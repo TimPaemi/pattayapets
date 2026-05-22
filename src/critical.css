@@ -1,0 +1,58 @@
+@font-face{font-family:'Hanken Grotesk';src:url(/assets/fonts/hanken-400.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Hanken Grotesk';src:url(/assets/fonts/hanken-500.woff2) format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Hanken Grotesk';src:url(/assets/fonts/hanken-700.woff2) format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Bricolage Grotesque';src:url(/assets/fonts/bricolage-400.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Bricolage Grotesque';src:url(/assets/fonts/bricolage-600.woff2) format('woff2');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Bricolage Grotesque';src:url(/assets/fonts/bricolage-700.woff2) format('woff2');font-weight:700;font-style:normal;font-display:swap}
+:root{
+--banyan:#1B5A4C;--banyan-dk:#14463B;--forest:#15241F;--marigold:#E7A23B;--marigold-dk:#9A6712;
+--alert:#C5402F;--alert-dk:#9A3122;--sand:#FAF5EC;--mist:#FFFDF7;--border:#E4DCC9;--sage:#5A6B62;
+--maxw:1140px;--rad:10px;--rad-lg:16px;
+--fd:'Bricolage Grotesque',system-ui,-apple-system,Segoe UI,sans-serif;
+--fb:'Hanken Grotesk',system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--sand);color:var(--forest);font-family:var(--fb);
+font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--banyan);text-underline-offset:2px}
+h1,h2,h3,h4{font-family:var(--fd);font-weight:700;line-height:1.18;letter-spacing:-.02em;margin:0 0 .5em}
+h1{font-size:clamp(2rem,5.2vw,3.05rem)}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+.skip-link{position:absolute;left:-999px;top:0;background:var(--forest);color:#fff;
+padding:10px 16px;border-radius:0 0 var(--rad) 0;z-index:200}
+.skip-link:focus{left:0}
+:focus-visible{outline:3px solid var(--marigold);outline-offset:2px}
+.topbar{background:var(--alert);color:#fff;font-size:.84rem;font-weight:500}
+.topbar a{color:#fff;text-decoration:none;display:block;padding:7px 20px;text-align:center;
+max-width:var(--maxw);margin:0 auto}
+.topbar a:hover{text-decoration:underline}
+.topbar svg{vertical-align:-2px;margin-right:6px}
+.site-header{background:var(--mist);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.header-row{display:flex;align-items:center;justify-content:space-between;gap:16px;
+max-width:var(--maxw);margin:0 auto;padding:12px 20px}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;flex-shrink:0}
+.brand-mark{width:34px;height:40px;flex-shrink:0}
+.brand-name{font-family:var(--fd);font-weight:700;font-size:1.5rem;letter-spacing:-.03em;line-height:1}
+.brand-name b{color:var(--banyan);font-weight:700}
+.brand-name span{color:var(--forest)}
+.nav{display:flex;align-items:center;gap:2px}
+.nav a{font-family:var(--fd);font-weight:600;font-size:.96rem;color:var(--forest);
+text-decoration:none;padding:9px 12px;border-radius:var(--rad);white-space:nowrap}
+.nav a:hover,.nav a[aria-current=page]{background:var(--sand);color:var(--banyan)}
+.nav-toggle{display:none}
+.breadcrumb{font-size:.82rem;color:var(--sage);padding:14px 0 0}
+.breadcrumb ol{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0}
+.breadcrumb a{color:var(--sage)}
+.breadcrumb li+li::before{content:"›";margin-right:6px;color:var(--border)}
+main{display:block;min-height:50vh}
+.lede{font-size:1.2rem;color:#33433C}
+@media(max-width:860px){
+.nav-toggle{display:inline-flex;align-items:center;gap:7px;background:var(--sand);
+border:1px solid var(--border);border-radius:var(--rad);font-family:var(--fd);font-weight:600;
+font-size:.92rem;color:var(--forest);padding:9px 13px;cursor:pointer}
+.nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--mist);
+border-bottom:1px solid var(--border);flex-direction:column;align-items:stretch;padding:8px 20px 14px;gap:0}
+.nav.open{display:flex}
+.nav a{padding:12px 10px;border-radius:var(--rad);font-size:1.02rem}
+}

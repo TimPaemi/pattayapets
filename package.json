@@ -1,0 +1,17 @@
+{
+  "name": "pattayapets",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PattayaPets.com — the honest pet resource for Pattaya. Editorial directory and guides.",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "@fontsource/bricolage-grotesque": "^5.2.10",
+    "@fontsource/hanken-grotesk": "^5.2.8",
+    "clean-css": "^5.3.3",
+    "html-minifier-terser": "^7.2.0",
+    "terser": "^5.48.0"
+  }
+}

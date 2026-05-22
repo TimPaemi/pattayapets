@@ -1,0 +1,2 @@
+# Cloudflare Pages redirects. Clean-URL directory hubs are served automatically.
+/index.html  /  301
