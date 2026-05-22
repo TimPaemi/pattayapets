@@ -1,7 +1,8 @@
 "use strict";
 /* PattayaPets allowlist build script.  src/ -> dist/
    Generates static HTML, minifies HTML/CSS/JS, copies allowlisted assets,
-   regenerates the service-worker precache, validates every JSON-LD block. */
+   regenerates the service-worker precache, validates every JSON-LD block,
+   and writes sitemap.xml, llms.txt and search-index.json. */
 
 const fs = require("fs");
 const path = require("path");
@@ -19,6 +20,16 @@ const STATIC_FILES = [
   "_headers", "_redirects", "robots.txt", "manifest.webmanifest",
   ".well-known/security.txt"
 ];
+const SECTION_LABELS = {
+  "": "Site pages", vets: "Vets & animal hospitals", groomers: "Pet groomers",
+  boarding: "Boarding & daycare", "pet-shops": "Pet shops", trainers: "Dog trainers",
+  "pet-relocation": "Pet relocation", "mobile-vets": "Mobile vets", area: "Areas",
+  "bring-pet-to-thailand": "Bringing a pet to Thailand",
+  "take-pet-out-of-thailand": "Taking a pet out of Thailand",
+  "dog-friendly-pattaya": "Dog-friendly Pattaya", "pet-emergency": "Pet emergency",
+  "owning-a-pet-in-pattaya": "Owning a pet in Pattaya",
+  "adopt-a-pet-pattaya": "Adoption & rescue", cats: "Cats", dogs: "Dogs"
+};
 
 const HTML_MIN = {
   collapseWhitespace: true,
@@ -54,6 +65,10 @@ function pathToFile(p) {
   return p.replace(/^\//, "");
 }
 
+function kindOf(p) {
+  return SECTION_LABELS[p.split("/")[1] || ""] || "Page";
+}
+
 function walk(dir, base, list) {
   base = base || dir;
   list = list || [];
@@ -67,35 +82,20 @@ function walk(dir, base, list) {
   return list;
 }
 
-/* validate every JSON-LD block in a rendered page */
 function validateJsonLd(html, pagePath) {
   const re = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g;
   let m, count = 0;
   while ((m = re.exec(html))) {
     try { JSON.parse(m[1]); count++; }
-    catch (e) {
-      throw new Error("Invalid JSON-LD on " + pagePath + ": " + e.message);
-    }
+    catch (e) { throw new Error("Invalid JSON-LD on " + pagePath + ": " + e.message); }
   }
   return count;
 }
 
-/* build a grouped, human-readable sitemap page from the page list */
 function buildSitemapPage(pages) {
-  const LABELS = {
-    "": "Site pages", vets: "Vets &amp; animal hospitals", groomers: "Pet groomers",
-    boarding: "Boarding &amp; daycare", "pet-shops": "Pet shops", trainers: "Dog trainers",
-    "pet-relocation": "Pet relocation", "mobile-vets": "Mobile vets", area: "Areas",
-    "bring-pet-to-thailand": "Bringing a pet to Thailand",
-    "take-pet-out-of-thailand": "Taking a pet out of Thailand",
-    "dog-friendly-pattaya": "Dog-friendly Pattaya", "pet-emergency": "Pet emergency",
-    "owning-a-pet-in-pattaya": "Owning a pet in Pattaya",
-    "adopt-a-pet-pattaya": "Adoption &amp; rescue", cats: "Cats", dogs: "Dogs"
-  };
   const groups = {};
   pages.filter(function (p) { return !p.noindex; }).forEach(function (p) {
-    const seg = p.path.split("/")[1] || "";
-    const key = LABELS[seg] || seg;
+    const key = kindOf(p.path);
     (groups[key] = groups[key] || []).push(p);
   });
   let body =
@@ -103,7 +103,7 @@ function buildSitemapPage(pages) {
     "<h1>Every page on PattayaPets</h1>" +
     '<p class="lede">A complete index of the directory and guide library.</p>';
   Object.keys(groups).forEach(function (g) {
-    body += "<h2>" + g + "</h2><ul>";
+    body += "<h2>" + g.replace(/&/g, "&amp;") + "</h2><ul>";
     groups[g].forEach(function (p) {
       body += '<li><a href="' + p.path + '">' +
         (p.crumb || p.shortTitle || p.title) + "</a></li>";
@@ -210,14 +210,23 @@ async function build() {
     "> The honest pet resource for Pattaya, Thailand — an independent editorial " +
     "directory of pet businesses and a guide hub for pet owners. No paid placements, " +
     "no sponsored content, no affiliate links. Editorial and informational only; " +
-    "not veterinary advice.\n\n" +
-    "## Key pages\n\n" +
+    "not veterinary advice.\n\n## Key pages\n\n" +
     indexable.map(function (p) {
       return "- [" + (p.crumb || p.shortTitle || p.title) + "](" +
         layout.canonical(p.path) + "): " + (p.description || "");
-    }).join("\n") +
-    "\n";
+    }).join("\n") + "\n";
   write("llms.txt", llms);
+
+  const searchIndex = indexable.map(function (p) {
+    return {
+      t: p.crumb || p.shortTitle || p.title,
+      u: p.path,
+      k: kindOf(p.path),
+      d: p.description || ""
+    };
+  });
+  write("search-index.json", JSON.stringify(searchIndex));
+  log("Search:     " + searchIndex.length + " pages indexed");
 
   const version = crypto.createHash("sha1")
     .update(cssMin + jsMin + criticalMin).digest("hex").slice(0, 12);

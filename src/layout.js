@@ -18,7 +18,8 @@ const NAV = [
   { name: "Bring a Pet", href: "/bring-pet-to-thailand/" },
   { name: "Dog-Friendly", href: "/dog-friendly-pattaya/" },
   { name: "Adopt", href: "/adopt-a-pet-pattaya/" },
-  { name: "About", href: "/about.html" }
+  { name: "About", href: "/about.html" },
+  { name: "Search", href: "/search.html" }
 ];
 
 const NETWORK = [

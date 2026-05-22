@@ -35,7 +35,8 @@ const SHOTS = [
   ["guide-hub", "/bring-pet-to-thailand/"],
   ["guide-article", "/pet-emergency/heatstroke.html"],
   ["emergency", "/pet-emergency/24-hour-vets-pattaya.html"],
-  ["directory", "/directory.html"]
+  ["directory", "/directory.html"],
+  ["search", "/search.html?q=heatstroke vet"]
 ];
 
 (async function () {
@@ -49,7 +50,7 @@ const SHOTS = [
     const name = pair[0], url = pair[1];
     for (const dev of [["desktop", 1280], ["mobile", 390]]) {
       const page = await browser.newPage();
-      await page.setViewport({ width: dev[1], height: 900, deviceScaleFactor: 1 });
+      await page.setViewport({ width: dev[1], height: 900, deviceScaleFactor: 2 });
       await page.goto("http://localhost:8099" + url, { waitUntil: "networkidle0", timeout: 20000 });
       await new Promise(function (r) { setTimeout(r, 500); });
       await page.screenshot({ path: OUT + "/" + name + "-" + dev[0] + ".png", fullPage: true });
