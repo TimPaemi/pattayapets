@@ -525,7 +525,7 @@ pages.push(exp({
   ],
   related: [
     { name: "Export to the EU", path: "/take-pet-out-of-thailand/to-eu.html", desc: "Stricter rules if you move on from the UAE." },
-    { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/", desc: "The reverse journey — no dedicated UAE import page yet." },
+    { name: "Import from the UAE", path: "/bring-pet-to-thailand/from-uae.html", desc: "The reverse journey — MOCCAE export and Thai import steps." },
     { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
     { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage export." }
   ]

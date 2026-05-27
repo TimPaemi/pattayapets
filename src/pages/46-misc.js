@@ -126,7 +126,7 @@ pages.push(hub({
       cards: [
         { name: "Adopt a cat", desc: "Pattaya shelters and rescues rehoming cats.", path: "/adopt-a-pet-pattaya/" },
         { name: "Bring a cat to Thailand", desc: "The full import process for a cat.", path: "/bring-pet-to-thailand/" },
-        { name: "Take a cat out of Thailand", desc: "Exporting a cat when you move on.", path: "/take-pet-out-of-thailand/" }
+        { name: "Take a cat out of Thailand", desc: "The Thai DLD export steps when you move on.", path: "/take-pet-out-of-thailand/export-process.html" }
       ]
     },
     {
@@ -205,7 +205,7 @@ pages.push(hub({
       cards: [
         { name: "Adopt a dog", desc: "Pattaya shelters and rescues rehoming dogs.", path: "/adopt-a-pet-pattaya/" },
         { name: "Bring a dog to Thailand", desc: "The full import process for a dog.", path: "/bring-pet-to-thailand/" },
-        { name: "Take a dog out of Thailand", desc: "Exporting a dog when you move on.", path: "/take-pet-out-of-thailand/" },
+        { name: "Take a dog out of Thailand", desc: "The Thai DLD export steps when you move on.", path: "/take-pet-out-of-thailand/export-process.html" },
         { name: "Pet emergencies", desc: "24-hour vets, heatstroke, snakes and more.", path: "/pet-emergency/" }
       ]
     }

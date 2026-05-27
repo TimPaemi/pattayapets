@@ -172,7 +172,9 @@ pages.push(own({
     { h: "Watch the at-risk pets", html:
       "<p>Snub-nosed breeds, very young, elderly, overweight or thick-coated " +
       "pets cope worst with heat. If your pet is one of them, be extra " +
-      "conservative with exercise and timing.</p>" }
+      "conservative with exercise and timing. Dog owners choosing a breed should " +
+      "read <a href=\"/dogs/choosing-a-dog-for-the-climate.html\">choosing a dog " +
+      "for the climate</a>.</p>" }
   ],
   faqs: [
     ["Should I shave my dog for the Thai heat?",
@@ -223,7 +225,9 @@ pages.push(own({
     { h: "Think about the pet, not just the rules", html:
       "<p>Beyond permission, consider whether the home actually suits a pet: " +
       "ground-floor or easy access for a dog, somewhere shaded and safe outside, " +
-      "good airflow or air-conditioning, and a walk route nearby. A technically " +
+      "good airflow or air-conditioning, and a walk route nearby. See " +
+      "<a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">where to " +
+      "walk your dog</a> for building a routine. A technically " +
       "pet-friendly 20th-floor studio is still hard work with a big dog.</p>" }
   ],
   faqs: [

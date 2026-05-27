@@ -54,7 +54,13 @@ pages.push(hub({
     "signs that should send you to a vet. For diagnosis and treatment, your " +
     "<a href=\"/vets/\">vet</a> is always the right call.</p>" +
     "<p>The common thread is <strong>prevention</strong>. Most of what follows is " +
-    "far easier, cheaper and kinder to prevent than to treat.</p>",
+    "far easier, cheaper and kinder to prevent than to treat. For routine " +
+    "vaccination and parasite schedules, see " +
+    "<a href=\"/dogs/dog-vaccinations-thailand.html\">dog vaccinations</a> and " +
+    "<a href=\"/cats/cat-vaccinations-thailand.html\">cat vaccinations</a>; for " +
+    "street-animal welfare, see " +
+    "<a href=\"/pet-health-pattaya/spaying-and-neutering.html\">spaying &amp; " +
+    "neutering</a>.</p>",
   groups: [
     {
       title: "Parasite-borne disease",

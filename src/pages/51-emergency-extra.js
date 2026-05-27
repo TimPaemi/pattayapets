@@ -123,7 +123,9 @@ pages.push(hazard({
       "develops over the following hours. <strong>Any pet hit by a vehicle should " +
       "be seen by a vet promptly</strong>, even with no visible wound. Phone a " +
       "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour clinic</a>, " +
-      "tell them you are coming, and go.</p>" },
+      "tell them you are coming, and go. If you do not have a car, see " +
+      "<a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">getting your pet " +
+      "to the vet</a>.</p>" },
     { h: "Lowering the risk", html:
       "<p>Most road accidents trace back to a pet getting loose. Keep dogs leashed " +
       "near roads, check that gates and fences are secure, and make sure your pet " +
@@ -178,7 +180,8 @@ pages.push(hazard({
       "plenty of fresh water and offer it often so the sea is less tempting. Along " +
       "the tideline, discourage scavenging: sharp shells, broken glass, coral, " +
       "fish hooks and line, and washed-up dead fish are all hazards, and " +
-      "<strong>pufferfish are toxic</strong> to a dog that mouths or eats one.</p>" },
+      "<strong>pufferfish are toxic</strong> to a dog that mouths or eats one &mdash; " +
+      "see <a href=\"/pet-emergency/poisoning.html\">poisoning</a>.</p>" },
     { h: "Swimming and currents", html:
       "<p>Not every dog is a strong swimmer. Watch a dog that heads out, be aware " +
       "of currents, and never assume a tired dog can bring itself back. On rocky " +
@@ -187,7 +190,10 @@ pages.push(hazard({
       "<p>Rinse the salt and sand off your dog with fresh water and dry it well, " +
       "<strong>ears included</strong>. Salt and damp left on the skin and in the " +
       "ears invite the irritation and infection that Pattaya&rsquo;s humidity " +
-      "already encourages.</p>" }
+      "already encourages &mdash; see " +
+      "<a href=\"/pet-health-pattaya/skin-and-ear-problems.html\">skin &amp; ear " +
+      "problems</a>. For where to go, see " +
+      "<a href=\"/dog-friendly-pattaya/beaches.html\">dog-friendly beaches</a>.</p>" }
   ],
   faqs: [
     ["Is the beach safe for my dog?",

@@ -224,7 +224,10 @@ pages.push(cat({
       "<li><strong>Slow introductions</strong> &mdash; to other pets, by scent " +
       "and through a door before any face-to-face meeting.</li>" +
       "<li><strong>Microchip</strong> the cat once the vet advises, so it can be " +
-      "identified if it is ever lost.</li></ul>" },
+      "identified if it is ever lost &mdash; see " +
+      "<a href=\"/owning-a-pet-in-pattaya/microchipping-your-pet.html\">microchipping</a>.</li>" +
+      "<li><strong>Vaccinate</strong> on schedule &mdash; see " +
+      "<a href=\"/cats/cat-vaccinations-thailand.html\">cat vaccinations in Thailand</a>.</li></ul>" },
     { h: "What to have ready at home", html:
       "<p>Before the cat arrives: food and water bowls, a litter tray and litter, " +
       "a scratching post, somewhere to hide and somewhere up high, and a few " +

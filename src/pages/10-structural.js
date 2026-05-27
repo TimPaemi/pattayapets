@@ -79,7 +79,9 @@ pages.push({
     '<a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import ' +
     "permit</a> and " +
     '<a href="/take-pet-out-of-thailand/export-process.html">export process</a> ' +
-    "pages for the Thai-side paperwork, and the separate guide for " +
+    "pages for the Thai-side paperwork. Gulf expats may also see " +
+    '<a href="/bring-pet-to-thailand/from-uae.html">import from the UAE</a>; ' +
+    "the separate hub covers " +
     '<a href="/take-pet-out-of-thailand/">taking a pet out of Thailand</a>.</p>' +
     "<h2>4. Thinking of adopting?</h2>" +
     "<p>Pattaya has several established shelters and rescue organisations. If you " +

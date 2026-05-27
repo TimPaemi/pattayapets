@@ -295,8 +295,10 @@ pages.push(own({
       "<p>In a busy city with open-gate housing, free-roaming animals and noisy " +
       "festivals, pets do get out. A collar and tag can be lost; a microchip " +
       "cannot. It is also a requirement for " +
-      "<a href=\"/bring-pet-to-thailand/\">bringing a pet to Thailand</a> and " +
-      "for <a href=\"/take-pet-out-of-thailand/\">taking one out</a>, and there " +
+      "<a href=\"/bring-pet-to-thailand/microchip-requirements.html\">bringing a pet to " +
+      "Thailand</a> and for the " +
+      "<a href=\"/take-pet-out-of-thailand/export-process.html\">export process</a>, " +
+      "and there " +
       "have been moves toward wider registration of pets in Thailand.</p>" },
     { h: "Getting your pet chipped", html:
       "<p>Any <a href=\"/vets/\">vet</a> in Pattaya can microchip a pet &mdash; " +
@@ -324,7 +326,7 @@ pages.push(own({
     { name: "If your pet goes missing", path: "/owning-a-pet-in-pattaya/lost-pet-pattaya.html", desc: "Where the microchip earns its place." },
     { name: "Microchip for import & export", path: "/bring-pet-to-thailand/microchip-requirements.html", desc: "ISO standard and why order matters." },
     { name: "Dog registration & the law", path: "/owning-a-pet-in-pattaya/dog-registration-thailand.html", desc: "Registration rules in Thailand." },
-    { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/", desc: "Microchipping in the import process." }
+    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "Microchipping in the export process." }
   ]
 }));
 
@@ -366,7 +368,9 @@ pages.push(own({
       "<li>Exactly <strong>what is included</strong> &mdash; visits per day, " +
       "walk length, feeding, litter, medication.</li>" +
       "<li>How they would <strong>handle an emergency</strong>, and that they " +
-      "are willing to get your pet to a vet.</li></ul>" },
+      "are willing to get your pet to a vet.</li></ul>" +
+      "<p>Leave the number of a " +
+      "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vet</a> too.</p>" },
     { h: "Brief them properly", html:
       "<p>Set a sitter up to succeed. Leave written instructions: the feeding " +
       "routine, walk times, medication, your <a href=\"/vets/\">vet&rsquo;s " +

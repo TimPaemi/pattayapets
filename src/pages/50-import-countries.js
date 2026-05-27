@@ -451,7 +451,7 @@ pages.push(country({
     ["Does the UAE require special paperwork to export a pet to Thailand?",
      "<p>Yes. MOCCAE requires an export permit, microchip, vaccinations and an endorsed health certificate. Confirm the current detail with MOCCAE and your airline for the emirate you are leaving from.</p>"],
     ["Is there quarantine when I bring a pet from the UAE to Thailand?",
-     "<p>Thailand's standard import process applies: with correct paperwork, most pets clear the Animal Quarantine Station inspection on arrival rather than entering long quarantine. See our Thailand pet quarantine guide for what that means in practice.</p>"]
+     "<p>Thailand's standard import process applies: with correct paperwork, most pets clear the Animal Quarantine Station inspection on arrival rather than entering long quarantine. See our guide to <a href=\"/bring-pet-to-thailand/thailand-pet-quarantine.html\">pet quarantine in Thailand</a> for what that means in practice.</p>"]
   ]
 }));
 

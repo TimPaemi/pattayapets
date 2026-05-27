@@ -221,7 +221,7 @@ pages.push(importStep({
       "after the blood sample. Doing the test now, while you are already at the " +
       "vet, can save you months later.</p>" +
       "<p>If you might later leave Thailand, read " +
-      '<a href="/take-pet-out-of-thailand/">taking a pet out of Thailand</a> ' +
+      '<a href="/take-pet-out-of-thailand/export-process.html">export process</a> ' +
       "for what the return journey involves.</p>" },
     { h: "What comes next", html:
       "<p>With vaccinations in order, the next documents are the " +

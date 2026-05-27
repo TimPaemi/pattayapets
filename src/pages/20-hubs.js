@@ -230,6 +230,9 @@ pages.push({
     card("/bring-pet-to-thailand/u-tapao-airport-pets.html", "Import", "U-Tapao or Bangkok?",
       "Which airport to fly your pet into, and how to reach Pattaya.",
       "Open the guide") +
+    card("/bring-pet-to-thailand/from-uae.html", "Import", "Import from the UAE",
+      "MOCCAE export permit and the Thai DLD steps for Gulf relocations.",
+      "Open the guide") +
     card("/pet-relocation/", "Relocation", "Pet relocation agents",
       "Import and export specialists who handle permits, flights and paperwork.",
       "View agents") +
