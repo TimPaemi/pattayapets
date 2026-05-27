@@ -92,7 +92,6 @@ const SHELTERS = [
     website: "https://hopeforstrays.org/",
     facebook: "https://www.facebook.com/HopeforStraysThailand/",
     address: "43/5 Moo 3, Chaiyapornwithi Road (Hwy 3240) Soi 33, East Pattaya (Nongprue), Chon Buri 20150",
-    phone: "089 158 8345", tel: "+66891588345",
     lede: "Hope for Strays is a non-profit dog rescue shelter in East Pattaya, home to " +
       "several hundred dogs at any time.",
     what:
@@ -134,7 +133,6 @@ const SHELTERS = [
     type: "Animal welfare foundation & hospital",
     website: "https://animalarmy.org/",
     address: "90/55 Moo 5, Na Jomtien, Sattahip District, Chon Buri 20250",
-    phone: "085 093 5954", tel: "+66850935954",
     email: "info@animalarmy.org",
     hours: "Daily 08:00&ndash;17:00; animal intake by appointment (emergencies excepted)",
     lede: "Animal Army Foundation is a licensed non-profit animal hospital in Na " +
@@ -183,7 +181,6 @@ const SHELTERS = [
     type: "Animal welfare charity",
     website: "https://www.soidog.org/",
     address: "167/9 Moo 4, Soi Mai Khao 10, Mai Khao, Thalang, Phuket 83110",
-    phone: "076 681 029", tel: "+6676681029",
     email: "clinic@soidog.org",
     hours: "Head office Mon&ndash;Fri 08:00&ndash;17:00; sanctuary visits by arrangement",
     lede: "Soi Dog Foundation is Thailand&rsquo;s best-known animal-welfare " +
@@ -228,7 +225,6 @@ const SHELTERS = [
     website: "https://www.adygsecondchancepattaya.org/",
     email: "adygsecondchancepattaya@gmail.com",
     address: "Sukjai Soi 6, Pattaya City, Bang Lamung District, Chon Buri 20150",
-    phone: "080 976 9976", tel: "+66809769976",
     lede: "Ady G. Second Chance Pattaya is a sanctuary caring for disabled and rescued " +
       "dogs in central Pattaya.",
     what:

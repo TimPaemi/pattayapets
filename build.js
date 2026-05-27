@@ -289,7 +289,7 @@ async function build() {
     "/bring-pet-to-thailand/import-permit-thailand-dld.html": "R1/1 import permit quarantine station AQS",
     "/bring-pet-to-thailand/u-tapao-airport-pets.html": "U-Tapao UTP Suvarnabhumi BKK Pattaya airport pet",
     "/bring-pet-to-thailand/snub-nosed-breeds-flying.html": "brachycephalic flat faced pug bulldog persian airline cargo",
-    "/take-pet-out-of-thailand/": "export pet thailand DLD export permit leave",
+    "/take-pet-out-of-thailand/": "export pet Thailand DLD export permit leave destination",
     "/pet-emergency/heatstroke.html": "heat stroke overheating hot dog cat emergency",
     "/pet-emergency/choking.html": "choking airway blocked dog cat",
     "/pet-emergency/venomous-creatures.html": "toad centipede bee sting scorpion poison",
@@ -410,7 +410,7 @@ async function build() {
     "/dog-friendly-pattaya/parks.html": "dog park green space walk Pattaya",
     "/owning-a-pet-in-pattaya/where-to-buy-pet-food.html": "pet food litter supermarket online delivery Pattaya",
     "/owning-a-pet-in-pattaya/hot-climate-pet-care.html": "hot climate heat stroke walk timing Pattaya",
-    "/take-pet-out-of-thailand/": "export pet Thailand DLD permit leave destination",
+    "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html": "where walk dog Pattaya cool hours beach soi dog leash routine",
     "/pet-health-pattaya/spaying-and-neutering.html": "neuter spay sterilisation street animals Pattaya",
     "/pet-relocation/": "pet relocation import export agent DLD permit nationwide Thailand",
     "/adopt-a-pet-pattaya/hope-for-strays.html": "Hope for Strays dog rescue East Pattaya adopt",
@@ -421,7 +421,13 @@ async function build() {
     "/adopt-a-pet-pattaya/malees-animal-shelter.html": "Malee Animal Shelter Pattaya Chanthaburi adopt",
     "/adopt-a-pet-pattaya/ady-g-second-chance-pattaya.html": "Ady G Second Chance disabled dog sanctuary Pattaya",
     "/about.html": "about PattayaPets editorial directory independent TIMPAEMI",
-    "/standards.html": "editorial standards anonymous visit verdict method"
+    "/standards.html": "editorial standards anonymous visit verdict method",
+    "/contact.html": "contact PattayaPets email corrections editorial hello",
+    "/corrections.html": "correction mistake report update factual error",
+    "/privacy.html": "privacy policy data analytics PattayaPets",
+    "/accessibility.html": "accessibility WCAG PattayaPets website",
+    "/masthead.html": "editorial standards about network Pattaya Authority",
+    "/": "PattayaPets pet resource directory guides Pattaya Thailand honest"
   };
 
   const searchIndex = indexable.map(function (p) {
@@ -447,6 +453,18 @@ async function build() {
       b.areas.forEach(function (ak) {
         if (AREAS[ak]) d += " " + AREAS[ak].name;
       });
+      d += " " + b.slug.replace(/-/g, " ");
+      if (b.c24) d += " 24 hour emergency open night";
+      var catKw = {
+        vets: " veterinarian clinic animal hospital Pattaya",
+        groomers: " dog cat grooming bath nail trim Pattaya",
+        boarding: " pet hotel kennel cattery daycare travel Pattaya",
+        "pet-shops": " pet food litter supplies toys shop Pattaya",
+        trainers: " dog training obedience behaviour puppy Pattaya",
+        "pet-relocation": " import export relocation agent DLD permit Thailand",
+        "mobile-vets": " home visit mobile vet house call Pattaya"
+      };
+      if (catKw[b.category]) d += catKw[b.category];
     }
     var gk = GUIDE_KEYWORDS[p.path];
     if (gk) d += " " + gk;

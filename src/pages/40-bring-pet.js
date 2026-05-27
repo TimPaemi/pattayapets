@@ -163,9 +163,9 @@ pages.push(importStep({
   ],
   related: [
     { name: "Rabies & titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "The next step, once the chip is in." },
+    { name: "Microchipping in Pattaya", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Why a chip matters for lost pets too." },
     { name: "DLD import permit", path: "/bring-pet-to-thailand/import-permit-thailand-dld.html", desc: "Apply once vaccinations are in order." },
-    { name: "The full process", path: "/bring-pet-to-thailand/", desc: "Back to the flagship guide." },
-    { name: "What it costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html", desc: "Budget for the whole move." }
+    { name: "The full process", path: "/bring-pet-to-thailand/", desc: "Back to the flagship guide." }
   ]
 }));
 
@@ -275,9 +275,9 @@ pages.push(importStep({
   ],
   related: [
     { name: "DLD import permit", path: "/bring-pet-to-thailand/import-permit-thailand-dld.html", desc: "The Thai-side permit you apply for." },
+    { name: "From the UK", path: "/bring-pet-to-thailand/from-uk.html", desc: "APHA endorsement as a worked example." },
     { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html", desc: "Endorsement timing vs your flight date." },
-    { name: "Rabies & titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "The vaccinations the certificate lists." },
-    { name: "What it costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html", desc: "Budgeting the whole move." }
+    { name: "Rabies & titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "The vaccinations the certificate lists." }
   ]
 }));
 

@@ -39,6 +39,10 @@ function countryRelated(slug) {
   return importCountryRelated(slug, RELATED);
 }
 
+const EU_IMPORT_REF =
+  "<p>For the shared EU export-certificate framework every member state follows, " +
+  "see our <a href=\"/bring-pet-to-thailand/from-eu.html\">bringing a pet from the EU</a> guide.</p>";
+
 function country(o) {
   var sections = (o.sections || []).slice();
   sections.push({ h: "Official sources", html: OFFICIAL });
@@ -101,7 +105,7 @@ pages.push(country({
       "completes an <strong>EU animal health / export certificate</strong>, endorsed by " +
       "the responsible German authority (the regional veterinary office, the " +
       "<em>Veterinaeramt</em>). The familiar EU pet passport governs travel within the " +
-      "EU and is not, by itself, what Thailand requires.</p>" },
+      "EU and is not, by itself, what Thailand requires.</p>" + EU_IMPORT_REF },
     { h: "Planning the return to Germany", html:
       "<p>To bring a pet back into the EU from Thailand &mdash; a non-EU country &mdash; " +
       "you will need a valid rabies vaccination and a " +

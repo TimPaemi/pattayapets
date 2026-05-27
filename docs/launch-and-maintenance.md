@@ -11,7 +11,7 @@ This file lives in `docs/` and is **not** part of the deployed website.
 
 PattayaPets is **built and finished as a Phase 1 site**. Current state:
 
-- **173 pages**, all generated to static HTML by the build script.
+- **179 pages**, all generated to static HTML by the build script.
 - Verified clean: every internal link works, every
   structured-data block is valid, no broken pages, accessibility and SEO
   fundamentals all in place.
@@ -20,7 +20,7 @@ PattayaPets is **built and finished as a Phase 1 site**. Current state:
 
 What the site contains:
 
-- An **editorial directory** of 29 Pattaya pet businesses across vets, groomers,
+- An **editorial directory** of 32 Pattaya pet businesses across vets, groomers,
   boarding, pet shops, trainers, pet-relocation agents and mobile vets, with category hubs
   and eight neighbourhood (area) hubs.
 - A large **guide library** — clusters for bringing a pet to Thailand, taking a
@@ -190,9 +190,9 @@ The real growth levers, in order of value:
 | Guide pages | `src/pages/*.js` |
 | The rulebook | `CLAUDE.md` |
 
-A healthy build prints: **"Pages: 166 rendered, 166 JSON-LD blocks valid"**.
-If the page count drops unexpectedly or it reports an invalid block, something
-in `src/` is broken — check the file you last edited.
+A healthy build prints: **"Pages: 179 rendered, 179 JSON-LD blocks valid"** and
+the link check reports **0 broken**. If the page count drops unexpectedly or it
+reports an invalid block, something in `src/` is broken — check the file you last edited.
 
 ---
 

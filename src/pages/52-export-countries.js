@@ -62,7 +62,9 @@ const EU_ENTRY =
   "titer test</a> &mdash; the blood sample taken at least 30 days after vaccination, " +
   "from an EU-approved laboratory &mdash; and then a <strong>three-month wait</strong> " +
   "from the sample date before the pet may travel. An EU third-country animal health " +
-  "certificate completes the paperwork.</p>";
+  "certificate completes the paperwork.</p>" +
+  "<p>For the shared EU rules that apply to every member state, see our " +
+  "<a href=\"/take-pet-out-of-thailand/to-eu.html\">exporting a pet to the EU</a> guide.</p>";
 
 const THAI_SIDE =
   "<p>All of this sits on top of the Thai " +

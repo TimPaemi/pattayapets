@@ -57,6 +57,10 @@ const EU_RETURN =
   "three-month wait before entry. Having the titer test done before you leave removes " +
   "that wait later &mdash; it is the single best piece of forward planning.</p>";
 
+const EU_IMPORT_REF =
+  "<p>For the shared EU export-certificate framework every member state follows, " +
+  "see our <a href=\"/bring-pet-to-thailand/from-eu.html\">bringing a pet from the EU</a> guide.</p>";
+
 function country(o) {
   var sections = (o.sections || []).slice();
   sections.push({ h: "Official sources", html: OFFICIAL });
@@ -88,7 +92,7 @@ pages.push(country({
       "official veterinarian under <strong>the Swedish Board of Agriculture " +
       "(Jordbruksverket)</strong>. The EU pet passport you use within Europe is not, " +
       "by itself, what Thailand requires. Use a vet experienced in export work and " +
-      "start early.</p>" },
+      "start early.</p>" + EU_IMPORT_REF },
     { h: "Planning the return to Sweden", html:
       EU_RETURN +
       "<p>Sweden does not apply the special tapeworm-treatment rule that a few " +
@@ -149,7 +153,7 @@ pages.push(country({
       "<strong>EU export health certificate</strong>, endorsed by an official " +
       "veterinarian under <strong>the Danish Veterinary and Food Administration</strong>. " +
       "The EU pet passport is for movement within Europe and is not, on its own, " +
-      "what Thailand requires.</p>" },
+      "what Thailand requires.</p>" + EU_IMPORT_REF },
     { h: "Planning the return to Denmark", html:
       EU_RETURN +
       "<p>Confirm the current EU re-entry requirements with the Danish Veterinary " +
@@ -177,7 +181,7 @@ pages.push(country({
       "<p>" + STD_STEPS + "For travel out of the EU, your vet completes an " +
       "<strong>EU export health certificate</strong>, endorsed by an official " +
       "veterinarian under <strong>the Finnish Food Authority (Ruokavirasto)</strong>. " +
-      "The EU pet passport governs intra-EU travel only.</p>" },
+      "The EU pet passport governs intra-EU travel only.</p>" + EU_IMPORT_REF },
     { h: "Planning the return to Finland", html:
       EU_RETURN +
       "<p>Finland also keeps the <strong>tapeworm (Echinococcus) treatment rule</strong>: " +
@@ -207,7 +211,8 @@ pages.push(country({
       "<p>" + STD_STEPS + "For travel out of the EU, your vet completes an " +
       "<strong>EU export health certificate</strong>, endorsed under <strong>the " +
       "Netherlands Food and Consumer Product Safety Authority (NVWA)</strong>. The " +
-      "EU pet passport is for intra-EU travel and is not what Thailand requires.</p>" },
+      "EU pet passport is for intra-EU travel and is not what Thailand requires.</p>" +
+      EU_IMPORT_REF },
     { h: "Planning the return to the Netherlands", html:
       EU_RETURN +
       "<p>A direct Amsterdam-Bangkok routing keeps the journey as short as possible, " +
@@ -237,7 +242,7 @@ pages.push(country({
       "<strong>EU export health certificate</strong>, endorsed through the official " +
       "channel of <strong>the French agriculture ministry&rsquo;s veterinary " +
       "services</strong> (the departmental directorate that handles animal health). " +
-      "The EU pet passport is for travel within Europe only.</p>" },
+      "The EU pet passport is for travel within Europe only.</p>" + EU_IMPORT_REF },
     { h: "Planning the return to France", html:
       EU_RETURN +
       "<p>Paris has direct routes to Bangkok, which keeps the journey shorter. " +
@@ -267,7 +272,7 @@ pages.push(country({
       "pet-travel system. For travel to Thailand your vet completes an export " +
       "health certificate, endorsed through <strong>the Federal Food Safety and " +
       "Veterinary Office (FSVO)</strong> and the cantonal veterinary office. The " +
-      "passport alone is not what Thailand requires.</p>" },
+      "passport alone is not what Thailand requires.</p>" + EU_IMPORT_REF },
     { h: "Planning the return to Switzerland", html:
       "<p>Switzerland applies EU-aligned rules for pets arriving from outside the " +
       "low-risk list. Returning a pet from Thailand will involve a valid rabies " +
@@ -298,7 +303,7 @@ pages.push(country({
       "<p>" + STD_STEPS + "For travel out of the EU, your vet completes an " +
       "<strong>EU export health certificate</strong>, endorsed by <strong>the " +
       "Department of Agriculture, Food and the Marine</strong>. The EU pet passport " +
-      "governs intra-EU travel only and is not what Thailand requires.</p>" },
+      "governs intra-EU travel only and is not what Thailand requires.</p>" + EU_IMPORT_REF },
     { h: "Planning the return to Ireland", html:
       EU_RETURN +
       "<p>Ireland also keeps the <strong>tapeworm (Echinococcus) treatment rule</strong>: " +
