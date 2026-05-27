@@ -309,6 +309,11 @@ async function build() {
     "/take-pet-out-of-thailand/to-uk.html": "export pet UK APHA tapeworm Thailand",
     "/owning-a-pet-in-pattaya/getting-to-the-vet.html": "taxi transport vet no car Grab Bolt",
     "/pet-emergency/pet-first-aid.html": "first aid injured pet calm carrier",
+    "/bring-pet-to-thailand/thailand-pet-quarantine.html": "quarantine AQS inspection arrival",
+    "/bring-pet-to-thailand/from-eu.html": "import pet EU pet passport Thailand",
+    "/take-pet-out-of-thailand/to-australia.html": "export pet Australia DAFF quarantine",
+    "/adopt-a-pet-pattaya/": "adopt rescue shelter dog cat Pattaya",
+    "/pet-insurance-thailand.html": "pet insurance cover vet bill Thailand",
     "/start-here.html": "new pet owner Pattaya orientation guide"
   };
 

@@ -47,7 +47,8 @@ const IMPORT_PAIR = {
   "to-uk": { slug: "from-uk", label: "From the UK (import)" },
   "to-usa": { slug: "from-usa", label: "From the USA (import)" },
   "to-australia": { slug: "from-australia", label: "From Australia (import)" },
-  "to-eu": { slug: "from-germany", label: "From Germany (import)" }
+  "to-eu": { slug: "from-eu", label: "From the EU (import)" },
+  "to-germany": { slug: "from-germany", label: "From Germany (import)" }
 };
 
 const EXP_RELATED = [
@@ -134,6 +135,12 @@ pages.push(hub({
         { name: "To New Zealand", desc: "A long, strict route that needs early planning with MPI.", path: "/take-pet-out-of-thailand/to-new-zealand.html" }
       ]
     }
+  ],
+  related: [
+    { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/", desc: "The reverse process, for when you arrive." },
+    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage import and export." },
+    { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." },
+    { name: "Pet insurance in Thailand", path: "/pet-insurance-thailand.html", desc: "When cover helps with export vet bills." }
   ]
 }));
 
@@ -240,7 +247,7 @@ pages.push(exp({
       "<a href=\"mailto:qsap_bkk_export@dld.go.th\">qsap_bkk_export@dld.go.th</a> " +
       "or attend in person at the AQS office on the 1st floor of the Customs Export " +
       "Building at the airport (Mon&ndash;Fri 08:30&ndash;12:00 and 13:00&ndash;15:30, " +
-      "except Thai public holidays; tel. (+66) 2134-0731&ndash;2).</p>" +
+      "except Thai public holidays).</p>" +
       "<p>An AQS veterinary officer reviews your documents, may examine your pet " +
       "and/or request tests, then issues the export licence (form 9) and health " +
       "certificate if everything complies.</p>" },
@@ -358,12 +365,6 @@ pages.push(exp({
       "genuinely useful here.</p>" },
     { h: "The Thai side and your timeline", html: THAI_SIDE }
   ],
-  related: [
-    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
-    { name: "What export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html", desc: "Budgeting the Thai side and the flight." },
-    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage export." },
-    { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." }
-  ],
   faqs: [
     ["How long does it take to move a pet from Thailand to the UK?",
      "<p>Plan for several months if the titer test still has to be done — the three-month wait after the blood sample is unavoidable. If a valid titer test is already in place, it can be considerably faster.</p>"],
@@ -398,12 +399,6 @@ pages.push(exp({
       "healthy on arrival and meet the rules in force. Confirm the current cat " +
       "requirements with the CDC and USDA.</p>" },
     { h: "The Thai side and your timeline", html: THAI_SIDE }
-  ],
-  related: [
-    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
-    { name: "What export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html", desc: "Budgeting the Thai side and the flight." },
-    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage export." },
-    { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." }
   ],
   faqs: [
     ["Does my dog need a rabies titer test to enter the USA from Thailand?",
@@ -440,13 +435,6 @@ pages.push(exp({
       "<a href=\"/take-pet-out-of-thailand/to-france.html\">France</a>, and you " +
       "should confirm with that country&rsquo;s authority.</p>" },
     { h: "The Thai side and your timeline", html: THAI_SIDE }
-  ],
-  related: [
-    { name: "To Germany", path: "/take-pet-out-of-thailand/to-germany.html", desc: "EU entry via Germany." },
-    { name: "To France", path: "/take-pet-out-of-thailand/to-france.html", desc: "EU entry via France." },
-    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
-    { name: "What export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html", desc: "Budgeting the Thai side and the flight." },
-    { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." }
   ],
   faqs: [
     ["Is the three-month wait avoidable?",
@@ -489,12 +477,6 @@ pages.push(exp({
       "Australia to Thailand</a> covers the easier direction &mdash; and why the " +
       "return is so much harder.</p>" },
     { h: "The Thai side and your timeline", html: THAI_SIDE }
-  ],
-  related: [
-    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
-    { name: "What export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html", desc: "Budgeting the Thai side and the flight." },
-    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Essential for this route." },
-    { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." }
   ],
   faqs: [
     ["Can I fly my pet directly from Thailand to Australia?",

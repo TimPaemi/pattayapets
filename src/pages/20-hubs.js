@@ -108,7 +108,7 @@ pages.push({
     "<h2>Browse the guides</h2>" +
     '<div class="grid grid-3">' +
     card("/start-here.html", "New here", "Start here",
-      "A short orientation for new pet owners in Pattaya &mdash; emergency numbers, " +
+      "A short orientation for new pet owners in Pattaya &mdash; emergency contacts, " +
       "finding a vet, the climate and the essentials.", "Open the page") +
     card("/bring-pet-to-thailand/", "Flagship guide", "Bringing a pet to Thailand",
       "The full import process: DLD permit, microchip, rabies and titer test, " +

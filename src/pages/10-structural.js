@@ -35,7 +35,7 @@ pages.push({
   path: "/start-here.html",
   title: "New to Pattaya with a pet? Start here | PattayaPets",
   description:
-    "A plain-English orientation for pet owners new to Pattaya: emergency numbers, " +
+    "A plain-English orientation for pet owners new to Pattaya: emergency contacts, " +
     "finding a vet, the hot climate, bringing a pet in or out, and adoption.",
   crumb: "Start here",
   breadcrumbs: [],

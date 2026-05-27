@@ -77,7 +77,6 @@ pages.push(hub({
 /* ---- SHELTER PAGES ---- */
 function shelterDesc(s) {
   var d = s.name + " is a " + s.type.toLowerCase() + " in the Pattaya area.";
-  if (s.phone) d += " Phone: " + s.phone + ".";
   if (s.email) d += " Email: " + s.email + ".";
   d += " How its rescue and adoption work runs, and how to help.";
   return d;
@@ -250,10 +249,6 @@ SHELTERS.forEach(function (s) {
   if (s.hours) {
     contact += "<p><strong>Hours:</strong> " + s.hours + "</p>";
   }
-  if (s.phone) {
-    contact += "<p><strong>Phone:</strong> <a href=\"tel:" + (s.tel || s.phone) + "\">" +
-      s.phone + "</a></p>";
-  }
   if (s.email) {
     contact += "<p><strong>Email:</strong> <a href=\"mailto:" + s.email + "\">" +
       s.email + "</a></p>";
@@ -301,7 +296,7 @@ SHELTERS.forEach(function (s) {
       { name: "Fostering a pet", path: "/adopt-a-pet-pattaya/fostering.html", desc: "Give a rescue animal a temporary home." },
       { name: "How to help street animals", path: "/adopt-a-pet-pattaya/how-to-help.html", desc: "Volunteer, donate and emergency help." },
       { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Do this soon after adoption." },
-      { name: "Vets in Pattaya", path: "/vets/", desc: "Line up a vet for your adopted pet." }
+      { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "If you might fly an adopted pet abroad." }
     ]
   }));
 });

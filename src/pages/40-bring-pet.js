@@ -106,6 +106,12 @@ pages.push(hub({
         { name: "Is there quarantine?", desc: "What really happens at the Animal Quarantine Station on arrival.", path: "/bring-pet-to-thailand/thailand-pet-quarantine.html" }
       ]
     }
+  ],
+  related: [
+    { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "The reverse process, for when you leave." },
+    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage import and export." },
+    { name: "U-Tapao or Bangkok?", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html", desc: "Which airport to fly into for Pattaya." },
+    { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Settling in once you arrive." }
   ]
 }));
 
@@ -538,7 +544,8 @@ const IMP_STEPS =
 const EXPORT_PAIR = {
   "from-uk": { slug: "to-uk", label: "To the UK (export)" },
   "from-usa": { slug: "to-usa", label: "To the USA (export)" },
-  "from-australia": { slug: "to-australia", label: "To Australia (export)" }
+  "from-australia": { slug: "to-australia", label: "To Australia (export)" },
+  "from-eu": { slug: "to-eu", label: "To the EU (export)" }
 };
 
 const COUNTRY_RELATED = [

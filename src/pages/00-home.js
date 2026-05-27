@@ -151,7 +151,7 @@ const body =
     'source to verify against.</p></div>' +
     '<div class="grid grid-4">' +
       '<a class="card" href="/start-here.html"><span class="card-tag">New here</span>' +
-        '<h3>Start here</h3><p>A short orientation for new pet owners &mdash; emergency numbers, ' +
+        '<h3>Start here</h3><p>A short orientation for new pet owners &mdash; emergency contacts, ' +
         'finding a vet, the climate and the essentials.</p>' +
         '<span class="card-meta">Open the page &rarr;</span></a>' +
       '<a class="card" href="/bring-pet-to-thailand/"><span class="card-tag">Flagship guide</span>' +
@@ -224,7 +224,7 @@ const body =
   '<section class="section section-banyan"><div class="container">' +
     '<div class="section-head"><p class="eyebrow">New to Pattaya with a pet?</p>' +
     '<h2>Start with the essentials</h2>' +
-    '<p>A short orientation page covering the emergency numbers, finding a vet, the ' +
+    '<p>A short orientation page covering emergency contacts, finding a vet, the ' +
     'climate, and the first things every new pet owner in Pattaya should know.</p></div>' +
     '<div class="btn-row"><a class="btn btn-primary" href="/start-here.html">Open the Start Here page</a>' +
     '<a class="btn btn-ghost" href="/search.html">Search the whole site</a></div>' +
