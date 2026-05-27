@@ -60,7 +60,9 @@ pages.push({
     '<a href="/vets/">directory of vets and animal hospitals</a>, filter by your ' +
     '<a href="/area/jomtien.html">neighbourhood</a>, or see ' +
     '<a href="/mobile-vets/">mobile and home-visit vets</a> if transport is difficult. ' +
-    "Note which clinics are open 24 hours.</p>" +
+    "Note which clinics are open 24 hours, and read our " +
+    '<a href="/pet-health-pattaya/">pet health guide</a> for the tropical-climate risks ' +
+    "to plan around.</p>" +
     "<h2>2. Heat is the biggest everyday risk</h2>" +
     "<p>Pattaya is hot and humid year round. Heatstroke, hot pavement burning paw " +
     "pads, and dehydration are common and preventable. Walk dogs early morning or " +

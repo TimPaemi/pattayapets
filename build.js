@@ -302,7 +302,7 @@ async function build() {
     "/dog-friendly-pattaya/": "dog friendly beach cafe restaurant hotel condo walk",
     "/owning-a-pet-in-pattaya/songkran-and-your-pet.html": "songkran water festival pet noise escape",
     "/owning-a-pet-in-pattaya/lost-pet-pattaya.html": "missing pet lost dog cat microchip",
-    "/pet-relocation/": "pet relocation import export agent DLD permit",
+    "/pet-relocation/": "pet relocation import export agent DLD permit nationwide",
     "/mobile-vets/": "home visit vet mobile house call",
     "/pet-health-pattaya/spaying-and-neutering.html": "neuter spay sterilisation street animals",
     "/bring-pet-to-thailand/from-uk.html": "import pet UK DEFRA APHA titer tapeworm Thailand",
@@ -362,7 +362,16 @@ async function build() {
     "/owning-a-pet-in-pattaya/fireworks-and-noise-anxiety.html": "fireworks thunder noise anxious pet escape",
     "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html": "pet sitter dog walker house sit Pattaya",
     "/bring-pet-to-thailand/from-germany.html": "import pet Germany EU Thailand",
-    "/bring-pet-to-thailand/from-canada.html": "import pet Canada CFIA Thailand"
+    "/bring-pet-to-thailand/from-canada.html": "import pet Canada CFIA Thailand",
+    "/take-pet-out-of-thailand/to-uae.html": "export pet UAE MOCCAE Thailand",
+    "/take-pet-out-of-thailand/to-singapore.html": "export pet Singapore AVS Thailand",
+    "/bring-pet-to-thailand/from-russia.html": "import pet Russia Thailand",
+    "/cats/indoor-vs-outdoor-cats.html": "indoor cat balcony outdoor street dog Pattaya",
+    "/cats/getting-a-cat-in-pattaya.html": "adopt kitten street cat Pattaya",
+    "/dogs/common-dog-health-issues-tropics.html": "skin ear tick disease hot humid dog",
+    "/dogs/choosing-a-dog-for-the-climate.html": "breed heat brachycephalic climate Pattaya",
+    "/owning-a-pet-in-pattaya/songkran-and-your-pet.html": "songkran water festival pet noise escape",
+    "/owning-a-pet-in-pattaya/saying-goodbye.html": "end of life euthanasia pet goodbye"
   };
 
   const searchIndex = indexable.map(function (p) {

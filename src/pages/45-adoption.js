@@ -296,6 +296,7 @@ SHELTERS.forEach(function (s) {
       { name: "Fostering a pet", path: "/adopt-a-pet-pattaya/fostering.html", desc: "Give a rescue animal a temporary home." },
       { name: "How to help street animals", path: "/adopt-a-pet-pattaya/how-to-help.html", desc: "Volunteer, donate and emergency help." },
       { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Do this soon after adoption." },
+      { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "What good rescues do before rehoming." },
       { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "If you might fly an adopted pet abroad." }
     ]
   }));

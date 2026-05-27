@@ -163,6 +163,12 @@ pages.push({
     card("/adopt-a-pet-pattaya/how-to-help.html", "Adoption", "How to help street animals",
       "Donate, volunteer, foster and what to do for an injured animal.",
       "Open the guide") +
+    card("/owning-a-pet-in-pattaya/lost-pet-pattaya.html", "Owning", "If your pet goes missing",
+      "A step-by-step plan for a lost dog or cat in Pattaya.",
+      "Open the guide") +
+    card("/owning-a-pet-in-pattaya/hot-climate-pet-care.html", "Owning", "Hot-climate pet care",
+      "The single biggest everyday adjustment for pets in Pattaya.",
+      "Open the guide") +
     card("/bring-pet-to-thailand/import-permit-thailand-dld.html", "Import", "DLD import permit",
       "How to apply for the Thai import permit before your pet flies in.",
       "Open the guide") +

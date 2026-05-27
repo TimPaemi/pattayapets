@@ -36,6 +36,7 @@ const AREA_GUIDE = {
     "<li><a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vets in Pattaya</a></li>" +
     "<li><a href=\"/mobile-vets/\">Mobile vets</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">Getting your pet to the vet</a></li>" +
+    "<li><a href=\"/pet-health-pattaya/\">Pet health in Pattaya</a></li>" +
     "</ul>",
 
   wongamat:
@@ -102,6 +103,7 @@ const AREA_GUIDE = {
     "<li><a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vets in Pattaya</a></li>" +
     "<li><a href=\"/mobile-vets/\">Mobile vets</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">Getting your pet to the vet</a></li>" +
+    "<li><a href=\"/dog-friendly-pattaya/\">Dog-friendly Pattaya</a></li>" +
     "</ul>",
 
   pratumnak:
@@ -196,6 +198,7 @@ const AREA_GUIDE = {
     "<li><a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vets in Pattaya</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">Getting your pet to the vet</a></li>" +
     "<li><a href=\"/mobile-vets/\">Mobile vets</a></li>" +
+    "<li><a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">Where and how to walk your dog</a></li>" +
     "<li><a href=\"/pet-health-pattaya/\">Pet health in Pattaya</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/\">Owning a pet in Pattaya</a></li>" +
     "</ul>",

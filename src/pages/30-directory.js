@@ -47,7 +47,7 @@ const CAT_GUIDES = {
     { name: "Where to buy pet food", path: "/owning-a-pet-in-pattaya/where-to-buy-pet-food.html" },
     { name: "Cats in Pattaya", path: "/cats/" },
     { name: "Dogs in Pattaya", path: "/dogs/" },
-    { name: "Pet insurance in Thailand", path: "/pet-insurance-thailand.html" }
+    { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/" }
   ],
   "mobile-vets": [
     { name: "Getting to the vet", path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html" },

@@ -413,8 +413,7 @@ pages.push(article({
   related: [
     { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Back to the cluster hub." },
     { name: "Boarding & daycare", path: "/boarding/", desc: "If the pet stays behind." },
-    { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/", desc: "International moves into Thailand." },
-    { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "International moves out of Thailand." },
+    { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html", desc: "Domestic flights and crate rules." },
     { name: "Pet sitters & dog walkers", path: "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html", desc: "In-home care while you travel." },
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Managing the heat, anywhere in Thailand." }
   ]

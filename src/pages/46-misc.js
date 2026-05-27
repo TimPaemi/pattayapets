@@ -133,7 +133,7 @@ pages.push(hub({
     { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Heartworm, parasites and tropical health." },
     { name: "Pet emergencies", path: "/pet-emergency/", desc: "24-hour vets and urgent hazards." },
     { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Shelters and rescue organisations." },
-    { name: "Bring a pet to Thailand", path: "/bring-pet-to-thailand/", desc: "The full import process for a cat." }
+    { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Essential ID for an indoor or outdoor cat." }
   ]
 }));
 
@@ -201,8 +201,8 @@ pages.push(hub({
   related: [
     { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Beaches, cafes and places to walk." },
     { name: "Pet emergencies", path: "/pet-emergency/", desc: "24-hour vets and urgent hazards." },
-    { name: "Dog trainers", path: "/trainers/", desc: "Obedience and behaviour help." },
-    { name: "Bring a pet to Thailand", path: "/bring-pet-to-thailand/", desc: "The full import process for a dog." }
+    { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Building a safe daily routine." },
+    { name: "Pet insurance in Thailand", path: "/pet-insurance-thailand.html", desc: "Cover for the big unexpected vet bill." }
   ]
 }));
 
