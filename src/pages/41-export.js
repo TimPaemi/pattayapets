@@ -146,8 +146,9 @@ pages.push(exp({
       "<p>Most pets depart from Suvarnabhumi (BKK). The DLD has an office at the " +
       "airport for final endorsement, and your pet is checked before it flies. " +
       "Many owners use a <a href=\"/pet-relocation/\">pet relocation agent</a> " +
-      "for export precisely because the airport steps and the destination " +
-      "paperwork have to line up perfectly.</p>" },
+      "for export precisely because the airport steps, the " +
+      "<a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline pet " +
+      "policy</a> and the destination paperwork have to line up perfectly.</p>" },
     { h: "Official sources", html: OFFICIAL },
     { h: "Next steps", html:
       "<p>For the permit application itself, see our dedicated page on the " +
@@ -166,7 +167,6 @@ pages.push(exp({
 
 pages.push(exp({
   slug: "export-permit-thailand-dld", crumb: "DLD export permit",
-  skipOfficial: true,
   title: "Thailand pet export permit (DLD) | PattayaPets",
   desc: "The Thailand pet export permit from the Department of Livestock " +
     "Development: how to apply, the timing, and what you submit before departure.",
@@ -206,8 +206,7 @@ pages.push(exp({
       "except Thai public holidays; tel. (+66) 2134-0731&ndash;2).</p>" +
       "<p>An AQS veterinary officer reviews your documents, may examine your pet " +
       "and/or request tests, then issues the export licence (form 9) and health " +
-      "certificate if everything complies.</p>" +
-      OFFICIAL },
+      "certificate if everything complies.</p>" },
     { h: "What you will typically need", html:
       "<ul><li>Completed form <strong>1/1</strong> and a copy of your ID (passport " +
       "for foreign nationals)</li>" +
@@ -229,7 +228,6 @@ pages.push(exp({
 
 pages.push(exp({
   slug: "cost-to-export-a-pet-from-thailand", crumb: "What it costs",
-  skipOfficial: true,
   title: "Cost to export a pet from Thailand | PattayaPets",
   desc: "An honest look at the cost of taking a dog or cat out of Thailand — " +
     "Thai-side fees, vet work, the flight and destination requirements.",
@@ -254,7 +252,9 @@ pages.push(exp({
       "<li><strong>IATA travel crate</strong> &mdash; sized to your pet if flying " +
       "in the hold or as cargo.</li>" +
       "<li><strong>The flight</strong> &mdash; often the largest single line, and " +
-      "highly variable by route and pet size.</li>" +
+      "highly variable by route and pet size. Check " +
+      "<a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline pet " +
+      "policies</a> early.</li>" +
       "<li><strong>Relocation agent</strong> &mdash; optional but common for cargo " +
       "bookings and complex destinations.</li>" +
       "<li><strong>Quarantine</strong> &mdash; only for certain destinations " +
@@ -421,7 +421,10 @@ pages.push(exp({
       "<p>Owners commonly report <strong>six months or more</strong> of " +
       "preparation. This is not a process to improvise. Start with the " +
       "Australian Department of Agriculture, Fisheries and Forestry for the " +
-      "current rules, and engage a specialist " +
+      "current rules &mdash; see " +
+      "<a href=\"https://www.agriculture.gov.au/biosecurity-trade/cats-dogs\" " +
+      "target=\"_blank\" rel=\"noopener nofollow\">importing cats and dogs to " +
+      "Australia</a> &mdash; and engage a specialist " +
       "<a href=\"/pet-relocation/\">pet relocation agent</a> experienced in the " +
       "Thailand-to-Australia route as early as you can.</p>" }
   ],

@@ -25,10 +25,26 @@ const OFFICIAL =
   "<a href=\"https://www.cdc.gov/importation/bringing-an-animal-into-the-us/index.html\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">CDC animal import (USA)</a>; " +
   "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
-  "rel=\"noopener nofollow\">EU pet movement</a>.</p>";
+  "rel=\"noopener nofollow\">EU pet movement</a>; " +
+  "<a href=\"https://www.maff.go.jp/aqs/english/\" target=\"_blank\" rel=\"noopener nofollow\">" +
+  "Japan MAFF Animal Quarantine</a>; " +
+  "<a href=\"https://www.nparks.gov.sg/avs/pets/importing-exporting-and-transhipping-animals-and-birds/importing-dogs-and-cats\" " +
+  "target=\"_blank\" rel=\"noopener nofollow\">Singapore AVS</a>; " +
+  "<a href=\"https://www.moec.gov.ae/en/services/import-export-services/import-pets\" " +
+  "target=\"_blank\" rel=\"noopener nofollow\">UAE MOCCAE pet import</a>; " +
+  "<a href=\"https://www.agriculture.gov.au/biosecurity-trade/cats-dogs\" target=\"_blank\" " +
+  "rel=\"noopener nofollow\">Australia DAFF</a>; " +
+  "<a href=\"https://www.mpi.govt.nz/import/bringing-pets-to-nz/\" target=\"_blank\" " +
+  "rel=\"noopener nofollow\">New Zealand MPI</a>; " +
+  "<a href=\"https://inspection.canada.ca/en/importing-food-plants-or-animals/pets\" " +
+  "target=\"_blank\" rel=\"noopener nofollow\">Canada CFIA</a>; " +
+  "<a href=\"https://www.blv.admin.ch/blv/en/home/tiere/reisen-mit-heimtieren.html\" " +
+  "target=\"_blank\" rel=\"noopener nofollow\">Switzerland FSVO</a>.</p>";
 
 const RELATED = [
   { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
+  { name: "DLD export permit", path: "/take-pet-out-of-thailand/export-permit-thailand-dld.html", desc: "The permit you apply for before departure." },
+  { name: "What export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html", desc: "Budgeting the Thai side and the flight." },
   { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." },
   { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage export." }
 ];
@@ -310,7 +326,9 @@ pages.push(exp({
       "and Canada does not generally require a rabies titer test or a quarantine " +
       "stay for pets. The Canadian Food Inspection Agency (CFIA) sets the rules, " +
       "and there can be additional steps depending on the animal&rsquo;s age and " +
-      "your situation &mdash; so confirm the current detail with the CFIA.</p>" },
+      "your situation &mdash; so confirm the current detail with the " +
+      "<a href=\"https://inspection.canada.ca/en/importing-food-plants-or-animals/pets\" " +
+      "target=\"_blank\" rel=\"noopener nofollow\">CFIA</a>.</p>" },
     { h: "The Thai side and a word of caution", html:
       THAI_SIDE +
       "<p>Even though Canada is straightforward, still consider a " +
@@ -374,8 +392,10 @@ pages.push(exp({
       "faces a long, multi-stage process. In practice that can mean the pet first " +
       "spending a qualifying period in an approved country, rabies titer testing, " +
       "a sequence of timed steps, an import permit, and a <strong>mandatory stay " +
-      "in a quarantine facility</strong> on arrival in New Zealand. The Ministry " +
-      "for Primary Industries (MPI) sets and enforces the rules.</p>" },
+      "in a quarantine facility</strong> on arrival in New Zealand. The " +
+      "<a href=\"https://www.mpi.govt.nz/import/bringing-pets-to-nz/\" target=\"_blank\" " +
+      "rel=\"noopener nofollow\">Ministry for Primary Industries (MPI)</a> sets and " +
+      "enforces the rules.</p>" },
     { h: "What it really takes", html:
       "<p>This is not a process to improvise or to start late. Plan on many " +
       "months, begin with MPI&rsquo;s current import requirements, and engage a " +
@@ -407,8 +427,9 @@ pages.push(exp({
       "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies " +
       "titer test</a> from an MAFF-approved laboratory, advance notification to the " +
       "Animal Quarantine Service, and a <strong>180-day wait</strong> from the blood " +
-      "sample date before the pet may enter. An import approval document from MAFF " +
-      "completes the paperwork.</p>" },
+      "sample date before the pet may enter. An import approval document from " +
+      "<a href=\"https://www.maff.go.jp/aqs/english/\" target=\"_blank\" " +
+      "rel=\"noopener nofollow\">MAFF</a> completes the paperwork.</p>" },
     { h: "The Thai side", html:
       THAI_SIDE +
       "<p>Because the Japan timeline is long, start the titer test and MAFF " +
@@ -441,7 +462,9 @@ pages.push(exp({
       "rabies titer test</a> from an approved laboratory, with timing rules between " +
       "vaccination, sampling and travel. Dogs and cats may face additional parasite " +
       "treatments and post-arrival home isolation or quarantine depending on the " +
-      "current AVS schedule. Confirm every detail with AVS before booking.</p>" },
+      "current AVS schedule. Confirm every detail with " +
+      "<a href=\"https://www.nparks.gov.sg/avs/pets/importing-exporting-and-transhipping-animals-and-birds/importing-dogs-and-cats\" " +
+      "target=\"_blank\" rel=\"noopener nofollow\">AVS</a> before booking.</p>" },
     { h: "The Thai side", html:
       THAI_SIDE +
       "<p>Start the titer test early &mdash; Singapore&rsquo;s timing rules sit on top " +
@@ -472,7 +495,9 @@ pages.push(exp({
       "(and usually other core vaccinations), an official veterinary health " +
       "certificate and compliance with any breed restrictions in the emirate you are " +
       "entering. Some emirates and airlines add their own rules &mdash; confirm with " +
-      "MOCCAE, your airline and the destination emirate before booking.</p>" },
+      "<a href=\"https://www.moec.gov.ae/en/services/import-export-services/import-pets\" " +
+      "target=\"_blank\" rel=\"noopener nofollow\">MOCCAE</a>, your airline and the " +
+      "destination emirate before booking.</p>" },
     { h: "The Thai side", html:
       THAI_SIDE +
       "<p>The UAE does not generally require a rabies titer test for entry from " +
