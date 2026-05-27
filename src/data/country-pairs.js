@@ -116,6 +116,8 @@ function attachImportMirrorLink(sections, exportSlug) {
 }
 
 module.exports = {
+  IMPORT_TO_EXPORT,
+  EXPORT_TO_IMPORT,
   importCountryRelated,
   exportCountryRelated,
   exportReturnBlock,

@@ -82,7 +82,7 @@ pages.push(article({
 pages.push(hub({
   path: "/cats/",
   title: "Cats in Pattaya: a cat owner's guide | PattayaPets",
-  image: "/assets/img/og-guides.png",
+  image: "/assets/img/og-cats.png",
   desc: "Everything for cat owners in Pattaya: vets, hot-climate care, bringing " +
     "or adopting a cat, and keeping a cat safe and happy in the tropics.",
   crumb: "Cats",
@@ -130,7 +130,7 @@ pages.push(hub({
       cards: [
         { name: "Adopt a cat", desc: "Pattaya shelters and rescues rehoming cats.", path: "/adopt-a-pet-pattaya/" },
         { name: "Bring a cat to Thailand", desc: "The full import process for a cat.", path: "/bring-pet-to-thailand/" },
-        { name: "Take a cat out of Thailand", desc: "The Thai DLD export steps when you move on.", path: "/take-pet-out-of-thailand/export-process.html" }
+        { name: "Take a cat out of Thailand", desc: "Export checklist, DLD permit and destination guides.", path: "/take-pet-out-of-thailand/" },
       ]
     },
     {
@@ -154,7 +154,7 @@ pages.push(hub({
 pages.push(hub({
   path: "/dogs/",
   title: "Dogs in Pattaya: a dog owner's guide | PattayaPets",
-  image: "/assets/img/og-guides.png",
+  image: "/assets/img/og-dogs.png",
   desc: "Everything for dog owners in Pattaya: vets, walking, training, " +
     "dog-friendly places, hot-climate care, and bringing or adopting a dog.",
   crumb: "Dogs",
@@ -210,7 +210,7 @@ pages.push(hub({
       cards: [
         { name: "Adopt a dog", desc: "Pattaya shelters and rescues rehoming dogs.", path: "/adopt-a-pet-pattaya/" },
         { name: "Bring a dog to Thailand", desc: "The full import process for a dog.", path: "/bring-pet-to-thailand/" },
-        { name: "Take a dog out of Thailand", desc: "The Thai DLD export steps when you move on.", path: "/take-pet-out-of-thailand/export-process.html" },
+        { name: "Take a dog out of Thailand", desc: "Export checklist, DLD permit and destination guides.", path: "/take-pet-out-of-thailand/" },
         { name: "Pet emergencies", desc: "24-hour vets, heatstroke, snakes and more.", path: "/pet-emergency/" }
       ]
     }

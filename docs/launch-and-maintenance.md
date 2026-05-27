@@ -184,7 +184,8 @@ The real growth levers, in order of value:
 
 | Task | Command / location |
 |---|---|
-| Build the site | `npm run build` (in `C:\pattayapets`) |
+| Build the site | `npm run build` (in `C:\Projects\pattayapets`) |
+| Full build + audits | `npm run build:all` (links, SEO, directory, country-pairs) |
 | Deploy | `npx wrangler pages deploy dist --project-name=pattayapets --branch=main --commit-dirty=true` |
 | Directory data | `src/data/businesses.js` |
 | Site-wide shell | `src/layout.js` |

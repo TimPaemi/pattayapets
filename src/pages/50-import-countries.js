@@ -572,7 +572,7 @@ pages.push(country({
   slug: "from-philippines", crumb: "From the Philippines",
   title: "Bringing a pet to Thailand from the Philippines | PattayaPets",
   desc: "Bringing a dog or cat from the Philippines to Thailand: BAI export " +
-    "paperwork, airline routes, and the standard Thai import steps.",
+    "paperwork, airline routes, and what to plan if you may leave again.",
   h1: "Bringing a pet to Thailand from the Philippines",
   lede: "Manila and other Philippine cities have direct and one-stop flights to " +
     "Bangkok, which makes this a common relocation route. The Thai steps are " +
