@@ -14,6 +14,15 @@ const VERIFY =
   "current requirement with the DLD, your airline and your origin-country " +
   "authority before you book or travel.";
 
+const OFFICIAL =
+  "<p><strong>Official sources to verify against:</strong> " +
+  "<a href=\"https://thaiconsulatela.thaiembassy.org/en/publicservice/bringing-pets-to-thailand\" " +
+  "target=\"_blank\" rel=\"noopener nofollow\">Thai embassy pet import guide</a> " +
+  "(revised January 2025); Suvarnabhumi AQS import: " +
+  "<a href=\"mailto:qsap_bkk_import@dld.go.th\">qsap_bkk_import@dld.go.th</a>; " +
+  "<a href=\"https://aqi.dld.go.th/\" target=\"_blank\" rel=\"noopener nofollow\">" +
+  "DLD Animal Quarantine stations</a>.</p>";
+
 const pages = [];
 
 /* ---------------- HUB ---------------- */
@@ -508,6 +517,8 @@ pages.push(article({
 
 /* ---------------- COUNTRY PAGES ---------------- */
 function countryPage(o) {
+  var sections = (o.sections || []).slice();
+  sections.push({ h: "Official sources", html: OFFICIAL });
   return article({
     path: "/bring-pet-to-thailand/" + o.slug + ".html",
     title: o.title,
@@ -518,7 +529,7 @@ function countryPage(o) {
     h1: o.h1,
     lede: o.lede,
     verify: VERIFY,
-    sections: o.sections,
+    sections: sections,
     faqs: o.faqs,
     related: [
       { name: "The full process", path: "/bring-pet-to-thailand/", desc: "Every step, in order." },
@@ -544,7 +555,9 @@ pages.push(countryPage({
       "<a href=\"/bring-pet-to-thailand/import-permit-thailand-dld.html\">DLD import permit</a>. " +
       "In the UK, the export health certificate is endorsed by the <strong>Animal " +
       "and Plant Health Agency (APHA)</strong>. Use a vet experienced in export " +
-      "work, and start the APHA process early.</p>" },
+      "work, and start the APHA process early. Confirm the current process on " +
+      "<a href=\"https://www.gov.uk/taking-your-pet-abroad\" target=\"_blank\" " +
+      "rel=\"noopener nofollow\">GOV.UK pet travel guidance</a>.</p>" },
     { h: "The return trip is the catch", html:
       "<p>This is the single most important thing for UK owners to understand. " +
       "Thailand is treated by the UK as an <strong>&lsquo;unlisted&rsquo; " +
@@ -562,7 +575,7 @@ pages.push(countryPage({
     ["Does Thailand need a titer test for a pet from the UK?",
      "<p>Generally no — the UK is a rabies-controlled country, so Thailand does not require the titer test to enter. But the UK requires it for the return journey, so most UK owners do the test anyway before leaving.</p>"],
     ["Who endorses my pet's paperwork in the UK?",
-     "<p>The Animal and Plant Health Agency (APHA) endorses the export health certificate completed by your vet. Confirm the current process with APHA and your vet.</p>"]
+     "<p>The Animal and Plant Health Agency (APHA) endorses the export health certificate completed by your vet. Confirm the current process with <a href=\"https://www.gov.uk/taking-your-pet-abroad\" target=\"_blank\" rel=\"noopener nofollow\">GOV.UK</a> and your vet.</p>"]
   ]
 }));
 

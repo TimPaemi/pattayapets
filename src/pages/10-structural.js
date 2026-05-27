@@ -39,7 +39,7 @@ pages.push({
     "finding a vet, the hot climate, bringing a pet in or out, and adoption.",
   crumb: "Start here",
   breadcrumbs: [],
-  updated: "2026-05-21",
+  updated: "2026-05-27",
   body:
     '<section class="section"><div class="container"><div class="prose">' +
     '<p class="eyebrow">Orientation</p>' +
@@ -57,15 +57,17 @@ pages.push({
     "<h2>1. Know where your nearest vet is &mdash; before you need one</h2>" +
     "<p>The single most useful thing you can do as a new pet owner here is to know, " +
     "in advance, which clinic you would go to. Browse the " +
-    '<a href="/vets/">directory of vets and animal hospitals</a>, or filter ' +
-    'by your <a href="/area/central-pattaya.html">neighbourhood</a>. Note which ' +
-    "clinics are open 24 hours.</p>" +
+    '<a href="/vets/">directory of vets and animal hospitals</a>, filter by your ' +
+    '<a href="/area/jomtien.html">neighbourhood</a>, or see ' +
+    '<a href="/mobile-vets/">mobile and home-visit vets</a> if transport is difficult. ' +
+    "Note which clinics are open 24 hours.</p>" +
     "<h2>2. Heat is the biggest everyday risk</h2>" +
     "<p>Pattaya is hot and humid year round. Heatstroke, hot pavement burning paw " +
     "pads, and dehydration are common and preventable. Walk dogs early morning or " +
     "after sunset, never leave a pet in a parked car, and read our guide to " +
     '<a href="/owning-a-pet-in-pattaya/hot-climate-pet-care.html">hot-climate pet ' +
-    "care</a>.</p>" +
+    "care</a> and " +
+    '<a href="/pet-health-pattaya/">pet health in Pattaya</a>.</p>' +
     "<h2>3. Bringing a pet to Thailand &mdash; or taking one out</h2>" +
     "<p>Pet import and export is a process with real deadlines: microchip, rabies " +
     "vaccination, a titer test, a health certificate and an import permit from the " +
@@ -81,10 +83,12 @@ pages.push({
     "<p>For food, litter and supplies, see the " +
     '<a href="/pet-shops/">pet shops directory</a>. For grooming, ' +
     '<a href="/groomers/">groomers</a>. For travel and work cover, ' +
-    '<a href="/boarding/">boarding and daycare</a>. And it is worth ' +
+    '<a href="/boarding/">boarding and daycare</a>. For walking and going out, see ' +
+    '<a href="/dog-friendly-pattaya/">dog-friendly Pattaya</a>. And it is worth ' +
     "understanding how " +
     '<a href="/pet-insurance-thailand.html">pet insurance in Thailand</a> works ' +
     "before you need to claim.</p>" +
+    '<p class="updated">Last updated 27 May 2026</p>' +
     DISC +
     "</div></div></section>"
 });

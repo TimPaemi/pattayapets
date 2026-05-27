@@ -111,7 +111,7 @@ pages.push({
       "The full import process: DLD permit, microchip, rabies and titer test, " +
       "health certificate, airlines and arrival.", "Open the guide") +
     card("/take-pet-out-of-thailand/", "Moving on", "Taking a pet out of Thailand",
-      "The export process, with country-by-country notes for common destinations.",
+      "DLD export permit, health certificate, costs and country-by-country destination notes.",
       "Open the guide") +
     card("/dog-friendly-pattaya/", "Out &amp; about", "Dog-friendly Pattaya",
       "Beaches, cafes, restaurants, hotels, condos and parks that welcome dogs.",

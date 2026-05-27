@@ -230,8 +230,9 @@ const BUSINESSES = [
     website: "https://www.facebook.com/FURidaypetgrooming/", hours: null,
     languages: "Thai and English",
     services: ["Dog grooming", "Cat grooming", "Bath & blow-dry"],
-    summary: "A pet grooming salon in Pattaya, reachable through its Facebook page, " +
-      "offering grooming for both dogs and cats."
+    summary: "A pet grooming salon in Pattaya reachable through its Facebook page only. " +
+      "Confirm the current address, hours and booking arrangements on Facebook " +
+      "before visiting."
   },
   {
     slug: "furpet-grooming-and-hotel",
@@ -242,8 +243,8 @@ const BUSINESSES = [
     hours: null,
     languages: "Thai; confirm English-language support when booking",
     services: ["Dog grooming", "Cat grooming", "Bathing", "Short-stay boarding"],
-    summary: "A Pattaya business combining pet grooming with short-stay boarding for both " +
-      "dogs and cats, handy if you want grooming and a few nights' stay arranged together."
+    summary: "A Pattaya grooming and short-stay boarding business listed on Facebook. " +
+      "Confirm the current address, hours and services directly on its page before visiting."
   },
 
   {
@@ -365,26 +366,28 @@ const BUSINESSES = [
   {
     slug: "zoeta-dogsoul",
     name: "Zoeta Dogsoul",
-    category: "trainers", areas: ["banglamung"], type: "Dog training & behaviour", c24: false,
-    address: null, phone: "095 849 6783", tel: "+66958496783",
+    category: "trainers", areas: [], type: "Dog training & behaviour", c24: false,
+    address: "Chiang Mai (headquarters); confirm Pattaya service area when booking",
+    phone: "095 849 6783", tel: "+66958496783",
     website: "https://zoeta-dogsoul.com/dog-training-pattaya/", hours: null,
     languages: "English and Thai",
     services: ["Private dog training", "Behaviour consultations", "Obedience classes"],
-    summary: "A Pattaya dog-training operation offering private training and behaviour " +
-      "work, with trainers who cite study under established animal behaviourists. " +
-      "Sessions are arranged by appointment."
+    summary: "A dog-training operation headquartered in Chiang Mai with a Pattaya " +
+      "programme page. Also listed on info@zoeta-dogsoul.com. Confirm whether " +
+      "in-person Pattaya sessions or home visits are offered when you enquire."
   },
   {
     slug: "k9-pattaya-dog-training-school",
     name: "K9 Pattaya Dog Training School",
     category: "trainers", areas: ["sattahip", "bang-saray", "jomtien"], type: "Dog training school", c24: false,
-    address: null, phone: "087 983 4466", tel: "+66879834466",
+    address: "Near Wat Huay Yai, Sattahip District, Chon Buri (confirm directions when booking)",
+    phone: "087 983 4466", tel: "+66879834466",
     website: "http://www.k9pattaya.com/", hours: null,
     languages: "English and Thai",
     services: ["Obedience training", "Protection training", "Board-and-train", "Dog hotel"],
     summary: "A long-running dog training school and boarding facility south of Pattaya " +
-      "near Wat Huay Yai, with a large outdoor training ground. Also reachable on " +
-      "096 724 2255. Confirm current programmes and visit arrangements before enrolling."
+      "near Wat Huay Yai in Sattahip. Also reachable on 096 724 2255 and 089 405 1954. " +
+      "Confirm current programmes and visit arrangements before enrolling."
   },
 
   {
@@ -440,12 +443,13 @@ const BUSINESSES = [
     slug: "pawspective-relocations",
     name: "Pawspective Relocations",
     category: "pet-relocation", areas: [], type: "Pet travel specialist", c24: false,
-    address: null, phone: null, tel: null,
+    address: null, phone: "098 826 9294", tel: "+66988269294",
     website: "https://www.pettravelthailand.com/", hours: null,
     languages: "English and Thai",
-    services: ["Pet travel planning", "Import & export", "Documentation support"],
+    services: ["Pet travel planning", "Import & export", "Documentation support", "Door-to-door relocation"],
     summary: "A pet-travel specialist offering planning and documentation support for " +
-      "moving pets into and out of Thailand."
+      "moving pets into and out of Thailand, including door-to-door options. Also " +
+      "listed on 084 352 1056 and LINE ID Numfonunited."
   },
 
   {

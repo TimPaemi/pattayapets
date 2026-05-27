@@ -14,6 +14,14 @@ const VERIFY =
   "notice. Treat this as orientation, then confirm every current requirement with " +
   "the DLD, your airline and your origin-country authority before you book or travel.";
 
+const OFFICIAL =
+  "<p><strong>Official sources to verify against:</strong> " +
+  "<a href=\"https://thaiconsulatela.thaiembassy.org/en/publicservice/bringing-pets-to-thailand\" " +
+  "target=\"_blank\" rel=\"noopener nofollow\">Thai embassy pet import guide</a>; " +
+  "Suvarnabhumi AQS: <a href=\"mailto:qsap_bkk_import@dld.go.th\">qsap_bkk_import@dld.go.th</a>; " +
+  "<a href=\"https://aqi.dld.go.th/\" target=\"_blank\" rel=\"noopener nofollow\">" +
+  "DLD Animal Quarantine stations</a>.</p>";
+
 const RELATED = [
   { name: "The full process", path: "/bring-pet-to-thailand/", desc: "Every step, in order." },
   { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html", desc: "Cabin, checked baggage or cargo, and travel crates." },
@@ -114,7 +122,9 @@ pages.push(article({
       "An officer checks that the microchip scans, that the rabies and other " +
       "vaccinations are in order, and that the health certificate and import " +
       "permit match the animal in front of them. With everything correct, this is " +
-      "an inspection and release &mdash; usually the same day. See " +
+      "an inspection and release &mdash; usually the same day, after payment of the " +
+      "AQS inspection fee (currently <strong>500&nbsp;baht</strong> &mdash; confirm " +
+      "the current amount with the station). See " +
       "<a href=\"/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html\">" +
       "arriving in Thailand</a> for the full picture.</p>" },
     { h: "When a hold or quarantine can happen", html:
@@ -136,7 +146,8 @@ pages.push(article({
       "accessible, and use a vet, or a " +
       "<a href=\"/pet-relocation/\">relocation agent</a>, experienced in the " +
       "process. Confirm the current requirements with the DLD before you " +
-      "travel.</p>" }
+      "travel.</p>" },
+    { h: "Official sources", html: OFFICIAL }
   ],
   faqs: [
     ["Will my pet be quarantined when it arrives in Thailand?",
