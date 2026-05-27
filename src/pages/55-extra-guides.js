@@ -194,10 +194,13 @@ pages.push(article({
       "<p>Put your <strong>own safety first</strong> &mdash; a frightened, hurt " +
       "animal may bite or scratch, however gentle its intentions. If you can " +
       "safely contain, shade or comfort it, do; then contact a local animal " +
-      "rescue or welfare group, or a <a href=\"/vets/\">vet</a> &mdash; some " +
-      "rescues operate a rescue ambulance for exactly this. Do not assume someone " +
-      "else will act. You cannot save every animal, but you can do something for " +
-      "the one in front of you.</p>" },
+      "rescue or welfare group, or a <a href=\"/vets/\">vet</a>. " +
+      "<a href=\"/adopt-a-pet-pattaya/animal-army-foundation.html\">Animal Army " +
+      "Foundation</a> in Na Jomtien operates a rescue ambulance for street " +
+      "animals and urgent cases (085 093 5954; see also " +
+      "<a href=\"/vets/animal-army-hospital.html\">Animal Army Hospital</a>). " +
+      "Do not assume someone else will act. You cannot save every animal, but you " +
+      "can do something for the one in front of you.</p>" },
     { h: "Support desexing - the real fix", html:
       "<p>The lasting solution to a street-animal population is " +
       "<strong>sterilisation</strong>. Supporting the rescues that run spay and " +

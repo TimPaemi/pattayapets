@@ -13,6 +13,15 @@ const VERIFY =
   "notice. Treat this as orientation, then confirm every current requirement with " +
   "the DLD, your airline and your origin-country authority before you book or travel.";
 
+const OFFICIAL =
+  "<p><strong>Official sources to verify against:</strong> " +
+  "<a href=\"https://thaiconsulatela.thaiembassy.org/en/publicservice/bringing-pets-to-thailand\" " +
+  "target=\"_blank\" rel=\"noopener nofollow\">Thai embassy pet import guide</a> " +
+  "(revised January 2025); Suvarnabhumi AQS import: " +
+  "<a href=\"mailto:qsap_bkk_import@dld.go.th\">qsap_bkk_import@dld.go.th</a>; " +
+  "<a href=\"https://aqi.dld.go.th/\" target=\"_blank\" rel=\"noopener nofollow\">" +
+  "DLD Animal Quarantine stations</a>.</p>";
+
 const RELATED = [
   { name: "The full process", path: "/bring-pet-to-thailand/", desc: "Every step, in order." },
   { name: "Rabies & titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why the titer test matters for the return trip." },
@@ -20,12 +29,14 @@ const RELATED = [
 ];
 
 function country(o) {
+  var sections = (o.sections || []).slice();
+  sections.push({ h: "Official sources", html: OFFICIAL });
   return article({
     path: "/bring-pet-to-thailand/" + o.slug + ".html",
     title: o.title, desc: o.desc, crumb: o.crumb, breadcrumbs: SUB,
     eyebrow: "Bringing a pet to Thailand &middot; By country",
     h1: o.h1, lede: o.lede, verify: VERIFY,
-    sections: o.sections, faqs: o.faqs, related: RELATED
+    sections: sections, faqs: o.faqs, related: RELATED
   });
 }
 

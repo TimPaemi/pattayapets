@@ -147,9 +147,8 @@ pages.push(exp({
       "airport for final endorsement, and your pet is checked before it flies. " +
       "Many owners use a <a href=\"/pet-relocation/\">pet relocation agent</a> " +
       "for export precisely because the airport steps and the destination " +
-      "<p>for export precisely because the airport steps and the destination " +
-      "paperwork have to line up perfectly.</p>" +
-      OFFICIAL },
+      "paperwork have to line up perfectly.</p>" },
+    { h: "Official sources", html: OFFICIAL },
     { h: "Next steps", html:
       "<p>For the permit application itself, see our dedicated page on the " +
       "<a href=\"/take-pet-out-of-thailand/export-permit-thailand-dld.html\">DLD " +

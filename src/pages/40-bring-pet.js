@@ -49,7 +49,7 @@ pages.push(hub({
     "Livestock Development (DLD)</strong>. Below, each step has its own page. " +
     "Read them in order.</p>" +
     '<div class="callout callout-tip"><div class="ch">Rules change — verify before you act</div>' +
-    "<p>" + VERIFY + "</p></div>",
+    "<p>" + VERIFY + "</p>" + OFFICIAL + "</div>",
   groups: [
     {
       title: "The process, step by step",

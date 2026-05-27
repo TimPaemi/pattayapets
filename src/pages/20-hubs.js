@@ -107,6 +107,9 @@ pages.push({
     "to verify against.</p></div>" +
     "<h2>Browse the guides</h2>" +
     '<div class="grid grid-3">' +
+    card("/start-here.html", "New here", "Start here",
+      "A short orientation for new pet owners in Pattaya &mdash; emergency numbers, " +
+      "finding a vet, the climate and the essentials.", "Open the page") +
     card("/bring-pet-to-thailand/", "Flagship guide", "Bringing a pet to Thailand",
       "The full import process: DLD permit, microchip, rabies and titer test, " +
       "health certificate, airlines and arrival.", "Open the guide") +
@@ -119,6 +122,9 @@ pages.push({
     card("/pet-emergency/", "Emergency", "Pet emergencies &amp; hazards",
       "24-hour vets, first-aid steps, heatstroke, ticks, snakes and street-dog " +
       "encounters.", "Open the guide") +
+    card("/pet-emergency/24-hour-vets-pattaya.html", "Urgent", "24-hour vets in Pattaya",
+      "Animal hospitals open around the clock &mdash; addresses and phone numbers.",
+      "View the list") +
     card("/owning-a-pet-in-pattaya/", "Day to day", "Owning a pet in Pattaya",
       "Costs, hot-climate care, pet-friendly housing and where to walk your dog.",
       "Open the guide") +

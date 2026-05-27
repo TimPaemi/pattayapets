@@ -62,6 +62,12 @@ pages.push(hub({
         { name: "End-of-life care", desc: "Compassionate guidance on saying goodbye.", path: "/owning-a-pet-in-pattaya/saying-goodbye.html" }
       ]
     }
+  ],
+  related: [
+    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Heartworm, ticks and tropical-climate risks." },
+    { name: "Pet emergencies", path: "/pet-emergency/", desc: "24-hour vets and urgent hazards." },
+    { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Beaches, walks and places that welcome dogs." },
+    { name: "Pet insurance in Thailand", path: "/pet-insurance-thailand.html", desc: "Cover for the big unexpected vet bill." }
   ]
 }));
 

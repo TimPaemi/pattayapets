@@ -64,6 +64,12 @@ pages.push(hub({
         { name: "Hit by a vehicle", desc: "What to do if your pet is in a road accident in Pattaya.", path: "/pet-emergency/road-accident.html" }
       ]
     }
+  ],
+  related: [
+    { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Preventing heatstroke and paw-pad burns in Pattaya." },
+    { name: "Getting to the vet", path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html", desc: "Transport, taxis and what to bring in an emergency." },
+    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Ticks, heartworm and other tropical-climate risks." },
+    { name: "Start here", path: "/start-here.html", desc: "Orientation for new pet owners in Pattaya." }
   ]
 }));
 

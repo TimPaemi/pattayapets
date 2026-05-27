@@ -9,7 +9,7 @@ module.exports = [
     crumb: "Not found",
     breadcrumbs: [],
     noindex: true,
-    updated: "2026-05-21",
+    updated: "2026-05-27",
     body:
       '<section class="section"><div class="container"><div class="prose">' +
       '<p class="eyebrow">Error 404</p>' +
@@ -34,7 +34,7 @@ module.exports = [
     crumb: "Offline",
     breadcrumbs: [],
     noindex: true,
-    updated: "2026-05-21",
+    updated: "2026-05-27",
     body:
       '<section class="section"><div class="container"><div class="prose">' +
       '<p class="eyebrow">No connection</p>' +

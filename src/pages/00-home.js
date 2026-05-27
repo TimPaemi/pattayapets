@@ -182,6 +182,14 @@ const body =
         '<h3>Pet insurance in Thailand</h3><p>How pet insurance works here, what it covers, ' +
         'and whether it is worth it.</p>' +
         '<span class="card-meta">Read the guide &rarr;</span></a>' +
+      '<a class="card" href="/dogs/"><span class="card-tag">For dog owners</span>' +
+        '<h3>The dog owner&rsquo;s hub</h3><p>Care, training, walks and health guides ' +
+        'for dogs in Pattaya &mdash; all in one place.</p>' +
+        '<span class="card-meta">Open the hub &rarr;</span></a>' +
+      '<a class="card" href="/cats/"><span class="card-tag">For cat owners</span>' +
+        '<h3>The cat owner&rsquo;s hub</h3><p>Indoor living, vets and health guides ' +
+        'for cats in Pattaya &mdash; all in one place.</p>' +
+        '<span class="card-meta">Open the hub &rarr;</span></a>' +
     '</div>' +
     '<div class="btn-row"><a class="btn btn-ghost" href="/guides.html">See all guides &rarr;</a></div>' +
   '</div></section>' +

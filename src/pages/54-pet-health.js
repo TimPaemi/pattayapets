@@ -79,6 +79,12 @@ pages.push(hub({
         { name: "Ticks & fleas", desc: "Year-round parasite prevention.", path: "/pet-emergency/ticks-and-fleas.html" }
       ]
     }
+  ],
+  related: [
+    { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Keeping a pet safe in Pattaya's heat." },
+    { name: "Pet emergencies", path: "/pet-emergency/", desc: "24-hour vets and first-aid orientation." },
+    { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Costs, housing and day-to-day life." },
+    { name: "Vets in Pattaya", path: "/vets/", desc: "Find a clinic near you." }
   ]
 }));
 

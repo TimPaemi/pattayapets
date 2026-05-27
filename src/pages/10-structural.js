@@ -15,7 +15,7 @@ function prosePage(o) {
     description: o.desc,
     crumb: o.crumb,
     breadcrumbs: o.breadcrumbs || [],
-    updated: o.updated || "2026-05-21",
+    updated: o.updated || "2026-05-27",
     noindex: !!o.noindex,
     schema: o.schema,
     body:
@@ -23,7 +23,7 @@ function prosePage(o) {
       '<p class="eyebrow">' + o.eyebrow + "</p><h1>" + o.h1 + "</h1>" +
       o.body +
       (o.noindex ? "" : DISC) +
-      '<p class="updated">Last updated ' + (o.updatedLabel || "21 May 2026") + "</p>" +
+      '<p class="updated">Last updated ' + (o.updatedLabel || "27 May 2026") + "</p>" +
       "</div></div></section>"
   };
 }
