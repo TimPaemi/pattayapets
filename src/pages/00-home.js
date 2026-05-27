@@ -205,6 +205,9 @@ const body =
       '<a class="card" href="/adopt-a-pet-pattaya/fostering.html"><span class="card-tag">Adoption</span>' +
         '<h3>Fostering a pet</h3><p>Give a rescue animal a temporary home while it waits for adoption.</p>' +
         '<span class="card-meta">Read the guide &rarr;</span></a>' +
+      '<a class="card" href="/owning-a-pet-in-pattaya/lost-pet-pattaya.html"><span class="card-tag">Owning</span>' +
+        '<h3>If your pet goes missing</h3><p>A step-by-step plan for a lost dog or cat in Pattaya.</p>' +
+        '<span class="card-meta">Read the guide &rarr;</span></a>' +
       '<a class="card" href="/adopt-a-pet-pattaya/how-to-help.html"><span class="card-tag">Adoption</span>' +
         '<h3>Helping street animals</h3><p>Donate, volunteer and what to do for an injured stray.</p>' +
         '<span class="card-meta">Read the guide &rarr;</span></a>' +

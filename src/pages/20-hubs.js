@@ -99,6 +99,12 @@ pages.push({
       "DLD permit, microchip, rabies titer and health certificate.", "Open the guide") +
     card("/pet-emergency/", "Emergency", "Pet emergencies",
       "24-hour vets, heatstroke, poisoning and first-aid basics.", "Open the guide") +
+    "</div>" +
+    '<div class="grid grid-4" style="margin-top:1rem">' +
+    card("/dog-friendly-pattaya/", "Out & about", "Dog-friendly Pattaya",
+      "Beaches, cafes, restaurants and places that welcome dogs.", "Open the guide") +
+    card("/mobile-vets/", "At home", "Mobile & home-visit vets",
+      "Vets who come to you — useful for nervous pets and multi-cat homes.", "View mobile vets") +
     "</div></div></section>"
 });
 

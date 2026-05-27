@@ -66,7 +66,7 @@ pages.push(article({
     { name: "What it costs to own a pet", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", desc: "The wider pet budget in Pattaya." },
     { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/", desc: "Insurance matters most on complex moves." },
     { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "Export timelines and unexpected vet bills." },
-    { name: "Vets in Pattaya", path: "/vets/", desc: "The directory of clinics and hospitals." },
+    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Preventive care and tropical risks." },
     { name: "Pet emergencies", path: "/pet-emergency/", desc: "When the big, unplanned bills happen." }
   ]
 }));

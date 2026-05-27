@@ -208,7 +208,7 @@ pages.push(health({
     { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html", desc: "Year-round prevention in the tropics." },
     { name: "Dog vaccinations & parasites", path: "/dogs/dog-vaccinations-thailand.html", desc: "Keeping prevention on schedule." },
     { name: "Common dog health issues", path: "/dogs/common-dog-health-issues-tropics.html", desc: "Other tropical risks for dogs." },
-    { name: "Vets in Pattaya", path: "/vets/", desc: "Find a clinic near you." }
+    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "The tropical-climate health picture." }
   ]
 }));
 

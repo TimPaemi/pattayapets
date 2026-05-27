@@ -574,7 +574,7 @@ pages.push(own({
   related: [
     { name: "Senior pet care", path: "/owning-a-pet-in-pattaya/senior-pet-care.html", desc: "Caring well for an older pet." },
     { name: "Pet insurance in Thailand", path: "/pet-insurance-thailand.html", desc: "When cover helps with end-of-life decisions." },
-    { name: "Vets in Pattaya", path: "/vets/", desc: "The vet who knows your pet best." },
+    { name: "Mobile & home-visit vets", path: "/mobile-vets/", desc: "Gentle care at home when travel is hard." },
     HUB_RELATED
   ]
 }));

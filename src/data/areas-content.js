@@ -70,6 +70,7 @@ const AREA_GUIDE = {
     "<li><a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vets in Pattaya</a></li>" +
     "<li><a href=\"/mobile-vets/\">Mobile vets</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">Getting your pet to the vet</a></li>" +
+    "<li><a href=\"/pet-health-pattaya/\">Pet health in Pattaya</a></li>" +
     "</ul>",
 
   "central-pattaya":
@@ -229,6 +230,7 @@ const AREA_GUIDE = {
     "<li><a href=\"/mobile-vets/\">Mobile vets</a></li>" +
     "<li><a href=\"/pet-emergency/\">Pet emergencies</a></li>" +
     "<li><a href=\"/adopt-a-pet-pattaya/how-to-help.html\">How to help street animals</a></li>" +
+    "<li><a href=\"/pet-health-pattaya/\">Pet health in Pattaya</a></li>" +
     "</ul>",
 
   banglamung:
@@ -261,6 +263,8 @@ const AREA_GUIDE = {
     "<li><a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vets in Pattaya</a></li>" +
     "<li><a href=\"/mobile-vets/\">Mobile vets</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">Getting your pet to the vet</a></li>" +
+    "<li><a href=\"/pet-health-pattaya/\">Pet health in Pattaya</a></li>" +
+    "<li><a href=\"/dog-friendly-pattaya/\">Dog-friendly Pattaya</a></li>" +
     "</ul>"
 
 };

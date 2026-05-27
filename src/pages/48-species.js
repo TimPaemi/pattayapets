@@ -176,7 +176,7 @@ pages.push(cat({
     { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "Why neutering matters in Pattaya." },
     { name: "Heartworm", path: "/pet-health-pattaya/heartworm.html", desc: "Mosquito-borne prevention year-round." },
     { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html", desc: "Year-round parasite prevention." },
-    { name: "Vets in Pattaya", path: "/vets/", desc: "Find a clinic for your cat." }
+    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "The tropical-climate health picture." }
   ]
 }));
 
@@ -235,8 +235,8 @@ pages.push(cat({
   ],
   related: [
     { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Shelters and rescues rehoming cats." },
+    { name: "Fostering a pet", path: "/adopt-a-pet-pattaya/fostering.html", desc: "Temporary homes between rescue and adoption." },
     { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "The tropical-climate health picture." },
-    { name: "Cat vaccinations & health", path: "/cats/cat-vaccinations-thailand.html", desc: "The routine health your new cat needs." },
     { name: "Indoor or outdoor cats", path: "/cats/indoor-vs-outdoor-cats.html", desc: "Keeping your new cat safe." }
   ]
 }));
@@ -296,8 +296,8 @@ pages.push(cat({
   related: [
     { name: "Boarding in Pattaya", path: "/boarding/", desc: "The directory of boarding facilities." },
     { name: "Pet sitters & dog walkers", path: "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html", desc: "In-home care while you travel." },
-    { name: "Cats in Pattaya", path: "/cats/", desc: "Back to the cat owner's hub." },
-    { name: "Cat vaccinations & health", path: "/cats/cat-vaccinations-thailand.html", desc: "Boarding places require current vaccinations." }
+    { name: "Pet insurance in Thailand", path: "/pet-insurance-thailand.html", desc: "Cover for unexpected vet bills." },
+    { name: "Cats in Pattaya", path: "/cats/", desc: "Back to the cat owner's hub." }
   ]
 }));
 

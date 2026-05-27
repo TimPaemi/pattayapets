@@ -340,7 +340,6 @@ async function build() {
     "/bring-pet-to-thailand/from-japan.html": "import pet Japan MAFF Thailand",
     "/bring-pet-to-thailand/from-singapore.html": "import pet Singapore AVS Thailand",
     "/pet-emergency/poisoning.html": "poison toad bait chocolate xylitol toxic",
-    "/pet-emergency/venomous-creatures.html": "toad centipede bee sting scorpion venom",
     "/pet-health-pattaya/heartworm.html": "heartworm mosquito prevention Thailand",
     "/pet-health-pattaya/skin-and-ear-problems.html": "skin ear infection yeast hot humid",
     "/owning-a-pet-in-pattaya/travelling-in-thailand.html": "domestic flight road trip pet hotel Thailand",
@@ -370,8 +369,19 @@ async function build() {
     "/cats/getting-a-cat-in-pattaya.html": "adopt kitten street cat Pattaya",
     "/dogs/common-dog-health-issues-tropics.html": "skin ear tick disease hot humid dog",
     "/dogs/choosing-a-dog-for-the-climate.html": "breed heat brachycephalic climate Pattaya",
-    "/owning-a-pet-in-pattaya/songkran-and-your-pet.html": "songkran water festival pet noise escape",
-    "/owning-a-pet-in-pattaya/saying-goodbye.html": "end of life euthanasia pet goodbye"
+    "/owning-a-pet-in-pattaya/saying-goodbye.html": "end of life euthanasia pet goodbye",
+    "/pet-emergency/": "pet emergency heatstroke snake poison 24 hour vet Pattaya",
+    "/pet-emergency/ticks-and-fleas.html": "ticks fleas parasite prevention year round",
+    "/pet-emergency/24-hour-vets-pattaya.html": "24 hour emergency vet hospital open night",
+    "/owning-a-pet-in-pattaya/": "owning pet Pattaya cost housing walk registration",
+    "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html": "pet cost budget food vet grooming Pattaya",
+    "/owning-a-pet-in-pattaya/pet-friendly-housing.html": "pet friendly condo rent housing Pattaya",
+    "/dogs/dog-vaccinations-thailand.html": "dog vaccination rabies heartworm parasite Thailand",
+    "/cats/cat-vaccinations-thailand.html": "cat vaccination rabies FIV FeLV Thailand",
+    "/dog-friendly-pattaya/condos.html": "dog friendly condo rent pet policy Pattaya",
+    "/dog-friendly-pattaya/hotels.html": "dog friendly hotel stay Pattaya pet policy",
+    "/guides.html": "pet guides Pattaya import export emergency owning",
+    "/directory.html": "pet directory vets groomers boarding Pattaya"
   };
 
   const searchIndex = indexable.map(function (p) {
