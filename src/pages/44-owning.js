@@ -12,7 +12,7 @@ const pages = [];
 pages.push(hub({
   path: "/owning-a-pet-in-pattaya/",
   title: "Owning a pet in Pattaya | PattayaPets",
-  image: "/assets/img/og-guides.png",
+  image: "/assets/img/og-owning.png",
   desc: "What it is really like to own a pet in Pattaya: costs, hot-climate care, " +
     "pet-friendly housing, walking, registration and where to buy pet food.",
   crumb: "Owning a pet in Pattaya",

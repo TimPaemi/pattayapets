@@ -11,7 +11,7 @@ This file lives in `docs/` and is **not** part of the deployed website.
 
 PattayaPets is **built and finished as a Phase 1 site**. Current state:
 
-- **189 pages**, all generated to static HTML by the build script.
+- **190 pages**, all generated to static HTML by the build script.
 - Verified clean: every internal link works, every
   structured-data block is valid, no broken pages, accessibility and SEO
   fundamentals all in place.
@@ -191,7 +191,7 @@ The real growth levers, in order of value:
 | Guide pages | `src/pages/*.js` |
 | The rulebook | `CLAUDE.md` |
 
-A healthy build prints: **"Pages: 189 rendered, 189 JSON-LD blocks valid"** (or higher) and
+A healthy build prints: **"Pages: 190 rendered, 190 JSON-LD blocks valid"** (or higher) and
 the link check reports **0 broken**. If the page count drops unexpectedly or it
 reports an invalid block, something in `src/` is broken — check the file you last edited.
 

@@ -12,7 +12,7 @@ const pages = [];
 pages.push(hub({
   path: "/dog-friendly-pattaya/",
   title: "Dog-friendly Pattaya | PattayaPets",
-  image: "/assets/img/og-guides.png",
+  image: "/assets/img/og-dog-friendly.png",
   desc: "Where dogs are welcome in Pattaya: dog-friendly beaches, cafes, " +
     "restaurants, hotels, condos and places to walk. Honest, practical guidance.",
   crumb: "Dog-friendly Pattaya",

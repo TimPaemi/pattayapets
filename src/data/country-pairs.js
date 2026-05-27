@@ -86,7 +86,7 @@ function attachReturnExportLink(sections, importSlug) {
   if (!block || !sections.length || !pair) return sections;
   var exportPath = "/take-pet-out-of-thailand/" + pair.slug + ".html";
   for (var i = sections.length - 1; i >= 0; i--) {
-    if (/return|re-entry|bringing it back|bringing your pet back/i.test(sections[i].h || "")) {
+    if (/return|re-entry|bringing it back|bringing your pet back|leave Thailand again|may return|return trip|may leave/i.test(sections[i].h || "")) {
       if (sections[i].html.indexOf(exportPath) === -1) {
         sections[i].html += block;
       }

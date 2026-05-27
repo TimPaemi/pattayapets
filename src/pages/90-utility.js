@@ -26,6 +26,7 @@ module.exports = [
       '<li><a href="/take-pet-out-of-thailand/">Taking a pet out of Thailand</a></li>' +
       '<li><a href="/pet-relocation/">Pet relocation agents</a></li>' +
       '<li><a href="/mobile-vets/">Mobile &amp; home-visit vets</a></li>' +
+      '<li><a href="/take-pet-out-of-thailand/checklist.html">Export checklist</a></li>' +
       '<li><a href="/bring-pet-to-thailand/checklist.html">Import checklist</a></li>' +
       '<li><a href="/pet-health-pattaya/">Pet health in Pattaya</a></li>' +
       '<li><a href="/start-here.html">Start here</a> &mdash; new pet owner orientation</li>' +

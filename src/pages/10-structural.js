@@ -15,7 +15,7 @@ function prosePage(o) {
     description: o.desc,
     crumb: o.crumb,
     breadcrumbs: o.breadcrumbs || [],
-    updated: o.updated || "2026-05-27",
+    updated: o.updated || "2026-05-29",
     noindex: !!o.noindex,
     schema: o.schema,
     body:
@@ -23,7 +23,7 @@ function prosePage(o) {
       '<p class="eyebrow">' + o.eyebrow + "</p><h1>" + o.h1 + "</h1>" +
       o.body +
       (o.noindex ? "" : DISC) +
-      '<p class="updated">Last updated ' + (o.updatedLabel || "27 May 2026") + "</p>" +
+      '<p class="updated">Last updated ' + (o.updatedLabel || "29 May 2026") + "</p>" +
       "</div></div></section>"
   };
 }
@@ -39,7 +39,7 @@ pages.push({
     "finding a vet, the hot climate, bringing a pet in or out, and adoption.",
   crumb: "Start here",
   breadcrumbs: [],
-  updated: "2026-05-27",
+  updated: "2026-05-29",
   body:
     '<section class="section"><div class="container"><div class="prose">' +
     '<p class="eyebrow">Orientation</p>' +
@@ -119,7 +119,7 @@ pages.push({
 /* ---------------- About ---------------- */
 pages.push(prosePage({
   path: "/about.html",
-  updated: "2026-05-27",
+  updated: "2026-05-29",
   updatedLabel: "27 May 2026",
   title: "About PattayaPets — an independent pet directory & guide",
   desc: "About PattayaPets — an independent editorial directory and guide for pet owners in Pattaya, operated by TIMPAEMI Co., Ltd. via the Pattaya Authority network.",

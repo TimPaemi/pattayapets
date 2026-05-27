@@ -34,6 +34,8 @@ module.exports = [{
     '<a class="chip chip-link" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a>' +
     '<a class="chip chip-link" href="/bring-pet-to-thailand/">Import guide</a>' +
     '<a class="chip chip-link" href="/bring-pet-to-thailand/checklist.html">Import checklist</a>' +
+    '<a class="chip chip-link" href="/take-pet-out-of-thailand/checklist.html">Export checklist</a>' +
+    '<a class="chip chip-link" href="/take-pet-out-of-thailand/export-process.html">Export process</a>' +
     '<a class="chip chip-link" href="/take-pet-out-of-thailand/">Export guide</a>' +
     '<a class="chip chip-link" href="/pet-emergency/">Emergencies</a>' +
     '<a class="chip chip-link" href="/pet-health-pattaya/">Pet health</a>' +
@@ -85,13 +87,13 @@ module.exports = [{
     '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vet</a> &middot; ' +
     '<a href="/bring-pet-to-thailand/from-uk.html">Bring pet from UK</a> &middot; ' +
     '<a href="/take-pet-out-of-thailand/to-uk.html">Export to UK</a> &middot; ' +
+    '<a href="/take-pet-out-of-thailand/checklist.html">Export checklist</a> &middot; ' +
     '<a href="/take-pet-out-of-thailand/export-process.html">Export process</a> &middot; ' +
     '<a href="/take-pet-out-of-thailand/to-uae.html">Export to UAE</a> &middot; ' +
     '<a href="/area/jomtien.html">Jomtien</a> &middot; ' +
     '<a href="/pet-health-pattaya/tick-borne-disease.html">Tick disease</a> &middot; ' +
     '<a href="/pet-health-pattaya/">Pet health</a> &middot; ' +
     '<a href="/adopt-a-pet-pattaya/">Adopt a pet</a> &middot; ' +
-    '<a href="/pet-emergency/heatstroke.html">Heatstroke</a> &middot; ' +
     '<a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">Import permit</a> &middot; ' +
     '<a href="/owning-a-pet-in-pattaya/dog-registration-thailand.html">Dog registration</a> &middot; ' +
     '<a href="/owning-a-pet-in-pattaya/lost-pet-pattaya.html">Lost pet</a> &middot; ' +

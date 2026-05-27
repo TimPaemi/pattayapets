@@ -213,8 +213,7 @@ pages.push(article({
   sections: [
     { h: "Before you book anything", html:
       "<ol>" +
-      "<li>Read the <a href=\"/bring-pet-to-thailand/\">full import guide</a> and your " +
-      "<a href=\"/bring-pet-to-thailand/\">import hub</a>.</li>" +
+      "<li>Read the <a href=\"/bring-pet-to-thailand/\">full import guide</a>.</li>" +
       "<li>Confirm your <strong>airline</strong> will carry your pet on your route &mdash; " +
       "see <a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline pet policies</a> " +
       "and <a href=\"/bring-pet-to-thailand/snub-nosed-breeds-flying.html\">snub-nosed breeds</a>.</li>" +
@@ -245,6 +244,9 @@ pages.push(article({
       "<li>Carry copies of every certificate, permit and endorsement in hand luggage.</li>" +
       "<li>Save Animal Quarantine Station contacts from the " +
       "<a href=\"/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html\">arrival guide</a>.</li>" +
+      "<li>If you may leave Thailand again, read the " +
+      "<a href=\"/take-pet-out-of-thailand/\">export hub</a> and " +
+      "<a href=\"/take-pet-out-of-thailand/checklist.html\">export checklist</a> early.</li>" +
       "</ul>" },
     { h: "On arrival in Thailand", html:
       "<ul>" +
@@ -270,6 +272,8 @@ pages.push(article({
     { name: "Pet quarantine", path: "/bring-pet-to-thailand/thailand-pet-quarantine.html", desc: "What happens at the AQS on arrival." },
     { name: "U-Tapao or Bangkok?", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html", desc: "Which airport to fly into for Pattaya." },
     { name: "DLD import permit", path: "/bring-pet-to-thailand/import-permit-thailand-dld.html", desc: "The Thai-side permit." },
+    { name: "Export checklist", path: "/take-pet-out-of-thailand/checklist.html", desc: "Planning the return journey." },
+    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side when you leave." },
     { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who handle paperwork and flights." }
   ]
 }));

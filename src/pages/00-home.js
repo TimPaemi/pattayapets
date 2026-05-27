@@ -62,8 +62,11 @@ const HOME_GUIDES = [
   ["/take-pet-out-of-thailand/", "Moving on", "Taking a pet out of Thailand",
     "Export process, costs and what the UK, EU, USA, Australia and more demand.",
     "Read the guide"],
-  ["/take-pet-out-of-thailand/export-process.html", "Export", "The export process",
-    "Thai DLD health certificate, export permit and airport steps on the way out.",
+  ["/take-pet-out-of-thailand/checklist.html", "Export", "Export checklist",
+    "A printable step-by-step checklist for taking your pet out of Thailand.",
+    "Open the checklist"],
+  ["/take-pet-out-of-thailand/export-permit-thailand-dld.html", "Export", "DLD export permit",
+    "How to apply for the Thai export permit before your pet flies out.",
     "Read the guide"],
   ["/pet-health-pattaya/", "Health", "Pet health in Pattaya",
     "Heartworm, tick disease, skin and ear problems in a tropical climate.",
@@ -103,6 +106,9 @@ const HOME_GUIDES = [
 const HOME_GUIDE_MORE =
   '<p class="guide-topics"><strong>More guides:</strong> ' +
   '<a href="/bring-pet-to-thailand/checklist.html">Import checklist</a> &middot; ' +
+  '<a href="/take-pet-out-of-thailand/checklist.html">Export checklist</a> &middot; ' +
+  '<a href="/take-pet-out-of-thailand/export-process.html">Export process</a> &middot; ' +
+  '<a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">Export permit</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/microchip-requirements.html">Microchip</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">Rabies &amp; titer</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/thailand-pet-quarantine.html">Quarantine</a> &middot; ' +
@@ -115,7 +121,9 @@ const HOME_GUIDE_MORE =
   '<a href="/bring-pet-to-thailand/from-south-africa.html">Import from South Africa</a> &middot; ' +
   '<a href="/take-pet-out-of-thailand/to-india.html">Export to India</a> &middot; ' +
   '<a href="/take-pet-out-of-thailand/to-china.html">Export to China</a> &middot; ' +
+  '<a href="/take-pet-out-of-thailand/to-philippines.html">Export to Philippines</a> &middot; ' +
   '<a href="/take-pet-out-of-thailand/to-japan.html">Export to Japan</a> &middot; ' +
+  '<a href="/owning-a-pet-in-pattaya/travelling-in-thailand.html">Travelling in Thailand</a> &middot; ' +
   '<a href="/take-pet-out-of-thailand/to-uk.html">Export to UK</a> &middot; ' +
   '<a href="/take-pet-out-of-thailand/to-eu.html">Export to EU</a> &middot; ' +
   '<a href="/pet-relocation/">Relocation agents</a> &middot; ' +

@@ -63,7 +63,7 @@ pages.push(hub({
   path: "/take-pet-out-of-thailand/",
   title: "Taking your pet out of Thailand | PattayaPets",
   image: "/assets/img/og-export.png",
-  updated: "2026-05-28",
+  updated: "2026-05-29",
   desc: "How to export a dog or cat from Thailand: the DLD export process, plus " +
     "destination notes for the UK, USA, EU and Australia.",
   crumb: "Taking a pet out of Thailand",
@@ -92,7 +92,8 @@ pages.push(hub({
     {
       title: "The process",
       cards: [
-        { tag: "Start here", name: "The export process", desc: "The Thai DLD side: health certificate, export permit and timing.", path: "/take-pet-out-of-thailand/export-process.html" },
+        { tag: "Start here", name: "Export checklist", desc: "A printable step-by-step checklist for the whole departure.", path: "/take-pet-out-of-thailand/checklist.html" },
+        { tag: "Step 1", name: "The export process", desc: "The Thai DLD side: health certificate, export permit and timing.", path: "/take-pet-out-of-thailand/export-process.html" },
         { tag: "Step 2", name: "DLD export permit", desc: "How to apply to the Animal Quarantine Station before you fly.", path: "/take-pet-out-of-thailand/export-permit-thailand-dld.html" }
       ]
     },
@@ -133,12 +134,13 @@ pages.push(hub({
     }
   ],
   related: [
+    { name: "Export checklist", path: "/take-pet-out-of-thailand/checklist.html", desc: "Printable step-by-step checklist." },
     { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
     { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Agents who coordinate export paperwork and flights." },
     { name: "Export to Australia", path: "/take-pet-out-of-thailand/to-australia.html", desc: "The hardest route — and the most expensive." },
     { name: "What export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html", desc: "Budgeting the Thai side and the flight." },
-    { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." },
-    { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/", desc: "The reverse journey, for context." }
+    { name: "Import checklist", path: "/bring-pet-to-thailand/checklist.html", desc: "The reverse journey." },
+    { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/", desc: "The import hub, for context." }
   ]
 }));
 

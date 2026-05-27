@@ -145,7 +145,16 @@ pages.push(country({
       "and have a <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">" +
       "rabies titer test</a> done from an approved laboratory. A titer test is strongly " +
       "advisable both for a smooth entry and for any onward travel &mdash; the EU, UK and " +
-      "others require it, with a waiting period, so doing it early is wise.</p>" }
+      "others require it, with a waiting period, so doing it early is wise.</p>" },
+    { h: "If you may leave Thailand again", html:
+      "<p>Russia&rsquo;s re-entry rules for pets arriving from abroad can change and " +
+      "often involve the state veterinary service and endorsed certificates. If you " +
+      "might return to Russia with your pet, verify the current import requirements " +
+      "before you leave and keep the " +
+      "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies titer test</a> " +
+      "on your timeline. See our guide to " +
+      "<a href=\"/take-pet-out-of-thailand/to-russia.html\">exporting a pet to Russia</a> " +
+      "for the full return paperwork.</p>" }
   ],
   faqs: [
     ["How is the pet certificate handled in Russia?",

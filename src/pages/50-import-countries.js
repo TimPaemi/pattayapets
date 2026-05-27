@@ -593,7 +593,15 @@ pages.push(country({
       "transfer to Pattaya &mdash; see " +
       "<a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok?</a> " +
       "and <a href=\"/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html\">arrival " +
-      "at Suvarnabhumi</a>.</p>" }
+      "at Suvarnabhumi</a>.</p>" },
+    { h: "If you may leave Thailand again", html:
+      "<p>The Philippines applies its own import rules when a pet returns from abroad. " +
+      "If you might go back to the Philippines with your pet, research current BAI " +
+      "import requirements before you leave and plan the " +
+      "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies titer test</a> " +
+      "with plenty of lead time. See our guide to " +
+      "<a href=\"/take-pet-out-of-thailand/to-philippines.html\">exporting a pet to the Philippines</a> " +
+      "for the full return paperwork.</p>" }
   ],
   faqs: [
     ["Is the Philippines treated as rabies-free by Thailand?",

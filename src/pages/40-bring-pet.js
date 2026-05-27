@@ -123,6 +123,8 @@ pages.push(hub({
     { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who handle the paperwork and flights." },
     { name: "Arriving in Thailand", path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html", desc: "The quarantine-station check on landing." },
     { name: "DLD import permit", path: "/bring-pet-to-thailand/import-permit-thailand-dld.html", desc: "The Thai-side permit you apply for." },
+    { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "Export hub — process, costs and destinations." },
+    { name: "Export checklist", path: "/take-pet-out-of-thailand/checklist.html", desc: "Printable step-by-step checklist for leaving." },
     { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side when you leave." }
   ]
 }));

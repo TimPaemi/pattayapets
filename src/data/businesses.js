@@ -123,8 +123,8 @@ const BUSINESSES = [
     name: "Pattaya Animal Hospital",
     category: "vets", areas: ["central-pattaya"], type: "Animal hospital", c24: false,
     address: "49/86-7 Moo 10, Pattaya Tai Road, Nong Prue, Bang Lamung, Chon Buri 20150",
-    phone: "038 373 290", tel: "+6638373290",
-    website: null, hours: null,
+    phone: null, tel: null,
+    website: null, hours: "Confirm current hours when booking",
     languages: "Thai; confirm English-language support when booking",
     services: ["General consultations", "Vaccinations", "Treatment & surgery"],
     summary: "An animal hospital on Pattaya Tai Road in central Pattaya, handling " +
@@ -164,7 +164,7 @@ const BUSINESSES = [
     name: "Siam Country Pet Hospital",
     category: "vets", areas: ["banglamung"], type: "Veterinary clinic", c24: false,
     address: "Pornpraphanimit Road (Siam Country Club Road), Nong Prue, Bang Lamung, Chon Buri 20150",
-    phone: "038 413 689", tel: "+6638413689",
+    phone: null, tel: null,
     website: null, hours: "Daily 08:00-00:00 (midnight); confirm current hours when booking",
     languages: "Thai and English",
     services: ["General consultations", "Vaccinations", "Surgery", "X-ray & ultrasound", "Blood testing", "Home visits (by arrangement)"],
@@ -177,7 +177,7 @@ const BUSINESSES = [
     name: "North Pattaya Animal Hospital",
     category: "vets", areas: ["naklua", "wongamat"], type: "Animal hospital", c24: false,
     address: "120/20 Moo 6, Sukhumvit Road, Naklua, Bang Lamung, Chon Buri 20150",
-    phone: "038 416 869", tel: "+6638416869",
+    phone: null, tel: null,
     website: null, hours: null,
     languages: "Thai; confirm English-language support when booking",
     services: ["General consultations", "Vaccinations", "Treatment & surgery",
@@ -268,13 +268,13 @@ const BUSINESSES = [
     name: "Elite Dog Resort",
     category: "boarding", areas: ["pratumnak"], type: "Luxury dog resort & spa", c24: false,
     address: "352/680 Moo 12, Phra Tamnak, Pattaya City, Bang Lamung, Chon Buri 20150",
-    phone: "02 507 1893", tel: "+6625071893",
+    phone: null, tel: null,
     website: "https://elitedogresort.com/", hours: "Daily 08:00-17:00; extended hours by appointment",
     languages: "Thai and English",
     services: ["Climate-controlled rooms", "Boarding", "Daycare", "Grooming & spa", "24/7 supervision", "VIP rooms"],
     summary: "A luxury dog resort and spa on Pratumnak hill, focused on small breeds, " +
       "with climate-controlled rooms, round-the-clock supervision, grooming and spa " +
-      "services, and standard or VIP options. Open seven days; phone line 10:00-18:00."
+      "services, and standard or VIP options. Enquire through the official website."
   },
   {
     slug: "pattaya-dog-hotel",

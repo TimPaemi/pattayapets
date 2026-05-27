@@ -167,6 +167,9 @@ pages.push({
     card("/take-pet-out-of-thailand/", "Moving on", "Taking a pet out of Thailand",
       "DLD export permit, health certificate, costs and country-by-country destination notes.",
       "Open the guide") +
+    card("/take-pet-out-of-thailand/checklist.html", "Export", "Export checklist",
+      "A printable step-by-step checklist for taking your pet out of Thailand.",
+      "Open the checklist") +
     card("/dog-friendly-pattaya/", "Out &amp; about", "Dog-friendly Pattaya",
       "Beaches, cafes, restaurants, hotels, condos and parks that welcome dogs.",
       "Open the guide") +
@@ -206,11 +209,23 @@ pages.push({
     card("/owning-a-pet-in-pattaya/hot-climate-pet-care.html", "Owning", "Hot-climate pet care",
       "The single biggest everyday adjustment for pets in Pattaya.",
       "Open the guide") +
+    card("/take-pet-out-of-thailand/export-permit-thailand-dld.html", "Export", "DLD export permit",
+      "How to apply for the Thai export permit before your pet flies out.",
+      "Open the guide") +
+    card("/owning-a-pet-in-pattaya/travelling-in-thailand.html", "Owning", "Travelling in Thailand",
+      "Domestic flights, road trips and pet-friendly hotels with your pet.",
+      "Open the guide") +
     card("/bring-pet-to-thailand/import-permit-thailand-dld.html", "Import", "DLD import permit",
       "How to apply for the Thai import permit before your pet flies in.",
       "Open the guide") +
     card("/bring-pet-to-thailand/rabies-vaccination-titer-test.html", "Import", "Rabies & titer test",
       "Why the titer test matters, and how the timing affects your move.",
+      "Open the guide") +
+    card("/bring-pet-to-thailand/health-certificate.html", "Import", "Health certificate",
+      "The veterinary health certificate and who has to endorse it.",
+      "Open the guide") +
+    card("/bring-pet-to-thailand/microchip-requirements.html", "Import", "Microchip requirements",
+      "The ISO microchip your pet needs, and why it must come first.",
       "Open the guide") +
     card("/take-pet-out-of-thailand/export-process.html", "Export", "The export process",
       "Thai DLD health certificate, export permit and the airport steps on the way out.",
