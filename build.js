@@ -123,6 +123,52 @@ function buildSitemapPage(pages) {
   };
 }
 
+var RECENT_SKIP = {
+  "/": 1, "/sitemap.html": 1, "/search.html": 1, "/404.html": 1,
+  "/offline.html": 1, "/masthead.html": 1
+};
+
+function fmtUpdated(iso) {
+  var p = String(iso || "").split("-");
+  if (p.length !== 3) return iso;
+  var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",
+    "Aug", "Sep", "Oct", "Nov", "Dec"];
+  return parseInt(p[2], 10) + " " + months[parseInt(p[1], 10) - 1] + " " + p[0];
+}
+
+function pageLabel(p) {
+  var t = p.crumb || p.shortTitle || p.title || "";
+  return t.replace(/\s*\|\s*PattayaPets\s*$/, "").replace(/\s*—\s*PattayaPets\s*$/, "");
+}
+
+function buildRecentSection(pages) {
+  var recent = pages.filter(function (p) {
+    return !p.noindex && !RECENT_SKIP[p.path] && p.updated;
+  }).sort(function (a, b) {
+    return b.updated.localeCompare(a.updated);
+  }).slice(0, 8);
+  if (!recent.length) return "";
+  var items = recent.map(function (p) {
+    return '<a class="recent-item" href="' + p.path + '">' +
+      '<span class="recent-date">' + fmtUpdated(p.updated) + "</span>" +
+      '<span class="recent-title">' + pageLabel(p).replace(/&/g, "&amp;") + "</span>" +
+      '<span class="recent-kind">' + kindOf(p.path).replace(/&/g, "&amp;") + "</span></a>";
+  }).join("");
+  return '<section class="section"><div class="container">' +
+    '<div class="section-head"><p class="eyebrow">Fresh content</p>' +
+    "<h2>Recently updated</h2>" +
+    "<p>Pages refreshed most recently across the directory and guides.</p></div>" +
+    '<div class="recent-list">' + items + "</div>" +
+    '<div class="btn-row"><a class="btn btn-ghost" href="/sitemap.html">Full sitemap &rarr;</a></div>' +
+    "</div></section>";
+}
+
+function injectRecentUpdates(pages) {
+  var home = pages.find(function (p) { return p.path === "/"; });
+  if (!home || !home.body || home.body.indexOf("<!--__RECENT_UPDATES__-->") === -1) return;
+  home.body = home.body.replace("<!--__RECENT_UPDATES__-->", buildRecentSection(pages));
+}
+
 async function build() {
   const t0 = Date.now();
   log("\nPattayaPets build");
@@ -153,6 +199,8 @@ async function build() {
     if (seen[p.path]) throw new Error("Duplicate page path: " + p.path);
     seen[p.path] = true;
   });
+
+  injectRecentUpdates(pages);
 
   let jsonldCount = 0;
   for (const page of pages) {

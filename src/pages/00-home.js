@@ -88,6 +88,8 @@ const body =
     '<div class="btn-row"><a class="btn btn-ghost" href="/pet-emergency/">All emergency vets, first-aid &amp; hazards &rarr;</a></div>' +
   '</div></section>' +
 
+  '<!--__RECENT_UPDATES__-->' +
+
   '<section class="section section-tint"><div class="container">' +
     '<div class="section-head"><p class="eyebrow">The editorial method</p>' +
     '<h2>Why you can trust what you read here</h2>' +

@@ -49,9 +49,9 @@ pages.push(hub({
       title: "Shelters & rescue organisations",
       note: "Established dog and cat rescues operating in and around Pattaya.",
       cards: [
-        { name: "Hope for Strays", desc: "A Pattaya dog rescue shelter caring for several hundred dogs.", path: "/adopt-a-pet-pattaya/hope-for-strays.html" },
+        { name: "Hope for Strays", desc: "East Pattaya dog rescue shelter — several hundred dogs, open to visitors by arrangement.", path: "/adopt-a-pet-pattaya/hope-for-strays.html" },
         { name: "Dog & Cat Rescue Pattaya", desc: "A Pattaya shelter rescuing dogs and helping the city's street cats.", path: "/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html" },
-        { name: "Animal Army Foundation", desc: "A long-running Pattaya foundation with a rescue ambulance and clinic.", path: "/adopt-a-pet-pattaya/animal-army-foundation.html" },
+        { name: "Animal Army Foundation", desc: "Licensed Na Jomtien hospital & rescue since 1994 — ambulance, clinic and adoptions.", path: "/adopt-a-pet-pattaya/animal-army-foundation.html" },
         { name: "Pattaya Street Dogs (K9aid)", desc: "A rescue caring for street dogs and feeding temple-dog colonies.", path: "/adopt-a-pet-pattaya/pattaya-street-dogs-k9aid.html" },
         { name: "Soi Dog Foundation", desc: "Thailand's best-known animal-welfare charity, with Pattaya work.", path: "/adopt-a-pet-pattaya/soi-dog-foundation.html" },
         { name: "Malee's Animal Shelter", desc: "A large shelter rescuing dogs and cats across the Pattaya–Chanthaburi area.", path: "/adopt-a-pet-pattaya/malees-animal-shelter.html" }
@@ -80,14 +80,19 @@ const SHELTERS = [
     crumb: "Hope for Strays",
     type: "Dog rescue shelter",
     website: "https://hopeforstrays.org/",
-    lede: "Hope for Strays is a non-profit dog rescue shelter in Pattaya, home to " +
+    facebook: "https://www.facebook.com/HopeforStraysThailand/",
+    address: "43/5 Moo 3, Chaiyapornwithi Road (Hwy 3240) Soi 33, East Pattaya (Nongprue), Chon Buri 20150",
+    phone: "089 158 8345", tel: "+66891588345",
+    lede: "Hope for Strays is a non-profit dog rescue shelter in East Pattaya, home to " +
       "several hundred dogs at any time.",
     what:
       "<p>Hope for Strays Foundation is a Pattaya-based non-profit dedicated to " +
-      "improving the lives of stray dogs. It runs a shelter caring for a large " +
+      "improving the lives of stray dogs in East Pattaya &mdash; primarily the " +
+      "Nongprue, Nongpralai and Pong areas. It runs a shelter caring for a large " +
       "number of dogs &mdash; reported as well over a hundred &mdash; and works " +
       "on vaccination, sterilisation, medical treatment and street feeding " +
-      "alongside rehoming.</p>",
+      "alongside rehoming. Visits and volunteering are welcome; contact the " +
+      "foundation first to arrange a time.</p>",
     adopt:
       "<p>Healthy, vaccinated and sterilised dogs are available for adoption. As " +
       "with any reputable rescue, expect a conversation about your home and " +
@@ -113,21 +118,30 @@ const SHELTERS = [
   {
     slug: "animal-army-foundation", name: "Animal Army Foundation",
     crumb: "Animal Army Foundation",
-    type: "Animal welfare foundation",
+    type: "Animal welfare foundation & hospital",
     website: "https://animalarmy.org/",
-    lede: "Animal Army Foundation is a long-running Pattaya animal-welfare " +
-      "organisation, operating since 1994.",
+    address: "90/55 Moo 5, Na Jomtien, Sattahip District, Chon Buri 20250",
+    phone: "085 093 5954", tel: "+66850935954",
+    email: "info@animalarmy.org",
+    hours: "Daily 08:00&ndash;17:00; animal intake by appointment (emergencies excepted)",
+    lede: "Animal Army Foundation is a licensed non-profit animal hospital in Na " +
+      "Jomtien, operating since 1994.",
     what:
-      "<p>Animal Army Foundation is a registered, licensed Pattaya organisation " +
-      "that has worked in animal welfare since 1994. Its work has included a " +
-      "veterinary team and a dedicated rescue ambulance providing emergency care " +
-      "to street animals, alongside encouraging the adoption of homeless " +
-      "companion animals. It has also supported adopters in flying newly adopted " +
-      "animals overseas.</p>",
+      "<p>Animal Army Foundation is a registered, licensed animal hospital in Na " +
+      "Jomtien that has worked in animal welfare since 1994. Its veterinary team " +
+      "operates a dedicated rescue ambulance providing emergency care to street " +
+      "animals and pets in urgent need, alongside everyday clinic work. It also " +
+      "encourages adoption of homeless companion animals and has supported adopters " +
+      "in flying newly adopted animals overseas. See also our " +
+      "<a href=\"/vets/animal-army-hospital.html\">Animal Army Hospital listing</a> " +
+      "in the vets directory.</p>",
     adopt:
-      "<p>Animal Army encourages adoption of the animals in its care. Because an " +
-      "organisation&rsquo;s services and facilities can change over time, " +
-      "confirm current adoption arrangements directly with the foundation.</p>"
+      "<p>Animal Army runs an adoption programme for dogs and cats in its care, " +
+      "including support for international adopters. Contact the foundation directly " +
+      "for current animals available and the process &mdash; see " +
+      "<a href=\"https://animalarmy.org/pages/adoption-with-animal-army\" " +
+      "target=\"_blank\" rel=\"noopener nofollow\">adoption with Animal Army</a> " +
+      "on its website.</p>"
   },
   {
     slug: "pattaya-street-dogs-k9aid", name: "Pattaya Street Dogs (K9aid)",
@@ -182,6 +196,30 @@ const SHELTERS = [
 ];
 
 SHELTERS.forEach(function (s) {
+  var contact = "";
+  if (s.address) {
+    contact += "<p><strong>Location:</strong> " + s.address + "</p>";
+  }
+  if (s.hours) {
+    contact += "<p><strong>Hours:</strong> " + s.hours + "</p>";
+  }
+  if (s.phone) {
+    contact += "<p><strong>Phone:</strong> <a href=\"tel:" + (s.tel || s.phone) + "\">" +
+      s.phone + "</a></p>";
+  }
+  if (s.email) {
+    contact += "<p><strong>Email:</strong> <a href=\"mailto:" + s.email + "\">" +
+      s.email + "</a></p>";
+  }
+  contact += '<p><a href="' + s.website + '" target="_blank" rel="noopener nofollow">' +
+    "Official website</a>";
+  if (s.facebook) {
+    contact += ' &middot; <a href="' + s.facebook +
+      '" target="_blank" rel="noopener nofollow">Facebook</a>';
+  }
+  contact += " for current contact details, visiting arrangements and the animals " +
+    "looking for homes.</p>";
+
   pages.push(article({
     path: "/adopt-a-pet-pattaya/" + s.slug + ".html",
     title: s.name + " | PattayaPets",
@@ -203,10 +241,7 @@ SHELTERS.forEach(function (s) {
       { h: "Adopting and helping", html: s.adopt +
         "<p>If you cannot adopt, fostering, volunteering and donating all make a " +
         "real difference &mdash; shelters run on exactly that support.</p>" },
-      { h: "Get in touch", html:
-        '<p><a href="' + s.website + '" target="_blank" rel="noopener nofollow">' +
-        "Visit the official website or page</a> for current contact details, " +
-        "location and the animals looking for homes.</p>" }
+      { h: "Get in touch", html: contact }
     ],
     faqs: [
       ["Are pets from " + s.name + " vaccinated and sterilised?",

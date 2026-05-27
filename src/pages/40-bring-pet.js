@@ -272,32 +272,57 @@ pages.push(article({
   sections: [
     { h: "What the import permit is", html:
       "<p>The permit is issued by the <strong>Department of Livestock " +
-      "Development (DLD)</strong> and confirms your pet may be imported. It is " +
-      "typically <strong>valid for 60 days</strong>, so it is applied for in the " +
-      "weeks before travel — not months ahead.</p>" },
+      "Development (DLD)</strong> through the <strong>Animal Quarantine Station " +
+      "(AQS)</strong> at your arrival airport. It confirms your pet may be imported. " +
+      "It is typically <strong>valid for 60 days</strong> from issuance, so it is " +
+      "applied for in the weeks before travel &mdash; not months ahead.</p>" },
+    { h: "When to apply", html:
+      "<p>Official guidance (revised January 2025) says you must apply " +
+      "<strong>at least seven Thailand business days before departure</strong>, and " +
+      "<strong>no more than 60 days before departure</strong>. The DLD recommends " +
+      "around <strong>30 days ahead</strong> &mdash; long enough for processing, " +
+      "short enough that the permit is still valid when you fly.</p>" +
+      "<p>You also cannot start the permit application until primary vaccinations " +
+      "(including rabies) have been given and the usual <strong>21-day wait</strong> " +
+      "after a primary rabies shot has passed. Boosters given while a previous shot " +
+      "is still valid do not restart that wait &mdash; confirm your pet&rsquo;s " +
+      "vaccination history with your vet.</p>" },
     { h: "How to apply", html:
-      "<p>Applications are made to the DLD — online through its e-service system, " +
-      "or via the Animal Quarantine Station at your arrival airport. You submit " +
-      "your pet&rsquo;s details, the microchip number, vaccination records and " +
-      "travel information. Officials review the application and, if it is in " +
-      "order, email the permit back &mdash; commonly within about " +
-      "<strong>seven working days</strong>.</p>" +
+      "<p>Applications are emailed to the AQS at your port of entry using DLD form " +
+      "<strong>R1/1</strong>. For Suvarnabhumi (Bangkok), the usual airport for " +
+      "Pattaya arrivals, email " +
+      "<a href=\"mailto:qsap_bkk_import@dld.go.th\">qsap_bkk_import@dld.go.th</a>. " +
+      "Other airports have their own AQS inboxes &mdash; check the DLD&rsquo;s current " +
+      "port-of-entry list before you send anything.</p>" +
+      "<p>Officials review the documents and, if everything is in order, email the " +
+      "permit back &mdash; commonly within about <strong>five to seven working " +
+      "days</strong>. Print the permit and carry it with your other papers.</p>" +
       "<p>Many owners have a pet relocation agent handle this step, because the " +
       "agent knows the current forms and the quarantine station contacts. Doing " +
-      "it yourself is possible; doing it early is essential.</p>" },
+      "it yourself is possible; doing it inside the correct timing window is " +
+      "essential.</p>" },
     { h: "What you will need to hand", html:
-      "<ul><li>Your pet&rsquo;s microchip number</li>" +
-      "<li>Rabies and other vaccination records</li>" +
-      "<li>Your flight details and arrival airport</li>" +
-      "<li>Your passport and Thai address details</li></ul>" +
+      "<ul><li>Completed form <strong>R1/1</strong> (your name, Thai address, origin " +
+      "country, pet details and microchip number)</li>" +
+      "<li>Copy of your passport</li>" +
+      "<li>Microchip implantation certificate</li>" +
+      "<li>Vaccination records in English (see our " +
+      "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies " +
+      "&amp; vaccination page</a> for what Thailand asks for)</li>" +
+      "<li>A clear colour photo of your pet (face visible)</li>" +
+      "<li>Flight itinerary / booking confirmation</li></ul>" +
       "<p>Keep printed copies of the permit and every supporting document for " +
-      "the airport.</p>" }
+      "the airport. On arrival, the AQS inspects your pet and issues the import " +
+      "licence; the inspection fee is currently <strong>500&nbsp;baht</strong> " +
+      "(confirm the current amount with the AQS).</p>" }
   ],
   faqs: [
     ["When should I apply for the import permit?",
-     "<p>Inside its validity window before travel — usually a few weeks ahead. Apply too early and it can expire before you fly; too late and it may not be issued in time. Around 2–4 weeks before travel is typical, but confirm with the DLD.</p>"],
+     "<p>Inside the official window: at least seven Thailand business days before departure, and no more than 60 days before. Around 30 days ahead is a sensible target. Apply too early and the permit can expire; too late and it may not be issued in time.</p>"],
     ["Do I need to be in Thailand to apply?",
-     "<p>No. The application can be made before you travel, online or through the arrival airport&rsquo;s quarantine station, or by an agent acting for you.</p>"]
+     "<p>No. The application is made before you travel, by email to the AQS at your arrival airport, or through a pet relocation agent acting for you.</p>"],
+    ["Can I apply at the airport on arrival instead?",
+     "<p>In some cases the AQS can issue a permit on arrival if you already hold a fully endorsed health certificate and all supporting documents &mdash; but many airlines require the permit before boarding. Check with your airline first; arriving without the paperwork the airline expects is a common reason pets are refused carriage.</p>"]
   ],
   related: [
     { name: "Arrival in Thailand", path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html", desc: "What happens when you land." },
