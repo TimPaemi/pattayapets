@@ -19,7 +19,7 @@ const pages = [];
 /* ---------------- HUB ---------------- */
 pages.push(hub({
   path: "/bring-pet-to-thailand/",
-  title: "Bringing your pet to Thailand — the full 2026 guide | PattayaPets",
+  title: "Bringing your pet to Thailand | PattayaPets",
   desc: "How to bring a dog or cat to Thailand: the DLD import permit, microchip, " +
     "rabies vaccination and titer test, health certificate, airlines and arrival.",
   crumb: "Bringing a pet to Thailand",
@@ -39,7 +39,7 @@ pages.push(hub({
     "<p>The process is overseen by Thailand&rsquo;s <strong>Department of " +
     "Livestock Development (DLD)</strong>. Below, each step has its own page. " +
     "Read them in order.</p>" +
-    '<div class="callout callout-tip"><h4>Rules change — verify before you act</h4>' +
+    '<div class="callout callout-tip"><div class="ch">Rules change — verify before you act</div>' +
     "<p>" + VERIFY + "</p></div>",
   groups: [
     {
@@ -56,7 +56,8 @@ pages.push(hub({
     {
       title: "Plan and budget",
       cards: [
-        { tag: "Money", name: "What it costs", desc: "An honest breakdown of where the money goes, with rough ranges.", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html" }
+        { tag: "Money", name: "What it costs", desc: "An honest breakdown of where the money goes, with rough ranges.", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html" },
+        { tag: "Arrival", name: "U-Tapao or Bangkok?", desc: "Which airport to fly your pet into, and how to reach Pattaya.", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html" }
       ]
     },
     {
@@ -66,7 +67,26 @@ pages.push(hub({
         { name: "From the UK", desc: "Endorsement by APHA, and the titer test the return trip will need.", path: "/bring-pet-to-thailand/from-uk.html" },
         { name: "From the USA", desc: "USDA APHIS endorsement and the CDC rules for dogs.", path: "/bring-pet-to-thailand/from-usa.html" },
         { name: "From the EU", desc: "EU export paperwork and what the pet passport does not cover.", path: "/bring-pet-to-thailand/from-eu.html" },
-        { name: "From Australia", desc: "Why this route is the hardest, and what it really involves.", path: "/bring-pet-to-thailand/from-australia.html" }
+        { name: "From Australia", desc: "Why this route is the hardest, and what it really involves.", path: "/bring-pet-to-thailand/from-australia.html" },
+        { name: "From Canada", desc: "CFIA endorsement and planning for the journey home.", path: "/bring-pet-to-thailand/from-canada.html" },
+        { name: "From Germany", desc: "EU export paperwork via the German veterinary office.", path: "/bring-pet-to-thailand/from-germany.html" },
+        { name: "From Russia", desc: "The state veterinary certificate and the rabies titer test.", path: "/bring-pet-to-thailand/from-russia.html" },
+        { name: "From Sweden", desc: "EU export paperwork via the Swedish Board of Agriculture.", path: "/bring-pet-to-thailand/from-sweden.html" },
+        { name: "From Norway", desc: "The export certificate and the tapeworm rule for the return.", path: "/bring-pet-to-thailand/from-norway.html" },
+        { name: "From Denmark", desc: "EU export paperwork via the Danish veterinary authority.", path: "/bring-pet-to-thailand/from-denmark.html" },
+        { name: "From Finland", desc: "EU export paperwork and the tapeworm rule for the return.", path: "/bring-pet-to-thailand/from-finland.html" },
+        { name: "From the Netherlands", desc: "EU export paperwork via the NVWA, with direct routes to Bangkok.", path: "/bring-pet-to-thailand/from-netherlands.html" },
+        { name: "From France", desc: "EU export paperwork via the French veterinary services.", path: "/bring-pet-to-thailand/from-france.html" },
+        { name: "From Switzerland", desc: "The EU-aligned Swiss export process via the FSVO.", path: "/bring-pet-to-thailand/from-switzerland.html" },
+        { name: "From Ireland", desc: "EU export paperwork and the tapeworm rule for the return.", path: "/bring-pet-to-thailand/from-ireland.html" },
+        { name: "From New Zealand", desc: "Straightforward export; the demanding part is the return.", path: "/bring-pet-to-thailand/from-new-zealand.html" }
+      ]
+    },
+    {
+      title: "Good to know before you fly",
+      cards: [
+        { name: "Snub-nosed breeds & flying", desc: "Why flat-faced breeds need extra care, and how airlines restrict them.", path: "/bring-pet-to-thailand/snub-nosed-breeds-flying.html" },
+        { name: "Is there quarantine?", desc: "What really happens at the Animal Quarantine Station on arrival.", path: "/bring-pet-to-thailand/thailand-pet-quarantine.html" }
       ]
     }
   ]
@@ -75,7 +95,7 @@ pages.push(hub({
 /* ---------------- MICROCHIP ---------------- */
 pages.push(article({
   path: "/bring-pet-to-thailand/microchip-requirements.html",
-  title: "Microchip requirements to bring a pet to Thailand | PattayaPets",
+  title: "Pet microchip requirements for Thailand | PattayaPets",
   desc: "Thailand requires an ISO 11784/11785 15-digit microchip, implanted before " +
     "the rabies vaccination. Here is what that means and why the order matters.",
   crumb: "Microchip",
@@ -127,7 +147,7 @@ pages.push(article({
 /* ---------------- RABIES & TITER ---------------- */
 pages.push(article({
   path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html",
-  title: "Rabies vaccination & titer test for Thailand pet import | PattayaPets",
+  title: "Rabies vaccination & titer test, Thailand | PattayaPets",
   desc: "The rabies vaccination, the 21-day wait, the other vaccines Thailand " +
     "asks for, and the rabies titer test — what it is and why you should do it.",
   crumb: "Rabies & titer test",
@@ -188,7 +208,7 @@ pages.push(article({
 /* ---------------- HEALTH CERTIFICATE ---------------- */
 pages.push(article({
   path: "/bring-pet-to-thailand/health-certificate.html",
-  title: "Veterinary health certificate for Thailand pet import | PattayaPets",
+  title: "Health certificate for Thailand pet import | PattayaPets",
   desc: "The veterinary health certificate Thailand requires, who has to issue " +
     "and government-endorse it, and the tight timing window before travel.",
   crumb: "Health certificate",
@@ -237,7 +257,7 @@ pages.push(article({
 /* ---------------- IMPORT PERMIT ---------------- */
 pages.push(article({
   path: "/bring-pet-to-thailand/import-permit-thailand-dld.html",
-  title: "Thailand pet import permit (DLD) — how to apply | PattayaPets",
+  title: "Thailand pet import permit (DLD) | PattayaPets",
   desc: "The Thailand pet import permit from the Department of Livestock " +
     "Development: how to apply, the timing, and what you submit.",
   crumb: "DLD import permit",
@@ -287,7 +307,7 @@ pages.push(article({
 /* ---------------- AIRLINE POLICIES ---------------- */
 pages.push(article({
   path: "/bring-pet-to-thailand/airline-pet-policies.html",
-  title: "Airline pet policies for flying a pet to Thailand | PattayaPets",
+  title: "Airline pet policies for Thailand | PattayaPets",
   desc: "How pets fly to Thailand — in-cabin, as checked baggage or as cargo — " +
     "IATA travel crates, snub-nosed breed rules, and how to book.",
   crumb: "Airline pet policies",
@@ -345,7 +365,7 @@ pages.push(article({
 /* ---------------- ARRIVAL ---------------- */
 pages.push(article({
   path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html",
-  title: "Arriving in Thailand with a pet — the airport check | PattayaPets",
+  title: "Arriving in Thailand with a pet | PattayaPets",
   desc: "What happens when your pet lands in Thailand: the Animal Quarantine " +
     "Station inspection, what officers check, and getting from the airport to Pattaya.",
   crumb: "Arrival in Thailand",
@@ -404,7 +424,7 @@ pages.push(article({
 /* ---------------- COST ---------------- */
 pages.push(article({
   path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html",
-  title: "How much does it cost to bring a pet to Thailand? | PattayaPets",
+  title: "Cost to bring a pet to Thailand | PattayaPets",
   desc: "An honest look at the cost of bringing a dog or cat to Thailand — where " +
     "the money goes, rough ranges, and whether to use a relocation agent.",
   crumb: "What it costs",

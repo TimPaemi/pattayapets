@@ -43,7 +43,7 @@ module.exports = [
       "could not load.</p>" +
       "<p>Pages you have already visited may still open from your device. Once you " +
       "are back online, everything will work normally again.</p>" +
-      '<div class="callout callout-emergency"><h4>In a pet emergency</h4>' +
+      '<div class="callout callout-emergency"><div class="ch">In a pet emergency</div>' +
       "<p>If your pet needs urgent help and you cannot get online, call a 24-hour " +
       "animal hospital directly. It is worth saving your nearest one in your phone " +
       "now, before you need it.</p></div>" +

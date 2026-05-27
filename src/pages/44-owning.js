@@ -11,7 +11,7 @@ const pages = [];
 
 pages.push(hub({
   path: "/owning-a-pet-in-pattaya/",
-  title: "Owning a pet in Pattaya — costs, climate & daily care | PattayaPets",
+  title: "Owning a pet in Pattaya | PattayaPets",
   desc: "What it is really like to own a pet in Pattaya: costs, hot-climate care, " +
     "pet-friendly housing, walking, registration and where to buy pet food.",
   crumb: "Owning a pet in Pattaya",
@@ -30,16 +30,36 @@ pages.push(hub({
       title: "The essentials",
       cards: [
         { name: "What it costs", desc: "A realistic monthly budget for a pet in Pattaya.", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html" },
-        { name: "Hot-climate pet care", desc: "The single biggest adjustment — keeping a pet safe in the heat.", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html" },
+        { name: "Hot-climate pet care", desc: "The single biggest adjustment: keeping a pet safe in the heat.", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html" },
         { name: "Pet-friendly housing", desc: "Renting and living with a pet when many condos say no.", path: "/owning-a-pet-in-pattaya/pet-friendly-housing.html" }
       ]
     },
     {
-      title: "Day to day",
+      title: "Everyday life",
       cards: [
         { name: "Where to walk your dog", desc: "Building a safe, cool-hours walking routine.", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html" },
+        { name: "Where to buy pet food", desc: "Pet shops, supermarkets, online and special diets.", path: "/owning-a-pet-in-pattaya/where-to-buy-pet-food.html" },
         { name: "Dog registration & the law", desc: "Rabies vaccination law and local dog registration.", path: "/owning-a-pet-in-pattaya/dog-registration-thailand.html" },
-        { name: "Where to buy pet food", desc: "Pet shops, supermarkets, online and special diets.", path: "/owning-a-pet-in-pattaya/where-to-buy-pet-food.html" }
+        { name: "Microchipping your pet", desc: "The best route home for a lost pet, and keeping details current.", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html" },
+        { name: "Pet sitters & dog walkers", desc: "Finding reliable care for when you are away or at work.", path: "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html" },
+        { name: "Getting to the vet", desc: "Pet transport options in Pattaya without a car.", path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html" },
+        { name: "Travelling in Thailand", desc: "Road trips, domestic flights and pet-friendly stays beyond Pattaya.", path: "/owning-a-pet-in-pattaya/travelling-in-thailand.html" }
+      ]
+    },
+    {
+      title: "Seasons and festivals",
+      cards: [
+        { name: "Songkran and your pet", desc: "Keeping animals safe and calm through the water festival.", path: "/owning-a-pet-in-pattaya/songkran-and-your-pet.html" },
+        { name: "Rainy-season pet care", desc: "Walks, skin and ear health, floodwater and storm anxiety.", path: "/owning-a-pet-in-pattaya/rainy-season-pet-care.html" },
+        { name: "Fireworks & noise-anxious pets", desc: "Helping a pet through fireworks, festivals and thunder.", path: "/owning-a-pet-in-pattaya/fireworks-and-noise-anxiety.html" }
+      ]
+    },
+    {
+      title: "Harder times",
+      cards: [
+        { name: "If your pet goes missing", desc: "A step-by-step plan for a lost dog or cat in Pattaya.", path: "/owning-a-pet-in-pattaya/lost-pet-pattaya.html" },
+        { name: "Senior pet care", desc: "Caring well for an older pet in a hot climate.", path: "/owning-a-pet-in-pattaya/senior-pet-care.html" },
+        { name: "End-of-life care", desc: "Compassionate guidance on saying goodbye.", path: "/owning-a-pet-in-pattaya/saying-goodbye.html" }
       ]
     }
   ]
@@ -98,7 +118,7 @@ pages.push(own({
   ],
   faqs: [
     ["Is vet care expensive in Pattaya?",
-     "<p>Routine vet care — vaccinations, check-ups, basic treatment — is generally affordable by Western standards. Major treatment, surgery or a hospital stay is where costs climb, which is the case for planning a buffer or insurance.</p>"],
+     "<p>Routine vet care — vaccinations, check-ups, basic treatment — is generally affordable by Western standards. Major treatment, surgery or a hospital stay is where costs climb &mdash; which is exactly what a savings buffer or insurance is for.</p>"],
     ["Should I get pet insurance in Thailand?",
      "<p>It depends on your finances and your pet. The case for it is the rare big bill, not the routine costs. See our guide to <a href=\"/pet-insurance-thailand.html\">pet insurance in Thailand</a>.</p>"]
   ]
@@ -155,7 +175,7 @@ pages.push(own({
 
 pages.push(own({
   slug: "pet-friendly-housing", crumb: "Pet-friendly housing",
-  title: "Pet-friendly housing in Pattaya — renting with a pet | PattayaPets",
+  title: "Pet-friendly housing in Pattaya | PattayaPets",
   desc: "Finding pet-friendly housing in Pattaya: why many condos say no, houses " +
     "versus condos, deposits, and what to confirm before you sign a lease.",
   h1: "Pet-friendly housing in Pattaya",
@@ -223,8 +243,9 @@ pages.push(own({
       "<a href=\"/dog-friendly-pattaya/beaches.html\">dog-friendly beaches</a>.</li>" +
       "<li><strong>Green and open spaces</strong>, where dogs are permitted.</li>" +
       "<li><strong>Pratumnak hill</strong>, for leafier, quieter roads.</li></ul>" +
-      "<p>More detail is in <a href=\"/dog-friendly-pattaya/parks.html\">where " +
-      "to walk a dog</a> in the dog-friendly cluster.</p>" },
+      "<p>For dog-friendly parks and green space specifically, see " +
+      "<a href=\"/dog-friendly-pattaya/parks.html\">parks and green space</a> " +
+      "in the dog-friendly cluster.</p>" },
     { h: "Walk safely", html:
       "<p>Keep your dog leashed, carry water, and learn the routes around you. " +
       "Be aware of <a href=\"/pet-emergency/street-dog-encounters.html\">" +

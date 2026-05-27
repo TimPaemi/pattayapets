@@ -23,12 +23,10 @@ const pages = [];
 /* ---------------- Directory hub ---------------- */
 pages.push({
   path: "/directory.html",
-  title: "Pattaya pet business directory — vets, groomers, boarding & more",
+  title: "Pattaya pet business directory",
   ogTitle: "The Pattaya pet business directory",
   description:
-    "The editorial directory of pet businesses in Pattaya — vets and animal " +
-    "hospitals, groomers, boarding, pet shops, dog trainers, relocation agents and " +
-    "mobile vets, browsable by area.",
+    "The editorial directory of pet businesses in Pattaya - vets and animal hospitals, groomers, boarding, pet shops, dog trainers, relocation and mobile vets.",
   crumb: "Directory",
   breadcrumbs: [],
   updated: "2026-05-21",
@@ -85,12 +83,10 @@ pages.push({
 /* ---------------- Guides hub ---------------- */
 pages.push({
   path: "/guides.html",
-  title: "Pattaya pet guides — bringing a pet to Thailand, dog-friendly & more",
+  title: "Pattaya pet guides",
   ogTitle: "PattayaPets guides & resources",
   description:
-    "Plain-English guides for pet owners in Pattaya — bringing a pet to Thailand, " +
-    "taking one out, dog-friendly places, pet emergencies, costs, adoption and " +
-    "insurance.",
+    "Plain-English guides for pet owners in Pattaya: bringing a pet to Thailand, taking one out, dog-friendly places, pet emergencies, costs and adoption.",
   crumb: "Guides",
   breadcrumbs: [],
   updated: "2026-05-21",
@@ -101,6 +97,7 @@ pages.push({
     "<p class=\"lede\">Clear, practical answers to what pet owners in Pattaya " +
     "search for. Every guide is date-stamped and points you to the official source " +
     "to verify against.</p></div>" +
+    "<h2>Browse the guides</h2>" +
     '<div class="grid grid-3">' +
     card("/bring-pet-to-thailand/", "Flagship guide", "Bringing a pet to Thailand",
       "The full import process: DLD permit, microchip, rabies and titer test, " +
@@ -117,6 +114,9 @@ pages.push({
     card("/owning-a-pet-in-pattaya/", "Day to day", "Owning a pet in Pattaya",
       "Costs, hot-climate care, pet-friendly housing and where to walk your dog.",
       "Open the guide") +
+    card("/pet-health-pattaya/", "Health", "Pet health in Pattaya",
+      "Heartworm, tick disease, skin and ear problems, parvovirus and neutering " +
+      "&mdash; the tropical-climate health picture.", "Open the guide") +
     card("/adopt-a-pet-pattaya/", "Adoption", "Adopt a pet in Pattaya",
       "The shelters and rescue organisations in and around Pattaya, and how " +
       "adoption works.", "Open the guide") +

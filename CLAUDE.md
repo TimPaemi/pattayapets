@@ -183,7 +183,7 @@ pattaya-medical.com.
 
 ## 9. Open items / placeholders (swap when Tim supplies)
 
-- GA4 Measurement ID — placeholder `G-XXXXXXXXXX` in `src/layout.js`.
+- GA4 Measurement ID — configured as `G-TX1PLBHN2K` in `src/layout.js` (set May 2026).
 - Cloudflare Web Analytics token — placeholder in `src/layout.js`.
 - Contact email — using `hello@pattayapets.com` (update if different).
 - WhatsApp / LINE — using the network's `+66 96 728 6999` / LINE `@timpaemi`.

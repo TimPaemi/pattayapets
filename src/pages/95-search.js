@@ -32,8 +32,8 @@ const SCRIPT = `
         '&rdquo;. Try fewer or different words.</p>';
       return;
     }
-    out.innerHTML='<p class="notice" style="margin-bottom:1.1rem">'+hits.length+
-      ' result'+(hits.length>1?'s':'')+'</p>'+
+    out.innerHTML='<h2 style="margin:0 0 1.1rem;font-size:.95rem;font-weight:600;color:var(--sage)">'+hits.length+
+      ' result'+(hits.length>1?'s':'')+'</h2>'+
       hits.map(function(x){
         return '<a class="card" href="'+x.p.u+'" style="margin-bottom:14px">'+
           '<span class="card-tag">'+esc(x.p.k)+'</span>'+

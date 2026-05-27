@@ -61,7 +61,7 @@ function article(o) {
     '<p class="lede">' + o.lede + "</p>" +
     '<p class="updated">Last updated ' + (o.updatedLabel || "21 May 2026") + "</p>";
   if (o.verify) {
-    prose += '<div class="callout callout-tip"><h4>Rules change — verify before you act</h4>' +
+    prose += '<div class="callout callout-tip"><div class="ch">Rules change — verify before you act</div>' +
       "<p>" + o.verify + "</p></div>";
   }
   (o.sections || []).forEach(function (s) {

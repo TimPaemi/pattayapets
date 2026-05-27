@@ -18,7 +18,7 @@ const pages = [];
 
 pages.push(hub({
   path: "/take-pet-out-of-thailand/",
-  title: "Taking your pet out of Thailand — the export guide | PattayaPets",
+  title: "Taking your pet out of Thailand | PattayaPets",
   desc: "How to export a dog or cat from Thailand: the DLD export process, plus " +
     "destination notes for the UK, USA, EU and Australia.",
   crumb: "Taking a pet out of Thailand",
@@ -40,7 +40,7 @@ pages.push(hub({
     "with your pet, get the <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">" +
     "rabies titer test</a> done early &mdash; ideally you already did it before " +
     "arriving.</p>" +
-    '<div class="callout callout-tip"><h4>Rules change — verify before you act</h4>' +
+    '<div class="callout callout-tip"><div class="ch">Rules change — verify before you act</div>' +
     "<p>" + VERIFY + "</p></div>",
   groups: [
     {
@@ -56,7 +56,19 @@ pages.push(hub({
         { name: "To the UK", desc: "Titer test, the three-month wait, and tapeworm treatment.", path: "/take-pet-out-of-thailand/to-uk.html" },
         { name: "To the USA", desc: "The CDC dog-import rules and the rabies titer test.", path: "/take-pet-out-of-thailand/to-usa.html" },
         { name: "To the EU", desc: "Titer test, the three-month wait and the EU certificate.", path: "/take-pet-out-of-thailand/to-eu.html" },
-        { name: "To Australia", desc: "The hardest route — why it takes six months or more.", path: "/take-pet-out-of-thailand/to-australia.html" }
+        { name: "To Australia", desc: "The hardest route — why it takes six months or more.", path: "/take-pet-out-of-thailand/to-australia.html" },
+        { name: "To Germany", desc: "The EU titer test, the three-month wait and the entry certificate.", path: "/take-pet-out-of-thailand/to-germany.html" },
+        { name: "To Sweden", desc: "Standard EU entry rules for a pet arriving from Thailand.", path: "/take-pet-out-of-thailand/to-sweden.html" },
+        { name: "To Norway", desc: "EU-style entry, plus the tapeworm rule for dogs.", path: "/take-pet-out-of-thailand/to-norway.html" },
+        { name: "To Denmark", desc: "Standard EU entry rules and the Danish authority.", path: "/take-pet-out-of-thailand/to-denmark.html" },
+        { name: "To Finland", desc: "EU entry, plus the tapeworm treatment for dogs.", path: "/take-pet-out-of-thailand/to-finland.html" },
+        { name: "To the Netherlands", desc: "EU entry, with direct routes into Amsterdam.", path: "/take-pet-out-of-thailand/to-netherlands.html" },
+        { name: "To France", desc: "EU entry rules, with Paris a common arrival point.", path: "/take-pet-out-of-thailand/to-france.html" },
+        { name: "To Ireland", desc: "EU entry, plus the tapeworm treatment for dogs.", path: "/take-pet-out-of-thailand/to-ireland.html" },
+        { name: "To Switzerland", desc: "EU-aligned rules: titer test and a waiting period.", path: "/take-pet-out-of-thailand/to-switzerland.html" },
+        { name: "To Canada", desc: "One of the simpler routes — no titer test or quarantine.", path: "/take-pet-out-of-thailand/to-canada.html" },
+        { name: "To Russia", desc: "A relatively straightforward route for a large community.", path: "/take-pet-out-of-thailand/to-russia.html" },
+        { name: "To New Zealand", desc: "A long, strict route that needs early planning with MPI.", path: "/take-pet-out-of-thailand/to-new-zealand.html" }
       ]
     }
   ]
@@ -79,7 +91,7 @@ function exp(o) {
 
 pages.push(exp({
   slug: "export-process", crumb: "The export process",
-  title: "Exporting a pet from Thailand — the DLD process | PattayaPets",
+  title: "Exporting a pet from Thailand | PattayaPets",
   desc: "The Thai side of taking a pet abroad: microchip, rabies, the DLD export " +
     "health certificate and export permit, and the airport on the way out.",
   h1: "The export process from Thailand",

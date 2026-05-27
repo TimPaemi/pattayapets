@@ -8,7 +8,7 @@ const SITE = {
   operator: "TIMPAEMI Co., Ltd.",
   email: "hello@pattayapets.com",
   whatsapp: "66967286999",
-  ga: "G-XXXXXXXXXX",
+  ga: "G-TX1PLBHN2K",
   cfBeacon: "CF-TOKEN-PLACEHOLDER"
 };
 
@@ -89,7 +89,7 @@ function footer() {
     '<div class="footer-brand">' + brandLink("") +
     "<p>An independent editorial directory and guide for pet owners in Pattaya. " +
     "Reviewed honestly through anonymous visits. No paid placements, ever.</p></div>" +
-    '<div><h4>The site</h4><ul class="footer-links">' +
+    '<div><div class="ch">The site</div><ul class="footer-links">' +
     '<li><a href="/directory.html">Business directory</a></li>' +
     '<li><a href="/guides.html">Guides &amp; resources</a></li>' +
     '<li><a href="/start-here.html">Start here</a></li>' +
@@ -98,7 +98,7 @@ function footer() {
     '<li><a href="/corrections.html">Corrections</a></li>' +
     '<li><a href="/contact.html">Contact</a></li>' +
     '<li><a href="/sitemap.html">Sitemap</a></li></ul></div>' +
-    '<div><h4>Pet owner essentials</h4><ul class="footer-links">' +
+    '<div><div class="ch">Pet owner essentials</div><ul class="footer-links">' +
     '<li><a href="/vets/">Vets &amp; animal hospitals</a></li>' +
     '<li><a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a></li>' +
     '<li><a href="/bring-pet-to-thailand/">Bring a pet to Thailand</a></li>' +
@@ -116,6 +116,19 @@ function footer() {
     '<span><a href="/privacy.html">Privacy</a> &middot; <a href="/accessibility.html">Accessibility</a></span>' +
     "</div></footer>"
   );
+}
+
+function fmtDate(iso) {
+  var M = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  var p = String(iso || "").split("-");
+  if (p.length !== 3) return String(iso || "");
+  return parseInt(p[2], 10) + " " + M[parseInt(p[1], 10) - 1] + " " + p[0];
+}
+function dateStamp(page) {
+  if (!page.updated) return "";
+  if (page.body && page.body.indexOf('class="updated"') !== -1) return "";
+  return '<div class="container"><p class="updated" style="margin:0 0 44px">Last updated ' +
+    fmtDate(page.updated) + "</p></div>";
 }
 
 function breadcrumbHtml(page) {
@@ -152,7 +165,15 @@ function websiteGraph() {
     name: SITE.name,
     url: SITE.url + "/",
     publisher: { "@id": SITE.url + "/#org" },
-    inLanguage: "en"
+    inLanguage: "en",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: SITE.url + "/search.html?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
   };
 }
 
@@ -241,7 +262,7 @@ function renderPage(page, opts) {
     "</head><body" + (page.bodyClass ? ' class="' + page.bodyClass + '"' : "") + ">" +
     header() +
     breadcrumbHtml(page) +
-    '<main id="main">' + page.body + "</main>" +
+    '<main id="main">' + page.body + dateStamp(page) + "</main>" +
     footer() +
     '<script src="/assets/js/site.js" defer></script>' +
     "</body></html>"

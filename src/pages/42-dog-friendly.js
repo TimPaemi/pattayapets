@@ -11,7 +11,7 @@ const pages = [];
 
 pages.push(hub({
   path: "/dog-friendly-pattaya/",
-  title: "Dog-friendly Pattaya — beaches, cafes, hotels & more | PattayaPets",
+  title: "Dog-friendly Pattaya | PattayaPets",
   desc: "Where dogs are welcome in Pattaya: dog-friendly beaches, cafes, " +
     "restaurants, hotels, condos and places to walk. Honest, practical guidance.",
   crumb: "Dog-friendly Pattaya",
@@ -225,7 +225,7 @@ pages.push(df({
 
 pages.push(df({
   slug: "condos", crumb: "Dog-friendly condos",
-  title: "Dog-friendly condos in Pattaya — renting with a pet | PattayaPets",
+  title: "Dog-friendly condos in Pattaya | PattayaPets",
   desc: "Renting a condo in Pattaya with a dog: why most condos are no-pet, how " +
     "to find a pet-friendly building, and what to check before you sign.",
   h1: "Renting a dog-friendly condo in Pattaya",
@@ -271,7 +271,7 @@ pages.push(df({
 
 pages.push(df({
   slug: "parks", crumb: "Places to walk",
-  title: "Where to walk a dog in Pattaya — parks & green space | PattayaPets",
+  title: "Where to walk a dog in Pattaya | PattayaPets",
   desc: "Where to walk a dog in Pattaya: the beach, quiet sois and green space — " +
     "and an honest look at the city's limited formal dog parks.",
   h1: "Where to walk your dog in Pattaya",

@@ -33,7 +33,7 @@ const pages = [];
 /* ---------------- Start Here ---------------- */
 pages.push({
   path: "/start-here.html",
-  title: "New to Pattaya with a pet? Start here — PattayaPets",
+  title: "New to Pattaya with a pet? Start here | PattayaPets",
   description:
     "A plain-English orientation for pet owners new to Pattaya: emergency numbers, " +
     "finding a vet, the hot climate, bringing a pet in or out, and adoption.",
@@ -48,7 +48,7 @@ pages.push({
     "street dog and suddenly have questions, this page is the short version. It " +
     "points you to the right guide for each situation. It is orientation, not " +
     "veterinary advice.</p>" +
-    '<div class="callout callout-emergency"><h4>If this is an emergency</h4>' +
+    '<div class="callout callout-emergency"><div class="ch">If this is an emergency</div>' +
     "<p>If your pet is seriously injured, struggling to breathe, collapsed, " +
     "bleeding heavily, or has a suspected poisoning or heatstroke, go straight to " +
     "a 24-hour animal hospital. Do not wait. See our list of " +

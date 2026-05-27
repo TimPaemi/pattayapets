@@ -19,7 +19,7 @@ const pages = [];
 /* ---------------- HUB ---------------- */
 pages.push(hub({
   path: "/pet-emergency/",
-  title: "Pet emergencies in Pattaya — 24-hour vets & tropical hazards | PattayaPets",
+  title: "Pet emergencies in Pattaya | PattayaPets",
   desc: "What to do in a pet emergency in Pattaya: 24-hour vets, first-aid " +
     "orientation, heatstroke, ticks, snake bites, street dogs and poisoning.",
   crumb: "Pet emergencies",
@@ -29,7 +29,7 @@ pages.push(hub({
   lede: "A hot climate brings its own risks for pets. Know where the 24-hour vets " +
     "are, and recognise the hazards before they become emergencies.",
   intro:
-    '<div class="callout callout-emergency"><h4>If your pet needs help right now</h4>' +
+    '<div class="callout callout-emergency"><div class="ch">If your pet needs help right now</div>' +
     "<p>Go straight to a 24-hour animal hospital &mdash; do not wait for normal " +
     "opening hours. See <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">" +
     "24-hour vets in Pattaya</a> for clinics open around the clock, with " +
@@ -52,7 +52,16 @@ pages.push(hub({
         { name: "Ticks & fleas", desc: "Year-round in a tropical climate, and why prevention matters.", path: "/pet-emergency/ticks-and-fleas.html" },
         { name: "Snake bites", desc: "Thailand has venomous snakes — how to lower the risk and react.", path: "/pet-emergency/snake-bites.html" },
         { name: "Street-dog encounters", desc: "Walking your dog safely around Pattaya's free-roaming dogs.", path: "/pet-emergency/street-dog-encounters.html" },
-        { name: "Poisoning", desc: "Common household and street hazards, and what to do.", path: "/pet-emergency/poisoning.html" }
+        { name: "Poisoning", desc: "Common household and street hazards, and what to do.", path: "/pet-emergency/poisoning.html" },
+        { name: "Beach & sea hazards", desc: "Jellyfish, hot sand, seawater and tideline scavenging on the beach.", path: "/pet-emergency/beach-and-sea-hazards.html" },
+        { name: "Toads, centipedes & stings", desc: "Venomous creatures beyond snakes, and what to do.", path: "/pet-emergency/venomous-creatures.html" }
+      ]
+    },
+    {
+      title: "Accidents and injuries",
+      cards: [
+        { name: "If your pet is choking", desc: "Recognising an airway blockage, and acting fast.", path: "/pet-emergency/choking.html" },
+        { name: "Hit by a vehicle", desc: "What to do if your pet is in a road accident in Pattaya.", path: "/pet-emergency/road-accident.html" }
       ]
     }
   ]
@@ -69,16 +78,15 @@ var c24list = c24.map(function (b) {
     "</a></h3><p class=\"biz-sub\">" + b.type + " &middot; " + areaNm + "</p></div>" +
     '<span class="badge-24h">24 hr</span></div>' +
     '<table class="facts-table" style="margin:.5rem 0 0"><tbody>' +
-    "<tr><th>Address</th><td>" + (b.address || "<em>Being verified</em>") + "</td></tr>" +
-    "<tr><th>Phone</th><td>" + (b.phone
-      ? '<a href="tel:' + b.tel + '">' + b.phone + "</a>"
-      : "<em>Being verified</em>") + "</td></tr>" +
+    (b.address ? "<tr><th scope=\"row\">Address</th><td>" + b.address + "</td></tr>" : "") +
+    (b.phone ? '<tr><th scope="row">Phone</th><td><a href="tel:' + b.tel + '">' + b.phone + "</a></td></tr>" : "") +
+    (!b.address && !b.phone ? '<tr><td colspan="2">Contact details are being verified &mdash; confirm by phone before travelling.</td></tr>' : "") +
     "</tbody></table></article>";
 }).join("");
 
 pages.push(article({
   path: "/pet-emergency/24-hour-vets-pattaya.html",
-  title: "24-hour vets in Pattaya — emergency animal hospitals | PattayaPets",
+  title: "24-hour vets in Pattaya | PattayaPets",
   desc: "Animal hospitals in Pattaya listed as open 24 hours, with addresses and " +
     "phone numbers — for pet emergencies outside normal clinic hours.",
   crumb: "24-hour vets",
@@ -90,7 +98,7 @@ pages.push(article({
     "around the clock.",
   sections: [
     { html:
-      '<div class="callout callout-emergency"><h4>Act now, read later</h4>' +
+      '<div class="callout callout-emergency"><div class="ch">Act now, read later</div>' +
       "<p>If your pet is in distress, call the nearest clinic below and head " +
       "there. Phone ahead if you can, so staff are ready &mdash; but do not delay " +
       "leaving. " + NOTVET + "</p></div>" },
@@ -196,7 +204,7 @@ pages.push(hazard({
 /* ---------------- HEATSTROKE ---------------- */
 pages.push(hazard({
   slug: "heatstroke", crumb: "Heatstroke",
-  title: "Heatstroke in pets — Pattaya's hot-climate risk | PattayaPets",
+  title: "Heatstroke in pets | PattayaPets",
   desc: "Heatstroke is the most common preventable pet emergency in Pattaya. " +
     "Recognise the signs, know the high-risk situations, and prevent it.",
   h1: "Heatstroke in pets",
@@ -242,7 +250,7 @@ pages.push(hazard({
 /* ---------------- TICKS & FLEAS ---------------- */
 pages.push(hazard({
   slug: "ticks-and-fleas", crumb: "Ticks & fleas",
-  title: "Ticks & fleas on pets in Pattaya — year-round prevention | PattayaPets",
+  title: "Ticks & fleas on pets in Pattaya | PattayaPets",
   desc: "Thailand's tropical climate means ticks and fleas all year. Why " +
     "prevention matters for pets in Pattaya, and what to watch for.",
   h1: "Ticks &amp; fleas in a tropical climate",
@@ -281,7 +289,7 @@ pages.push(hazard({
 /* ---------------- SNAKE BITES ---------------- */
 pages.push(hazard({
   slug: "snake-bites", crumb: "Snake bites",
-  title: "Snake bites & pets in Pattaya — lowering the risk | PattayaPets",
+  title: "Snake bites & pets in Pattaya | PattayaPets",
   desc: "Thailand has venomous snakes. How to lower the risk to your pet around " +
     "Pattaya, and what to do if you suspect a snake bite.",
   h1: "Snakes and your pet",
@@ -320,7 +328,7 @@ pages.push(hazard({
 /* ---------------- STREET DOGS ---------------- */
 pages.push(hazard({
   slug: "street-dog-encounters", crumb: "Street dogs",
-  title: "Street-dog encounters in Pattaya — walking your dog safely | PattayaPets",
+  title: "Street-dog encounters in Pattaya | PattayaPets",
   desc: "Pattaya has free-roaming street dogs. How to walk your own dog safely, " +
     "handle an encounter, and why rabies vaccination matters.",
   h1: "Walking safely around Pattaya&rsquo;s street dogs",
@@ -365,7 +373,7 @@ pages.push(hazard({
 /* ---------------- POISONING ---------------- */
 pages.push(hazard({
   slug: "poisoning", crumb: "Poisoning",
-  title: "Pet poisoning in Pattaya — common hazards & what to do | PattayaPets",
+  title: "Pet poisoning in Pattaya | PattayaPets",
   desc: "Common poisoning hazards for pets in Pattaya homes and streets, the " +
     "warning signs, and what to do if you suspect your pet has been poisoned.",
   h1: "Pet poisoning &mdash; hazards and what to do",

@@ -12,7 +12,7 @@ const pages = [];
 /* ---- HUB ---- */
 pages.push(hub({
   path: "/adopt-a-pet-pattaya/",
-  title: "Adopt a pet in Pattaya — shelters & rescue organisations | PattayaPets",
+  title: "Adopt a pet in Pattaya | PattayaPets",
   desc: "How to adopt a dog or cat in Pattaya: how adoption works, what to " +
     "expect, and the shelters and rescue organisations in and around the city.",
   crumb: "Adopt a pet in Pattaya",
@@ -27,14 +27,14 @@ pages.push(hub({
     "populations, and Pattaya is no exception. The organisations below rescue, " +
     "treat, sterilise and rehome animals &mdash; and they are almost always " +
     "looking for adopters, fosters, volunteers and donors.</p>" +
-    "<h3>How adoption usually works</h3>" +
+    "<h2>How adoption usually works</h2>" +
     "<p>Most shelters follow a similar path: you meet the animals, talk to the " +
     "team about what suits your home and lifestyle, and there is often a home " +
     "check or an adoption agreement. Reputable rescues rehome animals already " +
     "<strong>vaccinated and sterilised</strong>, and will be honest with you " +
     "about an animal&rsquo;s health and temperament. Expect questions &mdash; a " +
     "good shelter cares where its animals end up.</p>" +
-    "<h3>If you cannot adopt</h3>" +
+    "<h2>If you cannot adopt</h2>" +
     "<p>Fostering, volunteering, donating, or sponsoring an animal all genuinely " +
     "help &mdash; and if you are leaving Thailand, some organisations can " +
     "support adopters in flying an animal abroad. See also our guide to " +
@@ -55,6 +55,13 @@ pages.push(hub({
         { name: "Pattaya Street Dogs (K9aid)", desc: "A rescue caring for street dogs and feeding temple-dog colonies.", path: "/adopt-a-pet-pattaya/pattaya-street-dogs-k9aid.html" },
         { name: "Soi Dog Foundation", desc: "Thailand's best-known animal-welfare charity, with Pattaya work.", path: "/adopt-a-pet-pattaya/soi-dog-foundation.html" },
         { name: "Malee's Animal Shelter", desc: "A large shelter rescuing dogs and cats across the Pattaya–Chanthaburi area.", path: "/adopt-a-pet-pattaya/malees-animal-shelter.html" }
+      ]
+    },
+    {
+      title: "Helping beyond adoption",
+      cards: [
+        { name: "Fostering a pet", desc: "Give a rescue animal a temporary home while it waits for adoption.", path: "/adopt-a-pet-pattaya/fostering.html" },
+        { name: "How to help street animals", desc: "Donating, volunteering, and what to do for an injured animal.", path: "/adopt-a-pet-pattaya/how-to-help.html" }
       ]
     }
   ]
@@ -171,7 +178,7 @@ const SHELTERS = [
 SHELTERS.forEach(function (s) {
   pages.push(article({
     path: "/adopt-a-pet-pattaya/" + s.slug + ".html",
-    title: s.name + " — Pattaya animal rescue & adoption | PattayaPets",
+    title: s.name + " | PattayaPets",
     desc: s.name + " is a " + s.type.toLowerCase() + " in the Pattaya area. " +
       "How its rescue and adoption work runs, and how to help.",
     crumb: s.crumb,
