@@ -34,6 +34,8 @@ const AREA_GUIDE = {
     "<li><a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">Where and how to walk your dog</a></li>" +
     "<li><a href=\"/dog-friendly-pattaya/beaches.html\">Dog-friendly beaches</a></li>" +
     "<li><a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vets in Pattaya</a></li>" +
+    "<li><a href=\"/mobile-vets/\">Mobile vets</a></li>" +
+    "<li><a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">Getting your pet to the vet</a></li>" +
     "</ul>",
 
   wongamat:
@@ -98,6 +100,8 @@ const AREA_GUIDE = {
     "<li><a href=\"/owning-a-pet-in-pattaya/pet-friendly-housing.html\">Pet-friendly housing in Pattaya</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">Hot-climate pet care</a></li>" +
     "<li><a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vets in Pattaya</a></li>" +
+    "<li><a href=\"/mobile-vets/\">Mobile vets</a></li>" +
+    "<li><a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">Getting your pet to the vet</a></li>" +
     "</ul>",
 
   pratumnak:
@@ -128,7 +132,9 @@ const AREA_GUIDE = {
     "<li><a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">Where and how to walk your dog</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/pet-friendly-housing.html\">Pet-friendly housing in Pattaya</a></li>" +
     "<li><a href=\"/dog-friendly-pattaya/\">Dog-friendly Pattaya</a></li>" +
-    "<li><a href=\"/vets/\">Vets and animal hospitals</a></li>" +
+    "<li><a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vets in Pattaya</a></li>" +
+    "<li><a href=\"/mobile-vets/\">Mobile vets</a></li>" +
+    "<li><a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">Getting your pet to the vet</a></li>" +
     "</ul>",
 
   jomtien:
@@ -248,6 +254,8 @@ const AREA_GUIDE = {
     "<li><a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">Where and how to walk your dog</a></li>" +
     "<li><a href=\"/dogs/choosing-a-dog-for-the-climate.html\">Choosing a dog for the climate</a></li>" +
     "<li><a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vets in Pattaya</a></li>" +
+    "<li><a href=\"/mobile-vets/\">Mobile vets</a></li>" +
+    "<li><a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">Getting your pet to the vet</a></li>" +
     "</ul>"
 
 };

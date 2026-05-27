@@ -149,6 +149,9 @@ pages.push({
     card("/adopt-a-pet-pattaya/how-to-help.html", "Adoption", "How to help street animals",
       "Donate, volunteer, foster and what to do for an injured animal.",
       "Open the guide") +
+    card("/take-pet-out-of-thailand/export-process.html", "Export", "The export process",
+      "Thai DLD health certificate, export permit and the airport steps on the way out.",
+      "Open the guide") +
     card("/mobile-vets/", "At home", "Mobile & home-visit vets",
       "Vets who come to you &mdash; useful for nervous pets and multi-cat homes.",
       "View mobile vets") +

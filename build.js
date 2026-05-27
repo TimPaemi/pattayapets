@@ -321,7 +321,20 @@ async function build() {
     "/pet-health-pattaya/parvovirus.html": "parvovirus puppy vaccination deadly virus",
     "/pet-health-pattaya/tick-borne-disease.html": "tick disease ehrlichia babesia anaplasmosis",
     "/owning-a-pet-in-pattaya/rainy-season-pet-care.html": "rainy season monsoon humidity skin ear flood",
-    "/owning-a-pet-in-pattaya/microchipping-your-pet.html": "microchip ISO lost pet registration import export"
+    "/owning-a-pet-in-pattaya/microchipping-your-pet.html": "microchip ISO lost pet registration import export",
+    "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html": "import pet cost budget flight quarantine agent",
+    "/bring-pet-to-thailand/health-certificate.html": "health certificate vet export import fit to fly",
+    "/bring-pet-to-thailand/microchip-requirements.html": "ISO microchip 15 digit import export Thailand",
+    "/pet-emergency/road-accident.html": "hit by car vehicle injured pet transport vet",
+    "/pet-emergency/street-dog-encounters.html": "soi dog loose dog walk leash Pattaya",
+    "/pet-emergency/snake-bites.html": "snake bite venom Thailand cobra viper emergency",
+    "/owning-a-pet-in-pattaya/dog-registration-thailand.html": "dog registration rabies law Thailand license",
+    "/cats/cat-boarding-pattaya.html": "cat boarding cattery sitter travel Pattaya",
+    "/dogs/puppy-care-pattaya.html": "puppy vaccination socialise training heat Pattaya",
+    "/area/jomtien.html": "Jomtien pet owner beach dog walk vet",
+    "/area/naklua.html": "Naklua pet owner north Pattaya vet walk",
+    "/area/central-pattaya.html": "Central Pattaya pet owner condo vet emergency",
+    "/take-pet-out-of-thailand/to-usa.html": "export pet USA CDC dog import Thailand"
   };
 
   const searchIndex = indexable.map(function (p) {

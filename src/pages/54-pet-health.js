@@ -71,7 +71,8 @@ pages.push(hub({
         { name: "Skin & ear problems", desc: "Why heat and humidity make these so common, and what helps.", path: "/pet-health-pattaya/skin-and-ear-problems.html" },
         { name: "Spaying & neutering", desc: "The benefits, the timing, and the welfare case in a city with many street animals.", path: "/pet-health-pattaya/spaying-and-neutering.html" },
         { name: "Dental care", desc: "Why dental disease is so common, the signs, and home and professional care.", path: "/pet-health-pattaya/dental-care.html" },
-        { name: "Healthy weight", desc: "Why a healthy weight matters even more in the heat, and how to manage it.", path: "/pet-health-pattaya/healthy-weight.html" }
+        { name: "Healthy weight", desc: "Why a healthy weight matters even more in the heat, and how to manage it.", path: "/pet-health-pattaya/healthy-weight.html" },
+        { name: "Rainy-season pet care", desc: "Humidity, damp coats and skin flare-ups in monsoon season.", path: "/owning-a-pet-in-pattaya/rainy-season-pet-care.html" }
       ]
     },
     {

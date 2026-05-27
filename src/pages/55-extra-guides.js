@@ -152,8 +152,8 @@ pages.push(article({
   related: [
     { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Shelters and rescue organisations." },
     { name: "Helping street animals", path: "/adopt-a-pet-pattaya/how-to-help.html", desc: "More ways to make a difference." },
-    { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "Tackling the root of the problem." },
-    { name: "Vets in Pattaya", path: "/vets/", desc: "Clinics that work with rescue fosters." }
+    { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Essential once a foster pet is in your care." },
+    { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "Tackling the root of the problem." }
   ]
 }));
 
@@ -222,6 +222,7 @@ pages.push(article({
   related: [
     { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Shelters and rescue organisations." },
     { name: "Fostering a pet", path: "/adopt-a-pet-pattaya/fostering.html", desc: "Give a rescue animal a temporary home." },
+    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "For injured street animals." },
     { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "Approaching injured or loose animals safely." },
     { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "The lasting fix for the street-animal problem." }
   ]

@@ -34,6 +34,7 @@ const CAT_GUIDES = {
   groomers: [
     { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html" },
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html" },
+    { name: "Rainy-season pet care", path: "/owning-a-pet-in-pattaya/rainy-season-pet-care.html" },
     { name: "Cat boarding & sitters", path: "/cats/cat-boarding-pattaya.html" }
   ],
   boarding: [
@@ -57,13 +58,14 @@ const CAT_GUIDES = {
   trainers: [
     { name: "Puppy care in Pattaya", path: "/dogs/puppy-care-pattaya.html" },
     { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html" },
-    { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html" }
+    { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html" },
+    { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/" }
   ],
   "pet-relocation": [
     { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/" },
     { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/" },
-    { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html" },
-    { name: "U-Tapao or Bangkok?", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html" }
+    { name: "DLD import permit", path: "/bring-pet-to-thailand/import-permit-thailand-dld.html" },
+    { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html" }
   ]
 };
 
