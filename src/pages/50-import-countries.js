@@ -518,9 +518,11 @@ pages.push(article({
      "<p>For almost every owner, Bangkok's Suvarnabhumi &mdash; it has the established pet-import process and far more flight choice. Treat a direct U-Tapao arrival as something to verify carefully with the DLD and airline, not to assume.</p>"]
   ],
   related: [
+    { name: "Import checklist", path: "/bring-pet-to-thailand/checklist.html", desc: "Printable step-by-step checklist." },
     { name: "Arriving at Suvarnabhumi", path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html", desc: "The quarantine-station check on landing." },
     { name: "Pet quarantine in Thailand", path: "/bring-pet-to-thailand/thailand-pet-quarantine.html", desc: "What the AQS check really means." },
     { name: "The full process", path: "/bring-pet-to-thailand/", desc: "Every step, in order." },
+    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "When you leave Thailand again." },
     { name: "What it costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html", desc: "Budget for the whole move." }
   ]
 }));
@@ -553,7 +555,9 @@ pages.push(country({
       "period for re-entry. If you might return to India with your pet, plan the " +
       "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies titer test</a> " +
       "before or soon after arrival in Thailand, and verify current AQCS import " +
-      "rules with plenty of lead time.</p>" }
+      "rules with plenty of lead time. See our guide to " +
+      "<a href=\"/take-pet-out-of-thailand/to-india.html\">exporting a pet to India</a> " +
+      "for the full return paperwork.</p>" }
   ],
   faqs: [
     ["Does Thailand require extra steps for a pet from India?",
@@ -627,10 +631,9 @@ pages.push(country({
       "including rabies controls and advance notification. If you might return to " +
       "China with your pet, research the current import rules before you leave and " +
       "plan the <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">" +
-      "rabies titer test</a> with plenty of lead time. There is no dedicated " +
-      "export-to-China guide on PattayaPets yet &mdash; start with the " +
-      "<a href=\"/take-pet-out-of-thailand/\">export hub</a> and confirm with " +
-      "Chinese customs and your airline.</p>" }
+      "rabies titer test</a> with plenty of lead time. See our guide to " +
+      "<a href=\"/take-pet-out-of-thailand/to-china.html\">exporting a pet to China</a> " +
+      "for the full return paperwork.</p>" }
   ],
   faqs: [
     ["Does Thailand treat China differently for pet import?",
@@ -670,9 +673,8 @@ pages.push(country({
       "at Suvarnabhumi</a> and " +
       "<a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok?</a>.</p>" +
       "<p>If you may return to South Africa, verify current DALRRD re-entry rules " +
-      "with plenty of lead time &mdash; there is no dedicated export-to-South-Africa " +
-      "guide on PattayaPets yet; start with the " +
-      "<a href=\"/take-pet-out-of-thailand/\">export hub</a>.</p>" }
+      "with plenty of lead time &mdash; see our guide to " +
+      "<a href=\"/take-pet-out-of-thailand/to-south-africa.html\">exporting a pet to South Africa</a>.</p>" }
   ],
   faqs: [
     ["Is South Africa treated as rabies-free by Thailand?",

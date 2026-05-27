@@ -63,6 +63,7 @@ pages.push(hub({
   path: "/take-pet-out-of-thailand/",
   title: "Taking your pet out of Thailand | PattayaPets",
   image: "/assets/img/og-export.png",
+  updated: "2026-05-28",
   desc: "How to export a dog or cat from Thailand: the DLD export process, plus " +
     "destination notes for the UK, USA, EU and Australia.",
   crumb: "Taking a pet out of Thailand",
@@ -123,7 +124,11 @@ pages.push(hub({
         { name: "To Switzerland", desc: "EU-aligned rules: titer test and a waiting period.", path: "/take-pet-out-of-thailand/to-switzerland.html" },
         { name: "To Canada", desc: "One of the simpler routes — no titer test or quarantine.", path: "/take-pet-out-of-thailand/to-canada.html" },
         { name: "To Russia", desc: "A relatively straightforward route for a large community.", path: "/take-pet-out-of-thailand/to-russia.html" },
-        { name: "To New Zealand", desc: "A long, strict route that needs early planning with MPI.", path: "/take-pet-out-of-thailand/to-new-zealand.html" }
+        { name: "To New Zealand", desc: "A long, strict route that needs early planning with MPI.", path: "/take-pet-out-of-thailand/to-new-zealand.html" },
+        { name: "To India", desc: "AQCS import clearance and planning from Pattaya.", path: "/take-pet-out-of-thailand/to-india.html" },
+        { name: "To the Philippines", desc: "BAI import paperwork and direct flights to Manila.", path: "/take-pet-out-of-thailand/to-philippines.html" },
+        { name: "To China", desc: "Customs import clearance and quarantine on arrival.", path: "/take-pet-out-of-thailand/to-china.html" },
+        { name: "To South Africa", desc: "DALRRD import permit and routing from Bangkok.", path: "/take-pet-out-of-thailand/to-south-africa.html" }
       ]
     }
   ],

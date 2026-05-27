@@ -44,6 +44,10 @@ module.exports = [{
     '<a class="chip chip-link" href="/area/naklua.html">Naklua area</a>' +
     '<a class="chip chip-link" href="/area/central-pattaya.html">Central Pattaya</a>' +
     '<a class="chip chip-link" href="/area/wongamat.html">Wongamat area</a>' +
+    '<a class="chip chip-link" href="/area/pratumnak.html">Pratumnak area</a>' +
+    '<a class="chip chip-link" href="/area/bang-saray.html">Bang Saray area</a>' +
+    '<a class="chip chip-link" href="/area/sattahip.html">Sattahip area</a>' +
+    '<a class="chip chip-link" href="/area/banglamung.html">Banglamung area</a>' +
     '<a class="chip chip-link" href="/guides.html">All guides</a>' +
     '<a class="chip chip-link" href="/sitemap.html">Full sitemap</a>' +
     '</div></div>' +
@@ -57,8 +61,13 @@ module.exports = [{
     '<a href="/bring-pet-to-thailand/from-uae.html">Import from UAE</a> &middot; ' +
     '<a href="/bring-pet-to-thailand/from-india.html">Import from India</a> &middot; ' +
     '<a href="/bring-pet-to-thailand/from-china.html">Import from China</a> &middot; ' +
-    '<a href="/bring-pet-to-thailand/checklist.html">Import checklist</a> &middot; ' +
-    '<a href="/adopt-a-pet-pattaya/fostering.html">Fostering</a> &middot; ' +
+    '<a href="/bring-pet-to-thailand/from-south-africa.html">Import from South Africa</a> &middot; ' +
+    '<a href="/take-pet-out-of-thailand/to-india.html">Export to India</a> &middot; ' +
+    '<a href="/take-pet-out-of-thailand/to-china.html">Export to China</a> &middot; ' +
+    '<a href="/take-pet-out-of-thailand/to-japan.html">Export to Japan</a> &middot; ' +
+    '<a href="/pet-emergency/heatstroke.html">Heatstroke</a> &middot; ' +
+    '<a href="/pet-emergency/choking.html">Choking</a> &middot; ' +
+    '<a href="/pet-health-pattaya/heartworm.html">Heartworm</a> &middot; ' +
     '<a href="/adopt-a-pet-pattaya/how-to-help.html">How to help</a> &middot; ' +
     '<a href="/adopt-a-pet-pattaya/animal-army-foundation.html">Animal Army</a> &middot; ' +
     '<a href="/adopt-a-pet-pattaya/soi-dog-foundation.html">Soi Dog</a> &middot; ' +

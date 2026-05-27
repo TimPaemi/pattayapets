@@ -80,6 +80,7 @@ function exp(o) {
     title: o.title, desc: o.desc, crumb: o.crumb, breadcrumbs: SUB,
     eyebrow: "Taking a pet out of Thailand &middot; By destination",
     h1: o.h1, lede: o.lede, verify: VERIFY,
+    updated: "2026-05-28",
     sections: sections, faqs: o.faqs, related: o.related || expRelated(o.slug)
   });
 }
@@ -528,6 +529,143 @@ pages.push(exp({
     { name: "Import from the UAE", path: "/bring-pet-to-thailand/from-uae.html", desc: "The reverse journey — MOCCAE export and Thai import steps." },
     { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
     { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage export." }
+  ]
+}));
+
+/* ---------------- INDIA ---------------- */
+pages.push(exp({
+  slug: "to-india", crumb: "To India",
+  title: "Taking a pet from Thailand to India | PattayaPets",
+  desc: "Bringing a dog or cat from Thailand to India: AQCS import requirements, " +
+    "the Thai DLD export steps, and what to plan before you leave Pattaya.",
+  h1: "Taking a pet from Thailand to India",
+  lede: "India treats most foreign origins as requiring formal import clearance " +
+    "through AQCS. The Thai export side is standard; the Indian import permit and " +
+    "endorsement set your timeline.",
+  sections: [
+    { h: "Entering India from Thailand", html:
+      "<p>Pet import into India is handled through the <strong>Animal Quarantine and " +
+      "Certification Services (AQCS)</strong>, under the Department of Animal Husbandry " +
+      "and Dairying. Typically you need advance import clearance, an ISO microchip, a " +
+      "valid rabies vaccination, a veterinary health certificate from Thailand and " +
+      "compliance with any AQCS conditions for your arrival airport and state. " +
+      "Procedures vary by city &mdash; confirm the current detail with AQCS and an " +
+      "experienced import vet before you book.</p>" },
+    { h: "The Thai side and routing", html:
+      THAI_SIDE +
+      "<p>Direct Bangkok&ndash;India flights exist but many routes stop in the Gulf or " +
+      "elsewhere, which affects airline pet policies and journey time. See " +
+      "<a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline pet policies</a> " +
+      "early.</p>" +
+      "<p>If you came from India originally, see our guide to " +
+      "<a href=\"/bring-pet-to-thailand/from-india.html\">bringing a pet from India</a>.</p>" }
+  ],
+  faqs: [
+    ["Does India require a rabies titer test for a pet from Thailand?",
+     "<p>India's rules depend on the country of export and current AQCS policy. Thailand is not treated as rabies-free. Confirm the current requirements with AQCS and your vet rather than assuming.</p>"],
+    ["Which authority handles pet import into India?",
+     "<p>AQCS (Animal Quarantine and Certification Services) oversees import clearance for live animals. Your import vet and the AQCS office for your arrival airport will guide the current process.</p>"]
+  ]
+}));
+
+/* ---------------- PHILIPPINES ---------------- */
+pages.push(exp({
+  slug: "to-philippines", crumb: "To the Philippines",
+  title: "Taking a pet from Thailand to the Philippines | PattayaPets",
+  desc: "Bringing a dog or cat from Thailand to the Philippines: BAI import " +
+    "paperwork, the Thai DLD export steps, and direct flights to Manila.",
+  h1: "Taking a pet from Thailand to the Philippines",
+  lede: "Manila is a common destination for Pattaya expats returning home. The " +
+    "Philippine side runs through the Bureau of Animal Industry (BAI); the Thai " +
+    "export process still has to be completed first.",
+  sections: [
+    { h: "Entering the Philippines from Thailand", html:
+      "<p>The <strong>Bureau of Animal Industry (BAI)</strong> oversees pet import. " +
+      "Typically you need an import permit or Sanitary and Phytosanitary Import " +
+      "Clearance, an ISO microchip, a valid rabies vaccination, a veterinary health " +
+      "certificate endorsed for export from Thailand and compliance with BAI's " +
+      "current entry rules. Confirm every requirement with BAI and a BAI-accredited " +
+      "import veterinarian before you fix a travel date.</p>" },
+    { h: "The Thai side", html:
+      THAI_SIDE +
+      "<p>Flights from Bangkok to Manila are relatively straightforward compared with " +
+      "long-haul routes. Still confirm cabin, checked-baggage and cargo options with " +
+      "your airline.</p>" +
+      "<p>If you came from the Philippines originally, see " +
+      "<a href=\"/bring-pet-to-thailand/from-philippines.html\">bringing a pet from the Philippines</a>.</p>" }
+  ],
+  faqs: [
+    ["Does the Philippines require a rabies titer test from Thailand?",
+     "<p>BAI's current rules should be confirmed directly. Thailand is not treated as rabies-free. Your BAI-accredited vet will guide whether additional tests apply.</p>"],
+    ["Who issues the Philippine import permit?",
+     "<p>The Bureau of Animal Industry (BAI) oversees import certification. Apply through BAI's current process with plenty of lead time before travel.</p>"]
+  ]
+}));
+
+/* ---------------- CHINA ---------------- */
+pages.push(exp({
+  slug: "to-china", crumb: "To China",
+  title: "Taking a pet from Thailand to China | PattayaPets",
+  desc: "Bringing a dog or cat from Thailand to China: customs import clearance, " +
+    "quarantine rules, and the Thai DLD export steps.",
+  h1: "Taking a pet from Thailand to China",
+  lede: "China's pet import process is formal and city-specific. The Thai export " +
+    "side is manageable; the Chinese import permit, quarantine and customs steps " +
+    "need early planning with an experienced agent or vet.",
+  sections: [
+    { h: "Entering China from Thailand", html:
+      "<p>Pet import into China is handled through <strong>customs and animal " +
+      "quarantine authorities</strong> at the port of entry. Typically you need advance " +
+      "import approval, an ISO microchip, a valid rabies vaccination, a veterinary " +
+      "health certificate from Thailand and compliance with quarantine inspection on " +
+      "arrival. Rules differ by city and airport &mdash; confirm the current process " +
+      "for your destination with Chinese customs, the quarantine bureau and an " +
+      "experienced import specialist before you book.</p>" },
+    { h: "The Thai side and re-entry planning", html:
+      THAI_SIDE +
+      "<p>If you might return to Thailand later, keep vaccination records and " +
+      "microchip details current. If you came from China originally, see " +
+      "<a href=\"/bring-pet-to-thailand/from-china.html\">bringing a pet from China</a>.</p>" }
+  ],
+  faqs: [
+    ["Is pet import into China complicated?",
+     "<p>It is formal rather than casual. Import approval, health certification and quarantine inspection all apply, and procedures vary by city. An experienced agent or import vet makes the difference.</p>"],
+    ["Which Chinese authority handles pet import?",
+     "<p>Customs and the local animal quarantine inspection service at your port of entry. Confirm the current process for your destination city and airport before you travel.</p>"]
+  ]
+}));
+
+/* ---------------- SOUTH AFRICA ---------------- */
+pages.push(exp({
+  slug: "to-south-africa", crumb: "To South Africa",
+  title: "Taking a pet from Thailand to South Africa | PattayaPets",
+  desc: "Bringing a dog or cat from Thailand to South Africa: DALRRD import " +
+    "requirements, flight routing, and the Thai DLD export steps.",
+  h1: "Taking a pet from Thailand to South Africa",
+  lede: "South Africa classifies origin countries carefully for rabies control. " +
+    "The Thai export process is standard; the South African veterinary import " +
+    "permit and any additional tests set your timeline.",
+  sections: [
+    { h: "Entering South Africa from Thailand", html:
+      "<p>Pet import is overseen by the <strong>Department of Agriculture, Land Reform " +
+      "and Rural Development (DALRRD)</strong>. Typically you need a veterinary import " +
+      "permit, an ISO microchip, a valid rabies vaccination, a health certificate " +
+      "from Thailand and compliance with any additional requirements for pets arriving " +
+      "from Thailand's rabies status. Confirm the current detail with DALRRD and an " +
+      "experienced import veterinarian with plenty of lead time.</p>" },
+    { h: "The Thai side and routing", html:
+      THAI_SIDE +
+      "<p>Most routes from Bangkok to South Africa involve at least one stop, which " +
+      "affects airline pet policies and total journey time. Plan crate comfort and " +
+      "layover rules with your agent or airline.</p>" +
+      "<p>If you came from South Africa originally, see " +
+      "<a href=\"/bring-pet-to-thailand/from-south-africa.html\">bringing a pet from South Africa</a>.</p>" }
+  ],
+  faqs: [
+    ["Does South Africa require a rabies titer test from Thailand?",
+     "<p>South Africa's rules depend on how Thailand is classified and the current DALRRD policy. Confirm with DALRRD and your import vet rather than assuming.</p>"],
+    ["Who issues the South African import permit?",
+     "<p>DALRRD oversees veterinary import permits for live animals. Apply through the official process with plenty of lead time before your travel date.</p>"]
   ]
 }));
 

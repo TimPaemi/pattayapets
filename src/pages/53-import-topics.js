@@ -107,9 +107,11 @@ pages.push(article({
   ],
   related: [
     { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html", desc: "Which carriers allow flat-faced breeds." },
+    { name: "Import checklist", path: "/bring-pet-to-thailand/checklist.html", desc: "The full step-by-step plan." },
+    { name: "Pet quarantine", path: "/bring-pet-to-thailand/thailand-pet-quarantine.html", desc: "What happens on arrival." },
+    { name: "What import costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html", desc: "Budgeting the move." },
     { name: "Choosing a dog for the climate", path: "/dogs/choosing-a-dog-for-the-climate.html", desc: "Why brachycephalic breeds struggle in the heat." },
-    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists experienced with restricted breeds." },
-    { name: "DLD import permit", path: "/bring-pet-to-thailand/import-permit-thailand-dld.html", desc: "The Thai-side permit before you fly in." }
+    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists experienced with restricted breeds." }
   ]
 }));
 
@@ -187,8 +189,9 @@ pages.push(article({
   related: [
     { name: "Arriving at Suvarnabhumi", path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html", desc: "What the AQS check looks like on landing." },
     { name: "DLD import permit", path: "/bring-pet-to-thailand/import-permit-thailand-dld.html", desc: "The permit that must be in place before you fly." },
+    { name: "Import checklist", path: "/bring-pet-to-thailand/checklist.html", desc: "Printable step-by-step checklist." },
+    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side when you leave." },
     { name: "Microchip requirements", path: "/bring-pet-to-thailand/microchip-requirements.html", desc: "Why the chip must come before the rabies jab." },
-    { name: "U-Tapao or Bangkok?", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html", desc: "Which airport your pet will clear through." },
     { name: "What import costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html", desc: "Budgeting the whole move." }
   ]
 }));
@@ -263,9 +266,10 @@ pages.push(article({
   ],
   related: [
     { name: "The full process", path: "/bring-pet-to-thailand/", desc: "Every step with full detail." },
+    { name: "Snub-nosed breeds & flying", path: "/bring-pet-to-thailand/snub-nosed-breeds-flying.html", desc: "Airline restrictions for flat-faced pets." },
+    { name: "Pet quarantine", path: "/bring-pet-to-thailand/thailand-pet-quarantine.html", desc: "What happens at the AQS on arrival." },
+    { name: "U-Tapao or Bangkok?", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html", desc: "Which airport to fly into for Pattaya." },
     { name: "DLD import permit", path: "/bring-pet-to-thailand/import-permit-thailand-dld.html", desc: "The Thai-side permit." },
-    { name: "What import costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html", desc: "Budgeting the move." },
-    { name: "Arriving in Thailand", path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html", desc: "The AQS check on landing." },
     { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who handle paperwork and flights." }
   ]
 }));

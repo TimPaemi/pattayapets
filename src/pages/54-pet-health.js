@@ -39,7 +39,8 @@ const pages = [];
 pages.push(hub({
   path: "/pet-health-pattaya/",
   title: "Pet health in Pattaya: a tropical guide | PattayaPets",
-  image: "/assets/img/og-guides.png",
+  image: "/assets/img/og-health.png",
+  updated: "2026-05-28",
   desc: "Orientation to the pet health issues a hot, humid, parasite-rich climate " +
     "makes common in Pattaya: heartworm, tick disease, skin and ear problems and more.",
   crumb: "Pet health",
@@ -93,9 +94,10 @@ pages.push(hub({
   ],
   related: [
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "When prevention is not enough." },
+    { name: "Heartworm", path: "/pet-health-pattaya/heartworm.html", desc: "Year-round prevention in Pattaya." },
+    { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html", desc: "Humidity-driven flare-ups." },
+    { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "Routine surgery and welfare." },
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Keeping a pet safe in Pattaya's heat." },
-    { name: "Tick-borne disease", path: "/pet-health-pattaya/tick-borne-disease.html", desc: "What ticks can transmit in the tropics." },
-    { name: "Parvovirus", path: "/pet-health-pattaya/parvovirus.html", desc: "A deadly, preventable puppy disease." },
     { name: "Pet emergencies", path: "/pet-emergency/", desc: "24-hour vets and first-aid orientation." }
   ]
 }));

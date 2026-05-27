@@ -238,13 +238,41 @@ const AREA_MISSING_HINTS = {
     vets: "<a href=\"/vets/animal-army-hospital.html\">Animal Army Hospital</a> (Na Jomtien) " +
       "or <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour hospitals</a> in " +
       "central Pattaya",
+    groomers: "<a href=\"/groomers/woof-pattaya.html\">Woof Pattaya</a> (Nong Prue) or " +
+      "the <a href=\"/groomers/\">groomers directory</a>",
+    boarding: "<a href=\"/boarding/pattaya-dog-hotel.html\">Pattaya Dog Hotel</a> (Bang Saray) or " +
+      "the <a href=\"/boarding/\">boarding directory</a>",
+    trainers: "<a href=\"/trainers/k9-coach.html\">K9 Coach</a> (Bang Saray) or " +
+      "the <a href=\"/trainers/\">trainers directory</a>",
+    "mobile-vets": "<a href=\"/mobile-vets/mor-ja-pet-clinic-pattaya.html\">Mor Ja Pet Clinic</a> " +
+      "(confirm coverage) or the <a href=\"/mobile-vets/\">mobile vets directory</a>",
     "pet-shops": "<a href=\"/pet-shops/tong-ma-aquarium-and-pets-shop.html\">Tong-ma</a> " +
       "or <a href=\"/pet-shops/petsmart-pattaya.html\">PetSmart</a> (Thep Prasit, Jomtien)"
   },
   sattahip: {
     vets: "<a href=\"/vets/animal-army-hospital.html\">Animal Army Hospital</a> (Na Jomtien)",
-    groomers: "<a href=\"/groomers/\">Groomers across Pattaya</a> — mostly central and east",
+    groomers: "<a href=\"/groomers/woof-pattaya.html\">Woof Pattaya</a> (Nong Prue) or " +
+      "the <a href=\"/groomers/\">groomers directory</a>",
+    boarding: "<a href=\"/boarding/pattaya-dog-hotel.html\">Pattaya Dog Hotel</a> (Bang Saray / Sattahip) or " +
+      "the <a href=\"/boarding/\">boarding directory</a>",
+    trainers: "<a href=\"/trainers/k9-pattaya-dog-training-school.html\">K9 Pattaya</a> (Sattahip) or " +
+      "the <a href=\"/trainers/\">trainers directory</a>",
+    "mobile-vets": "<a href=\"/mobile-vets/\">Mobile vets</a> &mdash; East Pattaya listings",
     "pet-shops": "<a href=\"/pet-shops/\">Pet shops directory</a>"
+  },
+  banglamung: {
+    vets: "<a href=\"/vets/pattaya-community-pet-hospital.html\">Pattaya Community Pet Hospital</a> " +
+      "(Nernplubwan, 24h) or <a href=\"/vets/siam-country-pet-hospital.html\">Siam Country Pet Hospital</a>",
+    groomers: "<a href=\"/groomers/jaijai-grooming.html\">Jaijai Grooming</a> or " +
+      "<a href=\"/groomers/woof-pattaya.html\">Woof Pattaya</a>",
+    boarding: "<a href=\"/boarding/pattaya-dog-stay.html\">Pattaya Dog Stay</a> (central) or " +
+      "the <a href=\"/boarding/\">boarding directory</a>",
+    trainers: "<a href=\"/trainers/zoeta-dogsoul.html\">Zoeta Dogsoul</a> or " +
+      "<a href=\"/trainers/k9-coach.html\">K9 Coach</a> (Bang Saray)",
+    "mobile-vets": "<a href=\"/mobile-vets/mor-ja-pet-clinic-pattaya.html\">Mor Ja Pet Clinic</a> or " +
+      "<a href=\"/mobile-vets/baan-mor-raksasat-animal-hospital-pattaya.html\">Baan Mor Raksasat</a>",
+    "pet-shops": "<a href=\"/pet-shops/pattaya-pet-center.html\">Pattaya Pet Center</a> or " +
+      "the <a href=\"/pet-shops/\">pet shops directory</a>"
   },
   "central-pattaya": {
     trainers: "<a href=\"/trainers/k9-coach.html\">K9 Coach</a> (Bang Saray area) or " +
@@ -424,7 +452,7 @@ function bizSchema(b) {
 
 const pages = [];
 
-const FACTS_UPDATED = "2026-05-28";
+const FACTS_UPDATED = "2026-05-29";
 
 /* ---- business listing pages ---- */
 BUSINESSES.forEach(function (b) {
@@ -595,7 +623,7 @@ Object.keys(CATEGORIES).forEach(function (key) {
     description: clampDesc(cat.intro),
     crumb: cat.name,
     breadcrumbs: [{ name: "Directory", path: "/directory.html" }],
-    updated: "2026-05-28",
+    updated: "2026-05-29",
     body: body
   });
 });
@@ -683,7 +711,7 @@ Object.keys(AREAS).forEach(function (key) {
       ", Pattaya. " + area.blurb,
     crumb: area.name,
     breadcrumbs: [{ name: "Directory", path: "/directory.html" }],
-    updated: "2026-05-28",
+    updated: "2026-05-29",
     body: body
   });
 });

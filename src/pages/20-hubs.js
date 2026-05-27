@@ -242,6 +242,30 @@ pages.push({
     card("/bring-pet-to-thailand/from-south-africa.html", "Import", "Import from South Africa",
       "DAFF export certificate and planning from Africa.",
       "Open the guide") +
+    card("/take-pet-out-of-thailand/to-india.html", "Export", "Export to India",
+      "AQCS import clearance when you leave Pattaya.",
+      "Open the guide") +
+    card("/take-pet-out-of-thailand/to-philippines.html", "Export", "Export to the Philippines",
+      "BAI import paperwork from Thailand.",
+      "Open the guide") +
+    card("/take-pet-out-of-thailand/to-china.html", "Export", "Export to China",
+      "Customs import clearance and quarantine on arrival.",
+      "Open the guide") +
+    card("/take-pet-out-of-thailand/to-south-africa.html", "Export", "Export to South Africa",
+      "DALRRD import permit and routing from Bangkok.",
+      "Open the guide") +
+    card("/pet-emergency/heatstroke.html", "Urgent", "Heatstroke",
+      "Pattaya's number-one preventable pet emergency.",
+      "Open the guide") +
+    card("/pet-emergency/choking.html", "Emergency", "If your pet is choking",
+      "Recognising an airway blockage and acting fast.",
+      "Open the guide") +
+    card("/pet-health-pattaya/heartworm.html", "Health", "Heartworm prevention",
+      "Why year-round prevention matters in Pattaya.",
+      "Open the guide") +
+    card("/pet-health-pattaya/spaying-and-neutering.html", "Health", "Spaying & neutering",
+      "Routine surgery and the welfare case in Pattaya.",
+      "Open the guide") +
     card("/pet-relocation/", "Relocation", "Pet relocation agents",
       "Import and export specialists who handle permits, flights and paperwork.",
       "View agents") +
