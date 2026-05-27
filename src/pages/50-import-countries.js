@@ -33,6 +33,29 @@ const RELATED = [
   { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "The reverse process, for later." }
 ];
 
+const EXPORT_PAIR = {
+  "from-sweden": { slug: "to-sweden", label: "To Sweden (export)" },
+  "from-norway": { slug: "to-norway", label: "To Norway (export)" },
+  "from-denmark": { slug: "to-denmark", label: "To Denmark (export)" },
+  "from-finland": { slug: "to-finland", label: "To Finland (export)" },
+  "from-netherlands": { slug: "to-netherlands", label: "To the Netherlands (export)" },
+  "from-france": { slug: "to-france", label: "To France (export)" },
+  "from-ireland": { slug: "to-ireland", label: "To Ireland (export)" },
+  "from-switzerland": { slug: "to-switzerland", label: "To Switzerland (export)" },
+  "from-new-zealand": { slug: "to-new-zealand", label: "To New Zealand (export)" },
+  "from-japan": { slug: "to-japan", label: "To Japan (export)" },
+  "from-singapore": { slug: "to-singapore", label: "To Singapore (export)" }
+};
+
+function countryRelated(slug) {
+  var pair = EXPORT_PAIR[slug];
+  if (!pair) return RELATED;
+  return [
+    { name: pair.label, path: "/take-pet-out-of-thailand/" + pair.slug + ".html",
+      desc: "The reverse process, for when you leave." }
+  ].concat(RELATED);
+}
+
 const STD_STEPS =
   "Follow the standard steps &mdash; " +
   "<a href=\"/bring-pet-to-thailand/microchip-requirements.html\">microchip</a>, " +
@@ -58,7 +81,7 @@ function country(o) {
     title: o.title, desc: o.desc, crumb: o.crumb, breadcrumbs: SUB,
     eyebrow: "Bringing a pet to Thailand &middot; By country",
     h1: o.h1, lede: o.lede, verify: VERIFY,
-    sections: sections, faqs: o.faqs, related: RELATED
+    sections: sections, faqs: o.faqs, related: o.related || countryRelated(o.slug)
   });
 }
 

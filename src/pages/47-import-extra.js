@@ -32,6 +32,21 @@ const RELATED = [
   { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "The reverse process, for later." }
 ];
 
+const EXPORT_PAIR = {
+  "from-canada": { slug: "to-canada", label: "To Canada (export)" },
+  "from-germany": { slug: "to-germany", label: "To Germany (export)" },
+  "from-russia": { slug: "to-russia", label: "To Russia (export)" }
+};
+
+function countryRelated(slug) {
+  var pair = EXPORT_PAIR[slug];
+  if (!pair) return RELATED;
+  return [
+    { name: pair.label, path: "/take-pet-out-of-thailand/" + pair.slug + ".html",
+      desc: "The reverse process, for when you leave." }
+  ].concat(RELATED);
+}
+
 function country(o) {
   var sections = (o.sections || []).slice();
   sections.push({ h: "Official sources", html: OFFICIAL });
@@ -40,7 +55,7 @@ function country(o) {
     title: o.title, desc: o.desc, crumb: o.crumb, breadcrumbs: SUB,
     eyebrow: "Bringing a pet to Thailand &middot; By country",
     h1: o.h1, lede: o.lede, verify: VERIFY,
-    sections: sections, faqs: o.faqs, related: RELATED
+    sections: sections, faqs: o.faqs, related: o.related || countryRelated(o.slug)
   });
 }
 

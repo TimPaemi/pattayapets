@@ -126,6 +126,12 @@ pages.push(hub({
         { name: "Pet first aid", desc: "The calm basics if your cat is hurt or unwell.", path: "/pet-emergency/pet-first-aid.html" }
       ]
     }
+  ],
+  related: [
+    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Heartworm, parasites and tropical health." },
+    { name: "Pet emergencies", path: "/pet-emergency/", desc: "24-hour vets and urgent hazards." },
+    { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Shelters and rescue organisations." },
+    { name: "Bring a pet to Thailand", path: "/bring-pet-to-thailand/", desc: "The full import process for a cat." }
   ]
 }));
 
@@ -186,6 +192,12 @@ pages.push(hub({
         { name: "Pet emergencies", desc: "24-hour vets, heatstroke, snakes and more.", path: "/pet-emergency/" }
       ]
     }
+  ],
+  related: [
+    { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Beaches, cafes and places to walk." },
+    { name: "Pet emergencies", path: "/pet-emergency/", desc: "24-hour vets and urgent hazards." },
+    { name: "Dog trainers", path: "/trainers/", desc: "Obedience and behaviour help." },
+    { name: "Bring a pet to Thailand", path: "/bring-pet-to-thailand/", desc: "The full import process for a dog." }
   ]
 }));
 

@@ -25,6 +25,7 @@ module.exports = [
       '<li><a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in ' +
       "Pattaya</a></li>" +
       '<li><a href="/sitemap.html">The full sitemap</a></li>' +
+      '<li><a href="/search.html">Search the site</a></li>' +
       "</ul></div></div></section>"
   },
   {
@@ -44,9 +45,9 @@ module.exports = [
       "<p>Pages you have already visited may still open from your device. Once you " +
       "are back online, everything will work normally again.</p>" +
       '<div class="callout callout-emergency"><div class="ch">In a pet emergency</div>' +
-      "<p>If your pet needs urgent help and you cannot get online, call a 24-hour " +
-      "animal hospital directly. It is worth saving your nearest one in your phone " +
-      "now, before you need it.</p></div>" +
+      "<p>If your pet needs urgent help and you cannot get online, call a " +
+      '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour animal hospital</a> ' +
+      "directly. It is worth saving your nearest one in your phone now, before you need it.</p></div>" +
       "</div></div></section>"
   }
 ];

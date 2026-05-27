@@ -21,6 +21,12 @@ module.exports = [{
     '<input type="search" id="pp-q" autocomplete="off" ' +
     'placeholder="Try &ldquo;24 hour vet&rdquo;, &ldquo;Jomtien&rdquo;, &ldquo;bring dog from UK&rdquo;"></div>' +
     '<div id="pp-filters" class="search-filters" aria-label="Filter by section"></div>' +
+    '<p class="notice" style="margin-top:1rem">Popular: ' +
+    '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vet</a> &middot; ' +
+    '<a href="/bring-pet-to-thailand/from-uk.html">Bring pet from UK</a> &middot; ' +
+    '<a href="/take-pet-out-of-thailand/to-uk.html">Export to UK</a> &middot; ' +
+    '<a href="/area/jomtien.html">Jomtien</a> &middot; ' +
+    '<a href="/dog-friendly-pattaya/beaches.html">Dog-friendly beach</a></p>' +
     '<div id="pp-results" class="search-results">' +
     '<noscript><p class="notice">Search needs JavaScript enabled. You can browse ' +
     'the <a href="/start-here.html">start-here guide</a>, the ' +

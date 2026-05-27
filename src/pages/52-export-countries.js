@@ -49,6 +49,32 @@ const RELATED = [
   { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage export." }
 ];
 
+const IMPORT_PAIR = {
+  "to-germany": { slug: "from-germany", label: "From Germany (import)" },
+  "to-sweden": { slug: "from-sweden", label: "From Sweden (import)" },
+  "to-norway": { slug: "from-norway", label: "From Norway (import)" },
+  "to-denmark": { slug: "from-denmark", label: "From Denmark (import)" },
+  "to-finland": { slug: "from-finland", label: "From Finland (import)" },
+  "to-netherlands": { slug: "from-netherlands", label: "From the Netherlands (import)" },
+  "to-france": { slug: "from-france", label: "From France (import)" },
+  "to-ireland": { slug: "from-ireland", label: "From Ireland (import)" },
+  "to-switzerland": { slug: "from-switzerland", label: "From Switzerland (import)" },
+  "to-canada": { slug: "from-canada", label: "From Canada (import)" },
+  "to-russia": { slug: "from-russia", label: "From Russia (import)" },
+  "to-new-zealand": { slug: "from-new-zealand", label: "From New Zealand (import)" },
+  "to-japan": { slug: "from-japan", label: "From Japan (import)" },
+  "to-singapore": { slug: "from-singapore", label: "From Singapore (import)" }
+};
+
+function expRelated(slug) {
+  var pair = IMPORT_PAIR[slug];
+  if (!pair) return RELATED;
+  return [
+    { name: pair.label, path: "/bring-pet-to-thailand/" + pair.slug + ".html",
+      desc: "The easier direction, and why the return is harder." }
+  ].concat(RELATED);
+}
+
 const EU_ENTRY =
   "<p>For the EU, Thailand counts as a <strong>non-listed third country</strong>. " +
   "Entry requires an ISO microchip, a current rabies vaccination, a " +
@@ -72,7 +98,7 @@ function exp(o) {
     title: o.title, desc: o.desc, crumb: o.crumb, breadcrumbs: SUB,
     eyebrow: "Taking a pet out of Thailand &middot; By destination",
     h1: o.h1, lede: o.lede, verify: VERIFY,
-    sections: sections, faqs: o.faqs, related: RELATED
+    sections: sections, faqs: o.faqs, related: o.related || expRelated(o.slug)
   });
 }
 

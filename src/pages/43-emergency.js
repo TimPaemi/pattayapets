@@ -204,6 +204,12 @@ pages.push(hazard({
      "<p>A simple kit — a clean carrier, a spare lead, a towel or blanket, and your vet's number — covers most situations. Ask your own vet what else they suggest for your specific pet.</p>"],
     ["Can I give my dog human painkillers?",
      "<p>No. Many common human medicines, including some painkillers, are dangerous or fatal to dogs and cats. Never medicate a pet without a vet's direction.</p>"]
+  ],
+  related: [
+    { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "The most common preventable emergency here." },
+    { name: "Choking", path: "/pet-emergency/choking.html", desc: "Airway blockages and swallowed objects." },
+    { name: "Road accidents", path: "/pet-emergency/road-accident.html", desc: "Moving an injured pet safely." },
+    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Go straight here in an emergency." }
   ]
 }));
 

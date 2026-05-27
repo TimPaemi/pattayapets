@@ -150,6 +150,10 @@ const body =
     '<p>Plain-English guides, each one date-stamped and pointing you to the official ' +
     'source to verify against.</p></div>' +
     '<div class="grid grid-4">' +
+      '<a class="card" href="/start-here.html"><span class="card-tag">New here</span>' +
+        '<h3>Start here</h3><p>A short orientation for new pet owners &mdash; emergency numbers, ' +
+        'finding a vet, the climate and the essentials.</p>' +
+        '<span class="card-meta">Open the page &rarr;</span></a>' +
       '<a class="card" href="/bring-pet-to-thailand/"><span class="card-tag">Flagship guide</span>' +
         '<h3>Bringing a pet to Thailand</h3><p>The full import process &mdash; DLD permit, ' +
         'microchip, rabies and titer test, health certificate, airlines and arrival.</p>' +
@@ -166,6 +170,10 @@ const body =
         '<h3>Dog-friendly Pattaya</h3><p>Beaches, cafes, restaurants, hotels, condos and ' +
         'parks that genuinely welcome dogs.</p>' +
         '<span class="card-meta">Read the guide &rarr;</span></a>' +
+      '<a class="card" href="/pet-emergency/24-hour-vets-pattaya.html"><span class="card-tag">Urgent</span>' +
+        '<h3>24-hour vets in Pattaya</h3><p>Animal hospitals open around the clock &mdash; ' +
+        'addresses and phone numbers.</p>' +
+        '<span class="card-meta">View the list &rarr;</span></a>' +
       '<a class="card" href="/pet-emergency/"><span class="card-tag">Emergency</span>' +
         '<h3>Pet emergencies &amp; hazards</h3><p>24-hour vets, first-aid steps, heatstroke, ' +
         'ticks, snakes and street-dog encounters in a hot climate.</p>' +
@@ -174,6 +182,10 @@ const body =
         '<h3>Owning a pet in Pattaya</h3><p>Costs, hot-climate care, pet-friendly housing ' +
         'and where to walk your dog.</p>' +
         '<span class="card-meta">Read the guide &rarr;</span></a>' +
+      '<a class="card" href="/mobile-vets/"><span class="card-tag">At home</span>' +
+        '<h3>Mobile &amp; home-visit vets</h3><p>Vets who come to you &mdash; useful for nervous pets ' +
+        'and multi-cat homes.</p>' +
+        '<span class="card-meta">View mobile vets &rarr;</span></a>' +
       '<a class="card" href="/adopt-a-pet-pattaya/"><span class="card-tag">Adoption</span>' +
         '<h3>Adopt a pet in Pattaya</h3><p>The shelters and rescue organisations in and ' +
         'around Pattaya, and how adoption works.</p>' +

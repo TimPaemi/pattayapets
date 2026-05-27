@@ -143,6 +143,12 @@ pages.push(health({
      "<p>Because treating an established infection is long, costly and risky for a dog, and for cats there is no equivalent treatment. Prevention is simple and inexpensive by comparison - it is genuinely the whole game.</p>"],
     ["Can indoor cats get heartworm?",
      "<p>Cats can be affected by heartworm, and mosquitoes get indoors. Ask your vet whether heartworm prevention is right for your cat, especially as there is no feline treatment if it takes hold.</p>"]
+  ],
+  related: [
+    { name: "Dog vaccinations & parasites", path: "/dogs/dog-vaccinations-thailand.html", desc: "How prevention fits the wider routine." },
+    { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html", desc: "Year-round parasite prevention." },
+    { name: "Vets in Pattaya", path: "/vets/", desc: "Find a clinic near you." },
+    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Back to the health hub." }
   ]
 }));
 
@@ -196,6 +202,12 @@ pages.push(health({
      "<p>Lethargy, loss of appetite, fever, weakness, pale gums, unusual bruising or bleeding, lameness or weight loss. Any of these, especially after tick exposure, is a reason to see a vet promptly.</p>"],
     ["How do I protect my dog?",
      "<p>Consistent year-round tick prevention on your vet's plan, plus checking your dog for ticks after walks and removing any promptly. Prevention is far more reliable than catching disease early.</p>"]
+  ],
+  related: [
+    { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html", desc: "Year-round prevention in the tropics." },
+    { name: "Dog vaccinations & parasites", path: "/dogs/dog-vaccinations-thailand.html", desc: "Keeping prevention on schedule." },
+    { name: "Common dog health issues", path: "/dogs/common-dog-health-issues-tropics.html", desc: "Other tropical risks for dogs." },
+    { name: "Vets in Pattaya", path: "/vets/", desc: "Find a clinic near you." }
   ]
 }));
 
@@ -251,6 +263,12 @@ pages.push(health({
      "<p>Severe vomiting, profuse and often bloody diarrhoea, deep lethargy, and refusing food and water - coming on fast in a puppy or young dog. It is a dire emergency; get to a vet immediately.</p>"],
     ["Can older dogs get parvovirus?",
      "<p>It mainly affects unvaccinated puppies and young dogs, but keeping every dog's vaccinations current is the protection at any age. Ask your vet about your dog's booster schedule.</p>"]
+  ],
+  related: [
+    { name: "Puppy care in Pattaya", path: "/dogs/puppy-care-pattaya.html", desc: "Vaccination timing for a new puppy." },
+    { name: "Dog vaccinations", path: "/dogs/dog-vaccinations-thailand.html", desc: "The full vaccination and prevention routine." },
+    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Go straight here if you suspect parvo." },
+    { name: "Pet emergencies", path: "/pet-emergency/", desc: "Back to the emergency hub." }
   ]
 }));
 
@@ -308,6 +326,12 @@ pages.push(health({
      "<p>It is best not to guess. Skin and ear problems have several possible causes - parasites, allergies, infection - and the wrong product can worsen things. A vet can identify the cause and treat it properly; early is easier than late.</p>"],
     ["How can I help prevent it?",
      "<p>Dry your pet thoroughly after any soaking, ears and folds included; keep flea and parasite prevention going; check ears and skin regularly; and groom appropriately for the climate.</p>"]
+  ],
+  related: [
+    { name: "Rainy-season pet care", path: "/owning-a-pet-in-pattaya/rainy-season-pet-care.html", desc: "Humidity and damp coats drive flare-ups." },
+    { name: "Groomers in Pattaya", path: "/groomers/", desc: "Coat care in the climate." },
+    { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html", desc: "Parasites that trigger skin disease." },
+    { name: "Vets in Pattaya", path: "/vets/", desc: "Find a clinic near you." }
   ]
 }));
 
@@ -359,6 +383,12 @@ pages.push(health({
      "<p>It depends on species, breed and size, and veterinary guidance evolves. Ask your vet what they recommend for your specific pet rather than following a fixed rule.</p>"],
     ["Is it expensive in Pattaya?",
      "<p>Spaying and neutering are routine and generally affordable at Pattaya clinics. Some rescues and welfare groups also run low-cost or subsidised sterilisation programmes as part of tackling the street-animal population.</p>"]
+  ],
+  related: [
+    { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Rescues often neuter before rehoming." },
+    { name: "How to help street animals", path: "/adopt-a-pet-pattaya/how-to-help.html", desc: "Supporting sterilisation programmes." },
+    { name: "Cat vaccinations", path: "/cats/cat-vaccinations-thailand.html", desc: "Routine care for cats." },
+    { name: "Vets in Pattaya", path: "/vets/", desc: "Find a clinic near you." }
   ]
 }));
 

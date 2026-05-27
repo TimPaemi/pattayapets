@@ -128,6 +128,12 @@ pages.push(own({
      "<p>Routine vet care — vaccinations, check-ups, basic treatment — is generally affordable by Western standards. Major treatment, surgery or a hospital stay is where costs climb &mdash; which is exactly what a savings buffer or insurance is for.</p>"],
     ["Should I get pet insurance in Thailand?",
      "<p>It depends on your finances and your pet. The case for it is the rare big bill, not the routine costs. See our guide to <a href=\"/pet-insurance-thailand.html\">pet insurance in Thailand</a>.</p>"]
+  ],
+  related: [
+    { name: "Pet insurance in Thailand", path: "/pet-insurance-thailand.html", desc: "When insurance earns its place." },
+    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Preventive care and tropical risks." },
+    { name: "Where to buy pet food", path: "/owning-a-pet-in-pattaya/where-to-buy-pet-food.html", desc: "The everyday running costs." },
+    { name: "Boarding & daycare", path: "/boarding/", desc: "Travel costs when you are away." }
   ]
 }));
 
@@ -265,6 +271,12 @@ pages.push(own({
      "<p>Yes, particularly on the quieter Jomtien and Dongtan stretches and at cool hours. Keep your dog leashed, always pick up, and mind hot sand. See our dog-friendly beaches guide.</p>"],
     ["How do I handle street dogs while walking my dog?",
      "<p>Keep your dog close and leashed, give groups of street dogs a wide berth, and stay calm rather than confrontational. Our guide to street-dog encounters covers it in full.</p>"]
+  ],
+  related: [
+    { name: "Dog-friendly beaches", path: "/dog-friendly-pattaya/beaches.html", desc: "Cool-hour walks on the sand." },
+    { name: "Places to walk", path: "/dog-friendly-pattaya/parks.html", desc: "Beaches, sois and green space." },
+    { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "Walking safely around soi dogs." },
+    { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Timing and heat awareness." }
   ]
 }));
 

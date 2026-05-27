@@ -24,6 +24,51 @@ const HUB_TITLE = {
   "mobile-vets": "Mobile & home-visit vets in Pattaya"
 };
 
+const CAT_GUIDES = {
+  vets: [
+    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html" },
+    { name: "Pet emergencies", path: "/pet-emergency/" },
+    { name: "Getting to the vet", path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html" },
+    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/" }
+  ],
+  groomers: [
+    { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html" },
+    { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html" }
+  ],
+  boarding: [
+    { name: "Cat boarding & sitters", path: "/cats/cat-boarding-pattaya.html" },
+    { name: "Pet sitters & dog walkers", path: "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html" },
+    { name: "Travelling in Thailand", path: "/owning-a-pet-in-pattaya/travelling-in-thailand.html" }
+  ],
+  "pet-shops": [
+    { name: "Where to buy pet food", path: "/owning-a-pet-in-pattaya/where-to-buy-pet-food.html" }
+  ],
+  trainers: [
+    { name: "Puppy care in Pattaya", path: "/dogs/puppy-care-pattaya.html" },
+    { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html" }
+  ],
+  "pet-relocation": [
+    { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/" },
+    { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/" },
+    { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html" }
+  ],
+  "mobile-vets": [
+    { name: "Getting to the vet", path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html" },
+    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html" }
+  ]
+};
+
+function catGuidesSection(key) {
+  var links = CAT_GUIDES[key];
+  if (!links || !links.length) return "";
+  return '<section class="section"><div class="container"><div class="prose">' +
+    "<h2>Helpful guides</h2><ul>" +
+    links.map(function (l) {
+      return '<li><a href="' + l.path + '">' + esc(l.name) + "</a></li>";
+    }).join("") +
+    "</ul></div></div></section>";
+}
+
 const AREA_MISSING_HINTS = {
   pratumnak: {
     vets: "<a href=\"/vets/thonglor-pet-hospital-pattaya.html\">Thonglor Pet Hospital</a> " +
@@ -242,6 +287,20 @@ BUSINESSES.forEach(function (b) {
         "pet needs urgent help, do not wait for opening hours &mdash; see our list of " +
         '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in ' +
         "Pattaya</a>.</p></div>"
+      : b.category === "groomers"
+      ? '<div class="callout callout-note"><div class="ch">Skin &amp; ears in the heat</div><p>Humidity drives ' +
+        '<a href="/pet-health-pattaya/skin-and-ear-problems.html">skin and ear problems</a> here &mdash; ' +
+        "a groomer who spots early signs is worth keeping.</p></div>"
+      : b.category === "pet-relocation"
+      ? '<div class="callout callout-note"><div class="ch">Import &amp; export guides</div><p>See our guides to ' +
+        '<a href="/bring-pet-to-thailand/">bringing a pet to Thailand</a> and ' +
+        '<a href="/take-pet-out-of-thailand/">taking one out</a>, plus ' +
+        '<a href="/bring-pet-to-thailand/airline-pet-policies.html">airline pet policies</a>.</p></div>'
+      : b.category === "boarding"
+      ? '<div class="callout callout-note"><div class="ch">Alternatives to boarding</div><p>Cats especially may ' +
+        "do better with an " +
+        '<a href="/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html">in-home pet sitter</a>. ' +
+        'See also <a href="/cats/cat-boarding-pattaya.html">cat boarding and sitters</a>.</p></div>'
       : "") +
     '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +
     "PattayaPets is not a veterinary practice and does not give veterinary advice. " +
@@ -332,6 +391,7 @@ Object.keys(CATEGORIES).forEach(function (key) {
   }
 
   if (HUB_GUIDE[key]) body += HUB_GUIDE[key];
+  body += catGuidesSection(key);
 
   body += '<section class="section"><div class="container">' +
     '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +

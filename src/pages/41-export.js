@@ -23,7 +23,19 @@ const OFFICIAL =
   "(Mon&ndash;Fri 08:30&ndash;12:00 and 13:00&ndash;15:30, Thai public holidays excepted); " +
   "<a href=\"https://www.gov.uk/bring-pet-to-great-britain\" target=\"_blank\" rel=\"noopener nofollow\">UK pet travel</a>; " +
   "<a href=\"https://www.cdc.gov/importation/bringing-an-animal-into-the-us/index.html\" target=\"_blank\" rel=\"noopener nofollow\">CDC animal import (USA)</a>; " +
-  "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" rel=\"noopener nofollow\">EU pet movement</a>.</p>";
+  "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" rel=\"noopener nofollow\">EU pet movement</a>; " +
+  "<a href=\"https://www.maff.go.jp/aqs/english/\" target=\"_blank\" rel=\"noopener nofollow\">Japan MAFF Animal Quarantine</a>; " +
+  "<a href=\"https://www.nparks.gov.sg/avs/pets/importing-exporting-and-transhipping-animals-and-birds/importing-dogs-and-cats\" " +
+  "target=\"_blank\" rel=\"noopener nofollow\">Singapore AVS</a>; " +
+  "<a href=\"https://www.moec.gov.ae/en/services/import-export-services/import-pets\" " +
+  "target=\"_blank\" rel=\"noopener nofollow\">UAE MOCCAE pet import</a>; " +
+  "<a href=\"https://www.agriculture.gov.au/biosecurity-trade/cats-dogs\" target=\"_blank\" " +
+  "rel=\"noopener nofollow\">Australia DAFF</a>; " +
+  "<a href=\"https://www.mpi.govt.nz/import/bringing-pets-to-nz/\" target=\"_blank\" rel=\"noopener nofollow\">New Zealand MPI</a>; " +
+  "<a href=\"https://inspection.canada.ca/en/importing-food-plants-or-animals/pets\" " +
+  "target=\"_blank\" rel=\"noopener nofollow\">Canada CFIA</a>; " +
+  "<a href=\"https://www.blv.admin.ch/blv/en/home/tiere/reisen-mit-heimtieren.html\" " +
+  "target=\"_blank\" rel=\"noopener nofollow\">Switzerland FSVO</a>.</p>";
 
 const THAI_SIDE =
   "<p>All of this sits on top of the Thai " +
