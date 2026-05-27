@@ -1,3 +1,6 @@
 # Cloudflare Pages redirects. Clean-URL directory hubs are served automatically.
 /index.html  /  301
 /vets/th-animal-hospital-pattaya.html  /vets/pattaya-animal-hospital.html  301
+/trainers/canine-point-academy.html  /trainers/k9-coach.html  301
+/pet-shops/pet-lovers-centre-pattaya.html  /pet-shops/pattaya-pet-center.html  301
+/trainers/personal-dog-trainer-max.html  /trainers/  301

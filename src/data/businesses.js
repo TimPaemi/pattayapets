@@ -139,7 +139,8 @@ const BUSINESSES = [
     languages: "Thai; confirm English-language support when booking",
     services: ["24-hour service", "General treatment", "Surgery"],
     summary: "A 24-hour community animal hospital in Nernplubwan, part of the Muang Ake " +
-      "veterinary group. It handles general and after-hours care across the Pattaya area."
+      "veterinary group. Also listed on 061 094 9996. It handles general and after-hours " +
+      "care across the Pattaya area."
   },
   {
     slug: "north-pattaya-animal-hospital",
@@ -149,17 +150,19 @@ const BUSINESSES = [
     phone: "038 416 869", tel: "+6638416869",
     website: null, hours: null,
     languages: "Thai; confirm English-language support when booking",
-    services: ["General consultations", "Vaccinations", "Treatment & surgery"],
-    summary: "An animal hospital on Sukhumvit Road serving North Pattaya, Naklua and " +
-      "the Wongamat side of the city, handling general consultations, vaccinations " +
-      "and routine treatment."
+    services: ["General consultations", "Vaccinations", "Treatment & surgery",
+      "Specialist heart clinic", "Neurology", "Exotic pets", "Grooming & bathing"],
+    summary: "A well-established animal hospital on Sukhumvit Road in Naklua, founded in " +
+      "2006, with specialist clinics alongside everyday care and an on-site grooming " +
+      "service. Also reachable on 082 946 6979. Near Bangkok Hospital Pattaya."
   },
 
   {
     slug: "pattaya-city-pet-shop-grooming",
     name: "Pattaya City Pet Shop & Grooming Salon",
     category: "groomers", areas: ["central-pattaya"], type: "Grooming salon & pet shop", c24: false,
-    address: null, phone: "096 293 9454", tel: "+66962939454",
+    address: "209/17 Soi Khao Talo, Pattaya City, Bang Lamung, Chon Buri 20150",
+    phone: "096 293 9454", tel: "+66962939454",
     website: "https://www.pattayagrooming.com/", hours: null,
     languages: "Thai and English",
     services: ["Dog & cat grooming", "Bath & blow-dry", "Breed clips", "Nail trims", "Pet supplies"],
@@ -169,14 +172,15 @@ const BUSINESSES = [
   },
   {
     slug: "jaijai-grooming",
-    name: "Jaijai Grooming",
-    category: "groomers", areas: ["central-pattaya"], type: "Dog & cat grooming", c24: false,
-    address: null, phone: null, tel: null,
+    name: "Jaijai Spa & Grooming",
+    category: "groomers", areas: ["banglamung"], type: "Dog & cat grooming", c24: false,
+    address: "97/15 Moo 6, Pong, Bang Lamung, Chon Buri 20150",
+    phone: "062 502 9871", tel: "+66625029871",
     website: "https://www.facebook.com/jaijaigrooming/", hours: null,
     languages: "Thai; confirm English-language support when booking",
     services: ["Dog grooming", "Cat grooming", "Bath & tidy"],
-    summary: "A Pattaya grooming service for dogs and cats, run through its Facebook " +
-      "page and arranged by appointment."
+    summary: "A grooming salon in the Pong area east of Pattaya city, listed on Wongnai " +
+      "as jaijai spa & grooming. Appointments are arranged through its Facebook page."
   },
   {
     slug: "furiday-pet-grooming",
@@ -219,24 +223,26 @@ const BUSINESSES = [
     slug: "elite-dog-resort",
     name: "Elite Dog Resort",
     category: "boarding", areas: ["pratumnak"], type: "Luxury dog resort & spa", c24: false,
-    address: null, phone: null, tel: null,
-    website: "https://elitedogresort.com/", hours: null,
+    address: "352/680 Moo 12, Phra Tamnak, Pattaya City, Bang Lamung, Chon Buri 20150",
+    phone: "02 507 1893", tel: "+6625071893",
+    website: "https://elitedogresort.com/", hours: "Daily 08:00-17:00; extended hours by appointment",
     languages: "Thai and English",
     services: ["Climate-controlled rooms", "Boarding", "Daycare", "Grooming & spa", "24/7 supervision", "VIP rooms"],
     summary: "A luxury dog resort and spa on Pratumnak hill, focused on small breeds, " +
       "with climate-controlled rooms, round-the-clock supervision, grooming and spa " +
-      "services, and standard or VIP options."
+      "services, and standard or VIP options. Open seven days; phone line 10:00-18:00."
   },
   {
     slug: "pattaya-dog-hotel",
     name: "Pattaya Dog Hotel",
-    category: "boarding", areas: ["banglamung"], type: "Dog hotel", c24: false,
-    address: null, phone: null, tel: null,
-    website: "https://www.pattayadoghotel.com/", hours: null,
-    languages: "Thai and English",
-    services: ["Dog boarding", "Supervised playtime", "Grooming"],
-    summary: "A Pattaya dog hotel offering boarding with plenty of supervised playtime, " +
-      "plus grooming, for owners who want their dog kept active while they are away."
+    category: "boarding", areas: ["bang-saray", "sattahip"], type: "Dog hotel & training facility", c24: false,
+    address: null, phone: "080 905 3216", tel: "+66809053216",
+    website: "https://k9-coach.co.th/", hours: null,
+    languages: "English and Thai",
+    services: ["Dog boarding", "Board-and-train", "Supervised playtime", "Grooming"],
+    summary: "A dog hotel and boarding facility near Bang Saray, marketed alongside " +
+      "K9 Coach dog training on an 18-rai site. Confirm whether you are booking " +
+      "boarding only or a combined training stay when you enquire."
   },
 
   {
@@ -257,7 +263,7 @@ const BUSINESSES = [
     category: "pet-shops", areas: ["jomtien"], type: "Pet shop", c24: false,
     address: "315/100-101 Thep Prasit Road, Pattaya City, Bang Lamung, Chon Buri 20150",
     phone: null, tel: null,
-    website: "https://www.facebook.com/PetSmart.th/", hours: null,
+    website: "https://www.facebook.com/PetSmart.th/", hours: "Daily from 10:00",
     languages: "Thai and English",
     services: ["Pet food", "Snacks & treats", "Accessories"],
     summary: "A pet shop on Thep Prasit Road towards the Jomtien side of the city, with " +
@@ -268,7 +274,8 @@ const BUSINESSES = [
     slug: "peturday-pattaya",
     name: "Peturday Pattaya",
     category: "pet-shops", areas: ["pratumnak"], type: "Pet shop", c24: false,
-    address: null, phone: "098 471 4877", tel: "+66984714877",
+    address: "337/10 Phra Tamnak, Bang Lamung, Chon Buri 20150",
+    phone: "098 471 4877", tel: "+66984714877",
     website: "https://www.facebook.com/peturdaypty", hours: null,
     languages: "Thai and English",
     services: ["Pet food", "Supplies", "Accessories"],
@@ -277,29 +284,29 @@ const BUSINESSES = [
       "for supplies."
   },
   {
-    slug: "pet-lovers-centre-pattaya",
-    name: "Pet Lovers Centre Pattaya",
-    category: "pet-shops", areas: ["central-pattaya"], type: "Pet shop (chain branch)", c24: false,
-    address: null, phone: null, tel: null,
-    website: "https://www.petloverscentre.co.th/", hours: null,
+    slug: "pattaya-pet-center",
+    name: "Pattaya Pet Center",
+    category: "pet-shops", areas: ["central-pattaya"], type: "Pet shop", c24: false,
+    address: "49/84 Moo 10, South Pattaya Soi 12, Nong Prue, Bang Lamung, Chon Buri 20150",
+    phone: "087 127 7757", tel: "+66871277757",
+    website: null, hours: null,
     languages: "Thai and English",
-    services: ["Pet food", "Accessories", "Health & care products"],
-    summary: "A Pattaya branch of Pet Lovers Centre, one of Southeast Asia's largest pet " +
-      "retail chains, carrying mainstream food and accessory brands. Confirm the exact " +
-      "mall location and hours before visiting."
+    services: ["Pet food", "Accessories", "Supplies"],
+    summary: "A local pet shop on South Pattaya Soi 12 in Nong Prue, opposite the " +
+      "mosque, stocking everyday food and supplies for dogs and cats."
   },
 
   {
-    slug: "canine-point-academy",
-    name: "Canine Point Academy",
-    category: "trainers", areas: ["banglamung"], type: "Dog training academy", c24: false,
-    address: null, phone: null, tel: null,
-    website: "https://www.caninepointacademy.com/", hours: null,
+    slug: "k9-coach",
+    name: "K9 Coach",
+    category: "trainers", areas: ["bang-saray", "sattahip", "banglamung"], type: "Dog training & behaviour", c24: false,
+    address: null, phone: "080 905 3216", tel: "+66809053216",
+    website: "https://k9-coach.co.th/", hours: null,
     languages: "English and Thai",
-    services: ["Obedience training", "Puppy classes", "Dog boarding", "Daycare"],
-    summary: "A dog training academy that also offers boarding and daycare, led by a " +
-      "trainer holding international accreditation. It serves the wider Pattaya area; " +
-      "confirm the location and class schedules directly."
+    services: ["Obedience training", "Behaviour modification", "Board-and-train", "Daycare", "Private coaching"],
+    summary: "An English-speaking dog-training operation on an 18-rai facility near " +
+      "Bang Saray, with 36 kennels, multiple training areas and board-and-train " +
+      "programmes. Also runs the Pattaya Dog Hotel boarding service on the same site."
   },
   {
     slug: "zoeta-dogsoul",
@@ -316,26 +323,14 @@ const BUSINESSES = [
   {
     slug: "k9-pattaya-dog-training-school",
     name: "K9 Pattaya Dog Training School",
-    category: "trainers", areas: ["banglamung"], type: "Dog training school", c24: false,
-    address: null, phone: null, tel: null,
-    website: "https://www.k9pattaya.com/", hours: null,
+    category: "trainers", areas: ["sattahip", "bang-saray", "jomtien"], type: "Dog training school", c24: false,
+    address: null, phone: "087 983 4466", tel: "+66879834466",
+    website: "http://www.k9pattaya.com/", hours: null,
     languages: "English and Thai",
-    services: ["Obedience training", "Protection training", "Board-and-train"],
-    summary: "A long-running dog training school in the Pattaya area offering obedience " +
-      "and more advanced training programmes. Confirm current programmes and location " +
-      "directly before enrolling."
-  },
-  {
-    slug: "personal-dog-trainer-max",
-    name: "Personal Dog Trainer Max",
-    category: "trainers", areas: ["bang-saray", "sattahip"], type: "Private dog trainer", c24: false,
-    address: null, phone: null, tel: null,
-    website: "https://trainerpattaya.com/dog-training/", hours: null,
-    languages: "English and Thai",
-    services: ["Private family-dog training", "Positive-reinforcement methods", "In-home sessions"],
-    summary: "A private dog trainer working with family dogs across Pattaya, Bang Saray " +
-      "and Sattahip using positive-reinforcement methods. Training is one-to-one and " +
-      "arranged by appointment."
+    services: ["Obedience training", "Protection training", "Board-and-train", "Dog hotel"],
+    summary: "A long-running dog training school and boarding facility south of Pattaya " +
+      "near Wat Huay Yai, with a large outdoor training ground. Also reachable on " +
+      "096 724 2255. Confirm current programmes and visit arrangements before enrolling."
   },
 
   {
@@ -417,13 +412,13 @@ const BUSINESSES = [
     category: "mobile-vets", areas: ["banglamung"], type: "Animal hospital (home visits)", c24: false,
     address: "Railway Road (Khao Noi-Khao Talo), Nong Prue, Bang Lamung, Chon Buri",
     phone: null, tel: null,
-    website: null, hours: null,
+    website: "https://www.facebook.com/doctorpetclinic24hr/", hours: null,
     languages: "Thai; confirm English-language support when booking",
     services: ["Home visits", "Pet pickup & delivery", "General treatment", "Grooming", "Boarding"],
     summary: "A Pattaya animal hospital on the railway road between Khao Noi and Khao " +
-      "Talo that advertises off-site visits and pet pickup or delivery alongside its " +
-      "clinic, grooming and boarding services. Confirm home-visit availability for " +
-      "your area before booking."
+      "Talo — also known locally as Baan Mor Raksasat — that advertises off-site visits, " +
+      "pet pickup or delivery, grooming and boarding. Confirm home-visit availability and " +
+      "contact details on its Facebook page before booking."
   }
 ];
 

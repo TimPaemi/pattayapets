@@ -3,7 +3,7 @@
 Operator guide: which listings to visit first for maximum trust and SEO impact.
 Not deployed. Last updated: May 2026.
 
-All 29 current listings show **not yet reviewed**. This order balances homepage
+All 28 current listings show **not yet reviewed**. This order balances homepage
 visibility, expat search demand, and visit practicality (one trip, several wins).
 
 ---
@@ -30,7 +30,8 @@ visibility, expat search demand, and visit practicality (one trip, several wins)
 | 7 | Pet Relocation Thailand | Relocation | Flagship import/export guides funnel here; high-intent searches |
 | 8 | Brand Dog - Pattaya Pet Supplies | Pet shops | Full address + hours; South Pattaya anchor |
 | 9 | Zoeta Dogsoul | Trainers | English-first positioning; behaviour queries |
-| 10 | Elite Dog Resort | Boarding | Premium segment; Pratumnak expat hill |
+| 10 | K9 Coach | Trainers | 18-rai Bang Saray facility; English-speaking; also runs Pattaya Dog Hotel |
+| 11 | Elite Dog Resort | Boarding | Premium segment; Pratumnak expat hill |
 
 ---
 
@@ -42,7 +43,7 @@ visibility, expat search demand, and visit practicality (one trip, several wins)
 | 12 | Pattaya Community Pet Hospital | Vets | 24h but thin public data — visit verifies location/contact |
 | 13 | North Pattaya Animal Hospital | Vets | Naklua coverage gap |
 | 14 | Relo4Paws | Relocation | Second relocation opinion for comparison |
-| 15 | Personal Dog Trainer Max | Trainers | Bang Saray/Sattahip — covers southern areas |
+| 15 | K9 Pattaya Dog Training School | Trainers | South Pattaya–Sattahip; large training ground |
 | 16 | Mor Ja Pet Clinic | Mobile vets | Publicly advertises home visits; Nong Prue |
 | 17 | Baan Mor Raksasat Animal Hospital | Mobile vets | Home visits + pet transport; verify on visit |
 
@@ -50,7 +51,7 @@ visibility, expat search demand, and visit practicality (one trip, several wins)
 
 ## Tier 4 — Lower urgency
 
-Remaining groomers (Jaijai, FURiday, Furpet), pet shops (PetSmart, Peturday, Pet Lovers Centre), boarding (Pattaya Dog Hotel), trainers (Canine Point, K9), and relocation agents (United Pet Express, Asia Relocation, Pawspective).
+Remaining groomers (FURiday, Furpet), pet shops (PetSmart, Peturday, Pattaya Pet Center), boarding (Pattaya Dog Hotel), trainers (K9 Pattaya), and relocation agents (United Pet Express, Asia Relocation, Pawspective).
 
 Many rely on Facebook-only contact — visits need appointment planning.
 
