@@ -392,7 +392,8 @@ pages.push(prosePage({
     "and at high zoom.</li>" +
     "<li>The site works fully with JavaScript disabled.</li>" +
     "<li>Descriptive link text and alternative text on meaningful images.</li>" +
-    "<li>Search results update with <code>aria-live</code> when JavaScript is enabled.</li>" +
+    '<li>Header search submits to <code>/search.html</code> and works without JavaScript.</li>' +
+    '<li>Live search results on the search page update with <code>aria-live</code> when JavaScript is enabled.</li>' +
     "<li>Mobile navigation can be opened and closed with the keyboard (Escape closes it).</li>" +
     "</ul>" +
     "<h2>Known limitations</h2>" +

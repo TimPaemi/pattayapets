@@ -9,7 +9,7 @@
     "check": "node tools/check-links.js",
     "audit:seo": "node tools/audit-seo.js",
     "images": "node tools/make-images.js",
-    "build:all": "npm run build && npm run check"
+    "build:all": "npm run build && npm run check && npm run audit:seo"
   },
   "devDependencies": {
     "@fontsource/bricolage-grotesque": "^5.2.10",
