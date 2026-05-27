@@ -471,9 +471,8 @@ pages.push(importStep({
   related: [
     { name: "Pet quarantine in Thailand", path: "/bring-pet-to-thailand/thailand-pet-quarantine.html", desc: "When pets do and do not quarantine on arrival." },
     { name: "U-Tapao or Bangkok?", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html", desc: "Which airport to fly into for Pattaya." },
-    { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Settling in once you arrive." },
-    { name: "Mobile & home-visit vets", path: "/mobile-vets/", desc: "A calm first vet visit at home." },
-    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Tropical-climate health routines." }
+    { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Settle in with ID from day one." },
+    { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Settling in once you arrive." }
   ]
 }));
 

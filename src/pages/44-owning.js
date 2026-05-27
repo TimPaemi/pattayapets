@@ -66,9 +66,9 @@ pages.push(hub({
   ],
   related: [
     { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Heartworm, ticks and tropical-climate risks." },
-    { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Cool-hour walking routines." },
-    { name: "Pet emergencies", path: "/pet-emergency/", desc: "24-hour vets and urgent hazards." },
-    { name: "Getting to the vet", path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html", desc: "Transport without a car." }
+    { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Essential ID for any pet in Pattaya." },
+    { name: "Pet-friendly housing", path: "/owning-a-pet-in-pattaya/pet-friendly-housing.html", desc: "Renting and living with a pet here." },
+    { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "The climate basics every owner needs." }
   ]
 }));
 

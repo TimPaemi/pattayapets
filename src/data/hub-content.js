@@ -37,7 +37,9 @@ const HUB_GUIDE = {
     "and never rates veterinary medical quality. That judgement is between you " +
     "and your vet. See also " +
     "<a href=\"/pet-health-pattaya/\">pet health in Pattaya</a> for the tropical-climate " +
-    "risks to discuss with a clinic.</p>"),
+    "risks to discuss with a clinic, and " +
+    "<a href=\"/pet-health-pattaya/heartworm.html\">heartworm prevention</a> for the " +
+    "year-round mosquito risk.</p>"),
 
   groomers: S(
     "<h2>How to choose a groomer in Pattaya</h2>" +

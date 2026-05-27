@@ -134,7 +134,7 @@ pages.push(hub({
   ],
   related: [
     { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Heartworm, parasites and tropical health." },
-    { name: "Pet emergencies", path: "/pet-emergency/", desc: "24-hour vets and urgent hazards." },
+    { name: "If your pet goes missing", path: "/owning-a-pet-in-pattaya/lost-pet-pattaya.html", desc: "A step-by-step plan for a lost cat." },
     { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Shelters and rescue organisations." },
     { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Essential ID for an indoor or outdoor cat." }
   ]

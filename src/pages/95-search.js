@@ -61,7 +61,9 @@ module.exports = [{
     '<a href="/mobile-vets/">Mobile vet</a> &middot; ' +
     '<a href="/pet-health-pattaya/parvovirus.html">Parvovirus</a> &middot; ' +
     '<a href="/pet-emergency/venomous-creatures.html">Venomous creatures</a> &middot; ' +
-    '<a href="/pet-health-pattaya/dental-care.html">Dental care</a></p>' +
+    '<a href="/pet-health-pattaya/dental-care.html">Dental care</a> &middot; ' +
+    '<a href="/owning-a-pet-in-pattaya/rainy-season-pet-care.html">Rainy season</a> &middot; ' +
+    '<a href="/pet-health-pattaya/healthy-weight.html">Healthy weight</a></p>' +
     '<div id="pp-results" class="search-results">' +
     '<noscript><p class="notice">Search needs JavaScript enabled. You can browse ' +
     'the <a href="/start-here.html">start-here guide</a>, the ' +

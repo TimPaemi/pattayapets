@@ -84,7 +84,7 @@ pages.push(own({
     { name: "Fireworks & noise-anxious pets", path: "/owning-a-pet-in-pattaya/fireworks-and-noise-anxiety.html", desc: "The wider noise-anxiety picture." },
     { name: "If your pet goes missing", path: "/owning-a-pet-in-pattaya/lost-pet-pattaya.html", desc: "What to do if a pet bolts." },
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Keeping pets cool when the streets are busy." },
-    HUB_RELATED
+    { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "ID before the gates open." }
   ]
 }));
 
@@ -148,7 +148,7 @@ pages.push(own({
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "The hot-season half of the year." },
     { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html", desc: "Rainy-season skin and ear flare-ups." },
     { name: "Tropical dog health issues", path: "/dogs/common-dog-health-issues-tropics.html", desc: "Skin, ears and parasites in the climate." },
-    HUB_RELATED
+    { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html", desc: "Year-round parasite prevention." }
   ]
 }));
 
@@ -210,7 +210,7 @@ pages.push(own({
     { name: "Songkran and your pet", path: "/owning-a-pet-in-pattaya/songkran-and-your-pet.html", desc: "The year's biggest noisy event." },
     { name: "If your pet goes missing", path: "/owning-a-pet-in-pattaya/lost-pet-pattaya.html", desc: "If a frightened pet bolts." },
     { name: "Pet emergencies", path: "/pet-emergency/", desc: "When noise anxiety becomes a health crisis." },
-    HUB_RELATED
+    { name: "Dog registration & the law", path: "/owning-a-pet-in-pattaya/dog-registration-thailand.html", desc: "Rabies vaccination is a legal duty." }
   ]
 }));
 
@@ -269,7 +269,7 @@ pages.push(own({
     { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Why it matters, and keeping details current." },
     { name: "Fireworks & noise-anxious pets", path: "/owning-a-pet-in-pattaya/fireworks-and-noise-anxiety.html", desc: "The most common reason pets bolt." },
     { name: "How to help street animals", path: "/adopt-a-pet-pattaya/how-to-help.html", desc: "Posting and community help when a pet is lost." },
-    HUB_RELATED
+    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "If your pet is injured while missing." }
   ]
 }));
 
@@ -391,7 +391,7 @@ pages.push(own({
     { name: "Boarding in Pattaya", path: "/boarding/", desc: "Kennels and catteries directory." },
     { name: "Cat boarding in Pattaya", path: "/cats/cat-boarding-pattaya.html", desc: "When a sitter is not the right fit for a cat." },
     { name: "Travelling in Thailand", path: "/owning-a-pet-in-pattaya/travelling-in-thailand.html", desc: "When a sitter is not enough." },
-    HUB_RELATED
+    { name: "Pet-friendly housing", path: "/owning-a-pet-in-pattaya/pet-friendly-housing.html", desc: "If a sitter will be in your home." }
   ]
 }));
 
@@ -451,7 +451,7 @@ pages.push(own({
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Where to go when it cannot wait." },
     { name: "Hit by a vehicle", path: "/pet-emergency/road-accident.html", desc: "If transport fails in an emergency." },
     { name: "Mobile vets", path: "/mobile-vets/", desc: "Vets who come to you." },
-    HUB_RELATED
+    { name: "Pet emergencies", path: "/pet-emergency/", desc: "24-hour vets and urgent hazards." }
   ]
 }));
 
@@ -508,7 +508,7 @@ pages.push(own({
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Doubly important for older pets." },
     { name: "Dental care", path: "/pet-health-pattaya/dental-care.html", desc: "Common in older pets and worth catching early." },
     { name: "End-of-life care", path: "/owning-a-pet-in-pattaya/saying-goodbye.html", desc: "Compassionate guidance for the final stage." },
-    HUB_RELATED
+    { name: "Vets in Pattaya", path: "/vets/", desc: "Senior check-ups and blood tests." }
   ]
 }));
 
@@ -575,7 +575,7 @@ pages.push(own({
     { name: "Senior pet care", path: "/owning-a-pet-in-pattaya/senior-pet-care.html", desc: "Caring well for an older pet." },
     { name: "Pet insurance in Thailand", path: "/pet-insurance-thailand.html", desc: "When cover helps with end-of-life decisions." },
     { name: "Mobile & home-visit vets", path: "/mobile-vets/", desc: "Gentle care at home when travel is hard." },
-    HUB_RELATED
+    { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Rescues often support end-of-life decisions." }
   ]
 }));
 

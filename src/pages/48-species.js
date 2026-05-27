@@ -108,8 +108,7 @@ pages.push(cat({
   related: [
     { name: "Cats in Pattaya", path: "/cats/", desc: "Back to the cat owner's hub." },
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Heat and outdoor access for cats." },
-    { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "Essential for outdoor cats." },
-    { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "Safety if your cat goes outside." },
+    { name: "Poisoning hazards", path: "/pet-emergency/poisoning.html", desc: "Baits and toxins on the streets." },
     { name: "Getting a cat in Pattaya", path: "/cats/getting-a-cat-in-pattaya.html", desc: "Adopting, kittens and street cats." }
   ]
 }));

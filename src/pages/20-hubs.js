@@ -248,6 +248,15 @@ pages.push({
     card("/pet-health-pattaya/parvovirus.html", "Health", "Parvovirus",
       "A deadly, preventable puppy disease — and how to protect against it.",
       "Open the guide") +
+    card("/pet-health-pattaya/dental-care.html", "Health", "Dental care",
+      "Teeth, tartar and gum health for dogs and cats.",
+      "Open the guide") +
+    card("/pet-emergency/venomous-creatures.html", "Emergency", "Venomous creatures",
+      "Toads, centipedes and stings beyond snakes.",
+      "Open the guide") +
+    card("/owning-a-pet-in-pattaya/rainy-season-pet-care.html", "Owning", "Rainy-season pet care",
+      "Humidity, skin and ear health when the monsoon arrives.",
+      "Open the guide") +
     "</div>" +
     '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +
     "Our guides are not veterinary advice. Import and export rules change &mdash; " +

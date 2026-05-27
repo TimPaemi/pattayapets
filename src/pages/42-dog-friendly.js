@@ -49,8 +49,8 @@ pages.push(hub({
   related: [
     { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Building a safe daily routine." },
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "The heat is the biggest everyday adjustment." },
-    { name: "Beach & sea hazards", path: "/pet-emergency/beach-and-sea-hazards.html", desc: "Jellyfish, hot sand and seawater risks." },
-    { name: "The dog owner&rsquo;s hub", path: "/dogs/", desc: "Dog-specific care, training and health guides." }
+    { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "Out and about with your dog." },
+    { name: "Dog-friendly beaches", path: "/dog-friendly-pattaya/beaches.html", desc: "Cool-hour walks on the sand." }
   ]
 }));
 
@@ -260,8 +260,8 @@ pages.push(df({
   ],
   related: [
     { name: "Dog-friendly condos", path: "/dog-friendly-pattaya/condos.html", desc: "If you are staying longer than a holiday." },
+    { name: "Travelling in Thailand", path: "/owning-a-pet-in-pattaya/travelling-in-thailand.html", desc: "Pet-friendly stays beyond Pattaya." },
     { name: "Pet-friendly housing", path: "/owning-a-pet-in-pattaya/pet-friendly-housing.html", desc: "Renting with a dog in Pattaya." },
-    { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Back to the cluster hub." },
     { name: "Dog-friendly beaches", path: "/dog-friendly-pattaya/beaches.html", desc: "Walks near many pet-friendly stays." }
   ]
 }));
@@ -308,8 +308,8 @@ pages.push(df({
   related: [
     { name: "Pet-friendly housing", path: "/owning-a-pet-in-pattaya/pet-friendly-housing.html", desc: "The fuller guide to housing with a pet." },
     { name: "Dog registration & the law", path: "/owning-a-pet-in-pattaya/dog-registration-thailand.html", desc: "Rules for keeping a dog legally." },
-    { name: "Dog-friendly hotels", path: "/dog-friendly-pattaya/hotels.html", desc: "If you are staying before you rent." },
-    { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Back to the cluster hub." }
+    { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Building a routine from your building." },
+    { name: "Dog-friendly hotels", path: "/dog-friendly-pattaya/hotels.html", desc: "If you are staying before you rent." }
   ]
 }));
 
@@ -352,10 +352,10 @@ pages.push(df({
      "<p>For most owners it is a mix: the quiet sois near home for daily walks, and the cooler ends of the beach for something longer. Pratumnak's leafier roads are pleasant too.</p>"]
   ],
   related: [
-    { name: "Dog-friendly beaches", path: "/dog-friendly-pattaya/beaches.html", desc: "The best longer walks at cool hours." },
+    { name: "Travelling in Thailand", path: "/owning-a-pet-in-pattaya/travelling-in-thailand.html", desc: "Domestic trips with your dog." },
+    { name: "Dog-friendly beaches", path: "/dog-friendly-pattaya/beaches.html", desc: "Cool-hour walks on the sand." },
     { name: "Beach & sea hazards", path: "/pet-emergency/beach-and-sea-hazards.html", desc: "Jellyfish, hot sand and seawater risks." },
-    { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Building a safe daily routine." },
-    { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Back to the cluster hub." }
+    { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "The hot-climate risk to plan around." }
   ]
 }));
 

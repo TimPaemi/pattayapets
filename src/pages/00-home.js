@@ -235,6 +235,15 @@ const body =
       '<a class="card" href="/pet-health-pattaya/tick-borne-disease.html"><span class="card-tag">Health</span>' +
         '<h3>Tick-borne disease</h3><p>What ticks can transmit in Pattaya&rsquo;s year-round climate.</p>' +
         '<span class="card-meta">Read the guide &rarr;</span></a>' +
+      '<a class="card" href="/pet-emergency/venomous-creatures.html"><span class="card-tag">Emergency</span>' +
+        '<h3>Venomous creatures</h3><p>Toads, centipedes and stings beyond snakes.</p>' +
+        '<span class="card-meta">Read the guide &rarr;</span></a>' +
+      '<a class="card" href="/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html"><span class="card-tag">Owning</span>' +
+        '<h3>Pet sitters &amp; dog walkers</h3><p>Cover for travel and long work days.</p>' +
+        '<span class="card-meta">Read the guide &rarr;</span></a>' +
+      '<a class="card" href="/owning-a-pet-in-pattaya/rainy-season-pet-care.html"><span class="card-tag">Owning</span>' +
+        '<h3>Rainy-season pet care</h3><p>Humidity, skin and ear health when the monsoon arrives.</p>' +
+        '<span class="card-meta">Read the guide &rarr;</span></a>' +
     '</div>' +
     '<div class="btn-row"><a class="btn btn-ghost" href="/guides.html">See all guides &rarr;</a></div>' +
   '</div></section>' +
