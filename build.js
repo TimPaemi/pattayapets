@@ -350,7 +350,19 @@ async function build() {
     "/area/pratumnak.html": "Pratumnak pet owner hill walk vet",
     "/area/bang-saray.html": "Bang Saray pet owner quiet south coast",
     "/area/sattahip.html": "Sattahip pet owner naval south Pattaya",
-    "/area/banglamung.html": "Banglamung East Pattaya pet owner house garden"
+    "/area/banglamung.html": "Banglamung East Pattaya pet owner house garden",
+    "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html": "Suvarnabhumi BKK airport AQS arrival quarantine",
+    "/bring-pet-to-thailand/airline-pet-policies.html": "airline cabin cargo hold pet crate IATA",
+    "/bring-pet-to-thailand/rabies-vaccination-titer-test.html": "rabies titer FAVN blood test waiting period",
+    "/take-pet-out-of-thailand/to-eu.html": "export pet EU titer three month wait Thailand",
+    "/take-pet-out-of-thailand/to-japan.html": "export pet Japan MAFF 180 day wait Thailand",
+    "/take-pet-out-of-thailand/to-canada.html": "export pet Canada CFIA Thailand",
+    "/take-pet-out-of-thailand/to-germany.html": "export pet Germany EU titer Thailand",
+    "/dog-friendly-pattaya/beaches.html": "dog beach Jomtien walk sand leash",
+    "/owning-a-pet-in-pattaya/fireworks-and-noise-anxiety.html": "fireworks thunder noise anxious pet escape",
+    "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html": "pet sitter dog walker house sit Pattaya",
+    "/bring-pet-to-thailand/from-germany.html": "import pet Germany EU Thailand",
+    "/bring-pet-to-thailand/from-canada.html": "import pet Canada CFIA Thailand"
   };
 
   const searchIndex = indexable.map(function (p) {

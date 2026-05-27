@@ -66,10 +66,10 @@ pages.push(hub({
     }
   ],
   related: [
+    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Clinics open around the clock." },
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Preventing heatstroke and paw-pad burns in Pattaya." },
     { name: "Getting to the vet", path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html", desc: "Transport, taxis and what to bring in an emergency." },
-    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Ticks, heartworm and other tropical-climate risks." },
-    { name: "Start here", path: "/start-here.html", desc: "Orientation for new pet owners in Pattaya." }
+    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Ticks, heartworm and other tropical-climate risks." }
   ]
 }));
 

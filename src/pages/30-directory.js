@@ -35,7 +35,7 @@ const CAT_GUIDES = {
     { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html" },
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html" },
     { name: "Rainy-season pet care", path: "/owning-a-pet-in-pattaya/rainy-season-pet-care.html" },
-    { name: "Cat boarding & sitters", path: "/cats/cat-boarding-pattaya.html" }
+    { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/" }
   ],
   boarding: [
     { name: "Cat boarding & sitters", path: "/cats/cat-boarding-pattaya.html" },

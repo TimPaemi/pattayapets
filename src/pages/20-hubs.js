@@ -85,7 +85,21 @@ pages.push({
     '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +
     "Listings describe the business experience, not veterinary medical quality. " +
     "Always consult a qualified veterinarian.</div>" +
-    "</div></section>"
+    "</div></section>" +
+
+    '<section class="section section-tint"><div class="container">' +
+    '<div class="section-head"><h2>Helpful guides</h2>' +
+    "<p>Orientation for pet owners &mdash; not veterinary advice.</p></div>" +
+    '<div class="grid grid-4">' +
+    card("/pet-health-pattaya/", "Health", "Pet health in Pattaya",
+      "Heartworm, ticks, skin problems and other tropical-climate risks.", "Open the guide") +
+    card("/adopt-a-pet-pattaya/", "Adoption", "Adopt a pet in Pattaya",
+      "Shelters, fostering and how to help street animals.", "Open the guide") +
+    card("/bring-pet-to-thailand/", "Import", "Bringing a pet to Thailand",
+      "DLD permit, microchip, rabies titer and health certificate.", "Open the guide") +
+    card("/pet-emergency/", "Emergency", "Pet emergencies",
+      "24-hour vets, heatstroke, poisoning and first-aid basics.", "Open the guide") +
+    "</div></div></section>"
 });
 
 /* ---------------- Guides hub ---------------- */
@@ -148,6 +162,12 @@ pages.push({
       "Open the guide") +
     card("/adopt-a-pet-pattaya/how-to-help.html", "Adoption", "How to help street animals",
       "Donate, volunteer, foster and what to do for an injured animal.",
+      "Open the guide") +
+    card("/bring-pet-to-thailand/import-permit-thailand-dld.html", "Import", "DLD import permit",
+      "How to apply for the Thai import permit before your pet flies in.",
+      "Open the guide") +
+    card("/bring-pet-to-thailand/rabies-vaccination-titer-test.html", "Import", "Rabies & titer test",
+      "Why the titer test matters, and how the timing affects your move.",
       "Open the guide") +
     card("/take-pet-out-of-thailand/export-process.html", "Export", "The export process",
       "Thai DLD health certificate, export permit and the airport steps on the way out.",

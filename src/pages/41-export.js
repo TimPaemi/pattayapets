@@ -55,6 +55,7 @@ const EXP_RELATED = [
   { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
   { name: "DLD export permit", path: "/take-pet-out-of-thailand/export-permit-thailand-dld.html", desc: "The permit you apply for before departure." },
   { name: "What export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html", desc: "Budgeting the Thai side and the flight." },
+  { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/", desc: "The reverse journey, for context." },
   { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." },
   { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage export." }
 ];
@@ -137,10 +138,10 @@ pages.push(hub({
     }
   ],
   related: [
+    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
     { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/", desc: "The reverse process, for when you arrive." },
     { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage import and export." },
-    { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." },
-    { name: "Pet insurance in Thailand", path: "/pet-insurance-thailand.html", desc: "When cover helps with export vet bills." }
+    { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." }
   ]
 }));
 

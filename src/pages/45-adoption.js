@@ -70,7 +70,7 @@ pages.push(hub({
     { name: "Fostering a pet", path: "/adopt-a-pet-pattaya/fostering.html", desc: "Temporary homes save lives between rescue and adoption." },
     { name: "How to help street animals", path: "/adopt-a-pet-pattaya/how-to-help.html", desc: "Donate, volunteer and what to do for an injured animal." },
     { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Essential after you adopt." },
-    { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "If you might fly an adopted pet abroad." }
+    { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "What good rescues do before rehoming." }
   ]
 }));
 
