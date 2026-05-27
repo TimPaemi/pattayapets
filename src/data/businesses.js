@@ -371,9 +371,10 @@ const BUSINESSES = [
   {
     slug: "zoeta-dogsoul",
     name: "Zoeta Dogsoul",
-    category: "trainers", areas: [], type: "Dog training & behaviour", c24: false,
+    category: "trainers", areas: ["central-pattaya", "banglamung"], type: "Dog training & behaviour", c24: false,
     address: "Chiang Mai (headquarters); confirm Pattaya service area when booking",
     phone: "095 849 6783", tel: "+66958496783",
+    email: "info@zoeta-dogsoul.com",
     website: "https://zoeta-dogsoul.com/dog-training-pattaya/", hours: null,
     languages: "English and Thai",
     services: ["Private dog training", "Behaviour consultations", "Obedience classes"],
@@ -399,62 +400,75 @@ const BUSINESSES = [
     slug: "pet-relocation-thailand",
     name: "Pet Relocation Thailand",
     category: "pet-relocation", areas: [], type: "Pet import & export agent", c24: false,
-    address: null, phone: null, tel: null,
-    website: "https://www.petrelocationthailand.com/", hours: null,
+    address: "15 Soi Tha Kham 13, Bang Khun Thian, Bangkok 10150",
+    phone: null, tel: null,
+    whatsapp: "66946942992",
+    line: "petrelocation",
+    email: "info@petrelocationthailand.com",
+    website: "https://www.petrelocationthailand.com/", hours: "Monday–Friday 09:00–18:00",
     languages: "English and Thai",
     services: ["Import & export", "DLD permits", "Health certificates", "Crates & flight booking"],
     summary: "An agency handling pet import to and export from Thailand, coordinating " +
       "vaccinations, microchipping, blood tests, health certificates and permits. It " +
-      "serves clients nationwide, including the Pattaya area."
+      "serves clients nationwide, including the Pattaya area. Enquire via WhatsApp, " +
+      "LINE @petrelocation or the website contact form."
   },
   {
     slug: "relo4paws",
     name: "Relo4Paws",
     category: "pet-relocation", areas: [], type: "Pet relocation consultancy", c24: false,
     address: null, phone: null, tel: null,
+    whatsapp: "66855419959",
+    email: "info@relo4paws.com",
     website: "https://www.relo4paws.com/", hours: null,
     languages: "English and Thai",
     services: ["Pet relocation consulting", "Export from Thailand", "Worldwide destinations"],
     summary: "A consultancy arranging pet relocation from Thailand to destinations " +
       "worldwide, positioning itself on fair pricing and hands-on support through the " +
-      "process."
+      "process. English enquiries on WhatsApp; Thai support also listed on the website."
   },
   {
     slug: "united-pet-express",
     name: "United Pet Express",
     category: "pet-relocation", areas: [], type: "Pet import & export agent", c24: false,
-    address: null, phone: null, tel: null,
-    website: "https://www.unitedpetexpress.com/", hours: null,
+    address: "32/3 Soi Bangna-Trad 56, Bangna, Bangkok 10260",
+    phone: null, tel: null,
+    whatsapp: "66818991416",
+    email: "joybelle@unitedreloth.com",
+    website: "https://www.unitedpetexpress.com/", hours: "Monday–Friday 08:30–17:30",
     languages: "English and Thai",
     services: ["Import to Thailand", "Export from Thailand", "Door-to-door transport"],
     summary: "A pet transport company handling import to and export from Thailand, " +
-      "including the paperwork and logistics of moving a pet internationally."
+      "including the paperwork and logistics of moving a pet internationally. Urgent " +
+      "enquiries via WhatsApp; office hours Monday to Friday."
   },
   {
     slug: "asia-relocation-pet-transport",
     name: "Asia Relocation - Pet Transport",
     category: "pet-relocation", areas: [], type: "Relocation company (pet division)", c24: false,
     address: null, phone: null, tel: null,
+    email: "inquiryth@asia-relocation.com",
     website: "https://www.asia-relocation.com/thailand/moving-services/pet-relocation/",
     hours: null,
     languages: "English and Thai",
     services: ["Pet relocation", "Vaccination & microchip coordination", "Export permits"],
     summary: "The pet division of a Thailand relocation company, coordinating " +
       "vaccinations, microchipping, health certificates and export permits with the " +
-      "Department of Livestock Development. Enquiries via " +
-      "inquiryth@asia-relocation.com or the website inquiry form."
+      "Department of Livestock Development. Enquire via the website inquiry form or " +
+      "inquiryth@asia-relocation.com."
   },
   {
     slug: "pawspective-relocations",
     name: "Pawspective Relocations",
     category: "pet-relocation", areas: [], type: "Pet travel specialist", c24: false,
     address: null, phone: null, tel: null, line: "Numfonunited",
+    whatsapp: "66843521056",
     website: "https://www.pettravelthailand.com/", hours: null,
     languages: "English and Thai",
     services: ["Pet travel planning", "Import & export", "Documentation support", "Door-to-door relocation"],
     summary: "A pet-travel specialist offering planning and documentation support for " +
       "moving pets into and out of Thailand, including door-to-door options. " +
-      "Enquire via the website or LINE ID Numfonunited."
+      "Enquire via the website, WhatsApp or LINE ID Numfonunited."
   },
 
   {

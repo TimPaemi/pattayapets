@@ -11,7 +11,7 @@ This file lives in `docs/` and is **not** part of the deployed website.
 
 PattayaPets is **built and finished as a Phase 1 site**. Current state:
 
-- **179 pages**, all generated to static HTML by the build script.
+- **180 pages**, all generated to static HTML by the build script.
 - Verified clean: every internal link works, every
   structured-data block is valid, no broken pages, accessibility and SEO
   fundamentals all in place.
@@ -53,8 +53,9 @@ What each line does:
 
 1. `cd C:\Projects\pattayapets` — moves into the project folder.
 2. `npm install` — fetches the build tools (slow once, instant after).
-3. `npm run build:all` — regenerates the site and checks every internal link.
-   The build should finish without errors; the link check should report **0 broken**.
+3. `npm run build:all` — regenerates OG images, the site, checks every internal link,
+   and runs SEO and directory audits. The build should finish without errors; the link
+   check should report **0 broken**.
 4. `npx wrangler pages deploy ...` — uploads the finished site. **The first
    time only**, it opens a browser asking you to log in to Cloudflare — approve
    it, return to the terminal, and it finishes by printing your live URL.

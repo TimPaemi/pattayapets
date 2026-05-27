@@ -122,6 +122,7 @@ function article(o) {
     breadcrumbs: o.breadcrumbs || [],
     updated: o.updated || DEFAULT_UPDATED,
     schema: schema,
+    image: o.image,
     body: body
   };
 }
@@ -180,6 +181,7 @@ function hub(o) {
     breadcrumbs: o.breadcrumbs || [],
     updated: o.updated || DEFAULT_UPDATED,
     schema: schema,
+    image: o.image,
     body: body
   };
 }

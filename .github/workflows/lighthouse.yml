@@ -1,0 +1,22 @@
+name: Lighthouse
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Audit live homepage
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            https://pattayapets.com/
+            https://pattayapets.com/bring-pet-to-thailand/
+            https://pattayapets.com/pet-emergency/24-hour-vets-pattaya.html
+            https://pattayapets.com/vets/
+          configPath: ./.github/lighthouserc.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true

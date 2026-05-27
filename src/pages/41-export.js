@@ -62,6 +62,7 @@ const pages = [];
 pages.push(hub({
   path: "/take-pet-out-of-thailand/",
   title: "Taking your pet out of Thailand | PattayaPets",
+  image: "/assets/img/og-export.png",
   desc: "How to export a dog or cat from Thailand: the DLD export process, plus " +
     "destination notes for the UK, USA, EU and Australia.",
   crumb: "Taking a pet out of Thailand",
@@ -128,9 +129,11 @@ pages.push(hub({
   ],
   related: [
     { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
+    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Agents who coordinate export paperwork and flights." },
     { name: "Export to Australia", path: "/take-pet-out-of-thailand/to-australia.html", desc: "The hardest route — and the most expensive." },
     { name: "What export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html", desc: "Budgeting the Thai side and the flight." },
-    { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." }
+    { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." },
+    { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/", desc: "The reverse journey, for context." }
   ]
 }));
 

@@ -6,3 +6,4 @@ Thumbs.db
 npm-debug.log*
 .cache/
 tools/shots/
+src/assets/img/*.png

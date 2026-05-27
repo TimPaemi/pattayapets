@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#FAF5EC"/>
+  <g transform="translate(98 150) scale(2.7)">
+    <path d="M32 3C17.6 3 7 14 7 28.4 7 46 32 77 32 77S57 46 57 28.4C57 14 46.4 3 32 3Z" fill="#1B5A4C"/>
+    <g fill="#FAF5EC">
+      <ellipse cx="32" cy="38.8" rx="10.4" ry="8.2"/>
+      <circle cx="19.4" cy="25.2" r="5"/>
+      <circle cx="28.4" cy="18.8" r="5.2"/>
+      <circle cx="37.6" cy="18.8" r="5.2"/>
+      <circle cx="44.6" cy="25.2" r="5"/>
+    </g>
+  </g>
+  <text x="322" y="284" font-family="Bricolage Grotesque, sans-serif" font-weight="700" font-size="104" letter-spacing="-3">
+    <tspan fill="#15241F">Pattaya</tspan><tspan fill="#1B5A4C">Pets</tspan>
+  </text>
+  <text x="326" y="360" font-family="Hanken Grotesk, sans-serif" font-weight="600" font-size="38" fill="#1B5A4C">Taking your pet out of Thailand</text>
+  <text x="326" y="418" font-family="Hanken Grotesk, sans-serif" font-weight="400" font-size="28" fill="#5A6B62">DLD export, health certificate, UK, EU, USA, Australia</text>
+  <rect x="0" y="560" width="1200" height="70" fill="#E7A23B"/>
+  <text x="600" y="603" text-anchor="middle" font-family="Hanken Grotesk, sans-serif" font-weight="600" font-size="23" letter-spacing="1" fill="#15241F">pattayapets.com - Start the titer test early if you might leave</text>
+</svg>

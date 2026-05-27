@@ -5,11 +5,13 @@
   "description": "PattayaPets.com — the honest pet resource for Pattaya. Editorial directory and guides.",
   "license": "UNLICENSED",
   "scripts": {
+    "prebuild": "node tools/make-images.js",
     "build": "node build.js",
     "check": "node tools/check-links.js",
     "audit:seo": "node tools/audit-seo.js",
+    "audit:directory": "node tools/audit-directory.js",
     "images": "node tools/make-images.js",
-    "build:all": "npm run build && npm run check && npm run audit:seo"
+    "build:all": "npm run build && npm run check && npm run audit:seo && npm run audit:directory"
   },
   "devDependencies": {
     "@fontsource/bricolage-grotesque": "^5.2.10",

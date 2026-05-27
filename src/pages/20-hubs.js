@@ -144,6 +144,7 @@ pages.push({
   crumb: "Guides",
   breadcrumbs: [],
   updated: "2026-05-27",
+  image: "/assets/img/og-guides.png",
   body:
     '<section class="section"><div class="container">' +
     '<div class="section-head"><p class="eyebrow">Guides &amp; resources</p>' +

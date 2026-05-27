@@ -496,9 +496,11 @@ async function build() {
     .update(cssMin + jsMin + criticalMin).digest("hex").slice(0, 12);
   const precache = [
     "/", "/offline.html", "/start-here.html", "/directory.html", "/guides.html",
-    "/pet-emergency/24-hour-vets-pattaya.html", "/bring-pet-to-thailand/",
+    "/pet-emergency/", "/pet-emergency/24-hour-vets-pattaya.html",
+    "/bring-pet-to-thailand/", "/take-pet-out-of-thailand/",
+    "/dog-friendly-pattaya/", "/owning-a-pet-in-pattaya/",
     "/search-index.json", "/assets/css/site.css", "/assets/js/site.js",
-    "/assets/img/favicon.svg", "/manifest.webmanifest",
+    "/assets/img/favicon.svg", "/assets/img/og-default.png", "/manifest.webmanifest",
     "/assets/fonts/hanken-400.woff2", "/assets/fonts/hanken-500.woff2",
     "/assets/fonts/hanken-700.woff2", "/assets/fonts/bricolage-600.woff2",
     "/assets/fonts/bricolage-700.woff2"

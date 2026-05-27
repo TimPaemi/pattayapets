@@ -20,6 +20,7 @@ const pages = [];
 pages.push(hub({
   path: "/pet-emergency/",
   title: "Pet emergencies in Pattaya | PattayaPets",
+  image: "/assets/img/og-emergency.png",
   desc: "What to do in a pet emergency in Pattaya: 24-hour vets, first-aid " +
     "orientation, heatstroke, ticks, snake bites, street dogs and poisoning.",
   crumb: "Pet emergencies",
@@ -73,8 +74,10 @@ pages.push(hub({
   ],
   related: [
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Clinics open around the clock." },
+    { name: "Pet first-aid orientation", path: "/pet-emergency/pet-first-aid.html", desc: "Staying calm and moving an injured pet safely." },
+    { name: "Venomous creatures", path: "/pet-emergency/venomous-creatures.html", desc: "Toads, centipedes and stings beyond snakes." },
     { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "Walking safely around free-roaming dogs." },
-    { name: "Poisoning", path: "/pet-emergency/poisoning.html", desc: "Household and street hazards." },
+    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Prevention for heartworm, ticks and skin problems." },
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Preventing heatstroke and paw-pad burns." }
   ]
 }));

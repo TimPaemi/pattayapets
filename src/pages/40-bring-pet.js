@@ -36,6 +36,7 @@ const pages = [];
 pages.push(hub({
   path: "/bring-pet-to-thailand/",
   title: "Bringing your pet to Thailand | PattayaPets",
+  image: "/assets/img/og-import.png",
   desc: "How to bring a dog or cat to Thailand: the DLD import permit, microchip, " +
     "rabies vaccination and titer test, health certificate, airlines and arrival.",
   crumb: "Bringing a pet to Thailand",
@@ -112,6 +113,8 @@ pages.push(hub({
   related: [
     { name: "U-Tapao or Bangkok?", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html", desc: "Which airport to fly into for Pattaya." },
     { name: "What import costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html", desc: "Budgeting the move." },
+    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who handle the paperwork and flights." },
+    { name: "Arriving in Thailand", path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html", desc: "The quarantine-station check on landing." },
     { name: "DLD import permit", path: "/bring-pet-to-thailand/import-permit-thailand-dld.html", desc: "The Thai-side permit you apply for." },
     { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side when you leave." }
   ]
