@@ -35,7 +35,9 @@ const HUB_GUIDE = {
     "<p>PattayaPets reviews the <strong>business experience</strong> &mdash; " +
     "booking, communication, billing transparency, cleanliness and comfort &mdash; " +
     "and never rates veterinary medical quality. That judgement is between you " +
-    "and your vet.</p>"),
+    "and your vet. See also " +
+    "<a href=\"/pet-health-pattaya/\">pet health in Pattaya</a> for the tropical-climate " +
+    "risks to discuss with a clinic.</p>"),
 
   groomers: S(
     "<h2>How to choose a groomer in Pattaya</h2>" +
@@ -99,7 +101,8 @@ const HUB_GUIDE = {
     "<li><strong>Food</strong> &mdash; mainstream dog and cat brands are widely " +
     "stocked. For a specific imported or premium brand, check several shops and " +
     "online retailers. <strong>Prescription diets</strong> are usually best " +
-    "sourced through a <a href=\"/vets/\">vet</a>.</li>" +
+    "sourced through a <a href=\"/mobile-vets/\">vet</a> or the " +
+    "<a href=\"/vets/\">vets directory</a>.</li>" +
     "<li><strong>Shop versus vet</strong> &mdash; a pet shop sells supplies; " +
     "health advice, medication and prescription food are a vet&rsquo;s domain. " +
     "Keep the two separate in your mind.</li>" +
@@ -130,6 +133,9 @@ const HUB_GUIDE = {
     "dog.</li>" +
     "<li><strong>Ask to watch.</strong> A trainer worth hiring will happily let " +
     "you see a session and explain how they work.</li>" +
+    "<li><strong>Registration</strong> &mdash; see " +
+    "<a href=\"/owning-a-pet-in-pattaya/dog-registration-thailand.html\">dog registration &amp; the law</a> " +
+    "for the rabies-vaccination duty in Thailand.</li>" +
     "</ul>" +
     "<p>Starting early helps &mdash; gentle, positive work with a " +
     "<a href=\"/dogs/puppy-care-pattaya.html\">puppy</a> prevents many problems " +
@@ -184,7 +190,10 @@ const HUB_GUIDE = {
     "country&rsquo;s authority. Our guides to " +
     "<a href=\"/bring-pet-to-thailand/\">bringing a pet to Thailand</a> and " +
     "<a href=\"/take-pet-out-of-thailand/\">taking one out</a> walk through the " +
-    "whole process. For airline rules, see " +
+    "whole process. For costs, see " +
+    "<a href=\"/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html\">import costs</a> " +
+    "and <a href=\"/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html\">export costs</a>. " +
+    "For airline rules, see " +
     "<a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline pet " +
     "policies</a>, and for snub-nosed breeds and quarantine on arrival see " +
     "<a href=\"/bring-pet-to-thailand/snub-nosed-breeds-flying.html\">snub-nosed breeds &amp; flying</a> " +

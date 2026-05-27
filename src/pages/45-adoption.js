@@ -62,15 +62,17 @@ pages.push(hub({
       title: "Helping beyond adoption",
       cards: [
         { name: "Fostering a pet", desc: "Give a rescue animal a temporary home while it waits for adoption.", path: "/adopt-a-pet-pattaya/fostering.html" },
-        { name: "How to help street animals", desc: "Donating, volunteering, and what to do for an injured animal.", path: "/adopt-a-pet-pattaya/how-to-help.html" }
+        { name: "How to help street animals", desc: "Donating, volunteering, and what to do for an injured animal.", path: "/adopt-a-pet-pattaya/how-to-help.html" },
+        { name: "Getting a cat in Pattaya", desc: "Adopting, kittens and taking in a street cat.", path: "/cats/getting-a-cat-in-pattaya.html" },
+        { name: "Choosing a dog for the heat", desc: "Which dogs cope with Pattaya's climate.", path: "/dogs/choosing-a-dog-for-the-climate.html" }
       ]
     }
   ],
   related: [
+    { name: "Getting a cat in Pattaya", path: "/cats/getting-a-cat-in-pattaya.html", desc: "Adopting, kittens and street cats." },
     { name: "Fostering a pet", path: "/adopt-a-pet-pattaya/fostering.html", desc: "Temporary homes save lives between rescue and adoption." },
     { name: "How to help street animals", path: "/adopt-a-pet-pattaya/how-to-help.html", desc: "Donate, volunteer and what to do for an injured animal." },
-    { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Essential after you adopt." },
-    { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "What good rescues do before rehoming." }
+    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "If you might fly an adopted pet abroad." }
   ]
 }));
 
@@ -293,8 +295,8 @@ SHELTERS.forEach(function (s) {
     ],
     related: [
       { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "All the shelters and how adoption works." },
-      { name: "Fostering a pet", path: "/adopt-a-pet-pattaya/fostering.html", desc: "Give a rescue animal a temporary home." },
-      { name: "How to help street animals", path: "/adopt-a-pet-pattaya/how-to-help.html", desc: "Volunteer, donate and emergency help." },
+      { name: "Cat vaccinations & health", path: "/cats/cat-vaccinations-thailand.html", desc: "Routine care after you adopt." },
+      { name: "Dog vaccinations & parasites", path: "/dogs/dog-vaccinations-thailand.html", desc: "Routine care after you adopt." },
       { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Do this soon after adoption." },
       { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "What good rescues do before rehoming." },
       { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "If you might fly an adopted pet abroad." }

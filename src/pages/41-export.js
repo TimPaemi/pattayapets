@@ -126,9 +126,9 @@ pages.push(hub({
     }
   ],
   related: [
-    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
-    { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/", desc: "The reverse process, for when you arrive." },
-    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage import and export." },
+    { name: "Export to the EU", path: "/take-pet-out-of-thailand/to-eu.html", desc: "Titer test and the three-month wait." },
+    { name: "Export to the UK", path: "/take-pet-out-of-thailand/to-uk.html", desc: "Tapeworm treatment and approved routes." },
+    { name: "What export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html", desc: "Budgeting the Thai side and the flight." },
     { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." }
   ]
 }));

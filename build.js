@@ -288,7 +288,7 @@ async function build() {
     "/bring-pet-to-thailand/": "import pet thailand DLD permit microchip rabies titer health certificate",
     "/bring-pet-to-thailand/import-permit-thailand-dld.html": "R1/1 import permit quarantine station AQS",
     "/bring-pet-to-thailand/u-tapao-airport-pets.html": "U-Tapao UTP Suvarnabhumi BKK Pattaya airport pet",
-    "/bring-pet-to-thailand/snub-nosed-breeds-flying.html": "brachycephalic flat faced pug bulldog persian cargo",
+    "/bring-pet-to-thailand/snub-nosed-breeds-flying.html": "brachycephalic flat faced pug bulldog persian airline cargo",
     "/take-pet-out-of-thailand/": "export pet thailand DLD export permit leave",
     "/pet-emergency/heatstroke.html": "heat stroke overheating hot dog cat emergency",
     "/pet-emergency/choking.html": "choking airway blocked dog cat",
@@ -306,12 +306,12 @@ async function build() {
     "/take-pet-out-of-thailand/to-uk.html": "export pet UK APHA tapeworm Thailand",
     "/owning-a-pet-in-pattaya/getting-to-the-vet.html": "taxi transport vet no car Grab Bolt",
     "/pet-emergency/pet-first-aid.html": "first aid injured pet calm carrier",
-    "/bring-pet-to-thailand/thailand-pet-quarantine.html": "quarantine AQS inspection arrival",
+    "/bring-pet-to-thailand/thailand-pet-quarantine.html": "quarantine AQS inspection arrival Thailand import",
     "/bring-pet-to-thailand/from-eu.html": "import pet EU pet passport Thailand",
     "/take-pet-out-of-thailand/to-australia.html": "export pet Australia DAFF quarantine",
     "/adopt-a-pet-pattaya/": "adopt rescue shelter dog cat Pattaya",
     "/pet-insurance-thailand.html": "pet insurance cover vet bill Thailand",
-    "/start-here.html": "new pet owner Pattaya orientation guide",
+    "/start-here.html": "new pet owner Pattaya orientation emergency vet climate",
     "/take-pet-out-of-thailand/export-process.html": "export pet Thailand DLD health certificate permit airport",
     "/take-pet-out-of-thailand/export-permit-thailand-dld.html": "DLD export permit AQS form 1/1 Suvarnabhumi",
     "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html": "export pet cost budget flight titer agent",
@@ -412,7 +412,16 @@ async function build() {
     "/owning-a-pet-in-pattaya/hot-climate-pet-care.html": "hot climate heat stroke walk timing Pattaya",
     "/take-pet-out-of-thailand/": "export pet Thailand DLD permit leave destination",
     "/pet-health-pattaya/spaying-and-neutering.html": "neuter spay sterilisation street animals Pattaya",
-    "/pet-relocation/": "pet relocation import export agent DLD permit nationwide Thailand"
+    "/pet-relocation/": "pet relocation import export agent DLD permit nationwide Thailand",
+    "/adopt-a-pet-pattaya/hope-for-strays.html": "Hope for Strays dog rescue East Pattaya adopt",
+    "/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html": "Dog Cat Rescue Pattaya shelter adopt",
+    "/adopt-a-pet-pattaya/animal-army-foundation.html": "Animal Army Foundation Na Jomtien rescue adopt",
+    "/adopt-a-pet-pattaya/pattaya-street-dogs-k9aid.html": "Pattaya Street Dogs K9aid rescue adopt",
+    "/adopt-a-pet-pattaya/soi-dog-foundation.html": "Soi Dog Foundation Thailand rescue adopt",
+    "/adopt-a-pet-pattaya/malees-animal-shelter.html": "Malee Animal Shelter Pattaya Chanthaburi adopt",
+    "/adopt-a-pet-pattaya/ady-g-second-chance-pattaya.html": "Ady G Second Chance disabled dog sanctuary Pattaya",
+    "/about.html": "about PattayaPets editorial directory independent TIMPAEMI",
+    "/standards.html": "editorial standards anonymous visit verdict method"
   };
 
   const searchIndex = indexable.map(function (p) {

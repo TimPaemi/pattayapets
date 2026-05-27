@@ -94,8 +94,15 @@ pages.push({
     "also see the <a href=\"/dogs/\">dog owner&rsquo;s hub</a>; cat owners the " +
     "<a href=\"/cats/\">cat owner&rsquo;s hub</a>. And it is worth " +
     "understanding how " +
-    '<a href="/pet-insurance-thailand.html">pet insurance in Thailand</a> works ' +
-    "before you need to claim. You can also " +
+    '<a href="/owning-a-pet-in-pattaya/dog-registration-thailand.html">dog registration</a> ' +
+    "and " +
+    '<a href="/pet-emergency/ticks-and-fleas.html">ticks &amp; fleas</a> ' +
+    "prevention. Browse by " +
+    '<a href="/directory.html">neighbourhood</a> in the directory, or see ' +
+    '<a href="/pet-relocation/">pet relocation agents</a> if you are planning a move. ' +
+    "It is also worth understanding " +
+    '<a href="/pet-insurance-thailand.html">pet insurance in Thailand</a> ' +
+    "before you need to claim. You can " +
     '<a href="/search.html">search the site</a> or browse the ' +
     '<a href="/sitemap.html">full sitemap</a>.</p>' +
     '<p class="updated">Last updated 27 May 2026</p>' +

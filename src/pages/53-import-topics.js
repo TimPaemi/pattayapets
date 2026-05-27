@@ -100,7 +100,12 @@ pages.push(article({
     ["How can I make the flight safer for a snub-nosed pet?",
      "<p>Fly direct where possible, travel in the cooler season and hours, consider cabin travel if the pet is small enough, get a vet fitness check, use a well-ventilated crate, and never sedate without veterinary guidance.</p>"]
   ],
-  related: RELATED
+  related: [
+    { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html", desc: "Which carriers allow flat-faced breeds." },
+    { name: "Choosing a dog for the climate", path: "/dogs/choosing-a-dog-for-the-climate.html", desc: "Why brachycephalic breeds struggle in the heat." },
+    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists experienced with restricted breeds." },
+    { name: "The full import process", path: "/bring-pet-to-thailand/", desc: "Every step, in order." }
+  ]
 }));
 
 /* ---------------- THAILAND QUARANTINE ---------------- */
@@ -165,7 +170,12 @@ pages.push(article({
     ["What could cause my pet to be held or quarantined?",
      "<p>Paperwork problems &mdash; a microchip that does not scan or was implanted after the rabies shot, a missing import permit, an out-of-date or improperly endorsed health certificate, or an unmet requirement. Getting the documents exactly right is what keeps arrival smooth.</p>"]
   ],
-  related: RELATED
+  related: [
+    { name: "Arriving at Suvarnabhumi", path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html", desc: "What the AQS check looks like on landing." },
+    { name: "DLD import permit", path: "/bring-pet-to-thailand/import-permit-thailand-dld.html", desc: "The permit that must be in place before you fly." },
+    { name: "Microchip requirements", path: "/bring-pet-to-thailand/microchip-requirements.html", desc: "Why the chip must come before the rabies jab." },
+    { name: "U-Tapao or Bangkok?", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html", desc: "Which airport your pet will clear through." }
+  ]
 }));
 
 module.exports = pages;

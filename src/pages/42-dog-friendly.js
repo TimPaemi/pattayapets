@@ -47,9 +47,9 @@ pages.push(hub({
     }
   ],
   related: [
-    { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Day-to-day life, costs and housing with a dog." },
+    { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "The heat is the biggest everyday adjustment." },
+    { name: "Beach & sea hazards", path: "/pet-emergency/beach-and-sea-hazards.html", desc: "Jellyfish, hot sand and seawater risks." },
     { name: "Dog registration in Thailand", path: "/owning-a-pet-in-pattaya/dog-registration-thailand.html", desc: "The rules for keeping a dog legally." },
-    { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "What to do when walking your dog." },
     { name: "The dog owner&rsquo;s hub", path: "/dogs/", desc: "Dog-specific care, training and health guides." }
   ]
 }));
@@ -64,8 +64,8 @@ function df(o) {
     related: o.related || [
       { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Back to the cluster hub." },
       { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Building a safe daily routine." },
-      { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "Out and about with your dog." },
-      { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Heat, ticks and tropical-climate risks." }
+      { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Heat, timing and paw-pad safety." },
+      { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "Out and about with your dog." }
     ]
   });
 }
@@ -114,10 +114,10 @@ pages.push(df({
      "<p>Early morning and around or after sunset. The sand is cooler, the sun is kinder, and the quieter beach is more relaxing for your dog anyway.</p>"]
   ],
   related: [
+    { name: "Beach & sea hazards", path: "/pet-emergency/beach-and-sea-hazards.html", desc: "Jellyfish, hot sand and seawater risks." },
     { name: "Places to walk", path: "/dog-friendly-pattaya/parks.html", desc: "Beaches and quieter routes beyond the sand." },
-    { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "What to do when other dogs are around." },
-    { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Back to the cluster hub." },
-    { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "The hot-climate risk to plan around." }
+    { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "The hot-climate risk to plan around." },
+    { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Back to the cluster hub." }
   ]
 }));
 
@@ -353,7 +353,7 @@ pages.push(df({
   ],
   related: [
     { name: "Dog-friendly beaches", path: "/dog-friendly-pattaya/beaches.html", desc: "The best longer walks at cool hours." },
-    { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "What to do when other dogs are around." },
+    { name: "Beach & sea hazards", path: "/pet-emergency/beach-and-sea-hazards.html", desc: "Jellyfish, hot sand and seawater risks." },
     { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Building a safe daily routine." },
     { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Back to the cluster hub." }
   ]

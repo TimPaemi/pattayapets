@@ -22,7 +22,11 @@ module.exports = [{
     'placeholder="Try &ldquo;24 hour vet&rdquo;, &ldquo;Jomtien&rdquo;, &ldquo;bring dog from UK&rdquo;"></div>' +
     '<div id="pp-filters" class="search-filters" aria-label="Filter by section"></div>' +
     '<p class="notice" style="margin-top:1rem">Popular: ' +
-    '<a href="/bring-pet-to-thailand/from-usa.html">Import from USA</a> &middot; ' +
+    '<a href="/bring-pet-to-thailand/from-eu.html">Import from EU</a> &middot; ' +
+    '<a href="/adopt-a-pet-pattaya/fostering.html">Fostering</a> &middot; ' +
+    '<a href="/cats/indoor-vs-outdoor-cats.html">Indoor cats</a> &middot; ' +
+    '<a href="/pet-emergency/beach-and-sea-hazards.html">Beach hazards</a> &middot; ' +
+    '<a href="/bring-pet-to-thailand/snub-nosed-breeds-flying.html">Snub-nosed flying</a> &middot; ' +
     '<a href="/take-pet-out-of-thailand/to-usa.html">Export to USA</a> &middot; ' +
     '<a href="/take-pet-out-of-thailand/to-australia.html">Export to Australia</a> &middot; ' +
     '<a href="/take-pet-out-of-thailand/">Export hub</a> &middot; ' +

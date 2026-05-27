@@ -100,8 +100,11 @@ pages.push(hub({
     {
       title: "Caring for a cat in Pattaya",
       cards: [
-        { name: "Vets & animal hospitals", desc: "Find a clinic for your cat, including exotic-friendly hospitals.", path: "/vets/" },
+        { name: "24-hour vets in Pattaya", desc: "Animal hospitals open around the clock.", path: "/pet-emergency/24-hour-vets-pattaya.html" },
+        { name: "Mobile & home-visit vets", desc: "Vets who come to you — useful for nervous cats.", path: "/mobile-vets/" },
         { name: "Hot-climate pet care", desc: "Keeping a cat cool, hydrated and safe in the tropics.", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html" },
+        { name: "Microchipping your pet", desc: "Essential ID for an indoor or outdoor cat.", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html" },
+        { name: "Spaying & neutering", desc: "Why it matters in a city with many street animals.", path: "/pet-health-pattaya/spaying-and-neutering.html" },
         { name: "Groomers", desc: "Cat grooming salons in Pattaya.", path: "/groomers/" },
         { name: "Ticks & fleas", desc: "Year-round parasite prevention, yes, indoor cats too.", path: "/pet-emergency/ticks-and-fleas.html" },
         { name: "What it costs", desc: "Budgeting for a cat in Pattaya.", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html" },
@@ -167,8 +170,10 @@ pages.push(hub({
     {
       title: "Caring for a dog in Pattaya",
       cards: [
-        { name: "Vets & animal hospitals", desc: "Find a clinic or 24-hour hospital for your dog.", path: "/vets/" },
+        { name: "24-hour vets in Pattaya", desc: "Animal hospitals open around the clock.", path: "/pet-emergency/24-hour-vets-pattaya.html" },
+        { name: "Mobile & home-visit vets", desc: "Vets who come to you — useful for nervous dogs.", path: "/mobile-vets/" },
         { name: "Hot-climate pet care", desc: "The heat is the biggest daily adjustment, here is how.", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html" },
+        { name: "Ticks & fleas", desc: "Year-round parasite prevention for dogs.", path: "/pet-emergency/ticks-and-fleas.html" },
         { name: "Where to walk your dog", desc: "Building a safe, cool-hours walking routine.", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html" },
         { name: "Dog trainers", desc: "Obedience and behaviour help from Pattaya trainers.", path: "/trainers/" },
         { name: "Dog registration & the law", desc: "Rabies law and local registration for dogs.", path: "/owning-a-pet-in-pattaya/dog-registration-thailand.html" },
@@ -185,6 +190,7 @@ pages.push(hub({
       cards: [
         { name: "Dog-friendly Pattaya", desc: "Beaches, cafes, restaurants, hotels and more.", path: "/dog-friendly-pattaya/" },
         { name: "Dog-friendly beaches", desc: "Where dogs can enjoy the sand and sea.", path: "/dog-friendly-pattaya/beaches.html" },
+        { name: "Beach & sea hazards", desc: "Jellyfish, hot sand and seawater risks on walks.", path: "/pet-emergency/beach-and-sea-hazards.html" },
         { name: "Street-dog encounters", desc: "Walking safely around Pattaya's free-roaming dogs.", path: "/pet-emergency/street-dog-encounters.html" }
       ]
     },

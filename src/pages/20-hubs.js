@@ -214,6 +214,12 @@ pages.push({
     card("/bring-pet-to-thailand/u-tapao-airport-pets.html", "Import", "U-Tapao or Bangkok?",
       "Which airport to fly your pet into, and how to reach Pattaya.",
       "Open the guide") +
+    card("/pet-relocation/", "Relocation", "Pet relocation agents",
+      "Import and export specialists who handle permits, flights and paperwork.",
+      "View agents") +
+    card("/pet-emergency/beach-and-sea-hazards.html", "Beach", "Beach & sea hazards",
+      "Jellyfish, hot sand and seawater risks for dogs on Pattaya beaches.",
+      "Open the guide") +
     "</div>" +
     '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +
     "Our guides are not veterinary advice. Import and export rules change &mdash; " +
