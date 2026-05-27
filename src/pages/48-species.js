@@ -106,7 +106,7 @@ pages.push(cat({
      "<p>Build the home around the cat: vertical space and perches, daily wand-toy play, sturdy scratching posts, a window view, and ideally a compatible companion cat. A well-set-up indoor home is a good life for a cat.</p>"]
   ],
   related: [
-    { name: "Cats in Pattaya", path: "/cats/", desc: "Back to the cat owner's hub." },
+    { name: "Cat vaccinations", path: "/cats/cat-vaccinations-thailand.html", desc: "Routine vaccines and parasite prevention." },
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Heat and outdoor access for cats." },
     { name: "Poisoning hazards", path: "/pet-emergency/poisoning.html", desc: "Baits and toxins on the streets." },
     { name: "Getting a cat in Pattaya", path: "/cats/getting-a-cat-in-pattaya.html", desc: "Adopting, kittens and street cats." }
@@ -171,7 +171,7 @@ pages.push(cat({
      "<p>For almost every pet cat in Pattaya, yes. It prevents unwanted litters, cuts roaming and fighting and the disease that spreads through fights, and is a routine, affordable procedure. Ask your vet about timing.</p>"]
   ],
   related: [
-    { name: "Cats in Pattaya", path: "/cats/", desc: "Back to the cat owner's hub." },
+    { name: "Indoor vs outdoor cats", path: "/cats/indoor-vs-outdoor-cats.html", desc: "Keeping cats safe in Pattaya." },
     { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "Why neutering matters in Pattaya." },
     { name: "Heartworm", path: "/pet-health-pattaya/heartworm.html", desc: "Mosquito-borne prevention year-round." },
     { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html", desc: "Year-round parasite prevention." },
@@ -297,7 +297,7 @@ pages.push(cat({
     { name: "Boarding in Pattaya", path: "/boarding/", desc: "The directory of boarding facilities." },
     { name: "Pet sitters & dog walkers", path: "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html", desc: "In-home care while you travel." },
     { name: "Cat vaccinations & health", path: "/cats/cat-vaccinations-thailand.html", desc: "Boarding places require current vaccinations." },
-    { name: "Cats in Pattaya", path: "/cats/", desc: "Back to the cat owner's hub." }
+    { name: "Indoor vs outdoor cats", path: "/cats/indoor-vs-outdoor-cats.html", desc: "Why most cats stay indoors here." }
   ]
 }));
 
@@ -363,7 +363,7 @@ pages.push(dog({
      "<p>Routine vaccinations, parasite prevention and check-ups are generally affordable by Western standards. The larger costs come from treating illness or injury, which is the case for a savings buffer or insurance.</p>"]
   ],
   related: [
-    { name: "Dogs in Pattaya", path: "/dogs/", desc: "Back to the dog owner's hub." },
+    { name: "Puppy care in Pattaya", path: "/dogs/puppy-care-pattaya.html", desc: "Starting a vaccination routine early." },
     { name: "Heartworm", path: "/pet-health-pattaya/heartworm.html", desc: "Year-round mosquito-borne prevention." },
     { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html", desc: "Year-round parasite prevention." },
     { name: "Tick-borne disease", path: "/pet-health-pattaya/tick-borne-disease.html", desc: "What ticks can transmit here." },

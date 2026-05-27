@@ -48,9 +48,12 @@ module.exports = [
       "<p>It looks like your device has lost its internet connection, so this page " +
       "could not load.</p>" +
       "<p>Pages you have already visited may still open from your device. Once you " +
-      "are back online, everything will work normally again. Browse the " +
-      '<a href="/directory.html">business directory</a> or ' +
-      '<a href="/guides.html">guides</a> from a cached page if you need to.</p>' +
+      "are back online, everything will work normally again. Try " +
+      '<a href="/">the home page</a>, the ' +
+      '<a href="/directory.html">business directory</a>, ' +
+      '<a href="/guides.html">guides</a>, or ' +
+      '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a> from a ' +
+      "cached page if you need to.</p>" +
       '<div class="callout callout-emergency"><div class="ch">In a pet emergency</div>' +
       "<p>If your pet needs urgent help and you cannot get online, open a " +
       '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour animal hospital</a> ' +

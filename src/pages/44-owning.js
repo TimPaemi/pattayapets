@@ -80,10 +80,10 @@ function own(o) {
     h1: o.h1, lede: o.lede, verify: o.verify,
     sections: o.sections, faqs: o.faqs,
     related: o.related || [
-      { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Back to the cluster hub." },
-      { name: "Mobile & home-visit vets", path: "/mobile-vets/", desc: "Vets who come to you." },
+      { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "The climate basics every owner needs." },
       { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Preventive care and tropical risks." },
-      { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "The climate basics every owner needs." }
+      { name: "Pet emergencies", path: "/pet-emergency/", desc: "24-hour vets and urgent hazards." },
+      { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Building a safe daily routine." }
     ]
   });
 }

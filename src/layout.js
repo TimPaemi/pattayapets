@@ -94,6 +94,7 @@ function footer() {
     '<li><a href="/directory.html">Business directory</a></li>' +
     '<li><a href="/guides.html">Guides &amp; resources</a></li>' +
     '<li><a href="/start-here.html">Start here</a></li>' +
+    '<li><a href="/search.html">Search the site</a></li>' +
     '<li><a href="/about.html">About</a></li>' +
     '<li><a href="/standards.html">Editorial standards</a></li>' +
     '<li><a href="/corrections.html">Corrections</a></li>' +
@@ -101,7 +102,11 @@ function footer() {
     '<li><a href="/sitemap.html">Sitemap</a></li></ul></div>' +
     '<div><div class="ch">Pet owner essentials</div><ul class="footer-links">' +
     '<li><a href="/vets/">Vets &amp; animal hospitals</a></li>' +
+    '<li><a href="/groomers/">Pet groomers</a></li>' +
+    '<li><a href="/pet-shops/">Pet shops</a></li>' +
     '<li><a href="/mobile-vets/">Mobile &amp; home-visit vets</a></li>' +
+    '<li><a href="/dogs/">Dogs in Pattaya</a></li>' +
+    '<li><a href="/cats/">Cats in Pattaya</a></li>' +
     '<li><a href="/boarding/">Pet boarding &amp; daycare</a></li>' +
     '<li><a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a></li>' +
     '<li><a href="/bring-pet-to-thailand/">Bring a pet to Thailand</a></li>' +

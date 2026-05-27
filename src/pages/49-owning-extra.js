@@ -9,8 +9,6 @@ const GUIDES = { name: "Guides", path: "/guides.html" };
 const CLUSTER = { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/" };
 const SUB = [GUIDES, CLUSTER];
 
-const HUB_RELATED = { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Back to the cluster hub." };
-
 const pages = [];
 
 function own(o) {

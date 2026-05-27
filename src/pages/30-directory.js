@@ -107,6 +107,16 @@ function catGuidesSection(key) {
     "</ul></div></div></section>";
 }
 
+function bizGuidesSidebar(catKey) {
+  var links = CAT_GUIDES[catKey];
+  if (!links || !links.length) return "";
+  return '<hr><div class="ch">Helpful guides</div><ul class="toc">' +
+    links.slice(0, 4).map(function (l) {
+      return '<li><a href="' + l.path + '">' + esc(l.name) + "</a></li>";
+    }).join("") +
+    "</ul>";
+}
+
 const AREA_MISSING_HINTS = {
   pratumnak: {
     vets: "<a href=\"/vets/thonglor-pet-hospital-pattaya.html\">Thonglor Pet Hospital</a> " +
@@ -364,6 +374,17 @@ BUSINESSES.forEach(function (b) {
         "do better with an " +
         '<a href="/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html">in-home pet sitter</a>. ' +
         'See also <a href="/cats/cat-boarding-pattaya.html">cat boarding and sitters</a>.</p></div>'
+      : b.category === "pet-shops"
+      ? '<div class="callout callout-note"><div class="ch">Supplies &amp; ID</div><p>See ' +
+        '<a href="/owning-a-pet-in-pattaya/where-to-buy-pet-food.html">where to buy pet food</a> and ' +
+        '<a href="/owning-a-pet-in-pattaya/microchipping-your-pet.html">microchipping your pet</a>.</p></div>'
+      : b.category === "trainers"
+      ? '<div class="callout callout-note"><div class="ch">Training &amp; walks</div><p>Starting early? See ' +
+        '<a href="/dogs/puppy-care-pattaya.html">puppy care in Pattaya</a> and ' +
+        '<a href="/pet-emergency/street-dog-encounters.html">street-dog encounters</a>.</p></div>'
+      : b.category === "mobile-vets"
+      ? '<div class="callout callout-note"><div class="ch">When a clinic is still needed</div><p>Home visits suit routine care; emergencies and surgery still mean a ' +
+        '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour animal hospital</a>.</p></div>'
       : "") +
     '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +
     "PattayaPets is not a veterinary practice and does not give veterinary advice. " +
@@ -383,6 +404,7 @@ BUSINESSES.forEach(function (b) {
       ? '<hr><div class="ch">In this area</div><p><a href="/area/' + primaryArea + '.html">All pet ' +
         "services in " + esc(areaName(primaryArea)) + " &rarr;</a></p>"
       : "") +
+    bizGuidesSidebar(b.category) +
     "</div></aside>" +
     "</div></div></section>";
 
@@ -529,8 +551,11 @@ Object.keys(AREAS).forEach(function (key) {
 
   body += '<section class="section"><div class="container">' +
     '<div class="prose"><p>Planning ahead? See our list of ' +
-    '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in Pattaya</a> ' +
-    'and the <a href="/dog-friendly-pattaya/">dog-friendly Pattaya</a> guide.</p></div>' +
+    '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in Pattaya</a>, ' +
+    'the <a href="/pet-health-pattaya/">pet health guide</a>, ' +
+    '<a href="/owning-a-pet-in-pattaya/">owning a pet in Pattaya</a>, and ' +
+    '<a href="/dog-friendly-pattaya/">dog-friendly Pattaya</a>. New here? Start with ' +
+    '<a href="/start-here.html">Start here</a>.</p></div>' +
     '<div class="section-head"><h2>Every category</h2></div><div class="chips">' +
     Object.keys(CATEGORIES).map(function (ck) {
       return '<a class="chip chip-link" href="/' + ck + '/">' +

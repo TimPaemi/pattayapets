@@ -133,6 +133,12 @@ pages.push({
       "A realistic monthly budget for a pet in Pattaya.", "Open the guide") +
     card("/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html", "Owning", "Pet sitters & dog walkers",
       "Cover for travel and long work days.", "Open the guide") +
+    card("/owning-a-pet-in-pattaya/hot-climate-pet-care.html", "Owning", "Hot-climate pet care",
+      "Heat, walk timing and paw-pad safety.", "Open the guide") +
+    card("/pet-health-pattaya/dental-care.html", "Health", "Dental care",
+      "Why mouth health matters in the tropics.", "Open the guide") +
+    card("/owning-a-pet-in-pattaya/lost-pet-pattaya.html", "Owning", "Lost pet in Pattaya",
+      "Microchip, local groups and what to do first.", "Open the guide") +
     "</div></div></section>"
 });
 

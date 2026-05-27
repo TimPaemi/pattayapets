@@ -312,6 +312,10 @@ async function build() {
     "/adopt-a-pet-pattaya/": "adopt rescue shelter dog cat Pattaya",
     "/pet-insurance-thailand.html": "pet insurance cover vet bill Thailand",
     "/start-here.html": "new pet owner Pattaya orientation emergency vet climate",
+    "/owning-a-pet-in-pattaya/getting-to-the-vet.html": "getting pet to vet transport taxi no car Pattaya",
+    "/owning-a-pet-in-pattaya/lost-pet-pattaya.html": "lost pet missing microchip chip Pattaya",
+    "/pet-health-pattaya/dental-care.html": "dental teeth tartar gum disease clean Pattaya",
+    "/pet-health-pattaya/healthy-weight.html": "overweight obesity diet exercise heat Pattaya",
     "/take-pet-out-of-thailand/export-process.html": "export pet Thailand DLD health certificate permit airport",
     "/take-pet-out-of-thailand/export-permit-thailand-dld.html": "DLD export permit AQS form 1/1 Suvarnabhumi",
     "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html": "export pet cost budget flight titer agent",
@@ -436,7 +440,12 @@ async function build() {
     var d = p.description || "";
     var b = bizByPath[p.path];
     if (b) {
-      if (b.name) d += " " + b.name;
+      if (b.name) {
+        d += " " + b.name;
+        b.name.replace(/[^\w\s]/g, " ").split(/\s+/).forEach(function (w) {
+          if (w.length > 2) d += " " + w;
+        });
+      }
       if (b.address) d += " " + b.address;
       if (b.c24 && b.phone) d += " " + b.phone;
       if (b.type) d += " " + b.type;

@@ -244,6 +244,15 @@ const body =
       '<a class="card" href="/owning-a-pet-in-pattaya/rainy-season-pet-care.html"><span class="card-tag">Owning</span>' +
         '<h3>Rainy-season pet care</h3><p>Humidity, skin and ear health when the monsoon arrives.</p>' +
         '<span class="card-meta">Read the guide &rarr;</span></a>' +
+      '<a class="card" href="/owning-a-pet-in-pattaya/hot-climate-pet-care.html"><span class="card-tag">Owning</span>' +
+        '<h3>Hot-climate pet care</h3><p>Heat, walk timing and paw-pad safety in Pattaya.</p>' +
+        '<span class="card-meta">Read the guide &rarr;</span></a>' +
+      '<a class="card" href="/pet-health-pattaya/dental-care.html"><span class="card-tag">Health</span>' +
+        '<h3>Dental care</h3><p>Why mouth health matters in the tropics.</p>' +
+        '<span class="card-meta">Read the guide &rarr;</span></a>' +
+      '<a class="card" href="/pet-health-pattaya/healthy-weight.html"><span class="card-tag">Health</span>' +
+        '<h3>Healthy weight</h3><p>Extra weight and heat do not mix well.</p>' +
+        '<span class="card-meta">Read the guide &rarr;</span></a>' +
     '</div>' +
     '<div class="btn-row"><a class="btn btn-ghost" href="/guides.html">See all guides &rarr;</a></div>' +
   '</div></section>' +

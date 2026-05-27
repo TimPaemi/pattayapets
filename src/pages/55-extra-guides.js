@@ -281,7 +281,7 @@ pages.push(article({
      "<p>No - persistent bad breath is usually a sign of dental disease, not something to accept as normal. Mention it to your vet.</p>"]
   ],
   related: [
-    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Back to the health hub." },
+    { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html", desc: "Mouth pain can show up as head-shaking or pawing." },
     { name: "Mobile & home-visit vets", path: "/mobile-vets/", desc: "Routine dental checks at home." },
     { name: "Healthy weight", path: "/pet-health-pattaya/healthy-weight.html", desc: "Weight and diet affect dental health too." },
     { name: "What it costs to own a pet", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", desc: "Budgeting for routine and unexpected care." }
@@ -346,7 +346,7 @@ pages.push(article({
     { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Exercise and cool-hour routines." },
     { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "Neutering changes metabolism and appetite." },
     { name: "Dental care", path: "/pet-health-pattaya/dental-care.html", desc: "Weight and dental health go together." },
-    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Back to the health hub." }
+    { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Exercise in the cool hours." }
   ]
 }));
 

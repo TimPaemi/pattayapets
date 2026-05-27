@@ -165,7 +165,7 @@ pages.push(importStep({
     { name: "Rabies & titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "The next step, once the chip is in." },
     { name: "Microchipping in Pattaya", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Why a chip matters for lost pets too." },
     { name: "DLD import permit", path: "/bring-pet-to-thailand/import-permit-thailand-dld.html", desc: "Apply once vaccinations are in order." },
-    { name: "The full process", path: "/bring-pet-to-thailand/", desc: "Back to the flagship guide." }
+    { name: "Arrival in Thailand", path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html", desc: "What happens when you land." }
   ]
 }));
 
@@ -531,7 +531,7 @@ pages.push(importStep({
     { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who quote and manage the move." },
     { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html", desc: "Understanding the biggest cost." },
     { name: "U-Tapao or Bangkok?", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html", desc: "Airport choice affects transfer cost." },
-    { name: "The full process", path: "/bring-pet-to-thailand/", desc: "Back to the flagship guide." }
+    { name: "Cost of owning a pet", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", desc: "Budgeting after your pet arrives." }
   ]
 }));
 

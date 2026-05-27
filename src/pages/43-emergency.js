@@ -118,7 +118,9 @@ pages.push(article({
       "<ul><li><strong>Save a 24-hour clinic in your phone</strong> &mdash; pick " +
       "the closest to your home and add it to your contacts today.</li>" +
       "<li><strong>Know your route</strong> &mdash; have a sense of how you would " +
-      "get there, day or night, and who could drive if you cannot.</li>" +
+      "get there, day or night, and who could drive if you cannot. See " +
+      "<a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">getting your pet " +
+      "to the vet</a> for transport options without a car.</li>" +
       "<li><strong>Keep a carrier accessible</strong> &mdash; a panicked or " +
       "injured pet is far safer transported in a carrier or crate.</li>" +
       "<li><strong>Keep records handy</strong> &mdash; vaccination history helps " +
@@ -138,7 +140,7 @@ pages.push(article({
     { name: "Pet first-aid orientation", path: "/pet-emergency/pet-first-aid.html", desc: "Staying calm and moving a hurt pet safely." },
     { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "Pattaya's most common preventable emergency." },
     { name: "Poisoning", path: "/pet-emergency/poisoning.html", desc: "Toad toxin, baits and other hazards." },
-    { name: "Mobile & home-visit vets", path: "/mobile-vets/", desc: "For follow-up care when transport is hard." }
+    { name: "Getting your pet to the vet", path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html", desc: "Transport options without a car." }
   ]
 }));
 
@@ -161,7 +163,7 @@ function hazard(o) {
       { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Clinics open around the clock." },
       { name: "Pet first-aid orientation", path: "/pet-emergency/pet-first-aid.html", desc: "The calm, practical basics." },
       { name: "Getting your pet to the vet", path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html", desc: "Transport options without a car." },
-      { name: "Pet emergencies", path: "/pet-emergency/", desc: "Back to the emergency hub." }
+      { name: "Venomous creatures", path: "/pet-emergency/venomous-creatures.html", desc: "Snakes, scorpions and centipedes." }
     ]
   });
 }

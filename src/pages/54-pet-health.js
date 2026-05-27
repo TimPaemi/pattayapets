@@ -15,10 +15,10 @@ const HEALTH_VERIFY =
   "veterinarian &mdash; early advice is always better than waiting.";
 
 const RELATED = [
-  { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Back to the health hub." },
   { name: "Heartworm", path: "/pet-health-pattaya/heartworm.html", desc: "Year-round prevention in Pattaya." },
   { name: "Tick-borne disease", path: "/pet-health-pattaya/tick-borne-disease.html", desc: "Ticks are active all year here." },
   { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html", desc: "Heat and humidity drive flare-ups." },
+  { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "The climate basics every owner needs." },
   { name: "Mobile & home-visit vets", path: "/mobile-vets/", desc: "Routine checks without the clinic stress." },
   { name: "Pet emergencies", path: "/pet-emergency/", desc: "24-hour vets and urgent hazards." }
 ];
@@ -149,7 +149,7 @@ pages.push(health({
     { name: "Dog vaccinations & parasites", path: "/dogs/dog-vaccinations-thailand.html", desc: "How prevention fits the wider routine." },
     { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html", desc: "Year-round parasite prevention." },
     { name: "Mobile & home-visit vets", path: "/mobile-vets/", desc: "Routine prevention visits at home." },
-    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Back to the health hub." }
+    { name: "Parvovirus", path: "/pet-health-pattaya/parvovirus.html", desc: "Another preventable disease to vaccinate against." }
   ]
 }));
 
@@ -269,7 +269,7 @@ pages.push(health({
     { name: "Puppy care in Pattaya", path: "/dogs/puppy-care-pattaya.html", desc: "Vaccination timing for a new puppy." },
     { name: "Dog vaccinations", path: "/dogs/dog-vaccinations-thailand.html", desc: "The full vaccination and prevention routine." },
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Go straight here if you suspect parvo." },
-    { name: "Pet emergencies", path: "/pet-emergency/", desc: "Back to the emergency hub." }
+    { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "Dehydration risks when a puppy is sick." }
   ]
 }));
 

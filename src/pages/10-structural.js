@@ -251,7 +251,8 @@ pages.push(prosePage({
     "or somewhere dog-friendly we have missed.</li>" +
     "<li><strong>A correction</strong> &mdash; if a fact on the site is wrong, " +
     "tell us the specific claim and, if you can, a source. See the " +
-    '<a href="/corrections.html">corrections page</a>.</li>' +
+    '<a href="/corrections.html">corrections page</a> or browse the ' +
+    '<a href="/directory.html">directory</a> and <a href="/guides.html">guides</a>.</li>' +
     "<li><strong>A business update</strong> &mdash; if you run a listed business " +
     "and your hours, address or services have changed, let us know. Note that we " +
     "do not sell placement and updates do not change how we review.</li></ul>" +
