@@ -174,6 +174,7 @@ pages.push(cat({
   related: [
     { name: "Cats in Pattaya", path: "/cats/", desc: "Back to the cat owner's hub." },
     { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "Why neutering matters in Pattaya." },
+    { name: "Heartworm", path: "/pet-health-pattaya/heartworm.html", desc: "Mosquito-borne prevention year-round." },
     { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html", desc: "Year-round parasite prevention." },
     { name: "Vets in Pattaya", path: "/vets/", desc: "Find a clinic for your cat." }
   ]
@@ -364,7 +365,8 @@ pages.push(dog({
   related: [
     { name: "Dogs in Pattaya", path: "/dogs/", desc: "Back to the dog owner's hub." },
     { name: "Puppy care in Pattaya", path: "/dogs/puppy-care-pattaya.html", desc: "The vaccination series for puppies." },
-    { name: "Tropical health issues", path: "/dogs/common-dog-health-issues-tropics.html", desc: "What the climate brings." }
+    { name: "Tropical health issues", path: "/dogs/common-dog-health-issues-tropics.html", desc: "What the climate brings." },
+    { name: "Heartworm", path: "/pet-health-pattaya/heartworm.html", desc: "Year-round mosquito-borne prevention." }
   ]
 }));
 
@@ -425,7 +427,8 @@ pages.push(dog({
   related: [
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Keeping any dog safe in the heat." },
     { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Local dogs already adapted to the climate." },
-    { name: "Dogs in Pattaya", path: "/dogs/", desc: "Back to the dog owner's hub." }
+    { name: "Puppy care in Pattaya", path: "/dogs/puppy-care-pattaya.html", desc: "If you are starting with a young dog." },
+    { name: "Snub-nosed breeds & flying", path: "/bring-pet-to-thailand/snub-nosed-breeds-flying.html", desc: "Extra airline risk for flat-faced breeds." }
   ]
 }));
 
@@ -487,8 +490,9 @@ pages.push(dog({
   ],
   related: [
     { name: "Dog vaccinations & parasites", path: "/dogs/dog-vaccinations-thailand.html", desc: "The vaccination series in full." },
+    { name: "Tropical health issues", path: "/dogs/common-dog-health-issues-tropics.html", desc: "What the climate brings for young dogs." },
     { name: "Dog trainers in Pattaya", path: "/trainers/", desc: "Help building good habits early." },
-    { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Keeping a young dog safe in the heat." }
+    { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "Socialising safely before vaccinations finish." }
   ]
 }));
 
@@ -554,8 +558,9 @@ pages.push(dog({
   ],
   related: [
     { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html", desc: "Year-round parasite prevention." },
+    { name: "Heartworm", path: "/pet-health-pattaya/heartworm.html", desc: "Mosquito-borne prevention year-round." },
     { name: "Dog vaccinations & parasites", path: "/dogs/dog-vaccinations-thailand.html", desc: "The prevention routines in full." },
-    { name: "Pet emergencies", path: "/pet-emergency/", desc: "24-hour vets and the hazards to know." }
+    { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Heat is the most immediate climate risk." }
   ]
 }));
 

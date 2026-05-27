@@ -152,7 +152,8 @@ pages.push(article({
   related: [
     { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Shelters and rescue organisations." },
     { name: "Helping street animals", path: "/adopt-a-pet-pattaya/how-to-help.html", desc: "More ways to make a difference." },
-    { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "Tackling the root of the problem." }
+    { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "Tackling the root of the problem." },
+    { name: "Vets in Pattaya", path: "/vets/", desc: "Clinics that work with rescue fosters." }
   ]
 }));
 
@@ -221,6 +222,7 @@ pages.push(article({
   related: [
     { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Shelters and rescue organisations." },
     { name: "Fostering a pet", path: "/adopt-a-pet-pattaya/fostering.html", desc: "Give a rescue animal a temporary home." },
+    { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "Approaching injured or loose animals safely." },
     { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "The lasting fix for the street-animal problem." }
   ]
 }));
@@ -280,6 +282,7 @@ pages.push(article({
   related: [
     { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Back to the health hub." },
     { name: "Vets in Pattaya", path: "/vets/", desc: "Professional dental care at a clinic." },
+    { name: "Healthy weight", path: "/pet-health-pattaya/healthy-weight.html", desc: "Weight and diet affect dental health too." },
     { name: "What it costs to own a pet", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", desc: "Budgeting for routine and unexpected care." }
   ]
 }));
@@ -339,8 +342,9 @@ pages.push(article({
      "<p>Measure food, trim treats, exercise in the cool hours, and make changes gradually. See your vet first - they can rule out a medical cause and set a safe target and pace. Crash dieting is not safe, especially for cats.</p>"]
   ],
   related: [
+    { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Exercise and cool-hour routines." },
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Exercise and heat when managing weight." },
-    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Back to the health hub." },
+    { name: "Dental care", path: "/pet-health-pattaya/dental-care.html", desc: "Weight and dental health go together." },
     { name: "What it costs to own a pet", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", desc: "The wider pet budget in Pattaya." }
   ]
 }));

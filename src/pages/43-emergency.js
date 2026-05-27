@@ -137,6 +137,7 @@ pages.push(article({
   related: [
     { name: "Pet first-aid orientation", path: "/pet-emergency/pet-first-aid.html", desc: "Staying calm and moving a hurt pet safely." },
     { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "Pattaya's most common preventable emergency." },
+    { name: "Poisoning", path: "/pet-emergency/poisoning.html", desc: "Toad toxin, baits and other hazards." },
     { name: "All vets in Pattaya", path: "/vets/", desc: "The full directory for non-urgent care." }
   ]
 }));
@@ -260,6 +261,7 @@ pages.push(hazard({
   related: [
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Preventing heat problems day to day." },
     { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Cool-hour walking routines." },
+    { name: "Pet emergencies", path: "/pet-emergency/", desc: "Back to the emergency hub." },
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Clinics open around the clock." }
   ]
 }));
@@ -347,6 +349,7 @@ pages.push(hazard({
   ],
   related: [
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Go straight here if you suspect a bite." },
+    { name: "Venomous creatures", path: "/pet-emergency/venomous-creatures.html", desc: "Toads, centipedes and other venom risks." },
     { name: "Pet first aid", path: "/pet-emergency/pet-first-aid.html", desc: "Moving an injured pet safely." },
     { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Dawn and dusk are high-risk times." }
   ]
@@ -402,6 +405,7 @@ pages.push(hazard({
   ],
   related: [
     { name: "Dog registration & the law", path: "/owning-a-pet-in-pattaya/dog-registration-thailand.html", desc: "Rabies vaccination is a legal duty." },
+    { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Rescue organisations and rehoming." },
     { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Building a safe walking routine." },
     { name: "How to help street animals", path: "/adopt-a-pet-pattaya/how-to-help.html", desc: "What to do for an injured stray." }
   ]
@@ -453,6 +457,7 @@ pages.push(hazard({
   ],
   related: [
     { name: "Choking", path: "/pet-emergency/choking.html", desc: "Airway blockages and swallowed objects." },
+    { name: "Venomous creatures", path: "/pet-emergency/venomous-creatures.html", desc: "Toads, centipedes and other venom risks." },
     { name: "Pet first aid", path: "/pet-emergency/pet-first-aid.html", desc: "The calm basics before you reach a vet." },
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Do not wait for symptoms to worsen." }
   ]

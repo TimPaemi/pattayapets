@@ -202,6 +202,21 @@ const body =
         '<h3>The cat owner&rsquo;s hub</h3><p>Indoor living, vets and health guides ' +
         'for cats in Pattaya &mdash; all in one place.</p>' +
         '<span class="card-meta">Open the hub &rarr;</span></a>' +
+      '<a class="card" href="/adopt-a-pet-pattaya/fostering.html"><span class="card-tag">Adoption</span>' +
+        '<h3>Fostering a pet</h3><p>Give a rescue animal a temporary home while it waits for adoption.</p>' +
+        '<span class="card-meta">Read the guide &rarr;</span></a>' +
+      '<a class="card" href="/adopt-a-pet-pattaya/how-to-help.html"><span class="card-tag">Adoption</span>' +
+        '<h3>Helping street animals</h3><p>Donate, volunteer and what to do for an injured stray.</p>' +
+        '<span class="card-meta">Read the guide &rarr;</span></a>' +
+      '<a class="card" href="/bring-pet-to-thailand/snub-nosed-breeds-flying.html"><span class="card-tag">Import</span>' +
+        '<h3>Snub-nosed breeds &amp; flying</h3><p>Why flat-faced breeds need extra care with airlines.</p>' +
+        '<span class="card-meta">Read the guide &rarr;</span></a>' +
+      '<a class="card" href="/bring-pet-to-thailand/thailand-pet-quarantine.html"><span class="card-tag">Import</span>' +
+        '<h3>Pet quarantine in Thailand</h3><p>What the Animal Quarantine Station check really means.</p>' +
+        '<span class="card-meta">Read the guide &rarr;</span></a>' +
+      '<a class="card" href="/bring-pet-to-thailand/u-tapao-airport-pets.html"><span class="card-tag">Import</span>' +
+        '<h3>U-Tapao or Bangkok?</h3><p>Which airport to fly your pet into for Pattaya.</p>' +
+        '<span class="card-meta">Read the guide &rarr;</span></a>' +
     '</div>' +
     '<div class="btn-row"><a class="btn btn-ghost" href="/guides.html">See all guides &rarr;</a></div>' +
   '</div></section>' +

@@ -18,10 +18,10 @@ const OFFICIAL =
   "<p><strong>Official sources to verify against:</strong> " +
   "<a href=\"https://thaiconsulatela.thaiembassy.org/en/publicservice/bringing-pets-to-thailand\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">Thai embassy pet import guide</a> " +
-  "(revised January 2025); Suvarnabhumi AQS import: " +
-  "<a href=\"mailto:qsap_bkk_import@dld.go.th\">qsap_bkk_import@dld.go.th</a>; " +
+  "(revised January 2025); DLD import application form <strong>R1/1</strong> (via the embassy guide or " +
   "<a href=\"https://aqi.dld.go.th/\" target=\"_blank\" rel=\"noopener nofollow\">" +
-  "DLD Animal Quarantine stations</a>.</p>";
+  "DLD Animal Quarantine stations</a>); Suvarnabhumi AQS import: " +
+  "<a href=\"mailto:qsap_bkk_import@dld.go.th\">qsap_bkk_import@dld.go.th</a>.</p>";
 
 const RELATED = [
   { name: "The full process", path: "/bring-pet-to-thailand/", desc: "Every step, in order." },

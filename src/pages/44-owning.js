@@ -182,6 +182,7 @@ pages.push(own({
   related: [
     { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "Recognising and preventing the emergency." },
     { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html", desc: "Year-round parasite prevention." },
+    { name: "Pet emergencies", path: "/pet-emergency/", desc: "24-hour vets and urgent hazards." },
     { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Building a cool-hours routine." }
   ]
 }));
@@ -229,6 +230,7 @@ pages.push(own({
   ],
   related: [
     { name: "Dog-friendly condos", path: "/dog-friendly-pattaya/condos.html", desc: "The condo side in detail." },
+    { name: "What it costs to own a pet", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", desc: "Deposits, rent and the wider budget." },
     { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Back to the cluster hub." },
     { name: "Browse areas", path: "/directory.html", desc: "Get to know Pattaya's neighbourhoods." }
   ]
@@ -321,8 +323,9 @@ pages.push(own({
   ],
   related: [
     { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Registration schemes often tie to microchips." },
+    { name: "Dog vaccinations & parasites", path: "/dogs/dog-vaccinations-thailand.html", desc: "Rabies vaccination and the booster schedule." },
     { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Responsible ownership keeps dogs welcome out and about." },
-    { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Back to the cluster hub." }
+    { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "Why registration and control matter on walks." }
   ]
 }));
 
@@ -364,8 +367,9 @@ pages.push(own({
   ],
   related: [
     { name: "Pet shops in Pattaya", path: "/pet-shops/", desc: "The directory of pet supply shops." },
-    { name: "Vets in Pattaya", path: "/vets/", desc: "For prescription diets and advice." },
-    { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Back to the cluster hub." }
+    { name: "What it costs to own a pet", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", desc: "Food and litter in the wider budget." },
+    { name: "Cats in Pattaya", path: "/cats/", desc: "Cat-specific food and litter tips." },
+    { name: "Dogs in Pattaya", path: "/dogs/", desc: "Dog food brands and diet basics." }
   ]
 }));
 

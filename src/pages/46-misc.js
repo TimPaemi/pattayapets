@@ -107,7 +107,9 @@ pages.push(hub({
         { name: "What it costs", desc: "Budgeting for a cat in Pattaya.", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html" },
         { name: "Where to buy pet food", desc: "Cat food and litter: shops, supermarkets and online.", path: "/owning-a-pet-in-pattaya/where-to-buy-pet-food.html" },
         { name: "Pet insurance", desc: "Whether to insure your cat in Thailand.", path: "/pet-insurance-thailand.html" },
-        { name: "Pet health in Pattaya", desc: "Heartworm, parasites, skin and ear problems and neutering.", path: "/pet-health-pattaya/" }
+        { name: "Pet health in Pattaya", desc: "Heartworm, parasites, skin and ear problems and neutering.", path: "/pet-health-pattaya/" },
+        { name: "Dental care", desc: "Teeth, tartar and gum health for cats.", path: "/pet-health-pattaya/dental-care.html" },
+        { name: "Healthy weight", desc: "Keeping a cat at a healthy weight in the tropics.", path: "/pet-health-pattaya/healthy-weight.html" }
       ]
     },
     {
@@ -172,7 +174,10 @@ pages.push(hub({
         { name: "Dog registration & the law", desc: "Rabies law and local registration for dogs.", path: "/owning-a-pet-in-pattaya/dog-registration-thailand.html" },
         { name: "Grooming", desc: "Dog groomers across Pattaya.", path: "/groomers/" },
         { name: "Boarding & daycare", desc: "Dog hotels and kennels while you travel.", path: "/boarding/" },
-        { name: "Pet health in Pattaya", desc: "Heartworm, tick disease, skin and ear problems and more.", path: "/pet-health-pattaya/" }
+        { name: "Travelling in Thailand", desc: "Domestic trips with your dog.", path: "/owning-a-pet-in-pattaya/travelling-in-thailand.html" },
+        { name: "Pet health in Pattaya", desc: "Heartworm, tick disease, skin and ear problems and more.", path: "/pet-health-pattaya/" },
+        { name: "Dental care", desc: "Teeth, tartar and gum health for dogs.", path: "/pet-health-pattaya/dental-care.html" },
+        { name: "Healthy weight", desc: "Exercise, diet and weight in the heat.", path: "/pet-health-pattaya/healthy-weight.html" }
       ]
     },
     {

@@ -18,10 +18,10 @@ const OFFICIAL =
   "<p><strong>Official sources to verify against:</strong> " +
   "<a href=\"https://thaiconsulatela.thaiembassy.org/en/publicservice/bringing-pets-to-thailand\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">Thai embassy pet import guide</a> " +
-  "(revised January 2025); Suvarnabhumi AQS import: " +
-  "<a href=\"mailto:qsap_bkk_import@dld.go.th\">qsap_bkk_import@dld.go.th</a>; " +
+  "(revised January 2025); DLD import application form <strong>R1/1</strong> (via the embassy guide or " +
   "<a href=\"https://aqi.dld.go.th/\" target=\"_blank\" rel=\"noopener nofollow\">" +
-  "DLD Animal Quarantine stations</a>.</p>";
+  "DLD Animal Quarantine stations</a>); Suvarnabhumi AQS import: " +
+  "<a href=\"mailto:qsap_bkk_import@dld.go.th\">qsap_bkk_import@dld.go.th</a>.</p>";
 
 function importStep(o) {
   var sections = (o.sections || []).slice();
@@ -156,6 +156,7 @@ pages.push(importStep({
   ],
   related: [
     { name: "Rabies & titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "The next step, once the chip is in." },
+    { name: "DLD import permit", path: "/bring-pet-to-thailand/import-permit-thailand-dld.html", desc: "Apply once vaccinations are in order." },
     { name: "The full process", path: "/bring-pet-to-thailand/", desc: "Back to the flagship guide." },
     { name: "What it costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html", desc: "Budget for the whole move." }
   ]
@@ -218,6 +219,7 @@ pages.push(importStep({
   related: [
     { name: "Health certificate", path: "/bring-pet-to-thailand/health-certificate.html", desc: "The document that pulls it all together." },
     { name: "Microchip requirements", path: "/bring-pet-to-thailand/microchip-requirements.html", desc: "Step one — which has to come first." },
+    { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "Why the titer test matters for the return." },
     { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage this for you." }
   ]
 }));
@@ -266,6 +268,7 @@ pages.push(importStep({
   ],
   related: [
     { name: "DLD import permit", path: "/bring-pet-to-thailand/import-permit-thailand-dld.html", desc: "The Thai-side permit you apply for." },
+    { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html", desc: "Endorsement timing vs your flight date." },
     { name: "Rabies & titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "The vaccinations the certificate lists." },
     { name: "What it costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html", desc: "Budgeting the whole move." }
   ]
@@ -341,6 +344,7 @@ pages.push(importStep({
   ],
   related: [
     { name: "Arrival in Thailand", path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html", desc: "What happens when you land." },
+    { name: "Pet quarantine in Thailand", path: "/bring-pet-to-thailand/thailand-pet-quarantine.html", desc: "What happens if paperwork is wrong." },
     { name: "Health certificate", path: "/bring-pet-to-thailand/health-certificate.html", desc: "The document the permit relies on." },
     { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Agents who file the permit for you." }
   ]
@@ -519,6 +523,7 @@ pages.push(importStep({
   related: [
     { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who quote and manage the move." },
     { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html", desc: "Understanding the biggest cost." },
+    { name: "U-Tapao or Bangkok?", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html", desc: "Airport choice affects transfer cost." },
     { name: "The full process", path: "/bring-pet-to-thailand/", desc: "Back to the flagship guide." }
   ]
 }));

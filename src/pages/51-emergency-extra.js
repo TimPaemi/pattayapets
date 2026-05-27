@@ -84,6 +84,7 @@ pages.push(hazard({
   ],
   related: [
     { name: "Poisoning hazards", path: "/pet-emergency/poisoning.html", desc: "Swallowed toxins and objects." },
+    { name: "Venomous creatures", path: "/pet-emergency/venomous-creatures.html", desc: "Toad toxin and other venom risks." },
     { name: "Pet first aid", path: "/pet-emergency/pet-first-aid.html", desc: "The calm basics before you reach a vet." },
     { name: "Road accidents", path: "/pet-emergency/road-accident.html", desc: "Moving an injured pet safely." }
   ]

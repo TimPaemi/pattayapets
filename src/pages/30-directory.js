@@ -33,7 +33,8 @@ const CAT_GUIDES = {
   ],
   groomers: [
     { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html" },
-    { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html" }
+    { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html" },
+    { name: "Cat boarding & sitters", path: "/cats/cat-boarding-pattaya.html" }
   ],
   boarding: [
     { name: "Cat boarding & sitters", path: "/cats/cat-boarding-pattaya.html" },
@@ -41,7 +42,9 @@ const CAT_GUIDES = {
     { name: "Travelling in Thailand", path: "/owning-a-pet-in-pattaya/travelling-in-thailand.html" }
   ],
   "pet-shops": [
-    { name: "Where to buy pet food", path: "/owning-a-pet-in-pattaya/where-to-buy-pet-food.html" }
+    { name: "Where to buy pet food", path: "/owning-a-pet-in-pattaya/where-to-buy-pet-food.html" },
+    { name: "Cats in Pattaya", path: "/cats/" },
+    { name: "Dogs in Pattaya", path: "/dogs/" }
   ],
   trainers: [
     { name: "Puppy care in Pattaya", path: "/dogs/puppy-care-pattaya.html" },

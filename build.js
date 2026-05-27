@@ -284,6 +284,23 @@ async function build() {
     bizByPath["/" + b.category + "/" + b.slug + ".html"] = b;
   });
 
+  const GUIDE_KEYWORDS = {
+    "/bring-pet-to-thailand/": "import pet thailand DLD permit microchip rabies titer health certificate",
+    "/bring-pet-to-thailand/import-permit-thailand-dld.html": "R1/1 import permit quarantine station AQS",
+    "/bring-pet-to-thailand/u-tapao-airport-pets.html": "U-Tapao UTP Suvarnabhumi BKK Pattaya airport pet",
+    "/bring-pet-to-thailand/snub-nosed-breeds-flying.html": "brachycephalic flat faced pug bulldog persian cargo",
+    "/take-pet-out-of-thailand/": "export pet thailand DLD export permit leave",
+    "/pet-emergency/heatstroke.html": "heat stroke overheating hot dog cat emergency",
+    "/pet-emergency/choking.html": "choking airway blocked dog cat",
+    "/pet-emergency/venomous-creatures.html": "toad centipede bee sting scorpion poison",
+    "/pet-health-pattaya/dental-care.html": "teeth tartar gum dental dog cat",
+    "/pet-health-pattaya/healthy-weight.html": "obesity overweight diet exercise",
+    "/adopt-a-pet-pattaya/fostering.html": "foster rescue temporary home",
+    "/adopt-a-pet-pattaya/how-to-help.html": "street dog cat donate volunteer rescue",
+    "/dogs/": "dog owner puppy vaccination walk training",
+    "/cats/": "cat owner indoor balcony vaccination"
+  };
+
   const searchIndex = indexable.map(function (p) {
     var d = p.description || "";
     var b = bizByPath[p.path];
@@ -295,7 +312,7 @@ async function build() {
       if (CATEGORIES[b.category]) d += " " + CATEGORIES[b.category].name;
       if (b.summary) d += " " + b.summary;
       if (b.services && b.services.length) d += " " + b.services.join(" ");
-      if (b.category === "pet-relocation" && !b.areas.length) {
+      if (b.category === "pet-relocation") {
         d += " nationwide Thailand pet import export relocation";
       }
       if (b.email) d += " " + b.email;
@@ -307,6 +324,8 @@ async function build() {
         if (AREAS[ak]) d += " " + AREAS[ak].name;
       });
     }
+    var gk = GUIDE_KEYWORDS[p.path];
+    if (gk) d += " " + gk;
     return {
       t: p.crumb || p.shortTitle || p.title,
       u: p.path,
