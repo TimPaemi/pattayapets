@@ -113,7 +113,9 @@ pages.push(health({
       "<strong>mosquito bites</strong>. Over months, the worms grow and live in " +
       "the heart and the large blood vessels of the lungs, where they cause " +
       "serious, progressive damage. It mainly affects dogs, but cats can be " +
-      "affected too.</p>" },
+      "affected too. See " +
+      "<a href=\"/cats/cat-vaccinations-thailand.html\">cat vaccinations</a> for " +
+      "the feline routine.</p>" },
     { h: "Why Pattaya makes it a year-round risk", html:
       "<p>Heartworm needs mosquitoes to spread, and Pattaya has mosquitoes " +
       "<strong>all year</strong> &mdash; there is no cold season to break the " +
@@ -317,8 +319,10 @@ pages.push(health({
       "properly. Guessing with leftover or human products often makes things " +
       "worse.</p>" },
     { h: "What helps prevent it", html:
-      "<ul><li><strong>Dry your pet thoroughly</strong> after swimming, bathing " +
-      "or a wet walk &mdash; ears and skin folds included.</li>" +
+      "<li><strong>Dry your pet thoroughly</strong> after swimming, bathing " +
+      "or a wet walk &mdash; ears and skin folds included. See " +
+      "<a href=\"/pet-emergency/beach-and-sea-hazards.html\">beach &amp; sea " +
+      "hazards</a> if your dog swims.</li>" +
       "<li><strong>Keep parasite prevention going</strong> &mdash; fleas and " +
       "mites are a common trigger of skin disease.</li>" +
       "<li><strong>Check ears and skin regularly</strong>, so you catch trouble " +
@@ -370,7 +374,9 @@ pages.push(health({
       "sterilisation programmes &mdash; is one of the most genuinely effective " +
       "things an animal lover here can do. See " +
       "<a href=\"/adopt-a-pet-pattaya/\">adopt a pet in Pattaya</a> for the " +
-      "organisations doing this work.</p>" },
+      "organisations doing this work, and " +
+      "<a href=\"/adopt-a-pet-pattaya/how-to-help.html\">how to help street animals</a> " +
+      "for supporting sterilisation programmes.</p>" },
     { h: "When to do it", html:
       "<p>The right age depends on the species, the breed and the size of the " +
       "animal, and veterinary thinking on timing continues to evolve. Rather than " +

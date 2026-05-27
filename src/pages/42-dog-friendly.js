@@ -27,7 +27,11 @@ pages.push(hub({
     "each page below gives you the lay of the land, the etiquette that keeps " +
     "dogs welcome, and the specifics we can stand behind &mdash; with more added " +
     "as we confirm them. Know somewhere genuinely dog-friendly? " +
-    "<a href=\"/contact.html\">Tell us</a>.</p>",
+    "<a href=\"/contact.html\">Tell us</a>. For daily walks, see " +
+    "<a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">where to walk " +
+    "your dog</a> and " +
+    "<a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">hot-climate pet " +
+    "care</a>.</p>",
   groups: [
     {
       title: "Out and about with your dog",
@@ -104,8 +108,10 @@ pages.push(df({
       "<p>Hot sand burns paws &mdash; test it with the back of your hand. Bring " +
       "fresh drinking water; dogs should not drink seawater. Rinse the coat " +
       "after a swim, watch for tiring in the water, and keep the whole outing " +
-      "short in hot weather. See our guide to " +
-      "<a href=\"/pet-emergency/heatstroke.html\">heatstroke</a>.</p>" }
+      "short in hot weather. See our guides to " +
+      "<a href=\"/pet-emergency/heatstroke.html\">heatstroke</a> and " +
+      "<a href=\"/pet-emergency/beach-and-sea-hazards.html\">beach &amp; sea " +
+      "hazards</a>.</p>" }
   ],
   faqs: [
     ["Can I let my dog off the lead on the beach?",

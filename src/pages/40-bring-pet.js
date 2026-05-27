@@ -411,8 +411,8 @@ pages.push(importStep({
       "an approved crate, on the same flight as you, booked through the " +
       "airline&rsquo;s special-baggage service.</li>" +
       "<li><strong>As manifest cargo</strong> — your pet is booked as freight, " +
-      "often the only option for larger dogs or when travelling separately. " +
-      "Pet relocation agents usually arrange this.</li></ul>" },
+      "large dogs or when travelling separately. " +
+      "<a href=\"/pet-relocation/\">Pet relocation agents</a> usually arrange this.</li></ul>" },
     { h: "IATA-compliant travel crates", html:
       "<p>Pets flying in the hold must travel in a crate that meets the " +
       "<strong>IATA Live Animals Regulations</strong>: rigid construction, " +
@@ -562,7 +562,14 @@ pages.push(importStep({
       "cargo, supply the right crate and handle airport clearance. Owners with " +
       "a simple route, plenty of time and a small pet often manage alone. For a " +
       "large dog, a complex route, or a tight timeline, the agent fee usually " +
-      "buys real peace of mind.</p>" }
+      "buys real peace of mind.</p>" },
+    { h: "What comes next", html:
+      "<p>Once you have a budget, read " +
+      "<a href=\"/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html\">what happens on arrival</a> " +
+      "and " +
+      "<a href=\"/bring-pet-to-thailand/thailand-pet-quarantine.html\">pet quarantine in Thailand</a> " +
+      "so you know what the AQS check involves. If you might leave again, plan the " +
+      "<a href=\"/take-pet-out-of-thailand/export-process.html\">export process</a> early too.</p>" }
   ],
   faqs: [
     ["What is the most expensive part?",

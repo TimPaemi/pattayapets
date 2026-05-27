@@ -83,8 +83,9 @@ const CAT_GUIDES = {
   ],
   "pet-relocation": [
     { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/" },
-    { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/" },
-    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html" },
+    { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "Destination guides when you leave." },
+    { name: "DLD export permit", path: "/take-pet-out-of-thailand/export-permit-thailand-dld.html", desc: "The Thai-side permit before you fly out." },
+    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "Health certificate and airport steps on the way out." },
     { name: "DLD import permit", path: "/bring-pet-to-thailand/import-permit-thailand-dld.html" },
     { name: "Rabies & titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html" },
     { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html" },

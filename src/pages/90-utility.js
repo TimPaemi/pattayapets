@@ -21,7 +21,10 @@ module.exports = [
       '<li><a href="/">The PattayaPets home page</a></li>' +
       '<li><a href="/bring-pet-to-thailand/">Bringing a pet to Thailand</a></li>' +
       '<li><a href="/adopt-a-pet-pattaya/">Adopt a pet in Pattaya</a></li>' +
+      '<li><a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a></li>' +
+      '<li><a href="/take-pet-out-of-thailand/export-process.html">The export process</a></li>' +
       '<li><a href="/take-pet-out-of-thailand/">Taking a pet out of Thailand</a></li>' +
+      '<li><a href="/pet-relocation/">Pet relocation agents</a></li>' +
       '<li><a href="/pet-health-pattaya/">Pet health in Pattaya</a></li>' +
       '<li><a href="/start-here.html">Start here</a> &mdash; new pet owner orientation</li>' +
       '<li><a href="/directory.html">The business directory</a> &mdash; vets, ' +
@@ -55,7 +58,9 @@ module.exports = [
       '<a href="/directory.html">business directory</a>, ' +
       '<a href="/guides.html">guides</a>, or ' +
       '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a> from a ' +
-      "cached page if you need to.</p>" +
+      "cached page if you need to, or " +
+      '<a href="/owning-a-pet-in-pattaya/getting-to-the-vet.html">getting your pet ' +
+      "to the vet</a> if transport is the issue.</p>" +
       '<div class="callout callout-emergency"><div class="ch">In a pet emergency</div>' +
       "<p>If your pet needs urgent help and you cannot get online, open a " +
       '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour animal hospital</a> ' +

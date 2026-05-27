@@ -274,7 +274,10 @@ pages.push(own({
       "Be aware of <a href=\"/pet-emergency/street-dog-encounters.html\">" +
       "free-roaming street dogs</a> &mdash; give groups space and stay calm. And " +
       "always keep an eye on the heat: cut a walk short if your dog is " +
-      "struggling.</p>" }
+      "struggling. See " +
+      "<a href=\"/pet-emergency/heatstroke.html\">heatstroke</a> and " +
+      "<a href=\"/owning-a-pet-in-pattaya/dog-registration-thailand.html\">dog " +
+      "registration &amp; the law</a> for the wider picture on responsible walks.</p>" }
   ],
   faqs: [
     ["Can I walk my dog on the beach in Pattaya?",
@@ -306,7 +309,10 @@ pages.push(own({
       "<p>Under Thailand&rsquo;s rabies legislation, dogs and cats must be " +
       "<strong>vaccinated against rabies</strong> and kept up to date. This is " +
       "not just good practice &mdash; it is a legal duty, and it protects your " +
-      "pet, your family and the community. Keep the certificates.</p>" },
+      "pet, your family and the community. Keep the certificates and stay on " +
+      "schedule &mdash; see " +
+      "<a href=\"/dogs/dog-vaccinations-thailand.html\">dog vaccinations</a> and " +
+      "<a href=\"/cats/cat-vaccinations-thailand.html\">cat vaccinations</a>.</p>" },
     { h: "Local dog registration", html:
       "<p>Some Thai municipalities operate <strong>dog registration or " +
       "licensing</strong> schemes, and there have been moves toward wider " +

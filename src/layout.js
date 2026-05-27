@@ -110,6 +110,8 @@ function footer() {
     '<li><a href="/boarding/">Pet boarding &amp; daycare</a></li>' +
     '<li><a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a></li>' +
     '<li><a href="/bring-pet-to-thailand/">Bring a pet to Thailand</a></li>' +
+    '<li><a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a></li>' +
+    '<li><a href="/take-pet-out-of-thailand/export-process.html">The export process</a></li>' +
     '<li><a href="/take-pet-out-of-thailand/">Take a pet out of Thailand</a></li>' +
     '<li><a href="/owning-a-pet-in-pattaya/">Owning a pet in Pattaya</a></li>' +
     '<li><a href="/pet-health-pattaya/">Pet health in Pattaya</a></li>' +
