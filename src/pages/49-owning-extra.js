@@ -321,9 +321,9 @@ pages.push(own({
   ],
   related: [
     { name: "If your pet goes missing", path: "/owning-a-pet-in-pattaya/lost-pet-pattaya.html", desc: "Where the microchip earns its place." },
+    { name: "Microchip for import & export", path: "/bring-pet-to-thailand/microchip-requirements.html", desc: "ISO standard and why order matters." },
     { name: "Dog registration & the law", path: "/owning-a-pet-in-pattaya/dog-registration-thailand.html", desc: "Registration rules in Thailand." },
-    { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/", desc: "Microchipping in the import process." },
-    HUB_RELATED
+    { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/", desc: "Microchipping in the import process." }
   ]
 }));
 
@@ -389,8 +389,8 @@ pages.push(own({
   ],
   related: [
     { name: "Boarding in Pattaya", path: "/boarding/", desc: "Kennels and catteries directory." },
+    { name: "Cat boarding in Pattaya", path: "/cats/cat-boarding-pattaya.html", desc: "When a sitter is not the right fit for a cat." },
     { name: "Travelling in Thailand", path: "/owning-a-pet-in-pattaya/travelling-in-thailand.html", desc: "When a sitter is not enough." },
-    { name: "What it costs to own a pet", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", desc: "Where care costs fit the budget." },
     HUB_RELATED
   ]
 }));
@@ -449,8 +449,8 @@ pages.push(own({
   ],
   related: [
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Where to go when it cannot wait." },
+    { name: "Hit by a vehicle", path: "/pet-emergency/road-accident.html", desc: "If transport fails in an emergency." },
     { name: "Mobile vets", path: "/mobile-vets/", desc: "Vets who come to you." },
-    { name: "Pet emergencies", path: "/pet-emergency/", desc: "First-aid and urgent hazards." },
     HUB_RELATED
   ]
 }));

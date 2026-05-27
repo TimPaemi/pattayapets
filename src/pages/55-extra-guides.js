@@ -412,8 +412,8 @@ pages.push(article({
   ],
   related: [
     { name: "Boarding & daycare", path: "/boarding/", desc: "If the pet stays behind." },
+    { name: "Pet sitters & dog walkers", path: "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html", desc: "When the pet stays in Pattaya." },
     { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html", desc: "Domestic flights and crate rules." },
-    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "International travel is a different paperwork path." },
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Managing the heat, anywhere in Thailand." }
   ]
 }));

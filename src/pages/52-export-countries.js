@@ -511,7 +511,13 @@ pages.push(exp({
       "<p>The UAE does not generally require a rabies titer test for entry from " +
       "Thailand, but if you might move your pet on to the EU, UK or similar later, " +
       "having the <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">" +
-      "titer test</a> done early keeps that option open.</p>" }
+      "titer test</a> done early keeps that option open.</p>" },
+    { h: "Importing a pet from the UAE to Thailand", html:
+      "<p>PattayaPets does not yet publish a dedicated &ldquo;import from the UAE&rdquo; " +
+      "country guide &mdash; the UAE&ndash;Pattaya corridor is less common than UK or EU " +
+      "routes. The Thai import steps are the same regardless of origin: see our " +
+      "<a href=\"/bring-pet-to-thailand/\">bringing a pet to Thailand</a> guide and " +
+      "confirm UAE export requirements with MOCCAE before you book.</p>" }
   ],
   faqs: [
     ["Does the UAE require a rabies titer test from Thailand?",
@@ -521,8 +527,8 @@ pages.push(exp({
   ],
   related: [
     { name: "Export to the EU", path: "/take-pet-out-of-thailand/to-eu.html", desc: "Stricter rules if you move on from the UAE." },
+    { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/", desc: "The reverse journey — no dedicated UAE import page yet." },
     { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
-    { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Worth doing early if you may leave Thailand again." },
     { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage export." }
   ]
 }));

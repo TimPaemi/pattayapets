@@ -226,8 +226,8 @@ pages.push(importStep({
   related: [
     { name: "Health certificate", path: "/bring-pet-to-thailand/health-certificate.html", desc: "The document that pulls it all together." },
     { name: "Microchip requirements", path: "/bring-pet-to-thailand/microchip-requirements.html", desc: "Step one — which has to come first." },
-    { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "Why the titer test matters for the return." },
-    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage this for you." }
+    { name: "Pet quarantine in Thailand", path: "/bring-pet-to-thailand/thailand-pet-quarantine.html", desc: "What goes wrong when paperwork slips." },
+    { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "Why the titer test matters for the return." }
   ]
 }));
 
@@ -351,7 +351,7 @@ pages.push(importStep({
   ],
   related: [
     { name: "Arrival in Thailand", path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html", desc: "What happens when you land." },
-    { name: "Pet quarantine in Thailand", path: "/bring-pet-to-thailand/thailand-pet-quarantine.html", desc: "What happens if paperwork is wrong." },
+    { name: "U-Tapao or Bangkok?", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html", desc: "Which airport your permit targets." },
     { name: "Health certificate", path: "/bring-pet-to-thailand/health-certificate.html", desc: "The document the permit relies on." },
     { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Agents who file the permit for you." }
   ]

@@ -427,6 +427,7 @@ async function build() {
     "/privacy.html": "privacy policy data analytics PattayaPets",
     "/accessibility.html": "accessibility WCAG PattayaPets website",
     "/masthead.html": "editorial standards about network Pattaya Authority",
+    "/sitemap.html": "sitemap all pages directory guides PattayaPets",
     "/": "PattayaPets pet resource directory guides Pattaya Thailand honest"
   };
 

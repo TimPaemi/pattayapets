@@ -220,6 +220,18 @@ pages.push({
     card("/pet-emergency/beach-and-sea-hazards.html", "Beach", "Beach & sea hazards",
       "Jellyfish, hot sand and seawater risks for dogs on Pattaya beaches.",
       "Open the guide") +
+    card("/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", "Owning", "Where to walk your dog",
+      "Building a safe, cool-hours walking routine in Pattaya.",
+      "Open the guide") +
+    card("/owning-a-pet-in-pattaya/microchipping-your-pet.html", "Owning", "Microchipping your pet",
+      "The best route home for a lost pet, and keeping details current.",
+      "Open the guide") +
+    card("/owning-a-pet-in-pattaya/dog-registration-thailand.html", "Owning", "Dog registration",
+      "Rabies vaccination law and local registration in Thailand.",
+      "Open the guide") +
+    card("/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", "Owning", "What it costs",
+      "A realistic monthly budget for a pet in Pattaya.",
+      "Open the guide") +
     "</div>" +
     '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +
     "Our guides are not veterinary advice. Import and export rules change &mdash; " +

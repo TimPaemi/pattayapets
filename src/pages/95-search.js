@@ -54,6 +54,7 @@ module.exports = [{
     '<a href="/pet-emergency/ticks-and-fleas.html">Ticks &amp; fleas</a> &middot; ' +
     '<a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">Rabies titer</a> &middot; ' +
     '<a href="/bring-pet-to-thailand/microchip-requirements.html">Microchip</a> &middot; ' +
+    '<a href="/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html">Pet sitters</a> &middot; ' +
     '<a href="/cats/cat-boarding-pattaya.html">Cat boarding</a> &middot; ' +
     '<a href="/groomers/">Groomers</a> &middot; ' +
     '<a href="/pet-insurance-thailand.html">Pet insurance</a> &middot; ' +

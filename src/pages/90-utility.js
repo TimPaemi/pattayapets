@@ -19,6 +19,9 @@ module.exports = [
       "<p>Try one of these instead:</p>" +
       "<ul>" +
       '<li><a href="/">The PattayaPets home page</a></li>' +
+      '<li><a href="/bring-pet-to-thailand/">Bringing a pet to Thailand</a></li>' +
+      '<li><a href="/adopt-a-pet-pattaya/">Adopt a pet in Pattaya</a></li>' +
+      '<li><a href="/start-here.html">Start here</a> &mdash; new pet owner orientation</li>' +
       '<li><a href="/directory.html">The business directory</a> &mdash; vets, ' +
       "groomers, boarding and more</li>" +
       '<li><a href="/guides.html">Guides and resources</a> for pet owners</li>' +

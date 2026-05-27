@@ -96,6 +96,8 @@ pages.push({
     "understanding how " +
     '<a href="/owning-a-pet-in-pattaya/dog-registration-thailand.html">dog registration</a> ' +
     "and " +
+    '<a href="/owning-a-pet-in-pattaya/microchipping-your-pet.html">microchipping</a>, ' +
+    '<a href="/owning-a-pet-in-pattaya/where-to-walk-your-dog.html">where to walk your dog</a>, ' +
     '<a href="/pet-emergency/ticks-and-fleas.html">ticks &amp; fleas</a> ' +
     "prevention. Browse by " +
     '<a href="/directory.html">neighbourhood</a> in the directory, or see ' +
@@ -313,7 +315,10 @@ pages.push(prosePage({
     "date. We do not quietly edit and move on.</p>" +
     "<h2>Correction log</h2>" +
     "<p>No corrections have been published yet. This log will list them as they " +
-    "occur.</p>"
+    "occur.</p>" +
+    "<p>While you are here: browse the <a href=\"/directory.html\">business " +
+    "directory</a>, the <a href=\"/guides.html\">guides</a>, or " +
+    '<a href="/search.html">search the site</a>.</p>'
 }));
 
 /* ---------------- Privacy ---------------- */
