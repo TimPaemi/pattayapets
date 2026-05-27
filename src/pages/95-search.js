@@ -9,7 +9,7 @@ module.exports = [{
   crumb: "Search",
   breadcrumbs: [],
   noindex: true,
-  updated: "2026-05-27",
+  updated: "2026-05-28",
   body:
     '<section class="section"><div class="container">' +
     '<p class="eyebrow">Search</p>' +
@@ -28,6 +28,9 @@ module.exports = [{
     '<div class="chips">' +
     '<a class="chip chip-link" href="/directory.html">Directory</a>' +
     '<a class="chip chip-link" href="/vets/">Vets</a>' +
+    '<a class="chip chip-link" href="/groomers/">Groomers</a>' +
+    '<a class="chip chip-link" href="/boarding/">Boarding</a>' +
+    '<a class="chip chip-link" href="/mobile-vets/">Mobile vets</a>' +
     '<a class="chip chip-link" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a>' +
     '<a class="chip chip-link" href="/bring-pet-to-thailand/">Import guide</a>' +
     '<a class="chip chip-link" href="/bring-pet-to-thailand/checklist.html">Import checklist</a>' +
@@ -38,6 +41,8 @@ module.exports = [{
     '<a class="chip chip-link" href="/dog-friendly-pattaya/">Dog-friendly</a>' +
     '<a class="chip chip-link" href="/pet-relocation/">Relocation agents</a>' +
     '<a class="chip chip-link" href="/area/jomtien.html">Jomtien area</a>' +
+    '<a class="chip chip-link" href="/area/naklua.html">Naklua area</a>' +
+    '<a class="chip chip-link" href="/area/central-pattaya.html">Central Pattaya</a>' +
     '<a class="chip chip-link" href="/area/wongamat.html">Wongamat area</a>' +
     '<a class="chip chip-link" href="/guides.html">All guides</a>' +
     '<a class="chip chip-link" href="/sitemap.html">Full sitemap</a>' +
@@ -50,6 +55,9 @@ module.exports = [{
     '<p class="notice search-popular">Popular: ' +
     '<a href="/bring-pet-to-thailand/from-eu.html">Import from EU</a> &middot; ' +
     '<a href="/bring-pet-to-thailand/from-uae.html">Import from UAE</a> &middot; ' +
+    '<a href="/bring-pet-to-thailand/from-india.html">Import from India</a> &middot; ' +
+    '<a href="/bring-pet-to-thailand/from-china.html">Import from China</a> &middot; ' +
+    '<a href="/bring-pet-to-thailand/checklist.html">Import checklist</a> &middot; ' +
     '<a href="/adopt-a-pet-pattaya/fostering.html">Fostering</a> &middot; ' +
     '<a href="/adopt-a-pet-pattaya/how-to-help.html">How to help</a> &middot; ' +
     '<a href="/adopt-a-pet-pattaya/animal-army-foundation.html">Animal Army</a> &middot; ' +

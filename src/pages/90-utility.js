@@ -9,7 +9,7 @@ module.exports = [
     crumb: "Not found",
     breadcrumbs: [],
     noindex: true,
-    updated: "2026-05-27",
+    updated: "2026-05-28",
     body:
       '<section class="section"><div class="container"><div class="prose">' +
       '<p class="eyebrow">Error 404</p>' +
@@ -25,6 +25,8 @@ module.exports = [
       '<li><a href="/take-pet-out-of-thailand/export-process.html">The export process</a></li>' +
       '<li><a href="/take-pet-out-of-thailand/">Taking a pet out of Thailand</a></li>' +
       '<li><a href="/pet-relocation/">Pet relocation agents</a></li>' +
+      '<li><a href="/mobile-vets/">Mobile &amp; home-visit vets</a></li>' +
+      '<li><a href="/bring-pet-to-thailand/checklist.html">Import checklist</a></li>' +
       '<li><a href="/pet-health-pattaya/">Pet health in Pattaya</a></li>' +
       '<li><a href="/start-here.html">Start here</a> &mdash; new pet owner orientation</li>' +
       '<li><a href="/directory.html">The business directory</a> &mdash; vets, ' +
@@ -45,7 +47,7 @@ module.exports = [
     crumb: "Offline",
     breadcrumbs: [],
     noindex: true,
-    updated: "2026-05-27",
+    updated: "2026-05-28",
     body:
       '<section class="section"><div class="container"><div class="prose">' +
       '<p class="eyebrow">No connection</p>' +

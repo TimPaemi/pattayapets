@@ -40,6 +40,7 @@ const AREA_GUIDE = {
     "<ul>" +
     "<li><a href=\"/vets/pattaya-veterinary-clinic.html\">Pattaya Veterinary Clinic</a></li>" +
     "<li><a href=\"/vets/north-pattaya-animal-hospital.html\">North Pattaya Animal Hospital</a></li>" +
+    "<li><a href=\"/groomers/pattaya-city-pet-shop-grooming.html\">Pattaya City Grooming</a> (central)</li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/pet-friendly-housing.html\">Pet-friendly housing in Pattaya</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">Where and how to walk your dog</a></li>" +
     "<li><a href=\"/dog-friendly-pattaya/beaches.html\">Dog-friendly beaches</a></li>" +
@@ -199,6 +200,7 @@ const AREA_GUIDE = {
     "<ul>" +
     "<li><a href=\"/vets/animal-army-hospital.html\">Animal Army Hospital (Na Jomtien)</a></li>" +
     "<li><a href=\"/pet-shops/tong-ma-aquarium-and-pets-shop.html\">Tong-ma pet shop (Thep Prasit)</a></li>" +
+    "<li><a href=\"/boarding/\">Boarding &amp; daycare</a> (nearest options in central Pattaya)</li>" +
     "<li><a href=\"/dog-friendly-pattaya/beaches.html\">Dog-friendly beaches</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">Where and how to walk your dog</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/pet-friendly-housing.html\">Pet-friendly housing in Pattaya</a></li>" +

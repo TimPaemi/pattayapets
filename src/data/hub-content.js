@@ -153,7 +153,9 @@ const HUB_GUIDE = {
     "<p>Starting early helps &mdash; gentle, positive work with a " +
     "<a href=\"/dogs/puppy-care-pattaya.html\">puppy</a> prevents many problems " +
     "before they begin. For walking safely around Pattaya&rsquo;s street dogs, see " +
-    "<a href=\"/pet-emergency/street-dog-encounters.html\">street-dog encounters</a>.</p>"),
+    "<a href=\"/pet-emergency/street-dog-encounters.html\">street-dog encounters</a>. " +
+    "If you are importing a dog, see our " +
+    "<a href=\"/pet-relocation/\">pet relocation agents</a> directory.</p>"),
 
   "mobile-vets": S(
     "<h2>When a mobile vet makes sense in Pattaya</h2>" +
@@ -179,7 +181,8 @@ const HUB_GUIDE = {
     "<a href=\"/mobile-vets/mor-ja-pet-clinic-pattaya.html\">Mor Ja Pet Clinic</a> " +
     "and <a href=\"/mobile-vets/baan-mor-raksasat-animal-hospital-pattaya.html\">" +
     "Baan Mor Raksasat Animal Hospital</a>, and the full " +
-    "<a href=\"/vets/\">vets directory</a>.</p>"),
+    "<a href=\"/vets/\">vets directory</a>. For routine neutering at home, see " +
+    "<a href=\"/pet-health-pattaya/spaying-and-neutering.html\">spaying &amp; neutering</a>.</p>"),
 
   "pet-relocation": S(
     "<h2>How to choose a pet relocation agent</h2>" +

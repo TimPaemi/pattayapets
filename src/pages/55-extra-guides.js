@@ -418,6 +418,7 @@ pages.push(article({
     { name: "Boarding & daycare", path: "/boarding/", desc: "If the pet stays behind." },
     { name: "Pet sitters & dog walkers", path: "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html", desc: "When the pet stays in Pattaya." },
     { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html", desc: "Domestic flights and crate rules." },
+    { name: "U-Tapao or Bangkok?", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html", desc: "Flying into Thailand for Pattaya." },
     { name: "Dog-friendly hotels", path: "/dog-friendly-pattaya/hotels.html", desc: "Pet-friendly stays in Pattaya and beyond." },
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Managing the heat, anywhere in Thailand." }
   ]

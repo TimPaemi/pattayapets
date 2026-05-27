@@ -16,6 +16,11 @@ function firstSentence(t) { var m = t.match(/^.*?[.](\s|$)/); return m ? m[0].tr
 
 const HUB_OG = {
   vets: "/assets/img/og-vets.png",
+  groomers: "/assets/img/og-groomers.png",
+  boarding: "/assets/img/og-boarding.png",
+  "pet-shops": "/assets/img/og-pet-shops.png",
+  trainers: "/assets/img/og-trainers.png",
+  "mobile-vets": "/assets/img/og-mobile-vets.png",
   "pet-relocation": "/assets/img/og-relocation.png"
 };
 
@@ -41,6 +46,7 @@ const CAT_GUIDES = {
     { name: "Pet health in Pattaya", path: "/pet-health-pattaya/" }
   ],
   groomers: [
+    { name: "Mobile & home-visit vets", path: "/mobile-vets/" },
     { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html" },
     { name: "Dental care", path: "/pet-health-pattaya/dental-care.html" },
     { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html" },
@@ -49,6 +55,7 @@ const CAT_GUIDES = {
     { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/" }
   ],
   boarding: [
+    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html" },
     { name: "Cat boarding & sitters", path: "/cats/cat-boarding-pattaya.html" },
     { name: "Pet sitters & dog walkers", path: "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html" },
     { name: "Travelling in Thailand", path: "/owning-a-pet-in-pattaya/travelling-in-thailand.html" },
@@ -58,6 +65,7 @@ const CAT_GUIDES = {
     { name: "Pet insurance in Thailand", path: "/pet-insurance-thailand.html" }
   ],
   "pet-shops": [
+    { name: "Travelling in Thailand", path: "/owning-a-pet-in-pattaya/travelling-in-thailand.html" },
     { name: "Where to buy pet food", path: "/owning-a-pet-in-pattaya/where-to-buy-pet-food.html" },
     { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html" },
     { name: "Dog registration & the law", path: "/owning-a-pet-in-pattaya/dog-registration-thailand.html" },
@@ -77,6 +85,7 @@ const CAT_GUIDES = {
     { name: "Pet emergencies", path: "/pet-emergency/" }
   ],
   trainers: [
+    { name: "Pet relocation agents", path: "/pet-relocation/" },
     { name: "Puppy care in Pattaya", path: "/dogs/puppy-care-pattaya.html" },
     { name: "Dog registration & the law", path: "/owning-a-pet-in-pattaya/dog-registration-thailand.html" },
     { name: "Tropical dog health", path: "/dogs/common-dog-health-issues-tropics.html" },
@@ -183,6 +192,17 @@ function catCrossSection(key) {
 }
 
 const AREA_MISSING_HINTS = {
+  naklua: {
+    groomers: "<a href=\"/groomers/pattaya-city-pet-shop-grooming.html\">Pattaya City Grooming</a> (central) or " +
+      "the <a href=\"/groomers/\">groomers directory</a>",
+    boarding: "<a href=\"/boarding/pattaya-dog-stay.html\">Pattaya Dog Stay</a> (central) or " +
+      "<a href=\"/boarding/elite-dog-resort.html\">Elite Dog Resort</a> (Pratumnak)",
+    "pet-shops": "<a href=\"/pet-shops/pattaya-pet-center.html\">Pattaya Pet Center</a> (South Pattaya) or " +
+      "the <a href=\"/pet-shops/\">pet shops directory</a>",
+    trainers: "<a href=\"/trainers/zoeta-dogsoul.html\">Zoeta Dogsoul</a> (confirm Pattaya coverage) or " +
+      "the <a href=\"/trainers/\">trainers directory</a>",
+    "mobile-vets": "the <a href=\"/mobile-vets/\">mobile vets directory</a> &mdash; mostly East Pattaya / Banglamung"
+  },
   wongamat: {
     vets: "<a href=\"/vets/north-pattaya-animal-hospital.html\">North Pattaya Animal Hospital</a> " +
       "(Naklua/Wongamat) or <a href=\"/vets/pattaya-veterinary-clinic.html\">Pattaya Veterinary Clinic</a> (Naklua)",
@@ -191,7 +211,10 @@ const AREA_MISSING_HINTS = {
     "pet-shops": "<a href=\"/pet-shops/brand-dog-pattaya-pet-supplies.html\">Brand Dog</a> (South Pattaya) or " +
       "<a href=\"/pet-shops/peturday-pattaya.html\">Peturday</a> (Pratumnak)",
     boarding: "<a href=\"/boarding/elite-dog-resort.html\">Elite Dog Resort</a> (Pratumnak) or " +
-      "<a href=\"/boarding/pattaya-dog-stay.html\">Pattaya Dog Stay</a> (central)"
+      "<a href=\"/boarding/pattaya-dog-stay.html\">Pattaya Dog Stay</a> (central)",
+    trainers: "<a href=\"/trainers/zoeta-dogsoul.html\">Zoeta Dogsoul</a> or " +
+      "the <a href=\"/trainers/\">trainers directory</a>",
+    "mobile-vets": "the <a href=\"/mobile-vets/\">mobile vets directory</a> &mdash; East Pattaya listings"
   },
   pratumnak: {
     vets: "<a href=\"/vets/thonglor-pet-hospital-pattaya.html\">Thonglor Pet Hospital</a> " +
@@ -204,7 +227,12 @@ const AREA_MISSING_HINTS = {
   },
   jomtien: {
     groomers: "<a href=\"/groomers/woof-pattaya.html\">Woof Pattaya</a> (Nong Prue) or " +
-      "salons in <a href=\"/groomers/\">central Pattaya</a>"
+      "salons in <a href=\"/groomers/\">central Pattaya</a>",
+    boarding: "<a href=\"/boarding/pattaya-dog-stay.html\">Pattaya Dog Stay</a> (central) or " +
+      "the <a href=\"/boarding/\">boarding directory</a>",
+    trainers: "<a href=\"/trainers/k9-pattaya-dog-training-school.html\">K9 Pattaya</a> (Sattahip) or " +
+      "the <a href=\"/trainers/\">trainers directory</a>",
+    "mobile-vets": "<a href=\"/mobile-vets/mor-ja-pet-clinic-pattaya.html\">Mor Ja Pet Clinic</a> (confirm coverage)"
   },
   "bang-saray": {
     vets: "<a href=\"/vets/animal-army-hospital.html\">Animal Army Hospital</a> (Na Jomtien) " +
@@ -396,7 +424,7 @@ function bizSchema(b) {
 
 const pages = [];
 
-const FACTS_UPDATED = "2026-05-27";
+const FACTS_UPDATED = "2026-05-28";
 
 /* ---- business listing pages ---- */
 BUSINESSES.forEach(function (b) {
@@ -493,7 +521,7 @@ BUSINESSES.forEach(function (b) {
       { name: "Directory", path: "/directory.html" },
       { name: cat.name, path: "/" + cat.slug + "/" }
     ],
-    updated: "2026-05-27",
+    updated: FACTS_UPDATED,
     schema: [bizSchema(b)],
     body: body
   });
@@ -567,7 +595,7 @@ Object.keys(CATEGORIES).forEach(function (key) {
     description: clampDesc(cat.intro),
     crumb: cat.name,
     breadcrumbs: [{ name: "Directory", path: "/directory.html" }],
-    updated: "2026-05-27",
+    updated: "2026-05-28",
     body: body
   });
 });
@@ -655,7 +683,7 @@ Object.keys(AREAS).forEach(function (key) {
       ", Pattaya. " + area.blurb,
     crumb: area.name,
     breadcrumbs: [{ name: "Directory", path: "/directory.html" }],
-    updated: "2026-05-27",
+    updated: "2026-05-28",
     body: body
   });
 });

@@ -69,6 +69,7 @@ function country(o) {
     title: o.title, desc: o.desc, crumb: o.crumb, breadcrumbs: SUB,
     eyebrow: "Bringing a pet to Thailand &middot; By country",
     h1: o.h1, lede: o.lede, verify: VERIFY,
+    updated: "2026-05-28",
     sections: sections, faqs: o.faqs, related: o.related || countryRelated(o.slug)
   });
 }
@@ -595,6 +596,89 @@ pages.push(country({
      "<p>No. Follow the standard Thai import process with microchip, rabies vaccination, health certificate and DLD import permit. Confirm the current DLD list and your pet's vaccination timing before you apply.</p>"],
     ["Who issues the Philippine export health certificate?",
      "<p>The Bureau of Animal Industry (BAI) oversees export certification. Your BAI-accredited veterinarian will guide the health certificate and any BAI endorsement required for export.</p>"]
+  ]
+}));
+
+/* ---------------- CHINA ---------------- */
+pages.push(country({
+  slug: "from-china", crumb: "From China",
+  title: "Bringing a pet to Thailand from China | PattayaPets",
+  desc: "Bringing a dog or cat from China to Thailand: customs export paperwork, " +
+    "direct flights to Bangkok, and the standard Thai import steps.",
+  h1: "Bringing a pet to Thailand from China",
+  lede: "Direct flights from Shanghai, Guangzhou, Beijing and other Chinese cities " +
+    "to Bangkok are common, which makes China a frequent origin for relocations " +
+    "to Pattaya. The Thai import steps are standard; the Chinese side is handled " +
+    "through local animal health and customs export procedures.",
+  sections: [
+    { h: "The Chinese export side", html:
+      "<p>" + STD_STEPS + "For export from China, your veterinarian works with the " +
+      "local animal health authority and <strong>customs export inspection</strong> " +
+      "to issue the health certificate and any export endorsement required. " +
+      "Procedures vary by city and departure airport &mdash; use an experienced " +
+      "export vet or relocation agent and confirm the current requirements for " +
+      "your departure point before you book.</p>" +
+      "<p>Many routes fly directly to Suvarnabhumi in Bangkok, which simplifies " +
+      "the Pattaya end of the journey. Still confirm cabin, checked-baggage and " +
+      "cargo options with your airline early &mdash; see " +
+      "<a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline pet policies</a>.</p>" },
+    { h: "If you may leave Thailand again", html:
+      "<p>China applies strict re-entry rules for pets arriving from most countries, " +
+      "including rabies controls and advance notification. If you might return to " +
+      "China with your pet, research the current import rules before you leave and " +
+      "plan the <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">" +
+      "rabies titer test</a> with plenty of lead time. There is no dedicated " +
+      "export-to-China guide on PattayaPets yet &mdash; start with the " +
+      "<a href=\"/take-pet-out-of-thailand/\">export hub</a> and confirm with " +
+      "Chinese customs and your airline.</p>" }
+  ],
+  faqs: [
+    ["Does Thailand treat China differently for pet import?",
+     "<p>Thailand's core requirements are the same: microchip, rabies vaccination, health certificate and DLD import permit. China is not on Thailand's simplified rabies-free list, so follow the standard import route and confirm every document with the DLD before you fly.</p>"],
+    ["Which Chinese authority handles pet export?",
+     "<p>Export involves your accredited veterinarian, local animal health supervision, and customs export inspection at your departure airport. An experienced export vet or relocation agent will guide the current process for your city.</p>"]
+  ]
+}));
+
+/* ---------------- SOUTH AFRICA ---------------- */
+pages.push(country({
+  slug: "from-south-africa", crumb: "From South Africa",
+  title: "Bringing a pet to Thailand from South Africa | PattayaPets",
+  desc: "Bringing a dog or cat from South Africa to Thailand: DAFF export " +
+    "certificate, flight routing, and the standard Thai import steps.",
+  h1: "Bringing a pet to Thailand from South Africa",
+  lede: "South Africa is a high-rabies origin with a formal export process through " +
+    "the Department of Agriculture. The Thai import steps are standard; allow " +
+    "extra lead time for flights and export paperwork.",
+  sections: [
+    { h: "The South African export side", html:
+      "<p>" + STD_STEPS + "For export from South Africa, the veterinary health " +
+      "certificate is issued and endorsed through the " +
+      "<strong>Department of Agriculture, Land Reform and Rural Development (DALRRD)</strong> " +
+      "export process (often referred to in pet-move guides as DAFF). Use a " +
+      "state veterinarian or an experienced export vet and confirm the current " +
+      "export requirements for dogs and cats leaving South Africa before you fix " +
+      "a travel date.</p>" +
+      "<p>Most routes to Bangkok involve at least one stop &mdash; often in the " +
+      "Gulf or Southeast Asia &mdash; which affects total journey time and airline " +
+      "pet policies. Plan crate comfort, water and layover rules with your agent " +
+      "or airline.</p>" },
+    { h: "Arriving near Pattaya", html:
+      "<p>Pets clear at Suvarnabhumi in Bangkok. From there it is a road transfer " +
+      "to Pattaya &mdash; see " +
+      "<a href=\"/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html\">arrival " +
+      "at Suvarnabhumi</a> and " +
+      "<a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok?</a>.</p>" +
+      "<p>If you may return to South Africa, verify current DALRRD re-entry rules " +
+      "with plenty of lead time &mdash; there is no dedicated export-to-South-Africa " +
+      "guide on PattayaPets yet; start with the " +
+      "<a href=\"/take-pet-out-of-thailand/\">export hub</a>.</p>" }
+  ],
+  faqs: [
+    ["Is South Africa treated as rabies-free by Thailand?",
+     "<p>No. Follow the standard Thai import process with microchip, rabies vaccination, health certificate and DLD import permit. Confirm the current DLD list and your pet's vaccination timing before you apply.</p>"],
+    ["Who endorses the South African export certificate?",
+     "<p>Export health certification for live animals leaving South Africa is handled through the official veterinary export process under DALRRD. Your export vet will guide the health certificate and any state endorsement required.</p>"]
   ]
 }));
 

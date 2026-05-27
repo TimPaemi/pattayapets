@@ -35,11 +35,12 @@ pages.push({
   path: "/directory.html",
   title: "Pattaya pet business directory",
   ogTitle: "The Pattaya pet business directory",
+  image: "/assets/img/og-vets.png",
   description:
     "The editorial directory of pet businesses in Pattaya - vets and animal hospitals, groomers, boarding, pet shops, dog trainers, relocation and mobile vets.",
   crumb: "Directory",
   breadcrumbs: [],
-  updated: "2026-05-27",
+  updated: "2026-05-28",
   body:
     '<section class="section"><div class="container">' +
     '<div class="section-head"><p class="eyebrow">The directory</p>' +
@@ -143,7 +144,7 @@ pages.push({
     "Plain-English guides for pet owners in Pattaya: bringing a pet to Thailand, taking one out, dog-friendly places, pet emergencies, costs and adoption.",
   crumb: "Guides",
   breadcrumbs: [],
-  updated: "2026-05-27",
+  updated: "2026-05-28",
   image: "/assets/img/og-guides.png",
   body:
     '<section class="section"><div class="container">' +
@@ -234,6 +235,12 @@ pages.push({
       "Open the guide") +
     card("/bring-pet-to-thailand/from-philippines.html", "Import", "Import from the Philippines",
       "BAI export paperwork and direct flights to Thailand.",
+      "Open the guide") +
+    card("/bring-pet-to-thailand/from-china.html", "Import", "Import from China",
+      "Chinese customs export and direct flights from major cities.",
+      "Open the guide") +
+    card("/bring-pet-to-thailand/from-south-africa.html", "Import", "Import from South Africa",
+      "DAFF export certificate and planning from Africa.",
       "Open the guide") +
     card("/pet-relocation/", "Relocation", "Pet relocation agents",
       "Import and export specialists who handle permits, flights and paperwork.",

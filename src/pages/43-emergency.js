@@ -76,6 +76,7 @@ pages.push(hub({
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Clinics open around the clock." },
     { name: "Pet first-aid orientation", path: "/pet-emergency/pet-first-aid.html", desc: "Staying calm and moving an injured pet safely." },
     { name: "Venomous creatures", path: "/pet-emergency/venomous-creatures.html", desc: "Toads, centipedes and stings beyond snakes." },
+    { name: "Beach & sea hazards", path: "/pet-emergency/beach-and-sea-hazards.html", desc: "Jellyfish, hot sand and seawater on the beach." },
     { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "Walking safely around free-roaming dogs." },
     { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Prevention for heartworm, ticks and skin problems." },
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Preventing heatstroke and paw-pad burns." }

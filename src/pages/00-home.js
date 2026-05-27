@@ -111,6 +111,8 @@ const HOME_GUIDE_MORE =
   '<a href="/bring-pet-to-thailand/from-uae.html">Import from UAE</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/from-india.html">Import from India</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/from-philippines.html">Import from Philippines</a> &middot; ' +
+  '<a href="/bring-pet-to-thailand/from-china.html">Import from China</a> &middot; ' +
+  '<a href="/bring-pet-to-thailand/from-south-africa.html">Import from South Africa</a> &middot; ' +
   '<a href="/take-pet-out-of-thailand/to-uk.html">Export to UK</a> &middot; ' +
   '<a href="/take-pet-out-of-thailand/to-eu.html">Export to EU</a> &middot; ' +
   '<a href="/pet-relocation/">Relocation agents</a> &middot; ' +
@@ -266,7 +268,7 @@ module.exports = [{
   ogTitle: "PattayaPets - The honest pet resource for Pattaya",
   description:
     "The honest, independent directory of Pattaya pet businesses - vets, groomers, boarding, pet shops, trainers - plus plain-English guides for pet owners.",
-  updated: "2026-05-27",
+  updated: "2026-05-28",
   schema: [{
     "@type": "FAQPage",
     mainEntity: FAQ.map(function (f) {

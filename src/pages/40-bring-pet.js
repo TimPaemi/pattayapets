@@ -37,6 +37,7 @@ pages.push(hub({
   path: "/bring-pet-to-thailand/",
   title: "Bringing your pet to Thailand | PattayaPets",
   image: "/assets/img/og-import.png",
+  updated: "2026-05-28",
   desc: "How to bring a dog or cat to Thailand: the DLD import permit, microchip, " +
     "rabies vaccination and titer test, health certificate, airlines and arrival.",
   crumb: "Bringing a pet to Thailand",
@@ -102,7 +103,9 @@ pages.push(hub({
         { name: "From Ireland", desc: "EU export paperwork and the tapeworm rule for the return.", path: "/bring-pet-to-thailand/from-ireland.html" },
         { name: "From New Zealand", desc: "Straightforward export; the demanding part is the return.", path: "/bring-pet-to-thailand/from-new-zealand.html" },
         { name: "From India", desc: "AQCS export certificate and planning from a high-rabies origin.", path: "/bring-pet-to-thailand/from-india.html" },
-        { name: "From the Philippines", desc: "BAI export paperwork and direct flights to Thailand.", path: "/bring-pet-to-thailand/from-philippines.html" }
+        { name: "From the Philippines", desc: "BAI export paperwork and direct flights to Thailand.", path: "/bring-pet-to-thailand/from-philippines.html" },
+        { name: "From China", desc: "Chinese customs export and direct flights from major cities.", path: "/bring-pet-to-thailand/from-china.html" },
+        { name: "From South Africa", desc: "DAFF export certificate and planning from Africa.", path: "/bring-pet-to-thailand/from-south-africa.html" }
       ]
     },
     {
