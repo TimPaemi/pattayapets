@@ -107,6 +107,8 @@ pages.push({
       "Vets who come to you — useful for nervous pets and multi-cat homes.", "View mobile vets") +
     "</div>" +
     '<div class="grid grid-4" style="margin-top:1rem">' +
+    card("/take-pet-out-of-thailand/export-process.html", "Export", "The export process",
+      "Thai DLD health certificate, export permit and airport steps on the way out.", "Open the guide") +
     card("/take-pet-out-of-thailand/", "Moving on", "Taking a pet out of Thailand",
       "DLD export permit, costs and country-by-country destination notes.", "Open the guide") +
     card("/owning-a-pet-in-pattaya/", "Day to day", "Owning a pet in Pattaya",

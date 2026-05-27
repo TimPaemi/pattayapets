@@ -248,7 +248,8 @@ pages.push(df({
       "<li>Which <strong>areas</strong> are off-limits (pool, restaurant, " +
       "indoors)?</li>" +
       "<li>Is there <strong>somewhere to walk</strong> and toilet the dog " +
-      "nearby?</li></ul>" },
+      "nearby? See <a href=\"/dog-friendly-pattaya/beaches.html\">dog-friendly " +
+      "beaches</a> for cool-hour walks near many stays.</li></ul>" },
     { h: "Be a guest they will take again", html:
       "<p>Bring your dog&rsquo;s bedding, never leave a dog that will bark or " +
       "scratch alone in a room, keep it off the furniture, and clean up " +
@@ -348,8 +349,10 @@ pages.push(df({
       "<p>Whatever route you choose, the climate rules apply: walk early or " +
       "late, avoid hot pavement, carry water, and keep it shorter on the " +
       "hottest days. See <a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">" +
-      "where to walk your dog</a> and <a href=\"/pet-emergency/heatstroke.html\">" +
-      "heatstroke</a>.</p>" }
+      "where to walk your dog</a>, " +
+      "<a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">hot-climate pet " +
+      "care</a>, and " +
+      "<a href=\"/pet-emergency/street-dog-encounters.html\">street-dog encounters</a>.</p>" }
   ],
   faqs: [
     ["Are there dog parks in Pattaya?",

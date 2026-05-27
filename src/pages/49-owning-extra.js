@@ -255,7 +255,8 @@ pages.push(own({
       "<p>Simple posters work: a large clear photo, the word LOST, the area, and " +
       "a phone number, placed where people walk and wait. Do not give up too " +
       "soon &mdash; pets are reunited with owners weeks later. When yours is " +
-      "home, give it a vet check after time on the streets, work out how it got " +
+      "home, give it a vet check after time on the streets &mdash; see " +
+      "<a href=\"/vets/\">vets in Pattaya</a> &mdash; work out how it got " +
       "out, and fix that gap so it cannot happen again.</p>" }
   ],
   faqs: [

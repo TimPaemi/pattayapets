@@ -158,8 +158,8 @@ pages.push(importStep({
     { h: "What comes next", html:
       "<p>Once the chip is in and documented, move on to the " +
       '<a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">rabies vaccination and titer test</a>. ' +
-      "The full sequence is in our " +
-      '<a href="/bring-pet-to-thailand/">flagship import guide</a>.</p>' }
+      "After arrival, register the chip locally &mdash; see " +
+      '<a href="/owning-a-pet-in-pattaya/microchipping-your-pet.html">microchipping your pet</a>.</p>' }
   ],
   faqs: [
     ["Does my pet need a new microchip if it already has an ISO one?",
@@ -482,7 +482,9 @@ pages.push(importStep({
       "<li>look your pet over for visible signs of illness;</li>" +
       "<li>collect any arrival fees due.</li></ul>" +
       "<p>If everything is in order, pets are normally released to you the same " +
-      "day &mdash; there is no routine quarantine.</p>" },
+      "day &mdash; there is no routine quarantine. See " +
+      "<a href=\"/bring-pet-to-thailand/thailand-pet-quarantine.html\">pet quarantine in " +
+      "Thailand</a> for when a hold can happen.</p>" },
     { h: "If something is missing", html:
       "<p>A quarantine officer has the authority to detain a pet if paperwork is " +
       "incomplete or the animal shows signs of disease — potentially for tests " +
@@ -491,8 +493,10 @@ pages.push(importStep({
       "to hand over.</p>" },
     { h: "Getting from the airport to Pattaya", html:
       "<p>Plan the onward journey before you fly. Arrange a pet-friendly private " +
-      "transfer or a relocation agent&rsquo;s vehicle &mdash; ordinary airport " +
-      "taxis may refuse an animal, especially a large one in a crate. Bring " +
+      "transfer, a <a href=\"/pet-relocation/\">relocation agent&rsquo;s</a> vehicle, " +
+      "or read <a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">getting your " +
+      "pet to the vet</a> for transport options &mdash; ordinary airport taxis may " +
+      "refuse an animal, especially a large one in a crate. Bring " +
       "water and, after a long flight, expect your pet to be tired and thirsty " +
       "rather than lively.</p>"+
       "<p>Once you are settled, our guide to " +

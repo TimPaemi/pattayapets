@@ -97,7 +97,9 @@ const HUB_GUIDE = {
     "&mdash; cats especially &mdash; an " +
     "<a href=\"/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html\">" +
     "in-home pet sitter</a> is less stressful than boarding. See also " +
-    "<a href=\"/cats/cat-boarding-pattaya.html\">cat boarding and sitters</a>.</p>"),
+    "<a href=\"/cats/cat-boarding-pattaya.html\">cat boarding and sitters</a>, and " +
+    "<a href=\"/owning-a-pet-in-pattaya/travelling-in-thailand.html\">travelling in " +
+    "Thailand</a> if your pet stays behind on a domestic trip.</p>"),
 
   "pet-shops": S(
     "<h2>Buying pet supplies in Pattaya</h2>" +

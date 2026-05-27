@@ -162,7 +162,9 @@ pages.push(exp({
     { h: "What Thailand requires to export a pet", html:
       "<p>The Department of Livestock Development oversees pet export. The core " +
       "of the Thai side is:</p>" +
-      "<ul><li>a working <strong>ISO microchip</strong>;</li>" +
+      "<ul><li>a working <strong>ISO microchip</strong> &mdash; see " +
+      "<a href=\"/bring-pet-to-thailand/microchip-requirements.html\">microchip " +
+      "requirements</a>;</li>" +
       "<li>a current <strong>rabies vaccination</strong> and other vaccinations;</li>" +
       "<li>a <strong>veterinary health certificate</strong> confirming your pet " +
       "is fit to travel;</li>" +
@@ -265,7 +267,14 @@ pages.push(exp({
       "<li>Any test results the destination or AQS requires (such as a rabies titer " +
       "result for the UK or EU)</li></ul>" +
       "<p>Keep printed originals of the export permit, health certificate and every " +
-      "supporting document for the airport and the destination border check.</p>" }
+      "supporting document for the airport and the destination border check.</p>" },
+    { h: "What comes next", html:
+      "<p>Book the flight under " +
+      '<a href="/bring-pet-to-thailand/airline-pet-policies.html">airline pet policies</a>, ' +
+      "budget in our " +
+      '<a href="/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html">export cost guide</a>, ' +
+      "and consider a " +
+      '<a href="/pet-relocation/">pet relocation agent</a> if cargo or a complex destination is involved.</p>' }
   ],
   faqs: [
     ["Can I get the export permit on the day of the flight?",
@@ -333,7 +342,15 @@ pages.push(exp({
       "work (especially a titer test sent to an approved lab) and, if you use one, " +
       "the agent&rsquo;s service fee. See the " +
       "<a href=\"/take-pet-out-of-thailand/export-permit-thailand-dld.html\">export " +
-      "permit page</a> for the application process.</p>" }
+      "permit page</a> for the application process.</p>" },
+    { h: "What comes next", html:
+      "<p>Line up the <a href=\"/take-pet-out-of-thailand/export-process.html\">export " +
+      "process</a> and your destination page &mdash; for example " +
+      "<a href=\"/take-pet-out-of-thailand/to-eu.html\">export to the EU</a>, " +
+      "<a href=\"/take-pet-out-of-thailand/to-uae.html\">export to the UAE</a>, or " +
+      "<a href=\"/take-pet-out-of-thailand/to-australia.html\">export to Australia</a>. " +
+      "Many owners use a " +
+      "<a href=\"/pet-relocation/\">pet relocation agent</a> to keep timing aligned.</p>" }
   ],
   faqs: [
     ["Is export cheaper than import?",
