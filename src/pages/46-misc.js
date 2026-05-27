@@ -73,7 +73,8 @@ pages.push(article({
     { name: "What it costs to own a pet", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", desc: "The wider pet budget in Pattaya." },
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "When the big, unplanned bills happen." },
     { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Preventive care and tropical risks." },
-    { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/", desc: "Insurance matters most on complex moves." }
+    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "When a complex move needs coordination." },
+    { name: "What import costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html", desc: "Budgeting the big, unplanned move." }
   ]
 }));
 
@@ -92,7 +93,9 @@ pages.push(hub({
   intro:
     "<p>Cats adapt well to Pattaya life, and many live happily as indoor or " +
     "indoor-outdoor pets. The heat, parasites, traffic and free-roaming animals " +
-    "all still apply &mdash; the guides below cover what a cat owner here needs.</p>",
+    "all still apply &mdash; the guides below cover what a cat owner here needs. " +
+    "Start with <a href=\"/cats/indoor-vs-outdoor-cats.html\">indoor or outdoor " +
+    "cats</a> if you are new to keeping a cat in Pattaya.</p>",
   groups: [
     {
       title: "Cat-owner guides",

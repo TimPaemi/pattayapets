@@ -199,9 +199,13 @@ const HUB_GUIDE = {
     "always confirm current requirements with the official sources: Thailand&rsquo;s " +
     "Department of Livestock Development, your airline, and the destination " +
     "country&rsquo;s authority. Our guides to " +
-    "<a href=\"/bring-pet-to-thailand/\">bringing a pet to Thailand</a> and " +
-    "<a href=\"/take-pet-out-of-thailand/\">taking one out</a> walk through the " +
-    "whole process. For costs, see " +
+    "<a href=\"/bring-pet-to-thailand/\">bringing a pet to Thailand</a>, the " +
+    "<a href=\"/take-pet-out-of-thailand/export-process.html\">export process</a>, " +
+    "and the " +
+    "<a href=\"/bring-pet-to-thailand/import-permit-thailand-dld.html\">DLD import " +
+    "permit</a> and " +
+    "<a href=\"/take-pet-out-of-thailand/export-permit-thailand-dld.html\">DLD export " +
+    "permit</a> walk through the whole process. For costs, see " +
     "<a href=\"/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html\">import costs</a> " +
     "and <a href=\"/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html\">export costs</a>. " +
     "For airline rules, see " +

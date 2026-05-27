@@ -361,7 +361,9 @@ pages.push(dog({
     { h: "Neutering and the annual check-up", html:
       "<p>Neutering prevents unwanted litters, can reduce roaming and some later " +
       "health risks, and is routine and affordable in Pattaya &mdash; ask your " +
-      "vet about timing for your dog. An annual check-up, usually alongside the " +
+      "vet about timing for your dog. See " +
+      "<a href=\"/pet-health-pattaya/spaying-and-neutering.html\">spaying &amp; " +
+      "neutering</a>. An annual check-up, usually alongside the " +
       "booster, catches dental, weight and early health problems while they are " +
       "still easy to deal with.</p>" }
   ],
@@ -494,7 +496,9 @@ pages.push(dog({
       "<p>Ask your vet about the right age to neuter your puppy &mdash; it varies " +
       "with size and breed. As the puppy grows, keep up the boosters, the " +
       "parasite prevention and the annual check-up, and you have given your dog " +
-      "the best possible start in Pattaya.</p>" }
+      "the best possible start in Pattaya. Until vaccinations finish, keep puppies " +
+      "away from parvovirus risk &mdash; see " +
+      "<a href=\"/pet-health-pattaya/parvovirus.html\">parvovirus</a>.</p>" }
   ],
   faqs: [
     ["When should my puppy start vaccinations?",
@@ -545,7 +549,9 @@ pages.push(dog({
       "yeast and bacterial skin infections, &lsquo;hot spots&rsquo;, and ear " +
       "infections &mdash; floppy-eared and skin-folded breeds most of all. Damp " +
       "that does not dry, and scratching that does not stop, tend to get worse, " +
-      "not better, so it is worth seeing a vet early rather than waiting.</p>" },
+      "not better, so it is worth seeing a vet early rather than waiting. See " +
+      "<a href=\"/pet-health-pattaya/skin-and-ear-problems.html\">skin &amp; ear " +
+      "problems</a> for the wider picture.</p>" },
     { h: "Parasites, inside and out", html:
       "<p>Fleas, mites (which cause mange), intestinal worms and " +
       "mosquito-borne heartworm are all part of the picture here, year-round. " +

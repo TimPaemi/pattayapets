@@ -226,6 +226,9 @@ const body =
       '<a class="card" href="/bring-pet-to-thailand/u-tapao-airport-pets.html"><span class="card-tag">Import</span>' +
         '<h3>U-Tapao or Bangkok?</h3><p>Which airport to fly your pet into for Pattaya.</p>' +
         '<span class="card-meta">Read the guide &rarr;</span></a>' +
+      '<a class="card" href="/bring-pet-to-thailand/from-uae.html"><span class="card-tag">Import</span>' +
+        '<h3>Import from the UAE</h3><p>MOCCAE export permit and the Thai DLD steps for Gulf relocations.</p>' +
+        '<span class="card-meta">Read the guide &rarr;</span></a>' +
       '<a class="card" href="/owning-a-pet-in-pattaya/where-to-walk-your-dog.html"><span class="card-tag">Owning</span>' +
         '<h3>Where to walk your dog</h3><p>Building a safe, cool-hours walking routine in Pattaya.</p>' +
         '<span class="card-meta">Read the guide &rarr;</span></a>' +

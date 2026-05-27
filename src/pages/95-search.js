@@ -43,6 +43,7 @@ module.exports = [{
     '<a href="/bring-pet-to-thailand/from-uk.html">Bring pet from UK</a> &middot; ' +
     '<a href="/take-pet-out-of-thailand/to-uk.html">Export to UK</a> &middot; ' +
     '<a href="/take-pet-out-of-thailand/export-process.html">Export process</a> &middot; ' +
+    '<a href="/take-pet-out-of-thailand/to-uae.html">Export to UAE</a> &middot; ' +
     '<a href="/area/jomtien.html">Jomtien</a> &middot; ' +
     '<a href="/pet-health-pattaya/tick-borne-disease.html">Tick disease</a> &middot; ' +
     '<a href="/pet-health-pattaya/">Pet health</a> &middot; ' +

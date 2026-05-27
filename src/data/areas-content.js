@@ -10,6 +10,8 @@ const AREA_EXTRA =
   "<li><a href=\"/pet-emergency/beach-and-sea-hazards.html\">Beach &amp; sea hazards</a></li>" +
   "<li><a href=\"/owning-a-pet-in-pattaya/lost-pet-pattaya.html\">Lost pet in Pattaya</a></li>" +
   "<li><a href=\"/owning-a-pet-in-pattaya/rainy-season-pet-care.html\">Rainy-season pet care</a></li>" +
+  "<li><a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">Getting your pet to the vet</a></li>" +
+  "<li><a href=\"/adopt-a-pet-pattaya/how-to-help.html\">How to help street animals</a></li>" +
   "<li><a href=\"/pet-health-pattaya/dental-care.html\">Dental care</a></li>";
 
 const AREA_GUIDE = {

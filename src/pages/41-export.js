@@ -228,7 +228,9 @@ pages.push(exp({
       "<p>Thailand exports pets <em>to</em> another country&rsquo;s rules. Before " +
       "you apply, obtain that country&rsquo;s import requirements or import permit " +
       "and show them to the AQS &mdash; the Thai health certificate must match what " +
-      "the destination expects. Read the destination page in our " +
+      "the destination expects. Start with the " +
+      "<a href=\"/take-pet-out-of-thailand/export-process.html\">export process</a> " +
+      "and the destination page in our " +
       "<a href=\"/take-pet-out-of-thailand/\">export guide</a> &mdash; for example " +
       "<a href=\"/take-pet-out-of-thailand/to-uk.html\">the UK</a>, " +
       "<a href=\"/take-pet-out-of-thailand/to-usa.html\">the USA</a>, or " +

@@ -480,7 +480,9 @@ pages.push(own({
       "<p>Older pets benefit from seeing a vet more than once a year. Many " +
       "age-related conditions &mdash; kidney, heart, dental, joint, thyroid, " +
       "weight &mdash; are far easier to manage when caught early, and a vet may " +
-      "suggest routine blood tests to track an older pet&rsquo;s health. These " +
+      "suggest routine blood tests to track an older pet&rsquo;s health. Dental " +
+      "disease is common in older pets &mdash; see " +
+      "<a href=\"/pet-health-pattaya/dental-care.html\">dental care</a>. These " +
       "visits are about staying ahead of problems, not waiting for them.</p>" },
     { h: "The heat is harder on older pets", html:
       "<p>An ageing pet regulates temperature less well and tires sooner, so be " +
@@ -493,7 +495,8 @@ pages.push(own({
       "easy to reach; steps or a ramp for a dog that struggles to climb; rugs " +
       "for grip on slippery floors; and a litter tray with a low side for an " +
       "older cat. Keep them gently active and engaged &mdash; and keep an eye on " +
-      "weight, which matters more than ever now.</p>" },
+      "weight, which matters more than ever now &mdash; see " +
+      "<a href=\"/pet-health-pattaya/healthy-weight.html\">healthy weight</a>.</p>" },
     { h: "Watch for changes", html:
       "<p>Tell your vet promptly about changes in appetite, thirst, toileting, " +
       "weight, mobility, lumps, behaviour or apparent confusion. It is tempting " +

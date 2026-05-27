@@ -426,9 +426,10 @@ BUSINESSES.forEach(function (b) {
         "a groomer who spots early signs is worth keeping.</p></div>"
       : b.category === "pet-relocation"
       ? '<div class="callout callout-note"><div class="ch">Import &amp; export guides</div><p>See our guides to ' +
-        '<a href="/bring-pet-to-thailand/">bringing a pet to Thailand</a> and ' +
-        '<a href="/take-pet-out-of-thailand/">taking one out</a>, plus ' +
-        '<a href="/bring-pet-to-thailand/airline-pet-policies.html">airline pet policies</a>.</p></div>'
+        '<a href="/bring-pet-to-thailand/">bringing a pet to Thailand</a>, the ' +
+        '<a href="/take-pet-out-of-thailand/export-process.html">export process</a>, ' +
+        '<a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a>, ' +
+        'and <a href="/bring-pet-to-thailand/airline-pet-policies.html">airline pet policies</a>.</p></div>'
       : b.category === "boarding"
       ? '<div class="callout callout-note"><div class="ch">Alternatives to boarding</div><p>Cats especially may ' +
         "do better with an " +
@@ -616,7 +617,9 @@ Object.keys(AREAS).forEach(function (key) {
     'the <a href="/pet-health-pattaya/">pet health guide</a>, ' +
     '<a href="/owning-a-pet-in-pattaya/">owning a pet in Pattaya</a>, ' +
     '<a href="/dog-friendly-pattaya/">dog-friendly Pattaya</a>, ' +
-    '<a href="/bring-pet-to-thailand/">bringing a pet to Thailand</a>, and ' +
+    '<a href="/bring-pet-to-thailand/">bringing a pet to Thailand</a>, the ' +
+    '<a href="/take-pet-out-of-thailand/export-process.html">export process</a>, ' +
+    '<a href="/pet-relocation/">pet relocation agents</a>, and ' +
     '<a href="/adopt-a-pet-pattaya/">adopting a pet</a>. Species guides: ' +
     '<a href="/dogs/">dogs</a> and <a href="/cats/">cats</a>. New here? Start with ' +
     '<a href="/start-here.html">Start here</a>.</p></div>' +
