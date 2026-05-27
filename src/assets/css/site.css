@@ -54,17 +54,21 @@ a.card:hover{transform:translateY(-5px);box-shadow:var(--sh-md);border-color:var
 .card .card-meta{margin-top:auto;font-size:.87rem;color:var(--banyan);
 font-family:var(--fd);font-weight:600}
 a.card:hover .card-meta{color:var(--banyan-dk)}
-.recent-list{display:grid;gap:.65rem}
+.recent-list{display:grid;gap:.75rem;margin-top:.25rem}
 @media(min-width:640px){.recent-list{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:960px){.recent-list{grid-template-columns:repeat(4,1fr)}}
-.recent-item{display:flex;flex-direction:column;gap:.25rem;padding:1rem 1.15rem;
-  background:var(--mist);border:1px solid var(--border);border-radius:10px;
-  text-decoration:none;color:inherit;transition:border-color .15s,box-shadow .15s}
-.recent-item:hover{border-color:var(--banyan);box-shadow:0 2px 8px rgba(27,90,76,.08)}
-.recent-date{font-size:.82rem;color:var(--sage)}
-.recent-title{font-weight:500;color:var(--forest);line-height:1.35}
-.recent-desc{font-size:.85rem;color:var(--sage);line-height:1.4}
-.recent-kind{font-size:.82rem;color:var(--banyan)}
+.recent-item{display:flex;flex-direction:column;gap:.35rem;padding:1.1rem 1.2rem;
+  background:var(--mist);border:1px solid var(--border);border-radius:var(--r-sm);
+  text-decoration:none;color:inherit;min-height:100%;
+  transition:border-color .15s,box-shadow .15s}
+.recent-item:hover{text-decoration:none;border-color:var(--banyan);box-shadow:var(--sh-sm)}
+.recent-date{font-size:.78rem;color:var(--sage);letter-spacing:.02em}
+.recent-title{font-family:var(--fd);font-weight:600;font-size:1rem;color:var(--forest);line-height:1.3}
+.recent-desc{font-size:.88rem;color:var(--sage);line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.recent-kind{align-self:flex-start;margin-top:auto;font-family:var(--fd);font-weight:700;
+  font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--marigold-dk);
+  background:var(--marigold-tint);padding:4px 9px;border-radius:999px}
 .card-icon{width:48px;height:48px;padding:11px;margin-bottom:17px;color:var(--banyan);
 background:var(--banyan-tint);border-radius:13px}
 .card-tag{align-self:flex-start;font-family:var(--fd);font-weight:700;font-size:.7rem;

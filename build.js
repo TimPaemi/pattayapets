@@ -128,6 +128,32 @@ var RECENT_SKIP = {
   "/offline.html": 1, "/masthead.html": 1
 };
 
+var RECENT_STRUCTURAL = {
+  "/about.html": 1, "/accessibility.html": 1, "/privacy.html": 1,
+  "/contact.html": 1, "/corrections.html": 1, "/standards.html": 1
+};
+
+function recentTier(p) {
+  var path = p.path;
+  if (/^\/(bring-pet-to-thailand|take-pet-out-of-thailand|pet-emergency|dog-friendly-pattaya|owning-a-pet-in-pattaya|pet-health-pattaya)\//.test(path)) return 0;
+  if (path === "/bring-pet-to-thailand/" || path === "/take-pet-out-of-thailand/" ||
+      path === "/pet-emergency/" || path === "/dog-friendly-pattaya/" ||
+      path === "/owning-a-pet-in-pattaya/" || path === "/pet-health-pattaya/" ||
+      path === "/adopt-a-pet-pattaya/" || path === "/guides.html" ||
+      path === "/start-here.html") return 1;
+  if (/^\/(vets|groomers|boarding|pet-shops|trainers|mobile-vets|pet-relocation)\//.test(path)) return 2;
+  if (/^\/area\//.test(path)) return 3;
+  return 4;
+}
+
+function isRecentCandidate(p) {
+  if (p.noindex || !p.updated || RECENT_SKIP[p.path] || RECENT_STRUCTURAL[p.path]) return false;
+  if (/^\/adopt-a-pet-pattaya\/[a-z0-9-]+\.html$/.test(p.path) &&
+      p.path !== "/adopt-a-pet-pattaya/fostering.html" &&
+      p.path !== "/adopt-a-pet-pattaya/how-to-help.html") return false;
+  return true;
+}
+
 function fmtUpdated(iso) {
   var p = String(iso || "").split("-");
   if (p.length !== 3) return iso;
@@ -151,11 +177,11 @@ function truncateText(s, n) {
 }
 
 function buildRecentSection(pages) {
-  var recent = pages.filter(function (p) {
-    return !p.noindex && !RECENT_SKIP[p.path] && p.updated;
-  }).sort(function (a, b) {
+  var recent = pages.filter(isRecentCandidate).sort(function (a, b) {
     var d = b.updated.localeCompare(a.updated);
     if (d !== 0) return d;
+    var t = recentTier(a) - recentTier(b);
+    if (t !== 0) return t;
     return a.path.localeCompare(b.path);
   }).slice(0, 8);
   if (!recent.length) return "";
