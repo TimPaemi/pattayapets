@@ -6,4 +6,6 @@ Thumbs.db
 npm-debug.log*
 .cache/
 tools/shots/
+lighthouse-audit.json
+lighthouse-*.json
 src/assets/img/*.png

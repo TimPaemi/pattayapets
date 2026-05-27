@@ -95,6 +95,32 @@ main{display:block;min-height:50vh}
 .section{padding:74px 0}
 .section-tint{background:var(--mist);border-top:1px solid var(--border-soft);
 border-bottom:1px solid var(--border-soft)}
+.section-head{max-width:680px;margin-bottom:2.4rem}
+.section-head h2{margin:0 0 .6rem}
+.section-head p{color:var(--sage);font-size:1.1rem;margin:0}
+.grid{display:grid;gap:22px}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
+.grid>div{border-top:3px solid var(--marigold);padding:17px 0 0}
+.grid>div h3{margin:0 0 .45rem;color:var(--forest)}
+.grid>div p{margin:0;font-size:.97rem}
+.card{background:#fff;border:1px solid var(--border-soft);border-radius:var(--r-lg);
+padding:27px;display:flex;flex-direction:column;box-shadow:var(--sh-sm)}
+a.card{text-decoration:none;color:inherit}
+.card h3{margin:0 0 8px;color:var(--forest)}
+.card p{color:var(--ink-soft);font-size:.98rem;margin:0 0 18px}
+.card .card-meta{margin-top:auto;font-size:.87rem;color:var(--banyan);font-family:var(--fd);font-weight:600}
+.card-icon{width:48px;height:48px;padding:11px;margin-bottom:17px;color:var(--banyan);
+background:var(--banyan-tint);border-radius:13px}
+.card-tag{align-self:flex-start;font-family:var(--fd);font-weight:700;font-size:.7rem;
+letter-spacing:.1em;text-transform:uppercase;color:var(--marigold-dk);
+background:var(--marigold-tint);padding:6px 12px;border-radius:999px;margin-bottom:14px}
+.badge-24h{display:inline-flex;align-items:center;gap:6px;font-family:var(--fd);font-weight:700;
+font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;background:var(--alert);
+color:#fff;padding:6px 12px;border-radius:999px;flex:none;box-shadow:0 3px 9px rgba(197,64,47,.25)}
 .hero{position:relative;overflow:hidden;background-color:var(--banyan-dk);
 background-image:var(--paw),radial-gradient(720px 420px at 82% -18%,rgba(231,162,59,.17),transparent 62%);
 background-repeat:repeat,no-repeat;padding:66px 0 74px}
