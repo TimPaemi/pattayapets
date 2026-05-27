@@ -7,6 +7,7 @@
   "scripts": {
     "build": "node build.js",
     "check": "node tools/check-links.js",
+    "audit:seo": "node tools/audit-seo.js",
     "images": "node tools/make-images.js",
     "build:all": "npm run build && npm run check"
   },

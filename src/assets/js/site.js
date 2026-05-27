@@ -21,6 +21,12 @@
       nav.classList.toggle("open", open);
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
       document.body.classList.toggle("nav-open", open);
+      if (open) {
+        var first = nav.querySelector("a");
+        if (first) first.focus();
+      } else {
+        toggle.focus();
+      }
     }
     toggle.addEventListener("click", function () {
       setNav(!nav.classList.contains("open"));
@@ -78,6 +84,7 @@
     var idx = [];
     var activeFilter = "";
     var debounceTimer;
+    searchOut.setAttribute("aria-busy", "false");
 
     function esc(s) {
       return String(s).replace(/[&<>"]/g, function (c) {
@@ -116,10 +123,12 @@
       var q = searchInput.value.trim().toLowerCase();
       syncUrl(q);
       if (q.length < 2) {
+        searchOut.setAttribute("aria-busy", "false");
         searchOut.innerHTML = '<p class="notice">Type at least two letters to search every page.</p>';
         if (searchFilters) searchFilters.innerHTML = "";
         return;
       }
+      searchOut.setAttribute("aria-busy", "true");
       var terms = q.split(/\s+/);
       var hits = idx.map(function (p) {
         if (activeFilter && p.k !== activeFilter) return null;
@@ -133,12 +142,13 @@
         return { p: p, s: s };
       }).filter(Boolean).sort(function (a, b) { return b.s - a.s; }).slice(0, 60);
 
+      searchOut.setAttribute("aria-busy", "false");
       if (!hits.length) {
-        searchOut.innerHTML = '<p class="notice">No pages matched &ldquo;' + esc(q) +
+        searchOut.innerHTML = '<p class="notice" role="status">No pages matched &ldquo;' + esc(q) +
           '&rdquo;. Try fewer or different words.</p>';
         return;
       }
-      searchOut.innerHTML = '<p class="search-results__count">' + hits.length +
+      searchOut.innerHTML = '<p class="search-results__count" role="status">' + hits.length +
         " result" + (hits.length > 1 ? "s" : "") + "</p>" +
         hits.map(function (x) {
           return '<a class="card search-result" href="' + x.p.u + '">' +
@@ -148,6 +158,8 @@
         }).join("");
     }
 
+    searchOut.setAttribute("aria-busy", "true");
+    searchOut.innerHTML = '<p class="notice">Loading search index&hellip;</p>';
     fetch("/search-index.json").then(function (r) { return r.json(); }).then(function (d) {
       idx = d;
       var kinds = [];
@@ -161,6 +173,7 @@
       runSearch();
       try { searchInput.focus(); } catch (e) {}
     }).catch(function () {
+      searchOut.setAttribute("aria-busy", "false");
       searchOut.innerHTML = '<p class="notice">Search could not load. Browse the ' +
         '<a href="/directory.html">directory</a> or ' +
         '<a href="/sitemap.html">sitemap</a> instead.</p>';

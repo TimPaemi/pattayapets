@@ -392,10 +392,14 @@ pages.push(prosePage({
     "and at high zoom.</li>" +
     "<li>The site works fully with JavaScript disabled.</li>" +
     "<li>Descriptive link text and alternative text on meaningful images.</li>" +
+    "<li>Search results update with <code>aria-live</code> when JavaScript is enabled.</li>" +
+    "<li>Mobile navigation can be opened and closed with the keyboard (Escape closes it).</li>" +
     "</ul>" +
     "<h2>Known limitations</h2>" +
-    "<p>This is a new and growing site. If you find a page that is hard to use, we " +
-    "want to know &mdash; that feedback directly shapes our fixes.</p>" +
+    "<p>Site search needs JavaScript to query the full index; without it, use the " +
+    '<a href="/sitemap.html">sitemap</a> or <a href="/guides.html">guides page</a>. ' +
+    "We have not yet completed a formal WCAG audit with automated tooling. If you find " +
+    "a page that is hard to use, we want to know &mdash; that feedback directly shapes our fixes.</p>" +
     "<h2>Report a problem</h2>" +
     "<p>Email <a href=\"mailto:hello@pattayapets.com\">hello@pattayapets.com</a> " +
     "with the page and what went wrong. We aim to respond within seven days.</p>"

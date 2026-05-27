@@ -61,8 +61,8 @@ gap:8px;padding:9px 24px;max-width:var(--maxw);margin:0 auto;text-align:center}
 .topbar a span{text-decoration:underline;text-decoration-color:rgba(255,255,255,.4)}
 .topbar svg{color:#F0907F;flex:none}
 .site-header{background:rgba(255,255,255,.93);backdrop-filter:saturate(1.4) blur(8px);
-border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200}
-.header-row{display:flex;align-items:center;justify-content:space-between;gap:18px;
+border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;isolation:isolate}
+.header-row{position:relative;display:flex;align-items:center;justify-content:space-between;gap:18px;
 max-width:var(--maxw);margin:0 auto;padding:13px 24px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
 .brand-mark{width:36px;height:43px;flex:none}
@@ -108,7 +108,7 @@ box-shadow:0 0 0 4px var(--alert-tint);flex:none}
 .nav-toggle{display:inline-flex;align-items:center;gap:8px;background:var(--banyan-tint);
 border:1px solid var(--border);border-radius:var(--r-sm);font-family:var(--fd);font-weight:600;
 font-size:.92rem;color:var(--banyan-dk);padding:10px 14px;cursor:pointer}
-.nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;
+.nav{display:none;position:absolute;left:0;right:0;top:100%;z-index:210;background:#fff;
 border-bottom:1px solid var(--border);box-shadow:var(--sh-md);flex-direction:column;
 align-items:stretch;padding:10px 18px 16px;gap:2px}
 .nav.open{display:flex}

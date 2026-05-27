@@ -29,6 +29,10 @@ background-repeat:repeat,no-repeat}
 .section-banyan .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
 .center{text-align:center}
 .mt0{margin-top:0}.mb0{margin-bottom:0}
+.guide-topics{font-size:.92rem;color:var(--sage);line-height:1.65;margin:1.35rem 0 0;max-width:720px}
+.guide-topics a{font-weight:500}
+.search-results[aria-busy="true"]{opacity:.55;pointer-events:none}
+.search-results__count{font-family:var(--fd);font-weight:600;color:var(--sage);font-size:.9rem;margin:0 0 1rem}
 
 .grid{display:grid;gap:22px}
 .grid-2{grid-template-columns:repeat(2,1fr)}

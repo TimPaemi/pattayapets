@@ -495,7 +495,9 @@ async function build() {
   const version = crypto.createHash("sha1")
     .update(cssMin + jsMin + criticalMin).digest("hex").slice(0, 12);
   const precache = [
-    "/", "/offline.html", "/search-index.json", "/assets/css/site.css", "/assets/js/site.js",
+    "/", "/offline.html", "/start-here.html", "/directory.html", "/guides.html",
+    "/pet-emergency/24-hour-vets-pattaya.html", "/bring-pet-to-thailand/",
+    "/search-index.json", "/assets/css/site.css", "/assets/js/site.js",
     "/assets/img/favicon.svg", "/manifest.webmanifest",
     "/assets/fonts/hanken-400.woff2", "/assets/fonts/hanken-500.woff2",
     "/assets/fonts/hanken-700.woff2", "/assets/fonts/bricolage-600.woff2",

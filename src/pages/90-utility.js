@@ -41,7 +41,7 @@ module.exports = [
   {
     path: "/offline.html",
     title: "You are offline — PattayaPets",
-    description: "You appear to be offline.",
+    description: "You appear to be offline. PattayaPets may still open pages you visited earlier; reconnect to browse the directory and guides.",
     crumb: "Offline",
     breadcrumbs: [],
     noindex: true,

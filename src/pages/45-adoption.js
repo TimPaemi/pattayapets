@@ -85,10 +85,8 @@ pages.push(hub({
 
 /* ---- SHELTER PAGES ---- */
 function shelterDesc(s) {
-  var d = s.name + " is a " + s.type.toLowerCase() + " in the Pattaya area.";
-  if (s.email) d += " Email: " + s.email + ".";
-  d += " How its rescue and adoption work runs, and how to help.";
-  return d;
+  return s.name + " — " + s.type.toLowerCase() +
+    " in the Pattaya area. How rescue, adoption and volunteering work.";
 }
 
 const SHELTERS = [

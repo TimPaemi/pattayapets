@@ -101,47 +101,37 @@ pages.push({
       "24-hour vets, heatstroke, poisoning and first-aid basics.", "Open the guide") +
     "</div>" +
     '<div class="grid grid-4" style="margin-top:1rem">' +
-    card("/dog-friendly-pattaya/", "Out & about", "Dog-friendly Pattaya",
+    card("/dog-friendly-pattaya/", "Out &amp; about", "Dog-friendly Pattaya",
       "Beaches, cafes, restaurants and places that welcome dogs.", "Open the guide") +
-    card("/mobile-vets/", "At home", "Mobile & home-visit vets",
-      "Vets who come to you — useful for nervous pets and multi-cat homes.", "View mobile vets") +
-    "</div>" +
-    '<div class="grid grid-4" style="margin-top:1rem">' +
-    card("/take-pet-out-of-thailand/export-process.html", "Export", "The export process",
-      "Thai DLD health certificate, export permit and airport steps on the way out.", "Open the guide") +
-    card("/take-pet-out-of-thailand/", "Moving on", "Taking a pet out of Thailand",
-      "DLD export permit, costs and country-by-country destination notes.", "Open the guide") +
+    card("/pet-emergency/24-hour-vets-pattaya.html", "Urgent", "24-hour vets in Pattaya",
+      "Animal hospitals open around the clock.", "View the list") +
     card("/owning-a-pet-in-pattaya/", "Day to day", "Owning a pet in Pattaya",
       "Costs, hot-climate care, pet-friendly housing and where to walk your dog.", "Open the guide") +
+    card("/take-pet-out-of-thailand/export-process.html", "Export", "The export process",
+      "Thai DLD health certificate, export permit and airport steps.", "Open the guide") +
+    "</div>" +
+    '<div class="grid grid-4" style="margin-top:1rem">' +
+    card("/take-pet-out-of-thailand/", "Moving on", "Taking a pet out of Thailand",
+      "DLD export permit, costs and country-by-country destination notes.", "Open the guide") +
     card("/start-here.html", "New here", "Start here",
       "A short orientation for new pet owners in Pattaya.", "Open the page") +
     card("/pet-insurance-thailand.html", "Money", "Pet insurance in Thailand",
       "How pet insurance works here and whether it is worth it.", "Open the guide") +
+    card("/pet-relocation/", "Relocation", "Pet relocation agents",
+      "Import and export specialists who handle permits and flights.", "View agents") +
     "</div>" +
     '<div class="grid grid-4" style="margin-top:1rem">' +
     card("/dogs/", "Dog owners", "Dogs in Pattaya",
       "Care, training, walks and health guides for dogs.", "Open the hub") +
     card("/cats/", "Cat owners", "Cats in Pattaya",
       "Indoor living, health and care guides for cats.", "Open the hub") +
-    card("/pet-relocation/", "Relocation", "Pet relocation agents",
-      "Import and export specialists who handle permits and flights.", "View agents") +
-    "</div>" +
-    '<div class="grid grid-4" style="margin-top:1rem">' +
     card("/owning-a-pet-in-pattaya/microchipping-your-pet.html", "Owning", "Microchipping your pet",
       "The best route home for a lost pet, and keeping details current.", "Open the guide") +
-    card("/owning-a-pet-in-pattaya/dog-registration-thailand.html", "Owning", "Dog registration",
-      "Rabies vaccination law and local registration in Thailand.", "Open the guide") +
-    card("/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", "Owning", "What it costs",
-      "A realistic monthly budget for a pet in Pattaya.", "Open the guide") +
-    card("/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html", "Owning", "Pet sitters & dog walkers",
-      "Cover for travel and long work days.", "Open the guide") +
-    card("/owning-a-pet-in-pattaya/hot-climate-pet-care.html", "Owning", "Hot-climate pet care",
-      "Heat, walk timing and paw-pad safety.", "Open the guide") +
-    card("/pet-health-pattaya/dental-care.html", "Health", "Dental care",
-      "Why mouth health matters in the tropics.", "Open the guide") +
     card("/owning-a-pet-in-pattaya/lost-pet-pattaya.html", "Owning", "Lost pet in Pattaya",
       "Microchip, local groups and what to do first.", "Open the guide") +
-    "</div></div></section>"
+    "</div>" +
+    '<div class="btn-row" style="margin-top:1.5rem"><a class="btn btn-ghost" href="/guides.html">All guides &rarr;</a></div>' +
+    "</div></section>"
 });
 
 /* ---------------- Guides hub ---------------- */

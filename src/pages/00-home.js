@@ -39,6 +39,82 @@ function areaTile(name, slug) {
     '<span class="tile-count">' + sub + '</span></a>';
 }
 
+function guideCard(href, tag, title, desc, cta) {
+  return '<a class="card" href="' + href + '"><span class="card-tag">' + tag +
+    "</span><h3>" + title + "</h3><p>" + desc + "</p>" +
+    '<span class="card-meta">' + cta + " &rarr;</span></a>";
+}
+
+/* Curated homepage guides — full index lives on /guides.html */
+const HOME_GUIDES = [
+  ["/start-here.html", "New here", "Start here",
+    "Emergency contacts, finding a vet, the climate and the essentials for new owners.",
+    "Open the page"],
+  ["/bring-pet-to-thailand/", "Flagship guide", "Bringing a pet to Thailand",
+    "DLD permit, microchip, rabies and titer test, health certificate, airlines and arrival.",
+    "Read the guide"],
+  ["/bring-pet-to-thailand/import-permit-thailand-dld.html", "Import", "DLD import permit",
+    "How to apply for the Thai import permit before your pet flies in.",
+    "Read the guide"],
+  ["/take-pet-out-of-thailand/", "Moving on", "Taking a pet out of Thailand",
+    "Export process, costs and what the UK, EU, USA, Australia and more demand.",
+    "Read the guide"],
+  ["/take-pet-out-of-thailand/export-process.html", "Export", "The export process",
+    "Thai DLD health certificate, export permit and airport steps on the way out.",
+    "Read the guide"],
+  ["/pet-health-pattaya/", "Health", "Pet health in Pattaya",
+    "Heartworm, tick disease, skin and ear problems in a tropical climate.",
+    "Read the guide"],
+  ["/dog-friendly-pattaya/", "Out &amp; about", "Dog-friendly Pattaya",
+    "Beaches, cafes, restaurants, hotels, condos and parks that welcome dogs.",
+    "Read the guide"],
+  ["/pet-emergency/24-hour-vets-pattaya.html", "Urgent", "24-hour vets in Pattaya",
+    "Animal hospitals open around the clock — addresses and contact details.",
+    "View the list"],
+  ["/pet-emergency/", "Emergency", "Pet emergencies &amp; hazards",
+    "First aid, heatstroke, ticks, snakes, street dogs and venomous creatures.",
+    "Read the guide"],
+  ["/owning-a-pet-in-pattaya/", "Day to day", "Owning a pet in Pattaya",
+    "Costs, hot-climate care, pet-friendly housing and where to walk your dog.",
+    "Read the guide"],
+  ["/owning-a-pet-in-pattaya/hot-climate-pet-care.html", "Owning", "Hot-climate pet care",
+    "Heat, walk timing and paw-pad safety — the everyday adjustment in Pattaya.",
+    "Read the guide"],
+  ["/adopt-a-pet-pattaya/", "Adoption", "Adopt a pet in Pattaya",
+    "Shelters, fostering and how to help street animals in and around the city.",
+    "Read the guide"],
+  ["/owning-a-pet-in-pattaya/lost-pet-pattaya.html", "Owning", "If your pet goes missing",
+    "Microchip, local groups and what to do in the first hours.",
+    "Read the guide"],
+  ["/dogs/", "For dog owners", "The dog owner&rsquo;s hub",
+    "Care, training, walks and health guides for dogs — all in one place.",
+    "Open the hub"],
+  ["/cats/", "For cat owners", "The cat owner&rsquo;s hub",
+    "Indoor living, health and care guides for cats in Pattaya.",
+    "Open the hub"],
+  ["/pet-insurance-thailand.html", "Money", "Pet insurance in Thailand",
+    "How pet insurance works here, what it covers, and whether it is worth it.",
+    "Read the guide"]
+];
+
+const HOME_GUIDE_MORE =
+  '<p class="guide-topics"><strong>More guides:</strong> ' +
+  '<a href="/bring-pet-to-thailand/microchip-requirements.html">Microchip</a> &middot; ' +
+  '<a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">Rabies &amp; titer</a> &middot; ' +
+  '<a href="/bring-pet-to-thailand/thailand-pet-quarantine.html">Quarantine</a> &middot; ' +
+  '<a href="/bring-pet-to-thailand/snub-nosed-breeds-flying.html">Snub-nosed flying</a> &middot; ' +
+  '<a href="/bring-pet-to-thailand/from-uk.html">Import from UK</a> &middot; ' +
+  '<a href="/bring-pet-to-thailand/from-uae.html">Import from UAE</a> &middot; ' +
+  '<a href="/take-pet-out-of-thailand/to-uk.html">Export to UK</a> &middot; ' +
+  '<a href="/take-pet-out-of-thailand/to-eu.html">Export to EU</a> &middot; ' +
+  '<a href="/pet-relocation/">Relocation agents</a> &middot; ' +
+  '<a href="/owning-a-pet-in-pattaya/microchipping-your-pet.html">Microchipping</a> &middot; ' +
+  '<a href="/pet-health-pattaya/tick-borne-disease.html">Tick disease</a> &middot; ' +
+  '<a href="/pet-emergency/heatstroke.html">Heatstroke</a> &middot; ' +
+  '<a href="/pet-emergency/venomous-creatures.html">Venomous creatures</a> &middot; ' +
+  '<a href="/owning-a-pet-in-pattaya/getting-to-the-vet.html">Getting to the vet</a> &middot; ' +
+  '<a href="/cats/indoor-vs-outdoor-cats.html">Indoor vs outdoor cats</a></p>';
+
 const FAQ = [
   ['Is PattayaPets a vet?',
    'No. PattayaPets is an independent editorial publication about pet businesses and pet ownership in Pattaya. It is not a veterinary practice and gives no veterinary advice. For any medical concern, always consult a qualified veterinarian. In a pet emergency, contact a 24-hour animal hospital directly.'],
@@ -147,122 +223,14 @@ const body =
   '<section class="section"><div class="container">' +
     '<div class="section-head"><p class="eyebrow">Guides &amp; resources</p>' +
     '<h2>Answers to what Pattaya pet owners search for</h2>' +
-    '<p>Plain-English guides, each one date-stamped and pointing you to the official ' +
-    'source to verify against.</p></div>' +
+    '<p>Sixteen starting points below &mdash; every guide is date-stamped. The full index ' +
+    'is on the <a href="/guides.html">guides page</a>.</p></div>' +
     '<div class="grid grid-4">' +
-      '<a class="card" href="/start-here.html"><span class="card-tag">New here</span>' +
-        '<h3>Start here</h3><p>A short orientation for new pet owners &mdash; emergency contacts, ' +
-        'finding a vet, the climate and the essentials.</p>' +
-        '<span class="card-meta">Open the page &rarr;</span></a>' +
-      '<a class="card" href="/bring-pet-to-thailand/"><span class="card-tag">Flagship guide</span>' +
-        '<h3>Bringing a pet to Thailand</h3><p>The full import process &mdash; DLD permit, ' +
-        'microchip, rabies and titer test, health certificate, airlines and arrival.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/take-pet-out-of-thailand/"><span class="card-tag">Moving on</span>' +
-        '<h3>Taking a pet out of Thailand</h3><p>The export process, plus what each ' +
-        'destination &mdash; the UK, EU, USA, Australia and more &mdash; demands.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/pet-health-pattaya/"><span class="card-tag">Health</span>' +
-        '<h3>Pet health in Pattaya</h3><p>Heartworm, tick disease, skin and ear ' +
-        'problems and more &mdash; the tropical-climate health picture.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/dog-friendly-pattaya/"><span class="card-tag">Out &amp; about</span>' +
-        '<h3>Dog-friendly Pattaya</h3><p>Beaches, cafes, restaurants, hotels, condos and ' +
-        'parks that genuinely welcome dogs.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/pet-emergency/24-hour-vets-pattaya.html"><span class="card-tag">Urgent</span>' +
-        '<h3>24-hour vets in Pattaya</h3><p>Animal hospitals open around the clock &mdash; ' +
-        'addresses and contact details.</p>' +
-        '<span class="card-meta">View the list &rarr;</span></a>' +
-      '<a class="card" href="/pet-emergency/"><span class="card-tag">Emergency</span>' +
-        '<h3>Pet emergencies &amp; hazards</h3><p>24-hour vets, first-aid steps, heatstroke, ' +
-        'ticks, snakes and street-dog encounters in a hot climate.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/owning-a-pet-in-pattaya/"><span class="card-tag">Day to day</span>' +
-        '<h3>Owning a pet in Pattaya</h3><p>Costs, hot-climate care, pet-friendly housing ' +
-        'and where to walk your dog.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/mobile-vets/"><span class="card-tag">At home</span>' +
-        '<h3>Mobile &amp; home-visit vets</h3><p>Vets who come to you &mdash; useful for nervous pets ' +
-        'and multi-cat homes.</p>' +
-        '<span class="card-meta">View mobile vets &rarr;</span></a>' +
-      '<a class="card" href="/adopt-a-pet-pattaya/"><span class="card-tag">Adoption</span>' +
-        '<h3>Adopt a pet in Pattaya</h3><p>The shelters and rescue organisations in and ' +
-        'around Pattaya, and how adoption works.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/pet-insurance-thailand.html"><span class="card-tag">Money</span>' +
-        '<h3>Pet insurance in Thailand</h3><p>How pet insurance works here, what it covers, ' +
-        'and whether it is worth it.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/dogs/"><span class="card-tag">For dog owners</span>' +
-        '<h3>The dog owner&rsquo;s hub</h3><p>Care, training, walks and health guides ' +
-        'for dogs in Pattaya &mdash; all in one place.</p>' +
-        '<span class="card-meta">Open the hub &rarr;</span></a>' +
-      '<a class="card" href="/cats/"><span class="card-tag">For cat owners</span>' +
-        '<h3>The cat owner&rsquo;s hub</h3><p>Indoor living, vets and health guides ' +
-        'for cats in Pattaya &mdash; all in one place.</p>' +
-        '<span class="card-meta">Open the hub &rarr;</span></a>' +
-      '<a class="card" href="/adopt-a-pet-pattaya/fostering.html"><span class="card-tag">Adoption</span>' +
-        '<h3>Fostering a pet</h3><p>Give a rescue animal a temporary home while it waits for adoption.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/owning-a-pet-in-pattaya/lost-pet-pattaya.html"><span class="card-tag">Owning</span>' +
-        '<h3>If your pet goes missing</h3><p>A step-by-step plan for a lost dog or cat in Pattaya.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/adopt-a-pet-pattaya/how-to-help.html"><span class="card-tag">Adoption</span>' +
-        '<h3>Helping street animals</h3><p>Donate, volunteer and what to do for an injured stray.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/take-pet-out-of-thailand/export-process.html"><span class="card-tag">Export</span>' +
-        '<h3>The export process</h3><p>Thai DLD health certificate, export permit and the airport steps on the way out.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/bring-pet-to-thailand/snub-nosed-breeds-flying.html"><span class="card-tag">Import</span>' +
-        '<h3>Snub-nosed breeds &amp; flying</h3><p>Why flat-faced breeds need extra care with airlines.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/bring-pet-to-thailand/thailand-pet-quarantine.html"><span class="card-tag">Import</span>' +
-        '<h3>Pet quarantine in Thailand</h3><p>What the Animal Quarantine Station check really means.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/pet-relocation/"><span class="card-tag">Relocation</span>' +
-        '<h3>Pet relocation agents</h3><p>Import and export specialists who handle permits, flights and paperwork nationwide.</p>' +
-        '<span class="card-meta">View agents &rarr;</span></a>' +
-      '<a class="card" href="/bring-pet-to-thailand/u-tapao-airport-pets.html"><span class="card-tag">Import</span>' +
-        '<h3>U-Tapao or Bangkok?</h3><p>Which airport to fly your pet into for Pattaya.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/bring-pet-to-thailand/from-uae.html"><span class="card-tag">Import</span>' +
-        '<h3>Import from the UAE</h3><p>MOCCAE export permit and the Thai DLD steps for Gulf relocations.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/owning-a-pet-in-pattaya/where-to-walk-your-dog.html"><span class="card-tag">Owning</span>' +
-        '<h3>Where to walk your dog</h3><p>Building a safe, cool-hours walking routine in Pattaya.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/owning-a-pet-in-pattaya/microchipping-your-pet.html"><span class="card-tag">Owning</span>' +
-        '<h3>Microchipping your pet</h3><p>The best route home for a lost pet, and keeping details current.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/pet-health-pattaya/tick-borne-disease.html"><span class="card-tag">Health</span>' +
-        '<h3>Tick-borne disease</h3><p>What ticks can transmit in Pattaya&rsquo;s year-round climate.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/pet-emergency/venomous-creatures.html"><span class="card-tag">Emergency</span>' +
-        '<h3>Venomous creatures</h3><p>Toads, centipedes and stings beyond snakes.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html"><span class="card-tag">Owning</span>' +
-        '<h3>Pet sitters &amp; dog walkers</h3><p>Cover for travel and long work days.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/owning-a-pet-in-pattaya/rainy-season-pet-care.html"><span class="card-tag">Owning</span>' +
-        '<h3>Rainy-season pet care</h3><p>Humidity, skin and ear health when the monsoon arrives.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/owning-a-pet-in-pattaya/hot-climate-pet-care.html"><span class="card-tag">Owning</span>' +
-        '<h3>Hot-climate pet care</h3><p>Heat, walk timing and paw-pad safety in Pattaya.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/pet-health-pattaya/dental-care.html"><span class="card-tag">Health</span>' +
-        '<h3>Dental care</h3><p>Why mouth health matters in the tropics.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/pet-health-pattaya/healthy-weight.html"><span class="card-tag">Health</span>' +
-        '<h3>Healthy weight</h3><p>Extra weight and heat do not mix well.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/owning-a-pet-in-pattaya/getting-to-the-vet.html"><span class="card-tag">Owning</span>' +
-        '<h3>Getting your pet to the vet</h3><p>Transport options without a car.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-      '<a class="card" href="/cats/indoor-vs-outdoor-cats.html"><span class="card-tag">Cats</span>' +
-        '<h3>Indoor or outdoor cats</h3><p>Traffic, dogs and balconies — the Pattaya picture.</p>' +
-        '<span class="card-meta">Read the guide &rarr;</span></a>' +
-    '</div>' +
+    HOME_GUIDES.map(function (g) {
+      return guideCard(g[0], g[1], g[2], g[3], g[4]);
+    }).join("") +
+    "</div>" +
+    HOME_GUIDE_MORE +
     '<div class="btn-row"><a class="btn btn-ghost" href="/guides.html">See all guides &rarr;</a></div>' +
   '</div></section>' +
 

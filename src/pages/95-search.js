@@ -21,6 +21,12 @@ module.exports = [{
     '<input type="search" id="pp-q" autocomplete="off" ' +
     'placeholder="Try &ldquo;24 hour vet&rdquo;, &ldquo;Jomtien&rdquo;, &ldquo;bring dog from UK&rdquo;"></div>' +
     '<div id="pp-filters" class="search-filters" aria-label="Filter by section"></div>' +
+    '<div id="pp-results" class="search-results" aria-live="polite" aria-atomic="true" role="region" aria-label="Search results">' +
+    '<noscript><p class="notice">Search needs JavaScript enabled. You can browse ' +
+    'the <a href="/start-here.html">start-here guide</a>, the ' +
+    '<a href="/directory.html">business directory</a>, the ' +
+    '<a href="/guides.html">guides</a>, or the <a href="/sitemap.html">full ' +
+    "sitemap</a> instead.</p></noscript></div>" +
     '<p class="notice" style="margin-top:1rem">Popular: ' +
     '<a href="/bring-pet-to-thailand/from-eu.html">Import from EU</a> &middot; ' +
     '<a href="/bring-pet-to-thailand/from-uae.html">Import from UAE</a> &middot; ' +
@@ -69,11 +75,5 @@ module.exports = [{
     '<a href="/pet-health-pattaya/dental-care.html">Dental care</a> &middot; ' +
     '<a href="/owning-a-pet-in-pattaya/rainy-season-pet-care.html">Rainy season</a> &middot; ' +
     '<a href="/pet-health-pattaya/healthy-weight.html">Healthy weight</a></p>' +
-    '<div id="pp-results" class="search-results">' +
-    '<noscript><p class="notice">Search needs JavaScript enabled. You can browse ' +
-    'the <a href="/start-here.html">start-here guide</a>, the ' +
-    '<a href="/directory.html">business directory</a>, the ' +
-    '<a href="/guides.html">guides</a>, or the <a href="/sitemap.html">full ' +
-    "sitemap</a> instead.</p></noscript></div>" +
     "</div></section>"
 }];
