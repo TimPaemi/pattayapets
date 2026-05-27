@@ -1,0 +1,64 @@
+"use strict";
+/* Bidirectional import ↔ export country slug pairs for related-guide strips. */
+
+const IMPORT_TO_EXPORT = {
+  "from-uk": { slug: "to-uk", label: "To the UK (export)" },
+  "from-usa": { slug: "to-usa", label: "To the USA (export)" },
+  "from-australia": { slug: "to-australia", label: "To Australia (export)" },
+  "from-eu": { slug: "to-eu", label: "To the EU (export)" },
+  "from-germany": { slug: "to-germany", label: "To Germany (export)" },
+  "from-canada": { slug: "to-canada", label: "To Canada (export)" },
+  "from-russia": { slug: "to-russia", label: "To Russia (export)" },
+  "from-sweden": { slug: "to-sweden", label: "To Sweden (export)" },
+  "from-norway": { slug: "to-norway", label: "To Norway (export)" },
+  "from-denmark": { slug: "to-denmark", label: "To Denmark (export)" },
+  "from-finland": { slug: "to-finland", label: "To Finland (export)" },
+  "from-netherlands": { slug: "to-netherlands", label: "To the Netherlands (export)" },
+  "from-france": { slug: "to-france", label: "To France (export)" },
+  "from-ireland": { slug: "to-ireland", label: "To Ireland (export)" },
+  "from-switzerland": { slug: "to-switzerland", label: "To Switzerland (export)" },
+  "from-new-zealand": { slug: "to-new-zealand", label: "To New Zealand (export)" },
+  "from-japan": { slug: "to-japan", label: "To Japan (export)" },
+  "from-singapore": { slug: "to-singapore", label: "To Singapore (export)" }
+};
+
+const EXPORT_TO_IMPORT = {
+  "to-uk": { slug: "from-uk", label: "From the UK (import)" },
+  "to-usa": { slug: "from-usa", label: "From the USA (import)" },
+  "to-australia": { slug: "from-australia", label: "From Australia (import)" },
+  "to-eu": { slug: "from-eu", label: "From the EU (import)" },
+  "to-germany": { slug: "from-germany", label: "From Germany (import)" },
+  "to-canada": { slug: "from-canada", label: "From Canada (import)" },
+  "to-russia": { slug: "from-russia", label: "From Russia (import)" },
+  "to-sweden": { slug: "from-sweden", label: "From Sweden (import)" },
+  "to-norway": { slug: "from-norway", label: "From Norway (import)" },
+  "to-denmark": { slug: "from-denmark", label: "From Denmark (import)" },
+  "to-finland": { slug: "from-finland", label: "From Finland (import)" },
+  "to-netherlands": { slug: "from-netherlands", label: "From the Netherlands (import)" },
+  "to-france": { slug: "from-france", label: "From France (import)" },
+  "to-ireland": { slug: "from-ireland", label: "From Ireland (import)" },
+  "to-switzerland": { slug: "from-switzerland", label: "From Switzerland (import)" },
+  "to-new-zealand": { slug: "from-new-zealand", label: "From New Zealand (import)" },
+  "to-japan": { slug: "from-japan", label: "From Japan (import)" },
+  "to-singapore": { slug: "from-singapore", label: "From Singapore (import)" }
+};
+
+function importCountryRelated(slug, base, desc) {
+  var pair = IMPORT_TO_EXPORT[slug];
+  if (!pair) return base;
+  return [
+    { name: pair.label, path: "/take-pet-out-of-thailand/" + pair.slug + ".html",
+      desc: desc || "The reverse process, for when you leave." }
+  ].concat(base);
+}
+
+function exportCountryRelated(slug, base, desc) {
+  var pair = EXPORT_TO_IMPORT[slug];
+  if (!pair) return base;
+  return [
+    { name: pair.label, path: "/bring-pet-to-thailand/" + pair.slug + ".html",
+      desc: desc || "The easier direction, and why the return is harder." }
+  ].concat(base);
+}
+
+module.exports = { importCountryRelated, exportCountryRelated };

@@ -3,6 +3,7 @@
    Full parity with the import cluster's country pages. */
 
 const { article } = require("../guidekit.js");
+const { exportCountryRelated } = require("../data/country-pairs.js");
 
 const GUIDES = { name: "Guides", path: "/guides.html" };
 const CLUSTER = { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/" };
@@ -50,30 +51,8 @@ const RELATED = [
   { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage export." }
 ];
 
-const IMPORT_PAIR = {
-  "to-germany": { slug: "from-germany", label: "From Germany (import)" },
-  "to-sweden": { slug: "from-sweden", label: "From Sweden (import)" },
-  "to-norway": { slug: "from-norway", label: "From Norway (import)" },
-  "to-denmark": { slug: "from-denmark", label: "From Denmark (import)" },
-  "to-finland": { slug: "from-finland", label: "From Finland (import)" },
-  "to-netherlands": { slug: "from-netherlands", label: "From the Netherlands (import)" },
-  "to-france": { slug: "from-france", label: "From France (import)" },
-  "to-ireland": { slug: "from-ireland", label: "From Ireland (import)" },
-  "to-switzerland": { slug: "from-switzerland", label: "From Switzerland (import)" },
-  "to-canada": { slug: "from-canada", label: "From Canada (import)" },
-  "to-russia": { slug: "from-russia", label: "From Russia (import)" },
-  "to-new-zealand": { slug: "from-new-zealand", label: "From New Zealand (import)" },
-  "to-japan": { slug: "from-japan", label: "From Japan (import)" },
-  "to-singapore": { slug: "from-singapore", label: "From Singapore (import)" }
-};
-
 function expRelated(slug) {
-  var pair = IMPORT_PAIR[slug];
-  if (!pair) return RELATED;
-  return [
-    { name: pair.label, path: "/bring-pet-to-thailand/" + pair.slug + ".html",
-      desc: "The easier direction, and why the return is harder." }
-  ].concat(RELATED);
+  return exportCountryRelated(slug, RELATED);
 }
 
 const EU_ENTRY =
@@ -537,6 +516,12 @@ pages.push(exp({
      "<p>Generally no for UAE entry itself, though MOCCAE's rules can change. Confirm the current requirements with MOCCAE. Consider a titer test anyway if you might travel onward to stricter destinations.</p>"],
     ["Which UAE emirate am I importing into?",
      "<p>The import permit is federal, but some emirates and airlines add their own conditions. Confirm with MOCCAE and your airline for the emirate and airport you will use.</p>"]
+  ],
+  related: [
+    { name: "Export to the EU", path: "/take-pet-out-of-thailand/to-eu.html", desc: "Stricter rules if you move on from the UAE." },
+    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
+    { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Worth doing early if you may leave Thailand again." },
+    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage export." }
   ]
 }));
 

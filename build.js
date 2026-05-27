@@ -301,10 +301,7 @@ async function build() {
     "/cats/": "cat owner indoor balcony vaccination",
     "/dog-friendly-pattaya/": "dog friendly beach cafe restaurant hotel condo walk",
     "/owning-a-pet-in-pattaya/songkran-and-your-pet.html": "songkran water festival pet noise escape",
-    "/owning-a-pet-in-pattaya/lost-pet-pattaya.html": "missing pet lost dog cat microchip",
-    "/pet-relocation/": "pet relocation import export agent DLD permit nationwide",
     "/mobile-vets/": "home visit vet mobile house call",
-    "/pet-health-pattaya/spaying-and-neutering.html": "neuter spay sterilisation street animals",
     "/bring-pet-to-thailand/from-uk.html": "import pet UK DEFRA APHA titer tapeworm Thailand",
     "/take-pet-out-of-thailand/to-uk.html": "export pet UK APHA tapeworm Thailand",
     "/owning-a-pet-in-pattaya/getting-to-the-vet.html": "taxi transport vet no car Grab Bolt",
@@ -399,7 +396,23 @@ async function build() {
     "/dog-friendly-pattaya/condos.html": "dog friendly condo rent pet policy Pattaya",
     "/dog-friendly-pattaya/hotels.html": "dog friendly hotel stay Pattaya pet policy",
     "/guides.html": "pet guides Pattaya import export emergency owning",
-    "/directory.html": "pet directory vets groomers boarding Pattaya"
+    "/directory.html": "pet directory vets groomers boarding Pattaya",
+    "/pet-health-pattaya/": "heartworm tick parvovirus skin ear dental spay neuter tropical health",
+    "/vets/": "vet clinic animal hospital emergency 24 hour Pattaya",
+    "/groomers/": "dog cat grooming bath clip nail de-shed Pattaya",
+    "/boarding/": "pet hotel kennel cattery daycare travel Pattaya",
+    "/pet-shops/": "pet food supplies litter toys Pattaya shop",
+    "/trainers/": "dog training obedience behaviour Pattaya",
+    "/take-pet-out-of-thailand/to-russia.html": "export pet Russia Thailand veterinary certificate",
+    "/pet-emergency/beach-and-sea-hazards.html": "beach jellyfish hot sand seawater pufferfish dog",
+    "/dog-friendly-pattaya/cafes.html": "dog friendly cafe coffee Pattaya pet policy",
+    "/dog-friendly-pattaya/restaurants.html": "dog friendly restaurant dining Pattaya",
+    "/dog-friendly-pattaya/parks.html": "dog park green space walk Pattaya",
+    "/owning-a-pet-in-pattaya/where-to-buy-pet-food.html": "pet food litter supermarket online delivery Pattaya",
+    "/owning-a-pet-in-pattaya/hot-climate-pet-care.html": "hot climate heat stroke walk timing Pattaya",
+    "/take-pet-out-of-thailand/": "export pet Thailand DLD permit leave destination",
+    "/pet-health-pattaya/spaying-and-neutering.html": "neuter spay sterilisation street animals Pattaya",
+    "/pet-relocation/": "pet relocation import export agent DLD permit nationwide Thailand"
   };
 
   const searchIndex = indexable.map(function (p) {

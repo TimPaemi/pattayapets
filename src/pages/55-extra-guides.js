@@ -90,8 +90,8 @@ pages.push(article({
   related: [
     { name: "Snake bites", path: "/pet-emergency/snake-bites.html", desc: "Thailand's venomous snakes, and how to react." },
     { name: "Poisoning", path: "/pet-emergency/poisoning.html", desc: "Toad toxin, baits and other hazards." },
-    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Clinics open around the clock." },
-    { name: "Pet first-aid orientation", path: "/pet-emergency/pet-first-aid.html", desc: "The calm, practical basics." }
+    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Follow-up care and prevention." },
+    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Clinics open around the clock." }
   ]
 }));
 
@@ -282,7 +282,7 @@ pages.push(article({
   ],
   related: [
     { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Back to the health hub." },
-    { name: "Vets in Pattaya", path: "/vets/", desc: "Professional dental care at a clinic." },
+    { name: "Mobile & home-visit vets", path: "/mobile-vets/", desc: "Routine dental checks at home." },
     { name: "Healthy weight", path: "/pet-health-pattaya/healthy-weight.html", desc: "Weight and diet affect dental health too." },
     { name: "What it costs to own a pet", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", desc: "Budgeting for routine and unexpected care." }
   ]
@@ -344,7 +344,7 @@ pages.push(article({
   ],
   related: [
     { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Exercise and cool-hour routines." },
-    { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Exercise and heat when managing weight." },
+    { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "Neutering changes metabolism and appetite." },
     { name: "Dental care", path: "/pet-health-pattaya/dental-care.html", desc: "Weight and dental health go together." },
     { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Back to the health hub." }
   ]
@@ -411,10 +411,9 @@ pages.push(article({
      "<p>It can be, with planning: a secure carrier or harness, regular water and toilet stops, never leaving the pet in a parked vehicle, and travelling in cooler hours. If your pet finds car travel very stressful, consider a sitter or boarding instead.</p>"]
   ],
   related: [
-    { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Back to the cluster hub." },
     { name: "Boarding & daycare", path: "/boarding/", desc: "If the pet stays behind." },
     { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html", desc: "Domestic flights and crate rules." },
-    { name: "Pet sitters & dog walkers", path: "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html", desc: "In-home care while you travel." },
+    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "International travel is a different paperwork path." },
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Managing the heat, anywhere in Thailand." }
   ]
 }));

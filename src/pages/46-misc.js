@@ -200,7 +200,7 @@ pages.push(hub({
   ],
   related: [
     { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Beaches, cafes and places to walk." },
-    { name: "Pet emergencies", path: "/pet-emergency/", desc: "24-hour vets and urgent hazards." },
+    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Heartworm, ticks and tropical risks." },
     { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Building a safe daily routine." },
     { name: "Pet insurance in Thailand", path: "/pet-insurance-thailand.html", desc: "Cover for the big unexpected vet bill." }
   ]

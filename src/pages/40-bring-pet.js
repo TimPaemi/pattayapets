@@ -2,6 +2,7 @@
 /* Flagship cluster: Bringing your pet to Thailand */
 
 const { article, hub } = require("../guidekit.js");
+const { importCountryRelated } = require("../data/country-pairs.js");
 
 const GUIDES = { name: "Guides", path: "/guides.html" };
 const CLUSTER = { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/" };
@@ -108,10 +109,10 @@ pages.push(hub({
     }
   ],
   related: [
-    { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "The reverse process, for when you leave." },
+    { name: "From the EU", path: "/bring-pet-to-thailand/from-eu.html", desc: "The largest expat origin cohort." },
     { name: "DLD import permit", path: "/bring-pet-to-thailand/import-permit-thailand-dld.html", desc: "The Thai-side permit you apply for." },
     { name: "Rabies & titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." },
-    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage import and export." }
+    { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "The reverse process, for when you leave." }
   ]
 }));
 
@@ -471,7 +472,8 @@ pages.push(importStep({
     { name: "Pet quarantine in Thailand", path: "/bring-pet-to-thailand/thailand-pet-quarantine.html", desc: "When pets do and do not quarantine on arrival." },
     { name: "U-Tapao or Bangkok?", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html", desc: "Which airport to fly into for Pattaya." },
     { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Settling in once you arrive." },
-    { name: "Vets in Pattaya", path: "/vets/", desc: "Find a clinic near your new home." }
+    { name: "Mobile & home-visit vets", path: "/mobile-vets/", desc: "A calm first vet visit at home." },
+    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Tropical-climate health routines." }
   ]
 }));
 
@@ -541,13 +543,6 @@ const IMP_STEPS =
   "<a href=\"/bring-pet-to-thailand/health-certificate.html\">health certificate</a> and " +
   "<a href=\"/bring-pet-to-thailand/import-permit-thailand-dld.html\">DLD import permit</a>";
 
-const EXPORT_PAIR = {
-  "from-uk": { slug: "to-uk", label: "To the UK (export)" },
-  "from-usa": { slug: "to-usa", label: "To the USA (export)" },
-  "from-australia": { slug: "to-australia", label: "To Australia (export)" },
-  "from-eu": { slug: "to-eu", label: "To the EU (export)" }
-};
-
 const COUNTRY_RELATED = [
   { name: "The full process", path: "/bring-pet-to-thailand/", desc: "Every step, in order." },
   { name: "DLD import permit", path: "/bring-pet-to-thailand/import-permit-thailand-dld.html", desc: "The Thai-side permit you apply for." },
@@ -560,12 +555,7 @@ const COUNTRY_RELATED = [
 ];
 
 function countryRelated(slug) {
-  var pair = EXPORT_PAIR[slug];
-  if (!pair) return COUNTRY_RELATED;
-  return [
-    { name: pair.label, path: "/take-pet-out-of-thailand/" + pair.slug + ".html",
-      desc: "The return journey and why it is harder." }
-  ].concat(COUNTRY_RELATED);
+  return importCountryRelated(slug, COUNTRY_RELATED, "The return journey and why it is harder.");
 }
 
 function countryPage(o) {

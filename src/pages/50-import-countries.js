@@ -3,6 +3,7 @@
    plus the U-Tapao / Bangkok arrival-airport guide. */
 
 const { article } = require("../guidekit.js");
+const { importCountryRelated } = require("../data/country-pairs.js");
 
 const GUIDES = { name: "Guides", path: "/guides.html" };
 const CLUSTER = { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/" };
@@ -35,27 +36,8 @@ const RELATED = [
   { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "The reverse process, for later." }
 ];
 
-const EXPORT_PAIR = {
-  "from-sweden": { slug: "to-sweden", label: "To Sweden (export)" },
-  "from-norway": { slug: "to-norway", label: "To Norway (export)" },
-  "from-denmark": { slug: "to-denmark", label: "To Denmark (export)" },
-  "from-finland": { slug: "to-finland", label: "To Finland (export)" },
-  "from-netherlands": { slug: "to-netherlands", label: "To the Netherlands (export)" },
-  "from-france": { slug: "to-france", label: "To France (export)" },
-  "from-ireland": { slug: "to-ireland", label: "To Ireland (export)" },
-  "from-switzerland": { slug: "to-switzerland", label: "To Switzerland (export)" },
-  "from-new-zealand": { slug: "to-new-zealand", label: "To New Zealand (export)" },
-  "from-japan": { slug: "to-japan", label: "To Japan (export)" },
-  "from-singapore": { slug: "to-singapore", label: "To Singapore (export)" }
-};
-
 function countryRelated(slug) {
-  var pair = EXPORT_PAIR[slug];
-  if (!pair) return RELATED;
-  return [
-    { name: pair.label, path: "/take-pet-out-of-thailand/" + pair.slug + ".html",
-      desc: "The reverse process, for when you leave." }
-  ].concat(RELATED);
+  return importCountryRelated(slug, RELATED);
 }
 
 const STD_STEPS =
@@ -489,7 +471,12 @@ pages.push(article({
     ["Which airport should I plan for?",
      "<p>For almost every owner, Bangkok's Suvarnabhumi &mdash; it has the established pet-import process and far more flight choice. Treat a direct U-Tapao arrival as something to verify carefully with the DLD and airline, not to assume.</p>"]
   ],
-  related: RELATED
+  related: [
+    { name: "Arriving at Suvarnabhumi", path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html", desc: "The quarantine-station check on landing." },
+    { name: "Pet quarantine in Thailand", path: "/bring-pet-to-thailand/thailand-pet-quarantine.html", desc: "What the AQS check really means." },
+    { name: "The full process", path: "/bring-pet-to-thailand/", desc: "Every step, in order." },
+    { name: "What it costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html", desc: "Budget for the whole move." }
+  ]
 }));
 
 module.exports = pages;

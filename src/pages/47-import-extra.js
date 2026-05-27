@@ -2,6 +2,7 @@
 /* Extra origin-country guides for the "Bringing a pet to Thailand" cluster. */
 
 const { article } = require("../guidekit.js");
+const { importCountryRelated } = require("../data/country-pairs.js");
 
 const GUIDES = { name: "Guides", path: "/guides.html" };
 const CLUSTER = { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/" };
@@ -34,19 +35,8 @@ const RELATED = [
   { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "The reverse process, for later." }
 ];
 
-const EXPORT_PAIR = {
-  "from-canada": { slug: "to-canada", label: "To Canada (export)" },
-  "from-germany": { slug: "to-germany", label: "To Germany (export)" },
-  "from-russia": { slug: "to-russia", label: "To Russia (export)" }
-};
-
 function countryRelated(slug) {
-  var pair = EXPORT_PAIR[slug];
-  if (!pair) return RELATED;
-  return [
-    { name: pair.label, path: "/take-pet-out-of-thailand/" + pair.slug + ".html",
-      desc: "The reverse process, for when you leave." }
-  ].concat(RELATED);
+  return importCountryRelated(slug, RELATED);
 }
 
 function country(o) {

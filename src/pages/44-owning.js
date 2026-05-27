@@ -67,8 +67,8 @@ pages.push(hub({
   related: [
     { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Heartworm, ticks and tropical-climate risks." },
     { name: "Pet emergencies", path: "/pet-emergency/", desc: "24-hour vets and urgent hazards." },
-    { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Beaches, walks and places that welcome dogs." },
-    { name: "Pet insurance in Thailand", path: "/pet-insurance-thailand.html", desc: "Cover for the big unexpected vet bill." }
+    { name: "Mobile & home-visit vets", path: "/mobile-vets/", desc: "Vets who come to you." },
+    { name: "Getting to the vet", path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html", desc: "Transport without a car." }
   ]
 }));
 

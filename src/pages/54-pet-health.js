@@ -19,7 +19,7 @@ const RELATED = [
   { name: "Heartworm", path: "/pet-health-pattaya/heartworm.html", desc: "Year-round prevention in Pattaya." },
   { name: "Tick-borne disease", path: "/pet-health-pattaya/tick-borne-disease.html", desc: "Ticks are active all year here." },
   { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html", desc: "Heat and humidity drive flare-ups." },
-  { name: "Vets & animal hospitals", path: "/vets/", desc: "Find a clinic near you." },
+  { name: "Mobile & home-visit vets", path: "/mobile-vets/", desc: "Routine checks without the clinic stress." },
   { name: "Pet emergencies", path: "/pet-emergency/", desc: "24-hour vets and urgent hazards." }
 ];
 
@@ -87,8 +87,8 @@ pages.push(hub({
   related: [
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Keeping a pet safe in Pattaya's heat." },
     { name: "Pet emergencies", path: "/pet-emergency/", desc: "24-hour vets and first-aid orientation." },
-    { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html", desc: "Year-round parasite prevention." },
-    { name: "Mobile & home-visit vets", path: "/mobile-vets/", desc: "Vets who come to you." }
+    { name: "Dog vaccinations & parasites", path: "/dogs/dog-vaccinations-thailand.html", desc: "The core preventive routines for dogs." },
+    { name: "Cat vaccinations & health", path: "/cats/cat-vaccinations-thailand.html", desc: "The routine health picture for cats." }
   ]
 }));
 
@@ -148,7 +148,7 @@ pages.push(health({
   related: [
     { name: "Dog vaccinations & parasites", path: "/dogs/dog-vaccinations-thailand.html", desc: "How prevention fits the wider routine." },
     { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html", desc: "Year-round parasite prevention." },
-    { name: "Vets in Pattaya", path: "/vets/", desc: "Find a clinic near you." },
+    { name: "Mobile & home-visit vets", path: "/mobile-vets/", desc: "Routine prevention visits at home." },
     { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Back to the health hub." }
   ]
 }));
@@ -332,7 +332,7 @@ pages.push(health({
     { name: "Rainy-season pet care", path: "/owning-a-pet-in-pattaya/rainy-season-pet-care.html", desc: "Humidity and damp coats drive flare-ups." },
     { name: "Groomers in Pattaya", path: "/groomers/", desc: "Coat care in the climate." },
     { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html", desc: "Parasites that trigger skin disease." },
-    { name: "Vets in Pattaya", path: "/vets/", desc: "Find a clinic near you." }
+    { name: "Mobile & home-visit vets", path: "/mobile-vets/", desc: "Skin checks without the clinic stress." }
   ]
 }));
 
@@ -389,7 +389,7 @@ pages.push(health({
     { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Rescues often neuter before rehoming." },
     { name: "How to help street animals", path: "/adopt-a-pet-pattaya/how-to-help.html", desc: "Supporting sterilisation programmes." },
     { name: "Cat vaccinations", path: "/cats/cat-vaccinations-thailand.html", desc: "Routine care for cats." },
-    { name: "Vets in Pattaya", path: "/vets/", desc: "Find a clinic near you." }
+    { name: "Mobile & home-visit vets", path: "/mobile-vets/", desc: "Some offer home-visit neutering." }
   ]
 }));
 

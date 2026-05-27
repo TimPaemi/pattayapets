@@ -220,6 +220,9 @@ const body =
       '<a class="card" href="/bring-pet-to-thailand/thailand-pet-quarantine.html"><span class="card-tag">Import</span>' +
         '<h3>Pet quarantine in Thailand</h3><p>What the Animal Quarantine Station check really means.</p>' +
         '<span class="card-meta">Read the guide &rarr;</span></a>' +
+      '<a class="card" href="/pet-relocation/"><span class="card-tag">Relocation</span>' +
+        '<h3>Pet relocation agents</h3><p>Import and export specialists who handle permits, flights and paperwork nationwide.</p>' +
+        '<span class="card-meta">View agents &rarr;</span></a>' +
       '<a class="card" href="/bring-pet-to-thailand/u-tapao-airport-pets.html"><span class="card-tag">Import</span>' +
         '<h3>U-Tapao or Bangkok?</h3><p>Which airport to fly your pet into for Pattaya.</p>' +
         '<span class="card-meta">Read the guide &rarr;</span></a>' +

@@ -22,7 +22,13 @@ module.exports = [{
     'placeholder="Try &ldquo;24 hour vet&rdquo;, &ldquo;Jomtien&rdquo;, &ldquo;bring dog from UK&rdquo;"></div>' +
     '<div id="pp-filters" class="search-filters" aria-label="Filter by section"></div>' +
     '<p class="notice" style="margin-top:1rem">Popular: ' +
-    '<a href="/bring-pet-to-thailand/from-germany.html">Import from Germany</a> &middot; ' +
+    '<a href="/bring-pet-to-thailand/from-usa.html">Import from USA</a> &middot; ' +
+    '<a href="/take-pet-out-of-thailand/to-usa.html">Export to USA</a> &middot; ' +
+    '<a href="/take-pet-out-of-thailand/to-australia.html">Export to Australia</a> &middot; ' +
+    '<a href="/take-pet-out-of-thailand/">Export hub</a> &middot; ' +
+    '<a href="/owning-a-pet-in-pattaya/hot-climate-pet-care.html">Hot climate</a> &middot; ' +
+    '<a href="/dog-friendly-pattaya/beaches.html">Dog beaches</a> &middot; ' +
+    '<a href="/pet-health-pattaya/spaying-and-neutering.html">Spay &amp; neuter</a> &middot; ' +
     '<a href="/take-pet-out-of-thailand/to-eu.html">Export to EU</a> &middot; ' +
     '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vet</a> &middot; ' +
     '<a href="/bring-pet-to-thailand/from-uk.html">Bring pet from UK</a> &middot; ' +

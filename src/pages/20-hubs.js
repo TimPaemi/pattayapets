@@ -105,6 +105,24 @@ pages.push({
       "Beaches, cafes, restaurants and places that welcome dogs.", "Open the guide") +
     card("/mobile-vets/", "At home", "Mobile & home-visit vets",
       "Vets who come to you — useful for nervous pets and multi-cat homes.", "View mobile vets") +
+    "</div>" +
+    '<div class="grid grid-4" style="margin-top:1rem">' +
+    card("/take-pet-out-of-thailand/", "Moving on", "Taking a pet out of Thailand",
+      "DLD export permit, costs and country-by-country destination notes.", "Open the guide") +
+    card("/owning-a-pet-in-pattaya/", "Day to day", "Owning a pet in Pattaya",
+      "Costs, hot-climate care, pet-friendly housing and where to walk your dog.", "Open the guide") +
+    card("/start-here.html", "New here", "Start here",
+      "A short orientation for new pet owners in Pattaya.", "Open the page") +
+    card("/pet-insurance-thailand.html", "Money", "Pet insurance in Thailand",
+      "How pet insurance works here and whether it is worth it.", "Open the guide") +
+    "</div>" +
+    '<div class="grid grid-4" style="margin-top:1rem">' +
+    card("/dogs/", "Dog owners", "Dogs in Pattaya",
+      "Care, training, walks and health guides for dogs.", "Open the hub") +
+    card("/cats/", "Cat owners", "Cats in Pattaya",
+      "Indoor living, health and care guides for cats.", "Open the hub") +
+    card("/pet-relocation/", "Relocation", "Pet relocation agents",
+      "Import and export specialists who handle permits and flights.", "View agents") +
     "</div></div></section>"
 });
 

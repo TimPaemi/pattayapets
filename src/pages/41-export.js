@@ -2,6 +2,7 @@
 /* Cluster: Taking your pet out of Thailand */
 
 const { article, hub } = require("../guidekit.js");
+const { exportCountryRelated } = require("../data/country-pairs.js");
 
 const GUIDES = { name: "Guides", path: "/guides.html" };
 const CLUSTER = { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/" };
@@ -43,14 +44,6 @@ const THAI_SIDE =
   "&mdash; the DLD health certificate and export permit &mdash; which your pet must " +
   "clear on the way out. The two sets of paperwork have to agree.</p>";
 
-const IMPORT_PAIR = {
-  "to-uk": { slug: "from-uk", label: "From the UK (import)" },
-  "to-usa": { slug: "from-usa", label: "From the USA (import)" },
-  "to-australia": { slug: "from-australia", label: "From Australia (import)" },
-  "to-eu": { slug: "from-eu", label: "From the EU (import)" },
-  "to-germany": { slug: "from-germany", label: "From Germany (import)" }
-};
-
 const EXP_RELATED = [
   { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
   { name: "DLD export permit", path: "/take-pet-out-of-thailand/export-permit-thailand-dld.html", desc: "The permit you apply for before departure." },
@@ -61,12 +54,7 @@ const EXP_RELATED = [
 ];
 
 function expCountryRelated(slug) {
-  var pair = IMPORT_PAIR[slug];
-  if (!pair) return EXP_RELATED;
-  return [
-    { name: pair.label, path: "/bring-pet-to-thailand/" + pair.slug + ".html",
-      desc: "The easier direction, and why the return is harder." }
-  ].concat(EXP_RELATED);
+  return exportCountryRelated(slug, EXP_RELATED);
 }
 
 const pages = [];
@@ -210,8 +198,8 @@ pages.push(exp({
   ],
   related: [
     { name: "DLD export permit", path: "/take-pet-out-of-thailand/export-permit-thailand-dld.html", desc: "The permit you apply for before departure." },
-    { name: "What export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html", desc: "Budgeting the Thai side and the flight." },
-    { name: "Export to the UK", path: "/take-pet-out-of-thailand/to-uk.html", desc: "A common destination with a long lead time." },
+    { name: "Export to the EU", path: "/take-pet-out-of-thailand/to-eu.html", desc: "Titer test and the three-month wait." },
+    { name: "Export to the USA", path: "/take-pet-out-of-thailand/to-usa.html", desc: "CDC dog-import rules and the titer test." },
     { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage export." }
   ]
 }));
@@ -277,8 +265,8 @@ pages.push(exp({
   ],
   related: [
     { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
-    { name: "What export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html", desc: "Budgeting the Thai side and the flight." },
-    { name: "Export to the UK", path: "/take-pet-out-of-thailand/to-uk.html", desc: "Titer test, waiting period and tapeworm rules." },
+    { name: "Export to the EU", path: "/take-pet-out-of-thailand/to-eu.html", desc: "Titer test and the three-month wait." },
+    { name: "Export to the UK", path: "/take-pet-out-of-thailand/to-uk.html", desc: "Tapeworm treatment and approved routes." },
     { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." }
   ]
 }));
@@ -346,7 +334,7 @@ pages.push(exp({
   related: [
     { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
     { name: "DLD export permit", path: "/take-pet-out-of-thailand/export-permit-thailand-dld.html", desc: "The permit you apply for before departure." },
-    { name: "Export to the UK", path: "/take-pet-out-of-thailand/to-uk.html", desc: "A common destination with a long lead time." },
+    { name: "Export to Australia", path: "/take-pet-out-of-thailand/to-australia.html", desc: "The hardest route — and the most expensive." },
     { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage export." }
   ]
 }));
