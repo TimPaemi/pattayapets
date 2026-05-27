@@ -103,13 +103,16 @@ const SHELTERS = [
     crumb: "Dog & Cat Rescue Pattaya",
     type: "Dog & cat shelter",
     website: "https://www.facebook.com/DogRescuePattaya/",
+    facebook: "https://www.facebook.com/DogRescuePattaya/",
     lede: "Dog & Cat Rescue Pattaya is a Pattaya animal shelter that rescues dogs " +
       "and helps the city&rsquo;s street cats.",
     what:
       "<p>Dog &amp; Cat Rescue Pattaya operates as a shelter rescuing dogs and " +
       "supporting street cats around the city, with care, treatment and rehoming " +
       "at the centre of its work. It is active on social media, where it shares " +
-      "animals in need of homes and updates on rescues.</p>",
+      "animals in need of homes and updates on rescues. Shelter location and visiting " +
+      "arrangements are confirmed through its Facebook page rather than a fixed " +
+      "public address.</p>",
     adopt:
       "<p>Dogs and cats are rehomed once cared for. Contact the organisation " +
       "directly &mdash; its Facebook page is the most current channel &mdash; to " +
@@ -154,28 +157,37 @@ const SHELTERS = [
       "<p>Founded in 2018, Pattaya Street Dogs (K9aid) provides a home for a " +
       "group of rescued dogs and also feeds and monitors additional dogs living " +
       "at a Buddhist temple near the sea. Its work centres on care, feeding and " +
-      "finding homes for street dogs around Pattaya.</p>",
+      "finding homes for street dogs around Pattaya. Contact and visiting details " +
+      "are handled through the K9aid Pattaya page.</p>",
     adopt:
       "<p>The rescue rehomes dogs in its care and welcomes adopters, fosters, " +
-      "volunteers and donors. Contact it directly to ask how you can help or " +
-      "adopt.</p>"
+      "volunteers and donors. Contact it directly through " +
+      "<a href=\"https://k9aid.org/pattaya/\" target=\"_blank\" rel=\"noopener nofollow\">" +
+      "k9aid.org/pattaya</a> to ask how you can help or adopt.</p>"
   },
   {
     slug: "soi-dog-foundation", name: "Soi Dog Foundation",
     crumb: "Soi Dog Foundation",
     type: "Animal welfare charity",
     website: "https://www.soidog.org/",
+    address: "167/9 Moo 4, Soi Mai Khao 10, Mai Khao, Thalang, Phuket 83110",
+    phone: "076 681 029", tel: "+6676681029",
+    email: "clinic@soidog.org",
+    hours: "Head office Mon&ndash;Fri 08:00&ndash;17:00; sanctuary visits by arrangement",
     lede: "Soi Dog Foundation is Thailand&rsquo;s best-known animal-welfare " +
       "charity, with sterilisation, rescue and adoption work that reaches Pattaya.",
     what:
-      "<p>Soi Dog Foundation is a major Thai animal-welfare charity, widely known " +
-      "for large-scale sterilisation and vaccination programmes, rescue, and " +
-      "international adoption. Its work includes the Pattaya area, and it offers " +
-      "ways to sponsor and support animals there.</p>",
+      "<p>Soi Dog Foundation is a major Thai animal-welfare charity based in " +
+      "Phuket, widely known for large-scale sterilisation and vaccination " +
+      "programmes, rescue, and international adoption. Its work includes the " +
+      "Pattaya area through outreach and sponsorship &mdash; but the main sanctuary " +
+      "and head office are in Phuket, not Pattaya city. Guided sanctuary tours run " +
+      "from the Phuket site by prior arrangement.</p>",
     adopt:
       "<p>Soi Dog runs an established adoption programme, including international " +
       "adoption for supporters who have moved or are moving abroad. See its " +
-      "website for current adoption and sponsorship options.</p>"
+      "<a href=\"https://www.soidog.org/content/adopt\" target=\"_blank\" " +
+      "rel=\"noopener nofollow\">adoption pages</a> for current options.</p>"
   },
   {
     slug: "malees-animal-shelter", name: "Malee's Animal Shelter",
@@ -187,11 +199,13 @@ const SHELTERS = [
     what:
       "<p>Malee&rsquo;s Animal Shelter rescues and cares for dogs and cats in the " +
       "Pattaya and Chanthaburi region &mdash; reported as more than four hundred " +
-      "dogs and several dozen cats. It relies, like all the shelters here, on " +
-      "donations and volunteers to continue its work.</p>",
+      "dogs and several dozen cats. The shelter operates in Chanthaburi province " +
+      "east of Pattaya. It relies, like all the shelters here, on donations and " +
+      "volunteers to continue its work. Confirm the current location and visiting " +
+      "arrangements directly through its website before you travel.</p>",
     adopt:
       "<p>Dogs and cats are available for adoption. Contact the shelter directly " +
-      "to discuss adopting, fostering, volunteering or donating.</p>"
+      "through its website to discuss adopting, fostering, volunteering or donating.</p>"
   }
 ];
 

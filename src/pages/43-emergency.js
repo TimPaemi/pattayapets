@@ -360,13 +360,18 @@ pages.push(hazard({
       "vaccination current is essential &mdash; for its protection and because " +
       "it is legally required. If your pet is bitten or scratched by a street " +
       "animal, or you are, treat it seriously and seek medical or veterinary " +
-      "advice promptly.</p>" }
+      "advice promptly at a " +
+      "<a href=\"/vets/\">Pattaya vet</a> or a " +
+      "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour animal hospital</a>. " +
+      "For street-animal emergencies, " +
+      "<a href=\"/vets/animal-army-hospital.html\">Animal Army Hospital</a> in Na " +
+      "Jomtien operates a rescue ambulance.</p>" }
   ],
   faqs: [
     ["Are Pattaya's street dogs dangerous?",
      "<p>Most are not interested in confrontation and keep their distance. The sensible approach is respect, not fear: keep your dog leashed, give groups space, and stay calm. Keep your pet's rabies vaccination current as a basic precaution.</p>"],
     ["What if my dog is bitten by a street dog?",
-     "<p>Treat it seriously. Get the wound seen by a vet, who will also advise on rabies risk and your pet's vaccination status. If a person is bitten, seek medical advice promptly.</p>"]
+     "<p>Treat it seriously. Get the wound seen by a <a href=\"/vets/\">vet</a> as soon as you can — or a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour animal hospital</a> if it is after hours. The vet will advise on wound care and rabies risk given your pet's vaccination status. If a person is bitten, seek medical advice promptly.</p>"]
   ]
 }));
 

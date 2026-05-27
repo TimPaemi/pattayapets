@@ -14,6 +14,17 @@ const VERIFY =
   "every current requirement with the DLD and the destination country&rsquo;s " +
   "authority before booking.";
 
+const OFFICIAL =
+  "<p><strong>Official sources to verify against:</strong> " +
+  "<a href=\"https://aqi.dld.go.th/webnew/index.php/th/service-menu-2/office-service-menu/72-research/kmresearch/432-exportation-of-live-animals\" " +
+  "target=\"_blank\" rel=\"noopener nofollow\">DLD export of live animals</a>; " +
+  "Suvarnabhumi AQS export: " +
+  "<a href=\"mailto:qsap_bkk_export@dld.go.th\">qsap_bkk_export@dld.go.th</a> " +
+  "(Mon&ndash;Fri 08:30&ndash;12:00 and 13:00&ndash;15:30, Thai public holidays excepted); " +
+  "<a href=\"https://www.gov.uk/bring-pet-to-great-britain\" target=\"_blank\" rel=\"noopener nofollow\">UK pet travel</a>; " +
+  "<a href=\"https://www.cdc.gov/importation/bringing-an-animal-into-the-us/index.html\" target=\"_blank\" rel=\"noopener nofollow\">CDC animal import (USA)</a>; " +
+  "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" rel=\"noopener nofollow\">EU pet movement</a>.</p>";
+
 const pages = [];
 
 pages.push(hub({
@@ -41,12 +52,19 @@ pages.push(hub({
     "rabies titer test</a> done early &mdash; ideally you already did it before " +
     "arriving.</p>" +
     '<div class="callout callout-tip"><div class="ch">Rules change — verify before you act</div>' +
-    "<p>" + VERIFY + "</p></div>",
+    "<p>" + VERIFY + "</p>" + OFFICIAL + "</div>",
   groups: [
     {
       title: "The process",
       cards: [
-        { tag: "Start here", name: "The export process", desc: "The Thai DLD side: health certificate, export permit and timing.", path: "/take-pet-out-of-thailand/export-process.html" }
+        { tag: "Start here", name: "The export process", desc: "The Thai DLD side: health certificate, export permit and timing.", path: "/take-pet-out-of-thailand/export-process.html" },
+        { tag: "Step 2", name: "DLD export permit", desc: "How to apply to the Animal Quarantine Station before you fly.", path: "/take-pet-out-of-thailand/export-permit-thailand-dld.html" }
+      ]
+    },
+    {
+      title: "Plan and budget",
+      cards: [
+        { tag: "Money", name: "What it costs", desc: "Where the money goes on the Thai side and the flight out.", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html" }
       ]
     },
     {
@@ -86,6 +104,7 @@ function exp(o) {
     sections: o.sections, faqs: o.faqs,
     related: o.related || [
       { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
+      { name: "DLD export permit", path: "/take-pet-out-of-thailand/export-permit-thailand-dld.html", desc: "The permit you apply for before departure." },
       { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." },
       { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage export." }
     ]
@@ -123,13 +142,143 @@ pages.push(exp({
       "airport for final endorsement, and your pet is checked before it flies. " +
       "Many owners use a <a href=\"/pet-relocation/\">pet relocation agent</a> " +
       "for export precisely because the airport steps and the destination " +
-      "paperwork have to line up perfectly.</p>" }
+      "<p>for export precisely because the airport steps and the destination " +
+      "paperwork have to line up perfectly.</p>" +
+      OFFICIAL },
+    { h: "Next steps", html:
+      "<p>For the permit application itself, see our dedicated page on the " +
+      "<a href=\"/take-pet-out-of-thailand/export-permit-thailand-dld.html\">DLD " +
+      "export permit</a>. For budgeting, see " +
+      "<a href=\"/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html\">" +
+      "what export costs</a>.</p>" }
   ],
   faqs: [
     ["How far ahead should I start the export process?",
      "<p>The Thai side is fairly quick, but the destination side is not — a titer test plus a three-month wait means several months of lead time for the UK, EU or Australia. Start as early as you can; the titer test is the long pole.</p>"],
     ["Do I need an agent to export a pet?",
      "<p>No, but many owners use one. The value of an agent is in lining up the Thai endorsement, the destination requirements and the flight so nothing slips. For complex destinations it is often worth it.</p>"]
+  ]
+}));
+
+pages.push(exp({
+  slug: "export-permit-thailand-dld", crumb: "DLD export permit",
+  title: "Thailand pet export permit (DLD) | PattayaPets",
+  desc: "The Thailand pet export permit from the Department of Livestock " +
+    "Development: how to apply, the timing, and what you submit before departure.",
+  h1: "The Thailand export permit (DLD)",
+  lede: "Before your pet leaves Thailand, the Department of Livestock Development " +
+    "must issue an export permit and health certificate. Here is how that half works.",
+  sections: [
+    { h: "What the export permit is", html:
+      "<p>The export permit is issued by the <strong>Department of Livestock " +
+      "Development (DLD)</strong> through the <strong>Animal Quarantine Station " +
+      "(AQS)</strong> at your departure airport. It confirms your pet may be " +
+      "exported and is paired with a DLD health certificate after a veterinary " +
+      "inspection.</p>" },
+    { h: "Start with the destination country", html:
+      "<p>Thailand exports pets <em>to</em> another country&rsquo;s rules. Before " +
+      "you apply, obtain that country&rsquo;s import requirements or import permit " +
+      "and show them to the AQS &mdash; the Thai health certificate must match what " +
+      "the destination expects. Read the destination page in our " +
+      "<a href=\"/take-pet-out-of-thailand/\">export guide</a> and confirm with " +
+      "the foreign authority directly.</p>" },
+    { h: "When to apply", html:
+      "<p>Official DLD guidance asks you to submit export application form " +
+      "<strong>1/1 at least 15 days before export</strong>. In practice, allow " +
+      "more slack &mdash; especially if blood tests, a " +
+      "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies " +
+      "titer test</a> or destination-side paperwork still has to be completed.</p>" +
+      "<p>The destination country&rsquo;s timeline is usually the long pole: a " +
+      "titer test plus a three-month wait for the UK or EU can mean starting " +
+      "months before you book the flight.</p>" },
+    { h: "How to apply", html:
+      "<p>Applications go to the AQS at your port of departure using DLD form " +
+      "<strong>1/1</strong> (export application). For Suvarnabhumi (Bangkok), " +
+      "the usual airport for Pattaya departures, email " +
+      "<a href=\"mailto:qsap_bkk_export@dld.go.th\">qsap_bkk_export@dld.go.th</a> " +
+      "or attend in person at the AQS office on the 1st floor of the Customs Export " +
+      "Building at the airport (Mon&ndash;Fri 08:30&ndash;12:00 and 13:00&ndash;15:30, " +
+      "except Thai public holidays; tel. (+66) 2134-0731&ndash;2).</p>" +
+      "<p>An AQS veterinary officer reviews your documents, may examine your pet " +
+      "and/or request tests, then issues the export licence (form 9) and health " +
+      "certificate if everything complies.</p>" +
+      OFFICIAL },
+    { h: "What you will typically need", html:
+      "<ul><li>Completed form <strong>1/1</strong> and a copy of your ID (passport " +
+      "for foreign nationals)</li>" +
+      "<li>Your pet&rsquo;s microchip number and vaccination records</li>" +
+      "<li>The destination country&rsquo;s import permit or written health requirements</li>" +
+      "<li>Flight details and consignee details matching all other documents</li>" +
+      "<li>Any test results the destination or AQS requires (such as a rabies titer " +
+      "result for the UK or EU)</li></ul>" +
+      "<p>Keep printed originals of the export permit, health certificate and every " +
+      "supporting document for the airport and the destination border check.</p>" }
+  ],
+  faqs: [
+    ["Can I get the export permit on the day of the flight?",
+     "<p>Officially you should apply at least 15 days ahead. Last-minute export is risky — the AQS may need time for inspection or tests, and your destination country may not accept paperwork issued the same day. Plan weeks ahead, not hours.</p>"],
+    ["Do I need an agent for the export permit?",
+     "<p>No, but many owners use a pet relocation agent because the Thai endorsement, destination requirements and airline booking must align. For complex destinations it is often worth the fee.</p>"]
+  ]
+}));
+
+pages.push(exp({
+  slug: "cost-to-export-a-pet-from-thailand", crumb: "What it costs",
+  title: "Cost to export a pet from Thailand | PattayaPets",
+  desc: "An honest look at the cost of taking a dog or cat out of Thailand — " +
+    "Thai-side fees, vet work, the flight and destination requirements.",
+  h1: "What it costs to export a pet from Thailand",
+  lede: "Export has two cost piles: the relatively quick Thai side, and the " +
+    "destination country&rsquo;s requirements — which can run to months and " +
+    "thousands of dollars for a titer test and waiting period.",
+  verify: "Costs below are rough orientation only, gathered in May 2026, and vary " +
+    "widely by destination, airline, pet size and provider. Get written quotes for " +
+    "your specific situation before you budget.",
+  sections: [
+    { h: "Where the money goes", html:
+      "<p>A pet export is a stack of separate costs:</p>" +
+      "<ul><li><strong>Vaccinations and vet checks</strong> &mdash; keeping rabies " +
+      "and other jabs current at normal clinic rates.</li>" +
+      "<li><strong>Rabies titer test</strong> &mdash; essential for the UK, EU, " +
+      "Japan, Singapore and others; modest lab fee but a long calendar wait.</li>" +
+      "<li><strong>Thai export health certificate &amp; DLD fees</strong> &mdash; " +
+      "AQS inspection and official paperwork on departure.</li>" +
+      "<li><strong>Destination import permit or pre-approval</strong> &mdash; some " +
+      "countries charge for their own import licence.</li>" +
+      "<li><strong>IATA travel crate</strong> &mdash; sized to your pet if flying " +
+      "in the hold or as cargo.</li>" +
+      "<li><strong>The flight</strong> &mdash; often the largest single line, and " +
+      "highly variable by route and pet size.</li>" +
+      "<li><strong>Relocation agent</strong> &mdash; optional but common for cargo " +
+      "bookings and complex destinations.</li>" +
+      "<li><strong>Quarantine</strong> &mdash; only for certain destinations " +
+      "(notably Australia); can dominate the budget.</li></ul>" },
+    { h: "The honest range", html:
+      "<p>For a straightforward export to a country without quarantine &mdash; " +
+      "say Canada or Russia &mdash; owners commonly report a total in the " +
+      "<strong>low-to-mid four figures (US dollars)</strong> once vet work, Thai " +
+      "export fees, crate and flight are added. A small cat in cabin sits lower; " +
+      "a large dog as manifest cargo with agent support sits higher.</p>" +
+      "<p>For the UK, EU or Australia the <strong>destination timeline</strong> " +
+      "matters as much as the cash: a titer test and three-month (or longer) wait " +
+      "mean paying for ongoing care in Thailand while you wait, plus possible " +
+      "repeat vet visits to keep certificates current.</p>" +
+      "<p>We deliberately avoid a single headline number &mdash; get quotes from " +
+      "your airline and a <a href=\"/pet-relocation/\">relocation agent</a> for " +
+      "your exact route.</p>" },
+    { h: "Thai-side fees only", html:
+      "<p>The DLD export inspection and certificate are relatively modest compared " +
+      "with the flight. The expensive parts on the Thai side are usually the vet " +
+      "work (especially a titer test sent to an approved lab) and, if you use one, " +
+      "the agent&rsquo;s service fee. See the " +
+      "<a href=\"/take-pet-out-of-thailand/export-permit-thailand-dld.html\">export " +
+      "permit page</a> for the application process.</p>" }
+  ],
+  faqs: [
+    ["Is export cheaper than import?",
+     "<p>Not necessarily. The Thai export steps are fairly quick, but destination requirements — especially a titer test and waiting period for the UK or EU — can make export more expensive and slower than bringing a pet into Thailand.</p>"],
+    ["Should I budget for an agent?",
+     "<p>Many owners export without one for simpler destinations. For cargo bookings, Australia, Japan or the USA (CDC dog rules), an agent often pays for itself in avoided mistakes and re-bookings.</p>"]
   ]
 }));
 
@@ -159,8 +308,10 @@ pages.push(exp({
       "UK.</p>" },
     { h: "Plan the route", html:
       "<p>The UK only permits pets to enter via approved transport routes and " +
-      "carriers. Confirm the current rules with the UK government and choose an " +
-      "airline and route that satisfies them &mdash; a relocation agent is " +
+      "carriers. Confirm the current rules with the " +
+      "<a href=\"https://www.gov.uk/bring-pet-to-great-britain\" target=\"_blank\" " +
+      "rel=\"noopener nofollow\">UK government pet-travel guidance</a> and choose " +
+      "an airline and route that satisfies them &mdash; a relocation agent is " +
       "genuinely useful here.</p>" }
   ],
   faqs: [
@@ -189,7 +340,9 @@ pages.push(exp({
       "arrival through specific airports. The exact requirements depend on your " +
       "dog&rsquo;s vaccination history and where it was vaccinated.</p>" +
       "<p>Because these rules are detailed and have changed recently, check the " +
-      "current CDC requirements directly and well ahead of travel.</p>" },
+      "current <a href=\"https://www.cdc.gov/importation/bringing-an-animal-into-the-us/index.html\" " +
+      "target=\"_blank\" rel=\"noopener nofollow\">CDC requirements</a> directly " +
+      "and well ahead of travel.</p>" },
     { h: "Cats", html:
       "<p>Cats face lighter US requirements than dogs, but still need to be " +
       "healthy on arrival and meet the rules in force. Confirm the current cat " +
@@ -204,7 +357,7 @@ pages.push(exp({
     ["Does my dog need a rabies titer test to enter the USA from Thailand?",
      "<p>Because Thailand is treated as a high-rabies-risk country, a rabies titer test from an approved lab is commonly part of the CDC requirements for dogs. Verify the current rules for your dog's specific situation with the CDC.</p>"],
     ["Where do I check the current US rules?",
-     "<p>The CDC governs the disease-control side of dog and cat import, and the USDA the animal-health side. Check both, directly, before you book — these rules changed recently.</p>"]
+     "<p>The <a href=\"https://www.cdc.gov/importation/bringing-an-animal-into-the-us/index.html\" target=\"_blank\" rel=\"noopener nofollow\">CDC</a> governs the disease-control side of dog and cat import, and the <a href=\"https://www.aphis.usda.gov/pet-travel\" target=\"_blank\" rel=\"noopener nofollow\">USDA APHIS</a> the animal-health side. Check both, directly, before you book — these rules changed recently.</p>"]
   ]
 }));
 

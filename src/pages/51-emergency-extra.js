@@ -25,6 +25,7 @@ function hazard(o) {
     faqs: o.faqs,
     related: o.related || [
       { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Clinics open around the clock." },
+      { name: "Vets in Pattaya", path: "/vets/", desc: "The full directory of clinics and hospitals." },
       { name: "Pet first-aid orientation", path: "/pet-emergency/pet-first-aid.html", desc: "The calm, practical basics." },
       { name: "Getting your pet to the vet", path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html", desc: "Transport options without a car." }
     ]

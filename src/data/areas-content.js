@@ -113,6 +113,8 @@ const AREA_GUIDE = {
     "compromise for pet owners.</p>" +
     "<h3>Helpful guides for Pratumnak pet owners</h3>" +
     "<ul>" +
+    "<li><a href=\"/pet-shops/peturday-pattaya.html\">Peturday (Pratumnak pet shop)</a></li>" +
+    "<li><a href=\"/boarding/elite-dog-resort.html\">Elite Dog Resort (Pratumnak)</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">Where and how to walk your dog</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/pet-friendly-housing.html\">Pet-friendly housing in Pattaya</a></li>" +
     "<li><a href=\"/dog-friendly-pattaya/\">Dog-friendly Pattaya</a></li>" +
@@ -136,11 +138,14 @@ const AREA_GUIDE = {
     "mix gives pet owners options: a house sidesteps the condo no-pet problem, " +
     "while a condo means checking the building's policy carefully and securing " +
     "any balcony.</p>" +
-    "<p>With pet shops, groomers and clinics well represented along the " +
-    "Jomtien corridor, and central Pattaya close by, day-to-day pet life here " +
-    "is genuinely easy.</p>" +
+    "<p>With pet shops and clinics along the Jomtien corridor, and central Pattaya " +
+    "a short drive away for groomers and 24-hour hospitals, day-to-day pet life " +
+    "here is straightforward &mdash; though specialist grooming on the doorstep " +
+    "is thinner than in central Pattaya.</p>" +
     "<h3>Helpful guides for Jomtien pet owners</h3>" +
     "<ul>" +
+    "<li><a href=\"/vets/animal-army-hospital.html\">Animal Army Hospital (Na Jomtien)</a></li>" +
+    "<li><a href=\"/pet-shops/tong-ma-aquarium-and-pets-shop.html\">Tong-ma pet shop (Thep Prasit)</a></li>" +
     "<li><a href=\"/dog-friendly-pattaya/beaches.html\">Dog-friendly beaches</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">Where and how to walk your dog</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/pet-friendly-housing.html\">Pet-friendly housing in Pattaya</a></li>" +
@@ -167,6 +172,9 @@ const AREA_GUIDE = {
     "emergency care before you ever need it.</p>" +
     "<h3>Helpful guides for Bang Saray pet owners</h3>" +
     "<ul>" +
+    "<li><a href=\"/vets/animal-army-hospital.html\">Animal Army Hospital (Na Jomtien)</a></li>" +
+    "<li><a href=\"/boarding/pattaya-dog-hotel.html\">Pattaya Dog Hotel (near Bang Saray)</a></li>" +
+    "<li><a href=\"/trainers/k9-coach.html\">K9 Coach (Bang Saray area)</a></li>" +
     "<li><a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vets in Pattaya</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">Getting your pet to the vet</a></li>" +
     "<li><a href=\"/mobile-vets/\">Mobile vets</a></li>" +
@@ -192,6 +200,8 @@ const AREA_GUIDE = {
     "vets near you offer home visits.</p>" +
     "<h3>Helpful guides for Sattahip pet owners</h3>" +
     "<ul>" +
+    "<li><a href=\"/vets/animal-army-hospital.html\">Animal Army Hospital (Na Jomtien)</a></li>" +
+    "<li><a href=\"/trainers/k9-pattaya-dog-training-school.html\">K9 Pattaya Dog Training School</a></li>" +
     "<li><a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vets in Pattaya</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">Getting your pet to the vet</a></li>" +
     "<li><a href=\"/mobile-vets/\">Mobile vets</a></li>" +

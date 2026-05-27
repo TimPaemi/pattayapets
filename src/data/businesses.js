@@ -197,6 +197,19 @@ const BUSINESSES = [
       "as jaijai spa & grooming. Appointments are arranged through its Facebook page."
   },
   {
+    slug: "woof-pattaya",
+    name: "Woof Pattaya",
+    category: "groomers", areas: ["banglamung", "central-pattaya"], type: "Grooming salon & pet boarding", c24: false,
+    address: "77/10 Moo 1, Ruean Phisa Village, Nong Prue, Bang Lamung, Chon Buri 20150",
+    phone: "083 012 1897", tel: "+66830121897",
+    website: null, hours: null,
+    languages: "Thai; confirm English-language support when booking",
+    services: ["Dog grooming", "Cat grooming", "Bath & blow-dry", "Pet boarding", "Pick-up service (by arrangement)"],
+    summary: "A grooming salon and boarding service in Nong Prue (Ruean Phisa Village), " +
+      "offering baths, clips and short-stay boarding for dogs and cats. Pick-up " +
+      "service may be available by arrangement — confirm coverage when booking."
+  },
+  {
     slug: "furiday-pet-grooming",
     name: "FURiday Pet Grooming",
     category: "groomers", areas: ["central-pattaya"], type: "Pet grooming salon", c24: false,
