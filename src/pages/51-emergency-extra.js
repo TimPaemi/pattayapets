@@ -70,7 +70,9 @@ pages.push(hazard({
       "the throat, supervise chews and take away small end-pieces, and keep these " +
       "common culprits away from pets: <strong>bones, rawhide chunks, corn cobs, " +
       "fruit stones, children&rsquo;s toys and small household objects</strong>. " +
-      "Match every chew and toy to the size of your pet.</p>" }
+      "Match every chew and toy to the size of your pet. See also " +
+      "<a href=\"/pet-emergency/poisoning.html\">poisoning hazards</a> for items " +
+      "that can block or injure the airway.</p>" }
   ],
   faqs: [
     ["How do I know if my pet is choking?",
@@ -130,6 +132,12 @@ pages.push(hazard({
      "<p>Move it as little as possible. Support the whole body - slide a larger dog onto a board or blanket stretcher, carry a small pet supporting it fully - and keep it warm, still and calm. Approach slowly, as a hurt pet may bite in shock.</p>"],
     ["How can I reduce the risk of a road accident?",
      "<p>Keep dogs leashed near traffic, secure gates and fences so pets cannot get loose, and keep your pet microchipped and wearing ID. Most road accidents start with a pet escaping.</p>"]
+  ],
+  related: [
+    { name: "If your pet goes missing", path: "/owning-a-pet-in-pattaya/lost-pet-pattaya.html", desc: "If a loose pet is hit and runs off." },
+    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Clinics open around the clock." },
+    { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "ID if your pet gets loose." },
+    { name: "Pet first-aid orientation", path: "/pet-emergency/pet-first-aid.html", desc: "The calm, practical basics." }
   ]
 }));
 
@@ -182,6 +190,12 @@ pages.push(hazard({
      "<p>A small amount usually just causes an upset stomach. Drinking a lot can cause salt poisoning, which is serious. Offer fresh water, watch your dog, and see a vet if it becomes unwell, very thirsty, wobbly or vomits repeatedly.</p>"],
     ["What should I do if my dog is stung by a jellyfish?",
      "<p>Stop it licking the area, rinse with seawater rather than fresh water, and do not rub the spot. Watch closely - swelling, breathing difficulty, weakness or collapse is an emergency. If in any doubt, see a vet.</p>"]
+  ],
+  related: [
+    { name: "Dog-friendly beaches", path: "/dog-friendly-pattaya/beaches.html", desc: "Beach etiquette and where dogs can go." },
+    { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "The beach heat risk in detail." },
+    { name: "Poisoning", path: "/pet-emergency/poisoning.html", desc: "Pufferfish and tideline toxins." },
+    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Clinics open around the clock." }
   ]
 }));
 

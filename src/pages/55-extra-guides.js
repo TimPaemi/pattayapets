@@ -89,6 +89,7 @@ pages.push(article({
   ],
   related: [
     { name: "Snake bites", path: "/pet-emergency/snake-bites.html", desc: "Thailand's venomous snakes, and how to react." },
+    { name: "Poisoning", path: "/pet-emergency/poisoning.html", desc: "Toad toxin, baits and other hazards." },
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Clinics open around the clock." },
     { name: "Pet first-aid orientation", path: "/pet-emergency/pet-first-aid.html", desc: "The calm, practical basics." }
   ]
@@ -275,6 +276,11 @@ pages.push(article({
      "<p>Yes - it is the most effective home care. Introduce it gradually and use a pet toothpaste only; human toothpaste contains ingredients toxic to pets. Vet-recommended dental chews and diets can help alongside brushing.</p>"],
     ["Is bad breath in a pet normal?",
      "<p>No - persistent bad breath is usually a sign of dental disease, not something to accept as normal. Mention it to your vet.</p>"]
+  ],
+  related: [
+    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Back to the health hub." },
+    { name: "Vets in Pattaya", path: "/vets/", desc: "Professional dental care at a clinic." },
+    { name: "What it costs to own a pet", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", desc: "Budgeting for routine and unexpected care." }
   ]
 }));
 

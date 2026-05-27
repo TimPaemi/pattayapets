@@ -83,7 +83,8 @@ const HUB_GUIDE = {
     "bring your pet&rsquo;s usual food, vaccination records, any medication and " +
     "a familiar-smelling item. For some pets &mdash; cats especially &mdash; an " +
     "<a href=\"/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html\">" +
-    "in-home pet sitter</a> is less stressful than boarding.</p>"),
+    "in-home pet sitter</a> is less stressful than boarding. See also " +
+    "<a href=\"/cats/cat-boarding-pattaya.html\">cat boarding and sitters</a>.</p>"),
 
   "pet-shops": S(
     "<h2>Buying pet supplies in Pattaya</h2>" +
@@ -152,7 +153,11 @@ const HUB_GUIDE = {
     "</ul>" +
     "<p>See also " +
     "<a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">getting your pet " +
-    "to the vet</a> and the full <a href=\"/vets/\">vets directory</a>.</p>"),
+    "to the vet</a>, the listed " +
+    "<a href=\"/mobile-vets/mor-ja-pet-clinic-pattaya.html\">Mor Ja Pet Clinic</a> " +
+    "and <a href=\"/mobile-vets/baan-mor-raksasat-animal-hospital-pattaya.html\">" +
+    "Baan Mor Raksasat Animal Hospital</a>, and the full " +
+    "<a href=\"/vets/\">vets directory</a>.</p>"),
 
   "pet-relocation": S(
     "<h2>How to choose a pet relocation agent</h2>" +
@@ -176,7 +181,9 @@ const HUB_GUIDE = {
     "country&rsquo;s authority. Our guides to " +
     "<a href=\"/bring-pet-to-thailand/\">bringing a pet to Thailand</a> and " +
     "<a href=\"/take-pet-out-of-thailand/\">taking one out</a> walk through the " +
-    "whole process.</p>")
+    "whole process. For airline rules, see " +
+    "<a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline pet " +
+    "policies</a>.</p>")
 
 };
 

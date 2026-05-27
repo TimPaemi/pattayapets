@@ -209,7 +209,8 @@ const SHELTERS = [
       "arrangements directly through its website before you travel.</p>",
     adopt:
       "<p>Dogs and cats are available for adoption. Contact the shelter directly " +
-      "through its website to discuss adopting, fostering, volunteering or donating.</p>"
+      "through its website to discuss adopting, fostering, volunteering or donating. " +
+      "The site also lists ways to support its work if you cannot adopt.</p>"
   },
   {
     slug: "ady-g-second-chance-pattaya", name: "Ady G. Second Chance Pattaya",

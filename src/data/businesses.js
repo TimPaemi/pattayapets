@@ -277,13 +277,14 @@ const BUSINESSES = [
     slug: "pattaya-dog-hotel",
     name: "Pattaya Dog Hotel",
     category: "boarding", areas: ["bang-saray", "sattahip"], type: "Dog hotel & training facility", c24: false,
-    address: null, phone: "080 905 3216", tel: "+66809053216",
+    address: "Bang Saray / Sattahip area, Chon Buri (same site as K9 Coach — confirm directions when booking)",
+    phone: "080 905 3216", tel: "+66809053216",
     website: "https://k9-coach.co.th/", hours: null,
     languages: "English and Thai",
     services: ["Dog boarding", "Board-and-train", "Supervised playtime", "Grooming"],
-    summary: "A dog hotel and boarding facility near Bang Saray, marketed alongside " +
-      "K9 Coach dog training on an 18-rai site. Confirm whether you are booking " +
-      "boarding only or a combined training stay when you enquire."
+    summary: "A dog hotel and boarding facility near Bang Saray on the same 18-rai " +
+      "site as K9 Coach dog training. Confirm whether you are booking boarding " +
+      "only or a combined training stay when you enquire."
   },
 
   {
@@ -354,7 +355,8 @@ const BUSINESSES = [
     slug: "k9-coach",
     name: "K9 Coach",
     category: "trainers", areas: ["bang-saray", "sattahip", "banglamung"], type: "Dog training & behaviour", c24: false,
-    address: null, phone: "080 905 3216", tel: "+66809053216",
+    address: "Bang Saray / Sattahip area, Chon Buri (18-rai facility — confirm directions when booking)",
+    phone: "080 905 3216", tel: "+66809053216",
     website: "https://k9-coach.co.th/", hours: null,
     languages: "English and Thai",
     services: ["Obedience training", "Behaviour modification", "Board-and-train", "Daycare", "Private coaching"],
