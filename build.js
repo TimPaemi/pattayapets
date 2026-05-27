@@ -305,7 +305,7 @@ async function build() {
     "/pet-relocation/": "pet relocation import export agent DLD permit",
     "/mobile-vets/": "home visit vet mobile house call",
     "/pet-health-pattaya/spaying-and-neutering.html": "neuter spay sterilisation street animals",
-    "/bring-pet-to-thailand/from-uk.html": "import pet UK DEFRA titer Thailand",
+    "/bring-pet-to-thailand/from-uk.html": "import pet UK DEFRA APHA titer tapeworm Thailand",
     "/take-pet-out-of-thailand/to-uk.html": "export pet UK APHA tapeworm Thailand",
     "/owning-a-pet-in-pattaya/getting-to-the-vet.html": "taxi transport vet no car Grab Bolt",
     "/pet-emergency/pet-first-aid.html": "first aid injured pet calm carrier",
@@ -334,7 +334,23 @@ async function build() {
     "/area/jomtien.html": "Jomtien pet owner beach dog walk vet",
     "/area/naklua.html": "Naklua pet owner north Pattaya vet walk",
     "/area/central-pattaya.html": "Central Pattaya pet owner condo vet emergency",
-    "/take-pet-out-of-thailand/to-usa.html": "export pet USA CDC dog import Thailand"
+    "/take-pet-out-of-thailand/to-usa.html": "export pet USA CDC dog import Thailand",
+    "/bring-pet-to-thailand/from-usa.html": "import pet USA CDC Thailand",
+    "/bring-pet-to-thailand/from-australia.html": "import pet Australia DAFF Thailand",
+    "/bring-pet-to-thailand/from-japan.html": "import pet Japan MAFF Thailand",
+    "/bring-pet-to-thailand/from-singapore.html": "import pet Singapore AVS Thailand",
+    "/pet-emergency/poisoning.html": "poison toad bait chocolate xylitol toxic",
+    "/pet-emergency/venomous-creatures.html": "toad centipede bee sting scorpion venom",
+    "/pet-health-pattaya/heartworm.html": "heartworm mosquito prevention Thailand",
+    "/pet-health-pattaya/skin-and-ear-problems.html": "skin ear infection yeast hot humid",
+    "/owning-a-pet-in-pattaya/travelling-in-thailand.html": "domestic flight road trip pet hotel Thailand",
+    "/owning-a-pet-in-pattaya/lost-pet-pattaya.html": "missing lost dog cat microchip Pattaya",
+    "/owning-a-pet-in-pattaya/senior-pet-care.html": "older pet elderly dog cat heat climate",
+    "/area/wongamat.html": "Wongamat pet owner condo beach north Pattaya",
+    "/area/pratumnak.html": "Pratumnak pet owner hill walk vet",
+    "/area/bang-saray.html": "Bang Saray pet owner quiet south coast",
+    "/area/sattahip.html": "Sattahip pet owner naval south Pattaya",
+    "/area/banglamung.html": "Banglamung East Pattaya pet owner house garden"
   };
 
   const searchIndex = indexable.map(function (p) {

@@ -208,6 +208,9 @@ const body =
       '<a class="card" href="/adopt-a-pet-pattaya/how-to-help.html"><span class="card-tag">Adoption</span>' +
         '<h3>Helping street animals</h3><p>Donate, volunteer and what to do for an injured stray.</p>' +
         '<span class="card-meta">Read the guide &rarr;</span></a>' +
+      '<a class="card" href="/take-pet-out-of-thailand/export-process.html"><span class="card-tag">Export</span>' +
+        '<h3>The export process</h3><p>Thai DLD health certificate, export permit and the airport steps on the way out.</p>' +
+        '<span class="card-meta">Read the guide &rarr;</span></a>' +
       '<a class="card" href="/bring-pet-to-thailand/snub-nosed-breeds-flying.html"><span class="card-tag">Import</span>' +
         '<h3>Snub-nosed breeds &amp; flying</h3><p>Why flat-faced breeds need extra care with airlines.</p>' +
         '<span class="card-meta">Read the guide &rarr;</span></a>' +

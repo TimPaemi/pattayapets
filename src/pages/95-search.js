@@ -32,6 +32,10 @@ module.exports = [{
     '<a href="/adopt-a-pet-pattaya/">Adopt a pet</a> &middot; ' +
     '<a href="/pet-emergency/heatstroke.html">Heatstroke</a> &middot; ' +
     '<a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">Import permit</a> &middot; ' +
+    '<a href="/owning-a-pet-in-pattaya/dog-registration-thailand.html">Dog registration</a> &middot; ' +
+    '<a href="/owning-a-pet-in-pattaya/lost-pet-pattaya.html">Lost pet</a> &middot; ' +
+    '<a href="/bring-pet-to-thailand/thailand-pet-quarantine.html">Quarantine</a> &middot; ' +
+    '<a href="/pet-insurance-thailand.html">Pet insurance</a> &middot; ' +
     '<a href="/mobile-vets/">Mobile vet</a> &middot; ' +
     '<a href="/adopt-a-pet-pattaya/fostering.html">Fostering</a></p>' +
     '<div id="pp-results" class="search-results">' +

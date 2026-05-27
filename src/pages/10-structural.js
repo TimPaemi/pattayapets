@@ -73,7 +73,11 @@ pages.push({
     "vaccination, a titer test, a health certificate and an import permit from the " +
     "Thai Department of Livestock Development. Start early. Our flagship guide to " +
     '<a href="/bring-pet-to-thailand/">bringing a pet to Thailand</a> walks ' +
-    "through every step, and there is a separate guide for " +
+    "through every step; see also the " +
+    '<a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import ' +
+    "permit</a> and " +
+    '<a href="/take-pet-out-of-thailand/export-process.html">export process</a> ' +
+    "pages for the Thai-side paperwork, and the separate guide for " +
     '<a href="/take-pet-out-of-thailand/">taking a pet out of Thailand</a>.</p>' +
     "<h2>4. Thinking of adopting?</h2>" +
     "<p>Pattaya has several established shelters and rescue organisations. If you " +
