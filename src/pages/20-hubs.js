@@ -263,6 +263,18 @@ pages.push({
     card("/owning-a-pet-in-pattaya/rainy-season-pet-care.html", "Owning", "Rainy-season pet care",
       "Humidity, skin and ear health when the monsoon arrives.",
       "Open the guide") +
+    card("/owning-a-pet-in-pattaya/getting-to-the-vet.html", "Owning", "Getting your pet to the vet",
+      "Transport options without a car in Pattaya.",
+      "Open the guide") +
+    card("/pet-health-pattaya/healthy-weight.html", "Health", "Healthy weight",
+      "Extra weight and heat do not mix well.",
+      "Open the guide") +
+    card("/pet-health-pattaya/tick-borne-disease.html", "Health", "Tick-borne disease",
+      "The hidden danger of ticks in the tropics.",
+      "Open the guide") +
+    card("/cats/indoor-vs-outdoor-cats.html", "Cats", "Indoor or outdoor cats",
+      "Keeping a cat safe from traffic, dogs and balconies.",
+      "Open the guide") +
     "</div>" +
     '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +
     "Our guides are not veterinary advice. Import and export rules change &mdash; " +

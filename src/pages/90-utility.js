@@ -29,6 +29,8 @@ module.exports = [
       '<li><a href="/guides.html">Guides and resources</a> for pet owners</li>' +
       '<li><a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in ' +
       "Pattaya</a></li>" +
+      '<li><a href="/dogs/">Dogs in Pattaya</a></li>' +
+      '<li><a href="/cats/">Cats in Pattaya</a></li>' +
       '<li><a href="/sitemap.html">The full sitemap</a></li>' +
       '<li><a href="/search.html">Search the site</a></li>' +
       "</ul></div></div></section>"

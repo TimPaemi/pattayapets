@@ -99,7 +99,7 @@ const CAT_GUIDES = {
 function catGuidesSection(key) {
   var links = CAT_GUIDES[key];
   if (!links || !links.length) return "";
-  return '<section class="section"><div class="container"><div class="prose">' +
+  return '<section class="section" id="guides"><div class="container"><div class="prose">' +
     "<h2>Helpful guides</h2><ul>" +
     links.map(function (l) {
       return '<li><a href="' + l.path + '">' + esc(l.name) + "</a></li>";
@@ -110,11 +110,71 @@ function catGuidesSection(key) {
 function bizGuidesSidebar(catKey) {
   var links = CAT_GUIDES[catKey];
   if (!links || !links.length) return "";
+  var cat = CATEGORIES[catKey];
   return '<hr><div class="ch">Helpful guides</div><ul class="toc">' +
     links.slice(0, 4).map(function (l) {
       return '<li><a href="' + l.path + '">' + esc(l.name) + "</a></li>";
     }).join("") +
-    "</ul>";
+    "</ul>" +
+    (cat
+      ? '<p style="margin:.65rem 0 0;font-size:.92rem"><a href="/' + cat.slug +
+        '/#guides">All ' + esc(cat.name.toLowerCase()) + " guides &rarr;</a></p>"
+      : "");
+}
+
+const CAT_CROSS = {
+  vets: [
+    { label: "Mobile vets", path: "/mobile-vets/" },
+    { label: "24-hour vets", path: "/pet-emergency/24-hour-vets-pattaya.html" },
+    { label: "Pet health guide", path: "/pet-health-pattaya/" },
+    { label: "Pet emergencies", path: "/pet-emergency/" }
+  ],
+  groomers: [
+    { label: "Vets", path: "/vets/" },
+    { label: "Pet shops", path: "/pet-shops/" },
+    { label: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html" },
+    { label: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html" }
+  ],
+  boarding: [
+    { label: "Pet sitters", path: "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html" },
+    { label: "Cat boarding", path: "/cats/cat-boarding-pattaya.html" },
+    { label: "Vets", path: "/vets/" },
+    { label: "Import & travel", path: "/bring-pet-to-thailand/airline-pet-policies.html" }
+  ],
+  "pet-shops": [
+    { label: "Where to buy pet food", path: "/owning-a-pet-in-pattaya/where-to-buy-pet-food.html" },
+    { label: "Vets", path: "/vets/" },
+    { label: "Microchipping", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html" },
+    { label: "Cat owners", path: "/cats/" }
+  ],
+  trainers: [
+    { label: "Puppy care", path: "/dogs/puppy-care-pattaya.html" },
+    { label: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html" },
+    { label: "Where to walk", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html" },
+    { label: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/" }
+  ],
+  "mobile-vets": [
+    { label: "Vets & hospitals", path: "/vets/" },
+    { label: "24-hour vets", path: "/pet-emergency/24-hour-vets-pattaya.html" },
+    { label: "Getting to the vet", path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html" },
+    { label: "Senior pet care", path: "/owning-a-pet-in-pattaya/senior-pet-care.html" }
+  ],
+  "pet-relocation": [
+    { label: "Import guide", path: "/bring-pet-to-thailand/" },
+    { label: "Export guide", path: "/take-pet-out-of-thailand/" },
+    { label: "Import costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html" },
+    { label: "U-Tapao or Bangkok?", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html" }
+  ]
+};
+
+function catCrossSection(key) {
+  var links = CAT_CROSS[key];
+  if (!links || !links.length) return "";
+  return '<section class="section section-tint"><div class="container">' +
+    '<div class="section-head"><h2>Related on PattayaPets</h2></div><div class="chips">' +
+    links.map(function (l) {
+      return '<a class="chip chip-link" href="' + l.path + '">' + esc(l.label) + "</a>";
+    }).join("") + "</div></div></section>";
 }
 
 const AREA_MISSING_HINTS = {
@@ -477,6 +537,7 @@ Object.keys(CATEGORIES).forEach(function (key) {
 
   if (HUB_GUIDE[key]) body += HUB_GUIDE[key];
   body += catGuidesSection(key);
+  body += catCrossSection(key);
 
   body += '<section class="section"><div class="container">' +
     '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +
@@ -553,8 +614,11 @@ Object.keys(AREAS).forEach(function (key) {
     '<div class="prose"><p>Planning ahead? See our list of ' +
     '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in Pattaya</a>, ' +
     'the <a href="/pet-health-pattaya/">pet health guide</a>, ' +
-    '<a href="/owning-a-pet-in-pattaya/">owning a pet in Pattaya</a>, and ' +
-    '<a href="/dog-friendly-pattaya/">dog-friendly Pattaya</a>. New here? Start with ' +
+    '<a href="/owning-a-pet-in-pattaya/">owning a pet in Pattaya</a>, ' +
+    '<a href="/dog-friendly-pattaya/">dog-friendly Pattaya</a>, ' +
+    '<a href="/bring-pet-to-thailand/">bringing a pet to Thailand</a>, and ' +
+    '<a href="/adopt-a-pet-pattaya/">adopting a pet</a>. Species guides: ' +
+    '<a href="/dogs/">dogs</a> and <a href="/cats/">cats</a>. New here? Start with ' +
     '<a href="/start-here.html">Start here</a>.</p></div>' +
     '<div class="section-head"><h2>Every category</h2></div><div class="chips">' +
     Object.keys(CATEGORIES).map(function (ck) {

@@ -290,7 +290,7 @@ SHELTERS.forEach(function (s) {
        "<p>Often yes. Many rescues support adopters in relocating an animal abroad. Plan early and read our guide to <a href=\"/take-pet-out-of-thailand/\">taking a pet out of Thailand</a> — the rabies titer test in particular needs lead time.</p>"]
     ],
     related: [
-      { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "All the shelters and how adoption works." },
+      { name: "Fostering a pet", path: "/adopt-a-pet-pattaya/fostering.html", desc: "Temporary homes between rescue and adoption." },
       { name: "Cat vaccinations & health", path: "/cats/cat-vaccinations-thailand.html", desc: "Routine care after you adopt." },
       { name: "Dog vaccinations & parasites", path: "/dogs/dog-vaccinations-thailand.html", desc: "Routine care after you adopt." },
       { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Do this soon after adoption." },

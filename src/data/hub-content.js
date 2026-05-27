@@ -39,7 +39,9 @@ const HUB_GUIDE = {
     "<a href=\"/pet-health-pattaya/\">pet health in Pattaya</a> for the tropical-climate " +
     "risks to discuss with a clinic, and " +
     "<a href=\"/pet-health-pattaya/heartworm.html\">heartworm prevention</a> for the " +
-    "year-round mosquito risk.</p>"),
+    "year-round mosquito risk, and " +
+    "<a href=\"/pet-health-pattaya/tick-borne-disease.html\">tick-borne disease</a> " +
+    "for the year-round tick risk.</p>"),
 
   groomers: S(
     "<h2>How to choose a groomer in Pattaya</h2>" +
@@ -89,7 +91,10 @@ const HUB_GUIDE = {
     "</ul>" +
     "<p>Book well ahead for peak holiday periods, when good places fill up, and " +
     "bring your pet&rsquo;s usual food, vaccination records, any medication and " +
-    "a familiar-smelling item. For some pets &mdash; cats especially &mdash; an " +
+    "a familiar-smelling item. Humidity and rain can trigger " +
+    "<a href=\"/owning-a-pet-in-pattaya/rainy-season-pet-care.html\">skin and ear " +
+    "flare-ups</a> &mdash; worth mentioning to staff if your pet is prone. For some pets " +
+    "&mdash; cats especially &mdash; an " +
     "<a href=\"/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html\">" +
     "in-home pet sitter</a> is less stressful than boarding. See also " +
     "<a href=\"/cats/cat-boarding-pattaya.html\">cat boarding and sitters</a>.</p>"),

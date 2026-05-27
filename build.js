@@ -301,6 +301,7 @@ async function build() {
     "/cats/": "cat owner indoor balcony vaccination",
     "/dog-friendly-pattaya/": "dog friendly beach cafe restaurant hotel condo walk",
     "/owning-a-pet-in-pattaya/songkran-and-your-pet.html": "songkran water festival pet noise escape",
+    "/pet-health-pattaya/tick-borne-disease.html": "tick fever ehrlichiosis babesiosis dog Pattaya",
     "/mobile-vets/": "home visit vet mobile house call",
     "/bring-pet-to-thailand/from-uk.html": "import pet UK DEFRA APHA titer tapeworm Thailand",
     "/take-pet-out-of-thailand/to-uk.html": "export pet UK APHA tapeworm Thailand",

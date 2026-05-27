@@ -98,6 +98,8 @@ pages.push({
     "and " +
     '<a href="/owning-a-pet-in-pattaya/microchipping-your-pet.html">microchipping</a>, ' +
     '<a href="/owning-a-pet-in-pattaya/where-to-walk-your-dog.html">where to walk your dog</a>, ' +
+    '<a href="/owning-a-pet-in-pattaya/getting-to-the-vet.html">getting your pet to the vet</a>, ' +
+    '<a href="/owning-a-pet-in-pattaya/lost-pet-pattaya.html">if your pet goes missing</a>, and ' +
     '<a href="/pet-emergency/ticks-and-fleas.html">ticks &amp; fleas</a> ' +
     "prevention. Browse by " +
     '<a href="/directory.html">neighbourhood</a> in the directory, or see ' +
@@ -153,7 +155,9 @@ pages.push(prosePage({
     "<p>PattayaPets is an editorial publication <em>about</em> pet businesses. It is " +
     "not a vet, not a referral service, not a pet-relocation agency and not an " +
     "insurance broker. Nothing on the site is veterinary advice. For the full " +
-    'method, read our <a href="/standards.html">editorial standards</a>.</p>'
+    'method, read our <a href="/standards.html">editorial standards</a>. Browse the ' +
+    '<a href="/directory.html">directory</a>, the <a href="/guides.html">guides</a>, ' +
+    '<a href="/start-here.html">start here</a>, or <a href="/search.html">search the site</a>.</p>'
 }));
 
 /* ---------------- Editorial Standards ---------------- */

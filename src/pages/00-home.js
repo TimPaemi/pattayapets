@@ -253,6 +253,12 @@ const body =
       '<a class="card" href="/pet-health-pattaya/healthy-weight.html"><span class="card-tag">Health</span>' +
         '<h3>Healthy weight</h3><p>Extra weight and heat do not mix well.</p>' +
         '<span class="card-meta">Read the guide &rarr;</span></a>' +
+      '<a class="card" href="/owning-a-pet-in-pattaya/getting-to-the-vet.html"><span class="card-tag">Owning</span>' +
+        '<h3>Getting your pet to the vet</h3><p>Transport options without a car.</p>' +
+        '<span class="card-meta">Read the guide &rarr;</span></a>' +
+      '<a class="card" href="/cats/indoor-vs-outdoor-cats.html"><span class="card-tag">Cats</span>' +
+        '<h3>Indoor or outdoor cats</h3><p>Traffic, dogs and balconies — the Pattaya picture.</p>' +
+        '<span class="card-meta">Read the guide &rarr;</span></a>' +
     '</div>' +
     '<div class="btn-row"><a class="btn btn-ghost" href="/guides.html">See all guides &rarr;</a></div>' +
   '</div></section>' +
