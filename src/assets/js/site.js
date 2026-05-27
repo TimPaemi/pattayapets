@@ -185,6 +185,30 @@
     });
   }
 
+  /* Deferred analytics — after load + idle or first interaction (off Lighthouse critical path) */
+  var gaId = document.documentElement.getAttribute("data-ga");
+  if (gaId) {
+    var gaLoaded = false;
+    function loadGa() {
+      if (gaLoaded) return;
+      gaLoaded = true;
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag("js", new Date());
+      window.gtag("config", gaId, { anonymize_ip: true });
+      var s = document.createElement("script");
+      s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(gaId);
+      s.async = true;
+      document.head.appendChild(s);
+    }
+    window.addEventListener("load", function () {
+      setTimeout(loadGa, 4000);
+    }, { once: true });
+    ["scroll", "keydown", "pointerdown"].forEach(function (ev) {
+      window.addEventListener(ev, loadGa, { once: true, passive: true });
+    });
+  }
+
   /* Register the service worker for offline support */
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", function () {

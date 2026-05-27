@@ -1,9 +1,9 @@
-@font-face{font-family:'Hanken Grotesk';src:url(/assets/fonts/hanken-400.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'Hanken Grotesk';src:url(/assets/fonts/hanken-500.woff2) format('woff2');font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:'Hanken Grotesk';src:url(/assets/fonts/hanken-700.woff2) format('woff2');font-weight:700;font-style:normal;font-display:swap}
-@font-face{font-family:'Bricolage Grotesque';src:url(/assets/fonts/bricolage-400.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'Bricolage Grotesque';src:url(/assets/fonts/bricolage-600.woff2) format('woff2');font-weight:600;font-style:normal;font-display:swap}
-@font-face{font-family:'Bricolage Grotesque';src:url(/assets/fonts/bricolage-700.woff2) format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Hanken Grotesk';src:url(/assets/fonts/hanken-400.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap;
+  ascent-override:92%;descent-override:24%;line-gap-override:0%;size-adjust:101%}
+@font-face{font-family:'Bricolage Grotesque';src:url(/assets/fonts/bricolage-600.woff2) format('woff2');font-weight:600;font-style:normal;font-display:swap;
+  ascent-override:93%;descent-override:24%;line-gap-override:0%;size-adjust:104%}
+@font-face{font-family:'Bricolage Grotesque';src:url(/assets/fonts/bricolage-700.woff2) format('woff2');font-weight:700;font-style:normal;font-display:swap;
+  ascent-override:93%;descent-override:24%;line-gap-override:0%;size-adjust:104%}
 :root{
 --banyan:#1B5A4C;--banyan-dk:#143F35;--banyan-deep:#0E2F26;
 --banyan-tint:#E6F0EB;--banyan-tint2:#D3E5DD;
@@ -72,8 +72,7 @@ border:1.5px solid transparent;cursor:pointer;transition:transform .12s ease,box
 gap:8px;padding:9px 24px;max-width:var(--maxw);margin:0 auto;text-align:center}
 .topbar a span{text-decoration:underline;text-decoration-color:rgba(255,255,255,.4)}
 .topbar svg{color:#F0907F;flex:none}
-.site-header{background:rgba(255,255,255,.93);backdrop-filter:saturate(1.4) blur(8px);
-border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;isolation:isolate}
+.site-header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;isolation:isolate}
 .header-row{position:relative;display:flex;align-items:center;justify-content:space-between;gap:18px;
 max-width:var(--maxw);margin:0 auto;padding:13px 24px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
@@ -102,7 +101,8 @@ background-repeat:repeat,no-repeat;padding:66px 0 74px}
 .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.08fr .92fr;
 gap:48px;align-items:center}
 .hero .eyebrow{color:var(--marigold)}
-.hero h1{color:#fff;margin:.2rem 0 0}
+.hero h1{color:#fff;margin:.2rem 0 0;text-wrap:balance;min-height:2.15em}
+.hero-grid > div:first-child{min-height:14.5rem}
 .hero .lede{color:#c2d6cd;margin:1.35rem 0 0;max-width:560px}
 .hero .btn-primary{background:var(--marigold);color:#15241F;box-shadow:0 10px 24px rgba(231,162,59,.3)}
 .hero .btn-primary:hover{background:#efb152}

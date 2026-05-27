@@ -243,21 +243,12 @@ function renderPage(page, opts) {
   }
   const jsonld = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
 
-  let analytics = "";
-  if (SITE.ga && SITE.ga.indexOf("XXXX") === -1) {
-    analytics +=
-      '<script async src="https://www.googletagmanager.com/gtag/js?id=' + SITE.ga + '"></script>' +
-      "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}" +
-      "gtag('js',new Date());gtag('config','" + SITE.ga + "',{anonymize_ip:true});</script>";
-  }
-  if (SITE.cfBeacon && SITE.cfBeacon.indexOf("PLACEHOLDER") === -1) {
-    analytics +=
-      '<script defer src="https://static.cloudflareinsights.com/beacon.min.js" ' +
-      "data-cf-beacon='{\"token\":\"" + SITE.cfBeacon + "\"}'></script>";
-  }
+  const gaAttr = (SITE.ga && SITE.ga.indexOf("XXXX") === -1)
+    ? ' data-ga="' + SITE.ga + '"'
+    : "";
 
   return (
-    "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">" +
+    "<!doctype html><html lang=\"en\"" + gaAttr + "><head><meta charset=\"utf-8\">" +
     '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">' +
     "<title>" + esc(page.title) + "</title>" +
     '<meta name="description" content="' + esc(page.description) + '">' +
@@ -282,8 +273,9 @@ function renderPage(page, opts) {
     '<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">' +
     '<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">' +
     '<link rel="manifest" href="/manifest.webmanifest">' +
+    '<link rel="preload" href="/assets/fonts/bricolage-700.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">' +
     '<link rel="preload" href="/assets/fonts/hanken-400.woff2" as="font" type="font/woff2" crossorigin>' +
-    '<link rel="preload" href="/assets/fonts/bricolage-700.woff2" as="font" type="font/woff2" crossorigin>' +
+    '<link rel="preload" href="/assets/fonts/bricolage-600.woff2" as="font" type="font/woff2" crossorigin>' +
     "<style>" + cssCritical + "</style>" +
     '<link rel="preload" href="/assets/css/site.css" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">' +
     '<noscript><link rel="stylesheet" href="/assets/css/site.css">' +
@@ -291,13 +283,16 @@ function renderPage(page, opts) {
     "flex-direction:column;padding:4px 20px 12px;background:var(--mist)}" +
     ".nav-toggle{display:none}}</style></noscript>" +
     '<script type="application/ld+json">' + jsonld + "</script>" +
-    analytics +
     "</head><body" + (page.bodyClass ? ' class="' + page.bodyClass + '"' : "") + ">" +
     header() +
     breadcrumbHtml(page) +
     '<main id="main">' + page.body + dateStamp(page) + "</main>" +
     footer() +
     '<script src="/assets/js/site.js" defer></script>' +
+    (SITE.cfBeacon && SITE.cfBeacon.indexOf("PLACEHOLDER") === -1
+      ? '<script defer src="https://static.cloudflareinsights.com/beacon.min.js" ' +
+        "data-cf-beacon='{\"token\":\"" + SITE.cfBeacon + "\"}'></script>"
+      : "") +
     "</body></html>"
   );
 }
