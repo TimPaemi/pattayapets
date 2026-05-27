@@ -96,12 +96,16 @@ pages.push(hub({
 }));
 
 function exp(o) {
+  var sections = (o.sections || []).slice();
+  if (!o.skipOfficial) {
+    sections.push({ h: "Official sources", html: OFFICIAL });
+  }
   return article({
     path: "/take-pet-out-of-thailand/" + o.slug + ".html",
     title: o.title, desc: o.desc, crumb: o.crumb, breadcrumbs: SUB,
     eyebrow: "Taking a pet out of Thailand",
     h1: o.h1, lede: o.lede, verify: VERIFY,
-    sections: o.sections, faqs: o.faqs,
+    sections: sections, faqs: o.faqs,
     related: o.related || [
       { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
       { name: "DLD export permit", path: "/take-pet-out-of-thailand/export-permit-thailand-dld.html", desc: "The permit you apply for before departure." },
@@ -113,6 +117,7 @@ function exp(o) {
 
 pages.push(exp({
   slug: "export-process", crumb: "The export process",
+  skipOfficial: true,
   title: "Exporting a pet from Thailand | PattayaPets",
   desc: "The Thai side of taking a pet abroad: microchip, rabies, the DLD export " +
     "health certificate and export permit, and the airport on the way out.",
@@ -162,6 +167,7 @@ pages.push(exp({
 
 pages.push(exp({
   slug: "export-permit-thailand-dld", crumb: "DLD export permit",
+  skipOfficial: true,
   title: "Thailand pet export permit (DLD) | PattayaPets",
   desc: "The Thailand pet export permit from the Department of Livestock " +
     "Development: how to apply, the timing, and what you submit before departure.",
@@ -224,6 +230,7 @@ pages.push(exp({
 
 pages.push(exp({
   slug: "cost-to-export-a-pet-from-thailand", crumb: "What it costs",
+  skipOfficial: true,
   title: "Cost to export a pet from Thailand | PattayaPets",
   desc: "An honest look at the cost of taking a dog or cat out of Thailand — " +
     "Thai-side fees, vet work, the flight and destination requirements.",

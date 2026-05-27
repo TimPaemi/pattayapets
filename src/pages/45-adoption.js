@@ -54,7 +54,8 @@ pages.push(hub({
         { name: "Animal Army Foundation", desc: "Licensed Na Jomtien hospital & rescue since 1994 — ambulance, clinic and adoptions.", path: "/adopt-a-pet-pattaya/animal-army-foundation.html" },
         { name: "Pattaya Street Dogs (K9aid)", desc: "A rescue caring for street dogs and feeding temple-dog colonies.", path: "/adopt-a-pet-pattaya/pattaya-street-dogs-k9aid.html" },
         { name: "Soi Dog Foundation", desc: "Thailand's best-known animal-welfare charity, with Pattaya work.", path: "/adopt-a-pet-pattaya/soi-dog-foundation.html" },
-        { name: "Malee's Animal Shelter", desc: "A large shelter rescuing dogs and cats across the Pattaya–Chanthaburi area.", path: "/adopt-a-pet-pattaya/malees-animal-shelter.html" }
+        { name: "Malee's Animal Shelter", desc: "A large shelter rescuing dogs and cats across the Pattaya–Chanthaburi area.", path: "/adopt-a-pet-pattaya/malees-animal-shelter.html" },
+        { name: "Ady G. Second Chance Pattaya", desc: "A sanctuary for disabled and rescued dogs — Sukjai Soi 6, central Pattaya.", path: "/adopt-a-pet-pattaya/ady-g-second-chance-pattaya.html" }
       ]
     },
     {
@@ -206,6 +207,25 @@ const SHELTERS = [
     adopt:
       "<p>Dogs and cats are available for adoption. Contact the shelter directly " +
       "through its website to discuss adopting, fostering, volunteering or donating.</p>"
+  },
+  {
+    slug: "ady-g-second-chance-pattaya", name: "Ady G. Second Chance Pattaya",
+    crumb: "Ady G. Second Chance Pattaya",
+    type: "Dog sanctuary",
+    website: "https://www.adygsecondchancepattaya.org/",
+    address: "Sukjai Soi 6, Pattaya City, Bang Lamung District, Chon Buri 20150",
+    phone: "080 976 9976", tel: "+66809769976",
+    lede: "Ady G. Second Chance Pattaya is a sanctuary caring for disabled and rescued " +
+      "dogs in central Pattaya.",
+    what:
+      "<p>Founded in 2018, Ady G. Second Chance Pattaya runs a sanctuary for disabled " +
+      "and rescued dogs in central Pattaya &mdash; home to well over eighty dogs at " +
+      "times. The project focuses on dogs that would otherwise receive little help " +
+      "when injured or abandoned on the street, providing housing, food and medical care.</p>",
+    adopt:
+      "<p>Adoption may be possible for suitable homes. Contact the sanctuary directly " +
+      "to ask about the dogs in its care, visiting arrangements and how you can help " +
+      "as a donor or volunteer.</p>"
   }
 ];
 

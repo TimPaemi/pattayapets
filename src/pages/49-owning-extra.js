@@ -419,9 +419,11 @@ pages.push(own({
     { h: "Home-visit and mobile vets", html:
       "<p>Some vets offer <strong>home visits</strong>, which can be ideal for " +
       "routine care, for a very anxious pet, or simply when transport is hard. " +
-      "It is worth knowing in advance which clinics near you do this. A home " +
-      "visit is not a substitute for a hospital in a true emergency, but it is a " +
-      "useful option to have.</p>" },
+      "See the <a href=\"/mobile-vets/\">mobile &amp; home-visit vets directory</a> " +
+      "for clinics that advertise off-site visits, including " +
+      "<a href=\"/vets/siam-country-pet-hospital.html\">Siam Country Pet Hospital</a> " +
+      "and <a href=\"/mobile-vets/mor-ja-pet-clinic-pattaya.html\">Mor Ja Pet Clinic</a>. " +
+      "A home visit is not a substitute for a hospital in a true emergency.</p>" },
     { h: "In a real emergency", html:
       "<p>If it is an emergency, <strong>call the clinic first</strong> so they " +
       "are ready for you, have the carrier and a transport plan, and do not lose " +

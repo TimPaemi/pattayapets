@@ -24,6 +24,47 @@ const HUB_TITLE = {
   "mobile-vets": "Mobile & home-visit vets in Pattaya"
 };
 
+const AREA_MISSING_HINTS = {
+  pratumnak: {
+    vets: "<a href=\"/vets/thonglor-pet-hospital-pattaya.html\">Thonglor Pet Hospital</a> " +
+      "(central Pattaya, 24h) or <a href=\"/vets/pattaya-veterinary-clinic.html\">Pattaya " +
+      "Veterinary Clinic</a> (Naklua)",
+    groomers: "<a href=\"/groomers/pattaya-city-pet-shop-grooming.html\">Pattaya City " +
+      "Grooming</a> (central) or <a href=\"/groomers/woof-pattaya.html\">Woof Pattaya</a> " +
+      "(Nong Prue)"
+  },
+  jomtien: {
+    groomers: "<a href=\"/groomers/woof-pattaya.html\">Woof Pattaya</a> (Nong Prue) or " +
+      "salons in <a href=\"/groomers/\">central Pattaya</a>"
+  },
+  wongamat: {
+    groomers: "<a href=\"/groomers/pattaya-city-pet-shop-grooming.html\">Pattaya City " +
+      "Grooming</a> or the <a href=\"/groomers/\">groomers directory</a>"
+  },
+  "bang-saray": {
+    vets: "<a href=\"/vets/animal-army-hospital.html\">Animal Army Hospital</a> (Na Jomtien) " +
+      "or <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour hospitals</a> in " +
+      "central Pattaya",
+    "pet-shops": "<a href=\"/pet-shops/tong-ma-aquarium-and-pets-shop.html\">Tong-ma</a> " +
+      "or <a href=\"/pet-shops/petsmart-pattaya.html\">PetSmart</a> (Thep Prasit, Jomtien)"
+  },
+  sattahip: {
+    vets: "<a href=\"/vets/animal-army-hospital.html\">Animal Army Hospital</a> (Na Jomtien)",
+    groomers: "<a href=\"/groomers/\">Groomers across Pattaya</a> — mostly central and east",
+    "pet-shops": "<a href=\"/pet-shops/\">Pet shops directory</a>"
+  },
+  "central-pattaya": {
+    trainers: "<a href=\"/trainers/k9-coach.html\">K9 Coach</a> (Bang Saray area) or " +
+      "<a href=\"/trainers/\">trainers directory</a>"
+  }
+};
+
+function missingCategoryHint(areaKey, catKey) {
+  var areaHints = AREA_MISSING_HINTS[areaKey];
+  if (areaHints && areaHints[catKey]) return areaHints[catKey];
+  return "<a href=\"/" + catKey + "/\">" + esc(CATEGORIES[catKey].name) + "</a> across Pattaya";
+}
+
 function clampDesc(t) {
   t = String(t == null ? "" : t).replace(/\s+/g, " ").trim();
   if (t.length <= 158) return t;
@@ -331,6 +372,21 @@ Object.keys(AREAS).forEach(function (key) {
         esc(CATEGORIES[ck].name) + "</h2></div>" +
         '<div class="grid grid-2">' + inCat.map(bizCard).join("") + "</div>";
     });
+    var missing = Object.keys(CATEGORIES).filter(function (ck) {
+      return !list.some(function (b) { return b.category === ck; });
+    });
+    if (missing.length) {
+      body += '<div class="callout callout-note" style="margin-top:1.6rem">' +
+        '<div class="ch">Not listed in ' + esc(area.name) + " yet</div>" +
+        "<p>PattayaPets adds businesses only after verifying their facts. For categories " +
+        "with no " + esc(area.name) + " listing yet, these are the nearest options we " +
+        "currently list:</p><ul>" +
+        missing.map(function (ck) {
+          return "<li><strong>" + esc(CATEGORIES[ck].name) + ":</strong> " +
+            missingCategoryHint(key, ck) + "</li>";
+        }).join("") +
+        "</ul></div>";
+    }
     body += "</div></section>";
   } else {
     body += '<section class="section section-tint"><div class="container">' +

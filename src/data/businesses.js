@@ -157,6 +157,19 @@ const BUSINESSES = [
       "08:00-17:00; animal intake by appointment except emergencies."
   },
   {
+    slug: "siam-country-pet-hospital",
+    name: "Siam Country Pet Hospital",
+    category: "vets", areas: ["banglamung"], type: "Veterinary clinic", c24: false,
+    address: "Pornpraphanimit Road (Siam Country Club Road), Nong Prue, Bang Lamung, Chon Buri 20150",
+    phone: "038 413 689", tel: "+6638413689",
+    website: null, hours: "Daily 08:00-00:00 (midnight); confirm current hours when booking",
+    languages: "Thai and English",
+    services: ["General consultations", "Vaccinations", "Surgery", "X-ray & ultrasound", "Blood testing", "Home visits (by arrangement)"],
+    summary: "A clinic on Siam Country Club Road (Pornpraphanimit) in East Pattaya, with " +
+      "on-site diagnostics and English-speaking staff. Also listed on 080 573 6727. " +
+      "Home visits can be arranged — confirm coverage and fees when booking."
+  },
+  {
     slug: "north-pattaya-animal-hospital",
     name: "North Pattaya Animal Hospital",
     category: "vets", areas: ["naklua", "wongamat"], type: "Animal hospital", c24: false,
@@ -346,7 +359,8 @@ const BUSINESSES = [
     services: ["Obedience training", "Behaviour modification", "Board-and-train", "Daycare", "Private coaching"],
     summary: "An English-speaking dog-training operation on an 18-rai facility near " +
       "Bang Saray, with 36 kennels, multiple training areas and board-and-train " +
-      "programmes. Also runs the Pattaya Dog Hotel boarding service on the same site."
+      "programmes. Also runs the Pattaya Dog Hotel boarding service on the same site. " +
+      "Contact steve@k9-coach.co.th or 080 905 3216 to arrange a visit."
   },
   {
     slug: "zoeta-dogsoul",
@@ -419,7 +433,8 @@ const BUSINESSES = [
     services: ["Pet relocation", "Vaccination & microchip coordination", "Export permits"],
     summary: "The pet division of a Thailand relocation company, coordinating " +
       "vaccinations, microchipping, health certificates and export permits with the " +
-      "Department of Livestock Development."
+      "Department of Livestock Development. Enquiries via " +
+      "inquiryth@asia-relocation.com or the website inquiry form."
   },
   {
     slug: "pawspective-relocations",
@@ -452,13 +467,14 @@ const BUSINESSES = [
     category: "mobile-vets", areas: ["banglamung"], type: "Animal hospital (home visits)", c24: false,
     address: "Railway Road (Khao Noi-Khao Talo), Nong Prue, Bang Lamung, Chon Buri",
     phone: null, tel: null,
-    website: "https://www.facebook.com/doctorpetclinic24hr/", hours: null,
+    website: "https://www.facebook.com/doctorpetclinic24hr/", hours: "Daily 10:00-21:00",
     languages: "Thai; confirm English-language support when booking",
     services: ["Home visits", "Pet pickup & delivery", "General treatment", "Grooming", "Boarding"],
     summary: "A Pattaya animal hospital on the railway road between Khao Noi and Khao " +
-      "Talo — also known locally as Baan Mor Raksasat — that advertises off-site visits, " +
-      "pet pickup or delivery, grooming and boarding. Confirm home-visit availability and " +
-      "contact details on its Facebook page before booking."
+      "Talo — also known locally as Baan Mor Raksasat — with on-site diagnostics " +
+      "and advertised off-site visits, pet pickup or delivery, grooming and boarding. " +
+      "Despite the Facebook page name, published hours are 10:00-21:00, not 24-hour " +
+      "emergency care — confirm contact details on its Facebook page before booking."
   }
 ];
 

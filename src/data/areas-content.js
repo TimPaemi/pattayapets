@@ -113,7 +113,8 @@ const AREA_GUIDE = {
     "compromise for pet owners.</p>" +
     "<h3>Helpful guides for Pratumnak pet owners</h3>" +
     "<ul>" +
-    "<li><a href=\"/pet-shops/peturday-pattaya.html\">Peturday (Pratumnak pet shop)</a></li>" +
+    "<li><a href=\"/vets/thonglor-pet-hospital-pattaya.html\">Thonglor Pet Hospital</a> (central, 24h)</li>" +
+    "<li><a href=\"/pet-shops/peturday-pattaya.html\">Peturday</a> (Pratumnak pet shop)</li>" +
     "<li><a href=\"/boarding/elite-dog-resort.html\">Elite Dog Resort (Pratumnak)</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">Where and how to walk your dog</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/pet-friendly-housing.html\">Pet-friendly housing in Pattaya</a></li>" +

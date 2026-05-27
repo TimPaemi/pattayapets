@@ -14,6 +14,19 @@ const VERIFY =
   "without notice. Use this as orientation, then confirm every current requirement " +
   "with the DLD and the destination country's authority before booking.";
 
+const OFFICIAL =
+  "<p><strong>Official sources to verify against:</strong> " +
+  "<a href=\"https://aqi.dld.go.th/webnew/index.php/th/service-menu-2/office-service-menu/72-research/kmresearch/432-exportation-of-live-animals\" " +
+  "target=\"_blank\" rel=\"noopener nofollow\">DLD export of live animals</a>; " +
+  "Suvarnabhumi AQS export: " +
+  "<a href=\"mailto:qsap_bkk_export@dld.go.th\">qsap_bkk_export@dld.go.th</a>; " +
+  "<a href=\"https://www.gov.uk/bring-pet-to-great-britain\" target=\"_blank\" rel=\"noopener nofollow\">" +
+  "UK pet travel</a>; " +
+  "<a href=\"https://www.cdc.gov/importation/bringing-an-animal-into-the-us/index.html\" " +
+  "target=\"_blank\" rel=\"noopener nofollow\">CDC animal import (USA)</a>; " +
+  "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
+  "rel=\"noopener nofollow\">EU pet movement</a>.</p>";
+
 const RELATED = [
   { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
   { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." },
@@ -36,12 +49,14 @@ const THAI_SIDE =
   "clear on the way out. The two sets of paperwork have to agree.</p>";
 
 function exp(o) {
+  var sections = (o.sections || []).slice();
+  sections.push({ h: "Official sources", html: OFFICIAL });
   return article({
     path: "/take-pet-out-of-thailand/" + o.slug + ".html",
     title: o.title, desc: o.desc, crumb: o.crumb, breadcrumbs: SUB,
     eyebrow: "Taking a pet out of Thailand &middot; By destination",
     h1: o.h1, lede: o.lede, verify: VERIFY,
-    sections: o.sections, faqs: o.faqs, related: RELATED
+    sections: sections, faqs: o.faqs, related: RELATED
   });
 }
 
