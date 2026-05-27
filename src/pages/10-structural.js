@@ -317,7 +317,8 @@ pages.push(prosePage({
     "<p>No corrections have been published yet. This log will list them as they " +
     "occur.</p>" +
     "<p>While you are here: browse the <a href=\"/directory.html\">business " +
-    "directory</a>, the <a href=\"/guides.html\">guides</a>, or " +
+    "directory</a>, the <a href=\"/guides.html\">guides</a>, " +
+    '<a href="/start-here.html">start here</a> if you are new, or ' +
     '<a href="/search.html">search the site</a>.</p>'
 }));
 

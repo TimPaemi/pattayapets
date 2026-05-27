@@ -62,7 +62,9 @@ const HUB_GUIDE = {
     "spares a pet the travel and the wait; a salon may carry more equipment. " +
     "Either can be a good choice &mdash; it depends on your pet. Humidity drives " +
     "<a href=\"/pet-health-pattaya/skin-and-ear-problems.html\">skin and ear problems</a> " +
-    "here &mdash; a groomer who spots early signs is worth keeping.</p>"),
+    "here &mdash; a groomer who spots early signs is worth keeping. See also " +
+    "<a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">hot-climate pet care</a> " +
+    "and <a href=\"/pet-health-pattaya/dental-care.html\">dental care</a>.</p>"),
 
   boarding: S(
     "<h2>How to choose boarding in Pattaya</h2>" +

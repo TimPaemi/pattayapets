@@ -67,9 +67,9 @@ pages.push(hub({
   ],
   related: [
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Clinics open around the clock." },
-    { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Preventing heatstroke and paw-pad burns in Pattaya." },
-    { name: "Getting to the vet", path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html", desc: "Transport, taxis and what to bring in an emergency." },
-    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Ticks, heartworm and other tropical-climate risks." }
+    { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "Walking safely around free-roaming dogs." },
+    { name: "Poisoning", path: "/pet-emergency/poisoning.html", desc: "Household and street hazards." },
+    { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Preventing heatstroke and paw-pad burns." }
   ]
 }));
 
@@ -209,7 +209,7 @@ pages.push(hazard({
   ],
   related: [
     { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "The most common preventable emergency here." },
-    { name: "Choking", path: "/pet-emergency/choking.html", desc: "Airway blockages and swallowed objects." },
+    { name: "Venomous creatures", path: "/pet-emergency/venomous-creatures.html", desc: "Toads, centipedes and stings." },
     { name: "Road accidents", path: "/pet-emergency/road-accident.html", desc: "Moving an injured pet safely." },
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Go straight here in an emergency." }
   ]
@@ -261,8 +261,8 @@ pages.push(hazard({
   ],
   related: [
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Preventing heat problems day to day." },
+    { name: "Snub-nosed breeds & flying", path: "/bring-pet-to-thailand/snub-nosed-breeds-flying.html", desc: "Flat-faced breeds overheat especially easily." },
     { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Cool-hour walking routines." },
-    { name: "Pet emergencies", path: "/pet-emergency/", desc: "Back to the emergency hub." },
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Clinics open around the clock." }
   ]
 }));

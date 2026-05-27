@@ -21,6 +21,8 @@ module.exports = [
       '<li><a href="/">The PattayaPets home page</a></li>' +
       '<li><a href="/bring-pet-to-thailand/">Bringing a pet to Thailand</a></li>' +
       '<li><a href="/adopt-a-pet-pattaya/">Adopt a pet in Pattaya</a></li>' +
+      '<li><a href="/take-pet-out-of-thailand/">Taking a pet out of Thailand</a></li>' +
+      '<li><a href="/pet-health-pattaya/">Pet health in Pattaya</a></li>' +
       '<li><a href="/start-here.html">Start here</a> &mdash; new pet owner orientation</li>' +
       '<li><a href="/directory.html">The business directory</a> &mdash; vets, ' +
       "groomers, boarding and more</li>" +
@@ -46,7 +48,9 @@ module.exports = [
       "<p>It looks like your device has lost its internet connection, so this page " +
       "could not load.</p>" +
       "<p>Pages you have already visited may still open from your device. Once you " +
-      "are back online, everything will work normally again.</p>" +
+      "are back online, everything will work normally again. Browse the " +
+      '<a href="/directory.html">business directory</a> or ' +
+      '<a href="/guides.html">guides</a> from a cached page if you need to.</p>' +
       '<div class="callout callout-emergency"><div class="ch">In a pet emergency</div>' +
       "<p>If your pet needs urgent help and you cannot get online, open a " +
       '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour animal hospital</a> ' +

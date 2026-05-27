@@ -242,6 +242,12 @@ pages.push({
     card("/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", "Owning", "What it costs",
       "A realistic monthly budget for a pet in Pattaya.",
       "Open the guide") +
+    card("/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html", "Owning", "Pet sitters & dog walkers",
+      "Cover for travel and long work days.",
+      "Open the guide") +
+    card("/pet-health-pattaya/parvovirus.html", "Health", "Parvovirus",
+      "A deadly, preventable puppy disease — and how to protect against it.",
+      "Open the guide") +
     "</div>" +
     '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +
     "Our guides are not veterinary advice. Import and export rules change &mdash; " +

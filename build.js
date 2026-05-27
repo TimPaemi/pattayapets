@@ -395,9 +395,8 @@ async function build() {
     "/cats/cat-vaccinations-thailand.html": "cat vaccination rabies FIV FeLV Thailand",
     "/dog-friendly-pattaya/condos.html": "dog friendly condo rent pet policy Pattaya",
     "/dog-friendly-pattaya/hotels.html": "dog friendly hotel stay Pattaya pet policy",
-    "/guides.html": "pet guides Pattaya import export emergency owning",
-    "/directory.html": "pet directory vets groomers boarding Pattaya",
     "/guides.html": "pet guides import export emergency owning adoption health",
+    "/directory.html": "pet directory vets groomers boarding Pattaya",
     "/pet-health-pattaya/": "heartworm tick parvovirus skin ear dental spay neuter tropical health",
     "/vets/": "vet clinic animal hospital emergency 24 hour Pattaya",
     "/groomers/": "dog cat grooming bath clip nail de-shed Pattaya",
@@ -436,6 +435,7 @@ async function build() {
     var d = p.description || "";
     var b = bizByPath[p.path];
     if (b) {
+      if (b.name) d += " " + b.name;
       if (b.address) d += " " + b.address;
       if (b.c24 && b.phone) d += " " + b.phone;
       if (b.type) d += " " + b.type;

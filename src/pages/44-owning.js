@@ -231,8 +231,8 @@ pages.push(own({
   ],
   related: [
     { name: "Dog-friendly condos", path: "/dog-friendly-pattaya/condos.html", desc: "The condo side in detail." },
+    { name: "Indoor or outdoor cats", path: "/cats/indoor-vs-outdoor-cats.html", desc: "Balconies and high-rise safety for cats." },
     { name: "What it costs to own a pet", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", desc: "Deposits, rent and the wider budget." },
-    { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Back to the cluster hub." },
     { name: "Browse areas", path: "/directory.html", desc: "Get to know Pattaya's neighbourhoods." }
   ]
 }));

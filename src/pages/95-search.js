@@ -58,7 +58,10 @@ module.exports = [{
     '<a href="/cats/cat-boarding-pattaya.html">Cat boarding</a> &middot; ' +
     '<a href="/groomers/">Groomers</a> &middot; ' +
     '<a href="/pet-insurance-thailand.html">Pet insurance</a> &middot; ' +
-    '<a href="/mobile-vets/">Mobile vet</a></p>' +
+    '<a href="/mobile-vets/">Mobile vet</a> &middot; ' +
+    '<a href="/pet-health-pattaya/parvovirus.html">Parvovirus</a> &middot; ' +
+    '<a href="/pet-emergency/venomous-creatures.html">Venomous creatures</a> &middot; ' +
+    '<a href="/pet-health-pattaya/dental-care.html">Dental care</a></p>' +
     '<div id="pp-results" class="search-results">' +
     '<noscript><p class="notice">Search needs JavaScript enabled. You can browse ' +
     'the <a href="/start-here.html">start-here guide</a>, the ' +

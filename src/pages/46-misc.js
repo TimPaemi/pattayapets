@@ -206,9 +206,9 @@ pages.push(hub({
   ],
   related: [
     { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Beaches, cafes and places to walk." },
-    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Heartworm, ticks and tropical risks." },
-    { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Building a safe daily routine." },
-    { name: "Pet insurance in Thailand", path: "/pet-insurance-thailand.html", desc: "Cover for the big unexpected vet bill." }
+    { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "Walking safely around free-roaming dogs." },
+    { name: "Puppy care in Pattaya", path: "/dogs/puppy-care-pattaya.html", desc: "Starting well with a young dog." },
+    { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Building a safe daily routine." }
   ]
 }));
 
