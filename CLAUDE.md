@@ -172,12 +172,17 @@ dist/                    Build output. Git-ignored. Cloudflare Pages serves this
 
 ---
 
-## 8. Network footer link-outs — LOCKED
+## 8. Network footer — LOCKED
 
-Every page footer links these, each `target="_blank" rel="noopener"`:
-timpaemi.com · pattaya-authority.com · pattaya-restaurant-guide.com · pattayavisahelp.com ·
-pattaya-gym.com · pattaya-school-guide.com · pattaya-coffee.com · pattayastream.com ·
-pattaya-medical.com.
+Every page footer carries the network strapline **Built in Pattaya. For Pattaya.** and
+links the other owned Pattaya Authority sites (not PattayaPets itself), each
+`target="_blank" rel="noopener noreferrer"`:
+
+pattaya-authority.com · timpaemi.com · pattaya-restaurant-guide.com · pattayavisahelp.com ·
+pattaya-gym.com · pattaya-school-guide.com · pattaya-coffee.com · pattayastream.com
+(Pattaya Villa Stream) · pattaya-medical.com · pattaya-vehicle-rentals.com.
+
+Organization JSON-LD includes `slogan` and a matching `sameAs` array.
 
 ---
 

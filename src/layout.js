@@ -23,16 +23,20 @@ const NAV = [
   { name: "Search", href: "/search.html" }
 ];
 
+const NETWORK_SLOGAN = "Built in Pattaya. For Pattaya.";
+
+/* Canonical Pattaya Authority network list — exclude this site (PattayaPets). */
 const NETWORK = [
-  { name: "TimPaemi", url: "https://timpaemi.com/" },
   { name: "Pattaya Authority", url: "https://pattaya-authority.com/" },
-  { name: "Restaurant Guide", url: "https://pattaya-restaurant-guide.com/" },
+  { name: "TimPaemi", url: "https://timpaemi.com/" },
+  { name: "Pattaya Restaurant Guide", url: "https://pattaya-restaurant-guide.com/" },
   { name: "Pattaya Visa Help", url: "https://pattayavisahelp.com/" },
   { name: "Pattaya Gym", url: "https://pattaya-gym.com/" },
   { name: "Pattaya School Guide", url: "https://pattaya-school-guide.com/" },
   { name: "Pattaya Coffee", url: "https://pattaya-coffee.com/" },
-  { name: "Pattaya Stream", url: "https://pattayastream.com/" },
-  { name: "Pattaya Medical", url: "https://pattaya-medical.com/" }
+  { name: "Pattaya Villa Stream", url: "https://pattayastream.com/" },
+  { name: "Pattaya Medical", url: "https://pattaya-medical.com/" },
+  { name: "Pattaya Vehicle Rentals", url: "https://pattaya-vehicle-rentals.com/" }
 ];
 
 const DISCLAIMER =
@@ -102,6 +106,7 @@ function footer() {
     '<div class="footer-disclaimer">' + esc(DISCLAIMER) + "</div>" +
     '<div class="footer-main">' +
     '<div class="footer-brand">' + brandLink("") +
+    '<p class="network-strapline">' + esc(NETWORK_SLOGAN) + "</p>" +
     "<p>An independent editorial directory and guide for pet owners in Pattaya. " +
     "Reviewed honestly through anonymous visits. No paid placements, ever.</p></div>" +
     '<div><div class="ch">The site</div><ul class="footer-links">' +
@@ -135,7 +140,7 @@ function footer() {
     '<div class="network"><p class="network-label">The Pattaya Authority network</p>' +
     '<div class="network-links">' +
     NETWORK.map(function (s) {
-      return '<a href="' + s.url + '" target="_blank" rel="noopener">' + esc(s.name) + "</a>";
+      return '<a href="' + s.url + '" target="_blank" rel="noopener noreferrer">' + esc(s.name) + "</a>";
     }).join("") +
     "</div></div>" +
     '<div class="footer-legal"><span>&copy; ' + year + " " + esc(SITE.operator) +
@@ -175,6 +180,7 @@ function orgGraph() {
     "@id": SITE.url + "/#org",
     name: SITE.name,
     url: SITE.url + "/",
+    slogan: NETWORK_SLOGAN,
     description:
       "An independent editorial directory and guide for pet owners in Pattaya, Thailand.",
     logo: { "@type": "ImageObject", url: SITE.url + "/assets/img/icon-512.png" },
@@ -296,4 +302,4 @@ function renderPage(page, opts) {
   );
 }
 
-module.exports = { SITE, NAV, NETWORK, DISCLAIMER, esc, canonical, renderPage, brandLink };
+module.exports = { SITE, NAV, NETWORK, NETWORK_SLOGAN, DISCLAIMER, esc, canonical, renderPage, brandLink };

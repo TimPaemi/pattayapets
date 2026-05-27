@@ -211,6 +211,8 @@ margin:0 0 16px;font-weight:700;font-family:var(--fd)}
 .footer-brand .brand-name b{color:var(--marigold)}
 .footer-brand .brand-mark{width:34px;height:41px}
 .footer-brand p{color:#90a89e;font-size:.92rem;margin:14px 0 0;max-width:340px;line-height:1.6}
+.footer-brand p.network-strapline{font-family:var(--fd);font-weight:600;font-size:1.02rem;color:var(--marigold);
+margin:12px 0 2px;letter-spacing:.02em;line-height:1.35}
 .footer-links{list-style:none;padding:0;margin:0}
 .footer-links li{margin:.5rem 0}
 .footer-links a{color:#b6c8c0;text-decoration:none}
