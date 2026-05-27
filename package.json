@@ -11,8 +11,9 @@
     "audit:seo": "node tools/audit-seo.js",
     "audit:directory": "node tools/audit-directory.js",
     "audit:country-pairs": "node tools/audit-country-pairs.js",
+    "audit:orphans": "node tools/audit-orphans.js",
     "images": "node tools/make-images.js",
-    "build:all": "npm run build && npm run check && npm run audit:seo && npm run audit:directory && npm run audit:country-pairs"
+    "build:all": "npm run build && npm run check && npm run audit:seo && npm run audit:directory && npm run audit:country-pairs && npm run audit:orphans"
   },
   "devDependencies": {
     "@fontsource/bricolage-grotesque": "^5.2.10",

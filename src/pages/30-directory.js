@@ -417,9 +417,13 @@ function factsTable(b) {
   if (b.c24) rows.push(["Hours", "<strong>Open 24 hours</strong>"]);
   else if (b.hours) rows.push(["Hours", esc(b.hours)]);
   if (b.address) rows.push(["Address", esc(b.address)]);
-  contactRows(b).forEach(function (r) { rows.push(r); });
+  var contacts = contactRows(b);
+  contacts.forEach(function (r) { rows.push(r); });
   if (b.website) rows.push(["Website",
     '<a href="' + b.website + '" target="_blank" rel="noopener nofollow">Official site</a>']);
+  if (!contacts.length && !b.website) {
+    rows.push(["Contact", "No verified public phone or website listed &mdash; confirm when booking."]);
+  }
   rows.push(["Languages", esc(b.languages)]);
   return '<div class="table-wrap"><table class="facts-table"><tbody>' +
     rows.map(function (r) {
