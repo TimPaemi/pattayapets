@@ -3,7 +3,10 @@
    Listings = factual pages compiled from public sources. Optional fields after
    an anonymous visit: verdict ("recommend"|"ok"|"avoid"), reviewed (YYYY-MM-DD),
    review (business-experience text only). Never invent facts; leave null if not
-   verified and the listing simply omits that row. */
+   verified and the listing simply omits that row.
+   Contact: prefer website, email, WhatsApp (whatsapp: digits only) and LINE (line:
+   ID without @). Do not publish landline phones except verified numbers on 24-hour
+   emergency vet listings. */
 
 const CATEGORIES = {
   vets: {
@@ -396,7 +399,7 @@ const BUSINESSES = [
     slug: "pet-relocation-thailand",
     name: "Pet Relocation Thailand",
     category: "pet-relocation", areas: [], type: "Pet import & export agent", c24: false,
-    address: null, phone: "064 694 2992", tel: "+66646942992",
+    address: null, phone: null, tel: null,
     website: "https://www.petrelocationthailand.com/", hours: null,
     languages: "English and Thai",
     services: ["Import & export", "DLD permits", "Health certificates", "Crates & flight booking"],
@@ -408,7 +411,7 @@ const BUSINESSES = [
     slug: "relo4paws",
     name: "Relo4Paws",
     category: "pet-relocation", areas: [], type: "Pet relocation consultancy", c24: false,
-    address: null, phone: "085 541 9959", tel: "+66855419959",
+    address: null, phone: null, tel: null,
     website: "https://www.relo4paws.com/", hours: null,
     languages: "English and Thai",
     services: ["Pet relocation consulting", "Export from Thailand", "Worldwide destinations"],
@@ -420,7 +423,7 @@ const BUSINESSES = [
     slug: "united-pet-express",
     name: "United Pet Express",
     category: "pet-relocation", areas: [], type: "Pet import & export agent", c24: false,
-    address: null, phone: "02 316 2391", tel: "+6623162391",
+    address: null, phone: null, tel: null,
     website: "https://www.unitedpetexpress.com/", hours: null,
     languages: "English and Thai",
     services: ["Import to Thailand", "Export from Thailand", "Door-to-door transport"],
@@ -445,13 +448,13 @@ const BUSINESSES = [
     slug: "pawspective-relocations",
     name: "Pawspective Relocations",
     category: "pet-relocation", areas: [], type: "Pet travel specialist", c24: false,
-    address: null, phone: "098 826 9294", tel: "+66988269294",
+    address: null, phone: null, tel: null, line: "Numfonunited",
     website: "https://www.pettravelthailand.com/", hours: null,
     languages: "English and Thai",
     services: ["Pet travel planning", "Import & export", "Documentation support", "Door-to-door relocation"],
     summary: "A pet-travel specialist offering planning and documentation support for " +
-      "moving pets into and out of Thailand, including door-to-door options. Also " +
-      "listed on 084 352 1056 and LINE ID Numfonunited."
+      "moving pets into and out of Thailand, including door-to-door options. " +
+      "Enquire via the website or LINE ID Numfonunited."
   },
 
   {

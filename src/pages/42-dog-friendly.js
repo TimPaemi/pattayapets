@@ -63,7 +63,8 @@ function df(o) {
     sections: o.sections, faqs: o.faqs,
     related: o.related || [
       { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Back to the cluster hub." },
-      { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Day-to-day life with a dog here." },
+      { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Building a safe daily routine." },
+      { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "Out and about with your dog." },
       { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "The hot-climate risk to plan around." }
     ]
   });
@@ -306,7 +307,8 @@ pages.push(df({
   ],
   related: [
     { name: "Pet-friendly housing", path: "/owning-a-pet-in-pattaya/pet-friendly-housing.html", desc: "The fuller guide to housing with a pet." },
-    { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Day-to-day life with a pet here." },
+    { name: "Dog registration & the law", path: "/owning-a-pet-in-pattaya/dog-registration-thailand.html", desc: "Rules for keeping a dog legally." },
+    { name: "Dog-friendly hotels", path: "/dog-friendly-pattaya/hotels.html", desc: "If you are staying before you rent." },
     { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Back to the cluster hub." }
   ]
 }));

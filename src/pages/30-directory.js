@@ -46,18 +46,21 @@ const CAT_GUIDES = {
     { name: "Cats in Pattaya", path: "/cats/" },
     { name: "Dogs in Pattaya", path: "/dogs/" }
   ],
+  "mobile-vets": [
+    { name: "Getting to the vet", path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html" },
+    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html" },
+    { name: "Pet emergencies", path: "/pet-emergency/" }
+  ],
   trainers: [
     { name: "Puppy care in Pattaya", path: "/dogs/puppy-care-pattaya.html" },
-    { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html" }
+    { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html" },
+    { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html" }
   ],
   "pet-relocation": [
     { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/" },
     { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/" },
-    { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html" }
-  ],
-  "mobile-vets": [
-    { name: "Getting to the vet", path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html" },
-    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html" }
+    { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html" },
+    { name: "U-Tapao or Bangkok?", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html" }
   ]
 };
 
@@ -198,6 +201,32 @@ function verdictBadge(b) {
   return '<span class="verdict verdict-pending">Not yet reviewed</span>';
 }
 
+function contactChip(b) {
+  if (b.c24 && b.phone) return '<span class="chip">' + esc(b.phone) + "</span>";
+  if (b.whatsapp) return '<span class="chip">WhatsApp</span>';
+  if (b.line) return '<span class="chip">LINE</span>';
+  if (b.website) return '<span class="chip">Website</span>';
+  return "";
+}
+
+function contactRows(b) {
+  var rows = [];
+  if (b.c24 && b.phone) {
+    rows.push(["Phone", '<a href="tel:' + b.tel + '">' + esc(b.phone) + "</a>"]);
+  }
+  if (b.whatsapp) {
+    rows.push(["WhatsApp", '<a href="https://wa.me/' + esc(b.whatsapp) +
+      '" target="_blank" rel="noopener">Message on WhatsApp</a>']);
+  }
+  if (b.line) {
+    rows.push(["LINE", esc("@" + String(b.line).replace(/^@/, ""))]);
+  }
+  if (b.email) {
+    rows.push(["Email", '<a href="mailto:' + esc(b.email) + '">' + esc(b.email) + "</a>"]);
+  }
+  return rows;
+}
+
 function bizCard(b) {
   var areas = b.areas.length ? b.areas.map(areaName).join(", ") : "Serves all Thailand";
   return '<article class="biz-card"><div class="biz-top">' +
@@ -205,8 +234,7 @@ function bizCard(b) {
     '<p class="biz-sub">' + esc(b.type) + " &middot; " + esc(areas) + "</p></div>" +
     (b.c24 ? '<span class="badge-24h">24 hr</span>' : "") +
     "</div><p>" + esc(firstSentence(b.summary)) + "</p>" +
-    '<div class="biz-facts">' + verdictBadge(b) +
-    (b.phone ? '<span class="chip">' + esc(b.phone) + "</span>" : "") +
+    '<div class="biz-facts">' + verdictBadge(b) + contactChip(b) +
     "</div></article>";
 }
 
@@ -219,7 +247,7 @@ function factsTable(b) {
   if (b.c24) rows.push(["Hours", "<strong>Open 24 hours</strong>"]);
   else if (b.hours) rows.push(["Hours", esc(b.hours)]);
   if (b.address) rows.push(["Address", esc(b.address)]);
-  if (b.phone) rows.push(["Phone", '<a href="tel:' + b.tel + '">' + esc(b.phone) + "</a>"]);
+  contactRows(b).forEach(function (r) { rows.push(r); });
   if (b.website) rows.push(["Website",
     '<a href="' + b.website + '" target="_blank" rel="noopener nofollow">Official site</a>']);
   rows.push(["Languages", esc(b.languages)]);
@@ -246,7 +274,7 @@ function bizSchema(b) {
     areaServed: { "@type": "City", name: "Pattaya" }
   };
   if (b.address) s.address.streetAddress = b.address;
-  if (b.tel) s.telephone = b.tel;
+  if (b.c24 && b.tel) s.telephone = b.tel;
   if (b.website) s.sameAs = [b.website];
   if (b.c24) s.openingHours = "Mo-Su 00:00-23:59";
   return s;

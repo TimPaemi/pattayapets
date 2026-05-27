@@ -86,7 +86,7 @@ var c24list = c24.map(function (b) {
     '<table class="facts-table" style="margin:.5rem 0 0"><tbody>' +
     (b.address ? "<tr><th scope=\"row\">Address</th><td>" + b.address + "</td></tr>" : "") +
     (b.phone ? '<tr><th scope="row">Phone</th><td><a href="tel:' + b.tel + '">' + b.phone + "</a></td></tr>" : "") +
-    (!b.address && !b.phone ? '<tr><td colspan="2">Contact details are being verified &mdash; confirm by phone before travelling.</td></tr>' : "") +
+    (!b.address && !b.phone ? '<tr><td colspan="2">Contact details are being verified &mdash; check the clinic listing before travelling.</td></tr>' : "") +
     "</tbody></table></article>";
 }).join("");
 
@@ -94,7 +94,7 @@ pages.push(article({
   path: "/pet-emergency/24-hour-vets-pattaya.html",
   title: "24-hour vets in Pattaya | PattayaPets",
   desc: "Animal hospitals in Pattaya listed as open 24 hours, with addresses and " +
-    "phone numbers — for pet emergencies outside normal clinic hours.",
+    "contact details — for pet emergencies outside normal clinic hours.",
   crumb: "24-hour vets",
   breadcrumbs: SUB,
   eyebrow: "Pet emergencies",

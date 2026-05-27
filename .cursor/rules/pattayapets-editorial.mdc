@@ -9,6 +9,7 @@ alwaysApply: false
 ## Directory listings (`src/data/businesses.js`)
 
 - Facts from verified public sources only. Unknown field → `null` (row omitted).
+- **Contact:** website, email, WhatsApp and LINE — not published landline phones, except verified numbers on 24-hour emergency vet listings.
 - Verdicts (`recommend` / `ok` / `avoid`) only after anonymous visit with bill paid in full.
 - Verdict scope: business experience only — never veterinary medical quality.
 - No paid placements, sponsored tags, or affiliate links.

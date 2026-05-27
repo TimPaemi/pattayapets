@@ -83,6 +83,7 @@ pages.push(own({
   related: [
     { name: "Fireworks & noise-anxious pets", path: "/owning-a-pet-in-pattaya/fireworks-and-noise-anxiety.html", desc: "The wider noise-anxiety picture." },
     { name: "If your pet goes missing", path: "/owning-a-pet-in-pattaya/lost-pet-pattaya.html", desc: "What to do if a pet bolts." },
+    { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Keeping pets cool when the streets are busy." },
     HUB_RELATED
   ]
 }));
@@ -208,6 +209,7 @@ pages.push(own({
   related: [
     { name: "Songkran and your pet", path: "/owning-a-pet-in-pattaya/songkran-and-your-pet.html", desc: "The year's biggest noisy event." },
     { name: "If your pet goes missing", path: "/owning-a-pet-in-pattaya/lost-pet-pattaya.html", desc: "If a frightened pet bolts." },
+    { name: "Pet emergencies", path: "/pet-emergency/", desc: "When noise anxiety becomes a health crisis." },
     HUB_RELATED
   ]
 }));
@@ -266,6 +268,7 @@ pages.push(own({
   related: [
     { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Why it matters, and keeping details current." },
     { name: "Fireworks & noise-anxious pets", path: "/owning-a-pet-in-pattaya/fireworks-and-noise-anxiety.html", desc: "The most common reason pets bolt." },
+    { name: "How to help street animals", path: "/adopt-a-pet-pattaya/how-to-help.html", desc: "Posting and community help when a pet is lost." },
     HUB_RELATED
   ]
 }));
@@ -386,6 +389,7 @@ pages.push(own({
   ],
   related: [
     { name: "Boarding in Pattaya", path: "/boarding/", desc: "Kennels and catteries directory." },
+    { name: "Travelling in Thailand", path: "/owning-a-pet-in-pattaya/travelling-in-thailand.html", desc: "When a sitter is not enough." },
     { name: "What it costs to own a pet", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", desc: "Where care costs fit the budget." },
     HUB_RELATED
   ]
@@ -446,6 +450,7 @@ pages.push(own({
   related: [
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Where to go when it cannot wait." },
     { name: "Mobile vets", path: "/mobile-vets/", desc: "Vets who come to you." },
+    { name: "Pet emergencies", path: "/pet-emergency/", desc: "First-aid and urgent hazards." },
     HUB_RELATED
   ]
 }));
@@ -568,6 +573,7 @@ pages.push(own({
   ],
   related: [
     { name: "Senior pet care", path: "/owning-a-pet-in-pattaya/senior-pet-care.html", desc: "Caring well for an older pet." },
+    { name: "Pet insurance in Thailand", path: "/pet-insurance-thailand.html", desc: "When cover helps with end-of-life decisions." },
     { name: "Vets in Pattaya", path: "/vets/", desc: "The vet who knows your pet best." },
     HUB_RELATED
   ]

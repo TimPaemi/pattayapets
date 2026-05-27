@@ -298,7 +298,15 @@ async function build() {
     "/adopt-a-pet-pattaya/fostering.html": "foster rescue temporary home",
     "/adopt-a-pet-pattaya/how-to-help.html": "street dog cat donate volunteer rescue",
     "/dogs/": "dog owner puppy vaccination walk training",
-    "/cats/": "cat owner indoor balcony vaccination"
+    "/cats/": "cat owner indoor balcony vaccination",
+    "/dog-friendly-pattaya/": "dog friendly beach cafe restaurant hotel condo walk",
+    "/owning-a-pet-in-pattaya/songkran-and-your-pet.html": "songkran water festival pet noise escape",
+    "/owning-a-pet-in-pattaya/lost-pet-pattaya.html": "missing pet lost dog cat microchip",
+    "/pet-relocation/": "pet relocation import export agent DLD permit",
+    "/mobile-vets/": "home visit vet mobile house call",
+    "/pet-health-pattaya/spaying-and-neutering.html": "neuter spay sterilisation street animals",
+    "/bring-pet-to-thailand/from-uk.html": "import pet UK DEFRA titer Thailand",
+    "/take-pet-out-of-thailand/to-uk.html": "export pet UK APHA tapeworm Thailand"
   };
 
   const searchIndex = indexable.map(function (p) {
@@ -306,7 +314,7 @@ async function build() {
     var b = bizByPath[p.path];
     if (b) {
       if (b.address) d += " " + b.address;
-      if (b.phone) d += " " + b.phone;
+      if (b.c24 && b.phone) d += " " + b.phone;
       if (b.type) d += " " + b.type;
       if (b.languages) d += " " + b.languages;
       if (CATEGORIES[b.category]) d += " " + CATEGORIES[b.category].name;
@@ -316,6 +324,7 @@ async function build() {
         d += " nationwide Thailand pet import export relocation";
       }
       if (b.email) d += " " + b.email;
+      if (b.line) d += " LINE " + b.line;
       else {
         var em = (b.summary || "").match(/[\w.+-]+@[\w.-]+\.\w+/);
         if (em) d += " " + em[0];

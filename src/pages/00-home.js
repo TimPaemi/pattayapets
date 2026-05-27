@@ -26,7 +26,7 @@ function vet24Card(b) {
   return '<a class="card" href="/' + b.category + '/' + b.slug + '.html">' +
     '<span class="badge-24h" style="align-self:flex-start;margin-bottom:13px">Open 24 hours</span>' +
     '<h3>' + b.name + '</h3>' +
-    '<p>' + b.type + (b.phone ? ' &middot; ' + b.phone : '') + '</p>' +
+    '<p>' + b.type + '</p>' +
     '<span class="card-meta">View hospital &rarr;</span></a>';
 }
 
@@ -70,7 +70,7 @@ const body =
       '<h2>Pet emergency in Pattaya?</h2>' +
       '<p>If your pet is badly hurt or unwell, go straight to a 24-hour animal hospital. ' +
       'Our emergency page lists clinics that are open around the clock, with addresses ' +
-      'and phone numbers.</p>' +
+      'and contact details.</p>' +
       '<div class="btn-row" style="margin-top:.9rem">' +
       '<a class="btn btn-alert" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in Pattaya</a>' +
       '</div>' +
@@ -82,8 +82,8 @@ const body =
     '<div class="section-head"><p class="eyebrow">Pet emergency</p>' +
     '<h2>24-hour animal hospitals in Pattaya</h2>' +
     '<p>If your pet needs urgent care outside normal clinic hours, these animal ' +
-    'hospitals are listed as open around the clock. Save your nearest one in your ' +
-    'phone today &mdash; before you ever need it.</p></div>' +
+    'hospitals are listed as open around the clock. Save your nearest clinic&rsquo;s ' +
+    'contact details today &mdash; before you ever need them.</p></div>' +
     '<div class="grid grid-3">' + VETS24.map(vet24Card).join('') + '</div>' +
     '<div class="btn-row"><a class="btn btn-ghost" href="/pet-emergency/">All emergency vets, first-aid &amp; hazards &rarr;</a></div>' +
   '</div></section>' +
@@ -172,7 +172,7 @@ const body =
         '<span class="card-meta">Read the guide &rarr;</span></a>' +
       '<a class="card" href="/pet-emergency/24-hour-vets-pattaya.html"><span class="card-tag">Urgent</span>' +
         '<h3>24-hour vets in Pattaya</h3><p>Animal hospitals open around the clock &mdash; ' +
-        'addresses and phone numbers.</p>' +
+        'addresses and contact details.</p>' +
         '<span class="card-meta">View the list &rarr;</span></a>' +
       '<a class="card" href="/pet-emergency/"><span class="card-tag">Emergency</span>' +
         '<h3>Pet emergencies &amp; hazards</h3><p>24-hour vets, first-aid steps, heatstroke, ' +
