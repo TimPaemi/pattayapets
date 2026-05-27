@@ -160,7 +160,8 @@ function hazard(o) {
     related: o.related || [
       { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Clinics open around the clock." },
       { name: "Pet first-aid orientation", path: "/pet-emergency/pet-first-aid.html", desc: "The calm, practical basics." },
-      { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Day-to-day care in a hot climate." }
+      { name: "Getting your pet to the vet", path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html", desc: "Transport options without a car." },
+      { name: "Pet emergencies", path: "/pet-emergency/", desc: "Back to the emergency hub." }
     ]
   });
 }
@@ -306,7 +307,8 @@ pages.push(hazard({
   related: [
     { name: "Tick-borne disease", path: "/pet-health-pattaya/tick-borne-disease.html", desc: "What ticks can transmit here." },
     { name: "Heartworm", path: "/pet-health-pattaya/heartworm.html", desc: "Mosquito-borne prevention year-round." },
-    { name: "Dog vaccinations & parasites", path: "/dogs/dog-vaccinations-thailand.html", desc: "Keeping prevention on schedule." }
+    { name: "Dog vaccinations & parasites", path: "/dogs/dog-vaccinations-thailand.html", desc: "Keeping prevention on schedule." },
+    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "The tropical-climate health picture." }
   ]
 }));
 

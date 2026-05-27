@@ -64,6 +64,9 @@ const AREA_GUIDE = {
     "<li><a href=\"/dog-friendly-pattaya/condos.html\">Dog-friendly condos</a></li>" +
     "<li><a href=\"/cats/indoor-vs-outdoor-cats.html\">Indoor or outdoor cats</a></li>" +
     "<li><a href=\"/dog-friendly-pattaya/beaches.html\">Dog-friendly beaches</a></li>" +
+    "<li><a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vets in Pattaya</a></li>" +
+    "<li><a href=\"/mobile-vets/\">Mobile vets</a></li>" +
+    "<li><a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">Getting your pet to the vet</a></li>" +
     "</ul>",
 
   "central-pattaya":
@@ -157,6 +160,8 @@ const AREA_GUIDE = {
     "<li><a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">Where and how to walk your dog</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/pet-friendly-housing.html\">Pet-friendly housing in Pattaya</a></li>" +
     "<li><a href=\"/dog-friendly-pattaya/\">Dog-friendly Pattaya</a></li>" +
+    "<li><a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vets in Pattaya</a></li>" +
+    "<li><a href=\"/mobile-vets/\">Mobile vets</a></li>" +
     "</ul>",
 
   "bang-saray":
@@ -203,7 +208,7 @@ const AREA_GUIDE = {
     "<p>As with the other outlying areas, the main thing to plan for is " +
     "distance from central services. Sattahip is the furthest of these areas " +
     "from central Pattaya's specialist and 24-hour veterinary care, so " +
-    "identify your nearest clinic, keep its number saved, and find out which " +
+    "identify your nearest clinic, save the clinic contact details, and find out which " +
     "vets near you offer home visits.</p>" +
     "<h3>Helpful guides for Sattahip pet owners</h3>" +
     "<ul>" +

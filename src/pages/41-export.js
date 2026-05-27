@@ -206,6 +206,12 @@ pages.push(exp({
      "<p>The Thai side is fairly quick, but the destination side is not — a titer test plus a three-month wait means several months of lead time for the UK, EU or Australia. Start as early as you can; the titer test is the long pole.</p>"],
     ["Do I need an agent to export a pet?",
      "<p>No, but many owners use one. The value of an agent is in lining up the Thai endorsement, the destination requirements and the flight so nothing slips. For complex destinations it is often worth it.</p>"]
+  ],
+  related: [
+    { name: "DLD export permit", path: "/take-pet-out-of-thailand/export-permit-thailand-dld.html", desc: "The permit you apply for before departure." },
+    { name: "What export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html", desc: "Budgeting the Thai side and the flight." },
+    { name: "Export to the UK", path: "/take-pet-out-of-thailand/to-uk.html", desc: "A common destination with a long lead time." },
+    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage export." }
   ]
 }));
 
@@ -267,6 +273,12 @@ pages.push(exp({
      "<p>Officially you should apply at least 15 days ahead. Last-minute export is risky — the AQS may need time for inspection or tests, and your destination country may not accept paperwork issued the same day. Plan weeks ahead, not hours.</p>"],
     ["Do I need an agent for the export permit?",
      "<p>No, but many owners use a pet relocation agent because the Thai endorsement, destination requirements and airline booking must align. For complex destinations it is often worth the fee.</p>"]
+  ],
+  related: [
+    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
+    { name: "What export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html", desc: "Budgeting the Thai side and the flight." },
+    { name: "Export to the UK", path: "/take-pet-out-of-thailand/to-uk.html", desc: "Titer test, waiting period and tapeworm rules." },
+    { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." }
   ]
 }));
 
@@ -329,6 +341,12 @@ pages.push(exp({
      "<p>Not necessarily. The Thai export steps are fairly quick, but destination requirements — especially a titer test and waiting period for the UK or EU — can make export more expensive and slower than bringing a pet into Thailand.</p>"],
     ["Should I budget for an agent?",
      "<p>Many owners export without one for simpler destinations. For cargo bookings, Australia, Japan or the USA (CDC dog rules), an agent often pays for itself in avoided mistakes and re-bookings.</p>"]
+  ],
+  related: [
+    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
+    { name: "DLD export permit", path: "/take-pet-out-of-thailand/export-permit-thailand-dld.html", desc: "The permit you apply for before departure." },
+    { name: "Export to the UK", path: "/take-pet-out-of-thailand/to-uk.html", desc: "A common destination with a long lead time." },
+    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage export." }
   ]
 }));
 

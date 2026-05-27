@@ -314,7 +314,14 @@ async function build() {
     "/take-pet-out-of-thailand/to-australia.html": "export pet Australia DAFF quarantine",
     "/adopt-a-pet-pattaya/": "adopt rescue shelter dog cat Pattaya",
     "/pet-insurance-thailand.html": "pet insurance cover vet bill Thailand",
-    "/start-here.html": "new pet owner Pattaya orientation guide"
+    "/start-here.html": "new pet owner Pattaya orientation guide",
+    "/take-pet-out-of-thailand/export-process.html": "export pet Thailand DLD health certificate permit airport",
+    "/take-pet-out-of-thailand/export-permit-thailand-dld.html": "DLD export permit AQS form 1/1 Suvarnabhumi",
+    "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html": "export pet cost budget flight titer agent",
+    "/pet-health-pattaya/parvovirus.html": "parvovirus puppy vaccination deadly virus",
+    "/pet-health-pattaya/tick-borne-disease.html": "tick disease ehrlichia babesia anaplasmosis",
+    "/owning-a-pet-in-pattaya/rainy-season-pet-care.html": "rainy season monsoon humidity skin ear flood",
+    "/owning-a-pet-in-pattaya/microchipping-your-pet.html": "microchip ISO lost pet registration import export"
   };
 
   const searchIndex = indexable.map(function (p) {

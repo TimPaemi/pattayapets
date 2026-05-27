@@ -27,7 +27,7 @@ const HUB_TITLE = {
 const CAT_GUIDES = {
   vets: [
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html" },
-    { name: "Pet emergencies", path: "/pet-emergency/" },
+    { name: "Mobile & home-visit vets", path: "/mobile-vets/" },
     { name: "Getting to the vet", path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html" },
     { name: "Pet health in Pattaya", path: "/pet-health-pattaya/" }
   ],
@@ -39,7 +39,8 @@ const CAT_GUIDES = {
   boarding: [
     { name: "Cat boarding & sitters", path: "/cats/cat-boarding-pattaya.html" },
     { name: "Pet sitters & dog walkers", path: "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html" },
-    { name: "Travelling in Thailand", path: "/owning-a-pet-in-pattaya/travelling-in-thailand.html" }
+    { name: "Travelling in Thailand", path: "/owning-a-pet-in-pattaya/travelling-in-thailand.html" },
+    { name: "Pet insurance in Thailand", path: "/pet-insurance-thailand.html" }
   ],
   "pet-shops": [
     { name: "Where to buy pet food", path: "/owning-a-pet-in-pattaya/where-to-buy-pet-food.html" },
@@ -50,6 +51,7 @@ const CAT_GUIDES = {
   "mobile-vets": [
     { name: "Getting to the vet", path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html" },
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html" },
+    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/" },
     { name: "Pet emergencies", path: "/pet-emergency/" }
   ],
   trainers: [
