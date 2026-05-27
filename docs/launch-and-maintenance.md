@@ -34,6 +34,10 @@ The one honest caveat: every directory listing shows the verdict state
 
 ## 2. How to deploy (take it live)
 
+**Normal deploy:** push to `main` on GitHub. Cloudflare Pages rebuilds automatically
+(watch the deploy in your Cloudflare dashboard). You only need the commands below
+for a first-time machine setup or if GitHub deploy fails.
+
 The site builds on your computer and uploads to Cloudflare. Open **Command
 Prompt** (press the Windows key, type `cmd`, Enter) and run these four lines,
 one at a time:

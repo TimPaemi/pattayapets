@@ -386,6 +386,34 @@ const BUSINESSES = [
     services: ["Pet travel planning", "Import & export", "Documentation support"],
     summary: "A pet-travel specialist offering planning and documentation support for " +
       "moving pets into and out of Thailand."
+  },
+
+  {
+    slug: "mor-ja-pet-clinic-pattaya",
+    name: "Mor Ja Pet Clinic",
+    category: "mobile-vets", areas: ["banglamung"], type: "Mobile & clinic pet care", c24: false,
+    address: "519/156-157 Moo 6, Soi Siam Country Club, Nong Prue, Bang Lamung, Chon Buri 20150",
+    phone: null, tel: null,
+    website: null, hours: null,
+    languages: "Thai; confirm English-language support when booking",
+    services: ["Home visits", "General consultations", "Vaccinations", "Neutering", "Bathing"],
+    summary: "A Pattaya clinic in the Nong Prue / Siam Country Club area that publicly " +
+      "advertises off-site home visits alongside in-clinic care, vaccinations and " +
+      "neutering. Confirm current coverage area and any visit fees when booking."
+  },
+  {
+    slug: "baan-mor-raksasat-animal-hospital-pattaya",
+    name: "Baan Mor Raksasat Animal Hospital",
+    category: "mobile-vets", areas: ["banglamung"], type: "Animal hospital (home visits)", c24: false,
+    address: "Railway Road (Khao Noi-Khao Talo), Nong Prue, Bang Lamung, Chon Buri",
+    phone: null, tel: null,
+    website: null, hours: null,
+    languages: "Thai; confirm English-language support when booking",
+    services: ["Home visits", "Pet pickup & delivery", "General treatment", "Grooming", "Boarding"],
+    summary: "A Pattaya animal hospital on the railway road between Khao Noi and Khao " +
+      "Talo that advertises off-site visits and pet pickup or delivery alongside its " +
+      "clinic, grooming and boarding services. Confirm home-visit availability for " +
+      "your area before booking."
   }
 ];
 

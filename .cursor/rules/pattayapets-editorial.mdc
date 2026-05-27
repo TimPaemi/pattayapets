@@ -1,0 +1,24 @@
+---
+description: PattayaPets directory and guide editorial rules
+globs: src/data/businesses.js,src/pages/**/*.js,src/data/*-content.js
+alwaysApply: false
+---
+
+# Editorial rules (directory + guides)
+
+## Directory listings (`src/data/businesses.js`)
+
+- Facts from verified public sources only. Unknown field → `null` (row omitted).
+- Verdicts (`recommend` / `ok` / `avoid`) only after anonymous visit with bill paid in full.
+- Verdict scope: business experience only — never veterinary medical quality.
+- No paid placements, sponsored tags, or affiliate links.
+
+## Guides
+
+- Orientation, not vet advice. Include verify-with-official-source blocks on import/export.
+- Date-stamp every page (`updated: "YYYY-MM-DD"`).
+- Match patterns in `src/guidekit.js` and sibling pages in the same cluster.
+
+## Disclaimer
+
+Every page carries: editorial/informational only, not veterinary advice.

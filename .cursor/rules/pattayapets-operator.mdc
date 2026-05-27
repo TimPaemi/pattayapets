@@ -1,0 +1,33 @@
+---
+description: PattayaPets operator workflow — deploy, git, build
+alwaysApply: true
+---
+
+# PattayaPets operator workflow
+
+Read `CLAUDE.md` first. Anything marked LOCKED there is non-negotiable.
+
+## Deploy (canonical)
+
+1. Edit source in `src/` only — never hand-edit `dist/`.
+2. Run `npm run build` — must print valid JSON-LD for every page.
+3. Push to `main` on GitHub — Cloudflare Pages auto-deploys.
+4. Manual `wrangler pages deploy` is emergency fallback only.
+
+## Git
+
+- Commit only when Tim asks (or explicit "commit and push").
+- Do not push unless asked.
+- One focused change per commit when possible.
+
+## After content changes
+
+- Bump `updated` on edited pages.
+- Directory listings: facts only until an anonymous visit; verdict stays pending.
+- Run build before reporting done.
+
+## Placeholders
+
+- GA4: `G-TX1PLBHN2K` in `src/layout.js`
+- CF Analytics token still placeholder
+- Contact: `hello@pattayapets.com`
