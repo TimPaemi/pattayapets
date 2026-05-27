@@ -25,6 +25,10 @@ const OFFICIAL =
 
 const RELATED = [
   { name: "The full process", path: "/bring-pet-to-thailand/", desc: "Every step, in order." },
+  { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html", desc: "Cabin, checked baggage or cargo, and travel crates." },
+  { name: "Arriving in Thailand", path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html", desc: "The quarantine-station check on landing." },
+  { name: "What it costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html", desc: "Budget for the whole move." },
+  { name: "Pet quarantine", path: "/bring-pet-to-thailand/thailand-pet-quarantine.html", desc: "When pets do and do not quarantine on arrival." },
   { name: "Rabies & titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why the titer test matters for the return trip." },
   { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "The reverse process, for later." }
 ];
@@ -432,11 +436,14 @@ pages.push(article({
       "selected scheduled flights. Whether a pet can be imported through U-Tapao at " +
       "all depends on the DLD clearance facilities there and on your airline " +
       "carrying animals to it &mdash; do not assume it is possible. Confirm directly " +
-      "with the DLD and the airline before planning any U-Tapao arrival.</p>" },
+      "with the DLD and the airline before planning any U-Tapao arrival. See also " +
+      "<a href=\"/bring-pet-to-thailand/thailand-pet-quarantine.html\">pet quarantine " +
+      "in Thailand</a> for what happens when paperwork is not in order.</p>" },
     { h: "The practical reality for most owners", html:
       "<p>In practice, the overwhelming majority of pets bound for Pattaya arrive at " +
-      "<strong>Suvarnabhumi</strong>, clear the quarantine station there, and travel " +
-      "on to Pattaya by road. Routing through Bangkok also gives you far more choice " +
+      "<strong>Suvarnabhumi</strong>, clear the " +
+      "<a href=\"/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html\">quarantine " +
+      "station there</a>, and travel on to Pattaya by road. Routing through Bangkok also gives you far more choice " +
       "of airline and flight, and more direct long-haul options &mdash; which " +
       "usually means a shorter, lower-stress journey for the pet than chasing a " +
       "rare U-Tapao connection.</p>" },

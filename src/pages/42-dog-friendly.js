@@ -111,6 +111,12 @@ pages.push(df({
      "<p>Only where the stretch is genuinely empty and your dog's recall is reliable. A lead is the considerate default — it keeps your dog away from other people, other dogs and beach hazards, and keeps dogs welcome there in general.</p>"],
     ["What time of day is best for a beach walk?",
      "<p>Early morning and around or after sunset. The sand is cooler, the sun is kinder, and the quieter beach is more relaxing for your dog anyway.</p>"]
+  ],
+  related: [
+    { name: "Places to walk", path: "/dog-friendly-pattaya/parks.html", desc: "Beaches and quieter routes beyond the sand." },
+    { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "What to do when other dogs are around." },
+    { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Back to the cluster hub." },
+    { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "The hot-climate risk to plan around." }
   ]
 }));
 
@@ -154,6 +160,12 @@ pages.push(df({
      "<p>The simplest way is to ask at the door. Cafes with garden or open-air seating are the most likely to say yes. Policies change often, so asking beats relying on an old list."],
     ["Is it normal to bring a dog to a cafe in Pattaya?",
      "<p>At outdoor and garden cafes, a calm, leashed dog is widely accepted and increasingly common. Indoors, and at food-focused venues, assume not unless told otherwise.</p>"]
+  ],
+  related: [
+    { name: "Dog-friendly restaurants", path: "/dog-friendly-pattaya/restaurants.html", desc: "Eating out with a dog — similar etiquette." },
+    { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Back to the cluster hub." },
+    { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Day-to-day life with a dog here." },
+    { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "The hot-climate risk to plan around." }
   ]
 }));
 
@@ -193,6 +205,12 @@ pages.push(df({
      "<p>Often yes, at outdoor tables — beachfront and garden restaurants tend to be the most relaxed. Always ask when you arrive, and choose a table where your dog can settle out of the way.</p>"],
     ["Will restaurants provide water for my dog?",
      "<p>Some will, many will not. Bring your own travel bowl and water so your dog is comfortable regardless.</p>"]
+  ],
+  related: [
+    { name: "Dog-friendly cafes", path: "/dog-friendly-pattaya/cafes.html", desc: "Outdoor seating and similar etiquette." },
+    { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Back to the cluster hub." },
+    { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Day-to-day life with a dog here." },
+    { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "The hot-climate risk to plan around." }
   ]
 }));
 
@@ -227,13 +245,23 @@ pages.push(df({
     { h: "Be a guest they will take again", html:
       "<p>Bring your dog&rsquo;s bedding, never leave a dog that will bark or " +
       "scratch alone in a room, keep it off the furniture, and clean up " +
-      "everywhere. Considerate pet guests are why properties stay pet-friendly.</p>" }
+      "everywhere. Considerate pet guests are why properties stay pet-friendly.</p>" +
+      "<p>Staying longer? See also " +
+      "<a href=\"/dog-friendly-pattaya/condos.html\">dog-friendly condos</a> and " +
+      "<a href=\"/owning-a-pet-in-pattaya/pet-friendly-housing.html\">pet-friendly " +
+      "housing</a>.</p>" }
   ],
   faqs: [
     ["Are there really pet-friendly hotels in Pattaya?",
      "<p>Yes — a range of properties accept pets, particularly around Jomtien and Dongtan. The key is to confirm the specific policy (size limits, fees, rules) directly with the property before booking.</p>"],
     ["Can I leave my dog alone in the hotel room?",
      "<p>Many properties do not allow it, and even where it is allowed it is a bad idea if your dog may bark or panic. Always check the rule, and plan around your dog rather than leaving it stressed.</p>"]
+  ],
+  related: [
+    { name: "Dog-friendly condos", path: "/dog-friendly-pattaya/condos.html", desc: "If you are staying longer than a holiday." },
+    { name: "Pet-friendly housing", path: "/owning-a-pet-in-pattaya/pet-friendly-housing.html", desc: "Renting with a dog in Pattaya." },
+    { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Back to the cluster hub." },
+    { name: "Dog-friendly beaches", path: "/dog-friendly-pattaya/beaches.html", desc: "Walks near many pet-friendly stays." }
   ]
 }));
 
@@ -320,6 +348,12 @@ pages.push(df({
      "<p>Dedicated fenced dog parks are scarce. Most owners build a routine around the beach at cool hours, quiet sois and open green spaces. Always check whether dogs are allowed in a given park and keep yours leashed.</p>"],
     ["Where is the best everyday walk?",
      "<p>For most owners it is a mix: the quiet sois near home for daily walks, and the cooler ends of the beach for something longer. Pratumnak's leafier roads are pleasant too.</p>"]
+  ],
+  related: [
+    { name: "Dog-friendly beaches", path: "/dog-friendly-pattaya/beaches.html", desc: "The best longer walks at cool hours." },
+    { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "What to do when other dogs are around." },
+    { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Building a safe daily routine." },
+    { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Back to the cluster hub." }
   ]
 }));
 

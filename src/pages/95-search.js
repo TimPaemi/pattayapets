@@ -23,7 +23,8 @@ module.exports = [{
     '<div id="pp-filters" class="search-filters" aria-label="Filter by section"></div>' +
     '<div id="pp-results" class="search-results">' +
     '<noscript><p class="notice">Search needs JavaScript enabled. You can browse ' +
-    'the <a href="/directory.html">business directory</a>, the ' +
+    'the <a href="/start-here.html">start-here guide</a>, the ' +
+    '<a href="/directory.html">business directory</a>, the ' +
     '<a href="/guides.html">guides</a>, or the <a href="/sitemap.html">full ' +
     "sitemap</a> instead.</p></noscript></div>" +
     "</div></section>"

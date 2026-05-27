@@ -522,6 +522,12 @@ pages.push(importStep({
 }));
 
 /* ---------------- COUNTRY PAGES ---------------- */
+const IMP_STEPS =
+  "<a href=\"/bring-pet-to-thailand/microchip-requirements.html\">microchip</a>, " +
+  "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies</a>, " +
+  "<a href=\"/bring-pet-to-thailand/health-certificate.html\">health certificate</a> and " +
+  "<a href=\"/bring-pet-to-thailand/import-permit-thailand-dld.html\">DLD import permit</a>";
+
 function countryPage(o) {
   var sections = (o.sections || []).slice();
   sections.push({ h: "Official sources", html: OFFICIAL });
@@ -539,6 +545,9 @@ function countryPage(o) {
     faqs: o.faqs,
     related: [
       { name: "The full process", path: "/bring-pet-to-thailand/", desc: "Every step, in order." },
+      { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html", desc: "Cabin, checked baggage or cargo, and travel crates." },
+      { name: "Arriving in Thailand", path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html", desc: "The quarantine-station check on landing." },
+      { name: "What it costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html", desc: "Budget for the whole move." },
       { name: "Rabies & titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why the titer test matters for the return trip." },
       { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "The reverse process, for later." }
     ]
@@ -595,8 +604,7 @@ pages.push(countryPage({
     "USDA endorsement and the CDC&rsquo;s rules for dogs.",
   sections: [
     { h: "The US side of the paperwork", html:
-      "<p>Follow the standard steps — microchip, rabies, the other vaccinations, " +
-      "the health certificate and the DLD import permit. In the US, the health " +
+      "<p>Follow the standard steps &mdash; " + IMP_STEPS + ". In the US, the health " +
       "certificate is completed by a <strong>USDA-accredited veterinarian</strong> " +
       "and then endorsed by <strong>USDA APHIS</strong> (the Animal and Plant " +
       "Health Inspection Service), usually through its online VEHCS system. " +
@@ -632,8 +640,7 @@ pages.push(countryPage({
     "job for Thailand, or for coming back.",
   sections: [
     { h: "The EU side of the paperwork", html:
-      "<p>Follow the standard steps — microchip, rabies, other vaccinations, the " +
-      "health certificate and the DLD import permit. For travel out of the EU, " +
+      "<p>Follow the standard steps &mdash; " + IMP_STEPS + ". For travel out of the EU, " +
       "your vet completes an <strong>EU animal health / export certificate</strong> " +
       "and it is endorsed by your country&rsquo;s <strong>competent authority</strong> " +
       "(the official government veterinary body). The familiar blue EU pet " +
@@ -665,10 +672,8 @@ pages.push(countryPage({
     "Australia that owners must understand before they ever leave.",
   sections: [
     { h: "Australia to Thailand", html:
-      "<p>Heading to Thailand, the steps are the standard ones — microchip, " +
-      "rabies, other vaccinations, the health certificate endorsed by Australian " +
-      "authorities, and the DLD import permit. This direction is the " +
-      "straightforward part.</p>" },
+      "<p>Heading to Thailand, the steps are the standard ones &mdash; " + IMP_STEPS +
+      ". This direction is the straightforward part.</p>" },
     { h: "The return to Australia is the hard part", html:
       "<p>Australia has some of the strictest pet biosecurity rules in the " +
       "world, and <strong>Thailand is not on its list of approved countries</strong> " +

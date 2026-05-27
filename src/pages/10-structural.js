@@ -89,7 +89,9 @@ pages.push({
     "<a href=\"/cats/\">cat owner&rsquo;s hub</a>. And it is worth " +
     "understanding how " +
     '<a href="/pet-insurance-thailand.html">pet insurance in Thailand</a> works ' +
-    "before you need to claim.</p>" +
+    "before you need to claim. You can also " +
+    '<a href="/search.html">search the site</a> or browse the ' +
+    '<a href="/sitemap.html">full sitemap</a>.</p>' +
     '<p class="updated">Last updated 27 May 2026</p>' +
     DISC +
     "</div></div></section>"
@@ -242,7 +244,9 @@ pages.push(prosePage({
     "<p>We cannot give veterinary advice or help with a medical emergency &mdash; " +
     "please contact a qualified veterinarian or a 24-hour animal hospital directly. " +
     "We also cannot arrange pet relocation; for that, see the " +
-    '<a href="/pet-relocation/">relocation agents directory</a>.</p>'
+    '<a href="/pet-relocation/">relocation agents directory</a>. To find a page on ' +
+    'the site, try <a href="/search.html">search</a> or the ' +
+    '<a href="/sitemap.html">sitemap</a>.</p>'
 }));
 
 /* ---------------- Masthead ---------------- */
@@ -269,7 +273,9 @@ pages.push(prosePage({
     "<h2>Method</h2>" +
     "<p>Anonymous visits. Bills paid in full. Zero paid placements, zero " +
     "sponsorships, zero affiliate links. The full method is on the " +
-    '<a href="/standards.html">editorial standards</a> page.</p>'
+    '<a href="/standards.html">editorial standards</a> page. Browse the ' +
+    '<a href="/directory.html">directory</a>, the <a href="/guides.html">guides</a>, ' +
+    'or <a href="/search.html">search the site</a>.</p>'
 }));
 
 /* ---------------- Corrections ---------------- */

@@ -75,6 +75,14 @@ pages.push(hub({
 }));
 
 /* ---- SHELTER PAGES ---- */
+function shelterDesc(s) {
+  var d = s.name + " is a " + s.type.toLowerCase() + " in the Pattaya area.";
+  if (s.phone) d += " Phone: " + s.phone + ".";
+  if (s.email) d += " Email: " + s.email + ".";
+  d += " How its rescue and adoption work runs, and how to help.";
+  return d;
+}
+
 const SHELTERS = [
   {
     slug: "hope-for-strays", name: "Hope for Strays",
@@ -217,6 +225,7 @@ const SHELTERS = [
     crumb: "Ady G. Second Chance Pattaya",
     type: "Dog sanctuary",
     website: "https://www.adygsecondchancepattaya.org/",
+    email: "adygsecondchancepattaya@gmail.com",
     address: "Sukjai Soi 6, Pattaya City, Bang Lamung District, Chon Buri 20150",
     phone: "080 976 9976", tel: "+66809769976",
     lede: "Ady G. Second Chance Pattaya is a sanctuary caring for disabled and rescued " +
@@ -262,8 +271,7 @@ SHELTERS.forEach(function (s) {
   pages.push(article({
     path: "/adopt-a-pet-pattaya/" + s.slug + ".html",
     title: s.name + " | PattayaPets",
-    desc: s.name + " is a " + s.type.toLowerCase() + " in the Pattaya area. " +
-      "How its rescue and adoption work runs, and how to help.",
+    desc: shelterDesc(s),
     crumb: s.crumb,
     breadcrumbs: SUB,
     eyebrow: "Adopt a pet in Pattaya",

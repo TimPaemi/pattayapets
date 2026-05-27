@@ -25,6 +25,12 @@ const OFFICIAL =
   "<a href=\"https://www.cdc.gov/importation/bringing-an-animal-into-the-us/index.html\" target=\"_blank\" rel=\"noopener nofollow\">CDC animal import (USA)</a>; " +
   "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" rel=\"noopener nofollow\">EU pet movement</a>.</p>";
 
+const THAI_SIDE =
+  "<p>All of this sits on top of the Thai " +
+  "<a href=\"/take-pet-out-of-thailand/export-process.html\">export process</a> " +
+  "&mdash; the DLD health certificate and export permit &mdash; which your pet must " +
+  "clear on the way out. The two sets of paperwork have to agree.</p>";
+
 const pages = [];
 
 pages.push(hub({
@@ -109,6 +115,7 @@ function exp(o) {
     related: o.related || [
       { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
       { name: "DLD export permit", path: "/take-pet-out-of-thailand/export-permit-thailand-dld.html", desc: "The permit you apply for before departure." },
+      { name: "What export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html", desc: "Budgeting the Thai side and the flight." },
       { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." },
       { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage export." }
     ]
@@ -388,8 +395,19 @@ pages.push(exp({
       "<p>Your pet needs an EU animal health certificate completed for entry " +
       "from a third country and endorsed by the Thai authorities. The microchip, " +
       "vaccination dates and titer result must all line up on it. Rules can " +
-      "differ slightly by the EU country you enter through &mdash; confirm with " +
-      "that country&rsquo;s authority.</p>" }
+      "differ slightly by the EU country you enter through &mdash; we have " +
+      "dedicated pages for " +
+      "<a href=\"/take-pet-out-of-thailand/to-germany.html\">Germany</a> and " +
+      "<a href=\"/take-pet-out-of-thailand/to-france.html\">France</a>, and you " +
+      "should confirm with that country&rsquo;s authority.</p>" },
+    { h: "The Thai side and your timeline", html: THAI_SIDE }
+  ],
+  related: [
+    { name: "To Germany", path: "/take-pet-out-of-thailand/to-germany.html", desc: "EU entry via Germany." },
+    { name: "To France", path: "/take-pet-out-of-thailand/to-france.html", desc: "EU entry via France." },
+    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
+    { name: "What export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html", desc: "Budgeting the Thai side and the flight." },
+    { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." }
   ],
   faqs: [
     ["Is the three-month wait avoidable?",
@@ -426,7 +444,18 @@ pages.push(exp({
       "target=\"_blank\" rel=\"noopener nofollow\">importing cats and dogs to " +
       "Australia</a> &mdash; and engage a specialist " +
       "<a href=\"/pet-relocation/\">pet relocation agent</a> experienced in the " +
-      "Thailand-to-Australia route as early as you can.</p>" }
+      "Thailand-to-Australia route as early as you can.</p>" +
+      "<p>If you have not read it yet, our guide to " +
+      "<a href=\"/bring-pet-to-thailand/from-australia.html\">bringing a pet from " +
+      "Australia to Thailand</a> covers the easier direction &mdash; and why the " +
+      "return is so much harder.</p>" },
+    { h: "The Thai side and your timeline", html: THAI_SIDE }
+  ],
+  related: [
+    { name: "From Australia (import)", path: "/bring-pet-to-thailand/from-australia.html", desc: "The easier direction, and why the return is harder." },
+    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
+    { name: "What export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html", desc: "Budgeting the Thai side and the flight." },
+    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Essential for this route." }
   ],
   faqs: [
     ["Can I fly my pet directly from Thailand to Australia?",

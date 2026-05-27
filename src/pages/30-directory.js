@@ -354,13 +354,14 @@ Object.keys(CATEGORIES).forEach(function (key) {
 Object.keys(AREAS).forEach(function (key) {
   var area = AREAS[key];
   var list = BUSINESSES.filter(function (b) { return b.areas.indexOf(key) !== -1; });
+  var countLabel = list.length === 1 ? "1 business" : list.length + " businesses";
 
   var body =
     '<section class="section"><div class="container">' +
     '<p class="eyebrow">By area</p>' +
     "<h1>Pet services in " + esc(area.name) + ", Pattaya</h1>" +
-    '<p class="lede">' + esc(area.blurb) + " Below are the pet businesses " +
-    "PattayaPets currently lists in " + esc(area.name) + ".</p></div></section>";
+    '<p class="lede">' + esc(area.blurb) + " Below are the " + countLabel +
+    " PattayaPets currently lists in " + esc(area.name) + ".</p></div></section>";
 
   if (AREA_GUIDE[key]) {
     body += '<section class="section"><div class="container">' +
@@ -404,6 +405,9 @@ Object.keys(AREAS).forEach(function (key) {
   }
 
   body += '<section class="section"><div class="container">' +
+    '<div class="prose"><p>Planning ahead? See our list of ' +
+    '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in Pattaya</a> ' +
+    'and the <a href="/dog-friendly-pattaya/">dog-friendly Pattaya</a> guide.</p></div>' +
     '<div class="section-head"><h2>Every category</h2></div><div class="chips">' +
     Object.keys(CATEGORIES).map(function (ck) {
       return '<a class="chip chip-link" href="/' + ck + '/">' +

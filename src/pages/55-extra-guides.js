@@ -390,7 +390,7 @@ pages.push(article({
     { h: "The heat travels with you", html:
       "<p>Wherever you go in Thailand, it is hot. The same rules apply: cool-hour " +
       "activity, constant water and shade, and no hot vehicles. Keep " +
-      "<a href=\"/pet-health-pattaya/\">parasite prevention</a> going, and find " +
+      "<a href=\"/dogs/dog-vaccinations-thailand.html\">parasite prevention</a> going, and find " +
       "out where the nearest vet is at your destination &mdash; before you need " +
       "one. If a trip is not suitable for your pet, a " +
       "<a href=\"/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html\">pet " +

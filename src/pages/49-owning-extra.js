@@ -110,7 +110,9 @@ pages.push(own({
     { h: "Keep skin, paws and ears dry", html:
       "<p>Humidity plus a damp coat is the main rainy-season health issue. It " +
       "drives skin infections, &lsquo;hot spots&rsquo; and ear infections, " +
-      "especially in floppy-eared dogs and breeds with skin folds. Dry your pet " +
+      "especially in floppy-eared dogs and breeds with skin folds. See our guide to " +
+      "<a href=\"/pet-health-pattaya/skin-and-ear-problems.html\">skin and ear problems</a> " +
+      "for the signs. Dry your pet " +
       "thoroughly after every wet walk &mdash; ears and folds included &mdash; " +
       "and see a vet early if skin or ears look red, smell, or are being " +
       "scratched at.</p>" },
@@ -143,6 +145,7 @@ pages.push(own({
   ],
   related: [
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "The hot-season half of the year." },
+    { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html", desc: "Rainy-season skin and ear flare-ups." },
     { name: "Tropical dog health issues", path: "/dogs/common-dog-health-issues-tropics.html", desc: "Skin, ears and parasites in the climate." },
     HUB_RELATED
   ]
@@ -498,6 +501,7 @@ pages.push(own({
   ],
   related: [
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Doubly important for older pets." },
+    { name: "Dental care", path: "/pet-health-pattaya/dental-care.html", desc: "Common in older pets and worth catching early." },
     { name: "End-of-life care", path: "/owning-a-pet-in-pattaya/saying-goodbye.html", desc: "Compassionate guidance for the final stage." },
     HUB_RELATED
   ]

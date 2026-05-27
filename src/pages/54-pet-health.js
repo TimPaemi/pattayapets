@@ -16,6 +16,9 @@ const HEALTH_VERIFY =
 
 const RELATED = [
   { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Back to the health hub." },
+  { name: "Heartworm", path: "/pet-health-pattaya/heartworm.html", desc: "Year-round prevention in Pattaya." },
+  { name: "Tick-borne disease", path: "/pet-health-pattaya/tick-borne-disease.html", desc: "Ticks are active all year here." },
+  { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html", desc: "Heat and humidity drive flare-ups." },
   { name: "Vets & animal hospitals", path: "/vets/", desc: "Find a clinic near you." },
   { name: "Pet emergencies", path: "/pet-emergency/", desc: "24-hour vets and urgent hazards." }
 ];

@@ -24,7 +24,8 @@ pages.push(hub({
     "<p>Whether you have arrived with a pet, adopted one here, or are weighing it " +
     "up, these guides cover the practical side of day-to-day pet ownership in " +
     "Pattaya: what it costs, how the climate changes everything, finding housing " +
-    "that allows pets, and the local rules.</p>",
+    "that allows pets, and the local rules. For trips within Thailand, see our guide to " +
+    "<a href=\"/owning-a-pet-in-pattaya/travelling-in-thailand.html\">travelling with a pet</a>.</p>",
   groups: [
     {
       title: "The essentials",
@@ -288,7 +289,9 @@ pages.push(own({
       "<p>Some Thai municipalities operate <strong>dog registration or " +
       "licensing</strong> schemes, and there have been moves toward wider " +
       "registration and microchipping of dogs and cats. What applies to you " +
-      "depends on your local district. Ask at your local municipal or district " +
+      "depends on your local district. A working " +
+      "<a href=\"/owning-a-pet-in-pattaya/microchipping-your-pet.html\">microchip</a> " +
+      "with up-to-date contact details is increasingly part of that picture. Ask at your local municipal or district " +
       "office, or ask your vet &mdash; vets generally know the current local " +
       "position.</p>" },
     { h: "Responsible ownership", html:
@@ -303,6 +306,11 @@ pages.push(own({
      "<p>Yes. Thai law requires dogs and cats to be vaccinated against rabies and kept current. Keep the vaccination certificates, and use a vet to stay on schedule.</p>"],
     ["Do I have to register my dog in Pattaya?",
      "<p>Registration and licensing schemes vary by municipality, and rules have been evolving. Check the current requirement with your local district office or your vet, who will know the local position.</p>"]
+  ],
+  related: [
+    { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Registration schemes often tie to microchips." },
+    { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Responsible ownership keeps dogs welcome out and about." },
+    { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Back to the cluster hub." }
   ]
 }));
 
