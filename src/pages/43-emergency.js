@@ -250,6 +250,11 @@ pages.push(hazard({
      "<p>Early morning and after sunset are the comfortable windows. Through the middle of the day the air, sun and pavement are all working against your pet — keep walks short and shaded, or skip them.</p>"],
     ["My dog seems fine after overheating — do I still need a vet?",
      "<p>Heatstroke can cause internal damage that is not visible straight away. If your pet has genuinely overheated, a vet check is the safe call even if it seems to have recovered.</p>"]
+  ],
+  related: [
+    { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Preventing heat problems day to day." },
+    { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Cool-hour walking routines." },
+    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Clinics open around the clock." }
   ]
 }));
 
@@ -289,6 +294,11 @@ pages.push(hazard({
      "<p>Often yes — parasites can come in on people, on other pets, or through open windows and balconies. Ask your vet what is appropriate for your cat.</p>"],
     ["Should I remove a tick myself?",
      "<p>Ticks should be removed promptly and correctly. If you are not confident, a vet can do it quickly and advise on prevention so it does not keep happening.</p>"]
+  ],
+  related: [
+    { name: "Tick-borne disease", path: "/pet-health-pattaya/tick-borne-disease.html", desc: "What ticks can transmit here." },
+    { name: "Heartworm", path: "/pet-health-pattaya/heartworm.html", desc: "Mosquito-borne prevention year-round." },
+    { name: "Dog vaccinations & parasites", path: "/dogs/dog-vaccinations-thailand.html", desc: "Keeping prevention on schedule." }
   ]
 }));
 
@@ -328,6 +338,11 @@ pages.push(hazard({
      "<p>You may see sudden swelling, puncture marks, bleeding, pain, drooling, weakness or collapse — or you may simply have seen the snake. If a snake bite is possible, treat it as an emergency and get to a vet straight away.</p>"],
     ["Should I try to identify the snake?",
      "<p>Only from a safe distance, and never at the cost of delaying the trip to the vet. Your safety comes first; the vet can often treat without a precise identification.</p>"]
+  ],
+  related: [
+    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Go straight here if you suspect a bite." },
+    { name: "Pet first aid", path: "/pet-emergency/pet-first-aid.html", desc: "Moving an injured pet safely." },
+    { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Dawn and dusk are high-risk times." }
   ]
 }));
 
@@ -378,6 +393,11 @@ pages.push(hazard({
      "<p>Most are not interested in confrontation and keep their distance. The sensible approach is respect, not fear: keep your dog leashed, give groups space, and stay calm. Keep your pet's rabies vaccination current as a basic precaution.</p>"],
     ["What if my dog is bitten by a street dog?",
      "<p>Treat it seriously. Get the wound seen by a <a href=\"/vets/\">vet</a> as soon as you can — or a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour animal hospital</a> if it is after hours. The vet will advise on wound care and rabies risk given your pet's vaccination status. If a person is bitten, seek medical advice promptly.</p>"]
+  ],
+  related: [
+    { name: "Dog registration & the law", path: "/owning-a-pet-in-pattaya/dog-registration-thailand.html", desc: "Rabies vaccination is a legal duty." },
+    { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Building a safe walking routine." },
+    { name: "How to help street animals", path: "/adopt-a-pet-pattaya/how-to-help.html", desc: "What to do for an injured stray." }
   ]
 }));
 
@@ -424,6 +444,11 @@ pages.push(hazard({
      "<p>Not on your own initiative. For some poisons, inducing vomiting causes further harm. Call a vet first and follow their instruction.</p>"],
     ["My pet ate chocolate — is that really dangerous?",
      "<p>Chocolate is genuinely toxic to dogs, and the risk rises with darker chocolate and smaller dogs. If your pet has eaten chocolate, contact a vet with the type and amount and your pet's weight.</p>"]
+  ],
+  related: [
+    { name: "Choking", path: "/pet-emergency/choking.html", desc: "Airway blockages and swallowed objects." },
+    { name: "Pet first aid", path: "/pet-emergency/pet-first-aid.html", desc: "The calm basics before you reach a vet." },
+    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Do not wait for symptoms to worsen." }
   ]
 }));
 

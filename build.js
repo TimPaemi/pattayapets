@@ -141,6 +141,15 @@ function pageLabel(p) {
   return t.replace(/\s*\|\s*PattayaPets\s*$/, "").replace(/\s*—\s*PattayaPets\s*$/, "");
 }
 
+function truncateText(s, n) {
+  s = String(s || "").replace(/\s+/g, " ").trim();
+  if (s.length <= n) return s;
+  var cut = s.slice(0, n - 1);
+  var sp = cut.lastIndexOf(" ");
+  if (sp > n * 0.6) cut = cut.slice(0, sp);
+  return cut + "\u2026";
+}
+
 function buildRecentSection(pages) {
   var recent = pages.filter(function (p) {
     return !p.noindex && !RECENT_SKIP[p.path] && p.updated;
@@ -149,9 +158,11 @@ function buildRecentSection(pages) {
   }).slice(0, 8);
   if (!recent.length) return "";
   var items = recent.map(function (p) {
+    var desc = truncateText(p.description, 100).replace(/&/g, "&amp;").replace(/</g, "&lt;");
     return '<a class="recent-item" href="' + p.path + '">' +
       '<span class="recent-date">' + fmtUpdated(p.updated) + "</span>" +
       '<span class="recent-title">' + pageLabel(p).replace(/&/g, "&amp;") + "</span>" +
+      (desc ? '<span class="recent-desc">' + desc + "</span>" : "") +
       '<span class="recent-kind">' + kindOf(p.path).replace(/&/g, "&amp;") + "</span></a>";
   }).join("");
   return '<section class="section"><div class="container">' +
@@ -159,7 +170,8 @@ function buildRecentSection(pages) {
     "<h2>Recently updated</h2>" +
     "<p>Pages refreshed most recently across the directory and guides.</p></div>" +
     '<div class="recent-list">' + items + "</div>" +
-    '<div class="btn-row"><a class="btn btn-ghost" href="/sitemap.html">Full sitemap &rarr;</a></div>' +
+    '<div class="btn-row"><a class="btn btn-ghost" href="/guides.html">All guides &rarr;</a> ' +
+    '<a class="btn btn-ghost" href="/sitemap.html">Full sitemap &rarr;</a></div>' +
     "</div></section>";
 }
 
@@ -266,7 +278,7 @@ async function build() {
     }).join("\n") + "\n";
   write("llms.txt", llms);
 
-  const { BUSINESSES, AREAS } = require(path.join(SRC, "data/businesses.js"));
+  const { BUSINESSES, AREAS, CATEGORIES } = require(path.join(SRC, "data/businesses.js"));
   const bizByPath = {};
   BUSINESSES.forEach(function (b) {
     bizByPath["/" + b.category + "/" + b.slug + ".html"] = b;
@@ -279,8 +291,18 @@ async function build() {
       if (b.address) d += " " + b.address;
       if (b.phone) d += " " + b.phone;
       if (b.type) d += " " + b.type;
+      if (b.languages) d += " " + b.languages;
+      if (CATEGORIES[b.category]) d += " " + CATEGORIES[b.category].name;
       if (b.summary) d += " " + b.summary;
       if (b.services && b.services.length) d += " " + b.services.join(" ");
+      if (b.category === "pet-relocation" && !b.areas.length) {
+        d += " nationwide Thailand pet import export relocation";
+      }
+      if (b.email) d += " " + b.email;
+      else {
+        var em = (b.summary || "").match(/[\w.+-]+@[\w.-]+\.\w+/);
+        if (em) d += " " + em[0];
+      }
       b.areas.forEach(function (ak) {
         if (AREAS[ak]) d += " " + AREAS[ak].name;
       });

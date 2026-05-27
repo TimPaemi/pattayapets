@@ -182,6 +182,7 @@ pages.push(hub({
       cards: [
         { name: "Adopt a dog", desc: "Pattaya shelters and rescues rehoming dogs.", path: "/adopt-a-pet-pattaya/" },
         { name: "Bring a dog to Thailand", desc: "The full import process for a dog.", path: "/bring-pet-to-thailand/" },
+        { name: "Take a dog out of Thailand", desc: "Exporting a dog when you move on.", path: "/take-pet-out-of-thailand/" },
         { name: "Pet emergencies", desc: "24-hour vets, heatstroke, snakes and more.", path: "/pet-emergency/" }
       ]
     }

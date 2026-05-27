@@ -398,6 +398,7 @@ pages.push(importStep({
      "<p>Only if it is small enough to meet the airline's in-cabin weight and carrier limits, and only on airlines that allow it on that route. Most medium and large dogs travel in the hold.</p>"]
   ],
   related: [
+    { name: "Snub-nosed breeds & flying", path: "/bring-pet-to-thailand/snub-nosed-breeds-flying.html", desc: "Airline restrictions for flat-faced breeds." },
     { name: "Arrival in Thailand", path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html", desc: "Landing and the quarantine check." },
     { name: "What it costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html", desc: "The flight is usually the biggest line." },
     { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Agents who book pet cargo for you." }
@@ -457,9 +458,10 @@ pages.push(importStep({
      "<p>Arrange a pet-friendly transfer in advance. It is about a 90-minute to two-hour drive. Relocation agents can include the airport-to-door transfer in their service.</p>"]
   ],
   related: [
+    { name: "Pet quarantine in Thailand", path: "/bring-pet-to-thailand/thailand-pet-quarantine.html", desc: "When pets do and do not quarantine on arrival." },
+    { name: "U-Tapao or Bangkok?", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html", desc: "Which airport to fly into for Pattaya." },
     { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Settling in once you arrive." },
-    { name: "Vets in Pattaya", path: "/vets/", desc: "Find a clinic near your new home." },
-    { name: "The full process", path: "/bring-pet-to-thailand/", desc: "Back to the flagship guide." }
+    { name: "Vets in Pattaya", path: "/vets/", desc: "Find a clinic near your new home." }
   ]
 }));
 
@@ -583,8 +585,8 @@ pages.push(countryPage({
       "<p>The practical lesson: if there is any chance you will return to the UK " +
       "with your pet, have the titer test done <strong>before you leave the " +
       "UK</strong>, while the vaccination is fresh. It saves a three-month wait " +
-      "later. See our <a href=\"/take-pet-out-of-thailand/\">guide to taking a " +
-      "pet out of Thailand</a>.</p>" }
+      "later. See our guide to " +
+      "<a href=\"/take-pet-out-of-thailand/to-uk.html\">taking a pet from Thailand to the UK</a>.</p>" }
   ],
   faqs: [
     ["Does Thailand need a titer test for a pet from the UK?",
@@ -620,7 +622,8 @@ pages.push(countryPage({
       "<p>The takeaway is the same as for UK owners: if a return to the US is " +
       "possible, do the <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">" +
       "rabies titer test</a> early, and check the current CDC rules well before " +
-      "any return trip.</p>" }
+      "any return trip. See our guide to " +
+      "<a href=\"/take-pet-out-of-thailand/to-usa.html\">taking a pet from Thailand to the USA</a>.</p>" }
   ],
   faqs: [
     ["Who endorses my pet's health certificate in the US?",
@@ -652,7 +655,8 @@ pages.push(countryPage({
       "<strong>rabies titer test</strong>, with the blood sample taken at least " +
       "30 days after vaccination and a <strong>three-month wait</strong> before " +
       "entry. As with the UK, the smart move is to do the titer test before you " +
-      "leave, while the vaccination is current.</p>" }
+      "leave, while the vaccination is current. See our guide to " +
+      "<a href=\"/take-pet-out-of-thailand/to-eu.html\">taking a pet from Thailand to the EU</a>.</p>" }
   ],
   faqs: [
     ["Is my EU pet passport enough to bring my pet to Thailand?",
@@ -686,8 +690,8 @@ pages.push(countryPage({
       "<p>If you are an Australian who may one day return with your pet, do not " +
       "improvise this. Speak to the Australian Department of Agriculture and a " +
       "specialist <a href=\"/pet-relocation/\">pet relocation agent</a> early, " +
-      "and read our <a href=\"/take-pet-out-of-thailand/\">guide to taking a pet " +
-      "out of Thailand</a>.</p>" }
+      "and read our guide to " +
+      "<a href=\"/take-pet-out-of-thailand/to-australia.html\">taking a pet from Thailand to Australia</a>.</p>" }
   ],
   faqs: [
     ["Can I fly my pet straight from Thailand to Australia?",

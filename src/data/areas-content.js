@@ -28,6 +28,8 @@ const AREA_GUIDE = {
     "Pattaya, with the rest of the directory only a short trip away.</p>" +
     "<h3>Helpful guides for Naklua pet owners</h3>" +
     "<ul>" +
+    "<li><a href=\"/vets/pattaya-veterinary-clinic.html\">Pattaya Veterinary Clinic</a></li>" +
+    "<li><a href=\"/vets/north-pattaya-animal-hospital.html\">North Pattaya Animal Hospital</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/pet-friendly-housing.html\">Pet-friendly housing in Pattaya</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">Where and how to walk your dog</a></li>" +
     "<li><a href=\"/dog-friendly-pattaya/beaches.html\">Dog-friendly beaches</a></li>" +
@@ -57,6 +59,7 @@ const AREA_GUIDE = {
     "far.</p>" +
     "<h3>Helpful guides for Wongamat pet owners</h3>" +
     "<ul>" +
+    "<li><a href=\"/vets/north-pattaya-animal-hospital.html\">North Pattaya Animal Hospital</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/pet-friendly-housing.html\">Pet-friendly housing in Pattaya</a></li>" +
     "<li><a href=\"/dog-friendly-pattaya/condos.html\">Dog-friendly condos</a></li>" +
     "<li><a href=\"/cats/indoor-vs-outdoor-cats.html\">Indoor or outdoor cats</a></li>" +
@@ -85,6 +88,9 @@ const AREA_GUIDE = {
     "shop, a vet, or a 24-hour animal hospital if something goes wrong.</p>" +
     "<h3>Helpful guides for Central Pattaya pet owners</h3>" +
     "<ul>" +
+    "<li><a href=\"/vets/thonglor-pet-hospital-pattaya.html\">Thonglor Pet Hospital</a> (24h)</li>" +
+    "<li><a href=\"/groomers/pattaya-city-pet-shop-grooming.html\">Pattaya City Pet Shop &amp; Grooming</a></li>" +
+    "<li><a href=\"/pet-shops/brand-dog-pattaya-pet-supplies.html\">Brand Dog pet supplies</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/fireworks-and-noise-anxiety.html\">Fireworks and noise-anxious pets</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/pet-friendly-housing.html\">Pet-friendly housing in Pattaya</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">Hot-climate pet care</a></li>" +
@@ -230,6 +236,9 @@ const AREA_GUIDE = {
     "and your route to emergency care &mdash; matters.</p>" +
     "<h3>Helpful guides for Banglamung pet owners</h3>" +
     "<ul>" +
+    "<li><a href=\"/vets/siam-country-pet-hospital.html\">Siam Country Pet Hospital</a></li>" +
+    "<li><a href=\"/groomers/jaijai-grooming.html\">Jaijai Spa &amp; Grooming</a></li>" +
+    "<li><a href=\"/groomers/woof-pattaya.html\">Woof Pattaya</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/pet-friendly-housing.html\">Pet-friendly housing in Pattaya</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">Where and how to walk your dog</a></li>" +
     "<li><a href=\"/dogs/choosing-a-dog-for-the-climate.html\">Choosing a dog for the climate</a></li>" +

@@ -325,7 +325,14 @@ pages.push(exp({
       "<a href=\"https://www.gov.uk/bring-pet-to-great-britain\" target=\"_blank\" " +
       "rel=\"noopener nofollow\">UK government pet-travel guidance</a> and choose " +
       "an airline and route that satisfies them &mdash; a relocation agent is " +
-      "genuinely useful here.</p>" }
+      "genuinely useful here.</p>" },
+    { h: "The Thai side and your timeline", html: THAI_SIDE }
+  ],
+  related: [
+    { name: "From the UK (import)", path: "/bring-pet-to-thailand/from-uk.html", desc: "The easier direction, and why the return is harder." },
+    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
+    { name: "What export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html", desc: "Budgeting the Thai side and the flight." },
+    { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." }
   ],
   faqs: [
     ["How long does it take to move a pet from Thailand to the UK?",
@@ -360,11 +367,13 @@ pages.push(exp({
       "<p>Cats face lighter US requirements than dogs, but still need to be " +
       "healthy on arrival and meet the rules in force. Confirm the current cat " +
       "requirements with the CDC and USDA.</p>" },
-    { h: "The Thai side", html:
-      "<p>Alongside the US rules, your pet still needs to clear the Thai " +
-      "<a href=\"/take-pet-out-of-thailand/export-process.html\">export " +
-      "process</a> &mdash; health certificate and DLD export permit. The two " +
-      "sets of paperwork must be consistent.</p>" }
+    { h: "The Thai side and your timeline", html: THAI_SIDE }
+  ],
+  related: [
+    { name: "From the USA (import)", path: "/bring-pet-to-thailand/from-usa.html", desc: "USDA endorsement and CDC rules for the return trip." },
+    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
+    { name: "What export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html", desc: "Budgeting the Thai side and the flight." },
+    { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." }
   ],
   faqs: [
     ["Does my dog need a rabies titer test to enter the USA from Thailand?",

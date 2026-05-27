@@ -58,7 +58,9 @@ const HUB_GUIDE = {
     "</ul>" +
     "<p>Some groomers work from a salon, others come to you. A mobile groom " +
     "spares a pet the travel and the wait; a salon may carry more equipment. " +
-    "Either can be a good choice &mdash; it depends on your pet.</p>"),
+    "Either can be a good choice &mdash; it depends on your pet. Humidity drives " +
+    "<a href=\"/pet-health-pattaya/skin-and-ear-problems.html\">skin and ear problems</a> " +
+    "here &mdash; a groomer who spots early signs is worth keeping.</p>"),
 
   boarding: S(
     "<h2>How to choose boarding in Pattaya</h2>" +
@@ -131,7 +133,8 @@ const HUB_GUIDE = {
     "</ul>" +
     "<p>Starting early helps &mdash; gentle, positive work with a " +
     "<a href=\"/dogs/puppy-care-pattaya.html\">puppy</a> prevents many problems " +
-    "before they begin.</p>"),
+    "before they begin. For walking safely around Pattaya&rsquo;s street dogs, see " +
+    "<a href=\"/pet-emergency/street-dog-encounters.html\">street-dog encounters</a>.</p>"),
 
   "mobile-vets": S(
     "<h2>When a mobile vet makes sense in Pattaya</h2>" +
@@ -183,7 +186,9 @@ const HUB_GUIDE = {
     "<a href=\"/take-pet-out-of-thailand/\">taking one out</a> walk through the " +
     "whole process. For airline rules, see " +
     "<a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline pet " +
-    "policies</a>.</p>")
+    "policies</a>, and for snub-nosed breeds and quarantine on arrival see " +
+    "<a href=\"/bring-pet-to-thailand/snub-nosed-breeds-flying.html\">snub-nosed breeds &amp; flying</a> " +
+    "and <a href=\"/bring-pet-to-thailand/thailand-pet-quarantine.html\">pet quarantine in Thailand</a>.</p>")
 
 };
 

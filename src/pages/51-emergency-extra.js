@@ -81,6 +81,11 @@ pages.push(hazard({
      "<p>Only if you can clearly and easily see it at the front of the mouth. Never push fingers blindly down the throat &mdash; you can lodge the object deeper or be bitten. If your pet cannot breathe, phone a 24-hour vet immediately and follow their guidance while you get there.</p>"],
     ["How can I prevent choking?",
      "<p>Use toys and balls too big to lodge in the throat, supervise all chews, and keep bones, rawhide pieces, corn cobs, fruit stones and small objects out of reach. Size every chew and toy to your pet.</p>"]
+  ],
+  related: [
+    { name: "Poisoning hazards", path: "/pet-emergency/poisoning.html", desc: "Swallowed toxins and objects." },
+    { name: "Pet first aid", path: "/pet-emergency/pet-first-aid.html", desc: "The calm basics before you reach a vet." },
+    { name: "Road accidents", path: "/pet-emergency/road-accident.html", desc: "Moving an injured pet safely." }
   ]
 }));
 

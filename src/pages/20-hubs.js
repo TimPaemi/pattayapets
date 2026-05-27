@@ -152,6 +152,15 @@ pages.push({
     card("/mobile-vets/", "At home", "Mobile & home-visit vets",
       "Vets who come to you &mdash; useful for nervous pets and multi-cat homes.",
       "View mobile vets") +
+    card("/bring-pet-to-thailand/snub-nosed-breeds-flying.html", "Import", "Snub-nosed breeds & flying",
+      "Why flat-faced breeds need extra care, and how airlines restrict them.",
+      "Open the guide") +
+    card("/bring-pet-to-thailand/thailand-pet-quarantine.html", "Import", "Pet quarantine in Thailand",
+      "What really happens at the Animal Quarantine Station on arrival.",
+      "Open the guide") +
+    card("/bring-pet-to-thailand/u-tapao-airport-pets.html", "Import", "U-Tapao or Bangkok?",
+      "Which airport to fly your pet into, and how to reach Pattaya.",
+      "Open the guide") +
     "</div>" +
     '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +
     "Our guides are not veterinary advice. Import and export rules change &mdash; " +

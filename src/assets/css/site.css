@@ -59,6 +59,7 @@ a.card:hover .card-meta{color:var(--banyan-dk)}
 .recent-item:hover{border-color:var(--banyan);box-shadow:0 2px 8px rgba(27,90,76,.08)}
 .recent-date{font-size:.82rem;color:var(--sage)}
 .recent-title{font-weight:500;color:var(--forest);line-height:1.35}
+.recent-desc{font-size:.85rem;color:var(--sage);line-height:1.4}
 .recent-kind{font-size:.82rem;color:var(--banyan)}
 .card-icon{width:48px;height:48px;padding:11px;margin-bottom:17px;color:var(--banyan);
 background:var(--banyan-tint);border-radius:13px}
