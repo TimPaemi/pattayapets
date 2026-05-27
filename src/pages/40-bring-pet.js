@@ -535,6 +535,30 @@ const IMP_STEPS =
   "<a href=\"/bring-pet-to-thailand/health-certificate.html\">health certificate</a> and " +
   "<a href=\"/bring-pet-to-thailand/import-permit-thailand-dld.html\">DLD import permit</a>";
 
+const EXPORT_PAIR = {
+  "from-uk": { slug: "to-uk", label: "To the UK (export)" },
+  "from-usa": { slug: "to-usa", label: "To the USA (export)" },
+  "from-australia": { slug: "to-australia", label: "To Australia (export)" }
+};
+
+const COUNTRY_RELATED = [
+  { name: "The full process", path: "/bring-pet-to-thailand/", desc: "Every step, in order." },
+  { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html", desc: "Cabin, checked baggage or cargo, and travel crates." },
+  { name: "Arriving in Thailand", path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html", desc: "The quarantine-station check on landing." },
+  { name: "What it costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html", desc: "Budget for the whole move." },
+  { name: "Rabies & titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why the titer test matters for the return trip." },
+  { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "The reverse process, for later." }
+];
+
+function countryRelated(slug) {
+  var pair = EXPORT_PAIR[slug];
+  if (!pair) return COUNTRY_RELATED;
+  return [
+    { name: pair.label, path: "/take-pet-out-of-thailand/" + pair.slug + ".html",
+      desc: "The return journey and why it is harder." }
+  ].concat(COUNTRY_RELATED);
+}
+
 function countryPage(o) {
   var sections = (o.sections || []).slice();
   sections.push({ h: "Official sources", html: OFFICIAL });
@@ -550,14 +574,7 @@ function countryPage(o) {
     verify: VERIFY,
     sections: sections,
     faqs: o.faqs,
-    related: [
-      { name: "The full process", path: "/bring-pet-to-thailand/", desc: "Every step, in order." },
-      { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html", desc: "Cabin, checked baggage or cargo, and travel crates." },
-      { name: "Arriving in Thailand", path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html", desc: "The quarantine-station check on landing." },
-      { name: "What it costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html", desc: "Budget for the whole move." },
-      { name: "Rabies & titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why the titer test matters for the return trip." },
-      { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "The reverse process, for later." }
-    ]
+    related: o.related || countryRelated(o.slug)
   });
 }
 

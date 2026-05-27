@@ -306,7 +306,10 @@ async function build() {
     "/mobile-vets/": "home visit vet mobile house call",
     "/pet-health-pattaya/spaying-and-neutering.html": "neuter spay sterilisation street animals",
     "/bring-pet-to-thailand/from-uk.html": "import pet UK DEFRA titer Thailand",
-    "/take-pet-out-of-thailand/to-uk.html": "export pet UK APHA tapeworm Thailand"
+    "/take-pet-out-of-thailand/to-uk.html": "export pet UK APHA tapeworm Thailand",
+    "/owning-a-pet-in-pattaya/getting-to-the-vet.html": "taxi transport vet no car Grab Bolt",
+    "/pet-emergency/pet-first-aid.html": "first aid injured pet calm carrier",
+    "/start-here.html": "new pet owner Pattaya orientation guide"
   };
 
   const searchIndex = indexable.map(function (p) {

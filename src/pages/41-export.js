@@ -43,6 +43,30 @@ const THAI_SIDE =
   "&mdash; the DLD health certificate and export permit &mdash; which your pet must " +
   "clear on the way out. The two sets of paperwork have to agree.</p>";
 
+const IMPORT_PAIR = {
+  "to-uk": { slug: "from-uk", label: "From the UK (import)" },
+  "to-usa": { slug: "from-usa", label: "From the USA (import)" },
+  "to-australia": { slug: "from-australia", label: "From Australia (import)" },
+  "to-eu": { slug: "from-germany", label: "From Germany (import)" }
+};
+
+const EXP_RELATED = [
+  { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
+  { name: "DLD export permit", path: "/take-pet-out-of-thailand/export-permit-thailand-dld.html", desc: "The permit you apply for before departure." },
+  { name: "What export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html", desc: "Budgeting the Thai side and the flight." },
+  { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." },
+  { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage export." }
+];
+
+function expCountryRelated(slug) {
+  var pair = IMPORT_PAIR[slug];
+  if (!pair) return EXP_RELATED;
+  return [
+    { name: pair.label, path: "/bring-pet-to-thailand/" + pair.slug + ".html",
+      desc: "The easier direction, and why the return is harder." }
+  ].concat(EXP_RELATED);
+}
+
 const pages = [];
 
 pages.push(hub({
@@ -124,13 +148,7 @@ function exp(o) {
     eyebrow: "Taking a pet out of Thailand",
     h1: o.h1, lede: o.lede, verify: VERIFY,
     sections: sections, faqs: o.faqs,
-    related: o.related || [
-      { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
-      { name: "DLD export permit", path: "/take-pet-out-of-thailand/export-permit-thailand-dld.html", desc: "The permit you apply for before departure." },
-      { name: "What export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html", desc: "Budgeting the Thai side and the flight." },
-      { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." },
-      { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage export." }
-    ]
+    related: o.related || expCountryRelated(o.slug)
   });
 }
 
@@ -341,9 +359,9 @@ pages.push(exp({
     { h: "The Thai side and your timeline", html: THAI_SIDE }
   ],
   related: [
-    { name: "From the UK (import)", path: "/bring-pet-to-thailand/from-uk.html", desc: "The easier direction, and why the return is harder." },
     { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
     { name: "What export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html", desc: "Budgeting the Thai side and the flight." },
+    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage export." },
     { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." }
   ],
   faqs: [
@@ -382,9 +400,9 @@ pages.push(exp({
     { h: "The Thai side and your timeline", html: THAI_SIDE }
   ],
   related: [
-    { name: "From the USA (import)", path: "/bring-pet-to-thailand/from-usa.html", desc: "USDA endorsement and CDC rules for the return trip." },
     { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
     { name: "What export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html", desc: "Budgeting the Thai side and the flight." },
+    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who manage export." },
     { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." }
   ],
   faqs: [
@@ -473,10 +491,10 @@ pages.push(exp({
     { h: "The Thai side and your timeline", html: THAI_SIDE }
   ],
   related: [
-    { name: "From Australia (import)", path: "/bring-pet-to-thailand/from-australia.html", desc: "The easier direction, and why the return is harder." },
     { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
     { name: "What export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html", desc: "Budgeting the Thai side and the flight." },
-    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Essential for this route." }
+    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Essential for this route." },
+    { name: "Rabies titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why timing it early matters so much." }
   ],
   faqs: [
     ["Can I fly my pet directly from Thailand to Australia?",

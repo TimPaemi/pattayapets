@@ -33,14 +33,14 @@ pages.push(hub({
     "<p>Go straight to a 24-hour animal hospital &mdash; do not wait for normal " +
     "opening hours. See <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">" +
     "24-hour vets in Pattaya</a> for clinics open around the clock, with " +
-    "addresses and phone numbers. Save your nearest one in your phone today, " +
-    "before you ever need it.</p></div>" +
+    "addresses and contact details. Save your nearest clinic&rsquo;s contact " +
+    "today, before you ever need it.</p></div>" +
     '<div class="prose"><p>' + NOTVET + "</p></div>",
   groups: [
     {
       title: "When it is an emergency",
       cards: [
-        { tag: "Start here", name: "24-hour vets in Pattaya", desc: "Animal hospitals open around the clock — addresses and numbers.", path: "/pet-emergency/24-hour-vets-pattaya.html" },
+        { tag: "Start here", name: "24-hour vets in Pattaya", desc: "Animal hospitals open around the clock — addresses and contact details.", path: "/pet-emergency/24-hour-vets-pattaya.html" },
         { tag: "Be ready", name: "Pet first-aid orientation", desc: "Staying calm, moving an injured pet safely, and what not to do.", path: "/pet-emergency/pet-first-aid.html" }
       ]
     },
@@ -132,7 +132,7 @@ pages.push(article({
     ["Should I call before going?",
      "<p>If you can do it without delaying, yes — a quick call lets the clinic prepare and confirm a vet is on duty. But never let making a call hold you up when minutes matter.</p>"],
     ["Are these clinics confirmed as 24-hour by PattayaPets?",
-     "<p>They are listed as 24-hour based on public information. PattayaPets has not yet completed anonymous visits, and hours can change — please confirm by phone where possible.</p>"]
+     "<p>They are listed as 24-hour based on public information. PattayaPets has not yet completed anonymous visits, and hours can change — check the clinic listing for current contact details before you travel.</p>"]
   ],
   related: [
     { name: "Pet first-aid orientation", path: "/pet-emergency/pet-first-aid.html", desc: "Staying calm and moving a hurt pet safely." },

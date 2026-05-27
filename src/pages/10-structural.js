@@ -53,7 +53,7 @@ pages.push({
     "bleeding heavily, or has a suspected poisoning or heatstroke, go straight to " +
     "a 24-hour animal hospital. Do not wait. See our list of " +
     '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in Pattaya</a> ' +
-    "for addresses and phone numbers.</p></div>" +
+    "for addresses and contact details.</p></div>" +
     "<h2>1. Know where your nearest vet is &mdash; before you need one</h2>" +
     "<p>The single most useful thing you can do as a new pet owner here is to know, " +
     "in advance, which clinic you would go to. Browse the " +

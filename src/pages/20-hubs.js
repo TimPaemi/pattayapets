@@ -123,7 +123,7 @@ pages.push({
       "24-hour vets, first-aid steps, heatstroke, ticks, snakes and street-dog " +
       "encounters.", "Open the guide") +
     card("/pet-emergency/24-hour-vets-pattaya.html", "Urgent", "24-hour vets in Pattaya",
-      "Animal hospitals open around the clock &mdash; addresses and phone numbers.",
+      "Animal hospitals open around the clock &mdash; addresses and contact details.",
       "View the list") +
     card("/owning-a-pet-in-pattaya/", "Day to day", "Owning a pet in Pattaya",
       "Costs, hot-climate care, pet-friendly housing and where to walk your dog.",
