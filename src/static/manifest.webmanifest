@@ -12,5 +12,28 @@
     { "src": "/assets/img/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
     { "src": "/assets/img/icon-192.png", "sizes": "192x192", "type": "image/png" },
     { "src": "/assets/img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "24-hour vets",
+      "short_name": "Emergency",
+      "description": "Animal hospitals open around the clock in Pattaya",
+      "url": "/pet-emergency/24-hour-vets-pattaya.html",
+      "icons": [{ "src": "/assets/img/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Search",
+      "short_name": "Search",
+      "description": "Search the directory and guides",
+      "url": "/search.html",
+      "icons": [{ "src": "/assets/img/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Directory",
+      "short_name": "Directory",
+      "description": "Browse pet businesses in Pattaya",
+      "url": "/directory.html",
+      "icons": [{ "src": "/assets/img/icon-192.png", "sizes": "192x192" }]
+    }
   ]
 }

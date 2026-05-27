@@ -161,6 +161,8 @@ function bizSchema(b) {
 
 const pages = [];
 
+const FACTS_UPDATED = "2026-05-27";
+
 /* ---- business listing pages ---- */
 BUSINESSES.forEach(function (b) {
   var cat = CATEGORIES[b.category];
@@ -201,7 +203,7 @@ BUSINESSES.forEach(function (b) {
     "This listing describes a business, not medical quality. Always consult a " +
     "qualified veterinarian.</div>" +
     '<p class="updated">' + (b.reviewed ? "Reviewed " + fmtDate(b.reviewed) :
-      "Facts compiled 27 May 2026") + "</p>" +
+      "Facts compiled " + fmtDate(FACTS_UPDATED)) + "</p>" +
     "</div>" +
     '<aside class="sidebar"><div class="card"><div class="ch">More ' + esc(cat.name.toLowerCase()) +
     "</div><ul class=\"toc\">" +

@@ -45,6 +45,12 @@ pages.push(hub({
         { name: "Dog-friendly condos", desc: "Renting with a dog in Pattaya — the rules, and how to find a pet-friendly building.", path: "/dog-friendly-pattaya/condos.html" }
       ]
     }
+  ],
+  related: [
+    { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Day-to-day life, costs and housing with a dog." },
+    { name: "Dog registration in Thailand", path: "/owning-a-pet-in-pattaya/dog-registration-thailand.html", desc: "The rules for keeping a dog legally." },
+    { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "What to do when walking your dog." },
+    { name: "The dog owner&rsquo;s hub", path: "/dogs/", desc: "Dog-specific care, training and health guides." }
   ]
 }));
 
@@ -77,7 +83,8 @@ pages.push(df({
       "<strong>Dongtan</strong> end, is where you will most often see residents " +
       "walking dogs &mdash; particularly in the cooler early-morning and " +
       "after-sunset hours. It is a relaxed, local-feeling stretch well suited to " +
-      "a steady walk.</p>" +
+      "a steady walk. See also pet services in " +
+      "<a href=\"/area/jomtien.html\">Jomtien</a>.</p>" +
       "<p>Beach access for dogs is not formally signposted everywhere, and " +
       "attitudes vary by stretch and by time of day. The busy, central tourist " +
       "sections of Pattaya Beach are far less suitable than the quieter ends. " +
@@ -119,9 +126,11 @@ pages.push(df({
   sections: [
     { h: "Where to look", html:
       "<p>Pet-friendly cafes cluster where there is room for outdoor seating: " +
-      "the East Pattaya and Jomtien sides have a number of garden-style and " +
+      "the East Pattaya and " +
+      "<a href=\"/area/jomtien.html\">Jomtien</a> sides have a number of garden-style and " +
       "open-air cafes that welcome dogs, some even keeping a water bowl on hand. " +
-      "Cafes in tight indoor units in the city centre are less likely to.</p>" +
+      "Cafes in tight indoor units in " +
+      "<a href=\"/area/central-pattaya.html\">central Pattaya</a> are less likely to.</p>" +
       "<p>Because cafes open, close and change policy quickly, the reliable " +
       "approach is not a fixed list but a habit: look for outdoor or garden " +
       "seating, and simply ask. A polite &lsquo;is it okay to bring my dog?&rsquo; " +
@@ -160,8 +169,8 @@ pages.push(df({
     { h: "Where it works", html:
       "<p>The pattern is the same as for cafes: <strong>outdoor seating</strong> " +
       "is the key. Beachfront restaurants, garden restaurants and the more " +
-      "relaxed bar-and-grill style places &mdash; particularly around Jomtien " +
-      "and East Pattaya &mdash; are the most likely to welcome a dog. " +
+      "relaxed bar-and-grill style places &mdash; particularly around " +
+      "<a href=\"/area/jomtien.html\">Jomtien</a> and East Pattaya &mdash; are the most likely to welcome a dog. " +
       "Air-conditioned, formal indoor dining rooms generally will not.</p>" +
       "<p>One example often mentioned as dog-friendly is The Dog House Bar &amp; " +
       "Grill at Jomtien Beach &mdash; as ever, confirm the current policy " +
@@ -173,7 +182,11 @@ pages.push(df({
       "of staff and other diners.</li>" +
       "<li>Feed your dog before you go so it is settled, not begging.</li>" +
       "<li>Keep it on a short lead and bring its own water.</li>" +
-      "<li>Choose quieter times while your dog is still learning.</li></ul>" }
+      "<li>Choose quieter times while your dog is still learning.</li></ul>" },
+    { h: "Help us build the list", html:
+      "<p>PattayaPets adds restaurants here only once we are confident they " +
+      "genuinely welcome dogs &mdash; not copied from old lists. If you have a " +
+      "favourite outdoor spot, <a href=\"/contact.html\">send us a tip</a>.</p>" }
   ],
   faqs: [
     ["Can I take my dog to a beachfront restaurant in Pattaya?",
@@ -198,7 +211,8 @@ pages.push(df({
       "to resort-style properties &mdash; the Jomtien and Dongtan side, with its " +
       "more residential feel, has long been popular with pet owners. Rabbit " +
       "Resort on Dongtan Beach, for instance, is frequently described as " +
-      "pet-friendly. Listings change, so treat any name as a starting point and " +
+      "pet-friendly. See also " +
+      "<a href=\"/area/jomtien.html\">pet services in Jomtien</a>. Listings change, so treat any name as a starting point and " +
       "confirm directly.</p>" },
     { h: "Confirm before you book", html:
       "<p>&lsquo;Pet friendly&rsquo; on a booking site is not a contract. Before " +
@@ -292,7 +306,8 @@ pages.push(df({
       "<li><strong>Green and open spaces</strong> &mdash; Pattaya has parks and " +
       "open areas; check whether dogs are permitted and keep yours leashed.</li>" +
       "<li><strong>Pratumnak hill</strong> has quieter, leafier roads than the " +
-      "city core.</li></ul>" },
+      "city core &mdash; see " +
+      "<a href=\"/area/pratumnak.html\">pet services in Pratumnak</a>.</li></ul>" },
     { h: "Walk smart in the climate", html:
       "<p>Whatever route you choose, the climate rules apply: walk early or " +
       "late, avoid hot pavement, carry water, and keep it shorter on the " +

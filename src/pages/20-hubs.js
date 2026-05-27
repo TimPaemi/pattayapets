@@ -97,7 +97,7 @@ pages.push({
     "Plain-English guides for pet owners in Pattaya: bringing a pet to Thailand, taking one out, dog-friendly places, pet emergencies, costs and adoption.",
   crumb: "Guides",
   breadcrumbs: [],
-  updated: "2026-05-21",
+  updated: "2026-05-27",
   body:
     '<section class="section"><div class="container">' +
     '<div class="section-head"><p class="eyebrow">Guides &amp; resources</p>' +

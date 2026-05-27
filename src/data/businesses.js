@@ -271,6 +271,19 @@ const BUSINESSES = [
       "PetSmart chain."
   },
   {
+    slug: "tong-ma-aquarium-and-pets-shop",
+    name: "Tong-ma Aquarium & Pets Shop",
+    category: "pet-shops", areas: ["jomtien"], type: "Pet shop & aquarium", c24: false,
+    address: "229/70 Thep Prasit Road, Pattaya City, Bang Lamung, Chon Buri 20150",
+    phone: "062 881 4452", tel: "+66628814452",
+    website: null, hours: null,
+    languages: "Thai; confirm English-language support when booking",
+    services: ["Pet food", "Aquarium fish & supplies", "Accessories"],
+    summary: "A pet and aquarium shop on Thep Prasit Road on the Jomtien side of " +
+      "Pattaya, stocking fish, pond supplies and everyday pet accessories alongside " +
+      "food. Confirm current hours before visiting."
+  },
+  {
     slug: "peturday-pattaya",
     name: "Peturday Pattaya",
     category: "pet-shops", areas: ["pratumnak"], type: "Pet shop", c24: false,

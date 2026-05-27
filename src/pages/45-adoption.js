@@ -64,6 +64,12 @@ pages.push(hub({
         { name: "How to help street animals", desc: "Donating, volunteering, and what to do for an injured animal.", path: "/adopt-a-pet-pattaya/how-to-help.html" }
       ]
     }
+  ],
+  related: [
+    { name: "Fostering a pet", path: "/adopt-a-pet-pattaya/fostering.html", desc: "Temporary homes save lives between rescue and adoption." },
+    { name: "How to help street animals", path: "/adopt-a-pet-pattaya/how-to-help.html", desc: "Donate, volunteer and what to do for an injured animal." },
+    { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Essential after you adopt." },
+    { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "If you might fly an adopted pet abroad." }
   ]
 }));
 
@@ -210,7 +216,9 @@ SHELTERS.forEach(function (s) {
     ],
     related: [
       { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "All the shelters and how adoption works." },
-      { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Preparing for life with your new pet." },
+      { name: "Fostering a pet", path: "/adopt-a-pet-pattaya/fostering.html", desc: "Give a rescue animal a temporary home." },
+      { name: "How to help street animals", path: "/adopt-a-pet-pattaya/how-to-help.html", desc: "Volunteer, donate and emergency help." },
+      { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Do this soon after adoption." },
       { name: "Vets in Pattaya", path: "/vets/", desc: "Line up a vet for your adopted pet." }
     ]
   }));

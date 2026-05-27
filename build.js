@@ -28,7 +28,8 @@ const SECTION_LABELS = {
   "take-pet-out-of-thailand": "Taking a pet out of Thailand",
   "dog-friendly-pattaya": "Dog-friendly Pattaya", "pet-emergency": "Pet emergency",
   "owning-a-pet-in-pattaya": "Owning a pet in Pattaya",
-  "adopt-a-pet-pattaya": "Adoption & rescue", cats: "Cats", dogs: "Dogs"
+  "adopt-a-pet-pattaya": "Adoption & rescue", cats: "Cats", dogs: "Dogs",
+  "pet-health-pattaya": "Pet health in Pattaya"
 };
 
 const HTML_MIN = {
@@ -217,12 +218,28 @@ async function build() {
     }).join("\n") + "\n";
   write("llms.txt", llms);
 
+  const { BUSINESSES, AREAS } = require(path.join(SRC, "data/businesses.js"));
+  const bizByPath = {};
+  BUSINESSES.forEach(function (b) {
+    bizByPath["/" + b.category + "/" + b.slug + ".html"] = b;
+  });
+
   const searchIndex = indexable.map(function (p) {
+    var d = p.description || "";
+    var b = bizByPath[p.path];
+    if (b) {
+      if (b.address) d += " " + b.address;
+      if (b.phone) d += " " + b.phone;
+      if (b.services && b.services.length) d += " " + b.services.join(" ");
+      b.areas.forEach(function (ak) {
+        if (AREAS[ak]) d += " " + AREAS[ak].name;
+      });
+    }
     return {
       t: p.crumb || p.shortTitle || p.title,
       u: p.path,
       k: kindOf(p.path),
-      d: p.description || ""
+      d: d.replace(/\s+/g, " ").trim()
     };
   });
   write("search-index.json", JSON.stringify(searchIndex));
@@ -231,7 +248,7 @@ async function build() {
   const version = crypto.createHash("sha1")
     .update(cssMin + jsMin + criticalMin).digest("hex").slice(0, 12);
   const precache = [
-    "/", "/offline.html", "/assets/css/site.css", "/assets/js/site.js",
+    "/", "/offline.html", "/search-index.json", "/assets/css/site.css", "/assets/js/site.js",
     "/assets/img/favicon.svg", "/manifest.webmanifest",
     "/assets/fonts/hanken-400.woff2", "/assets/fonts/hanken-500.woff2",
     "/assets/fonts/hanken-700.woff2", "/assets/fonts/bricolage-600.woff2",

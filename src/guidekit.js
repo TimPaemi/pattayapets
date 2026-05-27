@@ -2,6 +2,8 @@
 /* Shared rendering kit for guide pages. Produces Article + FAQPage schema. */
 
 const SITE = "https://pattayapets.com";
+const DEFAULT_UPDATED = "2026-05-27";
+const DEFAULT_UPDATED_LABEL = "27 May 2026";
 
 const DISC =
   '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +
@@ -38,16 +40,42 @@ function faqSchema(faqs) {
 }
 
 function articleSchema(o, url) {
+  var updated = o.updated || DEFAULT_UPDATED;
   return {
     "@type": "Article",
     headline: stripTags(o.h1),
     description: o.desc,
     datePublished: o.published || "2026-05-21",
-    dateModified: o.updated || "2026-05-21",
+    dateModified: updated,
     author: { "@type": "Organization", name: "PattayaPets", url: SITE + "/" },
     publisher: { "@id": SITE + "/#org" },
     mainEntityOfPage: url,
     inLanguage: "en"
+  };
+}
+
+function hubCollectionSchema(o) {
+  var items = [];
+  (o.groups || []).forEach(function (g) {
+    (g.cards || []).forEach(function (c) {
+      items.push({
+        "@type": "ListItem",
+        position: items.length + 1,
+        url: SITE + c.path,
+        name: stripTags(c.name)
+      });
+    });
+  });
+  if (!items.length) return null;
+  return {
+    "@type": "CollectionPage",
+    name: stripTags(o.h1),
+    description: o.desc,
+    url: SITE + o.path,
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: items
+    }
   };
 }
 
@@ -59,7 +87,7 @@ function article(o) {
   let prose =
     '<p class="eyebrow">' + o.eyebrow + "</p><h1>" + o.h1 + "</h1>" +
     '<p class="lede">' + o.lede + "</p>" +
-    '<p class="updated">Last updated ' + (o.updatedLabel || "21 May 2026") + "</p>";
+    '<p class="updated">Last updated ' + (o.updatedLabel || DEFAULT_UPDATED_LABEL) + "</p>";
   if (o.verify) {
     prose += '<div class="callout callout-tip"><div class="ch">Rules change — verify before you act</div>' +
       "<p>" + o.verify + "</p></div>";
@@ -92,7 +120,7 @@ function article(o) {
     description: o.desc,
     crumb: o.crumb || stripTags(o.h1),
     breadcrumbs: o.breadcrumbs || [],
-    updated: o.updated || "2026-05-21",
+    updated: o.updated || DEFAULT_UPDATED,
     schema: schema,
     body: body
   };
@@ -104,7 +132,8 @@ function hub(o) {
     '<section class="section"><div class="container">' +
     '<p class="eyebrow">' + o.eyebrow + "</p>" +
     "<h1>" + o.h1 + "</h1>" +
-    '<p class="lede">' + o.lede + "</p>";
+    '<p class="lede">' + o.lede + "</p>" +
+    '<p class="updated">Last updated ' + (o.updatedLabel || DEFAULT_UPDATED_LABEL) + "</p>";
   if (o.intro) body += '<div class="prose" style="margin-top:1.2rem">' + o.intro + "</div>";
   body += "</div></section>";
 
@@ -123,11 +152,24 @@ function hub(o) {
       "</div></div></section>";
   });
 
+  if (o.related && o.related.length) {
+    body += '<section class="section"><div class="container">' +
+      '<div class="related"><h2>Keep reading</h2><div class="grid grid-3">' +
+      o.related.map(function (r) {
+        return '<a class="card" href="' + r.path + '"><h3>' + r.name + "</h3>" +
+          "<p>" + (r.desc || "") + '</p><span class="card-meta">Read &rarr;</span></a>';
+      }).join("") + "</div></div></div></section>";
+  }
+
   body += '<section class="section"><div class="container">' +
     '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +
     "PattayaPets is not a veterinary practice and does not give veterinary advice. " +
     "Import and export rules change &mdash; always verify with the official source. " +
     "Always consult a qualified veterinarian.</div></div></section>";
+
+  var schema = o.schema ? o.schema.slice() : [];
+  var coll = hubCollectionSchema(o);
+  if (coll) schema.push(coll);
 
   return {
     path: o.path,
@@ -136,8 +178,8 @@ function hub(o) {
     description: o.desc,
     crumb: o.crumb || o.h1,
     breadcrumbs: o.breadcrumbs || [],
-    updated: o.updated || "2026-05-21",
-    schema: o.schema || [],
+    updated: o.updated || DEFAULT_UPDATED,
+    schema: schema,
     body: body
   };
 }

@@ -3,7 +3,7 @@
 Operator guide: which listings to visit first for maximum trust and SEO impact.
 Not deployed. Last updated: May 2026.
 
-All 28 current listings show **not yet reviewed**. This order balances homepage
+All 29 current listings show **not yet reviewed**. This order balances homepage
 visibility, expat search demand, and visit practicality (one trip, several wins).
 
 ---
