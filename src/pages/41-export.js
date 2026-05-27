@@ -82,7 +82,8 @@ pages.push(hub({
     "<p>The single biggest mistake is starting late. If you might leave Thailand " +
     "with your pet, get the <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">" +
     "rabies titer test</a> done early &mdash; ideally you already did it before " +
-    "arriving.</p>" +
+    "arriving. Many owners use a " +
+    '<a href="/pet-relocation/">pet relocation agent</a> to keep the paperwork aligned.</p>' +
     '<div class="callout callout-tip"><div class="ch">Rules change — verify before you act</div>' +
     "<p>" + VERIFY + "</p>" + OFFICIAL + "</div>",
   groups: [

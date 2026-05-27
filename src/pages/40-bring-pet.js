@@ -112,7 +112,7 @@ pages.push(hub({
     { name: "U-Tapao or Bangkok?", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html", desc: "Which airport to fly into for Pattaya." },
     { name: "What import costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html", desc: "Budgeting the move." },
     { name: "DLD import permit", path: "/bring-pet-to-thailand/import-permit-thailand-dld.html", desc: "The Thai-side permit you apply for." },
-    { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "The reverse process, for when you leave." }
+    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side when you leave." }
   ]
 }));
 
@@ -242,7 +242,7 @@ pages.push(importStep({
     { name: "Health certificate", path: "/bring-pet-to-thailand/health-certificate.html", desc: "The document that pulls it all together." },
     { name: "Microchip requirements", path: "/bring-pet-to-thailand/microchip-requirements.html", desc: "Step one — which has to come first." },
     { name: "Pet quarantine in Thailand", path: "/bring-pet-to-thailand/thailand-pet-quarantine.html", desc: "What goes wrong when paperwork slips." },
-    { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "Why the titer test matters for the return." }
+    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "Why the titer test matters for the return." }
   ]
 }));
 
@@ -361,7 +361,14 @@ pages.push(importStep({
       "<p>Keep printed copies of the permit and every supporting document for " +
       "the airport. On arrival, the AQS inspects your pet and issues the import " +
       "licence; the inspection fee is currently <strong>500&nbsp;baht</strong> " +
-      "(confirm the current amount with the AQS).</p>" }
+      "(confirm the current amount with the AQS).</p>" },
+    { h: "What comes next", html:
+      "<p>With the permit in hand, book the flight under " +
+      '<a href="/bring-pet-to-thailand/airline-pet-policies.html">airline pet policies</a>, ' +
+      "then read " +
+      '<a href="/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html">what happens on arrival</a>. ' +
+      "Many owners use a " +
+      '<a href="/pet-relocation/">pet relocation agent</a> to keep the timing aligned.</p>' }
   ],
   faqs: [
     ["When should I apply for the import permit?",
@@ -585,7 +592,7 @@ const COUNTRY_RELATED = [
   { name: "Arriving in Thailand", path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html", desc: "The quarantine-station check on landing." },
   { name: "What it costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html", desc: "Budget for the whole move." },
   { name: "Rabies & titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "Why the titer test matters for the return trip." },
-  { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "The reverse process, for later." }
+  { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side when you leave." }
 ];
 
 function countryRelated(slug) {

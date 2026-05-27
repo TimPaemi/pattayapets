@@ -37,8 +37,11 @@ pages.push(hub({
     "<h2>If you cannot adopt</h2>" +
     "<p>Fostering, volunteering, donating, or sponsoring an animal all genuinely " +
     "help &mdash; and if you are leaving Thailand, some organisations can " +
-    "support adopters in flying an animal abroad. See also our guide to " +
-    "<a href=\"/take-pet-out-of-thailand/\">taking a pet out of Thailand</a>.</p>" +
+    "support adopters in flying an animal abroad. See " +
+    '<a href="/adopt-a-pet-pattaya/fostering.html">fostering</a>, ' +
+    '<a href="/adopt-a-pet-pattaya/how-to-help.html">how to help street animals</a>, ' +
+    "and our guide to " +
+    '<a href="/take-pet-out-of-thailand/export-process.html">exporting a pet from Thailand</a>.</p>' +
     '<div class="callout callout-note"><p>PattayaPets lists these organisations ' +
     "as a public-interest service. Details such as locations, opening times and " +
     "current animals change &mdash; always confirm directly with the " +
@@ -239,6 +242,19 @@ const SHELTERS = [
   }
 ];
 
+const SHELTER_HELP =
+  "<p>If you cannot adopt, " +
+  '<a href="/adopt-a-pet-pattaya/fostering.html">fostering</a>, ' +
+  '<a href="/adopt-a-pet-pattaya/how-to-help.html">volunteering and donating</a> ' +
+  "all make a real difference &mdash; shelters run on exactly that support. " +
+  "After you adopt, see " +
+  '<a href="/owning-a-pet-in-pattaya/microchipping-your-pet.html">microchipping</a>, ' +
+  '<a href="/cats/cat-vaccinations-thailand.html">cat vaccinations</a> or ' +
+  '<a href="/dogs/dog-vaccinations-thailand.html">dog vaccinations</a>, and ' +
+  '<a href="/pet-health-pattaya/spaying-and-neutering.html">spaying &amp; neutering</a>. ' +
+  "Flying abroad later? Read the " +
+  '<a href="/take-pet-out-of-thailand/export-process.html">export process</a>.</p>';
+
 SHELTERS.forEach(function (s) {
   var contact = "";
   if (s.address) {
@@ -278,16 +294,14 @@ SHELTERS.forEach(function (s) {
         "care change &mdash; please confirm current details directly with the " +
         "organisation.</p></div>" },
       { h: "What it does", html: s.what },
-      { h: "Adopting and helping", html: s.adopt +
-        "<p>If you cannot adopt, fostering, volunteering and donating all make a " +
-        "real difference &mdash; shelters run on exactly that support.</p>" },
+      { h: "Adopting and helping", html: s.adopt + SHELTER_HELP },
       { h: "Get in touch", html: contact }
     ],
     faqs: [
       ["Are pets from " + s.name + " vaccinated and sterilised?",
        "<p>Reputable rescues rehome animals vaccinated and sterilised, and are open about each animal's health. Confirm the specifics for any animal directly with the organisation.</p>"],
       ["I am leaving Thailand — can I adopt and take the pet with me?",
-       "<p>Often yes. Many rescues support adopters in relocating an animal abroad. Plan early and read our guide to <a href=\"/take-pet-out-of-thailand/\">taking a pet out of Thailand</a> — the rabies titer test in particular needs lead time.</p>"]
+       "<p>Often yes. Many rescues support adopters in relocating an animal abroad. Plan early and read our guide to the <a href=\"/take-pet-out-of-thailand/export-process.html\">export process</a> — the rabies titer test in particular needs lead time.</p>"]
     ],
     related: [
       { name: "Fostering a pet", path: "/adopt-a-pet-pattaya/fostering.html", desc: "Temporary homes between rescue and adoption." },
@@ -295,7 +309,7 @@ SHELTERS.forEach(function (s) {
       { name: "Dog vaccinations & parasites", path: "/dogs/dog-vaccinations-thailand.html", desc: "Routine care after you adopt." },
       { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Do this soon after adoption." },
       { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "What good rescues do before rehoming." },
-      { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "If you might fly an adopted pet abroad." }
+      { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side when you leave." }
     ]
   }));
 });

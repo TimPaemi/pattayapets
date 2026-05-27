@@ -229,7 +229,14 @@ pages.push(prosePage({
     "<h2>What we will never do</h2>" +
     "<p>No paid placements. No sponsored tags. No affiliate links. No fake reviews. " +
     "No scraping of competitor review sites. No generic stock pet clipart. The " +
-    "directory and the guides are ours, built honestly.</p>"
+    "directory and the guides are ours, built honestly.</p>" +
+    "<h2>Explore PattayaPets</h2>" +
+    "<p>Browse the <a href=\"/directory.html\">business directory</a>, the " +
+    "<a href=\"/guides.html\">guide library</a>, and the " +
+    "<a href=\"/adopt-a-pet-pattaya/\">adoption hub</a>. For moves in or out of " +
+    "Thailand, see <a href=\"/bring-pet-to-thailand/\">bringing a pet to " +
+    "Thailand</a>, the <a href=\"/take-pet-out-of-thailand/export-process.html\">" +
+    "export process</a>, and <a href=\"/pet-relocation/\">pet relocation agents</a>.</p>"
 }));
 
 /* ---------------- Contact ---------------- */

@@ -127,7 +127,8 @@ pages.push(article({
       "to <strong>say goodbye</strong> when your foster pet is adopted &mdash; the " +
       "hard part, and the whole point. You will follow the rescue&rsquo;s " +
       "guidance, and you should think about how a foster animal will fit with any " +
-      "<a href=\"/pet-health-pattaya/\">resident pets</a>. Be honest with the " +
+      "<a href=\"/dogs/\">dogs</a> or <a href=\"/cats/\">cats</a> already in your " +
+      "home. Be honest with the " +
       "rescue about what you can and cannot take on &mdash; a good organisation " +
       "wants the match to work.</p>" },
     { h: "How to start", html:
@@ -196,7 +197,8 @@ pages.push(article({
       "<p>Put your <strong>own safety first</strong> &mdash; a frightened, hurt " +
       "animal may bite or scratch, however gentle its intentions. If you can " +
       "safely contain, shade or comfort it, do; then contact a local animal " +
-      "rescue or welfare group, or a <a href=\"/vets/\">vet</a>. " +
+      "rescue or welfare group, or a <a href=\"/vets/\">vet</a>. For possible " +
+      "poisoning, see <a href=\"/pet-emergency/poisoning.html\">poisoning</a>. " +
       "<a href=\"/adopt-a-pet-pattaya/animal-army-foundation.html\">Animal Army " +
       "Foundation</a> in Na Jomtien operates a rescue ambulance for street " +
       "animals and urgent cases (085 093 5954; see also " +
@@ -384,7 +386,9 @@ pages.push(article({
       "<p>Pet-friendly hotels and resorts exist across Thailand, but many places " +
       "do not accept animals, so you must search <strong>specifically</strong> " +
       "for pet-friendly stays and <strong>confirm in writing</strong> before you " +
-      "travel. Privately rented condos and villas sometimes allow pets where " +
+      "travel. In Pattaya, see our guide to " +
+      "<a href=\"/dog-friendly-pattaya/hotels.html\">dog-friendly hotels</a>. " +
+      "Privately rented condos and villas sometimes allow pets where " +
       "hotels will not.</p>" },
     { h: "Where pets are restricted", html:
       "<p>Do not assume your pet is welcome everywhere. National parks, many " +
@@ -414,6 +418,7 @@ pages.push(article({
     { name: "Boarding & daycare", path: "/boarding/", desc: "If the pet stays behind." },
     { name: "Pet sitters & dog walkers", path: "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html", desc: "When the pet stays in Pattaya." },
     { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html", desc: "Domestic flights and crate rules." },
+    { name: "Dog-friendly hotels", path: "/dog-friendly-pattaya/hotels.html", desc: "Pet-friendly stays in Pattaya and beyond." },
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Managing the heat, anywhere in Thailand." }
   ]
 }));

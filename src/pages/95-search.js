@@ -24,6 +24,9 @@ module.exports = [{
     '<p class="notice" style="margin-top:1rem">Popular: ' +
     '<a href="/bring-pet-to-thailand/from-eu.html">Import from EU</a> &middot; ' +
     '<a href="/adopt-a-pet-pattaya/fostering.html">Fostering</a> &middot; ' +
+    '<a href="/adopt-a-pet-pattaya/how-to-help.html">How to help</a> &middot; ' +
+    '<a href="/adopt-a-pet-pattaya/animal-army-foundation.html">Animal Army</a> &middot; ' +
+    '<a href="/adopt-a-pet-pattaya/soi-dog-foundation.html">Soi Dog</a> &middot; ' +
     '<a href="/cats/indoor-vs-outdoor-cats.html">Indoor cats</a> &middot; ' +
     '<a href="/pet-emergency/beach-and-sea-hazards.html">Beach hazards</a> &middot; ' +
     '<a href="/owning-a-pet-in-pattaya/where-to-walk-your-dog.html">Where to walk</a> &middot; ' +
