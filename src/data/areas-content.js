@@ -73,7 +73,11 @@ const AREA_GUIDE = {
     "be secured before a cat is ever allowed onto one.</p>" +
     "<p>For services, Wongamat is well placed between the clinics and pet shops " +
     "of Naklua and north Pattaya, so routine vet visits and supplies are never " +
-    "far.</p>" +
+    "far. PattayaPets currently lists " +
+    '<a href="/vets/north-pattaya-animal-hospital.html">North Pattaya Animal Hospital</a> ' +
+    "for Wongamat and Naklua &mdash; for groomers, boarding and other categories, " +
+    'see the <a href="/area/wongamat.html">Wongamat area directory</a> for the ' +
+    "nearest listed options.</p>" +
     "<h3>Helpful guides for Wongamat pet owners</h3>" +
     "<ul>" +
     "<li><a href=\"/vets/north-pattaya-animal-hospital.html\">North Pattaya Animal Hospital</a></li>" +
@@ -147,7 +151,11 @@ const AREA_GUIDE = {
     "cat uses one.</p>" +
     "<p>Pratumnak's central position means vets, pet shops and emergency care " +
     "are all a short drive away &mdash; one of the reasons it is a popular " +
-    "compromise for pet owners.</p>" +
+    "compromise for pet owners. PattayaPets lists " +
+    '<a href="/pet-shops/peturday-pattaya.html">Peturday</a> and ' +
+    '<a href="/boarding/elite-dog-resort.html">Elite Dog Resort</a> on the hill; ' +
+    "for categories without a Pratumnak listing yet, see the " +
+    '<a href="/area/pratumnak.html">Pratumnak area directory</a>.</p>' +
     "<h3>Helpful guides for Pratumnak pet owners</h3>" +
     "<ul>" +
     "<li><a href=\"/vets/thonglor-pet-hospital-pattaya.html\">Thonglor Pet Hospital</a> (central, 24h)</li>" +

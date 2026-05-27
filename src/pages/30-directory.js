@@ -14,8 +14,12 @@ function bizUrl(b) { return "/" + b.category + "/" + b.slug + ".html"; }
 function areaName(k) { return AREAS[k] ? AREAS[k].name : "Pattaya"; }
 function firstSentence(t) { var m = t.match(/^.*?[.](\s|$)/); return m ? m[0].trim() : t; }
 
+const HUB_OG = {
+  vets: "/assets/img/og-vets.png",
+  "pet-relocation": "/assets/img/og-relocation.png"
+};
+
 const HUB_TITLE = {
-  vets: "Vets & animal hospitals in Pattaya",
   groomers: "Dog & cat groomers in Pattaya",
   boarding: "Pet boarding & kennels in Pattaya",
   "pet-shops": "Pet shops in Pattaya",
@@ -179,21 +183,28 @@ function catCrossSection(key) {
 }
 
 const AREA_MISSING_HINTS = {
+  wongamat: {
+    vets: "<a href=\"/vets/north-pattaya-animal-hospital.html\">North Pattaya Animal Hospital</a> " +
+      "(Naklua/Wongamat) or <a href=\"/vets/pattaya-veterinary-clinic.html\">Pattaya Veterinary Clinic</a> (Naklua)",
+    groomers: "<a href=\"/groomers/pattaya-city-pet-shop-grooming.html\">Pattaya City Grooming</a> (central) or " +
+      "the <a href=\"/groomers/\">groomers directory</a>",
+    "pet-shops": "<a href=\"/pet-shops/brand-dog-pattaya-pet-supplies.html\">Brand Dog</a> (South Pattaya) or " +
+      "<a href=\"/pet-shops/peturday-pattaya.html\">Peturday</a> (Pratumnak)",
+    boarding: "<a href=\"/boarding/elite-dog-resort.html\">Elite Dog Resort</a> (Pratumnak) or " +
+      "<a href=\"/boarding/pattaya-dog-stay.html\">Pattaya Dog Stay</a> (central)"
+  },
   pratumnak: {
     vets: "<a href=\"/vets/thonglor-pet-hospital-pattaya.html\">Thonglor Pet Hospital</a> " +
-      "(central Pattaya, 24h) or <a href=\"/vets/pattaya-veterinary-clinic.html\">Pattaya " +
-      "Veterinary Clinic</a> (Naklua)",
+      "(central Pattaya, 24h) or <a href=\"/vets/north-pattaya-animal-hospital.html\">North Pattaya Animal Hospital</a> (Naklua)",
     groomers: "<a href=\"/groomers/pattaya-city-pet-shop-grooming.html\">Pattaya City " +
       "Grooming</a> (central) or <a href=\"/groomers/woof-pattaya.html\">Woof Pattaya</a> " +
-      "(Nong Prue)"
+      "(Nong Prue)",
+    trainers: "<a href=\"/trainers/zoeta-dogsoul.html\">Zoeta Dogsoul</a> or " +
+      "<a href=\"/trainers/\">trainers directory</a>"
   },
   jomtien: {
     groomers: "<a href=\"/groomers/woof-pattaya.html\">Woof Pattaya</a> (Nong Prue) or " +
       "salons in <a href=\"/groomers/\">central Pattaya</a>"
-  },
-  wongamat: {
-    groomers: "<a href=\"/groomers/pattaya-city-pet-shop-grooming.html\">Pattaya City " +
-      "Grooming</a> or the <a href=\"/groomers/\">groomers directory</a>"
   },
   "bang-saray": {
     vets: "<a href=\"/vets/animal-army-hospital.html\">Animal Army Hospital</a> (Na Jomtien) " +
@@ -452,6 +463,8 @@ BUSINESSES.forEach(function (b) {
     "PattayaPets is not a veterinary practice and does not give veterinary advice. " +
     "This listing describes a business, not medical quality. Always consult a " +
     "qualified veterinarian.</div>" +
+    '<p class="notice" style="margin-top:1.2rem">Wrong phone, closed, or moved? ' +
+    '<a href="/corrections.html">Tell us on the corrections page</a> &mdash; we update facts when we can verify them.</p>' +
     '<p class="updated">' + (b.reviewed ? "Reviewed " + fmtDate(b.reviewed) :
       "Facts compiled " + fmtDate(FACTS_UPDATED)) + "</p>" +
     "</div>" +
@@ -550,6 +563,7 @@ Object.keys(CATEGORIES).forEach(function (key) {
     path: "/" + cat.slug + "/",
     title: HUB_TITLE[key] + " | PattayaPets",
     ogTitle: HUB_TITLE[key],
+    image: HUB_OG[key],
     description: clampDesc(cat.intro),
     crumb: cat.name,
     breadcrumbs: [{ name: "Directory", path: "/directory.html" }],

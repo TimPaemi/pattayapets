@@ -53,6 +53,9 @@ const HOME_GUIDES = [
   ["/bring-pet-to-thailand/", "Flagship guide", "Bringing a pet to Thailand",
     "DLD permit, microchip, rabies and titer test, health certificate, airlines and arrival.",
     "Read the guide"],
+  ["/bring-pet-to-thailand/checklist.html", "Import", "Import checklist",
+    "A printable step-by-step checklist for the whole move to Thailand.",
+    "Open the checklist"],
   ["/bring-pet-to-thailand/import-permit-thailand-dld.html", "Import", "DLD import permit",
     "How to apply for the Thai import permit before your pet flies in.",
     "Read the guide"],
@@ -99,12 +102,15 @@ const HOME_GUIDES = [
 
 const HOME_GUIDE_MORE =
   '<p class="guide-topics"><strong>More guides:</strong> ' +
+  '<a href="/bring-pet-to-thailand/checklist.html">Import checklist</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/microchip-requirements.html">Microchip</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">Rabies &amp; titer</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/thailand-pet-quarantine.html">Quarantine</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/snub-nosed-breeds-flying.html">Snub-nosed flying</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/from-uk.html">Import from UK</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/from-uae.html">Import from UAE</a> &middot; ' +
+  '<a href="/bring-pet-to-thailand/from-india.html">Import from India</a> &middot; ' +
+  '<a href="/bring-pet-to-thailand/from-philippines.html">Import from Philippines</a> &middot; ' +
   '<a href="/take-pet-out-of-thailand/to-uk.html">Export to UK</a> &middot; ' +
   '<a href="/take-pet-out-of-thailand/to-eu.html">Export to EU</a> &middot; ' +
   '<a href="/pet-relocation/">Relocation agents</a> &middot; ' +

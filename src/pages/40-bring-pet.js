@@ -62,6 +62,7 @@ pages.push(hub({
     {
       title: "The process, step by step",
       cards: [
+        { tag: "Start here", name: "Import checklist", desc: "A printable step-by-step checklist for the whole move.", path: "/bring-pet-to-thailand/checklist.html" },
         { tag: "Step 1", name: "Microchip", desc: "The ISO microchip your pet needs, and why it must come first.", path: "/bring-pet-to-thailand/microchip-requirements.html" },
         { tag: "Step 2", name: "Rabies & titer test", desc: "The rabies vaccination, other required jabs, and the titer test.", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html" },
         { tag: "Step 3", name: "Health certificate", desc: "The veterinary health certificate and who has to endorse it.", path: "/bring-pet-to-thailand/health-certificate.html" },
@@ -99,7 +100,9 @@ pages.push(hub({
         { name: "From France", desc: "EU export paperwork via the French veterinary services.", path: "/bring-pet-to-thailand/from-france.html" },
         { name: "From Switzerland", desc: "The EU-aligned Swiss export process via the FSVO.", path: "/bring-pet-to-thailand/from-switzerland.html" },
         { name: "From Ireland", desc: "EU export paperwork and the tapeworm rule for the return.", path: "/bring-pet-to-thailand/from-ireland.html" },
-        { name: "From New Zealand", desc: "Straightforward export; the demanding part is the return.", path: "/bring-pet-to-thailand/from-new-zealand.html" }
+        { name: "From New Zealand", desc: "Straightforward export; the demanding part is the return.", path: "/bring-pet-to-thailand/from-new-zealand.html" },
+        { name: "From India", desc: "AQCS export certificate and planning from a high-rabies origin.", path: "/bring-pet-to-thailand/from-india.html" },
+        { name: "From the Philippines", desc: "BAI export paperwork and direct flights to Thailand.", path: "/bring-pet-to-thailand/from-philippines.html" }
       ]
     },
     {
@@ -111,6 +114,7 @@ pages.push(hub({
     }
   ],
   related: [
+    { name: "Import checklist", path: "/bring-pet-to-thailand/checklist.html", desc: "Printable step-by-step checklist." },
     { name: "U-Tapao or Bangkok?", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html", desc: "Which airport to fly into for Pattaya." },
     { name: "What import costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html", desc: "Budgeting the move." },
     { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who handle the paperwork and flights." },

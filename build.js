@@ -286,6 +286,7 @@ async function build() {
 
   const GUIDE_KEYWORDS = {
     "/bring-pet-to-thailand/": "import pet thailand DLD permit microchip rabies titer health certificate",
+    "/bring-pet-to-thailand/checklist.html": "import pet thailand checklist timeline printable steps",
     "/bring-pet-to-thailand/import-permit-thailand-dld.html": "R1/1 import permit quarantine station AQS",
     "/bring-pet-to-thailand/u-tapao-airport-pets.html": "U-Tapao UTP Suvarnabhumi BKK Pattaya airport pet",
     "/bring-pet-to-thailand/snub-nosed-breeds-flying.html": "brachycephalic flat faced pug bulldog persian airline cargo",
@@ -386,6 +387,8 @@ async function build() {
     "/take-pet-out-of-thailand/to-uae.html": "export pet UAE MOCCAE Thailand",
     "/take-pet-out-of-thailand/to-singapore.html": "export pet Singapore AVS Thailand",
     "/bring-pet-to-thailand/from-russia.html": "import pet Russia Thailand",
+    "/bring-pet-to-thailand/from-india.html": "import pet India AQCS Thailand",
+    "/bring-pet-to-thailand/from-philippines.html": "import pet Philippines BAI Thailand",
     "/cats/indoor-vs-outdoor-cats.html": "indoor cat balcony outdoor street dog Pattaya",
     "/cats/getting-a-cat-in-pattaya.html": "adopt kitten street cat Pattaya",
     "/dogs/common-dog-health-issues-tropics.html": "skin ear tick disease hot humid dog",
@@ -498,6 +501,9 @@ async function build() {
     "/", "/offline.html", "/start-here.html", "/directory.html", "/guides.html",
     "/pet-emergency/", "/pet-emergency/24-hour-vets-pattaya.html",
     "/bring-pet-to-thailand/", "/take-pet-out-of-thailand/",
+    "/bring-pet-to-thailand/checklist.html",
+    "/bring-pet-to-thailand/import-permit-thailand-dld.html",
+    "/pet-health-pattaya/", "/vets/", "/adopt-a-pet-pattaya/",
     "/dog-friendly-pattaya/", "/owning-a-pet-in-pattaya/",
     "/search-index.json", "/assets/css/site.css", "/assets/js/site.js",
     "/assets/img/favicon.svg", "/assets/img/og-default.png", "/manifest.webmanifest",

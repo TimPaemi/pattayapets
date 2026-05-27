@@ -524,4 +524,78 @@ pages.push(article({
   ]
 }));
 
+/* ---------------- INDIA ---------------- */
+pages.push(country({
+  slug: "from-india", crumb: "From India",
+  title: "Bringing a pet to Thailand from India | PattayaPets",
+  desc: "Bringing a dog or cat from India to Thailand: AQCS export certificate, " +
+    "Thai import steps, and what to plan if you may leave again.",
+  h1: "Bringing a pet to Thailand from India",
+  lede: "Thailand's import rules are the same for every origin. From India, the " +
+    "distinctive part is the export health certificate issued through India's " +
+    "Animal Quarantine and Certification Services (AQCS).",
+  sections: [
+    { h: "The Indian export side", html:
+      "<p>" + STD_STEPS + "In India, the veterinary health certificate for export " +
+      "is issued and endorsed through the <strong>Animal Quarantine and Certification " +
+      "Services (AQCS)</strong>, under the Department of Animal Husbandry and " +
+      "Dairying. Procedures vary by airport and state &mdash; use an experienced " +
+      "export vet and confirm the current AQCS process for your departure city " +
+      "before you book.</p>" +
+      "<p>Direct flights from Indian cities to Bangkok are limited compared with " +
+      "routes via the Gulf or Southeast Asia hubs. That affects both airline pet " +
+      "policies and total journey time &mdash; see " +
+      "<a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline pet policies</a> " +
+      "early.</p>" },
+    { h: "If you may leave Thailand again", html:
+      "<p>India treats many countries as requiring a rabies titer test and waiting " +
+      "period for re-entry. If you might return to India with your pet, plan the " +
+      "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies titer test</a> " +
+      "before or soon after arrival in Thailand, and verify current AQCS import " +
+      "rules with plenty of lead time.</p>" }
+  ],
+  faqs: [
+    ["Does Thailand require extra steps for a pet from India?",
+     "<p>Thailand's core requirements are the same: microchip, rabies vaccination, health certificate and DLD import permit. India is not on Thailand's simplified rabies-free list, so follow the standard import route and confirm every document with the DLD before you fly.</p>"],
+    ["Which Indian authority endorses the export certificate?",
+     "<p>AQCS (Animal Quarantine and Certification Services) handles export certification for live animals leaving India. Your vet and AQCS office for your departure airport will guide the current process.</p>"]
+  ]
+}));
+
+/* ---------------- PHILIPPINES ---------------- */
+pages.push(country({
+  slug: "from-philippines", crumb: "From the Philippines",
+  title: "Bringing a pet to Thailand from the Philippines | PattayaPets",
+  desc: "Bringing a dog or cat from the Philippines to Thailand: BAI export " +
+    "paperwork, airline routes, and the standard Thai import steps.",
+  h1: "Bringing a pet to Thailand from the Philippines",
+  lede: "Manila and other Philippine cities have direct and one-stop flights to " +
+    "Bangkok, which makes this a common relocation route. The Thai steps are " +
+    "standard; the Philippine side is handled through the Bureau of Animal Industry (BAI).",
+  sections: [
+    { h: "The Philippine export side", html:
+      "<p>" + STD_STEPS + "For export from the Philippines, the health certificate " +
+      "and export endorsement are handled through the <strong>Bureau of Animal " +
+      "Industry (BAI)</strong>. Use a veterinarian registered with BAI and confirm " +
+      "the current export requirements for dogs and cats leaving the Philippines " +
+      "before you fix a travel date.</p>" +
+      "<p>Flights from Manila to Bangkok are relatively straightforward compared " +
+      "with long-haul routes from Europe or the Americas. Still confirm cabin, " +
+      "checked-baggage and cargo options with your airline &mdash; policies differ " +
+      "by carrier and aircraft.</p>" },
+    { h: "Arriving near Pattaya", html:
+      "<p>Most pets clear at Suvarnabhumi in Bangkok. From there it is a road " +
+      "transfer to Pattaya &mdash; see " +
+      "<a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok?</a> " +
+      "and <a href=\"/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html\">arrival " +
+      "at Suvarnabhumi</a>.</p>" }
+  ],
+  faqs: [
+    ["Is the Philippines treated as rabies-free by Thailand?",
+     "<p>No. Follow the standard Thai import process with microchip, rabies vaccination, health certificate and DLD import permit. Confirm the current DLD list and your pet's vaccination timing before you apply.</p>"],
+    ["Who issues the Philippine export health certificate?",
+     "<p>The Bureau of Animal Industry (BAI) oversees export certification. Your BAI-accredited veterinarian will guide the health certificate and any BAI endorsement required for export.</p>"]
+  ]
+}));
+
 module.exports = pages;

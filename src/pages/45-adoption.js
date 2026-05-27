@@ -13,6 +13,7 @@ const pages = [];
 pages.push(hub({
   path: "/adopt-a-pet-pattaya/",
   title: "Adopt a pet in Pattaya | PattayaPets",
+  image: "/assets/img/og-adoption.png",
   desc: "How to adopt a dog or cat in Pattaya: how adoption works, what to " +
     "expect, and the shelters and rescue organisations in and around the city.",
   crumb: "Adopt a pet in Pattaya",

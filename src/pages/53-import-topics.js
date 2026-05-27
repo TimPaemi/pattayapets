@@ -193,4 +193,81 @@ pages.push(article({
   ]
 }));
 
+/* ---------------- CHECKLIST ---------------- */
+pages.push(article({
+  path: "/bring-pet-to-thailand/checklist.html",
+  title: "Pet import to Thailand checklist | PattayaPets",
+  desc: "A printable step-by-step checklist for bringing a dog or cat to Thailand: " +
+    "microchip, rabies, health certificate, DLD import permit, airline and arrival.",
+  crumb: "Import checklist",
+  breadcrumbs: SUB,
+  eyebrow: "Bringing a pet to Thailand",
+  h1: "Pet import to Thailand checklist",
+  lede: "Use this as a working checklist while you plan. Every step links to the " +
+    "full guide. Allow at least one to two months &mdash; longer if you may later " +
+    "move your pet to the UK, EU or Australia.",
+  verify: VERIFY,
+  sections: [
+    { h: "Before you book anything", html:
+      "<ol>" +
+      "<li>Read the <a href=\"/bring-pet-to-thailand/\">full import guide</a> and your " +
+      "<a href=\"/bring-pet-to-thailand/\">import hub</a>.</li>" +
+      "<li>Confirm your <strong>airline</strong> will carry your pet on your route &mdash; " +
+      "see <a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline pet policies</a> " +
+      "and <a href=\"/bring-pet-to-thailand/snub-nosed-breeds-flying.html\">snub-nosed breeds</a>.</li>" +
+      "<li>Choose <a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok</a> " +
+      "for arrival near Pattaya.</li>" +
+      "<li>Budget with our <a href=\"/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html\">import cost guide</a>.</li>" +
+      "</ol>" },
+    { h: "The paperwork sequence (order matters)", html:
+      "<ol>" +
+      "<li><strong>Microchip</strong> &mdash; ISO 11784/11785, implanted " +
+      "<em>before</em> the rabies shot. " +
+      "<a href=\"/bring-pet-to-thailand/microchip-requirements.html\">Microchip guide</a></li>" +
+      "<li><strong>Rabies vaccination</strong> &mdash; at least 21 days before travel; other " +
+      "vaccinations as required. " +
+      "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">Rabies and titer guide</a></li>" +
+      "<li><strong>Rabies titer test</strong> (recommended even if Thailand does not require it) &mdash; " +
+      "essential if you may later export to the UK, EU or Australia. Start early.</li>" +
+      "<li><strong>Health certificate</strong> &mdash; within the validity window; endorsed by your " +
+      "origin-country authority. " +
+      "<a href=\"/bring-pet-to-thailand/health-certificate.html\">Health certificate guide</a></li>" +
+      "<li><strong>DLD import permit</strong> &mdash; apply before you fly. " +
+      "<a href=\"/bring-pet-to-thailand/import-permit-thailand-dld.html\">Import permit guide</a></li>" +
+      "</ol>" },
+    { h: "Two weeks before departure", html:
+      "<ul>" +
+      "<li>Re-read every document against the DLD and airline requirements.</li>" +
+      "<li>Confirm crate size meets IATA rules; book cargo or cabin slot if required.</li>" +
+      "<li>Carry copies of every certificate, permit and endorsement in hand luggage.</li>" +
+      "<li>Save Animal Quarantine Station contacts from the " +
+      "<a href=\"/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html\">arrival guide</a>.</li>" +
+      "</ul>" },
+    { h: "On arrival in Thailand", html:
+      "<ul>" +
+      "<li>Clear the Animal Quarantine Station inspection &mdash; see " +
+      "<a href=\"/bring-pet-to-thailand/thailand-pet-quarantine.html\">quarantine on arrival</a>.</li>" +
+      "<li>Register the microchip locally when settled &mdash; " +
+      "<a href=\"/owning-a-pet-in-pattaya/microchipping-your-pet.html\">microchipping in Pattaya</a>.</li>" +
+      "<li>Find a vet for a post-arrival check &mdash; " +
+      "<a href=\"/vets/\">Pattaya vets directory</a> or " +
+      "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour hospitals</a>.</li>" +
+      "</ul>" +
+      "<p>Need an agent? See <a href=\"/pet-relocation/\">pet relocation agents</a>.</p>" }
+  ],
+  faqs: [
+    ["How long before travel should I start?",
+     "<p>At least one to two months for a straightforward move. If you need a rabies titer test for a future export to the UK, EU or Australia, start several months earlier because of waiting periods after the blood sample.</p>"],
+    ["Can I print this checklist?",
+     "<p>Yes. Use your browser print function on this page. The step links stay useful on screen; for travel, keep PDF copies of every official certificate and permit instead.</p>"]
+  ],
+  related: [
+    { name: "The full process", path: "/bring-pet-to-thailand/", desc: "Every step with full detail." },
+    { name: "DLD import permit", path: "/bring-pet-to-thailand/import-permit-thailand-dld.html", desc: "The Thai-side permit." },
+    { name: "What import costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html", desc: "Budgeting the move." },
+    { name: "Arriving in Thailand", path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html", desc: "The AQS check on landing." },
+    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who handle paperwork and flights." }
+  ]
+}));
+
 module.exports = pages;

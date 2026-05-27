@@ -160,6 +160,9 @@ pages.push({
     card("/bring-pet-to-thailand/", "Flagship guide", "Bringing a pet to Thailand",
       "The full import process: DLD permit, microchip, rabies and titer test, " +
       "health certificate, airlines and arrival.", "Open the guide") +
+    card("/bring-pet-to-thailand/checklist.html", "Import", "Import checklist",
+      "A printable step-by-step checklist for the whole move to Thailand.",
+      "Open the checklist") +
     card("/take-pet-out-of-thailand/", "Moving on", "Taking a pet out of Thailand",
       "DLD export permit, health certificate, costs and country-by-country destination notes.",
       "Open the guide") +
@@ -225,6 +228,12 @@ pages.push({
       "Open the guide") +
     card("/bring-pet-to-thailand/from-uae.html", "Import", "Import from the UAE",
       "MOCCAE export permit and the Thai DLD steps for Gulf relocations.",
+      "Open the guide") +
+    card("/bring-pet-to-thailand/from-india.html", "Import", "Import from India",
+      "AQCS export certificate and planning from a high-rabies origin.",
+      "Open the guide") +
+    card("/bring-pet-to-thailand/from-philippines.html", "Import", "Import from the Philippines",
+      "BAI export paperwork and direct flights to Thailand.",
       "Open the guide") +
     card("/pet-relocation/", "Relocation", "Pet relocation agents",
       "Import and export specialists who handle permits, flights and paperwork.",

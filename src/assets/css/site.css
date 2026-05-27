@@ -181,6 +181,10 @@ color:var(--forest)}
 border-color:var(--banyan);box-shadow:0 0 0 3px var(--banyan-tint)}
 
 .search-form{max-width:600px;margin-top:1.6rem}
+.search-browse{margin-top:2rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.search-browse h2{font-size:1.15rem;margin:0 0 .6rem}
+.search-browse .chips{margin-top:.6rem}
+.search-popular{margin-top:1rem}
 .search-filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:1rem}
 .search-filters .chip{cursor:pointer;border:none;font:inherit}
 .search-filters .chip-active{background:var(--banyan);color:#fff;border-color:var(--banyan)}

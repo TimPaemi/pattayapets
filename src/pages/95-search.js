@@ -15,19 +15,39 @@ module.exports = [{
     '<p class="eyebrow">Search</p>' +
     "<h1>Search PattayaPets</h1>" +
     '<p class="lede">Find a vet, a guide, an area or a business &mdash; across ' +
-    "every page on the site.</p>" +
-    '<div class="field search-form">' +
+    "every page on the site. Live search needs JavaScript; browse the topics " +
+    "below if it is disabled.</p>" +
+    '<form class="search-form" action="/search.html" method="get" role="search">' +
     '<label for="pp-q">What are you looking for?</label>' +
-    '<input type="search" id="pp-q" autocomplete="off" ' +
-    'placeholder="Try &ldquo;24 hour vet&rdquo;, &ldquo;Jomtien&rdquo;, &ldquo;bring dog from UK&rdquo;"></div>' +
+    '<input type="search" id="pp-q" name="q" autocomplete="off" ' +
+    'placeholder="Try &ldquo;24 hour vet&rdquo;, &ldquo;Jomtien&rdquo;, &ldquo;bring dog from UK&rdquo;">' +
+    '<button type="submit" class="btn btn-primary" style="margin-top:.8rem">Search</button></form>' +
+    '<div class="search-browse">' +
+    '<h2>Browse by topic</h2>' +
+    '<p class="notice">These links work without JavaScript.</p>' +
+    '<div class="chips">' +
+    '<a class="chip chip-link" href="/directory.html">Directory</a>' +
+    '<a class="chip chip-link" href="/vets/">Vets</a>' +
+    '<a class="chip chip-link" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a>' +
+    '<a class="chip chip-link" href="/bring-pet-to-thailand/">Import guide</a>' +
+    '<a class="chip chip-link" href="/bring-pet-to-thailand/checklist.html">Import checklist</a>' +
+    '<a class="chip chip-link" href="/take-pet-out-of-thailand/">Export guide</a>' +
+    '<a class="chip chip-link" href="/pet-emergency/">Emergencies</a>' +
+    '<a class="chip chip-link" href="/pet-health-pattaya/">Pet health</a>' +
+    '<a class="chip chip-link" href="/adopt-a-pet-pattaya/">Adoption</a>' +
+    '<a class="chip chip-link" href="/dog-friendly-pattaya/">Dog-friendly</a>' +
+    '<a class="chip chip-link" href="/pet-relocation/">Relocation agents</a>' +
+    '<a class="chip chip-link" href="/area/jomtien.html">Jomtien area</a>' +
+    '<a class="chip chip-link" href="/area/wongamat.html">Wongamat area</a>' +
+    '<a class="chip chip-link" href="/guides.html">All guides</a>' +
+    '<a class="chip chip-link" href="/sitemap.html">Full sitemap</a>' +
+    '</div></div>' +
     '<div id="pp-filters" class="search-filters" aria-label="Filter by section"></div>' +
     '<div id="pp-results" class="search-results" aria-live="polite" aria-atomic="true" role="region" aria-label="Search results">' +
-    '<noscript><p class="notice">Search needs JavaScript enabled. You can browse ' +
-    'the <a href="/start-here.html">start-here guide</a>, the ' +
-    '<a href="/directory.html">business directory</a>, the ' +
-    '<a href="/guides.html">guides</a>, or the <a href="/sitemap.html">full ' +
-    "sitemap</a> instead.</p></noscript></div>" +
-    '<p class="notice" style="margin-top:1rem">Popular: ' +
+    '<noscript><p class="notice">Live search needs JavaScript. Use the topic links above, the ' +
+    '<a href="/directory.html">directory</a>, or the ' +
+    '<a href="/sitemap.html">sitemap</a>.</p></noscript></div>' +
+    '<p class="notice search-popular">Popular: ' +
     '<a href="/bring-pet-to-thailand/from-eu.html">Import from EU</a> &middot; ' +
     '<a href="/bring-pet-to-thailand/from-uae.html">Import from UAE</a> &middot; ' +
     '<a href="/adopt-a-pet-pattaya/fostering.html">Fostering</a> &middot; ' +
