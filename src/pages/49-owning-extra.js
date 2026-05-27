@@ -315,6 +315,7 @@ pages.push(own({
   ],
   related: [
     { name: "If your pet goes missing", path: "/owning-a-pet-in-pattaya/lost-pet-pattaya.html", desc: "Where the microchip earns its place." },
+    { name: "Dog registration & the law", path: "/owning-a-pet-in-pattaya/dog-registration-thailand.html", desc: "Registration rules in Thailand." },
     { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/", desc: "Microchipping in the import process." },
     HUB_RELATED
   ]

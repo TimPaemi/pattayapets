@@ -45,7 +45,7 @@ function articleSchema(o, url) {
     "@type": "Article",
     headline: stripTags(o.h1),
     description: o.desc,
-    datePublished: o.published || "2026-05-21",
+    datePublished: o.published || DEFAULT_UPDATED,
     dateModified: updated,
     author: { "@type": "Organization", name: "PattayaPets", url: SITE + "/" },
     publisher: { "@id": SITE + "/#org" },

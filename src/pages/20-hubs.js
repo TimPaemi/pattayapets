@@ -44,7 +44,7 @@ pages.push({
     '<section class="section"><div class="container">' +
     '<div class="section-head"><p class="eyebrow">The directory</p>' +
     "<h1>The Pattaya pet business directory</h1>" +
-    "<p class=\"lede\">Eight categories of pet business across Pattaya, each one " +
+    "<p class=\"lede\">Seven categories of pet business across Pattaya, each one " +
     "browsable by neighbourhood. Reviewed honestly &mdash; never paid.</p></div>" +
     '<div class="callout callout-note"><p>Every business starts as a verified ' +
     "<strong>facts page</strong> &mdash; name, area, services, hours, languages and " +

@@ -107,6 +107,8 @@ pages.push(cat({
   ],
   related: [
     { name: "Cats in Pattaya", path: "/cats/", desc: "Back to the cat owner's hub." },
+    { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Heat and outdoor access for cats." },
+    { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Essential if your cat goes outside." },
     { name: "Cat vaccinations & health", path: "/cats/cat-vaccinations-thailand.html", desc: "The routine health picture." },
     { name: "Getting a cat in Pattaya", path: "/cats/getting-a-cat-in-pattaya.html", desc: "Adopting, kittens and street cats." }
   ]
@@ -248,7 +250,9 @@ pages.push(cat({
     { h: "Your options", html:
       "<ul><li><strong>A pet sitter in your home</strong> &mdash; someone visits " +
       "(or stays) to feed, clean the litter and check on the cat. Often the " +
-      "least stressful choice, because the cat stays on its own territory.</li>" +
+      "least stressful choice, because the cat stays on its own territory. See " +
+      "<a href=\"/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html\">" +
+      "finding a pet sitter</a>.</li>" +
       "<li><strong>Cat boarding or a cattery</strong> &mdash; boarding facilities " +
       "that take cats, ideally with cats kept well away from dogs.</li>" +
       "<li><strong>Vet-clinic boarding</strong> &mdash; some clinics board cats, " +
@@ -288,6 +292,7 @@ pages.push(cat({
   ],
   related: [
     { name: "Boarding in Pattaya", path: "/boarding/", desc: "The directory of boarding facilities." },
+    { name: "Pet sitters & dog walkers", path: "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html", desc: "In-home care while you travel." },
     { name: "Cats in Pattaya", path: "/cats/", desc: "Back to the cat owner's hub." },
     { name: "Cat vaccinations & health", path: "/cats/cat-vaccinations-thailand.html", desc: "Boarding places require current vaccinations." }
   ]

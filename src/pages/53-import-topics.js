@@ -82,7 +82,8 @@ pages.push(article({
       "with a different policy, a different routing, or a " +
       "<a href=\"/pet-relocation/\">pet relocation specialist</a> experienced in " +
       "moving brachycephalic pets. The key is to find this out <em>early</em>, so " +
-      "it shapes your plan rather than derailing it.</p>" }
+      "it shapes your plan rather than derailing it.</p>" },
+    { h: "Official sources", html: OFFICIAL }
   ],
   faqs: [
     ["Which breeds count as snub-nosed?",

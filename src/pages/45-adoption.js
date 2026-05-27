@@ -152,6 +152,8 @@ const SHELTERS = [
     crumb: "Pattaya Street Dogs (K9aid)",
     type: "Dog rescue",
     website: "https://k9aid.org/pattaya/",
+    facebook: "https://www.facebook.com/k9aid",
+    email: "cindy@k9aid.org",
     lede: "Pattaya Street Dogs, part of K9aid, is a rescue caring for street dogs " +
       "and supporting temple-dog colonies.",
     what:
@@ -195,6 +197,7 @@ const SHELTERS = [
     crumb: "Malee's Animal Shelter",
     type: "Dog & cat shelter",
     website: "https://www.chanthaburishelter.com/",
+    address: "Chanthaburi province (confirm exact location via the website before visiting)",
     lede: "Malee&rsquo;s Animal Shelter rescues dogs and cats across the Pattaya " +
       "and Chanthaburi area, caring for several hundred animals.",
     what:
@@ -246,8 +249,9 @@ SHELTERS.forEach(function (s) {
       s.email + "</a></p>";
   }
   contact += '<p><a href="' + s.website + '" target="_blank" rel="noopener nofollow">' +
-    "Official website</a>";
-  if (s.facebook) {
+    (s.website.indexOf("facebook.com") !== -1 ? "Facebook page" : "Official website") +
+    "</a>";
+  if (s.facebook && s.facebook !== s.website) {
     contact += ' &middot; <a href="' + s.facebook +
       '" target="_blank" rel="noopener nofollow">Facebook</a>';
   }

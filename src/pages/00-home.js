@@ -107,7 +107,7 @@ const body =
   '<section class="section"><div class="container">' +
     '<div class="section-head"><p class="eyebrow">The directory</p>' +
     '<h2>Find pet care in Pattaya</h2>' +
-    '<p>Eight categories of pet business, each filterable by area. Every listing starts ' +
+    '<p>Seven categories of pet business, each filterable by area. Every listing starts ' +
     'as a verified facts page &mdash; address, hours, services, languages &mdash; with ' +
     'honest verdicts added after our anonymous visits.</p></div>' +
     '<div class="grid grid-3">' +

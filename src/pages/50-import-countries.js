@@ -446,7 +446,8 @@ pages.push(article({
       "expects an animal and a travel crate. Plan for the road time, bring water, " +
       "and avoid leaving a crate in a hot vehicle. After a long flight and the " +
       "quarantine check, a calm, direct drive to Pattaya is what your pet needs " +
-      "most.</p>" }
+      "most.</p>" },
+    { h: "Official sources", html: OFFICIAL }
   ],
   faqs: [
     ["Can I fly my pet directly into Pattaya?",

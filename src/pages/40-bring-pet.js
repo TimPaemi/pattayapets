@@ -23,6 +23,12 @@ const OFFICIAL =
   "<a href=\"https://aqi.dld.go.th/\" target=\"_blank\" rel=\"noopener nofollow\">" +
   "DLD Animal Quarantine stations</a>.</p>";
 
+function importStep(o) {
+  var sections = (o.sections || []).slice();
+  sections.push({ h: "Official sources", html: OFFICIAL });
+  return article(Object.assign({}, o, { sections: sections }));
+}
+
 const pages = [];
 
 /* ---------------- HUB ---------------- */
@@ -104,7 +110,7 @@ pages.push(hub({
 }));
 
 /* ---------------- MICROCHIP ---------------- */
-pages.push(article({
+pages.push(importStep({
   path: "/bring-pet-to-thailand/microchip-requirements.html",
   title: "Pet microchip requirements for Thailand | PattayaPets",
   desc: "Thailand requires an ISO 11784/11785 15-digit microchip, implanted before " +
@@ -156,7 +162,7 @@ pages.push(article({
 }));
 
 /* ---------------- RABIES & TITER ---------------- */
-pages.push(article({
+pages.push(importStep({
   path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html",
   title: "Rabies vaccination & titer test, Thailand | PattayaPets",
   desc: "The rabies vaccination, the 21-day wait, the other vaccines Thailand " +
@@ -217,7 +223,7 @@ pages.push(article({
 }));
 
 /* ---------------- HEALTH CERTIFICATE ---------------- */
-pages.push(article({
+pages.push(importStep({
   path: "/bring-pet-to-thailand/health-certificate.html",
   title: "Health certificate for Thailand pet import | PattayaPets",
   desc: "The veterinary health certificate Thailand requires, who has to issue " +
@@ -266,7 +272,7 @@ pages.push(article({
 }));
 
 /* ---------------- IMPORT PERMIT ---------------- */
-pages.push(article({
+pages.push(importStep({
   path: "/bring-pet-to-thailand/import-permit-thailand-dld.html",
   title: "Thailand pet import permit (DLD) | PattayaPets",
   desc: "The Thailand pet import permit from the Department of Livestock " +
@@ -341,7 +347,7 @@ pages.push(article({
 }));
 
 /* ---------------- AIRLINE POLICIES ---------------- */
-pages.push(article({
+pages.push(importStep({
   path: "/bring-pet-to-thailand/airline-pet-policies.html",
   title: "Airline pet policies for Thailand | PattayaPets",
   desc: "How pets fly to Thailand — in-cabin, as checked baggage or as cargo — " +
@@ -399,7 +405,7 @@ pages.push(article({
 }));
 
 /* ---------------- ARRIVAL ---------------- */
-pages.push(article({
+pages.push(importStep({
   path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html",
   title: "Arriving in Thailand with a pet | PattayaPets",
   desc: "What happens when your pet lands in Thailand: the Animal Quarantine " +
@@ -458,7 +464,7 @@ pages.push(article({
 }));
 
 /* ---------------- COST ---------------- */
-pages.push(article({
+pages.push(importStep({
   path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html",
   title: "Cost to bring a pet to Thailand | PattayaPets",
   desc: "An honest look at the cost of bringing a dog or cat to Thailand — where " +

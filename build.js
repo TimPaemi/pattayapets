@@ -278,6 +278,8 @@ async function build() {
     if (b) {
       if (b.address) d += " " + b.address;
       if (b.phone) d += " " + b.phone;
+      if (b.type) d += " " + b.type;
+      if (b.summary) d += " " + b.summary;
       if (b.services && b.services.length) d += " " + b.services.join(" ");
       b.areas.forEach(function (ak) {
         if (AREAS[ak]) d += " " + AREAS[ak].name;

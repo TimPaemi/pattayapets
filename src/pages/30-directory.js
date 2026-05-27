@@ -103,7 +103,11 @@ const MOBILE_VETS_INTRO =
   'a verified facts page, and publish an honest verdict only after an anonymous ' +
   'visit with the bill paid in full. In the meantime, see ' +
   '<a href="/owning-a-pet-in-pattaya/getting-to-the-vet.html">getting your pet ' +
-  'to the vet</a> and the full <a href="/vets/">vets directory</a>.</p>' +
+  'to the vet</a>, the listed ' +
+  '<a href="/mobile-vets/mor-ja-pet-clinic-pattaya.html">Mor Ja Pet Clinic</a> ' +
+  'and <a href="/mobile-vets/baan-mor-raksasat-animal-hospital-pattaya.html">' +
+  'Baan Mor Raksasat Animal Hospital</a>, and the full ' +
+  '<a href="/vets/">vets directory</a>.</p>' +
   '</div></div></section>';
 
 const VERDICT_LABELS = { recommend: "Recommend", ok: "OK", avoid: "Avoid" };
