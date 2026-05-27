@@ -20,7 +20,8 @@ const IMPORT_TO_EXPORT = {
   "from-switzerland": { slug: "to-switzerland", label: "To Switzerland (export)" },
   "from-new-zealand": { slug: "to-new-zealand", label: "To New Zealand (export)" },
   "from-japan": { slug: "to-japan", label: "To Japan (export)" },
-  "from-singapore": { slug: "to-singapore", label: "To Singapore (export)" }
+  "from-singapore": { slug: "to-singapore", label: "To Singapore (export)" },
+  "from-uae": { slug: "to-uae", label: "To the UAE (export)" }
 };
 
 const EXPORT_TO_IMPORT = {
@@ -41,7 +42,8 @@ const EXPORT_TO_IMPORT = {
   "to-switzerland": { slug: "from-switzerland", label: "From Switzerland (import)" },
   "to-new-zealand": { slug: "from-new-zealand", label: "From New Zealand (import)" },
   "to-japan": { slug: "from-japan", label: "From Japan (import)" },
-  "to-singapore": { slug: "from-singapore", label: "From Singapore (import)" }
+  "to-singapore": { slug: "from-singapore", label: "From Singapore (import)" },
+  "to-uae": { slug: "from-uae", label: "From the UAE (import)" }
 };
 
 function importCountryRelated(slug, base, desc) {

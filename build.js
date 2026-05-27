@@ -341,6 +341,7 @@ async function build() {
     "/bring-pet-to-thailand/from-australia.html": "import pet Australia DAFF Thailand",
     "/bring-pet-to-thailand/from-japan.html": "import pet Japan MAFF Thailand",
     "/bring-pet-to-thailand/from-singapore.html": "import pet Singapore AVS Thailand",
+    "/bring-pet-to-thailand/from-uae.html": "import pet UAE MOCCAE Dubai Abu Dhabi Thailand",
     "/pet-emergency/poisoning.html": "poison toad bait chocolate xylitol toxic",
     "/pet-health-pattaya/heartworm.html": "heartworm mosquito prevention Thailand",
     "/pet-health-pattaya/skin-and-ear-problems.html": "skin ear infection yeast hot humid",

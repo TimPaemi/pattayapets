@@ -33,7 +33,9 @@ pages.push(hub({
     "<p>Go straight to a 24-hour animal hospital &mdash; do not wait for normal " +
     "opening hours. See <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">" +
     "24-hour vets in Pattaya</a> for clinics open around the clock, with " +
-    "addresses and contact details. Save your nearest clinic&rsquo;s contact " +
+    "addresses and contact details. If you need transport, read " +
+    "<a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">getting your pet " +
+    "to the vet</a>. Save your nearest clinic&rsquo;s contact " +
     "today, before you ever need it.</p></div>" +
     '<div class="prose"><p>' + NOTVET + "</p></div>",
   groups: [
@@ -192,7 +194,9 @@ pages.push(hazard({
       "<li><strong>Keep the pet warm and still</strong> &mdash; minimise " +
       "movement, especially if a spinal injury is possible.</li>" +
       "<li><strong>Go</strong> &mdash; head for the nearest " +
-      "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vet</a>.</li></ul>" },
+      "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vet</a>. " +
+      "See <a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">getting your " +
+      "pet to the vet</a> if you do not have a car.</li></ul>" },
     { h: "What not to do", html:
       "<p>Do not give human medicines &mdash; many are toxic to pets. Do not " +
       "force food or water on a collapsed animal. Do not try to set a bone, " +
@@ -250,7 +254,9 @@ pages.push(hazard({
     { h: "Prevention", html:
       "<p>Keep fresh water always available, provide shade and airflow indoors, " +
       "walk in the cool hours, and never leave a pet in a hot car or a hot " +
-      "balcony. If you suspect heatstroke, move the pet to shade, offer small " +
+      "balcony. For day-to-day heat management, see " +
+      "<a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">hot-climate pet " +
+      "care</a>. If you suspect heatstroke, move the pet to shade, offer small " +
       "amounts of cool (not ice-cold) water, wet the coat with cool water, and " +
       "get to a vet without delay &mdash; cooling on the way, not instead of " +
       "going.</p>" }
@@ -435,7 +441,10 @@ pages.push(hazard({
       "<li><strong>Human medicines</strong> &mdash; many common ones are toxic " +
       "to pets.</li>" +
       "<li><strong>Cleaning products and insecticides</strong>, and some " +
-      "garden plants.</li></ul>" },
+      "garden plants.</li>" +
+      "<li><strong>Toad toxin</strong> &mdash; see " +
+      "<a href=\"/pet-emergency/venomous-creatures.html\">toads and venomous " +
+      "creatures</a>.</li></ul>" },
     { h: "Warning signs", html:
       "<p>Signs vary with the poison but can include vomiting, diarrhoea, " +
       "drooling, tremors or seizures, weakness, breathing trouble or sudden " +

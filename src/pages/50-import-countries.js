@@ -418,6 +418,43 @@ pages.push(country({
   ]
 }));
 
+/* ---------------- UAE ---------------- */
+pages.push(country({
+  slug: "from-uae", crumb: "From the UAE",
+  title: "Bringing a pet to Thailand from the UAE | PattayaPets",
+  desc: "Bringing a dog or cat from the UAE to Thailand: MOCCAE export permit, " +
+    "the Thai DLD import permit, and what to plan if you might return.",
+  h1: "Bringing a pet to Thailand from the UAE",
+  lede: "The UAE–Pattaya corridor is common for Gulf expats. The Thai import side " +
+    "is standard; MOCCAE export paperwork and your airline are where to confirm first.",
+  sections: [
+    { h: "The UAE side of the paperwork", html:
+      "<p>" + STD_STEPS + "For export from the UAE, the Ministry of Climate Change " +
+      "and Environment (MOCCAE) requires an <strong>export permit</strong>, an ISO " +
+      "microchip, valid vaccinations (including rabies) and an official veterinary " +
+      "health certificate endorsed for export. Some emirates and airlines add their " +
+      "own rules &mdash; confirm with " +
+      "<a href=\"https://www.moec.gov.ae/en/services/import-export-services/import-pets\" " +
+      "target=\"_blank\" rel=\"noopener nofollow\">MOCCAE</a> and your airline " +
+      "before booking.</p>" },
+    { h: "Planning the return to the UAE", html:
+      "<p>If you might take your pet back to the UAE, study " +
+      "<a href=\"/take-pet-out-of-thailand/to-uae.html\">exporting a pet to the UAE</a> " +
+      "before you leave &mdash; MOCCAE import permits, vaccination timing and breed " +
+      "restrictions in some emirates all need lead time. The UAE generally does not " +
+      "require a rabies titer test from Thailand, but if you might move on to the EU, " +
+      "UK or similar, having the " +
+      "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">titer test</a> " +
+      "done early keeps that option open.</p>" }
+  ],
+  faqs: [
+    ["Does the UAE require special paperwork to export a pet to Thailand?",
+     "<p>Yes. MOCCAE requires an export permit, microchip, vaccinations and an endorsed health certificate. Confirm the current detail with MOCCAE and your airline for the emirate you are leaving from.</p>"],
+    ["Is there quarantine when I bring a pet from the UAE to Thailand?",
+     "<p>Thailand's standard import process applies: with correct paperwork, most pets clear the Animal Quarantine Station inspection on arrival rather than entering long quarantine. See our Thailand pet quarantine guide for what that means in practice.</p>"]
+  ]
+}));
+
 /* ---------------- U-TAPAO vs BANGKOK ---------------- */
 pages.push(article({
   path: "/bring-pet-to-thailand/u-tapao-airport-pets.html",

@@ -87,6 +87,7 @@ pages.push(hub({
         { name: "From Canada", desc: "CFIA endorsement and planning for the journey home.", path: "/bring-pet-to-thailand/from-canada.html" },
         { name: "From Japan", desc: "AQS export paperwork and the rabies titer test for the return.", path: "/bring-pet-to-thailand/from-japan.html" },
         { name: "From Singapore", desc: "AVS export certificate and planning from a rabies-free origin.", path: "/bring-pet-to-thailand/from-singapore.html" },
+        { name: "From the UAE", desc: "MOCCAE export permit and the Thai import steps for Gulf relocations.", path: "/bring-pet-to-thailand/from-uae.html" },
         { name: "From Germany", desc: "EU export paperwork via the German veterinary office.", path: "/bring-pet-to-thailand/from-germany.html" },
         { name: "From Russia", desc: "The state veterinary certificate and the rabies titer test.", path: "/bring-pet-to-thailand/from-russia.html" },
         { name: "From Sweden", desc: "EU export paperwork via the Swedish Board of Agriculture.", path: "/bring-pet-to-thailand/from-sweden.html" },

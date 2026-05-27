@@ -23,6 +23,7 @@ module.exports = [{
     '<div id="pp-filters" class="search-filters" aria-label="Filter by section"></div>' +
     '<p class="notice" style="margin-top:1rem">Popular: ' +
     '<a href="/bring-pet-to-thailand/from-eu.html">Import from EU</a> &middot; ' +
+    '<a href="/bring-pet-to-thailand/from-uae.html">Import from UAE</a> &middot; ' +
     '<a href="/adopt-a-pet-pattaya/fostering.html">Fostering</a> &middot; ' +
     '<a href="/adopt-a-pet-pattaya/how-to-help.html">How to help</a> &middot; ' +
     '<a href="/adopt-a-pet-pattaya/animal-army-foundation.html">Animal Army</a> &middot; ' +

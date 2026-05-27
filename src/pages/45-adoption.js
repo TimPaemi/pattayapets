@@ -108,7 +108,10 @@ const SHELTERS = [
     adopt:
       "<p>Healthy, vaccinated and sterilised dogs are available for adoption. As " +
       "with any reputable rescue, expect a conversation about your home and " +
-      "lifestyle so the right dog is matched to the right family.</p>"
+      "lifestyle so the right dog is matched to the right family. If you are not " +
+      "ready to adopt permanently, " +
+      "<a href=\"/adopt-a-pet-pattaya/fostering.html\">fostering</a> frees kennel " +
+      "space here.</p>"
   },
   {
     slug: "dog-cat-rescue-pattaya", name: "Dog & Cat Rescue Pattaya",
@@ -128,7 +131,9 @@ const SHELTERS = [
     adopt:
       "<p>Dogs and cats are rehomed once cared for. Contact the organisation " +
       "directly &mdash; its Facebook page is the most current channel &mdash; to " +
-      "ask about adopting, fostering or helping.</p>"
+      "ask about adopting, fostering or helping. Found an injured street animal? " +
+      "See <a href=\"/adopt-a-pet-pattaya/how-to-help.html\">how to help street " +
+      "animals</a>.</p>"
   },
   {
     slug: "animal-army-foundation", name: "Animal Army Foundation",
@@ -176,7 +181,9 @@ const SHELTERS = [
       "<p>The rescue rehomes dogs in its care and welcomes adopters, fosters, " +
       "volunteers and donors. Contact it directly through " +
       "<a href=\"https://k9aid.org/pattaya/\" target=\"_blank\" rel=\"noopener nofollow\">" +
-      "k9aid.org/pattaya</a> to ask how you can help or adopt.</p>"
+      "k9aid.org/pattaya</a> to ask how you can help or adopt. Its temple-colony " +
+      "work is one example of the wider street-animal picture in " +
+      "<a href=\"/adopt-a-pet-pattaya/how-to-help.html\">how to help</a>.</p>"
   },
   {
     slug: "soi-dog-foundation", name: "Soi Dog Foundation",
@@ -199,7 +206,9 @@ const SHELTERS = [
       "<p>Soi Dog runs an established adoption programme, including international " +
       "adoption for supporters who have moved or are moving abroad. See its " +
       "<a href=\"https://www.soidog.org/content/adopt\" target=\"_blank\" " +
-      "rel=\"noopener nofollow\">adoption pages</a> for current options.</p>"
+      "rel=\"noopener nofollow\">adoption pages</a> for current options. Flying a " +
+      "pet abroad later? Read the " +
+      "<a href=\"/take-pet-out-of-thailand/export-process.html\">export process</a>.</p>"
   },
   {
     slug: "malees-animal-shelter", name: "Malee's Animal Shelter",
@@ -218,8 +227,9 @@ const SHELTERS = [
       "arrangements directly through its website before you travel.</p>",
     adopt:
       "<p>Dogs and cats are available for adoption. Contact the shelter directly " +
-      "through its website to discuss adopting, fostering, volunteering or donating. " +
-      "The site also lists ways to support its work if you cannot adopt.</p>"
+      "through its website to discuss adopting, " +
+      "<a href=\"/adopt-a-pet-pattaya/fostering.html\">fostering</a>, volunteering " +
+      "or donating. The site also lists ways to support its work if you cannot adopt.</p>"
   },
   {
     slug: "ady-g-second-chance-pattaya", name: "Ady G. Second Chance Pattaya",
@@ -238,7 +248,9 @@ const SHELTERS = [
     adopt:
       "<p>Adoption may be possible for suitable homes. Contact the sanctuary directly " +
       "to ask about the dogs in its care, visiting arrangements and how you can help " +
-      "as a donor or volunteer.</p>"
+      "as a donor or volunteer. Many sanctuary dogs need patient owners &mdash; see " +
+      "<a href=\"/dogs/choosing-a-dog-for-the-climate.html\">choosing a dog for " +
+      "Pattaya&rsquo;s climate</a> for the wider picture on care and exercise.</p>"
   }
 ];
 

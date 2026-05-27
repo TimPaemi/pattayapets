@@ -513,11 +513,9 @@ pages.push(exp({
       "having the <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">" +
       "titer test</a> done early keeps that option open.</p>" },
     { h: "Importing a pet from the UAE to Thailand", html:
-      "<p>PattayaPets does not yet publish a dedicated &ldquo;import from the UAE&rdquo; " +
-      "country guide &mdash; the UAE&ndash;Pattaya corridor is less common than UK or EU " +
-      "routes. The Thai import steps are the same regardless of origin: see our " +
-      "<a href=\"/bring-pet-to-thailand/\">bringing a pet to Thailand</a> guide and " +
-      "confirm UAE export requirements with MOCCAE before you book.</p>" }
+      "<p>See our guide to " +
+      "<a href=\"/bring-pet-to-thailand/from-uae.html\">bringing a pet from the UAE</a> " +
+      "for the MOCCAE export side and the standard Thai import steps.</p>" }
   ],
   faqs: [
     ["Does the UAE require a rabies titer test from Thailand?",
