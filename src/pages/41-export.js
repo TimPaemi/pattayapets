@@ -389,14 +389,20 @@ pages.push(exp({
       "within a set window (commonly 24&ndash;120 hours) before arrival in the " +
       "UK. Your pet also needs the microchip and the correct UK entry " +
       "documentation, and must travel on an approved route and carrier into the " +
-      "UK.</p>" },
+      "UK. The shared <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">" +
+      "rabies titer test</a> rules apply on the Thai side too &mdash; see the " +
+      "<a href=\"/take-pet-out-of-thailand/export-permit-thailand-dld.html\">DLD export " +
+      "permit</a> process.</p>" },
     { h: "Plan the route", html:
       "<p>The UK only permits pets to enter via approved transport routes and " +
       "carriers. Confirm the current rules with the " +
       "<a href=\"https://www.gov.uk/bring-pet-to-great-britain\" target=\"_blank\" " +
       "rel=\"noopener nofollow\">UK government pet-travel guidance</a> and choose " +
       "an airline and route that satisfies them &mdash; a relocation agent is " +
-      "genuinely useful here.</p>" },
+      "genuinely useful here. See also " +
+      "<a href=\"/pet-relocation/\">pet relocation agents</a> and " +
+      "<a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline pet " +
+      "policies</a>.</p>" },
     { h: "The Thai side and your timeline", html: THAI_SIDE }
   ],
   faqs: [

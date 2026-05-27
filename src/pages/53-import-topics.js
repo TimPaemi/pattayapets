@@ -90,6 +90,11 @@ pages.push(article({
       "<a href=\"/pet-relocation/\">pet relocation specialist</a> experienced in " +
       "moving brachycephalic pets. The key is to find this out <em>early</em>, so " +
       "it shapes your plan rather than derailing it.</p>" },
+    { h: "What comes next", html:
+      "<p>With airline clearance sorted, work through the " +
+      '<a href="/bring-pet-to-thailand/">full import process</a>, the ' +
+      '<a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a>, ' +
+      'and <a href="/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html">arrival at Suvarnabhumi</a>.</p>' },
     { h: "Official sources", html: OFFICIAL }
   ],
   faqs: [
@@ -164,6 +169,11 @@ pages.push(article({
       "<a href=\"/pet-relocation/\">relocation agent</a>, experienced in the " +
       "process. Confirm the current requirements with the DLD before you " +
       "travel.</p>" },
+    { h: "What comes next", html:
+      "<p>Read <a href=\"/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html\">what happens on arrival</a> and budget in our " +
+      "<a href=\"/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html\">import cost guide</a>. " +
+      "Planning to leave again? Start the " +
+      "<a href=\"/take-pet-out-of-thailand/export-process.html\">export process</a> early.</p>" },
     { h: "Official sources", html: OFFICIAL }
   ],
   faqs: [

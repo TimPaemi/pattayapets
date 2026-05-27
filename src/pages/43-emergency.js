@@ -37,7 +37,11 @@ pages.push(hub({
     "<a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">getting your pet " +
     "to the vet</a>. Save your nearest clinic&rsquo;s contact " +
     "today, before you ever need it.</p></div>" +
-    '<div class="prose"><p>' + NOTVET + "</p></div>",
+    '<div class="prose"><p>For everyday prevention, see ' +
+    "<a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">hot-climate pet " +
+    "care</a>, <a href=\"/pet-emergency/ticks-and-fleas.html\">ticks &amp; fleas</a>, " +
+    "and <a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">where to walk " +
+    "your dog</a> safely.</p><p>" + NOTVET + "</p></div>",
   groups: [
     {
       title: "When it is an emergency",
@@ -205,6 +209,8 @@ pages.push(hazard({
     { h: "Be ready before it happens", html:
       "<p>Keep a carrier accessible, a 24-hour clinic saved in your phone, and " +
       "your pet&rsquo;s vaccination records somewhere you can grab them. " +
+      "A <a href=\"/owning-a-pet-in-pattaya/microchipping-your-pet.html\">microchip</a> " +
+      "with current contact details helps if your pet gets loose. " +
       "Preparation is the most useful &lsquo;first aid&rsquo; there is.</p>" }
   ],
   faqs: [
@@ -250,7 +256,9 @@ pages.push(hazard({
       "<li><strong>Hot pavement</strong> &mdash; if you cannot hold the back of " +
       "your hand on it for seven seconds, it is too hot for paws.</li>" +
       "<li><strong>Snub-nosed breeds</strong> &mdash; Pugs, French Bulldogs, " +
-      "Persians and similar overheat especially easily.</li></ul>" },
+      "Persians and similar overheat especially easily; see " +
+      "<a href=\"/bring-pet-to-thailand/snub-nosed-breeds-flying.html\">snub-nosed " +
+      "breeds &amp; flying</a>.</li></ul>" },
     { h: "Prevention", html:
       "<p>Keep fresh water always available, provide shade and airflow indoors, " +
       "walk in the cool hours, and never leave a pet in a hot car or a hot " +
@@ -291,8 +299,9 @@ pages.push(hazard({
       "prevention is not seasonal &mdash; it is continuous.</p>" },
     { h: "Why ticks matter beyond the itch", html:
       "<p>Fleas cause irritation and can trigger skin allergies. Ticks are the " +
-      "bigger concern: they can transmit serious tick-borne diseases to dogs. " +
-      "Catching and preventing them is far easier than treating the illnesses " +
+      "bigger concern: they can transmit serious " +
+      "<a href=\"/pet-health-pattaya/tick-borne-disease.html\">tick-borne diseases</a> " +
+      "to dogs. Catching and preventing them is far easier than treating the illnesses " +
       "they carry.</p>" },
     { h: "Prevention", html:
       "<ul><li><strong>Use a vet-recommended preventative</strong> &mdash; " +
@@ -458,8 +467,9 @@ pages.push(hazard({
       "with some substances that does more harm than good.</p>" },
     { h: "Prevention", html:
       "<p>Store food, medicines, cleaning products and pest poisons well out of " +
-      "reach. Be cautious about where your pet scavenges on walks, and ask " +
-      "neighbours and condo management about any rodent baiting in shared " +
+      "reach. Be cautious about where your pet scavenges on walks &mdash; see " +
+      "<a href=\"/pet-emergency/street-dog-encounters.html\">street-dog encounters</a> " +
+      "for tideline and soi hazards &mdash; and ask neighbours and condo management about any rodent baiting in shared " +
       "areas.</p>" }
   ],
   faqs: [

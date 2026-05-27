@@ -131,7 +131,8 @@ pages.push(hazard({
       "near roads, check that gates and fences are secure, and make sure your pet " +
       "is <a href=\"/owning-a-pet-in-pattaya/microchipping-your-pet.html\">" +
       "microchipped</a> and wearing ID, so a pet that does get out can be " +
-      "identified fast.</p>" }
+      "identified fast. If a pet bolts after a scare, see " +
+      "<a href=\"/owning-a-pet-in-pattaya/lost-pet-pattaya.html\">lost pet in Pattaya</a>.</p>" }
   ],
   faqs: [
     ["My pet was hit but seems okay - does it still need a vet?",
