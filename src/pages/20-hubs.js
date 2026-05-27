@@ -143,6 +143,15 @@ pages.push({
     card("/cats/", "For cat owners", "The cat owner&rsquo;s hub",
       "Everything cat-specific in one place &mdash; care, vets and indoor living.",
       "Open the hub") +
+    card("/adopt-a-pet-pattaya/fostering.html", "Adoption", "Fostering a pet",
+      "Give a rescue animal a temporary home while it waits for adoption.",
+      "Open the guide") +
+    card("/adopt-a-pet-pattaya/how-to-help.html", "Adoption", "How to help street animals",
+      "Donate, volunteer, foster and what to do for an injured animal.",
+      "Open the guide") +
+    card("/mobile-vets/", "At home", "Mobile & home-visit vets",
+      "Vets who come to you &mdash; useful for nervous pets and multi-cat homes.",
+      "View mobile vets") +
     "</div>" +
     '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +
     "Our guides are not veterinary advice. Import and export rules change &mdash; " +

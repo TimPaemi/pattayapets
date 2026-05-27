@@ -337,6 +337,11 @@ pages.push(article({
      "<p>Not necessarily - many pets would happily eat well beyond what they need. Measure food to your vet's guidance rather than feeding to appetite, and count treats within the daily total. If appetite changes suddenly, mention it to your vet.</p>"],
     ["How do I help my pet lose weight safely?",
      "<p>Measure food, trim treats, exercise in the cool hours, and make changes gradually. See your vet first - they can rule out a medical cause and set a safe target and pace. Crash dieting is not safe, especially for cats.</p>"]
+  ],
+  related: [
+    { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Exercise and heat when managing weight." },
+    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Back to the health hub." },
+    { name: "What it costs to own a pet", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", desc: "The wider pet budget in Pattaya." }
   ]
 }));
 
@@ -366,7 +371,8 @@ pages.push(article({
     { h: "Domestic flights", html:
       "<p>Some Thai domestic airlines carry pets, in the cabin for small animals " +
       "or as cargo, but <strong>policies vary widely and change</strong>. Check " +
-      "the specific airline well ahead, and expect to need an airline-approved " +
+      "<a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline pet " +
+      "policies</a> well ahead, and expect to need an airline-approved " +
       "crate and to follow the airline&rsquo;s booking process &mdash; a domestic " +
       "flight is still a formal process, not a walk-on.</p>" },
     { h: "Pet-friendly accommodation", html:
@@ -401,7 +407,10 @@ pages.push(article({
   ],
   related: [
     { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Back to the cluster hub." },
-    { name: "Pet sitters & dog walkers", path: "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html", desc: "If the pet stays behind." },
+    { name: "Boarding & daycare", path: "/boarding/", desc: "If the pet stays behind." },
+    { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/", desc: "International moves into Thailand." },
+    { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "International moves out of Thailand." },
+    { name: "Pet sitters & dog walkers", path: "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html", desc: "In-home care while you travel." },
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Managing the heat, anywhere in Thailand." }
   ]
 }));

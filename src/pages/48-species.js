@@ -173,6 +173,7 @@ pages.push(cat({
   ],
   related: [
     { name: "Cats in Pattaya", path: "/cats/", desc: "Back to the cat owner's hub." },
+    { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "Why neutering matters in Pattaya." },
     { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html", desc: "Year-round parasite prevention." },
     { name: "Vets in Pattaya", path: "/vets/", desc: "Find a clinic for your cat." }
   ]
@@ -233,6 +234,7 @@ pages.push(cat({
   ],
   related: [
     { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Shelters and rescues rehoming cats." },
+    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "The tropical-climate health picture." },
     { name: "Cat vaccinations & health", path: "/cats/cat-vaccinations-thailand.html", desc: "The routine health your new cat needs." },
     { name: "Indoor or outdoor cats", path: "/cats/indoor-vs-outdoor-cats.html", desc: "Keeping your new cat safe." }
   ]
@@ -516,7 +518,8 @@ pages.push(dog({
       "seriously unwell. Signs an owner might notice include lethargy, loss of " +
       "appetite, fever, pale gums or bruising; these always warrant a vet visit. " +
       "The defence is consistent, year-round tick prevention &mdash; see " +
-      "<a href=\"/pet-emergency/ticks-and-fleas.html\">ticks and fleas</a>.</p>" },
+      "<a href=\"/pet-emergency/ticks-and-fleas.html\">ticks and fleas</a> and " +
+      "<a href=\"/pet-health-pattaya/tick-borne-disease.html\">tick-borne disease</a>.</p>" },
     { h: "Skin and ear problems", html:
       "<p>Heat and humidity are hard on skin. Dogs in the tropics commonly get " +
       "yeast and bacterial skin infections, &lsquo;hot spots&rsquo;, and ear " +

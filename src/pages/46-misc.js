@@ -64,6 +64,8 @@ pages.push(article({
   ],
   related: [
     { name: "What it costs to own a pet", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", desc: "The wider pet budget in Pattaya." },
+    { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/", desc: "Insurance matters most on complex moves." },
+    { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "Export timelines and unexpected vet bills." },
     { name: "Vets in Pattaya", path: "/vets/", desc: "The directory of clinics and hospitals." },
     { name: "Pet emergencies", path: "/pet-emergency/", desc: "When the big, unplanned bills happen." }
   ]
@@ -100,6 +102,7 @@ pages.push(hub({
       cards: [
         { name: "Vets & animal hospitals", desc: "Find a clinic for your cat, including exotic-friendly hospitals.", path: "/vets/" },
         { name: "Hot-climate pet care", desc: "Keeping a cat cool, hydrated and safe in the tropics.", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html" },
+        { name: "Groomers", desc: "Cat grooming salons in Pattaya.", path: "/groomers/" },
         { name: "Ticks & fleas", desc: "Year-round parasite prevention, yes, indoor cats too.", path: "/pet-emergency/ticks-and-fleas.html" },
         { name: "What it costs", desc: "Budgeting for a cat in Pattaya.", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html" },
         { name: "Where to buy pet food", desc: "Cat food and litter: shops, supermarkets and online.", path: "/owning-a-pet-in-pattaya/where-to-buy-pet-food.html" },
@@ -162,6 +165,7 @@ pages.push(hub({
         { name: "Dog trainers", desc: "Obedience and behaviour help from Pattaya trainers.", path: "/trainers/" },
         { name: "Dog registration & the law", desc: "Rabies law and local registration for dogs.", path: "/owning-a-pet-in-pattaya/dog-registration-thailand.html" },
         { name: "Grooming", desc: "Dog groomers across Pattaya.", path: "/groomers/" },
+        { name: "Boarding & daycare", desc: "Dog hotels and kennels while you travel.", path: "/boarding/" },
         { name: "Pet health in Pattaya", desc: "Heartworm, tick disease, skin and ear problems and more.", path: "/pet-health-pattaya/" }
       ]
     },

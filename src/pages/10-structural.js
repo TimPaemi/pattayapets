@@ -84,7 +84,9 @@ pages.push({
     '<a href="/pet-shops/">pet shops directory</a>. For grooming, ' +
     '<a href="/groomers/">groomers</a>. For travel and work cover, ' +
     '<a href="/boarding/">boarding and daycare</a>. For walking and going out, see ' +
-    '<a href="/dog-friendly-pattaya/">dog-friendly Pattaya</a>. And it is worth ' +
+    '<a href="/dog-friendly-pattaya/">dog-friendly Pattaya</a>. Dog owners should ' +
+    "also see the <a href=\"/dogs/\">dog owner&rsquo;s hub</a>; cat owners the " +
+    "<a href=\"/cats/\">cat owner&rsquo;s hub</a>. And it is worth " +
     "understanding how " +
     '<a href="/pet-insurance-thailand.html">pet insurance in Thailand</a> works ' +
     "before you need to claim.</p>" +
@@ -96,6 +98,8 @@ pages.push({
 /* ---------------- About ---------------- */
 pages.push(prosePage({
   path: "/about.html",
+  updated: "2026-05-27",
+  updatedLabel: "27 May 2026",
   title: "About PattayaPets — an independent pet directory & guide",
   desc: "About PattayaPets — an independent editorial directory and guide for pet owners in Pattaya, operated by TIMPAEMI Co., Ltd. via the Pattaya Authority network.",
   crumb: "About",
@@ -106,7 +110,9 @@ pages.push(prosePage({
     "work together: an <strong>editorial directory</strong> of pet businesses &mdash; " +
     "vets, groomers, boarding, pet shops, trainers and relocation agents &mdash; and " +
     "a <strong>library of guides</strong> answering the questions pet owners in " +
-    "Pattaya actually ask.</p>" +
+    "Pattaya actually ask &mdash; from import and export to " +
+    "<a href=\"/pet-health-pattaya/\">pet health in a tropical climate</a>, with " +
+    "dedicated <a href=\"/dogs/\">dog</a> and <a href=\"/cats/\">cat</a> hubs.</p>" +
     "<h2>Why it exists</h2>" +
     "<p>If you have a pet in Pattaya, or you are bringing one to Thailand, good " +
     "information is scattered and often out of date. Reviews of local pet " +
