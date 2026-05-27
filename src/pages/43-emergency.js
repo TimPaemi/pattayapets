@@ -138,7 +138,7 @@ pages.push(article({
     { name: "Pet first-aid orientation", path: "/pet-emergency/pet-first-aid.html", desc: "Staying calm and moving a hurt pet safely." },
     { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "Pattaya's most common preventable emergency." },
     { name: "Poisoning", path: "/pet-emergency/poisoning.html", desc: "Toad toxin, baits and other hazards." },
-    { name: "All vets in Pattaya", path: "/vets/", desc: "The full directory for non-urgent care." }
+    { name: "Mobile & home-visit vets", path: "/mobile-vets/", desc: "For follow-up care when transport is hard." }
   ]
 }));
 

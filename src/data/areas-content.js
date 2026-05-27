@@ -104,6 +104,7 @@ const AREA_GUIDE = {
     "<li><a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vets in Pattaya</a></li>" +
     "<li><a href=\"/mobile-vets/\">Mobile vets</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">Getting your pet to the vet</a></li>" +
+    "<li><a href=\"/pet-health-pattaya/\">Pet health in Pattaya</a></li>" +
     "<li><a href=\"/dog-friendly-pattaya/\">Dog-friendly Pattaya</a></li>" +
     "</ul>",
 
@@ -138,6 +139,7 @@ const AREA_GUIDE = {
     "<li><a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vets in Pattaya</a></li>" +
     "<li><a href=\"/mobile-vets/\">Mobile vets</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">Getting your pet to the vet</a></li>" +
+    "<li><a href=\"/pet-health-pattaya/\">Pet health in Pattaya</a></li>" +
     "</ul>",
 
   jomtien:
@@ -171,6 +173,8 @@ const AREA_GUIDE = {
     "<li><a href=\"/dog-friendly-pattaya/\">Dog-friendly Pattaya</a></li>" +
     "<li><a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vets in Pattaya</a></li>" +
     "<li><a href=\"/mobile-vets/\">Mobile vets</a></li>" +
+    "<li><a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">Getting your pet to the vet</a></li>" +
+    "<li><a href=\"/pet-health-pattaya/\">Pet health in Pattaya</a></li>" +
     "</ul>",
 
   "bang-saray":

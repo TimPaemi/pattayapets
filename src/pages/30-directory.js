@@ -58,6 +58,7 @@ const CAT_GUIDES = {
   ],
   trainers: [
     { name: "Puppy care in Pattaya", path: "/dogs/puppy-care-pattaya.html" },
+    { name: "Dog registration & the law", path: "/owning-a-pet-in-pattaya/dog-registration-thailand.html" },
     { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html" },
     { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html" },
     { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/" }
@@ -66,6 +67,7 @@ const CAT_GUIDES = {
     { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/" },
     { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/" },
     { name: "DLD import permit", path: "/bring-pet-to-thailand/import-permit-thailand-dld.html" },
+    { name: "Rabies & titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html" },
     { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html" }
   ]
 };
