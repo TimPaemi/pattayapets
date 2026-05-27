@@ -52,11 +52,14 @@ pages.push(cat({
       "spreads serious infections, including FIV and feline leukaemia (FeLV), " +
       "through bites.</li>" +
       "<li><strong>Parasites</strong> &mdash; ticks, fleas and worms are " +
-      "year-round in this climate.</li>" +
+      "year-round in this climate. See " +
+      "<a href=\"/pet-emergency/ticks-and-fleas.html\">ticks &amp; fleas</a>.</li>" +
       "<li><strong>Poisons</strong> &mdash; pest bait, chemicals and toxic " +
-      "plants.</li>" +
+      "plants. See <a href=\"/pet-emergency/poisoning.html\">poisoning hazards</a>.</li>" +
       "<li><strong>Loss and theft</strong> &mdash; an unneutered, unmicrochipped " +
-      "cat that wanders can simply not come home.</li></ul>" },
+      "cat that wanders can simply not come home. See " +
+      "<a href=\"/owning-a-pet-in-pattaya/microchipping-your-pet.html\">microchipping</a> " +
+      "and <a href=\"/owning-a-pet-in-pattaya/lost-pet-pattaya.html\">if your pet goes missing</a>.</li></ul>" },
     { h: "The case for an indoor or indoor-mostly life", html:
       "<p>For these reasons, many expat cat owners in Pattaya keep their cats " +
       "<strong>indoors</strong>, or indoor with access only to a safely enclosed " +
@@ -89,12 +92,16 @@ pages.push(cat({
       "<p>If an indoor-outdoor life suits your home &mdash; a quiet soi, a walled " +
       "garden &mdash; reduce the risk first:</p>" +
       "<ul><li><strong>Neuter</strong> the cat &mdash; it roams far less, fights " +
-      "far less, and cannot add to the street-cat population.</li>" +
+      "far less, and cannot add to the street-cat population. See " +
+      "<a href=\"/pet-health-pattaya/spaying-and-neutering.html\">spaying &amp; neutering</a>.</li>" +
       "<li><strong>Microchip and collar</strong> it, so a lost cat can come " +
-      "home.</li>" +
+      "home. See <a href=\"/owning-a-pet-in-pattaya/microchipping-your-pet.html\">microchipping</a>.</li>" +
       "<li>Keep <strong>vaccinations and parasite prevention</strong> fully up " +
-      "to date &mdash; an outdoor cat needs them most.</li>" +
-      "<li>Bring the cat in <strong>overnight</strong>, when traffic, dogs and " +
+      "to date &mdash; an outdoor cat needs them most. See " +
+      "<a href=\"/cats/cat-vaccinations-thailand.html\">cat vaccinations</a> and " +
+      "<a href=\"/pet-emergency/ticks-and-fleas.html\">ticks &amp; fleas</a>.</li>" +
+      "<li>Bring the cat in <strong>overnight</strong>, when traffic, " +
+      "<a href=\"/pet-emergency/street-dog-encounters.html\">street dogs</a> and " +
       "fights peak.</li></ul>" }
   ],
   faqs: [
@@ -339,7 +346,8 @@ pages.push(dog({
       "that <strong>prevention is simple</strong> &mdash; a regular preventive, " +
       "given year-round, on the schedule your vet recommends. If you are new to " +
       "the tropics this is the easiest thing to overlook, so raise it with your " +
-      "vet at the first visit.</p>" },
+      "vet at the first visit. See our " +
+      "<a href=\"/pet-health-pattaya/heartworm.html\">heartworm guide</a>.</p>" },
     { h: "Ticks, fleas and worms &mdash; all year", html:
       "<p>The climate means external and internal parasites never stop. Dogs " +
       "need <strong>year-round</strong> tick and flea control and regular " +
@@ -390,7 +398,9 @@ pages.push(dog({
       "<ul><li><strong>Flat-faced (brachycephalic) breeds</strong> &mdash; pugs, " +
       "French and English bulldogs, and similar. Their short airways make it " +
       "genuinely hard to cool down by panting, so they are at real risk in heat " +
-      "and exertion.</li>" +
+      "and exertion. If you are flying one in, read " +
+      "<a href=\"/bring-pet-to-thailand/snub-nosed-breeds-flying.html\">snub-nosed breeds &amp; flying</a> " +
+      "before you book.</li>" +
       "<li><strong>Thick double-coated breeds</strong> &mdash; Huskies, " +
       "Malamutes, Samoyeds and the like. They are popular and beautiful, but " +
       "they are built for cold and need serious heat management here.</li>" +
@@ -453,7 +463,9 @@ pages.push(dog({
       "<p>Puppies are vulnerable to worms, fleas and ticks, and to heartworm " +
       "carried by mosquitoes. Start prevention early on your vet&rsquo;s schedule " +
       "and keep it going year-round &mdash; in this climate parasites never have " +
-      "an off-season.</p>" },
+      "an off-season. See " +
+      "<a href=\"/pet-health-pattaya/heartworm.html\">heartworm prevention</a> and " +
+      "<a href=\"/pet-emergency/ticks-and-fleas.html\">ticks &amp; fleas</a>.</p>" },
     { h: "The heat and a young dog", html:
       "<p>Puppies overheat easily and do not know to stop. Keep outings " +
       "<strong>short and in the cool hours</strong> &mdash; early morning and " +

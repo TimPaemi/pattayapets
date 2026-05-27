@@ -47,7 +47,10 @@ pages.push(own({
       "pet will look for any way out. Do not take dogs through the water-fight " +
       "zones, and keep cats in entirely. Make sure ID and " +
       "<a href=\"/owning-a-pet-in-pattaya/microchipping-your-pet.html\">microchip " +
-      "details</a> are current before the festival, just in case.</p>" },
+      "details</a> are current before the festival, just in case. If your pet bolts, " +
+      "see <a href=\"/owning-a-pet-in-pattaya/lost-pet-pattaya.html\">lost pet in Pattaya</a>. " +
+      "Noise-anxious pets may also need the strategies in " +
+      "<a href=\"/owning-a-pet-in-pattaya/fireworks-and-noise-anxiety.html\">fireworks &amp; noise anxiety</a>.</p>" },
     { h: "Give them a calm space", html:
       "<p>Set up a quiet interior room away from the street noise, with familiar " +
       "bedding, water, and a fan or air-conditioning running &mdash; the steady " +
@@ -530,7 +533,8 @@ pages.push(own({
       "explain what is happening, what treatment can and cannot do, and how to " +
       "keep your pet comfortable. You do not have to carry these decisions " +
       "alone &mdash; a good vet will walk through them with you, without " +
-      "pressure, at your pace.</p>" },
+      "pressure, at your pace. For older pets, see also " +
+      "<a href=\"/owning-a-pet-in-pattaya/senior-pet-care.html\">senior pet care</a>.</p>" },
     { h: "Thinking about quality of life", html:
       "<p>The kindest question is not &lsquo;how long can we keep going?&rsquo; " +
       "but &lsquo;is my pet still comfortable and content?&rsquo;. Vets often " +
@@ -545,14 +549,19 @@ pages.push(own({
       "with your pet, holding and comforting it, and many owners find that " +
       "important. Some clinics can also arrange a <strong>home visit</strong>, " +
       "so a pet can stay in familiar surroundings &mdash; ask your vet whether " +
-      "that is possible. Take whatever time you need to say goodbye.</p>" },
+      "that is possible, or see " +
+      "<a href=\"/mobile-vets/\">mobile &amp; home-visit vets</a>. Take whatever time you need to say goodbye.</p>" },
     { h: "Aftercare", html:
       "<p>Pet cremation services are available in the Pattaya area, including " +
       "individual cremation where the ashes are returned to you. Your vet can " +
       "talk you through the options and help arrange aftercare, so this is not " +
       "something you have to organise by yourself at a difficult moment. There " +
       "is no single right choice &mdash; only the one that feels right to " +
-      "you.</p>" },
+      "you.</p>" +
+      "<p>Costs at this stage vary widely. See " +
+      "<a href=\"/pet-insurance-thailand.html\">pet insurance in Thailand</a> and " +
+      "<a href=\"/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html\">what it costs to own a pet</a> " +
+      "for budgeting context.</p>" },
     { h: "Grief is real, and so is healing", html:
       "<p>The loss of a pet is a genuine bereavement, and it deserves to be " +
       "treated as one. Be gentle with yourself, give yourself time, and lean on " +

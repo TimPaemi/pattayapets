@@ -2,7 +2,7 @@
 /* Cluster: Taking your pet out of Thailand */
 
 const { article, hub } = require("../guidekit.js");
-const { exportCountryRelated } = require("../data/country-pairs.js");
+const { exportCountryRelated, attachImportMirrorLink } = require("../data/country-pairs.js");
 
 const GUIDES = { name: "Guides", path: "/guides.html" };
 const CLUSTER = { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/" };
@@ -134,7 +134,7 @@ pages.push(hub({
 }));
 
 function exp(o) {
-  var sections = (o.sections || []).slice();
+  var sections = attachImportMirrorLink((o.sections || []).slice(), o.slug);
   if (!o.skipOfficial) {
     sections.push({ h: "Official sources", html: OFFICIAL });
   }
@@ -174,7 +174,11 @@ pages.push(exp({
       "<em>in</em> at the other end is governed entirely by the destination " +
       "country, and that is usually the harder, longer part &mdash; especially " +
       "the rabies titer test and its waiting period. Read the destination page " +
-      "for where you are going, and work backwards from your travel date.</p>" },
+      "for where you are going &mdash; for example " +
+      '<a href="/take-pet-out-of-thailand/to-uk.html">the UK</a>, ' +
+      '<a href="/take-pet-out-of-thailand/to-eu.html">the EU</a>, or ' +
+      '<a href="/take-pet-out-of-thailand/to-australia.html">Australia</a> ' +
+      "&mdash; and work backwards from your travel date.</p>" },
     { h: "Leaving from the airport", html:
       "<p>Most pets depart from Suvarnabhumi (BKK). The DLD has an office at the " +
       "airport for final endorsement, and your pet is checked before it flies. " +
@@ -224,7 +228,10 @@ pages.push(exp({
       "you apply, obtain that country&rsquo;s import requirements or import permit " +
       "and show them to the AQS &mdash; the Thai health certificate must match what " +
       "the destination expects. Read the destination page in our " +
-      "<a href=\"/take-pet-out-of-thailand/\">export guide</a> and confirm with " +
+      "<a href=\"/take-pet-out-of-thailand/\">export guide</a> &mdash; for example " +
+      "<a href=\"/take-pet-out-of-thailand/to-uk.html\">the UK</a>, " +
+      "<a href=\"/take-pet-out-of-thailand/to-usa.html\">the USA</a>, or " +
+      "<a href=\"/take-pet-out-of-thailand/to-eu.html\">the EU</a> &mdash; and confirm with " +
       "the foreign authority directly.</p>" },
     { h: "When to apply", html:
       "<p>Official DLD guidance asks you to submit export application form " +

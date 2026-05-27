@@ -154,6 +154,10 @@ pages.push(article({
       "designed so that arrival is straightforward. Get the sequence right &mdash; " +
       "<a href=\"/bring-pet-to-thailand/microchip-requirements.html\">microchip " +
       "before the rabies vaccination</a> &mdash; sort the " +
+      "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies " +
+      "vaccination</a>, the " +
+      "<a href=\"/bring-pet-to-thailand/health-certificate.html\">health certificate</a>, " +
+      "and the " +
       "<a href=\"/bring-pet-to-thailand/import-permit-thailand-dld.html\">DLD " +
       "import permit</a> in advance, keep the original documents together and " +
       "accessible, and use a vet, or a " +

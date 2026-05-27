@@ -1,5 +1,6 @@
 "use strict";
-/* Bidirectional import ↔ export country slug pairs for related-guide strips. */
+/* Bidirectional import ↔ export country slug pairs for related-guide strips
+   and in-body cross-links between paired country pages. */
 
 const IMPORT_TO_EXPORT = {
   "from-uk": { slug: "to-uk", label: "To the UK (export)" },
@@ -61,4 +62,54 @@ function exportCountryRelated(slug, base, desc) {
   ].concat(base);
 }
 
-module.exports = { importCountryRelated, exportCountryRelated };
+function exportReturnBlock(importSlug) {
+  var pair = IMPORT_TO_EXPORT[importSlug];
+  if (!pair) return "";
+  return "<p>See our guide to " +
+    '<a href="/take-pet-out-of-thailand/' + pair.slug + '.html">' +
+    pair.label + "</a> for the full export paperwork.</p>";
+}
+
+function attachReturnExportLink(sections, importSlug) {
+  var pair = IMPORT_TO_EXPORT[importSlug];
+  var block = exportReturnBlock(importSlug);
+  if (!block || !sections.length || !pair) return sections;
+  var exportPath = "/take-pet-out-of-thailand/" + pair.slug + ".html";
+  for (var i = sections.length - 1; i >= 0; i--) {
+    if (/return|re-entry|bringing it back|bringing your pet back/i.test(sections[i].h || "")) {
+      if (sections[i].html.indexOf(exportPath) === -1) {
+        sections[i].html += block;
+      }
+      return sections;
+    }
+  }
+  return sections;
+}
+
+function importMirrorBlock(exportSlug) {
+  var pair = EXPORT_TO_IMPORT[exportSlug];
+  if (!pair) return "";
+  return "<p>If you came the other way, see our guide to " +
+    '<a href="/bring-pet-to-thailand/' + pair.slug + '.html">' +
+    pair.label + "</a>.</p>";
+}
+
+function attachImportMirrorLink(sections, exportSlug) {
+  var pair = EXPORT_TO_IMPORT[exportSlug];
+  var block = importMirrorBlock(exportSlug);
+  if (!block || !sections.length || !pair) return sections;
+  var importPath = "/bring-pet-to-thailand/" + pair.slug + ".html";
+  if (sections[sections.length - 1].html.indexOf(importPath) === -1) {
+    sections[sections.length - 1].html += block;
+  }
+  return sections;
+}
+
+module.exports = {
+  importCountryRelated,
+  exportCountryRelated,
+  exportReturnBlock,
+  attachReturnExportLink,
+  importMirrorBlock,
+  attachImportMirrorLink
+};

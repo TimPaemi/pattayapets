@@ -3,7 +3,7 @@
    plus the U-Tapao / Bangkok arrival-airport guide. */
 
 const { article } = require("../guidekit.js");
-const { importCountryRelated } = require("../data/country-pairs.js");
+const { importCountryRelated, attachReturnExportLink } = require("../data/country-pairs.js");
 
 const GUIDES = { name: "Guides", path: "/guides.html" };
 const CLUSTER = { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/" };
@@ -62,7 +62,7 @@ const EU_IMPORT_REF =
   "see our <a href=\"/bring-pet-to-thailand/from-eu.html\">bringing a pet from the EU</a> guide.</p>";
 
 function country(o) {
-  var sections = (o.sections || []).slice();
+  var sections = attachReturnExportLink((o.sections || []).slice(), o.slug);
   sections.push({ h: "Official sources", html: OFFICIAL });
   return article({
     path: "/bring-pet-to-thailand/" + o.slug + ".html",
@@ -458,7 +458,10 @@ pages.push(article({
       "station there</a>, and travel on to Pattaya by road. Routing through Bangkok also gives you far more choice " +
       "of airline and flight, and more direct long-haul options &mdash; which " +
       "usually means a shorter, lower-stress journey for the pet than chasing a " +
-      "rare U-Tapao connection.</p>" },
+      "rare U-Tapao connection. Whichever airport you use, you still need the " +
+      "<a href=\"/bring-pet-to-thailand/import-permit-thailand-dld.html\">DLD import permit</a> " +
+      "and an airline that accepts pets under its " +
+      "<a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">pet policy</a>.</p>" },
     { h: "Getting from the airport to Pattaya", html:
       "<p>From Suvarnabhumi, arrange a <strong>pet-friendly vehicle</strong> in " +
       "advance &mdash; a private transfer or a relocation agent&rsquo;s service that " +

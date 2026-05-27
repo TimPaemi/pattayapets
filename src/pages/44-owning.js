@@ -202,13 +202,16 @@ pages.push(own({
       "in their regulations. Crucially, a landlord&rsquo;s permission does not " +
       "override the building&rsquo;s rules &mdash; if the building forbids pets, " +
       "you can be required to leave. You need <strong>both</strong> the building " +
-      "and the unit owner to allow pets, and you need it in writing.</p>" },
+      "and the unit owner to allow pets, and you need it in writing. For condos " +
+      "that do accept dogs, see " +
+      "<a href=\"/dog-friendly-pattaya/condos.html\">dog-friendly condos</a>.</p>" },
     { h: "Houses and villages versus condos", html:
       "<p>Stand-alone houses, townhouses and village-style rentals &mdash; common " +
       "in East Pattaya and the outer areas &mdash; are generally far easier with " +
       "pets than high-rise condos, and often come with a garden or yard. If a " +
       "pet is central to your life here, widening your search to houses is " +
-      "usually the simplest fix.</p>" },
+      "usually the simplest fix. Browse by " +
+      "<a href=\"/directory.html\">neighbourhood</a> in the directory.</p>" },
     { h: "What to confirm before you sign", html:
       "<ul><li>The <strong>building</strong> permits pets &mdash; see it in " +
       "writing.</li>" +

@@ -3,7 +3,7 @@
    Full parity with the import cluster's country pages. */
 
 const { article } = require("../guidekit.js");
-const { exportCountryRelated } = require("../data/country-pairs.js");
+const { exportCountryRelated, attachImportMirrorLink } = require("../data/country-pairs.js");
 
 const GUIDES = { name: "Guides", path: "/guides.html" };
 const CLUSTER = { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/" };
@@ -73,7 +73,7 @@ const THAI_SIDE =
   "clear on the way out. The two sets of paperwork have to agree.</p>";
 
 function exp(o) {
-  var sections = (o.sections || []).slice();
+  var sections = attachImportMirrorLink((o.sections || []).slice(), o.slug);
   sections.push({ h: "Official sources", html: OFFICIAL });
   return article({
     path: "/take-pet-out-of-thailand/" + o.slug + ".html",

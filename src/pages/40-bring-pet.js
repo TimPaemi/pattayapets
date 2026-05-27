@@ -2,7 +2,7 @@
 /* Flagship cluster: Bringing your pet to Thailand */
 
 const { article, hub } = require("../guidekit.js");
-const { importCountryRelated } = require("../data/country-pairs.js");
+const { importCountryRelated, attachReturnExportLink } = require("../data/country-pairs.js");
 
 const GUIDES = { name: "Guides", path: "/guides.html" };
 const CLUSTER = { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/" };
@@ -153,7 +153,12 @@ pages.push(importStep({
       "<p>Ask your vet to record the microchip number, the date implanted and the " +
       "chip&rsquo;s standard on your pet&rsquo;s records. That number will appear " +
       "on the rabies certificate, the health certificate and the import permit " +
-      "application, so it needs to be consistent everywhere.</p>" }
+      "application, so it needs to be consistent everywhere.</p>" },
+    { h: "What comes next", html:
+      "<p>Once the chip is in and documented, move on to the " +
+      '<a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">rabies vaccination and titer test</a>. ' +
+      "The full sequence is in our " +
+      '<a href="/bring-pet-to-thailand/">flagship import guide</a>.</p>' }
   ],
   faqs: [
     ["Does my pet need a new microchip if it already has an ISO one?",
@@ -213,7 +218,17 @@ pages.push(importStep({
       "the UK, the EU or Australia. Those destinations <em>do</em> require a " +
       "titer test, and they impose a waiting period of three months or more " +
       "after the blood sample. Doing the test now, while you are already at the " +
-      "vet, can save you months later.</p>" }
+      "vet, can save you months later.</p>" +
+      "<p>If you might later leave Thailand, read " +
+      '<a href="/take-pet-out-of-thailand/">taking a pet out of Thailand</a> ' +
+      "for what the return journey involves.</p>" },
+    { h: "What comes next", html:
+      "<p>With vaccinations in order, the next documents are the " +
+      '<a href="/bring-pet-to-thailand/health-certificate.html">health certificate</a> ' +
+      "and the " +
+      '<a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a>. ' +
+      "Step one was the " +
+      '<a href="/bring-pet-to-thailand/microchip-requirements.html">microchip</a>.</p>' }
   ],
   faqs: [
     ["How long before travel should the rabies shot be given?",
@@ -265,7 +280,14 @@ pages.push(importStep({
       "seven. Because it must also be government-endorsed inside that window, " +
       "the final fortnight before departure is the busy one. Book the vet exam " +
       "and the endorsement well in advance, and confirm the exact validity " +
-      "period that applies to your route.</p>" }
+      "period that applies to your route.</p>" },
+    { h: "What comes next", html:
+      "<p>Apply for the " +
+      '<a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a> ' +
+      "once the certificate is ready, then book the flight under " +
+      '<a href="/bring-pet-to-thailand/airline-pet-policies.html">airline pet policies</a>. ' +
+      "The vaccinations are covered in our " +
+      '<a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">rabies &amp; titer guide</a>.</p>' }
   ],
   faqs: [
     ["Can my normal vet do the health certificate?",
@@ -394,7 +416,15 @@ pages.push(importStep({
       "breeds</strong> — French Bulldogs, Pugs, Persian cats and similar — " +
       "because they are vulnerable to breathing problems and heat stress in the " +
       "hold. Some airlines also embargo hold travel during the hottest months. " +
-      "If you own a snub-nosed breed, check this before anything else.</p>" },
+      "If you own a snub-nosed breed, check this before anything else &mdash; see our " +
+      "<a href=\"/bring-pet-to-thailand/snub-nosed-breeds-flying.html\">snub-nosed breeds &amp; flying</a> guide.</p>" },
+    { h: "What comes next", html:
+      "<p>With the flight booked, read " +
+      "<a href=\"/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html\">what happens on arrival</a> " +
+      "and budget the move in our " +
+      "<a href=\"/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html\">cost guide</a>. " +
+      "The Thai-side permit is the " +
+      "<a href=\"/bring-pet-to-thailand/import-permit-thailand-dld.html\">DLD import permit</a>.</p>" },
     { h: "Booking the pet", html:
       "<p>Airline pet spaces are limited and book up. As soon as your travel " +
       "dates are firm, contact the airline (or your agent) to reserve your " +
@@ -494,13 +524,18 @@ pages.push(importStep({
   sections: [
     { h: "Where the money goes", html:
       "<p>A pet move is really a stack of separate costs:</p>" +
-      "<ul><li><strong>Microchip</strong> — small, if your pet is not already chipped.</li>" +
-      "<li><strong>Vaccinations</strong> — rabies and the others, at normal vet rates.</li>" +
-      "<li><strong>Rabies titer test</strong> — a lab blood test; modest, but only if you need it.</li>" +
-      "<li><strong>Health certificate &amp; government endorsement</strong> — the vet exam plus the official endorsement fee.</li>" +
-      "<li><strong>IATA travel crate</strong> — sized to your pet; larger dogs need larger, pricier crates.</li>" +
-      "<li><strong>The flight</strong> — almost always the biggest single cost, and the most variable.</li>" +
-      "<li><strong>Import permit</strong> — a relatively minor official fee.</li>" +
+      "<ul><li><strong>Microchip</strong> &mdash; small, if your pet is not already chipped. See " +
+      "<a href=\"/bring-pet-to-thailand/microchip-requirements.html\">microchip requirements</a>.</li>" +
+      "<li><strong>Vaccinations</strong> &mdash; rabies and the others, at normal vet rates. See " +
+      "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies &amp; titer test</a>.</li>" +
+      "<li><strong>Rabies titer test</strong> &mdash; a lab blood test; modest, but only if you need it.</li>" +
+      "<li><strong>Health certificate &amp; government endorsement</strong> &mdash; the vet exam plus the official endorsement fee. See " +
+      "<a href=\"/bring-pet-to-thailand/health-certificate.html\">health certificate</a>.</li>" +
+      "<li><strong>IATA travel crate</strong> &mdash; sized to your pet; larger dogs need larger, pricier crates.</li>" +
+      "<li><strong>The flight</strong> &mdash; almost always the biggest single cost, and the most variable. See " +
+      "<a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline pet policies</a>.</li>" +
+      "<li><strong>Import permit</strong> &mdash; a relatively minor official fee. See " +
+      "<a href=\"/bring-pet-to-thailand/import-permit-thailand-dld.html\">DLD import permit</a>.</li>" +
       "<li><strong>Relocation agent</strong> — optional, and covered below.</li>" +
       "<li><strong>Airport-to-Pattaya transfer</strong> — a pet-friendly vehicle on arrival.</li></ul>" },
     { h: "The honest range", html:
@@ -558,7 +593,7 @@ function countryRelated(slug) {
 }
 
 function countryPage(o) {
-  var sections = (o.sections || []).slice();
+  var sections = attachReturnExportLink((o.sections || []).slice(), o.slug);
   sections.push({ h: "Official sources", html: OFFICIAL });
   return article({
     path: "/bring-pet-to-thailand/" + o.slug + ".html",

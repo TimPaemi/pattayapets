@@ -2,7 +2,7 @@
 /* Extra origin-country guides for the "Bringing a pet to Thailand" cluster. */
 
 const { article } = require("../guidekit.js");
-const { importCountryRelated } = require("../data/country-pairs.js");
+const { importCountryRelated, attachReturnExportLink } = require("../data/country-pairs.js");
 
 const GUIDES = { name: "Guides", path: "/guides.html" };
 const CLUSTER = { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/" };
@@ -43,8 +43,17 @@ const EU_IMPORT_REF =
   "<p>For the shared EU export-certificate framework every member state follows, " +
   "see our <a href=\"/bring-pet-to-thailand/from-eu.html\">bringing a pet from the EU</a> guide.</p>";
 
+const STD_STEPS =
+  "Follow the standard steps &mdash; " +
+  "<a href=\"/bring-pet-to-thailand/microchip-requirements.html\">microchip</a>, " +
+  "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies and the " +
+  "other vaccinations</a>, the " +
+  "<a href=\"/bring-pet-to-thailand/health-certificate.html\">health certificate</a> " +
+  "and the <a href=\"/bring-pet-to-thailand/import-permit-thailand-dld.html\">DLD import " +
+  "permit</a>. ";
+
 function country(o) {
-  var sections = (o.sections || []).slice();
+  var sections = attachReturnExportLink((o.sections || []).slice(), o.slug);
   sections.push({ h: "Official sources", html: OFFICIAL });
   return article({
     path: "/bring-pet-to-thailand/" + o.slug + ".html",
@@ -67,12 +76,7 @@ pages.push(country({
     "endorses your paperwork, and what you should plan for if you ever return.",
   sections: [
     { h: "The Canadian side of the paperwork", html:
-      "<p>Follow the standard steps &mdash; " +
-      "<a href=\"/bring-pet-to-thailand/microchip-requirements.html\">microchip</a>, " +
-      "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies</a>, " +
-      "<a href=\"/bring-pet-to-thailand/health-certificate.html\">health certificate</a> " +
-      "and <a href=\"/bring-pet-to-thailand/import-permit-thailand-dld.html\">DLD import " +
-      "permit</a>. In Canada, the export health certificate is completed by your vet and " +
+      "<p>" + STD_STEPS + "In Canada, the export health certificate is completed by your vet and " +
       "endorsed by the <strong>Canadian Food Inspection Agency (CFIA)</strong>. Use a vet " +
       "experienced in export work and book the CFIA endorsement early.</p>" },
     { h: "Plan for the return to Canada", html:
@@ -100,8 +104,7 @@ pages.push(country({
     "document Thailand needs, nor enough for the journey back.",
   sections: [
     { h: "The German side of the paperwork", html:
-      "<p>Follow the standard steps &mdash; microchip, rabies, the other vaccinations, the " +
-      "health certificate and the DLD import permit. For travel out of the EU, your vet " +
+      "<p>" + STD_STEPS + "For travel out of the EU, your vet " +
       "completes an <strong>EU animal health / export certificate</strong>, endorsed by " +
       "the responsible German authority (the regional veterinary office, the " +
       "<em>Veterinaeramt</em>). The familiar EU pet passport governs travel within the " +
@@ -132,8 +135,7 @@ pages.push(country({
     "steps are standard; the Russian-specific part is the state veterinary paperwork.",
   sections: [
     { h: "The Russian side of the paperwork", html:
-      "<p>Follow the standard steps &mdash; microchip, rabies vaccination, the other " +
-      "vaccinations, the veterinary certificate and the DLD import permit. In Russia, the " +
+      "<p>" + STD_STEPS + "In Russia, the " +
       "veterinary certificate is issued and endorsed through the <strong>state veterinary " +
       "service</strong> (under Rosselkhoznadzor), usually by exchanging the clinic " +
       "certificate for an international form shortly before travel. Allow time for that " +

@@ -27,7 +27,12 @@ pages.push(article({
       "to cushion the cost of the <strong>big, unplanned event</strong> &mdash; " +
       "an accident, a serious illness, surgery, a hospital stay &mdash; rather " +
       "than to pay for routine vaccinations and check-ups. Cover, limits and " +
-      "price vary a great deal between providers.</p>" },
+      "price vary a great deal between providers. When a claim happens, it is usually " +
+      "through a <a href=\"/vets/\">vet</a> or " +
+      "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour animal hospital</a> " +
+      "&mdash; see our guides to " +
+      "<a href=\"/pet-health-pattaya/\">pet health in Pattaya</a> and " +
+      "<a href=\"/pet-emergency/\">pet emergencies</a>.</p>" },
     { h: "What to check before you buy", html:
       "<p>Before choosing any policy, read the document for:</p>" +
       "<ul><li><strong>What is covered</strong> &mdash; accident only, or " +
@@ -50,7 +55,9 @@ pages.push(article({
       "set aside a dedicated pet-emergency fund and let it build. Either way, " +
       "the goal is the same &mdash; making sure money is never the reason a pet " +
       "cannot get the treatment it needs.</p>" +
-      "<p>PattayaPets does not sell insurance, earn commission, or recommend a " +
+      "<p>For budgeting context, see " +
+      "<a href=\"/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html\">what it costs to own a pet in Pattaya</a>. " +
+      "PattayaPets does not sell insurance, earn commission, or recommend a " +
       "particular provider. Compare current policies yourself and read the " +
       "wording.</p>" }
   ],
@@ -64,10 +71,9 @@ pages.push(article({
   ],
   related: [
     { name: "What it costs to own a pet", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", desc: "The wider pet budget in Pattaya." },
-    { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/", desc: "Insurance matters most on complex moves." },
-    { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "Export timelines and unexpected vet bills." },
+    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "When the big, unplanned bills happen." },
     { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Preventive care and tropical risks." },
-    { name: "Pet emergencies", path: "/pet-emergency/", desc: "When the big, unplanned bills happen." }
+    { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/", desc: "Insurance matters most on complex moves." }
   ]
 }));
 
