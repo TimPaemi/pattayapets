@@ -325,6 +325,72 @@ pages.push(country({
   ]
 }));
 
+/* ---------------- JAPAN ---------------- */
+pages.push(country({
+  slug: "from-japan", crumb: "From Japan",
+  title: "Bringing a pet to Thailand from Japan | PattayaPets",
+  desc: "Bringing a dog or cat from Japan to Thailand: AQS export paperwork, the rabies " +
+    "titer test for the return, and what to plan before you leave.",
+  h1: "Bringing a pet to Thailand from Japan",
+  lede: "Japan is a well-organised origin for pet export. The Thai import steps are " +
+    "standard; the part worth planning early is what Japan will require if you ever " +
+    "bring your pet back.",
+  sections: [
+    { h: "The Japanese side of the paperwork", html:
+      "<p>" + STD_STEPS + "For export from Japan, your vet works through the " +
+      "<strong>Animal Quarantine Service (AQS)</strong> &mdash; the export health " +
+      "certificate, vaccination records and any pre-export inspection the route " +
+      "requires. Japan&rsquo;s process is thorough; use a vet experienced in export " +
+      "work and allow plenty of lead time for AQS appointments.</p>" },
+    { h: "Planning the return to Japan", html:
+      "<p>If there is any chance of returning your pet to Japan, research the " +
+      "<strong>re-entry rules before you leave</strong>. Japan applies strict rabies " +
+      "controls to pets arriving from most countries, including a " +
+      "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies " +
+      "titer test</a>, advance notification to AQS and a waiting period from the " +
+      "blood sample before the pet may enter. The timeline is measured in months, " +
+      "not weeks &mdash; confirm the current detail with AQS and your vet.</p>" }
+  ],
+  faqs: [
+    ["Is Japan's export process complicated?",
+     "<p>It is thorough rather than chaotic. The AQS sets clear steps, and an experienced export vet makes the difference. Start early, especially if you need AQS inspection appointments close to your travel date.</p>"],
+    ["What will Japan require for the return?",
+     "<p>Strict rabies controls for most origin countries: microchip, rabies vaccination, a rabies titer test, advance notification to AQS and a waiting period from the sample date. Confirm the current rules with AQS before you travel.</p>"]
+  ]
+}));
+
+/* ---------------- SINGAPORE ---------------- */
+pages.push(country({
+  slug: "from-singapore", crumb: "From Singapore",
+  title: "Bringing a pet to Thailand from Singapore | PattayaPets",
+  desc: "Bringing a dog or cat from Singapore to Thailand: AVS export certificate, " +
+    "the Thai DLD import permit, and what to plan if you might return.",
+  h1: "Bringing a pet to Thailand from Singapore",
+  lede: "Singapore is a rabies-free country with a clear export process. The Thai " +
+    "import side is standard; the return journey is where the rules tighten.",
+  sections: [
+    { h: "The Singapore side of the paperwork", html:
+      "<p>" + STD_STEPS + "For export from Singapore, your vet completes the export " +
+      "health certificate through the <strong>Animal &amp; Veterinary Service (AVS)</strong>. " +
+      "Singapore&rsquo;s export requirements are well documented; book AVS endorsement " +
+      "and any pre-export steps in good time.</p>" },
+    { h: "Planning the return to Singapore", html:
+      "<p>Singapore protects its rabies-free status strictly. Bringing a pet back from " +
+      "Thailand &mdash; which is not rabies-free &mdash; requires a valid rabies " +
+      "vaccination, a <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">" +
+      "rabies titer test</a> from an approved laboratory, an import licence from AVS " +
+      "and often a quarantine or home-isolation period on arrival. If there is any " +
+      "chance of returning, study AVS&rsquo;s current import requirements before you " +
+      "leave &mdash; not after.</p>" }
+  ],
+  faqs: [
+    ["Is it hard to export a pet from Singapore?",
+     "<p>The export side is straightforward if you follow AVS's published steps and use an experienced vet. The difficulty is the return journey from Thailand, not the departure from Singapore.</p>"],
+    ["What does Singapore require for the return?",
+     "<p>A rabies vaccination, a rabies titer test, an AVS import licence and compliance with Singapore's post-arrival rules. Confirm the current detail with AVS before you travel.</p>"]
+  ]
+}));
+
 /* ---------------- U-TAPAO vs BANGKOK ---------------- */
 pages.push(article({
   path: "/bring-pet-to-thailand/u-tapao-airport-pets.html",

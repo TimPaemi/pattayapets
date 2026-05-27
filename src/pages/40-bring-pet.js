@@ -69,6 +69,8 @@ pages.push(hub({
         { name: "From the EU", desc: "EU export paperwork and what the pet passport does not cover.", path: "/bring-pet-to-thailand/from-eu.html" },
         { name: "From Australia", desc: "Why this route is the hardest, and what it really involves.", path: "/bring-pet-to-thailand/from-australia.html" },
         { name: "From Canada", desc: "CFIA endorsement and planning for the journey home.", path: "/bring-pet-to-thailand/from-canada.html" },
+        { name: "From Japan", desc: "AQS export paperwork and the rabies titer test for the return.", path: "/bring-pet-to-thailand/from-japan.html" },
+        { name: "From Singapore", desc: "AVS export certificate and planning from a rabies-free origin.", path: "/bring-pet-to-thailand/from-singapore.html" },
         { name: "From Germany", desc: "EU export paperwork via the German veterinary office.", path: "/bring-pet-to-thailand/from-germany.html" },
         { name: "From Russia", desc: "The state veterinary certificate and the rabies titer test.", path: "/bring-pet-to-thailand/from-russia.html" },
         { name: "From Sweden", desc: "EU export paperwork via the Swedish Board of Agriculture.", path: "/bring-pet-to-thailand/from-sweden.html" },

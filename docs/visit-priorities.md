@@ -38,7 +38,7 @@ visibility, expat search demand, and visit practicality (one trip, several wins)
 
 | Priority | Business | Category | Why |
 | --- | --- | --- | --- |
-| 11 | TH Animal Hospital | Vets | Specialist positioning; sparse public facts — visit confirms details |
+| 11 | Pattaya Animal Hospital | Vets | Central Pattaya clinic; visit confirms hours and English support |
 | 12 | Pattaya Community Pet Hospital | Vets | 24h but thin public data — visit verifies location/contact |
 | 13 | North Pattaya Animal Hospital | Vets | Naklua coverage gap |
 | 14 | Relo4Paws | Relocation | Second relocation opinion for comparison |

@@ -375,4 +375,102 @@ pages.push(exp({
   ]
 }));
 
+/* ---------------- JAPAN ---------------- */
+pages.push(exp({
+  slug: "to-japan", crumb: "To Japan",
+  title: "Taking a pet from Thailand to Japan | PattayaPets",
+  desc: "Bringing a dog or cat from Thailand to Japan: MAFF import approval, microchip, " +
+    "rabies titer test and the 180-day wait from the sample date.",
+  h1: "Taking a pet from Thailand to Japan",
+  lede: "Japan has one of the strictest pet-import systems anywhere. From Thailand, " +
+    "plan on months of lead time and confirm every step with MAFF before you book.",
+  sections: [
+    { h: "Entering Japan from Thailand", html:
+      "<p>Japan&rsquo;s Ministry of Agriculture, Forestry and Fisheries (MAFF) treats " +
+      "Thailand as a designated region requiring advance preparation. The core steps " +
+      "include an ISO microchip, rabies vaccinations on the approved schedule, a " +
+      "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies " +
+      "titer test</a> from an MAFF-approved laboratory, advance notification to the " +
+      "Animal Quarantine Service, and a <strong>180-day wait</strong> from the blood " +
+      "sample date before the pet may enter. An import approval document from MAFF " +
+      "completes the paperwork.</p>" },
+    { h: "The Thai side", html:
+      THAI_SIDE +
+      "<p>Because the Japan timeline is long, start the titer test and MAFF " +
+      "notification as early as you can. A specialist " +
+      "<a href=\"/pet-relocation/\">pet relocation agent</a> experienced in the " +
+      "Japan route is worth considering.</p>" }
+  ],
+  faqs: [
+    ["How long does it take to bring a pet from Thailand to Japan?",
+     "<p>Often six months or more from starting the rabies titer test, because of the 180-day wait from the sample date plus the Thai export steps. Confirm the current MAFF timeline before you commit.</p>"],
+    ["Does Japan require a rabies titer test from Thailand?",
+     "<p>Yes. Japan requires a rabies titer test from an approved laboratory and a waiting period from the sample date. This is not a route to start late.</p>"]
+  ]
+}));
+
+/* ---------------- SINGAPORE ---------------- */
+pages.push(exp({
+  slug: "to-singapore", crumb: "To Singapore",
+  title: "Taking a pet from Thailand to Singapore | PattayaPets",
+  desc: "Bringing a dog or cat from Thailand to Singapore: AVS import licence, rabies " +
+    "titer test and Singapore's post-arrival rules.",
+  h1: "Taking a pet from Thailand to Singapore",
+  lede: "Singapore is rabies-free and protects that status strictly. A pet from " +
+    "Thailand can enter, but the paperwork and timeline need careful planning.",
+  sections: [
+    { h: "Entering Singapore from Thailand", html:
+      "<p>Singapore&rsquo;s Animal &amp; Veterinary Service (AVS) requires an " +
+      "<strong>import licence</strong>, an ISO microchip, a valid rabies vaccination " +
+      "and a <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">" +
+      "rabies titer test</a> from an approved laboratory, with timing rules between " +
+      "vaccination, sampling and travel. Dogs and cats may face additional parasite " +
+      "treatments and post-arrival home isolation or quarantine depending on the " +
+      "current AVS schedule. Confirm every detail with AVS before booking.</p>" },
+    { h: "The Thai side", html:
+      THAI_SIDE +
+      "<p>Start the titer test early &mdash; Singapore&rsquo;s timing rules sit on top " +
+      "of the Thai export process, and both have to align for your travel date.</p>" }
+  ],
+  faqs: [
+    ["Does Singapore require a rabies titer test from Thailand?",
+     "<p>Yes. AVS requires a rabies titer test from an approved laboratory for pets arriving from Thailand, along with an import licence and other health requirements. Confirm the current rules with AVS.</p>"],
+    ["Is there quarantine in Singapore?",
+     "<p>Post-arrival rules depend on AVS's current schedule and whether all pre-arrival steps were completed correctly. Confirm with AVS rather than assuming.</p>"]
+  ]
+}));
+
+/* ---------------- UAE ---------------- */
+pages.push(exp({
+  slug: "to-uae", crumb: "To the UAE",
+  title: "Taking a pet from Thailand to the UAE | PattayaPets",
+  desc: "Bringing a dog or cat from Thailand to the UAE: MOCCAE import permit, microchip, " +
+    "vaccinations and the Thai DLD export steps.",
+  h1: "Taking a pet from Thailand to the UAE",
+  lede: "The UAE route is a common one for Pattaya expats. The import permit and " +
+    "vaccination rules are manageable if you start in good time and confirm the " +
+    "current detail with MOCCAE.",
+  sections: [
+    { h: "Entering the UAE from Thailand", html:
+      "<p>The UAE Ministry of Climate Change and Environment (MOCCAE) requires an " +
+      "<strong>import permit</strong>, an ISO microchip, a valid rabies vaccination " +
+      "(and usually other core vaccinations), an official veterinary health " +
+      "certificate and compliance with any breed restrictions in the emirate you are " +
+      "entering. Some emirates and airlines add their own rules &mdash; confirm with " +
+      "MOCCAE, your airline and the destination emirate before booking.</p>" },
+    { h: "The Thai side", html:
+      THAI_SIDE +
+      "<p>The UAE does not generally require a rabies titer test for entry from " +
+      "Thailand, but if you might move your pet on to the EU, UK or similar later, " +
+      "having the <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">" +
+      "titer test</a> done early keeps that option open.</p>" }
+  ],
+  faqs: [
+    ["Does the UAE require a rabies titer test from Thailand?",
+     "<p>Generally no for UAE entry itself, though MOCCAE's rules can change. Confirm the current requirements with MOCCAE. Consider a titer test anyway if you might travel onward to stricter destinations.</p>"],
+    ["Which UAE emirate am I importing into?",
+     "<p>The import permit is federal, but some emirates and airlines add their own conditions. Confirm with MOCCAE and your airline for the emirate and airport you will use.</p>"]
+  ]
+}));
+
 module.exports = pages;

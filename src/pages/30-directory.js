@@ -65,6 +65,16 @@ const MOBILE_VETS_INTRO =
   'to the vet</a> and the full <a href="/vets/">vets directory</a>.</p>' +
   '</div></div></section>';
 
+const VERDICT_LABELS = { recommend: "Recommend", ok: "OK", avoid: "Avoid" };
+
+function fmtDate(iso) {
+  var p = String(iso || "").split("-");
+  if (p.length !== 3) return iso;
+  var months = ["January", "February", "March", "April", "May", "June", "July",
+    "August", "September", "October", "November", "December"];
+  return parseInt(p[2], 10) + " " + months[parseInt(p[1], 10) - 1] + " " + p[0];
+}
+
 function verdictPending() {
   return '<div class="callout"><span class="verdict verdict-pending">Not yet reviewed</span>' +
     "<p style=\"margin-top:.6rem\">This is a verified <strong>facts page</strong>. " +
@@ -74,6 +84,27 @@ function verdictPending() {
     "before travelling.</p></div>";
 }
 
+function verdictBlock(b) {
+  if (b.verdict && b.review) {
+    var label = VERDICT_LABELS[b.verdict] || b.verdict;
+    return '<div class="callout"><span class="verdict verdict-' + esc(b.verdict) + '">' +
+      esc(label) + "</span>" +
+      '<p style="margin-top:.6rem">' + esc(b.review) + "</p>" +
+      (b.reviewed ? '<p class="updated" style="margin-top:.8rem">Reviewed ' +
+        fmtDate(b.reviewed) + "</p>" : "") +
+      "</div>";
+  }
+  return verdictPending();
+}
+
+function verdictBadge(b) {
+  if (b.verdict && b.review) {
+    var label = VERDICT_LABELS[b.verdict] || b.verdict;
+    return '<span class="verdict verdict-' + esc(b.verdict) + '">' + esc(label) + "</span>";
+  }
+  return '<span class="verdict verdict-pending">Not yet reviewed</span>';
+}
+
 function bizCard(b) {
   var areas = b.areas.length ? b.areas.map(areaName).join(", ") : "Serves all Thailand";
   return '<article class="biz-card"><div class="biz-top">' +
@@ -81,7 +112,7 @@ function bizCard(b) {
     '<p class="biz-sub">' + esc(b.type) + " &middot; " + esc(areas) + "</p></div>" +
     (b.c24 ? '<span class="badge-24h">24 hr</span>' : "") +
     "</div><p>" + esc(firstSentence(b.summary)) + "</p>" +
-    '<div class="biz-facts"><span class="verdict verdict-pending">Not yet reviewed</span>' +
+    '<div class="biz-facts">' + verdictBadge(b) +
     (b.phone ? '<span class="chip">' + esc(b.phone) + "</span>" : "") +
     "</div></article>";
 }
@@ -146,7 +177,7 @@ BUSINESSES.forEach(function (b) {
     (primaryArea ? " &middot; " + esc(areaName(primaryArea)) + ", Pattaya" : " &middot; serves all Thailand") +
     (b.c24 ? ' &middot; <strong style="color:var(--alert)">open 24 hours</strong>' : "") +
     "</p>" +
-    verdictPending() +
+    verdictBlock(b) +
     "<p class=\"lede\">" + esc(b.summary) + "</p>" +
     "<h2>The facts</h2>" +
     factsTable(b) +
@@ -169,7 +200,8 @@ BUSINESSES.forEach(function (b) {
     "PattayaPets is not a veterinary practice and does not give veterinary advice. " +
     "This listing describes a business, not medical quality. Always consult a " +
     "qualified veterinarian.</div>" +
-    '<p class="updated">Facts compiled 22 May 2026</p>' +
+    '<p class="updated">' + (b.reviewed ? "Reviewed " + fmtDate(b.reviewed) :
+      "Facts compiled 27 May 2026") + "</p>" +
     "</div>" +
     '<aside class="sidebar"><div class="card"><div class="ch">More ' + esc(cat.name.toLowerCase()) +
     "</div><ul class=\"toc\">" +
@@ -195,7 +227,7 @@ BUSINESSES.forEach(function (b) {
       { name: "Directory", path: "/directory.html" },
       { name: cat.name, path: "/" + cat.slug + "/" }
     ],
-    updated: "2026-05-22",
+    updated: "2026-05-27",
     schema: [bizSchema(b)],
     body: body
   });
@@ -266,7 +298,7 @@ Object.keys(CATEGORIES).forEach(function (key) {
     description: clampDesc(cat.intro),
     crumb: cat.name,
     breadcrumbs: [{ name: "Directory", path: "/directory.html" }],
-    updated: "2026-05-22",
+    updated: "2026-05-27",
     body: body
   });
 });
@@ -327,7 +359,7 @@ Object.keys(AREAS).forEach(function (key) {
       ", Pattaya. " + area.blurb,
     crumb: area.name,
     breadcrumbs: [{ name: "Directory", path: "/directory.html" }],
-    updated: "2026-05-22",
+    updated: "2026-05-27",
     body: body
   });
 });

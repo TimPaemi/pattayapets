@@ -62,7 +62,9 @@ const HUB_GUIDE = {
 
   boarding: S(
     "<h2>How to choose boarding in Pattaya</h2>" +
-    "<p>Leaving a pet while you travel is easier when you have checked the " +
+    "<p>Pattaya has more dog-boarding options than dedicated catteries. If you are " +
+    "boarding a cat, confirm the facility accepts cats and keeps them apart from " +
+    "dogs. Leaving a pet while you travel is easier when you have checked the " +
     "place out properly first. The single best rule: <strong>visit before you " +
     "book</strong>. Once there, look for:</p>" +
     "<ul>" +
@@ -129,6 +131,28 @@ const HUB_GUIDE = {
     "<p>Starting early helps &mdash; gentle, positive work with a " +
     "<a href=\"/dogs/puppy-care-pattaya.html\">puppy</a> prevents many problems " +
     "before they begin.</p>"),
+
+  "mobile-vets": S(
+    "<h2>When a mobile vet makes sense in Pattaya</h2>" +
+    "<p>A mobile or home-visit vet examines and treats your pet at home. That can " +
+    "be calmer for the animal and far easier for you &mdash; no carrier, no car " +
+    "journey, no waiting room.</p>" +
+    "<ul>" +
+    "<li><strong>Good fits</strong> &mdash; routine vaccinations and health checks; " +
+    "pets that find clinics genuinely distressing; multi-pet households; owners " +
+    "without easy transport; gentle end-of-life care in familiar surroundings.</li>" +
+    "<li><strong>Not a substitute for a hospital</strong> &mdash; anything needing " +
+    "X-rays, surgery, hospitalisation or intensive monitoring still means a full " +
+    "clinic. In an emergency, go straight to a " +
+    "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour animal hospital</a>.</li>" +
+    "<li><strong>Confirm the details</strong> &mdash; coverage area, same-day " +
+    "availability, visit fees and what equipment the vet carries. Many Pattaya " +
+    "clinics offer home visits alongside their clinic work; a smaller number " +
+    "focus on mobile care.</li>" +
+    "</ul>" +
+    "<p>See also " +
+    "<a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">getting your pet " +
+    "to the vet</a> and the full <a href=\"/vets/\">vets directory</a>.</p>"),
 
   "pet-relocation": S(
     "<h2>How to choose a pet relocation agent</h2>" +

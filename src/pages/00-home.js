@@ -7,7 +7,8 @@ const ICON = {
   board: '<svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg>',
   shop: '<svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 7v1a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0V7l-3-5z"/><path d="M5 12v9h14v-9"/></svg>',
   train: '<svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="13" r="3"/><path d="M12 13h6l3-3v6"/><path d="M9 10V5l5 2"/></svg>',
-  move: '<svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15.5 14 13V6.5a2 2 0 0 0-4 0V13l-7 2.5V18l7-2v4l-2 1.5V23l4-1 4 1v-1.5L17 20v-4l7 2z"/></svg>'
+  move: '<svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15.5 14 13V6.5a2 2 0 0 0-4 0V13l-7 2.5V18l7-2v4l-2 1.5V23l4-1 4 1v-1.5L17 20v-4l7 2z"/></svg>',
+  mobile: '<svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>'
 };
 
 function catCard(href, icon, tag, name, desc) {
@@ -29,11 +30,14 @@ function vet24Card(b) {
     '<span class="card-meta">View hospital &rarr;</span></a>';
 }
 
-const AREAS = [
-  ['Naklua', 'naklua'], ['Wongamat', 'wongamat'], ['Central Pattaya', 'central-pattaya'],
-  ['Pratumnak', 'pratumnak'], ['Jomtien', 'jomtien'], ['Bang Saray', 'bang-saray'],
-  ['Sattahip', 'sattahip'], ['Banglamung', 'banglamung']
-];
+function areaTile(name, slug) {
+  var n = BUSINESSES.filter(function (b) { return b.areas.indexOf(slug) !== -1; }).length;
+  var sub = n ? (n + (n === 1 ? " business listed" : " businesses listed")) :
+    "Pet services in " + name;
+  return '<a class="tile" href="/area/' + slug + '.html">' +
+    '<span class="tile-name">' + name + '</span>' +
+    '<span class="tile-count">' + sub + '</span></a>';
+}
 
 const FAQ = [
   ['Is PattayaPets a vet?',
@@ -101,9 +105,9 @@ const body =
   '<section class="section"><div class="container">' +
     '<div class="section-head"><p class="eyebrow">The directory</p>' +
     '<h2>Find pet care in Pattaya</h2>' +
-    '<p>Seven categories of pet business, each filterable by area. Phase one publishes ' +
-    'verified facts &mdash; address, hours, services, languages &mdash; with honest ' +
-    'verdicts added after our anonymous visits.</p></div>' +
+    '<p>Eight categories of pet business, each filterable by area. Every listing starts ' +
+    'as a verified facts page &mdash; address, hours, services, languages &mdash; with ' +
+    'honest verdicts added after our anonymous visits.</p></div>' +
     '<div class="grid grid-3">' +
       catCard('/vets/', 'vet', 'Health', 'Vets &amp; animal hospitals',
         'General clinics, animal hospitals and 24-hour emergency care across Pattaya.') +
@@ -117,8 +121,10 @@ const body =
         'Obedience training and behaviour help from Pattaya-based trainers.') +
       catCard('/pet-relocation/', 'move', 'Relocation', 'Pet relocation agents',
         'Import and export specialists who handle permits, flights and paperwork.') +
+      catCard('/mobile-vets/', 'mobile', 'At home', 'Mobile &amp; home-visit vets',
+        'Vets who come to you &mdash; useful for nervous pets and multi-cat homes.') +
     '</div>' +
-    '<div class="btn-row"><a class="btn btn-ghost" href="/mobile-vets/">Also: mobile &amp; home-visit vets &rarr;</a></div>' +
+    '<div class="btn-row"><a class="btn btn-ghost" href="/directory.html">Browse the full directory &rarr;</a></div>' +
   '</div></section>' +
 
   '<section class="section section-tint"><div class="container">' +
@@ -126,11 +132,14 @@ const body =
     '<h2>Browse pet services by neighbourhood</h2>' +
     '<p>From Naklua in the north to Sattahip in the south &mdash; find what is near you.</p></div>' +
     '<div class="grid grid-4">' +
-      AREAS.map(function (a) {
-        return '<a class="tile" href="/area/' + a[1] + '.html">' +
-          '<span class="tile-name">' + a[0] + '</span>' +
-          '<span class="tile-count">Pet services in ' + a[0] + '</span></a>';
-      }).join('') +
+      areaTile('Naklua', 'naklua') +
+      areaTile('Wongamat', 'wongamat') +
+      areaTile('Central Pattaya', 'central-pattaya') +
+      areaTile('Pratumnak', 'pratumnak') +
+      areaTile('Jomtien', 'jomtien') +
+      areaTile('Bang Saray', 'bang-saray') +
+      areaTile('Sattahip', 'sattahip') +
+      areaTile('Banglamung', 'banglamung') +
     '</div></div></section>' +
 
   '<section class="section"><div class="container">' +
@@ -201,7 +210,7 @@ module.exports = [{
   ogTitle: "PattayaPets - The honest pet resource for Pattaya",
   description:
     "The honest, independent directory of Pattaya pet businesses - vets, groomers, boarding, pet shops, trainers - plus plain-English guides for pet owners.",
-  updated: "2026-05-22",
+  updated: "2026-05-27",
   schema: [{
     "@type": "FAQPage",
     mainEntity: FAQ.map(function (f) {

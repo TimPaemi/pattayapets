@@ -1,7 +1,8 @@
 "use strict";
 /* PattayaPets business directory data.
-   Phase 1 = factual listings compiled from public sources. Verdicts are added
-   only after an anonymous visit. Never invent facts; leave a field null if not
+   Listings = factual pages compiled from public sources. Optional fields after
+   an anonymous visit: verdict ("recommend"|"ok"|"avoid"), reviewed (YYYY-MM-DD),
+   review (business-experience text only). Never invent facts; leave null if not
    verified and the listing simply omits that row. */
 
 const CATEGORIES = {
@@ -19,8 +20,10 @@ const CATEGORIES = {
   },
   boarding: {
     name: "Pet boarding & daycare", slug: "boarding", schemaType: "LocalBusiness", one: "boarding provider",
-    intro: "Pet hotels, kennels, resorts and daycare for when you travel or work. " +
-      "Verified facts pages; verdicts follow an anonymous visit."
+    intro: "Pet hotels, kennels, catteries, resorts and daycare for when you travel " +
+      "or work. Dog boarding is more common in Pattaya than dedicated catteries &mdash; " +
+      "confirm a place accepts cats and keeps them apart from dogs. Verified facts " +
+      "pages; verdicts follow an anonymous visit."
   },
   "pet-shops": {
     name: "Pet shops & supplies", slug: "pet-shops", schemaType: "PetStore", one: "pet shop",
@@ -39,8 +42,10 @@ const CATEGORIES = {
   },
   "mobile-vets": {
     name: "Mobile & home-visit vets", slug: "mobile-vets", schemaType: "VeterinaryCare", one: "mobile vet",
-    intro: "Vets who come to you, useful for nervous pets, multi-cat homes and owners " +
-      "without transport. A young category on PattayaPets; verified listings are being added."
+    intro: "Vets who come to you &mdash; useful for nervous pets, multi-cat homes and " +
+      "owners without transport. Some Pattaya clinics offer home visits alongside " +
+      "their clinic work; coverage, fees and availability vary. Verified facts pages; " +
+      "verdicts follow an anonymous visit."
   }
 };
 
@@ -103,7 +108,7 @@ const BUSINESSES = [
     category: "vets", areas: ["central-pattaya"], type: "Animal hospital", c24: true,
     address: "44/57 Moo 11, Sukhumvit Road, Nong Prue, Bang Lamung, Chon Buri 20150",
     phone: "038 233 200", tel: "+6638233200",
-    website: null, hours: "Open 24 hours",
+    website: "https://en.muangakepethospital.com", hours: "Open 24 hours",
     languages: "Thai; confirm English-language support when booking",
     services: ["24-hour service", "General treatment", "Surgery", "Inpatient care"],
     summary: "The Pattaya branch of the Muang Ake veterinary group, on Sukhumvit Road in " +
@@ -111,38 +116,43 @@ const BUSINESSES = [
       "for after-hours care."
   },
   {
-    slug: "th-animal-hospital-pattaya",
-    name: "TH Animal Hospital",
+    slug: "pattaya-animal-hospital",
+    name: "Pattaya Animal Hospital",
     category: "vets", areas: ["central-pattaya"], type: "Animal hospital", c24: false,
-    address: null, phone: null, tel: null,
-    website: "https://www.thvet.com/en/home/",
-    hours: null,
-    languages: "Thai and English",
-    services: ["General treatment", "Neurology", "Ophthalmology", "Dermatology", "Orthopaedics", "Physical therapy"],
-    summary: "A Pattaya animal hospital that treats everyday illness alongside more " +
-      "specialised areas including neurological, eye, skin and bone-and-joint conditions, " +
-      "and offers physical therapy and consulting services."
+    address: "49/86-7 Moo 10, Pattaya Tai Road, Nong Prue, Bang Lamung, Chon Buri 20150",
+    phone: "038 373 290", tel: "+6638373290",
+    website: null, hours: null,
+    languages: "Thai; confirm English-language support when booking",
+    services: ["General consultations", "Vaccinations", "Treatment & surgery"],
+    summary: "An animal hospital on Pattaya Tai Road in central Pattaya, handling " +
+      "general consultations, vaccinations and routine treatment. Confirm current " +
+      "hours and English-language support when booking."
   },
   {
     slug: "pattaya-community-pet-hospital",
     name: "Pattaya Community Pet Hospital",
-    category: "vets", areas: ["central-pattaya"], type: "Animal hospital", c24: true,
-    address: null, phone: null, tel: null, website: null, hours: "Open 24 hours",
+    category: "vets", areas: ["central-pattaya", "banglamung"], type: "Animal hospital", c24: true,
+    address: "248/6-8 Moo 5, Nernplubwan, Nong Prue, Bang Lamung, Chon Buri 20150",
+    phone: "038 410 545", tel: "+6638410545",
+    website: "https://en.muangakepethospital.com/pattaya-community-pet-hospital/",
+    hours: "Open 24 hours",
     languages: "Thai; confirm English-language support when booking",
     services: ["24-hour service", "General treatment", "Surgery"],
-    summary: "A 24-hour community animal hospital serving the Pattaya area, useful to " +
-      "know for general and after-hours care. Confirm the current location and contact " +
-      "details before travelling."
+    summary: "A 24-hour community animal hospital in Nernplubwan, part of the Muang Ake " +
+      "veterinary group. It handles general and after-hours care across the Pattaya area."
   },
   {
     slug: "north-pattaya-animal-hospital",
     name: "North Pattaya Animal Hospital",
-    category: "vets", areas: ["naklua"], type: "Animal hospital", c24: false,
-    address: null, phone: null, tel: null, website: null, hours: null,
+    category: "vets", areas: ["naklua", "wongamat"], type: "Animal hospital", c24: false,
+    address: "120/20 Moo 6, Sukhumvit Road, Naklua, Bang Lamung, Chon Buri 20150",
+    phone: "038 416 869", tel: "+6638416869",
+    website: null, hours: null,
     languages: "Thai; confirm English-language support when booking",
     services: ["General consultations", "Vaccinations", "Treatment & surgery"],
-    summary: "An animal hospital serving the North Pattaya and Naklua side of the city, " +
-      "handling general consultations, vaccinations and routine treatment."
+    summary: "An animal hospital on Sukhumvit Road serving North Pattaya, Naklua and " +
+      "the Wongamat side of the city, handling general consultations, vaccinations " +
+      "and routine treatment."
   },
 
   {
@@ -308,7 +318,7 @@ const BUSINESSES = [
     name: "K9 Pattaya Dog Training School",
     category: "trainers", areas: ["banglamung"], type: "Dog training school", c24: false,
     address: null, phone: null, tel: null,
-    website: "http://www.k9pattaya.com/", hours: null,
+    website: "https://www.k9pattaya.com/", hours: null,
     languages: "English and Thai",
     services: ["Obedience training", "Protection training", "Board-and-train"],
     summary: "A long-running dog training school in the Pattaya area offering obedience " +
@@ -332,7 +342,7 @@ const BUSINESSES = [
     slug: "pet-relocation-thailand",
     name: "Pet Relocation Thailand",
     category: "pet-relocation", areas: [], type: "Pet import & export agent", c24: false,
-    address: null, phone: null, tel: null,
+    address: null, phone: "064 694 2992", tel: "+66646942992",
     website: "https://www.petrelocationthailand.com/", hours: null,
     languages: "English and Thai",
     services: ["Import & export", "DLD permits", "Health certificates", "Crates & flight booking"],
@@ -344,7 +354,7 @@ const BUSINESSES = [
     slug: "relo4paws",
     name: "Relo4Paws",
     category: "pet-relocation", areas: [], type: "Pet relocation consultancy", c24: false,
-    address: null, phone: null, tel: null,
+    address: null, phone: "085 541 9959", tel: "+66855419959",
     website: "https://www.relo4paws.com/", hours: null,
     languages: "English and Thai",
     services: ["Pet relocation consulting", "Export from Thailand", "Worldwide destinations"],
@@ -356,7 +366,7 @@ const BUSINESSES = [
     slug: "united-pet-express",
     name: "United Pet Express",
     category: "pet-relocation", areas: [], type: "Pet import & export agent", c24: false,
-    address: null, phone: null, tel: null,
+    address: null, phone: "02 316 2391", tel: "+6623162391",
     website: "https://www.unitedpetexpress.com/", hours: null,
     languages: "English and Thai",
     services: ["Import to Thailand", "Export from Thailand", "Door-to-door transport"],

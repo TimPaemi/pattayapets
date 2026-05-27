@@ -11,8 +11,8 @@ This file lives in `docs/` and is **not** part of the deployed website.
 
 PattayaPets is **built and finished as a Phase 1 site**. Current state:
 
-- **166 pages**, all generated to static HTML by the build script.
-- Verified clean: every internal link works (7,290+ links, 0 broken), every
+- **173 pages**, all generated to static HTML by the build script.
+- Verified clean: every internal link works, every
   structured-data block is valid, no broken pages, accessibility and SEO
   fundamentals all in place.
 - **Google Analytics is wired in** (`G-TX1PLBHN2K`, with IP anonymisation).
@@ -20,8 +20,8 @@ PattayaPets is **built and finished as a Phase 1 site**. Current state:
 
 What the site contains:
 
-- An **editorial directory** of 27 Pattaya pet businesses across vets, groomers,
-  boarding, pet shops, trainers and pet-relocation agents, with category hubs
+- An **editorial directory** of 29 Pattaya pet businesses across vets, groomers,
+  boarding, pet shops, trainers, pet-relocation agents and mobile vets, with category hubs
   and eight neighbourhood (area) hubs.
 - A large **guide library** — clusters for bringing a pet to Thailand, taking a
   pet out, dog-friendly Pattaya, pet emergencies, owning a pet, adoption, pet
@@ -39,23 +39,22 @@ The one honest caveat: every directory listing shows the verdict state
 for a first-time machine setup or if GitHub deploy fails.
 
 The site builds on your computer and uploads to Cloudflare. Open **Command
-Prompt** (press the Windows key, type `cmd`, Enter) and run these four lines,
+Prompt** (press the Windows key, type `cmd`, Enter) and run these lines,
 one at a time:
 
 ```
-cd C:\pattayapets
+cd C:\Projects\pattayapets
 npm install
-npm run build
+npm run build:all
 npx wrangler pages deploy dist --project-name=pattayapets --branch=main --commit-dirty=true
 ```
 
 What each line does:
 
-1. `cd C:\pattayapets` — moves into the project folder.
+1. `cd C:\Projects\pattayapets` — moves into the project folder.
 2. `npm install` — fetches the build tools (slow once, instant after).
-3. `npm run build` — regenerates the site. It should print
-   **"Pages: 166 rendered, 166 JSON-LD blocks valid"**. If it does, the build
-   is good.
+3. `npm run build:all` — regenerates the site and checks every internal link.
+   The build should finish without errors; the link check should report **0 broken**.
 4. `npx wrangler pages deploy ...` — uploads the finished site. **The first
    time only**, it opens a browser asking you to log in to Cloudflare — approve
    it, return to the terminal, and it finishes by printing your live URL.
@@ -73,8 +72,8 @@ If `npx` ever asks "Ok to proceed? (y)", type **y** and Enter.
    (mobile data) — that bypasses any cache and shows you the true live site.
 2. **Submit the sitemap to Google.** Go to Google Search Console
    (search.google.com/search-console), add `pattayapets.com` as a property,
-   and submit `https://pattayapets.com/sitemap.xml`. This is what gets your 166
-   pages crawled and indexed.
+   and submit `https://pattayapets.com/sitemap.xml`. This is what gets your pages
+   crawled and indexed.
 3. **Confirm analytics.** In Google Analytics, the Realtime report should show
    your own visit within a minute or two.
 

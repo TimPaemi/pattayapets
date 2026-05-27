@@ -16,6 +16,7 @@ const NAV = [
   { name: "Directory", href: "/directory.html" },
   { name: "Guides", href: "/guides.html" },
   { name: "Bring a Pet", href: "/bring-pet-to-thailand/" },
+  { name: "Emergency", href: "/pet-emergency/" },
   { name: "Dog-Friendly", href: "/dog-friendly-pattaya/" },
   { name: "Adopt", href: "/adopt-a-pet-pattaya/" },
   { name: "About", href: "/about.html" },

@@ -7,6 +7,16 @@ function card(href, tag, name, desc, cta) {
     '<span class="card-meta">' + cta + " &rarr;</span></a>";
 }
 
+const { BUSINESSES } = require("../data/businesses.js");
+
+function areaTile(name, slug, blurb) {
+  var n = BUSINESSES.filter(function (b) { return b.areas.indexOf(slug) !== -1; }).length;
+  var sub = n ? (n + (n === 1 ? " business listed" : " businesses listed")) : blurb;
+  return '<a class="tile" href="/area/' + slug + '.html">' +
+    '<span class="tile-name">' + name + "</span>" +
+    '<span class="tile-count">' + sub + "</span></a>";
+}
+
 const AREAS = [
   ["Naklua", "naklua", "The northern beach district above the city centre."],
   ["Wongamat", "wongamat", "Quiet upmarket beachfront north of Pattaya."],
@@ -29,12 +39,12 @@ pages.push({
     "The editorial directory of pet businesses in Pattaya - vets and animal hospitals, groomers, boarding, pet shops, dog trainers, relocation and mobile vets.",
   crumb: "Directory",
   breadcrumbs: [],
-  updated: "2026-05-21",
+  updated: "2026-05-27",
   body:
     '<section class="section"><div class="container">' +
     '<div class="section-head"><p class="eyebrow">The directory</p>' +
     "<h1>The Pattaya pet business directory</h1>" +
-    "<p class=\"lede\">Seven categories of pet business across Pattaya, each one " +
+    "<p class=\"lede\">Eight categories of pet business across Pattaya, each one " +
     "browsable by neighbourhood. Reviewed honestly &mdash; never paid.</p></div>" +
     '<div class="callout callout-note"><p>Every business starts as a verified ' +
     "<strong>facts page</strong> &mdash; name, area, services, hours, languages and " +
@@ -69,9 +79,7 @@ pages.push({
     "part of the city.</p></div>" +
     '<div class="grid grid-4">' +
     AREAS.map(function (a) {
-      return '<a class="tile" href="/area/' + a[1] + '.html">' +
-        '<span class="tile-name">' + a[0] + "</span>" +
-        '<span class="tile-count">' + a[2] + "</span></a>";
+      return areaTile(a[0], a[1], a[2]);
     }).join("") +
     "</div>" +
     '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +

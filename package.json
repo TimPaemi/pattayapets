@@ -5,13 +5,17 @@
   "description": "PattayaPets.com — the honest pet resource for Pattaya. Editorial directory and guides.",
   "license": "UNLICENSED",
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js",
+    "check": "node tools/check-links.js",
+    "images": "node tools/make-images.js",
+    "build:all": "npm run build && npm run check"
   },
   "devDependencies": {
     "@fontsource/bricolage-grotesque": "^5.2.10",
     "@fontsource/hanken-grotesk": "^5.2.8",
     "clean-css": "^5.3.3",
     "html-minifier-terser": "^7.2.0",
+    "sharp": "^0.34.2",
     "terser": "^5.48.0"
   }
 }
