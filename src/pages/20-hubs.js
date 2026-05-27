@@ -123,6 +123,16 @@ pages.push({
       "Indoor living, health and care guides for cats.", "Open the hub") +
     card("/pet-relocation/", "Relocation", "Pet relocation agents",
       "Import and export specialists who handle permits and flights.", "View agents") +
+    "</div>" +
+    '<div class="grid grid-4" style="margin-top:1rem">' +
+    card("/owning-a-pet-in-pattaya/microchipping-your-pet.html", "Owning", "Microchipping your pet",
+      "The best route home for a lost pet, and keeping details current.", "Open the guide") +
+    card("/owning-a-pet-in-pattaya/dog-registration-thailand.html", "Owning", "Dog registration",
+      "Rabies vaccination law and local registration in Thailand.", "Open the guide") +
+    card("/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", "Owning", "What it costs",
+      "A realistic monthly budget for a pet in Pattaya.", "Open the guide") +
+    card("/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html", "Owning", "Pet sitters & dog walkers",
+      "Cover for travel and long work days.", "Open the guide") +
     "</div></div></section>"
 });
 

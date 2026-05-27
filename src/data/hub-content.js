@@ -112,7 +112,9 @@ const HUB_GUIDE = {
     "</ul>" +
     "<p>More detail is in our guide to " +
     "<a href=\"/owning-a-pet-in-pattaya/where-to-buy-pet-food.html\">where to " +
-    "buy pet food in Pattaya</a>.</p>"),
+    "buy pet food in Pattaya</a>. Many shops can also arrange or advise on " +
+    "<a href=\"/owning-a-pet-in-pattaya/microchipping-your-pet.html\">" +
+    "microchipping</a> &mdash; ask at the counter or through your vet.</p>"),
 
   trainers: S(
     "<h2>How to choose a dog trainer in Pattaya</h2>" +

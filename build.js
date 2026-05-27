@@ -397,6 +397,7 @@ async function build() {
     "/dog-friendly-pattaya/hotels.html": "dog friendly hotel stay Pattaya pet policy",
     "/guides.html": "pet guides Pattaya import export emergency owning",
     "/directory.html": "pet directory vets groomers boarding Pattaya",
+    "/guides.html": "pet guides import export emergency owning adoption health",
     "/pet-health-pattaya/": "heartworm tick parvovirus skin ear dental spay neuter tropical health",
     "/vets/": "vet clinic animal hospital emergency 24 hour Pattaya",
     "/groomers/": "dog cat grooming bath clip nail de-shed Pattaya",

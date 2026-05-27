@@ -86,9 +86,9 @@ pages.push(hub({
   ],
   related: [
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Keeping a pet safe in Pattaya's heat." },
-    { name: "Pet emergencies", path: "/pet-emergency/", desc: "24-hour vets and first-aid orientation." },
-    { name: "Dog vaccinations & parasites", path: "/dogs/dog-vaccinations-thailand.html", desc: "The core preventive routines for dogs." },
-    { name: "Cat vaccinations & health", path: "/cats/cat-vaccinations-thailand.html", desc: "The routine health picture for cats." }
+    { name: "Tick-borne disease", path: "/pet-health-pattaya/tick-borne-disease.html", desc: "What ticks can transmit in the tropics." },
+    { name: "Parvovirus", path: "/pet-health-pattaya/parvovirus.html", desc: "A deadly, preventable puppy disease." },
+    { name: "Pet emergencies", path: "/pet-emergency/", desc: "24-hour vets and first-aid orientation." }
   ]
 }));
 

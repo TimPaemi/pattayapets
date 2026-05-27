@@ -4,6 +4,11 @@
    generator in src/pages/30-directory.js. Orientation only - general
    character of each area for pet owners, not invented specifics. */
 
+const AREA_EXTRA =
+  "<li><a href=\"/pet-emergency/street-dog-encounters.html\">Street-dog encounters</a></li>" +
+  "<li><a href=\"/pet-emergency/ticks-and-fleas.html\">Ticks &amp; fleas</a></li>" +
+  "<li><a href=\"/pet-emergency/beach-and-sea-hazards.html\">Beach &amp; sea hazards</a></li>";
+
 const AREA_GUIDE = {
 
   naklua:
@@ -39,6 +44,8 @@ const AREA_GUIDE = {
     "<li><a href=\"/pet-health-pattaya/\">Pet health in Pattaya</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">Hot-climate pet care</a></li>" +
     "<li><a href=\"/dog-friendly-pattaya/\">Dog-friendly Pattaya</a></li>" +
+    "<li><a href=\"/owning-a-pet-in-pattaya/microchipping-your-pet.html\">Microchipping your pet</a></li>" +
+    AREA_EXTRA +
     "</ul>",
 
   wongamat:
@@ -75,6 +82,7 @@ const AREA_GUIDE = {
     "<li><a href=\"/pet-health-pattaya/\">Pet health in Pattaya</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">Where and how to walk your dog</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">Hot-climate pet care</a></li>" +
+    AREA_EXTRA +
     "</ul>",
 
   "central-pattaya":
@@ -110,6 +118,9 @@ const AREA_GUIDE = {
     "<li><a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">Getting your pet to the vet</a></li>" +
     "<li><a href=\"/pet-health-pattaya/\">Pet health in Pattaya</a></li>" +
     "<li><a href=\"/dog-friendly-pattaya/\">Dog-friendly Pattaya</a></li>" +
+    "<li><a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">Where and how to walk your dog</a></li>" +
+    "<li><a href=\"/owning-a-pet-in-pattaya/lost-pet-pattaya.html\">If your pet goes missing</a></li>" +
+    AREA_EXTRA +
     "</ul>",
 
   pratumnak:
@@ -147,6 +158,7 @@ const AREA_GUIDE = {
     "<li><a href=\"/dog-friendly-pattaya/beaches.html\">Dog-friendly beaches</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">Hot-climate pet care</a></li>" +
     "<li><a href=\"/cats/indoor-vs-outdoor-cats.html\">Indoor or outdoor cats</a></li>" +
+    AREA_EXTRA +
     "</ul>",
 
   jomtien:
@@ -184,6 +196,7 @@ const AREA_GUIDE = {
     "<li><a href=\"/pet-health-pattaya/\">Pet health in Pattaya</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">Hot-climate pet care</a></li>" +
     "<li><a href=\"/dogs/\">Dogs in Pattaya</a></li>" +
+    AREA_EXTRA +
     "</ul>",
 
   "bang-saray":
@@ -217,6 +230,8 @@ const AREA_GUIDE = {
     "<li><a href=\"/owning-a-pet-in-pattaya/pet-friendly-housing.html\">Pet-friendly housing in Pattaya</a></li>" +
     "<li><a href=\"/dog-friendly-pattaya/\">Dog-friendly Pattaya</a></li>" +
     "<li><a href=\"/adopt-a-pet-pattaya/\">Adopt a pet in Pattaya</a></li>" +
+    "<li><a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">Hot-climate pet care</a></li>" +
+    AREA_EXTRA +
     "</ul>",
 
   sattahip:
@@ -250,6 +265,7 @@ const AREA_GUIDE = {
     "<li><a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">Where and how to walk your dog</a></li>" +
     "<li><a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">Hot-climate pet care</a></li>" +
     "<li><a href=\"/dog-friendly-pattaya/\">Dog-friendly Pattaya</a></li>" +
+    AREA_EXTRA +
     "</ul>",
 
   banglamung:
@@ -284,6 +300,8 @@ const AREA_GUIDE = {
     "<li><a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">Getting your pet to the vet</a></li>" +
     "<li><a href=\"/pet-health-pattaya/\">Pet health in Pattaya</a></li>" +
     "<li><a href=\"/dog-friendly-pattaya/\">Dog-friendly Pattaya</a></li>" +
+    "<li><a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">Hot-climate pet care</a></li>" +
+    AREA_EXTRA +
     "</ul>"
 
 };

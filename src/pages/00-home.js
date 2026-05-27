@@ -226,6 +226,15 @@ const body =
       '<a class="card" href="/bring-pet-to-thailand/u-tapao-airport-pets.html"><span class="card-tag">Import</span>' +
         '<h3>U-Tapao or Bangkok?</h3><p>Which airport to fly your pet into for Pattaya.</p>' +
         '<span class="card-meta">Read the guide &rarr;</span></a>' +
+      '<a class="card" href="/owning-a-pet-in-pattaya/where-to-walk-your-dog.html"><span class="card-tag">Owning</span>' +
+        '<h3>Where to walk your dog</h3><p>Building a safe, cool-hours walking routine in Pattaya.</p>' +
+        '<span class="card-meta">Read the guide &rarr;</span></a>' +
+      '<a class="card" href="/owning-a-pet-in-pattaya/microchipping-your-pet.html"><span class="card-tag">Owning</span>' +
+        '<h3>Microchipping your pet</h3><p>The best route home for a lost pet, and keeping details current.</p>' +
+        '<span class="card-meta">Read the guide &rarr;</span></a>' +
+      '<a class="card" href="/pet-health-pattaya/tick-borne-disease.html"><span class="card-tag">Health</span>' +
+        '<h3>Tick-borne disease</h3><p>What ticks can transmit in Pattaya&rsquo;s year-round climate.</p>' +
+        '<span class="card-meta">Read the guide &rarr;</span></a>' +
     '</div>' +
     '<div class="btn-row"><a class="btn btn-ghost" href="/guides.html">See all guides &rarr;</a></div>' +
   '</div></section>' +

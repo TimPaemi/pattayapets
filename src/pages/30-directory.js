@@ -29,6 +29,8 @@ const CAT_GUIDES = {
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html" },
     { name: "Mobile & home-visit vets", path: "/mobile-vets/" },
     { name: "Heartworm prevention", path: "/pet-health-pattaya/heartworm.html" },
+    { name: "Tick-borne disease", path: "/pet-health-pattaya/tick-borne-disease.html" },
+    { name: "Parvovirus", path: "/pet-health-pattaya/parvovirus.html" },
     { name: "Dog vaccinations", path: "/dogs/dog-vaccinations-thailand.html" },
     { name: "Cat vaccinations", path: "/cats/cat-vaccinations-thailand.html" },
     { name: "Getting to the vet", path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html" },
@@ -37,6 +39,7 @@ const CAT_GUIDES = {
   groomers: [
     { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html" },
     { name: "Dental care", path: "/pet-health-pattaya/dental-care.html" },
+    { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html" },
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html" },
     { name: "Rainy-season pet care", path: "/owning-a-pet-in-pattaya/rainy-season-pet-care.html" },
     { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/" }
@@ -46,12 +49,15 @@ const CAT_GUIDES = {
     { name: "Pet sitters & dog walkers", path: "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html" },
     { name: "Travelling in Thailand", path: "/owning-a-pet-in-pattaya/travelling-in-thailand.html" },
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html" },
+    { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html" },
     { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html" },
     { name: "Pet insurance in Thailand", path: "/pet-insurance-thailand.html" }
   ],
   "pet-shops": [
     { name: "Where to buy pet food", path: "/owning-a-pet-in-pattaya/where-to-buy-pet-food.html" },
     { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html" },
+    { name: "Dog registration & the law", path: "/owning-a-pet-in-pattaya/dog-registration-thailand.html" },
+    { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html" },
     { name: "Cats in Pattaya", path: "/cats/" },
     { name: "Dogs in Pattaya", path: "/dogs/" },
     { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/" },
@@ -61,6 +67,7 @@ const CAT_GUIDES = {
     { name: "Getting to the vet", path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html" },
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html" },
     { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html" },
+    { name: "Dental care", path: "/pet-health-pattaya/dental-care.html" },
     { name: "Senior pet care", path: "/owning-a-pet-in-pattaya/senior-pet-care.html" },
     { name: "Pet health in Pattaya", path: "/pet-health-pattaya/" },
     { name: "Pet emergencies", path: "/pet-emergency/" }
@@ -71,13 +78,16 @@ const CAT_GUIDES = {
     { name: "Tropical dog health", path: "/dogs/common-dog-health-issues-tropics.html" },
     { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html" },
     { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html" },
+    { name: "Fireworks & noise anxiety", path: "/owning-a-pet-in-pattaya/fireworks-and-noise-anxiety.html" },
     { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/" }
   ],
   "pet-relocation": [
     { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/" },
     { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/" },
+    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html" },
     { name: "DLD import permit", path: "/bring-pet-to-thailand/import-permit-thailand-dld.html" },
     { name: "Rabies & titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html" },
+    { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html" },
     { name: "Import costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html" },
     { name: "Export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html" },
     { name: "Pet quarantine", path: "/bring-pet-to-thailand/thailand-pet-quarantine.html" },

@@ -47,9 +47,9 @@ pages.push(hub({
     }
   ],
   related: [
+    { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Building a safe daily routine." },
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "The heat is the biggest everyday adjustment." },
     { name: "Beach & sea hazards", path: "/pet-emergency/beach-and-sea-hazards.html", desc: "Jellyfish, hot sand and seawater risks." },
-    { name: "Dog registration in Thailand", path: "/owning-a-pet-in-pattaya/dog-registration-thailand.html", desc: "The rules for keeping a dog legally." },
     { name: "The dog owner&rsquo;s hub", path: "/dogs/", desc: "Dog-specific care, training and health guides." }
   ]
 }));
@@ -164,8 +164,8 @@ pages.push(df({
   ],
   related: [
     { name: "Dog-friendly restaurants", path: "/dog-friendly-pattaya/restaurants.html", desc: "Eating out with a dog — similar etiquette." },
-    { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Back to the cluster hub." },
-    { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Day-to-day life with a dog here." },
+    { name: "Places to walk", path: "/dog-friendly-pattaya/parks.html", desc: "Beaches and quieter routes beyond the cafe." },
+    { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "Out and about with your dog." },
     { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "The hot-climate risk to plan around." }
   ]
 }));
@@ -209,8 +209,8 @@ pages.push(df({
   ],
   related: [
     { name: "Dog-friendly cafes", path: "/dog-friendly-pattaya/cafes.html", desc: "Outdoor seating and similar etiquette." },
-    { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Back to the cluster hub." },
-    { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/", desc: "Day-to-day life with a dog here." },
+    { name: "Places to walk", path: "/dog-friendly-pattaya/parks.html", desc: "Beaches and quieter routes after dinner." },
+    { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "Out and about with your dog." },
     { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "The hot-climate risk to plan around." }
   ]
 }));
