@@ -33,7 +33,11 @@ pages.push(hub({
     "check or an adoption agreement. Reputable rescues rehome animals already " +
     "<strong>vaccinated and sterilised</strong>, and will be honest with you " +
     "about an animal&rsquo;s health and temperament. Expect questions &mdash; a " +
-    "good shelter cares where its animals end up.</p>" +
+    "good shelter cares where its animals end up. New owners should read " +
+    '<a href="/owning-a-pet-in-pattaya/dog-registration-thailand.html">dog registration in Thailand</a> ' +
+    "and " +
+    '<a href="/owning-a-pet-in-pattaya/microchipping-your-pet.html">microchipping</a> ' +
+    "once the pet is home.</p>" +
     "<h2>If you cannot adopt</h2>" +
     "<p>Fostering, volunteering, donating, or sponsoring an animal all genuinely " +
     "help &mdash; and if you are leaving Thailand, some organisations can " +

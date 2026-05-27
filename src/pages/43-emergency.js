@@ -343,7 +343,8 @@ pages.push(hazard({
       "<p>Snakes turn up in gardens, gardens&rsquo; edges, long grass, drains, " +
       "and undergrowth &mdash; and they are more active around dawn and dusk and " +
       "after rain. A pet that likes to nose through bushes is the one most at " +
-      "risk.</p>" },
+      "risk. For toads, centipedes and stings at the same times of day, see " +
+      "<a href=\"/pet-emergency/venomous-creatures.html\">venomous creatures</a>.</p>" },
     { h: "Lowering the risk", html:
       "<ul><li>Keep grass cut short and clear away debris, wood piles and " +
       "rubbish where snakes shelter.</li>" +
@@ -398,7 +399,10 @@ pages.push(hazard({
       "<li>If you see a group of street dogs ahead, calmly change direction " +
       "rather than walking through them.</li>" +
       "<li>Stay relaxed &mdash; a tense owner makes a tense dog, and tension " +
-      "invites a reaction.</li></ul>" },
+      "invites a reaction.</li></ul>" +
+      "<p>For calmer routes and timing, see " +
+      "<a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">where to walk " +
+      "your dog</a>.</p>" },
     { h: "If dogs approach", html:
       "<p>Do not run or shout. Keep moving calmly and steadily away, keep your " +
       "body side-on rather than squared up, and avoid direct staring. Put " +

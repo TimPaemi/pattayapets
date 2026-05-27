@@ -426,8 +426,9 @@ pages.push(exp({
       "<p>The CDC tightened its requirements for dogs entering the United " +
       "States. Dogs arriving from a high-rabies-risk country &mdash; which " +
       "includes Thailand &mdash; face additional steps, which can include a " +
-      "microchip, a minimum age, a <strong>rabies titer test</strong> from an " +
-      "approved laboratory, CDC import paperwork submitted in advance, and " +
+      "microchip, a minimum age, a <strong>" +
+      "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies " +
+      "titer test</a></strong> from an approved laboratory, CDC import paperwork submitted in advance, and " +
       "arrival through specific airports. The exact requirements depend on your " +
       "dog&rsquo;s vaccination history and where it was vaccinated.</p>" +
       "<p>Because these rules are detailed and have changed recently, check the " +
@@ -438,6 +439,13 @@ pages.push(exp({
       "<p>Cats face lighter US requirements than dogs, but still need to be " +
       "healthy on arrival and meet the rules in force. Confirm the current cat " +
       "requirements with the CDC and USDA.</p>" },
+    { h: "What comes next", html:
+      "<p>Budget with our " +
+      '<a href="/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html">export cost guide</a>, ' +
+      "line up the " +
+      '<a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">DLD export permit</a>, ' +
+      "and consider a " +
+      '<a href="/pet-relocation/">pet relocation agent</a> for CDC paperwork and routing.</p>' },
     { h: "The Thai side and your timeline", html: THAI_SIDE }
   ],
   faqs: [
