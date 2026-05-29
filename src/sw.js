@@ -35,7 +35,7 @@ self.addEventListener("fetch", function (e) {
         return res;
       }).catch(function () {
         return caches.match(req).then(function (r) {
-          return r || caches.match("/offline.html");
+          return r || caches.match("/offline");
         });
       })
     );

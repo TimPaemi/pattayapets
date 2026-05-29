@@ -540,7 +540,7 @@ async function build() {
   const version = crypto.createHash("sha1")
     .update(cssMin + jsMin + criticalMin).digest("hex").slice(0, 12);
   const precache = [
-    "/", "/offline.html", "/start-here.html", "/directory.html", "/guides.html",
+    "/", "/offline", "/start-here.html", "/directory.html", "/guides.html",
     "/pet-emergency/", "/pet-emergency/24-hour-vets-pattaya.html",
     "/pet-emergency/heatstroke.html", "/pet-emergency/choking.html",
     "/pet-emergency/poisoning.html", "/pet-emergency/beach-and-sea-hazards.html",
