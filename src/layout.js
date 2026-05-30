@@ -115,6 +115,7 @@ function footer() {
     '<li><a href="/start-here.html">Start here</a></li>' +
     '<li><a href="/search.html">Search the site</a></li>' +
     '<li><a href="/about.html">About</a></li>' +
+    '<li><a href="/masthead.html">Masthead</a></li>' +
     '<li><a href="/standards.html">Editorial standards</a></li>' +
     '<li><a href="/corrections.html">Corrections</a></li>' +
     '<li><a href="/contact.html">Contact</a></li>' +
@@ -127,6 +128,7 @@ function footer() {
     '<li><a href="/dogs/">Dogs in Pattaya</a></li>' +
     '<li><a href="/cats/">Cats in Pattaya</a></li>' +
     '<li><a href="/boarding/">Pet boarding &amp; daycare</a></li>' +
+    '<li><a href="/trainers/">Dog trainers</a></li>' +
     '<li><a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a></li>' +
     '<li><a href="/bring-pet-to-thailand/">Bring a pet to Thailand</a></li>' +
     '<li><a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a></li>' +

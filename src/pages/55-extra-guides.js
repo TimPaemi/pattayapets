@@ -182,7 +182,14 @@ pages.push(article({
       "welcome supplies &mdash; food, blankets, cleaning materials &mdash; or let " +
       "you sponsor a specific animal. Give to the established, registered rescues; " +
       "the <a href=\"/adopt-a-pet-pattaya/\">adopt a pet</a> hub lists " +
-      "organisations working in the area.</p>" },
+      "organisations working in the area, including " +
+      "<a href=\"/adopt-a-pet-pattaya/hope-for-strays.html\">Hope for Strays</a>, " +
+      "<a href=\"/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html\">Dog &amp; Cat Rescue Pattaya</a>, " +
+      "<a href=\"/adopt-a-pet-pattaya/soi-dog-foundation.html\">Soi Dog Foundation</a>, " +
+      "<a href=\"/adopt-a-pet-pattaya/malees-animal-shelter.html\">Malee&rsquo;s Animal Shelter</a>, " +
+      "<a href=\"/adopt-a-pet-pattaya/pattaya-street-dogs-k9aid.html\">Pattaya Street Dogs (K9aid)</a> " +
+      "and " +
+      "<a href=\"/adopt-a-pet-pattaya/ady-g-second-chance-pattaya.html\">Ady G. Second Chance Pattaya</a>.</p>" },
     { h: "Volunteer", html:
       "<p>Shelters need hands as much as funds: walking and socialising dogs, " +
       "helping with cleaning and feeding, transport, admin, fundraising and " +
@@ -223,6 +230,12 @@ pages.push(article({
   ],
   related: [
     { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Shelters and rescue organisations." },
+    { name: "Hope for Strays", path: "/adopt-a-pet-pattaya/hope-for-strays.html", desc: "East Pattaya dog rescue shelter." },
+    { name: "Dog & Cat Rescue Pattaya", path: "/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html", desc: "Dogs and street cats in Pattaya." },
+    { name: "Soi Dog Foundation", path: "/adopt-a-pet-pattaya/soi-dog-foundation.html", desc: "Thailand's best-known animal-welfare charity." },
+    { name: "Malee's Animal Shelter", path: "/adopt-a-pet-pattaya/malees-animal-shelter.html", desc: "Dogs and cats across Pattaya and Chanthaburi." },
+    { name: "Pattaya Street Dogs (K9aid)", path: "/adopt-a-pet-pattaya/pattaya-street-dogs-k9aid.html", desc: "Street dogs and temple-dog colonies." },
+    { name: "Ady G. Second Chance Pattaya", path: "/adopt-a-pet-pattaya/ady-g-second-chance-pattaya.html", desc: "Sanctuary for disabled and rescued dogs." },
     { name: "Fostering a pet", path: "/adopt-a-pet-pattaya/fostering.html", desc: "Give a rescue animal a temporary home." },
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "For injured street animals." },
     { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "Approaching injured or loose animals safely." },

@@ -281,6 +281,9 @@ pages.push({
     card("/pet-health-pattaya/spaying-and-neutering.html", "Health", "Spaying & neutering",
       "Routine surgery and the welfare case in Pattaya.",
       "Open the guide") +
+    card("/trainers/", "Training", "Dog trainers in Pattaya",
+      "Obedience training and behaviour help from Pattaya-based trainers.",
+      "View trainers") +
     card("/pet-relocation/", "Relocation", "Pet relocation agents",
       "Import and export specialists who handle permits, flights and paperwork.",
       "View agents") +

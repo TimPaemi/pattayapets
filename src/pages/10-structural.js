@@ -86,11 +86,19 @@ pages.push({
     "<h2>4. Thinking of adopting?</h2>" +
     "<p>Pattaya has several established shelters and rescue organisations. If you " +
     "can offer a home, see our guide to " +
-    '<a href="/adopt-a-pet-pattaya/">adopting a pet in Pattaya</a>.</p>' +
+    '<a href="/adopt-a-pet-pattaya/">adopting a pet in Pattaya</a>. You can also ' +
+    "help without adopting &mdash; see " +
+    '<a href="/adopt-a-pet-pattaya/how-to-help.html">how to help street animals</a>, ' +
+    "or browse rescues such as " +
+    '<a href="/adopt-a-pet-pattaya/hope-for-strays.html">Hope for Strays</a>, ' +
+    '<a href="/adopt-a-pet-pattaya/soi-dog-foundation.html">Soi Dog Foundation</a> ' +
+    "and " +
+    '<a href="/adopt-a-pet-pattaya/animal-army-foundation.html">Animal Army Foundation</a>.</p>' +
     "<h2>5. Everyday essentials</h2>" +
     "<p>For food, litter and supplies, see the " +
     '<a href="/pet-shops/">pet shops directory</a>. For grooming, ' +
-    '<a href="/groomers/">groomers</a>. For travel and work cover, ' +
+    '<a href="/groomers/">groomers</a>. For obedience and behaviour, ' +
+    '<a href="/trainers/">dog trainers</a>. For travel and work cover, ' +
     '<a href="/boarding/">boarding and daycare</a>. For walking and going out, see ' +
     '<a href="/dog-friendly-pattaya/">dog-friendly Pattaya</a>. Dog owners should ' +
     "also see the <a href=\"/dogs/\">dog owner&rsquo;s hub</a>; cat owners the " +
@@ -111,7 +119,7 @@ pages.push({
     "before you need to claim. You can " +
     '<a href="/search.html">search the site</a> or browse the ' +
     '<a href="/sitemap.html">full sitemap</a>.</p>' +
-    '<p class="updated">Last updated 27 May 2026</p>' +
+    '<p class="updated">Last updated 30 May 2026</p>' +
     DISC +
     "</div></div></section>"
 });
@@ -147,7 +155,8 @@ pages.push(prosePage({
     "independent Pattaya publications that share one method: visit anonymously, pay " +
     "every bill, take no money from the businesses covered. The founder is " +
     '<a href="https://timpaemi.com/" target="_blank" rel="noopener">Tim</a>. ' +
-    "Reviews are bylined to The Editors.</p>" +
+    "Reviews are bylined to The Editors. See the " +
+    '<a href="/masthead.html">masthead</a> for how bylines and the publication work.</p>' +
     "<h2>How it is funded</h2>" +
     "<p>By TIMPAEMI Co., Ltd. directly. There are no ads, no sponsorships, no " +
     "affiliate links, no commissions and no paid placements anywhere on the site. " +

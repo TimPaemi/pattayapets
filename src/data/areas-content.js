@@ -12,6 +12,11 @@ const AREA_EXTRA =
   "<li><a href=\"/owning-a-pet-in-pattaya/rainy-season-pet-care.html\">Rainy-season pet care</a></li>" +
   "<li><a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">Getting your pet to the vet</a></li>" +
   "<li><a href=\"/adopt-a-pet-pattaya/how-to-help.html\">How to help street animals</a></li>" +
+  "<li><a href=\"/adopt-a-pet-pattaya/hope-for-strays.html\">Hope for Strays</a></li>" +
+  "<li><a href=\"/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html\">Dog &amp; Cat Rescue Pattaya</a></li>" +
+  "<li><a href=\"/adopt-a-pet-pattaya/malees-animal-shelter.html\">Malee&rsquo;s Animal Shelter</a></li>" +
+  "<li><a href=\"/adopt-a-pet-pattaya/pattaya-street-dogs-k9aid.html\">Pattaya Street Dogs (K9aid)</a></li>" +
+  "<li><a href=\"/adopt-a-pet-pattaya/ady-g-second-chance-pattaya.html\">Ady G. Second Chance Pattaya</a></li>" +
   "<li><a href=\"/pet-health-pattaya/dental-care.html\">Dental care</a></li>";
 
 const AREA_GUIDE = {
