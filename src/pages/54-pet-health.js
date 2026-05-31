@@ -288,7 +288,7 @@ pages.push(health({
 /* ---------------- SKIN & EAR ---------------- */
 pages.push(health({
   slug: "skin-and-ear-problems", crumb: "Skin & ear problems",
-  title: "Pet skin and ear problems in Pattaya's climate | PattayaPets",
+  title: "Pet Skin & Ear Problems Pattaya | Heat, Humidity & Allergies | PattayaPets",
   desc: "Why heat and humidity make skin infections, hot spots and ear infections " +
     "so common in Pattaya pets, and what helps prevent and manage them.",
   h1: "Skin and ear problems in a humid climate",
@@ -353,7 +353,7 @@ pages.push(health({
 /* ---------------- SPAYING & NEUTERING ---------------- */
 pages.push(health({
   slug: "spaying-and-neutering", crumb: "Spaying & neutering",
-  title: "Spaying and neutering pets in Pattaya | PattayaPets",
+  title: "Spay & Neuter Pets in Pattaya | When, Why & What to Expect | PattayaPets",
   desc: "What spaying and neutering involve, the benefits for your pet, the timing, " +
     "and the welfare case in a city with a large street-animal population.",
   h1: "Spaying and neutering in Pattaya",

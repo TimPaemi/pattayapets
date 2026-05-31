@@ -98,7 +98,7 @@ pages.push(article({
 /* ============ ADOPT: FOSTERING ============ */
 pages.push(article({
   path: "/adopt-a-pet-pattaya/fostering.html",
-  title: "Fostering a pet in Pattaya | PattayaPets",
+  title: "Fostering a Pet in Pattaya | Short-Term Care That Saves Lives | PattayaPets",
   desc: "What fostering a rescue dog or cat in Pattaya involves, why it matters so " +
     "much, what it asks of you, and how to start.",
   crumb: "Fostering",
@@ -161,7 +161,7 @@ pages.push(article({
 /* ============ ADOPT: HOW TO HELP ============ */
 pages.push(article({
   path: "/adopt-a-pet-pattaya/how-to-help.html",
-  title: "How to help Pattaya's street animals | PattayaPets",
+  title: "How to Help Street Animals in Pattaya | Without Adopting | PattayaPets",
   desc: "Ways to help Pattaya's street dogs and cats without adopting: donating, " +
     "volunteering, fostering, supporting desexing, and what to do for an injured animal.",
   crumb: "How to help",
@@ -368,7 +368,7 @@ pages.push(article({
 /* ============ OWNING: TRAVELLING IN THAILAND ============ */
 pages.push(article({
   path: "/owning-a-pet-in-pattaya/travelling-in-thailand.html",
-  title: "Travelling around Thailand with a pet | PattayaPets",
+  title: "Travelling in Thailand with a Pet | Road Trips & Domestic Flights | PattayaPets",
   desc: "Taking a pet beyond Pattaya: road trips, domestic flights, pet-friendly " +
     "accommodation, where pets are restricted, and the heat.",
   crumb: "Travelling in Thailand",

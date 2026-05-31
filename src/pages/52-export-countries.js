@@ -90,7 +90,7 @@ const pages = [];
 /* ---------------- GERMANY ---------------- */
 pages.push(exp({
   slug: "to-germany", crumb: "To Germany",
-  title: "Taking a pet from Thailand to Germany | PattayaPets",
+  title: "Export a Pet from Thailand to Germany (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Thailand to Germany: the rabies titer test, the " +
     "three-month wait and the EU entry health certificate.",
   h1: "Taking a pet from Thailand to Germany",
@@ -116,7 +116,7 @@ pages.push(exp({
 /* ---------------- SWEDEN ---------------- */
 pages.push(exp({
   slug: "to-sweden", crumb: "To Sweden",
-  title: "Taking a pet from Thailand to Sweden | PattayaPets",
+  title: "Export a Pet from Thailand to Sweden (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Thailand to Sweden: the rabies titer test, the " +
     "three-month wait and the EU entry health certificate.",
   h1: "Taking a pet from Thailand to Sweden",
@@ -142,7 +142,7 @@ pages.push(exp({
 /* ---------------- NORWAY ---------------- */
 pages.push(exp({
   slug: "to-norway", crumb: "To Norway",
-  title: "Taking a pet from Thailand to Norway | PattayaPets",
+  title: "Export a Pet from Thailand to Norway (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Thailand to Norway: the rabies titer test, the " +
     "three-month wait, and the tapeworm treatment for dogs.",
   h1: "Taking a pet from Thailand to Norway",
@@ -168,7 +168,7 @@ pages.push(exp({
 /* ---------------- DENMARK ---------------- */
 pages.push(exp({
   slug: "to-denmark", crumb: "To Denmark",
-  title: "Taking a pet from Thailand to Denmark | PattayaPets",
+  title: "Export a Pet from Thailand to Denmark (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Thailand to Denmark: the rabies titer test, the " +
     "three-month wait and the EU entry health certificate.",
   h1: "Taking a pet from Thailand to Denmark",
@@ -193,7 +193,7 @@ pages.push(exp({
 /* ---------------- FINLAND ---------------- */
 pages.push(exp({
   slug: "to-finland", crumb: "To Finland",
-  title: "Taking a pet from Thailand to Finland | PattayaPets",
+  title: "Export a Pet from Thailand to Finland (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Thailand to Finland: the rabies titer test, the " +
     "three-month wait, and the tapeworm treatment for dogs.",
   h1: "Taking a pet from Thailand to Finland",
@@ -219,7 +219,7 @@ pages.push(exp({
 /* ---------------- NETHERLANDS ---------------- */
 pages.push(exp({
   slug: "to-netherlands", crumb: "To the Netherlands",
-  title: "Taking a pet from Thailand to the Netherlands | PattayaPets",
+  title: "Export a Pet from Thailand to the Netherlands (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Thailand to the Netherlands: the rabies titer " +
     "test, the three-month wait and the EU entry health certificate.",
   h1: "Taking a pet from Thailand to the Netherlands",
@@ -245,7 +245,7 @@ pages.push(exp({
 /* ---------------- FRANCE ---------------- */
 pages.push(exp({
   slug: "to-france", crumb: "To France",
-  title: "Taking a pet from Thailand to France | PattayaPets",
+  title: "Export a Pet from Thailand to France (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Thailand to France: the rabies titer test, the " +
     "three-month wait and the EU entry health certificate.",
   h1: "Taking a pet from Thailand to France",
@@ -270,7 +270,7 @@ pages.push(exp({
 /* ---------------- IRELAND ---------------- */
 pages.push(exp({
   slug: "to-ireland", crumb: "To Ireland",
-  title: "Taking a pet from Thailand to Ireland | PattayaPets",
+  title: "Export a Pet from Thailand to Ireland (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Thailand to Ireland: the rabies titer test, the " +
     "three-month wait, and the tapeworm treatment for dogs.",
   h1: "Taking a pet from Thailand to Ireland",
@@ -295,7 +295,7 @@ pages.push(exp({
 /* ---------------- SWITZERLAND ---------------- */
 pages.push(exp({
   slug: "to-switzerland", crumb: "To Switzerland",
-  title: "Taking a pet from Thailand to Switzerland | PattayaPets",
+  title: "Export a Pet from Thailand to Switzerland (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Thailand to Switzerland: the rabies titer test, " +
     "the waiting period and the entry paperwork.",
   h1: "Taking a pet from Thailand to Switzerland",
@@ -322,7 +322,7 @@ pages.push(exp({
 /* ---------------- CANADA ---------------- */
 pages.push(exp({
   slug: "to-canada", crumb: "To Canada",
-  title: "Taking a pet from Thailand to Canada | PattayaPets",
+  title: "Export a Pet from Thailand to Canada (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Thailand to Canada: the rabies vaccination " +
     "certificate, and why this is one of the simpler routes.",
   h1: "Taking a pet from Thailand to Canada",
@@ -356,7 +356,7 @@ pages.push(exp({
 /* ---------------- RUSSIA ---------------- */
 pages.push(exp({
   slug: "to-russia", crumb: "To Russia",
-  title: "Taking a pet from Thailand to Russia | PattayaPets",
+  title: "Export a Pet from Thailand to Russia (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Thailand to Russia: the veterinary certificate, " +
     "rabies vaccination and the state veterinary process.",
   h1: "Taking a pet from Thailand to Russia",
@@ -388,7 +388,7 @@ pages.push(exp({
 /* ---------------- NEW ZEALAND ---------------- */
 pages.push(exp({
   slug: "to-new-zealand", crumb: "To New Zealand",
-  title: "Taking a pet from Thailand to New Zealand | PattayaPets",
+  title: "Export a Pet from Thailand to New Zealand (DLD 2026) | PattayaPets",
   desc: "Why moving a pet from Thailand to New Zealand is a long, demanding route, " +
     "and why you must research it with MPI before you commit.",
   h1: "Taking a pet from Thailand to New Zealand",
@@ -571,7 +571,7 @@ pages.push(exp({
 /* ---------------- PHILIPPINES ---------------- */
 pages.push(exp({
   slug: "to-philippines", crumb: "To the Philippines",
-  title: "Taking a pet from Thailand to the Philippines | PattayaPets",
+  title: "Export a Pet from Thailand to the Philippines (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Thailand to the Philippines: BAI import " +
     "paperwork, the Thai DLD export steps, and direct flights to Manila.",
   h1: "Taking a pet from Thailand to the Philippines",
@@ -605,7 +605,7 @@ pages.push(exp({
 /* ---------------- CHINA ---------------- */
 pages.push(exp({
   slug: "to-china", crumb: "To China",
-  title: "Taking a pet from Thailand to China | PattayaPets",
+  title: "Export a Pet from Thailand to China (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Thailand to China: customs import clearance, " +
     "quarantine rules, and the Thai DLD export steps.",
   h1: "Taking a pet from Thailand to China",
@@ -638,7 +638,7 @@ pages.push(exp({
 /* ---------------- SOUTH AFRICA ---------------- */
 pages.push(exp({
   slug: "to-south-africa", crumb: "To South Africa",
-  title: "Taking a pet from Thailand to South Africa | PattayaPets",
+  title: "Export a Pet from Thailand to South Africa (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Thailand to South Africa: DALRRD import " +
     "requirements, flight routing, and the Thai DLD export steps.",
   h1: "Taking a pet from Thailand to South Africa",

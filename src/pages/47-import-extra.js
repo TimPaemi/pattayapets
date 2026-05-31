@@ -68,7 +68,7 @@ const pages = [];
 
 pages.push(country({
   slug: "from-canada", crumb: "From Canada",
-  title: "Bringing a pet to Thailand from Canada | PattayaPets",
+  title: "Bring a Pet to Thailand from Canada (CFIA & DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Canada to Thailand: CFIA endorsement of the " +
     "health certificate, and the rabies titer test the return trip will need.",
   h1: "Bringing a pet to Thailand from Canada",
@@ -96,7 +96,7 @@ pages.push(country({
 
 pages.push(country({
   slug: "from-germany", crumb: "From Germany",
-  title: "Bringing a pet to Thailand from Germany | PattayaPets",
+  title: "Bring a Pet to Thailand from Germany (EU & DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Germany to Thailand: the EU export certificate, " +
     "the German competent authority, and what the EU pet passport does not cover.",
   h1: "Bringing a pet to Thailand from Germany",
@@ -127,7 +127,7 @@ pages.push(country({
 
 pages.push(country({
   slug: "from-russia", crumb: "From Russia",
-  title: "Bringing a pet to Thailand from Russia | PattayaPets",
+  title: "Bring a Pet to Thailand from Russia (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Russia to Thailand: the veterinary certificate, " +
     "state endorsement, and why the rabies titer test matters.",
   h1: "Bringing a pet to Thailand from Russia",

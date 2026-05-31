@@ -122,7 +122,7 @@ pages.push(cat({
 
 pages.push(cat({
   slug: "cat-vaccinations-thailand", crumb: "Vaccinations & health",
-  title: "Cat vaccinations & health in Thailand | PattayaPets",
+  title: "Cat Vaccinations Thailand | Schedule for Cats in Pattaya | PattayaPets",
   desc: "An orientation to cat vaccinations, parasite prevention, neutering and " +
     "routine health for cat owners in Pattaya and Thailand.",
   h1: "Cat vaccinations and routine health in Thailand",
@@ -315,7 +315,7 @@ pages.push(cat({
 
 pages.push(dog({
   slug: "dog-vaccinations-thailand", crumb: "Vaccinations & parasites",
-  title: "Dog vaccinations & parasites in Thailand | PattayaPets",
+  title: "Dog Vaccinations Thailand | Schedule & Parasite Prevention | PattayaPets",
   desc: "An orientation to dog vaccinations, rabies law, heartworm and year-round " +
     "parasite prevention for dog owners in Pattaya and Thailand.",
   h1: "Dog vaccinations and parasite prevention in Thailand",

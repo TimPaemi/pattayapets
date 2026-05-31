@@ -278,7 +278,7 @@ pages.push(own({
 /* ---------------- MICROCHIPPING ---------------- */
 pages.push(own({
   slug: "microchipping-your-pet", crumb: "Microchipping",
-  title: "Microchipping your pet in Pattaya | PattayaPets",
+  title: "Microchipping Your Pet in Pattaya | ISO Chip, Registry & Lost Pets | PattayaPets",
   desc: "What a pet microchip is, why it matters in Pattaya, how chipping works, " +
     "and the vital step of keeping your registered details up to date.",
   h1: "Microchipping your pet in Pattaya",
@@ -334,7 +334,7 @@ pages.push(own({
 /* ---------------- PET SITTERS & DOG WALKERS ---------------- */
 pages.push(own({
   slug: "pet-sitters-and-dog-walkers", crumb: "Sitters & dog walkers",
-  title: "Finding a pet sitter or dog walker in Pattaya | PattayaPets",
+  title: "Pet Sitters & Dog Walkers Pattaya | Finding Reliable Care | PattayaPets",
   desc: "How to find and choose a reliable pet sitter or dog walker in Pattaya, " +
     "what to check, and how to brief them so your pet is well cared for.",
   h1: "Finding a pet sitter or dog walker in Pattaya",

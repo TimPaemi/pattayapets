@@ -79,7 +79,7 @@ const pages = [];
 /* ---------------- SWEDEN ---------------- */
 pages.push(country({
   slug: "from-sweden", crumb: "From Sweden",
-  title: "Bringing a pet to Thailand from Sweden | PattayaPets",
+  title: "Bring a Pet to Thailand from Sweden (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Sweden to Thailand: the EU export certificate, " +
     "the Swedish authority that endorses it, and planning the journey home.",
   h1: "Bringing a pet to Thailand from Sweden",
@@ -111,7 +111,7 @@ pages.push(country({
 /* ---------------- NORWAY ---------------- */
 pages.push(country({
   slug: "from-norway", crumb: "From Norway",
-  title: "Bringing a pet to Thailand from Norway | PattayaPets",
+  title: "Bring a Pet to Thailand from Norway (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Norway to Thailand: the export certificate, the " +
     "Norwegian Food Safety Authority, and the tapeworm rule for the return.",
   h1: "Bringing a pet to Thailand from Norway",
@@ -142,7 +142,7 @@ pages.push(country({
 /* ---------------- DENMARK ---------------- */
 pages.push(country({
   slug: "from-denmark", crumb: "From Denmark",
-  title: "Bringing a pet to Thailand from Denmark | PattayaPets",
+  title: "Bring a Pet to Thailand from Denmark (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Denmark to Thailand: the EU export certificate, " +
     "the Danish authority that endorses it, and the return-trip planning.",
   h1: "Bringing a pet to Thailand from Denmark",
@@ -171,7 +171,7 @@ pages.push(country({
 /* ---------------- FINLAND ---------------- */
 pages.push(country({
   slug: "from-finland", crumb: "From Finland",
-  title: "Bringing a pet to Thailand from Finland | PattayaPets",
+  title: "Bring a Pet to Thailand from Finland (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Finland to Thailand: the EU export certificate, " +
     "the Finnish Food Authority, and the tapeworm rule for the return.",
   h1: "Bringing a pet to Thailand from Finland",
@@ -201,7 +201,7 @@ pages.push(country({
 /* ---------------- NETHERLANDS ---------------- */
 pages.push(country({
   slug: "from-netherlands", crumb: "From the Netherlands",
-  title: "Bringing a pet to Thailand: the Netherlands | PattayaPets",
+  title: "Bring a Pet to Thailand from the Netherlands (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from the Netherlands to Thailand: the EU export " +
     "certificate, the Dutch authority (NVWA), and planning the return.",
   h1: "Bringing a pet to Thailand from the Netherlands",
@@ -231,7 +231,7 @@ pages.push(country({
 /* ---------------- FRANCE ---------------- */
 pages.push(country({
   slug: "from-france", crumb: "From France",
-  title: "Bringing a pet to Thailand from France | PattayaPets",
+  title: "Bring a Pet to Thailand from France (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from France to Thailand: the EU export certificate, " +
     "the French veterinary authorities, and planning the return.",
   h1: "Bringing a pet to Thailand from France",
@@ -261,7 +261,7 @@ pages.push(country({
 /* ---------------- SWITZERLAND ---------------- */
 pages.push(country({
   slug: "from-switzerland", crumb: "From Switzerland",
-  title: "Bringing a pet to Thailand from Switzerland | PattayaPets",
+  title: "Bring a Pet to Thailand from Switzerland (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Switzerland to Thailand: the export certificate, " +
     "the Swiss authority (FSVO), and planning the return.",
   h1: "Bringing a pet to Thailand from Switzerland",
@@ -293,7 +293,7 @@ pages.push(country({
 /* ---------------- IRELAND ---------------- */
 pages.push(country({
   slug: "from-ireland", crumb: "From Ireland",
-  title: "Bringing a pet to Thailand from Ireland | PattayaPets",
+  title: "Bring a Pet to Thailand from Ireland (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Ireland to Thailand: the EU export certificate, " +
     "the Irish department that endorses it, and the tapeworm rule for the return.",
   h1: "Bringing a pet to Thailand from Ireland",
@@ -323,7 +323,7 @@ pages.push(country({
 /* ---------------- NEW ZEALAND ---------------- */
 pages.push(country({
   slug: "from-new-zealand", crumb: "From New Zealand",
-  title: "Bringing a pet to Thailand from New Zealand | PattayaPets",
+  title: "Bring a Pet to Thailand from New Zealand (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from New Zealand to Thailand: MPI endorsement, and " +
     "the demanding requirements if you ever return your pet to New Zealand.",
   h1: "Bringing a pet to Thailand from New Zealand",
@@ -390,7 +390,7 @@ pages.push(country({
 /* ---------------- SINGAPORE ---------------- */
 pages.push(country({
   slug: "from-singapore", crumb: "From Singapore",
-  title: "Bringing a pet to Thailand from Singapore | PattayaPets",
+  title: "Bring a Pet to Thailand from Singapore (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Singapore to Thailand: AVS export certificate, " +
     "the Thai DLD import permit, and what to plan if you might return.",
   h1: "Bringing a pet to Thailand from Singapore",
@@ -459,7 +459,7 @@ pages.push(country({
 /* ---------------- U-TAPAO vs BANGKOK ---------------- */
 pages.push(article({
   path: "/bring-pet-to-thailand/u-tapao-airport-pets.html",
-  title: "Flying a pet into Pattaya: U-Tapao or Bangkok? | PattayaPets",
+  title: "U-Tapao or Bangkok for Pets? Flying into Pattaya (2026) | PattayaPets",
   desc: "Whether you can fly a pet directly into U-Tapao near Pattaya, why most pet " +
     "imports use Bangkok's Suvarnabhumi, and how to get from the airport to Pattaya.",
   crumb: "U-Tapao or Bangkok?",
@@ -614,7 +614,7 @@ pages.push(country({
 /* ---------------- CHINA ---------------- */
 pages.push(country({
   slug: "from-china", crumb: "From China",
-  title: "Bringing a pet to Thailand from China | PattayaPets",
+  title: "Bring a Pet to Thailand from China (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from China to Thailand: customs export paperwork, " +
     "direct flights to Bangkok, and the standard Thai import steps.",
   h1: "Bringing a pet to Thailand from China",
@@ -654,7 +654,7 @@ pages.push(country({
 /* ---------------- SOUTH AFRICA ---------------- */
 pages.push(country({
   slug: "from-south-africa", crumb: "From South Africa",
-  title: "Bringing a pet to Thailand from South Africa | PattayaPets",
+  title: "Bring a Pet to Thailand from South Africa (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from South Africa to Thailand: DAFF export " +
     "certificate, flight routing, and the standard Thai import steps.",
   h1: "Bringing a pet to Thailand from South Africa",

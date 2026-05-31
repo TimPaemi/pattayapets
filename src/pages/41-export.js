@@ -308,7 +308,7 @@ pages.push(exp({
 
 pages.push(exp({
   slug: "cost-to-export-a-pet-from-thailand", crumb: "What it costs",
-  title: "Cost to export a pet from Thailand | PattayaPets",
+  title: "Cost to Export a Pet from Thailand (2026) | DLD, Vet & Flight Fees | PattayaPets",
   desc: "An honest look at the cost of taking a dog or cat out of Thailand — " +
     "Thai-side fees, vet work, the flight and destination requirements.",
   h1: "What it costs to export a pet from Thailand",
@@ -474,7 +474,7 @@ pages.push(exp({
 
 pages.push(exp({
   slug: "to-eu", crumb: "To the EU",
-  title: "Taking a pet from Thailand to the EU | PattayaPets",
+  title: "Export a Pet from Thailand to the EU (Pet Passport & DLD 2026) | PattayaPets",
   desc: "Bringing a pet from Thailand to the European Union: the rabies titer " +
     "test, the three-month wait and the EU entry health certificate.",
   h1: "Taking a pet from Thailand to the EU",
@@ -510,7 +510,7 @@ pages.push(exp({
 
 pages.push(exp({
   slug: "to-australia", crumb: "To Australia",
-  title: "Taking a pet from Thailand to Australia | PattayaPets",
+  title: "Export a Pet from Thailand to Australia (DAFF & DLD 2026) | PattayaPets",
   desc: "Why moving a pet from Thailand to Australia is the hardest route — " +
     "non-approved country status, long timelines and mandatory quarantine.",
   h1: "Taking a pet from Thailand to Australia",

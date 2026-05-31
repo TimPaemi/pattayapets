@@ -352,7 +352,7 @@ pages.push(own({
 
 pages.push(own({
   slug: "where-to-buy-pet-food", crumb: "Where to buy pet food",
-  title: "Where to buy pet food in Pattaya | PattayaPets",
+  title: "Where to Buy Pet Food in Pattaya | Shops, Supermarkets & Online | PattayaPets",
   desc: "Where to buy pet food and supplies in Pattaya — pet shops, supermarkets, " +
     "online delivery, and finding premium and prescription diets.",
   h1: "Where to buy pet food in Pattaya",

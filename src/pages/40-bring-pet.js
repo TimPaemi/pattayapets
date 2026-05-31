@@ -137,7 +137,7 @@ pages.push(hub({
 /* ---------------- MICROCHIP ---------------- */
 pages.push(importStep({
   path: "/bring-pet-to-thailand/microchip-requirements.html",
-  title: "Pet microchip requirements for Thailand | PattayaPets",
+  title: "Thailand Pet Import Microchip | ISO 11784/11785 & Order | PattayaPets",
   desc: "Thailand requires an ISO 11784/11785 15-digit microchip, implanted before " +
     "the rabies vaccination. Here is what that means and why the order matters.",
   crumb: "Microchip",
@@ -267,7 +267,7 @@ pages.push(importStep({
 /* ---------------- HEALTH CERTIFICATE ---------------- */
 pages.push(importStep({
   path: "/bring-pet-to-thailand/health-certificate.html",
-  title: "Health certificate for Thailand pet import | PattayaPets",
+  title: "Pet Health Certificate for Thailand Import | Endorsement & Timing | PattayaPets",
   desc: "The veterinary health certificate Thailand requires, who has to issue " +
     "and government-endorse it, and the tight timing window before travel.",
   crumb: "Health certificate",
@@ -413,7 +413,7 @@ pages.push(importStep({
 /* ---------------- AIRLINE POLICIES ---------------- */
 pages.push(importStep({
   path: "/bring-pet-to-thailand/airline-pet-policies.html",
-  title: "Airline pet policies for Thailand | PattayaPets",
+  title: "Flying a Pet to Thailand | Airline Policies, Cabin & Cargo | PattayaPets",
   desc: "How pets fly to Thailand — in-cabin, as checked baggage or as cargo — " +
     "IATA travel crates, snub-nosed breed rules, and how to book.",
   crumb: "Airline pet policies",
@@ -480,7 +480,7 @@ pages.push(importStep({
 /* ---------------- ARRIVAL ---------------- */
 pages.push(importStep({
   path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html",
-  title: "Arriving in Thailand with a pet | PattayaPets",
+  title: "Arriving in Thailand with a Pet | AQS Clearance & Pattaya Transfer | PattayaPets",
   desc: "What happens when your pet lands in Thailand: the Animal Quarantine " +
     "Station inspection, what officers check, and getting from the airport to Pattaya.",
   crumb: "Arrival in Thailand",
@@ -517,6 +517,9 @@ pages.push(importStep({
     { h: "Getting from the airport to Pattaya", html:
       "<p>Plan the onward journey before you fly. Arrange a pet-friendly private " +
       "transfer, a <a href=\"/pet-relocation/\">relocation agent&rsquo;s</a> vehicle, " +
+      "a hire car from " +
+      '<a href="https://pattaya-vehicle-rentals.com/" target="_blank" rel="noopener noreferrer">' +
+      "Pattaya Vehicle Rentals</a>, " +
       "or read <a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">getting your " +
       "pet to the vet</a> for transport options &mdash; ordinary airport taxis may " +
       "refuse an animal, especially a large one in a crate. Bring " +
@@ -544,7 +547,7 @@ pages.push(importStep({
 /* ---------------- COST ---------------- */
 pages.push(importStep({
   path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html",
-  title: "Cost to bring a pet to Thailand | PattayaPets",
+  title: "Cost to Bring a Pet to Thailand (2026) | Flights, Permits & Vet Fees | PattayaPets",
   desc: "An honest look at the cost of bringing a dog or cat to Thailand — where " +
     "the money goes, rough ranges, and whether to use a relocation agent.",
   crumb: "What it costs",
@@ -765,7 +768,7 @@ pages.push(countryPage({
 
 pages.push(countryPage({
   slug: "from-australia", crumb: "From Australia",
-  title: "Bringing a pet to Thailand from Australia | PattayaPets",
+  title: "Bring a Pet to Thailand from Australia (DAFF & DLD 2026) | PattayaPets",
   desc: "Bringing a pet from Australia to Thailand, and the hard truth about the " +
     "return journey — Australia&rsquo;s strict biosecurity rules.",
   h1: "Bringing a pet to Thailand from Australia",
