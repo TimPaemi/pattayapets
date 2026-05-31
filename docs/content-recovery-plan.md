@@ -39,9 +39,13 @@ This document replaces the old “title/meta batch” queue until Phase 3 is com
 - [x] `/bring-pet-to-thailand/from-usa.html` — USDA/APHIS, 10-day window, CDC return rules
 - [x] `/bring-pet-to-thailand/from-australia.html` — DAFF NOI, 72-hour export window, return warning
 
-### Import / export corridors (remaining — Batch 77+)
+### Import / export corridors — Batch 77 ✅ export mirrors
 
-- [ ] **Thailand → UK / USA / Australia** export pages (mirror depth on outbound side)
+- [x] `/take-pet-out-of-thailand/to-uk.html` — timeline, GOV.UK unlisted rules, DLD export table, tapeworm window
+- [x] `/take-pet-out-of-thailand/to-usa.html` — CDC high-rabies timeline, DLD export table, failure points
+- [x] `/take-pet-out-of-thailand/to-australia.html` — non-approved country pathway, Mickleham quarantine, phases table
+
+### Import / export corridors (remaining — Batch 78+)
 - [ ] **Germany → Thailand** and **UAE → Thailand**
 - [ ] EU member-state clones in `50-import-countries.js` — enrich or consolidate (Tim decision)
 

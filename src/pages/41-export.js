@@ -9,7 +9,7 @@ const CLUSTER = { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-
 const SUB = [GUIDES, CLUSTER];
 
 const VERIFY =
-  "This guide was last reviewed on 30 May 2026 against DLD export procedures and " +
+  "This guide was last reviewed on 31 May 2026 against DLD export procedures and " +
   "published destination-country import rules. Export rules &mdash; Thai DLD " +
   "procedures, destination-country requirements, airline policies and CDC/APHA " +
   "rules &mdash; change without notice. Use this as orientation, then confirm " +
@@ -148,17 +148,37 @@ pages.push(hub({
 function exp(o) {
   var sections = attachImportMirrorLink((o.sections || []).slice(), o.slug);
   if (!o.skipOfficial) {
-    sections.push({ h: "Official sources", html: OFFICIAL });
+    sections.push({ h: "Official sources", html: (o.officialExtra || "") + OFFICIAL });
   }
   return article({
     path: "/take-pet-out-of-thailand/" + o.slug + ".html",
     title: o.title, desc: o.desc, crumb: o.crumb, breadcrumbs: SUB,
     eyebrow: "Taking a pet out of Thailand",
     h1: o.h1, lede: o.lede, verify: VERIFY,
+    updated: o.updated || "2026-05-31",
     sections: sections, faqs: o.faqs,
     related: o.related || expCountryRelated(o.slug)
   });
 }
+
+const DLD_EXPORT_TABLE =
+  '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+  '<th scope="col">Thai-side document</th><th scope="col">Notes</th></tr></thead><tbody>' +
+  '<tr><th scope="row">Export application (form 1/1)</th><td>Email or submit to the AQS at your departure airport. Apply at least <strong>15 days</strong> before export (allow more in practice).</td></tr>' +
+  '<tr><th scope="row">Destination import rules</th><td>Show the UK/US/Australian import permit or published requirements to the AQS &mdash; the Thai health certificate must match.</td></tr>' +
+  '<tr><th scope="row">Microchip &amp; vaccinations</th><td>ISO chip and current rabies vaccination on record; destination may require a <a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">rabies titer test</a>.</td></tr>' +
+  '<tr><th scope="row">DLD export licence (form 9) &amp; health certificate</th><td>Issued after AQS inspection if paperwork complies.</td></tr>' +
+  '<tr><th scope="row">Flight confirmation</th><td>Confirm departure date with the AQS at least <strong>three days</strong> before you fly.</td></tr>' +
+  '</tbody></table></div>';
+
+const EXPORT_FAILS =
+  "<ul>" +
+  "<li><strong>Starting with Thailand only</strong> &mdash; the destination timeline (titer test, CDC form, Australian import permit) is usually the long pole, not the DLD export desk.</li>" +
+  "<li><strong>Expired titer or vaccination gap</strong> &mdash; a lapsed rabies shot can invalidate a titer test and restart months of waiting.</li>" +
+  "<li><strong>Mismatched microchip numbers</strong> &mdash; across Thai export papers, airline booking and destination import forms.</li>" +
+  "<li><strong>Last-minute DLD export</strong> &mdash; applying inside the 15-day window when the AQS still needs inspection or test results.</li>" +
+  "<li><strong>Wrong airport AQS</strong> &mdash; export paperwork must match your actual departure port (Suvarnabhumi for most Pattaya departures).</li>" +
+  "</ul>";
 
 pages.push(exp({
   slug: "export-process", crumb: "The export process",
@@ -386,89 +406,197 @@ pages.push(exp({
   slug: "to-uk", crumb: "To the UK",
   title: "Export a Pet from Thailand to the UK (Titer & Tapeworm 2026) | PattayaPets",
   desc: "Thailand to UK pet export: rabies titer test, three-month wait, tapeworm " +
-    "treatment for dogs, approved routes and DLD export paperwork.",
+    "treatment, approved routes, DLD export timeline and document checklist.",
   h1: "Taking a pet from Thailand to the UK",
-  lede: "The UK treats Thailand as an &lsquo;unlisted&rsquo; country, which makes " +
-    "the rabies titer test and its waiting period the centre of your timeline.",
+  lede: "Great Britain treats Thailand as an <strong>&lsquo;unlisted&rsquo; " +
+    "country</strong>. That single classification drives a timeline measured in " +
+    "months, not weeks &mdash; unless you planned ahead before you ever moved here.",
+  officialExtra:
+    "<p><strong>UK sources:</strong> " +
+    "<a href=\"https://www.gov.uk/bring-pet-to-great-britain\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">bringing a pet to Great Britain</a>; " +
+    "<a href=\"https://www.gov.uk/taking-your-pet-abroad\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">taking your pet abroad</a>. " +
+    "Mirror import guide: " +
+    "<a href=\"/bring-pet-to-thailand/from-uk.html\">bringing a pet from the UK</a>.</p>",
   sections: [
-    { h: "The rabies titer test and the three-month wait", html:
-      "<p>To enter the UK from Thailand your pet needs a current rabies " +
-      "vaccination and a <strong>rabies titer (blood) test</strong> taken at " +
-      "least 30 days after vaccination. Then comes the part that catches people " +
-      "out: you must <strong>wait three months from the date of the blood " +
-      "sample</strong> before the pet can travel to the UK.</p>" +
-      "<p>If you did the titer test before you ever left for Thailand and it has " +
-      "stayed valid, you may avoid that wait. If not, build three months into " +
-      "your plan.</p>" },
-    { h: "Tapeworm and other requirements", html:
-      "<p>Dogs additionally need a tapeworm treatment administered by a vet " +
-      "within a set window (commonly 24&ndash;120 hours) before arrival in the " +
-      "UK. Your pet also needs the microchip and the correct UK entry " +
-      "documentation, and must travel on an approved route and carrier into the " +
-      "UK. The shared <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">" +
-      "rabies titer test</a> rules apply on the Thai side too &mdash; see the " +
-      "<a href=\"/take-pet-out-of-thailand/export-permit-thailand-dld.html\">DLD export " +
-      "permit</a> process.</p>" },
-    { h: "Plan the route", html:
-      "<p>The UK only permits pets to enter via approved transport routes and " +
-      "carriers. Confirm the current rules with the " +
-      "<a href=\"https://www.gov.uk/bring-pet-to-great-britain\" target=\"_blank\" " +
-      "rel=\"noopener nofollow\">UK government pet-travel guidance</a> and choose " +
-      "an airline and route that satisfies them &mdash; a relocation agent is " +
-      "genuinely useful here. See also " +
-      "<a href=\"/pet-relocation/\">pet relocation agents</a> and " +
-      "<a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline pet " +
-      "policies</a>.</p>" },
-    { h: "The Thai side and your timeline", html: THAI_SIDE }
+    { h: "The timeline — work backwards from landing in Britain", html:
+      "<p>If you do not already hold a valid rabies titer test from before you " +
+      "moved to Thailand, assume <strong>at least three months</strong> from the " +
+      "blood sample before your pet can enter Great Britain.</p>" +
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Authority</th></tr></thead><tbody>' +
+      '<tr><th scope="row">Month 1 (if no valid titer yet)</th>' +
+      '<td>Ensure ISO microchip and current rabies vaccination; blood sample for <strong>rabies titer test</strong> at least 30 days after vaccination; send to an approved lab</td>' +
+      '<td>Thai vet + approved laboratory</td></tr>' +
+      '<tr><th scope="row">Months 1&ndash;3</th>' +
+      '<td><strong>Wait three months</strong> from the date of the blood sample (unlisted-country rule)</td>' +
+      '<td>UK import rules</td></tr>' +
+      '<tr><th scope="row">6&ndash;8 weeks before flight</th>' +
+      '<td>Research <strong>approved UK entry routes and carriers</strong>; book pet space on a compliant flight</td>' +
+      '<td>Airline / relocation agent</td></tr>' +
+      '<tr><th scope="row">&ge;15 days before export</th>' +
+      '<td>Apply for Thai <a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">DLD export permit</a> (form 1/1) with UK requirements and titer result attached</td>' +
+      '<td>DLD AQS (e.g. qsap_bkk_export@dld.go.th)</td></tr>' +
+      '<tr><th scope="row">24 hours &ndash; 5 days before UK arrival (dogs)</th>' +
+      '<td>Vet-administered <strong>tapeworm treatment</strong> (Echinococcus multilocularis) documented on the health certificate</td>' +
+      '<td>Accredited vet</td></tr>' +
+      '<tr><th scope="row">&ge;3 days before departure</th>' +
+      '<td>Confirm export date with the AQS; collect DLD export licence and health certificate</td>' +
+      '<td>DLD</td></tr>' +
+      '<tr><th scope="row">UK arrival</th>' +
+      '<td>Enter via an <strong>approved route</strong>; present microchip, rabies, titer and travel documents at border control</td>' +
+      '<td>UK Border Force / carrier</td></tr>' +
+      '</tbody></table></div>' },
+    { h: "What the UK requires from Thailand", html:
+      "<p>For pets entering Great Britain from an unlisted country such as Thailand, " +
+      "GOV.UK requires (among other steps):</p>" +
+      "<ul>" +
+      "<li><strong>ISO microchip</strong> implanted before rabies vaccination</li>" +
+      "<li><strong>Valid rabies vaccination</strong></li>" +
+      "<li><strong>Rabies blood test (titer)</strong> from an approved lab, with sample taken at least 30 days after vaccination</li>" +
+      "<li><strong>Three-month wait</strong> from the date of that blood sample before entry</li>" +
+      "<li>The correct <strong>pet travel document</strong> for entry from an unlisted country (not an EU pet passport alone)</li>" +
+      "<li>For <strong>dogs</strong>, tapeworm treatment by a vet <strong>no less than 24 hours and no more than 5 days</strong> before arrival in Great Britain</li>" +
+      "<li>Travel on an <strong>approved route and carrier</strong> into Great Britain</li>" +
+      "</ul>" +
+      "<p>Failure to meet these rules can mean <strong>quarantine up to four months</strong> or refusal of entry. Confirm every detail on " +
+      "<a href=\"https://www.gov.uk/bring-pet-to-great-britain\" target=\"_blank\" rel=\"noopener nofollow\">GOV.UK</a> before you book.</p>" +
+      '<div class="callout callout-tip"><div class="ch">Already did the titer test before Thailand?</div>' +
+      "<p>If you had the blood test done in the UK (or another listed country) before " +
+      "moving and kept rabies vaccination current without a gap, you may skip the " +
+      "three-month wait &mdash; but only if the test and vaccines are still valid. " +
+      "That is why British owners are told to do the test <em>before</em> leaving for Thailand.</p></div>" },
+    { h: "The Thai export side (DLD)", html:
+      "<p>Your pet must also clear Thailand&rsquo;s export process in parallel:</p>" +
+      DLD_EXPORT_TABLE +
+      "<p>Full walkthrough: " +
+      '<a href="/take-pet-out-of-thailand/export-process.html">export process</a> ' +
+      "and " +
+      '<a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">export permit application</a>. ' +
+      "Suvarnabhumi export desk: Mon&ndash;Fri 08:30&ndash;12:00 and 13:00&ndash;15:30 (Thai public holidays excepted).</p>" },
+    { h: "Approved routes and booking", html:
+      "<p>The UK restricts which airlines, ports and routes may carry pets into Great " +
+      "Britain. Not every Bangkok&ndash;London connection qualifies. Confirm the " +
+      "current approved-route list on GOV.UK and tell your airline you are importing " +
+      "a pet from an unlisted country &mdash; cargo and accompanied travel have " +
+      "different rules. A " +
+      '<a href="/pet-relocation/">pet relocation agent</a> experienced in UK entry ' +
+      "is often worth the fee for routing alone. See also " +
+      '<a href="/bring-pet-to-thailand/airline-pet-policies.html">airline pet policies</a>.</p>' },
+    { h: "Common mistakes on this corridor", html: EXPORT_FAILS +
+      "<ul>" +
+      "<li><strong>Booking a flight before the three-month wait ends</strong> &mdash; the titer clock cannot be rushed.</li>" +
+      "<li><strong>Missing or mistimed tapeworm treatment</strong> for dogs &mdash; a common reason for refusal at the border.</li>" +
+      "<li><strong>Assuming any EU airport connection works</strong> &mdash; check approved routes into Great Britain specifically.</li>" +
+      "</ul>" }
   ],
   faqs: [
     ["How long does it take to move a pet from Thailand to the UK?",
-     "<p>Plan for several months if the titer test still has to be done — the three-month wait after the blood sample is unavoidable. If a valid titer test is already in place, it can be considerably faster.</p>"],
+     "<p>If the rabies titer test still has to be done from Thailand, plan for at least three months after the blood sample, plus Thai export processing and flight booking. If a valid titer test is already in place from before you moved, it can be considerably faster — but confirm validity with GOV.UK.</p>"],
     ["Does my dog need a tapeworm treatment?",
-     "<p>Yes — dogs entering the UK need a vet-administered tapeworm treatment within a set time window before arrival. Confirm the current window with the UK authorities.</p>"]
+     "<p>Yes. Dogs entering Great Britain need vet-administered tapeworm treatment documented on the certificate, given no less than 24 hours and no more than 5 days before arrival. Confirm the current window on GOV.UK.</p>"],
+    ["Can my pet fly in cabin to the UK from Bangkok?",
+     "<p>It depends on the airline and route, and whether the route is UK-approved for pet entry. Many UK-bound pets travel as checked baggage or cargo. Confirm with the airline and GOV.UK approved routes — do not assume cabin travel is available or compliant.</p>"],
+    ["What if my titer test fails?",
+     "<p>A failed or borderline result usually means revaccination and retesting, which restarts waiting periods. Use an approved laboratory and an experienced vet; build slack into your timeline.</p>"],
+    ["Do I need a UK import permit as well as the Thai export permit?",
+     "<p>Great Britain does not issue a separate import permit for personal pet dogs and cats in the same way Australia does, but you must meet every documentary and routing requirement on GOV.UK. The Thai export permit is Thailand&rsquo;s permission to leave; UK rules govern entry.</p>"]
   ]
 }));
 
 pages.push(exp({
   slug: "to-usa", crumb: "To the USA",
   title: "Export a Pet from Thailand to the USA (CDC Rules 2026) | PattayaPets",
-  desc: "Thailand to USA pet export: CDC dog-import rules, rabies titer test, DLD export " +
-    "paperwork and what US-bound dog owners must plan months ahead.",
+  desc: "Thailand to USA pet export: CDC dog-import rules for high-rabies countries, " +
+    "titer test, DLD export timeline, document checklist and planning months ahead.",
   h1: "Taking a pet from Thailand to the USA",
-  lede: "The US Centers for Disease Control treats Thailand as a " +
-    "high-rabies-risk country, and that shapes everything for dogs.",
+  lede: "The US Centers for Disease Control treats Thailand as a <strong>high-rabies-risk " +
+    "country</strong>. For dogs especially, CDC paperwork and timing often matter " +
+    "more than the Thai export desk.",
+  officialExtra:
+    "<p><strong>US sources:</strong> " +
+    "<a href=\"https://www.cdc.gov/importation/bringing-an-animal-into-the-us/index.html\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">CDC animal import</a>; " +
+    "<a href=\"https://www.aphis.usda.gov/pet-travel\" target=\"_blank\" rel=\"noopener nofollow\">USDA APHIS pet travel</a>. " +
+    "Mirror import guide: " +
+    "<a href=\"/bring-pet-to-thailand/from-usa.html\">bringing a pet from the USA</a>.</p>",
   sections: [
-    { h: "The CDC rules for dogs", html:
-      "<p>The CDC tightened its requirements for dogs entering the United " +
-      "States. Dogs arriving from a high-rabies-risk country &mdash; which " +
-      "includes Thailand &mdash; face additional steps, which can include a " +
-      "microchip, a minimum age, a <strong>" +
-      "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies " +
-      "titer test</a></strong> from an approved laboratory, CDC import paperwork submitted in advance, and " +
-      "arrival through specific airports. The exact requirements depend on your " +
-      "dog&rsquo;s vaccination history and where it was vaccinated.</p>" +
-      "<p>Because these rules are detailed and have changed recently, check the " +
-      "current <a href=\"https://www.cdc.gov/importation/bringing-an-animal-into-the-us/index.html\" " +
-      "target=\"_blank\" rel=\"noopener nofollow\">CDC requirements</a> directly " +
-      "and well ahead of travel.</p>" },
-    { h: "Cats", html:
-      "<p>Cats face lighter US requirements than dogs, but still need to be " +
-      "healthy on arrival and meet the rules in force. Confirm the current cat " +
-      "requirements with the CDC and USDA.</p>" },
-    { h: "What comes next", html:
-      "<p>Budget with our " +
-      '<a href="/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html">export cost guide</a>, ' +
-      "line up the " +
-      '<a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">DLD export permit</a>, ' +
-      "and consider a " +
-      '<a href="/pet-relocation/">pet relocation agent</a> for CDC paperwork and routing.</p>' },
-    { h: "The Thai side and your timeline", html: THAI_SIDE }
+    { h: "The timeline — dogs from a high-rabies country", html:
+      "<p>CDC rules for dogs changed several times from 2024 onward. The table below " +
+      "is orientation &mdash; your dog&rsquo;s vaccination history and US entry airport " +
+      "determine the exact path. Read the CDC site directly before acting.</p>" +
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Authority</th></tr></thead><tbody>' +
+      '<tr><th scope="row">2&ndash;3 months before (typical)</th>' +
+      '<td>Confirm ISO microchip; ensure rabies vaccination is current; arrange <strong>rabies titer test</strong> if required for your CDC pathway</td>' +
+      '<td>Thai vet + approved lab</td></tr>' +
+      '<tr><th scope="row">Weeks before travel</th>' +
+      '<td>Complete CDC dog import documentation online; note any required US arrival airports</td>' +
+      '<td>CDC</td></tr>' +
+      '<tr><th scope="row">&ge;15 days before export</th>' +
+      '<td>Apply for Thai <a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">DLD export permit</a> (form 1/1) with CDC/USDA requirements attached</td>' +
+      '<td>DLD AQS</td></tr>' +
+      '<tr><th scope="row">Final week</th>' +
+      '<td>AQS inspection; DLD export licence and health certificate issued; confirm airline IATA crate rules</td>' +
+      '<td>DLD + airline</td></tr>' +
+      '<tr><th scope="row">&ge;3 days before departure</th>' +
+      '<td>Confirm export date with the AQS by email</td>' +
+      '<td>DLD</td></tr>' +
+      '<tr><th scope="row">US arrival</th>' +
+      '<td>Present CDC documentation, health papers and microchip at designated inspection if required</td>' +
+      '<td>CDC / port veterinarian</td></tr>' +
+      '</tbody></table></div>' },
+    { h: "CDC rules for dogs — what Thailand triggers", html:
+      "<p>Dogs entering the United States from Thailand face the CDC&rsquo;s " +
+      "high-rabies-country requirements. Depending on your dog&rsquo;s age, " +
+      "microchip, vaccination history and whether it was vaccinated in the US " +
+      "before travel, steps commonly include:</p>" +
+      "<ul>" +
+      "<li><strong>ISO-compatible microchip</strong> recorded before or with rabies vaccination</li>" +
+      "<li><strong>Minimum age</strong> rules (young puppies may not import)</li>" +
+      "<li><strong>Rabies vaccination</strong> tied to the microchip</li>" +
+      "<li><strong>Rabies titer test</strong> from an approved laboratory, for many dogs coming from high-rabies countries</li>" +
+      "<li><strong>CDC Dog Import Form</strong> (or equivalent current CDC paperwork) submitted before travel</li>" +
+      "<li>Arrival through <strong>designated airports</strong> for some import categories</li>" +
+      "</ul>" +
+      "<p>These rules are detailed and have been updated repeatedly. Do not rely on " +
+      "a forum post or an old airline PDF &mdash; read " +
+      "<a href=\"https://www.cdc.gov/importation/bringing-an-animal-into-the-us/index.html\" " +
+      "target=\"_blank\" rel=\"noopener nofollow\">CDC requirements</a> and " +
+      "<a href=\"https://www.aphis.usda.gov/pet-travel\" target=\"_blank\" rel=\"noopener nofollow\">USDA APHIS pet travel</a> " +
+      "for cats and any state-level rules at your US destination.</p>" },
+    { h: "Cats — lighter, but not automatic", html:
+      "<p>Cats face fewer CDC restrictions than dogs, but must still be healthy on " +
+      "arrival and may need documentation depending on airline and state rules. " +
+      "Some US states and airlines impose extra requirements beyond the CDC. Confirm " +
+      "cat rules with the CDC, USDA and your airline before booking.</p>" },
+    { h: "The Thai export side (DLD)", html:
+      "<p>CDC approval does not replace Thailand&rsquo;s export process:</p>" +
+      DLD_EXPORT_TABLE +
+      "<p>See " +
+      '<a href="/take-pet-out-of-thailand/export-process.html">export process</a> ' +
+      "and budget in " +
+      '<a href="/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html">what export costs</a>.</p>' },
+    { h: "Common mistakes on this corridor", html: EXPORT_FAILS +
+      "<ul>" +
+      "<li><strong>Assuming pre-2024 dog-import rules still apply</strong> &mdash; verify the current CDC page.</li>" +
+      "<li><strong>Non-ISO microchip</strong> &mdash; common on older US-born dogs; may require re-chip and re-vaccination.</li>" +
+      "<li><strong>Wrong US arrival airport</strong> &mdash; some CDC categories restrict where dogs may land.</li>" +
+      "<li><strong>Submitting CDC paperwork on the day of travel</strong> &mdash; many forms must be filed in advance.</li>" +
+      "</ul>" }
   ],
   faqs: [
     ["Does my dog need a rabies titer test to enter the USA from Thailand?",
-     "<p>Because Thailand is treated as a high-rabies-risk country, a rabies titer test from an approved lab is commonly part of the CDC requirements for dogs. Verify the current rules for your dog's specific situation with the CDC.</p>"],
+     "<p>Because Thailand is a high-rabies-risk country under CDC rules, a rabies titer test from an approved lab is commonly required for dogs — but the exact rule depends on vaccination history and the current CDC policy. Verify your dog's specific case on the CDC website.</p>"],
     ["Where do I check the current US rules?",
-     "<p>The <a href=\"https://www.cdc.gov/importation/bringing-an-animal-into-the-us/index.html\" target=\"_blank\" rel=\"noopener nofollow\">CDC</a> governs the disease-control side of dog and cat import, and the <a href=\"https://www.aphis.usda.gov/pet-travel\" target=\"_blank\" rel=\"noopener nofollow\">USDA APHIS</a> the animal-health side. Check both, directly, before you book — these rules changed recently.</p>"]
+     "<p>The CDC governs disease-control import rules for dogs; USDA APHIS covers animal-health certification. Check both directly, plus your destination US state's requirements, before you book.</p>"],
+    ["Can I use the same health certificate that got my dog into Thailand?",
+     "<p>No. Export from Thailand requires a fresh DLD export health certificate and export permit. US entry requires current CDC-compliant documentation for the inbound journey.</p>"],
+    ["Should I use a relocation agent for the USA?",
+     "<p>Many owners manage simpler cat moves themselves. For dogs from Thailand under current CDC rules, an agent experienced in US entry often prevents expensive rebooking or denial at arrival.</p>"],
+    ["How does this relate to bringing a dog TO Thailand from the US?",
+     "<p>Different direction, different rules. See our <a href=\"/bring-pet-to-thailand/from-usa.html\">USA-to-Thailand import guide</a> for the inbound path; this page is Thailand to USA only.</p>"]
   ]
 }));
 
@@ -511,42 +639,97 @@ pages.push(exp({
 pages.push(exp({
   slug: "to-australia", crumb: "To Australia",
   title: "Export a Pet from Thailand to Australia (DAFF & DLD 2026) | PattayaPets",
-  desc: "Why moving a pet from Thailand to Australia is the hardest route — " +
-    "non-approved country status, long timelines and mandatory quarantine.",
+  desc: "Thailand to Australia pet export: why direct import fails, approved-country " +
+    "pathway, DAFF import permit, mandatory quarantine and DLD export checklist.",
   h1: "Taking a pet from Thailand to Australia",
-  lede: "Be honest with yourself early: Australia has some of the strictest pet " +
-    "biosecurity rules in the world, and Thailand is not an approved country.",
+  lede: "Be direct with yourself: <strong>you cannot fly a pet directly from Thailand " +
+    "to Australia</strong> under normal DAFF rules. Thailand is not an approved " +
+    "country. This corridor is a multi-stage project measured in months and " +
+    "thousands of dollars.",
+  officialExtra:
+    "<p><strong>Australian sources:</strong> " +
+    "<a href=\"https://www.agriculture.gov.au/biosecurity-trade/cats-dogs\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">importing cats and dogs to Australia</a>. " +
+    "Mirror import guide: " +
+    "<a href=\"/bring-pet-to-thailand/from-australia.html\">bringing a pet from Australia</a>.</p>",
   sections: [
-    { h: "Why this route is so hard", html:
-      "<p>Australia only allows pets to be imported from countries on its " +
-      "approved list, and <strong>Thailand is not on that list</strong>. In " +
-      "practice, taking a pet from Thailand to Australia means a long, " +
-      "multi-stage process: your pet typically has to spend a qualifying period " +
-      "in an approved country first, complete a rabies titer test and a series " +
-      "of timed steps, obtain an Australian import permit, and then serve a " +
-      "<strong>mandatory stay in a government quarantine facility</strong> on " +
-      "arrival.</p>" },
-    { h: "What it really takes", html:
-      "<p>Owners commonly report <strong>six months or more</strong> of " +
-      "preparation. This is not a process to improvise. Start with the " +
-      "Australian Department of Agriculture, Fisheries and Forestry for the " +
-      "current rules &mdash; see " +
-      "<a href=\"https://www.agriculture.gov.au/biosecurity-trade/cats-dogs\" " +
-      "target=\"_blank\" rel=\"noopener nofollow\">importing cats and dogs to " +
-      "Australia</a> &mdash; and engage a specialist " +
-      "<a href=\"/pet-relocation/\">pet relocation agent</a> experienced in the " +
-      "Thailand-to-Australia route as early as you can.</p>" +
-      "<p>If you have not read it yet, our guide to " +
-      "<a href=\"/bring-pet-to-thailand/from-australia.html\">bringing a pet from " +
-      "Australia to Thailand</a> covers the easier direction &mdash; and why the " +
-      "return is so much harder.</p>" },
-    { h: "The Thai side and your timeline", html: THAI_SIDE }
+    { h: "Why direct import does not work", html:
+      "<p>Australia only allows dog and cat imports from countries on its approved " +
+      "list (grouped by rabies risk). <strong>Thailand is not an approved country</strong> " +
+      "for direct import. A pet that has lived in Thailand must typically:</p>" +
+      "<ol>" +
+      "<li>Complete veterinary steps including a <strong>rabies titer test</strong></li>" +
+      "<li>Spend a qualifying period in an <strong>approved country</strong> (the pathway depends on DAFF&rsquo;s current country groups)</li>" +
+      "<li>Obtain an <strong>Australian import permit</strong> before export from that approved country</li>" +
+      "<li>Enter Australia and serve <strong>mandatory post-entry quarantine</strong> at the government facility in Mickleham, Victoria</li>" +
+      "</ol>" +
+      "<p>Owners commonly report <strong>six months to a year or more</strong> of " +
+      "planning. This is not a last-minute relocation.</p>" },
+    { h: "The realistic timeline (high level)", html:
+      "<p>Every case differs by approved-country pathway, but the shape is similar:</p>" +
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">Phase</th><th scope="col">What happens</th><th scope="col">Who</th></tr></thead><tbody>' +
+      '<tr><th scope="row">Planning (months 1&ndash;2)</th>' +
+      '<td>Contact DAFF; engage specialist <a href="/pet-relocation/">relocation agent</a>; choose approved-country pathway; confirm whether pet can wait in Thailand or must move interim</td>' +
+      '<td>You + agent + DAFF</td></tr>' +
+      '<tr><th scope="row">Veterinary prep</th>' +
+      '<td>Rabies vaccination, titer test, other DAFF-specified tests and treatments on a fixed schedule</td>' +
+      '<td>DAFF-approved vet</td></tr>' +
+      '<tr><th scope="row">Approved-country residency</th>' +
+      '<td>Pet resides in (or transits through) an approved country for the period DAFF requires before Australian entry</td>' +
+      '<td>DAFF conditions</td></tr>' +
+      '<tr><th scope="row">Import permit</th>' +
+      '<td>Apply for Australian import permit with full veterinary history</td>' +
+      '<td>DAFF</td></tr>' +
+      '<tr><th scope="row">Export from interim country</th>' +
+      '<td>That country&rsquo;s export process + airline cargo booking to Australia</td>' +
+      '<td>Foreign authority + airline</td></tr>' +
+      '<tr><th scope="row">Thailand exit (if pet is still here early on)</th>' +
+      '<td><a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">DLD export permit</a> to reach the approved country &mdash; Thailand is only the first leg</td>' +
+      '<td>DLD AQS</td></tr>' +
+      '<tr><th scope="row">Arrival in Australia</th>' +
+      '<td>Mandatory quarantine at Mickleham; release only when DAFF clears the pet</td>' +
+      '<td>DAFF quarantine facility</td></tr>' +
+      '</tbody></table></div>' +
+      '<div class="callout callout-emergency"><div class="ch">Australia → Thailand was the easy bit</div>' +
+      "<p>If you imported from Australia recently, do not assume symmetry. Read " +
+      '<a href="/bring-pet-to-thailand/from-australia.html">Australia to Thailand</a> ' +
+      "for the outbound direction you already managed &mdash; then accept that the return is an entirely different process.</p></div>" },
+    { h: "What DAFF import typically requires", html:
+      "<p>Confirm the current DAFF checklist directly. Commonly includes:</p>" +
+      "<ul>" +
+      "<li><strong>Import permit</strong> issued before export to Australia</li>" +
+      "<li><strong>ISO microchip</strong> and rabies vaccination history</li>" +
+      "<li><strong>Rabies neutralising antibody titre test (RNAT)</strong> from an approved lab, on schedule</li>" +
+      "<li>Additional blood tests, treatments and examinations timed to DAFF&rsquo;s calendar</li>" +
+      "<li>Export health certificate from the <strong>approved country of export</strong> (not Thailand for final entry)</li>" +
+      "<li>Booking at the <strong>post-entry quarantine facility</strong> before the pet flies</li>" +
+      "</ul>" +
+      "<p>Quarantine is not optional &mdash; even perfect paperwork ends with a stay at Mickleham.</p>" },
+    { h: "The Thai export side — when Thailand is still in the journey", html:
+      "<p>If your pet is departing Thailand for an approved interim country, you still need:</p>" +
+      DLD_EXPORT_TABLE +
+      "<p>That interim country then becomes the export origin for the Australia leg. See " +
+      '<a href="/take-pet-out-of-thailand/export-process.html">export process</a>.</p>' },
+    { h: "Common mistakes on this corridor", html: EXPORT_FAILS +
+      "<ul>" +
+      "<li><strong>Booking Bangkok&ndash;Sydney direct</strong> &mdash; not available for pets from Thailand under normal DAFF rules.</li>" +
+      "<li><strong>Starting when the work contract ends</strong> &mdash; six months&rsquo; lead time is optimistic, not conservative.</li>" +
+      "<li><strong>Skipping the relocation agent</strong> &mdash; on this corridor, specialist help is not a luxury.</li>" +
+      "<li><strong>Underestimating quarantine cost and booking lead time</strong> &mdash; Mickleham slots fill up.</li>" +
+      "</ul>" }
   ],
   faqs: [
     ["Can I fly my pet directly from Thailand to Australia?",
-     "<p>Generally not. Because Thailand is not an approved country, the route normally requires a qualifying period in an approved country first, then entry to Australia with quarantine. Confirm the current pathway with the Australian authorities.</p>"],
+     "<p>Generally no. Thailand is not an approved country for direct dog and cat import to Australia. The usual route requires veterinary preparation, time in an approved country, an Australian import permit and mandatory quarantine on arrival.</p>"],
     ["How early should I start?",
-     "<p>As early as possible — six months of lead time or more is common. The earlier you involve the Australian department and a specialist agent, the smoother it goes.</p>"]
+     "<p>As early as possible — before you even move to Thailand if return is conceivable. Six months is a common minimum; many pathways take longer.</p>"],
+    ["How much does Thailand-to-Australia cost?",
+     "<p>Often several thousand US dollars or more: interim-country residency, multiple flights, veterinary tests, DAFF fees, quarantine at Mickleham and agent fees. Get a written quote from a specialist agent rather than guessing.</p>"],
+    ["Does my pet need a Thai export permit if Australia is the final goal?",
+     "<p>If the pet leaves Thailand en route to an approved interim country, yes — the DLD export permit and health certificate are required for that first leg. The Australia import permit covers entry from the approved country, not from Thailand directly.</p>"],
+    ["What if I cannot complete the return pathway?",
+     "<p>Some owners rehome their pet in Thailand or relocate the pet to a third country where they can stay long-term. Decide early — last-minute rehoming is distressing for everyone.</p>"]
   ]
 }));
 

@@ -178,6 +178,8 @@ box-shadow:0 0 0 4px var(--alert-tint);flex:none}
 .callout .ch{margin:0 0 7px;color:var(--forest)}
 .callout-emergency{border-left-color:var(--alert);background:var(--alert-tint)}
 .callout-emergency .ch{color:var(--alert-dk)}
+.callout-tip{border-left-color:var(--marigold);background:var(--marigold-tint)}
+.callout-tip .ch{color:var(--marigold-dk)}
 .callout-note{border-left-color:var(--sage);background:var(--cream)}
 .verdict{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-weight:700;
   font-size:.74rem;letter-spacing:.05em;text-transform:uppercase;padding:6px 13px;border-radius:999px}

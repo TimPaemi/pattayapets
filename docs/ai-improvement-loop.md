@@ -37,6 +37,7 @@ Not deployed. Last updated: 30 May 2026.
 | **74** | Production smoke test (`tools/audit-live.js`) + extended dist audit (`tools/audit-full.js`) |
 | **75** | **Content recovery Phase 0:** FOUC critical CSS, tablet nav 1080px, dog-friendly venues/routes, pet-health HTML fix, recovery plan doc |
 | **76** | **Content recovery Phase 1:** Full-depth UK / USA / Australia import corridor pages (timelines, checklists, failure points) |
+| **77** | **Export mirror depth:** UK / USA / Australia export corridors; callout-tip FOUC fix |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 
