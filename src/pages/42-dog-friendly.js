@@ -165,10 +165,28 @@ pages.push(df({
       "<li>Bring water; do not assume the cafe provides it.</li>" +
       "<li>Leave if your dog is unsettled &mdash; one stressed dog can close a " +
       "door for every dog after it.</li></ul>" },
-    { h: "Help us build the list", html:
-      "<p>PattayaPets is compiling dog-friendly cafes the honest way &mdash; " +
-      "confirmed, not copied. If you have a favourite that genuinely welcomes " +
-      "dogs, <a href=\"/contact.html\">send us a tip</a>.</p>" }
+    { h: "Places that welcome dogs (confirm before you go)", html:
+      "<p>Policies change. Always ask at the door. These are widely reported as " +
+      "dog-friendly in Pattaya &mdash; we have not reviewed them as businesses, " +
+      "only noted that expats and visitors regularly bring dogs:</p>" +
+      "<ul>" +
+      "<li><strong>Casa Myka</strong> &mdash; 352/103&ndash;104 Thappraya Road, " +
+      "near Dongtan Beach. Terrace and courtyard seating; dogs are typically " +
+      "welcomed outdoors and staff often bring water bowls. Open daily " +
+      "08:00&ndash;22:00. Confirm where your dog can sit before you order.</li>" +
+      "<li><strong>Pet and Play Cafe</strong> &mdash; Huai Yai / East Pattaya " +
+      "area (Bang Lamung). A family cafe with a fenced dog run and outdoor " +
+      "seating; visitors report bringing their own dogs. Worth the drive if you " +
+      "want off-lead play in a secure area. Confirm hours and any entry rules " +
+      "on arrival.</li>" +
+      "<li><strong>Sandbar by the Sea</strong> &mdash; Dongtan Beach / Jomtien " +
+      "beachfront. Outdoor dining with dogs reported as allowed on the terrace. " +
+      "Good for a casual breakfast or lunch after an early beach walk.</li>" +
+      "</ul>" +
+      "<p>For more cafes city-wide, see " +
+      '<a href="https://pattaya-coffee.com/" target="_blank" rel="noopener noreferrer">' +
+      "Pattaya Coffee</a> &mdash; then confirm dog policy before you go. Know " +
+      "another spot? <a href=\"/contact.html\">Send us a tip</a>.</p>" }
   ],
   faqs: [
     ["How do I know if a cafe allows dogs?",
@@ -212,10 +230,27 @@ pages.push(df({
       "<li>Feed your dog before you go so it is settled, not begging.</li>" +
       "<li>Keep it on a short lead and bring its own water.</li>" +
       "<li>Choose quieter times while your dog is still learning.</li></ul>" },
-    { h: "Help us build the list", html:
-      "<p>PattayaPets adds restaurants here only once we are confident they " +
-      "genuinely welcome dogs &mdash; not copied from old lists. If you have a " +
-      "favourite outdoor spot, <a href=\"/contact.html\">send us a tip</a>.</p>" }
+    { h: "Places that welcome dogs (confirm before you go)", html:
+      "<p>Outdoor seating is the rule. These are commonly named as dog-friendly " +
+      "around Pattaya &mdash; confirm policy when you arrive; we have not " +
+      "reviewed them as dining experiences:</p>" +
+      "<ul>" +
+      "<li><strong>The Dog House Bar &amp; Grill</strong> &mdash; Jomtien Beach " +
+      "Road area. Long-standing expat favourite for eating out with a dog on the " +
+      "terrace. Still the name most people mention &mdash; verify current hours " +
+      "and table rules.</li>" +
+      "<li><strong>Sandbar by the Sea</strong> &mdash; Dongtan Beach. Beachfront " +
+      "breakfast, brunch and lunch; dogs reported as welcome on outdoor tables.</li>" +
+      "<li><strong>Casa Myka</strong> &mdash; Thappraya Road near Dongtan. More " +
+      "cafe than full restaurant, but serves breakfast and lunch from late morning; " +
+      "dogs welcomed on outdoor seating.</li>" +
+      "<li><strong>Pet and Play Cafe</strong> &mdash; Huai Yai / East Pattaya. " +
+      "Homemade meals plus a fenced area where dogs can run; family-oriented.</li>" +
+      "</ul>" +
+      "<p>For a wider editorial list of restaurants in Pattaya, see the " +
+      '<a href="https://pattaya-restaurant-guide.com/" target="_blank" rel="noopener noreferrer">' +
+      "Pattaya Restaurant Guide</a> &mdash; always ask about dogs before you book. " +
+      "Spot another good terrace? <a href=\"/contact.html\">Tell us</a>.</p>" }
   ],
   faqs: [
     ["Can I take my dog to a beachfront restaurant in Pattaya?",
@@ -355,6 +390,28 @@ pages.push(df({
       "<li><strong>Pratumnak hill</strong> has quieter, leafier roads than the " +
       "city core &mdash; see " +
       "<a href=\"/area/pratumnak.html\">pet services in Pratumnak</a>.</li></ul>" },
+    { h: "Named routes owners actually use", html:
+      "<p>These are not official dog parks &mdash; they are routes and spots expat " +
+      "owners report using regularly. Rules and enforcement vary; keep your dog " +
+      "leashed unless you are in a clearly private, fenced space:</p>" +
+      "<ul>" +
+      "<li><strong>Dongtan Beach (Jomtien)</strong> &mdash; the stretch between " +
+      "Dongtan and Jomtien is the most common early-morning beach walk. Go before " +
+      "08:00 when sand is cool and crowds are thin.</li>" +
+      "<li><strong>Pratumnak Hill roads</strong> &mdash; the quieter sois climbing " +
+      "toward Big Buddha (Khao Phra Bat) offer shade and less traffic than Beach " +
+      "Road. Stick to side streets, not temple grounds.</li>" +
+      "<li><strong>North Jomtien / Na Jomtien</strong> &mdash; longer, quieter " +
+      "beach than central Pattaya; good for a leashed stroll at dawn.</li>" +
+      "<li><strong>Your own condo soi</strong> &mdash; often the most reliable " +
+      "daily walk. Introduce yourself to neighbours; a polite dog owner keeps " +
+      "access open for everyone.</li>" +
+      "<li><strong>Pet and Play Cafe (Huai Yai)</strong> &mdash; not a public park, " +
+      "but the fenced run is the closest thing to off-lead play many owners find. " +
+      "See <a href=\"/dog-friendly-pattaya/cafes.html\">dog-friendly cafes</a>.</li>" +
+      "</ul>" +
+      "<p>Formal city parks often restrict dogs. If you see a sign, obey it &mdash; " +
+      "fines and neighbour complaints are real.</p>" },
     { h: "Walk smart in the climate", html:
       "<p>Whatever route you choose, the climate rules apply: walk early or " +
       "late, avoid hot pavement, carry water, and keep it shorter on the " +

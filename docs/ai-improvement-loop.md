@@ -35,6 +35,7 @@ Not deployed. Last updated: 30 May 2026.
 | **72** | Furpet full Facebook facts; Relo4Paws phones/services; 404/offline CTR; groomers area anchor + import checklist link |
 | **73** | Baan Mor phone/email; relocation service-area addresses; Pet Passions zone; groomers mobile callout; area hub links |
 | **74** | Production smoke test (`tools/audit-live.js`) + extended dist audit (`tools/audit-full.js`) |
+| **75** | **Content recovery Phase 0:** FOUC critical CSS, tablet nav 1080px, dog-friendly venues/routes, pet-health HTML fix, recovery plan doc |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 

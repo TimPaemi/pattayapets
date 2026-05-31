@@ -96,11 +96,11 @@ var c24list = c24.map(function (b) {
     "<div><h3><a href=\"/" + b.category + "/" + b.slug + ".html\">" + b.name +
     "</a></h3><p class=\"biz-sub\">" + b.type + " &middot; " + areaNm + "</p></div>" +
     '<span class="badge-24h">24 hr</span></div>' +
-    '<table class="facts-table" style="margin:.5rem 0 0"><tbody>' +
+    '<div class="table-wrap"><table class="facts-table" style="margin:.5rem 0 0"><tbody>' +
     (b.address ? "<tr><th scope=\"row\">Address</th><td>" + b.address + "</td></tr>" : "") +
     (b.phone ? '<tr><th scope="row">Phone</th><td><a href="tel:' + b.tel + '">' + b.phone + "</a></td></tr>" : "") +
     (!b.address && !b.phone ? '<tr><td colspan="2">Contact details are being verified &mdash; check the clinic listing before travelling.</td></tr>' : "") +
-    "</tbody></table></article>";
+    "</tbody></table></div></article>";
 }).join("");
 
 pages.push(article({

@@ -323,7 +323,7 @@ pages.push(health({
       "properly. Guessing with leftover or human products often makes things " +
       "worse.</p>" },
     { h: "What helps prevent it", html:
-      "<li><strong>Dry your pet thoroughly</strong> after swimming, bathing " +
+      "<ul><li><strong>Dry your pet thoroughly</strong> after swimming, bathing " +
       "or a wet walk &mdash; ears and skin folds included. See " +
       "<a href=\"/pet-emergency/beach-and-sea-hazards.html\">beach &amp; sea " +
       "hazards</a> if your dog swims.</li>" +

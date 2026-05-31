@@ -155,8 +155,62 @@ box-shadow:0 0 0 4px var(--alert-tint);flex:none}
 .recent-kind{align-self:flex-start;margin-top:auto;font-family:var(--fd);font-weight:700;
   font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--marigold-dk);
   background:var(--marigold-tint);padding:4px 9px;border-radius:999px}
+.section-banyan{background-color:var(--banyan-deep);color:#cfe0d9;
+  background-image:var(--paw),radial-gradient(620px 320px at 88% -10%,rgba(231,162,59,.16),transparent 70%);
+  background-repeat:repeat,no-repeat}
+.section-banyan h1,.section-banyan h2,.section-banyan h3{color:#fff}
+.section-banyan .eyebrow{color:var(--marigold)}
+.section-banyan .section-head p{color:#a9c3b9}
+.section-banyan a:not(.btn){color:#fff}
+.section-banyan .btn-primary{background:var(--marigold);color:#15241F}
+.section-banyan .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.tile{display:flex;flex-direction:column;gap:5px;background:#fff;border:1px solid var(--border-soft);
+  border-radius:var(--r);padding:19px 21px;text-decoration:none;color:inherit;box-shadow:var(--sh-sm)}
+.tile:hover{transform:translateY(-4px);box-shadow:var(--sh-md);text-decoration:none}
+.tile .tile-name{font-family:var(--fd);font-weight:700;color:var(--forest);font-size:1.06rem;
+  display:flex;align-items:center;gap:8px}
+.tile .tile-name::before{content:"";width:9px;height:9px;border-radius:50%;
+  background:var(--marigold);flex:none}
+.tile .tile-count{font-size:.85rem;color:var(--sage)}
+.callout{border:1px solid var(--border-soft);border-left:4px solid var(--banyan);
+  border-radius:var(--r);background:#fff;padding:20px 22px;margin:1.9rem 0;box-shadow:var(--sh-sm)}
+.callout p:last-child{margin-bottom:0}
+.callout .ch{margin:0 0 7px;color:var(--forest)}
+.callout-emergency{border-left-color:var(--alert);background:var(--alert-tint)}
+.callout-emergency .ch{color:var(--alert-dk)}
+.callout-note{border-left-color:var(--sage);background:var(--cream)}
+.verdict{display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-weight:700;
+  font-size:.74rem;letter-spacing:.05em;text-transform:uppercase;padding:6px 13px;border-radius:999px}
+.verdict-pending{background:var(--sand);color:var(--sage);border:1px dashed var(--alert)}
+.disclaimer-box{border:1px solid var(--border);background:var(--sand);border-radius:var(--r);
+  padding:16px 18px;font-size:.89rem;color:var(--sage);margin:2.4rem 0 0}
+.prose{max-width:730px}
+.prose h2{margin-top:2.8rem}
+.prose ul,.prose ol{margin:0 0 1.15rem;padding-left:1.3rem}
+.faq{border:1px solid var(--border-soft);border-radius:var(--r);background:#fff;
+  margin:.7rem 0;box-shadow:var(--sh-sm);overflow:hidden}
+.faq summary{cursor:pointer;padding:18px 21px;font-family:var(--fd);font-weight:600;
+  font-size:1.05rem;color:var(--forest);list-style:none}
+.site-footer{background-color:var(--banyan-deep);background-image:var(--paw);
+  color:#b6c8c0;font-size:.93rem;margin-top:76px}
+.footer-disclaimer{background:var(--banyan-dk);color:#dcebe4;font-size:.87rem;text-align:center;
+  padding:14px 24px}
+.footer-main{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;
+  max-width:var(--maxw);margin:0 auto;padding:54px 24px 36px}
+.footer-main .ch{color:#fff;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;
+  margin:0 0 16px;font-weight:700;font-family:var(--fd)}
+.footer-brand .brand-name span{color:#fff}
+.footer-brand .brand-name b{color:var(--marigold)}
+.footer-links{list-style:none;padding:0;margin:0}
+.footer-links a{color:#b6c8c0;text-decoration:none}
+.network{max-width:var(--maxw);margin:0 auto;padding:28px 24px;border-top:1px solid #21443a}
+.network-links{display:flex;flex-wrap:wrap;gap:9px}
+.network-links a{color:#c2d3cb;text-decoration:none;font-size:.83rem;
+  border:1px solid #2c5247;border-radius:999px;padding:7px 14px}
+.footer-legal{max-width:var(--maxw);margin:0 auto;padding:20px 24px 36px;border-top:1px solid #21443a;
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:#6f8b80;font-size:.81rem}
 @media(max-width:920px){.section{padding:56px 0}}
-@media(max-width:860px){
+@media(max-width:1080px){
 .hero-grid{grid-template-columns:1fr;gap:30px}
 .header-search{display:none}
 .nav-toggle{display:inline-flex;align-items:center;gap:8px;background:var(--banyan-tint);
