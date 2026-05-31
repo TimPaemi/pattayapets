@@ -12,10 +12,10 @@ const pages = [];
 /* ---- HUB ---- */
 pages.push(hub({
   path: "/adopt-a-pet-pattaya/",
-  title: "Adopt a pet in Pattaya | PattayaPets",
+  title: "Adopt a Pet in Pattaya | Shelters, Street Dogs & How to Help | PattayaPets",
   image: "/assets/img/og-adoption.png",
-  desc: "How to adopt a dog or cat in Pattaya: how adoption works, what to " +
-    "expect, and the shelters and rescue organisations in and around the city.",
+  desc: "Adopt a dog or cat in Pattaya: how adoption works, shelters and rescues " +
+    "(Soi Dog, Hope for Strays), fostering, and helping street animals without adopting.",
   crumb: "Adopt a pet in Pattaya",
   breadcrumbs: [GUIDES],
   eyebrow: "Guide",

@@ -24,6 +24,7 @@ Not deployed. Last updated: 30 May 2026.
 | 61 | CTR titles/meta on 15 high-intent URLs |
 | 62 | Visit delegate kit (`docs/visit-delegate-kit/`) |
 | 63 | Social kit + ads map + contextual network links (PattayaPets only) |
+| **64** | Gym + school guide network links; CTR titles on emergency, adoption, health hubs |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 

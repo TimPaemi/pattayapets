@@ -38,7 +38,7 @@ const pages = [];
 /* ---------------- HUB ---------------- */
 pages.push(hub({
   path: "/pet-health-pattaya/",
-  title: "Pet health in Pattaya: a tropical guide | PattayaPets",
+  title: "Pet Health in Pattaya | Heartworm, Ticks & Tropical Risks | PattayaPets",
   image: "/assets/img/og-health.png",
   updated: "2026-05-28",
   desc: "Orientation to the pet health issues a hot, humid, parasite-rich climate " +

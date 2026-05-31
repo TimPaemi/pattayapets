@@ -35,6 +35,8 @@ Last updated: 30 May 2026.
 | `/start-here.html` (§3) | pattayavisahelp.com | Pattaya Visa Help |
 | `/dog-friendly-pattaya/` | pattaya-restaurant-guide.com | Pattaya Restaurant Guide |
 | `/owning-a-pet-in-pattaya/getting-to-the-vet.html` | pattaya-vehicle-rentals.com | Pattaya Vehicle Rentals |
+| `/owning-a-pet-in-pattaya/where-to-walk-your-dog.html` | pattayagym.com | Pattaya Gym |
+| `/start-here.html` (§3) | pattayaschoolguide.com | Pattaya School Guide (families) |
 | Footer (all pages) | Full `NETWORK` in `layout.js` | Locked |
 
 ---

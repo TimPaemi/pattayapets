@@ -269,7 +269,10 @@ pages.push(own({
       "<li><strong>Pratumnak hill</strong>, for leafier, quieter roads.</li></ul>" +
       "<p>For dog-friendly parks and green space specifically, see " +
       "<a href=\"/dog-friendly-pattaya/parks.html\">parks and green space</a> " +
-      "in the dog-friendly cluster.</p>" },
+      "in the dog-friendly cluster. Many expats pair a dawn walk with morning " +
+      "exercise &mdash; if you want gym facilities after the dog is home, see " +
+      '<a href="https://pattayagym.com/" target="_blank" rel="noopener noreferrer">' +
+      "Pattaya Gym</a>.</p>" },
     { h: "Walk safely", html:
       "<p>Keep your dog leashed, carry water, and learn the routes around you. " +
       "Be aware of <a href=\"/pet-emergency/street-dog-encounters.html\">" +

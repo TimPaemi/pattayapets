@@ -85,7 +85,10 @@ pages.push({
     '<a href="/take-pet-out-of-thailand/">taking a pet out of Thailand</a>. ' +
     "For visa and relocation timing alongside the move, see " +
     '<a href="https://pattayavisahelp.com/" target="_blank" rel="noopener noreferrer">' +
-    "Pattaya Visa Help</a>.</p>" +
+    "Pattaya Visa Help</a>. Relocating with children? See " +
+    '<a href="https://pattayaschoolguide.com/" target="_blank" rel="noopener noreferrer">' +
+    "Pattaya School Guide</a> for schools and family planning &mdash; then use " +
+    "this site for the pet side of the move.</p>" +
     "<h2>4. Thinking of adopting?</h2>" +
     "<p>Pattaya has several established shelters and rescue organisations. If you " +
     "can offer a home, see our guide to " +

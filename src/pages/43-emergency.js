@@ -19,10 +19,10 @@ const pages = [];
 /* ---------------- HUB ---------------- */
 pages.push(hub({
   path: "/pet-emergency/",
-  title: "Pet emergencies in Pattaya | PattayaPets",
+  title: "Pet Emergency Pattaya | 24-Hour Vets, First Aid & Hot-Climate Hazards | PattayaPets",
   image: "/assets/img/og-emergency.png",
-  desc: "What to do in a pet emergency in Pattaya: 24-hour vets, first-aid " +
-    "orientation, heatstroke, ticks, snake bites, street dogs and poisoning.",
+  desc: "Pet emergency in Pattaya: 24-hour animal hospitals with addresses and phone " +
+    "numbers, first aid, heatstroke, ticks, snake bites, street dogs and poisoning.",
   crumb: "Pet emergencies",
   breadcrumbs: [GUIDES],
   eyebrow: "Emergency guide",
@@ -235,9 +235,9 @@ pages.push(hazard({
 /* ---------------- HEATSTROKE ---------------- */
 pages.push(hazard({
   slug: "heatstroke", crumb: "Heatstroke",
-  title: "Heatstroke in pets | PattayaPets",
-  desc: "Heatstroke is the most common preventable pet emergency in Pattaya. " +
-    "Recognise the signs, know the high-risk situations, and prevent it.",
+  title: "Heatstroke in Dogs & Cats Pattaya | Signs, First Aid & Prevention | PattayaPets",
+  desc: "Heatstroke in dogs and cats in Pattaya: warning signs, what to do before the " +
+    "vet, high-risk situations, and how to prevent it in Thailand's heat.",
   h1: "Heatstroke in pets",
   lede: "In Pattaya&rsquo;s heat and humidity, heatstroke is the emergency owners " +
     "most often cause by accident &mdash; and the one most easily prevented.",
