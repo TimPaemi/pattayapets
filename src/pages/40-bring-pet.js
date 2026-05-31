@@ -639,7 +639,7 @@ function countryRelated(slug) {
 
 function countryPage(o) {
   var sections = attachReturnExportLink((o.sections || []).slice(), o.slug);
-  sections.push({ h: "Official sources", html: OFFICIAL });
+  sections.push({ h: "Official sources", html: (o.officialExtra || "") + OFFICIAL });
   return article({
     path: "/bring-pet-to-thailand/" + o.slug + ".html",
     title: o.title,
@@ -650,86 +650,399 @@ function countryPage(o) {
     h1: o.h1,
     lede: o.lede,
     verify: VERIFY,
+    updated: o.updated || "2026-05-31",
     sections: sections,
     faqs: o.faqs,
     related: o.related || countryRelated(o.slug)
   });
 }
 
+const TH_DOCS_TABLE =
+  '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+  '<th scope="col">Document</th><th scope="col">What it is</th></tr></thead><tbody>' +
+  '<tr><th scope="row">DLD import permit</th><td>Form <strong>R1/1</strong>, emailed to the AQS at your arrival airport. Valid <strong>60 days</strong> from issue. Apply <strong>7&ndash;60 days</strong> before departure (around <strong>30 days</strong> is sensible).</td></tr>' +
+  '<tr><th scope="row">Microchip certificate</th><td>ISO 11784/11785 15-digit chip, implanted <strong>before</strong> rabies vaccination.</td></tr>' +
+  '<tr><th scope="row">Vaccination records</th><td>In English. Dogs: rabies, distemper, hepatitis, parvovirus, leptospirosis (or negative leptospirosis test within 30 days). Cats: rabies and feline panleukopenia (FVRCP covers this). At least <strong>21 days</strong> after primary shots.</td></tr>' +
+  '<tr><th scope="row">Government-endorsed health certificate</th><td>Your origin country&rsquo;s official export certificate &mdash; endorsed by APHA, USDA APHIS, DAFF, etc.</td></tr>' +
+  '<tr><th scope="row">Your passport</th><td>Original at the AQS (or the person collecting a cargo shipment).</td></tr>' +
+  '<tr><th scope="row">Pet photo</th><td>Colour, face clearly visible (for the permit application).</td></tr>' +
+  '<tr><th scope="row">Flight booking</th><td>Itinerary showing date, flight number and arrival airport.</td></tr>' +
+  '</tbody></table></div>';
+
+const TH_ARRIVAL =
+  "<p>From a rabies-controlled origin such as the UK, USA or Australia, pets with " +
+  "complete paperwork are normally cleared at the AQS the same day &mdash; this is " +
+  "an inspection, not a multi-week quarantine. The AQS issues Forms R-6 and R-7 and " +
+  "charges <strong>500&nbsp;baht</strong> per animal (confirm the current fee). " +
+  "Email the AQS to <strong>confirm your arrival date at least three days before " +
+  "landing</strong>. See " +
+  '<a href="/bring-pet-to-thailand/thailand-pet-quarantine.html">pet quarantine in Thailand</a> ' +
+  "and " +
+  '<a href="/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html">arriving at Suvarnabhumi</a>.</p>';
+
+const TH_FAILS =
+  "<ul>" +
+  "<li><strong>Wrong order</strong> &mdash; rabies given before the microchip, or import permit applied before the 21-day wait has passed.</li>" +
+  "<li><strong>Permit timing</strong> &mdash; applied too early (expires before you fly) or too late (AQS cannot process in time).</li>" +
+  "<li><strong>Airline vs government</strong> &mdash; Thailand may allow permit-on-arrival in some cases, but your airline may refuse boarding without the permit email in hand.</li>" +
+  "<li><strong>Health certificate window</strong> &mdash; endorsed certificate expires before you land; a delayed flight can mean starting again.</li>" +
+  "<li><strong>Cargo arrival hours</strong> &mdash; pets shipped as cargo may only be collected during AQS weekday business hours at some airports.</li>" +
+  "</ul>";
+
 pages.push(countryPage({
   slug: "from-uk", crumb: "From the UK",
   title: "Bring a Pet to Thailand from the UK (APHA & DLD 2026) | PattayaPets",
-  desc: "UK to Thailand pet import: APHA health certificate endorsement, DLD import " +
-    "permit, and why to do the rabies titer test before you leave for a UK return.",
+  desc: "UK to Thailand pet import: EHC 2917, APHA timeline, DLD permit checklist, " +
+    "Bangkok arrival and why to do the rabies titer test before you leave.",
   h1: "Bringing a pet to Thailand from the UK",
-  lede: "The Thai requirements are the standard ones. What is UK-specific is who " +
-    "endorses your paperwork — and what you must plan for if you ever come back.",
+  lede: "Thousands of British expats live in Pattaya. The Thai requirements are the " +
+    "same for everyone; what is UK-specific is export certificate <strong>2917</strong>, " +
+    "who certifies it, and what you must plan now if you ever want to come home with your pet.",
+  officialExtra:
+    "<p><strong>UK sources:</strong> " +
+    "<a href=\"https://www.gov.uk/export-health-certificates/export-cats-and-dogs-to-thailand-certificate-2917\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">EHC 2917 (cats and dogs to Thailand)</a>; " +
+    "<a href=\"https://www.gov.uk/guidance/get-an-export-health-certificate\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">how to get an export health certificate</a>; " +
+    "<a href=\"https://www.gov.uk/bring-pet-to-great-britain\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">bringing a pet to Great Britain</a> " +
+    "(return journey).</p>",
   sections: [
-    { h: "The UK side of the paperwork", html:
-      "<p>Follow the standard steps — <a href=\"/bring-pet-to-thailand/microchip-requirements.html\">" +
-      "microchip</a>, <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies</a>, " +
-      "<a href=\"/bring-pet-to-thailand/health-certificate.html\">health certificate</a> and " +
-      "<a href=\"/bring-pet-to-thailand/import-permit-thailand-dld.html\">DLD import permit</a>. " +
-      "In the UK, the export health certificate is endorsed by the <strong>Animal " +
-      "and Plant Health Agency (APHA)</strong>. Use a vet experienced in export " +
-      "work, and start the APHA process early. Confirm the current process on " +
-      "<a href=\"https://www.gov.uk/taking-your-pet-abroad\" target=\"_blank\" " +
-      "rel=\"noopener nofollow\">GOV.UK pet travel guidance</a>.</p>" },
-    { h: "The return trip is the catch", html:
-      "<p>This is the single most important thing for UK owners to understand. " +
-      "Thailand is treated by the UK as an <strong>&lsquo;unlisted&rsquo; " +
-      "country</strong>. To bring a pet <em>back into the UK</em> from Thailand, " +
-      "you need a <strong>rabies titer (blood) test</strong> taken at least 30 " +
-      "days after vaccination — and then you must <strong>wait three months</strong> " +
-      "from the date of that blood sample before the pet can enter the UK.</p>" +
-      "<p>The practical lesson: if there is any chance you will return to the UK " +
-      "with your pet, have the titer test done <strong>before you leave the " +
-      "UK</strong>, while the vaccination is fresh. It saves a three-month wait " +
-      "later. See our guide to " +
-      "<a href=\"/take-pet-out-of-thailand/to-uk.html\">taking a pet from Thailand to the UK</a>.</p>" }
+    { h: "The timeline — what to do when", html:
+      "<p>Build backwards from your flight date. If you may return to the UK, add " +
+      "the <strong>rabies titer test</strong> at the start &mdash; not the end.</p>" +
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">When</th><th scope="col">Step</th><th scope="col">UK / Thailand</th></tr></thead><tbody>' +
+      '<tr><th scope="row">3+ months before (if UK return possible)</th>' +
+      '<td>Microchip (if needed), rabies vaccination, optional <a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">rabies titer (FAVN) test</a> &mdash; blood drawn &ge;30 days after vaccination</td>' +
+      '<td>Your vet; approved lab</td></tr>' +
+      '<tr><th scope="row">6&ndash;8 weeks before</th>' +
+      '<td>DHPP (dogs) or FVRCP (cats), leptospirosis (dogs) or negative leptospirosis test; wait <strong>21 days</strong> after any primary rabies shot</td>' +
+      '<td>Your vet</td></tr>' +
+      '<tr><th scope="row">~30 days before departure</th>' +
+      '<td>Apply for <a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a> (form R1/1) by email to the AQS at your arrival airport</td>' +
+      '<td>DLD / Suvarnabhumi AQS</td></tr>' +
+      '<tr><th scope="row">2&ndash;3 weeks before</th>' +
+      '<td>Book pet space on the flight; confirm the airline requires the import permit before boarding</td>' +
+      '<td>Airline</td></tr>' +
+      '<tr><th scope="row">7+ working days before export</th>' +
+      '<td>Apply for <strong>export health certificate 2917</strong> via APHA&rsquo;s online service; nominate an Official Veterinarian (OV)</td>' +
+      '<td>APHA / DAERA (NI)</td></tr>' +
+      '<tr><th scope="row">Final 7&ndash;10 days</th>' +
+      '<td>OV examines your pet and completes EHC 2917; certificate issued inside its validity window</td>' +
+      '<td>Official Veterinarian</td></tr>' +
+      '<tr><th scope="row">&ge;3 days before landing</th>' +
+      '<td>Email the AQS to confirm your exact arrival date and flight</td>' +
+      '<td>DLD AQS</td></tr>' +
+      '<tr><th scope="row">Arrival day</th>' +
+      '<td>AQS inspection at the airport; Forms R-6/R-7 issued; 500&nbsp;baht fee</td>' +
+      '<td>Bangkok / U-Tapao AQS</td></tr>' +
+      '</tbody></table></div>' +
+      "<p>Full step pages: " + IMP_STEPS + ".</p>" },
+    { h: "The UK export certificate (EHC 2917)", html:
+      "<p>Great Britain does not use the EU pet passport for exports to Thailand. " +
+      "You need the country-specific export health certificate " +
+      "<strong>EHC 2917</strong> &mdash; &ldquo;Export cats and dogs to Thailand&rdquo; " +
+      "(version 3 guidance notes, updated May 2026 on GOV.UK).</p>" +
+      "<p><strong>England, Scotland and Wales:</strong> apply through APHA&rsquo;s " +
+      "<a href=\"https://www.gov.uk/export-health-certificates/export-cats-and-dogs-to-thailand-certificate-2917\" " +
+      "target=\"_blank\" rel=\"noopener nofollow\">EHC online service</a>. You nominate " +
+      "an <strong>Official Veterinarian (OV)</strong> who will examine your pet and " +
+      "sign the certificate. APHA typically returns the EHC within <strong>seven " +
+      "working days</strong> of your export date, or within one working day if you " +
+      "are exporting sooner &mdash; but do not leave it to the last minute.</p>" +
+      "<p><strong>Northern Ireland:</strong> apply through " +
+      "<strong>DAERA</strong> via the DECS online process, not the GB EHC Online " +
+      "service.</p>" +
+      "<p>The EHC must match your Thai import permit and vaccination records exactly " +
+      "&mdash; microchip number, vaccine dates and breed must line up across every " +
+      "document. Read the guidance notes for EHC 2917 for the certificate&rsquo;s " +
+      "validity period and any breed or age conditions before your OV appointment.</p>" },
+    { h: "Documents Thailand expects", html:
+      "<p>These are the papers the DLD asks for regardless of origin country:</p>" +
+      TH_DOCS_TABLE + TH_ARRIVAL },
+    { h: "Plan the UK return before you leave", html:
+      "<p>This is the single most important UK-specific point. Thailand is an " +
+      "<strong>&lsquo;unlisted&rsquo; country</strong> under UK pet-travel rules. To " +
+      "bring a dog or cat <em>back into Great Britain</em> from Thailand you need:</p>" +
+      "<ul>" +
+      "<li>A current rabies vaccination</li>" +
+      "<li>A <strong>rabies titer test</strong> (blood sample at least 30 days after vaccination)</li>" +
+      "<li>A <strong>three-month wait</strong> from the date of that blood sample before entry</li>" +
+      "<li>For <strong>dogs</strong>, a vet-administered tapeworm treatment within the window before arrival</li>" +
+      "<li>Travel on an <strong>approved route and carrier</strong> into Great Britain</li>" +
+      "</ul>" +
+      "<p>The practical lesson: if there is any chance you will return with your pet, " +
+      "have the titer test done <strong>while you are still in the UK</strong>, with " +
+      "the vaccination fresh. That removes the three-month wait later. See our guide to " +
+      "<a href=\"/take-pet-out-of-thailand/to-uk.html\">exporting a pet from Thailand to the UK</a>.</p>" +
+      '<div class="callout callout-note"><div class="ch">Thailand does not require the titer test on the way in</div>' +
+      "<p>From the UK, Thailand generally does <em>not</em> ask for a titer test to " +
+      "enter. You do it for your own future &mdash; not because Bangkok demands it on arrival.</p></div>" },
+    { h: "Common mistakes British owners make", html: TH_FAILS +
+      "<ul>" +
+      "<li><strong>Assuming the EU pet passport is enough</strong> &mdash; it is not valid for Thailand export; you need EHC 2917.</li>" +
+      "<li><strong>Skipping the titer test</strong> &mdash; then discovering the three-month wait when a job or family emergency calls you home.</li>" +
+      "<li><strong>Wrong AQS email</strong> &mdash; apply to the quarantine station at the airport you actually land at (Suvarnabhumi for most Pattaya arrivals).</li>" +
+      "</ul>" }
   ],
   faqs: [
     ["Does Thailand need a titer test for a pet from the UK?",
-     "<p>Generally no — the UK is a rabies-controlled country, so Thailand does not require the titer test to enter. But the UK requires it for the return journey, so most UK owners do the test anyway before leaving.</p>"],
-    ["Who endorses my pet's paperwork in the UK?",
-     "<p>The Animal and Plant Health Agency (APHA) endorses the export health certificate completed by your vet. Confirm the current process with <a href=\"https://www.gov.uk/taking-your-pet-abroad\" target=\"_blank\" rel=\"noopener nofollow\">GOV.UK</a> and your vet.</p>"]
+     "<p>Generally no — the UK is a rabies-controlled country, so Thailand does not require the titer test to enter. But the UK requires it for the return journey, so most British owners do the test before leaving.</p>"],
+    ["Which export certificate do I need from the UK?",
+     "<p>Export health certificate <strong>2917</strong> for cats and dogs to Thailand, applied for through APHA (or DAERA in Northern Ireland) and signed by an Official Veterinarian. Confirm you are using the latest version on GOV.UK.</p>"],
+    ["How long before the flight should I apply for the Thai import permit?",
+     "<p>Inside the official window: at least seven Thailand business days before departure, and no more than 60 days before. Around 30 days ahead is a sensible target — long enough for AQS processing, short enough that the permit is still valid when you fly.</p>"],
+    ["Will my pet be quarantined on arrival in Thailand?",
+     "<p>Not usually, if every document is in order and your pet appears healthy. The AQS inspection is typically same-day clearance. Quarantine is reserved for paperwork failures or signs of disease — see our <a href=\"/bring-pet-to-thailand/thailand-pet-quarantine.html\">quarantine guide</a>.</p>"],
+    ["Can I fly into U-Tapao instead of Bangkok?",
+     "<p>U-Tapao is closer to Pattaya. Check that your airline accepts pets on that route and apply for the import permit through the correct AQS for your port of entry. See <a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok?</a></p>"]
   ]
 }));
 
 pages.push(countryPage({
   slug: "from-usa", crumb: "From the USA",
   title: "Bring a Pet to Thailand from the USA (USDA & DLD 2026) | PattayaPets",
-  desc: "USA to Thailand pet import: USDA APHIS endorsement, DLD import permit (R1/1) " +
-    "and CDC rules for dogs if you return to the United States later.",
+  desc: "USA to Thailand pet import: USDA APHIS endorsement, DLD permit, 10-day " +
+    "certificate window, document checklist and CDC rules if you return later.",
   h1: "Bringing a pet to Thailand from the USA",
-  lede: "From the US, the Thai steps are standard. The US-specific points are the " +
-    "USDA endorsement and the CDC&rsquo;s rules for dogs.",
+  lede: "The Thai side is the same for every nationality. From the United States, " +
+    "what catches people out is the <strong>two-step US endorsement</strong> " +
+    "(accredited vet, then USDA APHIS), the <strong>10-day certificate window</strong>, " +
+    "and the CDC&rsquo;s separate rules if a dog ever re-enters the US.",
+  officialExtra:
+    "<p><strong>US sources:</strong> " +
+    "<a href=\"https://www.aphis.usda.gov/pet-travel/us-to-another-country-export\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">USDA APHIS pet export</a>; " +
+    "<a href=\"https://www.cdc.gov/importation/bringing-an-animal-into-the-us/index.html\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">CDC dog and cat import rules</a>; " +
+    "Thai embassy guide (revised January 2025) for the US-specific checklist.</p>",
   sections: [
-    { h: "The US side of the paperwork", html:
-      "<p>Follow the standard steps &mdash; " + IMP_STEPS + ". In the US, the health " +
-      "certificate is completed by a <strong>USDA-accredited veterinarian</strong> " +
-      "and then endorsed by <strong>USDA APHIS</strong> (the Animal and Plant " +
-      "Health Inspection Service), usually through its online VEHCS system. " +
-      "Build in time for that endorsement.</p>" },
-    { h: "The CDC rules for dogs", html:
-      "<p>The US Centers for Disease Control (CDC) tightened its rules for dogs " +
-      "<em>entering the United States</em>. If you may ever bring your dog back " +
-      "to the US, this matters: dogs must meet CDC requirements including a " +
-      "microchip, a minimum age, and — for dogs that have been in a " +
-      "high-rabies-risk country — additional steps such as a rabies titer test " +
-      "and CDC paperwork. Thailand is treated as a rabies-risk country by the " +
-      "CDC.</p>" +
-      "<p>The takeaway is the same as for UK owners: if a return to the US is " +
-      "possible, do the <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">" +
-      "rabies titer test</a> early, and check the current CDC rules well before " +
-      "any return trip. See our guide to " +
-      "<a href=\"/take-pet-out-of-thailand/to-usa.html\">taking a pet from Thailand to the USA</a>.</p>" }
+    { h: "The timeline — what to do when", html:
+      "<p>The Thai Royal Consulate-General in Los Angeles publishes a US-specific " +
+      "checklist (revised January 2025). The order matters: import permit first, " +
+      "then the endorsed health certificate in the final days.</p>" +
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Who</th></tr></thead><tbody>' +
+      '<tr><th scope="row">3+ months before (if US return possible)</th>' +
+      '<td>Microchip, rabies vaccination, optional <a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">rabies titer test</a> for future CDC compliance</td>' +
+      '<td>USDA-accredited vet</td></tr>' +
+      '<tr><th scope="row">6&ndash;8 weeks before</th>' +
+      '<td>DHPP/FVRCP, leptospirosis (dogs) or negative test; <strong>21-day wait</strong> after primary rabies</td>' +
+      '<td>Accredited vet</td></tr>' +
+      '<tr><th scope="row">~30 days before departure</th>' +
+      '<td>Email DLD import permit application (R1/1 + passport copy, photo, vaccinations, itinerary) to the AQS at your arrival airport</td>' +
+      '<td>DLD AQS (e.g. qsap_bkk_import@dld.go.th for Suvarnabhumi)</td></tr>' +
+      '<tr><th scope="row">After permit arrives (5&ndash;7 Thailand business days)</th>' +
+      '<td>Book flight with confirmed pet space; verify airline requires the permit email before check-in</td>' +
+      '<td>Airline</td></tr>' +
+      '<tr><th scope="row">Within 10 days of travel</th>' +
+      '<td>USDA-accredited vet issues the Official Health Certificate (OHC); submit to <strong>USDA APHIS</strong> for physical endorsement (stamp)</td>' +
+      '<td>Vet + APHIS (often via VEHCS)</td></tr>' +
+      '<tr><th scope="row">Before departure</th>' +
+      '<td>Land in Thailand within <strong>10 days of the USDA endorsement date</strong> on the OHC</td>' +
+      '<td>You</td></tr>' +
+      '<tr><th scope="row">&ge;3 days before landing</th>' +
+      '<td>Confirm arrival date with the AQS by email</td>' +
+      '<td>DLD</td></tr>' +
+      '<tr><th scope="row">Arrival</th>' +
+      '<td>Present <strong>original</strong> endorsed OHC, original permit printout, passport, vaccination records at the AQS</td>' +
+      '<td>Suvarnabhumi carousel area / cargo AQS</td></tr>' +
+      '</tbody></table></div>' +
+      "<p>Step-by-step pages: " + IMP_STEPS + ".</p>" },
+    { h: "The US side: accredited vet and USDA endorsement", html:
+      "<p>Two separate steps, often confused:</p>" +
+      "<ol>" +
+      "<li>A <strong>USDA-accredited veterinarian</strong> examines your pet and " +
+      "completes the <strong>Official Health Certificate (OHC)</strong> for Thailand.</li>" +
+      "<li><strong>USDA APHIS</strong> physically <strong>endorses</strong> that " +
+      "certificate &mdash; stamps and countersigns the original. Electronic copies " +
+      "alone are <strong>not</strong> accepted at the Thai AQS; you need the " +
+      "original stamped document.</li>" +
+      "</ol>" +
+      "<p>Most exporters use APHIS&rsquo;s online <strong>VEHCS</strong> system to " +
+      "submit the certificate for endorsement, then receive the stamped original " +
+      "before travel. Find your nearest endorsement office on the " +
+      "<a href=\"https://www.aphis.usda.gov/pet-travel/us-to-another-country-export\" " +
+      "target=\"_blank\" rel=\"noopener nofollow\">USDA APHIS pet-travel pages</a>.</p>" +
+      "<p>The OHC is valid for <strong>10 days from the date of USDA endorsement</strong> " +
+      "according to the Thai embassy&rsquo;s January 2025 guidance. A delayed flight " +
+      "that pushes you past that window can mean re-issuing the certificate &mdash; " +
+      "build slack into your schedule.</p>" },
+    { h: "Documents Thailand expects", html:
+      "<p>At the AQS on arrival you should carry:</p>" +
+      "<ul>" +
+      "<li><strong>Original</strong> traveller&rsquo;s passport (or pickup person&rsquo;s passport for cargo)</li>" +
+      "<li><strong>Original</strong> USDA-endorsed health certificate with stamp</li>" +
+      "<li>Printed import permit (the email from the AQS)</li>" +
+      "<li>Original vaccination records / pet passport showing microchip number</li>" +
+      "</ul>" +
+      TH_DOCS_TABLE + TH_ARRIVAL +
+      "<p><strong>Cargo shipments:</strong> the cargo AQS at Suvarnabhumi operates " +
+      "Monday&ndash;Friday business hours; hand-carried pets can be cleared 24 hours. " +
+      "Plan arrival times accordingly.</p>" },
+    { h: "The CDC rules — for the return journey", html:
+      "<p>The CDC governs dogs (and cats) <em>entering the United States</em>, not " +
+      "leaving it. Thailand is treated as a <strong>high-rabies-risk country</strong>. " +
+      "If you may bring your dog back to the US later, you face additional CDC " +
+      "requirements that can include:</p>" +
+      "<ul>" +
+      "<li>ISO microchip</li>" +
+      "<li>Minimum age rules</li>" +
+      "<li>Rabies vaccination history tied to the microchip</li>" +
+      "<li>A <strong>rabies titer test</strong> from an approved laboratory, for many scenarios</li>" +
+      "<li>CDC import paperwork submitted in advance</li>" +
+      "<li>Arrival through designated airports for some routes</li>" +
+      "</ul>" +
+      "<p>These rules have changed several times since 2024. Do not rely on a blog post " +
+      "&mdash; read the current " +
+      "<a href=\"https://www.cdc.gov/importation/bringing-an-animal-into-the-us/index.html\" " +
+      "target=\"_blank\" rel=\"noopener nofollow\">CDC requirements</a> directly and " +
+      "see our guide to " +
+      "<a href=\"/take-pet-out-of-thailand/to-usa.html\">exporting a pet from Thailand to the USA</a>. " +
+      "Doing the titer test before you leave the US, while vaccinations are current, " +
+      "is the same forward-planning advice as for UK owners.</p>" },
+    { h: "Common mistakes US owners make", html: TH_FAILS +
+      "<ul>" +
+      "<li><strong>Electronic-only health certificate</strong> &mdash; Thailand wants the original USDA-stamped paper.</li>" +
+      "<li><strong>Certificate after endorsement, not from endorsement</strong> &mdash; the 10-day clock starts on the endorsement date, not the vet exam date.</li>" +
+      "<li><strong>Non-ISO microchip</strong> &mdash; older US chips may need a second ISO chip implanted before rabies is re-done.</li>" +
+      "<li><strong>Ignoring CDC until the return flight</strong> &mdash; by then it may be too late to meet titer-test timelines.</li>" +
+      "</ul>" }
   ],
   faqs: [
+    ["Do I apply for the Thai import permit before or after the USDA health certificate?",
+     "<p>Before. The Thai embassy&rsquo;s January 2025 US checklist says to apply for the import permit first (7&ndash;60 days before departure), then have the accredited vet issue the OHC after you receive the permit, and then get USDA endorsement — all within the 10-day validity window before arrival.</p>"],
     ["Who endorses my pet's health certificate in the US?",
-     "<p>A USDA-accredited vet completes it and USDA APHIS endorses it, generally via the online VEHCS system. Your vet will guide you through it.</p>"],
+     "<p>A USDA-accredited veterinarian completes it, and USDA APHIS endorses (stamps) the original — generally via the VEHCS online system. Your vet will know the process; build in several days for APHIS processing.</p>"],
     ["Do CDC rules affect taking my dog TO Thailand?",
-     "<p>The CDC rules govern dogs entering the United States, not leaving it. They matter most if you plan to bring your dog back to the US later — in which case plan for them in advance.</p>"]
+     "<p>No — CDC rules govern entry into the United States. They matter when you plan to bring your dog back from Thailand later, which is why US owners should read them before leaving, not on the return trip.</p>"],
+    ["Is a rabies titer test required to enter Thailand from the US?",
+     "<p>Generally no for pets from rabies-controlled countries. Thailand may require it for pets from high-rabies origins. The test is still worth doing before departure if you might return to the US, UK or EU later.</p>"],
+    ["Which Bangkok airport should I use for Pattaya?",
+     "<p>Most owners fly into Suvarnabhumi (BKK). U-Tapao (UTP) is closer to Pattaya but has fewer pet-friendly routes — see <a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok?</a></p>"]
+  ]
+}));
+
+pages.push(countryPage({
+  slug: "from-australia", crumb: "From Australia",
+  title: "Bring a Pet to Thailand from Australia (DAFF & DLD 2026) | PattayaPets",
+  desc: "Australia to Thailand pet import: DAFF export permit, NOI timeline, DLD " +
+    "import permit, 72-hour export window and the truth about returning home.",
+  h1: "Bringing a pet to Thailand from Australia",
+  lede: "Australia&rarr;Thailand is manageable if you respect both countries&rsquo; " +
+    "timelines. Australia&rarr;Thailand&rarr;<em>Australia</em> is a different " +
+    "proposition entirely &mdash; understand that before you ever leave.",
+  officialExtra:
+    "<p><strong>Australian sources:</strong> " +
+    "<a href=\"https://www.agriculture.gov.au/biosecurity-trade/export/controlled-goods/live-animals/companion-and-other-live-animals\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">DAFF companion animal export</a>; " +
+    "<a href=\"https://canberra.thaiembassy.org/en/content/bringing-pets-to-thailand\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">Royal Thai Embassy Canberra import guide</a>.</p>",
+  sections: [
+    { h: "The timeline — what to do when", html:
+      "<p>You are juggling <strong>two governments</strong>: DAFF on the way out, DLD " +
+      "on the way in. Missing either timeline voids the move.</p>" +
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Authority</th></tr></thead><tbody>' +
+      '<tr><th scope="row">8+ weeks before</th>' +
+      '<td>ISO microchip, rabies and core vaccinations; pet must be <strong>at least 4 months old</strong> to import into Thailand</td>' +
+      '<td>Registered Australian vet</td></tr>' +
+      '<tr><th scope="row">After 21-day post-vaccination wait</th>' +
+      '<td>Apply for Thai <a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a> (R1/1) by email to the AQS at your arrival airport</td>' +
+      '<td>DLD (allow 5&ndash;7 Thailand business days)</td></tr>' +
+      '<tr><th scope="row">&ge;10 working days before export</th>' +
+      '<td>Lodge a <strong>Notice of Intention (NOI)</strong> to export with DAFF, with Thailand&rsquo;s requirements and your Thai import permit attached</td>' +
+      '<td>Department of Agriculture, Fisheries and Forestry</td></tr>' +
+      '<tr><th scope="row">Pre-export period</th>' +
+      '<td>DAFF assesses NOI; your vet completes examinations, treatments and documentation per Thailand&rsquo;s conditions</td>' +
+      '<td>DAFF + registered vet</td></tr>' +
+      '<tr><th scope="row">Final days</th>' +
+      '<td>DAFF issues <strong>export permit and health certificate</strong>; you must export within <strong>72 hours</strong> of permit issue</td>' +
+      '<td>DAFF</td></tr>' +
+      '<tr><th scope="row">Before departure</th>' +
+      '<td>Book cargo or accompanied travel (direct Australia&ndash;Thailand pet routes are limited — confirm with airlines early)</td>' +
+      '<td>Airline / relocation agent</td></tr>' +
+      '<tr><th scope="row">Arrival in Thailand</th>' +
+      '<td>AQS inspection; Forms R-6/R-7; 500&nbsp;baht fee if paperwork is complete</td>' +
+      '<td>DLD AQS</td></tr>' +
+      '</tbody></table></div>' +
+      "<p>Thai-side steps in detail: " + IMP_STEPS + ".</p>" },
+    { h: "The Australian export side (DAFF)", html:
+      "<p>Australia treats every pet export as a controlled consignment. Before your " +
+      "pet leaves, you typically need:</p>" +
+      "<ol>" +
+      "<li><strong>Thailand&rsquo;s import conditions</strong> &mdash; including your " +
+      "DLD import permit, which specifies what DAFF must certify.</li>" +
+      "<li>A <strong>Notice of Intention (NOI)</strong> lodged with DAFF at least " +
+      "<strong>10 working days</strong> before the intended export date (more for " +
+      "complex routes).</li>" +
+      "<li>Pre-export work by a <strong>registered veterinarian</strong> &mdash; " +
+      "examinations, vaccinations and any tests Thailand requires.</li>" +
+      "<li>A DAFF <strong>export permit and health certificate</strong>, issued only " +
+      "when DAFF is satisfied the pet meets Thailand&rsquo;s conditions.</li>" +
+      "</ol>" +
+      "<p>Critical detail: once DAFF issues the export permit, your pet must leave " +
+      "Australia within <strong>72 hours</strong>. That is a condition of the permit " +
+      "&mdash; not a guideline. Coordinate your flight booking with your vet and DAFF " +
+      "assessment so you are not re-applying because a flight slipped.</p>" +
+      "<p>DAFF charges time-based fees for assessment and certificate preparation, " +
+      "plus an export permit fee. Budget this separately from airline cargo charges " +
+      "&mdash; see " +
+      '<a href="/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html">what import costs</a>.</p>' },
+    { h: "Documents Thailand expects", html:
+      "<p>The Royal Thai Embassy in Canberra publishes Australia-specific notes. Core " +
+      "requirements match the global DLD rules:</p>" +
+      TH_DOCS_TABLE +
+      "<p><strong>Age and breed restrictions:</strong> pets must be at least " +
+      "<strong>4 months old</strong>. Pit bull terrier and American Staffordshire " +
+      "terrier types are prohibited from import into Thailand (airlines may impose " +
+      "additional breed bans).</p>" +
+      TH_ARRIVAL +
+      "<p>If you are shipping cargo without travelling on the same flight, the embassy " +
+      "guide asks for separate shipper and pickup-person passport copies and recommends " +
+      "arrival during AQS weekday business hours for cargo clearance.</p>" },
+    { h: "The return to Australia — read this first", html:
+      "<p>Australia has some of the strictest pet biosecurity rules in the world. " +
+      "<strong>Thailand is not on Australia&rsquo;s list of approved countries</strong> " +
+      "for direct dog and cat import. In practice, bringing a pet from Thailand back " +
+      "to Australia means:</p>" +
+      "<ul>" +
+      "<li>A <strong>rabies titer test</strong> and a series of timed veterinary steps</li>" +
+      "<li>An <strong>Australian import permit</strong> applied for months ahead</li>" +
+      "<li>A qualifying period spent in an <strong>approved country</strong> (Group 2 or 3) before entry to Australia — Thailand alone does not qualify</li>" +
+      "<li><strong>Mandatory quarantine</strong> at the government facility (Mickleham, Victoria) on arrival, even when every step is perfect</li>" +
+      "<li>Commonly <strong>six months or more</strong> of planning and <strong>thousands of dollars</strong> in fees</li>" +
+      "</ul>" +
+      "<p>If you are an Australian who might one day go home with your pet, speak to " +
+      "DAFF and a specialist " +
+      '<a href="/pet-relocation/">pet relocation agent</a> before you leave Australia — ' +
+      "not when your contract ends. Read " +
+      '<a href="/take-pet-out-of-thailand/to-australia.html">taking a pet from Thailand to Australia</a> ' +
+      "for the full picture.</p>" +
+      '<div class="callout callout-emergency"><div class="ch">Australia → Thailand is the easy direction</div>' +
+      "<p>Do not assume because the outbound move was straightforward that the inbound " +
+      "move to Australia will mirror it. Many owners only discover the approved-country " +
+      "requirement when it is too late to avoid rehoming their pet.</p></div>" },
+    { h: "Common mistakes Australian owners make", html: TH_FAILS +
+      "<ul>" +
+      "<li><strong>Missing the 72-hour export window</strong> after DAFF issues the permit.</li>" +
+      "<li><strong>NOI lodged too late</strong> &mdash; fewer than 10 working days before planned export.</li>" +
+      "<li><strong>Assuming direct return</strong> &mdash; Thailand-to-Australia direct import is not available; plan an approved-country pathway years ahead, not weeks.</li>" +
+      "<li><strong>Cargo arrival on a weekend</strong> &mdash; cargo AQS hours may delay pickup.</li>" +
+      "</ul>" }
+  ],
+  faqs: [
+    ["Can I fly my pet straight from Australia to Thailand?",
+     "<p>Yes — this direction is routinely done. You need DAFF export approval, a Thai import permit, airline cargo or accompanied booking, and compliant vaccinations. Direct routes are limited; confirm pet acceptance with the airline early.</p>"],
+    ["How long does DAFF take to approve an export?",
+     "<p>Allow at least 10 working days from lodging the Notice of Intention, often longer if documentation needs correction. Then remember the 72-hour export window once the permit is issued.</p>"],
+    ["Will my pet be quarantined on arrival in Thailand?",
+     "<p>Usually not if paperwork is complete and your pet is healthy — the AQS inspection is same-day clearance. Incomplete documents or signs of illness can trigger quarantine of 7–30 days at an approved facility.</p>"],
+    ["Can I fly my pet straight from Thailand back to Australia?",
+     "<p>Generally no — Thailand is not an approved country for direct import. The route involves time in an approved country, an import permit, and mandatory government quarantine on arrival in Australia. Plan with DAFF and a relocation specialist.</p>"],
+    ["How long does the return to Australia take to arrange?",
+     "<p>Owners commonly report six months or more of preparation, often longer if an approved-country residency period is required. Start before you leave Australia if return is possible.</p>"]
   ]
 }));
 
@@ -763,41 +1076,6 @@ pages.push(countryPage({
      "<p>No. The EU pet passport governs movement within the EU. For Thailand you need an EU export health certificate endorsed by your competent authority, plus the Thai import permit.</p>"],
     ["What does the EU need for the return journey?",
      "<p>A valid rabies vaccination and a rabies titer test, with a three-month wait after the blood sample. Doing the titer test before you leave the EU avoids that wait later.</p>"]
-  ]
-}));
-
-pages.push(countryPage({
-  slug: "from-australia", crumb: "From Australia",
-  title: "Bring a Pet to Thailand from Australia (DAFF & DLD 2026) | PattayaPets",
-  desc: "Bringing a pet from Australia to Thailand, and the hard truth about the " +
-    "return journey — Australia&rsquo;s strict biosecurity rules.",
-  h1: "Bringing a pet to Thailand from Australia",
-  lede: "Australia to Thailand is manageable. It is the journey <em>back</em> to " +
-    "Australia that owners must understand before they ever leave.",
-  sections: [
-    { h: "Australia to Thailand", html:
-      "<p>Heading to Thailand, the steps are the standard ones &mdash; " + IMP_STEPS +
-      ". This direction is the straightforward part.</p>" },
-    { h: "The return to Australia is the hard part", html:
-      "<p>Australia has some of the strictest pet biosecurity rules in the " +
-      "world, and <strong>Thailand is not on its list of approved countries</strong> " +
-      "for direct pet import. In practice, bringing a pet from Thailand to " +
-      "Australia means a long, structured process: a rabies titer test, an " +
-      "import permit, a period spent in an approved country to qualify, and a " +
-      "mandatory stay in the government quarantine facility on arrival in " +
-      "Australia. It commonly takes <strong>six months or more</strong> of " +
-      "planning.</p>" +
-      "<p>If you are an Australian who may one day return with your pet, do not " +
-      "improvise this. Speak to the Australian Department of Agriculture and a " +
-      "specialist <a href=\"/pet-relocation/\">pet relocation agent</a> early, " +
-      "and read our guide to " +
-      "<a href=\"/take-pet-out-of-thailand/to-australia.html\">taking a pet from Thailand to Australia</a>.</p>" }
-  ],
-  faqs: [
-    ["Can I fly my pet straight from Thailand to Australia?",
-     "<p>Generally not directly — Thailand is not an approved country for direct pet import to Australia. The route usually involves time in an approved country first, plus quarantine on arrival. It is a long process; get specialist advice early.</p>"],
-    ["How long does the return to Australia take to arrange?",
-     "<p>Owners commonly report six months or more of preparation. Start with the Australian Department of Agriculture and a relocation agent well before you plan to travel.</p>"]
   ]
 }));
 

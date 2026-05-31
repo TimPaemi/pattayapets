@@ -20,7 +20,7 @@ This document replaces the old “title/meta batch” queue until Phase 3 is com
 
 ---
 
-## Phase 0 — Bugs & design (Batch 75) ✅ in progress
+## Phase 0 — Bugs & design (Batch 75) ✅
 
 - [x] Fix `<ul>` in `/pet-health-pattaya/skin-and-ear-infections.html`
 - [x] Promote footer, tiles, callouts, verdict, prose, FAQ to critical CSS
@@ -33,15 +33,13 @@ This document replaces the old “title/meta batch” queue until Phase 3 is com
 
 ## Phase 1 — Thin clusters (Batches 76–78)
 
-### Dog-friendly (remaining)
+### Import corridors (priority) — Batch 76 ✅ UK / USA / Australia
 
-- [ ] Beaches page: specific access points, tide/heat warnings, photo-free factual map refs
-- [ ] Hotels page: named pet-friendly hotels with “call to confirm” + deposit/size rules
-- [ ] Condos page: realistic rental expectations, not generic advice
+- [x] `/bring-pet-to-thailand/from-uk.html` — EHC 2917, timeline table, document checklist, return planning
+- [x] `/bring-pet-to-thailand/from-usa.html` — USDA/APHIS, 10-day window, CDC return rules
+- [x] `/bring-pet-to-thailand/from-australia.html` — DAFF NOI, 72-hour export window, return warning
 
-### Import / export corridors
-
-Priority corridors (research DLD + embassy + airline pages, date-stamp):
+### Import / export corridors (remaining)
 
 1. UK → Thailand, Thailand → UK  
 2. USA → Thailand, Thailand → USA  
