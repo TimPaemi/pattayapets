@@ -54,15 +54,17 @@ This document replaces the old “title/meta batch” queue until Phase 3 is com
 - [x] Fixed broken MOCCAE links (`moec.gov.ae` → `moccae.gov.ae`)
 - [x] Table FOUC fix in critical CSS
 
-### Import / export corridors — Batch 80 ✅ Japan + Singapore
+### Import / export corridors — Batch 81 ✅ India + Philippines + China
 
-- [x] `/bring-pet-to-thailand/from-japan.html` — AQS export timeline, 180-day return rule, MAFF links
-- [x] `/bring-pet-to-thailand/from-singapore.html` — AVS export timeline, Schedule III return rules
-- [x] `/take-pet-out-of-thailand/to-japan.html` — MAFF 180-day timeline, advance notification, DLD export table
-- [x] `/take-pet-out-of-thailand/to-singapore.html` — Schedule III RNATT timing, AQC quarantine, DLD export table
-- [x] Fixed dead AVS official URL (`nparks.gov.sg/avs/pets/...` → `avs.nparks.gov.sg/...`)
+- [x] `/bring-pet-to-thailand/from-india.html` — AQCS export timeline, 7-day appointment rule, re-import NOC
+- [x] `/bring-pet-to-thailand/from-philippines.html` — BAI export timeline, SPSIC return planning
+- [x] `/bring-pet-to-thailand/from-china.html` — customs export timeline, GACC return rules
+- [x] `/take-pet-out-of-thailand/to-india.html` — AQCS Advance NOC, approved ports
+- [x] `/take-pet-out-of-thailand/to-philippines.html` — BAI SPSIC, IVHC 10-day window
+- [x] `/take-pet-out-of-thailand/to-china.html` — GACC non-designated titer/quarantine rules
+- [x] Fixed MOCCAE-only wording in shared DLD export table
 
-### Import / export corridors (remaining — Batch 81+)
+### Import / export corridors (remaining — Batch 82+)
 
 - [ ] EU member-state clones in `50-import-countries.js` — enrich or consolidate (Tim decision)
 

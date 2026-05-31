@@ -41,6 +41,7 @@ Not deployed. Last updated: 30 May 2026.
 | **78** | **Germany + UAE corridors:** full-depth import and export pages; MOCCAE link fix; table FOUC fix |
 | **79** | **Dog-friendly depth:** beaches stretch table, hotels with official links, condos checklist |
 | **80** | **Japan + Singapore corridors:** full import/export depth; AVS URL fix |
+| **81** | **India + Philippines + China corridors:** full import/export depth; generic DLD export table fix |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 

@@ -732,123 +732,277 @@ pages.push(article({
 pages.push(country({
   slug: "from-india", crumb: "From India",
   title: "Bring a Pet to Thailand from India (AQCS & DLD 2026) | PattayaPets",
-  desc: "Bringing a dog or cat from India to Thailand: AQCS export certificate, " +
-    "Thai import steps, and what to plan if you may leave again.",
+  desc: "India to Thailand pet import: AQCS export certificate timeline, DLD import " +
+    "checklist, flight routing via Gulf hubs, and re-import planning if you return.",
   h1: "Bringing a pet to Thailand from India",
-  lede: "Thailand's import rules are the same for every origin. From India, the " +
-    "distinctive part is the export health certificate issued through India's " +
-    "Animal Quarantine and Certification Services (AQCS).",
+  lede: "India is a high-rabies origin with a formal AQCS export process. The Thai import " +
+    "steps are standard &mdash; but direct flights to Bangkok are limited, so routing and " +
+    "airline pet policy matter as much as the paperwork.",
+  officialExtra:
+    "<p><strong>India sources:</strong> " +
+    '<a href="https://aqcsindia.gov.in/Home/ImportExportPets" target="_blank" ' +
+    "rel=\"noopener nofollow\">AQCS import/export of pets</a>; " +
+    '<a href="https://aqcsindia.gov.in/Home/ExportPets" target="_blank" rel="noopener nofollow">' +
+    "AQCS export requirements</a>; " +
+    '<a href="https://aqcsindia.gov.in/pdfs/india-dogs-guidance.pdf" target="_blank" ' +
+    "rel=\"noopener nofollow\">India dog import guidance (PDF)</a>. Export mirror: " +
+    "<a href=\"/take-pet-out-of-thailand/to-india.html\">taking a pet to India</a>.</p>",
   sections: [
-    { h: "The Indian export side", html:
-      "<p>" + STD_STEPS + "In India, the veterinary health certificate for export " +
-      "is issued and endorsed through the <strong>Animal Quarantine and Certification " +
-      "Services (AQCS)</strong>, under the Department of Animal Husbandry and " +
-      "Dairying. Procedures vary by airport and state &mdash; use an experienced " +
-      "export vet and confirm the current AQCS process for your departure city " +
-      "before you book.</p>" +
-      "<p>Direct flights from Indian cities to Bangkok are limited compared with " +
-      "routes via the Gulf or Southeast Asia hubs. That affects both airline pet " +
-      "policies and total journey time &mdash; see " +
+    { h: "The timeline — AQCS export and DLD import", html:
+      "<p>Book an AQCS appointment early &mdash; export certificates are normally issued " +
+      "on the same day as inspection but require documents submitted about " +
+      "<strong>seven days before embarkation</strong>.</p>" +
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Authority</th></tr></thead><tbody>' +
+      '<tr><th scope="row">8+ weeks before</th>' +
+      '<td>ISO microchip; rabies and core vaccinations per Thailand&rsquo;s schedule</td>' +
+      '<td>Indian vet</td></tr>' +
+      '<tr><th scope="row">4&ndash;6 weeks before</th>' +
+      '<td>Apply for <a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a> (form R1/1) to Bangkok AQS</td>' +
+      '<td>DLD</td></tr>' +
+      '<tr><th scope="row">7+ days before departure</th>' +
+      '<td>Submit export documents to AQCS; book prior appointment; pet examined at AQCS station</td>' +
+      '<td>AQCS (departure city)</td></tr>' +
+      '<tr><th scope="row">Within 10 days of departure</th>' +
+      '<td>AQCS issues <strong>Certificate of Health for Export</strong> (valid 10 days from issue)</td>' +
+      '<td>AQCS</td></tr>' +
+      '<tr><th scope="row">2+ weeks before</th>' +
+      '<td>Book airline &mdash; many routes connect via Dubai, Doha or Singapore; confirm cabin, hold or cargo</td>' +
+      '<td>Airline</td></tr>' +
+      '<tr><th scope="row">Arrival in Thailand</th>' +
+      '<td>AQS inspection at Suvarnabhumi with DLD permit and AQCS export certificate</td>' +
+      '<td>DLD AQS</td></tr>' +
+      '</tbody></table></div>' },
+    { h: "Documents the DLD expects", html: TH_IMPORT_TABLE + TH_ARRIVAL_STD },
+    { h: "AQCS export checklist (India side)", html:
+      "<p>AQCS publishes the current list at " +
+      '<a href="https://aqcsindia.gov.in/Home/ExportPets" target="_blank" rel="noopener nofollow">' +
+      "aqcsindia.gov.in</a>. Typically required:</p>" +
+      "<ul>" +
+      "<li>Two passport-size photos of the pet (4&times;6&nbsp;in, light-facing).</li>" +
+      "<li>Owner passport copy and air ticket.</li>" +
+      "<li>Microchip certificate and vaccination records.</li>" +
+      "<li>Vet &lsquo;fit to fly&rsquo; certificate from a registered local veterinarian.</li>" +
+      "<li>Thailand&rsquo;s import requirements attached (DLD permit copy).</li>" +
+      "<li>Pet presented for AQCS examination; prior appointment by email or phone.</li>" +
+      "</ul>" +
+      "<p>Direct Delhi/Mumbai/Chennai&ndash;Bangkok flights are limited. Most owners route " +
+      "via Gulf or Southeast Asian hubs &mdash; see " +
       "<a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline pet policies</a> " +
-      "early.</p>" },
-    { h: "If you may leave Thailand again", html:
-      "<p>India treats many countries as requiring a rabies titer test and waiting " +
-      "period for re-entry. If you might return to India with your pet, plan the " +
-      "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies titer test</a> " +
-      "before or soon after arrival in Thailand, and verify current AQCS import " +
-      "rules with plenty of lead time. See our guide to " +
+      "and total journey time before booking.</p>" },
+    { h: "If you may return to India", html:
+      "<p>If the pet was exported from India with an AQCS certificate, a return can be treated " +
+      "as <strong>re-import</strong> &mdash; but only if you kept the original export paperwork " +
+      "and meet AQCS re-import rules. Otherwise India treats the pet as a fresh import requiring " +
+      "an online Advance NOC via the " +
+      '<a href="https://indialog-pga.logistics.gov.in/AQCS/Home.aspx" target="_blank" ' +
+      "rel=\"noopener nofollow\">AQCS Import Clearance System</a>, applied at least " +
+      "<strong>seven working days</strong> before arrival at an approved port (Delhi, Mumbai, " +
+      "Chennai, Kolkata, Bangalore or Hyderabad).</p>" +
+      "<p>See " +
       "<a href=\"/take-pet-out-of-thailand/to-india.html\">exporting a pet to India</a> " +
-      "for the full return paperwork.</p>" }
+      "for the full Thailand-to-India pathway.</p>" },
+    { h: "Common mistakes on this corridor", html: TH_IMPORT_FAILS +
+      "<ul>" +
+      "<li><strong>No AQCS appointment</strong> &mdash; export certificates are not issued without prior booking and document submission ~7 days ahead.</li>" +
+      "<li><strong>Expired export certificate</strong> &mdash; AQCS export validity is only 10 days from issue.</li>" +
+      "<li><strong>Assuming a direct flight</strong> &mdash; hub connections add airline pet-policy complexity and journey time.</li>" +
+      "</ul>" }
   ],
   faqs: [
     ["Does Thailand require extra steps for a pet from India?",
-     "<p>Thailand's core requirements are the same: microchip, rabies vaccination, health certificate and DLD import permit. India is not on Thailand's simplified rabies-free list, so follow the standard import route and confirm every document with the DLD before you fly.</p>"],
+     "<p>Thailand's core requirements are the same: microchip, rabies vaccination, health certificate and DLD import permit. India is not on Thailand's rabies-free simplified list — follow the standard import route and confirm every document with the DLD before you fly.</p>"],
     ["Which Indian authority endorses the export certificate?",
-     "<p>AQCS (Animal Quarantine and Certification Services) handles export certification for live animals leaving India. Your vet and AQCS office for your departure airport will guide the current process.</p>"]
+     "<p>AQCS (Animal Quarantine and Certification Services) at your departure airport. Book a prior appointment and submit documents about seven days before embarkation.</p>"],
+    ["How long is the AQCS export certificate valid?",
+     "<p>Typically 10 days from the date of issue or examination at AQCS. Plan your flight and DLD permit timing around that window.</p>"],
+    ["Can I fly my pet in cabin from India to Bangkok?",
+     "<p>It depends on the airline and routing. Many itineraries connect through Gulf hubs where cargo rules apply. Confirm with the airline for each sector before booking.</p>"],
+    ["What if I want to bring my pet back to India later?",
+     "<p>Keep the original AQCS export certificate for re-import. Otherwise apply for an Advance NOC online at least seven working days before arrival. See our export-to-India guide for the full return pathway.</p>"]
   ]
 }));
 
 /* ---------------- PHILIPPINES ---------------- */
 pages.push(country({
   slug: "from-philippines", crumb: "From the Philippines",
-  title: "Bring a Pet to Thailand from Philippines (DLD 2026) | PattayaPets",
-  desc: "Bringing a dog or cat from the Philippines to Thailand: BAI export " +
-    "paperwork, airline routes, and what to plan if you may leave again.",
+  title: "Bring a Pet to Thailand from Philippines (BAI & DLD 2026) | PattayaPets",
+  desc: "Philippines to Thailand pet import: BAI export health certificate, DLD import " +
+    "timeline, Manila–Bangkok routing, and BAI re-import rules if you return.",
   h1: "Bringing a pet to Thailand from the Philippines",
-  lede: "Manila and other Philippine cities have direct and one-stop flights to " +
-    "Bangkok, which makes this a common relocation route. The Thai steps are " +
-    "standard; the Philippine side is handled through the Bureau of Animal Industry (BAI).",
+  lede: "Manila&ndash;Bangkok is one of the easier regional corridors &mdash; direct and " +
+    "one-stop flights are common. The Philippine side runs through the Bureau of Animal " +
+    "Industry (BAI); the Thai side is the standard DLD import permit.",
+  officialExtra:
+    "<p><strong>Philippines sources:</strong> " +
+    '<a href="https://www.bai.gov.ph/Stakeholders/PetImport" target="_blank" ' +
+    "rel=\"noopener nofollow\">BAI &mdash; pet import procedures</a> (export mirror " +
+    "requirements); export mirror: " +
+    "<a href=\"/take-pet-out-of-thailand/to-philippines.html\">taking a pet to the Philippines</a>.</p>",
   sections: [
-    { h: "The Philippine export side", html:
-      "<p>" + STD_STEPS + "For export from the Philippines, the health certificate " +
-      "and export endorsement are handled through the <strong>Bureau of Animal " +
-      "Industry (BAI)</strong>. Use a veterinarian registered with BAI and confirm " +
-      "the current export requirements for dogs and cats leaving the Philippines " +
-      "before you fix a travel date.</p>" +
-      "<p>Flights from Manila to Bangkok are relatively straightforward compared " +
-      "with long-haul routes from Europe or the Americas. Still confirm cabin, " +
-      "checked-baggage and cargo options with your airline &mdash; policies differ " +
-      "by carrier and aircraft.</p>" },
-    { h: "Arriving near Pattaya", html:
-      "<p>Most pets clear at Suvarnabhumi in Bangkok. From there it is a road " +
-      "transfer to Pattaya &mdash; see " +
+    { h: "The timeline — BAI export and DLD import", html:
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Authority</th></tr></thead><tbody>' +
+      '<tr><th scope="row">6+ weeks before</th>' +
+      '<td>ISO microchip; rabies and core vaccinations (dogs: DHLPPi; cats: panleukopenia)</td>' +
+      '<td>BAI-accredited vet</td></tr>' +
+      '<tr><th scope="row">4&ndash;6 weeks before</th>' +
+      '<td>Apply for <a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a> (form R1/1)</td>' +
+      '<td>DLD AQS</td></tr>' +
+      '<tr><th scope="row">2&ndash;3 weeks before</th>' +
+      '<td>Book Manila&ndash;Bangkok flight; confirm cabin, hold or cargo with airline</td>' +
+      '<td>Airline</td></tr>' +
+      '<tr><th scope="row">Within 10 days of departure</th>' +
+      '<td>BAI-endorsed export health certificate / international veterinary health certificate (IVHC)</td>' +
+      '<td>BAI + vet</td></tr>' +
+      '<tr><th scope="row">&ge;3 days before landing</th>' +
+      '<td>Confirm arrival date with Bangkok AQS by email</td>' +
+      '<td>DLD</td></tr>' +
+      '<tr><th scope="row">Arrival in Thailand</th>' +
+      '<td>AQS inspection at Suvarnabhumi; road transfer to Pattaya</td>' +
+      '<td>DLD AQS</td></tr>' +
+      '</tbody></table></div>' +
+      "<p>Thai-side steps: " + STD_STEPS + "</p>" },
+    { h: "Documents the DLD expects", html: TH_IMPORT_TABLE + TH_ARRIVAL_STD +
+      "<p>From Suvarnabhumi it is a road transfer to Pattaya &mdash; see " +
       "<a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok?</a> " +
-      "and <a href=\"/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html\">arrival " +
-      "at Suvarnabhumi</a>.</p>" },
-    { h: "If you may leave Thailand again", html:
-      "<p>The Philippines applies its own import rules when a pet returns from abroad. " +
-      "If you might go back to the Philippines with your pet, research current BAI " +
-      "import requirements before you leave and plan the " +
-      "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies titer test</a> " +
-      "with plenty of lead time. See our guide to " +
+      "and <a href=\"/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html\">arrival at " +
+      "Suvarnabhumi</a>.</p>" },
+    { h: "The Philippine export side (BAI)", html:
+      "<p>Export from the Philippines is handled through a <strong>BAI-accredited " +
+      "veterinarian</strong> who issues the health certificate and obtains BAI endorsement. " +
+      "BAI&rsquo;s import guidance (which mirrors what export paperwork should contain) " +
+      "requires:</p>" +
+      "<ul>" +
+      "<li>ISO-compatible microchip with proof of implantation.</li>" +
+      "<li>Rabies vaccination at least <strong>14 days</strong> before travel and within validity.</li>" +
+      "<li>Internal and external parasite treatment records.</li>" +
+      "<li>Pet at least <strong>4 months (120 days)</strong> old at time of travel.</li>" +
+      "<li>IVHC issued within <strong>10 calendar days</strong> before export (BAI import rule " +
+      "for pets entering the Philippines &mdash; confirm the same window applies for export).</li>" +
+      "</ul>" +
+      "<p>Use a BAI-accredited vet experienced in export work and confirm the current BAI " +
+      "process before you fix a date.</p>" },
+    { h: "If you may return to the Philippines", html:
+      "<p>Returning to the Philippines requires a <strong>Sanitary and Phytosanitary Import " +
+      "Clearance (SPSIC)</strong> applied online before the pet leaves Thailand &mdash; valid " +
+      "<strong>60 days</strong>, maximum three pets per application. Requirements include " +
+      "microchip proof, vaccination and deworming records, and a photograph of the pet.</p>" +
+      "<p>See " +
       "<a href=\"/take-pet-out-of-thailand/to-philippines.html\">exporting a pet to the Philippines</a> " +
-      "for the full return paperwork.</p>" }
+      "for the full Thailand-to-Manila pathway and SPSIC steps.</p>" },
+    { h: "Common mistakes on this corridor", html: TH_IMPORT_FAILS +
+      "<ul>" +
+      "<li><strong>Health certificate outside the 10-day window</strong> &mdash; BAI timing rules are strict.</li>" +
+      "<li><strong>Rabies given too close to travel</strong> &mdash; must be at least 14 days before departure.</li>" +
+      "<li><strong>Pet under 4 months</strong> &mdash; BAI does not allow import (and export vets may refuse) below 120 days.</li>" +
+      "</ul>" }
   ],
   faqs: [
     ["Is the Philippines treated as rabies-free by Thailand?",
-     "<p>No. Follow the standard Thai import process with microchip, rabies vaccination, health certificate and DLD import permit. Confirm the current DLD list and your pet's vaccination timing before you apply.</p>"],
+     "<p>No. Follow the standard Thai import process with microchip, rabies vaccination, health certificate and DLD import permit.</p>"],
     ["Who issues the Philippine export health certificate?",
-     "<p>The Bureau of Animal Industry (BAI) oversees export certification. Your BAI-accredited veterinarian will guide the health certificate and any BAI endorsement required for export.</p>"]
+     "<p>A BAI-accredited veterinarian, with BAI endorsement. Confirm the current export process with BAI before you travel.</p>"],
+    ["Are there direct flights from Manila to Bangkok with pets?",
+     "<p>Yes — several carriers fly the route. Confirm cabin, checked baggage or cargo options for your pet's size and the aircraft type.</p>"],
+    ["Can I fly into U-Tapao near Pattaya from Manila?",
+     "<p>Do not assume it. Most pet imports clear at Suvarnabhumi. Confirm with the DLD and airline before planning a U-Tapao arrival.</p>"],
+    ["What if I want to return to the Philippines later?",
+     "<p>Apply for an SPSIC online before export from Thailand — valid 60 days. See our export-to-Philippines guide for the full checklist.</p>"]
   ]
 }));
 
 /* ---------------- CHINA ---------------- */
 pages.push(country({
   slug: "from-china", crumb: "From China",
-  title: "Bring a Pet to Thailand from China (DLD 2026) | PattayaPets",
-  desc: "Bringing a dog or cat from China to Thailand: customs export paperwork, " +
-    "direct flights to Bangkok, and the standard Thai import steps.",
+  title: "Bring a Pet to Thailand from China (Customs Export & DLD 2026) | PattayaPets",
+  desc: "China to Thailand pet import: customs export inspection timeline, DLD import " +
+    "checklist, direct flights to Bangkok, and GACC re-entry rules if you return.",
   h1: "Bringing a pet to Thailand from China",
-  lede: "Direct flights from Shanghai, Guangzhou, Beijing and other Chinese cities " +
-    "to Bangkok are common, which makes China a frequent origin for relocations " +
-    "to Pattaya. The Thai import steps are standard; the Chinese side is handled " +
-    "through local animal health and customs export procedures.",
+  lede: "Shanghai, Guangzhou and Beijing have direct Bangkok routes, which makes China " +
+    "a common origin for Pattaya relocations. Export is city-specific under Chinese " +
+    "customs; the Thai import side is the standard DLD permit.",
+  officialExtra:
+    "<p><strong>China sources:</strong> " +
+    '<a href="https://english.beijing.gov.cn/latest/lawsandpolicies/202104/t20210407_2346645.html" ' +
+    'target="_blank" rel="noopener nofollow">GACC Announcement No.&nbsp;5 (2019) &mdash; ' +
+    "pet entry (English reference)</a>; " +
+    '<a href="https://www.gov.cn/zhengce/zhengceku/2019-11/04/content_5448320.htm" ' +
+    'target="_blank" rel="noopener nofollow">original Chinese announcement</a>. ' +
+    "Export mirror: " +
+    "<a href=\"/take-pet-out-of-thailand/to-china.html\">taking a pet to China</a>.</p>",
   sections: [
+    { h: "The timeline — China export and DLD import", html:
+      "<p>Procedures vary by departure city (Shanghai, Guangzhou, Beijing, Shenzhen, etc.). " +
+      "Use an export vet or relocation agent who knows your airport.</p>" +
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Authority</th></tr></thead><tbody>' +
+      '<tr><th scope="row">6+ weeks before</th>' +
+      '<td>ISO microchip; rabies and core vaccinations per Thailand&rsquo;s schedule</td>' +
+      '<td>Chinese vet</td></tr>' +
+      '<tr><th scope="row">4&ndash;6 weeks before</th>' +
+      '<td>Apply for <a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a> (form R1/1)</td>' +
+      '<td>DLD AQS</td></tr>' +
+      '<tr><th scope="row">3+ weeks before</th>' +
+      '<td>Book direct or connecting flight to Suvarnabhumi; confirm airline pet policy</td>' +
+      '<td>Airline</td></tr>' +
+      '<tr><th scope="row">1&ndash;2 weeks before</th>' +
+      '<td>Apply for export inspection with local animal health / customs at departure airport</td>' +
+      '<td>Customs + animal quarantine bureau</td></tr>' +
+      '<tr><th scope="row">Within 7&ndash;10 days of departure</th>' +
+      '<td>Final health examination; export quarantine certificate issued</td>' +
+      '<td>Customs inspection office</td></tr>' +
+      '<tr><th scope="row">Arrival in Thailand</th>' +
+      '<td>AQS inspection at Suvarnabhumi with DLD permit and Chinese export certificate</td>' +
+      '<td>DLD AQS</td></tr>' +
+      '</tbody></table></div>' +
+      "<p>Thai-side steps: " + STD_STEPS + "</p>" },
+    { h: "Documents the DLD expects", html: TH_IMPORT_TABLE + TH_ARRIVAL_STD },
     { h: "The Chinese export side", html:
-      "<p>" + STD_STEPS + "For export from China, your veterinarian works with the " +
-      "local animal health authority and <strong>customs export inspection</strong> " +
-      "to issue the health certificate and any export endorsement required. " +
-      "Procedures vary by city and departure airport &mdash; use an experienced " +
-      "export vet or relocation agent and confirm the current requirements for " +
-      "your departure point before you book.</p>" +
-      "<p>Many routes fly directly to Suvarnabhumi in Bangkok, which simplifies " +
-      "the Pattaya end of the journey. Still confirm cabin, checked-baggage and " +
-      "cargo options with your airline early &mdash; see " +
-      "<a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline pet policies</a>.</p>" },
-    { h: "If you may leave Thailand again", html:
-      "<p>China applies strict re-entry rules for pets arriving from most countries, " +
-      "including rabies controls and advance notification. If you might return to " +
-      "China with your pet, research the current import rules before you leave and " +
-      "plan the <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">" +
-      "rabies titer test</a> with plenty of lead time. See our guide to " +
+      "<p>Pet export from China requires coordination between your veterinarian, the " +
+      "local <strong>animal health supervision authority</strong> and " +
+      "<strong>customs export inspection</strong> at your departure airport. Each major " +
+      "city (Shanghai PVG, Guangzhou CAN, Beijing PEK/PKX, etc.) has its own appointment " +
+      "system and document checklist &mdash; do not copy another city&rsquo;s process.</p>" +
+      "<p>Typically you need: microchip proof, vaccination records, owner passport copy, " +
+      "flight booking, Thailand&rsquo;s import requirements (DLD permit), and the pet " +
+      "presented for export inspection. An experienced " +
+      "<a href=\"/pet-relocation/\">pet relocation agent</a> is worth using on this corridor.</p>" },
+    { h: "If you may return to China", html:
+      "<p>Under GACC Announcement No.&nbsp;5 (2019), Thailand is a <strong>non-designated</strong> " +
+      "origin. Returning to China typically requires:</p>" +
+      "<ul>" +
+      "<li>One pet per person per entry.</li>" +
+      "<li>ISO 11784/11785 microchip.</li>" +
+      "<li>Two rabies vaccinations (at least 30 days apart).</li>" +
+      "<li><a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">Rabies antibody test</a> " +
+      "from a GACC-recognised laboratory (&ge; 0.5 IU/ml) after the second vaccination.</li>" +
+      "<li>Official health certificate within <strong>14 days</strong> of arrival.</li>" +
+      "<li>Declaration to customs on arrival; entry through a port with quarantine facilities " +
+      "if waiver conditions are not met.</li>" +
+      "</ul>" +
+      "<p>Without meeting waiver conditions, expect <strong>30 days quarantine</strong> at a " +
+      "designated facility. See " +
       "<a href=\"/take-pet-out-of-thailand/to-china.html\">exporting a pet to China</a> " +
-      "for the full return paperwork.</p>" }
+      "for the full Thailand-to-China pathway.</p>" },
+    { h: "Common mistakes on this corridor", html: TH_IMPORT_FAILS +
+      "<ul>" +
+      "<li><strong>Assuming all Chinese airports work the same</strong> &mdash; Shanghai, Guangzhou and Beijing have different export offices.</li>" +
+      "<li><strong>No export inspection appointment</strong> &mdash; customs export clearance is not walk-in at most airports.</li>" +
+      "<li><strong>Ignoring GACC return rules</strong> &mdash; the titer test and two-vaccination schedule need months of lead time.</li>" +
+      "</ul>" }
   ],
   faqs: [
     ["Does Thailand treat China differently for pet import?",
-     "<p>Thailand's core requirements are the same: microchip, rabies vaccination, health certificate and DLD import permit. China is not on Thailand's simplified rabies-free list, so follow the standard import route and confirm every document with the DLD before you fly.</p>"],
+     "<p>Thailand's core requirements are the same: microchip, rabies vaccination, health certificate and DLD import permit. China is not on Thailand's rabies-free simplified list.</p>"],
     ["Which Chinese authority handles pet export?",
-     "<p>Export involves your accredited veterinarian, local animal health supervision, and customs export inspection at your departure airport. An experienced export vet or relocation agent will guide the current process for your city.</p>"]
+     "<p>Your accredited vet, local animal health supervision, and customs export inspection at your departure airport. Use an export specialist for your specific city.</p>"],
+    ["Are there direct flights from China to Bangkok with pets?",
+     "<p>Yes — several carriers fly Shanghai, Guangzhou and Beijing to Suvarnabhumi. Confirm cabin, hold or cargo for your pet before booking.</p>"],
+    ["What if I want to return to China later?",
+     "<p>Plan for GACC non-designated country rules: two rabies shots, titer test from a recognised lab, and possibly 30 days quarantine if waiver conditions are not met. Start months ahead.</p>"],
+    ["Can I import through U-Tapao instead of Bangkok?",
+     "<p>Do not assume it. Suvarnabhumi is the established pet-import port. Confirm with the DLD before planning any U-Tapao arrival.</p>"]
   ]
 }));
 
