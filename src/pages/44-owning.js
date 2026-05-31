@@ -250,7 +250,7 @@ pages.push(own({
 
 pages.push(own({
   slug: "where-to-walk-your-dog", crumb: "Where to walk your dog",
-  title: "Where to walk your dog in Pattaya | PattayaPets",
+  title: "Where to Walk Your Dog in Pattaya | Routes, Timing & Safety | PattayaPets",
   desc: "Building a safe, cool-hours dog-walking routine in Pattaya — the beach, " +
     "quiet sois, green space, and managing heat and street dogs.",
   h1: "Where and how to walk your dog in Pattaya",

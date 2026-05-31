@@ -195,7 +195,7 @@ pages.push(importStep({
 /* ---------------- RABIES & TITER ---------------- */
 pages.push(importStep({
   path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html",
-  title: "Rabies vaccination & titer test, Thailand | PattayaPets",
+  title: "Rabies Vaccination & Titer Test for Thailand Import | PattayaPets",
   desc: "The rabies vaccination, the 21-day wait, the other vaccines Thailand " +
     "asks for, and the rabies titer test — what it is and why you should do it.",
   crumb: "Rabies & titer test",

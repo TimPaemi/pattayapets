@@ -210,7 +210,10 @@ const HUB_GUIDE = {
     "<a href=\"/bring-pet-to-thailand/import-permit-thailand-dld.html\">DLD import " +
     "permit</a> and " +
     "<a href=\"/take-pet-out-of-thailand/export-permit-thailand-dld.html\">DLD export " +
-    "permit</a> walk through the whole process. For costs, see " +
+    "permit</a> walk through the whole process. Start with the " +
+    "<a href=\"/bring-pet-to-thailand/checklist.html\">import checklist</a> or " +
+    "<a href=\"/take-pet-out-of-thailand/checklist.html\">export checklist</a>. " +
+    "For costs, see " +
     "<a href=\"/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html\">import costs</a> " +
     "and <a href=\"/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html\">export costs</a>. " +
     "For airline rules, see " +

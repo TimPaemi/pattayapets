@@ -28,7 +28,7 @@ const pages = [];
 /* ============ EMERGENCY: VENOMOUS CREATURES ============ */
 pages.push(article({
   path: "/pet-emergency/venomous-creatures.html",
-  title: "Toads, centipedes and stinging creatures | PattayaPets",
+  title: "Venomous Creatures & Pets Pattaya | Toads, Centipedes & Stings | PattayaPets",
   desc: "Beyond snakes: the toads, centipedes, bees and other small creatures in " +
     "Thailand that can hurt or poison a curious pet, and what to do.",
   crumb: "Toads, centipedes & stings",
@@ -246,7 +246,7 @@ pages.push(article({
 /* ============ HEALTH: DENTAL CARE ============ */
 pages.push(article({
   path: "/pet-health-pattaya/dental-care.html",
-  title: "Dental care for pets in Pattaya | PattayaPets",
+  title: "Pet Dental Care Pattaya | Teeth Cleaning & Gum Health | PattayaPets",
   desc: "Why dental disease is so common in dogs and cats, the signs to watch for, " +
     "home care, and professional dental care - orientation, not veterinary advice.",
   crumb: "Dental care",
@@ -306,7 +306,7 @@ pages.push(article({
 /* ============ HEALTH: HEALTHY WEIGHT ============ */
 pages.push(article({
   path: "/pet-health-pattaya/healthy-weight.html",
-  title: "Healthy weight and obesity in pets | PattayaPets",
+  title: "Pet Obesity Pattaya | Healthy Weight in a Hot Climate | PattayaPets",
   desc: "Why a healthy weight matters even more in Pattaya's heat, how to tell if " +
     "a pet is overweight, why pets gain weight, and how to manage it.",
   crumb: "Healthy weight",

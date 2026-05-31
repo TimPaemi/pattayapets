@@ -34,7 +34,7 @@ function dog(o) {
 
 pages.push(cat({
   slug: "indoor-vs-outdoor-cats", crumb: "Indoor or outdoor?",
-  title: "Indoor or outdoor cats in Pattaya | PattayaPets",
+  title: "Indoor vs Outdoor Cats Pattaya | Balcony Safety & Street Risks | PattayaPets",
   desc: "Whether to let a cat outside in Pattaya, the real risks of the streets " +
     "here, balcony safety in condos, and how to give an indoor cat a good life.",
   h1: "Indoor or outdoor? Keeping a cat safe in Pattaya",
@@ -188,7 +188,7 @@ pages.push(cat({
 
 pages.push(cat({
   slug: "getting-a-cat-in-pattaya", crumb: "Getting a cat",
-  title: "Getting a cat in Pattaya | PattayaPets",
+  title: "Getting a Cat in Pattaya | Adopt, Buy or Rescue | PattayaPets",
   desc: "How to get a cat in Pattaya: adopting from shelters, taking in a street " +
     "kitten, what to do first, and settling a new cat into your home.",
   h1: "Getting a cat in Pattaya: adopt, kitten or street cat",
@@ -253,7 +253,7 @@ pages.push(cat({
 
 pages.push(cat({
   slug: "cat-boarding-pattaya", crumb: "Cat boarding",
-  title: "Cat boarding in Pattaya | PattayaPets",
+  title: "Cat Boarding Pattaya | Catteries & Care While You Travel | PattayaPets",
   desc: "Options for cat care while you travel from Pattaya: catteries and cat " +
     "boarding, vet-clinic boarding, in-home pet sitters, and what to check.",
   h1: "Cat boarding and care while you travel",
@@ -386,7 +386,7 @@ pages.push(dog({
 
 pages.push(dog({
   slug: "choosing-a-dog-for-the-climate", crumb: "Choosing a dog",
-  title: "Choosing a dog for Pattaya's climate | PattayaPets",
+  title: "Choosing a Dog for Pattaya's Heat | Breeds & Climate Fit | PattayaPets",
   desc: "Which dogs cope with Pattaya's heat and which struggle &mdash; coat, " +
     "build and flat-faced breeds, and the case for adopting a local dog.",
   h1: "Choosing a dog suited to Pattaya's heat",
@@ -450,7 +450,7 @@ pages.push(dog({
 
 pages.push(dog({
   slug: "puppy-care-pattaya", crumb: "Puppy care",
-  title: "Bringing up a puppy in Pattaya | PattayaPets",
+  title: "Raising a Puppy in Pattaya | Training, Heat & Socialisation | PattayaPets",
   desc: "Raising a puppy in Pattaya: the vaccination series, parasite prevention, " +
     "the heat, safe socialisation, training and neutering.",
   h1: "Bringing up a puppy in Pattaya",
@@ -518,7 +518,7 @@ pages.push(dog({
 
 pages.push(dog({
   slug: "common-dog-health-issues-tropics", crumb: "Tropical health issues",
-  title: "Common dog health issues in a tropical climate | PattayaPets",
+  title: "Common Dog Health Issues in Pattaya | Tropical Climate Risks | PattayaPets",
   desc: "The health problems Pattaya's heat and humidity make more common in " +
     "dogs &mdash; tick-borne disease, skin and ear infections, parasites and heat.",
   h1: "Common dog health issues in a tropical climate",

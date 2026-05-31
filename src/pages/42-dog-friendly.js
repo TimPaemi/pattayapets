@@ -81,7 +81,7 @@ function df(o) {
 
 pages.push(df({
   slug: "beaches", crumb: "Dog-friendly beaches",
-  title: "Dog-friendly beaches in Pattaya & Jomtien | PattayaPets",
+  title: "Dog-Friendly Beaches Pattaya & Jomtien | Cool-Hour Walks | PattayaPets",
   desc: "Where you can walk a dog on the beach around Pattaya and Jomtien, the " +
     "etiquette that keeps dogs welcome, and how to do it safely in the heat.",
   h1: "Dog-friendly beaches in Pattaya",
@@ -134,7 +134,7 @@ pages.push(df({
 
 pages.push(df({
   slug: "cafes", crumb: "Dog-friendly cafes",
-  title: "Dog-friendly cafes in Pattaya | PattayaPets",
+  title: "Dog-Friendly Cafes Pattaya | Outdoor Seating & Etiquette | PattayaPets",
   desc: "How to find dog-friendly cafes in Pattaya, what to look for, and the " +
     "etiquette that keeps you and your dog welcome back.",
   h1: "Dog-friendly cafes in Pattaya",
@@ -202,7 +202,9 @@ pages.push(df({
       "<p>One example often mentioned as dog-friendly is The Dog House Bar &amp; " +
       "Grill at Jomtien Beach &mdash; as ever, confirm the current policy " +
       "directly. PattayaPets adds restaurants to this guide only once we are " +
-      "confident of them.</p>" },
+      "confident of them. For a wider list of places to eat out in Pattaya, see the " +
+      '<a href="https://pattaya-restaurant-guide.com/" target="_blank" rel="noopener noreferrer">' +
+      "Pattaya Restaurant Guide</a> &mdash; always confirm dog policy before you go.</p>" },
     { h: "Etiquette for eating out with a dog", html:
       "<ul><li>Always ask first, and accept a no gracefully.</li>" +
       "<li>Pick an outdoor table with room for your dog to lie out of the way " +
@@ -330,7 +332,7 @@ pages.push(df({
 
 pages.push(df({
   slug: "parks", crumb: "Places to walk",
-  title: "Where to walk a dog in Pattaya | PattayaPets",
+  title: "Where to Walk a Dog in Pattaya | Beaches, Sois & Green Space | PattayaPets",
   desc: "Where to walk a dog in Pattaya: the beach, quiet sois and green space — " +
     "and an honest look at the city's limited formal dog parks.",
   h1: "Where to walk your dog in Pattaya",

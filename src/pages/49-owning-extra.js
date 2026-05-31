@@ -24,7 +24,7 @@ function own(o) {
 /* ---------------- SONGKRAN ---------------- */
 pages.push(own({
   slug: "songkran-and-your-pet", crumb: "Songkran & your pet",
-  title: "Songkran and your pet in Pattaya | PattayaPets",
+  title: "Songkran & Your Pet Pattaya | Water Festival Safety Tips | PattayaPets",
   desc: "How to keep a dog or cat safe and calm during Songkran in Pattaya - " +
     "the water festival, the noise, escape risk, and walking around it.",
   h1: "Songkran and your pet: keeping animals safe and calm",
@@ -92,7 +92,7 @@ pages.push(own({
 /* ---------------- RAINY SEASON ---------------- */
 pages.push(own({
   slug: "rainy-season-pet-care", crumb: "Rainy-season care",
-  title: "Rainy-season pet care in Pattaya | PattayaPets",
+  title: "Rainy-Season Pet Care Pattaya | Walks, Skin & Flood Safety | PattayaPets",
   desc: "Caring for a dog or cat through Pattaya's rainy season - walks, skin " +
     "and ear health, floodwater, leptospirosis, mosquitoes and storm anxiety.",
   h1: "Rainy-season pet care in Pattaya",
@@ -156,7 +156,7 @@ pages.push(own({
 /* ---------------- FIREWORKS & NOISE ---------------- */
 pages.push(own({
   slug: "fireworks-and-noise-anxiety", crumb: "Fireworks & noise",
-  title: "Fireworks, festivals and noise-anxious pets | PattayaPets",
+  title: "Fireworks & Noise-Anxious Pets Pattaya | Festivals & Storms | PattayaPets",
   desc: "Helping a noise-anxious dog or cat through fireworks, festivals and " +
     "thunderstorms in Pattaya - preparing a safe space and preventing escapes.",
   h1: "Fireworks, festivals and noise-anxious pets",
@@ -404,7 +404,7 @@ pages.push(own({
 /* ---------------- GETTING TO THE VET ---------------- */
 pages.push(own({
   slug: "getting-to-the-vet", crumb: "Getting to the vet",
-  title: "Getting your pet to the vet without a car | PattayaPets",
+  title: "Getting Your Pet to the Vet Without a Car | Pattaya Transport | PattayaPets",
   desc: "Transport options for getting a pet to the vet in Pattaya without a " +
     "car - carriers, taxis and ride apps, home-visit vets and emergency plans.",
   h1: "Getting your pet to the vet without a car in Pattaya",
@@ -466,7 +466,7 @@ pages.push(own({
 /* ---------------- SENIOR PETS ---------------- */
 pages.push(own({
   slug: "senior-pet-care", crumb: "Senior pets",
-  title: "Caring for a senior pet in Pattaya | PattayaPets",
+  title: "Senior Pet Care Pattaya | Older Dogs & Cats in the Heat | PattayaPets",
   desc: "How to care for an older dog or cat in Pattaya - check-ups, the heat, " +
     "comfort at home, and the changes worth watching for as a pet ages.",
   h1: "Caring for a senior pet in Pattaya",
@@ -526,7 +526,7 @@ pages.push(own({
 /* ---------------- END OF LIFE ---------------- */
 pages.push(own({
   slug: "saying-goodbye", crumb: "Saying goodbye",
-  title: "End-of-life care for pets in Pattaya | PattayaPets",
+  title: "End-of-Life Pet Care Pattaya | Saying Goodbye with Dignity | PattayaPets",
   desc: "Compassionate, practical orientation on end-of-life care for a pet in " +
     "Pattaya - quality of life, what euthanasia involves, and aftercare options.",
   h1: "End-of-life care: saying goodbye to a pet in Pattaya",

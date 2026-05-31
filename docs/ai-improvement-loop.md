@@ -28,6 +28,7 @@ Not deployed. Last updated: 30 May 2026.
 | **65** | Fix vets hub `undefined` title bug; CTR pack #2; coffee + medical disambiguation links |
 | **66** | CTR pack #3 (emergency, health, corridors, areas); housing + Authority links |
 | **67** | Import/export step pages; all country corridor titles; arrival + vehicle rentals |
+| **68** | CTR pack #4 (species, seasonal, venomous); relocation checklists; restaurant guide link |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 
