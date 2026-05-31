@@ -68,7 +68,8 @@ const HUB_GUIDE = {
     "<a href=\"/pet-health-pattaya/skin-and-ear-problems.html\">skin and ear problems</a> " +
     "here &mdash; a groomer who spots early signs is worth keeping. See also " +
     "<a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">hot-climate pet care</a> " +
-    "and <a href=\"/pet-health-pattaya/dental-care.html\">dental care</a>.</p>"),
+    "and <a href=\"/pet-health-pattaya/dental-care.html\">dental care</a>. " +
+    "Browse groomers <a href=\"/groomers/#area\">by Pattaya area</a> on the category hub.</p>"),
 
   boarding: S(
     "<h2>How to choose boarding in Pattaya</h2>" +

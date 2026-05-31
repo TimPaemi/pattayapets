@@ -4,12 +4,12 @@
 module.exports = [
   {
     path: "/404.html",
-    title: "Page not found — PattayaPets",
+    title: "Page Not Found | PattayaPets Directory & Guides",
     description: "The page you were looking for could not be found on PattayaPets.",
     crumb: "Not found",
     breadcrumbs: [],
     noindex: true,
-    updated: "2026-05-28",
+    updated: "2026-05-31",
     body:
       '<section class="section"><div class="container"><div class="prose">' +
       '<p class="eyebrow">Error 404</p>' +
@@ -43,12 +43,12 @@ module.exports = [
   },
   {
     path: "/offline.html",
-    title: "You are offline — PattayaPets",
+    title: "You Are Offline | PattayaPets — Cached Pages May Still Open",
     description: "You appear to be offline. PattayaPets may still open pages you visited earlier; reconnect to browse the directory and guides.",
     crumb: "Offline",
     breadcrumbs: [],
     noindex: true,
-    updated: "2026-05-28",
+    updated: "2026-05-31",
     body:
       '<section class="section"><div class="container"><div class="prose">' +
       '<p class="eyebrow">No connection</p>' +

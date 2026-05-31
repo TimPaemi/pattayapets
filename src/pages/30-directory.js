@@ -472,7 +472,7 @@ function bizSchema(b) {
 
 const pages = [];
 
-const FACTS_UPDATED = "2026-05-30";
+const FACTS_UPDATED = "2026-05-31";
 
 /* ---- business listing pages ---- */
 BUSINESSES.forEach(function (b) {
@@ -517,7 +517,8 @@ BUSINESSES.forEach(function (b) {
         '<a href="/bring-pet-to-thailand/">bringing a pet to Thailand</a>, the ' +
         '<a href="/take-pet-out-of-thailand/export-process.html">export process</a>, ' +
         '<a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a>, ' +
-        'and <a href="/bring-pet-to-thailand/airline-pet-policies.html">airline pet policies</a>.</p></div>'
+        '<a href="/bring-pet-to-thailand/airline-pet-policies.html">airline pet policies</a>, ' +
+        'and the <a href="/bring-pet-to-thailand/checklist.html">import checklist</a>.</p></div>'
       : b.category === "boarding"
       ? '<div class="callout callout-note"><div class="ch">Alternatives to boarding</div><p>Cats especially may ' +
         "do better with an " +
@@ -609,7 +610,7 @@ Object.keys(CATEGORIES).forEach(function (key) {
       "visit.</p></div>" +
       '<div class="grid grid-2">' + list.map(bizCard).join("") + "</div>";
     if (areaKeys.length) {
-      body += '<div class="section-head" style="margin-top:2rem"><h2>Browse by area</h2></div>' +
+      body += '<div class="section-head" style="margin-top:2rem" id="area"><h2>Browse by area</h2></div>' +
         '<div class="chips">' + areaKeys.map(function (ak) {
           return '<a class="chip chip-link" href="/area/' + ak + '.html">' +
             esc(AREAS[ak].name) + "</a>";
@@ -644,7 +645,7 @@ Object.keys(CATEGORIES).forEach(function (key) {
     description: clampDesc(HUB_DESC[key] || cat.intro),
     crumb: cat.name,
     breadcrumbs: [{ name: "Directory", path: "/directory.html" }],
-    updated: "2026-05-30",
+    updated: "2026-05-31",
     body: body
   });
 });
@@ -732,7 +733,7 @@ Object.keys(AREAS).forEach(function (key) {
       area.name + ", Pattaya. " + area.blurb,
     crumb: area.name,
     breadcrumbs: [{ name: "Directory", path: "/directory.html" }],
-    updated: "2026-05-30",
+    updated: "2026-05-31",
     body: body
   });
 });

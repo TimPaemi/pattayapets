@@ -244,13 +244,16 @@ const BUSINESSES = [
     slug: "furpet-grooming-and-hotel",
     name: "Furpet Grooming & Hotel",
     category: "groomers", areas: ["banglamung"], type: "Grooming salon & pet hotel", c24: false,
-    address: null, phone: null, tel: null,
+    address: "373/43 Chalermprakiat 23, Bang Lamung, Pattaya, Chon Buri 20150",
+    phone: "095 676 6999", tel: "+66956766999", line: "furpet",
     website: "https://www.facebook.com/people/Furpet-Grooming-and-Hotel/61561258409344/",
-    hours: null,
-    languages: "Thai; confirm English-language support when booking",
-    services: ["Dog grooming", "Cat grooming", "Bathing", "Short-stay boarding"],
-    summary: "A Pattaya grooming and short-stay boarding business listed on Facebook. " +
-      "Confirm the current address, hours and services directly on its page before visiting."
+    hours: "Daily 10:00–18:00, closed Mondays (confirm on Facebook)",
+    languages: "Thai and English",
+    services: ["Dog grooming", "Cat grooming", "Bathing", "Short-stay boarding",
+      "Breed show trim"],
+    summary: "A grooming salon and short-stay pet hotel on Chalermprakiat 23 in East " +
+      "Pattaya, with ISFC/IGA-certified groomers for dogs and cats. Book on " +
+      "095 676 6999, LINE @furpet or Facebook; closed every Monday."
   },
 
   {
@@ -420,15 +423,17 @@ const BUSINESSES = [
     slug: "relo4paws",
     name: "Relo4Paws",
     category: "pet-relocation", areas: [], type: "Pet relocation consultancy", c24: false,
-    address: null, phone: null, tel: null,
+    address: null, phone: "085 541 9959", tel: "+66855419959",
     whatsapp: "66855419959",
     email: "info@relo4paws.com",
-    website: "https://www.relo4paws.com/", hours: null,
+    website: "https://www.relo4paws.com/", hours: "Always open (confirm when booking)",
     languages: "English and Thai",
-    services: ["Pet relocation consulting", "Export from Thailand", "Worldwide destinations"],
-    summary: "A consultancy arranging pet relocation from Thailand to destinations " +
-      "worldwide, positioning itself on fair pricing and hands-on support through the " +
-      "process. English enquiries on WhatsApp; Thai support also listed on the website."
+    services: ["Pet relocation consulting", "Export from Thailand", "Import to Thailand",
+      "Worldwide destinations", "Pet taxi within Thailand", "Vet coordination",
+      "IATA travel crates", "Airport export handling"],
+    summary: "A Bangkok-based consultancy arranging pet import and export from Thailand " +
+      "worldwide, including airport handling at Suvarnabhumi, pet taxi and vet " +
+      "coordination. English on 085 541 9959 or WhatsApp; Thai line 088 978 9953."
   },
   {
     slug: "united-pet-express",
@@ -455,7 +460,7 @@ const BUSINESSES = [
     hours: null,
     languages: "English and Thai",
     services: ["Pet relocation", "Vaccination & microchip coordination", "Export permits"],
-    summary: "The pet division of a Thailand relocation company, coordinating " +
+    summary: "The pet division of a Bangkok relocation company (On Nut area), coordinating " +
       "vaccinations, microchipping, health certificates and export permits with the " +
       "Department of Livestock Development. Enquire via the website inquiry form or " +
       "inquiryth@asia-relocation.com."
@@ -503,6 +508,33 @@ const BUSINESSES = [
       "and advertised off-site visits, pet pickup or delivery, grooming and boarding. " +
       "Despite the Facebook page name, published hours are 10:00-21:00, not 24-hour " +
       "emergency care — confirm contact details on its Facebook page before booking."
+  },
+  {
+    slug: "pet-passions-mobile-grooming",
+    name: "Pet Passions Mobile Grooming & Spa",
+    category: "groomers", areas: ["central-pattaya", "jomtien", "banglamung"], type: "Mobile grooming van", c24: false,
+    address: null, phone: null, tel: null,
+    website: "https://petpassionsth.com/eng/", hours: "By online appointment (24/7 booking)",
+    languages: "Thai and English",
+    services: ["Mobile bath", "Breed grooming & haircuts", "Spa treatments", "Weight-based pricing"],
+    summary: "A DBD-registered mobile grooming service that sends a fully equipped van to " +
+      "your address for baths, clips and spa work on dogs and cats. Appointments are " +
+      "booked through petpassionsth.com or its app; confirm whether your Pattaya " +
+      "address is inside the current service zone and any travel surcharge before booking."
+  },
+  {
+    slug: "doggie-star-grooming-pattaya",
+    name: "Doggie Star Grooming",
+    category: "groomers", areas: ["jomtien"], type: "Dog & cat grooming salon", c24: false,
+    address: "Jomtien Second Road area, Bang Lamung, Chon Buri (confirm on Facebook)",
+    phone: null, tel: null,
+    website: "https://www.facebook.com/DoggieStarGrooming/",
+    hours: "By appointment (confirm on Facebook)",
+    languages: "Thai; confirm English-language support when booking",
+    services: ["Dog grooming", "Cat grooming", "Bath & blow-dry", "Nail trims"],
+    summary: "A Jomtien grooming salon listed on Facebook as Doggie Star Grooming, " +
+      "handling baths and breed clips for dogs and cats by appointment. Confirm the " +
+      "current street address, hours and vaccination rules on its Facebook page before visiting."
   }
 ];
 
