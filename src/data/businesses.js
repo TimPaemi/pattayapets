@@ -124,12 +124,13 @@ const BUSINESSES = [
     category: "vets", areas: ["central-pattaya"], type: "Animal hospital", c24: false,
     address: "49/86-7 Moo 10, Pattaya Tai Road, Nong Prue, Bang Lamung, Chon Buri 20150",
     phone: null, tel: null,
-    website: null, hours: "Confirm current hours when booking",
+    website: null, hours: "Daily 08:30–20:00 (confirm when booking)",
     languages: "Thai; confirm English-language support when booking",
     services: ["General consultations", "Vaccinations", "Treatment & surgery"],
     summary: "An animal hospital on Pattaya Tai Road in central Pattaya, handling " +
-      "general consultations, vaccinations and routine treatment. Confirm current " +
-      "hours and English-language support when booking."
+      "general consultations, vaccinations and routine treatment. Directory records " +
+      "list daily hours of 08:30–20:00; confirm current hours, contact details and " +
+      "English-language support when booking."
   },
   {
     slug: "pattaya-community-pet-hospital",
@@ -473,16 +474,18 @@ const BUSINESSES = [
 
   {
     slug: "mor-ja-pet-clinic-pattaya",
-    name: "Mor Ja Pet Clinic",
+    name: "Mor Ja Pet Clinic (Mor Ja Raksa Sat)",
     category: "mobile-vets", areas: ["banglamung"], type: "Mobile & clinic pet care", c24: false,
     address: "519/156-157 Moo 6, Soi Siam Country Club, Nong Prue, Bang Lamung, Chon Buri 20150",
     phone: null, tel: null,
     website: null, hours: null,
     languages: "Thai; confirm English-language support when booking",
-    services: ["Home visits", "General consultations", "Vaccinations", "Neutering", "Bathing"],
-    summary: "A Pattaya clinic in the Nong Prue / Siam Country Club area that publicly " +
-      "advertises off-site home visits alongside in-clinic care, vaccinations and " +
-      "neutering. Confirm current coverage area and any visit fees when booking."
+    services: ["Home visits", "General consultations", "Vaccinations", "Neutering",
+      "Bathing", "Puppy & kitten vaccination packages"],
+    summary: "Also listed locally as Mor Ja Raksa Sat (หมอจ๋ารักษาสัตว์) — a clinic in " +
+      "the Nong Prue / Siam Country Club area that publicly advertises free off-site " +
+      "home visits alongside in-clinic care, vaccinations, neutering and bathing. " +
+      "Confirm current coverage area, hours and any visit fees when booking."
   },
   {
     slug: "baan-mor-raksasat-animal-hospital-pattaya",

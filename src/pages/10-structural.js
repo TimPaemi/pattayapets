@@ -135,7 +135,7 @@ pages.push(prosePage({
   path: "/about.html",
   updated: "2026-05-29",
   updatedLabel: "27 May 2026",
-  title: "About PattayaPets — an independent pet directory & guide",
+  title: "About PattayaPets | Independent Pet Directory & Guides for Pattaya",
   desc: "About PattayaPets — an independent editorial directory and guide for pet owners in Pattaya, operated by TIMPAEMI Co., Ltd. via the Pattaya Authority network.",
   crumb: "About",
   eyebrow: "About",
@@ -182,7 +182,7 @@ pages.push(prosePage({
 /* ---------------- Editorial Standards ---------------- */
 pages.push(prosePage({
   path: "/standards.html",
-  title: "Editorial Standards & method — PattayaPets",
+  title: "How PattayaPets Reviews Pet Businesses | Editorial Standards",
   desc: "How PattayaPets reviews pet businesses: anonymous visits, bills paid in full, zero paid placements, and verdicts scoped to the business experience only.",
   crumb: "Editorial Standards",
   eyebrow: "How we work",
@@ -261,7 +261,7 @@ pages.push(prosePage({
 /* ---------------- Contact ---------------- */
 pages.push(prosePage({
   path: "/contact.html",
-  title: "Contact PattayaPets",
+  title: "Contact PattayaPets | Corrections, Tips & Listing Updates",
   desc: "Contact PattayaPets — submit a tip, report a correction, or update a business listing. Editorial publication for Pattaya pet owners.",
   crumb: "Contact",
   eyebrow: "Get in touch",
@@ -298,7 +298,7 @@ pages.push(prosePage({
 /* ---------------- Masthead ---------------- */
 pages.push(prosePage({
   path: "/masthead.html",
-  title: "Masthead — PattayaPets",
+  title: "PattayaPets Masthead | Who Writes the Directory & Guides",
   desc: "The PattayaPets masthead — who produces the directory and guides, and what our bylines mean.",
   crumb: "Masthead",
   eyebrow: "The publication",
@@ -327,7 +327,7 @@ pages.push(prosePage({
 /* ---------------- Corrections ---------------- */
 pages.push(prosePage({
   path: "/corrections.html",
-  title: "Corrections — PattayaPets",
+  title: "Report a Correction | PattayaPets Accuracy Policy",
   desc: "How PattayaPets handles corrections. Spotted a factual error? Here is how to report it, and our log of published corrections.",
   crumb: "Corrections",
   eyebrow: "Accuracy",

@@ -30,6 +30,7 @@ Not deployed. Last updated: 30 May 2026.
 | **67** | Import/export step pages; all country corridor titles; arrival + vehicle rentals |
 | **68** | CTR pack #4 (species, seasonal, venomous); relocation checklists; restaurant guide link |
 | **69** | Directory contacts, shelter titles, category hub meta; trainers hub link |
+| **70** | Business listing SEO titles + meta; area hub CTR; structural page titles; Pattaya Animal Hospital hours; Mor Ja enrichment |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 

@@ -14,6 +14,11 @@ function bizUrl(b) { return "/" + b.category + "/" + b.slug + ".html"; }
 function areaName(k) { return AREAS[k] ? AREAS[k].name : "Pattaya"; }
 function firstSentence(t) { var m = t.match(/^.*?[.](\s|$)/); return m ? m[0].trim() : t; }
 
+function bizPageTitle(b, cat) {
+  var loc = b.areas.length ? areaName(b.areas[0]) : "Pattaya";
+  return b.name + " | " + cat.name + " in " + loc + " | PattayaPets";
+}
+
 const HUB_OG = {
   vets: "/assets/img/og-vets.png",
   groomers: "/assets/img/og-groomers.png",
@@ -517,7 +522,8 @@ BUSINESSES.forEach(function (b) {
       ? '<div class="callout callout-note"><div class="ch">Alternatives to boarding</div><p>Cats especially may ' +
         "do better with an " +
         '<a href="/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html">in-home pet sitter</a>. ' +
-        'See also <a href="/cats/cat-boarding-pattaya.html">cat boarding and sitters</a>.</p></div>'
+        'See also <a href="/cats/cat-boarding-pattaya.html">cat boarding and sitters</a>. ' +
+        'Moving internationally? See <a href="/bring-pet-to-thailand/">bringing a pet to Thailand</a>.</p></div>'
       : b.category === "pet-shops"
       ? '<div class="callout callout-note"><div class="ch">Supplies &amp; ID</div><p>See ' +
         '<a href="/owning-a-pet-in-pattaya/where-to-buy-pet-food.html">where to buy pet food</a> and ' +
@@ -556,7 +562,7 @@ BUSINESSES.forEach(function (b) {
 
   pages.push({
     path: bizUrl(b),
-    title: b.name + " | PattayaPets",
+    title: bizPageTitle(b, cat),
     ogTitle: b.name + " - " + b.type + " in Pattaya",
     description: clampDesc(firstSentence(b.summary)),
     crumb: b.name,
@@ -720,10 +726,10 @@ Object.keys(AREAS).forEach(function (key) {
 
   pages.push({
     path: "/area/" + key + ".html",
-    title: "Vets & Pet Services in " + area.name + ", Pattaya | PattayaPets",
+    title: "Pet Vets & Services in " + area.name + ", Pattaya | PattayaPets",
     ogTitle: "Pet services in " + area.name + ", Pattaya",
-    description: "Vets, groomers, pet shops and other pet services in " + area.name +
-      ", Pattaya. " + area.blurb,
+    description: "Find vets, groomers, boarding, pet shops and pet services in " +
+      area.name + ", Pattaya. " + area.blurb,
     crumb: area.name,
     breadcrumbs: [{ name: "Directory", path: "/directory.html" }],
     updated: "2026-05-29",
