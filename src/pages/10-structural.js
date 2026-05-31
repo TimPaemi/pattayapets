@@ -356,11 +356,13 @@ pages.push(prosePage({
 /* ---------------- Privacy ---------------- */
 pages.push(prosePage({
   path: "/privacy.html",
-  title: "Privacy — PattayaPets",
-  desc: "The PattayaPets privacy notice — what limited analytics we use, and what we do not collect.",
+  title: "Privacy Notice | PattayaPets Analytics & Data",
+  desc: "What PattayaPets collects — cookieless Cloudflare analytics, anonymised GA4, and email when you contact us. No ads, no accounts, no data sales.",
   crumb: "Privacy",
   eyebrow: "Your privacy",
   h1: "Privacy notice",
+  updated: "2026-05-30",
+  updatedLabel: "30 May 2026",
   body:
     "<p>PattayaPets is a static website. We do not run user accounts, we do not ask " +
     "you to log in, and we do not sell or share personal data. This notice explains " +
@@ -392,11 +394,13 @@ pages.push(prosePage({
 /* ---------------- Accessibility ---------------- */
 pages.push(prosePage({
   path: "/accessibility.html",
-  title: "Accessibility — PattayaPets",
-  desc: "The PattayaPets accessibility statement — our commitment to WCAG 2.2 AA and how to report an accessibility problem.",
+  title: "Accessibility Statement | WCAG 2.2 AA | PattayaPets",
+  desc: "How PattayaPets meets WCAG 2.2 AA — keyboard navigation, screen readers, skip links, and how to report an accessibility problem.",
   crumb: "Accessibility",
   eyebrow: "Accessibility",
   h1: "Accessibility statement",
+  updated: "2026-05-30",
+  updatedLabel: "30 May 2026",
   body:
     "<p>PattayaPets should be usable by everyone, including people who rely on a " +
     "keyboard, a screen reader, or browser zoom. We build to the " +

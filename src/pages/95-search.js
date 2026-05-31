@@ -3,13 +3,13 @@
 
 module.exports = [{
   path: "/search.html",
-  title: "Search PattayaPets — vets, guides & areas",
+  title: "Search PattayaPets | Find Vets, Guides & Pet Services",
   description: "Search every page on PattayaPets — the Pattaya pet directory, " +
     "guides, areas and businesses.",
   crumb: "Search",
   breadcrumbs: [],
   noindex: true,
-  updated: "2026-05-28",
+  updated: "2026-05-30",
   body:
     '<section class="section"><div class="container">' +
     '<p class="eyebrow">Search</p>' +

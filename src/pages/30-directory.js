@@ -472,7 +472,7 @@ function bizSchema(b) {
 
 const pages = [];
 
-const FACTS_UPDATED = "2026-05-29";
+const FACTS_UPDATED = "2026-05-30";
 
 /* ---- business listing pages ---- */
 BUSINESSES.forEach(function (b) {
@@ -644,7 +644,7 @@ Object.keys(CATEGORIES).forEach(function (key) {
     description: clampDesc(HUB_DESC[key] || cat.intro),
     crumb: cat.name,
     breadcrumbs: [{ name: "Directory", path: "/directory.html" }],
-    updated: "2026-05-29",
+    updated: "2026-05-30",
     body: body
   });
 });
@@ -732,7 +732,7 @@ Object.keys(AREAS).forEach(function (key) {
       area.name + ", Pattaya. " + area.blurb,
     crumb: area.name,
     breadcrumbs: [{ name: "Directory", path: "/directory.html" }],
-    updated: "2026-05-29",
+    updated: "2026-05-30",
     body: body
   });
 });

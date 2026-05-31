@@ -229,14 +229,16 @@ const BUSINESSES = [
   {
     slug: "furiday-pet-grooming",
     name: "FURiday Pet Grooming",
-    category: "groomers", areas: ["central-pattaya"], type: "Pet grooming salon", c24: false,
-    address: null, phone: null, tel: null,
-    website: "https://www.facebook.com/FURidaypetgrooming/", hours: null,
+    category: "groomers", areas: ["naklua"], type: "Pet grooming salon", c24: false,
+    address: "Pattaya-Naklua Road, Na Kluea, Bang Lamung, Chon Buri 20150",
+    phone: null, tel: null,
+    website: "https://www.facebook.com/FURidaypetgrooming/", hours: "By appointment (confirm on Facebook)",
     languages: "Thai and English",
-    services: ["Dog grooming", "Cat grooming", "Bath & blow-dry"],
-    summary: "A pet grooming salon in Pattaya reachable through its Facebook page only. " +
-      "Confirm the current address, hours and booking arrangements on Facebook " +
-      "before visiting."
+    services: ["Dog grooming", "Cat grooming", "Bath & blow-dry", "Short-stay pet hotel"],
+    summary: "A Naklua grooming salon on Pattaya-Naklua Road with bath, trim and " +
+      "short-stay boarding, listed on Facebook and third-party directories. " +
+      "Appointments are required; confirm current hours and vaccination rules on " +
+      "Facebook before visiting."
   },
   {
     slug: "furpet-grooming-and-hotel",
@@ -462,14 +464,14 @@ const BUSINESSES = [
     slug: "pawspective-relocations",
     name: "Pawspective Relocations",
     category: "pet-relocation", areas: [], type: "Pet travel specialist", c24: false,
-    address: null, phone: null, tel: null, line: "Numfonunited",
+    address: null, phone: "098 826 9294", tel: "+66988269294", line: "Numfonunited",
     whatsapp: "66843521056",
     website: "https://www.pettravelthailand.com/", hours: null,
     languages: "English and Thai",
     services: ["Pet travel planning", "Import & export", "Documentation support", "Door-to-door relocation"],
     summary: "A pet-travel specialist offering planning and documentation support for " +
       "moving pets into and out of Thailand, including door-to-door options. " +
-      "Enquire via the website, WhatsApp or LINE ID Numfonunited."
+      "Enquire via the website, on 098 826 9294, WhatsApp or LINE ID Numfonunited."
   },
 
   {

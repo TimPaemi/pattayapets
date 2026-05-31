@@ -31,6 +31,7 @@ Not deployed. Last updated: 30 May 2026.
 | **68** | CTR pack #4 (species, seasonal, venomous); relocation checklists; restaurant guide link |
 | **69** | Directory contacts, shelter titles, category hub meta; trainers hub link |
 | **70** | Business listing SEO titles + meta; area hub CTR; structural page titles; Pattaya Animal Hospital hours; Mor Ja enrichment |
+| **71** | FURiday Naklua address; Pawspective mobile; privacy/accessibility/search/sitemap CTR; freshness dates |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 

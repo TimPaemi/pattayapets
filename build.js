@@ -114,8 +114,8 @@ function buildSitemapPage(pages) {
   body += "</div></section>";
   return {
     path: "/sitemap.html",
-    title: "Sitemap — PattayaPets",
-    description: "A complete index of every page on PattayaPets — the Pattaya pet directory and guides.",
+    title: "Complete Sitemap | Pattaya Pet Directory & Guides",
+    description: "Browse every page on PattayaPets — vets, groomers, import guides, emergency help and area directories for Pattaya pet owners.",
     crumb: "Sitemap",
     breadcrumbs: [],
     updated: new Date().toISOString().slice(0, 10),
