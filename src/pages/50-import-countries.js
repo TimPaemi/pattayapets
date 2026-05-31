@@ -10,7 +10,7 @@ const CLUSTER = { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thail
 const SUB = [GUIDES, CLUSTER];
 
 const VERIFY =
-  "This guide was last reviewed in May 2026. Thailand's Department of Livestock " +
+  "This guide was last reviewed on 31 May 2026. Thailand's Department of Livestock " +
   "Development, airlines and origin-country authorities change their rules without " +
   "notice. Treat this as orientation, then confirm every current requirement with " +
   "the DLD, your airline and your origin-country authority before you book or travel.";
@@ -61,15 +61,39 @@ const EU_IMPORT_REF =
   "<p>For the shared EU export-certificate framework every member state follows, " +
   "see our <a href=\"/bring-pet-to-thailand/from-eu.html\">bringing a pet from the EU</a> guide.</p>";
 
+const TH_DOCS_TABLE =
+  '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+  '<th scope="col">Document</th><th scope="col">What it is</th></tr></thead><tbody>' +
+  '<tr><th scope="row">DLD import permit</th><td>Form <strong>R1/1</strong>, emailed to the AQS at your arrival airport. Valid <strong>60 days</strong> from issue. Apply <strong>7&ndash;60 days</strong> before departure (around <strong>30 days</strong> is sensible).</td></tr>' +
+  '<tr><th scope="row">MOCCAE export permit</th><td>UAE export approval before the pet leaves the Emirates (separate from the Thai permit).</td></tr>' +
+  '<tr><th scope="row">Microchip certificate</th><td>ISO 11784/11785 chip; number must match every certificate.</td></tr>' +
+  '<tr><th scope="row">Vaccination records</th><td>In English. Thailand asks for rabies plus core vaccines — see our <a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">vaccination guide</a>.</td></tr>' +
+  '<tr><th scope="row">Endorsed health certificate</th><td>Official veterinary certificate for export from the UAE, endorsed as MOCCAE requires.</td></tr>' +
+  '<tr><th scope="row">Flight booking</th><td>Itinerary; confirm airline pet policy (some Gulf routes require cargo).</td></tr>' +
+  '</tbody></table></div>';
+
+const TH_ARRIVAL_UAE =
+  "<p>With complete paperwork, pets from the UAE normally clear the AQS the same day. " +
+  "Confirm arrival at least three days ahead. See " +
+  '<a href="/bring-pet-to-thailand/thailand-pet-quarantine.html">pet quarantine in Thailand</a>.</p>';
+
+const UAE_FAILS =
+  "<ul>" +
+  "<li><strong>MOCCAE export permit missing</strong> &mdash; required before leaving the UAE, separate from the Thai import permit.</li>" +
+  "<li><strong>Breed on the prohibited list</strong> &mdash; several fighting-dog types and wolf hybrids cannot enter the UAE; check before you assume return is possible.</li>" +
+  "<li><strong>Assuming cabin travel</strong> &mdash; MOCCAE often expects IATA-compliant cargo shipment; confirm with Emirates, Etihad or your airline.</li>" +
+  "<li><strong>Microchip mismatch</strong> &mdash; MOCCAE and DLD both require the chip number to match every document exactly.</li>" +
+  "</ul>";
+
 function country(o) {
   var sections = attachReturnExportLink((o.sections || []).slice(), o.slug);
-  sections.push({ h: "Official sources", html: OFFICIAL });
+  sections.push({ h: "Official sources", html: (o.officialExtra || "") + OFFICIAL });
   return article({
     path: "/bring-pet-to-thailand/" + o.slug + ".html",
     title: o.title, desc: o.desc, crumb: o.crumb, breadcrumbs: SUB,
     eyebrow: "Bringing a pet to Thailand &middot; By country",
     h1: o.h1, lede: o.lede, verify: VERIFY,
-    updated: "2026-05-28",
+    updated: o.updated || "2026-05-31",
     sections: sections, faqs: o.faqs, related: o.related || countryRelated(o.slug)
   });
 }
@@ -423,36 +447,91 @@ pages.push(country({
 pages.push(country({
   slug: "from-uae", crumb: "From the UAE",
   title: "Bring a Pet to Thailand from UAE (MOCCAE & DLD 2026) | PattayaPets",
-  desc: "Bringing a dog or cat from the UAE to Thailand: MOCCAE export permit, " +
-    "the Thai DLD import permit, and what to plan if you might return.",
+  desc: "UAE to Thailand pet import: MOCCAE export permit, DLD import timeline, " +
+    "vaccination checklist, airline cargo rules and return-to-UAE planning.",
   h1: "Bringing a pet to Thailand from the UAE",
-  lede: "The UAE–Pattaya corridor is common for Gulf expats. The Thai import side " +
-    "is standard; MOCCAE export paperwork and your airline are where to confirm first.",
+  lede: "Dubai and Abu Dhabi to Bangkok is a corridor Gulf expats use constantly. " +
+    "You are juggling <strong>two permits</strong> &mdash; MOCCAE to leave the UAE, " +
+    "DLD to enter Thailand &mdash; plus airline rules that often mean cargo, not cabin.",
+  officialExtra:
+    "<p><strong>UAE sources:</strong> " +
+    "<a href=\"https://moccae.gov.ae/en/services/import-permit-pets\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">MOCCAE import/export of pets</a> (service updated January 2025; " +
+    "transition to Emirates Drug Establishment may apply &mdash; confirm current portal). " +
+    "Export mirror: " +
+    "<a href=\"/take-pet-out-of-thailand/to-uae.html\">taking a pet to the UAE</a>.</p>",
   sections: [
-    { h: "The UAE side of the paperwork", html:
-      "<p>" + STD_STEPS + "For export from the UAE, the Ministry of Climate Change " +
-      "and Environment (MOCCAE) requires an <strong>export permit</strong>, an ISO " +
-      "microchip, valid vaccinations (including rabies) and an official veterinary " +
-      "health certificate endorsed for export. Some emirates and airlines add their " +
-      "own rules &mdash; confirm with " +
-      "<a href=\"https://www.moec.gov.ae/en/services/import-export-services/import-pets\" " +
-      "target=\"_blank\" rel=\"noopener nofollow\">MOCCAE</a> and your airline " +
-      "before booking.</p>" },
+    { h: "The timeline — what to do when", html:
+      "<p>Apply for <strong>both</strong> the UAE export side and the Thai import side " +
+      "in parallel once vaccinations are in order.</p>" +
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Authority</th></tr></thead><tbody>' +
+      '<tr><th scope="row">6&ndash;8 weeks before</th>' +
+      '<td>ISO microchip, rabies and core vaccinations; <strong>21-day wait</strong> after primary rabies (MOCCAE and DLD both expect this)</td>' +
+      '<td>UAE-licensed vet</td></tr>' +
+      '<tr><th scope="row">~30 days before departure</th>' +
+      '<td>Apply for <strong>MOCCAE export permit</strong> to leave the UAE</td>' +
+      '<td>MOCCAE online portal</td></tr>' +
+      '<tr><th scope="row">~30 days before departure</th>' +
+      '<td>Apply for <a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a> (form R1/1) to the AQS at your arrival airport</td>' +
+      '<td>DLD AQS</td></tr>' +
+      '<tr><th scope="row">2&ndash;3 weeks before</th>' +
+      '<td>Book pet space &mdash; confirm whether the airline accepts cabin, hold or requires <strong>manifested cargo</strong> per IATA</td>' +
+      '<td>Airline</td></tr>' +
+      '<tr><th scope="row">Final week</th>' +
+      '<td>Official export health certificate from competent UAE veterinary authority; any pre-shipment treatments MOCCAE requires</td>' +
+      '<td>Vet + MOCCAE</td></tr>' +
+      '<tr><th scope="row">&ge;3 days before landing</th>' +
+      '<td>Confirm arrival date with the Thai AQS by email</td>' +
+      '<td>DLD</td></tr>' +
+      '<tr><th scope="row">Arrival in Thailand</th>' +
+      '<td>AQS inspection; 500&nbsp;baht fee if paperwork is complete</td>' +
+      '<td>DLD</td></tr>' +
+      '</tbody></table></div>' +
+      "<p>Thai-side steps: " + STD_STEPS + "</p>" },
+    { h: "The UAE export side (MOCCAE)", html:
+      "<p>Before a pet leaves the United Arab Emirates, the Ministry of Climate Change " +
+      "and Environment (MOCCAE) requires an <strong>export permit</strong>, permanent " +
+      "microchip identification, valid vaccinations (including rabies) and an official " +
+      "veterinary health certificate. MOCCAE publishes the current service on " +
+      "<a href=\"https://moccae.gov.ae/en/services/import-permit-pets\" target=\"_blank\" " +
+      "rel=\"noopener nofollow\">its website</a>.</p>" +
+      "<p><strong>Residents who may return to the UAE:</strong> MOCCAE rules state that " +
+      "pets leaving the UAE should obtain a <strong>MOCCAE veterinary health certificate " +
+      "before departure</strong>, keep rabies vaccination valid for the return, and apply " +
+      "for an import permit before coming back. If rabies vaccination lapses while you are " +
+      "in Thailand, the pet may be treated as a first-time import on return.</p>" +
+      "<p><strong>Breed restrictions:</strong> several dog types (including Pit Bull types, " +
+      "Tosa, Dogo Argentino, Fila Brasileiro, wolf hybrids and American Staffordshire " +
+      "Terrier) are prohibited from UAE import. Confirm your breed before assuming you can " +
+      "return.</p>" },
+    { h: "Documents for Thailand", html: TH_DOCS_TABLE + TH_ARRIVAL_UAE },
     { h: "Planning the return to the UAE", html:
-      "<p>If you might take your pet back to the UAE, study " +
+      "<p>If you might take your pet back to the Emirates, read " +
       "<a href=\"/take-pet-out-of-thailand/to-uae.html\">exporting a pet to the UAE</a> " +
-      "before you leave &mdash; MOCCAE import permits, vaccination timing and breed " +
-      "restrictions in some emirates all need lead time. The UAE generally does not " +
-      "require a rabies titer test from Thailand, but if you might move on to the EU, " +
-      "UK or similar, having the " +
+      "before you leave. MOCCAE requires a prior <strong>import permit</strong> (valid " +
+      "90 days from issue per current service guidance), matching microchip, rabies " +
+      "vaccination at least <strong>21 days</strong> before arrival (and not before the " +
+      "pet is <strong>three months old</strong>), core vaccinations for dogs and cats, and " +
+      "often pre-shipment treatments within a set window. Entry inspection fees apply at " +
+      "the port of arrival.</p>" +
+      "<p>The UAE generally does <em>not</em> require a rabies titer test from Thailand, " +
+      "but if you might move on to the EU or UK, doing the " +
       "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">titer test</a> " +
-      "done early keeps that option open.</p>" }
+      "early keeps that option open.</p>" },
+    { h: "Common mistakes on this corridor", html: UAE_FAILS }
   ],
   faqs: [
     ["Does the UAE require special paperwork to export a pet to Thailand?",
-     "<p>Yes. MOCCAE requires an export permit, microchip, vaccinations and an endorsed health certificate. Confirm the current detail with MOCCAE and your airline for the emirate you are leaving from.</p>"],
+     "<p>Yes. MOCCAE requires an export permit, microchip, vaccinations and an endorsed health certificate before the pet leaves the UAE — in addition to Thailand's DLD import permit on the Thai side.</p>"],
+    ["Do I need both a MOCCAE permit and a Thai import permit?",
+     "<p>Yes. MOCCAE permission covers export from the UAE; the DLD import permit (form R1/1) covers entry into Thailand. They are separate applications to separate authorities.</p>"],
+    ["Can my pet fly in the cabin from Dubai to Bangkok?",
+     "<p>It depends on the airline and MOCCAE conditions. Some routes require manifested cargo under IATA rules. Confirm with your airline and MOCCAE before booking — do not assume cabin travel is available.</p>"],
     ["Is there quarantine when I bring a pet from the UAE to Thailand?",
-     "<p>Thailand's standard import process applies: with correct paperwork, most pets clear the Animal Quarantine Station inspection on arrival rather than entering long quarantine. See our guide to <a href=\"/bring-pet-to-thailand/thailand-pet-quarantine.html\">pet quarantine in Thailand</a> for what that means in practice.</p>"]
+     "<p>With correct paperwork, most pets clear the AQS inspection on arrival rather than entering long quarantine. Incomplete documents or signs of illness can trigger quarantine — see our <a href=\"/bring-pet-to-thailand/thailand-pet-quarantine.html\">quarantine guide</a>.</p>"],
+    ["Which emirate's rules apply?",
+     "<p>MOCCAE sets federal import/export rules, but airlines and local authorities may add conditions. Confirm for the emirate and airport you use (Dubai, Abu Dhabi, Sharjah, etc.).</p>"]
   ]
 }));
 

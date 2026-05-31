@@ -45,8 +45,17 @@ This document replaces the old “title/meta batch” queue until Phase 3 is com
 - [x] `/take-pet-out-of-thailand/to-usa.html` — CDC high-rabies timeline, DLD export table, failure points
 - [x] `/take-pet-out-of-thailand/to-australia.html` — non-approved country pathway, Mickleham quarantine, phases table
 
-### Import / export corridors (remaining — Batch 78+)
-- [ ] **Germany → Thailand** and **UAE → Thailand**
+### Import / export corridors — Batch 78 ✅ Germany + UAE
+
+- [x] `/bring-pet-to-thailand/from-germany.html` — EU export certificate, Veterinäramt, timeline, checklist
+- [x] `/bring-pet-to-thailand/from-uae.html` — MOCCAE export + DLD dual permit timeline
+- [x] `/take-pet-out-of-thailand/to-germany.html` — EU titer wait, designated entry points
+- [x] `/take-pet-out-of-thailand/to-uae.html` — MOCCAE import permit, vaccines, breed rules, IATA cargo
+- [x] Fixed broken MOCCAE links (`moec.gov.ae` → `moccae.gov.ae`)
+- [x] Table FOUC fix in critical CSS
+
+### Import / export corridors (remaining — Batch 79+)
+
 - [ ] EU member-state clones in `50-import-countries.js` — enrich or consolidate (Tim decision)
 
 **EU template pages:** Either enrich with country-specific embassy links + quarantine notes, or consolidate to hub + `noindex` thin clones (Tim decision).

@@ -10,7 +10,7 @@ const CLUSTER = { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-
 const SUB = [GUIDES, CLUSTER];
 
 const VERIFY =
-  "This guide was last reviewed in May 2026. Export rules &mdash; Thai DLD " +
+  "This guide was last reviewed on 31 May 2026. Export rules &mdash; Thai DLD " +
   "procedures, destination-country requirements and airline policies &mdash; change " +
   "without notice. Use this as orientation, then confirm every current requirement " +
   "with the DLD and the destination country's authority before booking.";
@@ -31,7 +31,7 @@ const OFFICIAL =
   "Japan MAFF Animal Quarantine</a>; " +
   "<a href=\"https://www.nparks.gov.sg/avs/pets/importing-exporting-and-transhipping-animals-and-birds/importing-dogs-and-cats\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">Singapore AVS</a>; " +
-  "<a href=\"https://www.moec.gov.ae/en/services/import-export-services/import-pets\" " +
+  "<a href=\"https://moccae.gov.ae/en/services/import-permit-pets\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">UAE MOCCAE pet import</a>; " +
   "<a href=\"https://www.agriculture.gov.au/biosecurity-trade/cats-dogs\" target=\"_blank\" " +
   "rel=\"noopener nofollow\">Australia DAFF</a>; " +
@@ -74,42 +74,119 @@ const THAI_SIDE =
 
 function exp(o) {
   var sections = attachImportMirrorLink((o.sections || []).slice(), o.slug);
-  sections.push({ h: "Official sources", html: OFFICIAL });
+  sections.push({ h: "Official sources", html: (o.officialExtra || "") + OFFICIAL });
   return article({
     path: "/take-pet-out-of-thailand/" + o.slug + ".html",
     title: o.title, desc: o.desc, crumb: o.crumb, breadcrumbs: SUB,
     eyebrow: "Taking a pet out of Thailand &middot; By destination",
     h1: o.h1, lede: o.lede, verify: VERIFY,
-    updated: "2026-05-28",
+    updated: o.updated || "2026-05-31",
     sections: sections, faqs: o.faqs, related: o.related || expRelated(o.slug)
   });
 }
+
+const DLD_EXPORT_TABLE =
+  '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+  '<th scope="col">Thai-side document</th><th scope="col">Notes</th></tr></thead><tbody>' +
+  '<tr><th scope="row">Export application (form 1/1)</th><td>Apply at least <strong>15 days</strong> before export to the AQS at your departure airport.</td></tr>' +
+  '<tr><th scope="row">Destination import rules</th><td>Attach MOCCAE or EU/German import requirements so the Thai health certificate matches.</td></tr>' +
+  '<tr><th scope="row">Microchip &amp; vaccinations</th><td>ISO chip and current rabies vaccination; EU/Germany may require a <a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">rabies titer test</a>.</td></tr>' +
+  '<tr><th scope="row">DLD export licence &amp; health certificate</th><td>Issued after AQS inspection if paperwork complies.</td></tr>' +
+  '</tbody></table></div>';
+
+const EXPORT_FAILS =
+  "<ul>" +
+  "<li><strong>Starting with Thailand only</strong> &mdash; MOCCAE or EU import permits are usually the long pole.</li>" +
+  "<li><strong>Expired vaccinations</strong> &mdash; a lapsed rabies shot can void MOCCAE or EU entry.</li>" +
+  "<li><strong>Microchip mismatch</strong> across Thai export papers and destination import forms.</li>" +
+  "<li><strong>Last-minute DLD export</strong> &mdash; applying inside the 15-day window when tests are still pending.</li>" +
+  "</ul>";
 
 const pages = [];
 
 /* ---------------- GERMANY ---------------- */
 pages.push(exp({
   slug: "to-germany", crumb: "To Germany",
-  title: "Export a Pet from Thailand to Germany (DLD 2026) | PattayaPets",
-  desc: "Bringing a dog or cat from Thailand to Germany: the rabies titer test, the " +
-    "three-month wait and the EU entry health certificate.",
+  title: "Export a Pet from Thailand to Germany (EU Titer & DLD 2026) | PattayaPets",
+  desc: "Thailand to Germany pet export: EU titer test, three-month wait, entry " +
+    "certificate, designated entry points and DLD export timeline.",
   h1: "Taking a pet from Thailand to Germany",
-  lede: "Germany follows the standard EU rules for a pet arriving from Thailand, so " +
-    "the rabies titer test and its waiting period set your timeline.",
+  lede: "Germany follows standard EU rules for pets from non-listed third countries. " +
+    "Thailand triggers the <strong>rabies titer test</strong> and its " +
+    "<strong>three-month wait</strong> &mdash; plan in quarters, not weeks.",
+  officialExtra:
+    "<p><strong>German / EU sources:</strong> " +
+    "<a href=\"https://www.bmleh.de/EN/topics/animals/pets-and-zoo-animals/pets-entry-regulation.html\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">BMELH entry regulation</a>; " +
+    "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">EU pet movement</a>. " +
+    "Import mirror: " +
+    "<a href=\"/bring-pet-to-thailand/from-germany.html\">bringing a pet from Germany</a>.</p>",
   sections: [
-    { h: "Entering Germany", html:
-      EU_ENTRY +
-      "<p>The entry health certificate is checked on arrival, and the German " +
-      "regional veterinary authorities oversee the process at the German end. " +
-      "Direct Bangkok-Frankfurt and Bangkok-Munich routes keep the journey " +
-      "shorter, which is easier on the pet.</p>" },
-    { h: "The Thai side and your timeline", html: THAI_SIDE }
+    { h: "The timeline — work backwards from Frankfurt or Munich", html:
+      "<p>Direct Bangkok&ndash;Frankfurt and Bangkok&ndash;Munich routes exist, but the " +
+      "EU veterinary timeline is usually slower than booking a seat.</p>" +
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Authority</th></tr></thead><tbody>' +
+      '<tr><th scope="row">Month 1 (if no valid titer yet)</th>' +
+      '<td>Rabies vaccination current; <strong>rabies titer test</strong> blood sample &ge;30 days after vaccination; approved lab</td>' +
+      '<td>Thai vet + EU-approved lab</td></tr>' +
+      '<tr><th scope="row">Months 1&ndash;3</th>' +
+      '<td><strong>Wait three months</strong> from the blood sample date (non-listed third-country rule)</td>' +
+      '<td>EU Regulation 576/2013 framework</td></tr>' +
+      '<tr><th scope="row">6&ndash;8 weeks before flight</th>' +
+      '<td>Book pet on a route entering Germany via a <strong>designated traveller point of entry</strong></td>' +
+      '<td>Airline / agent</td></tr>' +
+      '<tr><th scope="row">&ge;15 days before export</th>' +
+      '<td>Apply for Thai <a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">DLD export permit</a> (form 1/1) with titer result and EU entry requirements attached</td>' +
+      '<td>DLD AQS</td></tr>' +
+      '<tr><th scope="row">Within 10 days of EU entry</th>' +
+      '<td><strong>EU animal health certificate</strong> for third-country entry completed and endorsed by Thai competent authority; valid for entry within the EU window (confirm current validity on EU guidance)</td>' +
+      '<td>DLD + official vet</td></tr>' +
+      '<tr><th scope="row">Germany arrival</th>' +
+      '<td>Present documents at designated entry point; customs/ veterinary identity check</td>' +
+      '<td>German border authority</td></tr>' +
+      '</tbody></table></div>' +
+      "<p>Shared EU rules: " +
+      '<a href="/take-pet-out-of-thailand/to-eu.html">exporting a pet to the EU</a>.</p>' },
+    { h: "What Germany / the EU requires from Thailand", html:
+      "<p>Thailand is a <strong>non-listed third country</strong> under EU pet-travel rules. " +
+      "Entry typically requires:</p>" +
+      "<ul>" +
+      "<li>ISO microchip before rabies vaccination</li>" +
+      "<li>Valid rabies vaccination</li>" +
+      "<li><strong>Rabies titer test</strong> from an EU-approved laboratory, blood drawn at least 30 days after vaccination</li>" +
+      "<li><strong>Three-month wait</strong> from the blood sample date</li>" +
+      "<li><strong>EU animal health certificate</strong> for non-commercial entry from a third country, endorsed by the exporting country&rsquo;s competent authority</li>" +
+      "<li>Entry through a <strong>designated point of entry</strong> listed for Germany</li>" +
+      "</ul>" +
+      "<p>Finland, Ireland, Malta and parts of the UK keep extra tapeworm rules for dogs " +
+      "&mdash; Germany itself does not, but confirm if you connect through those countries.</p>" +
+      '<div class="callout callout-tip"><div class="ch">Did the titer test before Thailand?</div>' +
+      "<p>If you had the blood test done in Germany (or another EU country) before moving " +
+      "and kept rabies vaccination current, you may avoid the three-month wait &mdash; " +
+      "verify validity before you fly.</p></div>" },
+    { h: "The Thai export side (DLD)", html:
+      "<p>Parallel Thai requirements:</p>" + DLD_EXPORT_TABLE +
+      "<p>See " +
+      '<a href="/take-pet-out-of-thailand/export-process.html">export process</a>.</p>' },
+    { h: "Common mistakes on this corridor", html: EXPORT_FAILS +
+      "<ul>" +
+      "<li><strong>Assuming the EU pet passport alone works</strong> from Thailand &mdash; you need a third-country entry certificate.</li>" +
+      "<li><strong>Entering via a non-designated airport</strong> &mdash; Germany lists approved entry points for pets from third countries.</li>" +
+      "</ul>" }
   ],
   faqs: [
     ["Can my pet skip the three-month wait into Germany?",
-     "<p>Only if a valid rabies titer test is already in place and the rabies vaccination has been kept current. That is why owners are urged to do the titer test before they ever leave for Thailand.</p>"],
+     "<p>Only if a valid rabies titer test is already in place and rabies vaccination has been kept current without a gap — commonly because you did the test before leaving Germany for Thailand.</p>"],
     ["Is the EU pet passport enough to enter Germany from Thailand?",
-     "<p>No. Coming from Thailand, a non-listed country, your pet needs an EU third-country entry health certificate, not just the pet passport. Confirm the current rules with the German authorities.</p>"]
+     "<p>No. Coming from Thailand you need an EU third-country animal health certificate endorsed on the Thai side, not just a pet passport issued years ago in Germany.</p>"],
+    ["Which German airports accept pets from third countries?",
+     "<p>Pets from third countries must enter via designated traveller points of entry. Frankfurt and Munich are common for Bangkok routes — confirm the current BMELH list before booking.</p>"],
+    ["Do I need a separate German import permit?",
+     "<p>Personal non-commercial pet moves typically use the EU health certificate framework rather than a separate German import permit, but every document and timing rule must be met. Confirm with BMELH if your case is non-standard.</p>"],
+    ["How does this differ from exporting to the EU hub page?",
+     "<p>The veterinary rules are the same EU-wide; this page adds Germany-specific entry-point and routing notes. See also <a href=\"/take-pet-out-of-thailand/to-eu.html\">export to the EU</a>.</p>"]
   ]
 }));
 
@@ -491,38 +568,89 @@ pages.push(exp({
 pages.push(exp({
   slug: "to-uae", crumb: "To the UAE",
   title: "Export a Pet from Thailand to UAE (MOCCAE & DLD 2026) | PattayaPets",
-  desc: "Bringing a dog or cat from Thailand to the UAE: MOCCAE import permit, microchip, " +
-    "vaccinations and the Thai DLD export steps.",
+  desc: "Thailand to UAE pet export: MOCCAE import permit, vaccinations, breed rules, " +
+    "IATA cargo requirements, DLD export timeline and document checklist.",
   h1: "Taking a pet from Thailand to the UAE",
-  lede: "The UAE route is a common one for Pattaya expats. The import permit and " +
-    "vaccination rules are manageable if you start in good time and confirm the " +
-    "current detail with MOCCAE.",
+  lede: "The UAE corridor is manageable compared with the EU or Australia &mdash; " +
+    "no three-month titer wait for UAE entry itself. But MOCCAE is strict on " +
+    "<strong>permits, vaccines, breeds and cargo rules</strong>. Start early.",
+  officialExtra:
+    "<p><strong>UAE sources:</strong> " +
+    "<a href=\"https://moccae.gov.ae/en/services/import-permit-pets\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">MOCCAE import permit for pets</a> (updated January 2025). " +
+    "Import mirror: " +
+    "<a href=\"/bring-pet-to-thailand/from-uae.html\">bringing a pet from the UAE</a>.</p>",
   sections: [
-    { h: "Entering the UAE from Thailand", html:
-      "<p>The UAE Ministry of Climate Change and Environment (MOCCAE) requires an " +
-      "<strong>import permit</strong>, an ISO microchip, a valid rabies vaccination " +
-      "(and usually other core vaccinations), an official veterinary health " +
-      "certificate and compliance with any breed restrictions in the emirate you are " +
-      "entering. Some emirates and airlines add their own rules &mdash; confirm with " +
-      "<a href=\"https://www.moec.gov.ae/en/services/import-export-services/import-pets\" " +
-      "target=\"_blank\" rel=\"noopener nofollow\">MOCCAE</a>, your airline and the " +
-      "destination emirate before booking.</p>" },
-    { h: "The Thai side", html:
-      THAI_SIDE +
-      "<p>The UAE does not generally require a rabies titer test for entry from " +
-      "Thailand, but if you might move your pet on to the EU, UK or similar later, " +
-      "having the <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">" +
-      "titer test</a> done early keeps that option open.</p>" },
-    { h: "Importing a pet from the UAE to Thailand", html:
-      "<p>See our guide to " +
-      "<a href=\"/bring-pet-to-thailand/from-uae.html\">bringing a pet from the UAE</a> " +
-      "for the MOCCAE export side and the standard Thai import steps.</p>" }
+    { h: "The timeline — Thailand to Dubai or Abu Dhabi", html:
+      "<p>Unlike the EU, the UAE route is often measured in <strong>weeks</strong>, not " +
+      "months &mdash; but MOCCAE and your airline still need lead time.</p>" +
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Authority</th></tr></thead><tbody>' +
+      '<tr><th scope="row">4&ndash;6 weeks before</th>' +
+      '<td>Confirm ISO microchip; rabies and core vaccinations current; rabies given at least <strong>21 days</strong> before UAE arrival (and not before pet is <strong>3 months old</strong>)</td>' +
+      '<td>Thai vet</td></tr>' +
+      '<tr><th scope="row">3&ndash;4 weeks before</th>' +
+      '<td>Apply for <strong>MOCCAE import permit</strong> online (valid <strong>90 days</strong> from issue per current service guidance)</td>' +
+      '<td>MOCCAE portal</td></tr>' +
+      '<tr><th scope="row">&ge;15 days before export</th>' +
+      '<td>Apply for Thai <a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">DLD export permit</a> (form 1/1) with MOCCAE requirements attached</td>' +
+      '<td>DLD AQS</td></tr>' +
+      '<tr><th scope="row">2 weeks before</th>' +
+      '<td>Book airline — confirm <strong>IATA cargo</strong> vs cabin/hold; MOCCAE often requires manifested cargo</td>' +
+      '<td>Airline</td></tr>' +
+      '<tr><th scope="row">Within 10 days of shipment</th>' +
+      '<td>Pre-shipment treatments MOCCAE requires (internal/external parasites per current List B guidance)</td>' +
+      '<td>Accredited vet</td></tr>' +
+      '<tr><th scope="row">Before departure</th>' +
+      '<td>DLD export licence and health certificate; confirm export date with AQS</td>' +
+      '<td>DLD</td></tr>' +
+      '<tr><th scope="row">UAE arrival</th>' +
+      '<td>Veterinary inspection at port of entry; import permit + health certificate + microchip check; pay inspection fees</td>' +
+      '<td>MOCCAE quarantine centre</td></tr>' +
+      '</tbody></table></div>' },
+    { h: "What MOCCAE requires from Thailand", html:
+      "<p>Per MOCCAE&rsquo;s published import service (verify current detail on " +
+      "<a href=\"https://moccae.gov.ae/en/services/import-permit-pets\" target=\"_blank\" " +
+      "rel=\"noopener nofollow\">moccae.gov.ae</a>):</p>" +
+      "<ul>" +
+      "<li><strong>Prior import permit</strong> obtained online before the pet travels</li>" +
+      "<li><strong>Permanent microchip</strong> — chip number must match the health certificate exactly</li>" +
+      "<li><strong>Rabies vaccination</strong> at least 21 days before arrival; primary rabies not before 3 months of age</li>" +
+      "<li><strong>Dogs:</strong> rabies plus distemper, parvovirus, infectious hepatitis and leptospirosis</li>" +
+      "<li><strong>Cats:</strong> rabies plus panleukopenia (and commonly calicivirus / rhinotracheitis per MOCCAE vaccination lists)</li>" +
+      "<li><strong>Pre-shipment treatments</strong> within the window MOCCAE specifies</li>" +
+      "<li>Attested <strong>veterinary health certificate</strong> from the exporting country&rsquo;s competent authority</li>" +
+      "<li>Shipment under <strong>IATA live-animal regulations</strong> (often manifested cargo)</li>" +
+      "</ul>" +
+      "<p><strong>Prohibited breeds</strong> include Pit Bull types, Japanese Tosa, Dogo Argentino, " +
+      "Fila Brasileiro, wolf-dog hybrids and American Staffordshire Terrier. Non-compliance " +
+      "can mean fines, rejection or confiscation under MOCCAE rules.</p>" +
+      "<p>MOCCAE also limits how many pets a person may import per year — confirm the current cap.</p>" },
+    { h: "The Thai export side (DLD)", html:
+      "<p>MOCCAE approval does not replace Thailand&rsquo;s export process:</p>" +
+      DLD_EXPORT_TABLE +
+      "<p>See " +
+      '<a href="/take-pet-out-of-thailand/export-process.html">export process</a> and ' +
+      '<a href="/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html">export costs</a>.</p>' },
+    { h: "Common mistakes on this corridor", html: EXPORT_FAILS +
+      "<ul>" +
+      "<li><strong>Expired MOCCAE import permit</strong> — the permit is valid for a fixed period (90 days per current guidance); a delayed flight can void it.</li>" +
+      "<li><strong>Banned breed</strong> — confirm before you leave Thailand that your dog can enter the UAE at all.</li>" +
+      "<li><strong>Cabin booking when cargo is required</strong> — leads to denied boarding at Bangkok.</li>" +
+      "<li><strong>Missing pre-shipment treatments</strong> within MOCCAE&rsquo;s required window.</li>" +
+      "</ul>" }
   ],
   faqs: [
     ["Does the UAE require a rabies titer test from Thailand?",
-     "<p>Generally no for UAE entry itself, though MOCCAE's rules can change. Confirm the current requirements with MOCCAE. Consider a titer test anyway if you might travel onward to stricter destinations.</p>"],
-    ["Which UAE emirate am I importing into?",
-     "<p>The import permit is federal, but some emirates and airlines add their own conditions. Confirm with MOCCAE and your airline for the emirate and airport you will use.</p>"]
+     "<p>Generally no for UAE entry itself under current MOCCAE guidance — unlike the EU or UK. Confirm on the MOCCAE website before you travel. Consider a titer test anyway if you might move on to stricter destinations later.</p>"],
+    ["How long is the MOCCAE import permit valid?",
+     "<p>MOCCAE's online service states the import permit is valid for 90 days from issuance. Do not travel with an expired permit — apply again if your plans slip.</p>"],
+    ["Can my pet fly in the cabin to Dubai?",
+     "<p>It depends on the airline and MOCCAE conditions. Many UAE-bound pets travel as manifested cargo under IATA rules. Confirm with the airline and MOCCAE before you book cabin space.</p>"],
+    ["Which UAE airport will I use?",
+     "<p>Dubai (DXB), Abu Dhabi (AUH) and other ports have MOCCAE veterinary inspection centres. Confirm the centre for your arrival airport and its hours — cargo arrivals may differ from passenger terminal hours.</p>"],
+    ["What if I originally brought my pet from the UAE?",
+     "<p>Returning residents may follow MOCCAE's 'resident pet' rules if rabies vaccination stayed valid and you obtained a MOCCAE veterinary health certificate before leaving the UAE. If vaccination lapsed in Thailand, you may be treated as a first-time import.</p>"]
   ],
   related: [
     { name: "Export to the EU", path: "/take-pet-out-of-thailand/to-eu.html", desc: "Stricter rules if you move on from the UAE." },

@@ -29,7 +29,7 @@ const OFFICIAL =
   "<a href=\"https://www.maff.go.jp/aqs/english/\" target=\"_blank\" rel=\"noopener nofollow\">Japan MAFF Animal Quarantine</a>; " +
   "<a href=\"https://www.nparks.gov.sg/avs/pets/importing-exporting-and-transhipping-animals-and-birds/importing-dogs-and-cats\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">Singapore AVS</a>; " +
-  "<a href=\"https://www.moec.gov.ae/en/services/import-export-services/import-pets\" " +
+  "<a href=\"https://moccae.gov.ae/en/services/import-permit-pets\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">UAE MOCCAE pet import</a>; " +
   "<a href=\"https://www.agriculture.gov.au/biosecurity-trade/cats-dogs\" target=\"_blank\" " +
   "rel=\"noopener nofollow\">Australia DAFF</a>; " +

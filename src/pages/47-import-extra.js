@@ -9,7 +9,7 @@ const CLUSTER = { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thail
 const SUB = [GUIDES, CLUSTER];
 
 const VERIFY =
-  "This guide was last reviewed in May 2026. Thailand's Department of Livestock " +
+  "This guide was last reviewed on 31 May 2026. Thailand's Department of Livestock " +
   "Development, airlines and origin-country authorities change their rules without " +
   "notice. Treat this as orientation, then confirm every current requirement with " +
   "the DLD, your airline and your origin-country authority before you book or travel.";
@@ -52,14 +52,51 @@ const STD_STEPS =
   "and the <a href=\"/bring-pet-to-thailand/import-permit-thailand-dld.html\">DLD import " +
   "permit</a>. ";
 
+const EU_RETURN =
+  "<p>Thailand is not on the EU&rsquo;s list of low-risk countries, so to bring a pet " +
+  "back into the EU from Thailand you need a valid rabies vaccination and a " +
+  "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies titer " +
+  "test</a>, with the blood sample taken at least 30 days after vaccination and a " +
+  "three-month wait before entry. Having the titer test done before you leave removes " +
+  "that wait later &mdash; it is the single best piece of forward planning.</p>";
+
+const TH_DOCS_TABLE =
+  '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+  '<th scope="col">Document</th><th scope="col">What it is</th></tr></thead><tbody>' +
+  '<tr><th scope="row">DLD import permit</th><td>Form <strong>R1/1</strong>, emailed to the AQS at your arrival airport. Valid <strong>60 days</strong> from issue. Apply <strong>7&ndash;60 days</strong> before departure (around <strong>30 days</strong> is sensible).</td></tr>' +
+  '<tr><th scope="row">Microchip certificate</th><td>ISO 11784/11785 15-digit chip, implanted <strong>before</strong> rabies vaccination.</td></tr>' +
+  '<tr><th scope="row">Vaccination records</th><td>In English. Dogs: rabies, distemper, hepatitis, parvovirus, leptospirosis (or negative leptospirosis test within 30 days). Cats: rabies and feline panleukopenia. At least <strong>21 days</strong> after primary shots.</td></tr>' +
+  '<tr><th scope="row">Government-endorsed health certificate</th><td>EU export certificate for third-country travel, endorsed by the German competent authority.</td></tr>' +
+  '<tr><th scope="row">Your passport</th><td>Original at the AQS (or the person collecting a cargo shipment).</td></tr>' +
+  '<tr><th scope="row">Pet photo</th><td>Colour, face clearly visible (for the permit application).</td></tr>' +
+  '<tr><th scope="row">Flight booking</th><td>Itinerary showing date, flight number and arrival airport.</td></tr>' +
+  '</tbody></table></div>';
+
+const TH_ARRIVAL =
+  "<p>From Germany, pets with complete paperwork are normally cleared at the AQS the same day &mdash; " +
+  "an inspection, not multi-week quarantine. The AQS charges <strong>500&nbsp;baht</strong> per animal. " +
+  "Email the AQS to <strong>confirm your arrival date at least three days before landing</strong>. See " +
+  '<a href="/bring-pet-to-thailand/thailand-pet-quarantine.html">pet quarantine in Thailand</a> ' +
+  "and " +
+  '<a href="/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html">arriving at Suvarnabhumi</a>.</p>';
+
+const TH_FAILS =
+  "<ul>" +
+  "<li><strong>Using the EU pet passport alone</strong> &mdash; it is for travel within the EU, not export to Thailand.</li>" +
+  "<li><strong>Wrong endorsement authority</strong> &mdash; the export certificate must be endorsed by the competent German veterinary authority, not just signed by any vet.</li>" +
+  "<li><strong>Permit timing</strong> &mdash; DLD import permit applied too early (expires) or too late (AQS cannot process in time).</li>" +
+  "<li><strong>Skipping the titer test</strong> if you may return to Germany &mdash; the three-month EU wait catches people who did not plan ahead.</li>" +
+  "</ul>";
+
 function country(o) {
   var sections = attachReturnExportLink((o.sections || []).slice(), o.slug);
-  sections.push({ h: "Official sources", html: OFFICIAL });
+  sections.push({ h: "Official sources", html: (o.officialExtra || "") + OFFICIAL });
   return article({
     path: "/bring-pet-to-thailand/" + o.slug + ".html",
     title: o.title, desc: o.desc, crumb: o.crumb, breadcrumbs: SUB,
     eyebrow: "Bringing a pet to Thailand &middot; By country",
     h1: o.h1, lede: o.lede, verify: VERIFY,
+    updated: o.updated || "2026-05-31",
     sections: sections, faqs: o.faqs, related: o.related || countryRelated(o.slug)
   });
 }
@@ -97,31 +134,94 @@ pages.push(country({
 pages.push(country({
   slug: "from-germany", crumb: "From Germany",
   title: "Bring a Pet to Thailand from Germany (EU & DLD 2026) | PattayaPets",
-  desc: "Bringing a dog or cat from Germany to Thailand: the EU export certificate, " +
-    "the German competent authority, and what the EU pet passport does not cover.",
+  desc: "Germany to Thailand pet import: EU export certificate, Veterinäramt endorsement, " +
+    "DLD permit timeline, document checklist and EU return planning.",
   h1: "Bringing a pet to Thailand from Germany",
-  lede: "German owners travel with an EU pet passport at home, but it is not the " +
-    "document Thailand needs, nor enough for the journey back.",
+  lede: "Frankfurt and Munich have direct Bangkok routes, so Germany&rarr;Pattaya is a " +
+    "well-trodden corridor. The Thai steps are standard; what is German-specific is the " +
+    "<strong>EU export health certificate</strong> and planning the EU return if you " +
+    "ever come back.",
+  officialExtra:
+    "<p><strong>German / EU sources:</strong> " +
+    "<a href=\"https://www.bmleh.de/EN/topics/animals/pets-and-zoo-animals/pets-entry-regulation.html\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">BMELH pet entry rules</a>; " +
+    "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">EU pet movement</a>. " +
+    "Export mirror: " +
+    "<a href=\"/take-pet-out-of-thailand/to-germany.html\">taking a pet to Germany</a>.</p>",
   sections: [
+    { h: "The timeline — what to do when", html:
+      "<p>Work backwards from your flight. Direct <strong>Frankfurt&ndash;Bangkok</strong> " +
+      "and <strong>Munich&ndash;Bangkok</strong> routes are common; still confirm pet " +
+      "acceptance with the airline early.</p>" +
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Who</th></tr></thead><tbody>' +
+      '<tr><th scope="row">3+ months before (if EU return possible)</th>' +
+      '<td>Microchip (if needed), rabies vaccination, optional <a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">rabies titer test</a> &mdash; blood &ge;30 days after vaccination</td>' +
+      '<td>Your vet; approved lab</td></tr>' +
+      '<tr><th scope="row">6&ndash;8 weeks before</th>' +
+      '<td>DHPP (dogs) or FVRCP (cats), leptospirosis (dogs) or negative test; <strong>21-day wait</strong> after any primary rabies shot</td>' +
+      '<td>Your vet</td></tr>' +
+      '<tr><th scope="row">~30 days before departure</th>' +
+      '<td>Apply for <a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a> (form R1/1) to the AQS at your arrival airport</td>' +
+      '<td>DLD / Suvarnabhumi AQS</td></tr>' +
+      '<tr><th scope="row">2&ndash;3 weeks before</th>' +
+      '<td>Book pet space on the flight; confirm airline requires the Thai import permit before boarding</td>' +
+      '<td>Airline</td></tr>' +
+      '<tr><th scope="row">Final 1&ndash;2 weeks</th>' +
+      '<td><strong>EU animal health / export certificate</strong> completed by an authorised vet and endorsed by the competent German authority (<em>Veterin&auml;ramt</em> / BLV framework)</td>' +
+      '<td>Authorised vet + German authority</td></tr>' +
+      '<tr><th scope="row">&ge;3 days before landing</th>' +
+      '<td>Email the AQS to confirm your exact arrival date and flight</td>' +
+      '<td>DLD</td></tr>' +
+      '<tr><th scope="row">Arrival day</th>' +
+      '<td>AQS inspection; Forms R-6/R-7; 500&nbsp;baht fee</td>' +
+      '<td>Bangkok AQS</td></tr>' +
+      '</tbody></table></div>' +
+      "<p>Step pages: " + STD_STEPS + EU_IMPORT_REF },
     { h: "The German side of the paperwork", html:
-      "<p>" + STD_STEPS + "For travel out of the EU, your vet " +
-      "completes an <strong>EU animal health / export certificate</strong>, endorsed by " +
-      "the responsible German authority (the regional veterinary office, the " +
-      "<em>Veterinaeramt</em>). The familiar EU pet passport governs travel within the " +
-      "EU and is not, by itself, what Thailand requires.</p>" + EU_IMPORT_REF },
-    { h: "Planning the return to Germany", html:
-      "<p>To bring a pet back into the EU from Thailand &mdash; a non-EU country &mdash; " +
-      "you will need a valid rabies vaccination and a " +
-      "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies titer " +
-      "test</a>, with the blood sample taken at least 30 days after vaccination and a " +
-      "three-month wait before entry. Doing the titer test before you leave Germany " +
-      "avoids that wait later.</p>" }
+      "<p>For travel from Germany to a non-EU country such as Thailand, your vet " +
+      "completes an <strong>EU animal health / export certificate</strong> for " +
+      "third-country movement. It must be issued by an <strong>authorised or official " +
+      "veterinarian</strong> and <strong>endorsed by the competent authority</strong> " +
+      "&mdash; in Germany, that is typically your regional veterinary office " +
+      "(<em>Veterin&auml;ramt</em>) under the federal food and veterinary framework " +
+      "(BMELH / BLV).</p>" +
+      "<p>The blue <strong>EU pet passport</strong> you use for holidays in Spain or " +
+      "Italy is <em>not</em> the document Thailand accepts on its own. You need the " +
+      "export certificate plus the Thai import permit, with the same microchip number " +
+      "on every page.</p>" +
+      "<p>Use a vet experienced in international export work &mdash; not every practice " +
+      "handles third-country certificates daily.</p>" },
+    { h: "Documents Thailand expects", html:
+      "<p>Regardless of origin country, the DLD asks for:</p>" +
+      TH_DOCS_TABLE + TH_ARRIVAL },
+    { h: "Plan the return to Germany before you leave", html:
+      EU_RETURN +
+      "<p>Germany follows the standard EU rules for pets entering from a non-listed " +
+      "third country such as Thailand: rabies vaccination, titer test, three-month wait " +
+      "from the blood sample, and an EU third-country entry health certificate on the " +
+      "way back. Entry is through designated traveller points of entry &mdash; confirm " +
+      "the current list on " +
+      "<a href=\"https://www.bmleh.de/EN/topics/animals/pets-and-zoo-animals/pets-entry-regulation.html\" " +
+      "target=\"_blank\" rel=\"noopener nofollow\">BMELH</a>. See " +
+      "<a href=\"/take-pet-out-of-thailand/to-germany.html\">exporting a pet to Germany</a>.</p>" +
+      '<div class="callout callout-tip"><div class="ch">Thailand does not require the titer test on the way in</div>' +
+      "<p>From Germany, Thailand generally does not ask for a titer test to enter. You " +
+      "do it for your own future if you may return to the EU.</p></div>" },
+    { h: "Common mistakes German owners make", html: TH_FAILS }
   ],
   faqs: [
     ["Is my EU pet passport enough to bring my pet to Thailand?",
-     "<p>No. The EU pet passport is for movement within the EU. For Thailand you need an EU export health certificate endorsed by the German authorities, plus the Thai import permit.</p>"],
+     "<p>No. The EU pet passport governs movement within the EU. For Thailand you need an EU export health certificate endorsed by the German authorities, plus the Thai DLD import permit.</p>"],
+    ["Which German authority endorses the export certificate?",
+     "<p>An authorised veterinarian completes the certificate; endorsement comes from the competent regional veterinary authority (Veterinäramt) under Germany's federal veterinary system. Your export-experienced vet will know the current process.</p>"],
+    ["Can I fly direct from Frankfurt or Munich with a pet?",
+     "<p>Both cities have direct Bangkok routes, but not every flight accepts pets in cabin or hold. Confirm pet space and the airline's IATA crate rules when you book — see our <a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline pet policies</a> guide.</p>"],
     ["What does Germany need for the return journey?",
-     "<p>A valid rabies vaccination and a rabies titer test, with a three-month wait after the blood sample. Confirm the current EU re-entry rules before you travel.</p>"]
+     "<p>A valid rabies vaccination, a rabies titer test with a three-month wait from the blood sample, and an EU third-country entry health certificate. Doing the titer test before you leave Germany avoids the wait later.</p>"],
+    ["Will my pet be quarantined on arrival in Thailand?",
+     "<p>Not usually, if every document is in order and your pet appears healthy. The AQS inspection is typically same-day clearance — see our <a href=\"/bring-pet-to-thailand/thailand-pet-quarantine.html\">quarantine guide</a>.</p>"]
   ]
 }));
 
