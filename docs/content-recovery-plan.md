@@ -62,9 +62,9 @@ This document replaces the old “title/meta batch” queue until Phase 3 is com
 
 ### Dog-friendly (remaining)
 
-- [ ] Beaches page: specific access points, tide/heat warnings
-- [ ] Hotels page: named pet-friendly hotels with “call to confirm”
-- [ ] Condos page: realistic rental expectations
+- [x] Beaches page: stretch-by-stretch table, heat/tide guidance, 5 FAQs (Batch 79)
+- [x] Hotels page: named properties with official policy links, booking checklist (Batch 79)
+- [x] Condos page: building vs landlord table, signing checklist, 5 FAQs (Batch 79)
 
 ### Pet health cluster
 

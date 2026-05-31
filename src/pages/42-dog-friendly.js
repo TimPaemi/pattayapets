@@ -69,6 +69,7 @@ function df(o) {
     title: o.title, desc: o.desc, crumb: o.crumb, breadcrumbs: SUB,
     eyebrow: "Dog-friendly Pattaya",
     h1: o.h1, lede: o.lede,
+    updated: o.updated, updatedLabel: o.updatedLabel, verify: o.verify,
     sections: o.sections, faqs: o.faqs,
     related: o.related || [
       { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Building a safe daily routine." },
@@ -87,42 +88,89 @@ pages.push(df({
   h1: "Dog-friendly beaches in Pattaya",
   lede: "A beach walk at the right time of day is one of the real pleasures of " +
     "owning a dog in Pattaya &mdash; if you do it considerately.",
+  updated: "2026-05-31",
+  updatedLabel: "31 May 2026",
+  verify: "Thailand does not publish a single national &lsquo;dogs on beaches&rsquo; rule for " +
+    "Pattaya. Access is a mix of local practice, beach cleanliness campaigns, and how " +
+    "considerate owners behave. Always read the stretch you are on, keep your dog leashed " +
+    "unless the sand is genuinely empty, and obey any posted signs.",
   sections: [
-    { h: "Where dogs walk", html:
-      "<p>The long stretch of <strong>Jomtien Beach</strong>, including the " +
-      "<strong>Dongtan</strong> end, is where you will most often see residents " +
-      "walking dogs &mdash; particularly in the cooler early-morning and " +
-      "after-sunset hours. It is a relaxed, local-feeling stretch well suited to " +
-      "a steady walk. See also pet services in " +
-      "<a href=\"/area/jomtien.html\">Jomtien</a>.</p>" +
-      "<p>Beach access for dogs is not formally signposted everywhere, and " +
-      "attitudes vary by stretch and by time of day. The busy, central tourist " +
-      "sections of Pattaya Beach are far less suitable than the quieter ends. " +
-      "Read the spot you are in: if it is calm and other dogs are around, you " +
-      "are probably fine; if it is packed with sunbathers and vendors, move on.</p>" },
+    { h: "Stretch by stretch — where owners actually walk", html:
+      "<p>There is no official map of &lsquo;dog beaches&rsquo; in Chonburi. In practice, " +
+      "residents walk dogs on quieter sand at cool hours. The table below is what expat " +
+      "owners report &mdash; not a guarantee of permission. If a stretch feels crowded " +
+      "with sunbathers, move on.</p>" +
+      '<div class="table-wrap"><table class="facts-table">' +
+      "<thead><tr><th>Stretch</th><th>Typical use</th><th>Notes</th></tr></thead><tbody>" +
+      "<tr><td><strong>Dongtan Beach</strong> (south Jomtien)</td>" +
+      "<td>Most common dog-walking beach in Pattaya</td>" +
+      "<td>Early morning and after sunset. Residential feel; many local owners. " +
+      "See <a href=\"/area/jomtien.html\">Jomtien</a>.</td></tr>" +
+      "<tr><td><strong>Jomtien Beach</strong> (central Jomtien)</td>" +
+      "<td>Regular leashed walks at quiet hours</td>" +
+      "<td>Busier than Dongtan by day. Stick to the edges or go before 08:00.</td></tr>" +
+      "<tr><td><strong>Na Jomtien / north Jomtien</strong></td>" +
+      "<td>Longer, quieter dawn walks</td>" +
+      "<td>Less built-up than central Pattaya Beach. Good for a steady leashed stroll.</td></tr>" +
+      "<tr><td><strong>Pattaya Beach</strong> (central tourist strip)</td>" +
+      "<td>Generally avoid with a dog</td>" +
+      "<td>Heavy foot traffic, vendors and sunbeds. Very few owners walk dogs here in daylight.</td></tr>" +
+      "<tr><td><strong>North Pattaya / Wongamat</strong></td>" +
+      "<td>Occasional quiet-hour walks</td>" +
+      "<td>Rockier in places; check tide line and access from your soi. See " +
+      "<a href=\"/area/wongamat.html\">Wongamat</a>.</td></tr>" +
+      "<tr><td><strong>Bang Saray</strong></td>" +
+      "<td>Quieter alternative south of Pattaya</td>" +
+      "<td>Smaller village beach; still use cool hours and a lead. See " +
+      "<a href=\"/area/bang-saray.html\">Bang Saray</a>.</td></tr>" +
+      "</tbody></table></div>" },
+    { h: "When to go — heat, tide and season", html:
+      '<div class="table-wrap"><table class="facts-table">' +
+      "<thead><tr><th>Factor</th><th>Practical rule</th></tr></thead><tbody>" +
+      "<tr><td><strong>Best times</strong></td>" +
+      "<td>Before 08:00 and from around 17:00 onward. Sand above ~30&deg;C burns paw pads in minutes.</td></tr>" +
+      "<tr><td><strong>Midday</strong></td>" +
+      "<td>Avoid March&ndash;May especially. If you must go out, keep it to shaded sois, not open sand.</td></tr>" +
+      "<tr><td><strong>Hot sand test</strong></td>" +
+      "<td>Hold the back of your hand on the sand for five seconds. If it hurts you, it hurts your dog.</td></tr>" +
+      "<tr><td><strong>Monsoon (roughly May&ndash;Oct)</strong></td>" +
+      "<td>More debris on the tideline, stronger currents and jellyfish risk after storms. Rinse your dog after any swim.</td></tr>" +
+      "<tr><td><strong>Water quality</strong></td>" +
+      "<td>After heavy rain, runoff can make near-shore water murky. Drinking seawater causes vomiting &mdash; bring fresh water.</td></tr>" +
+      "</tbody></table></div>" +
+      "<p>See <a href=\"/pet-emergency/heatstroke.html\">heatstroke</a>, " +
+      "<a href=\"/pet-emergency/beach-and-sea-hazards.html\">beach &amp; sea hazards</a>, and " +
+      "<a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">hot-climate pet care</a>.</p>" },
     { h: "Beach etiquette that keeps dogs welcome", html:
       "<ul><li><strong>Keep your dog on a lead</strong> unless you are certain " +
       "of recall and the stretch is empty.</li>" +
       "<li><strong>Always pick up</strong> &mdash; nothing turns a beach against " +
       "dogs faster than the opposite.</li>" +
-      "<li><strong>Give people space</strong>, especially children and other " +
+      "<li><strong>Give people space</strong>, especially children, sunbathers and other " +
       "dogs.</li>" +
-      "<li><strong>Go at cool hours</strong> &mdash; sand gets hot enough to " +
-      "burn paw pads, and midday sun is dangerous.</li></ul>" },
-    { h: "Safety in the heat and the sea", html:
-      "<p>Hot sand burns paws &mdash; test it with the back of your hand. Bring " +
-      "fresh drinking water; dogs should not drink seawater. Rinse the coat " +
-      "after a swim, watch for tiring in the water, and keep the whole outing " +
-      "short in hot weather. See our guides to " +
-      "<a href=\"/pet-emergency/heatstroke.html\">heatstroke</a> and " +
-      "<a href=\"/pet-emergency/beach-and-sea-hazards.html\">beach &amp; sea " +
-      "hazards</a>.</p>" }
+      "<li><strong>Street dogs</strong> share the sand too. Keep distance, do not let your dog " +
+      "charge groups, and read our guide to " +
+      "<a href=\"/pet-emergency/street-dog-encounters.html\">street-dog encounters</a>.</li>" +
+      "<li><strong>No glass or food left behind</strong> &mdash; tideline rubbish is a paw and " +
+      "mouth hazard.</li></ul>" },
+    { h: "Safety in the sea", html:
+      "<p>Many Pattaya dogs paddle happily in shallow water; not all can swim confidently. " +
+      "Use a harness (not a collar) if your dog enters the sea, watch for tiring, and rinse " +
+      "the coat after saltwater. Jellyfish stings and cut feet from hidden debris happen &mdash; " +
+      "know your nearest " +
+      "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vet</a> before you go.</p>" }
   ],
   faqs: [
     ["Can I let my dog off the lead on the beach?",
      "<p>Only where the stretch is genuinely empty and your dog's recall is reliable. A lead is the considerate default — it keeps your dog away from other people, other dogs and beach hazards, and keeps dogs welcome there in general.</p>"],
     ["What time of day is best for a beach walk?",
-     "<p>Early morning and around or after sunset. The sand is cooler, the sun is kinder, and the quieter beach is more relaxing for your dog anyway.</p>"]
+     "<p>Early morning and around or after sunset. The sand is cooler, the sun is kinder, and the quieter beach is more relaxing for your dog anyway.</p>"],
+    ["Are dogs banned from Pattaya beaches?",
+     "<p>There is no single published city-wide ban we can point to, but central Pattaya Beach is impractical with a dog and attitudes vary by stretch. Dongtan and Jomtien at quiet hours are where owners actually go. Obey any posted signs and use common sense.</p>"],
+    ["Can my dog swim in the sea at Jomtien?",
+     "<p>Many dogs do, in shallow water at calm times. Watch currents after storms, rinse salt off afterwards, and never assume your dog can swim — use a harness and stay close.</p>"],
+    ["What should I bring on a beach walk?",
+     "<p>Lead, poop bags, fresh drinking water and a bowl, a towel to rinse sandy paws, and ideally booties or stick to cool hours if sand is hot. A mat helps if you stop at a beachfront cafe afterwards.</p>"]
   ],
   related: [
     { name: "Beach & sea hazards", path: "/pet-emergency/beach-and-sea-hazards.html", desc: "Jellyfish, hot sand and seawater risks." },
@@ -275,40 +323,85 @@ pages.push(df({
   lede: "Pet-friendly accommodation in Pattaya exists &mdash; but &lsquo;pet " +
     "friendly&rsquo; means different things at different properties, so the " +
     "booking call matters.",
+  updated: "2026-05-31",
+  updatedLabel: "31 May 2026",
+  verify: "Pet policies, fees and breed rules change without notice. Always confirm " +
+    "directly with the property before you pay &mdash; a &lsquo;pet friendly&rsquo; filter " +
+    "on a booking site is not a contract. PattayaPets has not reviewed these hotels as " +
+    "guest experiences; we list them because they publish or widely report pet policies.",
   sections: [
-    { h: "What is out there", html:
-      "<p>A range of Pattaya accommodation accepts pets, from relaxed guesthouses " +
-      "to resort-style properties &mdash; the Jomtien and Dongtan side, with its " +
-      "more residential feel, has long been popular with pet owners. Rabbit " +
-      "Resort on Dongtan Beach, for instance, is frequently described as " +
-      "pet-friendly. See also " +
-      "<a href=\"/area/jomtien.html\">pet services in Jomtien</a>. Listings change, so treat any name as a starting point and " +
-      "confirm directly.</p>" },
-    { h: "Confirm before you book", html:
-      "<p>&lsquo;Pet friendly&rsquo; on a booking site is not a contract. Before " +
-      "you pay, confirm in writing with the property:</p>" +
-      "<ul><li>Is my dog&rsquo;s <strong>size and breed</strong> accepted?</li>" +
-      "<li>Is there a <strong>pet fee or deposit</strong>?</li>" +
-      "<li>Can the dog be <strong>left alone</strong> in the room, or not?</li>" +
-      "<li>Which <strong>areas</strong> are off-limits (pool, restaurant, " +
-      "indoors)?</li>" +
-      "<li>Is there <strong>somewhere to walk</strong> and toilet the dog " +
-      "nearby? See <a href=\"/dog-friendly-pattaya/beaches.html\">dog-friendly " +
-      "beaches</a> for cool-hour walks near many stays.</li></ul>" },
+    { h: "What to confirm before you book", html:
+      "<p>&lsquo;Pet friendly&rsquo; on a booking site is not enough. Before you pay, " +
+      "get written confirmation from the property on:</p>" +
+      '<div class="table-wrap"><table class="facts-table">' +
+      "<thead><tr><th>Question</th><th>Why it matters</th></tr></thead><tbody>" +
+      "<tr><td>Size, breed and number limits</td>" +
+      "<td>Some hotels cap weight (e.g. 12&nbsp;kg) or ban specific breeds.</td></tr>" +
+      "<tr><td>Daily fee and deposit</td>" +
+      "<td>Ranges from a few hundred baht per night to weight-tier daily charges plus a damage deposit.</td></tr>" +
+      "<tr><td>Ground-floor / designated rooms only?</td>" +
+      "<td>Many properties restrict pets to specific room types or floors.</td></tr>" +
+      "<tr><td>Can the dog be left alone in the room?</td>" +
+      "<td>Often no, or hourly charges apply if barking is reported.</td></tr>" +
+      "<tr><td>Pool, restaurant and beach rules</td>" +
+      "<td>Common exclusions &mdash; assume off-limits unless told otherwise.</td></tr>" +
+      "<tr><td>Vaccination proof</td>" +
+      "<td>Rabies certificate on arrival is commonly required.</td></tr>" +
+      "</tbody></table></div>" },
+    { h: "Properties that accept pets (confirm before you book)", html:
+      "<p>Policies change. These properties publish or are widely reported as accepting " +
+      "dogs &mdash; treat as starting points, not guarantees:</p>" +
+      "<ul>" +
+      "<li><strong>Rabbit Resort</strong> &mdash; Dongtan Beach, Jomtien. One of the best-known " +
+      "pet-friendly resorts in Pattaya; Thai-village style on the sand. Their published pet " +
+      "policy includes weight-tier daily fees, a damage deposit, ground-floor rooms only, " +
+      "leash rules and breed restrictions. Read the full policy on " +
+      '<a href="https://rabbitresort.com/testimonials-2/" target="_blank" rel="noopener noreferrer">' +
+      "Rabbit Resort&rsquo;s website</a> and confirm by phone before booking.</li>" +
+      "<li><strong>Hard Rock Hotel Pattaya</strong> &mdash; Central Pattaya. Runs the " +
+      "&lsquo;Unleashed&rsquo; pet programme: weight limits, nightly fee, designated pet zones " +
+      "and book-direct requirement. Details on " +
+      '<a href="https://hotel.hardrock.com/pattaya/petfriendly.aspx" target="_blank" rel="noopener noreferrer">' +
+      "Hard Rock Pattaya&rsquo;s pet page</a>. Not a beach-resort stay, but useful if you " +
+      "want city access with a small dog.</li>" +
+      "<li><strong>La Miniera Pool Villas</strong> &mdash; East Pattaya (Bang Lamung). " +
+      "Dedicated pet-friendly pool villas with published surcharges by dog weight and pet " +
+      "amenities. See " +
+      '<a href="https://www.laminierapattaya.com/our-accommodations-villas/villas/pet-friendly-pool-villa-family/" target="_blank" rel="noopener noreferrer">' +
+      "La Miniera&rsquo;s pet villa page</a>. Good for families who want private pool space.</li>" +
+      "<li><strong>Somerset Pattaya</strong> &mdash; Central Pattaya. Frequently listed on " +
+      '<a href="https://www.booking.com/pets/city/th/pattaya.html" target="_blank" rel="noopener noreferrer">' +
+      "Booking.com&rsquo;s pet-friendly filter</a>; guests report designated pet-friendly floors. " +
+      "Confirm current policy on your booking channel.</li>" +
+      "<li><strong>Villa rentals (Tortuga Villas, 4poolvillas and similar)</strong> &mdash; " +
+      "Private pool villas around Pattaya often allow pets when hotels will not. Read the " +
+      "individual listing&rsquo;s pet clause; owner rules override generic platform filters.</li>" +
+      "</ul>" +
+      "<p>For more options, filter " +
+      '<a href="https://www.booking.com/pets/city/th/pattaya.html" target="_blank" rel="noopener noreferrer">' +
+      "Booking.com&rsquo;s pet-friendly Pattaya list</a> &mdash; then message each property " +
+      "before you pay. Know another genuinely pet-friendly stay? " +
+      "<a href=\"/contact.html\">Tell us</a>.</p>" },
     { h: "Be a guest they will take again", html:
-      "<p>Bring your dog&rsquo;s bedding, never leave a dog that will bark or " +
-      "scratch alone in a room, keep it off the furniture, and clean up " +
-      "everywhere. Considerate pet guests are why properties stay pet-friendly.</p>" +
-      "<p>Staying longer? See also " +
+      "<p>Bring bedding, never leave a barking dog alone, keep off furniture, and clean up " +
+      "everywhere you walk on the property. Considerate guests are why hotels stay pet-friendly.</p>" +
+      "<p>Many Jomtien stays are walking distance from " +
+      "<a href=\"/dog-friendly-pattaya/beaches.html\">dog-friendly beaches</a> at cool hours. " +
+      "Staying longer? See " +
       "<a href=\"/dog-friendly-pattaya/condos.html\">dog-friendly condos</a> and " +
-      "<a href=\"/owning-a-pet-in-pattaya/pet-friendly-housing.html\">pet-friendly " +
-      "housing</a>.</p>" }
+      "<a href=\"/owning-a-pet-in-pattaya/pet-friendly-housing.html\">pet-friendly housing</a>.</p>" }
   ],
   faqs: [
     ["Are there really pet-friendly hotels in Pattaya?",
-     "<p>Yes — a range of properties accept pets, particularly around Jomtien and Dongtan. The key is to confirm the specific policy (size limits, fees, rules) directly with the property before booking.</p>"],
+     "<p>Yes — from dedicated resorts like Rabbit Resort on Dongtan Beach to city hotels with published pet programmes and villa rentals. The key is to read the actual policy and confirm in writing before you pay.</p>"],
     ["Can I leave my dog alone in the hotel room?",
-     "<p>Many properties do not allow it, and even where it is allowed it is a bad idea if your dog may bark or panic. Always check the rule, and plan around your dog rather than leaving it stressed.</p>"]
+     "<p>Many properties forbid it or charge hourly fees if the dog barks. Rabbit Resort, for example, publishes an hourly charge for unattended pets. Always check the rule and plan your day around your dog.</p>"],
+    ["How much do hotels charge for pets in Pattaya?",
+     "<p>It varies widely: from a few hundred baht per night at some city hotels to weight-tier daily fees plus deposits at resorts. There is no standard rate — get the full figure in writing before booking.</p>"],
+    ["Do I need vaccination papers at check-in?",
+     "<p>Often yes — rabies vaccination proof is commonly required at pet-friendly properties. Carry your vaccination booklet or vet certificate even if nobody asked when you booked.</p>"],
+    ["Is Jomtien or central Pattaya better with a dog?",
+     "<p>Jomtien and Dongtan suit dogs better day to day: quieter beach walks and more pet-aware guesthouses. Central Pattaya has some pet-friendly hotels but heavy traffic and fewer easy walk routes.</p>"]
   ],
   related: [
     { name: "Dog-friendly condos", path: "/dog-friendly-pattaya/condos.html", desc: "If you are staying longer than a holiday." },
@@ -327,35 +420,75 @@ pages.push(df({
   lede: "This is the one that surprises new arrivals: in Pattaya, most condo " +
     "buildings do not allow pets at all. Finding one that does takes a deliberate " +
     "search.",
+  updated: "2026-05-31",
+  updatedLabel: "31 May 2026",
+  verify: "Condominium regulations and juristic-office enforcement vary by building. " +
+    "A landlord&rsquo;s verbal OK does not override a no-pet rule in the building bylaws. " +
+    "Get the building&rsquo;s written pet policy before you sign a lease or pay a deposit.",
   sections: [
-    { h: "The reality of condo rules", html:
-      "<p>A great many Pattaya condominium buildings have <strong>no-pet " +
-      "rules</strong> written into the building regulations. A friendly landlord " +
-      "saying &lsquo;yes&rsquo; is not enough &mdash; if the building&rsquo;s " +
-      "rules forbid pets, you and your dog can be made to leave regardless of " +
-      "what the unit&rsquo;s owner agreed.</p>" +
-      "<p>So there are two permissions to secure: the <strong>building</strong> " +
-      "must allow pets, and the <strong>unit&rsquo;s owner</strong> must agree.</p>" },
-    { h: "Finding a pet-friendly building", html:
-      "<ul><li>Tell any agent up front that pet-friendly is non-negotiable, and " +
-      "the dog&rsquo;s size &mdash; it narrows the search honestly.</li>" +
-      "<li>Lower-rise and house-style or village rentals are often easier than " +
-      "big high-rise condos.</li>" +
-      "<li>Ask to see the <strong>building&rsquo;s</strong> pet policy in " +
-      "writing, not just the landlord&rsquo;s word.</li>" +
-      "<li>Get the pet permission written into the lease.</li></ul>" },
-    { h: "Before you sign", html:
-      "<p>Confirm any pet deposit, size or number limits, and rules about shared " +
-      "areas and lifts. Think too about the practicalities of the building for a " +
-      "dog &mdash; ground-floor access, somewhere nearby to walk, and shade. Our " +
-      "guide to <a href=\"/owning-a-pet-in-pattaya/pet-friendly-housing.html\">" +
-      "pet-friendly housing</a> goes further.</p>" }
+    { h: "Two permissions — building and landlord", html:
+      "<p>A great many Pattaya condominium buildings have <strong>no-pet rules</strong> in " +
+      "their registered regulations. A friendly landlord saying &lsquo;yes&rsquo; is not " +
+      "enough &mdash; if the juristic office enforces a ban, you and your dog can be " +
+      "required to leave regardless of what the unit owner agreed.</p>" +
+      '<div class="table-wrap"><table class="facts-table">' +
+      "<thead><tr><th>Who says yes</th><th>What it means</th></tr></thead><tbody>" +
+      "<tr><td><strong>Building / juristic office</strong></td>" +
+      "<td>The rule that actually matters. Ask for written confirmation that dogs are permitted, " +
+      "with any size or number limits.</td></tr>" +
+      "<tr><td><strong>Unit owner / agent</strong></td>" +
+      "<td>Must agree to your dog specifically. Get pet permission written into the lease.</td></tr>" +
+      "<tr><td><strong>Neighbours</strong></td>" +
+      "<td>Even where pets are allowed, barking and lift mess can trigger complaints. " +
+      "Ground-floor or villa-style units reduce friction.</td></tr>" +
+      "</tbody></table></div>" },
+    { h: "Where pet-friendly rentals are easier to find", html:
+      "<p>High-rise towers in central Pattaya and Pratumnak are the hardest. Owners " +
+      "more often succeed in:</p>" +
+      "<ul>" +
+      "<li><strong>Low-rise and village-style projects</strong> in Huai Yai, East Pattaya " +
+      "and Bang Lamung &mdash; fewer shared lifts, more ground access.</li>" +
+      "<li><strong>House and townhouse rentals</strong> &mdash; no juristic office, but check " +
+      "the lease still allows pets.</li>" +
+      "<li><strong>Older, smaller condo blocks</strong> in Naklua and Jomtien &mdash; sometimes " +
+      "more flexible than new high-rises, but still verify in writing.</li>" +
+      "<li><strong>Pet-filtered searches</strong> on Facebook groups, Thai property portals " +
+      "and agents who specialise in expat rentals &mdash; say &lsquo;dog, X kg&rsquo; on the " +
+      "first message so nobody wastes time.</li>" +
+      "</ul>" +
+      "<p>See also <a href=\"/area/jomtien.html\">Jomtien</a> and " +
+      "<a href=\"/owning-a-pet-in-pattaya/pet-friendly-housing.html\">pet-friendly housing</a> " +
+      "for the fuller renting guide.</p>" },
+    { h: "Before you sign — checklist", html:
+      '<div class="table-wrap"><table class="facts-table">' +
+      "<thead><tr><th>Check</th><th>Why</th></tr></thead><tbody>" +
+      "<tr><td>Written building pet policy</td>" +
+      "<td>Not just the agent&rsquo;s WhatsApp message.</td></tr>" +
+      "<tr><td>Pet deposit and monthly surcharge</td>" +
+      "<td>Common range: one extra month&rsquo;s rent as deposit; some buildings add a monthly pet fee.</td></tr>" +
+      "<tr><td>Size / breed limits</td>" +
+      "<td>Large breeds are rejected more often than small dogs.</td></tr>" +
+      "<tr><td>Lift and common-area rules</td>" +
+      "<td>Some buildings require dogs in carriers in lifts.</td></tr>" +
+      "<tr><td>Walk route nearby</td>" +
+      "<td>Ground-floor access to a quiet soi or cool-hour beach walk saves daily stress.</td></tr>" +
+      "<tr><td><a href=\"/owning-a-pet-in-pattaya/dog-registration-thailand.html\">Dog registration</a></td>" +
+      "<td>Separate from the lease &mdash; you still need to comply with local dog-keeping rules.</td></tr>" +
+      "</tbody></table></div>" +
+      "<p>If the owner refuses to put pet permission in the lease, walk away. Verbal promises " +
+      "do not help when a neighbour complains to the juristic office.</p>" }
   ],
   faqs: [
     ["Why do so many Pattaya condos not allow pets?",
-     "<p>Many condominium buildings simply have no-pet rules in their regulations. It is one of the most common frustrations for pet owners here — which is why you should search specifically for pet-friendly buildings and get it in writing.</p>"],
+     "<p>Many condominium buildings simply have no-pet rules in their regulations — often driven by lift hygiene, barking complaints and insurance. It is one of the most common frustrations for pet owners here.</p>"],
     ["The owner says it is fine — is that enough?",
-     "<p>No. If the building's regulations forbid pets, the owner's permission does not override that. Confirm the building allows pets and put the agreement in your lease.</p>"]
+     "<p>No. If the building's regulations forbid pets, the owner's permission does not override that. Confirm the building allows pets and put the agreement in your lease.</p>"],
+    ["How much extra will a pet-friendly condo cost?",
+     "<p>Expect a narrower choice and sometimes a higher rent or pet deposit. There is no fixed market rate — one extra month's deposit is common, and some buildings add a monthly pet surcharge.</p>"],
+    ["Can I register my dog if the condo allows pets?",
+     "<p>Registration with the local authority is a separate legal requirement from your lease. See our guide to dog registration in Thailand for the paperwork your district expects.</p>"],
+    ["Is a house rental better than a condo with a dog?",
+     "<p>Often yes — no juristic office, easier ground access, and fewer neighbour complaints about lifts. The trade-off is location and security; many owners in Pattaya choose a village house in East Pattaya or Huai Yai for exactly this reason.</p>"]
   ],
   related: [
     { name: "Pet-friendly housing", path: "/owning-a-pet-in-pattaya/pet-friendly-housing.html", desc: "The fuller guide to housing with a pet." },

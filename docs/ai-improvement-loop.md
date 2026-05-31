@@ -39,6 +39,7 @@ Not deployed. Last updated: 30 May 2026.
 | **76** | **Content recovery Phase 1:** Full-depth UK / USA / Australia import corridor pages (timelines, checklists, failure points) |
 | **77** | **Export mirror depth:** UK / USA / Australia export corridors; callout-tip FOUC fix |
 | **78** | **Germany + UAE corridors:** full-depth import and export pages; MOCCAE link fix; table FOUC fix |
+| **79** | **Dog-friendly depth:** beaches stretch table, hotels with official links, condos checklist |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 
