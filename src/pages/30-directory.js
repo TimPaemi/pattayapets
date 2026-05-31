@@ -209,8 +209,8 @@ function catCrossSection(key) {
 
 const AREA_MISSING_HINTS = {
   naklua: {
-    groomers: "<a href=\"/groomers/pattaya-city-pet-shop-grooming.html\">Pattaya City Grooming</a> (central) or " +
-      "the <a href=\"/groomers/\">groomers directory</a>",
+    groomers: "<a href=\"/groomers/furiday-pet-grooming.html\">FURiday</a> (Naklua) or " +
+      "<a href=\"/groomers/pattaya-city-pet-shop-grooming.html\">Pattaya City Grooming</a> (central)",
     boarding: "<a href=\"/boarding/pattaya-dog-stay.html\">Pattaya Dog Stay</a> (central) or " +
       "<a href=\"/boarding/elite-dog-resort.html\">Elite Dog Resort</a> (Pratumnak)",
     "pet-shops": "<a href=\"/pet-shops/pattaya-pet-center.html\">Pattaya Pet Center</a> (South Pattaya) or " +
@@ -242,7 +242,8 @@ const AREA_MISSING_HINTS = {
       "<a href=\"/trainers/\">trainers directory</a>"
   },
   jomtien: {
-    groomers: "<a href=\"/groomers/woof-pattaya.html\">Woof Pattaya</a> (Nong Prue) or " +
+    groomers: "<a href=\"/groomers/doggie-star-grooming-pattaya.html\">Doggie Star</a> (Jomtien), " +
+      "<a href=\"/groomers/pet-passions-mobile-grooming.html\">Pet Passions mobile</a> (van) or " +
       "salons in <a href=\"/groomers/\">central Pattaya</a>",
     boarding: "<a href=\"/boarding/pattaya-dog-stay.html\">Pattaya Dog Stay</a> (central) or " +
       "the <a href=\"/boarding/\">boarding directory</a>",
@@ -279,7 +280,8 @@ const AREA_MISSING_HINTS = {
   banglamung: {
     vets: "<a href=\"/vets/pattaya-community-pet-hospital.html\">Pattaya Community Pet Hospital</a> " +
       "(Nernplubwan, 24h) or <a href=\"/vets/siam-country-pet-hospital.html\">Siam Country Pet Hospital</a>",
-    groomers: "<a href=\"/groomers/jaijai-grooming.html\">Jaijai Grooming</a> or " +
+    groomers: "<a href=\"/groomers/furpet-grooming-and-hotel.html\">Furpet</a>, " +
+      "<a href=\"/groomers/jaijai-grooming.html\">Jaijai Grooming</a> or " +
       "<a href=\"/groomers/woof-pattaya.html\">Woof Pattaya</a>",
     boarding: "<a href=\"/boarding/pattaya-dog-stay.html\">Pattaya Dog Stay</a> (central) or " +
       "the <a href=\"/boarding/\">boarding directory</a>",
@@ -509,9 +511,13 @@ BUSINESSES.forEach(function (b) {
         '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in ' +
         "Pattaya</a>.</p></div>"
       : b.category === "groomers"
-      ? '<div class="callout callout-note"><div class="ch">Skin &amp; ears in the heat</div><p>Humidity drives ' +
-        '<a href="/pet-health-pattaya/skin-and-ear-problems.html">skin and ear problems</a> here &mdash; ' +
-        "a groomer who spots early signs is worth keeping.</p></div>"
+      ? (b.type.toLowerCase().indexOf("mobile") !== -1
+        ? '<div class="callout callout-note"><div class="ch">Mobile grooming</div><p>The van comes to your address &mdash; confirm parking access, service zone and any travel surcharge when booking. Humidity drives ' +
+          '<a href="/pet-health-pattaya/skin-and-ear-problems.html">skin and ear problems</a> here &mdash; ' +
+          "a groomer who spots early signs is worth keeping.</p></div>"
+        : '<div class="callout callout-note"><div class="ch">Skin &amp; ears in the heat</div><p>Humidity drives ' +
+          '<a href="/pet-health-pattaya/skin-and-ear-problems.html">skin and ear problems</a> here &mdash; ' +
+          "a groomer who spots early signs is worth keeping.</p></div>")
       : b.category === "pet-relocation"
       ? '<div class="callout callout-note"><div class="ch">Import &amp; export guides</div><p>See our guides to ' +
         '<a href="/bring-pet-to-thailand/">bringing a pet to Thailand</a>, the ' +

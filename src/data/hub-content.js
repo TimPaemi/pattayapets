@@ -69,7 +69,10 @@ const HUB_GUIDE = {
     "here &mdash; a groomer who spots early signs is worth keeping. See also " +
     "<a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">hot-climate pet care</a> " +
     "and <a href=\"/pet-health-pattaya/dental-care.html\">dental care</a>. " +
-    "Browse groomers <a href=\"/groomers/#area\">by Pattaya area</a> on the category hub.</p>"),
+    "Some groomers work from a salon, others come to you in a fully equipped van " +
+    "&mdash; useful if travel stresses your pet. Confirm the service zone, parking " +
+    "access and any travel surcharge when booking. Browse groomers " +
+    "<a href=\"/groomers/#area\">by Pattaya area</a> on the category hub.</p>"),
 
   boarding: S(
     "<h2>How to choose boarding in Pattaya</h2>" +

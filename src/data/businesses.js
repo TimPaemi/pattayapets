@@ -423,7 +423,8 @@ const BUSINESSES = [
     slug: "relo4paws",
     name: "Relo4Paws",
     category: "pet-relocation", areas: [], type: "Pet relocation consultancy", c24: false,
-    address: null, phone: "085 541 9959", tel: "+66855419959",
+    address: "Bangkok & Suvarnabhumi Airport — no walk-in office (book online or by phone)",
+    phone: "085 541 9959", tel: "+66855419959",
     whatsapp: "66855419959",
     email: "info@relo4paws.com",
     website: "https://www.relo4paws.com/", hours: "Always open (confirm when booking)",
@@ -454,7 +455,7 @@ const BUSINESSES = [
     slug: "asia-relocation-pet-transport",
     name: "Asia Relocation - Pet Transport",
     category: "pet-relocation", areas: [], type: "Relocation company (pet division)", c24: false,
-    address: null, phone: null, tel: null,
+    address: "Bangkok team — On Nut area (inquiries via website or email only)",
     email: "inquiryth@asia-relocation.com",
     website: "https://www.asia-relocation.com/thailand/moving-services/pet-relocation/",
     hours: null,
@@ -469,7 +470,8 @@ const BUSINESSES = [
     slug: "pawspective-relocations",
     name: "Pawspective Relocations",
     category: "pet-relocation", areas: [], type: "Pet travel specialist", c24: false,
-    address: null, phone: "098 826 9294", tel: "+66988269294", line: "Numfonunited",
+    address: "Thailand-wide service — enquire via website, phone or LINE",
+    phone: "098 826 9294", tel: "+66988269294", line: "Numfonunited",
     whatsapp: "66843521056",
     website: "https://www.pettravelthailand.com/", hours: null,
     languages: "English and Thai",
@@ -498,22 +500,23 @@ const BUSINESSES = [
     slug: "baan-mor-raksasat-animal-hospital-pattaya",
     name: "Baan Mor Raksasat Animal Hospital",
     category: "mobile-vets", areas: ["banglamung"], type: "Animal hospital (home visits)", c24: false,
-    address: "Railway Road (Khao Noi-Khao Talo), Nong Prue, Bang Lamung, Chon Buri",
-    phone: null, tel: null,
-    website: "https://www.facebook.com/doctorpetclinic24hr/", hours: "Daily 10:00-21:00",
+    address: "Local road between Soi Khao Noi and Soi Khao Talo, Nong Prue, Bang Lamung, Chon Buri",
+    phone: "085 055 8898", tel: "+66850558898",
+    email: "doctorpetlover@hotmail.com",
+    website: "https://www.facebook.com/DoctorPetClinic24Hr/", hours: "Daily 10:00–21:00",
     languages: "Thai; confirm English-language support when booking",
     services: ["Home visits", "Pet pickup & delivery", "General treatment", "Grooming", "Boarding"],
     summary: "A Pattaya animal hospital on the railway road between Khao Noi and Khao " +
       "Talo — also known locally as Baan Mor Raksasat — with on-site diagnostics " +
       "and advertised off-site visits, pet pickup or delivery, grooming and boarding. " +
-      "Despite the Facebook page name, published hours are 10:00-21:00, not 24-hour " +
-      "emergency care — confirm contact details on its Facebook page before booking."
+      "Reachable on 085 055 8898 or doctorpetlover@hotmail.com; despite the Facebook " +
+      "page name, published hours are 10:00–21:00, not 24-hour emergency care."
   },
   {
     slug: "pet-passions-mobile-grooming",
     name: "Pet Passions Mobile Grooming & Spa",
     category: "groomers", areas: ["central-pattaya", "jomtien", "banglamung"], type: "Mobile grooming van", c24: false,
-    address: null, phone: null, tel: null,
+    address: "Mobile van — Central Pattaya, Jomtien & Bang Lamung (confirm zone when booking)",
     website: "https://petpassionsth.com/eng/", hours: "By online appointment (24/7 booking)",
     languages: "Thai and English",
     services: ["Mobile bath", "Breed grooming & haircuts", "Spa treatments", "Weight-based pricing"],

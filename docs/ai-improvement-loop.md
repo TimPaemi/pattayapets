@@ -33,6 +33,7 @@ Not deployed. Last updated: 30 May 2026.
 | **70** | Business listing SEO titles + meta; area hub CTR; structural page titles; Pattaya Animal Hospital hours; Mor Ja enrichment |
 | **71** | FURiday Naklua address; Pawspective mobile; privacy/accessibility/search/sitemap CTR; freshness dates |
 | **72** | Furpet full Facebook facts; Relo4Paws phones/services; 404/offline CTR; groomers area anchor + import checklist link |
+| **73** | Baan Mor phone/email; relocation service-area addresses; Pet Passions zone; groomers mobile callout; area hub links |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 
