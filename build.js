@@ -299,7 +299,9 @@ async function build() {
     "> The honest pet resource for Pattaya, Thailand — an independent editorial " +
     "directory of pet businesses and a guide hub for pet owners. No paid placements, " +
     "no sponsored content, no affiliate links. Editorial and informational only; " +
-    "not veterinary advice.\n\n## Key pages\n\n" +
+    "not veterinary advice.\n\n## Network (May 2026)\n\n" +
+    "Part of the TimPaemi Pattaya network. Portfolio: https://pattaya-authority.com/work/pattaya-pets/\n\n" +
+    "## Key pages\n\n" +
     indexable.map(function (p) {
       return "- [" + (p.crumb || p.shortTitle || p.title) + "](" +
         layout.canonical(p.path) + "): " + (p.description || "");
