@@ -37,7 +37,7 @@ const pages = [];
 /* ---------------- CHOKING ---------------- */
 pages.push(hazard({
   slug: "choking", crumb: "Choking",
-  title: "If your pet is choking | PattayaPets",
+  title: "Pet Choking Pattaya | What to Do Before the Vet | PattayaPets",
   desc: "Recognising choking and an airway blockage in a dog or cat, what to do, " +
     "what not to do, and how to prevent it.",
   h1: "If your pet is choking",
@@ -93,7 +93,7 @@ pages.push(hazard({
 /* ---------------- ROAD ACCIDENTS ---------------- */
 pages.push(hazard({
   slug: "road-accident", crumb: "Road accidents",
-  title: "If your pet is hit by a vehicle | PattayaPets",
+  title: "Pet Hit by a Car Pattaya | Road Accident First Steps | PattayaPets",
   desc: "What to do if your dog or cat is hit by a vehicle in Pattaya: staying " +
     "safe, moving an injured pet, and why a vet check is essential.",
   h1: "If your pet is hit by a vehicle",
@@ -153,7 +153,7 @@ pages.push(hazard({
 /* ---------------- BEACH & SEA HAZARDS ---------------- */
 pages.push(hazard({
   slug: "beach-and-sea-hazards", crumb: "Beach & sea hazards",
-  title: "Beach and sea hazards for pets in Pattaya | PattayaPets",
+  title: "Beach & Sea Hazards for Pets Pattaya | Jellyfish, Hot Sand & Toxins | PattayaPets",
   desc: "The specific risks of Pattaya's beaches for dogs: jellyfish, hot sand, " +
     "seawater, the tideline, currents, and caring for your dog after a beach trip.",
   h1: "Beach and sea hazards for pets",

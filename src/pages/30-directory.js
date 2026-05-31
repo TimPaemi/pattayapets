@@ -710,7 +710,7 @@ Object.keys(AREAS).forEach(function (key) {
 
   pages.push({
     path: "/area/" + key + ".html",
-    title: "Pet services in " + area.name + ", Pattaya | PattayaPets",
+    title: "Vets & Pet Services in " + area.name + ", Pattaya | PattayaPets",
     ogTitle: "Pet services in " + area.name + ", Pattaya",
     description: "Vets, groomers, pet shops and other pet services in " + area.name +
       ", Pattaya. " + area.blurb,

@@ -422,7 +422,7 @@ pages.push(exp({
 /* ---------------- JAPAN ---------------- */
 pages.push(exp({
   slug: "to-japan", crumb: "To Japan",
-  title: "Taking a pet from Thailand to Japan | PattayaPets",
+  title: "Export a Pet from Thailand to Japan (MAFF & DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Thailand to Japan: MAFF import approval, microchip, " +
     "rabies titer test and the 180-day wait from the sample date.",
   h1: "Taking a pet from Thailand to Japan",
@@ -457,7 +457,7 @@ pages.push(exp({
 /* ---------------- SINGAPORE ---------------- */
 pages.push(exp({
   slug: "to-singapore", crumb: "To Singapore",
-  title: "Taking a pet from Thailand to Singapore | PattayaPets",
+  title: "Export a Pet from Thailand to Singapore (AVS & DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Thailand to Singapore: AVS import licence, rabies " +
     "titer test and Singapore's post-arrival rules.",
   h1: "Taking a pet from Thailand to Singapore",
@@ -490,7 +490,7 @@ pages.push(exp({
 /* ---------------- UAE ---------------- */
 pages.push(exp({
   slug: "to-uae", crumb: "To the UAE",
-  title: "Taking a pet from Thailand to the UAE | PattayaPets",
+  title: "Export a Pet from Thailand to UAE (MOCCAE & DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Thailand to the UAE: MOCCAE import permit, microchip, " +
     "vaccinations and the Thai DLD export steps.",
   h1: "Taking a pet from Thailand to the UAE",
@@ -535,7 +535,7 @@ pages.push(exp({
 /* ---------------- INDIA ---------------- */
 pages.push(exp({
   slug: "to-india", crumb: "To India",
-  title: "Taking a pet from Thailand to India | PattayaPets",
+  title: "Export a Pet from Thailand to India (AQCS & DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Thailand to India: AQCS import requirements, " +
     "the Thai DLD export steps, and what to plan before you leave Pattaya.",
   h1: "Taking a pet from Thailand to India",

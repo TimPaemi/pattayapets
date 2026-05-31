@@ -33,7 +33,7 @@ const pages = [];
 /* ---------------- Start Here ---------------- */
 pages.push({
   path: "/start-here.html",
-  title: "New to Pattaya with a pet? Start here | PattayaPets",
+  title: "New to Pattaya with a Pet? Start Here | Vets, Import & Emergencies | PattayaPets",
   description:
     "A plain-English orientation for pet owners new to Pattaya: emergency contacts, " +
     "finding a vet, the hot climate, bringing a pet in or out, and adoption.",
@@ -159,7 +159,9 @@ pages.push(prosePage({
     "<p>PattayaPets is published by <strong>TIMPAEMI Co., Ltd.</strong>, based in " +
     "Pattaya, and operated via the Pattaya Authority network &mdash; a family of " +
     "independent Pattaya publications that share one method: visit anonymously, pay " +
-    "every bill, take no money from the businesses covered. The founder is " +
+    "every bill, take no money from the businesses covered. See the " +
+    '<a href="https://pattaya-authority.com/work/pattaya-pets/" target="_blank" rel="noopener noreferrer">' +
+    "Pattaya Authority case study</a> for how PattayaPets fits the network. The founder is " +
     '<a href="https://timpaemi.com/" target="_blank" rel="noopener">Tim</a>. ' +
     "Reviews are bylined to The Editors. See the " +
     '<a href="/masthead.html">masthead</a> for how bylines and the publication work.</p>' +

@@ -26,6 +26,7 @@ Not deployed. Last updated: 30 May 2026.
 | 63 | Social kit + ads map + contextual network links (PattayaPets only) |
 | **64** | Gym + school guide network links; CTR titles on emergency, adoption, health hubs |
 | **65** | Fix vets hub `undefined` title bug; CTR pack #2; coffee + medical disambiguation links |
+| **66** | CTR pack #3 (emergency, health, corridors, areas); housing + Authority links |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 
@@ -37,7 +38,8 @@ Not deployed. Last updated: 30 May 2026.
 |-------|---------|-----------------|
 | **65** | GSC CTR pass #2 after 4 weeks of impression data | Paste GSC export |
 | **66** | Mirror links on sister repos (visa, restaurant guide, authority) | Open each repo window |
-| **67** | Verdict publish — after delegate returns Tier 1 templates | Delegate visits |
+| **67** | GSC CTR pass #3 after impression data | Paste GSC export |
+| **68** | Verdict publish — after delegate returns Tier 1 templates | Delegate visits |
 
 ---
 

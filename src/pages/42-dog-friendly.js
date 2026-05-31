@@ -231,7 +231,7 @@ pages.push(df({
 
 pages.push(df({
   slug: "hotels", crumb: "Dog-friendly hotels",
-  title: "Dog-friendly hotels in Pattaya | PattayaPets",
+  title: "Dog-Friendly Hotels Pattaya | Pet-Friendly Stays & Booking Tips | PattayaPets",
   desc: "Finding pet-friendly accommodation in Pattaya, what to confirm before " +
     "you book, and the questions that avoid a nasty surprise at check-in.",
   h1: "Dog-friendly hotels in Pattaya",
@@ -283,7 +283,7 @@ pages.push(df({
 
 pages.push(df({
   slug: "condos", crumb: "Dog-friendly condos",
-  title: "Dog-friendly condos in Pattaya | PattayaPets",
+  title: "Dog-Friendly Condos Pattaya | Renting With a Dog | PattayaPets",
   desc: "Renting a condo in Pattaya with a dog: why most condos are no-pet, how " +
     "to find a pet-friendly building, and what to check before you sign.",
   h1: "Renting a dog-friendly condo in Pattaya",

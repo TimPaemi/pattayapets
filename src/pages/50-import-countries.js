@@ -356,7 +356,7 @@ pages.push(country({
 /* ---------------- JAPAN ---------------- */
 pages.push(country({
   slug: "from-japan", crumb: "From Japan",
-  title: "Bringing a pet to Thailand from Japan | PattayaPets",
+  title: "Bring a Pet to Thailand from Japan (MAFF Export & DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from Japan to Thailand: AQS export paperwork, the rabies " +
     "titer test for the return, and what to plan before you leave.",
   h1: "Bringing a pet to Thailand from Japan",
@@ -422,7 +422,7 @@ pages.push(country({
 /* ---------------- UAE ---------------- */
 pages.push(country({
   slug: "from-uae", crumb: "From the UAE",
-  title: "Bringing a pet to Thailand from the UAE | PattayaPets",
+  title: "Bring a Pet to Thailand from UAE (MOCCAE & DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from the UAE to Thailand: MOCCAE export permit, " +
     "the Thai DLD import permit, and what to plan if you might return.",
   h1: "Bringing a pet to Thailand from the UAE",
@@ -530,7 +530,7 @@ pages.push(article({
 /* ---------------- INDIA ---------------- */
 pages.push(country({
   slug: "from-india", crumb: "From India",
-  title: "Bringing a pet to Thailand from India | PattayaPets",
+  title: "Bring a Pet to Thailand from India (AQCS & DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from India to Thailand: AQCS export certificate, " +
     "Thai import steps, and what to plan if you may leave again.",
   h1: "Bringing a pet to Thailand from India",
@@ -570,7 +570,7 @@ pages.push(country({
 /* ---------------- PHILIPPINES ---------------- */
 pages.push(country({
   slug: "from-philippines", crumb: "From the Philippines",
-  title: "Bringing a pet to Thailand from the Philippines | PattayaPets",
+  title: "Bring a Pet to Thailand from Philippines (DLD 2026) | PattayaPets",
   desc: "Bringing a dog or cat from the Philippines to Thailand: BAI export " +
     "paperwork, airline routes, and what to plan if you may leave again.",
   h1: "Bringing a pet to Thailand from the Philippines",

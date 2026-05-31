@@ -105,7 +105,7 @@ pages.push(hub({
 /* ---------------- HEARTWORM ---------------- */
 pages.push(health({
   slug: "heartworm", crumb: "Heartworm",
-  title: "Heartworm in pets in Pattaya | PattayaPets",
+  title: "Heartworm in Dogs & Cats Pattaya | Prevention & Year-Round Risk | PattayaPets",
   desc: "What heartworm is, why Pattaya's year-round mosquitoes make it a constant " +
     "risk, how prevention works, and why it beats treatment every time.",
   h1: "Heartworm: the mosquito-borne risk",
@@ -168,7 +168,7 @@ pages.push(health({
 /* ---------------- TICK-BORNE DISEASE ---------------- */
 pages.push(health({
   slug: "tick-borne-disease", crumb: "Tick-borne disease",
-  title: "Tick-borne disease in dogs in Pattaya | PattayaPets",
+  title: "Tick-Borne Disease in Dogs Pattaya | Symptoms & Prevention | PattayaPets",
   desc: "The blood-borne diseases ticks spread in Thailand - sometimes called tick " +
     "fever - the signs to watch for, and why year-round prevention matters.",
   h1: "Tick-borne disease: the hidden danger of ticks",
@@ -227,7 +227,7 @@ pages.push(health({
 /* ---------------- PARVOVIRUS ---------------- */
 pages.push(health({
   slug: "parvovirus", crumb: "Parvovirus",
-  title: "Parvovirus in dogs in Pattaya | PattayaPets",
+  title: "Parvovirus in Dogs Pattaya | Signs, Prevention & What to Do | PattayaPets",
   desc: "What parvovirus is, why it is so dangerous for unvaccinated puppies in " +
     "Pattaya, the warning signs, and why vaccination is the protection.",
   h1: "Parvovirus: deadly, and preventable",

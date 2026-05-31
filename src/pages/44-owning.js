@@ -91,7 +91,7 @@ function own(o) {
 
 pages.push(own({
   slug: "cost-of-owning-a-pet", crumb: "What it costs",
-  title: "The cost of owning a pet in Pattaya | PattayaPets",
+  title: "Cost of Owning a Pet in Pattaya | Monthly Budget Guide | PattayaPets",
   desc: "A realistic look at the monthly cost of owning a dog or cat in Pattaya — " +
     "food, vet care, preventatives, grooming and boarding.",
   h1: "What it costs to own a pet in Pattaya",
@@ -213,7 +213,10 @@ pages.push(own({
       "in East Pattaya and the outer areas &mdash; are generally far easier with " +
       "pets than high-rise condos, and often come with a garden or yard. If a " +
       "pet is central to your life here, widening your search to houses is " +
-      "usually the simplest fix. Browse by " +
+      "usually the simplest fix. Families relocating with children should also " +
+      "see " +
+      '<a href="https://pattayaschoolguide.com/" target="_blank" rel="noopener noreferrer">' +
+      "Pattaya School Guide</a> for schools near your chosen area. Browse by " +
       "<a href=\"/directory.html\">neighbourhood</a> in the directory.</p>" },
     { h: "What to confirm before you sign", html:
       "<ul><li>The <strong>building</strong> permits pets &mdash; see it in " +
@@ -299,7 +302,7 @@ pages.push(own({
 
 pages.push(own({
   slug: "dog-registration-thailand", crumb: "Registration & the law",
-  title: "Dog registration & pet law in Thailand | PattayaPets",
+  title: "Dog Registration Thailand | Rabies Law & Local Rules | PattayaPets",
   desc: "Pet law for owners in Pattaya: the legal requirement to vaccinate " +
     "against rabies, local dog registration, and responsible-ownership rules.",
   h1: "Dog registration and the law",

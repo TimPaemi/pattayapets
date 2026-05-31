@@ -185,7 +185,7 @@ function hazard(o) {
 /* ---------------- FIRST AID ---------------- */
 pages.push(hazard({
   slug: "pet-first-aid", crumb: "Pet first aid",
-  title: "Pet first aid in Pattaya — the calm basics | PattayaPets",
+  title: "Pet First Aid Pattaya | Calm Steps Before the Vet | PattayaPets",
   desc: "Practical orientation for a pet emergency in Pattaya: stay calm, move an " +
     "injured pet safely, and get to a vet — without making things worse.",
   h1: "Pet first-aid orientation",
@@ -340,7 +340,7 @@ pages.push(hazard({
 /* ---------------- SNAKE BITES ---------------- */
 pages.push(hazard({
   slug: "snake-bites", crumb: "Snake bites",
-  title: "Snake bites & pets in Pattaya | PattayaPets",
+  title: "Snake Bite in Dogs & Cats Pattaya | What to Do & Prevention | PattayaPets",
   desc: "Thailand has venomous snakes. How to lower the risk to your pet around " +
     "Pattaya, and what to do if you suspect a snake bite.",
   h1: "Snakes and your pet",
@@ -386,7 +386,7 @@ pages.push(hazard({
 /* ---------------- STREET DOGS ---------------- */
 pages.push(hazard({
   slug: "street-dog-encounters", crumb: "Street dogs",
-  title: "Street-dog encounters in Pattaya | PattayaPets",
+  title: "Street Dog Encounters Pattaya | Walking Your Dog Safely | PattayaPets",
   desc: "Pattaya has free-roaming street dogs. How to walk your own dog safely, " +
     "handle an encounter, and why rabies vaccination matters.",
   h1: "Walking safely around Pattaya&rsquo;s street dogs",
@@ -445,7 +445,7 @@ pages.push(hazard({
 /* ---------------- POISONING ---------------- */
 pages.push(hazard({
   slug: "poisoning", crumb: "Poisoning",
-  title: "Pet poisoning in Pattaya | PattayaPets",
+  title: "Pet Poisoning Pattaya | Common Toxins & Emergency Steps | PattayaPets",
   desc: "Common poisoning hazards for pets in Pattaya homes and streets, the " +
     "warning signs, and what to do if you suspect your pet has been poisoned.",
   h1: "Pet poisoning &mdash; hazards and what to do",
