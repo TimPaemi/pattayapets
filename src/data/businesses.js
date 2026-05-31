@@ -526,6 +526,21 @@ const BUSINESSES = [
       "address is inside the current service zone and any travel surcharge before booking."
   },
   {
+    slug: "pluto-luxury-pet-hotel-pattaya",
+    name: "Pluto Luxury Pet Hotel",
+    category: "boarding", areas: ["banglamung"], type: "Dog & cat hotel", c24: false,
+    address: "Pattaya area, Chon Buri (confirm exact address on plutopethotel.com)",
+    phone: null, tel: null,
+    website: "https://www.plutopethotel.com/en/pet-hotel-en/",
+    hours: "By appointment (confirm on website)",
+    languages: "Thai and English",
+    services: ["Daycare", "Overnight boarding", "Cat boarding", "Grooming by arrangement"],
+    summary: "A luxury pet hotel brand operating daycare and overnight boarding for " +
+      "dogs and cats, with English-language booking via plutopethotel.com. " +
+      "Confirm the Pattaya-area location, rates, vaccination rules and pickup " +
+      "service before you book — this listing is orientation only."
+  },
+  {
     slug: "doggie-star-grooming-pattaya",
     name: "Doggie Star Grooming",
     category: "groomers", areas: ["jomtien"], type: "Dog & cat grooming salon", c24: false,
