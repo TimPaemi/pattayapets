@@ -27,7 +27,7 @@ const OFFICIAL =
   "<a href=\"https://www.cdc.gov/importation/bringing-an-animal-into-the-us/index.html\" target=\"_blank\" rel=\"noopener nofollow\">CDC animal import (USA)</a>; " +
   "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" rel=\"noopener nofollow\">EU pet movement</a>; " +
   "<a href=\"https://www.maff.go.jp/aqs/english/\" target=\"_blank\" rel=\"noopener nofollow\">Japan MAFF Animal Quarantine</a>; " +
-  "<a href=\"https://www.nparks.gov.sg/avs/pets/importing-exporting-and-transhipping-animals-and-birds/importing-dogs-and-cats\" " +
+  "<a href=\"https://avs.nparks.gov.sg/pets/importing-exporting-a-pet/import/dogs-and-cats/\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">Singapore AVS</a>; " +
   "<a href=\"https://moccae.gov.ae/en/services/import-permit-pets\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">UAE MOCCAE pet import</a>; " +

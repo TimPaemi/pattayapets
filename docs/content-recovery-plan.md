@@ -54,7 +54,15 @@ This document replaces the old “title/meta batch” queue until Phase 3 is com
 - [x] Fixed broken MOCCAE links (`moec.gov.ae` → `moccae.gov.ae`)
 - [x] Table FOUC fix in critical CSS
 
-### Import / export corridors (remaining — Batch 79+)
+### Import / export corridors — Batch 80 ✅ Japan + Singapore
+
+- [x] `/bring-pet-to-thailand/from-japan.html` — AQS export timeline, 180-day return rule, MAFF links
+- [x] `/bring-pet-to-thailand/from-singapore.html` — AVS export timeline, Schedule III return rules
+- [x] `/take-pet-out-of-thailand/to-japan.html` — MAFF 180-day timeline, advance notification, DLD export table
+- [x] `/take-pet-out-of-thailand/to-singapore.html` — Schedule III RNATT timing, AQC quarantine, DLD export table
+- [x] Fixed dead AVS official URL (`nparks.gov.sg/avs/pets/...` → `avs.nparks.gov.sg/...`)
+
+### Import / export corridors (remaining — Batch 81+)
 
 - [ ] EU member-state clones in `50-import-countries.js` — enrich or consolidate (Tim decision)
 

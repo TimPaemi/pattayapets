@@ -85,6 +85,30 @@ const UAE_FAILS =
   "<li><strong>Microchip mismatch</strong> &mdash; MOCCAE and DLD both require the chip number to match every document exactly.</li>" +
   "</ul>";
 
+const TH_IMPORT_TABLE =
+  '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+  '<th scope="col">Document</th><th scope="col">What it is</th></tr></thead><tbody>' +
+  '<tr><th scope="row">DLD import permit</th><td>Form <strong>R1/1</strong>, emailed to the AQS at your arrival airport. Valid <strong>60 days</strong> from issue. Apply <strong>7&ndash;60 days</strong> before departure (around <strong>30 days</strong> is sensible).</td></tr>' +
+  '<tr><th scope="row">Microchip certificate</th><td>ISO 11784/11785 15-digit chip, implanted <strong>before</strong> rabies vaccination.</td></tr>' +
+  '<tr><th scope="row">Vaccination records</th><td>In English. See our <a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">vaccination guide</a> for dog and cat schedules.</td></tr>' +
+  '<tr><th scope="row">Government-endorsed health certificate</th><td>Export certificate from the origin country, endorsed as that authority requires.</td></tr>' +
+  '<tr><th scope="row">Flight booking</th><td>Itinerary; confirm airline pet policy early.</td></tr>' +
+  '</tbody></table></div>';
+
+const TH_ARRIVAL_STD =
+  "<p>With complete paperwork, pets normally clear the AQS the same day &mdash; an inspection, " +
+  "not multi-week quarantine. Email the AQS to <strong>confirm your arrival date at least three " +
+  "days before landing</strong>. See " +
+  '<a href="/bring-pet-to-thailand/thailand-pet-quarantine.html">pet quarantine in Thailand</a>.</p>';
+
+const TH_IMPORT_FAILS =
+  "<ul>" +
+  "<li><strong>DLD permit too early or expired</strong> &mdash; valid only 60 days from issue; apply inside the 7&ndash;60 day window.</li>" +
+  "<li><strong>Microchip after rabies vaccination</strong> &mdash; invalidates the vaccination record for import.</li>" +
+  "<li><strong>Health certificate outside the validity window</strong> &mdash; usually 7&ndash;10 days before departure; confirm with the AQS.</li>" +
+  "<li><strong>Assuming return will be easy</strong> &mdash; rabies-free origins (Japan, Singapore, NZ) have strict re-entry rules from Thailand.</li>" +
+  "</ul>";
+
 function country(o) {
   var sections = attachReturnExportLink((o.sections || []).slice(), o.slug);
   sections.push({ h: "Official sources", html: (o.officialExtra || "") + OFFICIAL });
@@ -381,65 +405,163 @@ pages.push(country({
 pages.push(country({
   slug: "from-japan", crumb: "From Japan",
   title: "Bring a Pet to Thailand from Japan (MAFF Export & DLD 2026) | PattayaPets",
-  desc: "Bringing a dog or cat from Japan to Thailand: AQS export paperwork, the rabies " +
-    "titer test for the return, and what to plan before you leave.",
+  desc: "Japan to Thailand pet import: AQS export inspection, DLD import timeline, " +
+    "document checklist, and the 180-day rule if you ever return to Japan.",
   h1: "Bringing a pet to Thailand from Japan",
-  lede: "Japan is a well-organised origin for pet export. The Thai import steps are " +
-    "standard; the part worth planning early is what Japan will require if you ever " +
-    "bring your pet back.",
+  lede: "Japan&rsquo;s Animal Quarantine Service runs a thorough export process. The Thai " +
+    "import side is standard &mdash; but if you might return to Japan, start the " +
+    "<strong>180-day MAFF timeline</strong> before you ever leave.",
+  officialExtra:
+    "<p><strong>Japan sources:</strong> " +
+    '<a href="https://www.maff.go.jp/aqs/english/animal/dog/import-other.html" target="_blank" ' +
+    "rel=\"noopener nofollow\">MAFF AQS &mdash; import from non-designated regions</a> " +
+    "(Thailand is non-designated); " +
+    '<a href="https://www.maff.go.jp/aqs/english/" target="_blank" rel="noopener nofollow">' +
+    "MAFF Animal Quarantine Service</a>. Export mirror: " +
+    "<a href=\"/take-pet-out-of-thailand/to-japan.html\">taking a pet to Japan</a>.</p>",
   sections: [
-    { h: "The Japanese side of the paperwork", html:
-      "<p>" + STD_STEPS + "For export from Japan, your vet works through the " +
-      "<strong>Animal Quarantine Service (AQS)</strong> &mdash; the export health " +
-      "certificate, vaccination records and any pre-export inspection the route " +
-      "requires. Japan&rsquo;s process is thorough; use a vet experienced in export " +
-      "work and allow plenty of lead time for AQS appointments.</p>" },
+    { h: "The timeline — Japan export and Thai import", html:
+      "<p>Run the Japanese export steps and the DLD import permit in parallel once " +
+      "vaccinations are current.</p>" +
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Authority</th></tr></thead><tbody>' +
+      '<tr><th scope="row">8+ weeks before</th>' +
+      '<td>ISO microchip; rabies and core vaccinations per Thailand&rsquo;s schedule</td>' +
+      '<td>Japanese vet</td></tr>' +
+      '<tr><th scope="row">4&ndash;6 weeks before</th>' +
+      '<td>Apply for <a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a> (form R1/1) to the AQS at your arrival airport</td>' +
+      '<td>DLD AQS</td></tr>' +
+      '<tr><th scope="row">3+ weeks before</th>' +
+      '<td>Prior application for <strong>AQS export inspection</strong>; confirm Thailand import requirements with AQS</td>' +
+      '<td>MAFF AQS (departure airport)</td></tr>' +
+      '<tr><th scope="row">2 weeks before</th>' +
+      '<td>Book airline (cabin, hold or cargo); confirm crate and routing to Suvarnabhumi or U-Tapao</td>' +
+      '<td>Airline</td></tr>' +
+      '<tr><th scope="row">Within 10 days of departure</th>' +
+      '<td>Final clinical examination; AQS issues <strong>export quarantine certificate</strong></td>' +
+      '<td>AQS + vet</td></tr>' +
+      '<tr><th scope="row">Arrival in Thailand</th>' +
+      '<td>AQS inspection with DLD permit, export certificate and vaccination records</td>' +
+      '<td>DLD AQS</td></tr>' +
+      '</tbody></table></div>' },
+    { h: "Documents the DLD expects", html: TH_IMPORT_TABLE + TH_ARRIVAL_STD },
     { h: "Planning the return to Japan", html:
-      "<p>If there is any chance of returning your pet to Japan, research the " +
-      "<strong>re-entry rules before you leave</strong>. Japan applies strict rabies " +
-      "controls to pets arriving from most countries, including a " +
-      "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies " +
-      "titer test</a>, advance notification to AQS and a waiting period from the " +
-      "blood sample before the pet may enter. The timeline is measured in months, " +
-      "not weeks &mdash; confirm the current detail with AQS and your vet.</p>" }
+      "<p>Thailand is a <strong>non-designated region</strong> under MAFF rules. If there is " +
+      "any chance of returning your pet to Japan, research this <strong>before you leave " +
+      "Japan</strong> &mdash; not after settling in Pattaya:</p>" +
+      "<ul>" +
+      "<li>ISO microchip and <strong>at least two rabies vaccinations</strong> (with correct spacing).</li>" +
+      "<li><a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">Rabies antibody test</a> " +
+      "at a MAFF-designated laboratory &mdash; result &ge; 0.5 IU/ml.</li>" +
+      "<li><strong>180-day wait</strong> from the blood sample date before the pet may enter Japan.</li>" +
+      "<li><strong>Advance notification</strong> to the AQS at your arrival port at least " +
+      "<strong>40 days</strong> before the return flight (online via NACCS or by email).</li>" +
+      "<li>Pre-departure clinical examination and government-endorsed export certificate from Thailand.</li>" +
+      "</ul>" +
+      "<p>Miss a step and Japan can hold the pet in detention quarantine for up to 180 days. " +
+      "See our mirror guide " +
+      "<a href=\"/take-pet-out-of-thailand/to-japan.html\">exporting a pet to Japan</a> " +
+      "for the full Thailand-to-Japan pathway.</p>" },
+    { h: "Common mistakes on this corridor", html: TH_IMPORT_FAILS +
+      "<ul>" +
+      "<li><strong>Starting AQS export late</strong> &mdash; inspection appointments at Narita, Haneda or Kansai fill up.</li>" +
+      "<li><strong>Ignoring the 180-day clock</strong> &mdash; the wait runs from the titer blood draw, not from when results arrive.</li>" +
+      "<li><strong>Notification under 40 days</strong> &mdash; MAFF may reject late advance notification for Japan entry.</li>" +
+      "</ul>" }
   ],
   faqs: [
     ["Is Japan's export process complicated?",
-     "<p>It is thorough rather than chaotic. The AQS sets clear steps, and an experienced export vet makes the difference. Start early, especially if you need AQS inspection appointments close to your travel date.</p>"],
-    ["What will Japan require for the return?",
-     "<p>Strict rabies controls for most origin countries: microchip, rabies vaccination, a rabies titer test, advance notification to AQS and a waiting period from the sample date. Confirm the current rules with AQS before you travel.</p>"]
+     "<p>It is thorough rather than chaotic. AQS sets clear steps: prior export application, meeting Thailand's import requirements, clinical examination and the export quarantine certificate. An experienced export vet and early AQS contact make the difference.</p>"],
+    ["What will Japan require for the return from Thailand?",
+     "<p>Non-designated region rules: microchip, two rabies vaccinations, MAFF-designated titer test, 180-day wait from the blood sample, advance notification at least 40 days before arrival, then Thai export paperwork. Plan seven months or more.</p>"],
+    ["Can puppies under 10 months enter Japan from Thailand?",
+     "<p>Japan's non-designated pathway effectively requires completing two rabies vaccinations and the 180-day wait after titer sampling — which means young puppies cannot complete the process quickly. Confirm current MAFF age rules before you assume a puppy can return.</p>"],
+    ["Which Japanese airports handle pet export to Thailand?",
+     "<p>Most Tokyo and Osaka routes go via Narita, Haneda or Kansai AQS offices. Confirm which airport your airline uses and book AQS export inspection at that port.</p>"],
+    ["Does Thailand quarantine pets from Japan?",
+     "<p>With complete paperwork, Thailand normally clears pets the same day at the AQS — an inspection, not weeks of quarantine. Email the Bangkok AQS to confirm arrival at least three days ahead.</p>"]
   ]
 }));
 
 /* ---------------- SINGAPORE ---------------- */
 pages.push(country({
   slug: "from-singapore", crumb: "From Singapore",
-  title: "Bring a Pet to Thailand from Singapore (DLD 2026) | PattayaPets",
-  desc: "Bringing a dog or cat from Singapore to Thailand: AVS export certificate, " +
-    "the Thai DLD import permit, and what to plan if you might return.",
+  title: "Bring a Pet to Thailand from Singapore (AVS Export & DLD 2026) | PattayaPets",
+  desc: "Singapore to Thailand pet import: AVS export certificate, DLD import timeline, " +
+    "document checklist, and Schedule III rules if you return from Thailand.",
   h1: "Bringing a pet to Thailand from Singapore",
-  lede: "Singapore is a rabies-free country with a clear export process. The Thai " +
-    "import side is standard; the return journey is where the rules tighten.",
+  lede: "Singapore is a rabies-controlled origin with a clear AVS export process. The Thai " +
+    "import side is straightforward &mdash; but returning from Thailand triggers " +
+    "<strong>Schedule III</strong> rules including quarantine.",
+  officialExtra:
+    "<p><strong>Singapore sources:</strong> " +
+    '<a href="https://avs.nparks.gov.sg/pets/importing-exporting-a-pet/import/dogs-and-cats/" ' +
+    'target="_blank" rel="noopener nofollow">AVS &mdash; importing dogs and cats</a> ' +
+    "(verify your export country&rsquo;s rabies schedule close to travel). Export mirror: " +
+    "<a href=\"/take-pet-out-of-thailand/to-singapore.html\">taking a pet to Singapore</a>.</p>",
   sections: [
-    { h: "The Singapore side of the paperwork", html:
-      "<p>" + STD_STEPS + "For export from Singapore, your vet completes the export " +
-      "health certificate through the <strong>Animal &amp; Veterinary Service (AVS)</strong>. " +
-      "Singapore&rsquo;s export requirements are well documented; book AVS endorsement " +
-      "and any pre-export steps in good time.</p>" },
+    { h: "The timeline — Singapore export and Thai import", html:
+      "<p>AVS export endorsement and the DLD import permit can run in parallel once " +
+      "vaccinations are current.</p>" +
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Authority</th></tr></thead><tbody>' +
+      '<tr><th scope="row">6+ weeks before</th>' +
+      '<td>ISO microchip; rabies and core vaccinations per Thailand&rsquo;s schedule</td>' +
+      '<td>AVS-accredited vet</td></tr>' +
+      '<tr><th scope="row">4&ndash;6 weeks before</th>' +
+      '<td>Apply for <a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a> (form R1/1)</td>' +
+      '<td>DLD AQS</td></tr>' +
+      '<tr><th scope="row">3+ weeks before</th>' +
+      '<td>AVS export health certificate and endorsement; confirm Thailand import conditions with AVS</td>' +
+      '<td>AVS</td></tr>' +
+      '<tr><th scope="row">2 weeks before</th>' +
+      '<td>Book airline (direct Singapore&ndash;Bangkok routes are common); confirm cabin, hold or cargo</td>' +
+      '<td>Airline</td></tr>' +
+      '<tr><th scope="row">Within 7&ndash;10 days of departure</th>' +
+      '<td>Final health examination; parasite treatments if AVS requires for export</td>' +
+      '<td>Vet</td></tr>' +
+      '<tr><th scope="row">Arrival in Thailand</th>' +
+      '<td>AQS inspection with DLD permit, AVS export certificate and vaccination records</td>' +
+      '<td>DLD AQS</td></tr>' +
+      '</tbody></table></div>' },
+    { h: "Documents the DLD expects", html: TH_IMPORT_TABLE + TH_ARRIVAL_STD },
     { h: "Planning the return to Singapore", html:
-      "<p>Singapore protects its rabies-free status strictly. Bringing a pet back from " +
-      "Thailand &mdash; which is not rabies-free &mdash; requires a valid rabies " +
-      "vaccination, a <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">" +
-      "rabies titer test</a> from an approved laboratory, an import licence from AVS " +
-      "and often a quarantine or home-isolation period on arrival. If there is any " +
-      "chance of returning, study AVS&rsquo;s current import requirements before you " +
-      "leave &mdash; not after.</p>" }
+      "<p>Singapore classifies export countries by rabies risk. Thailand is <strong>not</strong> " +
+      "Schedule I or II, so a return from Pattaya falls under <strong>Schedule III</strong> " +
+      "rules &mdash; verify the current schedule on the AVS website before you travel:</p>" +
+      "<ul>" +
+      "<li>ISO microchip before vaccination.</li>" +
+      "<li>Valid rabies vaccination using an AVS-accepted inactivated or recombinant vaccine.</li>" +
+      "<li><a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">Rabies serology (RNATT)</a> " +
+      "at least 28 days after vaccination; blood sample at least <strong>90 days</strong> and " +
+      "within <strong>12 months</strong> before export; result &ge; 0.5 IU/ml at an approved lab.</li>" +
+      "<li>AVS <strong>import licence</strong> (dog licence via PALS first if importing a dog).</li>" +
+      "<li>Book <strong>quarantine at the Animal Quarantine Centre (AQC)</strong> &mdash; Schedule III " +
+      "imports typically require at least <strong>30 days</strong> post-arrival quarantine.</li>" +
+      "<li>Internal and external parasite treatments within the AVS window before export.</li>" +
+      "</ul>" +
+      "<p>Start the titer clock early in Thailand. See " +
+      "<a href=\"/take-pet-out-of-thailand/to-singapore.html\">exporting a pet to Singapore</a> " +
+      "for the full Thailand-to-Singapore pathway.</p>" },
+    { h: "Common mistakes on this corridor", html: TH_IMPORT_FAILS +
+      "<ul>" +
+      "<li><strong>Assuming Singapore&rsquo;s export ease means an easy return</strong> &mdash; " +
+      "Schedule III re-entry is a different process with quarantine.</li>" +
+      "<li><strong>Blood sample too soon</strong> &mdash; AVS requires at least 90 days between sampling and export.</li>" +
+      "<li><strong>No quarantine booking</strong> &mdash; AQC space must be reserved via the Quarantine Management System.</li>" +
+      "</ul>" }
   ],
   faqs: [
-    ["Is it hard to export a pet from Singapore?",
-     "<p>The export side is straightforward if you follow AVS's published steps and use an experienced vet. The difficulty is the return journey from Thailand, not the departure from Singapore.</p>"],
-    ["What does Singapore require for the return?",
-     "<p>A rabies vaccination, a rabies titer test, an AVS import licence and compliance with Singapore's post-arrival rules. Confirm the current detail with AVS before you travel.</p>"]
+    ["Is it hard to export a pet from Singapore to Thailand?",
+     "<p>The export side is straightforward if you follow AVS's published steps and use an accredited vet. Direct flights to Bangkok are common. The difficulty is the return journey from Thailand, not the departure from Singapore.</p>"],
+    ["What does Singapore require for the return from Thailand?",
+     "<p>Schedule III rules: microchip, rabies vaccination, RNATT titer with 90-day lead time, AVS import licence, parasite treatments, AQC quarantine booking and typically 30 days post-arrival quarantine. Verify the current schedule on AVS before you travel.</p>"],
+    ["Does Thailand treat Singapore as rabies-free?",
+     "<p>No. Follow the standard Thai import process — microchip, rabies vaccination, health certificate and DLD import permit — even though Singapore is rabies-controlled on its own schedule.</p>"],
+    ["Can I fly Singapore to Bangkok with a pet in cabin?",
+     "<p>Some carriers allow cabin pets on short-haul routes subject to weight limits and aircraft type. Confirm directly with the airline; many owners use checked baggage or cargo for larger dogs.</p>"],
+    ["How long before I should apply for the DLD import permit?",
+     "<p>Apply 7–60 days before departure; around 30 days is sensible. The permit is valid 60 days from issue — do not apply too early.</p>"]
   ]
 }));
 
