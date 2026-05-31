@@ -27,7 +27,7 @@ Last updated: 30 May 2026.
 
 ---
 
-## PattayaPets outbound (live after Batch 66)
+## PattayaPets outbound (live after Batch 67)
 
 | PattayaPets page | Links to | Anchor text idea |
 |------------------|----------|------------------|
@@ -40,6 +40,7 @@ Last updated: 30 May 2026.
 | `/dog-friendly-pattaya/cafes.html` | pattaya-coffee.com | Pattaya Coffee |
 | `/pet-emergency/` | pattaya-medical.com | Pattaya Medical (human care — disambiguation) |
 | `/owning-a-pet-in-pattaya/pet-friendly-housing.html` | pattayaschoolguide.com | Pattaya School Guide (families) |
+| `/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html` | pattaya-vehicle-rentals.com | Pattaya Vehicle Rentals |
 | `/about.html` | pattaya-authority.com/work/pattaya-pets | Pattaya Authority case study |
 | Footer (all pages) | Full `NETWORK` in `layout.js` | Locked |
 
