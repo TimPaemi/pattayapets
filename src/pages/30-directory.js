@@ -34,6 +34,16 @@ const HUB_TITLE = {
   "mobile-vets": "Mobile & Home-Visit Vets in Pattaya"
 };
 
+const HUB_DESC = {
+  vets: "Vets and animal hospitals in Pattaya — 24-hour emergency care, vaccinations and surgery. Verified facts pages; verdicts after anonymous visits.",
+  groomers: "Dog and cat groomers in Pattaya — baths, breed clips, nail trims and heat-aware coat care. Verified facts pages; verdicts after anonymous visits.",
+  boarding: "Pet boarding, kennels and dog hotels in Pattaya for travel and work days. Verified facts pages; verdicts after anonymous visits.",
+  "pet-shops": "Pet shops in Pattaya for food, litter, toys and supplies. Verified facts pages; verdicts after anonymous visits.",
+  trainers: "Dog trainers and obedience classes in Pattaya. Verified facts pages; verdicts after anonymous visits.",
+  "pet-relocation": "Pet relocation agents for import and export to and from Thailand — DLD permits, health certificates and flights.",
+  "mobile-vets": "Mobile and home-visit vets in Pattaya — useful for nervous pets and owners without a car. Verified facts pages."
+};
+
 const CAT_GUIDES = {
   vets: [
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html" },
@@ -625,7 +635,7 @@ Object.keys(CATEGORIES).forEach(function (key) {
     title: (HUB_TITLE[key] || cat.name) + " | PattayaPets",
     ogTitle: HUB_TITLE[key] || cat.name,
     image: HUB_OG[key],
-    description: clampDesc(cat.intro),
+    description: clampDesc(HUB_DESC[key] || cat.intro),
     crumb: cat.name,
     breadcrumbs: [{ name: "Directory", path: "/directory.html" }],
     updated: "2026-05-29",

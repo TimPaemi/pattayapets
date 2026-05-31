@@ -86,13 +86,14 @@ pages.push(hub({
 
 /* ---- SHELTER PAGES ---- */
 function shelterDesc(s) {
-  return s.name + " — " + s.type.toLowerCase() +
-    " in the Pattaya area. How rescue, adoption and volunteering work.";
+  return "Adopt from " + s.name + " near Pattaya — " + s.type.toLowerCase() +
+    ". How rescue, adoption, fostering and volunteering work.";
 }
 
 const SHELTERS = [
   {
     slug: "hope-for-strays", name: "Hope for Strays",
+    pageTitle: "Hope for Strays Pattaya | Dog Rescue Shelter & Adoption",
     crumb: "Hope for Strays",
     type: "Dog rescue shelter",
     website: "https://hopeforstrays.org/",
@@ -118,6 +119,7 @@ const SHELTERS = [
   },
   {
     slug: "dog-cat-rescue-pattaya", name: "Dog & Cat Rescue Pattaya",
+    pageTitle: "Dog & Cat Rescue Pattaya | Adopt Dogs & Street Cats",
     crumb: "Dog & Cat Rescue Pattaya",
     type: "Dog & cat shelter",
     website: "https://www.facebook.com/DogRescuePattaya/",
@@ -140,6 +142,7 @@ const SHELTERS = [
   },
   {
     slug: "animal-army-foundation", name: "Animal Army Foundation",
+    pageTitle: "Animal Army Foundation Pattaya | Rescue Hospital & Adoption",
     crumb: "Animal Army Foundation",
     type: "Animal welfare foundation & hospital",
     website: "https://animalarmy.org/",
@@ -167,6 +170,7 @@ const SHELTERS = [
   },
   {
     slug: "pattaya-street-dogs-k9aid", name: "Pattaya Street Dogs (K9aid)",
+    pageTitle: "Pattaya Street Dogs (K9aid) | Rescue & Temple-Dog Care",
     crumb: "Pattaya Street Dogs (K9aid)",
     type: "Dog rescue",
     website: "https://k9aid.org/pattaya/",
@@ -190,6 +194,7 @@ const SHELTERS = [
   },
   {
     slug: "soi-dog-foundation", name: "Soi Dog Foundation",
+    pageTitle: "Soi Dog Foundation | Thailand Rescue, Sterilisation & Adoption",
     crumb: "Soi Dog Foundation",
     type: "Animal welfare charity",
     website: "https://www.soidog.org/",
@@ -215,6 +220,7 @@ const SHELTERS = [
   },
   {
     slug: "malees-animal-shelter", name: "Malee's Animal Shelter",
+    pageTitle: "Malee's Animal Shelter | Pattaya & Chanthaburi Dog & Cat Rescue",
     crumb: "Malee's Animal Shelter",
     type: "Dog & cat shelter",
     website: "https://www.chanthaburishelter.com/",
@@ -236,6 +242,7 @@ const SHELTERS = [
   },
   {
     slug: "ady-g-second-chance-pattaya", name: "Ady G. Second Chance Pattaya",
+    pageTitle: "Ady G. Second Chance Pattaya | Disabled Dog Sanctuary",
     crumb: "Ady G. Second Chance Pattaya",
     type: "Dog sanctuary",
     website: "https://www.adygsecondchancepattaya.org/",
@@ -294,7 +301,7 @@ SHELTERS.forEach(function (s) {
 
   pages.push(article({
     path: "/adopt-a-pet-pattaya/" + s.slug + ".html",
-    title: s.name + " | PattayaPets",
+    title: (s.pageTitle || s.name) + " | PattayaPets",
     desc: shelterDesc(s),
     crumb: s.crumb,
     breadcrumbs: SUB,

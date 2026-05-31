@@ -29,6 +29,7 @@ Not deployed. Last updated: 30 May 2026.
 | **66** | CTR pack #3 (emergency, health, corridors, areas); housing + Authority links |
 | **67** | Import/export step pages; all country corridor titles; arrival + vehicle rentals |
 | **68** | CTR pack #4 (species, seasonal, venomous); relocation checklists; restaurant guide link |
+| **69** | Directory contacts, shelter titles, category hub meta; trainers hub link |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 

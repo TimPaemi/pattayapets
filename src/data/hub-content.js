@@ -155,7 +155,8 @@ const HUB_GUIDE = {
     "before they begin. For walking safely around Pattaya&rsquo;s street dogs, see " +
     "<a href=\"/pet-emergency/street-dog-encounters.html\">street-dog encounters</a>. " +
     "If you are importing a dog, see our " +
-    "<a href=\"/pet-relocation/\">pet relocation agents</a> directory.</p>"),
+    "<a href=\"/pet-relocation/\">pet relocation agents</a> directory. Browse " +
+    "<a href=\"/trainers/\">dog trainers in Pattaya</a> for obedience and behaviour help.</p>"),
 
   "mobile-vets": S(
     "<h2>When a mobile vet makes sense in Pattaya</h2>" +
