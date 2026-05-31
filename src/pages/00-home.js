@@ -275,11 +275,12 @@ const body =
 
 module.exports = [{
   path: "/",
-  title: "PattayaPets - The honest pet resource for Pattaya",
-  ogTitle: "PattayaPets - The honest pet resource for Pattaya",
+  title: "PattayaPets | Pet Directory, Import Guides & 24-Hour Vets",
+  ogTitle: "PattayaPets — The honest pet resource for Pattaya",
   description:
-    "The honest, independent directory of Pattaya pet businesses - vets, groomers, boarding, pet shops, trainers - plus plain-English guides for pet owners.",
-  updated: "2026-05-28",
+    "Pattaya pet directory — vets, groomers, boarding, pet shops — plus import guides, " +
+    "dog-friendly places and emergencies. Reviewed honestly, never paid.",
+  updated: "2026-05-30",
   schema: [{
     "@type": "FAQPage",
     mainEntity: FAQ.map(function (f) {

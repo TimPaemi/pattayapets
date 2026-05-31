@@ -11,10 +11,10 @@ const pages = [];
 
 pages.push(hub({
   path: "/dog-friendly-pattaya/",
-  title: "Dog-friendly Pattaya | PattayaPets",
+  title: "Dog-Friendly Pattaya | Beaches, Cafes, Restaurants & Hotels | PattayaPets",
   image: "/assets/img/og-dog-friendly.png",
-  desc: "Where dogs are welcome in Pattaya: dog-friendly beaches, cafes, " +
-    "restaurants, hotels, condos and places to walk. Honest, practical guidance.",
+  desc: "Dog-friendly Pattaya: beaches, cafes, restaurants, hotels and condos that welcome " +
+    "dogs — plus walking routes, etiquette and what to confirm before you go.",
   crumb: "Dog-friendly Pattaya",
   breadcrumbs: [GUIDES],
   eyebrow: "Guide",
@@ -152,7 +152,10 @@ pages.push(df({
       "<p>Because cafes open, close and change policy quickly, the reliable " +
       "approach is not a fixed list but a habit: look for outdoor or garden " +
       "seating, and simply ask. A polite &lsquo;is it okay to bring my dog?&rsquo; " +
-      "at the door settles it.</p>" },
+      "at the door settles it. For a wider editorial guide to Pattaya&rsquo;s cafe " +
+      "scene, see " +
+      '<a href="https://pattaya-coffee.com/" target="_blank" rel="noopener noreferrer">' +
+      "Pattaya Coffee</a> &mdash; then confirm dog policy before you go.</p>" },
     { h: "Cafe etiquette", html:
       "<ul><li>Choose an outdoor table and keep your dog settled beside you, on " +
       "a short lead.</li>" +
@@ -183,7 +186,7 @@ pages.push(df({
 
 pages.push(df({
   slug: "restaurants", crumb: "Dog-friendly restaurants",
-  title: "Dog-friendly restaurants in Pattaya | PattayaPets",
+  title: "Dog-Friendly Restaurants in Pattaya | Where to Eat With Your Dog | PattayaPets",
   desc: "Eating out with your dog in Pattaya — where it works, the etiquette, and " +
     "how to find restaurants that welcome a well-behaved dog.",
   h1: "Dog-friendly restaurants in Pattaya",

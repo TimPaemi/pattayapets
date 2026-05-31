@@ -33,7 +33,7 @@ const pages = [];
 /* ---------------- Directory hub ---------------- */
 pages.push({
   path: "/directory.html",
-  title: "Pattaya pet business directory",
+  title: "Pattaya Pet Business Directory | Vets, Groomers & Boarding | PattayaPets",
   ogTitle: "The Pattaya pet business directory",
   image: "/assets/img/og-vets.png",
   description:
@@ -138,7 +138,7 @@ pages.push({
 /* ---------------- Guides hub ---------------- */
 pages.push({
   path: "/guides.html",
-  title: "Pattaya pet guides",
+  title: "Pattaya Pet Guides | Import, Export, Emergency & Owning | PattayaPets",
   ogTitle: "PattayaPets guides & resources",
   description:
     "Plain-English guides for pet owners in Pattaya: bringing a pet to Thailand, taking one out, dog-friendly places, pet emergencies, costs and adoption.",

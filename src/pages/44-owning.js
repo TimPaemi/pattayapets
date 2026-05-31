@@ -11,7 +11,7 @@ const pages = [];
 
 pages.push(hub({
   path: "/owning-a-pet-in-pattaya/",
-  title: "Owning a pet in Pattaya | PattayaPets",
+  title: "Owning a Pet in Pattaya | Costs, Housing, Heat & Daily Life | PattayaPets",
   image: "/assets/img/og-owning.png",
   desc: "What it is really like to own a pet in Pattaya: costs, hot-climate care, " +
     "pet-friendly housing, walking, registration and where to buy pet food.",
@@ -141,7 +141,7 @@ pages.push(own({
 
 pages.push(own({
   slug: "hot-climate-pet-care", crumb: "Hot-climate pet care",
-  title: "Hot-climate pet care in Pattaya | PattayaPets",
+  title: "Hot-Climate Pet Care Pattaya | Heatstroke, Walks & Paw Safety | PattayaPets",
   desc: "How to keep a dog or cat safe and comfortable in Pattaya's heat and " +
     "humidity — water, walk timing, cooling, paws, coat and parasites.",
   h1: "Hot-climate pet care",
@@ -193,7 +193,7 @@ pages.push(own({
 
 pages.push(own({
   slug: "pet-friendly-housing", crumb: "Pet-friendly housing",
-  title: "Pet-friendly housing in Pattaya | PattayaPets",
+  title: "Pet-Friendly Housing Pattaya | Condos, Houses & Rental Rules | PattayaPets",
   desc: "Finding pet-friendly housing in Pattaya: why many condos say no, houses " +
     "versus condos, deposits, and what to confirm before you sign a lease.",
   h1: "Pet-friendly housing in Pattaya",

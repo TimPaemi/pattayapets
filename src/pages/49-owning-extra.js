@@ -218,7 +218,7 @@ pages.push(own({
 /* ---------------- LOST PET ---------------- */
 pages.push(own({
   slug: "lost-pet-pattaya", crumb: "If your pet goes missing",
-  title: "If your pet goes missing in Pattaya | PattayaPets",
+  title: "Lost Pet Pattaya | What to Do in the First Hours | PattayaPets",
   desc: "A practical, step-by-step plan for what to do if your dog or cat goes " +
     "missing in Pattaya - searching, spreading the word, and microchips.",
   h1: "If your pet goes missing in Pattaya",

@@ -25,6 +25,7 @@ Not deployed. Last updated: 30 May 2026.
 | 62 | Visit delegate kit (`docs/visit-delegate-kit/`) |
 | 63 | Social kit + ads map + contextual network links (PattayaPets only) |
 | **64** | Gym + school guide network links; CTR titles on emergency, adoption, health hubs |
+| **65** | Fix vets hub `undefined` title bug; CTR pack #2; coffee + medical disambiguation links |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 

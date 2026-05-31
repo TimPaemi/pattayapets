@@ -42,7 +42,10 @@ pages.push(hub({
     "<a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">hot-climate pet " +
     "care</a>, <a href=\"/pet-emergency/ticks-and-fleas.html\">ticks &amp; fleas</a>, " +
     "and <a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">where to walk " +
-    "your dog</a> safely.</p><p>" + NOTVET + "</p></div>",
+    "your dog</a> safely.</p><p><strong>This hub is for animal emergencies only.</strong> " +
+    "For human medical care in Pattaya, see " +
+    '<a href="https://pattaya-medical.com/" target="_blank" rel="noopener noreferrer">' +
+    "Pattaya Medical</a>.</p><p>" + NOTVET + "</p></div>",
   groups: [
     {
       title: "When it is an emergency",
@@ -291,7 +294,7 @@ pages.push(hazard({
 /* ---------------- TICKS & FLEAS ---------------- */
 pages.push(hazard({
   slug: "ticks-and-fleas", crumb: "Ticks & fleas",
-  title: "Ticks & fleas on pets in Pattaya | PattayaPets",
+  title: "Ticks & Fleas on Pets in Pattaya | Prevention & Treatment | PattayaPets",
   desc: "Thailand's tropical climate means ticks and fleas all year. Why " +
     "prevention matters for pets in Pattaya, and what to watch for.",
   h1: "Ticks &amp; fleas in a tropical climate",

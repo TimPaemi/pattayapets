@@ -9,7 +9,7 @@ const pages = [];
 /* ---------------- PET INSURANCE ---------------- */
 pages.push(article({
   path: "/pet-insurance-thailand.html",
-  title: "Pet insurance in Thailand: is it worth it? | PattayaPets",
+  title: "Pet Insurance Thailand | Is It Worth It for Expats? | PattayaPets",
   desc: "How pet insurance works in Thailand, what it typically covers and " +
     "excludes, what to check before buying, and whether it is worth it in Pattaya.",
   crumb: "Pet insurance",
@@ -81,7 +81,7 @@ pages.push(article({
 /* ---------------- CATS HUB ---------------- */
 pages.push(hub({
   path: "/cats/",
-  title: "Cats in Pattaya: a cat owner's guide | PattayaPets",
+  title: "Cats in Pattaya | Cat Owner's Guide to Housing, Health & Care | PattayaPets",
   image: "/assets/img/og-cats.png",
   desc: "Everything for cat owners in Pattaya: vets, hot-climate care, bringing " +
     "or adopting a cat, and keeping a cat safe and happy in the tropics.",
@@ -153,7 +153,7 @@ pages.push(hub({
 /* ---------------- DOGS HUB ---------------- */
 pages.push(hub({
   path: "/dogs/",
-  title: "Dogs in Pattaya: a dog owner's guide | PattayaPets",
+  title: "Dogs in Pattaya | Dog Owner's Guide to Walks, Training & Health | PattayaPets",
   image: "/assets/img/og-dogs.png",
   desc: "Everything for dog owners in Pattaya: vets, walking, training, " +
     "dog-friendly places, hot-climate care, and bringing or adopting a dog.",

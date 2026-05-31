@@ -25,12 +25,13 @@ const HUB_OG = {
 };
 
 const HUB_TITLE = {
-  groomers: "Dog & cat groomers in Pattaya",
-  boarding: "Pet boarding & kennels in Pattaya",
-  "pet-shops": "Pet shops in Pattaya",
-  trainers: "Dog trainers in Pattaya",
-  "pet-relocation": "Pet relocation agents in Thailand",
-  "mobile-vets": "Mobile & home-visit vets in Pattaya"
+  vets: "Vets in Pattaya | Animal Hospitals & 24-Hour Emergency",
+  groomers: "Dog & Cat Groomers in Pattaya",
+  boarding: "Pet Boarding & Kennels in Pattaya",
+  "pet-shops": "Pet Shops in Pattaya",
+  trainers: "Dog Trainers in Pattaya",
+  "pet-relocation": "Pet Relocation Agents in Thailand",
+  "mobile-vets": "Mobile & Home-Visit Vets in Pattaya"
 };
 
 const CAT_GUIDES = {
@@ -570,7 +571,7 @@ Object.keys(CATEGORIES).forEach(function (key) {
   var body =
     '<section class="section"><div class="container">' +
     '<p class="eyebrow">Directory</p>' +
-    "<h1>" + esc(HUB_TITLE[key]) + "</h1>" +
+    "<h1>" + esc(HUB_TITLE[key] || cat.name) + "</h1>" +
     '<p class="lede">' + esc(cat.intro) + "</p>";
 
   if (key === "vets") {
@@ -621,8 +622,8 @@ Object.keys(CATEGORIES).forEach(function (key) {
 
   pages.push({
     path: "/" + cat.slug + "/",
-    title: HUB_TITLE[key] + " | PattayaPets",
-    ogTitle: HUB_TITLE[key],
+    title: (HUB_TITLE[key] || cat.name) + " | PattayaPets",
+    ogTitle: HUB_TITLE[key] || cat.name,
     image: HUB_OG[key],
     description: clampDesc(cat.intro),
     crumb: cat.name,

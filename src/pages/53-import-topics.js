@@ -42,7 +42,7 @@ const pages = [];
 /* ---------------- SNUB-NOSED BREEDS ---------------- */
 pages.push(article({
   path: "/bring-pet-to-thailand/snub-nosed-breeds-flying.html",
-  title: "Flying a snub-nosed pet to Thailand | PattayaPets",
+  title: "Flying a Snub-Nosed Dog or Cat to Thailand | Airline Rules | PattayaPets",
   desc: "Why flat-faced (brachycephalic) breeds need extra care when flying to " +
     "Thailand, airline restrictions, and how to lower the risk.",
   crumb: "Snub-nosed breeds",
@@ -120,7 +120,7 @@ pages.push(article({
 /* ---------------- THAILAND QUARANTINE ---------------- */
 pages.push(article({
   path: "/bring-pet-to-thailand/thailand-pet-quarantine.html",
-  title: "Is there pet quarantine in Thailand? | PattayaPets",
+  title: "Pet Quarantine in Thailand | What Happens on Arrival (2026) | PattayaPets",
   desc: "Whether Thailand quarantines imported pets, what really happens at the " +
     "Animal Quarantine Station on arrival, and what can cause a pet to be held.",
   crumb: "Pet quarantine",
