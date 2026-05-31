@@ -9,11 +9,12 @@ const CLUSTER = { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thail
 const SUB = [GUIDES, CLUSTER];
 
 const VERIFY =
-  "This guide was last reviewed in May 2026. Thailand&rsquo;s Department of " +
-  "Livestock Development (DLD), airlines and origin-country authorities change " +
-  "their rules without notice. Treat this as an orientation, then confirm every " +
-  "current requirement with the DLD, your airline and your origin-country " +
-  "authority before you book or travel.";
+  "This guide was last reviewed on 30 May 2026 against the Thai embassy pet-import " +
+  "guidance (revised January 2025), DLD Animal Quarantine Station contacts and " +
+  "published export procedures. Thailand&rsquo;s Department of Livestock Development " +
+  "(DLD), airlines and origin-country authorities change their rules without notice. " +
+  "Treat this as an orientation, then confirm every current requirement with the DLD, " +
+  "your airline and your origin-country authority before you book or travel.";
 
 const OFFICIAL =
   "<p><strong>Official sources to verify against:</strong> " +
@@ -35,11 +36,11 @@ const pages = [];
 /* ---------------- HUB ---------------- */
 pages.push(hub({
   path: "/bring-pet-to-thailand/",
-  title: "Bringing your pet to Thailand | PattayaPets",
+  title: "How to Bring a Pet to Thailand (DLD Guide 2026) | PattayaPets",
   image: "/assets/img/og-import.png",
-  updated: "2026-05-28",
-  desc: "How to bring a dog or cat to Thailand: the DLD import permit, microchip, " +
-    "rabies vaccination and titer test, health certificate, airlines and arrival.",
+  updated: "2026-05-30",
+  desc: "How to bring a dog or cat to Thailand in 2026: DLD import permit, microchip, " +
+    "rabies vaccination, health certificate, airlines and arrival at Bangkok or U-Tapao.",
   crumb: "Bringing a pet to Thailand",
   breadcrumbs: [GUIDES],
   eyebrow: "Flagship guide",
@@ -319,9 +320,9 @@ pages.push(importStep({
 /* ---------------- IMPORT PERMIT ---------------- */
 pages.push(importStep({
   path: "/bring-pet-to-thailand/import-permit-thailand-dld.html",
-  title: "Thailand pet import permit (DLD) | PattayaPets",
-  desc: "The Thailand pet import permit from the Department of Livestock " +
-    "Development: how to apply, the timing, and what you submit.",
+  title: "Thailand DLD Pet Import Permit: How to Apply (2026) | PattayaPets",
+  desc: "Apply for Thailand's DLD pet import permit (form R1/1): 7–60 day window, AQS " +
+    "email contacts, required vaccines, 500 baht arrival fee and what to submit.",
   crumb: "DLD import permit",
   breadcrumbs: SUB,
   eyebrow: "Bringing a pet to Thailand · Step 4",
@@ -375,6 +376,12 @@ pages.push(importStep({
       "the airport. On arrival, the AQS inspects your pet and issues the import " +
       "licence; the inspection fee is currently <strong>500&nbsp;baht</strong> " +
       "(confirm the current amount with the AQS).</p>" },
+    { h: "Confirm your arrival date", html:
+      "<p>DLD guidance also asks you to <strong>confirm your exact arrival date with " +
+      "the AQS at least three days before you land</strong>, so the quarantine " +
+      "station can prepare. After your permit is approved and your flight is " +
+      "booked, email the AQS with your final itinerary &mdash; do not assume a " +
+      "permit alone is enough without telling them when you are coming.</p>" },
     { h: "What comes next", html:
       "<p>With the permit in hand, book the flight under " +
       '<a href="/bring-pet-to-thailand/airline-pet-policies.html">airline pet policies</a>, ' +
@@ -644,9 +651,9 @@ function countryPage(o) {
 
 pages.push(countryPage({
   slug: "from-uk", crumb: "From the UK",
-  title: "Bringing a pet to Thailand from the UK | PattayaPets",
-  desc: "Bringing a dog or cat from the UK to Thailand: APHA endorsement, and the " +
-    "rabies titer test the return journey to the UK will require.",
+  title: "Bring a Pet to Thailand from the UK (APHA & DLD 2026) | PattayaPets",
+  desc: "UK to Thailand pet import: APHA health certificate endorsement, DLD import " +
+    "permit, and why to do the rabies titer test before you leave for a UK return.",
   h1: "Bringing a pet to Thailand from the UK",
   lede: "The Thai requirements are the standard ones. What is UK-specific is who " +
     "endorses your paperwork — and what you must plan for if you ever come back.",
@@ -684,9 +691,9 @@ pages.push(countryPage({
 
 pages.push(countryPage({
   slug: "from-usa", crumb: "From the USA",
-  title: "Bringing a pet to Thailand from the USA | PattayaPets",
-  desc: "Bringing a dog or cat from the United States to Thailand: USDA APHIS " +
-    "endorsement and the CDC rules that affect dogs.",
+  title: "Bring a Pet to Thailand from the USA (USDA & DLD 2026) | PattayaPets",
+  desc: "USA to Thailand pet import: USDA APHIS endorsement, DLD import permit (R1/1) " +
+    "and CDC rules for dogs if you return to the United States later.",
   h1: "Bringing a pet to Thailand from the USA",
   lede: "From the US, the Thai steps are standard. The US-specific points are the " +
     "USDA endorsement and the CDC&rsquo;s rules for dogs.",
@@ -721,9 +728,9 @@ pages.push(countryPage({
 
 pages.push(countryPage({
   slug: "from-eu", crumb: "From the EU",
-  title: "Bringing a pet to Thailand from the EU | PattayaPets",
-  desc: "Bringing a dog or cat from an EU country to Thailand: the EU export " +
-    "certificate, and why the EU pet passport does not cover the return trip.",
+  title: "Bring a Pet to Thailand from the EU (DLD Import 2026) | PattayaPets",
+  desc: "EU to Thailand pet import: EU export health certificate, competent authority " +
+    "endorsement, DLD import permit and the titer test if you return to the EU.",
   h1: "Bringing a pet to Thailand from the EU",
   lede: "EU owners travel with a pet passport at home — but it does not do the " +
     "job for Thailand, or for coming back.",

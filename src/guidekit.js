@@ -2,8 +2,8 @@
 /* Shared rendering kit for guide pages. Produces Article + FAQPage schema. */
 
 const SITE = "https://pattayapets.com";
-const DEFAULT_UPDATED = "2026-05-29";
-const DEFAULT_UPDATED_LABEL = "29 May 2026";
+const DEFAULT_UPDATED = "2026-05-30";
+const DEFAULT_UPDATED_LABEL = "30 May 2026";
 
 const DISC =
   '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +

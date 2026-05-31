@@ -9,10 +9,12 @@ const CLUSTER = { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thail
 const SUB = [GUIDES, CLUSTER];
 
 const VERIFY =
-  "This guide was last reviewed in May 2026. Thailand's Department of Livestock " +
-  "Development, airlines and origin-country authorities change their rules without " +
-  "notice. Treat this as orientation, then confirm every current requirement with " +
-  "the DLD, your airline and your origin-country authority before you book or travel.";
+  "This guide was last reviewed on 30 May 2026 against the Thai embassy pet-import " +
+  "guidance (revised January 2025), DLD Animal Quarantine Station contacts and " +
+  "published export procedures. Thailand's Department of Livestock Development, " +
+  "airlines and origin-country authorities change their rules without notice. Treat " +
+  "this as orientation, then confirm every current requirement with the DLD, your " +
+  "airline and your origin-country authority before you book or travel.";
 
 const OFFICIAL =
   "<p><strong>Official sources to verify against:</strong> " +
@@ -199,18 +201,28 @@ pages.push(article({
 /* ---------------- CHECKLIST ---------------- */
 pages.push(article({
   path: "/bring-pet-to-thailand/checklist.html",
-  title: "Pet import to Thailand checklist | PattayaPets",
-  desc: "A printable step-by-step checklist for bringing a dog or cat to Thailand: " +
-    "microchip, rabies, health certificate, DLD import permit, airline and arrival.",
+  title: "Bring a Dog or Cat to Thailand: Printable Checklist | PattayaPets",
+  desc: "Printable pet import checklist for Thailand: microchip, rabies, DLD import " +
+    "permit (R1/1), health certificate, airline booking and arrival steps for Pattaya.",
   crumb: "Import checklist",
   breadcrumbs: SUB,
   eyebrow: "Bringing a pet to Thailand",
   h1: "Pet import to Thailand checklist",
+  updated: "2026-05-30",
+  updatedLabel: "30 May 2026",
   lede: "Use this as a working checklist while you plan. Every step links to the " +
     "full guide. Allow at least one to two months &mdash; longer if you may later " +
     "move your pet to the UK, EU or Australia.",
   verify: VERIFY,
   sections: [
+    { h: "May 2026 review", html:
+      '<div class="callout callout-tip"><div class="ch">What we checked this update</div>' +
+      "<p>Cross-checked against the Thai embassy pet-import guide (revised January 2025) " +
+      "and DLD AQS guidance: import permit window (7&ndash;60 days before departure, " +
+      "valid 60 days once issued); form <strong>R1/1</strong>; dog vaccines including " +
+      "leptospirosis (or a negative test within 30 days if not vaccinated); 21-day wait " +
+      "after primary rabies; confirm arrival with the AQS at least three days before " +
+      "landing; 500&nbsp;baht inspection fee on arrival. Always re-verify before you fly.</p></div>" },
     { h: "Before you book anything", html:
       "<ol>" +
       "<li>Read the <a href=\"/bring-pet-to-thailand/\">full import guide</a>.</li>" +
@@ -226,19 +238,22 @@ pages.push(article({
       "<li><strong>Microchip</strong> &mdash; ISO 11784/11785, implanted " +
       "<em>before</em> the rabies shot. " +
       "<a href=\"/bring-pet-to-thailand/microchip-requirements.html\">Microchip guide</a></li>" +
-      "<li><strong>Rabies vaccination</strong> &mdash; at least 21 days before travel; other " +
-      "vaccinations as required. " +
+      "<li><strong>Rabies vaccination</strong> &mdash; at least 21 days before travel; dogs " +
+      "also need distemper, hepatitis, parvovirus and leptospirosis (or a negative " +
+      "leptospirosis test within 30 days per current embassy guidance). " +
       "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">Rabies and titer guide</a></li>" +
       "<li><strong>Rabies titer test</strong> (recommended even if Thailand does not require it) &mdash; " +
       "essential if you may later export to the UK, EU or Australia. Start early.</li>" +
       "<li><strong>Health certificate</strong> &mdash; within the validity window; endorsed by your " +
       "origin-country authority. " +
       "<a href=\"/bring-pet-to-thailand/health-certificate.html\">Health certificate guide</a></li>" +
-      "<li><strong>DLD import permit</strong> &mdash; apply before you fly. " +
+      "<li><strong>DLD import permit</strong> &mdash; apply in the 7&ndash;60 day window before " +
+      "departure (around 30 days ahead is sensible). " +
       "<a href=\"/bring-pet-to-thailand/import-permit-thailand-dld.html\">Import permit guide</a></li>" +
       "</ol>" },
     { h: "Two weeks before departure", html:
       "<ul>" +
+      "<li>Confirm your exact arrival date with the AQS at least three days before landing.</li>" +
       "<li>Re-read every document against the DLD and airline requirements.</li>" +
       "<li>Confirm crate size meets IATA rules; book cargo or cabin slot if required.</li>" +
       "<li>Carry copies of every certificate, permit and endorsement in hand luggage.</li>" +

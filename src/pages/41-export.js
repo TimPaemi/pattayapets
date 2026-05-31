@@ -9,7 +9,8 @@ const CLUSTER = { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-
 const SUB = [GUIDES, CLUSTER];
 
 const VERIFY =
-  "This guide was last reviewed in May 2026. Export rules &mdash; Thai DLD " +
+  "This guide was last reviewed on 30 May 2026 against DLD export procedures and " +
+  "published destination-country import rules. Export rules &mdash; Thai DLD " +
   "procedures, destination-country requirements, airline policies and CDC/APHA " +
   "rules &mdash; change without notice. Use this as orientation, then confirm " +
   "every current requirement with the DLD and the destination country&rsquo;s " +
@@ -61,11 +62,11 @@ const pages = [];
 
 pages.push(hub({
   path: "/take-pet-out-of-thailand/",
-  title: "Taking your pet out of Thailand | PattayaPets",
+  title: "How to Export a Pet from Thailand (DLD Guide 2026) | PattayaPets",
   image: "/assets/img/og-export.png",
-  updated: "2026-05-29",
-  desc: "How to export a dog or cat from Thailand: the DLD export process, plus " +
-    "destination notes for the UK, USA, EU and Australia.",
+  updated: "2026-05-30",
+  desc: "Export a dog or cat from Thailand in 2026: DLD export permit, health certificate, " +
+    "rabies titer timing and destination guides for the UK, USA, EU and Australia.",
   crumb: "Taking a pet out of Thailand",
   breadcrumbs: [GUIDES],
   eyebrow: "Guide",
@@ -162,9 +163,10 @@ function exp(o) {
 pages.push(exp({
   slug: "export-process", crumb: "The export process",
   skipOfficial: true,
-  title: "Exporting a pet from Thailand | PattayaPets",
-  desc: "The Thai side of taking a pet abroad: microchip, rabies, the DLD export " +
-    "health certificate and export permit, and the airport on the way out.",
+  title: "Export a Pet from Thailand: DLD Process Step by Step | PattayaPets",
+  desc: "Thai DLD pet export process: ISO microchip, rabies vaccination, export health " +
+    "certificate, export permit (form 1/1) and Suvarnabhumi AQS steps before you fly.",
+  updated: "2026-05-30",
   h1: "The export process from Thailand",
   lede: "Before any destination-country rule applies, your pet has to clear the " +
     "Thai export process. Here is that half.",
@@ -195,7 +197,10 @@ pages.push(exp({
     { h: "Leaving from the airport", html:
       "<p>Most pets depart from Suvarnabhumi (BKK). The DLD has an office at the " +
       "airport for final endorsement, and your pet is checked before it flies. " +
-      "Many owners use a <a href=\"/pet-relocation/\">pet relocation agent</a> " +
+      "Confirm your exact departure date with the AQS export desk when your permit " +
+      "application is underway &mdash; the same three-day confirmation rule applies " +
+      "on export as on import. Many owners use a " +
+      "<a href=\"/pet-relocation/\">pet relocation agent</a> " +
       "for export precisely because the airport steps, the " +
       "<a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline pet " +
       "policy</a> and the destination paperwork have to line up perfectly.</p>" },
@@ -223,9 +228,10 @@ pages.push(exp({
 
 pages.push(exp({
   slug: "export-permit-thailand-dld", crumb: "DLD export permit",
-  title: "Thailand pet export permit (DLD) | PattayaPets",
-  desc: "The Thailand pet export permit from the Department of Livestock " +
-    "Development: how to apply, the timing, and what you submit before departure.",
+  title: "Thailand DLD Pet Export Permit: How to Apply (2026) | PattayaPets",
+  desc: "Apply for Thailand's DLD pet export permit (form 1/1): 15-day minimum lead time, " +
+    "Suvarnabhumi AQS export desk, destination import rules and what to submit.",
+  updated: "2026-05-30",
   h1: "The Thailand export permit (DLD)",
   lede: "Before your pet leaves Thailand, the Department of Livestock Development " +
     "must issue an export permit and health certificate. Here is how that half works.",
@@ -378,9 +384,9 @@ pages.push(exp({
 
 pages.push(exp({
   slug: "to-uk", crumb: "To the UK",
-  title: "Taking a pet from Thailand to the UK | PattayaPets",
-  desc: "Bringing a pet from Thailand to the UK: the rabies titer test, the " +
-    "three-month wait, tapeworm treatment for dogs and approved routes.",
+  title: "Export a Pet from Thailand to the UK (Titer & Tapeworm 2026) | PattayaPets",
+  desc: "Thailand to UK pet export: rabies titer test, three-month wait, tapeworm " +
+    "treatment for dogs, approved routes and DLD export paperwork.",
   h1: "Taking a pet from Thailand to the UK",
   lede: "The UK treats Thailand as an &lsquo;unlisted&rsquo; country, which makes " +
     "the rabies titer test and its waiting period the centre of your timeline.",
@@ -425,9 +431,9 @@ pages.push(exp({
 
 pages.push(exp({
   slug: "to-usa", crumb: "To the USA",
-  title: "Taking a pet from Thailand to the USA | PattayaPets",
-  desc: "Bringing a pet from Thailand to the United States: the CDC dog-import " +
-    "rules, the rabies titer test, and what the process involves.",
+  title: "Export a Pet from Thailand to the USA (CDC Rules 2026) | PattayaPets",
+  desc: "Thailand to USA pet export: CDC dog-import rules, rabies titer test, DLD export " +
+    "paperwork and what US-bound dog owners must plan months ahead.",
   h1: "Taking a pet from Thailand to the USA",
   lede: "The US Centers for Disease Control treats Thailand as a " +
     "high-rabies-risk country, and that shapes everything for dogs.",

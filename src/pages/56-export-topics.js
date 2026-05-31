@@ -8,7 +8,8 @@ const CLUSTER = { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-
 const SUB = [GUIDES, CLUSTER];
 
 const VERIFY =
-  "This guide was last reviewed in May 2026. Export rules &mdash; Thai DLD " +
+  "This guide was last reviewed on 30 May 2026 against DLD export procedures and " +
+  "published destination-country import rules. Export rules &mdash; Thai DLD " +
   "procedures, destination-country requirements and airline policies &mdash; change " +
   "without notice. Use this as orientation, then confirm every current requirement " +
   "with the DLD and the destination country's authority before booking.";
@@ -24,9 +25,9 @@ const pages = [];
 
 pages.push(article({
   path: "/take-pet-out-of-thailand/checklist.html",
-  title: "Pet export from Thailand checklist | PattayaPets",
-  desc: "Printable checklist for taking a dog or cat out of Thailand: microchip, " +
-    "rabies titer, DLD export permit, health certificate and airline booking.",
+  title: "Export a Pet from Thailand: Printable Checklist | PattayaPets",
+  desc: "Printable pet export checklist from Thailand: rabies titer timing, DLD export " +
+    "permit, health certificate, destination import rules and airline booking.",
   crumb: "Export checklist",
   breadcrumbs: SUB,
   eyebrow: "Taking a pet out of Thailand",
@@ -34,7 +35,8 @@ pages.push(article({
   lede: "Use this as a working checklist while you plan your departure from Pattaya. " +
     "Allow several months if your destination requires a rabies titer test and waiting period.",
   verify: VERIFY,
-  updated: "2026-05-29",
+  updated: "2026-05-30",
+  updatedLabel: "30 May 2026",
   sections: [
     { h: "Before you book anything", html:
       "<ol>" +
