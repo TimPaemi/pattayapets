@@ -9,7 +9,7 @@ const CLUSTER = { name: "Pet health in Pattaya", path: "/pet-health-pattaya/" };
 const SUB = [GUIDES, CLUSTER];
 
 const HEALTH_VERIFY =
-  "This is general health orientation, last reviewed May 2026, and is not " +
+  "This is general health orientation, last reviewed on 31 May 2026, and is not " +
   "veterinary advice or a diagnosis. PattayaPets is an editorial publication, not " +
   "a veterinary practice. If you are worried about your pet, see a qualified " +
   "veterinarian &mdash; early advice is always better than waiting.";
@@ -40,7 +40,7 @@ pages.push(hub({
   path: "/pet-health-pattaya/",
   title: "Pet Health in Pattaya | Heartworm, Ticks & Tropical Risks | PattayaPets",
   image: "/assets/img/og-health.png",
-  updated: "2026-05-28",
+  updated: "2026-05-31",
   desc: "Orientation to the pet health issues a hot, humid, parasite-rich climate " +
     "makes common in Pattaya: heartworm, tick disease, skin and ear problems and more.",
   crumb: "Pet health",

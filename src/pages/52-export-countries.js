@@ -43,6 +43,8 @@ const OFFICIAL =
   "rel=\"noopener nofollow\">Philippines BAI</a>; " +
   "<a href=\"https://english.beijing.gov.cn/latest/lawsandpolicies/202104/t20210407_2346645.html\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">China GACC pet entry</a>; " +
+  "<a href=\"https://www.gov.za/services/import/import-animals-and-animal-products\" " +
+  "target=\"_blank\" rel=\"noopener nofollow\">South Africa DALRRD import</a>; " +
   "<a href=\"https://inspection.canada.ca/en/importing-food-plants-or-animals/pets\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">Canada CFIA</a>; " +
   "<a href=\"https://www.blv.admin.ch/blv/en/home/tiere/reisen-mit-heimtieren.html\" " +
@@ -983,34 +985,91 @@ pages.push(exp({
 /* ---------------- SOUTH AFRICA ---------------- */
 pages.push(exp({
   slug: "to-south-africa", crumb: "To South Africa",
-  title: "Export a Pet from Thailand to South Africa (DLD 2026) | PattayaPets",
-  desc: "Bringing a dog or cat from Thailand to South Africa: DALRRD import " +
-    "requirements, flight routing, and the Thai DLD export steps.",
+  title: "Export a Pet from Thailand to South Africa (DALRRD & DLD 2026) | PattayaPets",
+  desc: "Thailand to South Africa pet export: DALRRD import permit, dog quarantine, " +
+    "five pre-import blood tests, manifest cargo rules and DLD export timeline.",
   h1: "Taking a pet from Thailand to South Africa",
-  lede: "South Africa classifies origin countries carefully for rabies control. " +
-    "The Thai export process is standard; the South African veterinary import " +
-    "permit and any additional tests set your timeline.",
+  lede: "Thailand is <strong>not</strong> on South Africa&rsquo;s quarantine-exempt list. " +
+    "Dogs normally face <strong>state quarantine on arrival</strong>, five pre-import blood " +
+    "tests, and entry only as <strong>manifest cargo</strong> via Johannesburg or Cape Town.",
+  officialExtra:
+    "<p><strong>South Africa sources:</strong> " +
+    '<a href="https://www.gov.za/services/import/import-animals-and-animal-products" ' +
+    'target="_blank" rel="noopener nofollow">gov.za &mdash; import animals and animal products</a> ' +
+    "(contact <strong>VetPermits@Dalrrd.gov.za</strong> for current VIP forms and fees); " +
+    '<a href="https://dirco.gov.za/newyork/wp-content/uploads/sites/77/2025/04/Importing-cats-and-dogs-to-SA-subject-to-quarantine.pdf" ' +
+    'target="_blank" rel="noopener nofollow">quarantine import application form (PDF)</a>. ' +
+    "Import mirror: " +
+    "<a href=\"/bring-pet-to-thailand/from-south-africa.html\">bringing a pet from South Africa</a>.</p>",
   sections: [
-    { h: "Entering South Africa from Thailand", html:
-      "<p>Pet import is overseen by the <strong>Department of Agriculture, Land Reform " +
-      "and Rural Development (DALRRD)</strong>. Typically you need a veterinary import " +
-      "permit, an ISO microchip, a valid rabies vaccination, a health certificate " +
-      "from Thailand and compliance with any additional requirements for pets arriving " +
-      "from Thailand's rabies status. Confirm the current detail with DALRRD and an " +
-      "experienced import veterinarian with plenty of lead time.</p>" },
-    { h: "The Thai side and routing", html:
-      THAI_SIDE +
-      "<p>Most routes from Bangkok to South Africa involve at least one stop, which " +
-      "affects airline pet policies and total journey time. Plan crate comfort and " +
-      "layover rules with your agent or airline.</p>" +
-      "<p>If you came from South Africa originally, see " +
-      "<a href=\"/bring-pet-to-thailand/from-south-africa.html\">bringing a pet from South Africa</a>.</p>" }
+    { h: "The timeline — Thailand to South Africa", html:
+      "<p>DALRRD asks for permit applications at least <strong>four weeks</strong> before " +
+      "arrival; processing takes <strong>5&ndash;10 working days</strong> if approved. " +
+      "Dogs from Thailand require quarantine booking as part of the permit application.</p>" +
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Authority</th></tr></thead><tbody>' +
+      '<tr><th scope="row">3+ months before</th>' +
+      '<td>Email DALRRD for current requirements; confirm Thailand is still non-quarantine-exempt for dogs</td>' +
+      '<td>DALRRD (VetPermits@Dalrrd.gov.za)</td></tr>' +
+      '<tr><th scope="row">6&ndash;8 weeks before</th>' +
+      '<td>Apply for <strong>Veterinary Import Permit</strong> with proof of payment; book quarantine (dogs) at Kempton Park or Milnerton</td>' +
+      '<td>DALRRD Permit Office</td></tr>' +
+      '<tr><th scope="row">Within 30 days of export</th>' +
+      '<td>Dogs: blood tests for Babesia gibsoni, Brucella canis, Dirofilaria immitis, Trypanosoma evansi and Leishmania (all negative)</td>' +
+      '<td>Approved laboratory</td></tr>' +
+      '<tr><th scope="row">30+ days before import (primary rabies)</th>' +
+      '<td>Valid rabies vaccination (primary: 30 days&ndash;12 months before import; booster within validity)</td>' +
+      '<td>Thai vet</td></tr>' +
+      '<tr><th scope="row">&ge;15 days before export</th>' +
+      '<td>Apply for Thai <a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">DLD export permit</a> (form 1/1) with DALRRD VIP attached</td>' +
+      '<td>DLD AQS</td></tr>' +
+      '<tr><th scope="row">Within 10 days of departure</th>' +
+      '<td>Government-endorsed veterinary health certificate on DALRRD specimen format</td>' +
+      '<td>DLD AQS + vet</td></tr>' +
+      '<tr><th scope="row">Arrival</th>' +
+      '<td>Manifest cargo to OR Tambo (Johannesburg) or Cape Town <strong>cargo terminal</strong>; dog to state quarantine if required</td>' +
+      '<td>DALRRD import control</td></tr>' +
+      '</tbody></table></div>' },
+    { h: "Thai-side export documents", html: DLD_EXPORT_TABLE + THAI_SIDE },
+    { h: "What DALRRD requires (verify before you start)", html:
+      "<p>DALRRD&rsquo;s published information document (June 2022) specifies, among other things:</p>" +
+      "<ul>" +
+      "<li><strong>Original Veterinary Import Permit</strong> issued with the permit application.</li>" +
+      "<li><strong>ISO 11784/11785 microchip</strong> (tattoos not accepted).</li>" +
+      "<li><strong>Manifest cargo only</strong> &mdash; not excess baggage; inspection at the " +
+      "<strong>cargo terminal</strong>, not the passenger terminal.</li>" +
+      "<li><strong>Dogs from non-exempt countries</strong> (including Thailand) are quarantined on arrival; " +
+      "entry via OR Tambo or Cape Town only for quarantined dogs.</li>" +
+      "<li><strong>Cats</strong> are not routinely quarantined if the VIP, health certificate and " +
+      "rabies certificate are complete on arrival &mdash; but missing originals can trigger holding.</li>" +
+      "<li><strong>Dogs:</strong> five negative blood tests within 30 days of import; laboratory report in English.</li>" +
+      "<li><strong>Health certificate</strong> endorsed by the exporting country&rsquo;s government veterinarian " +
+      "within <strong>10 days</strong> of departure.</li>" +
+      "</ul>" +
+      "<p>Rules change &mdash; email <strong>VetPermits@Dalrrd.gov.za</strong> for the current VIP, " +
+      "fee and health-certificate template before you commit to dates.</p>" },
+    { h: "Common mistakes", html: EXPORT_FAILS +
+      "<ul>" +
+      "<li><strong>Applying for the VIP too late</strong> &mdash; allow four weeks minimum plus 5&ndash;10 working days processing.</li>" +
+      "<li><strong>Passenger-terminal arrival</strong> &mdash; DALRRD inspects at cargo terminals; pets must travel as manifest cargo.</li>" +
+      "<li><strong>Skipping dog blood tests</strong> &mdash; all five must be negative within 30 days of import.</li>" +
+      "<li><strong>No quarantine reservation</strong> &mdash; required for dogs from Thailand when applying for the permit.</li>" +
+      "<li><strong>Wrong airport</strong> &mdash; quarantined dogs enter only via Johannesburg or Cape Town.</li>" +
+      "</ul>" +
+      "<p>A specialist <a href=\"/pet-relocation/\">pet relocation agent</a> experienced in " +
+      "the South Africa route is strongly recommended.</p>" }
   ],
   faqs: [
     ["Does South Africa require a rabies titer test from Thailand?",
-     "<p>South Africa's rules depend on how Thailand is classified and the current DALRRD policy. Confirm with DALRRD and your import vet rather than assuming.</p>"],
+     "<p>DALRRD's published dog import rules focus on five specific disease blood tests (Babesia, Brucella, heartworm, Trypanosoma, Leishmania) rather than a rabies titer. Rabies vaccination timing rules apply separately. Confirm the current VIP requirements with VetPermits@Dalrrd.gov.za.</p>"],
     ["Who issues the South African import permit?",
-     "<p>DALRRD oversees veterinary import permits for live animals. Apply through the official process with plenty of lead time before your travel date.</p>"]
+     "<p>DALRRD Directorate Animal Health Permit Office in Pretoria. Apply with proof of payment to VetPermits@Dalrrd.gov.za at least four weeks before arrival.</p>"],
+    ["Will my dog be quarantined in South Africa from Thailand?",
+     "<p>Yes — Thailand is not on South Africa's quarantine-exempt country list for dogs. Book quarantine at Kempton Park (Johannesburg) or Milnerton (Cape Town) when applying for the import permit.</p>"],
+    ["Can my pet fly in the cabin to South Africa?",
+     "<p>DALRRD allows cabin travel if the airline permits it, but the pet must still be registered as manifest cargo and inspected at the cargo terminal on landing. Confirm with your airline and agent.</p>"],
+    ["When should I apply for the Thai DLD export permit?",
+     "<p>At least 15 days before export, once the DALRRD import permit is issued and dog blood tests (if applicable) are complete.</p>"]
   ]
 }));
 

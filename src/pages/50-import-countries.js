@@ -1009,41 +1009,91 @@ pages.push(country({
 /* ---------------- SOUTH AFRICA ---------------- */
 pages.push(country({
   slug: "from-south-africa", crumb: "From South Africa",
-  title: "Bring a Pet to Thailand from South Africa (DLD 2026) | PattayaPets",
-  desc: "Bringing a dog or cat from South Africa to Thailand: DAFF export " +
-    "certificate, flight routing, and the standard Thai import steps.",
+  title: "Bring a Pet to Thailand from South Africa (DALRRD & DLD 2026) | PattayaPets",
+  desc: "South Africa to Thailand pet import: state vet export certificate, DLD " +
+    "import timeline, manifest cargo routing, and return-to-SA planning.",
   h1: "Bringing a pet to Thailand from South Africa",
-  lede: "South Africa is a high-rabies origin with a formal export process through " +
-    "the Department of Agriculture. The Thai import steps are standard; allow " +
-    "extra lead time for flights and export paperwork.",
+  lede: "South Africa runs a formal export process through <strong>DALRRD state " +
+    "veterinarians</strong>. The Thai import side is standard &mdash; but flights to " +
+    "Bangkok almost always connect via the Gulf or Asia, and airlines often require " +
+    "<strong>manifested cargo</strong>.",
+  officialExtra:
+    "<p><strong>South Africa sources:</strong> " +
+    '<a href="https://www.elsenburg.com/exporting-pets-and-products/" target="_blank" ' +
+    "rel=\"noopener nofollow\">Western Cape DALRRD &mdash; exporting pets</a> (general " +
+    "process; contact your province&rsquo;s state vet office); " +
+    '<a href="https://www.gov.za/services/import/import-animals-and-animal-products" ' +
+    'target="_blank" rel="noopener nofollow">gov.za &mdash; import animals</a>. ' +
+    "Export mirror: " +
+    "<a href=\"/take-pet-out-of-thailand/to-south-africa.html\">taking a pet to South Africa</a>.</p>",
   sections: [
-    { h: "The South African export side", html:
-      "<p>" + STD_STEPS + "For export from South Africa, the veterinary health " +
-      "certificate is issued and endorsed through the " +
-      "<strong>Department of Agriculture, Land Reform and Rural Development (DALRRD)</strong> " +
-      "export process (often referred to in pet-move guides as DAFF). Use a " +
-      "state veterinarian or an experienced export vet and confirm the current " +
-      "export requirements for dogs and cats leaving South Africa before you fix " +
-      "a travel date.</p>" +
-      "<p>Most routes to Bangkok involve at least one stop &mdash; often in the " +
-      "Gulf or Southeast Asia &mdash; which affects total journey time and airline " +
-      "pet policies. Plan crate comfort, water and layover rules with your agent " +
-      "or airline.</p>" },
-    { h: "Arriving near Pattaya", html:
-      "<p>Pets clear at Suvarnabhumi in Bangkok. From there it is a road transfer " +
-      "to Pattaya &mdash; see " +
-      "<a href=\"/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html\">arrival " +
+    { h: "The timeline — South African export and DLD import", html:
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Authority</th></tr></thead><tbody>' +
+      '<tr><th scope="row">8+ weeks before</th>' +
+      '<td>ISO microchip; rabies and core vaccinations per Thailand&rsquo;s schedule</td>' +
+      '<td>Private vet</td></tr>' +
+      '<tr><th scope="row">4&ndash;6 weeks before</th>' +
+      '<td>Apply for <a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a> (form R1/1) to Bangkok AQS</td>' +
+      '<td>DLD</td></tr>' +
+      '<tr><th scope="row">3+ weeks before</th>' +
+      '<td>Confirm Thailand import requirements with your local <strong>state veterinarian</strong>; book export certification appointment</td>' +
+      '<td>DALRRD state vet</td></tr>' +
+      '<tr><th scope="row">2+ weeks before</th>' +
+      '<td>Book airline routing (often via Dubai, Doha or Singapore); confirm <strong>manifest cargo</strong> vs cabin rules</td>' +
+      '<td>Airline</td></tr>' +
+      '<tr><th scope="row">Within 7&ndash;10 days of departure</th>' +
+      '<td>Private vet health check; state vet endorses export health certificate for Thailand</td>' +
+      '<td>State vet + private vet</td></tr>' +
+      '<tr><th scope="row">Arrival in Thailand</th>' +
+      '<td>AQS inspection at Suvarnabhumi; road transfer to Pattaya</td>' +
+      '<td>DLD AQS</td></tr>' +
+      '</tbody></table></div>' +
+      "<p>Thai-side steps: " + STD_STEPS + "</p>" },
+    { h: "Documents the DLD expects", html: TH_IMPORT_TABLE + TH_ARRIVAL_STD +
+      "<p>See <a href=\"/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html\">arrival " +
       "at Suvarnabhumi</a> and " +
-      "<a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok?</a>.</p>" +
-      "<p>If you may return to South Africa, verify current DALRRD re-entry rules " +
-      "with plenty of lead time &mdash; see our guide to " +
-      "<a href=\"/take-pet-out-of-thailand/to-south-africa.html\">exporting a pet to South Africa</a>.</p>" }
+      "<a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok?</a>.</p>" },
+    { h: "The South African export side (DALRRD)", html:
+      "<p>Export from South Africa requires a <strong>Veterinary Health Certificate " +
+      "certified by a state veterinarian</strong>. The usual sequence:</p>" +
+      "<ol>" +
+      "<li>Obtain Thailand&rsquo;s DLD import requirements (your permit copy).</li>" +
+      "<li>Private veterinarian completes health checks, vaccinations and any tests Thailand requires.</li>" +
+      "<li>Present the signed certificate, vaccination records and DLD permit to your " +
+      "<strong>provincial state veterinary office</strong> for official endorsement.</li>" +
+      "</ol>" +
+      "<p>DALRRD guidance stresses that you must confirm the destination country&rsquo;s " +
+      "rules yourself &mdash; Thailand&rsquo;s embassy guide and your DLD permit are the " +
+      "source of truth. Most Johannesburg/Cape Town&ndash;Bangkok routes involve at least " +
+      "one stop; plan crate comfort, layovers and " +
+      "<a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline pet policies</a> " +
+      "with a relocation agent if the routing is complex.</p>" },
+    { h: "If you may return to South Africa", html:
+      "<p>Thailand is <strong>not</strong> on South Africa&rsquo;s list of countries whose " +
+      "dogs enter without quarantine. A return means a DALRRD <strong>Veterinary Import " +
+      "Permit</strong>, possible <strong>state quarantine</strong> for dogs, five pre-import " +
+      "blood tests for dogs, and entry only via approved airports in <strong>manifest cargo</strong>. " +
+      "Start months ahead &mdash; see " +
+      "<a href=\"/take-pet-out-of-thailand/to-south-africa.html\">exporting a pet to South Africa</a>.</p>" },
+    { h: "Common mistakes on this corridor", html: TH_IMPORT_FAILS +
+      "<ul>" +
+      "<li><strong>Booking before export cert timing is clear</strong> &mdash; state vet endorsement must match Thailand&rsquo;s validity window.</li>" +
+      "<li><strong>Assuming cabin travel avoids cargo rules</strong> &mdash; some airlines and routes still require manifest cargo registration.</li>" +
+      "<li><strong>Underestimating hub journey time</strong> &mdash; Gulf/Asia connections add stress and airline policy complexity.</li>" +
+      "</ul>" }
   ],
   faqs: [
     ["Is South Africa treated as rabies-free by Thailand?",
-     "<p>No. Follow the standard Thai import process with microchip, rabies vaccination, health certificate and DLD import permit. Confirm the current DLD list and your pet's vaccination timing before you apply.</p>"],
+     "<p>No. Follow the standard Thai import process with microchip, rabies vaccination, health certificate and DLD import permit.</p>"],
     ["Who endorses the South African export certificate?",
-     "<p>Export health certification for live animals leaving South Africa is handled through the official veterinary export process under DALRRD. Your export vet will guide the health certificate and any state endorsement required.</p>"]
+     "<p>A DALRRD state veterinarian, after your private vet completes the health certificate and Thailand's requirements are attached.</p>"],
+    ["Are there direct flights from South Africa to Bangkok with pets?",
+     "<p>Most routes connect via the Gulf or Southeast Asia. Confirm pet acceptance on every sector and whether manifested cargo is required.</p>"],
+    ["How long does state vet export certification take?",
+     "<p>Book early. You need a private vet health check within the window Thailand requires, then a state vet appointment for endorsement — allow several weeks total.</p>"],
+    ["What if I want to return to South Africa later?",
+     "<p>Plan as a formal DALRRD import with permit, blood tests for dogs, possible quarantine, and cargo-terminal entry. See our export-to-South-Africa guide.</p>"]
   ]
 }));
 

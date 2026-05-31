@@ -18,7 +18,7 @@ const NOTVET =
   "orientation only.";
 
 const HEALTH_VERIFY =
-  "This is general health orientation, last reviewed May 2026, and is not " +
+  "This is general health orientation, last reviewed on 31 May 2026, and is not " +
   "veterinary advice or a diagnosis. PattayaPets is an editorial publication, not " +
   "a veterinary practice. If you are worried about your pet, see a qualified " +
   "veterinarian &mdash; early advice is always better than waiting.";
