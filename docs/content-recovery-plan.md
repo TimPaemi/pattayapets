@@ -39,17 +39,19 @@ This document replaces the old “title/meta batch” queue until Phase 3 is com
 - [x] `/bring-pet-to-thailand/from-usa.html` — USDA/APHIS, 10-day window, CDC return rules
 - [x] `/bring-pet-to-thailand/from-australia.html` — DAFF NOI, 72-hour export window, return warning
 
-### Import / export corridors (remaining)
+### Import / export corridors (remaining — Batch 77+)
 
-1. UK → Thailand, Thailand → UK  
-2. USA → Thailand, Thailand → USA  
-3. Australia → Thailand  
-4. Germany → Thailand  
-5. UAE → Thailand  
-
-For each: timeline table, document checklist, quarantine note, common failure points, official links.
+- [ ] **Thailand → UK / USA / Australia** export pages (mirror depth on outbound side)
+- [ ] **Germany → Thailand** and **UAE → Thailand**
+- [ ] EU member-state clones in `50-import-countries.js` — enrich or consolidate (Tim decision)
 
 **EU template pages:** Either enrich with country-specific embassy links + quarantine notes, or consolidate to hub + `noindex` thin clones (Tim decision).
+
+### Dog-friendly (remaining)
+
+- [ ] Beaches page: specific access points, tide/heat warnings
+- [ ] Hotels page: named pet-friendly hotels with “call to confirm”
+- [ ] Condos page: realistic rental expectations
 
 ### Pet health cluster
 
