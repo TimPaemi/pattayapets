@@ -82,7 +82,10 @@ pages.push({
     "pages for the Thai-side paperwork. Gulf expats may also see " +
     '<a href="/bring-pet-to-thailand/from-uae.html">import from the UAE</a>; ' +
     "the separate hub covers " +
-    '<a href="/take-pet-out-of-thailand/">taking a pet out of Thailand</a>.</p>' +
+    '<a href="/take-pet-out-of-thailand/">taking a pet out of Thailand</a>. ' +
+    "For visa and relocation timing alongside the move, see " +
+    '<a href="https://pattayavisahelp.com/" target="_blank" rel="noopener noreferrer">' +
+    "Pattaya Visa Help</a>.</p>" +
     "<h2>4. Thinking of adopting?</h2>" +
     "<p>Pattaya has several established shelters and rescue organisations. If you " +
     "can offer a home, see our guide to " +

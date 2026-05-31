@@ -32,7 +32,9 @@ pages.push(hub({
     "<a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">where to walk " +
     "your dog</a> and " +
     "<a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">hot-climate pet " +
-    "care</a>.</p>",
+    "care</a>. For a wider editorial list of places to eat out in Pattaya, see the " +
+    '<a href="https://pattaya-restaurant-guide.com/" target="_blank" rel="noopener noreferrer">' +
+    "Pattaya Restaurant Guide</a> &mdash; cross-check dog policies before you go.</p>",
   groups: [
     {
       title: "Out and about with your dog",

@@ -23,6 +23,8 @@ Not deployed. Last updated: 30 May 2026.
 | 60 | Import/export freshness (May 2026, embassy Jan 2025 cross-check) |
 | 61 | CTR titles/meta on 15 high-intent URLs |
 | 62 | Visit delegate kit (`docs/visit-delegate-kit/`) |
+| 63 | Social kit + ads map + contextual network links (PattayaPets only) |
+| 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 
 ---
@@ -31,10 +33,8 @@ Not deployed. Last updated: 30 May 2026.
 
 | Batch | Focus | Requires human? |
 |-------|---------|-----------------|
-| **63** | Social kit — 30 FB/LINE posts from existing guides | No |
-| **64** | Ads map — keywords → landing URLs → UTMs | Budget approval only |
 | **65** | GSC CTR pass #2 after 4 weeks of impression data | Paste GSC export |
-| **66** | Network routing — contextual links from sister sites | Other repos |
+| **66** | Mirror links on sister repos (visa, restaurant guide, authority) | Open each repo window |
 | **67** | Verdict publish — after delegate returns Tier 1 templates | Delegate visits |
 
 ---
