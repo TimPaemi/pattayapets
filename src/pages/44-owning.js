@@ -129,7 +129,13 @@ pages.push(own({
     ["Is vet care expensive in Pattaya?",
      "<p>Routine vet care — vaccinations, check-ups, basic treatment — is generally affordable by Western standards. Major treatment, surgery or a hospital stay is where costs climb &mdash; which is exactly what a savings buffer or insurance is for.</p>"],
     ["Should I get pet insurance in Thailand?",
-     "<p>It depends on your finances and your pet. The case for it is the rare big bill, not the routine costs. See our guide to <a href=\"/pet-insurance-thailand.html\">pet insurance in Thailand</a>.</p>"]
+     "<p>It depends on your finances and your pet. The case for it is the rare big bill, not the routine costs. See our guide to <a href=\"/pet-insurance-thailand.html\">pet insurance in Thailand</a>.</p>"],
+    ["How much should I budget monthly for a dog or cat?",
+     "<p>Food, flea prevention and routine vet care are the steady costs — often a few thousand baht a month for a medium dog, less for a cat. Build a separate buffer for emergencies and boarding.</p>"],
+    ["Are vet prices higher for expats?",
+     "<p>Reputable clinics generally quote the same fees regardless of nationality. Ask for an estimate before non-routine treatment and keep vaccination records so you are not paying to repeat work unnecessarily.</p>"],
+    ["What unexpected costs catch new owners out?",
+     "<p>Pet-friendly housing deposits, air-conditioned transport, grooming in the humid season, and export paperwork if you leave Thailand are common surprises — plan them early if they apply to you.</p>"]
   ],
   related: [
     { name: "Pet insurance in Thailand", path: "/pet-insurance-thailand.html", desc: "When insurance earns its place." },
@@ -181,7 +187,13 @@ pages.push(own({
     ["Should I shave my dog for the Thai heat?",
      "<p>Not a double-coated breed down to the skin — the coat insulates and shields from sun. A groomer can tidy and thin a coat appropriately. Single-coated breeds are different; ask a groomer or vet what suits yours.</p>"],
     ["Does my cat need anything special in the heat?",
-     "<p>Cats generally self-regulate well but still need constant water, shade and a cool indoor spot. Watch for excessive panting, which is abnormal in cats and a reason to see a vet.</p>"]
+     "<p>Cats generally self-regulate well but still need constant water, shade and a cool indoor spot. Watch for excessive panting, which is abnormal in cats and a reason to see a vet.</p>"],
+    ["Should I leave the AC on for my pet when I am out?",
+     "<p>If your home gets very hot without it, yes — a fan alone may not be enough in midday humidity. Ensure fresh water and that the pet cannot block the AC unit or chew cables.</p>"],
+    ["Can I walk my dog at midday if I carry water?",
+     "<p>Water helps but does not stop heatstroke on hot pavement or in full sun. Early morning and evening walks are the safe default in Pattaya.</p>"],
+    ["Do short-haired breeds need less care in the heat?",
+     "<p>They overheat faster in direct sun because they lack a thick coat's insulation — shade, timing and paw-pad checks still matter. See <a href=\"/pet-emergency/heatstroke.html\">heatstroke</a> for warning signs.</p>"]
   ],
   related: [
     { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "Recognising and preventing the emergency." },
@@ -238,7 +250,13 @@ pages.push(own({
     ["Is it hard to rent with a pet in Pattaya?",
      "<p>Harder than many newcomers expect, because a lot of condo buildings ban pets outright. It is very manageable if you search specifically for pet-friendly buildings — or rent a house — and get the permission in writing.</p>"],
     ["Will I pay extra to rent with a pet?",
-     "<p>Often there is a higher deposit or a pet/cleaning charge. Confirm it up front and have it written into the lease so there are no surprises later.</p>"]
+     "<p>Often there is a higher deposit or a pet/cleaning charge. Confirm it up front and have it written into the lease so there are no surprises later.</p>"],
+    ["What should a pet-friendly lease include?",
+     "<p>Explicit permission to keep your pet, any deposit or monthly pet fee, rules on number and size of animals, and who pays for damage beyond normal wear. Verbal OK from a landlord is not enough if the building forbids pets.</p>"],
+    ["Are houses easier than condos for pet owners?",
+     "<p>Often yes — a house with a small garden gives more space and fewer lift-and-neighbour issues. Still confirm the owner allows pets and check noise rules if you have a vocal dog.</p>"],
+    ["Can my landlord evict me for having a pet?",
+     "<p>If your lease or building rules ban pets and you moved in without written permission, you are exposed. Fix it before signing, not after a complaint.</p>"]
   ],
   related: [
     { name: "Dog-friendly condos", path: "/dog-friendly-pattaya/condos.html", desc: "The condo side in detail." },
@@ -290,7 +308,13 @@ pages.push(own({
     ["Can I walk my dog on the beach in Pattaya?",
      "<p>Yes, particularly on the quieter Jomtien and Dongtan stretches and at cool hours. Keep your dog leashed, always pick up, and mind hot sand. See our dog-friendly beaches guide.</p>"],
     ["How do I handle street dogs while walking my dog?",
-     "<p>Keep your dog close and leashed, give groups of street dogs a wide berth, and stay calm rather than confrontational. Our guide to street-dog encounters covers it in full.</p>"]
+     "<p>Keep your dog close and leashed, give groups of street dogs a wide berth, and stay calm rather than confrontational. Our guide to street-dog encounters covers it in full.</p>"],
+    ["Do I need booties for hot pavement?",
+     "<p>Many dogs manage with timing walks for cooler hours; booties help if your dog will wear them and you must cross hot asphalt. Test them at home first.</p>"],
+    ["Where can I let my dog off-lead?",
+     "<p>Only where it is safe, legal and your recall is reliable — which rules out most busy Pattaya streets. A long lead on the beach at quiet hours is a practical compromise.</p>"],
+    ["What should I carry on every walk?",
+     "<p>Water, poop bags, a spare lead clip and your phone with a vet contact saved. In the rainy season, a towel for muddy paws helps when you get home.</p>"]
   ],
   related: [
     { name: "Dog-friendly beaches", path: "/dog-friendly-pattaya/beaches.html", desc: "Cool-hour walks on the sand." },
@@ -340,7 +364,13 @@ pages.push(own({
     ["Is rabies vaccination legally required for pets in Thailand?",
      "<p>Yes. Thai law requires dogs and cats to be vaccinated against rabies and kept current. Keep the vaccination certificates, and use a vet to stay on schedule.</p>"],
     ["Do I have to register my dog in Pattaya?",
-     "<p>Registration and licensing schemes vary by municipality, and rules have been evolving. Check the current requirement with your local district office or your vet, who will know the local position.</p>"]
+     "<p>Registration and licensing schemes vary by municipality, and rules have been evolving. Check the current requirement with your local district office or your vet, who will know the local position.</p>"],
+    ["What documents should I keep after vaccination?",
+     "<p>Keep the rabies certificate, microchip number and any municipal registration receipt in one folder — you may need them for boarding, export or if your dog is involved in an incident.</p>"],
+    ["Can I register a cat as well as a dog?",
+     "<p>Rabies vaccination rules apply to cats too. Registration schemes focus on dogs in many areas — confirm locally whether cats need separate licensing.</p>"],
+    ["What happens if my pet's rabies vaccine lapses?",
+     "<p>You are out of compliance with Thai law and may need to restart vaccination intervals for travel. Book a booster before the expiry date on the certificate.</p>"]
   ],
   related: [
     { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Registration schemes often tie to microchips." },
@@ -384,7 +414,13 @@ pages.push(own({
     ["Can I get my usual brand of pet food in Pattaya?",
      "<p>Mainstream brands are widely available. For a specific imported or premium brand, check pet shops and online retailers — and if your pet is settled on something particular, keep a buffer stock so a temporary shortage is not a problem.</p>"],
     ["Where do I get a prescription diet?",
-     "<p>Through vet clinics and some pet shops. Ask your vet where to buy the diet they have recommended, and whether it can be ordered online for regular delivery.</p>"]
+     "<p>Through vet clinics and some pet shops. Ask your vet where to buy the diet they have recommended, and whether it can be ordered online for regular delivery.</p>"],
+    ["Is Thai-made pet food reliable?",
+     "<p>Established Thai brands sold through reputable shops are widely used. If your pet has allergies or a sensitive stomach, introduce new food gradually and ask your vet if a specific diet is needed.</p>"],
+    ["Should I stock up before Songkran or holidays?",
+     "<p>Shops can run short around long holidays and during heavy rain when delivery slows. Keep two weeks of your pet's usual food as a buffer.</p>"],
+    ["Can I bring pet food from abroad?",
+     "<p>Small amounts for personal use are usually fine; large shipments may face customs rules. For everyday feeding, local supply is simpler — see our <a href=\"/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html\">cost guide</a>.</p>"]
   ],
   related: [
     { name: "Pet shops in Pattaya", path: "/pet-shops/", desc: "The directory of pet supply shops." },

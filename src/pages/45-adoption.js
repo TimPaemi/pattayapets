@@ -323,7 +323,13 @@ SHELTERS.forEach(function (s) {
       ["Are pets from " + s.name + " vaccinated and sterilised?",
        "<p>Reputable rescues rehome animals vaccinated and sterilised, and are open about each animal's health. Confirm the specifics for any animal directly with the organisation.</p>"],
       ["I am leaving Thailand — can I adopt and take the pet with me?",
-       "<p>Often yes. Many rescues support adopters in relocating an animal abroad. Plan early and read our guide to the <a href=\"/take-pet-out-of-thailand/export-process.html\">export process</a> — the rabies titer test in particular needs lead time.</p>"]
+       "<p>Often yes. Many rescues support adopters in relocating an animal abroad. Plan early and read our guide to the <a href=\"/take-pet-out-of-thailand/export-process.html\">export process</a> — the rabies titer test in particular needs lead time.</p>"],
+      ["How do I visit or volunteer?",
+       "<p>Contact the organisation directly via its website or Facebook page to ask about visiting hours, volunteering and fostering. PattayaPets does not coordinate visits.</p>"],
+      ["What should I ask before adopting a rescue pet?",
+       "<p>Ask about vaccinations, sterilisation, behavioural history, any medical needs and what support the rescue offers after adoption. See our <a href=\"/adopt-a-pet-pattaya/\">adopt a pet in Pattaya</a> hub for the wider picture.</p>"],
+      ["Can foreigners adopt in Thailand?",
+       "<p>Yes — rescues regularly place animals with expat and tourist adopters. You need a stable home, commitment to vaccinations and registration, and realistic plans if you may leave Thailand later.</p>"]
     ],
     related: [
       { name: "Fostering a pet", path: "/adopt-a-pet-pattaya/fostering.html", desc: "Temporary homes between rescue and adoption." },

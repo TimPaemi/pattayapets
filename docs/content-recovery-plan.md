@@ -117,6 +117,15 @@ This document replaces the old “title/meta batch” queue until Phase 3 is com
 - [x] Germany BMEL URL fix (`bmleh.de` → `bmel.de`)
 - [x] `tools/audit-content-depth.js` — guide section/FAQ depth WARN audit wired into `audit:full`
 
+### Thin-FAQ guide recovery — Batch 88 ✅
+
+- [x] Emergency cluster (6): pet-first-aid, heatstroke, ticks-and-fleas, snake-bites, street-dog-encounters, poisoning — expanded to ≥4 FAQs each
+- [x] Owning cluster (6): cost, hot-climate, housing, walks, registration, pet food — expanded to ≥4 FAQs each
+- [x] Dog-friendly (3): cafes, restaurants, parks — expanded to ≥4 FAQs each
+- [x] Import/export steps (5): airline-pet-policies, arrival-suvarnabhumi, cost-to-bring, export-process, cost-to-export — expanded to ≥4 FAQs each
+- [x] Adoption org template (7 shelter pages): +3 FAQs via shared `SHELTERS.forEach` block
+- [x] `audit:content` — **0 thin-FAQ WARNs** (118 guides checked)
+
 ---
 
 ## Phase 3 — Measure again

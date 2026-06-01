@@ -48,6 +48,7 @@ Not deployed. Last updated: 30 May 2026.
 | **85** | **Canada corridor + pet-health audit:** CFIA depth, dead CFIA URL fix site-wide, emergency cross-links |
 | **86** | **EU hub depth + official-link audit:** from-eu / to-eu hubs; `audit:official`; 14 dead authority URL fixes; Pattaya Animal Hospital phone |
 | **87** | **Import/export step depth + content audit:** microchip, health cert, export permit, checklists enriched; BMEL Germany URL fix; `audit:content` |
+| **88** | **Thin-FAQ recovery:** 27 guides + 7 shelter org pages expanded to ≥4 FAQs; `audit:content` 0 WARNs |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 

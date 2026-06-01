@@ -240,7 +240,13 @@ pages.push(df({
     ["How do I know if a cafe allows dogs?",
      "<p>The simplest way is to ask at the door. Cafes with garden or open-air seating are the most likely to say yes. Policies change often, so asking beats relying on an old list."],
     ["Is it normal to bring a dog to a cafe in Pattaya?",
-     "<p>At outdoor and garden cafes, a calm, leashed dog is widely accepted and increasingly common. Indoors, and at food-focused venues, assume not unless told otherwise.</p>"]
+     "<p>At outdoor and garden cafes, a calm, leashed dog is widely accepted and increasingly common. Indoors, and at food-focused venues, assume not unless told otherwise.</p>"],
+    ["Should I bring a mat or blanket for my dog?",
+     "<p>A small travel mat helps your dog settle and keeps fur off the furniture — many owners bring one as a courtesy.</p>"],
+    ["What if my dog barks at other customers?",
+     "<p>Move to a quieter table or leave — one noisy dog makes the next owner less welcome. Short cafe visits while your dog is exercised and calm work best.</p>"],
+    ["Are small dogs treated differently from large dogs?",
+     "<p>Large dogs are harder to fit at tight tables and may be refused where small dogs are OK. Always ask rather than assuming.</p>"]
   ],
   related: [
     { name: "Dog-friendly restaurants", path: "/dog-friendly-pattaya/restaurants.html", desc: "Eating out with a dog — similar etiquette." },
@@ -304,7 +310,13 @@ pages.push(df({
     ["Can I take my dog to a beachfront restaurant in Pattaya?",
      "<p>Often yes, at outdoor tables — beachfront and garden restaurants tend to be the most relaxed. Always ask when you arrive, and choose a table where your dog can settle out of the way.</p>"],
     ["Will restaurants provide water for my dog?",
-     "<p>Some will, many will not. Bring your own travel bowl and water so your dog is comfortable regardless.</p>"]
+     "<p>Some will, many will not. Bring your own travel bowl and water so your dog is comfortable regardless.</p>"],
+    ["Should I feed my dog before we go out to eat?",
+     "<p>A light meal or skip feeding until after helps avoid begging and stomach upset in the heat. Fresh water matters more than table scraps.</p>"],
+    ["Can I take my dog to a night market?",
+     "<p>Crowds, heat and food on the ground make night markets stressful for most dogs. If you go, keep a short lead, watch for dropped skewers and leave if your dog is overwhelmed.</p>"],
+    ["Do I need to tip extra for bringing a dog?",
+     "<p>Not expected, but clearing up fur and keeping your dog under the table is appreciated. A polite ask at the door beats assuming.</p>"]
   ],
   related: [
     { name: "Dog-friendly cafes", path: "/dog-friendly-pattaya/cafes.html", desc: "Outdoor seating and similar etiquette." },
@@ -558,7 +570,13 @@ pages.push(df({
     ["Are there dog parks in Pattaya?",
      "<p>Dedicated fenced dog parks are scarce. Most owners build a routine around the beach at cool hours, quiet sois and open green spaces. Always check whether dogs are allowed in a given park and keep yours leashed.</p>"],
     ["Where is the best everyday walk?",
-     "<p>For most owners it is a mix: the quiet sois near home for daily walks, and the cooler ends of the beach for something longer. Pratumnak's leafier roads are pleasant too.</p>"]
+     "<p>For most owners it is a mix: the quiet sois near home for daily walks, and the cooler ends of the beach for something longer. Pratumnak's leafier roads are pleasant too.</p>"],
+    ["Are dogs allowed in public parks in Chonburi?",
+     "<p>Rules vary by park and signage is not always clear. Assume leashed-only unless you see explicit permission; when in doubt, use sois and beach stretches instead.</p>"],
+    ["How do I find other dog owners to walk with?",
+     "<p>Local Facebook groups and rescue volunteers often organise informal meet-ups. Keep first meetings on-lead until you know the other dogs.</p>"],
+    ["Is it safe to walk during rainy season?",
+     "<p>Yes with care — avoid flooded sois, watch for snakes in long grass after rain, and towel-dry paws to prevent skin issues. See our <a href=\"/owning-a-pet-in-pattaya/rainy-season-pet-care.html\">rainy season guide</a>.</p>"]
   ],
   related: [
     { name: "Travelling in Thailand", path: "/owning-a-pet-in-pattaya/travelling-in-thailand.html", desc: "Domestic trips with your dog." },

@@ -236,7 +236,13 @@ pages.push(exp({
     ["How far ahead should I start the export process?",
      "<p>The Thai side is fairly quick, but the destination side is not — a titer test plus a three-month wait means several months of lead time for the UK, EU or Australia. Start as early as you can; the titer test is the long pole.</p>"],
     ["Do I need an agent to export a pet?",
-     "<p>No, but many owners use one. The value of an agent is in lining up the Thai endorsement, the destination requirements and the flight so nothing slips. For complex destinations it is often worth it.</p>"]
+     "<p>No, but many owners use one. The value of an agent is in lining up the Thai endorsement, the destination requirements and the flight so nothing slips. For complex destinations it is often worth it.</p>"],
+    ["Can I export from U-Tapao instead of Bangkok?",
+     "<p>Some routes depart U-Tapao (UTP), closer to Pattaya. Export paperwork must match your actual departure airport — tell the AQS which port you will use.</p>"],
+    ["What if my destination changes mid-process?",
+     "<p>You may need new import rules, a fresh health certificate and possibly a new titer timeline. Start destination research before you book flights.</p>"],
+    ["Is export harder than import into Thailand?",
+     "<p>The Thai export steps are shorter, but destinations like the UK, EU or Australia add months of testing and waiting — that side is usually harder than entering Thailand.</p>"]
   ],
   related: [
     { name: "DLD export permit", path: "/take-pet-out-of-thailand/export-permit-thailand-dld.html", desc: "The permit you apply for before departure." },
@@ -431,7 +437,13 @@ pages.push(exp({
     ["Is export cheaper than import?",
      "<p>Not necessarily. The Thai export steps are fairly quick, but destination requirements — especially a titer test and waiting period for the UK or EU — can make export more expensive and slower than bringing a pet into Thailand.</p>"],
     ["Should I budget for an agent?",
-     "<p>Many owners export without one for simpler destinations. For cargo bookings, Australia, Japan or the USA (CDC dog rules), an agent often pays for itself in avoided mistakes and re-bookings.</p>"]
+     "<p>Many owners export without one for simpler destinations. For cargo bookings, Australia, Japan or the USA (CDC dog rules), an agent often pays for itself in avoided mistakes and re-bookings.</p>"],
+    ["How much does the DLD export inspection cost?",
+     "<p>Thai-side government fees are relatively small compared with flights and lab work — confirm current AQS charges when you apply. The titer test and airline cargo quote dominate most budgets.</p>"],
+    ["Do I pay while waiting for a titer test?",
+     "<p>Yes — boarding, food, vet boosters and repeat certificates accrue during the waiting period. That ongoing care is why export to the UK or EU can exceed import cost.</p>"],
+    ["Can I get a fixed quote upfront?",
+     "<p>Relocation agents can quote a package; DIY exporters should get separate quotes from your vet, the lab, the airline and the destination authority before committing to dates.</p>"]
   ],
   related: [
     { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },

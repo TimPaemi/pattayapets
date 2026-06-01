@@ -493,7 +493,13 @@ pages.push(importStep({
     ["Which airlines carry pets to Thailand?",
      "<p>Several full-service carriers serving Bangkok accept pets as checked baggage or cargo, with conditions; budget airlines often do not. Because routes and policies change, confirm directly with the airline for your specific route rather than relying on a list.</p>"],
     ["Can my dog sit with me in the cabin?",
-     "<p>Only if it is small enough to meet the airline's in-cabin weight and carrier limits, and only on airlines that allow it on that route. Most medium and large dogs travel in the hold.</p>"]
+     "<p>Only if it is small enough to meet the airline's in-cabin weight and carrier limits, and only on airlines that allow it on that route. Most medium and large dogs travel in the hold.</p>"],
+    ["Do I need an IATA-compliant crate?",
+     "<p>Yes for hold and cargo travel — airlines reject non-compliant crates. Buy early and let your pet acclimatise; see the crate section on this page for sizing rules.</p>"],
+    ["When should I book my pet's flight space?",
+     "<p>As soon as your dates are firm — pet slots are limited per flight and are not guaranteed with a passenger ticket. Confirm fees and crate rules in writing.</p>"],
+    ["Can I sedate my pet for the flight?",
+     "<p>Most airlines discourage or forbid sedation because it affects breathing at altitude. Talk to your vet about stress management alternatives rather than sedatives unless the airline and vet both agree.</p>"]
   ],
   related: [
     { name: "Snub-nosed breeds & flying", path: "/bring-pet-to-thailand/snub-nosed-breeds-flying.html", desc: "Airline restrictions for flat-faced breeds." },
@@ -560,7 +566,13 @@ pages.push(importStep({
     ["Will my pet be put in quarantine?",
      "<p>Not routinely. If the import permit and paperwork are in order and your pet is healthy, there is no standard quarantine period — pets are usually released the same day. Quarantine is a fallback the officer can use if something is wrong.</p>"],
     ["How do I get my pet from Bangkok airport to Pattaya?",
-     "<p>Arrange a pet-friendly transfer in advance. It is about a 90-minute to two-hour drive. Relocation agents can include the airport-to-door transfer in their service.</p>"]
+     "<p>Arrange a pet-friendly transfer in advance. It is about a 90-minute to two-hour drive. Relocation agents can include the airport-to-door transfer in their service.</p>"],
+    ["How long does AQS clearance take?",
+     "<p>When paperwork is complete, inspection often takes under an hour — but queues vary by arrival time and how organised your documents are. Have everything in one folder, printed.</p>"],
+    ["What fees do I pay on arrival?",
+     "<p>The AQS inspection fee is currently 500 baht (confirm with the station). Budget for a pet-friendly transfer separately — ordinary taxis may refuse animals.</p>"],
+    ["Can I fly into U-Tapao instead of Suvarnabhumi?",
+     "<p>Yes — closer to Pattaya but fewer international routes. Your import permit must name the correct arrival airport; see <a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao and pets</a>.</p>"]
   ],
   related: [
     { name: "Pet quarantine in Thailand", path: "/bring-pet-to-thailand/thailand-pet-quarantine.html", desc: "When pets do and do not quarantine on arrival." },
@@ -631,7 +643,13 @@ pages.push(importStep({
     ["What is the most expensive part?",
      "<p>Almost always the flight itself, especially for a medium or large dog flying in the hold or as cargo. Crate size and route drive the price.</p>"],
     ["Is it cheaper to do it without an agent?",
-     "<p>It can be, if your route is simple and you have time to manage the paperwork and bookings yourself. For complex moves the agent fee often pays for itself by avoiding costly mistakes and missed deadlines.</p>"]
+     "<p>It can be, if your route is simple and you have time to manage the paperwork and bookings yourself. For complex moves the agent fee often pays for itself by avoiding costly mistakes and missed deadlines.</p>"],
+    ["How much does the DLD import permit cost?",
+     "<p>The permit itself is modest compared with the flight; confirm current AQS fees when you apply. The big variables are airline cargo rates and vet work in your origin country.</p>"],
+    ["Does pet size change the cost a lot?",
+     "<p>Yes — crate volume drives cargo price. A cat in cabin is a different order of magnitude from a Labrador in the hold. Measure your pet and crate before you budget.</p>"],
+    ["Are there hidden fees on arrival?",
+     "<p>Beyond the AQS inspection fee, plan for transfer, a Thai vet visit if you want a local baseline, and pet-friendly housing deposits — not hidden, but easy to overlook.</p>"]
   ],
   related: [
     { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Specialists who quote and manage the move." },

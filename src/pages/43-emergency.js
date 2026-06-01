@@ -225,7 +225,11 @@ pages.push(hazard({
     ["Should I keep a pet first-aid kit?",
      "<p>A simple kit — a clean carrier, a spare lead, a towel or blanket, and your vet's number — covers most situations. Ask your own vet what else they suggest for your specific pet.</p>"],
     ["Can I give my dog human painkillers?",
-     "<p>No. Many common human medicines, including some painkillers, are dangerous or fatal to dogs and cats. Never medicate a pet without a vet's direction.</p>"]
+     "<p>No. Many common human medicines, including some painkillers, are dangerous or fatal to dogs and cats. Never medicate a pet without a vet's direction.</p>"],
+    ["What should I keep in a simple pet first-aid kit?",
+     "<p>A carrier, spare lead, towel, your vet's number and a 24-hour clinic contact cover most situations. Ask your vet what else suits your pet.</p>"],
+    ["When is it definitely an emergency?",
+     "<p>Difficulty breathing, collapse, heavy bleeding, suspected poisoning, seizures, heatstroke signs or a road accident all warrant immediate travel to a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vet</a>.</p>"]
   ],
   related: [
     { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "The most common preventable emergency here." },
@@ -281,7 +285,13 @@ pages.push(hazard({
     ["What time of day is safe to walk a dog in Pattaya?",
      "<p>Early morning and after sunset are the comfortable windows. Through the middle of the day the air, sun and pavement are all working against your pet — keep walks short and shaded, or skip them.</p>"],
     ["My dog seems fine after overheating — do I still need a vet?",
-     "<p>Heatstroke can cause internal damage that is not visible straight away. If your pet has genuinely overheated, a vet check is the safe call even if it seems to have recovered.</p>"]
+     "<p>Heatstroke can cause internal damage that is not visible straight away. If your pet has genuinely overheated, a vet check is the safe call even if it seems to have recovered.</p>"],
+    ["How hot is too hot for pavement?",
+     "<p>If you cannot hold the back of your hand on the pavement for five seconds, it is too hot for paw pads. Walk on grass or wait for cooler hours.</p>"],
+    ["Can cats get heatstroke indoors?",
+     "<p>Yes — a room without airflow or AC, a balcony with no shade, or a closed car can overheat a cat quickly. Ensure water, shade and ventilation; panting in a cat is always urgent.</p>"],
+    ["What is the fastest way to cool a pet?",
+     "<p>Move to shade or AC, offer small amounts of cool (not ice-cold) water, and wet paws and belly with lukewarm water while you travel to a vet. Do not force water if the pet is collapsed.</p>"]
   ],
   related: [
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Preventing heat problems day to day." },
@@ -327,7 +337,13 @@ pages.push(hazard({
     ["Do indoor cats need flea and tick prevention in Pattaya?",
      "<p>Often yes — parasites can come in on people, on other pets, or through open windows and balconies. Ask your vet what is appropriate for your cat.</p>"],
     ["Should I remove a tick myself?",
-     "<p>Ticks should be removed promptly and correctly. If you are not confident, a vet can do it quickly and advise on prevention so it does not keep happening.</p>"]
+     "<p>Ticks should be removed promptly and correctly. If you are not confident, a vet can do it quickly and advise on prevention so it does not keep happening.</p>"],
+    ["How often should I use flea and tick prevention in Pattaya?",
+     "<p>Year-round prevention is the norm here — ticks and fleas do not stop in the dry season. Your vet can recommend a product suited to your pet and lifestyle.</p>"],
+    ["What if my pet is scratching but I see no fleas?",
+     "<p>Fleas are not always visible; allergies, mites and skin infections also cause itching. A vet exam beats guessing — especially if scratching is intense or the skin is red or broken.</p>"],
+    ["Are tick-borne diseases common in Pattaya?",
+     "<p>Ticks are present in Thailand and can transmit serious illnesses. Prevention and prompt removal reduce risk; see our <a href=\"/pet-health-pattaya/tick-borne-disease.html\">tick-borne disease</a> guide for what to watch for.</p>"]
   ],
   related: [
     { name: "Tick-borne disease", path: "/pet-health-pattaya/tick-borne-disease.html", desc: "What ticks can transmit here." },
@@ -373,7 +389,13 @@ pages.push(hazard({
     ["How do I know if my pet was bitten by a snake?",
      "<p>You may see sudden swelling, puncture marks, bleeding, pain, drooling, weakness or collapse — or you may simply have seen the snake. If a snake bite is possible, treat it as an emergency and get to a vet straight away.</p>"],
     ["Should I try to identify the snake?",
-     "<p>Only from a safe distance, and never at the cost of delaying the trip to the vet. Your safety comes first; the vet can often treat without a precise identification.</p>"]
+     "<p>Only from a safe distance, and never at the cost of delaying the trip to the vet. Your safety comes first; the vet can often treat without a precise identification.</p>"],
+    ["How quickly do I need to get to a vet after a snake bite?",
+     "<p>Immediately — do not wait to see if swelling develops. Time matters; call ahead if you can so the clinic is ready.</p>"],
+    ["Are venomous snakes common in Pattaya?",
+     "<p>Snakes exist in and around Pattaya, including venomous species in green spaces and undeveloped land. Keep dogs on leads near scrub and avoid letting pets poke into holes or piles of leaves.</p>"],
+    ["Should I apply a tourniquet or suck out venom?",
+     "<p>No — outdated first-aid myths can cause more harm. Focus on getting your pet to a vet quickly and keeping it as calm and still as possible.</p>"]
   ],
   related: [
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Go straight here if you suspect a bite." },
@@ -432,7 +454,13 @@ pages.push(hazard({
     ["Are Pattaya's street dogs dangerous?",
      "<p>Most are not interested in confrontation and keep their distance. The sensible approach is respect, not fear: keep your dog leashed, give groups space, and stay calm. Keep your pet's rabies vaccination current as a basic precaution.</p>"],
     ["What if my dog is bitten by a street dog?",
-     "<p>Treat it seriously. Get the wound seen by a <a href=\"/vets/\">vet</a> as soon as you can — or a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour animal hospital</a> if it is after hours. The vet will advise on wound care and rabies risk given your pet's vaccination status. If a person is bitten, seek medical advice promptly.</p>"]
+     "<p>Treat it seriously. Get the wound seen by a <a href=\"/vets/\">vet</a> as soon as you can — or a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour animal hospital</a> if it is after hours. The vet will advise on wound care and rabies risk given your pet's vaccination status. If a person is bitten, seek medical advice promptly.</p>"],
+    ["Should I carry treats to distract street dogs?",
+     "<p>Do not throw food at loose dogs — it can attract more animals or create competition. Keep your dog close, change direction calmly, and avoid running.</p>"],
+    ["Is it safe to walk at night?",
+     "<p>Many owners walk early morning or after sunset for heat reasons; at night visibility is lower and some street dogs are more active. A good lead, a torch and familiar routes help.</p>"],
+    ["What if a street dog follows us home?",
+     "<p>Do not encourage it inside. If it seems lost or injured, contact a local rescue rather than adopting on impulse — see <a href=\"/adopt-a-pet-pattaya/\">adopt a pet in Pattaya</a> for organisations that can help.</p>"]
   ],
   related: [
     { name: "Dog registration & the law", path: "/owning-a-pet-in-pattaya/dog-registration-thailand.html", desc: "Rabies vaccination is a legal duty." },
@@ -488,7 +516,13 @@ pages.push(hazard({
     ["Should I make my pet vomit if it ate something toxic?",
      "<p>Not on your own initiative. For some poisons, inducing vomiting causes further harm. Call a vet first and follow their instruction.</p>"],
     ["My pet ate chocolate — is that really dangerous?",
-     "<p>Chocolate is genuinely toxic to dogs, and the risk rises with darker chocolate and smaller dogs. If your pet has eaten chocolate, contact a vet with the type and amount and your pet's weight.</p>"]
+     "<p>Chocolate is genuinely toxic to dogs, and the risk rises with darker chocolate and smaller dogs. If your pet has eaten chocolate, contact a vet with the type and amount and your pet's weight.</p>"],
+    ["What household items poison pets most often in Thailand?",
+     "<p>Human medicines, insecticides, rat poison, certain foods (onions, grapes, xylitol gum), and some plants and toads are common risks. Keep chemicals and meds out of reach and know the number for a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vet</a>.</p>"],
+    ["Should I bring the packaging to the vet?",
+     "<p>Yes — the label helps the vet identify the substance and dose. If your pet vomited, note what you saw; do not collect vomit unless the vet asks.</p>"],
+    ["Can lilies poison cats?",
+     "<p>Many lilies are highly toxic to cats — even small amounts of pollen or leaf can cause kidney failure. If you have cats, avoid lilies in the home and garden.</p>"]
   ],
   related: [
     { name: "Choking", path: "/pet-emergency/choking.html", desc: "Airway blockages and swallowed objects." },
