@@ -80,9 +80,17 @@ This document replaces the old “title/meta batch” queue until Phase 3 is com
 - [x] `/take-pet-out-of-thailand/to-canada.html` — DLD export timeline, CFIA entry checklist, 5 FAQs
 - [x] Fixed dead CFIA URL (`importing-food-plants-or-animals` → `importing-food-plants-animals`, was 410) site-wide in `41-export.js`, `47-import-extra.js`, `52-export-countries.js`
 
+### Import / export corridors — Batch 86 ✅ EU hubs + official-link audit
+
+- [x] `/bring-pet-to-thailand/from-eu.html` — timeline table, TH docs, member-state links, EU failure points, 5 FAQs
+- [x] `/take-pet-out-of-thailand/to-eu.html` — export timeline, DLD table, BCP/member-state links, 5 FAQs
+- [x] `tools/audit-official-links.js` — HEAD-checks 96 external URLs; wired into `audit:full`
+- [x] Fixed 14 dead official URLs (MPI NZ, Jordbruksverket, Mattilsynet, Fødevarestyrelsen, Ruokavirasto, NVWA, France mesdemarches, gov.ie pet-travel, India AQCS, Muang Ake branch, Zoeta, Soi Dog adopt, Pattaya Authority footer)
+- [x] Pattaya Animal Hospital: phone `038 373 290` from public directory listing
+
 ### Import / export corridors
 
-- [x] All 23 import / 23 export country pairs at full depth (Batch 85 completes Canada — last thin corridor)
+- [x] All 23 import / 23 export country pairs at full depth; EU hub pages now match corridor depth (Batch 86)
 
 ### Pet health cluster — Batch 85 ✅ audit pass
 
@@ -97,7 +105,8 @@ This document replaces the old “title/meta batch” queue until Phase 3 is com
 
 - [ ] Tier 1 visits: 5 vets, 2 groomers, 2 boarding (delegate kit)
 - [ ] Publish first verdicts only after anonymous visits
-- [ ] Resolve missing contacts: `pattaya-animal-hospital`, `mor-ja-pet-clinic-pattaya`
+- [x] Pattaya Animal Hospital contact (`038 373 290`)
+- [ ] Mor Ja Pet Clinic — no verified public phone; leave WARN until found
 
 ---
 

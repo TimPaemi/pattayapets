@@ -33,7 +33,7 @@ const OFFICIAL =
   "target=\"_blank\" rel=\"noopener nofollow\">UAE MOCCAE pet import</a>; " +
   "<a href=\"https://www.agriculture.gov.au/biosecurity-trade/cats-dogs\" target=\"_blank\" " +
   "rel=\"noopener nofollow\">Australia DAFF</a>; " +
-  "<a href=\"https://www.mpi.govt.nz/import/bringing-pets-to-nz/\" target=\"_blank\" rel=\"noopener nofollow\">New Zealand MPI</a>; " +
+  "<a href=\"https://www.mpi.govt.nz/bring-send-to-nz/pets-travelling-to-nz/bringing-cats-and-dogs-to-nz\" target=\"_blank\" rel=\"noopener nofollow\">New Zealand MPI</a>; " +
   "<a href=\"https://inspection.canada.ca/en/importing-food-plants-animals/pets\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">Canada CFIA</a>; " +
   "<a href=\"https://www.blv.admin.ch/blv/en/home/tiere/reisen-mit-heimtieren.html\" " +
@@ -600,39 +600,99 @@ pages.push(exp({
   ]
 }));
 
+const EU_EXPORT_TIMELINE =
+  '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+  '<th scope="col">When</th><th scope="col">Step</th></tr></thead><tbody>' +
+  '<tr><th scope="row">4&ndash;6 months before travel</th>' +
+  '<td>Plan rabies vaccination and FAVN titer test at an EU-approved lab, then the mandatory waiting period before EU entry. See <a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">titer timing</a>.</td></tr>' +
+  '<tr><th scope="row">As soon as dates firm</th>' +
+  '<td>Confirm destination member-state rules (Border Control Post entry point, advance notification, tapeworm treatment for dogs if required).</td></tr>' +
+  '<tr><th scope="row">At least 15 days before departure</th>' +
+  '<td>Apply for Thai DLD export permit (form 1/1) at the departure airport AQS; gather destination import proof.</td></tr>' +
+  '<tr><th scope="row">Within 10 days of export</th>' +
+  '<td>Thai official vet issues export health certificate aligned with EU entry requirements.</td></tr>' +
+  '<tr><th scope="row">Before check-in</th>' +
+  '<td>Confirm flight pet booking and that connection airports accept live animals if not flying direct.</td></tr>' +
+  '<tr><th scope="row">At EU Border Control Post</th>' +
+  '<td>Present EU health certificate, microchip, vaccination and titer records for documentary and identity check.</td></tr>' +
+  '</tbody></table></div>';
+
+const EU_MEMBER_EXPORT_LINKS =
+  "<p>National pages cover competent-authority contacts, BCP airports and local extras:</p>" +
+  "<ul>" +
+  "<li><a href=\"/take-pet-out-of-thailand/to-germany.html\">Germany</a> &middot; " +
+  "<a href=\"/take-pet-out-of-thailand/to-france.html\">France</a> &middot; " +
+  "<a href=\"/take-pet-out-of-thailand/to-netherlands.html\">Netherlands</a> &middot; " +
+  "<a href=\"/take-pet-out-of-thailand/to-denmark.html\">Denmark</a> &middot; " +
+  "<a href=\"/take-pet-out-of-thailand/to-sweden.html\">Sweden</a> &middot; " +
+  "<a href=\"/take-pet-out-of-thailand/to-finland.html\">Finland</a> &middot; " +
+  "<a href=\"/take-pet-out-of-thailand/to-ireland.html\">Ireland</a> &middot; " +
+  "<a href=\"/take-pet-out-of-thailand/to-norway.html\">Norway</a> (EEA) &middot; " +
+  "<a href=\"/take-pet-out-of-thailand/to-switzerland.html\">Switzerland</a></li>" +
+  "</ul>";
+
+const EU_EXPORT_FAILS =
+  "<ul>" +
+  "<li><strong>Starting with DLD only</strong> &mdash; the EU titer test and three-month wait usually set the calendar, not the Thai export desk.</li>" +
+  "<li><strong>Wrong BCP airport</strong> &mdash; pets must enter through a member-state Border Control Post that accepts your species; not every EU airport qualifies.</li>" +
+  "<li><strong>Certificate mismatch</strong> &mdash; Thai export health certificate wording must match the EU model your destination accepts for third-country entry.</li>" +
+  "<li><strong>Expired titer or rabies gap</strong> &mdash; a lapsed vaccination invalidates prior tests and restarts waiting periods.</li>" +
+  "<li><strong>Commercial vs non-commercial</strong> &mdash; more than five pets, resale or change of ownership can trigger commercial TRACES rules instead of pet-travel rules.</li>" +
+  "</ul>";
+
 pages.push(exp({
   slug: "to-eu", crumb: "To the EU",
   title: "Export a Pet from Thailand to the EU (Pet Passport & DLD 2026) | PattayaPets",
-  desc: "Bringing a pet from Thailand to the European Union: the rabies titer " +
-    "test, the three-month wait and the EU entry health certificate.",
+  desc: "Thailand to EU pet export: DLD export permit, rabies titer test, three-month " +
+    "wait and EU entry health certificate — member-state BCP rules apply.",
+  updated: "2026-05-31",
   h1: "Taking a pet from Thailand to the EU",
   lede: "For the EU, Thailand is a non-listed third country &mdash; so the rabies " +
-    "titer test and its three-month wait drive your timeline.",
+    "titer test and its three-month wait drive your timeline. Line up DLD export " +
+    "paperwork inside that longer EU calendar.",
+  officialExtra:
+    "<p><strong>EU sources:</strong> " +
+    "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">European Commission &mdash; movement of pets</a>. " +
+    "Mirror import guide: " +
+    "<a href=\"/bring-pet-to-thailand/from-eu.html\">bringing a pet from the EU</a>.</p>",
   sections: [
+    { h: "The timeline — what to do when", html:
+      "<p>Work backwards from the date you want to land in the EU. The titer test " +
+      "and waiting period are usually the long pole for pets leaving Thailand.</p>" +
+      EU_EXPORT_TIMELINE },
     { h: "The titer test and the wait", html:
       "<p>To bring a pet into the EU from Thailand, your pet needs a current " +
       "rabies vaccination and a <strong>rabies titer test</strong> showing an " +
       "adequate antibody level, with the blood sample taken at least 30 days " +
       "after vaccination. You then wait <strong>three months from the blood " +
       "sample date</strong> before the pet may enter the EU.</p>" +
-      "<p>As everywhere, doing the titer test early &mdash; before leaving, if " +
-      "possible &mdash; is what saves you that wait.</p>" },
+      "<p>As everywhere, doing the titer test early &mdash; before leaving Europe " +
+      "for Thailand, if possible &mdash; is what saves you that wait on the way back.</p>" },
     { h: "The EU entry health certificate", html:
       "<p>Your pet needs an EU animal health certificate completed for entry " +
       "from a third country and endorsed by the Thai authorities. The microchip, " +
-      "vaccination dates and titer result must all line up on it. Rules can " +
-      "differ slightly by the EU country you enter through &mdash; we have " +
-      "dedicated pages for " +
-      "<a href=\"/take-pet-out-of-thailand/to-germany.html\">Germany</a> and " +
-      "<a href=\"/take-pet-out-of-thailand/to-france.html\">France</a>, and you " +
-      "should confirm with that country&rsquo;s authority.</p>" },
-    { h: "The Thai side and your timeline", html: THAI_SIDE }
+      "vaccination dates and titer result must all line up on it. Entry must be " +
+      "through an approved <strong>Border Control Post (BCP)</strong> in the member " +
+      "state of arrival.</p>" +
+      "<p>Dogs entering Finland, Ireland, Malta or Norway may need tapeworm " +
+      "treatment; some member states require advance notification. Confirm with " +
+      "the competent authority for your entry country.</p>" +
+      EU_MEMBER_EXPORT_LINKS },
+    { h: "Thai export documents", html: DLD_EXPORT_TABLE + THAI_SIDE },
+    { h: "Common mistakes on this corridor", html: EXPORT_FAILS + EU_EXPORT_FAILS }
   ],
   faqs: [
     ["Is the three-month wait avoidable?",
      "<p>Only if a valid rabies titer test is already in place and has remained valid (with the rabies vaccination kept current). That is why owners are advised to do the test before leaving for Thailand.</p>"],
     ["Does the EU pet passport work for this?",
-     "<p>The EU pet passport is for movement within the EU and for pets resident there. Coming from Thailand you need a third-country entry health certificate; check the rules for your specific EU entry country.</p>"]
+     "<p>The EU pet passport is for movement within the EU and for pets resident there. Coming from Thailand you need a third-country entry health certificate; check the rules for your specific EU entry country.</p>"],
+    ["Can my pet enter any EU airport?",
+     "<p>No. Entry must be through a Border Control Post designated for your species. Many popular tourist airports are not BCPs. Your member-state page lists approved entry points.</p>"],
+    ["How long does DLD export take compared with EU entry rules?",
+     "<p>Thai export permit and health certificate work usually takes weeks if paperwork is clean. EU titer testing and waiting periods often take months. Start with the EU timeline, then fit DLD export inside it.</p>"],
+    ["What if I am moving with more than one pet?",
+     "<p>Up to five pets travelling with their owner within five days of the owner may qualify for non-commercial rules. Above that, or if ownership changes, commercial TRACES and import rules may apply &mdash; confirm with the destination competent authority.</p>"]
   ]
 }));
 

@@ -213,7 +213,7 @@ const SHELTERS = [
     adopt:
       "<p>Soi Dog runs an established adoption programme, including international " +
       "adoption for supporters who have moved or are moving abroad. See its " +
-      "<a href=\"https://www.soidog.org/content/adopt\" target=\"_blank\" " +
+      "<a href=\"https://www.soidog.org/adopt\" target=\"_blank\" " +
       "rel=\"noopener nofollow\">adoption pages</a> for current options. Flying a " +
       "pet abroad later? Read the " +
       "<a href=\"/take-pet-out-of-thailand/export-process.html\">export process</a>.</p>"

@@ -119,6 +119,7 @@ ok = run("audit-seo", "npm", ["run", "audit:seo"]) && ok;
 ok = run("audit-directory", "npm", ["run", "audit:directory"]) && ok;
 ok = run("audit-country-pairs", "npm", ["run", "audit:country-pairs"]) && ok;
 ok = run("audit-orphans", "npm", ["run", "audit:orphans"]) && ok;
+ok = run("audit-official-links", "npm", ["run", "audit:official"]) && ok;
 
 console.log("\n" + (ok ? "PASS" : "FAIL") + " — extended audit complete");
 process.exit(ok ? 0 : 1);

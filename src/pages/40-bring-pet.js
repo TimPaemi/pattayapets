@@ -1046,22 +1046,82 @@ pages.push(countryPage({
   ]
 }));
 
+const EU_MEMBER_IMPORT_LINKS =
+  "<p>Each member state has its own competent authority and certificate format. " +
+  "Use the page for your departure country:</p>" +
+  "<ul>" +
+  "<li><a href=\"/bring-pet-to-thailand/from-germany.html\">Germany</a> &middot; " +
+  "<a href=\"/bring-pet-to-thailand/from-france.html\">France</a> &middot; " +
+  "<a href=\"/bring-pet-to-thailand/from-netherlands.html\">Netherlands</a> &middot; " +
+  "<a href=\"/bring-pet-to-thailand/from-denmark.html\">Denmark</a> &middot; " +
+  "<a href=\"/bring-pet-to-thailand/from-sweden.html\">Sweden</a> &middot; " +
+  "<a href=\"/bring-pet-to-thailand/from-finland.html\">Finland</a> &middot; " +
+  "<a href=\"/bring-pet-to-thailand/from-ireland.html\">Ireland</a> &middot; " +
+  "<a href=\"/bring-pet-to-thailand/from-norway.html\">Norway</a> (EEA) &middot; " +
+  "<a href=\"/bring-pet-to-thailand/from-switzerland.html\">Switzerland</a></li>" +
+  "</ul>";
+
+const EU_IMPORT_FAILS =
+  "<ul>" +
+  "<li><strong>Pet passport only</strong> &mdash; intra-EU passports do not replace a competent-authority export health certificate for Thailand.</li>" +
+  "<li><strong>Wrong endorsement chain</strong> &mdash; some member states require central authority sign-off after the official vet; missing it voids the certificate.</li>" +
+  "<li><strong>Permit timing</strong> &mdash; DLD import permit applied inside seven working days when the AQS desk is busy, or too early so it expires before you fly.</li>" +
+  "<li><strong>Health certificate window</strong> &mdash; issued outside the validity period for your landing date.</li>" +
+  "<li><strong>Return-trip blindness</strong> &mdash; no titer test before leaving Europe, then a three-month wait when you try to bring the pet back from Thailand.</li>" +
+  "</ul>";
+
 pages.push(countryPage({
   slug: "from-eu", crumb: "From the EU",
   title: "Bring a Pet to Thailand from the EU (DLD Import 2026) | PattayaPets",
-  desc: "EU to Thailand pet import: EU export health certificate, competent authority " +
-    "endorsement, DLD import permit and the titer test if you return to the EU.",
+  desc: "EU to Thailand pet import: export health certificate, competent authority " +
+    "endorsement, DLD import permit and Bangkok AQS clearance — plus EU return planning.",
+  updated: "2026-05-31",
   h1: "Bringing a pet to Thailand from the EU",
   lede: "EU owners travel with a pet passport at home — but it does not do the " +
-    "job for Thailand, or for coming back.",
+    "job for Thailand, or for coming back. Thailand applies one import rulebook; " +
+    "your member state issues the export certificate.",
+  officialExtra:
+    "<p><strong>EU sources:</strong> " +
+    "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">European Commission &mdash; movement of pets</a>.</p>",
   sections: [
+    { h: "The timeline — what to do when", html:
+      "<p>Build backwards from your Bangkok arrival date. If you may return to the EU, " +
+      "add the <strong>rabies titer test</strong> at the start.</p>" +
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">When</th><th scope="col">Step</th></tr></thead><tbody>' +
+      '<tr><th scope="row">3+ months before (if EU return possible)</th>' +
+      '<td>ISO microchip (if needed), rabies vaccination, optional <a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">FAVN titer test</a> &mdash; blood drawn &ge;30 days after vaccination</td></tr>' +
+      '<tr><th scope="row">6&ndash;8 weeks before</th>' +
+      '<td>Core vaccinations (DHPP/FVRCP, leptospirosis for dogs); wait <strong>21 days</strong> after any primary rabies shot</td></tr>' +
+      '<tr><th scope="row">~30 days before departure</th>' +
+      '<td>Apply for <a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a> (form R1/1) by email to the AQS at your arrival airport</td></tr>' +
+      '<tr><th scope="row">2&ndash;3 weeks before</th>' +
+      '<td>Book pet space on the flight; confirm airline requires the import permit before boarding</td></tr>' +
+      '<tr><th scope="row">Final 7&ndash;10 days</th>' +
+      '<td>Official vet completes <strong>EU export health certificate</strong>; competent authority endorses as your country requires</td></tr>' +
+      '<tr><th scope="row">&ge;3 days before landing</th>' +
+      '<td>Email the AQS to confirm your exact arrival date and flight</td></tr>' +
+      '<tr><th scope="row">Arrival day</th>' +
+      '<td>AQS inspection at Suvarnabhumi; Forms R-6/R-7 issued; fee payable on clearance</td></tr>' +
+      '</tbody></table></div>' +
+      "<p>Full step pages: " + IMP_STEPS + ".</p>" },
     { h: "The EU side of the paperwork", html:
-      "<p>Follow the standard steps &mdash; " + IMP_STEPS + ". For travel out of the EU, " +
-      "your vet completes an <strong>EU animal health / export certificate</strong> " +
-      "and it is endorsed by your country&rsquo;s <strong>competent authority</strong> " +
-      "(the official government veterinary body). The familiar blue EU pet " +
-      "passport is for travel within the EU and is not, by itself, the document " +
-      "Thailand needs.</p>" },
+      "<p>For travel out of the EU to Thailand, your vet completes an " +
+      "<strong>EU animal health / export certificate</strong> and it is endorsed by " +
+      "your country&rsquo;s <strong>competent authority</strong> (the official " +
+      "government veterinary body). The familiar blue EU pet passport is for travel " +
+      "within the EU and is not, by itself, the document Thailand needs.</p>" +
+      "<ul>" +
+      "<li><strong>ISO 11784/11785 microchip</strong> implanted before the rabies vaccination used for export.</li>" +
+      "<li><strong>Valid rabies vaccination</strong> recorded on the export certificate.</li>" +
+      "<li><strong>Export health certificate for Thailand</strong> &mdash; aligned with DLD import rules, not intra-EU pet-passport travel alone.</li>" +
+      "<li><strong>Official endorsement</strong> where your member state requires central authority sign-off.</li>" +
+      "</ul>" +
+      EU_MEMBER_IMPORT_LINKS },
+    { h: "Documents Thailand expects", html:
+      "<p>These are the papers the DLD asks for regardless of EU departure country:</p>" +
+      TH_DOCS_TABLE + TH_ARRIVAL },
     { h: "Planning for the return to the EU", html:
       "<p>To bring a pet <em>back into the EU</em> from Thailand &mdash; a " +
       "non-EU country &mdash; you will need a valid rabies vaccination and a " +
@@ -1069,13 +1129,20 @@ pages.push(countryPage({
       "30 days after vaccination and a <strong>three-month wait</strong> before " +
       "entry. As with the UK, the smart move is to do the titer test before you " +
       "leave, while the vaccination is current. See our guide to " +
-      "<a href=\"/take-pet-out-of-thailand/to-eu.html\">taking a pet from Thailand to the EU</a>.</p>" }
+      "<a href=\"/take-pet-out-of-thailand/to-eu.html\">taking a pet from Thailand to the EU</a>.</p>" },
+    { h: "Common mistakes on this corridor", html: TH_FAILS + EU_IMPORT_FAILS }
   ],
   faqs: [
     ["Is my EU pet passport enough to bring my pet to Thailand?",
-     "<p>No. The EU pet passport governs movement within the EU. For Thailand you need an EU export health certificate endorsed by your competent authority, plus the Thai import permit.</p>"],
+     "<p>No. The EU pet passport governs movement within the EU. For Thailand you need an export health certificate endorsed by your competent authority, plus the Thai import permit.</p>"],
+    ["Do all EU countries use the same export certificate for Thailand?",
+     "<p>No. Thailand's import rules are uniform, but each member state's competent authority issues its own export certificate format and endorsement process. Use our country page for your departure state.</p>"],
     ["What does the EU need for the return journey?",
-     "<p>A valid rabies vaccination and a rabies titer test, with a three-month wait after the blood sample. Doing the titer test before you leave the EU avoids that wait later.</p>"]
+     "<p>A valid rabies vaccination and a rabies titer test, with a three-month wait after the blood sample. Doing the titer test before you leave the EU avoids that wait later.</p>"],
+    ["Which EU airport should I fly from?",
+     "<p>Thailand cares about correct paperwork, not which EU hub you use. Choose a route with a confirmed pet booking and minimal connection risk; long layovers in non-EU countries can trigger extra transit rules.</p>"],
+    ["How long does the full EU-to-Thailand process take?",
+     "<p>Budget six to eight weeks minimum for straightforward moves, longer if you are lining up vaccinations, permit processing and airline cargo space. Add months if you are also preparing a valid titer test for a future EU return.</p>"]
   ]
 }));
 

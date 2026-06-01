@@ -160,7 +160,7 @@ pages.push(prosePage({
     "Pattaya, and operated via the Pattaya Authority network &mdash; a family of " +
     "independent Pattaya publications that share one method: visit anonymously, pay " +
     "every bill, take no money from the businesses covered. See the " +
-    '<a href="https://pattaya-authority.com/work/pattaya-pets/" target="_blank" rel="noopener noreferrer">' +
+    '<a href="https://pattaya-authority.com/" target="_blank" rel="noopener noreferrer">' +
     "Pattaya Authority case study</a> for how PattayaPets fits the network. The founder is " +
     '<a href="https://timpaemi.com/" target="_blank" rel="noopener">Tim</a>. ' +
     "Reviews are bylined to The Editors. See the " +

@@ -123,13 +123,13 @@ const BUSINESSES = [
     name: "Pattaya Animal Hospital",
     category: "vets", areas: ["central-pattaya"], type: "Animal hospital", c24: false,
     address: "49/86-7 Moo 10, Pattaya Tai Road, Nong Prue, Bang Lamung, Chon Buri 20150",
-    phone: null, tel: null,
+    phone: "038 373 290", tel: "+6638373290",
     website: null, hours: "Daily 08:30–20:00 (confirm when booking)",
     languages: "Thai; confirm English-language support when booking",
     services: ["General consultations", "Vaccinations", "Treatment & surgery"],
     summary: "An animal hospital on Pattaya Tai Road in central Pattaya, handling " +
-      "general consultations, vaccinations and routine treatment. Directory records " +
-      "list daily hours of 08:30–20:00; confirm current hours, contact details and " +
+      "general consultations, vaccinations and routine treatment. Listed on " +
+      "038 373 290 with daily hours of 08:30–20:00; confirm current hours and " +
       "English-language support when booking."
   },
   {
@@ -138,7 +138,7 @@ const BUSINESSES = [
     category: "vets", areas: ["central-pattaya", "banglamung"], type: "Animal hospital", c24: true,
     address: "248/6-8 Moo 5, Nernplubwan, Nong Prue, Bang Lamung, Chon Buri 20150",
     phone: "038 410 545", tel: "+6638410545",
-    website: "https://en.muangakepethospital.com/pattaya-community-pet-hospital/",
+    website: "https://en.muangakepethospital.com/",
     hours: "Open 24 hours",
     languages: "Thai; confirm English-language support when booking",
     services: ["24-hour service", "General treatment", "Surgery"],
@@ -381,7 +381,7 @@ const BUSINESSES = [
     address: "Chiang Mai (headquarters); confirm Pattaya service area when booking",
     phone: "095 849 6783", tel: "+66958496783",
     email: "info@zoeta-dogsoul.com",
-    website: "https://zoeta-dogsoul.com/dog-training-pattaya/", hours: null,
+    website: "https://zoeta-dogsoul.com/", hours: null,
     languages: "English and Thai",
     services: ["Private dog training", "Behaviour consultations", "Obedience classes"],
     summary: "A dog-training operation headquartered in Chiang Mai with a Pattaya " +

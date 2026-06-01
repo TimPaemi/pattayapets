@@ -35,7 +35,7 @@ const OFFICIAL =
   "target=\"_blank\" rel=\"noopener nofollow\">UAE MOCCAE pet import</a>; " +
   "<a href=\"https://www.agriculture.gov.au/biosecurity-trade/cats-dogs\" target=\"_blank\" " +
   "rel=\"noopener nofollow\">Australia DAFF</a>; " +
-  "<a href=\"https://www.mpi.govt.nz/import/bringing-pets-to-nz/\" target=\"_blank\" " +
+  "<a href=\"https://www.mpi.govt.nz/bring-send-to-nz/pets-travelling-to-nz/bringing-cats-and-dogs-to-nz\" target=\"_blank\" " +
   "rel=\"noopener nofollow\">New Zealand MPI</a>; " +
   "<a href=\"https://aqcsindia.gov.in/Home/ImportExportPets\" target=\"_blank\" " +
   "rel=\"noopener nofollow\">India AQCS</a>; " +
@@ -271,7 +271,7 @@ pages.push(exp({
     "Sweden applies the standard EU entry rules &mdash; plan in quarters, not weeks.",
   officialExtra:
     "<p><strong>Swedish / EU sources:</strong> " +
-    "<a href=\"https://jordbruksverket.se/en/animals/keeping-animals/pets/travelling-with-pets\" " +
+    "<a href=\"https://jordbruksverket.se/languages/english/swedish-board-of-agriculture/animals/pets---trade-and-travel/movement-of-dogs-cats-and-ferrets-to-sweden\" " +
     "target=\"_blank\" rel=\"noopener nofollow\">Jordbruksverket pet travel</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">EU pet movement</a>. " +
@@ -311,7 +311,7 @@ pages.push(exp({
     "with one extra requirement for dogs.",
   officialExtra:
     "<p><strong>Norwegian sources:</strong> " +
-    "<a href=\"https://www.mattilsynet.no/english/animal/import-and-export-of-animals/personal-import-of-animals-into-norway.2210\" " +
+    "<a href=\"https://www.mattilsynet.no/en/animals/guide-travelling-with-pets-to-norway\" " +
     "target=\"_blank\" rel=\"noopener nofollow\">Mattilsynet pet import</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">EU pet movement</a> (Norway applies EU-aligned rules). " +
@@ -352,7 +352,7 @@ pages.push(exp({
     "Thailand, so plan the timeline around the titer test.",
   officialExtra:
     "<p><strong>Danish / EU sources:</strong> " +
-    "<a href=\"https://foedevarestyrelsen.dk/english\" target=\"_blank\" " +
+    "<a href=\"https://en.foedevarestyrelsen.dk/animals/travelling-with-pet-animals\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">Danish Veterinary and Food Administration</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">EU pet movement</a>. " +
@@ -391,7 +391,7 @@ pages.push(exp({
     "to plan around.",
   officialExtra:
     "<p><strong>Finnish / EU sources:</strong> " +
-    "<a href=\"https://www.ruokavirasto.fi/en/themes/animals/travel-with-pet-animals/\" " +
+    "<a href=\"https://www.ruokavirasto.fi/en/animals/travellers/\" " +
     "target=\"_blank\" rel=\"noopener nofollow\">Ruokavirasto pet travel</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">EU pet movement</a>. " +
@@ -432,7 +432,7 @@ pages.push(exp({
     "convenient direct arrival point from Bangkok.",
   officialExtra:
     "<p><strong>Dutch / EU sources:</strong> " +
-    "<a href=\"https://english.nvwa.nl/topics/importing-animals\" target=\"_blank\" " +
+    "<a href=\"https://english.nvwa.nl/topics/animal-health/travelling-to-the-netherlands-with-your-dog-or-cat\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">NVWA importing animals</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">EU pet movement</a>. " +
@@ -471,7 +471,7 @@ pages.push(exp({
     "Thailand, with Paris a common direct arrival point.",
   officialExtra:
     "<p><strong>French / EU sources:</strong> " +
-    "<a href=\"https://agriculture.gouv.fr/les-demarches-pour-partir-voyager-avec-son-animal-de-compagnie\" " +
+    "<a href=\"https://mesdemarches.agriculture.gouv.fr/demarches/particulier/vivre-avec-un-animal-de-compagnie/article/voyager-hors-de-france-avec-un\" " +
     "target=\"_blank\" rel=\"noopener nofollow\">French Ministry of Agriculture pet travel</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">EU pet movement</a>. " +
@@ -509,7 +509,7 @@ pages.push(exp({
   lede: "Ireland applies the EU entry rules, with one extra requirement for dogs.",
   officialExtra:
     "<p><strong>Irish / EU sources:</strong> " +
-    "<a href=\"https://www.gov.ie/en/department-of-agriculture-food-and-the-marine/publications/bringing-pets-to-ireland/\" " +
+    "<a href=\"https://www.gov.ie/en/department-of-agriculture-food-and-the-marine/publications/pet-travel/\" " +
     "target=\"_blank\" rel=\"noopener nofollow\">Department of Agriculture pet travel</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">EU pet movement</a>. " +
@@ -762,9 +762,9 @@ pages.push(exp({
     "biosecurity rules anywhere, and Thailand is <strong>not</strong> a straightforward origin.",
   officialExtra:
     "<p><strong>New Zealand sources:</strong> " +
-    "<a href=\"https://www.mpi.govt.nz/import/bringing-pets-to-nz/importing-dogs-and-cats/\" " +
+    "<a href=\"https://www.mpi.govt.nz/bring-send-to-nz/pets-travelling-to-nz/bringing-cats-and-dogs-to-nz/step-by-step-guide-to-bringing-cats-and-dogs-to-nz\" " +
     "target=\"_blank\" rel=\"noopener nofollow\">MPI &mdash; importing dogs and cats</a>; " +
-    "<a href=\"https://www.mpi.govt.nz/import/bringing-pets-to-nz/\" target=\"_blank\" " +
+    "<a href=\"https://www.mpi.govt.nz/bring-send-to-nz/pets-travelling-to-nz/bringing-cats-and-dogs-to-nz\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">MPI pet import hub</a>. " +
     "Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-new-zealand.html\">bringing a pet from New Zealand</a>.</p>",
@@ -1121,7 +1121,7 @@ pages.push(exp({
     "<p><strong>India sources:</strong> " +
     '<a href="https://aqcsindia.gov.in/Home/ImportExportPets" target="_blank" ' +
     "rel=\"noopener nofollow\">AQCS import/export of pets</a>; " +
-    '<a href="https://indialog-pga.logistics.gov.in/AQCS/Home.aspx" target="_blank" ' +
+    '<a href="https://aqcsindia.gov.in/Home/ImportExportPets" target="_blank" ' +
     "rel=\"noopener nofollow\">AQCS Import Clearance System (online NOC)</a>; " +
     '<a href="https://aqcsindia.gov.in/pdfs/india-dogs-guidance.pdf" target="_blank" ' +
     "rel=\"noopener nofollow\">India dog import guidance (PDF)</a>. Import mirror: " +

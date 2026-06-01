@@ -177,7 +177,7 @@ pages.push(country({
     "you ever come back.",
   officialExtra:
     "<p><strong>Swedish / EU sources:</strong> " +
-    "<a href=\"https://jordbruksverket.se/en/animals/keeping-animals/pets/travelling-with-pets\" " +
+    "<a href=\"https://jordbruksverket.se/languages/english/swedish-board-of-agriculture/animals/pets---trade-and-travel/movement-of-dogs-cats-and-ferrets-to-sweden\" " +
     "target=\"_blank\" rel=\"noopener nofollow\">Jordbruksverket pet travel</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">EU pet movement</a>. " +
@@ -237,7 +237,7 @@ pages.push(country({
     "tapeworm rule for dogs.",
   officialExtra:
     "<p><strong>Norwegian / EU sources:</strong> " +
-    "<a href=\"https://www.mattilsynet.no/english/animal/import-and-export-of-animals/personal-import-of-animals-into-norway.2210\" " +
+    "<a href=\"https://www.mattilsynet.no/en/animals/guide-travelling-with-pets-to-norway\" " +
     "target=\"_blank\" rel=\"noopener nofollow\">Mattilsynet pet import</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">EU pet movement</a> (Norway applies EU-aligned rules). " +
@@ -291,7 +291,7 @@ pages.push(country({
     "Denmark-specific is who endorses the export paperwork and planning the EU return.",
   officialExtra:
     "<p><strong>Danish / EU sources:</strong> " +
-    "<a href=\"https://foedevarestyrelsen.dk/english\" target=\"_blank\" " +
+    "<a href=\"https://en.foedevarestyrelsen.dk/animals/travelling-with-pet-animals\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">Danish Veterinary and Food Administration</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">EU pet movement</a>. " +
@@ -346,7 +346,7 @@ pages.push(country({
     "around is the journey home, which has the tapeworm rule for dogs.",
   officialExtra:
     "<p><strong>Finnish / EU sources:</strong> " +
-    "<a href=\"https://www.ruokavirasto.fi/en/themes/animals/travel-with-pet-animals/\" " +
+    "<a href=\"https://www.ruokavirasto.fi/en/animals/travellers/\" " +
     "target=\"_blank\" rel=\"noopener nofollow\">Ruokavirasto pet travel</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">EU pet movement</a>. " +
@@ -400,7 +400,7 @@ pages.push(country({
     "makes the Netherlands one of the more straightforward departure points.",
   officialExtra:
     "<p><strong>Dutch / EU sources:</strong> " +
-    "<a href=\"https://english.nvwa.nl/topics/importing-animals\" target=\"_blank\" " +
+    "<a href=\"https://english.nvwa.nl/topics/animal-health/travelling-to-the-netherlands-with-your-dog-or-cat\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">NVWA importing animals</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">EU pet movement</a>. " +
@@ -456,7 +456,7 @@ pages.push(country({
     "part is the export certificate, its endorsement and planning the EU return.",
   officialExtra:
     "<p><strong>French / EU sources:</strong> " +
-    "<a href=\"https://agriculture.gouv.fr/les-demarches-pour-partir-voyager-avec-son-animal-de-compagnie\" " +
+    "<a href=\"https://mesdemarches.agriculture.gouv.fr/demarches/particulier/vivre-avec-un-animal-de-compagnie/article/voyager-hors-de-france-avec-un\" " +
     "target=\"_blank\" rel=\"noopener nofollow\">French Ministry of Agriculture pet travel</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">EU pet movement</a>. " +
@@ -570,7 +570,7 @@ pages.push(country({
     "tapeworm rule for dogs worth planning around.",
   officialExtra:
     "<p><strong>Irish / EU sources:</strong> " +
-    "<a href=\"https://www.gov.ie/en/department-of-agriculture-food-and-the-marine/publications/bringing-pets-to-ireland/\" " +
+    "<a href=\"https://www.gov.ie/en/department-of-agriculture-food-and-the-marine/publications/pet-travel/\" " +
     "target=\"_blank\" rel=\"noopener nofollow\">Department of Agriculture pet travel</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">EU pet movement</a>. " +
@@ -624,9 +624,9 @@ pages.push(country({
     "real thought, <strong>before you ever leave</strong>, is whether you might bring it back.",
   officialExtra:
     "<p><strong>New Zealand sources:</strong> " +
-    "<a href=\"https://www.mpi.govt.nz/import/bringing-pets-to-nz/importing-dogs-and-cats/\" " +
+    "<a href=\"https://www.mpi.govt.nz/bring-send-to-nz/pets-travelling-to-nz/bringing-cats-and-dogs-to-nz/step-by-step-guide-to-bringing-cats-and-dogs-to-nz\" " +
     "target=\"_blank\" rel=\"noopener nofollow\">MPI &mdash; importing dogs and cats</a>; " +
-    "<a href=\"https://www.mpi.govt.nz/import/bringing-pets-to-nz/\" target=\"_blank\" " +
+    "<a href=\"https://www.mpi.govt.nz/bring-send-to-nz/pets-travelling-to-nz/bringing-cats-and-dogs-to-nz\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">MPI pet import hub</a>. " +
     "Export mirror: " +
     "<a href=\"/take-pet-out-of-thailand/to-new-zealand.html\">taking a pet to New Zealand</a>.</p>",
@@ -1103,7 +1103,7 @@ pages.push(country({
       "as <strong>re-import</strong> &mdash; but only if you kept the original export paperwork " +
       "and meet AQCS re-import rules. Otherwise India treats the pet as a fresh import requiring " +
       "an online Advance NOC via the " +
-      '<a href="https://indialog-pga.logistics.gov.in/AQCS/Home.aspx" target="_blank" ' +
+      '<a href="https://aqcsindia.gov.in/Home/ImportExportPets" target="_blank" ' +
       "rel=\"noopener nofollow\">AQCS Import Clearance System</a>, applied at least " +
       "<strong>seven working days</strong> before arrival at an approved port (Delhi, Mumbai, " +
       "Chennai, Kolkata, Bangalore or Hyderabad).</p>" +
