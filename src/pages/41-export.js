@@ -34,7 +34,7 @@ const OFFICIAL =
   "<a href=\"https://www.agriculture.gov.au/biosecurity-trade/cats-dogs\" target=\"_blank\" " +
   "rel=\"noopener nofollow\">Australia DAFF</a>; " +
   "<a href=\"https://www.mpi.govt.nz/import/bringing-pets-to-nz/\" target=\"_blank\" rel=\"noopener nofollow\">New Zealand MPI</a>; " +
-  "<a href=\"https://inspection.canada.ca/en/importing-food-plants-or-animals/pets\" " +
+  "<a href=\"https://inspection.canada.ca/en/importing-food-plants-animals/pets\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">Canada CFIA</a>; " +
   "<a href=\"https://www.blv.admin.ch/blv/en/home/tiere/reisen-mit-heimtieren.html\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">Switzerland FSVO</a>.</p>";

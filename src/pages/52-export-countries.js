@@ -45,7 +45,7 @@ const OFFICIAL =
   "target=\"_blank\" rel=\"noopener nofollow\">China GACC pet entry</a>; " +
   "<a href=\"https://www.gov.za/services/import/import-animals-and-animal-products\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">South Africa DALRRD import</a>; " +
-  "<a href=\"https://inspection.canada.ca/en/importing-food-plants-or-animals/pets\" " +
+  "<a href=\"https://inspection.canada.ca/en/importing-food-plants-animals/pets\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">Canada CFIA</a>; " +
   "<a href=\"https://www.blv.admin.ch/blv/en/home/tiere/reisen-mit-heimtieren.html\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">Switzerland FSVO</a>.</p>";
@@ -589,34 +589,84 @@ pages.push(exp({
 /* ---------------- CANADA ---------------- */
 pages.push(exp({
   slug: "to-canada", crumb: "To Canada",
-  title: "Export a Pet from Thailand to Canada (DLD 2026) | PattayaPets",
-  desc: "Bringing a dog or cat from Thailand to Canada: the rabies vaccination " +
-    "certificate, and why this is one of the simpler routes.",
+  title: "Export a Pet from Thailand to Canada (CFIA & DLD 2026) | PattayaPets",
+  desc: "Thailand to Canada pet export: CFIA rabies certificate, no titer wait, DLD " +
+    "export timeline, document checklist and onward-travel notes.",
   h1: "Taking a pet from Thailand to Canada",
   lede: "Compared with the EU or Australia, Canada is one of the more " +
-    "straightforward destinations for a pet leaving Thailand.",
+    "straightforward destinations for a pet leaving Thailand &mdash; but the DLD " +
+    "export steps still run in parallel.",
+  officialExtra:
+    "<p><strong>Canadian sources:</strong> " +
+    "<a href=\"https://inspection.canada.ca/en/importing-food-plants-animals/pets\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">CFIA &mdash; importing or travelling with pets</a>. " +
+    "Import mirror: " +
+    "<a href=\"/bring-pet-to-thailand/from-canada.html\">bringing a pet from Canada</a>.</p>",
   sections: [
-    { h: "Entering Canada", html:
-      "<p>Canada&rsquo;s requirements for a dog or cat are comparatively simple. " +
-      "The central document is a <strong>valid rabies vaccination certificate</strong>, " +
-      "and Canada does not generally require a rabies titer test or a quarantine " +
-      "stay for pets. The Canadian Food Inspection Agency (CFIA) sets the rules, " +
-      "and there can be additional steps depending on the animal&rsquo;s age and " +
-      "your situation &mdash; so confirm the current detail with the " +
-      "<a href=\"https://inspection.canada.ca/en/importing-food-plants-or-animals/pets\" " +
-      "target=\"_blank\" rel=\"noopener nofollow\">CFIA</a>.</p>" },
-    { h: "The Thai side and a word of caution", html:
-      THAI_SIDE +
-      "<p>Even though Canada is straightforward, still consider a " +
-      "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies " +
-      "titer test</a> if there is any chance of onward travel &mdash; the EU, UK " +
-      "and others require it with a long waiting period.</p>" }
+    { h: "The timeline — Thailand to Canada", html:
+      "<p>Canada does not require a rabies titer test, so the timeline is weeks rather " +
+      "than months &mdash; but book CFIA-aligned paperwork and the DLD export desk early.</p>" +
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Authority</th></tr></thead><tbody>' +
+      '<tr><th scope="row">6&ndash;8 weeks before</th>' +
+      '<td>Confirm current CFIA import requirements; ensure ISO microchip and current rabies vaccination</td>' +
+      '<td>CFIA + Thai vet</td></tr>' +
+      '<tr><th scope="row">4&ndash;6 weeks before</th>' +
+      '<td>Book pet on Bangkok&ndash;Toronto, Bangkok&ndash;Vancouver or connecting route; confirm airline pet policy</td>' +
+      '<td>Airline</td></tr>' +
+      '<tr><th scope="row">&ge;15 days before export</th>' +
+      '<td>Apply for Thai <a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">DLD export permit</a> (form 1/1) with CFIA entry requirements attached</td>' +
+      '<td>DLD AQS</td></tr>' +
+      '<tr><th scope="row">Within 10 days of departure</th>' +
+      '<td>Final clinical examination; DLD export health certificate with valid rabies vaccination recorded</td>' +
+      '<td>DLD AQS + vet</td></tr>' +
+      '<tr><th scope="row">Arrival in Canada</th>' +
+      '<td>Present rabies vaccination certificate; CFIA inspection if selected at the port of entry</td>' +
+      '<td>CFIA / Canada Border Services</td></tr>' +
+      '</tbody></table></div>' },
+    { h: "What Canada requires from Thailand", html:
+      "<p>Canada&rsquo;s requirements for a personal dog or cat are comparatively " +
+      "simple. The central document is a <strong>valid rabies vaccination " +
+      "certificate</strong> in English or French. Canada does not generally require " +
+      "a rabies titer test or a quarantine stay for compliant personal imports.</p>" +
+      "<p>Typical entry documents include:</p>" +
+      "<ul>" +
+      "<li>ISO microchip (recommended; should match the rabies certificate if present)</li>" +
+      "<li>Valid rabies vaccination administered in accordance with CFIA&rsquo;s current rules</li>" +
+      "<li>DLD export health certificate for the Thai exit</li>" +
+      "<li>Healthy animal matching the paperwork</li>" +
+      "</ul>" +
+      "<p>Additional steps can apply depending on the animal&rsquo;s age, whether the " +
+      "move is commercial, or the province of arrival &mdash; confirm the current detail " +
+      "with CFIA before you book.</p>" +
+      '<div class="callout callout-tip"><div class="ch">Planning onward travel to the EU?</div>' +
+      "<p>Even though Canada is straightforward, consider a " +
+      "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies titer test</a> " +
+      "in Thailand if there is any chance of later moving to the EU, UK or similar &mdash; " +
+      "those routes require it with a long waiting period.</p></div>" },
+    { h: "The Thai export side (DLD)", html:
+      "<p>Parallel Thai requirements:</p>" + DLD_EXPORT_TABLE +
+      "<p>See " +
+      '<a href="/take-pet-out-of-thailand/export-process.html">export process</a>.</p>' },
+    { h: "Common mistakes on this corridor", html: EXPORT_FAILS +
+      "<ul>" +
+      "<li><strong>Expired rabies vaccination</strong> &mdash; CFIA expects a current certificate; a lapsed shot can block entry.</li>" +
+      "<li><strong>Certificate language</strong> &mdash; CFIA expects English or French; confirm the DLD export certificate meets that requirement.</li>" +
+      "<li><strong>Last-minute DLD export</strong> &mdash; applying inside the 15-day window when the AQS still needs inspection time.</li>" +
+      "<li><strong>Assuming EU rules apply</strong> &mdash; Canada has no three-month titer wait, but the Thai export process still applies.</li>" +
+      "</ul>" }
   ],
   faqs: [
     ["Does Canada require a rabies titer test for a pet from Thailand?",
-     "<p>Generally no &mdash; Canada's main requirement is a valid rabies vaccination certificate, and it does not normally require titer testing or quarantine. Confirm the current rules for your pet with the CFIA.</p>"],
+     "<p>Generally no &mdash; Canada's main requirement is a valid rabies vaccination certificate, and it does not normally require titer testing or quarantine for personal imports. Confirm the current rules for your pet with CFIA.</p>"],
     ["Is Canada really easier than the EU?",
-     "<p>For the entry requirements themselves, yes &mdash; there is no three-month titer wait. The Thai export process still applies, and you should still start in good time.</p>"]
+     "<p>For entry requirements, yes &mdash; there is no three-month titer wait. The Thai DLD export process still applies, and you should still start in good time.</p>"],
+    ["How long does Thailand-to-Canada take to plan?",
+     "<p>Weeks rather than months if vaccinations are current &mdash; allow at least 15 days for the DLD export permit plus time for the final health certificate.</p>"],
+    ["Can my pet fly in the cabin to Canada?",
+     "<p>Depends on the airline and aircraft on your Bangkok&ndash;Toronto/Vancouver or connecting route. Confirm pet space and crate rules when you book.</p>"],
+    ["What if I later move from Canada to the EU?",
+     "<p>Plan a titer test and waiting period before that move. Doing the test while still in Thailand saves time if you know EU relocation is possible.</p>"]
   ]
 }));
 

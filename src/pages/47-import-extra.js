@@ -120,6 +120,44 @@ const RU_IMPORT_FAILS =
   "<li><strong>Assuming Russia re-entry will be simple</strong> &mdash; rules change; confirm FSVPS requirements before you leave if you may return.</li>" +
   "</ul>";
 
+const CA_IMPORT_FAILS =
+  "<ul>" +
+  "<li><strong>CFIA endorsement booked too late</strong> &mdash; CFIA offices need appointments; peak summer routes fill up.</li>" +
+  "<li><strong>Health certificate outside the validity window</strong> &mdash; CFIA and the DLD both expect a recent certificate; confirm the window with your vet and the AQS.</li>" +
+  "<li><strong>Assuming Canada re-entry needs no planning</strong> &mdash; CFIA still expects a valid rabies certificate and may inspect on arrival.</li>" +
+  "<li><strong>Skipping the titer test if EU travel is possible</strong> &mdash; onward moves to the EU or UK need it with a long wait.</li>" +
+  "</ul>";
+
+function caImportTimeline() {
+  return "<p>Work backwards from your flight. <strong>Toronto&ndash;Bangkok</strong> and " +
+    "<strong>Vancouver&ndash;Bangkok</strong> direct routes exist; still confirm pet " +
+    "acceptance with the airline early.</p>" +
+    '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+    '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Who</th></tr></thead><tbody>' +
+    '<tr><th scope="row">3+ months before (if EU/UK return possible)</th>' +
+    '<td>Microchip (if needed), rabies vaccination, optional <a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">rabies titer test</a> for onward travel</td>' +
+    '<td>Your vet; approved lab</td></tr>' +
+    '<tr><th scope="row">6&ndash;8 weeks before</th>' +
+    '<td>Core vaccinations and the <strong>21-day wait</strong> after any primary rabies shot Thailand requires</td>' +
+    '<td>Your vet</td></tr>' +
+    '<tr><th scope="row">~30 days before departure</th>' +
+    '<td>Apply for <a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a> (form R1/1) to the AQS at your arrival airport</td>' +
+    '<td>DLD / Suvarnabhumi AQS</td></tr>' +
+    '<tr><th scope="row">2&ndash;3 weeks before</th>' +
+    '<td>Book pet space on the flight; confirm airline requires the Thai import permit before boarding</td>' +
+    '<td>Airline</td></tr>' +
+    '<tr><th scope="row">Final 1&ndash;2 weeks</th>' +
+    '<td>Export health certificate completed by your vet and <strong>endorsed by CFIA</strong> (Canadian Food Inspection Agency)</td>' +
+    '<td>Vet + CFIA</td></tr>' +
+    '<tr><th scope="row">&ge;3 days before landing</th>' +
+    '<td>Email the AQS to confirm your exact arrival date and flight</td>' +
+    '<td>DLD</td></tr>' +
+    '<tr><th scope="row">Arrival day</th>' +
+    '<td>AQS inspection; Forms R-6/R-7; 500&nbsp;baht fee</td>' +
+    '<td>Bangkok AQS</td></tr>' +
+    '</tbody></table></div>';
+}
+
 function ruImportTimeline() {
   return "<p>Work backwards from your flight. Moscow and other hubs have Bangkok routes; " +
     "confirm pet acceptance with the airline early.</p>" +
@@ -167,28 +205,71 @@ const pages = [];
 pages.push(country({
   slug: "from-canada", crumb: "From Canada",
   title: "Bring a Pet to Thailand from Canada (CFIA & DLD 2026) | PattayaPets",
-  desc: "Bringing a dog or cat from Canada to Thailand: CFIA endorsement of the " +
-    "health certificate, and the rabies titer test the return trip will need.",
+  desc: "Canada to Thailand pet import: CFIA export endorsement, DLD permit timeline, " +
+    "document checklist, Toronto/Vancouver routing and return-to-Canada planning.",
   h1: "Bringing a pet to Thailand from Canada",
-  lede: "The Thai requirements are the standard ones. What is Canada-specific is who " +
-    "endorses your paperwork, and what you should plan for if you ever return.",
+  lede: "Canada&rarr;Thailand is a well-used corridor for snowbirds and relocators. " +
+    "The Thai steps are standard; what is Canada-specific is <strong>CFIA endorsement</strong> " +
+    "and planning if you ever come back.",
+  officialExtra:
+    "<p><strong>Canadian sources:</strong> " +
+    "<a href=\"https://inspection.canada.ca/en/importing-food-plants-animals/pets\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">CFIA &mdash; importing or travelling with pets</a>. " +
+    "Export mirror: " +
+    "<a href=\"/take-pet-out-of-thailand/to-canada.html\">taking a pet to Canada</a>.</p>",
   sections: [
+    { h: "The timeline — what to do when", html:
+      caImportTimeline() +
+      "<p>Step pages: " + STD_STEPS + "</p>" },
     { h: "The Canadian side of the paperwork", html:
-      "<p>" + STD_STEPS + "In Canada, the export health certificate is completed by your vet and " +
-      "endorsed by the <strong>Canadian Food Inspection Agency (CFIA)</strong>. Use a vet " +
-      "experienced in export work and book the CFIA endorsement early.</p>" },
+      "<p>In Canada, your veterinarian completes the export health certificate for " +
+      "international travel. <strong>CFIA</strong> (the Canadian Food Inspection Agency) " +
+      "must <strong>endorse</strong> that certificate before the pet leaves. This is not " +
+      "a rubber stamp &mdash; CFIA checks that Thailand&rsquo;s import requirements are " +
+      "met, including microchip, vaccinations and the DLD import permit details.</p>" +
+      "<p>Use a vet experienced in export work and book the CFIA endorsement appointment " +
+      "early, especially before peak summer travel. The certificate is usually issued " +
+      "within a short window before departure; confirm the validity period with CFIA and " +
+      "the Bangkok AQS.</p>" +
+      "<p>Canada is a rabies-controlled country, so Thailand generally does <em>not</em> " +
+      "require a rabies titer test for entry from Canada. Many owners still do the test " +
+      "pre-emptively if they might move on to the EU or UK later.</p>" },
+    { h: "Documents Thailand expects", html:
+      "<p>Regardless of origin country, the DLD asks for:</p>" +
+      TH_IMPORT_TABLE + TH_ARRIVAL_STD },
     { h: "Plan for the return to Canada", html:
-      "<p>Canada is a rabies-controlled country, so Thailand does not require a titer test " +
-      "for entry from Canada. But if there is any chance you will bring your pet " +
-      "<em>back</em> to Canada, check the Canadian import rules in advance &mdash; and, as " +
-      "for all destinations, having the <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">" +
-      "rabies titer test</a> done early keeps your options open.</p>" }
+      "<p>If there is any chance you will bring your pet <em>back</em> to Canada, " +
+      "research CFIA&rsquo;s current import rules before you leave &mdash; not when " +
+      "your lease ends. For personal dogs and cats, Canada typically requires:</p>" +
+      "<ul>" +
+      "<li>A <strong>valid rabies vaccination certificate</strong> in English or French, " +
+      "with the microchip number if the pet is chipped</li>" +
+      "<li>A healthy animal with paperwork that matches the pet in front of the inspector</li>" +
+      "<li>Inspection by CFIA on arrival if selected &mdash; no routine quarantine for " +
+      "compliant personal imports</li>" +
+      "</ul>" +
+      "<p>Canada does not generally require a titer test for return from Thailand, which " +
+      "makes it one of the simpler reverse corridors compared with the EU or New Zealand. " +
+      "Still confirm age, breed and commercial-import rules with CFIA if your case is " +
+      "non-standard. See " +
+      "<a href=\"/take-pet-out-of-thailand/to-canada.html\">exporting a pet to Canada</a>.</p>" +
+      '<div class="callout callout-tip"><div class="ch">Snowbird season timing</div>' +
+      "<p>Many Canadian owners arrive in Pattaya for November&ndash;March. Apply for the " +
+      "DLD permit around <strong>30 days before</strong> departure and book CFIA endorsement " +
+      "before Thanksgiving/Christmas rush if you fly in peak season.</p></div>" },
+    { h: "Common mistakes on this corridor", html: TH_IMPORT_FAILS + CA_IMPORT_FAILS }
   ],
   faqs: [
     ["Who endorses my pet's paperwork in Canada?",
-     "<p>The Canadian Food Inspection Agency (CFIA) endorses the export health certificate completed by your veterinarian. Confirm the current process with the CFIA and your vet.</p>"],
+     "<p>The Canadian Food Inspection Agency (CFIA) endorses the export health certificate completed by your veterinarian. Confirm the current process and appointment booking with CFIA and your vet.</p>"],
     ["Does Thailand need a titer test for a pet from Canada?",
-     "<p>Generally no, because Canada is a rabies-controlled country. The titer test becomes important for onward moves to countries that require it, so many owners do it pre-emptively.</p>"]
+     "<p>Generally no, because Canada is a rabies-controlled country. The titer test becomes important for onward moves to the EU, UK or similar destinations.</p>"],
+    ["Are there direct flights from Toronto or Vancouver with a pet?",
+     "<p>Both cities have direct Bangkok routes, but not every flight accepts pets in cabin or hold. Confirm pet space and crate rules when you book.</p>"],
+    ["Will my pet be quarantined on arrival in Thailand?",
+     "<p>Not usually with complete paperwork. The AQS inspection is typically same-day clearance &mdash; see our <a href=\"/bring-pet-to-thailand/thailand-pet-quarantine.html\">quarantine guide</a>.</p>"],
+    ["What does Canada need for the return journey?",
+     "<p>Typically a valid rabies vaccination certificate in English or French and a healthy pet matching the paperwork. Confirm current CFIA rules before you assume return is automatic.</p>"]
   ]
 }));
 

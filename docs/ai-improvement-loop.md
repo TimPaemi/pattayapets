@@ -45,6 +45,7 @@ Not deployed. Last updated: 30 May 2026.
 | **82** | **South Africa corridor:** full import/export depth; pet-health date-stamps |
 | **83** | **EU member-state corridors:** Sweden–Ireland import + export depth (16 pages); shared EU timeline helpers |
 | **84** | **NZ + Russia corridors:** full import/export depth (4 pages); FSVPS + MPI official links |
+| **85** | **Canada corridor + pet-health audit:** CFIA depth, dead CFIA URL fix site-wide, emergency cross-links |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 

@@ -74,22 +74,22 @@ This document replaces the old “title/meta batch” queue until Phase 3 is com
 - [x] `/take-pet-out-of-thailand/to-russia.html` — FSVPS entry + DLD export timeline, 5 FAQs
 - [x] Official links verified live: `mpi.govt.nz/import/bringing-pets-to-nz/importing-dogs-and-cats/`, `fsvps.gov.ru`
 
-### Import / export corridors (remaining — Batch 85+)
+### Import / export corridors — Batch 85 ✅ Canada + CFIA link fix
 
-- [ ] `/bring-pet-to-thailand/from-canada.html` — lighter than major corridors (optional deepen)
+- [x] `/bring-pet-to-thailand/from-canada.html` — CFIA timeline, DLD checklist, snowbird notes, 5 FAQs
+- [x] `/take-pet-out-of-thailand/to-canada.html` — DLD export timeline, CFIA entry checklist, 5 FAQs
+- [x] Fixed dead CFIA URL (`importing-food-plants-or-animals` → `importing-food-plants-animals`, was 410) site-wide in `41-export.js`, `47-import-extra.js`, `52-export-countries.js`
 
-**EU template pages:** ✅ Enriched in Batch 83.
+### Import / export corridors
 
-### Dog-friendly (remaining)
+- [x] All 23 import / 23 export country pairs at full depth (Batch 85 completes Canada — last thin corridor)
 
-- [x] Beaches page: stretch-by-stretch table, heat/tide guidance, 5 FAQs (Batch 79)
-- [x] Hotels page: named properties with official policy links, booking checklist (Batch 79)
-- [x] Condos page: building vs landlord table, signing checklist, 5 FAQs (Batch 79)
+### Pet health cluster — Batch 85 ✅ audit pass
 
-### Pet health cluster
-
-- [ ] Audit every guide for broken HTML, minimum 3 H2 sections, one FAQ each
-- [ ] Cross-link to emergency and owning guides
+- [x] `updated: 2026-05-31` on all pet-health articles via `health()` helper
+- [x] Dental + healthy-weight: emergency cross-links, `updated` stamps, extra H2 sections
+- [x] Heartworm related links to `/pet-emergency/`
+- [x] Spot-check: all hub + 7 guides ≥3 H2 sections, ≥3 FAQs each; no broken HTML found in build
 
 ---
 

@@ -29,6 +29,7 @@ function health(o) {
     title: o.title, desc: o.desc, crumb: o.crumb, breadcrumbs: SUB,
     eyebrow: "Pet health in Pattaya",
     h1: o.h1, lede: o.lede, verify: HEALTH_VERIFY,
+    updated: o.updated || "2026-05-31",
     sections: o.sections, faqs: o.faqs, related: o.related || RELATED
   });
 }
@@ -159,6 +160,7 @@ pages.push(health({
   ],
   related: [
     { name: "Dog vaccinations & parasites", path: "/dogs/dog-vaccinations-thailand.html", desc: "How prevention fits the wider routine." },
+    { name: "Pet emergencies", path: "/pet-emergency/", desc: "When prevention is not enough." },
     { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html", desc: "Year-round parasite prevention." },
     { name: "Mobile & home-visit vets", path: "/mobile-vets/", desc: "Routine prevention visits at home." },
     { name: "Parvovirus", path: "/pet-health-pattaya/parvovirus.html", desc: "Another preventable disease to vaccinate against." }

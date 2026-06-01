@@ -256,6 +256,7 @@ pages.push(article({
   lede: "Dental disease is one of the most common &mdash; and most overlooked " +
     "&mdash; health problems in pets.",
   verify: HEALTH_VERIFY,
+  updated: "2026-05-31",
   sections: [
     { h: "Why dental health matters", html:
       "<p>Dental disease is extremely common in adult dogs and cats. It is " +
@@ -285,7 +286,15 @@ pages.push(article({
       "needed, performs a professional clean &mdash; carried out under anaesthetic " +
       "so the whole mouth can be cleaned and assessed properly. Follow your " +
       "vet&rsquo;s advice on how often your pet needs this; do not put it off " +
-      "because the mouth &lsquo;looks fine&rsquo;.</p>" }
+      "because the mouth &lsquo;looks fine&rsquo;.</p>" },
+    { h: "When mouth pain is an emergency", html:
+      "<p>Sudden difficulty eating, heavy drooling, facial swelling, bleeding that " +
+      "will not stop, or a pet that will not open its mouth at all needs a " +
+      "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">vet promptly</a> &mdash; " +
+      "not a wait-and-see approach. Chronic bad breath and tartar are slower problems; " +
+      "acute mouth trauma or swelling is urgent. See also " +
+      "<a href=\"/pet-emergency/poisoning.html\">poisoning</a> if you suspect your pet " +
+      "swallowed something harmful.</p>" }
   ],
   faqs: [
     ["How do I know if my pet has dental disease?",
@@ -296,6 +305,7 @@ pages.push(article({
      "<p>No - persistent bad breath is usually a sign of dental disease, not something to accept as normal. Mention it to your vet.</p>"]
   ],
   related: [
+    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Sudden mouth pain or swelling needs a vet promptly." },
     { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html", desc: "Mouth pain can show up as head-shaking or pawing." },
     { name: "Mobile & home-visit vets", path: "/mobile-vets/", desc: "Routine dental checks at home." },
     { name: "Healthy weight", path: "/pet-health-pattaya/healthy-weight.html", desc: "Weight and diet affect dental health too." },
@@ -316,6 +326,7 @@ pages.push(article({
   lede: "Carrying extra weight is one of the most common and most preventable pet " +
     "health problems &mdash; and in Pattaya&rsquo;s heat it matters even more.",
   verify: HEALTH_VERIFY,
+  updated: "2026-05-31",
   sections: [
     { h: "Why weight matters", html:
       "<p>Excess weight is not a cosmetic issue. It strains joints and the heart, " +
@@ -347,7 +358,14 @@ pages.push(article({
       "pet care</a>.</li>" +
       "<li><strong>Change gradually</strong>, and have a vet check before a " +
       "weight-loss plan &mdash; to rule out a medical cause and set a safe, " +
-      "realistic target.</li></ul>" }
+      "realistic target.</li></ul>" },
+    { h: "When weight becomes urgent", html:
+      "<p>Rapid weight loss, a swollen abdomen, collapse, or a pet that stops " +
+      "drinking in the heat needs a vet urgently &mdash; see " +
+      "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vets in Pattaya</a> " +
+      "and " +
+      "<a href=\"/pet-emergency/heatstroke.html\">heatstroke</a>. Gradual overweight " +
+      "is a slow problem; sudden change in appetite or energy is not.</p>" }
   ],
   faqs: [
     ["How do I know if my pet is overweight?",
@@ -358,6 +376,7 @@ pages.push(article({
      "<p>Measure food, trim treats, exercise in the cool hours, and make changes gradually. See your vet first - they can rule out a medical cause and set a safe target and pace. Crash dieting is not safe, especially for cats.</p>"]
   ],
   related: [
+    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Sudden collapse or rapid weight loss needs urgent care." },
     { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Exercise and cool-hour routines." },
     { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "Neutering changes metabolism and appetite." },
     { name: "Dental care", path: "/pet-health-pattaya/dental-care.html", desc: "Weight and dental health go together." },
