@@ -251,11 +251,29 @@ pages.push(exp({
   title: "Thailand DLD Pet Export Permit: How to Apply (2026) | PattayaPets",
   desc: "Apply for Thailand's DLD pet export permit (form 1/1): 15-day minimum lead time, " +
     "Suvarnabhumi AQS export desk, destination import rules and what to submit.",
-  updated: "2026-05-30",
+  updated: "2026-05-31",
   h1: "The Thailand export permit (DLD)",
   lede: "Before your pet leaves Thailand, the Department of Livestock Development " +
     "must issue an export permit and health certificate. Here is how that half works.",
   sections: [
+    { h: "Timeline at a glance", html:
+      "<p>Work backwards from your departure date. The destination country&rsquo;s " +
+      "rules &mdash; not the Thai desk alone &mdash; usually set the calendar.</p>" +
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">When</th><th scope="col">Step</th></tr></thead><tbody>' +
+      '<tr><th scope="row">4&ndash;6 months before (UK/EU/AU)</th>' +
+      '<td>Rabies titer test and waiting period if the destination requires it. <a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">Titer guide</a></td></tr>' +
+      '<tr><th scope="row">As soon as dates firm</th>' +
+      '<td>Obtain destination import permit or written requirements to show the AQS</td></tr>' +
+      '<tr><th scope="row">At least 15 days before export</th>' +
+      '<td>Submit DLD export application form <strong>1/1</strong> to the departure airport AQS</td></tr>' +
+      '<tr><th scope="row">Final 7&ndash;10 days</th>' +
+      '<td>AQS inspection; export licence (form 9) and health certificate issued if compliant</td></tr>' +
+      '<tr><th scope="row">At least 3 days before departure</th>' +
+      '<td>Confirm exact departure date and flight with the AQS export desk</td></tr>' +
+      '<tr><th scope="row">Departure day</th>' +
+      '<td>Final AQS check at the airport; airline accepts pet with matching paperwork</td></tr>' +
+      '</tbody></table></div>' },
     { h: "What the export permit is", html:
       "<p>The export permit is issued by the <strong>Department of Livestock " +
       "Development (DLD)</strong> through the <strong>Animal Quarantine Station " +
@@ -304,6 +322,21 @@ pages.push(exp({
       "result for the UK or EU)</li></ul>" +
       "<p>Keep printed originals of the export permit, health certificate and every " +
       "supporting document for the airport and the destination border check.</p>" },
+    { h: "Confirm your departure date", html:
+      "<p>As on import, DLD practice expects you to <strong>confirm your exact " +
+      "departure date with the AQS at least three days before you fly</strong>, " +
+      "once the export permit is underway and your flight is booked. Email " +
+      "<a href=\"mailto:qsap_bkk_export@dld.go.th\">qsap_bkk_export@dld.go.th</a> " +
+      "with your flight number and pet details &mdash; do not assume the permit " +
+      "alone is enough without telling the desk when you are leaving.</p>" },
+    { h: "Common mistakes", html:
+      "<ul>" +
+      "<li><strong>Starting with Thailand only</strong> &mdash; the UK, EU or Australian timeline is usually the long pole, not the 15-day DLD window.</li>" +
+      "<li><strong>Last-minute form 1/1</strong> &mdash; applying inside 15 days when inspection or titer results are still pending.</li>" +
+      "<li><strong>Mismatched microchip numbers</strong> &mdash; across Thai export papers, airline booking and destination import forms.</li>" +
+      "<li><strong>Wrong airport AQS</strong> &mdash; export paperwork must match your actual departure port (Suvarnabhumi for most Pattaya departures).</li>" +
+      "<li><strong>Destination import proof missing</strong> &mdash; the AQS needs to see what the receiving country expects before issuing the health certificate.</li>" +
+      "</ul>" },
     { h: "What comes next", html:
       "<p>Book the flight under " +
       '<a href="/bring-pet-to-thailand/airline-pet-policies.html">airline pet policies</a>, ' +
@@ -316,7 +349,13 @@ pages.push(exp({
     ["Can I get the export permit on the day of the flight?",
      "<p>Officially you should apply at least 15 days ahead. Last-minute export is risky — the AQS may need time for inspection or tests, and your destination country may not accept paperwork issued the same day. Plan weeks ahead, not hours.</p>"],
     ["Do I need an agent for the export permit?",
-     "<p>No, but many owners use a pet relocation agent because the Thai endorsement, destination requirements and airline booking must align. For complex destinations it is often worth the fee.</p>"]
+     "<p>No, but many owners use a pet relocation agent because the Thai endorsement, destination requirements and airline booking must align. For complex destinations it is often worth the fee.</p>"],
+    ["Which airport AQS handles Pattaya departures?",
+     "<p>Most pets leave from Suvarnabhumi (BKK). The AQS export desk is on the 1st floor of the Customs Export Building at the airport. U-Tapao has a separate process — confirm if that is your port.</p>"],
+    ["What is form 1/1 vs form 9?",
+     "<p>Form 1/1 is the export application you submit before travel. After inspection, the AQS issues the export licence (form 9) and the health certificate if everything complies.</p>"],
+    ["Do I confirm my departure date with the AQS?",
+     "<p>Yes — confirm at least three days before you fly, with flight number and pet details, so the export desk can prepare for your arrival at the airport.</p>"]
   ],
   related: [
     { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },

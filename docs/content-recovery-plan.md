@@ -108,6 +108,15 @@ This document replaces the old “title/meta batch” queue until Phase 3 is com
 - [x] Pattaya Animal Hospital contact (`038 373 290`)
 - [ ] Mor Ja Pet Clinic — no verified public phone; leave WARN until found
 
+### Import / export step pages — Batch 87 ✅
+
+- [x] `/bring-pet-to-thailand/microchip-requirements.html` — failure points, 5 FAQs
+- [x] `/bring-pet-to-thailand/health-certificate.html` — failure points, 5 FAQs
+- [x] `/take-pet-out-of-thailand/export-permit-thailand-dld.html` — timeline table, AQS confirmation, failure points, 5 FAQs
+- [x] Import + export checklists — common-mistakes section, 5 FAQs each
+- [x] Germany BMEL URL fix (`bmleh.de` → `bmel.de`)
+- [x] `tools/audit-content-depth.js` — guide section/FAQ depth WARN audit wired into `audit:full`
+
 ---
 
 ## Phase 3 — Measure again

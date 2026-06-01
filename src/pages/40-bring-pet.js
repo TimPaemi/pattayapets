@@ -172,6 +172,13 @@ pages.push(importStep({
       "chip&rsquo;s standard on your pet&rsquo;s records. That number will appear " +
       "on the rabies certificate, the health certificate and the import permit " +
       "application, so it needs to be consistent everywhere.</p>" },
+    { h: "Common mistakes", html:
+      "<ul>" +
+      "<li><strong>Rabies before chip</strong> &mdash; the most frequent sequencing error; the rabies shot must be redone after implantation.</li>" +
+      "<li><strong>Non-ISO chip without a plan</strong> &mdash; older US chips may not scan at the AQS; add an ISO chip or bring a compatible reader.</li>" +
+      "<li><strong>Typos across documents</strong> &mdash; one wrong digit on the permit vs the health certificate vs the airline booking stops clearance.</li>" +
+      "<li><strong>Assuming a tattoo counts</strong> &mdash; Thailand expects a scannable ISO microchip for modern imports.</li>" +
+      "</ul>" },
     { h: "What comes next", html:
       "<p>Once the chip is in and documented, move on to the " +
       '<a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">rabies vaccination and titer test</a>. ' +
@@ -182,7 +189,13 @@ pages.push(importStep({
     ["Does my pet need a new microchip if it already has an ISO one?",
      "<p>No. An existing ISO 11784/11785 15-digit microchip is fine — you do not need another. You only need to act if the existing chip is a non-ISO type.</p>"],
     ["My pet was vaccinated for rabies before it was chipped. Is that a problem?",
-     "<p>Usually yes. Because the rabies record must reference the microchip, a rabies vaccination given before the chip is generally not accepted, and the vaccination has to be redone after chipping. Confirm your exact situation with your vet and the DLD.</p>"]
+     "<p>Usually yes. Because the rabies record must reference the microchip, a rabies vaccination given before the chip is generally not accepted, and the vaccination has to be redone after chipping. Confirm your exact situation with your vet and the DLD.</p>"],
+    ["Can I use a tattoo instead of a microchip?",
+     "<p>For Thailand import, plan on an ISO microchip. Tattoos alone are not a substitute under current DLD guidance for most routes.</p>"],
+    ["Where should the chip number appear?",
+     "<p>On every document in the chain: vaccination records, the health certificate, the import permit application (R1/1) and the airline booking. Officials compare them at the AQS on arrival.</p>"],
+    ["Does the chip need registering in Thailand after arrival?",
+     "<p>Thailand does not require a national pet registry on import, but registering locally helps if your pet is lost. See our <a href=\"/owning-a-pet-in-pattaya/microchipping-your-pet.html\">microchipping in Pattaya</a> guide.</p>"]
   ],
   related: [
     { name: "Rabies & titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html", desc: "The next step, once the chip is in." },
@@ -299,6 +312,13 @@ pages.push(importStep({
       "the final fortnight before departure is the busy one. Book the vet exam " +
       "and the endorsement well in advance, and confirm the exact validity " +
       "period that applies to your route.</p>" },
+    { h: "Common mistakes", html:
+      "<ul>" +
+      "<li><strong>Vet-only certificate</strong> &mdash; missing USDA APHIS, APHA or EU competent-authority endorsement.</li>" +
+      "<li><strong>Expired before landing</strong> &mdash; a delayed flight can push you outside the validity window.</li>" +
+      "<li><strong>Microchip mismatch</strong> &mdash; certificate quotes a different number from the permit or vaccinations.</li>" +
+      "<li><strong>Wrong certificate model</strong> &mdash; using a generic vet letter instead of the country-specific export health certificate Thailand expects.</li>" +
+      "</ul>" },
     { h: "What comes next", html:
       "<p>Apply for the " +
       '<a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a> ' +
@@ -311,7 +331,13 @@ pages.push(importStep({
     ["Can my normal vet do the health certificate?",
      "<p>Your vet can carry out the examination and complete the certificate, but it then needs government endorsement (APHIS, APHA or the EU equivalent). Some vets are specifically accredited for export work — ask before booking.</p>"],
     ["What if my travel date moves?",
-     "<p>Because the certificate has a short validity, a delayed trip can mean re-issuing it. Build a little slack into your plans and keep your vet informed.</p>"]
+     "<p>Because the certificate has a short validity, a delayed trip can mean re-issuing it. Build a little slack into your plans and keep your vet informed.</p>"],
+    ["How long does government endorsement take?",
+     "<p>It varies by country — APHA often targets seven working days for GB export certificates, USDA APHIS can be faster for some routes. Do not leave endorsement to the last day before your flight.</p>"],
+    ["Does Thailand accept a copy of the health certificate?",
+     "<p>Plan on originals at the AQS. Copies alone are commonly rejected at inspection.</p>"],
+    ["Which country page shows a worked example?",
+     "<p>See our <a href=\"/bring-pet-to-thailand/from-uk.html\">UK import guide</a> for EHC 2917 and APHA endorsement as a full worked example.</p>"]
   ],
   related: [
     { name: "DLD import permit", path: "/bring-pet-to-thailand/import-permit-thailand-dld.html", desc: "The Thai-side permit you apply for." },

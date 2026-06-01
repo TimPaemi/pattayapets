@@ -208,7 +208,7 @@ pages.push(article({
   breadcrumbs: SUB,
   eyebrow: "Bringing a pet to Thailand",
   h1: "Pet import to Thailand checklist",
-  updated: "2026-05-30",
+  updated: "2026-05-31",
   updatedLabel: "30 May 2026",
   lede: "Use this as a working checklist while you plan. Every step links to the " +
     "full guide. Allow at least one to two months &mdash; longer if you may later " +
@@ -273,13 +273,26 @@ pages.push(article({
       "<a href=\"/vets/\">Pattaya vets directory</a> or " +
       "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour hospitals</a>.</li>" +
       "</ul>" +
-      "<p>Need an agent? See <a href=\"/pet-relocation/\">pet relocation agents</a>.</p>" }
+      "<p>Need an agent? See <a href=\"/pet-relocation/\">pet relocation agents</a>.</p>" },
+    { h: "Common mistakes to avoid", html:
+      "<ul>" +
+      "<li><strong>Wrong order</strong> &mdash; rabies before microchip, or permit before the 21-day wait.</li>" +
+      "<li><strong>Airline vs government</strong> &mdash; Thailand may allow permit-on-arrival in some cases, but your airline may refuse boarding without the permit email.</li>" +
+      "<li><strong>Skipping the three-day AQS confirmation</strong> &mdash; always email your landing date once the permit is approved.</li>" +
+      "<li><strong>No return-trip plan</strong> &mdash; if you may leave Thailand again, start the titer test before you arrive. See the <a href=\"/take-pet-out-of-thailand/checklist.html\">export checklist</a>.</li>" +
+      "</ul>" }
   ],
   faqs: [
     ["How long before travel should I start?",
      "<p>At least one to two months for a straightforward move. If you need a rabies titer test for a future export to the UK, EU or Australia, start several months earlier because of waiting periods after the blood sample.</p>"],
     ["Can I print this checklist?",
-     "<p>Yes. Use your browser print function on this page. The step links stay useful on screen; for travel, keep PDF copies of every official certificate and permit instead.</p>"]
+     "<p>Yes. Use your browser print function on this page. The step links stay useful on screen; for travel, keep PDF copies of every official certificate and permit instead.</p>"],
+    ["What if my airline requires the permit before check-in?",
+     "<p>Many carriers do. Even when the AQS can issue a permit on arrival in theory, apply early and carry the approval email so boarding is not refused.</p>"],
+    ["Do cats need the same vaccines as dogs?",
+     "<p>Cats need rabies and FVRCP; dogs need rabies plus DHPP and leptospirosis (or a negative leptospirosis test within 30 days). See our <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">vaccination guide</a>.</p>"],
+    ["Which airport is best for Pattaya?",
+     "<p>Most owners use Suvarnabhumi (BKK) or U-Tapao (UTP). See <a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok</a> for the trade-offs.</p>"]
   ],
   related: [
     { name: "The full process", path: "/bring-pet-to-thailand/", desc: "Every step with full detail." },

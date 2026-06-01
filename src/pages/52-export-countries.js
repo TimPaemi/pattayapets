@@ -186,7 +186,7 @@ pages.push(exp({
     "<strong>three-month wait</strong> &mdash; plan in quarters, not weeks.",
   officialExtra:
     "<p><strong>German / EU sources:</strong> " +
-    "<a href=\"https://www.bmleh.de/EN/topics/animals/pets-and-zoo-animals/pets-entry-regulation.html\" " +
+    "<a href=\"https://www.bmel.de/EN/topics/animals/pets-and-zoo-animals/pets-entry-regulation.html\" " +
     "target=\"_blank\" rel=\"noopener nofollow\">BMELH entry regulation</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">EU pet movement</a>. " +

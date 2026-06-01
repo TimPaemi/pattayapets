@@ -12,6 +12,7 @@
     "audit:directory": "node tools/audit-directory.js",
     "audit:country-pairs": "node tools/audit-country-pairs.js",
     "audit:orphans": "node tools/audit-orphans.js",
+    "audit:content": "node tools/audit-content-depth.js",
     "audit:lighthouse": "node tools/audit-lighthouse.js",
     "images": "node tools/make-images.js",
     "indexnow": "node scripts/ping-indexnow.js",

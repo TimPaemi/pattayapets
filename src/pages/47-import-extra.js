@@ -285,7 +285,7 @@ pages.push(country({
     "ever come back.",
   officialExtra:
     "<p><strong>German / EU sources:</strong> " +
-    "<a href=\"https://www.bmleh.de/EN/topics/animals/pets-and-zoo-animals/pets-entry-regulation.html\" " +
+    "<a href=\"https://www.bmel.de/EN/topics/animals/pets-and-zoo-animals/pets-entry-regulation.html\" " +
     "target=\"_blank\" rel=\"noopener nofollow\">BMELH pet entry rules</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">EU pet movement</a>. " +
@@ -345,7 +345,7 @@ pages.push(country({
       "from the blood sample, and an EU third-country entry health certificate on the " +
       "way back. Entry is through designated traveller points of entry &mdash; confirm " +
       "the current list on " +
-      "<a href=\"https://www.bmleh.de/EN/topics/animals/pets-and-zoo-animals/pets-entry-regulation.html\" " +
+      "<a href=\"https://www.bmel.de/EN/topics/animals/pets-and-zoo-animals/pets-entry-regulation.html\" " +
       "target=\"_blank\" rel=\"noopener nofollow\">BMELH</a>. See " +
       "<a href=\"/take-pet-out-of-thailand/to-germany.html\">exporting a pet to Germany</a>.</p>" +
       '<div class="callout callout-tip"><div class="ch">Thailand does not require the titer test on the way in</div>' +

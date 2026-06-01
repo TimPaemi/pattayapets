@@ -35,7 +35,7 @@ pages.push(article({
   lede: "Use this as a working checklist while you plan your departure from Pattaya. " +
     "Allow several months if your destination requires a rabies titer test and waiting period.",
   verify: VERIFY,
-  updated: "2026-05-30",
+  updated: "2026-05-31",
   updatedLabel: "30 May 2026",
   sections: [
     { h: "Before you book anything", html:
@@ -85,13 +85,26 @@ pages.push(article({
       "<li>Keep the pet calm, hydrated and never leave the crate in a hot vehicle.</li>" +
       "<li>Have destination import paperwork ready for landing.</li>" +
       "</ul>" +
-      "<p>Came the other way? See <a href=\"/bring-pet-to-thailand/checklist.html\">import checklist</a>.</p>" }
+      "<p>Came the other way? See <a href=\"/bring-pet-to-thailand/checklist.html\">import checklist</a>.</p>" },
+    { h: "Common mistakes to avoid", html:
+      "<ul>" +
+      "<li><strong>Starting with DLD only</strong> &mdash; the destination titer test and waiting period usually sets the calendar.</li>" +
+      "<li><strong>Expired titer or rabies gap</strong> &mdash; a lapsed vaccination invalidates prior tests.</li>" +
+      "<li><strong>Last-minute form 1/1</strong> &mdash; applying inside the 15-day window when the AQS still needs inspection.</li>" +
+      "<li><strong>No three-day AQS confirmation</strong> &mdash; confirm your departure date with the export desk before you fly.</li>" +
+      "</ul>" }
   ],
   faqs: [
     ["How long before departure should I start?",
      "<p>For the UK, EU or Australia, start several months ahead because of the rabies titer test and waiting period. For simpler destinations such as Canada or Russia, the Thai export side still needs weeks of lead time.</p>"],
     ["Can I print this checklist?",
-     "<p>Yes. Use your browser print function on this page. For travel, keep PDF copies of every official certificate and permit instead.</p>"]
+     "<p>Yes. Use your browser print function on this page. For travel, keep PDF copies of every official certificate and permit instead.</p>"],
+    ["What is the single biggest timing mistake?",
+     "<p>Starting the Thai export permit without first lining up the destination country&rsquo;s import rules — especially the titer test and three-month wait for the UK and EU.</p>"],
+    ["Do I need to confirm my flight with the AQS?",
+     "<p>Yes. Confirm your exact departure date with the Suvarnabhumi export desk at least three days before you fly.</p>"],
+    ["Should I use a relocation agent?",
+     "<p>Not mandatory, but agents often pay for themselves on dog moves to the USA under current CDC rules, or any cargo routing. See <a href=\"/pet-relocation/\">pet relocation agents</a>.</p>"]
   ],
   related: [
     { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side in full." },
