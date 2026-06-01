@@ -82,6 +82,7 @@
   var searchFilters = document.getElementById("pp-filters");
   if (searchInput && searchOut) {
     var idx = [];
+    var filterKinds = [];
     var activeFilter = "";
     var debounceTimer;
     searchOut.setAttribute("aria-busy", "false");
@@ -129,6 +130,7 @@
         return;
       }
       searchOut.setAttribute("aria-busy", "true");
+      if (searchFilters && filterKinds.length) renderFilters(filterKinds);
       var terms = q.split(/\s+/);
       var hits = idx.map(function (p) {
         if (activeFilter && p.k !== activeFilter) return null;
@@ -162,12 +164,11 @@
     searchOut.innerHTML = '<p class="notice">Loading search index&hellip;</p>';
     fetch("/search-index.json").then(function (r) { return r.json(); }).then(function (d) {
       idx = d;
-      var kinds = [];
+      filterKinds = [];
       d.forEach(function (p) {
-        if (kinds.indexOf(p.k) === -1) kinds.push(p.k);
+        if (filterKinds.indexOf(p.k) === -1) filterKinds.push(p.k);
       });
-      kinds.sort();
-      renderFilters(kinds);
+      filterKinds.sort();
       var u = new URLSearchParams(location.search).get("q");
       if (u) searchInput.value = u;
       runSearch();

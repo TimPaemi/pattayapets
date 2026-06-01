@@ -14,6 +14,7 @@
     "audit:orphans": "node tools/audit-orphans.js",
     "audit:content": "node tools/audit-content-depth.js",
     "audit:lighthouse": "node tools/audit-lighthouse.js",
+    "audit:lighthouse:all": "node tools/audit-lighthouse-all.js",
     "images": "node tools/make-images.js",
     "indexnow": "node scripts/ping-indexnow.js",
     "ship": "npm run build && npm run indexnow",

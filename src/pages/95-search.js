@@ -53,7 +53,7 @@ module.exports = [{
     '<a class="chip chip-link" href="/guides.html">All guides</a>' +
     '<a class="chip chip-link" href="/sitemap.html">Full sitemap</a>' +
     '</div></div>' +
-    '<div id="pp-filters" class="search-filters" aria-label="Filter by section"></div>' +
+    '<div id="pp-filters" class="search-filters" role="group" aria-label="Filter by section"></div>' +
     '<div id="pp-results" class="search-results" aria-live="polite" aria-atomic="true" role="region" aria-label="Search results">' +
     '<noscript><p class="notice">Live search needs JavaScript. Use the topic links above, the ' +
     '<a href="/directory.html">directory</a>, or the ' +

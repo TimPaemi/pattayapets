@@ -8,4 +8,5 @@ npm-debug.log*
 tools/shots/
 lighthouse-audit.json
 lighthouse-*.json
+lighthouse-reports/
 src/assets/img/*.png

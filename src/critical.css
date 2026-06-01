@@ -1,8 +1,12 @@
-@font-face{font-family:'Hanken Grotesk';src:url(/assets/fonts/hanken-400.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap;
+@font-face{font-family:'Hanken Grotesk';src:url(/assets/fonts/hanken-400.woff2) format('woff2');font-weight:400;font-style:normal;font-display:optional;
   ascent-override:92%;descent-override:24%;line-gap-override:0%;size-adjust:101%}
-@font-face{font-family:'Bricolage Grotesque';src:url(/assets/fonts/bricolage-600.woff2) format('woff2');font-weight:600;font-style:normal;font-display:swap;
+@font-face{font-family:'Hanken Grotesk';src:url(/assets/fonts/hanken-500.woff2) format('woff2');font-weight:500;font-style:normal;font-display:optional;
+  ascent-override:92%;descent-override:24%;line-gap-override:0%;size-adjust:101%}
+@font-face{font-family:'Hanken Grotesk';src:url(/assets/fonts/hanken-700.woff2) format('woff2');font-weight:700;font-style:normal;font-display:optional;
+  ascent-override:92%;descent-override:24%;line-gap-override:0%;size-adjust:101%}
+@font-face{font-family:'Bricolage Grotesque';src:url(/assets/fonts/bricolage-600.woff2) format('woff2');font-weight:600;font-style:normal;font-display:optional;
   ascent-override:93%;descent-override:24%;line-gap-override:0%;size-adjust:104%}
-@font-face{font-family:'Bricolage Grotesque';src:url(/assets/fonts/bricolage-700.woff2) format('woff2');font-weight:700;font-style:normal;font-display:swap;
+@font-face{font-family:'Bricolage Grotesque';src:url(/assets/fonts/bricolage-700.woff2) format('woff2');font-weight:700;font-style:normal;font-display:optional;
   ascent-override:93%;descent-override:24%;line-gap-override:0%;size-adjust:104%}
 :root{
 --banyan:#1B5A4C;--banyan-dk:#143F35;--banyan-deep:#0E2F26;
@@ -196,6 +200,11 @@ box-shadow:0 0 0 4px var(--alert-tint);flex:none}
 .prose{max-width:730px}
 .prose h2{margin-top:2.8rem}
 .prose ul,.prose ol{margin:0 0 1.15rem;padding-left:1.3rem}
+.related{margin-top:3.2rem;padding-top:2.2rem;border-top:1px solid var(--border)}
+.related h2{font-size:1.5rem;margin-bottom:1.4rem}
+.updated{font-size:.82rem;color:var(--sage);font-family:var(--fd);font-weight:600;
+display:inline-flex;align-items:center;gap:7px}
+.updated::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--marigold)}
 .faq{border:1px solid var(--border-soft);border-radius:var(--r);background:#fff;
   margin:.7rem 0;box-shadow:var(--sh-sm);overflow:hidden}
 .faq summary{cursor:pointer;padding:18px 21px;font-family:var(--fd);font-weight:600;
@@ -219,6 +228,11 @@ box-shadow:0 0 0 4px var(--alert-tint);flex:none}
 .footer-legal{max-width:var(--maxw);margin:0 auto;padding:20px 24px 36px;border-top:1px solid #21443a;
   display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:#6f8b80;font-size:.81rem}
 @media(max-width:920px){.section{padding:56px 0}}
+@media(max-width:560px){
+.section-head{margin-bottom:1.7rem}
+.card{padding:22px 22px}
+.related h2{font-size:1.3rem}
+}
 @media(max-width:1080px){
 .hero-grid{grid-template-columns:1fr;gap:30px}
 .header-search{display:none}

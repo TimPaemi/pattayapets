@@ -277,6 +277,8 @@ function renderPage(page, opts) {
     '<link rel="manifest" href="/manifest.webmanifest">' +
     '<link rel="preload" href="/assets/fonts/bricolage-700.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">' +
     '<link rel="preload" href="/assets/fonts/hanken-400.woff2" as="font" type="font/woff2" crossorigin>' +
+    '<link rel="preload" href="/assets/fonts/hanken-500.woff2" as="font" type="font/woff2" crossorigin>' +
+    '<link rel="preload" href="/assets/fonts/hanken-700.woff2" as="font" type="font/woff2" crossorigin>' +
     '<link rel="preload" href="/assets/fonts/bricolage-600.woff2" as="font" type="font/woff2" crossorigin>' +
     "<style>" + cssCritical + "</style>" +
     '<link rel="preload" href="/assets/css/site.css" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">' +
