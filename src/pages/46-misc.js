@@ -59,7 +59,20 @@ pages.push(article({
       "<a href=\"/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html\">what it costs to own a pet in Pattaya</a>. " +
       "PattayaPets does not sell insurance, earn commission, or recommend a " +
       "particular provider. Compare current policies yourself and read the " +
-      "wording.</p>" }
+      "wording.</p>" },
+    { h: "Common policy traps", html:
+      "<p>Owners often discover these only when they claim:</p>" +
+      "<ul><li><strong>Buying too late</strong> &mdash; insuring after symptoms appear, when " +
+      "the condition is already excluded as pre-existing.</li>" +
+      "<li><strong>Assuming routine care is covered</strong> &mdash; most policies exclude " +
+      "vaccinations, neutering and dental cleanings unless you buy a premium add-on.</li>" +
+      "<li><strong>Missing waiting periods</strong> &mdash; illness cover may not start for " +
+      "14&ndash;30 days after the policy begins; accidents may be covered sooner.</li>" +
+      "<li><strong>Annual caps that run out</strong> &mdash; a single surgery can consume " +
+      "a year&rsquo;s limit; check per-condition caps as well as the headline figure.</li>" +
+      "<li><strong>Not checking the vet list</strong> &mdash; some policies only settle with " +
+      "named clinics; confirm your <a href=\"/vets/\">Pattaya vet</a> is accepted.</li></ul>" +
+      "<p>Read the schedule of benefits, not just the marketing page.</p>" }
   ],
   faqs: [
     ["Is pet insurance common in Thailand?",
@@ -67,7 +80,11 @@ pages.push(article({
     ["Will insurance cover my pet's existing condition?",
      "<p>Almost certainly not &mdash; pre-existing conditions are a standard exclusion. This is the main reason to insure while a pet is young and healthy, if you are going to insure at all.</p>"],
     ["What is the alternative to insurance?",
-     "<p>Self-insuring: setting aside a dedicated savings buffer for pet emergencies. For a disciplined saver with routine, affordable vet costs, this is a genuine alternative.</p>"]
+     "<p>Self-insuring: setting aside a dedicated savings buffer for pet emergencies. For a disciplined saver with routine, affordable vet costs, this is a genuine alternative.</p>"],
+    ["Does pet insurance cover import or export costs?",
+     "<p>Almost never — relocation, quarantine and travel are separate from medical cover. Budget import and export separately; see our <a href=\"/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html\">import cost guide</a>.</p>"],
+    ["How much should I save if I self-insure instead?",
+     "<p>There is no fixed rule — many owners aim for enough to cover emergency surgery at a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour hospital</a>. Start with a realistic figure from your vet for a major event, then build the buffer over time.</p>"]
   ],
   related: [
     { name: "What it costs to own a pet", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", desc: "The wider pet budget in Pattaya." },

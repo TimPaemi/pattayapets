@@ -18,6 +18,11 @@ const GUIDE_PREFIXES = [
   "/dogs/"
 ];
 
+/* Root-level article guides not under a cluster prefix */
+const STANDALONE_GUIDES = new Set([
+  "/pet-insurance-thailand.html"
+]);
+
 const SKIP_SUFFIX = /\/index\.html$/;
 const HUB_ONLY = new Set([
   "/bring-pet-to-thailand/index.html",
@@ -45,6 +50,7 @@ function walk(d, acc) {
 }
 
 function isGuide(rel) {
+  if (STANDALONE_GUIDES.has(rel)) return true;
   if (!GUIDE_PREFIXES.some(function (pre) { return rel.startsWith(pre); })) return false;
   if (HUB_ONLY.has(rel)) return false;
   return true;
