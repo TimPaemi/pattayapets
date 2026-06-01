@@ -623,66 +623,185 @@ pages.push(exp({
 /* ---------------- RUSSIA ---------------- */
 pages.push(exp({
   slug: "to-russia", crumb: "To Russia",
-  title: "Export a Pet from Thailand to Russia (DLD 2026) | PattayaPets",
-  desc: "Bringing a dog or cat from Thailand to Russia: the veterinary certificate, " +
-    "rabies vaccination and the state veterinary process.",
+  title: "Export a Pet from Thailand to Russia (FSVPS & DLD 2026) | PattayaPets",
+  desc: "Thailand to Russia pet export: FSVPS entry certificate, rabies vaccination, " +
+    "DLD export timeline, document checklist and onward-travel notes.",
   h1: "Taking a pet from Thailand to Russia",
   lede: "Pattaya has a large Russian community, and the route home is, by " +
-    "international standards, relatively straightforward.",
+    "international standards, relatively straightforward &mdash; but the Thai DLD " +
+    "export steps still run in parallel.",
+  officialExtra:
+    "<p><strong>Russian sources:</strong> " +
+    "<a href=\"https://fsvps.gov.ru/\" target=\"_blank\" rel=\"noopener nofollow\">" +
+    "Federal Service for Veterinary and Phytosanitary Surveillance (FSVPS)</a>. " +
+    "Import mirror: " +
+    "<a href=\"/bring-pet-to-thailand/from-russia.html\">bringing a pet from Russia</a>.</p>",
   sections: [
-    { h: "Entering Russia", html:
+    { h: "The timeline — Thailand to Russia", html:
+      "<p>Russia does not generally require a rabies titer test, so the timeline is " +
+      "shorter than EU routes &mdash; but the DLD export desk still needs lead time.</p>" +
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Authority</th></tr></thead><tbody>' +
+      '<tr><th scope="row">6&ndash;8 weeks before</th>' +
+      '<td>Confirm current FSVPS import requirements; ensure ISO microchip and current rabies vaccination</td>' +
+      '<td>FSVPS + Thai vet</td></tr>' +
+      '<tr><th scope="row">4&ndash;6 weeks before</th>' +
+      '<td>Book pet on Bangkok&ndash;Moscow or connecting route; confirm airline pet policy</td>' +
+      '<td>Airline</td></tr>' +
+      '<tr><th scope="row">&ge;15 days before export</th>' +
+      '<td>Apply for Thai <a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">DLD export permit</a> (form 1/1) with Russian entry requirements attached</td>' +
+      '<td>DLD AQS</td></tr>' +
+      '<tr><th scope="row">Within 10 days of departure</th>' +
+      '<td>Final clinical examination; DLD export health certificate endorsed for Russia</td>' +
+      '<td>DLD AQS + vet</td></tr>' +
+      '<tr><th scope="row">Close to travel date</th>' +
+      '<td>Present documents on arrival; FSVPS may inspect the veterinary certificate at the border</td>' +
+      '<td>FSVPS / border veterinary control</td></tr>' +
+      '</tbody></table></div>' },
+    { h: "What Russia requires from Thailand", html:
       "<p>Russia&rsquo;s requirements centre on a <strong>veterinary certificate</strong> " +
       "and a <strong>current rabies vaccination</strong>, with the pet microchipped " +
       "for identification. Russia does not generally require a rabies titer test " +
-      "for entry from most countries. The certificate is handled through the state " +
-      "veterinary service, and the exact form is usually finalised close to " +
-      "travel.</p>" },
-    { h: "The Thai side and onward travel", html:
-      THAI_SIDE +
-      "<p>If there is any chance of later moving your pet on to the EU, UK or " +
-      "similar, a <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">" +
-      "rabies titer test</a> done early keeps that option open without a long " +
-      "wait.</p>" }
+      "for entry from most countries. The certificate is handled through FSVPS, and " +
+      "the exact form is usually finalised close to travel &mdash; confirm the current " +
+      "process with FSVPS and your vet before you book.</p>" +
+      "<p>Typical entry documents include:</p>" +
+      "<ul>" +
+      "<li>ISO microchip matching every certificate</li>" +
+      "<li>Valid rabies vaccination</li>" +
+      "<li>Government-endorsed export health certificate from Thailand (DLD)</li>" +
+      "<li>Proof of ownership where FSVPS asks for it</li>" +
+      "</ul>" +
+      '<div class="callout callout-tip"><div class="ch">Planning onward travel to the EU?</div>' +
+      "<p>If there is any chance of later moving your pet on to the EU, UK or similar, a " +
+      "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies titer test</a> " +
+      "done early in Thailand keeps that option open without a long wait later.</p></div>" },
+    { h: "The Thai export side (DLD)", html:
+      "<p>Parallel Thai requirements:</p>" + DLD_EXPORT_TABLE +
+      "<p>See " +
+      '<a href="/take-pet-out-of-thailand/export-process.html">export process</a>.</p>' },
+    { h: "Common mistakes on this corridor", html: EXPORT_FAILS +
+      "<ul>" +
+      "<li><strong>Leaving FSVPS confirmation until arrival</strong> &mdash; rules change; verify import requirements before you fly.</li>" +
+      "<li><strong>Certificate timing</strong> &mdash; Russian veterinary certificates are often finalised close to departure; still allow DLD export lead time.</li>" +
+      "<li><strong>Microchip mismatch</strong> &mdash; across Thai export papers, airline booking and FSVPS expectations.</li>" +
+      "</ul>" }
   ],
   faqs: [
     ["Does Russia require a rabies titer test for a pet from Thailand?",
-     "<p>Generally no &mdash; Russia's requirements centre on a veterinary certificate and a current rabies vaccination. Confirm the current process with the state veterinary service and your vet.</p>"],
+     "<p>Generally no &mdash; Russia's requirements centre on a veterinary certificate and a current rabies vaccination. Confirm the current process with FSVPS and your vet.</p>"],
     ["When is the Russian certificate issued?",
-     "<p>Usually close to the travel date, through the state veterinary service. Your vet can advise on the timing and the steps; start early so nothing is rushed.</p>"]
+     "<p>Usually close to the travel date, through FSVPS. Your vet can advise on the timing; start early so nothing is rushed.</p>"],
+    ["How long does Thailand-to-Russia take to plan?",
+     "<p>Weeks rather than months if no titer test is needed &mdash; but allow at least 15 days for the DLD export permit and time for the final health certificate.</p>"],
+    ["Can my pet fly in the cabin to Russia?",
+     "<p>Depends on the airline and aircraft on your Bangkok&ndash;Moscow or connecting route. Confirm pet space and crate rules when you book.</p>"],
+    ["What if I later move from Russia to the EU?",
+     "<p>Plan a titer test and waiting period before that move. Doing the test while still in Thailand saves time if you know EU relocation is possible.</p>"]
   ]
 }));
 
 /* ---------------- NEW ZEALAND ---------------- */
 pages.push(exp({
   slug: "to-new-zealand", crumb: "To New Zealand",
-  title: "Export a Pet from Thailand to New Zealand (DLD 2026) | PattayaPets",
-  desc: "Why moving a pet from Thailand to New Zealand is a long, demanding route, " +
-    "and why you must research it with MPI before you commit.",
+  title: "Export a Pet from Thailand to New Zealand (MPI & DLD 2026) | PattayaPets",
+  desc: "Thailand to New Zealand pet export: why direct import fails, MPI import permit, " +
+    "titer testing, mandatory quarantine and DLD export checklist.",
   h1: "Taking a pet from Thailand to New Zealand",
   lede: "Be honest with yourself early: New Zealand has some of the strictest pet " +
-    "biosecurity rules anywhere, and Thailand is not a straightforward origin.",
+    "biosecurity rules anywhere, and Thailand is <strong>not</strong> a straightforward origin.",
+  officialExtra:
+    "<p><strong>New Zealand sources:</strong> " +
+    "<a href=\"https://www.mpi.govt.nz/import/bringing-pets-to-nz/importing-dogs-and-cats/\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">MPI &mdash; importing dogs and cats</a>; " +
+    "<a href=\"https://www.mpi.govt.nz/import/bringing-pets-to-nz/\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">MPI pet import hub</a>. " +
+    "Import mirror: " +
+    "<a href=\"/bring-pet-to-thailand/from-new-zealand.html\">bringing a pet from New Zealand</a>.</p>",
   sections: [
-    { h: "Why this route is hard", html:
-      "<p>New Zealand protects its rabies-free status with strict import rules, " +
-      "and a pet coming from Thailand &mdash; which is not rabies-free &mdash; " +
-      "faces a long, multi-stage process. In practice that can mean the pet first " +
-      "spending a qualifying period in an approved country, rabies titer testing, " +
-      "a sequence of timed steps, an import permit, and a <strong>mandatory stay " +
-      "in a quarantine facility</strong> on arrival in New Zealand. The " +
-      "<a href=\"https://www.mpi.govt.nz/import/bringing-pets-to-nz/\" target=\"_blank\" " +
-      "rel=\"noopener nofollow\">Ministry for Primary Industries (MPI)</a> sets and " +
-      "enforces the rules.</p>" },
-    { h: "What it really takes", html:
-      "<p>This is not a process to improvise or to start late. Plan on many " +
-      "months, begin with MPI&rsquo;s current import requirements, and engage a " +
-      "specialist <a href=\"/pet-relocation/\">pet relocation agent</a> " +
-      "experienced in the route as early as you can. " + THAI_SIDE + "</p>" }
+    { h: "Why direct import is not simple", html:
+      "<p>New Zealand protects its rabies-free status with strict import rules. " +
+      "Thailand is <strong>not</strong> on MPI&rsquo;s list of countries from which " +
+      "pets can import under the lightest pathways. A pet that has lived in Thailand " +
+      "typically faces a long, multi-stage process that can include:</p>" +
+      "<ol>" +
+      "<li><strong>MPI import permit</strong> applied for well before any flight is booked</li>" +
+      "<li><a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">Rabies titer testing</a> " +
+      "from an MPI-approved laboratory, on MPI&rsquo;s schedule</li>" +
+      "<li>A <strong>waiting period</strong> after the blood sample before export (MPI sets the current period &mdash; verify directly)</li>" +
+      "<li>Thai <a href=\"/take-pet-out-of-thailand/export-permit-thailand-dld.html\">DLD export paperwork</a> matching MPI&rsquo;s conditions</li>" +
+      "<li><strong>Mandatory post-arrival quarantine</strong> at an MPI-approved facility (Auckland or Christchurch area) &mdash; not optional</li>" +
+      "</ol>" +
+      "<p>Some pathways require a qualifying period in another approved country first. " +
+      "Owners commonly report <strong>many months</strong> of planning. This is not a " +
+      "last-minute relocation.</p>" +
+      '<div class="callout callout-emergency"><div class="ch">NZ → Thailand was the easy bit</div>' +
+      "<p>If you imported from New Zealand recently, do not assume symmetry. Read " +
+      '<a href="/bring-pet-to-thailand/from-new-zealand.html">New Zealand to Thailand</a> ' +
+      "for the outbound direction you already managed &mdash; then accept that the return is an entirely different process.</p></div>" },
+    { h: "The realistic timeline (high level)", html:
+      "<p>Every case differs by MPI&rsquo;s current country categories, but the shape is similar:</p>" +
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">Phase</th><th scope="col">What happens</th><th scope="col">Who</th></tr></thead><tbody>' +
+      '<tr><th scope="row">Planning (months 1&ndash;2)</th>' +
+      '<td>Contact MPI; engage specialist <a href="/pet-relocation/">relocation agent</a>; confirm whether your pet can export directly from Thailand or needs an interim country</td>' +
+      '<td>You + agent + MPI</td></tr>' +
+      '<tr><th scope="row">Veterinary prep in Thailand</th>' +
+      '<td>Rabies vaccination, titer test, other MPI-specified tests and treatments on a fixed schedule</td>' +
+      '<td>MPI-approved vet + lab</td></tr>' +
+      '<tr><th scope="row">Waiting period</th>' +
+      '<td>MPI-required wait after the titer blood sample before export</td>' +
+      '<td>MPI rules</td></tr>' +
+      '<tr><th scope="row">Import permit</th>' +
+      '<td>Apply for MPI import permit with full veterinary history; book quarantine facility space</td>' +
+      '<td>MPI</td></tr>' +
+      '<tr><th scope="row">&ge;15 days before export</th>' +
+      '<td>Apply for Thai DLD export permit (form 1/1) with MPI import permit attached</td>' +
+      '<td>DLD AQS</td></tr>' +
+      '<tr><th scope="row">Within 10 days of departure</th>' +
+      '<td>Final clinical examination; DLD export health certificate matching MPI conditions</td>' +
+      '<td>DLD AQS + vet</td></tr>' +
+      '<tr><th scope="row">Arrival in New Zealand</th>' +
+      '<td>Mandatory quarantine at MPI-approved facility; release only when MPI clears the pet</td>' +
+      '<td>MPI quarantine facility</td></tr>' +
+      '</tbody></table></div>' },
+    { h: "What MPI import typically requires", html:
+      "<p>Confirm the current MPI checklist directly. Commonly includes:</p>" +
+      "<ul>" +
+      "<li><strong>Import permit</strong> issued before export to New Zealand</li>" +
+      "<li><strong>ISO microchip</strong> and rabies vaccination history</li>" +
+      "<li><strong>Rabies neutralising antibody titre test</strong> from an MPI-approved lab, on schedule</li>" +
+      "<li>Additional treatments and examinations timed to MPI&rsquo;s calendar</li>" +
+      "<li>Export health certificate from Thailand endorsed by the DLD, matching MPI&rsquo;s template</li>" +
+      "<li>Booking at an <strong>MPI-approved quarantine facility</strong> before the pet flies</li>" +
+      "</ul>" +
+      "<p>Quarantine is not optional &mdash; even perfect paperwork ends with a stay at an approved facility.</p>" },
+    { h: "The Thai export side (DLD)", html:
+      "<p>Parallel Thai requirements:</p>" + DLD_EXPORT_TABLE +
+      "<p>See " +
+      '<a href="/take-pet-out-of-thailand/export-process.html">export process</a>. ' +
+      "Engage a specialist agent early &mdash; MPI and DLD paperwork must agree exactly.</p>" },
+    { h: "Common mistakes on this corridor", html: EXPORT_FAILS +
+      "<ul>" +
+      "<li><strong>Assuming a direct Bangkok&ndash;Auckland pet flight solves everything</strong> &mdash; MPI biosecurity rules are the long pole, not the airline booking.</li>" +
+      "<li><strong>Starting when the work contract ends</strong> &mdash; many months&rsquo; lead time is normal, not conservative.</li>" +
+      "<li><strong>No quarantine facility booking</strong> &mdash; MPI-approved space must be reserved as part of import planning.</li>" +
+      "<li><strong>Titer test timing wrong</strong> &mdash; the waiting period runs from the blood sample date, not from when results arrive.</li>" +
+      "</ul>" +
+      "<p>A specialist <a href=\"/pet-relocation/\">pet relocation agent</a> experienced in " +
+      "the New Zealand route is strongly recommended.</p>" }
   ],
   faqs: [
     ["Can I fly my pet directly from Thailand to New Zealand?",
-     "<p>Generally not in a simple way. Because of New Zealand's strict rules, the route often requires a qualifying period in an approved country first, then entry to New Zealand with quarantine. Confirm the current pathway with MPI.</p>"],
+     "<p>Not in a simple way under normal MPI rules. Thailand is not a low-risk origin; the route typically requires titer testing, an import permit, DLD export paperwork and mandatory quarantine. Some cases need an interim approved country. Confirm the current pathway with MPI.</p>"],
     ["How early should I start planning?",
-     "<p>As early as possible &mdash; many months of lead time. The sooner you involve MPI and a specialist agent, the fewer nasty surprises in the timeline.</p>"]
+     "<p>As early as possible &mdash; many months of lead time. The sooner you involve MPI and a specialist agent, the fewer surprises in the timeline.</p>"],
+    ["How long is quarantine in New Zealand?",
+     "<p>MPI sets the minimum quarantine period at an approved facility &mdash; commonly at least ten days, but confirm the current rules and book space early.</p>"],
+    ["Does New Zealand require a rabies titer test from Thailand?",
+     "<p>Yes for normal pathways from non-rabies-free countries. The test must be from an MPI-approved laboratory and the waiting period after the blood sample must elapse before export.</p>"],
+    ["When should I apply for the Thai DLD export permit?",
+     "<p>At least 15 days before export, once the MPI import permit is issued and titer/waiting-period requirements are satisfied.</p>"]
   ]
 }));
 

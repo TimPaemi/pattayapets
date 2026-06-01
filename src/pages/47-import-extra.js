@@ -88,6 +88,67 @@ const TH_FAILS =
   "<li><strong>Skipping the titer test</strong> if you may return to Germany &mdash; the three-month EU wait catches people who did not plan ahead.</li>" +
   "</ul>";
 
+const TH_IMPORT_TABLE =
+  '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+  '<th scope="col">Document</th><th scope="col">What it is</th></tr></thead><tbody>' +
+  '<tr><th scope="row">DLD import permit</th><td>Form <strong>R1/1</strong>, emailed to the AQS at your arrival airport. Valid <strong>60 days</strong> from issue. Apply <strong>7&ndash;60 days</strong> before departure (around <strong>30 days</strong> is sensible).</td></tr>' +
+  '<tr><th scope="row">Microchip certificate</th><td>ISO 11784/11785 15-digit chip, implanted <strong>before</strong> rabies vaccination.</td></tr>' +
+  '<tr><th scope="row">Vaccination records</th><td>In English. See our <a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">vaccination guide</a> for dog and cat schedules.</td></tr>' +
+  '<tr><th scope="row">Government-endorsed health certificate</th><td>Export certificate from the origin country, endorsed as that authority requires.</td></tr>' +
+  '<tr><th scope="row">Flight booking</th><td>Itinerary; confirm airline pet policy early.</td></tr>' +
+  '</tbody></table></div>';
+
+const TH_ARRIVAL_STD =
+  "<p>With complete paperwork, pets normally clear the AQS the same day &mdash; an inspection, " +
+  "not multi-week quarantine. Email the AQS to <strong>confirm your arrival date at least three " +
+  "days before landing</strong>. See " +
+  '<a href="/bring-pet-to-thailand/thailand-pet-quarantine.html">pet quarantine in Thailand</a>.</p>';
+
+const TH_IMPORT_FAILS =
+  "<ul>" +
+  "<li><strong>DLD permit too early or expired</strong> &mdash; valid only 60 days from issue; apply inside the 7&ndash;60 day window.</li>" +
+  "<li><strong>Microchip after rabies vaccination</strong> &mdash; invalidates the vaccination record for import.</li>" +
+  "<li><strong>Health certificate outside the validity window</strong> &mdash; usually 7&ndash;10 days before departure; confirm with the AQS.</li>" +
+  "<li><strong>Assuming return will be easy</strong> &mdash; rabies-free origins (Japan, Singapore, NZ) have strict re-entry rules from Thailand.</li>" +
+  "</ul>";
+
+const RU_IMPORT_FAILS =
+  "<ul>" +
+  "<li><strong>Clinic certificate only</strong> &mdash; Thailand expects the government-endorsed international veterinary certificate, not just a local clinic form.</li>" +
+  "<li><strong>Last-minute state vet exchange</strong> &mdash; Rosselkhoznadzor endorsement queues can delay departure if you leave it too late.</li>" +
+  "<li><strong>Microchip number mismatch</strong> &mdash; the chip on the Russian certificate must match the DLD permit and every vaccination record exactly.</li>" +
+  "<li><strong>Assuming Russia re-entry will be simple</strong> &mdash; rules change; confirm FSVPS requirements before you leave if you may return.</li>" +
+  "</ul>";
+
+function ruImportTimeline() {
+  return "<p>Work backwards from your flight. Moscow and other hubs have Bangkok routes; " +
+    "confirm pet acceptance with the airline early.</p>" +
+    '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+    '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Who</th></tr></thead><tbody>' +
+    '<tr><th scope="row">3+ months before (if EU/UK return possible)</th>' +
+    '<td>Microchip (if needed), rabies vaccination, optional <a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">rabies titer test</a> &mdash; blood &ge;30 days after vaccination</td>' +
+    '<td>Your vet; approved lab</td></tr>' +
+    '<tr><th scope="row">6&ndash;8 weeks before</th>' +
+    '<td>Core vaccinations and the <strong>21-day wait</strong> after any primary rabies shot Thailand requires</td>' +
+    '<td>Your vet</td></tr>' +
+    '<tr><th scope="row">~30 days before departure</th>' +
+    '<td>Apply for <a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a> (form R1/1) to the AQS at your arrival airport</td>' +
+    '<td>DLD / Suvarnabhumi AQS</td></tr>' +
+    '<tr><th scope="row">2&ndash;3 weeks before</th>' +
+    '<td>Book pet space on the flight; confirm airline requires the Thai import permit before boarding</td>' +
+    '<td>Airline</td></tr>' +
+    '<tr><th scope="row">Final 5&ndash;10 days</th>' +
+    '<td>Clinic veterinary certificate exchanged for the <strong>international export certificate</strong> through the regional office of the Federal Service for Veterinary and Phytosanitary Surveillance (FSVPS / Rosselkhoznadzor)</td>' +
+    '<td>Clinic vet + FSVPS regional office</td></tr>' +
+    '<tr><th scope="row">&ge;3 days before landing</th>' +
+    '<td>Email the AQS to confirm your exact arrival date and flight</td>' +
+    '<td>DLD</td></tr>' +
+    '<tr><th scope="row">Arrival day</th>' +
+    '<td>AQS inspection; Forms R-6/R-7; 500&nbsp;baht fee</td>' +
+    '<td>Bangkok AQS</td></tr>' +
+    '</tbody></table></div>';
+}
+
 function country(o) {
   var sections = attachReturnExportLink((o.sections || []).slice(), o.slug);
   sections.push({ h: "Official sources", html: (o.officialExtra || "") + OFFICIAL });
@@ -227,40 +288,68 @@ pages.push(country({
 
 pages.push(country({
   slug: "from-russia", crumb: "From Russia",
-  title: "Bring a Pet to Thailand from Russia (DLD 2026) | PattayaPets",
-  desc: "Bringing a dog or cat from Russia to Thailand: the veterinary certificate, " +
-    "state endorsement, and why the rabies titer test matters.",
+  title: "Bring a Pet to Thailand from Russia (FSVPS & DLD 2026) | PattayaPets",
+  desc: "Russia to Thailand pet import: FSVPS export certificate, DLD permit timeline, " +
+    "document checklist, titer test planning and return-trip notes.",
   h1: "Bringing a pet to Thailand from Russia",
   lede: "Pattaya has a large Russian community, and many arrive with a pet. The Thai " +
-    "steps are standard; the Russian-specific part is the state veterinary paperwork.",
+    "steps are standard; what is Russia-specific is the <strong>state veterinary " +
+    "certificate</strong> and planning ahead if you may return to Russia or move on to the EU.",
+  officialExtra:
+    "<p><strong>Russian sources:</strong> " +
+    "<a href=\"https://fsvps.gov.ru/\" target=\"_blank\" rel=\"noopener nofollow\">" +
+    "Federal Service for Veterinary and Phytosanitary Surveillance (FSVPS)</a>. " +
+    "Export mirror: " +
+    "<a href=\"/take-pet-out-of-thailand/to-russia.html\">taking a pet to Russia</a>.</p>",
   sections: [
+    { h: "The timeline — what to do when", html:
+      ruImportTimeline() +
+      "<p>Step pages: " + STD_STEPS + "</p>" },
     { h: "The Russian side of the paperwork", html:
-      "<p>" + STD_STEPS + "In Russia, the " +
-      "veterinary certificate is issued and endorsed through the <strong>state veterinary " +
-      "service</strong> (under Rosselkhoznadzor), usually by exchanging the clinic " +
-      "certificate for an international form shortly before travel. Allow time for that " +
-      "step.</p>" },
-    { h: "The rabies titer test", html:
-      "<p>Make sure the <strong>microchip is implanted before the rabies vaccination</strong>, " +
-      "and have a <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">" +
-      "rabies titer test</a> done from an approved laboratory. A titer test is strongly " +
-      "advisable both for a smooth entry and for any onward travel &mdash; the EU, UK and " +
-      "others require it, with a waiting period, so doing it early is wise.</p>" },
-    { h: "If you may leave Thailand again", html:
+      "<p>In Russia, your clinic veterinarian completes the initial health certificate. " +
+      "Shortly before travel, that document is exchanged for the <strong>international " +
+      "veterinary certificate</strong> through the regional office of the Federal Service " +
+      "for Veterinary and Phytosanitary Surveillance (<strong>FSVPS</strong>, under " +
+      "Rosselkhoznadzor). The exact form and timing depend on your departure region &mdash; " +
+      "confirm the current procedure with your vet and the local FSVPS office.</p>" +
+      "<p>Thailand expects a government-endorsed export certificate, not only a clinic " +
+      "stamp. The microchip number must match every page.</p>" +
+      "<p>Use a vet experienced in international export work and allow time for the " +
+      "state veterinary exchange &mdash; queues close to peak travel dates are common.</p>" },
+    { h: "Documents Thailand expects", html:
+      "<p>Regardless of origin country, the DLD asks for:</p>" +
+      TH_IMPORT_TABLE + TH_ARRIVAL_STD },
+    { h: "The rabies titer test — strongly advised", html:
+      "<p>Thailand does not generally require a titer test for entry from Russia, but " +
+      "make sure the <strong>microchip is implanted before the rabies vaccination</strong>, " +
+      "and consider a <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">" +
+      "rabies titer test</a> from an approved laboratory before you leave. It supports " +
+      "onward travel to the EU, UK and similar destinations, each with a waiting period " +
+      "after the blood sample. Doing it early keeps your options open.</p>" +
+      '<div class="callout callout-tip"><div class="ch">Large Russian community in Pattaya</div>' +
+      "<p>Many owners fly Moscow&ndash;Bangkok or connect via the Gulf. Confirm pet " +
+      "acceptance and crate rules with the airline when you book &mdash; see our " +
+      '<a href="/bring-pet-to-thailand/airline-pet-policies.html">airline pet policies</a> guide.</p></div>' },
+    { h: "If you may return to Russia or leave Thailand again", html:
       "<p>Russia&rsquo;s re-entry rules for pets arriving from abroad can change and " +
-      "often involve the state veterinary service and endorsed certificates. If you " +
-      "might return to Russia with your pet, verify the current import requirements " +
-      "before you leave and keep the " +
-      "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies titer test</a> " +
-      "on your timeline. See our guide to " +
-      "<a href=\"/take-pet-out-of-thailand/to-russia.html\">exporting a pet to Russia</a> " +
-      "for the full return paperwork.</p>" }
+      "typically involve a current rabies vaccination, microchip identification and " +
+      "a veterinary certificate handled through FSVPS. If you might return to Russia " +
+      "with your pet, verify the current import requirements before you leave Russia " +
+      "and keep vaccination records in English. See our mirror guide " +
+      "<a href=\"/take-pet-out-of-thailand/to-russia.html\">exporting a pet to Russia</a>.</p>" },
+    { h: "Common mistakes on this corridor", html: TH_IMPORT_FAILS + RU_IMPORT_FAILS }
   ],
   faqs: [
     ["How is the pet certificate handled in Russia?",
-     "<p>A clinic issues the initial veterinary certificate, which is then exchanged for the international form through the state veterinary service shortly before departure. Confirm the current procedure with your vet and the state service.</p>"],
+     "<p>A clinic issues the initial veterinary certificate, which is then exchanged for the international form through the regional FSVPS office shortly before departure. Confirm the current procedure with your vet and FSVPS.</p>"],
     ["Should my pet have a rabies titer test leaving Russia?",
-     "<p>It is strongly advisable. It supports a smooth entry and is required for onward travel to the EU, UK and similar destinations, where a waiting period also applies. Doing it early keeps your options open.</p>"]
+     "<p>It is strongly advisable. Thailand may not require it on entry, but the EU, UK and similar destinations do, with a waiting period after the blood sample. Doing it early keeps your options open.</p>"],
+    ["Which authority endorses the export certificate?",
+     "<p>The regional office of FSVPS (Federal Service for Veterinary and Phytosanitary Surveillance). Your export-experienced vet coordinates the exchange from the clinic certificate.</p>"],
+    ["Will my pet be quarantined on arrival in Thailand?",
+     "<p>Not usually with complete paperwork. The AQS inspection is typically same-day clearance &mdash; see our <a href=\"/bring-pet-to-thailand/thailand-pet-quarantine.html\">quarantine guide</a>.</p>"],
+    ["What does Russia need for the return journey from Thailand?",
+     "<p>Generally a current rabies vaccination, microchip and veterinary certificate through FSVPS &mdash; confirm the current import rules before you assume return is straightforward.</p>"]
   ]
 }));
 

@@ -66,12 +66,19 @@ This document replaces the old “title/meta batch” queue until Phase 3 is com
 - [x] Export mirror depth (8): same countries — EU titer timeline, DLD export table, tapeworm notes where applicable
 - [x] Shared helpers: `euImportTimeline`, `euExportSections`, `EU_IMPORT_FAILS`, `EU_ENTRY_REQ_LIST`
 
-### Import / export corridors (remaining — Batch 84+)
+### Import / export corridors — Batch 84 ✅ NZ + Russia
 
-- [ ] `/bring-pet-to-thailand/from-new-zealand.html` — still lighter than major corridors (NZ return complexity already noted; optional deepen)
-- [ ] `/bring-pet-to-thailand/from-russia.html` — thin vs Germany/UK standard
+- [x] `/bring-pet-to-thailand/from-new-zealand.html` — MPI export timeline, DLD checklist, MPI return/quarantine warning, 5 FAQs
+- [x] `/bring-pet-to-thailand/from-russia.html` — FSVPS export timeline, DLD checklist, titer advisory, 5 FAQs
+- [x] `/take-pet-out-of-thailand/to-new-zealand.html` — MPI pathway timeline (Australia-style depth), quarantine, 5 FAQs
+- [x] `/take-pet-out-of-thailand/to-russia.html` — FSVPS entry + DLD export timeline, 5 FAQs
+- [x] Official links verified live: `mpi.govt.nz/import/bringing-pets-to-nz/importing-dogs-and-cats/`, `fsvps.gov.ru`
 
-**EU template pages:** ✅ Enriched in Batch 83 (Tim chose enrich over consolidate).
+### Import / export corridors (remaining — Batch 85+)
+
+- [ ] `/bring-pet-to-thailand/from-canada.html` — lighter than major corridors (optional deepen)
+
+**EU template pages:** ✅ Enriched in Batch 83.
 
 ### Dog-friendly (remaining)
 

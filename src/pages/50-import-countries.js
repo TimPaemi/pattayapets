@@ -616,33 +616,96 @@ pages.push(country({
 /* ---------------- NEW ZEALAND ---------------- */
 pages.push(country({
   slug: "from-new-zealand", crumb: "From New Zealand",
-  title: "Bring a Pet to Thailand from New Zealand (DLD 2026) | PattayaPets",
-  desc: "Bringing a dog or cat from New Zealand to Thailand: MPI endorsement, and " +
-    "the demanding requirements if you ever return your pet to New Zealand.",
+  title: "Bring a Pet to Thailand from New Zealand (MPI & DLD 2026) | PattayaPets",
+  desc: "New Zealand to Thailand pet import: MPI export endorsement, DLD permit timeline, " +
+    "document checklist and why the return to NZ is the hard part.",
   h1: "Bringing a pet to Thailand from New Zealand",
   lede: "Getting a pet out of New Zealand is straightforward. The part that needs " +
-    "real thought, before you ever leave, is whether you might bring it back.",
+    "real thought, <strong>before you ever leave</strong>, is whether you might bring it back.",
+  officialExtra:
+    "<p><strong>New Zealand sources:</strong> " +
+    "<a href=\"https://www.mpi.govt.nz/import/bringing-pets-to-nz/importing-dogs-and-cats/\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">MPI &mdash; importing dogs and cats</a>; " +
+    "<a href=\"https://www.mpi.govt.nz/import/bringing-pets-to-nz/\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">MPI pet import hub</a>. " +
+    "Export mirror: " +
+    "<a href=\"/take-pet-out-of-thailand/to-new-zealand.html\">taking a pet to New Zealand</a>.</p>",
   sections: [
+    { h: "The timeline — MPI export and Thai import", html:
+      "<p>Run the MPI export steps and the DLD import permit in parallel once " +
+      "vaccinations are current. Auckland is the usual long-haul departure point.</p>" +
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Authority</th></tr></thead><tbody>' +
+      '<tr><th scope="row">8+ weeks before</th>' +
+      '<td>ISO microchip; rabies and core vaccinations per Thailand&rsquo;s schedule (NZ is rabies-free &mdash; your vet confirms what Thailand requires for export from NZ)</td>' +
+      '<td>New Zealand vet</td></tr>' +
+      '<tr><th scope="row">4&ndash;6 weeks before</th>' +
+      '<td>Apply for <a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a> (form R1/1) to the AQS at your arrival airport</td>' +
+      '<td>DLD AQS</td></tr>' +
+      '<tr><th scope="row">3+ weeks before</th>' +
+      '<td>MPI export application; confirm Thailand import requirements with MPI and your vet</td>' +
+      '<td>MPI + vet</td></tr>' +
+      '<tr><th scope="row">2 weeks before</th>' +
+      '<td>Book airline (cabin, hold or cargo); confirm crate and routing to Suvarnabhumi or U-Tapao</td>' +
+      '<td>Airline</td></tr>' +
+      '<tr><th scope="row">Within 10 days of departure</th>' +
+      '<td>Final clinical examination; MPI <strong>endorses the export health certificate</strong></td>' +
+      '<td>MPI + vet</td></tr>' +
+      '<tr><th scope="row">&ge;3 days before landing</th>' +
+      '<td>Email the AQS to confirm your exact arrival date and flight</td>' +
+      '<td>DLD</td></tr>' +
+      '<tr><th scope="row">Arrival in Thailand</th>' +
+      '<td>AQS inspection with DLD permit, MPI export certificate and vaccination records</td>' +
+      '<td>DLD AQS</td></tr>' +
+      '</tbody></table></div>' },
     { h: "The New Zealand side of the paperwork", html:
-      "<p>" + STD_STEPS + "In New Zealand the export health certificate is completed " +
-      "by your vet and endorsed by <strong>the Ministry for Primary Industries " +
-      "(MPI)</strong>. New Zealand is a rabies-free country, so the export side is " +
-      "generally clean &mdash; use a vet experienced in export work and book the MPI " +
-      "endorsement in good time.</p>" },
+      "<p>In New Zealand the export health certificate is completed by your vet and " +
+      "endorsed by <strong>the Ministry for Primary Industries (MPI)</strong>. New Zealand " +
+      "is a rabies-free country, so the export side is generally clean &mdash; use a vet " +
+      "experienced in export work and book the MPI endorsement in good time.</p>" +
+      "<p>MPI checks that the destination country&rsquo;s import rules are met. For " +
+      "Thailand that means matching the DLD permit, microchip, vaccinations and " +
+      "certificate validity window.</p>" },
+    { h: "Documents the DLD expects", html: TH_IMPORT_TABLE + TH_ARRIVAL_STD },
     { h: "Think hard about the return to New Zealand", html:
-      "<p>This is the part to research <strong>before you leave</strong>. New Zealand " +
-      "protects its rabies-free status with strict import rules, and bringing a pet " +
-      "back from Thailand &mdash; which is not rabies-free &mdash; can be a long, " +
-      "demanding and expensive process, with rabies titer testing, extended timelines " +
-      "and the real possibility of quarantine on arrival. If there is any chance you " +
-      "will return your pet to New Zealand, study MPI&rsquo;s current import " +
-      "requirements first, so nothing about the timeline takes you by surprise.</p>" }
+      "<p>This is the part to research <strong>before you leave New Zealand</strong>, not " +
+      "after settling in Pattaya. New Zealand protects its rabies-free status with strict " +
+      "import rules. Thailand is <strong>not</strong> a low-risk origin under MPI&rsquo;s " +
+      "country categories, so bringing a pet back from Thailand typically involves:</p>" +
+      "<ul>" +
+      "<li>An <strong>MPI import permit</strong> applied for well before travel.</li>" +
+      "<li><a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">Rabies titer testing</a> " +
+      "from an MPI-approved laboratory, on MPI&rsquo;s schedule.</li>" +
+      "<li>A <strong>waiting period</strong> after the blood sample before export from Thailand (MPI sets the current period &mdash; verify directly).</li>" +
+      "<li>Thai <a href=\"/take-pet-out-of-thailand/export-process.html\">DLD export paperwork</a> " +
+      "that matches MPI&rsquo;s import conditions.</li>" +
+      "<li><strong>Mandatory post-arrival quarantine</strong> at an MPI-approved facility in New Zealand (commonly Auckland or Christchurch) &mdash; not optional.</li>" +
+      "</ul>" +
+      "<p>Some owners cannot return the pet at all without an interim period in another " +
+      "approved country. MPI&rsquo;s pathway depends on the current country list &mdash; " +
+      "confirm before you commit to leaving New Zealand with your pet. See our mirror guide " +
+      "<a href=\"/take-pet-out-of-thailand/to-new-zealand.html\">exporting a pet to New Zealand</a>.</p>" +
+      '<div class="callout callout-emergency"><div class="ch">NZ → Thailand is the easy direction</div>' +
+      "<p>Do not assume symmetry. The outbound journey from New Zealand is manageable; " +
+      "the return from Thailand can take many months and cost thousands of dollars.</p></div>" },
+    { h: "Common mistakes on this corridor", html: TH_IMPORT_FAILS +
+      "<ul>" +
+      "<li><strong>Assuming you can return the pet easily</strong> &mdash; MPI rules from Thailand are among the strictest anywhere.</li>" +
+      "<li><strong>MPI export booked late</strong> &mdash; endorsement appointments fill up before peak travel seasons.</li>" +
+      "<li><strong>DLD permit timing</strong> &mdash; the 60-day validity window catches owners who apply too early or too late.</li>" +
+      "</ul>" }
   ],
   faqs: [
     ["Is it hard to take a pet out of New Zealand?",
      "<p>No &mdash; the export side is generally straightforward. Your vet completes the export certificate and MPI endorses it. The difficulty is the return journey, not the departure.</p>"],
     ["Can I bring my pet back to New Zealand from Thailand?",
-     "<p>It is possible but demanding. New Zealand applies strict rules to protect its rabies-free status, and a return from Thailand can involve titer testing, long lead times and possible quarantine. Research MPI's current requirements well before you travel, not after.</p>"]
+     "<p>It is possible but demanding. MPI applies strict biosecurity rules; a return from Thailand typically involves titer testing, long lead times, an import permit and mandatory quarantine. Research MPI's current requirements before you travel, not after.</p>"],
+    ["Does Thailand require a titer test for a pet from New Zealand?",
+     "<p>Generally no for entry from a rabies-free country like New Zealand. The titer test matters for the return to NZ or onward moves to the EU and UK.</p>"],
+    ["Which New Zealand airports handle pet export to Thailand?",
+     "<p>Auckland is the usual long-haul hub. Confirm which airport your airline uses and book MPI endorsement through your export-experienced vet.</p>"],
+    ["Will my pet be quarantined on arrival in Thailand?",
+     "<p>With complete paperwork, Thailand normally clears pets the same day at the AQS &mdash; an inspection, not weeks of quarantine. Email the Bangkok AQS to confirm arrival at least three days ahead.</p>"]
   ]
 }));
 
