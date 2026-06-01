@@ -156,7 +156,11 @@ pages.push(health({
     ["Why is prevention emphasised so heavily?",
      "<p>Because treating an established infection is long, costly and risky for a dog, and for cats there is no equivalent treatment. Prevention is simple and inexpensive by comparison - it is genuinely the whole game.</p>"],
     ["Can indoor cats get heartworm?",
-     "<p>Cats can be affected by heartworm, and mosquitoes get indoors. Ask your vet whether heartworm prevention is right for your cat, especially as there is no feline treatment if it takes hold.</p>"]
+     "<p>Cats can be affected by heartworm, and mosquitoes get indoors. Ask your vet whether heartworm prevention is right for your cat, especially as there is no feline treatment if it takes hold.</p>"],
+    ["How is heartworm tested?",
+     "<p>Your vet uses blood tests — often before starting or changing prevention. Follow their schedule; do not skip tests if prevention lapses.</p>"],
+    ["What if I miss a heartworm dose?",
+     "<p>Contact your vet — they may recommend restarting with a test first. Prevention works best on a consistent monthly schedule in Pattaya.</p>"]
   ],
   related: [
     { name: "Dog vaccinations & parasites", path: "/dogs/dog-vaccinations-thailand.html", desc: "How prevention fits the wider routine." },
@@ -216,7 +220,11 @@ pages.push(health({
     ["What are the warning signs?",
      "<p>Lethargy, loss of appetite, fever, weakness, pale gums, unusual bruising or bleeding, lameness or weight loss. Any of these, especially after tick exposure, is a reason to see a vet promptly.</p>"],
     ["How do I protect my dog?",
-     "<p>Consistent year-round tick prevention on your vet's plan, plus checking your dog for ticks after walks and removing any promptly. Prevention is far more reliable than catching disease early.</p>"]
+     "<p>Consistent year-round tick prevention on your vet's plan, plus checking your dog for ticks after walks and removing any promptly. Prevention is far more reliable than catching disease early.</p>"],
+    ["Can tick fever be cured?",
+     "<p>Many cases respond to veterinary treatment, especially when caught early. Delay makes treatment harder — see a vet promptly if you see ticks or warning signs.</p>"],
+    ["Do ticks affect cats in Pattaya?",
+     "<p>Yes — outdoor and balcony cats are at risk. Ask your vet about cat-safe prevention products.</p>"]
   ],
   related: [
     { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html", desc: "Year-round prevention in the tropics." },
@@ -277,7 +285,11 @@ pages.push(health({
     ["What are the signs of parvovirus?",
      "<p>Severe vomiting, profuse and often bloody diarrhoea, deep lethargy, and refusing food and water - coming on fast in a puppy or young dog. It is a dire emergency; get to a vet immediately.</p>"],
     ["Can older dogs get parvovirus?",
-     "<p>It mainly affects unvaccinated puppies and young dogs, but keeping every dog's vaccinations current is the protection at any age. Ask your vet about your dog's booster schedule.</p>"]
+     "<p>It mainly affects unvaccinated puppies and young dogs, but keeping every dog's vaccinations current is the protection at any age. Ask your vet about your dog's booster schedule.</p>"],
+    ["Is parvovirus contagious to other dogs?",
+     "<p>Yes — it spreads through contact with infected faeces and environments. Keep unvaccinated puppies away from public ground and unknown dogs until the course is complete.</p>"],
+    ["Can parvovirus be prevented after exposure?",
+     "<p>There is no simple post-exposure fix — vaccination before exposure is the protection. If exposure is suspected, call your vet immediately for advice.</p>"]
   ],
   related: [
     { name: "Puppy care in Pattaya", path: "/dogs/puppy-care-pattaya.html", desc: "Vaccination timing for a new puppy." },
@@ -342,7 +354,11 @@ pages.push(health({
     ["Should I treat it myself?",
      "<p>It is best not to guess. Skin and ear problems have several possible causes - parasites, allergies, infection - and the wrong product can worsen things. A vet can identify the cause and treat it properly; early is easier than late.</p>"],
     ["How can I help prevent it?",
-     "<p>Dry your pet thoroughly after any soaking, ears and folds included; keep flea and parasite prevention going; check ears and skin regularly; and groom appropriately for the climate.</p>"]
+     "<p>Dry your pet thoroughly after any soaking, ears and folds included; keep flea and parasite prevention going; check ears and skin regularly; and groom appropriately for the climate.</p>"],
+    ["Are ear infections common in rainy season?",
+     "<p>Yes — humidity plus damp ears after rain or swimming drives flare-ups. Dry ears gently after wet walks and see a vet if shaking or odour starts.</p>"],
+    ["Can diet affect skin problems?",
+     "<p>Some pets have food sensitivities, but many skin issues here are infection or parasite driven. Your vet should diagnose before you change diet alone.</p>"]
   ],
   related: [
     { name: "Rainy-season pet care", path: "/owning-a-pet-in-pattaya/rainy-season-pet-care.html", desc: "Humidity and damp coats drive flare-ups." },
@@ -401,7 +417,11 @@ pages.push(health({
     ["When is the right age?",
      "<p>It depends on species, breed and size, and veterinary guidance evolves. Ask your vet what they recommend for your specific pet rather than following a fixed rule.</p>"],
     ["Is it expensive in Pattaya?",
-     "<p>Spaying and neutering are routine and generally affordable at Pattaya clinics. Some rescues and welfare groups also run low-cost or subsidised sterilisation programmes as part of tackling the street-animal population.</p>"]
+     "<p>Spaying and neutering are routine and generally affordable at Pattaya clinics. Some rescues and welfare groups also run low-cost or subsidised sterilisation programmes as part of tackling the street-animal population.</p>"],
+    ["Should I let my pet have one litter first?",
+     "<p>Vets and rescues advise against it — one litter adds to the street-animal problem and offers no health benefit for most pets. Sterilise on your vet's recommended schedule.</p>"],
+    ["How long is recovery after spaying or neutering?",
+     "<p>Most pets rest a few days to two weeks with restricted exercise. Your vet gives specific aftercare — follow it to prevent complications.</p>"]
   ],
   related: [
     { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Rescues often neuter before rehoming." },

@@ -1024,7 +1024,11 @@ pages.push(article({
     ["How do I get my pet from Bangkok to Pattaya?",
      "<p>By road &mdash; arrange a pet-friendly private transfer or a relocation agent's vehicle in advance. It is roughly a one-and-a-half to two-hour drive. Bring water and never leave the crate in a hot, unventilated vehicle.</p>"],
     ["Which airport should I plan for?",
-     "<p>For almost every owner, Bangkok's Suvarnabhumi &mdash; it has the established pet-import process and far more flight choice. Treat a direct U-Tapao arrival as something to verify carefully with the DLD and airline, not to assume.</p>"]
+     "<p>For almost every owner, Bangkok's Suvarnabhumi &mdash; it has the established pet-import process and far more flight choice. Treat a direct U-Tapao arrival as something to verify carefully with the DLD and airline, not to assume.</p>"],
+    ["Does the DLD import permit name the arrival airport?",
+     "<p>Yes — your permit application must target the correct AQS. If you change from BKK to UTP or vice versa, you may need to amend or reapply.</p>"],
+    ["Is U-Tapao close enough to justify fewer flight options?",
+     "<p>UTP saves road time after landing, but only if your airline and the DLD will accept pets there. Most long-haul owners still use Suvarnabhumi for reliability and route choice.</p>"]
   ],
   related: [
     { name: "Import checklist", path: "/bring-pet-to-thailand/checklist.html", desc: "Printable step-by-step checklist." },

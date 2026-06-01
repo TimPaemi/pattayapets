@@ -80,7 +80,11 @@ pages.push(hazard({
     ["Should I try to pull the object out?",
      "<p>Only if you can clearly and easily see it at the front of the mouth. Never push fingers blindly down the throat &mdash; you can lodge the object deeper or be bitten. If your pet cannot breathe, phone a 24-hour vet immediately and follow their guidance while you get there.</p>"],
     ["How can I prevent choking?",
-     "<p>Use toys and balls too big to lodge in the throat, supervise all chews, and keep bones, rawhide pieces, corn cobs, fruit stones and small objects out of reach. Size every chew and toy to your pet.</p>"]
+     "<p>Use toys and balls too big to lodge in the throat, supervise all chews, and keep bones, rawhide pieces, corn cobs, fruit stones and small objects out of reach. Size every chew and toy to your pet.</p>"],
+    ["Can cats choke the same way as dogs?",
+     "<p>Yes — string, small toys and hair ties are common cat hazards. The same rule applies: get to a vet fast; only remove objects you can see easily at the mouth.</p>"],
+    ["Should I try the Heimlich manoeuvre on my pet?",
+     "<p>Only under direct veterinary guidance on the phone while you travel to a clinic. Blind attempts can injure ribs or push an object deeper.</p>"]
   ],
   related: [
     { name: "Poisoning hazards", path: "/pet-emergency/poisoning.html", desc: "Swallowed toxins and objects." },
@@ -140,7 +144,11 @@ pages.push(hazard({
     ["How do I move an injured pet safely?",
      "<p>Move it as little as possible. Support the whole body - slide a larger dog onto a board or blanket stretcher, carry a small pet supporting it fully - and keep it warm, still and calm. Approach slowly, as a hurt pet may bite in shock.</p>"],
     ["How can I reduce the risk of a road accident?",
-     "<p>Keep dogs leashed near traffic, secure gates and fences so pets cannot get loose, and keep your pet microchipped and wearing ID. Most road accidents start with a pet escaping.</p>"]
+     "<p>Keep dogs leashed near traffic, secure gates and fences so pets cannot get loose, and keep your pet microchipped and wearing ID. Most road accidents start with a pet escaping.</p>"],
+    ["My pet was hit but the driver left — what now?",
+     "<p>Your priority is the vet. A police report may help later with insurance, but do not delay treatment to chase the vehicle.</p>"],
+    ["Can I use Grab or a taxi after a road accident?",
+     "<p>Only if the driver accepts an animal in a crate and the pet can be moved safely. Many owners arrange a private pet transfer — see <a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">getting to the vet</a>.</p>"]
   ],
   related: [
     { name: "If your pet goes missing", path: "/owning-a-pet-in-pattaya/lost-pet-pattaya.html", desc: "If a loose pet is hit and runs off." },
@@ -202,7 +210,11 @@ pages.push(hazard({
     ["My dog drank seawater - should I worry?",
      "<p>A small amount usually just causes an upset stomach. Drinking a lot can cause salt poisoning, which is serious. Offer fresh water, watch your dog, and see a vet if it becomes unwell, very thirsty, wobbly or vomits repeatedly.</p>"],
     ["What should I do if my dog is stung by a jellyfish?",
-     "<p>Stop it licking the area, rinse with seawater rather than fresh water, and do not rub the spot. Watch closely - swelling, breathing difficulty, weakness or collapse is an emergency. If in any doubt, see a vet.</p>"]
+     "<p>Stop it licking the area, rinse with seawater rather than fresh water, and do not rub the spot. Watch closely - swelling, breathing difficulty, weakness or collapse is an emergency. If in any doubt, see a vet.</p>"],
+    ["Should I rinse my dog after every beach visit?",
+     "<p>Yes — salt irritates skin and ears. A fresh-water rinse and thorough dry, especially of ears and paws, prevents many post-beach vet visits.</p>"],
+    ["Are jellyfish worse at certain times of year?",
+     "<p>Risk varies by season and beach stretch. Avoid washed-up jellyfish year-round, and keep dogs away from the tideline after storms when debris accumulates.</p>"]
   ],
   related: [
     { name: "Dog-friendly beaches", path: "/dog-friendly-pattaya/beaches.html", desc: "Beach etiquette and where dogs can go." },

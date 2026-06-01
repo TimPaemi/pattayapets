@@ -105,7 +105,11 @@ pages.push(article({
     ["Will an airline fly my flat-faced dog to Thailand?",
      "<p>It depends entirely on the airline. Many restrict or refuse snub-nosed breeds, particularly in cargo, and policies differ and change. Check the specific airline's current policy before you book anything.</p>"],
     ["How can I make the flight safer for a snub-nosed pet?",
-     "<p>Fly direct where possible, travel in the cooler season and hours, consider cabin travel if the pet is small enough, get a vet fitness check, use a well-ventilated crate, and never sedate without veterinary guidance.</p>"]
+     "<p>Fly direct where possible, travel in the cooler season and hours, consider cabin travel if the pet is small enough, get a vet fitness check, use a well-ventilated crate, and never sedate without veterinary guidance.</p>"],
+    ["Are airline embargoes seasonal for snub-nosed pets?",
+     "<p>Many carriers restrict hold travel during hot months regardless of breed. Flat-faced pets face extra limits — confirm seasonal rules when you quote the route.</p>"],
+    ["Should I get a fitness certificate for a brachycephalic pet?",
+     "<p>A pre-travel vet check is wise and may be required by the airline. The vet can confirm breathing and fitness for the planned mode of travel.</p>"]
   ],
   related: [
     { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html", desc: "Which carriers allow flat-faced breeds." },
@@ -186,7 +190,11 @@ pages.push(article({
     ["What happens at the Animal Quarantine Station?",
      "<p>A Department of Livestock Development officer checks the microchip, the vaccinations, the health certificate and the import permit against your pet. With everything in order, the pet is cleared to enter, usually the same day.</p>"],
     ["What could cause my pet to be held or quarantined?",
-     "<p>Paperwork problems &mdash; a microchip that does not scan or was implanted after the rabies shot, a missing import permit, an out-of-date or improperly endorsed health certificate, or an unmet requirement. Getting the documents exactly right is what keeps arrival smooth.</p>"]
+     "<p>Paperwork problems &mdash; a microchip that does not scan or was implanted after the rabies shot, a missing import permit, an out-of-date or improperly endorsed health certificate, or an unmet requirement. Getting the documents exactly right is what keeps arrival smooth.</p>"],
+    ["How much does AQS clearance cost on arrival?",
+     "<p>The inspection fee is currently 500 baht — confirm with the station before you travel. That is separate from airline, vet and transfer costs.</p>"],
+    ["Can a relocation agent handle quarantine clearance for me?",
+     "<p>Many agents meet pets at the airport and manage the AQS step. DIY is possible if your paperwork is perfect and you know the process.</p>"]
   ],
   related: [
     { name: "Arriving at Suvarnabhumi", path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html", desc: "What the AQS check looks like on landing." },

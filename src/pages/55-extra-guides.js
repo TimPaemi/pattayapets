@@ -85,7 +85,11 @@ pages.push(article({
     ["Is a centipede bite dangerous to a pet?",
      "<p>For a healthy pet a single bite is painful but usually not life-threatening. See a vet if swelling spreads, the pet seems unwell, or it is small, very young or elderly.</p>"],
     ["My pet was stung by a bee - should I worry?",
-     "<p>A single sting usually just causes pain and swelling - watch closely. Seek a vet urgently for multiple stings, a sting in the mouth or throat, or signs of an allergic reaction such as facial swelling, hives, weakness or breathing difficulty.</p>"]
+     "<p>A single sting usually just causes pain and swelling - watch closely. Seek a vet urgently for multiple stings, a sting in the mouth or throat, or signs of an allergic reaction such as facial swelling, hives, weakness or breathing difficulty.</p>"],
+    ["Are scorpions common in Pattaya homes?",
+     "<p>They can appear in gardens and ground-floor rooms, especially after rain. Shake out shoes and bedding; see a vet if your pet is stung and seems unwell.</p>"],
+    ["What about centipedes in rainy season?",
+     "<p>Large centipedes are more active when it is wet. Bites are painful — rinse the area and watch for spreading swelling or lethargy.</p>"]
   ],
   related: [
     { name: "Snake bites", path: "/pet-emergency/snake-bites.html", desc: "Thailand's venomous snakes, and how to react." },
@@ -148,7 +152,11 @@ pages.push(article({
     ["Who pays the veterinary bills for a foster pet?",
      "<p>Usually the rescue organisation covers the veterinary costs. Confirm the arrangement with the specific rescue before you start, so expectations are clear on both sides.</p>"],
     ["Isn't it too hard to give them back?",
-     "<p>Saying goodbye is the hard part - but it is the point: each animal you foster and pass on to a permanent home frees you to help the next one. And if you truly cannot let go, adopting your foster pet is a happy ending too.</p>"]
+     "<p>Saying goodbye is the hard part - but it is the point: each animal you foster and pass on to a permanent home frees you to help the next one. And if you truly cannot let go, adopting your foster pet is a happy ending too.</p>"],
+    ["Can I foster if I have other pets?",
+     "<p>Often yes, with slow introductions and the rescue's guidance. Some fosters need a pet-free home — ask the organisation what they need.</p>"],
+    ["How long does fostering usually last?",
+     "<p>From a few weeks to several months, depending on the animal's needs and adoption demand. Confirm expected duration before you commit.</p>"]
   ],
   related: [
     { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Shelters and rescue organisations." },
@@ -226,7 +234,11 @@ pages.push(article({
     ["I found an injured street dog - what should I do?",
      "<p>Keep yourself safe first, as a hurt animal may bite. If you can safely contain or comfort it, do so, then contact a local rescue, welfare group or vet - some rescues run a rescue ambulance. Acting for the animal in front of you is what matters.</p>"],
     ["Does feeding street animals help?",
-     "<p>It can ease immediate hunger, but feeding alone tends to grow colonies. The thoughtful approach is to pair any feeding with support for sterilisation programmes, which address the root of the street-animal problem.</p>"]
+     "<p>It can ease immediate hunger, but feeding alone tends to grow colonies. The thoughtful approach is to pair any feeding with support for sterilisation programmes, which address the root of the street-animal problem.</p>"],
+    ["Can tourists volunteer at Pattaya rescues?",
+     "<p>Many shelters welcome short-term help — walking dogs, cleaning, social media. Contact organisations directly; see our <a href=\"/adopt-a-pet-pattaya/\">adoption hub</a> for listings.</p>"],
+    ["Should I rescue every street animal I see?",
+     "<p>You cannot save them all alone — focus on one animal at a time and involve a rescue or vet for medical care, sterilisation and rehoming.</p>"]
   ],
   related: [
     { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Shelters and rescue organisations." },
@@ -302,7 +314,11 @@ pages.push(article({
     ["Can I brush my pet's teeth?",
      "<p>Yes - it is the most effective home care. Introduce it gradually and use a pet toothpaste only; human toothpaste contains ingredients toxic to pets. Vet-recommended dental chews and diets can help alongside brushing.</p>"],
     ["Is bad breath in a pet normal?",
-     "<p>No - persistent bad breath is usually a sign of dental disease, not something to accept as normal. Mention it to your vet.</p>"]
+     "<p>No - persistent bad breath is usually a sign of dental disease, not something to accept as normal. Mention it to your vet.</p>"],
+    ["How often should pets have dental checks?",
+     "<p>At least at annual vet visits; senior pets may need more frequent mouth exams. Professional cleaning under anaesthesia may be recommended when tartar builds up.</p>"],
+    ["Are dental chews enough on their own?",
+     "<p>They help but rarely replace brushing and vet care. Use them as part of a plan your vet approves, not instead of check-ups.</p>"]
   ],
   related: [
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Sudden mouth pain or swelling needs a vet promptly." },
@@ -373,7 +389,11 @@ pages.push(article({
     ["My pet always seems hungry - am I underfeeding it?",
      "<p>Not necessarily - many pets would happily eat well beyond what they need. Measure food to your vet's guidance rather than feeding to appetite, and count treats within the daily total. If appetite changes suddenly, mention it to your vet.</p>"],
     ["How do I help my pet lose weight safely?",
-     "<p>Measure food, trim treats, exercise in the cool hours, and make changes gradually. See your vet first - they can rule out a medical cause and set a safe target and pace. Crash dieting is not safe, especially for cats.</p>"]
+     "<p>Measure food, trim treats, exercise in the cool hours, and make changes gradually. See your vet first - they can rule out a medical cause and set a safe target and pace. Crash dieting is not safe, especially for cats.</p>"],
+    ["Do neutered pets gain weight more easily?",
+     "<p>Metabolism often slows after neutering — adjust portions with your vet's guidance rather than feeding the same amount as before surgery.</p>"],
+    ["Are table scraps a big cause of weight gain?",
+     "<p>Yes — human food is calorie dense and encourages begging. Keep treats to less than 10% of daily calories.</p>"]
   ],
   related: [
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Sudden collapse or rapid weight loss needs urgent care." },
@@ -444,7 +464,11 @@ pages.push(article({
     ["How do I find pet-friendly hotels in Thailand?",
      "<p>Search specifically for pet-friendly accommodation - many places do not accept animals - and confirm the policy in writing before you travel. Privately rented condos and villas can be an alternative.</p>"],
     ["Is a long road trip safe for my pet?",
-     "<p>It can be, with planning: a secure carrier or harness, regular water and toilet stops, never leaving the pet in a parked vehicle, and travelling in cooler hours. If your pet finds car travel very stressful, consider a sitter or boarding instead.</p>"]
+     "<p>It can be, with planning: a secure carrier or harness, regular water and toilet stops, never leaving the pet in a parked vehicle, and travelling in cooler hours. If your pet finds car travel very stressful, consider a sitter or boarding instead.</p>"],
+    ["Do I need health papers for domestic pet travel in Thailand?",
+     "<p>Inter-provincial travel usually does not need export paperwork, but airlines and some hotels may ask for vaccination records. Carry rabies certificates for any trip.</p>"],
+    ["Can I take my pet on a Thai train or bus?",
+     "<p>Policies are restrictive and inconsistent — assume not unless you confirm in advance. Flights and private road travel are the practical options for most owners.</p>"]
   ],
   related: [
     { name: "Boarding & daycare", path: "/boarding/", desc: "If the pet stays behind." },

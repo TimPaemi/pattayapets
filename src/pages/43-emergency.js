@@ -148,7 +148,11 @@ pages.push(article({
     ["Should I call before going?",
      "<p>If you can do it without delaying, yes — a quick call lets the clinic prepare and confirm a vet is on duty. But never let making a call hold you up when minutes matter.</p>"],
     ["Are these clinics confirmed as 24-hour by PattayaPets?",
-     "<p>They are listed as 24-hour based on public information. PattayaPets has not yet completed anonymous visits, and hours can change — check the clinic listing for current contact details before you travel.</p>"]
+     "<p>They are listed as 24-hour based on public information. PattayaPets has not yet completed anonymous visits, and hours can change — check the clinic listing for current contact details before you travel.</p>"],
+    ["What should I bring to a 24-hour vet visit?",
+     "<p>Your pet secured in a carrier or on a lead, vaccination records if you have them, any medication, and a payment method. Save the clinic address in English and Thai for your driver if someone else is taking you.</p>"],
+    ["Do I need an appointment for an emergency?",
+     "<p>No — go straight there for a genuine emergency. A quick call on the way helps the team prepare, but do not delay travel when minutes matter.</p>"]
   ],
   related: [
     { name: "Pet first-aid orientation", path: "/pet-emergency/pet-first-aid.html", desc: "Staying calm and moving a hurt pet safely." },

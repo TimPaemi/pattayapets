@@ -267,7 +267,11 @@ pages.push(importStep({
     ["Is the titer test required to enter Thailand?",
      "<p>Generally no, for pets coming from rabies-controlled countries. It becomes important if you later move your pet to a country that requires it, such as the UK, EU or Australia — so many owners do it pre-emptively. Confirm your case with the DLD.</p>"],
     ["Where is the titer blood test analysed?",
-     "<p>At an approved rabies laboratory — your vet or a pet relocation agent will know the nearest accepted lab. The result takes a few weeks to come back, which is why you start early.</p>"]
+     "<p>At an approved rabies laboratory — your vet or a pet relocation agent will know the nearest accepted lab. The result takes a few weeks to come back, which is why you start early.</p>"],
+    ["What if my pet's rabies vaccine lapsed before travel?",
+     "<p>If the previous vaccination expired, the next shot is treated as a primary dose and the 21-day wait restarts. Plan travel dates around that wait — confirm dates on the certificate with your vet.</p>"],
+    ["Do puppies and kittens need a special vaccination schedule?",
+     "<p>Yes — young animals need a starter course over several weeks, and Thailand's 21-day rule applies from the primary rabies shot. Your vet sets the full schedule; do not travel until the course and waiting period are complete.</p>"]
   ],
   related: [
     { name: "Health certificate", path: "/bring-pet-to-thailand/health-certificate.html", desc: "The document that pulls it all together." },
@@ -426,7 +430,11 @@ pages.push(importStep({
     ["Do I need to be in Thailand to apply?",
      "<p>No. The application is made before you travel, by email to the AQS at your arrival airport, or through a pet relocation agent acting for you.</p>"],
     ["Can I apply at the airport on arrival instead?",
-     "<p>In some cases the AQS can issue a permit on arrival if you already hold a fully endorsed health certificate and all supporting documents &mdash; but many airlines require the permit before boarding. Check with your airline first; arriving without the paperwork the airline expects is a common reason pets are refused carriage.</p>"]
+     "<p>In some cases the AQS can issue a permit on arrival if you already hold a fully endorsed health certificate and all supporting documents &mdash; but many airlines require the permit before boarding. Check with your airline first; arriving without the paperwork the airline expects is a common reason pets are refused carriage.</p>"],
+    ["How long is the import permit valid once issued?",
+     "<p>Typically 60 days from issuance. That is why you apply in the weeks before travel, not months ahead — an expired permit can block arrival or boarding.</p>"],
+    ["Must the import permit match my arrival airport?",
+     "<p>Yes — apply to the AQS at the airport where your pet will land. Suvarnabhumi and U-Tapao have different desks; using the wrong one delays clearance.</p>"]
   ],
   related: [
     { name: "Arrival in Thailand", path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html", desc: "What happens when you land." },

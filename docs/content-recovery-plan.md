@@ -126,6 +126,13 @@ This document replaces the old “title/meta batch” queue until Phase 3 is com
 - [x] Adoption org template (7 shelter pages): +3 FAQs via shared `SHELTERS.forEach` block
 - [x] `audit:content` — **0 thin-FAQ WARNs** (118 guides checked)
 
+### Second FAQ pass — Batch 89 ✅
+
+- [x] Import steps: rabies/titer, import permit, snub-nosed, quarantine, U-Tapao — expanded to ≥5 FAQs
+- [x] Emergency extras: 24-hour vets, choking, road accident, beach hazards — ≥5 FAQs
+- [x] Species (7), owning-extra (9), pet-health (5), extra-guides (6) — all at ≥5 FAQs
+- [x] **37 guides** that were at minimum 3 FAQs now at ≥5; content recovery Phase 1 FAQ depth complete
+
 ---
 
 ## Phase 3 — Measure again

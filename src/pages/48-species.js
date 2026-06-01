@@ -110,7 +110,11 @@ pages.push(cat({
     ["My condo has a balcony &mdash; is that safe for my cat?",
      "<p>Not as it is. Cats fall from condo balconies, and a fall from height is often fatal. Screen or net the balcony fully before letting a cat use it. Cat-proof balcony netting is easy to find in Pattaya.</p>"],
     ["How do I keep an indoor cat happy?",
-     "<p>Build the home around the cat: vertical space and perches, daily wand-toy play, sturdy scratching posts, a window view, and ideally a compatible companion cat. A well-set-up indoor home is a good life for a cat.</p>"]
+     "<p>Build the home around the cat: vertical space and perches, daily wand-toy play, sturdy scratching posts, a window view, and ideally a compatible companion cat. A well-set-up indoor home is a good life for a cat.</p>"],
+    ["Should I leash-walk an indoor cat in Pattaya?",
+     "<p>Some owners use a harness for supervised balcony or garden time. Never rely on a collar alone outdoors — traffic and dogs are real risks. See <a href=\"/cats/getting-a-cat-in-pattaya.html\">getting a cat in Pattaya</a> for adoption options.</p>"],
+    ["Do indoor cats still need parasite prevention?",
+     "<p>Often yes — fleas and ticks can enter on people or other pets. Ask your vet about prevention suited to an indoor lifestyle.</p>"]
   ],
   related: [
     { name: "Cat vaccinations", path: "/cats/cat-vaccinations-thailand.html", desc: "Routine vaccines and parasite prevention." },
@@ -175,7 +179,11 @@ pages.push(cat({
     ["Is cat vaccination expensive in Pattaya?",
      "<p>Routine vaccinations and check-ups are generally very affordable by Western standards. The bigger costs come from treating illness or injury, which is part of the case for a savings buffer or insurance.</p>"],
     ["Should I neuter my cat?",
-     "<p>For almost every pet cat in Pattaya, yes. It prevents unwanted litters, cuts roaming and fighting and the disease that spreads through fights, and is a routine, affordable procedure. Ask your vet about timing.</p>"]
+     "<p>For almost every pet cat in Pattaya, yes. It prevents unwanted litters, cuts roaming and fighting and the disease that spreads through fights, and is a routine, affordable procedure. Ask your vet about timing.</p>"],
+    ["When should kittens start vaccinations?",
+     "<p>Usually in the first weeks of life, with boosters on a schedule your vet sets. Do not let an unvaccinated kitten mix with unknown cats until the course is complete.</p>"],
+    ["Are rabies boosters required by law for cats?",
+     "<p>Yes — Thai law requires current rabies vaccination for cats as well as dogs. Keep the certificate and schedule boosters before expiry.</p>"]
   ],
   related: [
     { name: "Indoor vs outdoor cats", path: "/cats/indoor-vs-outdoor-cats.html", desc: "Keeping cats safe in Pattaya." },
@@ -240,7 +248,11 @@ pages.push(cat({
     ["I found a street kitten &mdash; what should I do first?",
      "<p>Take it to a vet for a health check and parasite treatment, and arrange vaccination and neutering when it is old enough. If you have other cats, keep the kitten separate until the vet has checked it for FeLV, FIV and other infections.</p>"],
     ["How do I introduce a new cat to my home?",
-     "<p>Start it in one quiet room with everything it needs, then expand its space gradually. Introduce other pets slowly &mdash; by scent and through a closed door first &mdash; never with a sudden face-to-face meeting.</p>"]
+     "<p>Start it in one quiet room with everything it needs, then expand its space gradually. Introduce other pets slowly &mdash; by scent and through a closed door first &mdash; never with a sudden face-to-face meeting.</p>"],
+    ["Should I adopt a street kitten or buy from a shop?",
+     "<p>Rescues and shelters rehome vaccinated, neutered cats and address the street-animal problem directly. See our <a href=\"/adopt-a-pet-pattaya/\">adopt a pet</a> hub for organisations in Pattaya.</p>"],
+    ["What vet visit does a new cat need first?",
+     "<p>A health check, parasite treatment, vaccination plan and neutering discussion — even if the cat looks healthy. Keep it separate from other cats until the vet clears introductions.</p>"]
   ],
   related: [
     { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Shelters and rescues rehoming cats." },
@@ -301,7 +313,11 @@ pages.push(cat({
     ["Is it better to board my cat or use a pet sitter?",
      "<p>It depends on the cat. Cats bond to territory, so a shy or older cat is often less stressed at home with a visiting sitter. A confident, sociable cat may board well. Choose around your cat's temperament.</p>"],
     ["What do I need to arrange before boarding my cat?",
-     "<p>Up-to-date vaccinations, enough of the usual food, any medication with instructions, the vaccination record, and your and your vet's contact details. Visit the facility first, and book early for busy travel periods.</p>"]
+     "<p>Up-to-date vaccinations, enough of the usual food, any medication with instructions, the vaccination record, and your and your vet's contact details. Visit the facility first, and book early for busy travel periods.</p>"],
+    ["Will boarding stress my cat?",
+     "<p>Many cats find boarding harder than dogs because they are territory-bound. A home sitter may be less stressful — compare options in our <a href=\"/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html\">pet sitters guide</a>.</p>"],
+    ["Do boarding facilities require FVRCP and rabies?",
+     "<p>Reputable kennels and catteries require current vaccinations. Confirm exact requirements when you book and bring certificates on drop-off day.</p>"]
   ],
   related: [
     { name: "Boarding in Pattaya", path: "/boarding/", desc: "The directory of boarding facilities." },
@@ -373,7 +389,11 @@ pages.push(dog({
     ["What is heartworm and does my dog need prevention?",
      "<p>Heartworm is a serious parasite spread by mosquitoes, which are present in Pattaya year-round. Prevention is simple &mdash; a regular preventive on your vet's schedule &mdash; and far easier than treatment. Ask your vet at the first visit.</p>"],
     ["Is dog vaccination expensive in Pattaya?",
-     "<p>Routine vaccinations, parasite prevention and check-ups are generally affordable by Western standards. The larger costs come from treating illness or injury, which is the case for a savings buffer or insurance.</p>"]
+     "<p>Routine vaccinations, parasite prevention and check-ups are generally affordable by Western standards. The larger costs come from treating illness or injury, which is the case for a savings buffer or insurance.</p>"],
+    ["When do puppies finish their first vaccination course?",
+     "<p>Over several weeks, with a final booster timing set by your vet. Keep an unvaccinated puppy away from unknown dogs and high-risk ground until the course is complete.</p>"],
+    ["Is leptospirosis vaccination required in Thailand?",
+     "<p>Dogs need leptospirosis protection for import and good local practice — either vaccination or a negative test within 30 days per current embassy guidance. Ask your vet what suits your dog.</p>"]
   ],
   related: [
     { name: "Puppy care in Pattaya", path: "/dogs/puppy-care-pattaya.html", desc: "Starting a vaccination routine early." },
@@ -438,7 +458,11 @@ pages.push(dog({
     ["Can I keep a Husky in Pattaya?",
      "<p>It can be done and many people do, but a thick double-coated cold-climate breed needs serious heat management &mdash; air-conditioning, strictly cool-hour exercise and constant vigilance. Go in knowing the daily commitment.</p>"],
     ["Are flat-faced breeds like pugs okay in the heat?",
-     "<p>They are the highest-risk group, because their short airways make cooling by panting difficult. They can live well in Pattaya with air-conditioning and very careful, cool-hour, low-exertion exercise &mdash; but the risk is real and constant.</p>"]
+     "<p>They are the highest-risk group, because their short airways make cooling by panting difficult. They can live well in Pattaya with air-conditioning and very careful, cool-hour, low-exertion exercise &mdash; but the risk is real and constant.</p>"],
+    ["Is adopting a Thai street dog a good choice for the climate?",
+     "<p>Often yes — local and mixed-breed dogs are already adapted to heat and humidity. See <a href=\"/adopt-a-pet-pattaya/\">adopt a pet in Pattaya</a> for rescues rehoming dogs.</p>"],
+    ["Should I avoid thick-coated breeds entirely?",
+     "<p>Not necessarily, but owners of Huskies, Malamutes and similar breeds need AC, strict cool-hour exercise and realistic daily heat management — not occasional shade alone.</p>"]
   ],
   related: [
     { name: "Puppy care in Pattaya", path: "/dogs/puppy-care-pattaya.html", desc: "If you are starting with a young dog." },
@@ -506,7 +530,11 @@ pages.push(dog({
     ["When can I take my puppy outside in Pattaya?",
      "<p>Your vet will advise keeping a puppy away from unknown dogs and high-risk places until its vaccination course is complete. You can still socialise it safely in the meantime &mdash; carried outings, safe vaccinated dogs and gentle experiences at home &mdash; and always in the cool hours.</p>"],
     ["Where can I get help training my puppy?",
-     "<p>Pattaya has dog trainers who help with obedience and behaviour &mdash; see our trainers directory. Starting gentle, reward-based training early, with help if you want it, prevents many problems later.</p>"]
+     "<p>Pattaya has dog trainers who help with obedience and behaviour &mdash; see our trainers directory. Starting gentle, reward-based training early, with help if you want it, prevents many problems later.</p>"],
+    ["What food should I feed a puppy in Pattaya?",
+     "<p>A complete puppy diet from a reputable brand, measured to your vet's guidance. Avoid sudden switches and table scraps — stomach upsets are common in the heat.</p>"],
+    ["When can my puppy meet other dogs?",
+     "<p>After your vet clears social contact — usually once the vaccination course is far enough along. Use controlled, vaccinated playmates rather than busy street areas.</p>"]
   ],
   related: [
     { name: "Heartworm", path: "/pet-health-pattaya/heartworm.html", desc: "Year-round prevention in Pattaya." },
@@ -576,7 +604,11 @@ pages.push(dog({
     ["What are tick-borne diseases and how serious are they?",
      "<p>Ticks here can transmit serious blood-borne diseases that can make a dog very unwell. Signs an owner may notice include lethargy, loss of appetite, fever or pale gums &mdash; always a reason for a vet visit. Consistent year-round tick prevention is the main defence.</p>"],
     ["How do I prevent these problems?",
-     "<p>Year-round parasite prevention on your vet's plan, cool-hour exercise and heat care, keeping skin and ears clean and dry, and early vet visits when something seems off. Prevention and early action handle most of the tropical pattern.</p>"]
+     "<p>Year-round parasite prevention on your vet's plan, cool-hour exercise and heat care, keeping skin and ears clean and dry, and early vet visits when something seems off. Prevention and early action handle most of the tropical pattern.</p>"],
+    ["Are certain dog breeds more prone in Pattaya?",
+     "<p>Floppy-eared, skin-folded and thick-coated breeds often struggle most with ears, skin and heat. Any dog benefits from the same prevention basics — see <a href=\"/pet-health-pattaya/skin-and-ear-problems.html\">skin and ear problems</a>.</p>"],
+    ["When is itching an emergency?",
+     "<p>Intense scratching with swelling, hives, collapse or difficulty breathing suggests an allergic reaction — go to a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vet</a>. Routine itching can wait for a daytime appointment.</p>"]
   ],
   related: [
     { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html", desc: "Heat and humidity drive flare-ups." },
