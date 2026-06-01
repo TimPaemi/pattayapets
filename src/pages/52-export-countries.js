@@ -110,6 +110,68 @@ const EXPORT_FAILS =
   "<li><strong>Last-minute DLD export</strong> &mdash; applying inside the 15-day window when tests are still pending.</li>" +
   "</ul>";
 
+const EU_EXPORT_FAILS_EXTRA =
+  "<ul>" +
+  "<li><strong>Assuming the EU pet passport alone works</strong> from Thailand &mdash; you need a third-country entry certificate.</li>" +
+  "<li><strong>Entering via a non-designated point</strong> &mdash; each country lists approved entry points for pets from third countries.</li>" +
+  "</ul>";
+
+function euExportTimeline(routingIntro) {
+  return "<p>" + routingIntro + "</p>" +
+    '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+    '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Authority</th></tr></thead><tbody>' +
+    '<tr><th scope="row">Month 1 (if no valid titer yet)</th>' +
+    '<td>Rabies vaccination current; <strong>rabies titer test</strong> blood sample &ge;30 days after vaccination; approved lab</td>' +
+    '<td>Thai vet + EU-approved lab</td></tr>' +
+    '<tr><th scope="row">Months 1&ndash;3</th>' +
+    '<td><strong>Wait three months</strong> from the blood sample date (non-listed third-country rule)</td>' +
+    '<td>EU Regulation 576/2013 framework</td></tr>' +
+    '<tr><th scope="row">6&ndash;8 weeks before flight</th>' +
+    '<td>Book pet on a route entering via a <strong>designated traveller point of entry</strong></td>' +
+    '<td>Airline / agent</td></tr>' +
+    '<tr><th scope="row">&ge;15 days before export</th>' +
+    '<td>Apply for Thai <a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">DLD export permit</a> (form 1/1) with titer result and destination entry requirements attached</td>' +
+    '<td>DLD AQS</td></tr>' +
+    '<tr><th scope="row">Within 10 days of entry</th>' +
+    '<td><strong>EU animal health certificate</strong> for third-country entry completed and endorsed by Thai competent authority</td>' +
+    '<td>DLD + official vet</td></tr>' +
+    '<tr><th scope="row">Destination arrival</th>' +
+    '<td>Present documents at designated entry point; customs / veterinary identity check</td>' +
+    '<td>Border authority</td></tr>' +
+    '</tbody></table></div>' +
+    "<p>Shared EU rules: " +
+    '<a href="/take-pet-out-of-thailand/to-eu.html">exporting a pet to the EU</a>.</p>';
+}
+
+function euExportSections(o) {
+  return [
+    { h: o.timelineHeading || "The timeline — work backwards from your flight", html: euExportTimeline(o.routingIntro) },
+    { h: o.reqHeading, html: o.reqHtml },
+    { h: "The Thai export side (DLD)", html:
+      "<p>Parallel Thai requirements:</p>" + DLD_EXPORT_TABLE +
+      "<p>See " +
+      '<a href="/take-pet-out-of-thailand/export-process.html">export process</a>.</p>' },
+    { h: "Common mistakes on this corridor", html: EXPORT_FAILS + EU_EXPORT_FAILS_EXTRA + (o.extraFails || "") }
+  ];
+}
+
+const EU_ENTRY_REQ_LIST =
+  "<p>Thailand is a <strong>non-listed third country</strong> under EU pet-travel rules. " +
+  "Entry typically requires:</p>" +
+  "<ul>" +
+  "<li>ISO microchip before rabies vaccination</li>" +
+  "<li>Valid rabies vaccination</li>" +
+  "<li><strong>Rabies titer test</strong> from an EU-approved laboratory, blood drawn at least 30 days after vaccination</li>" +
+  "<li><strong>Three-month wait</strong> from the blood sample date</li>" +
+  "<li><strong>EU animal health certificate</strong> for non-commercial entry from a third country, endorsed by the exporting country&rsquo;s competent authority</li>" +
+  "<li>Entry through a <strong>designated point of entry</strong></li>" +
+  "</ul>";
+
+const EU_TITER_TIP =
+  '<div class="callout callout-tip"><div class="ch">Did the titer test before Thailand?</div>' +
+  "<p>If you had the blood test done in Europe before moving and kept rabies vaccination " +
+  "current, you may avoid the three-month wait &mdash; verify validity before you fly.</p></div>";
+
 const pages = [];
 
 /* ---------------- GERMANY ---------------- */
@@ -201,206 +263,326 @@ pages.push(exp({
 /* ---------------- SWEDEN ---------------- */
 pages.push(exp({
   slug: "to-sweden", crumb: "To Sweden",
-  title: "Export a Pet from Thailand to Sweden (DLD 2026) | PattayaPets",
-  desc: "Bringing a dog or cat from Thailand to Sweden: the rabies titer test, the " +
-    "three-month wait and the EU entry health certificate.",
+  title: "Export a Pet from Thailand to Sweden (EU Titer & DLD 2026) | PattayaPets",
+  desc: "Thailand to Sweden pet export: EU titer test, three-month wait, entry " +
+    "certificate, Jordbruksverket rules and DLD export timeline.",
   h1: "Taking a pet from Thailand to Sweden",
   lede: "Many of Pattaya's Swedish residents eventually head home with a pet. " +
-    "Sweden applies the standard EU entry rules.",
-  sections: [
-    { h: "Entering Sweden", html:
-      EU_ENTRY +
+    "Sweden applies the standard EU entry rules &mdash; plan in quarters, not weeks.",
+  officialExtra:
+    "<p><strong>Swedish / EU sources:</strong> " +
+    "<a href=\"https://jordbruksverket.se/en/animals/keeping-animals/pets/travelling-with-pets\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">Jordbruksverket pet travel</a>; " +
+    "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">EU pet movement</a>. " +
+    "Import mirror: " +
+    "<a href=\"/bring-pet-to-thailand/from-sweden.html\">bringing a pet from Sweden</a>.</p>",
+  sections: euExportSections({
+    routingIntro: "The EU veterinary timeline is usually slower than booking a seat on a Stockholm route.",
+    reqHeading: "What Sweden / the EU requires from Thailand",
+    reqHtml: EU_ENTRY_REQ_LIST +
       "<p>The Swedish Board of Agriculture (Jordbruksverket) oversees pet entry. " +
       "Sweden does not apply the special tapeworm-treatment rule that a few " +
       "countries keep &mdash; but always reconfirm the current requirements with " +
-      "Jordbruksverket before you book.</p>" },
-    { h: "The Thai side and your timeline", html: THAI_SIDE }
-  ],
+      "Jordbruksverket before you book.</p>" + EU_TITER_TIP
+  }),
   faqs: [
     ["How long does moving a pet from Thailand to Sweden take?",
      "<p>Plan for several months if the titer test still has to be done &mdash; the three-month wait after the blood sample is unavoidable. A valid existing titer test makes it much faster.</p>"],
     ["Does Sweden require tapeworm treatment?",
-     "<p>Sweden does not currently apply the special tapeworm-treatment rule. Confirm the current position with Jordbruksverket, as rules change.</p>"]
+     "<p>Sweden does not currently apply the special tapeworm-treatment rule. Confirm the current position with Jordbruksverket, as rules change.</p>"],
+    ["Is the EU pet passport enough to enter Sweden from Thailand?",
+     "<p>No. Coming from Thailand you need an EU third-country entry health certificate endorsed on the Thai side, not just a pet passport issued years ago in Sweden.</p>"],
+    ["Can my pet skip the three-month wait into Sweden?",
+     "<p>Only if a valid rabies titer test is already in place and rabies vaccination has been kept current without a gap.</p>"],
+    ["How does this differ from the EU hub page?",
+     "<p>The veterinary rules are the same EU-wide; this page adds Sweden-specific authority notes. See also <a href=\"/take-pet-out-of-thailand/to-eu.html\">export to the EU</a>.</p>"]
   ]
 }));
 
 /* ---------------- NORWAY ---------------- */
 pages.push(exp({
   slug: "to-norway", crumb: "To Norway",
-  title: "Export a Pet from Thailand to Norway (DLD 2026) | PattayaPets",
-  desc: "Bringing a dog or cat from Thailand to Norway: the rabies titer test, the " +
-    "three-month wait, and the tapeworm treatment for dogs.",
+  title: "Export a Pet from Thailand to Norway (EU-style Titer & DLD 2026) | PattayaPets",
+  desc: "Thailand to Norway pet export: rabies titer test, three-month wait, Mattilsynet " +
+    "entry rules, tapeworm treatment for dogs and DLD export timeline.",
   h1: "Taking a pet from Thailand to Norway",
   lede: "Norway is not in the EU, but it applies the EU pet-travel rules &mdash; " +
     "with one extra requirement for dogs.",
-  sections: [
-    { h: "Entering Norway", html:
-      EU_ENTRY +
+  officialExtra:
+    "<p><strong>Norwegian sources:</strong> " +
+    "<a href=\"https://www.mattilsynet.no/english/animal/import-and-export-of-animals/personal-import-of-animals-into-norway.2210\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">Mattilsynet pet import</a>; " +
+    "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">EU pet movement</a> (Norway applies EU-aligned rules). " +
+    "Import mirror: " +
+    "<a href=\"/bring-pet-to-thailand/from-norway.html\">bringing a pet from Norway</a>.</p>",
+  sections: euExportSections({
+    routingIntro: "Norway follows EU-style third-country rules; the titer test and three-month wait are usually the long pole.",
+    reqHeading: "What Norway requires from Thailand",
+    reqHtml: EU_ENTRY_REQ_LIST +
       "<p>The Norwegian Food Safety Authority (Mattilsynet) oversees pet entry. " +
       "Norway also keeps the <strong>tapeworm (Echinococcus) treatment rule</strong>: " +
       "a dog entering Norway must be treated against tapeworm by a vet within a set " +
-      "window before arrival (commonly 24 to 120 hours).</p>" },
-    { h: "The Thai side and your timeline", html: THAI_SIDE }
-  ],
+      "window before arrival (commonly 24 to 120 hours).</p>" + EU_TITER_TIP,
+    extraFails: "<ul><li><strong>Missing tapeworm treatment for dogs</strong> &mdash; confirm the current window with Mattilsynet before you fly.</li></ul>"
+  }),
   faqs: [
     ["Does my dog need tapeworm treatment to enter Norway?",
      "<p>Yes &mdash; Norway requires a vet-administered tapeworm treatment for dogs within a set window before arrival. Confirm the current window with Mattilsynet.</p>"],
     ["Does Norway being outside the EU change the process?",
-     "<p>Not greatly. Norway applies the EU pet-travel rules, so the titer test, the three-month wait and the health certificate work as for an EU country, plus the tapeworm step for dogs.</p>"]
+     "<p>Not greatly. Norway applies the EU pet-travel rules, so the titer test, the three-month wait and the health certificate work as for an EU country, plus the tapeworm step for dogs.</p>"],
+    ["Is the EU pet passport enough from Thailand?",
+     "<p>No. You need a third-country entry health certificate endorsed on the Thai side.</p>"],
+    ["Can my pet skip the three-month wait?",
+     "<p>Only with a valid pre-existing rabies titer test and current rabies vaccination.</p>"],
+    ["How early should I start?",
+     "<p>Several months ahead if the titer test still has to be done from Pattaya.</p>"]
   ]
 }));
 
 /* ---------------- DENMARK ---------------- */
 pages.push(exp({
   slug: "to-denmark", crumb: "To Denmark",
-  title: "Export a Pet from Thailand to Denmark (DLD 2026) | PattayaPets",
-  desc: "Bringing a dog or cat from Thailand to Denmark: the rabies titer test, the " +
-    "three-month wait and the EU entry health certificate.",
+  title: "Export a Pet from Thailand to Denmark (EU Titer & DLD 2026) | PattayaPets",
+  desc: "Thailand to Denmark pet export: EU titer test, three-month wait, entry " +
+    "certificate, Danish authority rules and DLD export timeline.",
   h1: "Taking a pet from Thailand to Denmark",
   lede: "Denmark applies the standard EU entry rules for a pet arriving from " +
     "Thailand, so plan the timeline around the titer test.",
-  sections: [
-    { h: "Entering Denmark", html:
-      EU_ENTRY +
+  officialExtra:
+    "<p><strong>Danish / EU sources:</strong> " +
+    "<a href=\"https://foedevarestyrelsen.dk/english\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">Danish Veterinary and Food Administration</a>; " +
+    "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">EU pet movement</a>. " +
+    "Import mirror: " +
+    "<a href=\"/bring-pet-to-thailand/from-denmark.html\">bringing a pet from Denmark</a>.</p>",
+  sections: euExportSections({
+    routingIntro: "The EU veterinary timeline is usually slower than booking a Copenhagen connection.",
+    reqHeading: "What Denmark / the EU requires from Thailand",
+    reqHtml: EU_ENTRY_REQ_LIST +
       "<p>The Danish Veterinary and Food Administration oversees pet entry. " +
       "Denmark does not apply the special tapeworm-treatment rule, but confirm the " +
-      "current requirements with the Danish authorities before you book.</p>" },
-    { h: "The Thai side and your timeline", html: THAI_SIDE }
-  ],
+      "current requirements with the Danish authorities before you book.</p>" + EU_TITER_TIP
+  }),
   faqs: [
     ["Is the three-month wait avoidable for Denmark?",
      "<p>Only if a valid rabies titer test is already in place, with the rabies vaccination kept current. Otherwise the three-month wait from the blood-sample date is unavoidable.</p>"],
     ["Who should I check the current rules with?",
-     "<p>The Danish Veterinary and Food Administration for the destination side, and the Thai DLD for the export side. Check both before booking, as rules change.</p>"]
+     "<p>The Danish Veterinary and Food Administration for the destination side, and the Thai DLD for the export side. Check both before booking, as rules change.</p>"],
+    ["Is the EU pet passport enough from Thailand?",
+     "<p>No. You need a third-country entry health certificate endorsed on the Thai side.</p>"],
+    ["How long does the whole move take?",
+     "<p>Plan several months if the titer test still has to be done from Pattaya.</p>"],
+    ["How does this differ from the EU hub page?",
+     "<p>The veterinary rules are the same EU-wide; this page adds Denmark-specific authority notes. See <a href=\"/take-pet-out-of-thailand/to-eu.html\">export to the EU</a>.</p>"]
   ]
 }));
 
 /* ---------------- FINLAND ---------------- */
 pages.push(exp({
   slug: "to-finland", crumb: "To Finland",
-  title: "Export a Pet from Thailand to Finland (DLD 2026) | PattayaPets",
-  desc: "Bringing a dog or cat from Thailand to Finland: the rabies titer test, the " +
-    "three-month wait, and the tapeworm treatment for dogs.",
+  title: "Export a Pet from Thailand to Finland (EU Titer & DLD 2026) | PattayaPets",
+  desc: "Thailand to Finland pet export: EU titer test, three-month wait, Ruokavirasto " +
+    "entry rules, tapeworm treatment for dogs and DLD export timeline.",
   h1: "Taking a pet from Thailand to Finland",
   lede: "Finland applies the EU entry rules, with one extra requirement for dogs " +
     "to plan around.",
-  sections: [
-    { h: "Entering Finland", html:
-      EU_ENTRY +
+  officialExtra:
+    "<p><strong>Finnish / EU sources:</strong> " +
+    "<a href=\"https://www.ruokavirasto.fi/en/themes/animals/travel-with-pet-animals/\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">Ruokavirasto pet travel</a>; " +
+    "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">EU pet movement</a>. " +
+    "Import mirror: " +
+    "<a href=\"/bring-pet-to-thailand/from-finland.html\">bringing a pet from Finland</a>.</p>",
+  sections: euExportSections({
+    routingIntro: "The EU titer test and three-month wait are usually the long pole for Finland entry.",
+    reqHeading: "What Finland / the EU requires from Thailand",
+    reqHtml: EU_ENTRY_REQ_LIST +
       "<p>The Finnish Food Authority (Ruokavirasto) oversees pet entry. Finland " +
       "also keeps the <strong>tapeworm (Echinococcus) treatment rule</strong>: a " +
       "dog entering Finland must be treated against tapeworm by a vet within a set " +
-      "window before arrival (commonly 24 to 120 hours).</p>" },
-    { h: "The Thai side and your timeline", html: THAI_SIDE }
-  ],
+      "window before arrival (commonly 24 to 120 hours).</p>" + EU_TITER_TIP,
+    extraFails: "<ul><li><strong>Missing tapeworm treatment for dogs</strong> &mdash; confirm the current window with Ruokavirasto before you fly.</li></ul>"
+  }),
   faqs: [
     ["Does my dog need tapeworm treatment to enter Finland?",
      "<p>Yes &mdash; Finland requires a vet-administered tapeworm treatment for dogs within a set window before arrival. Confirm the current window with Ruokavirasto.</p>"],
     ["How early should I start?",
-     "<p>Several months ahead if the titer test still has to be done &mdash; the three-month wait is unavoidable. Do the titer test as early as possible.</p>"]
+     "<p>Several months ahead if the titer test still has to be done &mdash; the three-month wait is unavoidable. Do the titer test as early as possible.</p>"],
+    ["Is the EU pet passport enough from Thailand?",
+     "<p>No. You need a third-country entry health certificate endorsed on the Thai side.</p>"],
+    ["Can my pet skip the three-month wait?",
+     "<p>Only with a valid pre-existing rabies titer test and current rabies vaccination.</p>"],
+    ["How does this differ from the EU hub page?",
+     "<p>The veterinary rules are the same EU-wide; this page adds Finland-specific tapeworm notes. See <a href=\"/take-pet-out-of-thailand/to-eu.html\">export to the EU</a>.</p>"]
   ]
 }));
 
 /* ---------------- NETHERLANDS ---------------- */
 pages.push(exp({
   slug: "to-netherlands", crumb: "To the Netherlands",
-  title: "Export a Pet from Thailand to the Netherlands (DLD 2026) | PattayaPets",
-  desc: "Bringing a dog or cat from Thailand to the Netherlands: the rabies titer " +
-    "test, the three-month wait and the EU entry health certificate.",
+  title: "Export a Pet from Thailand to the Netherlands (EU Titer & DLD 2026) | PattayaPets",
+  desc: "Thailand to Netherlands pet export: EU titer test, three-month wait, NVWA " +
+    "entry rules, Amsterdam routing and DLD export timeline.",
   h1: "Taking a pet from Thailand to the Netherlands",
   lede: "The Netherlands applies the standard EU entry rules, and Amsterdam is a " +
     "convenient direct arrival point from Bangkok.",
-  sections: [
-    { h: "Entering the Netherlands", html:
-      EU_ENTRY +
+  officialExtra:
+    "<p><strong>Dutch / EU sources:</strong> " +
+    "<a href=\"https://english.nvwa.nl/topics/importing-animals\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">NVWA importing animals</a>; " +
+    "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">EU pet movement</a>. " +
+    "Import mirror: " +
+    "<a href=\"/bring-pet-to-thailand/from-netherlands.html\">bringing a pet from the Netherlands</a>.</p>",
+  sections: euExportSections({
+    routingIntro: "Direct Bangkok&ndash;Amsterdam routes exist, but the EU titer timeline is usually slower than booking a seat.",
+    reqHeading: "What the Netherlands / the EU requires from Thailand",
+    reqHtml: EU_ENTRY_REQ_LIST +
       "<p>The Netherlands Food and Consumer Product Safety Authority (NVWA) " +
       "oversees pet entry. Amsterdam Schiphol has direct routes from Bangkok, " +
-      "which keeps the journey as short as possible &mdash; easier on the " +
-      "pet.</p>" },
-    { h: "The Thai side and your timeline", html: THAI_SIDE }
-  ],
+      "which keeps the journey as short as possible &mdash; easier on the pet.</p>" + EU_TITER_TIP
+  }),
   faqs: [
     ["Are there direct flights for a pet from Thailand to the Netherlands?",
      "<p>Amsterdam has direct routes from Bangkok; whether a given flight accepts a pet in cabin, as checked baggage or as cargo depends on the airline and aircraft. Confirm with the airline well ahead.</p>"],
     ["Is the three-month wait avoidable?",
-     "<p>Only with a valid rabies titer test already in place and the vaccination kept current. Otherwise plan for the full three-month wait after the blood sample.</p>"]
+     "<p>Only with a valid rabies titer test already in place and the vaccination kept current. Otherwise plan for the full three-month wait after the blood sample.</p>"],
+    ["Is the EU pet passport enough from Thailand?",
+     "<p>No. You need a third-country entry health certificate endorsed on the Thai side.</p>"],
+    ["Who should I check rules with?",
+     "<p>NVWA for the Netherlands side and the Thai DLD for export. Check both before booking.</p>"],
+    ["How does this differ from the EU hub page?",
+     "<p>The veterinary rules are the same EU-wide; this page adds Amsterdam routing notes. See <a href=\"/take-pet-out-of-thailand/to-eu.html\">export to the EU</a>.</p>"]
   ]
 }));
 
 /* ---------------- FRANCE ---------------- */
 pages.push(exp({
   slug: "to-france", crumb: "To France",
-  title: "Export a Pet from Thailand to France (DLD 2026) | PattayaPets",
-  desc: "Bringing a dog or cat from Thailand to France: the rabies titer test, the " +
-    "three-month wait and the EU entry health certificate.",
+  title: "Export a Pet from Thailand to France (EU Titer & DLD 2026) | PattayaPets",
+  desc: "Thailand to France pet export: EU titer test, three-month wait, entry " +
+    "certificate, Paris routing and DLD export timeline.",
   h1: "Taking a pet from Thailand to France",
   lede: "France applies the standard EU entry rules for a pet arriving from " +
     "Thailand, with Paris a common direct arrival point.",
-  sections: [
-    { h: "Entering France", html:
-      EU_ENTRY +
+  officialExtra:
+    "<p><strong>French / EU sources:</strong> " +
+    "<a href=\"https://agriculture.gouv.fr/les-demarches-pour-partir-voyager-avec-son-animal-de-compagnie\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">French Ministry of Agriculture pet travel</a>; " +
+    "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">EU pet movement</a>. " +
+    "Import mirror: " +
+    "<a href=\"/bring-pet-to-thailand/from-france.html\">bringing a pet from France</a>.</p>",
+  sections: euExportSections({
+    routingIntro: "Direct Bangkok&ndash;Paris routes exist, but the EU titer timeline is usually the long pole.",
+    reqHeading: "What France / the EU requires from Thailand",
+    reqHtml: EU_ENTRY_REQ_LIST +
       "<p>The French veterinary authorities oversee pet entry, and the entry " +
       "health certificate is checked on arrival. Paris has direct routes from " +
-      "Bangkok, which shortens the journey.</p>" },
-    { h: "The Thai side and your timeline", html: THAI_SIDE }
-  ],
+      "Bangkok, which shortens the journey.</p>" + EU_TITER_TIP
+  }),
   faqs: [
     ["How long does it take to move a pet from Thailand to France?",
      "<p>Plan for several months if the titer test is still to be done &mdash; the three-month wait is fixed. A valid existing titer test makes it considerably faster.</p>"],
     ["Does the EU pet passport cover entry from Thailand?",
-     "<p>No. Coming from a non-listed country your pet needs an EU third-country entry health certificate. Confirm the current rules with the French authorities.</p>"]
+     "<p>No. Coming from a non-listed country your pet needs an EU third-country entry health certificate. Confirm the current rules with the French authorities.</p>"],
+    ["Can my pet skip the three-month wait?",
+     "<p>Only with a valid pre-existing rabies titer test and current rabies vaccination.</p>"],
+    ["Which Paris airports accept pets from third countries?",
+     "<p>Pets from third countries must enter via designated traveller points of entry. Confirm the current French list before booking.</p>"],
+    ["How does this differ from the EU hub page?",
+     "<p>The veterinary rules are the same EU-wide; this page adds France-specific routing notes. See <a href=\"/take-pet-out-of-thailand/to-eu.html\">export to the EU</a>.</p>"]
   ]
 }));
 
 /* ---------------- IRELAND ---------------- */
 pages.push(exp({
   slug: "to-ireland", crumb: "To Ireland",
-  title: "Export a Pet from Thailand to Ireland (DLD 2026) | PattayaPets",
-  desc: "Bringing a dog or cat from Thailand to Ireland: the rabies titer test, the " +
-    "three-month wait, and the tapeworm treatment for dogs.",
+  title: "Export a Pet from Thailand to Ireland (EU Titer & DLD 2026) | PattayaPets",
+  desc: "Thailand to Ireland pet export: EU titer test, three-month wait, Department of " +
+    "Agriculture rules, tapeworm treatment for dogs and DLD export timeline.",
   h1: "Taking a pet from Thailand to Ireland",
   lede: "Ireland applies the EU entry rules, with one extra requirement for dogs.",
-  sections: [
-    { h: "Entering Ireland", html:
-      EU_ENTRY +
+  officialExtra:
+    "<p><strong>Irish / EU sources:</strong> " +
+    "<a href=\"https://www.gov.ie/en/department-of-agriculture-food-and-the-marine/publications/bringing-pets-to-ireland/\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">Department of Agriculture pet travel</a>; " +
+    "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">EU pet movement</a>. " +
+    "Import mirror: " +
+    "<a href=\"/bring-pet-to-thailand/from-ireland.html\">bringing a pet from Ireland</a>.</p>",
+  sections: euExportSections({
+    routingIntro: "The EU titer test and three-month wait are usually the long pole for Ireland entry.",
+    reqHeading: "What Ireland / the EU requires from Thailand",
+    reqHtml: EU_ENTRY_REQ_LIST +
       "<p>The Department of Agriculture, Food and the Marine oversees pet entry. " +
       "Ireland also keeps the <strong>tapeworm (Echinococcus) treatment rule</strong>: " +
       "a dog entering Ireland must be treated against tapeworm by a vet within a " +
-      "set window before arrival (commonly 24 to 120 hours).</p>" },
-    { h: "The Thai side and your timeline", html: THAI_SIDE }
-  ],
+      "set window before arrival (commonly 24 to 120 hours).</p>" + EU_TITER_TIP,
+    extraFails: "<ul><li><strong>Missing tapeworm treatment for dogs</strong> &mdash; confirm the current window with the Department before you fly.</li></ul>"
+  }),
   faqs: [
     ["Does my dog need tapeworm treatment to enter Ireland?",
      "<p>Yes &mdash; Ireland requires a vet-administered tapeworm treatment for dogs within a set window before arrival. Confirm the current window with the Department of Agriculture, Food and the Marine.</p>"],
     ["Is there a route to avoid the three-month wait?",
-     "<p>Only a valid pre-existing rabies titer test avoids it. If the test still has to be done from Thailand, the three-month wait applies.</p>"]
+     "<p>Only a valid pre-existing rabies titer test avoids it. If the test still has to be done from Thailand, the three-month wait applies.</p>"],
+    ["Is the EU pet passport enough from Thailand?",
+     "<p>No. You need a third-country entry health certificate endorsed on the Thai side.</p>"],
+    ["How early should I start?",
+     "<p>Several months ahead if the titer test still has to be done from Pattaya.</p>"],
+    ["How does this differ from the EU hub page?",
+     "<p>The veterinary rules are the same EU-wide; this page adds Ireland-specific tapeworm notes. See <a href=\"/take-pet-out-of-thailand/to-eu.html\">export to the EU</a>.</p>"]
   ]
 }));
 
 /* ---------------- SWITZERLAND ---------------- */
 pages.push(exp({
   slug: "to-switzerland", crumb: "To Switzerland",
-  title: "Export a Pet from Thailand to Switzerland (DLD 2026) | PattayaPets",
-  desc: "Bringing a dog or cat from Thailand to Switzerland: the rabies titer test, " +
-    "the waiting period and the entry paperwork.",
+  title: "Export a Pet from Thailand to Switzerland (EU-aligned Titer & DLD 2026) | PattayaPets",
+  desc: "Thailand to Switzerland pet export: EU-aligned titer test, waiting period, " +
+    "FSVO entry rules and DLD export timeline.",
   h1: "Taking a pet from Thailand to Switzerland",
   lede: "Switzerland is not in the EU, but it applies closely aligned rules for a " +
-    "pet arriving from Thailand.",
-  sections: [
-    { h: "Entering Switzerland", html:
+    "pet arriving from Thailand &mdash; plan in quarters, not weeks.",
+  officialExtra:
+    "<p><strong>Swiss sources:</strong> " +
+    "<a href=\"https://www.blv.admin.ch/blv/en/home/tiere/reisen-mit-heimtieren.html\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">FSVO travelling with pets</a>; " +
+    "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">EU pet movement</a> (Switzerland applies EU-aligned rules). " +
+    "Import mirror: " +
+    "<a href=\"/bring-pet-to-thailand/from-switzerland.html\">bringing a pet from Switzerland</a>.</p>",
+  sections: euExportSections({
+    routingIntro: "Switzerland applies EU-aligned third-country rules; the titer test and waiting period are usually the long pole.",
+    reqHeading: "What Switzerland requires from Thailand",
+    reqHtml:
       "<p>Switzerland applies EU-aligned rules for pets arriving from outside the " +
-      "low-risk list. In practice that means an ISO microchip, a current rabies " +
-      "vaccination, a <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">" +
-      "rabies titer test</a> from an approved laboratory, and a waiting period " +
-      "before entry, with the appropriate entry paperwork. The Federal Food Safety " +
-      "and Veterinary Office (FSVO) oversees the process.</p>" },
-    { h: "The Thai side and your timeline", html: THAI_SIDE }
-  ],
+      "low-risk list. In practice that means:</p>" +
+      "<ul>" +
+      "<li>ISO microchip before rabies vaccination</li>" +
+      "<li>Current rabies vaccination</li>" +
+      "<li><a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">Rabies titer test</a> from an approved laboratory, blood drawn at least 30 days after vaccination</li>" +
+      "<li>A waiting period before entry (commonly three months from the blood sample for third-country origins &mdash; confirm with FSVO)</li>" +
+      "<li>Appropriate entry paperwork endorsed by the exporting country&rsquo;s competent authority</li>" +
+      "<li>Entry through a designated point where FSVO requires it</li>" +
+      "</ul>" +
+      "<p>The Federal Food Safety and Veterinary Office (FSVO) oversees the process.</p>" + EU_TITER_TIP
+  }),
   faqs: [
     ["Does Switzerland being outside the EU make this easier?",
-     "<p>Not really &mdash; Switzerland runs EU-aligned pet rules, so a titer test and waiting period still apply for a pet from Thailand. Confirm the current detail with the FSVO.</p>"],
+     "<p>Not really &mdash; Switzerland runs EU-aligned pet rules, so a titer test and waiting period still apply for a pet from Thailand. Confirm the current detail with FSVO.</p>"],
     ["What is the single most important step?",
-     "<p>The rabies titer test, done as early as possible. Its waiting period is what makes the timeline long, so it is the thing to get moving first.</p>"]
+     "<p>The rabies titer test, done as early as possible. Its waiting period is what makes the timeline long, so it is the thing to get moving first.</p>"],
+    ["Is the EU pet passport enough from Thailand?",
+     "<p>No. You need entry paperwork for a third-country origin, endorsed on the Thai side.</p>"],
+    ["Can my pet skip the waiting period?",
+     "<p>Only if a valid titer test is already in place and rabies vaccination has been kept current. Confirm validity with FSVO.</p>"],
+    ["How does this differ from exporting to the EU?",
+     "<p>The veterinary framework is closely aligned; this page adds FSVO-specific notes. See also <a href=\"/take-pet-out-of-thailand/to-eu.html\">export to the EU</a>.</p>"]
   ]
 }));
 

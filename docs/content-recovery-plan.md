@@ -60,11 +60,18 @@ This document replaces the old “title/meta batch” queue until Phase 3 is com
 - [x] `/take-pet-out-of-thailand/to-south-africa.html` — VIP timeline, dog quarantine, five blood tests, cargo terminal rules
 - [x] Pet-health cluster date-stamps updated to 31 May 2026
 
-### Import / export corridors (remaining — Batch 83+)
+### Import / export corridors — Batch 83 ✅ EU member states
 
-- [ ] EU member-state clones in `50-import-countries.js` — enrich or consolidate (Tim decision)
+- [x] Import depth (8): Sweden, Norway, Denmark, Finland, Netherlands, France, Switzerland, Ireland — timeline tables, DLD checklist, authority links, 5 FAQs each
+- [x] Export mirror depth (8): same countries — EU titer timeline, DLD export table, tapeworm notes where applicable
+- [x] Shared helpers: `euImportTimeline`, `euExportSections`, `EU_IMPORT_FAILS`, `EU_ENTRY_REQ_LIST`
 
-**EU template pages:** Either enrich with country-specific embassy links + quarantine notes, or consolidate to hub + `noindex` thin clones (Tim decision).
+### Import / export corridors (remaining — Batch 84+)
+
+- [ ] `/bring-pet-to-thailand/from-new-zealand.html` — still lighter than major corridors (NZ return complexity already noted; optional deepen)
+- [ ] `/bring-pet-to-thailand/from-russia.html` — thin vs Germany/UK standard
+
+**EU template pages:** ✅ Enriched in Batch 83 (Tim chose enrich over consolidate).
 
 ### Dog-friendly (remaining)
 

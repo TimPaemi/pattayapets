@@ -43,6 +43,7 @@ Not deployed. Last updated: 30 May 2026.
 | **80** | **Japan + Singapore corridors:** full import/export depth; AVS URL fix |
 | **81** | **India + Philippines + China corridors:** full import/export depth; generic DLD export table fix |
 | **82** | **South Africa corridor:** full import/export depth; pet-health date-stamps |
+| **83** | **EU member-state corridors:** Sweden–Ireland import + export depth (16 pages); shared EU timeline helpers |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 
