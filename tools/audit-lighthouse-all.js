@@ -55,7 +55,9 @@ const URLS = [
   { label: "Relocation hub", path: "/pet-relocation/" }
 ];
 
-function runLh(url, outFile) {
+function runLh(url, outFile, attempt) {
+  attempt = attempt || 1;
+  if (attempt > 1 && fs.existsSync(outFile)) fs.unlinkSync(outFile);
   var r = spawnSync(
     process.platform === "win32" ? "npx.cmd" : "npx",
     [
@@ -71,7 +73,9 @@ function runLh(url, outFile) {
     ],
     { stdio: "pipe", shell: process.platform === "win32", encoding: "utf8" }
   );
-  return r.status === 0 && fs.existsSync(outFile);
+  if (r.status === 0 && fs.existsSync(outFile)) return true;
+  if (attempt < 3) return runLh(url, outFile, attempt + 1);
+  return false;
 }
 
 if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
