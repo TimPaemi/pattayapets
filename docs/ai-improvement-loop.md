@@ -55,6 +55,7 @@ Not deployed. Last updated: 30 May 2026.
 | **92** | **Full audit fixes:** hyphenated network URLs, dead shelter/grooming links, `_headers` font preloads, privacy analytics accuracy |
 | **93** | **Mobile search shortcut** in header + `autocomplete=search`; `npm run deploy` = build:all + IndexNow |
 | **94** | **Agency-depth emergency + adoption:** 24-hour vets, first-aid, heatstroke, poisoning, snakes, ticks, street dogs &amp; choking expanded; all 7 shelter org pages + fostering/how-to-help; `audit:content:richness` gate |
+| **95** | **Owning essentials depth:** cost, walks, registration &amp; pet-food guides expanded to richness bar |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 
