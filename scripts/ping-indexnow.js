@@ -49,7 +49,8 @@ function post(endpoint, body) {
     const label = `${i + 1}-${Math.min(i + BATCH, urlList.length)}`;
     for (const ep of endpoints) {
       const res = await post(ep, { ...payloadBase, urlList: batch });
-      console.log(`${ep} batch ${label} → HTTP ${res.status}`);
+      const detail = res.status >= 400 && res.body ? " " + res.body.trim().slice(0, 120) : "";
+      console.log(`${ep} batch ${label} → HTTP ${res.status}${detail}`);
     }
   }
   console.log(`IndexNow: submitted ${urlList.length} URLs`);

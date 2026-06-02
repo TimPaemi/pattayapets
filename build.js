@@ -285,7 +285,7 @@ async function build() {
   var indexNowKeyPath = path.join(SRC, "static", "pp-indexnow-key.txt");
   if (fs.existsSync(indexNowKeyPath)) {
     var indexNowKey = fs.readFileSync(indexNowKeyPath, "utf8").trim();
-    fs.writeFileSync(path.join(DIST, indexNowKey + ".txt"), indexNowKey + "\n");
+    fs.writeFileSync(path.join(DIST, indexNowKey + ".txt"), indexNowKey);
   }
 
   const indexable = pages.filter(function (p) { return !p.noindex; });
