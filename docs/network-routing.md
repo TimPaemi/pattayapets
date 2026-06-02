@@ -22,8 +22,8 @@ Last updated: 30 May 2026.
 | Pet emergency / vet | pattayapets.com | `/pet-emergency/24-hour-vets-pattaya.html` |
 | Human medical (not pets) | pattaya-medical.com | — (do not conflate) |
 | No car, vet transport | pattaya-vehicle-rentals.com | `/owning-a-pet-in-pattaya/getting-to-the-vet.html` |
-| School + family + pet | pattayaschoolguide.com | `/start-here.html` |
-| Gym + dog walks | pattayagym.com | `/owning-a-pet-in-pattaya/where-to-walk-your-dog.html` |
+| School + family + pet | pattaya-school-guide.com | `/start-here.html` |
+| Gym + dog walks | pattaya-gym.com | `/owning-a-pet-in-pattaya/where-to-walk-your-dog.html` |
 
 ---
 
@@ -35,12 +35,12 @@ Last updated: 30 May 2026.
 | `/start-here.html` (§3) | pattayavisahelp.com | Pattaya Visa Help |
 | `/dog-friendly-pattaya/` | pattaya-restaurant-guide.com | Pattaya Restaurant Guide |
 | `/owning-a-pet-in-pattaya/getting-to-the-vet.html` | pattaya-vehicle-rentals.com | Pattaya Vehicle Rentals |
-| `/owning-a-pet-in-pattaya/where-to-walk-your-dog.html` | pattayagym.com | Pattaya Gym |
-| `/start-here.html` (§3) | pattayaschoolguide.com | Pattaya School Guide (families) |
+| `/owning-a-pet-in-pattaya/where-to-walk-your-dog.html` | pattaya-gym.com | Pattaya Gym |
+| `/start-here.html` (§3) | pattaya-school-guide.com | Pattaya School Guide (families) |
 | `/dog-friendly-pattaya/cafes.html` | pattaya-coffee.com | Pattaya Coffee |
 | `/dog-friendly-pattaya/restaurants.html` | pattaya-restaurant-guide.com | Pattaya Restaurant Guide |
 | `/pet-emergency/` | pattaya-medical.com | Pattaya Medical (human care — disambiguation) |
-| `/owning-a-pet-in-pattaya/pet-friendly-housing.html` | pattayaschoolguide.com | Pattaya School Guide (families) |
+| `/owning-a-pet-in-pattaya/pet-friendly-housing.html` | pattaya-school-guide.com | Pattaya School Guide (families) |
 | `/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html` | pattaya-vehicle-rentals.com | Pattaya Vehicle Rentals |
 | `/about.html` | pattaya-authority.com/work/pattaya-pets | Pattaya Authority case study |
 | Footer (all pages) | Full `NETWORK` in `layout.js` | Locked |

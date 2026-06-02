@@ -86,7 +86,7 @@ pages.push({
     "For visa and relocation timing alongside the move, see " +
     '<a href="https://pattayavisahelp.com/" target="_blank" rel="noopener noreferrer">' +
     "Pattaya Visa Help</a>. Relocating with children? See " +
-    '<a href="https://pattayaschoolguide.com/" target="_blank" rel="noopener noreferrer">' +
+    '<a href="https://pattaya-school-guide.com/" target="_blank" rel="noopener noreferrer">' +
     "Pattaya School Guide</a> for schools and family planning &mdash; then use " +
     "this site for the pet side of the move.</p>" +
     "<h2>4. Thinking of adopting?</h2>" +
@@ -357,25 +357,24 @@ pages.push(prosePage({
 pages.push(prosePage({
   path: "/privacy.html",
   title: "Privacy Notice | PattayaPets Analytics & Data",
-  desc: "What PattayaPets collects — cookieless Cloudflare analytics, anonymised GA4, and email when you contact us. No ads, no accounts, no data sales.",
+  desc: "What PattayaPets collects: anonymised GA4, optional Cloudflare analytics, and email when you contact us. No ads, accounts, or data sales.",
   crumb: "Privacy",
   eyebrow: "Your privacy",
   h1: "Privacy notice",
-  updated: "2026-05-30",
-  updatedLabel: "30 May 2026",
+  updated: "2026-06-01",
+  updatedLabel: "1 June 2026",
   body:
     "<p>PattayaPets is a static website. We do not run user accounts, we do not ask " +
     "you to log in, and we do not sell or share personal data. This notice explains " +
     "the little we do collect.</p>" +
     "<h2>Analytics</h2>" +
-    "<p>We use two privacy-minded analytics tools to understand which pages are " +
-    "useful:</p>" +
+    "<p>We use privacy-minded analytics to understand which pages are useful:</p>" +
     "<ul>" +
-    "<li><strong>Cloudflare Web Analytics</strong> &mdash; a cookieless tool that " +
-    "measures page views without tracking individuals across sites.</li>" +
     "<li><strong>Google Analytics 4</strong> &mdash; configured with IP " +
-    "anonymisation. GA4 sets first-party cookies to count visits. We do not use " +
+    "anonymisation. GA4 may set first-party cookies to count visits. We do not use " +
     "Google Analytics for advertising and we have not enabled ad features.</li>" +
+    "<li><strong>Cloudflare Web Analytics</strong> &mdash; when enabled, a cookieless " +
+    "tool that measures page views without tracking individuals across sites.</li>" +
     "</ul>" +
     "<p>We do not display advertising and we do not use advertising or " +
     "cross-site tracking cookies. You can block cookies in your browser settings, " +

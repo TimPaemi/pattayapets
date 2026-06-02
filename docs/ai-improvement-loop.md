@@ -52,6 +52,7 @@ Not deployed. Last updated: 30 May 2026.
 | **89** | **Second FAQ pass:** remaining 37 guides at minimum threshold expanded to ≥5 FAQs; import/emergency/species/owning/health clusters |
 | **90** | **Audit round:** pet insurance guide depth + standalone guide in `audit:content`; full audit clean |
 | **91** | **Lighthouse all-templates gate:** `audit:lighthouse:all` (33 URLs); font CLS fix (`font-display:optional`, Hanken 500/700 in critical); search a11y + CLS |
+| **92** | **Full audit fixes:** hyphenated network URLs, dead shelter/grooming links, `_headers` font preloads, privacy analytics accuracy |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 

@@ -223,7 +223,7 @@ const SHELTERS = [
     pageTitle: "Malee's Animal Shelter | Pattaya & Chanthaburi Dog & Cat Rescue",
     crumb: "Malee's Animal Shelter",
     type: "Dog & cat shelter",
-    website: "https://www.chanthaburishelter.com/",
+    website: "https://maleeanimalshelter.wordpress.com/",
     address: "Chanthaburi province (confirm exact location via the website before visiting)",
     lede: "Malee&rsquo;s Animal Shelter rescues dogs and cats across the Pattaya " +
       "and Chanthaburi area, caring for several hundred animals.",

@@ -194,7 +194,7 @@ const BUSINESSES = [
     category: "groomers", areas: ["central-pattaya"], type: "Grooming salon & pet shop", c24: false,
     address: "209/17 Soi Khao Talo, Pattaya City, Bang Lamung, Chon Buri 20150",
     phone: "096 293 9454", tel: "+66962939454",
-    website: "https://www.pattayagrooming.com/", hours: null,
+    website: "https://pattayagrooming.wordpress.com/", hours: null,
     languages: "Thai and English",
     services: ["Dog & cat grooming", "Bath & blow-dry", "Breed clips", "Nail trims", "Pet supplies"],
     summary: "A combined grooming salon and pet shop serving central Pattaya, handling " +

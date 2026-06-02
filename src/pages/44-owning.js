@@ -227,7 +227,7 @@ pages.push(own({
       "pet is central to your life here, widening your search to houses is " +
       "usually the simplest fix. Families relocating with children should also " +
       "see " +
-      '<a href="https://pattayaschoolguide.com/" target="_blank" rel="noopener noreferrer">' +
+      '<a href="https://pattaya-school-guide.com/" target="_blank" rel="noopener noreferrer">' +
       "Pattaya School Guide</a> for schools near your chosen area. Browse by " +
       "<a href=\"/directory.html\">neighbourhood</a> in the directory.</p>" },
     { h: "What to confirm before you sign", html:
@@ -292,7 +292,7 @@ pages.push(own({
       "<a href=\"/dog-friendly-pattaya/parks.html\">parks and green space</a> " +
       "in the dog-friendly cluster. Many expats pair a dawn walk with morning " +
       "exercise &mdash; if you want gym facilities after the dog is home, see " +
-      '<a href="https://pattayagym.com/" target="_blank" rel="noopener noreferrer">' +
+      '<a href="https://pattaya-gym.com/" target="_blank" rel="noopener noreferrer">' +
       "Pattaya Gym</a>.</p>" },
     { h: "Walk safely", html:
       "<p>Keep your dog leashed, carry water, and learn the routes around you. " +
