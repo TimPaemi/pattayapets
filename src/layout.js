@@ -70,7 +70,7 @@ function headerSearch() {
   return (
     '<form class="header-search" action="/search.html" method="get" role="search">' +
     '<label class="visually-hidden" for="header-q">Search PattayaPets</label>' +
-    '<input type="search" name="q" id="header-q" autocomplete="off" ' +
+    '<input type="search" name="q" id="header-q" autocomplete="search" ' +
     'placeholder="Search the site" maxlength="80">' +
     '<button type="submit" aria-label="Search">' +
     '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" ' +
@@ -78,6 +78,10 @@ function headerSearch() {
     "</button></form>"
   );
 }
+
+const SEARCH_ICON =
+  '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" ' +
+  'stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>';
 
 function header() {
   return (
@@ -90,9 +94,13 @@ function header() {
     '<header class="site-header"><div class="header-row">' +
     brandLink("") +
     headerSearch() +
+    '<div class="header-mobile-actions">' +
+    '<a class="header-search-link" href="/search.html" aria-label="Search PattayaPets">' +
+    SEARCH_ICON + "</a>" +
     '<button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">' +
     '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" ' +
     'stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>Menu</button>' +
+    "</div>" +
     '<nav class="nav" id="primary-nav" aria-label="Primary">' +
     NAV.map(function (n) { return '<a href="' + n.href + '">' + esc(n.name) + "</a>"; }).join("") +
     "</nav></div></header>"

@@ -73,6 +73,9 @@
       document.querySelectorAll('#primary-nav a[href="/search.html"]').forEach(function (a) {
         a.setAttribute("aria-current", "page");
       });
+      document.querySelectorAll(".header-search-link").forEach(function (a) {
+        a.setAttribute("aria-current", "page");
+      });
     }
   } catch (e) {}
 

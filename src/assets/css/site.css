@@ -244,7 +244,7 @@ display:inline-flex;align-items:center;gap:7px}
 [hidden]{display:none!important}
 
 @media print{
-.topbar,.site-header,.site-footer,.nav-toggle,.btn-row,.sidebar{display:none}
+.topbar,.site-header,.site-footer,.nav-toggle,.header-mobile-actions,.btn-row,.sidebar{display:none}
 .hero{background:#fff;padding:20px 0}
 .hero h1,.hero .lede{color:#000}
 body{background:#fff;font-size:12pt;color:#000}
