@@ -18,6 +18,7 @@ const DIST = process.env.PP_DIST ? path.resolve(process.env.PP_DIST) : path.join
 const ASSET_EXT = [".woff2", ".svg", ".png", ".webp", ".jpg", ".jpeg", ".ico", ".gif"];
 const STATIC_FILES = [
   "_headers", "_redirects", "robots.txt", "manifest.webmanifest",
+  "pp-indexnow-key.txt",
   ".well-known/security.txt"
 ];
 const SECTION_LABELS = {
