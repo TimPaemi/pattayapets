@@ -58,6 +58,7 @@ Not deployed. Last updated: 30 May 2026.
 | **95** | **Owning essentials depth:** cost, walks, registration &amp; pet-food guides expanded to richness bar |
 | **96** | **Full richness pass (0 below bar):** shared `richness-blocks.js` wired into import/export/dog-friendly wrappers; owning, health, species &amp; insurance expanded — **119/119 guides pass** |
 | **97** | **IndexNow key deploy fix:** copy `pp-indexnow-key.txt` to dist static allowlist |
+| **98** | **IndexNow option-1 key file:** emit `{key}.txt` at dist root; ping without custom keyLocation |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 
