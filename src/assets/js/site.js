@@ -267,6 +267,66 @@
     }, { passive: true });
   });
 
+  /* Print checklist button */
+  document.querySelectorAll(".print-page-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () { window.print(); });
+  });
+
+  /* Footer panels: collapsed by default on narrow screens */
+  (function () {
+    var panels = document.querySelectorAll(".footer-panel");
+    if (!panels.length) return;
+    var mq = window.matchMedia("(max-width: 760px)");
+    function sync() {
+      panels.forEach(function (p) {
+        if (mq.matches) p.removeAttribute("open");
+        else p.setAttribute("open", "");
+      });
+    }
+    sync();
+    if (mq.addEventListener) mq.addEventListener("change", sync);
+    else mq.addListener(sync);
+  })();
+
+  /* Directory hub listing filters */
+  (function () {
+    var list = document.getElementById("dir-listings");
+    if (!list) return;
+    var cards = list.querySelectorAll(".biz-card[data-dir-tags]");
+    var status = document.getElementById("dir-filter-status");
+    var filters = document.querySelectorAll(".dir-filter[data-dir-filter]");
+    if (!filters.length || !cards.length) return;
+    function apply(filter) {
+      var shown = 0;
+      cards.forEach(function (card) {
+        var tags = card.getAttribute("data-dir-tags") || "";
+        var tagList = tags.split(/\s+/);
+        var ok = filter === "all" ||
+          (filter === "24h" && tagList.indexOf("24h") !== -1) ||
+          (filter.indexOf("area:") === 0 && tagList.indexOf(filter) !== -1);
+        card.hidden = !ok;
+        if (ok) shown += 1;
+      });
+      filters.forEach(function (btn) {
+        btn.classList.toggle("is-active", btn.getAttribute("data-dir-filter") === filter);
+      });
+      if (status) {
+        if (shown === 0) {
+          status.hidden = false;
+          status.textContent = "No listings match this filter. Try another area or view all.";
+        } else {
+          status.hidden = true;
+          status.textContent = "";
+        }
+      }
+    }
+    filters.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        apply(btn.getAttribute("data-dir-filter") || "all");
+      });
+    });
+  })();
+
   /* On-this-page TOC: highlight current section while scrolling */
   (function () {
     var tocLinks = document.querySelectorAll(".sidebar .toc a[href^='#']");
@@ -285,7 +345,16 @@
       active = link;
       if (active) active.setAttribute("aria-current", "location");
     }
-    if ("IntersectionObserver" in window) {
+    function pickByScroll() {
+      var y = window.scrollY + 110;
+      var current = headings[0];
+      headings.forEach(function (h) {
+        if (h.el.offsetTop <= y) current = h;
+      });
+      setActive(current.link);
+    }
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!reduceMotion && "IntersectionObserver" in window) {
       var obs = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
@@ -294,6 +363,9 @@
         });
       }, { rootMargin: "-20% 0px -65% 0px", threshold: 0 });
       headings.forEach(function (h) { obs.observe(h.el); });
+    } else {
+      window.addEventListener("scroll", pickByScroll, { passive: true });
+      pickByScroll();
     }
   })();
 })();

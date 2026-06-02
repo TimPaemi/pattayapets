@@ -415,9 +415,41 @@ function contactRows(b) {
   return rows;
 }
 
+function bizDirTags(b) {
+  var tags = [];
+  if (b.c24) tags.push("24h");
+  if (b.areas.length) {
+    b.areas.forEach(function (a) { tags.push("area:" + a); });
+  } else {
+    tags.push("nationwide");
+  }
+  return tags.join(" ");
+}
+
+function dirFiltersBar(list, areaKeys) {
+  var has24 = list.some(function (b) { return b.c24; });
+  if (!has24 && areaKeys.length < 2) return "";
+  var chips =
+    '<button type="button" class="chip chip-link dir-filter is-active" data-dir-filter="all">All (' +
+    list.length + ")</button>";
+  if (has24) {
+    var n24 = list.filter(function (b) { return b.c24; }).length;
+    chips += '<button type="button" class="chip chip-link dir-filter" data-dir-filter="24h">24-hour (' +
+      n24 + ")</button>";
+  }
+  areaKeys.forEach(function (ak) {
+    var n = list.filter(function (b) { return b.areas.indexOf(ak) !== -1; }).length;
+    if (!n) return;
+    chips += '<button type="button" class="chip chip-link dir-filter" data-dir-filter="area:' + ak + '">' +
+      esc(AREAS[ak].name) + " (" + n + ")</button>";
+  });
+  return '<div class="dir-filters" role="group" aria-label="Filter listings">' + chips + "</div>" +
+    '<p class="dir-filter-status notice" id="dir-filter-status" hidden></p>';
+}
+
 function bizCard(b) {
   var areas = b.areas.length ? b.areas.map(areaName).join(", ") : "Serves all Thailand";
-  return '<article class="biz-card"><div class="biz-top">' +
+  return '<article class="biz-card" data-dir-tags="' + esc(bizDirTags(b)) + '"><div class="biz-top">' +
     "<div><h3><a href=\"" + bizUrl(b) + "\">" + esc(b.name) + "</a></h3>" +
     '<p class="biz-sub">' + esc(b.type) + " &middot; " + esc(areas) + "</p></div>" +
     (b.c24 ? '<span class="badge-24h">24 hr</span>' : "") +
@@ -614,7 +646,8 @@ Object.keys(CATEGORIES).forEach(function (key) {
       (list.length === 1 ? cat.one : cat.one + "s") + "</h2>" +
       "<p>Every listing is a verified facts page. Verdicts follow an anonymous " +
       "visit.</p></div>" +
-      '<div class="grid grid-2">' + list.map(bizCard).join("") + "</div>";
+      dirFiltersBar(list, areaKeys) +
+      '<div class="grid grid-2 dir-listings" id="dir-listings">' + list.map(bizCard).join("") + "</div>";
     if (areaKeys.length) {
       body += '<div class="section-head" style="margin-top:2rem" id="area"><h2>Browse by area</h2></div>' +
         '<div class="chips">' + areaKeys.map(function (ak) {

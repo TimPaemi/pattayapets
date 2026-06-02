@@ -23,10 +23,13 @@ function slugifyHeading(s) {
   return stripTags(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "section";
 }
 
-function tocSidebar(toc) {
+function tocSidebar(toc, hasFaqs) {
   if (!toc || toc.length < 3) return "";
+  var quick = hasFaqs
+    ? '<p class="toc-quick"><a href="#faq">Jump to FAQ &darr;</a></p>'
+    : "";
   return '<aside class="sidebar"><div class="card">' +
-    '<div class="ch">On this page</div>' +
+    '<div class="ch">On this page</div>' + quick +
     '<nav aria-label="On this page"><ul class="toc">' +
     toc.map(function (t) {
       return '<li><a href="#' + t.id + '">' + t.label + "</a></li>";
@@ -117,10 +120,19 @@ function article(o) {
   var hasFaqs = o.faqs && o.faqs.length;
   if (hasFaqs) toc.push({ id: "faq", label: "Frequently asked" });
 
+  var isChecklist = /\/checklist\.html$/.test(o.path);
   let prose =
     '<p class="eyebrow">' + o.eyebrow + "</p><h1>" + o.h1 + "</h1>" +
     '<p class="lede">' + o.lede + "</p>" +
     '<p class="updated">Last updated ' + (o.updatedLabel || DEFAULT_UPDATED_LABEL) + "</p>";
+  if (isChecklist) {
+    prose += '<div class="guide-actions btn-row">' +
+      '<button type="button" class="btn btn-ghost print-page-btn">' +
+      '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+      'stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9V2h12v7"/>' +
+      '<path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>' +
+      '<path d="M6 14h12v8H6z"/></svg>Print checklist</button></div>';
+  }
   if (o.verify) {
     prose += '<div class="callout callout-tip"><div class="ch">Rules change — verify before you act</div>' +
       "<p>" + o.verify + "</p></div>";
@@ -139,7 +151,7 @@ function article(o) {
   var useToc = toc.length >= 3;
   var mainCol = '<div class="prose">' + prose + "</div>";
   var grid = useToc
-    ? '<div class="page-grid">' + mainCol + tocSidebar(toc) + "</div>"
+    ? '<div class="page-grid">' + mainCol + tocSidebar(toc, hasFaqs) + "</div>"
     : mainCol;
 
   let body = '<section class="section"><div class="container">' + grid;

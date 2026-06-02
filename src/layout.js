@@ -117,7 +117,8 @@ function footer() {
     '<p class="network-strapline">' + esc(NETWORK_SLOGAN) + "</p>" +
     "<p>An independent editorial directory and guide for pet owners in Pattaya. " +
     "Reviewed honestly through anonymous visits. No paid placements, ever.</p></div>" +
-    '<div><div class="ch">The site</div><ul class="footer-links">' +
+    '<details class="footer-panel" open><summary class="footer-panel__title">The site</summary>' +
+    '<div class="footer-panel__body"><ul class="footer-links">' +
     '<li><a href="/directory.html">Business directory</a></li>' +
     '<li><a href="/guides.html">Guides &amp; resources</a></li>' +
     '<li><a href="/start-here.html">Start here</a></li>' +
@@ -127,8 +128,9 @@ function footer() {
     '<li><a href="/standards.html">Editorial standards</a></li>' +
     '<li><a href="/corrections.html">Corrections</a></li>' +
     '<li><a href="/contact.html">Contact</a></li>' +
-    '<li><a href="/sitemap.html">Sitemap</a></li></ul></div>' +
-    '<div><div class="ch">Pet owner essentials</div><ul class="footer-links">' +
+    '<li><a href="/sitemap.html">Sitemap</a></li></ul></div></details>' +
+    '<details class="footer-panel" open><summary class="footer-panel__title">Pet owner essentials</summary>' +
+    '<div class="footer-panel__body"><ul class="footer-links">' +
     '<li><a href="/vets/">Vets &amp; animal hospitals</a></li>' +
     '<li><a href="/groomers/">Pet groomers</a></li>' +
     '<li><a href="/pet-shops/">Pet shops</a></li>' +
@@ -146,7 +148,7 @@ function footer() {
     '<li><a href="/pet-health-pattaya/">Pet health in Pattaya</a></li>' +
     '<li><a href="/dog-friendly-pattaya/">Dog-friendly Pattaya</a></li>' +
     '<li><a href="/adopt-a-pet-pattaya/">Adopt a pet</a></li>' +
-    '<li><a href="/pet-insurance-thailand.html">Pet insurance</a></li></ul></div></div>' +
+    '<li><a href="/pet-insurance-thailand.html">Pet insurance</a></li></ul></div></details></div>' +
     '<div class="network"><p class="network-label">The Pattaya Authority network</p>' +
     '<div class="network-links">' +
     NETWORK.map(function (s) {
