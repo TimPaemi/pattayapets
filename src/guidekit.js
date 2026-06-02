@@ -151,7 +151,7 @@ function article(o) {
   var useToc = toc.length >= 3;
   var mainCol = '<div class="prose">' + prose + "</div>";
   var grid = useToc
-    ? '<div class="page-grid">' + mainCol + tocSidebar(toc, hasFaqs) + "</div>"
+    ? '<div class="page-grid">' + tocSidebar(toc, hasFaqs) + mainCol + "</div>"
     : mainCol;
 
   let body = '<section class="section"><div class="container">' + grid;

@@ -279,8 +279,8 @@
     var mq = window.matchMedia("(max-width: 760px)");
     function sync() {
       panels.forEach(function (p) {
-        if (mq.matches) p.removeAttribute("open");
-        else p.setAttribute("open", "");
+        if (!mq.matches) p.setAttribute("open", "");
+        else p.removeAttribute("open");
       });
     }
     sync();

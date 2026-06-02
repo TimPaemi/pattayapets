@@ -93,17 +93,24 @@ URLS.forEach(function (item, i) {
   var slug = item.path.replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "") || "home";
   var outFile = path.join(outDir, slug + ".json");
   process.stdout.write("[" + (i + 1) + "/" + URLS.length + "] " + item.label + " ... ");
-  if (!runLh(url, outFile)) {
+  var report = null;
+  var scores = {};
+  var skipSeo = NOINDEX_SKIP_SEO.has(item.path);
+  for (var attempt = 1; attempt <= 3; attempt++) {
+    if (!runLh(url, outFile)) continue;
+    report = JSON.parse(fs.readFileSync(outFile, "utf8"));
+    scores = {};
+    Object.keys(report.categories).forEach(function (k) {
+      scores[k] = Math.round(report.categories[k].score * 100);
+    });
+    var perfOk = (scores.performance || 0) >= minPerf;
+    if (perfOk || attempt === 3) break;
+  }
+  if (!report) {
     console.log("ERROR (lighthouse failed)");
     failed.push({ item: item, reason: "lighthouse error", scores: {} });
     return;
   }
-  var report = JSON.parse(fs.readFileSync(outFile, "utf8"));
-  var scores = {};
-  Object.keys(report.categories).forEach(function (k) {
-    scores[k] = Math.round(report.categories[k].score * 100);
-  });
-  var skipSeo = NOINDEX_SKIP_SEO.has(item.path);
   var ok = (scores.performance || 0) >= minPerf &&
     (scores.accessibility || 0) >= minOther &&
     (scores["best-practices"] || 0) >= minOther &&

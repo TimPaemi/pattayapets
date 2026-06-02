@@ -117,7 +117,7 @@ function footer() {
     '<p class="network-strapline">' + esc(NETWORK_SLOGAN) + "</p>" +
     "<p>An independent editorial directory and guide for pet owners in Pattaya. " +
     "Reviewed honestly through anonymous visits. No paid placements, ever.</p></div>" +
-    '<details class="footer-panel" open><summary class="footer-panel__title">The site</summary>' +
+    '<details class="footer-panel"><summary class="footer-panel__title">The site</summary>' +
     '<div class="footer-panel__body"><ul class="footer-links">' +
     '<li><a href="/directory.html">Business directory</a></li>' +
     '<li><a href="/guides.html">Guides &amp; resources</a></li>' +
@@ -129,7 +129,7 @@ function footer() {
     '<li><a href="/corrections.html">Corrections</a></li>' +
     '<li><a href="/contact.html">Contact</a></li>' +
     '<li><a href="/sitemap.html">Sitemap</a></li></ul></div></details>' +
-    '<details class="footer-panel" open><summary class="footer-panel__title">Pet owner essentials</summary>' +
+    '<details class="footer-panel"><summary class="footer-panel__title">Pet owner essentials</summary>' +
     '<div class="footer-panel__body"><ul class="footer-links">' +
     '<li><a href="/vets/">Vets &amp; animal hospitals</a></li>' +
     '<li><a href="/groomers/">Pet groomers</a></li>' +

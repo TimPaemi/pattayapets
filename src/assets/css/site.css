@@ -167,7 +167,9 @@ line-height:1;flex:none}
 .faq .faq-body{padding:16px 21px 4px}
 .faq .faq-body p:last-child{margin-bottom:14px}
 
-.page-grid{display:grid;grid-template-columns:1fr 290px;gap:50px;align-items:start}
+.page-grid{display:grid;grid-template-columns:1fr;gap:24px;align-items:start}
+.page-grid .prose{order:2;min-width:0}
+.page-grid .sidebar{order:1;position:static}
 .sidebar{position:sticky;top:96px}
 .sidebar .card{padding:21px 23px;box-shadow:var(--sh-sm)}
 .sidebar .ch{margin:0 0 11px;color:var(--forest)}
@@ -202,15 +204,17 @@ text-transform:uppercase;color:#fff;margin:0;padding:16px 0;cursor:pointer;list-
 .footer-panel__body{display:block!important;padding:0}
 .footer-panel__body .footer-links{margin-top:0}
 }
-@media(max-width:900px){
-.page-grid{grid-template-columns:1fr;gap:24px}
-.page-grid .sidebar{order:-1;position:static}
 .page-grid .sidebar .toc{display:flex;flex-wrap:wrap;gap:7px}
 .page-grid .sidebar .toc li{margin:0;flex:0 1 auto}
 .page-grid .sidebar .toc a{padding:7px 12px;font-size:.84rem;background:var(--mist);border:1px solid var(--border-soft)}
-.sidebar{position:static}
+@media(min-width:901px){
+.page-grid{grid-template-columns:1fr 290px;gap:50px}
+.page-grid .prose{order:1}
+.page-grid .sidebar{order:2;position:sticky;top:96px}
+.page-grid .sidebar .toc{display:block}
+.page-grid .sidebar .toc li{margin:.1rem 0;flex:none}
+.page-grid .sidebar .toc a{padding:7px 11px;font-size:.93rem;background:transparent;border:0}
 }
-@media(min-width:901px){.sidebar{position:sticky;top:96px}}
 
 .related{margin-top:3.2rem;padding-top:2.2rem;border-top:1px solid var(--border)}
 .related h2{font-size:1.5rem;margin-bottom:1.4rem}

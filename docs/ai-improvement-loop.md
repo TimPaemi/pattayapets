@@ -62,6 +62,7 @@ Not deployed. Last updated: 30 May 2026.
 | **99** | **Lighthouse retry:** 3-attempt retry on spawn failures (Windows headless flake on first URLs) |
 | **100** | **UX pass:** guide on-this-page TOC + mobile jump chips, back-to-top, `/` search shortcut, table scroll hint, print checklists, focus/safe-area polish |
 | **101** | **UX pass #2:** collapsible mobile footer, print checklist button, jump-to-FAQ, directory area/24h filters, reduced-motion TOC fallback |
+| **102** | **CLS fix:** TOC sidebar DOM order + critical page-grid styles; footer panels closed by default (no JS collapse shift); LH perf retry |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 
