@@ -19,6 +19,21 @@ function stripTags(s) {
     .replace(/&amp;/g, "&").replace(/&nbsp;/g, " ").trim();
 }
 
+function slugifyHeading(s) {
+  return stripTags(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "section";
+}
+
+function tocSidebar(toc) {
+  if (!toc || toc.length < 3) return "";
+  return '<aside class="sidebar"><div class="card">' +
+    '<div class="ch">On this page</div>' +
+    '<nav aria-label="On this page"><ul class="toc">' +
+    toc.map(function (t) {
+      return '<li><a href="#' + t.id + '">' + t.label + "</a></li>";
+    }).join("") +
+    "</ul></nav></div></aside>";
+}
+
 function faqBlock(faqs) {
   return faqs.map(function (f) {
     return '<details class="faq"><summary>' + f[0] + "</summary>" +
@@ -84,6 +99,24 @@ function hubCollectionSchema(o) {
         related:[{name,path,desc}] } */
 function article(o) {
   const url = SITE + o.path;
+  var sections = o.sections || [];
+  var toc = [];
+  var usedIds = {};
+  var headingIds = [];
+  sections.forEach(function (s) {
+    if (!s.h) {
+      headingIds.push(null);
+      return;
+    }
+    var id = slugifyHeading(s.h);
+    while (usedIds[id]) id = id + "-2";
+    usedIds[id] = true;
+    headingIds.push(id);
+    toc.push({ id: id, label: stripTags(s.h) });
+  });
+  var hasFaqs = o.faqs && o.faqs.length;
+  if (hasFaqs) toc.push({ id: "faq", label: "Frequently asked" });
+
   let prose =
     '<p class="eyebrow">' + o.eyebrow + "</p><h1>" + o.h1 + "</h1>" +
     '<p class="lede">' + o.lede + "</p>" +
@@ -92,18 +125,24 @@ function article(o) {
     prose += '<div class="callout callout-tip"><div class="ch">Rules change — verify before you act</div>' +
       "<p>" + o.verify + "</p></div>";
   }
-  (o.sections || []).forEach(function (s) {
-    prose += (s.h ? "<h2>" + s.h + "</h2>" : "") + s.html;
+  sections.forEach(function (s, i) {
+    if (s.h) prose += '<h2 id="' + headingIds[i] + '">' + s.h + "</h2>";
+    prose += s.html;
   });
   let schema = [articleSchema(o, url)];
-  if (o.faqs && o.faqs.length) {
-    prose += "<h2>Frequently asked</h2>" + faqBlock(o.faqs);
+  if (hasFaqs) {
+    prose += '<h2 id="faq">Frequently asked</h2>' + faqBlock(o.faqs);
     schema.push(faqSchema(o.faqs));
   }
   prose += DISC;
 
-  let body = '<section class="section"><div class="container">' +
-    '<div class="prose">' + prose + "</div>";
+  var useToc = toc.length >= 3;
+  var mainCol = '<div class="prose">' + prose + "</div>";
+  var grid = useToc
+    ? '<div class="page-grid">' + mainCol + tocSidebar(toc) + "</div>"
+    : mainCol;
+
+  let body = '<section class="section"><div class="container">' + grid;
   if (o.related && o.related.length) {
     body += '<div class="related"><h2>Keep reading</h2><div class="grid grid-3">' +
       o.related.map(function (r) {
@@ -112,6 +151,14 @@ function article(o) {
       }).join("") + "</div></div>";
   }
   body += "</div></section>";
+
+  var bodyClass = o.bodyClass || "";
+  if (useToc && bodyClass.indexOf("has-guide-toc") === -1) {
+    bodyClass = (bodyClass ? bodyClass + " " : "") + "has-guide-toc";
+  }
+  if (/\/checklist\.html$/.test(o.path)) {
+    bodyClass = (bodyClass ? bodyClass + " " : "") + "print-guide";
+  }
 
   return {
     path: o.path,
@@ -123,6 +170,7 @@ function article(o) {
     updated: o.updated || DEFAULT_UPDATED,
     schema: schema,
     image: o.image,
+    bodyClass: bodyClass || undefined,
     body: body
   };
 }

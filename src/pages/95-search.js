@@ -17,11 +17,12 @@ module.exports = [{
     '<p class="lede">Find a vet, a guide, an area or a business &mdash; across ' +
     "every page on the site. Live search needs JavaScript; browse the topics " +
     "below if it is disabled.</p>" +
-    '<form class="search-form" action="/search.html" method="get" role="search">' +
+    '<form class="search-form field" action="/search.html" method="get" role="search">' +
     '<label for="pp-q">What are you looking for?</label>' +
     '<input type="search" id="pp-q" name="q" autocomplete="search" ' +
     'placeholder="Try &ldquo;24 hour vet&rdquo;, &ldquo;Jomtien&rdquo;, &ldquo;bring dog from UK&rdquo;">' +
     '<button type="submit" class="btn btn-primary" style="margin-top:.8rem">Search</button></form>' +
+    '<p class="search-kbd-hint">Tip: press <kbd>/</kbd> on any page to jump to search.</p>' +
     '<div class="search-browse">' +
     '<h2>Browse by topic</h2>' +
     '<p class="notice">These links work without JavaScript.</p>' +

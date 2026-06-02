@@ -97,7 +97,7 @@ function header() {
     '<div class="header-mobile-actions">' +
     '<a class="header-search-link" href="/search.html" aria-label="Search PattayaPets">' +
     SEARCH_ICON + "</a>" +
-    '<button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">' +
+    '<button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">' +
     '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" ' +
     'stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>Menu</button>' +
     "</div>" +
@@ -298,7 +298,7 @@ function renderPage(page, opts) {
     "</head><body" + (page.bodyClass ? ' class="' + page.bodyClass + '"' : "") + ">" +
     header() +
     breadcrumbHtml(page) +
-    '<main id="main">' + page.body + dateStamp(page) + "</main>" +
+    '<main id="main" tabindex="-1">' + page.body + dateStamp(page) + "</main>" +
     footer() +
     '<script src="/assets/js/site.js" defer></script>' +
     (SITE.cfBeacon && SITE.cfBeacon.indexOf("PLACEHOLDER") === -1

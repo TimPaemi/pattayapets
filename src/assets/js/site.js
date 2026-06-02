@@ -20,6 +20,7 @@
     function setNav(open) {
       nav.classList.toggle("open", open);
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
       document.body.classList.toggle("nav-open", open);
       if (open) {
         var first = nav.querySelector("a");
@@ -219,4 +220,80 @@
       navigator.serviceWorker.register("/sw.js").catch(function () {});
     });
   }
+
+  /* Keyboard shortcut: / focuses search (when not typing in a field) */
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "/" || e.ctrlKey || e.metaKey || e.altKey) return;
+    var t = e.target;
+    var tag = t && t.tagName;
+    if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || (t && t.isContentEditable)) return;
+    e.preventDefault();
+    var q = document.getElementById("header-q") || document.getElementById("pp-q");
+    if (q) {
+      q.focus();
+      return;
+    }
+    location.href = "/search.html";
+  });
+
+  /* Back to top — long guide and directory pages */
+  (function () {
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "back-to-top";
+    btn.hidden = true;
+    btn.setAttribute("aria-label", "Back to top");
+    btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+      'stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+    document.body.appendChild(btn);
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.addEventListener("scroll", function () {
+      btn.hidden = window.scrollY < 480;
+    }, { passive: true });
+    btn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+    });
+  })();
+
+  /* Horizontal table scroll hint */
+  document.querySelectorAll(".table-wrap").forEach(function (wrap) {
+    function mark() {
+      wrap.classList.toggle("table-wrap--scroll", wrap.scrollWidth > wrap.clientWidth + 2);
+    }
+    mark();
+    window.addEventListener("resize", mark, { passive: true });
+    wrap.addEventListener("scroll", function () {
+      wrap.classList.toggle("table-wrap--scrolled", wrap.scrollLeft > 8);
+    }, { passive: true });
+  });
+
+  /* On-this-page TOC: highlight current section while scrolling */
+  (function () {
+    var tocLinks = document.querySelectorAll(".sidebar .toc a[href^='#']");
+    if (!tocLinks.length) return;
+    var headings = [];
+    tocLinks.forEach(function (a) {
+      var id = a.getAttribute("href").slice(1);
+      var el = document.getElementById(id);
+      if (el) headings.push({ el: el, link: a });
+    });
+    if (!headings.length) return;
+    var active = null;
+    function setActive(link) {
+      if (active === link) return;
+      if (active) active.removeAttribute("aria-current");
+      active = link;
+      if (active) active.setAttribute("aria-current", "location");
+    }
+    if ("IntersectionObserver" in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var hit = headings.find(function (h) { return h.el === entry.target; });
+          if (hit) setActive(hit.link);
+        });
+      }, { rootMargin: "-20% 0px -65% 0px", threshold: 0 });
+      headings.forEach(function (h) { obs.observe(h.el); });
+    }
+  })();
 })();

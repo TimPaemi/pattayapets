@@ -60,6 +60,7 @@ Not deployed. Last updated: 30 May 2026.
 | **97** | **IndexNow key deploy fix:** copy `pp-indexnow-key.txt` to dist static allowlist |
 | **98** | **IndexNow option-1 key file:** emit `{key}.txt` at dist root; ping without custom keyLocation |
 | **99** | **Lighthouse retry:** 3-attempt retry on spawn failures (Windows headless flake on first URLs) |
+| **100** | **UX pass:** guide on-this-page TOC + mobile jump chips, back-to-top, `/` search shortcut, table scroll hint, print checklists, focus/safe-area polish |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 
