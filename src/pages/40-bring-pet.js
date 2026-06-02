@@ -3,6 +3,7 @@
 
 const { article, hub } = require("../guidekit.js");
 const { importCountryRelated, attachReturnExportLink } = require("../data/country-pairs.js");
+const rb = require("../data/richness-blocks.js");
 
 const GUIDES = { name: "Guides", path: "/guides.html" };
 const CLUSTER = { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/" };
@@ -27,8 +28,16 @@ const OFFICIAL =
 
 function importStep(o) {
   var sections = (o.sections || []).slice();
+  if (!o.skipRichness) {
+    sections.push(rb.IMPORT_PATTAYA_ARRIVAL);
+    sections.push(rb.IMPORT_PATTAYA_LIFE);
+  }
   sections.push({ h: "Official sources", html: OFFICIAL });
-  return article(Object.assign({}, o, { sections: sections }));
+  return article(Object.assign({}, o, {
+    sections: sections,
+    faqs: rb.mergeFaqs(o.faqs, rb.IMPORT_EXTRA_FAQS),
+    updated: o.updated || "2026-06-01"
+  }));
 }
 
 const pages = [];
@@ -691,6 +700,10 @@ function countryRelated(slug) {
 
 function countryPage(o) {
   var sections = attachReturnExportLink((o.sections || []).slice(), o.slug);
+  if (!o.skipRichness) {
+    sections.push(rb.IMPORT_PATTAYA_ARRIVAL);
+    sections.push(rb.IMPORT_PATTAYA_LIFE);
+  }
   sections.push({ h: "Official sources", html: (o.officialExtra || "") + OFFICIAL });
   return article({
     path: "/bring-pet-to-thailand/" + o.slug + ".html",
@@ -702,9 +715,9 @@ function countryPage(o) {
     h1: o.h1,
     lede: o.lede,
     verify: VERIFY,
-    updated: o.updated || "2026-05-31",
+    updated: o.updated || "2026-06-01",
     sections: sections,
-    faqs: o.faqs,
+    faqs: rb.mergeFaqs(o.faqs, rb.IMPORT_EXTRA_FAQS),
     related: o.related || countryRelated(o.slug)
   });
 }

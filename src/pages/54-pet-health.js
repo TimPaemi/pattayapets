@@ -212,7 +212,15 @@ pages.push(health({
       "fine tweezers or a tick tool and pull steadily, without twisting or " +
       "crushing it. Do not use heat or chemicals. If you are unsure, or the tick " +
       "is awkwardly placed, a vet or vet nurse can do it &mdash; and can advise on " +
-      "prevention while you are there.</p>" }
+      "prevention while you are there.</p>" },
+    { h: "Testing and follow-up in Pattaya", html:
+      "<p>Vets here routinely screen for tick-borne disease with blood tests when " +
+      "signs appear or after heavy tick exposure. Treatment courses can run weeks; " +
+      "finish the full course even if your dog looks brighter after a few days.</p>" +
+      "<p>Dogs that recover may need periodic rechecks — some infections can linger. " +
+      "Prevention remains cheaper than repeated treatment; pair vet products with " +
+      "daily tick checks after walks in grass, gardens and scrub near Jomtien or " +
+      "East Pattaya villages.</p>" }
   ],
   faqs: [
     ["What is 'tick fever'?",
@@ -277,7 +285,15 @@ pages.push(health({
       "called feline parvo &mdash; which is also serious and also preventable by " +
       "the standard cat vaccine. The same lesson applies: vaccinate, and keep it " +
       "current. See <a href=\"/cats/cat-vaccinations-thailand.html\">cat " +
-      "vaccinations</a>.</p>" }
+      "vaccinations</a>.</p>" },
+    { h: "If you suspect exposure", html:
+      "<p>If an unvaccinated puppy may have walked where infected dogs have been, " +
+      "call your vet immediately &mdash; do not wait for diarrhoea to start. " +
+      "Hospitalisation with fluids and supportive care is often required; home " +
+      "remedies cannot replace IV treatment.</p>" +
+      "<p>Disinfect shoes and floors if parvo has visited your home; the virus persists " +
+      "in the environment. Do not bring a new unvaccinated puppy into the same space " +
+      "until your vet advises it is safe.</p>" }
   ],
   faqs: [
     ["How do I protect my puppy from parvovirus?",

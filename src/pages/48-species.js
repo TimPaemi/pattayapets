@@ -305,7 +305,18 @@ pages.push(cat({
       "<p>Whatever you choose, leave: enough of the cat&rsquo;s usual food, its " +
       "vaccination record, any medication with clear instructions, your vet&rsquo;s " +
       "details and your contact details, and something that smells of home. Book " +
-      "early for peak travel periods, when good places fill up.</p>" }
+      "early for peak travel periods, when good places fill up.</p>" },
+    { h: "Peak season and emergency contacts", html:
+      "<p>Songkran, Christmas and school holidays fill boarding and sitters fast " +
+      "&mdash; book weeks ahead. Leave your Thai and home-country numbers, your " +
+      "vet&rsquo;s details, and written consent for emergency treatment up to a " +
+      "stated amount. If your cat needs daily medication, do a trial visit with the " +
+      "sitter or facility before a long trip.</p>" +
+      "<p>For medical boarding, confirm overnight staff and who administers drugs " +
+      "after hours. A clinic that boards cats is not automatically a 24-hour " +
+      "hospital &mdash; see " +
+      "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vets</a> for " +
+      "true emergencies while you are away.</p>" }
   ],
   faqs: [
     ["Where can I board my cat in Pattaya?",

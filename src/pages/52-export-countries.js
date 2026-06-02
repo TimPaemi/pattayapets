@@ -4,6 +4,7 @@
 
 const { article } = require("../guidekit.js");
 const { exportCountryRelated, attachImportMirrorLink } = require("../data/country-pairs.js");
+const rb = require("../data/richness-blocks.js");
 
 const GUIDES = { name: "Guides", path: "/guides.html" };
 const CLUSTER = { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/" };
@@ -82,14 +83,19 @@ const THAI_SIDE =
 
 function exp(o) {
   var sections = attachImportMirrorLink((o.sections || []).slice(), o.slug);
+  if (!o.skipRichness) {
+    sections.push(rb.EXPORT_FROM_PATTAYA);
+    sections.push(rb.EXPORT_RELOCATION);
+  }
   sections.push({ h: "Official sources", html: (o.officialExtra || "") + OFFICIAL });
   return article({
     path: "/take-pet-out-of-thailand/" + o.slug + ".html",
     title: o.title, desc: o.desc, crumb: o.crumb, breadcrumbs: SUB,
     eyebrow: "Taking a pet out of Thailand &middot; By destination",
     h1: o.h1, lede: o.lede, verify: VERIFY,
-    updated: o.updated || "2026-05-31",
-    sections: sections, faqs: o.faqs, related: o.related || expRelated(o.slug)
+    updated: o.updated || "2026-06-01",
+    sections: sections, faqs: rb.mergeFaqs(o.faqs, rb.EXPORT_EXTRA_FAQS),
+    related: o.related || expRelated(o.slug)
   });
 }
 

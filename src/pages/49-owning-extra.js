@@ -329,7 +329,23 @@ pages.push(own({
       "move home, or take on a pet from someone else, <strong>update the " +
       "registration</strong>. Keep a note of the chip number and the database " +
       "yourself. An out-of-date record is the most common reason a chipped pet " +
-      "still does not get home.</p>" }
+      "still does not get home.</p>" },
+    { h: "Lost pets, import and export paperwork", html:
+      "<p>If your pet goes missing, tell local vets, post in responsible community " +
+      "groups, and follow our " +
+      "<a href=\"/owning-a-pet-in-pattaya/lost-pet-pattaya.html\">lost pet in Pattaya</a> " +
+      "plan. The chip number should appear on vaccination books, export health " +
+      "certificates and airline paperwork &mdash; keep one master record photo on " +
+      "your phone.</p>" +
+      "<p>For import, the chip must be implanted <strong>before</strong> the rabies " +
+      "jab used for Thailand entry. For export, the same number must match every " +
+      "DLD and destination form. A typo at chipping time can cost weeks later.</p>" },
+    { h: "Multiple pets and rescues", html:
+      "<p>Each animal needs its own chip and registration. Adopted pets from " +
+      "rescues may already be chipped &mdash; transfer registry details to your " +
+      "name on adoption day, not weeks later. See " +
+      "<a href=\"/adopt-a-pet-pattaya/\">adopt a pet in Pattaya</a> for shelter " +
+      "organisations.</p>" }
   ],
   faqs: [
     ["Is microchipping a pet painful or risky?",
@@ -533,7 +549,15 @@ pages.push(own({
       "weight, mobility, lumps, behaviour or apparent confusion. It is tempting " +
       "to put everything down to &lsquo;just getting old&rsquo; &mdash; but many " +
       "of these changes are treatable conditions, and catching them early keeps " +
-      "an older pet comfortable for longer.</p>" }
+      "an older pet comfortable for longer.</p>" },
+    { h: "Medication, arthritis and cognitive changes", html:
+      "<p>Older pets may need daily medication for joints, heart, kidneys or thyroid " +
+      "issues. Use pill organisers, calendar reminders and the same vet pharmacy " +
+      "where possible so formulations stay consistent. Slippery tile floors worsen " +
+      "arthritis &mdash; rugs and ramps help more than forcing exercise.</p>" +
+      "<p>Disorientation, night waking or house-soiling can signal pain or cognitive " +
+      "decline, not stubbornness. Your vet can discuss pain relief and quality-of-life " +
+      "options before crises hit during a holiday weekend.</p>" }
   ],
   faqs: [
     ["How often should an older pet see the vet?",

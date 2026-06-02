@@ -3,6 +3,7 @@
    snub-nosed breeds and flying, and the Thailand quarantine question. */
 
 const { article } = require("../guidekit.js");
+const rb = require("../data/richness-blocks.js");
 
 const GUIDES = { name: "Guides", path: "/guides.html" };
 const CLUSTER = { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/" };
@@ -38,6 +39,22 @@ const RELATED = [
 ];
 
 const pages = [];
+
+function importTopic(o) {
+  var sections = (o.sections || []).slice();
+  if (!o.skipRichness) {
+    sections.push(rb.IMPORT_PATTAYA_ARRIVAL);
+    sections.push(rb.IMPORT_PATTAYA_LIFE);
+  }
+  if (!o.skipOfficial) {
+    sections.push({ h: "Official sources", html: (o.officialExtra || "") + OFFICIAL });
+  }
+  return article(Object.assign({}, o, {
+    sections: sections,
+    faqs: rb.mergeFaqs(o.faqs, rb.IMPORT_EXTRA_FAQS),
+    updated: o.updated || "2026-06-01"
+  }));
+}
 
 /* ---------------- SNUB-NOSED BREEDS ---------------- */
 pages.push(article({
@@ -122,7 +139,7 @@ pages.push(article({
 }));
 
 /* ---------------- THAILAND QUARANTINE ---------------- */
-pages.push(article({
+pages.push(importTopic({
   path: "/bring-pet-to-thailand/thailand-pet-quarantine.html",
   title: "Pet Quarantine in Thailand | What Happens on Arrival (2026) | PattayaPets",
   desc: "Whether Thailand quarantines imported pets, what really happens at the " +
@@ -184,6 +201,7 @@ pages.push(article({
       "<a href=\"/take-pet-out-of-thailand/export-process.html\">export process</a> early.</p>" },
     { h: "Official sources", html: OFFICIAL }
   ],
+  skipOfficial: true,
   faqs: [
     ["Will my pet be quarantined when it arrives in Thailand?",
      "<p>Generally not, if it arrives with complete, correct paperwork and meets the requirements. For a compliant pet, arrival is an inspection and same-day release at the Animal Quarantine Station, not a quarantine stay.</p>"],

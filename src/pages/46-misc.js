@@ -72,8 +72,26 @@ pages.push(article({
       "a year&rsquo;s limit; check per-condition caps as well as the headline figure.</li>" +
       "<li><strong>Not checking the vet list</strong> &mdash; some policies only settle with " +
       "named clinics; confirm your <a href=\"/vets/\">Pattaya vet</a> is accepted.</li></ul>" +
-      "<p>Read the schedule of benefits, not just the marketing page.</p>" }
+      "<p>Read the schedule of benefits, not just the marketing page.</p>" },
+    { h: "Expat policies versus Thai providers", html:
+      "<p>Some expat-focused insurers sell policies valid across countries; Thai " +
+      "providers often cover treatment within Thailand only. If you travel with your " +
+      "pet or may relocate again, read territorial limits carefully.</p>" +
+      "<p>Compare excess (deductible), co-pay percentages, and whether direct billing " +
+      "exists at your usual <a href=\"/vets/\">Pattaya clinic</a>. A cheap premium with " +
+      "a high excess and low annual cap may not help in a true emergency.</p>" },
+    { h: "When self-insuring is reasonable", html:
+      "<p>Disciplined savers with young, healthy pets sometimes skip insurance and " +
+      "maintain a dedicated emergency fund instead — see " +
+      "<a href=\"/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html\">cost of owning a pet</a>. " +
+      "That works until a single hospitalisation exceeds the fund; know your risk tolerance.</p>" +
+      "<p>Insurance rarely covers import, export or routine wellness unless you buy " +
+      "add-ons. Budget relocation separately via " +
+      "<a href=\"/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html\">import costs</a> " +
+      "and " +
+      "<a href=\"/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html\">export costs</a>.</p>" }
   ],
+  updated: "2026-06-01",
   faqs: [
     ["Is pet insurance common in Thailand?",
      "<p>It is increasingly available, with several providers offering dog and cat policies. Terms vary widely, so compare the actual cover rather than just the price.</p>"],

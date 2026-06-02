@@ -3,6 +3,7 @@
 
 const { article } = require("../guidekit.js");
 const { importCountryRelated, attachReturnExportLink } = require("../data/country-pairs.js");
+const rb = require("../data/richness-blocks.js");
 
 const GUIDES = { name: "Guides", path: "/guides.html" };
 const CLUSTER = { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/" };
@@ -189,14 +190,19 @@ function ruImportTimeline() {
 
 function country(o) {
   var sections = attachReturnExportLink((o.sections || []).slice(), o.slug);
+  if (!o.skipRichness) {
+    sections.push(rb.IMPORT_PATTAYA_ARRIVAL);
+    sections.push(rb.IMPORT_PATTAYA_LIFE);
+  }
   sections.push({ h: "Official sources", html: (o.officialExtra || "") + OFFICIAL });
   return article({
     path: "/bring-pet-to-thailand/" + o.slug + ".html",
     title: o.title, desc: o.desc, crumb: o.crumb, breadcrumbs: SUB,
     eyebrow: "Bringing a pet to Thailand &middot; By country",
     h1: o.h1, lede: o.lede, verify: VERIFY,
-    updated: o.updated || "2026-05-31",
-    sections: sections, faqs: o.faqs, related: o.related || countryRelated(o.slug)
+    updated: o.updated || "2026-06-01",
+    sections: sections, faqs: rb.mergeFaqs(o.faqs, rb.IMPORT_EXTRA_FAQS),
+    related: o.related || countryRelated(o.slug)
   });
 }
 

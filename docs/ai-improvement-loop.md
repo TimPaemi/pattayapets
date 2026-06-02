@@ -56,6 +56,7 @@ Not deployed. Last updated: 30 May 2026.
 | **93** | **Mobile search shortcut** in header + `autocomplete=search`; `npm run deploy` = build:all + IndexNow |
 | **94** | **Agency-depth emergency + adoption:** 24-hour vets, first-aid, heatstroke, poisoning, snakes, ticks, street dogs &amp; choking expanded; all 7 shelter org pages + fostering/how-to-help; `audit:content:richness` gate |
 | **95** | **Owning essentials depth:** cost, walks, registration &amp; pet-food guides expanded to richness bar |
+| **96** | **Full richness pass (0 below bar):** shared `richness-blocks.js` wired into import/export/dog-friendly wrappers; owning, health, species &amp; insurance expanded — **119/119 guides pass** |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 

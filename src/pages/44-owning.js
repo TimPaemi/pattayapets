@@ -216,7 +216,17 @@ pages.push(own({
       "pets cope worst with heat. If your pet is one of them, be extra " +
       "conservative with exercise and timing. Dog owners choosing a breed should " +
       "read <a href=\"/dogs/choosing-a-dog-for-the-climate.html\">choosing a dog " +
-      "for the climate</a>.</p>" }
+      "for the climate</a>.</p>" },
+    { h: "Condos, balconies and power cuts", html:
+      "<p>High-rise living is common in Pattaya. Check balcony mesh and gaps " +
+      "cats can slip through; dogs need shade on terrace floors that heat up by " +
+      "mid-morning. If your building loses power in hot season, have a plan &mdash; " +
+      "a neighbour with AC, boarding, or a pet sitter &mdash; rather than leaving a " +
+      "pet in a closed unit. Indoor-only cats still need airflow; a fan alone may " +
+      "not be enough when humidity is high.</p>" +
+      "<p>After beach or pool visits, rinse salt from coats and dry ears to prevent " +
+      "skin and ear problems aggravated by heat &mdash; see " +
+      "<a href=\"/pet-health-pattaya/skin-and-ear-problems.html\">skin &amp; ear problems</a>.</p>" }
   ],
   faqs: [
     ["Should I shave my dog for the Thai heat?",
@@ -228,7 +238,13 @@ pages.push(own({
     ["Can I walk my dog at midday if I carry water?",
      "<p>Water helps but does not stop heatstroke on hot pavement or in full sun. Early morning and evening walks are the safe default in Pattaya.</p>"],
     ["Do short-haired breeds need less care in the heat?",
-     "<p>They overheat faster in direct sun because they lack a thick coat's insulation — shade, timing and paw-pad checks still matter. See <a href=\"/pet-emergency/heatstroke.html\">heatstroke</a> for warning signs.</p>"]
+     "<p>They overheat faster in direct sun because they lack a thick coat's insulation — shade, timing and paw-pad checks still matter. See <a href=\"/pet-emergency/heatstroke.html\">heatstroke</a> for warning signs.</p>"],
+    ["How hot is too hot for a balcony pet?",
+     "<p>If you would not sit there comfortably for an hour at midday, your pet should not either. Provide shade, water and retreat indoors when temperatures climb.</p>"],
+    ["Should I use cooling mats or ice?",
+     "<p>Cooling mats and damp towels can help indoors; avoid ice-cold baths if a pet is already overheating — see <a href=\"/pet-emergency/heatstroke.html\">heatstroke</a> for emergency cooling guidance.</p>"],
+    ["Does humidity make heat worse for pets?",
+     "<p>Yes — panting clears heat less efficiently in humid air. AC or strong airflow matters as much as shade in Pattaya's wet season.</p>"]
   ],
   related: [
     { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "Recognising and preventing the emergency." },
@@ -279,7 +295,23 @@ pages.push(own({
       "good airflow or air-conditioning, and a walk route nearby. See " +
       "<a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">where to " +
       "walk your dog</a> for building a routine. A technically " +
-      "pet-friendly 20th-floor studio is still hard work with a big dog.</p>" }
+      "pet-friendly 20th-floor studio is still hard work with a big dog.</p>" },
+    { h: "Negotiating with landlords and juristic offices", html:
+      "<p>When you find a willing landlord, get pet permission <strong>in the lease " +
+      "and</strong> confirmed with the building juristic person where applicable. " +
+      "Offer a reasonable pet deposit and describe your pet calmly (size, breed, " +
+      "neutered, quiet). References from a previous landlord help.</p>" +
+      "<p>If a agent says pets are OK but the building rules say no, believe the " +
+      "building rules. Eviction after move-in is traumatic for everyone. See " +
+      "<a href=\"/dog-friendly-pattaya/condos.html\">dog-friendly condos</a> for " +
+      "the dog-owner angle and " +
+      "<a href=\"/cats/indoor-vs-outdoor-cats.html\">indoor cats</a> for balcony safety.</p>" },
+    { h: "Short-term stays and hotels", html:
+      "<p>Tourists and snowbirds sometimes arrive before securing long-term housing. " +
+      "Book <a href=\"/dog-friendly-pattaya/hotels.html\">pet-friendly hotels</a> " +
+      "explicitly &mdash; never smuggle a pet into a no-pet room. For cats, a " +
+      "temporary setup needs litter, hiding space and secure windows until your " +
+      "lease is signed.</p>" }
   ],
   faqs: [
     ["Is it hard to rent with a pet in Pattaya?",

@@ -2,6 +2,7 @@
 /* Cluster: Dog-friendly Pattaya */
 
 const { article, hub } = require("../guidekit.js");
+const rb = require("../data/richness-blocks.js");
 
 const GUIDES = { name: "Guides", path: "/guides.html" };
 const CLUSTER = { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/" };
@@ -64,13 +65,18 @@ pages.push(hub({
 }));
 
 function df(o) {
+  var sections = (o.sections || []).slice();
+  if (!o.skipRichness) {
+    sections.push(rb.DOG_OUTING_CHECKLIST);
+    sections.push(rb.DOG_OUTING_SEASONS);
+  }
   return article({
     path: "/dog-friendly-pattaya/" + o.slug + ".html",
     title: o.title, desc: o.desc, crumb: o.crumb, breadcrumbs: SUB,
     eyebrow: "Dog-friendly Pattaya",
     h1: o.h1, lede: o.lede,
-    updated: o.updated, updatedLabel: o.updatedLabel, verify: o.verify,
-    sections: o.sections, faqs: o.faqs,
+    updated: o.updated || "2026-06-01", updatedLabel: o.updatedLabel, verify: o.verify,
+    sections: sections, faqs: rb.mergeFaqs(o.faqs, rb.DOG_EXTRA_FAQS),
     related: o.related || [
       { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Building a safe daily routine." },
       { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "Out and about with your dog." },

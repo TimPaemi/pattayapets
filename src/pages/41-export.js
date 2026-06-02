@@ -3,6 +3,7 @@
 
 const { article, hub } = require("../guidekit.js");
 const { exportCountryRelated, attachImportMirrorLink } = require("../data/country-pairs.js");
+const rb = require("../data/richness-blocks.js");
 
 const GUIDES = { name: "Guides", path: "/guides.html" };
 const CLUSTER = { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/" };
@@ -147,6 +148,10 @@ pages.push(hub({
 
 function exp(o) {
   var sections = attachImportMirrorLink((o.sections || []).slice(), o.slug);
+  if (!o.skipRichness) {
+    sections.push(rb.EXPORT_FROM_PATTAYA);
+    sections.push(rb.EXPORT_RELOCATION);
+  }
   if (!o.skipOfficial) {
     sections.push({ h: "Official sources", html: (o.officialExtra || "") + OFFICIAL });
   }
@@ -155,8 +160,8 @@ function exp(o) {
     title: o.title, desc: o.desc, crumb: o.crumb, breadcrumbs: SUB,
     eyebrow: "Taking a pet out of Thailand",
     h1: o.h1, lede: o.lede, verify: VERIFY,
-    updated: o.updated || "2026-05-31",
-    sections: sections, faqs: o.faqs,
+    updated: o.updated || "2026-06-01",
+    sections: sections, faqs: rb.mergeFaqs(o.faqs, rb.EXPORT_EXTRA_FAQS),
     related: o.related || expCountryRelated(o.slug)
   });
 }
