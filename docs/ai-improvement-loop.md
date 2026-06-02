@@ -54,6 +54,7 @@ Not deployed. Last updated: 30 May 2026.
 | **91** | **Lighthouse all-templates gate:** `audit:lighthouse:all` (33 URLs); font CLS fix (`font-display:optional`, Hanken 500/700 in critical); search a11y + CLS |
 | **92** | **Full audit fixes:** hyphenated network URLs, dead shelter/grooming links, `_headers` font preloads, privacy analytics accuracy |
 | **93** | **Mobile search shortcut** in header + `autocomplete=search`; `npm run deploy` = build:all + IndexNow |
+| **94** | **Agency-depth emergency + adoption:** 24-hour vets, first-aid, heatstroke, poisoning, snakes, ticks, street dogs &amp; choking expanded; all 7 shelter org pages + fostering/how-to-help; `audit:content:richness` gate |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 

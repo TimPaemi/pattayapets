@@ -144,8 +144,31 @@ pages.push(article({
     { h: "And if you cannot let go?", html:
       "<p>Sometimes a foster carer realises they cannot part with the animal and " +
       "adopts it themselves &mdash; affectionately called a &lsquo;foster " +
-      "failure&rsquo;. It is, of course, a perfectly happy ending.</p>" }
+      "failure&rsquo;. It is, of course, a perfectly happy ending.</p>" },
+    { h: "Practical setup in a Pattaya home", html:
+      "<p>Most fosters need a <strong>quiet room or crate zone</strong> away from " +
+      "busy balconies and street noise at first. Stock food the rescue recommends, " +
+      "washable bedding, poo bags, and a carrier for vet trips. Condos with strict " +
+      "pet rules need written permission before you foster &mdash; see " +
+      "<a href=\"/owning-a-pet-in-pattaya/pet-friendly-housing.html\">pet-friendly housing</a>.</p>" +
+      "<p>Heat and humidity mean water bowls refreshed often and no midday walks for " +
+      "dogs recovering from surgery. Keep vaccination records and foster agreement " +
+      "paperwork where you can grab them for emergencies &mdash; " +
+      "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vets</a> ask " +
+      "useful questions fast when you have dates and names ready.</p>" },
+    { h: "Which rescues to contact", html:
+      "<p>Start with the organisations on our " +
+      "<a href=\"/adopt-a-pet-pattaya/\">adopt a pet in Pattaya</a> hub &mdash; " +
+      "<a href=\"/adopt-a-pet-pattaya/hope-for-strays.html\">Hope for Strays</a>, " +
+      "<a href=\"/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html\">Dog &amp; Cat Rescue Pattaya</a>, " +
+      "<a href=\"/adopt-a-pet-pattaya/animal-army-foundation.html\">Animal Army Foundation</a>, " +
+      "<a href=\"/adopt-a-pet-pattaya/pattaya-street-dogs-k9aid.html\">Pattaya Street Dogs (K9aid)</a>, " +
+      "<a href=\"/adopt-a-pet-pattaya/soi-dog-foundation.html\">Soi Dog Foundation</a>, " +
+      "<a href=\"/adopt-a-pet-pattaya/malees-animal-shelter.html\">Malee&rsquo;s Animal Shelter</a> " +
+      "and <a href=\"/adopt-a-pet-pattaya/ady-g-second-chance-pattaya.html\">Ady G. Second Chance Pattaya</a>. " +
+      "Each has different capacity and foster needs week to week.</p>" }
   ],
+  updated: "2026-06-01",
   faqs: [
     ["What does fostering a pet involve?",
      "<p>Giving a rescue animal a temporary home - days to months - while it recovers, grows up or waits for a permanent family. The rescue usually covers vet costs; you provide the home and care, and follow their guidance.</p>"],
@@ -156,7 +179,13 @@ pages.push(article({
     ["Can I foster if I have other pets?",
      "<p>Often yes, with slow introductions and the rescue's guidance. Some fosters need a pet-free home — ask the organisation what they need.</p>"],
     ["How long does fostering usually last?",
-     "<p>From a few weeks to several months, depending on the animal's needs and adoption demand. Confirm expected duration before you commit.</p>"]
+     "<p>From a few weeks to several months, depending on the animal's needs and adoption demand. Confirm expected duration before you commit.</p>"],
+    ["Can tourists or short-term renters foster?",
+     "<p>Some rescues accept short-term fosters if dates are clear upfront — useful for snowbirds and long-stay visitors. Be honest about your leave date; an animal needs a stable plan.</p>"],
+    ["What if the foster pet needs emergency vet care?",
+     "<p>Contact the rescue immediately if that is your agreement; otherwise go to a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vet</a> and keep receipts. Never delay stabilisation to wait for office hours.</p>"],
+    ["Do I need to register a foster dog?",
+     "<p>If the dog is in your care for an extended period, discuss registration and microchip responsibility with the rescue — see <a href=\"/owning-a-pet-in-pattaya/dog-registration-thailand.html\">dog registration in Thailand</a>.</p>"]
   ],
   related: [
     { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Shelters and rescue organisations." },
@@ -226,8 +255,21 @@ pages.push(article({
       "neuter programmes &mdash; and <a href=\"/pet-health-pattaya/spaying-and-neutering.html\">" +
       "neutering your own pets</a> &mdash; addresses the cause, not just the " +
       "symptom. If you feed street animals, do it thoughtfully: feeding alone " +
-      "grows colonies, so pair it with support for sterilisation.</p>" }
+      "grows colonies, so pair it with support for sterilisation.</p>" +
+      "<p>Some rescues run targeted TNVR (trap-neuter-vaccinate-return) for stable " +
+      "colonies. Donating specifically to desexing funds often goes further than " +
+      "random food drops that attract more unsterilised animals.</p>" },
+    { h: "What not to do — even with good intentions", html:
+      "<p>Do not <strong>dump pets</strong> at temples or beaches &mdash; it burdens " +
+      "communities and rescues already at capacity. Do not take street puppies home " +
+      "without a vet plan and landlord permission. Do not feed aggressive colonies " +
+      "in ways that create traffic hazards or neighbour conflict.</p>" +
+      "<p>Posting dramatic photos without contacting a rescue first rarely helps. " +
+      "Better: message an organisation from our hub, share location pin and photos, " +
+      "and ask what they need (transport, foster, donation) rather than assuming " +
+      "adoption is the only fix.</p>" }
   ],
+  updated: "2026-06-01",
   faqs: [
     ["How can I help if I can't adopt a pet?",
      "<p>Donate money or supplies, volunteer your time, foster temporarily, sponsor an animal, and support sterilisation programmes. Even small, regular contributions genuinely help a stretched rescue.</p>"],
@@ -238,7 +280,13 @@ pages.push(article({
     ["Can tourists volunteer at Pattaya rescues?",
      "<p>Many shelters welcome short-term help — walking dogs, cleaning, social media. Contact organisations directly; see our <a href=\"/adopt-a-pet-pattaya/\">adoption hub</a> for listings.</p>"],
     ["Should I rescue every street animal I see?",
-     "<p>You cannot save them all alone — focus on one animal at a time and involve a rescue or vet for medical care, sterilisation and rehoming.</p>"]
+     "<p>You cannot save them all alone — focus on one animal at a time and involve a rescue or vet for medical care, sterilisation and rehoming.</p>"],
+    ["Can I donate supplies instead of money?",
+     "<p>Often yes — food, bedding and cleaning materials are welcome, but ask what is needed this week. Cash lets rescues buy medicine and pay vets when donations lag.</p>"],
+    ["Who handles injured street animals at night?",
+     "<p><a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour animal hospitals</a> stabilise emergencies; <a href=\"/vets/animal-army-hospital.html\">Animal Army Hospital</a> runs a rescue ambulance for street cases when available. Call ahead if you can.</p>"],
+    ["Is it legal to take a street dog home in Thailand?",
+     "<p>People do adopt strays through rescues, but ownership implies responsibility for registration, vaccination and care. Work with a rescue rather than grabbing an animal without a plan.</p>"]
   ],
   related: [
     { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Shelters and rescue organisations." },

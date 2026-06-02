@@ -108,7 +108,9 @@ const SHELTERS = [
       "number of dogs &mdash; reported as well over a hundred &mdash; and works " +
       "on vaccination, sterilisation, medical treatment and street feeding " +
       "alongside rehoming. Visits and volunteering are welcome; contact the " +
-      "foundation first to arrange a time.</p>",
+      "foundation first to arrange a time. The shelter relies on donations for food, " +
+      "medicine and sterilisation programmes &mdash; typical of Pattaya&rsquo;s " +
+      "independent rescues.</p>",
     adopt:
       "<p>Healthy, vaccinated and sterilised dogs are available for adoption. As " +
       "with any reputable rescue, expect a conversation about your home and " +
@@ -132,7 +134,7 @@ const SHELTERS = [
       "at the centre of its work. It is active on social media, where it shares " +
       "animals in need of homes and updates on rescues. Shelter location and visiting " +
       "arrangements are confirmed through its Facebook page rather than a fixed " +
-      "public address.</p>",
+      "public address &mdash; message before you travel so volunteers can meet you.</p>",
     adopt:
       "<p>Dogs and cats are rehomed once cared for. Contact the organisation " +
       "directly &mdash; its Facebook page is the most current channel &mdash; to " +
@@ -157,7 +159,9 @@ const SHELTERS = [
       "operates a dedicated rescue ambulance providing emergency care to street " +
       "animals and pets in urgent need, alongside everyday clinic work. It also " +
       "encourages adoption of homeless companion animals and has supported adopters " +
-      "in flying newly adopted animals overseas. See also our " +
+      "in flying newly adopted animals overseas. Its Na Jomtien site combines rescue " +
+      "ambulance work with everyday clinic services &mdash; useful if you adopt an " +
+      "animal that still needs follow-up treatment. See also our " +
       "<a href=\"/vets/animal-army-hospital.html\">Animal Army Hospital listing</a> " +
       "in the vets directory.</p>",
     adopt:
@@ -182,8 +186,9 @@ const SHELTERS = [
       "<p>Founded in 2018, Pattaya Street Dogs (K9aid) provides a home for a " +
       "group of rescued dogs and also feeds and monitors additional dogs living " +
       "at a Buddhist temple near the sea. Its work centres on care, feeding and " +
-      "finding homes for street dogs around Pattaya. Contact and visiting details " +
-      "are handled through the K9aid Pattaya page.</p>",
+      "finding homes for street dogs around Pattaya. The project publishes updates " +
+      "through K9aid&rsquo;s Pattaya channels; contact before visiting so someone " +
+      "can meet you.</p>",
     adopt:
       "<p>The rescue rehomes dogs in its care and welcomes adopters, fosters, " +
       "volunteers and donors. Contact it directly through " +
@@ -230,10 +235,12 @@ const SHELTERS = [
     what:
       "<p>Malee&rsquo;s Animal Shelter rescues and cares for dogs and cats in the " +
       "Pattaya and Chanthaburi region &mdash; reported as more than four hundred " +
-      "dogs and several dozen cats. The shelter operates in Chanthaburi province " +
-      "east of Pattaya. It relies, like all the shelters here, on donations and " +
-      "volunteers to continue its work. Confirm the current location and visiting " +
-      "arrangements directly through its website before you travel.</p>",
+      "dogs and several dozen cats at times. The shelter operates in Chanthaburi province " +
+      "east of Pattaya (roughly one to two hours by road). It relies on donations and " +
+      "volunteers; founders Malee and Derek have run the project for many years. Confirm " +
+      "the current location and visiting arrangements through " +
+      "<a href=\"https://maleeanimalshelter.wordpress.com/\" target=\"_blank\" " +
+      "rel=\"noopener nofollow\">its website</a> before you travel.</p>",
     adopt:
       "<p>Dogs and cats are available for adoption. Contact the shelter directly " +
       "through its website to discuss adopting, " +
@@ -268,14 +275,33 @@ const SHELTER_HELP =
   "<p>If you cannot adopt, " +
   '<a href="/adopt-a-pet-pattaya/fostering.html">fostering</a>, ' +
   '<a href="/adopt-a-pet-pattaya/how-to-help.html">volunteering and donating</a> ' +
-  "all make a real difference &mdash; shelters run on exactly that support. " +
-  "After you adopt, see " +
-  '<a href="/owning-a-pet-in-pattaya/microchipping-your-pet.html">microchipping</a>, ' +
-  '<a href="/cats/cat-vaccinations-thailand.html">cat vaccinations</a> or ' +
+  "all make a real difference &mdash; shelters run on exactly that support.</p>";
+
+const SHELTER_VISIT =
+  "<p>Most Pattaya rescues are <strong>small teams on tight budgets</strong>, not " +
+  "tourist attractions. Message or email before you visit, wear closed shoes, and " +
+  "expect noise, strong smells and animals in various states of health. Children can " +
+  "visit when the organisation agrees, but supervise closely &mdash; frightened rescue " +
+  "dogs may not behave like pets at home.</p>" +
+  "<p>Volunteering often means cleaning, feeding, walking sociable dogs or helping " +
+  "with laundry &mdash; not only cuddling puppies. Donations of cash, food and " +
+  "medicine are usually welcome; ask what they need this week rather than assuming.</p>";
+
+const SHELTER_AFTER =
+  "<p>After adoption, schedule a vet check within the first week even if the rescue " +
+  "has vaccinated and sterilised the animal. Register and " +
+  '<a href="/owning-a-pet-in-pattaya/microchipping-your-pet.html">microchip</a> ' +
+  "as soon as practical, read " +
+  '<a href="/owning-a-pet-in-pattaya/dog-registration-thailand.html">dog registration in Thailand</a> ' +
+  "for dogs, and confirm your condo or landlord allows pets &mdash; see " +
+  '<a href="/owning-a-pet-in-pattaya/pet-friendly-housing.html">pet-friendly housing</a>. ' +
+  "Routine care: " +
+  '<a href="/cats/cat-vaccinations-thailand.html">cat vaccinations</a>, ' +
   '<a href="/dogs/dog-vaccinations-thailand.html">dog vaccinations</a>, and ' +
-  '<a href="/pet-health-pattaya/spaying-and-neutering.html">spaying &amp; neutering</a>. ' +
-  "Flying abroad later? Read the " +
-  '<a href="/take-pet-out-of-thailand/export-process.html">export process</a>.</p>';
+  '<a href="/pet-health-pattaya/spaying-and-neutering.html">spaying &amp; neutering</a> ' +
+  "if not already done. Flying abroad later? Start the " +
+  '<a href="/take-pet-out-of-thailand/export-process.html">export process</a> ' +
+  "months ahead &mdash; the rabies titer test cannot be rushed.</p>";
 
 SHELTERS.forEach(function (s) {
   var contact = "";
@@ -316,20 +342,29 @@ SHELTERS.forEach(function (s) {
         "care change &mdash; please confirm current details directly with the " +
         "organisation.</p></div>" },
       { h: "What it does", html: s.what },
-      { h: "Adopting and helping", html: s.adopt + SHELTER_HELP },
+      { h: "Adopting from " + s.name, html: s.adopt + SHELTER_HELP },
+      { h: "Visiting, fostering and volunteering", html: SHELTER_VISIT + (s.visit || "") },
+      { h: "After you adopt in Pattaya", html: SHELTER_AFTER },
       { h: "Get in touch", html: contact }
     ],
+    updated: "2026-06-01",
     faqs: [
       ["Are pets from " + s.name + " vaccinated and sterilised?",
-       "<p>Reputable rescues rehome animals vaccinated and sterilised, and are open about each animal's health. Confirm the specifics for any animal directly with the organisation.</p>"],
+       "<p>Reputable rescues rehome animals vaccinated and sterilised, and are open about each animal's health. Confirm the specifics for any animal directly with the organisation before you commit.</p>"],
+      ["Does " + s.name + " charge an adoption fee?",
+       "<p>Many rescues ask for a donation or adoption fee to cover vaccinations, sterilisation and food. Amounts vary — ask directly. A fee is normal; unusually high pressure for cash without paperwork is a red flag.</p>"],
       ["I am leaving Thailand — can I adopt and take the pet with me?",
        "<p>Often yes. Many rescues support adopters in relocating an animal abroad. Plan early and read our guide to the <a href=\"/take-pet-out-of-thailand/export-process.html\">export process</a> — the rabies titer test in particular needs lead time.</p>"],
       ["How do I visit or volunteer?",
-       "<p>Contact the organisation directly via its website or Facebook page to ask about visiting hours, volunteering and fostering. PattayaPets does not coordinate visits.</p>"],
+       "<p>Contact the organisation directly via its website or Facebook page to ask about visiting hours, volunteering and fostering. PattayaPets does not coordinate visits — always arrange ahead.</p>"],
+      ["Can I foster before adopting from " + s.name + "?",
+       "<p>Many rescues welcome fosters — it frees kennel space and lets you learn the animal's temperament. See our <a href=\"/adopt-a-pet-pattaya/fostering.html\">fostering guide</a> and ask the organisation what they need.</p>"],
       ["What should I ask before adopting a rescue pet?",
-       "<p>Ask about vaccinations, sterilisation, behavioural history, any medical needs and what support the rescue offers after adoption. See our <a href=\"/adopt-a-pet-pattaya/\">adopt a pet in Pattaya</a> hub for the wider picture.</p>"],
+       "<p>Ask about vaccinations, sterilisation, behavioural history, any medical needs, bite history, and what support the rescue offers after adoption. See our <a href=\"/adopt-a-pet-pattaya/\">adopt a pet in Pattaya</a> hub for the wider picture.</p>"],
       ["Can foreigners adopt in Thailand?",
-       "<p>Yes — rescues regularly place animals with expat and tourist adopters. You need a stable home, commitment to vaccinations and registration, and realistic plans if you may leave Thailand later.</p>"]
+       "<p>Yes — rescues regularly place animals with expat and tourist adopters. You need a stable home, commitment to vaccinations and registration, and realistic plans if you may leave Thailand later.</p>"],
+      ["What if my condo does not allow pets?",
+       "<p>Do not adopt until housing is sorted — returning an animal is traumatic for everyone. Read <a href=\"/owning-a-pet-in-pattaya/pet-friendly-housing.html\">pet-friendly housing</a> and get written permission from your landlord or juristic person where possible.</p>"]
     ],
     related: [
       { name: "Fostering a pet", path: "/adopt-a-pet-pattaya/fostering.html", desc: "Temporary homes between rescue and adoption." },

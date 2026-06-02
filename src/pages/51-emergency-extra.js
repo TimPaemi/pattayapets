@@ -19,6 +19,7 @@ function hazard(o) {
     path: "/pet-emergency/" + o.slug + ".html",
     title: o.title, desc: o.desc, crumb: o.crumb, breadcrumbs: SUB,
     eyebrow: "Pet emergencies", h1: o.h1, lede: o.lede,
+    updated: o.updated || "2026-06-01",
     sections: [{ html:
       '<div class="callout callout-emergency"><p>' + NOTVET + "</p></div>" }]
       .concat(o.sections),
@@ -65,6 +66,16 @@ pages.push(hazard({
       "through what to do. Techniques to dislodge an airway blockage exist, but " +
       "they can injure a pet if done wrong &mdash; they are best attempted under a " +
       "vet&rsquo;s direct guidance while you get to help.</p>" },
+    { h: "On the way to the clinic", html:
+      "<p>Keep the airway as open as possible without poking. For a small dog, " +
+      "support the chest and keep the head slightly down if safe; for cats, a hard " +
+      "carrier prevents further panic in the car. Have someone phone the clinic while " +
+      "you drive &mdash; reception can prepare oxygen and staff.</p>" +
+      "<p>If breathing stops entirely, only attempt rescue breaths or chest compressions " +
+      "if a vet is guiding you live on the phone. The priority in Pattaya traffic is " +
+      "still reaching a hospital fast; see " +
+      "<a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">getting your pet " +
+      "to the vet</a> for transport options.</p>" },
     { h: "Preventing it", html:
       "<p>Most choking is preventable. Choose toys and balls too large to lodge in " +
       "the throat, supervise chews and take away small end-pieces, and keep these " +
@@ -72,7 +83,16 @@ pages.push(hazard({
       "fruit stones, children&rsquo;s toys and small household objects</strong>. " +
       "Match every chew and toy to the size of your pet. See also " +
       "<a href=\"/pet-emergency/poisoning.html\">poisoning hazards</a> for items " +
-      "that can block or injure the airway.</p>" }
+      "that can block or injure the airway.</p>" },
+    { h: "After a choking scare", html:
+      "<p>Even when an object is cleared, have a vet check for <strong>scratches, " +
+      "swelling or leftover material</strong> in the mouth or throat. Oesophageal " +
+      "blockages can present hours later with drooling, retching or refusal to eat.</p>" +
+      "<p>Swap risky chews for size-appropriate toys, and tell household members and " +
+      "guests not to feed table scraps — especially bones from Thai street food. " +
+      "If your pet repeats choking episodes, investigate underlying dental disease or " +
+      "a habit of gulping food too fast with your regular " +
+      "<a href=\"/vets/\">vet</a>.</p>" }
   ],
   faqs: [
     ["How do I know if my pet is choking?",
@@ -84,7 +104,11 @@ pages.push(hazard({
     ["Can cats choke the same way as dogs?",
      "<p>Yes — string, small toys and hair ties are common cat hazards. The same rule applies: get to a vet fast; only remove objects you can see easily at the mouth.</p>"],
     ["Should I try the Heimlich manoeuvre on my pet?",
-     "<p>Only under direct veterinary guidance on the phone while you travel to a clinic. Blind attempts can injure ribs or push an object deeper.</p>"]
+     "<p>Only under direct veterinary guidance on the phone while you travel to a clinic. Blind attempts can injure ribs or push an object deeper.</p>"],
+    ["What objects do Pattaya dogs choke on most?",
+     "<p>Chicken bones from street food scraps, corn cobs, small balls, and children's toys dropped in sois. Supervise chews and keep bins secured on balconies.</p>"],
+    ["My pet gagged but seems fine now — still see a vet?",
+     "<p>Yes if you suspect something was swallowed partially — oesophageal blockages can worsen hours later. When in doubt, a quick vet check is safer than waiting.</p>"]
   ],
   related: [
     { name: "Poisoning hazards", path: "/pet-emergency/poisoning.html", desc: "Swallowed toxins and objects." },

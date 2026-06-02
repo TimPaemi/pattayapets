@@ -108,7 +108,6 @@ pages.push(article({
   title: "24-Hour Emergency Vets in Pattaya (Addresses & Phone) | PattayaPets",
   desc: "24-hour animal hospitals in Pattaya for pet emergencies: addresses, phone numbers " +
     "and what to do before you need one — open around the clock near Pattaya.",
-  updated: "2026-05-30",
   crumb: "24-hour vets",
   breadcrumbs: SUB,
   eyebrow: "Pet emergencies",
@@ -125,8 +124,32 @@ pages.push(article({
     { h: "Animal hospitals listed as open 24 hours", html:
       "<p>The clinics below appear, from public information, to operate 24 hours. " +
       "Opening hours can change &mdash; if you can, call first to confirm someone " +
-      "is on duty for emergencies.</p>" +
-      '<div class="grid grid-2">' + c24list + "</div>" },
+      "is on duty for emergencies. PattayaPets lists these as <strong>facts pages</strong> " +
+      "until anonymous visits are complete; we do not rate medical quality.</p>" +
+      '<div class="grid grid-2">' + c24list + "</div>" +
+      "<p>Need a daytime clinic or a vet in your neighbourhood? Browse the full " +
+      "<a href=\"/vets/\">vets directory</a>, " +
+      "<a href=\"/area/naklua.html\">Naklua</a>, " +
+      "<a href=\"/area/jomtien.html\">Jomtien</a> and " +
+      "<a href=\"/area/central-pattaya.html\">Central Pattaya</a> area hubs, or " +
+      "<a href=\"/mobile-vets/\">mobile &amp; home-visit vets</a> for routine care " +
+      "that is not an emergency.</p>" },
+    { h: "How emergency vet care works in Pattaya", html:
+      "<p>Most 24-hour animal hospitals in Pattaya are <strong>private clinics</strong>, " +
+      "not government services. You pay at the time of treatment &mdash; cash and card " +
+      "are widely accepted, but it is wise to bring both. English is commonly spoken " +
+      "at the larger hospitals listed here, especially at reception, though you should " +
+      "not assume every staff member on every shift will be fluent.</p>" +
+      "<p>In a true emergency the priority is stabilising your pet. Clinics may ask for " +
+      "a deposit or an estimate before extensive diagnostics or surgery; that is normal " +
+      "business practice here, not a sign you are in the wrong place. If your pet needs " +
+      "specialist care the hospital may stabilise first and refer you onward &mdash; " +
+      "still an emergency success, not a failure.</p>" +
+      "<p><strong>What to tell reception on the phone or at arrival:</strong> species " +
+      "and approximate weight, what happened, when symptoms started, whether the pet " +
+      "is conscious and breathing normally, and any known toxins or medicines involved. " +
+      "If heatstroke is possible, say so immediately &mdash; see " +
+      "<a href=\"/pet-emergency/heatstroke.html\">heatstroke</a> for the signs.</p>" },
     { h: "Before an emergency ever happens", html:
       "<p>Three minutes of preparation now can save your pet later:</p>" +
       "<ul><li><strong>Save a 24-hour clinic in your phone</strong> &mdash; pick " +
@@ -140,7 +163,35 @@ pages.push(article({
       "<li><strong>Keep records handy</strong> &mdash; vaccination history helps " +
       "the vet act faster.</li></ul>" +
       "<p>For non-urgent care, browse the full " +
-      "<a href=\"/vets/\">directory of vets and animal hospitals</a>.</p>" }
+      "<a href=\"/vets/\">directory of vets and animal hospitals</a>.</p>" },
+    { h: "Getting there fast — transport and language", html:
+      "<p>Most expats use <strong>Grab or a trusted driver</strong> with the clinic " +
+      "address saved in English and Thai. Put the address in your phone before you " +
+      "need it &mdash; see " +
+      "<a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">getting your pet " +
+      "to the vet</a> for options without your own car, including " +
+      '<a href="https://pattaya-vehicle-rentals.com/" target="_blank" rel="noopener noreferrer">' +
+      "short-term car hire</a> if you prefer to drive yourself at night.</p>" +
+      "<p>If you are new to Thailand, save the phrase <em>soo sat</em> (animal hospital) " +
+      "for a driver. A calm human voice on the phone helps reception prepare; a photo " +
+      "of your pet in distress is useful only if it does not delay leaving.</p>" +
+      "<p><strong>Mobile and home-visit vets</strong> suit vaccinations and routine checks, " +
+      "but they are rarely equipped for surgery, oxygen, IV fluids or overnight " +
+      "monitoring. In a collapse, breathing difficulty or major trauma, go to a " +
+      "24-hour hospital, not a mobile appointment.</p>" },
+    { h: "After the emergency — follow-up and records", html:
+      "<p>Once your pet is stable, ask for a <strong>written discharge summary</strong> " +
+      "or copy of notes — especially if you may travel, change vets, or need " +
+      "insurance paperwork. Note medication names, doses and recheck dates in your " +
+      "phone the same day; stress makes memory unreliable.</p>" +
+      "<p>If your pet was hospitalised overnight, clarify visiting rules, how updates " +
+      "are shared (LINE, phone, email), and what to watch for at home before you " +
+      "leave. For ongoing care, our <a href=\"/vets/\">vets directory</a> lists " +
+      "daytime clinics if you need a follow-up near home rather than returning to " +
+      "the emergency hospital.</p>" +
+      "<p>Heatstroke, snake bites, poisoning and road trauma often need <strong>recheck " +
+      "appointments</strong> even when your pet looks recovered. Skipping follow-up " +
+      "is one of the most common reasons preventable complications appear days later.</p>" }
   ],
   faqs: [
     ["How do I know if it is a real emergency?",
@@ -152,8 +203,15 @@ pages.push(article({
     ["What should I bring to a 24-hour vet visit?",
      "<p>Your pet secured in a carrier or on a lead, vaccination records if you have them, any medication, and a payment method. Save the clinic address in English and Thai for your driver if someone else is taking you.</p>"],
     ["Do I need an appointment for an emergency?",
-     "<p>No — go straight there for a genuine emergency. A quick call on the way helps the team prepare, but do not delay travel when minutes matter.</p>"]
+     "<p>No — go straight there for a genuine emergency. A quick call on the way helps the team prepare, but do not delay travel when minutes matter.</p>"],
+    ["How much does an emergency vet visit cost in Pattaya?",
+     "<p>There is no fixed public price — it depends on the clinic, time of day and treatment. Consultations often start in the low thousands of baht; surgery, imaging or overnight care can run much higher. Ask for an estimate when you can, but do not let cost delay life-saving stabilisation.</p>"],
+    ["Which 24-hour clinic is closest to Jomtien or Naklua?",
+     "<p>Most listed 24-hour hospitals cluster along Sukhumvit and central Pattaya. From Jomtien or Naklua, pick the nearest from the list above and save the drive time in advance. For daytime neighbourhood care, use our <a href=\"/area/jomtien.html\">Jomtien</a> and <a href=\"/area/naklua.html\">Naklua</a> area pages.</p>"],
+    ["Can I get human medical help on this page?",
+     "<p>No — this list is for <strong>animals only</strong>. For human emergencies in Pattaya, see <a href=\"https://pattaya-medical.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Pattaya Medical</a>.</p>"]
   ],
+  updated: "2026-06-01",
   related: [
     { name: "Pet first-aid orientation", path: "/pet-emergency/pet-first-aid.html", desc: "Staying calm and moving a hurt pet safely." },
     { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "Pattaya's most common preventable emergency." },
@@ -173,6 +231,7 @@ function hazard(o) {
     eyebrow: "Pet emergencies",
     h1: o.h1,
     lede: o.lede,
+    updated: o.updated || "2026-06-01",
     sections: [{ html:
       '<div class="callout callout-emergency"><p>' + NOTVET + "</p></div>" }]
       .concat(o.sections),
@@ -200,41 +259,87 @@ pages.push(hazard({
     { h: "The mindset", html:
       "<p>In an emergency, your job is to be the calm one. A frightened or " +
       "injured animal reads your panic. Speak low, move slowly, and focus on one " +
-      "thing: getting safely to professional help.</p>" },
+      "thing: getting safely to professional help.</p>" +
+      "<p>Most owners in Pattaya are not medically trained &mdash; and that is " +
+      "fine. <strong>First aid here means not making things worse</strong> while " +
+      "you travel to a vet. If you are alone, prioritise securing the pet and " +
+      "calling a driver or friend before you attempt anything that could get you " +
+      "bitten.</p>" },
     { h: "Moving an injured pet safely", html:
       "<ul><li><strong>Protect yourself first</strong> &mdash; even a gentle pet " +
-      "in pain may bite or scratch. Approach slowly and quietly.</li>" +
+      "in pain may bite or scratch. Approach slowly and quietly. A towel over the " +
+      "head can calm some dogs briefly; do not smother a cat or restrict breathing.</li>" +
       "<li><strong>Use a carrier or a firm surface</strong> &mdash; for a small " +
-      "pet, a carrier; for a larger dog, a board, a blanket used as a stretcher, " +
-      "or careful support of the body.</li>" +
+      "pet, a hard-sided carrier; for a larger dog, a board, a blanket used as a " +
+      "stretcher with two people, or careful support of the chest and hindquarters " +
+      "without twisting the spine.</li>" +
       "<li><strong>Keep the pet warm and still</strong> &mdash; minimise " +
-      "movement, especially if a spinal injury is possible.</li>" +
+      "movement, especially if a spinal injury is possible. Heatstroke is the " +
+      "exception: cool with water and air flow on the way &mdash; see " +
+      "<a href=\"/pet-emergency/heatstroke.html\">heatstroke</a>.</li>" +
+      "<li><strong>Muzzle only if safe</strong> &mdash; an improvised muzzle on a " +
+      "conscious dog in pain can help you lift them; never muzzle a vomiting pet, a " +
+      "brachycephalic (flat-faced) breed struggling to breathe, or any animal that " +
+      "is gasping.</li>" +
       "<li><strong>Go</strong> &mdash; head for the nearest " +
       "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vet</a>. " +
       "See <a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">getting your " +
       "pet to the vet</a> if you do not have a car.</li></ul>" },
+    { h: "Bleeding, breathing and collapse", html:
+      "<p><strong>Bleeding:</strong> apply firm pressure with a clean cloth for several " +
+      "minutes without repeatedly lifting to check. Do not use a tourniquet unless a " +
+      "vet has told you how &mdash; it is rarely appropriate for pets.</p>" +
+      "<p><strong>Choking:</strong> if you can see an object in the mouth and can remove " +
+      "it safely, try; otherwise go. See <a href=\"/pet-emergency/choking.html\">choking</a> " +
+      "for orientation &mdash; do not blindly finger a throat.</p>" +
+      "<p><strong>Collapse or seizure:</strong> clear hard objects away, time the episode, " +
+      "do not restrain violently, and transport once it is safe to move. Prolonged " +
+      "seizure or repeated seizures need urgent vet care.</p>" },
     { h: "What not to do", html:
       "<p>Do not give human medicines &mdash; many are toxic to pets. Do not " +
       "force food or water on a collapsed animal. Do not try to set a bone, " +
       "induce vomiting, or treat a wound beyond gently controlling obvious " +
-      "bleeding. These are decisions for a veterinarian.</p>" },
+      "bleeding. These are decisions for a veterinarian.</p>" +
+      "<p>Do not delay leaving because you are searching online for a home remedy. " +
+      "Pattaya&rsquo;s heat makes <strong>wait-and-see</strong> especially dangerous " +
+      "for heatstroke, toad poisoning and snake bites.</p>" },
+    { h: "At the clinic — what to expect", html:
+      "<p>Reception will triage: breathing problems, collapse and major trauma usually " +
+      "go first. You may be asked to wait even when you feel it is urgent &mdash; trust " +
+      "that the clinical team is prioritising the sickest patients. Have your payment " +
+      "method ready; deposits for surgery or overnight care are common at private hospitals.</p>" +
+      "<p>Ask for an estimate when the situation is stable enough to discuss. If English " +
+      "is limited, write key facts on your phone: species, weight, what happened, " +
+      "current medicines, and your contact number.</p>" },
     { h: "Be ready before it happens", html:
       "<p>Keep a carrier accessible, a 24-hour clinic saved in your phone, and " +
       "your pet&rsquo;s vaccination records somewhere you can grab them. " +
       "A <a href=\"/owning-a-pet-in-pattaya/microchipping-your-pet.html\">microchip</a> " +
       "with current contact details helps if your pet gets loose. " +
-      "Preparation is the most useful &lsquo;first aid&rsquo; there is.</p>" }
+      "Preparation is the most useful &lsquo;first aid&rsquo; there is.</p>" +
+      "<p>A practical kit for Pattaya: hard carrier, spare lead and harness, towel, " +
+      "photocopy of vaccination book, vet card, cash, and the address of your nearest " +
+      "24-hour hospital in Thai for Grab drivers.</p>" }
   ],
   faqs: [
     ["Should I keep a pet first-aid kit?",
-     "<p>A simple kit — a clean carrier, a spare lead, a towel or blanket, and your vet's number — covers most situations. Ask your own vet what else they suggest for your specific pet.</p>"],
+     "<p>Yes — keep it simple: a clean carrier, spare lead, towel, vaccination records, your regular vet&rsquo;s number and a 24-hour clinic contact. Ask your own vet what else they suggest for your specific pet (e.g. breed, chronic conditions).</p>"],
     ["Can I give my dog human painkillers?",
-     "<p>No. Many common human medicines, including some painkillers, are dangerous or fatal to dogs and cats. Never medicate a pet without a vet's direction.</p>"],
-    ["What should I keep in a simple pet first-aid kit?",
-     "<p>A carrier, spare lead, towel, your vet's number and a 24-hour clinic contact cover most situations. Ask your vet what else suits your pet.</p>"],
+     "<p>No. Many common human medicines, including ibuprofen, paracetamol/acetaminophen and some painkillers, are dangerous or fatal to dogs and cats. Never medicate a pet without a vet&rsquo;s direction.</p>"],
     ["When is it definitely an emergency?",
-     "<p>Difficulty breathing, collapse, heavy bleeding, suspected poisoning, seizures, heatstroke signs or a road accident all warrant immediate travel to a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vet</a>.</p>"]
+     "<p>Difficulty breathing, collapse, heavy bleeding, suspected poisoning, seizures, heatstroke signs or a road accident all warrant immediate travel to a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vet</a>.</p>"],
+    ["How do I transport a cat versus a dog in an emergency?",
+     "<p>Cats almost always travel more safely in a hard carrier — a panicked cat in a car without one is a danger to itself and the driver. Dogs may use a carrier, crate or careful restraint on a lead; large injured dogs may need a blanket stretcher with two people.</p>"],
+    ["Should I induce vomiting if my pet ate something toxic?",
+     "<p>Not unless a vet or poison helpline tells you to. Some toxins cause more damage on the way back up. For toad mouthing, rinse the mouth with water if you can do it safely and go — see <a href=\"/pet-emergency/poisoning.html\">poisoning</a>.</p>"],
+    ["What if the emergency happens during Songkran or a holiday?",
+     "<p>24-hour hospitals aim to stay open, but roads may be congested and staff stretched. Leave earlier, call ahead, and avoid driving yourself if you have been drinking — use a sober driver or Grab.</p>"],
+    ["Can I use a mobile vet for first aid at home?",
+     "<p>Mobile vets help with routine care and some urgent calls, but surgery, oxygen and overnight monitoring need a hospital. If your pet has collapsed or cannot breathe, go to a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour animal hospital</a>, not a home visit.</p>"],
+    ["Does pet insurance cover emergency visits in Pattaya?",
+     "<p>Depends on your policy and insurer — many expat policies require treatment at registered clinics and pre-authorisation for large claims. Read our <a href=\"/pet-insurance-thailand.html\">pet insurance in Thailand</a> orientation and check your own documents before you need them.</p>"]
   ],
+  updated: "2026-06-01",
   related: [
     { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "The most common preventable emergency here." },
     { name: "Venomous creatures", path: "/pet-emergency/venomous-creatures.html", desc: "Toads, centipedes and stings." },
@@ -263,7 +368,22 @@ pages.push(hazard({
       "drooling, a bright red tongue and gums, weakness or stumbling, vomiting, " +
       "and collapse. Heatstroke is a true emergency &mdash; if you see these " +
       "signs, it is time to act and to head for a " +
-      "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">vet</a>.</p>" },
+      "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">vet</a>.</p>" +
+      "<p><strong>Cats pant less often than dogs</strong> &mdash; when a cat is " +
+      "panting with an open mouth, treat it as urgent. Brachycephalic breeds " +
+      "(Pugs, French Bulldogs, Persians) can tip into distress with less obvious " +
+      "warning because their airways are already compromised.</p>" },
+    { h: "Cooling on the way to the vet", html:
+      "<p>Start cooling <strong>while you travel</strong>, not instead of going. " +
+      "Move the pet to shade or air conditioning, offer small sips of cool (not " +
+      "ice-cold) water if it is conscious and able to swallow, and wet the paws, " +
+      "belly and inner thighs with lukewarm water. Use a fan or car AC on the " +
+      "way. Do not force water into a collapsed animal or wrap it in wet towels " +
+      "that trap heat &mdash; evaporation and airflow matter more than soaking.</p>" +
+      "<p>Phone the clinic en route so they can prepare IV fluids and monitoring. " +
+      "Heatstroke can cause clotting problems and organ damage that are not visible " +
+      "from the outside; professional treatment is not optional once signs are " +
+      "serious.</p>" },
     { h: "The high-risk situations", html:
       "<ul><li><strong>A parked car</strong> &mdash; never, even for a minute, " +
       "even with windows cracked. Interiors become lethal extraordinarily fast.</li>" +
@@ -280,10 +400,13 @@ pages.push(hazard({
       "walk in the cool hours, and never leave a pet in a hot car or a hot " +
       "balcony. For day-to-day heat management, see " +
       "<a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">hot-climate pet " +
-      "care</a>. If you suspect heatstroke, move the pet to shade, offer small " +
-      "amounts of cool (not ice-cold) water, wet the coat with cool water, and " +
-      "get to a vet without delay &mdash; cooling on the way, not instead of " +
-      "going.</p>" }
+      "care</a> and " +
+      "<a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">where to walk " +
+      "your dog</a>.</p>" +
+      "<p>On condo balconies, check that metal flooring and glass walls do not turn " +
+      "a shaded spot into a greenhouse by mid-morning. If you rely on AC, have a " +
+      "backup plan for power cuts during hot season &mdash; a neighbour, pet sitter " +
+      "or boarding option beats a panicked emergency run.</p>" }
   ],
   faqs: [
     ["What time of day is safe to walk a dog in Pattaya?",
@@ -295,7 +418,13 @@ pages.push(hazard({
     ["Can cats get heatstroke indoors?",
      "<p>Yes — a room without airflow or AC, a balcony with no shade, or a closed car can overheat a cat quickly. Ensure water, shade and ventilation; panting in a cat is always urgent.</p>"],
     ["What is the fastest way to cool a pet?",
-     "<p>Move to shade or AC, offer small amounts of cool (not ice-cold) water, and wet paws and belly with lukewarm water while you travel to a vet. Do not force water if the pet is collapsed.</p>"]
+     "<p>Move to shade or AC, offer small amounts of cool (not ice-cold) water, and wet paws and belly with lukewarm water while you travel to a vet. Do not force water if the pet is collapsed.</p>"],
+    ["Can I use ice packs or cold baths?",
+     "<p>Ice-cold immersion can shock the system and constrict blood vessels, slowing cooling. Lukewarm water plus airflow is safer while you get to a vet.</p>"],
+    ["Does wetting a dog's coat help in humid Pattaya air?",
+     "<p>Yes, if water can evaporate — wet belly and paws, use a fan or car AC, and avoid heavy wet towels that trap heat against the skin.</p>"],
+    ["Are short-nosed breeds at higher risk?",
+     "<p>Yes — brachycephalic dogs and cats overheat faster. See <a href=\"/bring-pet-to-thailand/snub-nosed-breeds-flying.html\">snub-nosed breeds</a> for the wider picture on breathing and heat.</p>"]
   ],
   related: [
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Preventing heat problems day to day." },
@@ -332,22 +461,51 @@ pages.push(hazard({
       "<li><strong>Check after walks</strong> &mdash; run your hands over your " +
       "pet, especially ears, neck, armpits and between toes.</li>" +
       "<li><strong>Keep the environment tidy</strong> &mdash; short grass and " +
-      "clean bedding give parasites fewer places to thrive.</li></ul>" +
+      "clean bedding give parasites fewer places to thrive.</li>" +
+      "<li><strong>Treat all pets in the household</strong> &mdash; fleas hop between " +
+      "dogs and cats; treating one pet while another carries parasites wastes money.</li></ul>" +
       "<p>If you find a tick or a flea problem, a " +
       "<a href=\"/vets/\">vet</a> can recommend the right treatment and " +
-      "prevention plan.</p>" }
+      "prevention plan. See also " +
+      "<a href=\"/pet-health-pattaya/heartworm.html\">heartworm prevention</a> " +
+      "&mdash; mosquitoes, like ticks, do not take a dry-season holiday here.</p>" },
+    { h: "Removing ticks safely", html:
+      "<p>Found a tick? Remove it <strong>promptly</strong> &mdash; the longer it " +
+      "feeds, the higher the risk of disease transmission. Use a proper tick hook " +
+      "or fine tweezers, grasp close to the skin, and pull steadily upward without " +
+      "twisting or squeezing the body. Do not burn ticks, smother them in oil or " +
+      "leave the head behind if you can avoid it; if part remains, let a vet advise.</p>" +
+      "<p>After removal, note the date and location on your phone. Watch your pet for " +
+      "lethargy, fever, lameness or loss of appetite over the following weeks &mdash; " +
+      "see <a href=\"/pet-health-pattaya/tick-borne-disease.html\">tick-borne disease</a> " +
+      "for what to mention to a vet.</p>" },
+    { h: "When to see a vet", html:
+      "<p>Book a vet visit if you find <strong>many ticks or fleas</strong>, if your " +
+      "pet is scratching until the skin breaks, if a tick was attached for days, " +
+      "or if you see lethargy, pale gums, fever or lameness after a bite. Puppies " +
+      "and kittens with heavy infestations can become anaemic quickly in the tropics.</p>" +
+      "<p>Your vet can recommend a product suited to Pattaya&rsquo;s year-round " +
+      "pressure, treat any secondary skin infection, and discuss testing if tick-borne " +
+      "illness is suspected. Do not rotate random supermarket products without " +
+      "professional advice &mdash; some combinations are unsafe.</p>" }
   ],
   faqs: [
     ["Do indoor cats need flea and tick prevention in Pattaya?",
      "<p>Often yes — parasites can come in on people, on other pets, or through open windows and balconies. Ask your vet what is appropriate for your cat.</p>"],
     ["Should I remove a tick myself?",
-     "<p>Ticks should be removed promptly and correctly. If you are not confident, a vet can do it quickly and advise on prevention so it does not keep happening.</p>"],
+     "<p>Ticks should be removed promptly and correctly with a tick hook or fine tweezers. If you are not confident, a vet can do it quickly and advise on prevention so it does not keep happening.</p>"],
     ["How often should I use flea and tick prevention in Pattaya?",
      "<p>Year-round prevention is the norm here — ticks and fleas do not stop in the dry season. Your vet can recommend a product suited to your pet and lifestyle.</p>"],
     ["What if my pet is scratching but I see no fleas?",
      "<p>Fleas are not always visible; allergies, mites and skin infections also cause itching. A vet exam beats guessing — especially if scratching is intense or the skin is red or broken.</p>"],
     ["Are tick-borne diseases common in Pattaya?",
-     "<p>Ticks are present in Thailand and can transmit serious illnesses. Prevention and prompt removal reduce risk; see our <a href=\"/pet-health-pattaya/tick-borne-disease.html\">tick-borne disease</a> guide for what to watch for.</p>"]
+     "<p>Ticks are present in Thailand and can transmit serious illnesses. Prevention and prompt removal reduce risk; see our <a href=\"/pet-health-pattaya/tick-borne-disease.html\">tick-borne disease</a> guide for what to watch for.</p>"],
+    ["Can I use dog flea products on cats?",
+     "<p>No — some dog-only products contain permethrin, which is toxic to cats. Always use species-appropriate products prescribed or approved by your vet.</p>"],
+    ["Do ticks live on beaches and condo gardens?",
+     "<p>Ticks favour grass, undergrowth and areas where wildlife or street dogs pass through — including garden edges and scrub near Jomtien and Naklua. Check pets after any outdoor time, not only forest walks.</p>"],
+    ["Should I worry about one tick?",
+     "<p>A single tick removed promptly is usually manageable, but note the date and watch for illness. Multiple ticks or repeated finds mean your prevention plan needs a vet review.</p>"]
   ],
   related: [
     { name: "Tick-borne disease", path: "/pet-health-pattaya/tick-borne-disease.html", desc: "What ticks can transmit here." },
@@ -387,7 +545,28 @@ pages.push(hazard({
       "&mdash; and get to a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">" +
       "vet</a> immediately. Do not try to catch or kill the snake; if you can " +
       "safely note its colour and size from a distance, that may help the vet. " +
-      "Do not apply a tourniquet, cut the wound, or attempt to suck out venom.</p>" }
+      "Do not apply a tourniquet, cut the wound, or attempt to suck out venom.</p>" +
+      "<p>Carry your pet or use minimal movement if you must lift it. Phone ahead " +
+      "so the clinic can prepare antivenom assessment and supportive care. Time " +
+      "matters more than perfect identification.</p>" },
+    { h: "What happens at the vet", html:
+      "<p>Veterinary teams treat snake bites with <strong>supportive care</strong> " +
+      "&mdash; pain relief, fluids, monitoring and, when indicated, antivenom. " +
+      "Not every bite envenomates; not every species requires the same antivenom. " +
+      "That is why professional assessment beats home remedies.</p>" +
+      "<p>Expect blood tests, wound care and possibly hospitalisation. Even non-venomous " +
+      "bites can become infected in Pattaya&rsquo;s heat. Follow discharge instructions " +
+      "on rechecks and activity restriction &mdash; swelling can worsen before it improves.</p>" },
+    { h: "Snakes in and around Pattaya", html:
+      "<p>Thailand has many snake species; several are venomous. In green spaces, " +
+      "vacant plots, gardens and edges of development around Pattaya and Chon Buri, " +
+      "encounters are possible &mdash; especially after rain when snakes move. " +
+      "Common advice from wildlife authorities is to give snakes space and call " +
+      "trained handlers for removal from homes rather than attempting capture yourself.</p>" +
+      "<p>For pets, the practical rule is simpler: assume any bite from an unknown snake " +
+      "is an emergency until a vet says otherwise. See also " +
+      "<a href=\"/pet-emergency/venomous-creatures.html\">venomous creatures</a> " +
+      "for toads and centipedes at the same times of day.</p>" }
   ],
   faqs: [
     ["How do I know if my pet was bitten by a snake?",
@@ -399,7 +578,13 @@ pages.push(hazard({
     ["Are venomous snakes common in Pattaya?",
      "<p>Snakes exist in and around Pattaya, including venomous species in green spaces and undeveloped land. Keep dogs on leads near scrub and avoid letting pets poke into holes or piles of leaves.</p>"],
     ["Should I apply a tourniquet or suck out venom?",
-     "<p>No — outdated first-aid myths can cause more harm. Focus on getting your pet to a vet quickly and keeping it as calm and still as possible.</p>"]
+     "<p>No — outdated first-aid myths can cause more harm. Focus on getting your pet to a vet quickly and keeping it as calm and still as possible.</p>"],
+    ["Does antivenom exist for pets in Thailand?",
+     "<p>Veterinary hospitals in Thailand can access antivenom when clinically indicated. Availability and type depend on the case — another reason to reach a hospital fast rather than waiting at home.</p>"],
+    ["My dog killed the snake — should I bring it?",
+     "<p>Only if you can do so safely without delay. A photo from a distance is often enough. Never risk a second bite handling a dead snake.</p>"],
+    ["Can cats survive snake bites?",
+     "<p>Cats are bitten less often but are not immune. Any suspected bite in either species is an emergency.</p>"]
   ],
   related: [
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Go straight here if you suspect a bite." },
@@ -452,7 +637,25 @@ pages.push(hazard({
       "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour animal hospital</a>. " +
       "For street-animal emergencies, " +
       "<a href=\"/vets/animal-army-hospital.html\">Animal Army Hospital</a> in Na " +
-      "Jomtien operates a rescue ambulance.</p>" }
+      "Jomtien operates a rescue ambulance.</p>" +
+      "<p>Bring your pet&rsquo;s vaccination book to the vet after any bite. The " +
+      "clinic will advise on wound cleaning, antibiotics if needed, and whether " +
+      "a rabies booster is required given timing and severity. Human bite victims " +
+      "need medical care separately &mdash; see " +
+      '<a href="https://pattaya-medical.com/" target="_blank" rel="noopener noreferrer">' +
+      "Pattaya Medical</a> for human emergency orientation.</p>" },
+    { h: "High-risk areas and situations", html:
+      "<p>Soi dogs are most territorial near where they sleep and eat &mdash; " +
+      "often the same side streets every day. Markets, construction sites with " +
+      "food waste, and unlit alleys at dawn or dusk see more movement. If you rent " +
+      "short-term, ask neighbours which routes are calm before you establish a " +
+      "walking pattern.</p>" +
+      "<p>Small dogs and puppies can trigger chase behaviour in some street dogs. " +
+      "Pick them up only if you can do so without putting your face near the " +
+      "approaching group; otherwise create distance calmly with your body between " +
+      "them. Off-lead beach runs near soi access points combine two risk factors &mdash; " +
+      "see <a href=\"/dog-friendly-pattaya/beaches.html\">dog-friendly beaches</a> " +
+      "for etiquette.</p>" }
   ],
   faqs: [
     ["Are Pattaya's street dogs dangerous?",
@@ -464,7 +667,13 @@ pages.push(hazard({
     ["Is it safe to walk at night?",
      "<p>Many owners walk early morning or after sunset for heat reasons; at night visibility is lower and some street dogs are more active. A good lead, a torch and familiar routes help.</p>"],
     ["What if a street dog follows us home?",
-     "<p>Do not encourage it inside. If it seems lost or injured, contact a local rescue rather than adopting on impulse — see <a href=\"/adopt-a-pet-pattaya/\">adopt a pet in Pattaya</a> for organisations that can help.</p>"]
+     "<p>Do not encourage it inside. If it seems lost or injured, contact a local rescue rather than adopting on impulse — see <a href=\"/adopt-a-pet-pattaya/\">adopt a pet in Pattaya</a> for organisations that can help.</p>"],
+    ["Should my dog greet street dogs on a walk?",
+     "<p>Generally no — keep moving and give space. Even friendly-looking encounters can turn if a territorial dog feels challenged near its patch.</p>"],
+    ["Are temple dogs different from soi dogs?",
+     "<p>Temple colonies are often fed and tolerated by residents but are still free-roaming dogs with the same bite and disease risks. Same rules: lead, space, current rabies vaccination.</p>"],
+    ["What if I am bitten while protecting my dog?",
+     "<p>Wash the wound, seek human medical advice promptly, and still have your dog's vaccination status checked by a vet if it was also bitten.</p>"]
   ],
   related: [
     { name: "Dog registration & the law", path: "/owning-a-pet-in-pattaya/dog-registration-thailand.html", desc: "Rabies vaccination is a legal duty." },
@@ -514,7 +723,20 @@ pages.push(hazard({
       "reach. Be cautious about where your pet scavenges on walks &mdash; see " +
       "<a href=\"/pet-emergency/street-dog-encounters.html\">street-dog encounters</a> " +
       "for tideline and soi hazards &mdash; and ask neighbours and condo management about any rodent baiting in shared " +
-      "areas.</p>" }
+      "areas.</p>" +
+      "<p>In Pattaya&rsquo;s rainy season, <strong>toad encounters</strong> spike &mdash; " +
+      "dogs that mouth toads can foam at the mouth and collapse quickly. Rinse the " +
+      "mouth with water if you can do so safely and go; details in " +
+      "<a href=\"/pet-emergency/venomous-creatures.html\">venomous creatures</a>.</p>" },
+    { h: "At the veterinary hospital", html:
+      "<p>On arrival, tell reception <strong>what you think was ingested</strong>, " +
+      "when, and roughly how much. Bring packaging, photos of bait stations, or " +
+      "samples only if safe and the vet asks. Treatment depends on the toxin: " +
+      "some cases need activated charcoal or specific antidotes; others need " +
+      "supportive fluids and monitoring; vomiting is induced only when appropriate.</p>" +
+      "<p>Do not be surprised if your pet is kept for observation. Many poisons have " +
+      "delayed effects. Ask what warning signs to watch for at home and when to " +
+      "return immediately.</p>" }
   ],
   faqs: [
     ["Should I make my pet vomit if it ate something toxic?",
@@ -526,7 +748,13 @@ pages.push(hazard({
     ["Should I bring the packaging to the vet?",
      "<p>Yes — the label helps the vet identify the substance and dose. If your pet vomited, note what you saw; do not collect vomit unless the vet asks.</p>"],
     ["Can lilies poison cats?",
-     "<p>Many lilies are highly toxic to cats — even small amounts of pollen or leaf can cause kidney failure. If you have cats, avoid lilies in the home and garden.</p>"]
+     "<p>Many lilies are highly toxic to cats — even small amounts of pollen or leaf can cause kidney failure. If you have cats, avoid lilies in the home and garden.</p>"],
+    ["What about rat poison my neighbour put out?",
+     "<p>Secondary poisoning from eating a poisoned rodent is a real risk. Ask management where bait is placed, keep dogs on leads in shared areas, and treat any suspected ingestion as urgent.</p>"],
+    ["My pet ate a pufferfish on the beach — what now?",
+     "<p>Treat as an emergency — pufferfish toxin is extremely dangerous. Rinse the mouth if safe, do not delay, and see <a href=\"/pet-emergency/beach-and-sea-hazards.html\">beach hazards</a>.</p>"],
+    ["Can grapes or onions in Thai food harm my dog?",
+     "<p>Yes — both are toxic to dogs, and restaurant scraps often contain garlic and onion. Keep table food away from pets and warn guests who share from their plate.</p>"]
   ],
   related: [
     { name: "Choking", path: "/pet-emergency/choking.html", desc: "Airway blockages and swallowed objects." },

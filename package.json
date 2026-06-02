@@ -13,6 +13,7 @@
     "audit:country-pairs": "node tools/audit-country-pairs.js",
     "audit:orphans": "node tools/audit-orphans.js",
     "audit:content": "node tools/audit-content-depth.js",
+    "audit:content:richness": "node tools/audit-content-richness.js",
     "audit:lighthouse": "node tools/audit-lighthouse.js",
     "audit:lighthouse:all": "node tools/audit-lighthouse-all.js",
     "images": "node tools/make-images.js",
