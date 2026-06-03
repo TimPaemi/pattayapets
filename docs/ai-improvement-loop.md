@@ -73,6 +73,7 @@ Not deployed. Last updated: 30 May 2026.
 | **110** | **Area tile vet shortcuts** (`tile-wrap` + `/vets/?filter=area:`); directory 24h card; search area vet chips |
 | **111** | **Shared `area-tiles.js`:** vets + groomers + boarding shortcuts on home/directory area grids |
 | **112** | **Filter counts:** pet-shops/trainers on area tiles; JS “Showing X of Y” on filters; guide chip counts at load |
+| **113** | **Mobile vets on area tiles;** shorter area chip labels; fix duplicate groomers card on directory |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 

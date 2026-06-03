@@ -3,7 +3,18 @@
 
 const { BUSINESSES, CATEGORIES } = require("./data/businesses.js");
 
-const AREA_TILE_CATS = ["vets", "groomers", "boarding", "pet-shops", "trainers"];
+const AREA_TILE_CATS = [
+  "vets", "groomers", "boarding", "pet-shops", "trainers", "mobile-vets"
+];
+
+const AREA_TILE_CHIP_LABEL = {
+  vets: "Vets",
+  groomers: "Groomers",
+  boarding: "Boarding",
+  "pet-shops": "Pet shops",
+  trainers: "Trainers",
+  "mobile-vets": "Mobile vets"
+};
 
 function areaTileHtml(name, slug, subFallback) {
   var list = BUSINESSES.filter(function (b) { return b.areas.indexOf(slug) !== -1; });
@@ -18,7 +29,7 @@ function areaTileHtml(name, slug, subFallback) {
     return list.some(function (b) { return b.category === ck; });
   }).map(function (ck) {
     var cat = CATEGORIES[ck];
-    var label = cat ? cat.name : ck;
+    var label = AREA_TILE_CHIP_LABEL[ck] || (cat ? cat.name : ck);
     var n = list.filter(function (b) { return b.category === ck; }).length;
     return '<a class="tile-sub chip chip-link" href="/' + ck + "/?filter=" +
       encodeURIComponent("area:" + slug) + '">' + label + " in " + name +
@@ -28,4 +39,10 @@ function areaTileHtml(name, slug, subFallback) {
   return '<div class="tile-wrap">' + tile + '<div class="tile-subs">' + chips + "</div></div>";
 }
 
-module.exports = { areaTileHtml };
+function areaChipLabel(ck) {
+  if (AREA_TILE_CHIP_LABEL[ck]) return AREA_TILE_CHIP_LABEL[ck];
+  var cat = CATEGORIES[ck];
+  return cat ? cat.name : ck;
+}
+
+module.exports = { areaTileHtml, areaChipLabel };

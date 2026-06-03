@@ -5,6 +5,7 @@ const { CATEGORIES, AREAS, BUSINESSES } = require("../data/businesses.js");
 const SITE = "https://pattayapets.com";
 const { AREA_GUIDE } = require("../data/areas-content.js");
 const { HUB_GUIDE } = require("../data/hub-content.js");
+const { areaChipLabel } = require("../area-tiles.js");
 
 function esc(s) {
   return String(s == null ? "" : s)
@@ -434,7 +435,7 @@ function areaDirQuickLinks(areaKey, list) {
   }).map(function (ck) {
     var n = list.filter(function (b) { return b.category === ck; }).length;
     return '<a class="chip chip-link" href="/' + ck + "/?filter=" +
-      encodeURIComponent("area:" + areaKey) + '">' + esc(CATEGORIES[ck].name) +
+      encodeURIComponent("area:" + areaKey) + '">' + esc(areaChipLabel(ck)) +
       " in " + esc(areaLabel) + " (" + n + ")</a>";
   }).join("");
   if (!chips) return "";
