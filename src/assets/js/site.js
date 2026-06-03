@@ -2,6 +2,32 @@
 (function () {
   "use strict";
 
+  function filterQueryGet(key) {
+    try {
+      return new URLSearchParams(location.search).get(key) || "";
+    } catch (e) {
+      return "";
+    }
+  }
+
+  function filterQuerySet(key, value) {
+    try {
+      var url = new URL(location.href);
+      if (!value || value === "all") url.searchParams.delete(key);
+      else url.searchParams.set(key, value);
+      history.replaceState(null, "", url.pathname + url.search + url.hash);
+    } catch (e) {}
+  }
+
+  function filterPick(buttons, attr, raw) {
+    if (!raw || raw === "all") return "";
+    var ok = false;
+    buttons.forEach(function (btn) {
+      if ((btn.getAttribute(attr) || "") === raw) ok = true;
+    });
+    return ok ? raw : "";
+  }
+
   /* Stylesheet preload fallback */
   var cssLink = document.querySelector('link[rel="preload"][href="/assets/css/site.css"]');
   if (cssLink) {
@@ -313,6 +339,7 @@
     var filters = document.querySelectorAll(".dir-filter[data-dir-filter]");
     if (!filters.length || !cards.length) return;
     function apply(filter) {
+      if (!filter) filter = "all";
       var shown = 0;
       cards.forEach(function (card) {
         var tags = card.getAttribute("data-dir-tags") || "";
@@ -335,12 +362,15 @@
           status.textContent = "";
         }
       }
+      filterQuerySet("filter", filter);
     }
     filters.forEach(function (btn) {
       btn.addEventListener("click", function () {
         apply(btn.getAttribute("data-dir-filter") || "all");
       });
     });
+    var dirInit = filterPick(filters, "data-dir-filter", filterQueryGet("filter"));
+    if (dirInit) apply(dirInit);
   })();
 
   /* Guides hub: filter cards by topic */
@@ -355,6 +385,7 @@
       : [];
     if (!filters.length || !cards.length) return;
     function apply(filter) {
+      if (!filter) filter = "all";
       var shown = 0;
       cards.forEach(function (card) {
         var cat = card.getAttribute("data-guide-cat") || "";
@@ -374,12 +405,15 @@
           status.textContent = "";
         }
       }
+      filterQuerySet("topic", filter);
     }
     filters.forEach(function (btn) {
       btn.addEventListener("click", function () {
         apply(btn.getAttribute("data-guide-filter") || "all");
       });
     });
+    var guideInit = filterPick(filters, "data-guide-filter", filterQueryGet("topic"));
+    if (guideInit) apply(guideInit);
   })();
 
   /* Area hub: filter listing blocks by category */
@@ -394,6 +428,7 @@
       : [];
     if (!filters.length || !blocks.length) return;
     function apply(filter) {
+      if (!filter) filter = "all";
       var shown = 0;
       blocks.forEach(function (block) {
         var cat = block.getAttribute("data-dir-cat") || "";
@@ -413,12 +448,15 @@
           status.textContent = "";
         }
       }
+      filterQuerySet("cat", filter);
     }
     filters.forEach(function (btn) {
       btn.addEventListener("click", function () {
         apply(btn.getAttribute("data-dir-filter") || "all");
       });
     });
+    var areaInit = filterPick(filters, "data-dir-filter", filterQueryGet("cat"));
+    if (areaInit) apply(areaInit);
   })();
 
   /* On-this-page TOC: highlight current section while scrolling */

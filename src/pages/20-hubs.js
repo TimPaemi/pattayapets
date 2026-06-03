@@ -33,6 +33,7 @@ function guideCard(href, tag, name, desc, cta) {
 function guideFiltersBar() {
   var chips =
     '<button type="button" class="chip chip-link guide-filter is-active" data-guide-filter="all">All</button>' +
+    '<button type="button" class="chip chip-link guide-filter" data-guide-filter="start">Start here</button>' +
     '<button type="button" class="chip chip-link guide-filter" data-guide-filter="import">Import</button>' +
     '<button type="button" class="chip chip-link guide-filter" data-guide-filter="export">Export</button>' +
     '<button type="button" class="chip chip-link guide-filter" data-guide-filter="emergency">Emergency</button>' +
