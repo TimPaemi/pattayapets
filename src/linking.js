@@ -275,6 +275,35 @@ function mergeSidebars(tocAside, linkAside) {
   return tocAside || linkAside;
 }
 
+function hubQuickBar(topic) {
+  var links = pickLinks(INTERNAL_BY_TOPIC[topic] || INTERNAL_BY_TOPIC.general, 6);
+  if (!links.length) return "";
+  return '<div class="hub-quick-links"><div class="ch">Jump to</div><div class="chips">' +
+    links.map(function (l) {
+      return '<a class="chip chip-link" href="' + l.path + '">' + esc(l.name) + "</a>";
+    }).join("") +
+    "</div></div>";
+}
+
+function guideClusterChips() {
+  var clusters = [
+    { path: "/guides.html?topic=start", name: "Start here" },
+    { path: "/guides.html?topic=import", name: "Import" },
+    { path: "/guides.html?topic=export", name: "Export" },
+    { path: "/guides.html?topic=emergency", name: "Emergency" },
+    { path: "/guides.html?topic=owning", name: "Owning" },
+    { path: "/guides.html?topic=health", name: "Health" },
+    { path: "/guides.html?topic=adoption", name: "Adoption" },
+    { path: "/guides.html?topic=lifestyle", name: "Out & about" },
+    { path: "/guides.html?topic=species", name: "Dogs & cats" }
+  ];
+  return '<div class="guide-cluster-chips chips">' +
+    clusters.map(function (c) {
+      return '<a class="chip chip-link" href="' + c.path + '">' + esc(c.name) + "</a>";
+    }).join("") +
+    "</div>";
+}
+
 function inPageLinkSection(topic) {
   var internal = INTERNAL_BY_TOPIC[topic] || INTERNAL_BY_TOPIC.general;
   var netKeys = NETWORK_BY_TOPIC[topic] || NETWORK_BY_TOPIC.general;
@@ -376,6 +405,8 @@ module.exports = {
   mergeSidebars,
   inPageLinkSection,
   seeAlsoCallout,
+  hubQuickBar,
+  guideClusterChips,
   networkChipsHtml,
   networkDirectoryProse,
   proseNetworkLine,

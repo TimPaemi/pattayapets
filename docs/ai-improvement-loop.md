@@ -76,6 +76,7 @@ Not deployed. Last updated: 30 May 2026.
 | **113** | **Mobile vets on area tiles;** shorter area chip labels; fix duplicate groomers card on directory |
 | **114** | **Internal linking:** `linking.js` sidebars on guides + listings; “More to read” strips; expanded category cross-links |
 | **115** | **See also callouts** on guides; network directory on about/masthead; `audit:linking`; sitemap + search network chips |
+| **116** | **Hub jump bars** on cluster + category pages; guide cluster chips; home network row; groomers copy dedupe |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 

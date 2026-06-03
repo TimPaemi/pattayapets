@@ -69,7 +69,9 @@ module.exports = [
       '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a> from a ' +
       "cached page if you need to, or " +
       '<a href="/owning-a-pet-in-pattaya/getting-to-the-vet.html">getting your pet ' +
-      "to the vet</a> if transport is the issue.</p>" +
+      "to the vet</a> if transport is the issue, or " +
+      '<a href="https://pattaya-vehicle-rentals.com/" target="_blank" rel="noopener noreferrer">' +
+      "rent a car</a> via Pattaya Vehicle Rentals in the Pattaya Authority network.</p>" +
       '<div class="callout callout-emergency"><div class="ch">In a pet emergency</div>' +
       "<p>If your pet needs urgent help and you cannot get online, open a " +
       '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour animal hospital</a> ' +

@@ -19,7 +19,7 @@ function catCard(href, icon, tag, name, desc) {
 
 const { BUSINESSES } = require("../data/businesses.js");
 const { areaTileHtml } = require("../area-tiles.js");
-const { inPageLinkSection } = require("../linking.js");
+const { inPageLinkSection, networkChipsHtml } = require("../linking.js");
 const VETS24 = BUSINESSES.filter(function (b) {
   return (b.category === "vets" || b.category === "mobile-vets") && b.c24;
 });
@@ -186,7 +186,10 @@ const body =
     '<div class="section-head"><p class="eyebrow">The editorial method</p>' +
     '<h2>Why you can trust what you read here</h2>' +
     '<p>PattayaPets follows the Pattaya Authority network method &mdash; the same ' +
-    'approach used by our restaurant, medical and school guides.</p></div>' +
+    'approach used by our restaurant, medical and school guides.</p>' +
+    '<p style="margin-top:1rem">Sister publications in the network:</p>' +
+    networkChipsHtml(["authority", "visa", "restaurant", "medical", "vehicle", "school", "stream"]) +
+    '</div>' +
     '<div class="grid grid-4">' +
       '<div><h3>Anonymous visits</h3><p>We visit as ordinary customers &mdash; no PR tours, no special treatment.</p></div>' +
       '<div><h3>Bills paid in full</h3><p>Every bill is paid from our own funds. Nobody pays to appear here.</p></div>' +

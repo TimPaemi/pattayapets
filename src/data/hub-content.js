@@ -62,17 +62,15 @@ const HUB_GUIDE = {
     "<li><strong>What the groom includes.</strong> Bath, brush-out, nail trim, " +
     "ear and eye cleaning, coat trim &mdash; confirm what is covered.</li>" +
     "</ul>" +
-    "<p>Some groomers work from a salon, others come to you. A mobile groom " +
-    "spares a pet the travel and the wait; a salon may carry more equipment. " +
-    "Either can be a good choice &mdash; it depends on your pet. Humidity drives " +
+    "<p>Some groomers work from a salon; others come to you in a fully equipped van " +
+    "&mdash; useful if travel stresses your pet. Confirm the service zone, parking " +
+    "access and any travel surcharge when booking. Humidity drives " +
     "<a href=\"/pet-health-pattaya/skin-and-ear-problems.html\">skin and ear problems</a> " +
     "here &mdash; a groomer who spots early signs is worth keeping. See also " +
-    "<a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">hot-climate pet care</a> " +
-    "and <a href=\"/pet-health-pattaya/dental-care.html\">dental care</a>. " +
-    "Some groomers work from a salon, others come to you in a fully equipped van " +
-    "&mdash; useful if travel stresses your pet. Confirm the service zone, parking " +
-    "access and any travel surcharge when booking. Browse groomers " +
-    "<a href=\"/groomers/#area\">by Pattaya area</a> on the category hub.</p>"),
+    "<a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">hot-climate pet care</a>, " +
+    "<a href=\"/pet-health-pattaya/dental-care.html\">dental care</a>, and " +
+    "<a href=\"/dog-friendly-pattaya/\">dog-friendly Pattaya</a>. Filter groomers " +
+    "<a href=\"/groomers/\">by area</a> on the category hub.</p>"),
 
   boarding: S(
     "<h2>How to choose boarding in Pattaya</h2>" +

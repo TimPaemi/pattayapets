@@ -6,7 +6,8 @@ const {
   sidebarLinkAside,
   mergeSidebars,
   inPageLinkSection,
-  seeAlsoCallout
+  seeAlsoCallout,
+  hubQuickBar
 } = require("./linking.js");
 
 const SITE = "https://pattayapets.com";
@@ -231,6 +232,7 @@ function hub(o) {
     '<p class="updated">Last updated ' + (o.updatedLabel || DEFAULT_UPDATED_LABEL) + "</p>";
   if (o.intro) body += '<div class="prose" style="margin-top:1.2rem">' + o.intro + "</div>";
   var guidesTopic = o.guidesTopic || hubGuidesTopic(o.path);
+  if (guidesTopic) body += hubQuickBar(guidesTopic);
   if (guidesTopic) {
     body += '<div class="btn-row" style="margin-top:1.2rem">' +
       '<a class="btn btn-ghost" href="/guides.html?topic=' + guidesTopic + '">' +

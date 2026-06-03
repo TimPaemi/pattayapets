@@ -9,7 +9,8 @@ const { areaChipLabel } = require("../area-tiles.js");
 const {
   linkTopicForCategory,
   sidebarLinkPanels,
-  inPageLinkSection
+  inPageLinkSection,
+  hubQuickBar
 } = require("../linking.js");
 
 function esc(s) {
@@ -685,7 +686,8 @@ Object.keys(CATEGORIES).forEach(function (key) {
     '<section class="section"><div class="container">' +
     '<p class="eyebrow">Directory</p>' +
     "<h1>" + esc(HUB_TITLE[key] || cat.name) + "</h1>" +
-    '<p class="lede">' + esc(cat.intro) + "</p>";
+    '<p class="lede">' + esc(cat.intro) + "</p>" +
+    hubQuickBar(linkTopicForCategory(key));
 
   if (key === "vets") {
     body += '<div class="callout callout-emergency"><div class="ch">Need a vet right now?</div>' +

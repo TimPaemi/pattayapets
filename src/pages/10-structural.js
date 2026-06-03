@@ -383,6 +383,7 @@ pages.push(prosePage({
   h1: "Privacy notice",
   updated: "2026-06-01",
   updatedLabel: "1 June 2026",
+  linkTopic: "general",
   body:
     "<p>PattayaPets is a static website. We do not run user accounts, we do not ask " +
     "you to log in, and we do not sell or share personal data. This notice explains " +

@@ -57,7 +57,7 @@ function guideFiltersBar() {
 
 const { BUSINESSES } = require("../data/businesses.js");
 const { areaTileHtml } = require("../area-tiles.js");
-const { inPageLinkSection } = require("../linking.js");
+const { inPageLinkSection, guideClusterChips } = require("../linking.js");
 
 function areaTile(name, slug, blurb) {
   return areaTileHtml(name, slug, blurb);
@@ -205,6 +205,7 @@ pages.push({
     "<p class=\"lede\">Clear, practical answers to what pet owners in Pattaya " +
     "search for. Every guide is date-stamped and points you to the official source " +
     "to verify against.</p></div>" +
+    guideClusterChips() +
     "<h2>Browse the guides</h2>" +
     guideFiltersBar() +
     '<div id="guide-listings" class="grid grid-3">' +
