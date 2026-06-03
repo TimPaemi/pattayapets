@@ -13,6 +13,7 @@ pages.push(hub({
   path: "/owning-a-pet-in-pattaya/",
   title: "Owning a Pet in Pattaya | Costs, Housing, Heat & Daily Life | PattayaPets",
   image: "/assets/img/og-owning.png",
+  updated: "2026-06-04",
   desc: "What it is really like to own a pet in Pattaya: costs, hot-climate care, " +
     "pet-friendly housing, walking, registration and where to buy pet food.",
   crumb: "Owning a pet in Pattaya",
@@ -25,8 +26,17 @@ pages.push(hub({
     "<p>Whether you have arrived with a pet, adopted one here, or are weighing it " +
     "up, these guides cover the practical side of day-to-day pet ownership in " +
     "Pattaya: what it costs, how the climate changes everything, finding housing " +
-    "that allows pets, and the local rules. For trips within Thailand, see our guide to " +
-    "<a href=\"/owning-a-pet-in-pattaya/travelling-in-thailand.html\">travelling with a pet</a>.</p>",
+    "that allows pets, and the local rules. Save " +
+    '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a> in your phone, ' +
+    "and read " +
+    '<a href="/owning-a-pet-in-pattaya/microchipping-your-pet.html">microchipping</a> ' +
+    "early. For trips within Thailand, see " +
+    "<a href=\"/owning-a-pet-in-pattaya/travelling-in-thailand.html\">travelling with a pet</a>. " +
+    "Relocating? Pair this hub with " +
+    '<a href="https://pattayavisahelp.com/" target="_blank" rel="noopener noreferrer">' +
+    "Pattaya Visa Help</a> and pet-friendly rentals on " +
+    '<a href="https://pattayastream.com/" target="_blank" rel="noopener noreferrer">' +
+    "Pattaya Villa Stream</a>.</p>",
   groups: [
     {
       title: "The essentials",

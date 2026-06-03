@@ -38,7 +38,7 @@ const HUB_OG = {
 };
 
 const HUB_TITLE = {
-  vets: "Vets in Pattaya | Animal Hospitals & 24-Hour Emergency",
+  vets: "Vets in Pattaya | 24-Hour Animal Hospitals & Clinics",
   groomers: "Dog & Cat Groomers in Pattaya",
   boarding: "Pet Boarding & Kennels in Pattaya",
   "pet-shops": "Pet Shops in Pattaya",
@@ -451,6 +451,20 @@ function bizDirTags(b) {
   return tags.join(" ");
 }
 
+function areaHubQuickBar(areaKey) {
+  var areaLabel = AREAS[areaKey] ? AREAS[areaKey].name : "this area";
+  var f = encodeURIComponent("area:" + areaKey);
+  var chips =
+    '<a class="chip chip-link" href="/vets/?filter=' + f + '">Vets in ' + esc(areaLabel) + "</a>" +
+    '<a class="chip chip-link" href="/groomers/?filter=' + f + '">Groomers</a>' +
+    '<a class="chip chip-link" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a>' +
+    '<a class="chip chip-link" href="/pet-health-pattaya/">Pet health</a>' +
+    '<a class="chip chip-link" href="/dog-friendly-pattaya/">Dog-friendly</a>' +
+    '<a class="chip chip-link" href="/start-here.html">Start here</a>';
+  return '<div class="hub-quick-links" style="margin-top:1.1rem"><div class="ch">Jump to</div>' +
+    '<div class="chips">' + chips + "</div></div>";
+}
+
 function areaDirQuickLinks(areaKey, list) {
   if (!list.length) return "";
   var areaLabel = AREAS[areaKey] ? AREAS[areaKey].name : "this area";
@@ -768,6 +782,7 @@ Object.keys(AREAS).forEach(function (key) {
     "<h1>Pet services in " + esc(area.name) + ", Pattaya</h1>" +
     '<p class="lede">' + esc(area.blurb) + " Below are the " + countLabel +
     " PattayaPets currently lists in " + esc(area.name) + ".</p>" +
+    areaHubQuickBar(key) +
     areaDirQuickLinks(key, list) +
     "</div></section>";
 
@@ -850,7 +865,7 @@ Object.keys(AREAS).forEach(function (key) {
       area.name + ", Pattaya. " + area.blurb,
     crumb: area.name,
     breadcrumbs: [{ name: "Directory", path: "/directory.html" }],
-    updated: "2026-06-03",
+    updated: "2026-06-04",
     body: body
   });
 });

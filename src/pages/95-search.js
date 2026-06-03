@@ -9,7 +9,7 @@ module.exports = [{
   crumb: "Search",
   breadcrumbs: [],
   noindex: true,
-  updated: "2026-05-30",
+  updated: "2026-06-04",
   body:
     '<section class="section"><div class="container">' +
     '<p class="eyebrow">Search</p>' +
@@ -48,6 +48,12 @@ module.exports = [{
     '<a class="chip chip-link" href="/adopt-a-pet-pattaya/">Adoption</a>' +
     '<a class="chip chip-link" href="/dog-friendly-pattaya/">Dog-friendly</a>' +
     '<a class="chip chip-link" href="/pet-relocation/">Relocation agents</a>' +
+    '<a class="chip chip-link" href="/bring-pet-to-thailand/from-uk.html">Import from UK</a>' +
+    '<a class="chip chip-link" href="/take-pet-out-of-thailand/to-uk.html">Export to UK</a>' +
+    '<a class="chip chip-link" href="/bring-pet-to-thailand/from-uae.html">Import from UAE</a>' +
+    '<a class="chip chip-link" href="/dogs/">Dogs hub</a>' +
+    '<a class="chip chip-link" href="/cats/">Cats hub</a>' +
+    '<a class="chip chip-link" href="/adopt-a-pet-pattaya/hope-for-strays.html">Hope for Strays</a>' +
     '<a class="chip chip-link" href="/area/jomtien.html">Jomtien area</a>' +
     '<a class="chip chip-link" href="/vets/?filter=area%3Ajomtien">Vets in Jomtien</a>' +
     '<a class="chip chip-link" href="/groomers/?filter=area%3Ajomtien">Groomers in Jomtien</a>' +
@@ -72,6 +78,9 @@ module.exports = [{
     '<a class="chip chip-link" href="https://pattayastream.com/" target="_blank" rel="noopener noreferrer">Villa Stream</a>' +
     '<a class="chip chip-link" href="https://pattaya-medical.com/" target="_blank" rel="noopener noreferrer">Pattaya Medical</a>' +
     '<a class="chip chip-link" href="https://pattaya-authority.com/work/pattaya-pets/" target="_blank" rel="noopener noreferrer">Pattaya Authority</a>' +
+    '<a class="chip chip-link" href="https://pattaya-coffee.com/" target="_blank" rel="noopener noreferrer">Pattaya Coffee</a>' +
+    '<a class="chip chip-link" href="https://pattaya-gym.com/" target="_blank" rel="noopener noreferrer">Pattaya Gym</a>' +
+    '<a class="chip chip-link" href="https://pattaya-school-guide.com/" target="_blank" rel="noopener noreferrer">School Guide</a>' +
     '</div></div>' +
     '<div id="pp-filters" class="search-filters" role="group" aria-label="Filter by section"></div>' +
     '<div id="pp-results" class="search-results" aria-live="polite" aria-atomic="true" role="region" aria-label="Search results">' +

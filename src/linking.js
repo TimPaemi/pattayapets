@@ -79,31 +79,36 @@ const INTERNAL_BY_TOPIC = {
   emergency: [
     { path: "/pet-emergency/24-hour-vets-pattaya.html", name: "24-hour vets" },
     { path: "/vets/?filter=24h", name: "24-hour directory filter" },
+    { path: "/pet-emergency/heatstroke.html", name: "Heatstroke" },
+    { path: "/pet-emergency/poisoning.html", name: "Poisoning" },
     { path: "/pet-emergency/", name: "Emergency hub" },
     { path: "/pet-health-pattaya/", name: "Pet health guide" },
-    { path: "/mobile-vets/", name: "Mobile vets" }
+    { path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html", name: "Getting to the vet" }
   ],
   owning: [
     { path: "/owning-a-pet-in-pattaya/", name: "Owning a pet in Pattaya" },
+    { path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", name: "Hot-climate care" },
+    { path: "/owning-a-pet-in-pattaya/pet-friendly-housing.html", name: "Pet-friendly housing" },
+    { path: "/owning-a-pet-in-pattaya/lost-pet-pattaya.html", name: "Lost pet plan" },
     { path: "/start-here.html", name: "Start here" },
     { path: "/pet-shops/", name: "Pet shops" },
-    { path: "/groomers/", name: "Groomers" },
-    { path: "/boarding/", name: "Boarding" },
     { path: "/dog-friendly-pattaya/", name: "Dog-friendly Pattaya" }
   ],
   health: [
     { path: "/pet-health-pattaya/", name: "Pet health hub" },
+    { path: "/pet-health-pattaya/heartworm.html", name: "Heartworm" },
+    { path: "/pet-health-pattaya/tick-borne-disease.html", name: "Tick-borne disease" },
     { path: "/vets/", name: "Vets directory" },
     { path: "/pet-emergency/", name: "Emergencies" },
-    { path: "/mobile-vets/", name: "Mobile vets" },
-    { path: "/guides.html?topic=health", name: "Health guides index" }
+    { path: "/mobile-vets/", name: "Mobile vets" }
   ],
   lifestyle: [
     { path: "/dog-friendly-pattaya/", name: "Dog-friendly Pattaya" },
+    { path: "/dog-friendly-pattaya/beaches.html", name: "Dog-friendly beaches" },
+    { path: "/dog-friendly-pattaya/restaurants.html", name: "Dog-friendly restaurants" },
     { path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", name: "Where to walk your dog" },
     { path: "/pet-emergency/beach-and-sea-hazards.html", name: "Beach hazards" },
-    { path: "/directory.html", name: "Full directory" },
-    { path: "/guides.html?topic=lifestyle", name: "Out & about guides" }
+    { path: "/pet-emergency/street-dog-encounters.html", name: "Street-dog encounters" }
   ],
   adoption: [
     { path: "/adopt-a-pet-pattaya/", name: "Adopt a pet in Pattaya" },
@@ -152,6 +157,8 @@ const INTERNAL_BY_TOPIC = {
     { path: "/guides.html", name: "Guides" },
     { path: "/start-here.html", name: "Start here" },
     { path: "/bring-pet-to-thailand/", name: "Import guide" },
+    { path: "/pet-relocation/", name: "Relocation agents" },
+    { path: "/adopt-a-pet-pattaya/", name: "Adopt a pet" },
     { path: "/pet-emergency/24-hour-vets-pattaya.html", name: "24-hour vets" }
   ],
   general: [

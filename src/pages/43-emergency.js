@@ -21,6 +21,7 @@ pages.push(hub({
   path: "/pet-emergency/",
   title: "Pet Emergency Pattaya | 24-Hour Vets, First Aid & Hot-Climate Hazards | PattayaPets",
   image: "/assets/img/og-emergency.png",
+  updated: "2026-06-04",
   desc: "Pet emergency in Pattaya: 24-hour animal hospitals with addresses and phone " +
     "numbers, first aid, heatstroke, ticks, snake bites, street dogs and poisoning.",
   crumb: "Pet emergencies",

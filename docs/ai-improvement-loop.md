@@ -80,6 +80,7 @@ Not deployed. Last updated: 30 May 2026.
 | **117** | **Dead URL fix:** remove parked `animalarmy.org` links; phone/email on shelter page; `audit:official` GET retry on HEAD 404 |
 | **118** | **Adoption cross-links:** shelter peer cards, expanded adoption topic chips, directory + guides + home discovery |
 | **119** | **Relocation corridors:** country chip strips on `/pet-relocation/`, expanded relocation topic links, guides + species hubs |
+| **120** | **Area jump bars**, expanded emergency/health/lifestyle topic links, search + home discovery, hub freshness |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 

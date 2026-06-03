@@ -41,7 +41,7 @@ pages.push(hub({
   path: "/pet-health-pattaya/",
   title: "Pet Health in Pattaya | Heartworm, Ticks & Tropical Risks | PattayaPets",
   image: "/assets/img/og-health.png",
-  updated: "2026-05-31",
+  updated: "2026-06-04",
   desc: "Orientation to the pet health issues a hot, humid, parasite-rich climate " +
     "makes common in Pattaya: heartworm, tick disease, skin and ear problems and more.",
   crumb: "Pet health",
@@ -63,7 +63,9 @@ pages.push(hub({
     "<a href=\"/cats/cat-vaccinations-thailand.html\">cat vaccinations</a>; for " +
     "street-animal welfare, see " +
     "<a href=\"/pet-health-pattaya/spaying-and-neutering.html\">spaying &amp; " +
-    "neutering</a>.</p>",
+    "neutering</a>. In an emergency, see " +
+    '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in Pattaya</a> ' +
+    "or browse the <a href=\"/vets/\">vets directory</a>.</p>",
   groups: [
     {
       title: "Parasite-borne disease",

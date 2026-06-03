@@ -14,6 +14,7 @@ pages.push(hub({
   path: "/dog-friendly-pattaya/",
   title: "Dog-Friendly Pattaya | Beaches, Cafes, Restaurants & Hotels | PattayaPets",
   image: "/assets/img/og-dog-friendly.png",
+  updated: "2026-06-04",
   desc: "Dog-friendly Pattaya: beaches, cafes, restaurants, hotels and condos that welcome " +
     "dogs — plus walking routes, etiquette and what to confirm before you go.",
   crumb: "Dog-friendly Pattaya",

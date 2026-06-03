@@ -131,7 +131,11 @@ const HOME_GUIDE_MORE =
   '<a href="/owning-a-pet-in-pattaya/getting-to-the-vet.html">Getting to the vet</a> &middot; ' +
   '<a href="/cats/indoor-vs-outdoor-cats.html">Indoor vs outdoor cats</a> &middot; ' +
   '<a href="/adopt-a-pet-pattaya/hope-for-strays.html">Hope for Strays</a> &middot; ' +
-  '<a href="/adopt-a-pet-pattaya/soi-dog-foundation.html">Soi Dog Foundation</a></p>';
+  '<a href="/adopt-a-pet-pattaya/soi-dog-foundation.html">Soi Dog Foundation</a> &middot; ' +
+  '<a href="/bring-pet-to-thailand/from-uk.html">Import from UK</a> &middot; ' +
+  '<a href="/take-pet-out-of-thailand/to-uk.html">Export to UK</a> &middot; ' +
+  '<a href="/pet-relocation/">Relocation agents</a> &middot; ' +
+  '<a href="/dogs/">Dogs hub</a> &middot; <a href="/cats/">Cats hub</a></p>';
 
 const FAQ = [
   ['Is PattayaPets a vet?',
@@ -291,12 +295,12 @@ const body =
 
 module.exports = [{
   path: "/",
-  title: "PattayaPets | Pet Directory, Import Guides & 24-Hour Vets",
+  title: "PattayaPets | Vets, Import Guides, Dog-Friendly Pattaya & Directory",
   ogTitle: "PattayaPets — The honest pet resource for Pattaya",
   description:
     "Pattaya pet directory — vets, groomers, boarding, pet shops — plus import guides, " +
     "dog-friendly places and emergencies. Reviewed honestly, never paid.",
-  updated: "2026-05-30",
+  updated: "2026-06-04",
   schema: [{
     "@type": "FAQPage",
     mainEntity: FAQ.map(function (f) {
