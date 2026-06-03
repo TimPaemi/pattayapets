@@ -257,9 +257,11 @@ const body =
     '<a class="chip chip-link" href="/guides.html?topic=owning">Owning</a>' +
     '<a class="chip chip-link" href="/guides.html?topic=health">Health</a>' +
     '<a class="chip chip-link" href="/guides.html?topic=adoption">Adoption</a>' +
+    '<a class="chip chip-link" href="/guides.html?topic=start">Start here</a>' +
     "</div>" +
     '<div class="btn-row">' +
     '<a class="btn btn-ghost" href="/guides.html">See all guides &rarr;</a>' +
+    '<a class="btn btn-ghost" href="/guides.html?topic=start">Orientation guides</a>' +
     '<a class="btn btn-ghost" href="/vets/?filter=24h">24-hour vets in directory</a></div>' +
   '</div></section>' +
 
@@ -269,6 +271,7 @@ const body =
     '<p>A short orientation page covering emergency contacts, finding a vet, the ' +
     'climate, and the first things every new pet owner in Pattaya should know.</p></div>' +
     '<div class="btn-row"><a class="btn btn-primary" href="/start-here.html">Open the Start Here page</a>' +
+    '<a class="btn btn-ghost" href="/guides.html?topic=start">Orientation guides</a>' +
     '<a class="btn btn-ghost" href="/search.html">Search the whole site</a></div>' +
   '</div></section>' +
 

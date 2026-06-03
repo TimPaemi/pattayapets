@@ -48,6 +48,10 @@ pages.push({
     "street dog and suddenly have questions, this page is the short version. It " +
     "points you to the right guide for each situation. It is orientation, not " +
     "veterinary advice.</p>" +
+    '<div class="btn-row">' +
+    '<a class="btn btn-primary" href="/guides.html?topic=start">Browse orientation guides</a>' +
+    '<a class="btn btn-alert" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a>' +
+    '<a class="btn btn-ghost" href="/vets/?filter=24h">24-hour directory</a></div>' +
     '<div class="callout callout-emergency"><div class="ch">If this is an emergency</div>' +
     "<p>If your pet is seriously injured, struggling to breathe, collapsed, " +
     "bleeding heavily, or has a suspected poisoning or heatstroke, go straight to " +
@@ -57,8 +61,9 @@ pages.push({
     "<h2>1. Know where your nearest vet is &mdash; before you need one</h2>" +
     "<p>The single most useful thing you can do as a new pet owner here is to know, " +
     "in advance, which clinic you would go to. Browse the " +
-    '<a href="/vets/">directory of vets and animal hospitals</a>, filter by your ' +
-    '<a href="/area/jomtien.html">neighbourhood</a>, or see ' +
+    '<a href="/vets/">directory of vets and animal hospitals</a> (use the area chips on ' +
+    'each category page), see <a href="/vets/?filter=24h">24-hour clinics</a>, browse ' +
+    '<a href="/area/jomtien.html">by neighbourhood</a>, or see ' +
     '<a href="/mobile-vets/">mobile and home-visit vets</a> if transport is difficult. ' +
     "Note which clinics are open 24 hours, and read our " +
     '<a href="/pet-health-pattaya/">pet health guide</a> for the tropical-climate risks ' +

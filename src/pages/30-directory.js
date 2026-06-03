@@ -426,6 +426,21 @@ function bizDirTags(b) {
   return tags.join(" ");
 }
 
+function areaDirQuickLinks(areaKey, list) {
+  if (!list.length) return "";
+  var areaLabel = AREAS[areaKey] ? AREAS[areaKey].name : "this area";
+  var chips = Object.keys(CATEGORIES).filter(function (ck) {
+    return list.some(function (b) { return b.category === ck; });
+  }).map(function (ck) {
+    return '<a class="chip chip-link" href="/' + ck + "/?filter=" +
+      encodeURIComponent("area:" + areaKey) + '">' + esc(CATEGORIES[ck].name) +
+      " in " + esc(areaLabel) + "</a>";
+  }).join("");
+  if (!chips) return "";
+  return '<div class="dir-filters" role="group" aria-label="Directory in ' +
+    esc(areaLabel) + '">' + chips + "</div>";
+}
+
 function areaFiltersBar(list, areaSlug) {
   var cats = Object.keys(CATEGORIES).filter(function (ck) {
     return list.some(function (b) { return b.category === ck; });
@@ -673,8 +688,8 @@ Object.keys(CATEGORIES).forEach(function (key) {
     if (areaKeys.length) {
       body += '<div class="section-head" style="margin-top:2rem" id="area"><h2>Browse by area</h2></div>' +
         '<div class="chips">' + areaKeys.map(function (ak) {
-          return '<a class="chip chip-link" href="/area/' + ak + '.html">' +
-            esc(AREAS[ak].name) + "</a>";
+          return '<a class="chip chip-link" href="/' + key + "/?filter=" +
+            encodeURIComponent("area:" + ak) + '">' + esc(AREAS[ak].name) + "</a>";
         }).join("") + "</div>";
     }
     body += "</div></section>";
@@ -722,7 +737,9 @@ Object.keys(AREAS).forEach(function (key) {
     '<p class="eyebrow">By area</p>' +
     "<h1>Pet services in " + esc(area.name) + ", Pattaya</h1>" +
     '<p class="lede">' + esc(area.blurb) + " Below are the " + countLabel +
-    " PattayaPets currently lists in " + esc(area.name) + ".</p></div></section>";
+    " PattayaPets currently lists in " + esc(area.name) + ".</p>" +
+    areaDirQuickLinks(key, list) +
+    "</div></section>";
 
   if (AREA_GUIDE[key]) {
     body += '<section class="section"><div class="container">' +
@@ -779,10 +796,15 @@ Object.keys(AREAS).forEach(function (key) {
     '<a href="/pet-relocation/">pet relocation agents</a>, and ' +
     '<a href="/adopt-a-pet-pattaya/">adopting a pet</a>. Species guides: ' +
     '<a href="/dogs/">dogs</a> and <a href="/cats/">cats</a>. New here? Start with ' +
-    '<a href="/start-here.html">Start here</a>.</p></div>' +
+    '<a href="/start-here.html">Start here</a> or the ' +
+    '<a href="/guides.html?topic=start">orientation guides</a>.</p></div>' +
     '<div class="section-head"><h2>Every category</h2></div><div class="chips">' +
     Object.keys(CATEGORIES).map(function (ck) {
-      return '<a class="chip chip-link" href="/' + ck + '/">' +
+      var inArea = list.some(function (b) { return b.category === ck; });
+      var href = inArea
+        ? "/" + ck + "/?filter=" + encodeURIComponent("area:" + key)
+        : "/" + ck + "/";
+      return '<a class="chip chip-link" href="' + href + '">' +
         esc(CATEGORIES[ck].name) + "</a>";
     }).join("") + "</div>" +
     '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +
