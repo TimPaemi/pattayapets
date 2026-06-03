@@ -115,6 +115,11 @@ pages.push(article({
   lede: "When a pet emergency happens at night or on a holiday, you need a clinic " +
     "that is already open. These Pattaya animal hospitals are listed as operating " +
     "around the clock.",
+  related: [
+    { name: "24-hour clinics in the directory", path: "/vets/?filter=24h", desc: "Filter the vets hub to clinics open around the clock." },
+    { name: "All emergency guides", path: "/guides.html?topic=emergency", desc: "Heatstroke, poisoning, first aid and more." },
+    { name: "Pet emergencies hub", path: "/pet-emergency/", desc: "The full emergency guide cluster." }
+  ],
   sections: [
     { html:
       '<div class="callout callout-emergency"><div class="ch">Act now, read later</div>' +
@@ -127,7 +132,8 @@ pages.push(article({
       "is on duty for emergencies. PattayaPets lists these as <strong>facts pages</strong> " +
       "until anonymous visits are complete; we do not rate medical quality.</p>" +
       '<div class="grid grid-2">' + c24list + "</div>" +
-      "<p>Need a daytime clinic or a vet in your neighbourhood? Browse the full " +
+      "<p>Need a daytime clinic or a vet in your neighbourhood? Browse " +
+      "<a href=\"/vets/?filter=24h\">24-hour clinics in the vets directory</a>, the full " +
       "<a href=\"/vets/\">vets directory</a>, " +
       "<a href=\"/area/naklua.html\">Naklua</a>, " +
       "<a href=\"/area/jomtien.html\">Jomtien</a> and " +

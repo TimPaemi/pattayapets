@@ -130,7 +130,8 @@ function article(o) {
   if (isEmergencyGuide) {
     prose += '<div class="emergency-quick-bar btn-row">' +
       '<a class="btn btn-alert" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in Pattaya</a>' +
-      '<a class="btn btn-ghost" href="/pet-emergency/">All emergency guides</a></div>';
+      '<a class="btn btn-ghost" href="/vets/?filter=24h">24-hour directory</a>' +
+      '<a class="btn btn-ghost" href="/guides.html?topic=emergency">Emergency guides</a></div>';
   }
   if (isChecklist) {
     prose += '<div class="guide-actions btn-row">' +

@@ -651,8 +651,9 @@ Object.keys(CATEGORIES).forEach(function (key) {
     body += '<div class="callout callout-emergency"><div class="ch">Need a vet right now?</div>' +
       "<p>For urgent, after-hours help see " +
       '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in ' +
-      "Pattaya</a>. The clinics below marked <span class=\"badge-24h\">24 hr</span> " +
-      "operate around the clock.</p></div>";
+      "Pattaya</a> or " +
+      '<a href="/vets/?filter=24h">show only 24-hour clinics</a> in this directory. ' +
+      "Listings marked <span class=\"badge-24h\">24 hr</span> operate around the clock.</p></div>";
   }
   body += "</div></section>";
 

@@ -250,7 +250,17 @@ const body =
     }).join("") +
     "</div>" +
     HOME_GUIDE_MORE +
-    '<div class="btn-row"><a class="btn btn-ghost" href="/guides.html">See all guides &rarr;</a></div>' +
+    '<div class="guide-filters dir-filters" style="margin-top:1.4rem">' +
+    '<a class="chip chip-link" href="/guides.html?topic=import">Import</a>' +
+    '<a class="chip chip-link" href="/guides.html?topic=export">Export</a>' +
+    '<a class="chip chip-link" href="/guides.html?topic=emergency">Emergency</a>' +
+    '<a class="chip chip-link" href="/guides.html?topic=owning">Owning</a>' +
+    '<a class="chip chip-link" href="/guides.html?topic=health">Health</a>' +
+    '<a class="chip chip-link" href="/guides.html?topic=adoption">Adoption</a>' +
+    "</div>" +
+    '<div class="btn-row">' +
+    '<a class="btn btn-ghost" href="/guides.html">See all guides &rarr;</a>' +
+    '<a class="btn btn-ghost" href="/vets/?filter=24h">24-hour vets in directory</a></div>' +
   '</div></section>' +
 
   '<section class="section section-banyan"><div class="container">' +
