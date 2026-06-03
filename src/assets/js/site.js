@@ -28,6 +28,20 @@
     return ok ? raw : "";
   }
 
+  function filterResultStatus(status, shown, total, emptyText, unit) {
+    if (!status) return;
+    if (shown === 0) {
+      status.hidden = false;
+      status.textContent = emptyText;
+    } else if (shown < total) {
+      status.hidden = false;
+      status.textContent = "Showing " + shown + " of " + total + " " + unit + ".";
+    } else {
+      status.hidden = true;
+      status.textContent = "";
+    }
+  }
+
   /* Stylesheet preload fallback */
   var cssLink = document.querySelector('link[rel="preload"][href="/assets/css/site.css"]');
   if (cssLink) {
@@ -353,15 +367,8 @@
       filters.forEach(function (btn) {
         btn.classList.toggle("is-active", btn.getAttribute("data-dir-filter") === filter);
       });
-      if (status) {
-        if (shown === 0) {
-          status.hidden = false;
-          status.textContent = "No listings match this filter. Try another area or view all.";
-        } else {
-          status.hidden = true;
-          status.textContent = "";
-        }
-      }
+      filterResultStatus(status, shown, cards.length,
+        "No listings match this filter. Try another area or view all.", "listings");
       filterQuerySet("filter", filter);
     }
     filters.forEach(function (btn) {
@@ -385,6 +392,22 @@
       ? container.querySelectorAll(".guide-filter[data-guide-filter]")
       : [];
     if (!filters.length || !cards.length) return;
+    var guideLabels = {};
+    filters.forEach(function (btn) {
+      var t = btn.getAttribute("data-guide-filter");
+      guideLabels[t] = btn.textContent.replace(/\s*\(\d+\)\s*$/, "").trim();
+    });
+    var guideCounts = { all: cards.length };
+    cards.forEach(function (card) {
+      var cat = card.getAttribute("data-guide-cat") || "other";
+      guideCounts[cat] = (guideCounts[cat] || 0) + 1;
+    });
+    filters.forEach(function (btn) {
+      var t = btn.getAttribute("data-guide-filter");
+      var base = guideLabels[t] || btn.textContent;
+      var n = t === "all" ? guideCounts.all : guideCounts[t];
+      if (n) btn.textContent = base + " (" + n + ")";
+    });
     function apply(filter) {
       if (!filter) filter = "all";
       var shown = 0;
@@ -397,15 +420,8 @@
       filters.forEach(function (btn) {
         btn.classList.toggle("is-active", btn.getAttribute("data-guide-filter") === filter);
       });
-      if (status) {
-        if (shown === 0) {
-          status.hidden = false;
-          status.textContent = "No guides match this filter. View all to reset.";
-        } else {
-          status.hidden = true;
-          status.textContent = "";
-        }
-      }
+      filterResultStatus(status, shown, cards.length,
+        "No guides match this filter. View all to reset.", "guides");
       filterQuerySet("topic", filter);
     }
     filters.forEach(function (btn) {
@@ -441,15 +457,8 @@
       filters.forEach(function (btn) {
         btn.classList.toggle("is-active", btn.getAttribute("data-dir-filter") === filter);
       });
-      if (status) {
-        if (shown === 0) {
-          status.hidden = false;
-          status.textContent = "No categories match this filter. View all to reset.";
-        } else {
-          status.hidden = true;
-          status.textContent = "";
-        }
-      }
+      filterResultStatus(status, shown, blocks.length,
+        "No categories match this filter. View all to reset.", "categories");
       filterQuerySet("cat", filter);
     }
     filters.forEach(function (btn) {

@@ -109,6 +109,10 @@ pages.push({
     "<h3>24-hour vets (directory)</h3>" +
     "<p>Filter the vets hub to clinics open around the clock.</p>" +
     '<span class="card-meta">View 24-hour listings &rarr;</span></a>' +
+    '<a class="card" href="/groomers/"><span class="card-tag">Grooming</span>' +
+    "<h3>Pet groomers</h3>" +
+    "<p>Dog and cat grooming across Pattaya &mdash; filter by area on each hub.</p>" +
+    '<span class="card-meta">View groomers &rarr;</span></a>' +
     card("/groomers/", "Grooming", "Pet groomers",
       "Dog and cat grooming &mdash; baths, clips, de-shedding and nail care.", "View groomers") +
     card("/boarding/", "Boarding", "Boarding &amp; daycare",

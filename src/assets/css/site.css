@@ -188,7 +188,8 @@ line-height:1;flex:none}
 
 .dir-filters{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 1.4rem}
 .dir-filter.is-active,.dir-filter.chip-active{background:var(--banyan);color:#fff;border-color:var(--banyan)}
-.dir-filter-status{margin:0 0 1.2rem}
+.dir-filter-status{margin:0 0 1.2rem;font-size:.9rem}
+.dir-filter-status:not([hidden]){display:block}
 .biz-card[hidden]{display:none!important}
 .dir-cat-block[hidden]{display:none!important}
 .guide-card[hidden]{display:none!important}

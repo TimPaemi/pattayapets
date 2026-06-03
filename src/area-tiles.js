@@ -3,7 +3,7 @@
 
 const { BUSINESSES, CATEGORIES } = require("./data/businesses.js");
 
-const AREA_TILE_CATS = ["vets", "groomers", "boarding"];
+const AREA_TILE_CATS = ["vets", "groomers", "boarding", "pet-shops", "trainers"];
 
 function areaTileHtml(name, slug, subFallback) {
   var list = BUSINESSES.filter(function (b) { return b.areas.indexOf(slug) !== -1; });
@@ -19,8 +19,10 @@ function areaTileHtml(name, slug, subFallback) {
   }).map(function (ck) {
     var cat = CATEGORIES[ck];
     var label = cat ? cat.name : ck;
+    var n = list.filter(function (b) { return b.category === ck; }).length;
     return '<a class="tile-sub chip chip-link" href="/' + ck + "/?filter=" +
-      encodeURIComponent("area:" + slug) + '">' + label + " in " + name + "</a>";
+      encodeURIComponent("area:" + slug) + '">' + label + " in " + name +
+      " (" + n + ")</a>";
   }).join("");
   if (!chips) return tile;
   return '<div class="tile-wrap">' + tile + '<div class="tile-subs">' + chips + "</div></div>";

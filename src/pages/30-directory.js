@@ -432,9 +432,10 @@ function areaDirQuickLinks(areaKey, list) {
   var chips = Object.keys(CATEGORIES).filter(function (ck) {
     return list.some(function (b) { return b.category === ck; });
   }).map(function (ck) {
+    var n = list.filter(function (b) { return b.category === ck; }).length;
     return '<a class="chip chip-link" href="/' + ck + "/?filter=" +
       encodeURIComponent("area:" + areaKey) + '">' + esc(CATEGORIES[ck].name) +
-      " in " + esc(areaLabel) + "</a>";
+      " in " + esc(areaLabel) + " (" + n + ")</a>";
   }).join("");
   if (!chips) return "";
   return '<div class="dir-filters" role="group" aria-label="Directory in ' +
