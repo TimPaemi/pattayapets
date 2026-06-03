@@ -62,6 +62,16 @@ module.exports = [{
     '<a class="chip chip-link" href="/area/banglamung.html">Banglamung area</a>' +
     '<a class="chip chip-link" href="/guides.html">All guides</a>' +
     '<a class="chip chip-link" href="/sitemap.html">Full sitemap</a>' +
+    '</div>' +
+    '<h2 style="margin-top:1.6rem">Pattaya Authority network</h2>' +
+    '<p class="notice">Sister guides for the wider move &mdash; visas, rentals, dining and more.</p>' +
+    '<div class="chips">' +
+    '<a class="chip chip-link" href="https://pattayavisahelp.com/" target="_blank" rel="noopener noreferrer">Pattaya Visa Help</a>' +
+    '<a class="chip chip-link" href="https://pattaya-restaurant-guide.com/" target="_blank" rel="noopener noreferrer">Restaurant Guide</a>' +
+    '<a class="chip chip-link" href="https://pattaya-vehicle-rentals.com/" target="_blank" rel="noopener noreferrer">Vehicle Rentals</a>' +
+    '<a class="chip chip-link" href="https://pattayastream.com/" target="_blank" rel="noopener noreferrer">Villa Stream</a>' +
+    '<a class="chip chip-link" href="https://pattaya-medical.com/" target="_blank" rel="noopener noreferrer">Pattaya Medical</a>' +
+    '<a class="chip chip-link" href="https://pattaya-authority.com/" target="_blank" rel="noopener noreferrer">Pattaya Authority</a>' +
     '</div></div>' +
     '<div id="pp-filters" class="search-filters" role="group" aria-label="Filter by section"></div>' +
     '<div id="pp-results" class="search-results" aria-live="polite" aria-atomic="true" role="region" aria-label="Search results">' +

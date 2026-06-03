@@ -113,6 +113,8 @@ function buildSitemapPage(pages) {
     body += "</ul>";
   });
   body += "</div></section>";
+  const { inPageLinkSection } = require("./src/linking.js");
+  body += inPageLinkSection("general");
   return {
     path: "/sitemap.html",
     title: "Complete Sitemap | Pattaya Pet Directory & Guides",

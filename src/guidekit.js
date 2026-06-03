@@ -5,7 +5,8 @@ const {
   linkTopicFromPath,
   sidebarLinkAside,
   mergeSidebars,
-  inPageLinkSection
+  inPageLinkSection,
+  seeAlsoCallout
 } = require("./linking.js");
 
 const SITE = "https://pattayapets.com";
@@ -161,10 +162,11 @@ function article(o) {
     prose += '<h2 id="faq">Frequently asked</h2>' + faqBlock(o.faqs);
     schema.push(faqSchema(o.faqs));
   }
+  var linkTopic = o.linkTopic || linkTopicFromPath(o.path);
+  prose += seeAlsoCallout(linkTopic, o.path);
   prose += DISC;
 
   var useToc = toc.length >= 3;
-  var linkTopic = o.linkTopic || linkTopicFromPath(o.path);
   var tocAside = useToc ? tocSidebar(toc, hasFaqs) : "";
   var linkAside = sidebarLinkAside(linkTopic);
   var sidebar = mergeSidebars(tocAside, linkAside);
@@ -215,6 +217,7 @@ function hubGuidesTopic(path) {
   if (path === "/adopt-a-pet-pattaya/") return "adoption";
   if (path === "/dog-friendly-pattaya/") return "lifestyle";
   if (path === "/dogs/" || path === "/cats/") return "species";
+  if (path.indexOf("/pet-insurance") === 0) return "insurance";
   return "";
 }
 

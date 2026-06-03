@@ -153,6 +153,13 @@ const INTERNAL_BY_TOPIC = {
     { path: "/start-here.html", name: "Start here" },
     { path: "/search.html", name: "Search" },
     { path: "/about.html", name: "About PattayaPets" }
+  ],
+  insurance: [
+    { path: "/pet-insurance-thailand.html", name: "Pet insurance guide" },
+    { path: "/vets/", name: "Vets directory" },
+    { path: "/pet-emergency/", name: "Pet emergencies" },
+    { path: "/owning-a-pet-in-pattaya/", name: "Owning a pet in Pattaya" },
+    { path: "/pet-health-pattaya/", name: "Pet health" }
   ]
 };
 
@@ -169,7 +176,8 @@ const NETWORK_BY_TOPIC = {
   relocation: ["visa", "vehicle", "authority"],
   start: ["visa", "school", "vehicle", "authority"],
   home: ["authority", "visa", "restaurant", "medical", "vehicle"],
-  general: ["authority", "visa", "restaurant"]
+  general: ["authority", "visa", "restaurant"],
+  insurance: ["medical", "authority", "visa"]
 };
 
 const CATEGORY_TOPIC = {
@@ -195,6 +203,7 @@ function linkTopicFromPath(path) {
   if (path === "/dogs/" || path.indexOf("/dogs/") === 0) return "species";
   if (path === "/cats/" || path.indexOf("/cats/") === 0) return "species";
   if (path === "/start-here.html") return "start";
+  if (path.indexOf("/pet-insurance") === 0) return "insurance";
   if (path === "/directory.html" || path.indexOf("/area/") === 0) return "directory";
   if (/^\/(vets|groomers|boarding|pet-shops|trainers|mobile-vets|pet-relocation)\//.test(path)) {
     return "directory";
@@ -294,6 +303,56 @@ function inPageLinkSection(topic) {
     "</div></div></section>";
 }
 
+function pathNorm(p) {
+  return String(p || "").replace(/index\.html$/, "").split("?")[0] || "/";
+}
+
+function seeAlsoCallout(topic, excludePath) {
+  var here = pathNorm(excludePath);
+  var internal = (INTERNAL_BY_TOPIC[topic] || INTERNAL_BY_TOPIC.general).filter(function (l) {
+    return pathNorm(l.path) !== here;
+  }).slice(0, 4);
+  var netKeys = (NETWORK_BY_TOPIC[topic] || NETWORK_BY_TOPIC.general).slice(0, 3);
+  if (!internal.length && !netKeys.length) return "";
+  var body = "";
+  if (internal.length) {
+    body += "<p>" + internal.map(function (l) {
+      return '<a href="' + l.path + '">' + esc(l.name) + "</a>";
+    }).join(" &middot; ") + "</p>";
+  }
+  if (netKeys.length) {
+    body += '<p class="see-also-network">Pattaya network: ' +
+      netKeys.map(function (k) {
+        var s = NETWORK_SITES[k];
+        return s
+          ? '<a href="' + s.url + '" target="_blank" rel="noopener noreferrer">' +
+            esc(s.name) + "</a>"
+          : "";
+      }).filter(Boolean).join(" &middot; ") + "</p>";
+  }
+  return '<div class="callout callout-note see-also"><div class="ch">See also</div>' + body + "</div>";
+}
+
+function networkChipsHtml(keys) {
+  var list = keys || Object.keys(NETWORK_SITES);
+  return '<div class="chips">' + list.map(function (k) {
+    var s = NETWORK_SITES[k];
+    if (!s) return "";
+    return '<a class="chip chip-link" href="' + s.url + '" target="_blank" rel="noopener noreferrer">' +
+      esc(s.name) + "</a>";
+  }).join("") + "</div>";
+}
+
+function networkDirectoryProse() {
+  return "<h2>Sister publications in the Pattaya Authority network</h2>" +
+    "<p>PattayaPets is one independent publication in a family of Pattaya guides. " +
+    "Each site uses the same method &mdash; anonymous visits, bills paid in full, " +
+    "no paid placements. They are editorial neighbours, not competitors:</p>" +
+    networkChipsHtml() +
+    '<p style="margin-top:.9rem"><a href="https://pattaya-authority.com/" target="_blank" ' +
+    'rel="noopener noreferrer">About the Pattaya Authority network &rarr;</a></p>';
+}
+
 function proseNetworkLine(topic) {
   var keys = NETWORK_BY_TOPIC[topic] || NETWORK_BY_TOPIC.general;
   if (!keys.length) return "";
@@ -316,6 +375,9 @@ module.exports = {
   sidebarLinkAside,
   mergeSidebars,
   inPageLinkSection,
+  seeAlsoCallout,
+  networkChipsHtml,
+  networkDirectoryProse,
   proseNetworkLine,
   internalListHtml,
   networkListHtml

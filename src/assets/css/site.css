@@ -242,6 +242,9 @@ text-transform:uppercase;color:#fff;margin:0;padding:16px 0;cursor:pointer;list-
 .link-section-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
 @media(max-width:720px){.link-section-grid{grid-template-columns:1fr;gap:1.4rem}}
 .link-section-col .ch{margin-bottom:.65rem}
+.see-also{margin-top:2rem}
+.see-also-network{font-size:.9rem;color:var(--sage);margin-top:.5rem}
+.see-also-network a{color:var(--banyan)}
 
 .field{margin-bottom:18px}
 .field label{display:block;font-family:var(--fd);font-weight:600;font-size:.93rem;

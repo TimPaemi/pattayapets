@@ -2,7 +2,7 @@
 /* Structural pages: About, Standards, Start Here, Contact, Masthead,
    Corrections, Privacy, Accessibility */
 
-const { inPageLinkSection } = require("../linking.js");
+const { inPageLinkSection, networkDirectoryProse } = require("../linking.js");
 
 const DISC =
   '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +
@@ -11,6 +11,7 @@ const DISC =
   "consult a qualified veterinarian.</div>";
 
 function prosePage(o) {
+  var tail = o.linkTopic ? inPageLinkSection(o.linkTopic) : "";
   return {
     path: o.path,
     title: o.title,
@@ -26,7 +27,7 @@ function prosePage(o) {
       o.body +
       (o.noindex ? "" : DISC) +
       '<p class="updated">Last updated ' + (o.updatedLabel || "29 May 2026") + "</p>" +
-      "</div></div></section>"
+      "</div></div></section>" + tail
   };
 }
 
@@ -148,6 +149,7 @@ pages.push(prosePage({
   crumb: "About",
   eyebrow: "About",
   h1: "About PattayaPets",
+  linkTopic: "home",
   body:
     "<p>PattayaPets is the honest pet resource for Pattaya. It has two halves that " +
     "work together: an <strong>editorial directory</strong> of pet businesses &mdash; " +
@@ -184,7 +186,8 @@ pages.push(prosePage({
     "insurance broker. Nothing on the site is veterinary advice. For the full " +
     'method, read our <a href="/standards.html">editorial standards</a>. Browse the ' +
     '<a href="/directory.html">directory</a>, the <a href="/guides.html">guides</a>, ' +
-    '<a href="/start-here.html">start here</a>, or <a href="/search.html">search the site</a>.</p>'
+    '<a href="/start-here.html">start here</a>, or <a href="/search.html">search the site</a>.</p>' +
+    networkDirectoryProse()
 }));
 
 /* ---------------- Editorial Standards ---------------- */
@@ -195,6 +198,7 @@ pages.push(prosePage({
   crumb: "Editorial Standards",
   eyebrow: "How we work",
   h1: "Editorial standards & method",
+  linkTopic: "general",
   schema: [{
     "@type": "FAQPage",
     mainEntity: [
@@ -274,6 +278,7 @@ pages.push(prosePage({
   crumb: "Contact",
   eyebrow: "Get in touch",
   h1: "Contact PattayaPets",
+  linkTopic: "general",
   body:
     "<p>PattayaPets is a small editorial team. We read everything, and we are glad " +
     "to hear from readers, pet owners and the businesses we cover.</p>" +
@@ -315,6 +320,7 @@ pages.push(prosePage({
   crumb: "Masthead",
   eyebrow: "The publication",
   h1: "Masthead",
+  linkTopic: "general",
   body:
     "<p>PattayaPets is produced by a small editorial team based in Pattaya and " +
     "published by TIMPAEMI Co., Ltd. via the Pattaya Authority network.</p>" +
@@ -333,7 +339,8 @@ pages.push(prosePage({
     "sponsorships, zero affiliate links. The full method is on the " +
     '<a href="/standards.html">editorial standards</a> page. Browse the ' +
     '<a href="/directory.html">directory</a>, the <a href="/guides.html">guides</a>, ' +
-    'or <a href="/search.html">search the site</a>.</p>'
+    'or <a href="/search.html">search the site</a>.</p>' +
+    networkDirectoryProse()
 }));
 
 /* ---------------- Corrections ---------------- */
@@ -344,6 +351,7 @@ pages.push(prosePage({
   crumb: "Corrections",
   eyebrow: "Accuracy",
   h1: "Corrections",
+  linkTopic: "general",
   body:
     "<p>PattayaPets aims to be accurate, and pet businesses change &mdash; hours " +
     "move, clinics relocate, services come and go. When we get something wrong, we " +
@@ -412,6 +420,7 @@ pages.push(prosePage({
   h1: "Accessibility statement",
   updated: "2026-05-30",
   updatedLabel: "30 May 2026",
+  linkTopic: "general",
   body:
     "<p>PattayaPets should be usable by everyone, including people who rely on a " +
     "keyboard, a screen reader, or browser zoom. We build to the " +
