@@ -55,7 +55,9 @@ What each line does:
 2. `npm install` — fetches the build tools (slow once, instant after).
 3. `npm run build:all` — regenerates OG images, the site, checks every internal link,
    and runs SEO and directory audits. The build should finish without errors; the link
-   check should report **0 broken**.
+   check should report **0 broken**. Before a big deploy, you can also run
+   `npm run audit:go` (build:all plus a full dist audit and a live smoke test on
+   pattayapets.com).
 4. `npx wrangler pages deploy ...` — uploads the finished site. **The first
    time only**, it opens a browser asking you to log in to Cloudflare — approve
    it, return to the terminal, and it finishes by printing your live URL.

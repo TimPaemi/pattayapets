@@ -56,18 +56,10 @@ function guideFiltersBar() {
 }
 
 const { BUSINESSES } = require("../data/businesses.js");
+const { areaTileHtml } = require("../area-tiles.js");
 
 function areaTile(name, slug, blurb) {
-  var list = BUSINESSES.filter(function (b) { return b.areas.indexOf(slug) !== -1; });
-  var n = list.length;
-  var sub = n ? (n + (n === 1 ? " business listed" : " businesses listed")) : blurb;
-  var tile = '<a class="tile" href="/area/' + slug + '.html">' +
-    '<span class="tile-name">' + name + "</span>" +
-    '<span class="tile-count">' + sub + "</span></a>";
-  if (!list.some(function (b) { return b.category === "vets"; })) return tile;
-  return '<div class="tile-wrap">' + tile +
-    '<a class="tile-sub chip chip-link" href="/vets/?filter=' +
-    encodeURIComponent("area:" + slug) + '">Vets in ' + name + "</a></div>";
+  return areaTileHtml(name, slug, blurb);
 }
 
 const AREAS = [

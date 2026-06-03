@@ -288,7 +288,8 @@ background:var(--marigold);flex:none}
 .tile .tile-count{font-size:.85rem;color:var(--sage)}
 .tile-wrap{display:flex;flex-direction:column;gap:9px;height:100%}
 .tile-wrap .tile{flex:1}
-.tile-sub{align-self:flex-start;font-size:.84rem;text-decoration:none}
+.tile-subs{display:flex;flex-wrap:wrap;gap:7px}
+.tile-sub{font-size:.84rem;text-decoration:none}
 
 .site-footer{background-color:var(--banyan-deep);background-image:var(--paw);
 color:#b6c8c0;font-size:.93rem;margin-top:76px}

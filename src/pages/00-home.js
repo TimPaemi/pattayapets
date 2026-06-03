@@ -18,6 +18,7 @@ function catCard(href, icon, tag, name, desc) {
 }
 
 const { BUSINESSES } = require("../data/businesses.js");
+const { areaTileHtml } = require("../area-tiles.js");
 const VETS24 = BUSINESSES.filter(function (b) {
   return (b.category === "vets" || b.category === "mobile-vets") && b.c24;
 });
@@ -31,17 +32,7 @@ function vet24Card(b) {
 }
 
 function areaTile(name, slug) {
-  var list = BUSINESSES.filter(function (b) { return b.areas.indexOf(slug) !== -1; });
-  var n = list.length;
-  var sub = n ? (n + (n === 1 ? " business listed" : " businesses listed")) :
-    "Pet services in " + name;
-  var tile = '<a class="tile" href="/area/' + slug + '.html">' +
-    '<span class="tile-name">' + name + '</span>' +
-    '<span class="tile-count">' + sub + "</span></a>";
-  if (!list.some(function (b) { return b.category === "vets"; })) return tile;
-  return '<div class="tile-wrap">' + tile +
-    '<a class="tile-sub chip chip-link" href="/vets/?filter=' +
-    encodeURIComponent("area:" + slug) + '">Vets in ' + name + "</a></div>";
+  return areaTileHtml(name, slug, "Pet services in " + name);
 }
 
 function guideCard(href, tag, title, desc, cta) {
