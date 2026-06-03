@@ -59,7 +59,8 @@ async function headCheck(url) {
       headers: { "User-Agent": "PattayaPets-official-link-audit/1.0" }
     });
     clearTimeout(timer);
-    if (res.status === 405 || res.status === 403 || res.status === 400) {
+    if (res.status === 405 || res.status === 403 || res.status === 400 ||
+        res.status === 404 || res.status === 410) {
       res = await fetch(url, {
         method: "GET",
         redirect: "follow",

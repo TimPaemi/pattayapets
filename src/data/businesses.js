@@ -152,7 +152,6 @@ const BUSINESSES = [
     category: "vets", areas: ["jomtien", "sattahip"], type: "Animal hospital & rescue clinic", c24: false,
     address: "90/55 Moo 5, Na Jomtien, Sattahip District, Chon Buri 20250",
     phone: "085 093 5954", tel: "+66850935954",
-    website: "https://animalarmy.org/",
     hours: "Daily 08:00-17:00; animal intake by appointment (emergencies excepted)",
     languages: "Thai and English",
     services: ["General consultations", "Rescue ambulance", "Surgery", "Street-animal care", "Adoption support"],

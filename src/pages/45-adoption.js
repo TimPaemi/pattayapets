@@ -147,7 +147,7 @@ const SHELTERS = [
     pageTitle: "Animal Army Foundation Pattaya | Rescue Hospital & Adoption",
     crumb: "Animal Army Foundation",
     type: "Animal welfare foundation & hospital",
-    website: "https://animalarmy.org/",
+    phone: "085 093 5954", tel: "+66850935954",
     address: "90/55 Moo 5, Na Jomtien, Sattahip District, Chon Buri 20250",
     email: "info@animalarmy.org",
     hours: "Daily 08:00&ndash;17:00; animal intake by appointment (emergencies excepted)",
@@ -166,11 +166,9 @@ const SHELTERS = [
       "in the vets directory.</p>",
     adopt:
       "<p>Animal Army runs an adoption programme for dogs and cats in its care, " +
-      "including support for international adopters. Contact the foundation directly " +
-      "for current animals available and the process &mdash; see " +
-      "<a href=\"https://animalarmy.org/pages/adoption-with-animal-army\" " +
-      "target=\"_blank\" rel=\"noopener nofollow\">adoption with Animal Army</a> " +
-      "on its website.</p>"
+      "including support for international adopters. Its public website is not " +
+      "currently available &mdash; contact the foundation by phone or email for " +
+      "current animals and the adoption process.</p>"
   },
   {
     slug: "pattaya-street-dogs-k9aid", name: "Pattaya Street Dogs (K9aid)",
@@ -315,15 +313,27 @@ SHELTERS.forEach(function (s) {
     contact += "<p><strong>Email:</strong> <a href=\"mailto:" + s.email + "\">" +
       s.email + "</a></p>";
   }
-  contact += '<p><a href="' + s.website + '" target="_blank" rel="noopener nofollow">' +
-    (s.website.indexOf("facebook.com") !== -1 ? "Facebook page" : "Official website") +
-    "</a>";
-  if (s.facebook && s.facebook !== s.website) {
-    contact += ' &middot; <a href="' + s.facebook +
-      '" target="_blank" rel="noopener nofollow">Facebook</a>';
+  if (s.phone) {
+    contact += "<p><strong>Phone:</strong> <a href=\"tel:" + (s.tel || s.phone) + "\">" +
+      s.phone + "</a></p>";
   }
-  contact += " for current contact details, visiting arrangements and the animals " +
-    "looking for homes.</p>";
+  var ext = [];
+  if (s.website) {
+    ext.push('<a href="' + s.website + '" target="_blank" rel="noopener nofollow">' +
+      (s.website.indexOf("facebook.com") !== -1 ? "Facebook page" : "Official website") +
+      "</a>");
+  }
+  if (s.facebook && s.facebook !== s.website) {
+    ext.push('<a href="' + s.facebook + '" target="_blank" rel="noopener nofollow">Facebook</a>');
+  }
+  if (ext.length) {
+    contact += "<p>" + ext.join(" &middot; ") +
+      " for current contact details, visiting arrangements and the animals " +
+      "looking for homes.</p>";
+  } else if (s.phone || s.email) {
+    contact += "<p>Contact the organisation directly for visiting arrangements and " +
+      "the animals looking for homes.</p>";
+  }
 
   pages.push(article({
     path: "/adopt-a-pet-pattaya/" + s.slug + ".html",
