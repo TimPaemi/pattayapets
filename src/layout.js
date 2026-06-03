@@ -27,7 +27,7 @@ const NETWORK_SLOGAN = "Built in Pattaya. For Pattaya.";
 
 /* Canonical Pattaya Authority network list — exclude this site (PattayaPets). */
 const NETWORK = [
-  { name: "Pattaya Authority", url: "https://pattaya-authority.com/" },
+  { name: "Pattaya Authority", url: "https://pattaya-authority.com/work/pattaya-pets/" },
   { name: "TimPaemi", url: "https://timpaemi.com/" },
   { name: "Pattaya Restaurant Guide", url: "https://pattaya-restaurant-guide.com/" },
   { name: "Pattaya Visa Help", url: "https://pattayavisahelp.com/" },

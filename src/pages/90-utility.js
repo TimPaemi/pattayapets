@@ -44,7 +44,7 @@ module.exports = [
       '<a href="https://pattayavisahelp.com/" target="_blank" rel="noopener noreferrer">Pattaya Visa Help</a>, ' +
       '<a href="https://pattaya-vehicle-rentals.com/" target="_blank" rel="noopener noreferrer">Vehicle Rentals</a>, ' +
       '<a href="https://pattaya-medical.com/" target="_blank" rel="noopener noreferrer">Pattaya Medical</a> ' +
-      "in the <a href=\"https://pattaya-authority.com/\" target=\"_blank\" rel=\"noopener noreferrer\">" +
+      "in the <a href=\"https://pattaya-authority.com/work/pattaya-pets/\" target=\"_blank\" rel=\"noopener noreferrer\">" +
       "Pattaya Authority</a> network.</p></div></div></section>"
   },
   {

@@ -71,7 +71,7 @@ module.exports = [{
     '<a class="chip chip-link" href="https://pattaya-vehicle-rentals.com/" target="_blank" rel="noopener noreferrer">Vehicle Rentals</a>' +
     '<a class="chip chip-link" href="https://pattayastream.com/" target="_blank" rel="noopener noreferrer">Villa Stream</a>' +
     '<a class="chip chip-link" href="https://pattaya-medical.com/" target="_blank" rel="noopener noreferrer">Pattaya Medical</a>' +
-    '<a class="chip chip-link" href="https://pattaya-authority.com/" target="_blank" rel="noopener noreferrer">Pattaya Authority</a>' +
+    '<a class="chip chip-link" href="https://pattaya-authority.com/work/pattaya-pets/" target="_blank" rel="noopener noreferrer">Pattaya Authority</a>' +
     '</div></div>' +
     '<div id="pp-filters" class="search-filters" role="group" aria-label="Filter by section"></div>' +
     '<div id="pp-results" class="search-results" aria-live="polite" aria-atomic="true" role="region" aria-label="Search results">' +
