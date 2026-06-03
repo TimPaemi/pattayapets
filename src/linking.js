@@ -157,7 +157,9 @@ const INTERNAL_BY_TOPIC = {
     { path: "/guides.html", name: "Guides" },
     { path: "/start-here.html", name: "Start here" },
     { path: "/bring-pet-to-thailand/", name: "Import guide" },
+    { path: "/take-pet-out-of-thailand/", name: "Export guide" },
     { path: "/pet-relocation/", name: "Relocation agents" },
+    { path: "/mobile-vets/", name: "Mobile vets" },
     { path: "/adopt-a-pet-pattaya/", name: "Adopt a pet" },
     { path: "/pet-emergency/24-hour-vets-pattaya.html", name: "24-hour vets" }
   ],

@@ -10,4 +10,5 @@ lighthouse-audit.json
 lighthouse-*.json
 lighthouse-*.txt
 lighthouse-reports/
+lh-tmp.json
 src/assets/img/*.png

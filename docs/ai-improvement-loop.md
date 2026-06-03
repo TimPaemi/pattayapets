@@ -82,6 +82,7 @@ Not deployed. Last updated: 30 May 2026.
 | **119** | **Relocation corridors:** country chip strips on `/pet-relocation/`, expanded relocation topic links, guides + species hubs |
 | **120** | **Area jump bars**, expanded emergency/health/lifestyle topic links, search + home discovery, hub freshness |
 | **121** | **UX audit fixes:** dedupe `/guides.html` filters (remove duplicate cluster chips); collapsible country corridors on `/pet-relocation/` (mobile `details`, desktop always open); Directory + Emergency quick links in mobile header |
+| **122** | **Homepage scannability:** 12 featured guide cards + collapsible six more; deduped topic link strip; expanded home “More to read”; `lh-tmp.json` gitignore; Lighthouse all-templates gate |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 

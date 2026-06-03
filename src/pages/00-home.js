@@ -42,8 +42,8 @@ function guideCard(href, tag, title, desc, cta) {
     '<span class="card-meta">' + cta + " &rarr;</span></a>";
 }
 
-/* Curated homepage guides — full index lives on /guides.html */
-const HOME_GUIDES = [
+/* Curated homepage guides — full index on /guides.html */
+const HOME_GUIDES_FEATURED = [
   ["/start-here.html", "New here", "Start here",
     "Emergency contacts, finding a vet, the climate and the essentials for new owners.",
     "Open the page"],
@@ -53,18 +53,12 @@ const HOME_GUIDES = [
   ["/bring-pet-to-thailand/checklist.html", "Import", "Import checklist",
     "A printable step-by-step checklist for the whole move to Thailand.",
     "Open the checklist"],
-  ["/bring-pet-to-thailand/import-permit-thailand-dld.html", "Import", "DLD import permit",
-    "How to apply for the Thai import permit before your pet flies in.",
-    "Read the guide"],
   ["/take-pet-out-of-thailand/", "Moving on", "Taking a pet out of Thailand",
     "Export process, costs and what the UK, EU, USA, Australia and more demand.",
     "Read the guide"],
   ["/take-pet-out-of-thailand/checklist.html", "Export", "Export checklist",
     "A printable step-by-step checklist for taking your pet out of Thailand.",
     "Open the checklist"],
-  ["/take-pet-out-of-thailand/export-permit-thailand-dld.html", "Export", "DLD export permit",
-    "How to apply for the Thai export permit before your pet flies out.",
-    "Read the guide"],
   ["/pet-health-pattaya/", "Health", "Pet health in Pattaya",
     "Heartworm, tick disease, skin and ear problems in a tropical climate.",
     "Read the guide"],
@@ -80,18 +74,27 @@ const HOME_GUIDES = [
   ["/owning-a-pet-in-pattaya/", "Day to day", "Owning a pet in Pattaya",
     "Costs, hot-climate care, pet-friendly housing and where to walk your dog.",
     "Read the guide"],
-  ["/owning-a-pet-in-pattaya/hot-climate-pet-care.html", "Owning", "Hot-climate pet care",
-    "Heat, walk timing and paw-pad safety — the everyday adjustment in Pattaya.",
-    "Read the guide"],
   ["/adopt-a-pet-pattaya/", "Adoption", "Adopt a pet in Pattaya",
     "Shelters, fostering and how to help street animals in and around the city.",
+    "Read the guide"],
+  ["/dogs/", "For dog owners", "The dog owner&rsquo;s hub",
+    "Care, training, walks and health guides for dogs — all in one place.",
+    "Open the hub"]
+];
+
+const HOME_GUIDES_MORE = [
+  ["/bring-pet-to-thailand/import-permit-thailand-dld.html", "Import", "DLD import permit",
+    "How to apply for the Thai import permit before your pet flies in.",
+    "Read the guide"],
+  ["/take-pet-out-of-thailand/export-permit-thailand-dld.html", "Export", "DLD export permit",
+    "How to apply for the Thai export permit before your pet flies out.",
+    "Read the guide"],
+  ["/owning-a-pet-in-pattaya/hot-climate-pet-care.html", "Owning", "Hot-climate pet care",
+    "Heat, walk timing and paw-pad safety — the everyday adjustment in Pattaya.",
     "Read the guide"],
   ["/owning-a-pet-in-pattaya/lost-pet-pattaya.html", "Owning", "If your pet goes missing",
     "Microchip, local groups and what to do in the first hours.",
     "Read the guide"],
-  ["/dogs/", "For dog owners", "The dog owner&rsquo;s hub",
-    "Care, training, walks and health guides for dogs — all in one place.",
-    "Open the hub"],
   ["/cats/", "For cat owners", "The cat owner&rsquo;s hub",
     "Indoor living, health and care guides for cats in Pattaya.",
     "Open the hub"],
@@ -100,31 +103,36 @@ const HOME_GUIDES = [
     "Read the guide"]
 ];
 
+function homeGuideGrid(guides) {
+  return guides.map(function (g) {
+    return guideCard(g[0], g[1], g[2], g[3], g[4]);
+  }).join("");
+}
+
 const HOME_GUIDE_MORE =
-  '<p class="guide-topics"><strong>More guides:</strong> ' +
-  '<a href="/bring-pet-to-thailand/checklist.html">Import checklist</a> &middot; ' +
-  '<a href="/take-pet-out-of-thailand/checklist.html">Export checklist</a> &middot; ' +
-  '<a href="/take-pet-out-of-thailand/export-process.html">Export process</a> &middot; ' +
-  '<a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">Export permit</a> &middot; ' +
+  '<details class="corridor-panel guide-topics-panel">' +
+  '<summary class="corridor-panel__title">More guides by topic</summary>' +
+  '<div class="corridor-panel__body"><p class="guide-topics">' +
   '<a href="/bring-pet-to-thailand/microchip-requirements.html">Microchip</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">Rabies &amp; titer</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/thailand-pet-quarantine.html">Quarantine</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/snub-nosed-breeds-flying.html">Snub-nosed flying</a> &middot; ' +
+  '<a href="/take-pet-out-of-thailand/export-process.html">Export process</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/from-uk.html">Import from UK</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/from-uae.html">Import from UAE</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/from-india.html">Import from India</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/from-philippines.html">Import from Philippines</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/from-china.html">Import from China</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/from-south-africa.html">Import from South Africa</a> &middot; ' +
+  '<a href="/take-pet-out-of-thailand/to-uk.html">Export to UK</a> &middot; ' +
+  '<a href="/take-pet-out-of-thailand/to-eu.html">Export to EU</a> &middot; ' +
   '<a href="/take-pet-out-of-thailand/to-india.html">Export to India</a> &middot; ' +
   '<a href="/take-pet-out-of-thailand/to-china.html">Export to China</a> &middot; ' +
   '<a href="/take-pet-out-of-thailand/to-philippines.html">Export to Philippines</a> &middot; ' +
   '<a href="/take-pet-out-of-thailand/to-japan.html">Export to Japan</a> &middot; ' +
-  '<a href="/owning-a-pet-in-pattaya/travelling-in-thailand.html">Travelling in Thailand</a> &middot; ' +
-  '<a href="/take-pet-out-of-thailand/to-uk.html">Export to UK</a> &middot; ' +
-  '<a href="/take-pet-out-of-thailand/to-eu.html">Export to EU</a> &middot; ' +
   '<a href="/pet-relocation/">Relocation agents</a> &middot; ' +
   '<a href="/owning-a-pet-in-pattaya/microchipping-your-pet.html">Microchipping</a> &middot; ' +
+  '<a href="/owning-a-pet-in-pattaya/travelling-in-thailand.html">Travelling in Thailand</a> &middot; ' +
   '<a href="/pet-health-pattaya/tick-borne-disease.html">Tick disease</a> &middot; ' +
   '<a href="/pet-emergency/heatstroke.html">Heatstroke</a> &middot; ' +
   '<a href="/pet-emergency/venomous-creatures.html">Venomous creatures</a> &middot; ' +
@@ -132,10 +140,7 @@ const HOME_GUIDE_MORE =
   '<a href="/cats/indoor-vs-outdoor-cats.html">Indoor vs outdoor cats</a> &middot; ' +
   '<a href="/adopt-a-pet-pattaya/hope-for-strays.html">Hope for Strays</a> &middot; ' +
   '<a href="/adopt-a-pet-pattaya/soi-dog-foundation.html">Soi Dog Foundation</a> &middot; ' +
-  '<a href="/bring-pet-to-thailand/from-uk.html">Import from UK</a> &middot; ' +
-  '<a href="/take-pet-out-of-thailand/to-uk.html">Export to UK</a> &middot; ' +
-  '<a href="/pet-relocation/">Relocation agents</a> &middot; ' +
-  '<a href="/dogs/">Dogs hub</a> &middot; <a href="/cats/">Cats hub</a></p>';
+  '<a href="/mobile-vets/">Mobile vets</a></p></div></details>';
 
 const FAQ = [
   ['Is PattayaPets a vet?',
@@ -248,13 +253,14 @@ const body =
   '<section class="section"><div class="container">' +
     '<div class="section-head"><p class="eyebrow">Guides &amp; resources</p>' +
     '<h2>Answers to what Pattaya pet owners search for</h2>' +
-    '<p>Sixteen starting points below &mdash; every guide is date-stamped. The full index ' +
-    'is on the <a href="/guides.html">guides page</a>.</p></div>' +
-    '<div class="grid grid-4">' +
-    HOME_GUIDES.map(function (g) {
-      return guideCard(g[0], g[1], g[2], g[3], g[4]);
-    }).join("") +
-    "</div>" +
+    '<p>Twelve featured guides below, plus six more and quick links by topic. Every guide ' +
+    'is date-stamped &mdash; the full index is on the <a href="/guides.html">guides page</a>.</p></div>' +
+    '<div class="grid grid-4">' + homeGuideGrid(HOME_GUIDES_FEATURED) + "</div>" +
+    '<details class="corridor-panel home-guides-panel">' +
+    '<summary class="corridor-panel__title">Six more guides</summary>' +
+    '<div class="corridor-panel__body"><div class="grid grid-4">' +
+    homeGuideGrid(HOME_GUIDES_MORE) +
+    "</div></div></details>" +
     HOME_GUIDE_MORE +
     '<div class="guide-filters dir-filters" style="margin-top:1.4rem">' +
     '<a class="chip chip-link" href="/guides.html?topic=import">Import</a>' +
