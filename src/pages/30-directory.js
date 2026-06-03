@@ -6,6 +6,11 @@ const SITE = "https://pattayapets.com";
 const { AREA_GUIDE } = require("../data/areas-content.js");
 const { HUB_GUIDE } = require("../data/hub-content.js");
 const { areaChipLabel } = require("../area-tiles.js");
+const {
+  linkTopicForCategory,
+  sidebarLinkPanels,
+  inPageLinkSection
+} = require("../linking.js");
 
 function esc(s) {
   return String(s == null ? "" : s)
@@ -158,43 +163,57 @@ const CAT_CROSS = {
     { label: "Mobile vets", path: "/mobile-vets/" },
     { label: "24-hour vets", path: "/pet-emergency/24-hour-vets-pattaya.html" },
     { label: "Pet health guide", path: "/pet-health-pattaya/" },
-    { label: "Pet emergencies", path: "/pet-emergency/" }
+    { label: "Pet emergencies", path: "/pet-emergency/" },
+    { label: "Directory", path: "/directory.html" },
+    { label: "Guides", path: "/guides.html?topic=health" }
   ],
   groomers: [
     { label: "Vets", path: "/vets/" },
     { label: "Pet shops", path: "/pet-shops/" },
     { label: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html" },
-    { label: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html" }
+    { label: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html" },
+    { label: "Area: Jomtien", path: "/area/jomtien.html" },
+    { label: "Start here", path: "/start-here.html" }
   ],
   boarding: [
     { label: "Pet sitters", path: "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html" },
     { label: "Cat boarding", path: "/cats/cat-boarding-pattaya.html" },
     { label: "Vets", path: "/vets/" },
-    { label: "Import & travel", path: "/bring-pet-to-thailand/airline-pet-policies.html" }
+    { label: "Import & travel", path: "/bring-pet-to-thailand/airline-pet-policies.html" },
+    { label: "Export process", path: "/take-pet-out-of-thailand/export-process.html" },
+    { label: "Dog-friendly stays", path: "/dog-friendly-pattaya/" }
   ],
   "pet-shops": [
     { label: "Where to buy pet food", path: "/owning-a-pet-in-pattaya/where-to-buy-pet-food.html" },
     { label: "Vets", path: "/vets/" },
     { label: "Microchipping", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html" },
-    { label: "Cat owners", path: "/cats/" }
+    { label: "Cat owners", path: "/cats/" },
+    { label: "Dog owners", path: "/dogs/" },
+    { label: "Owning hub", path: "/owning-a-pet-in-pattaya/" }
   ],
   trainers: [
     { label: "Puppy care", path: "/dogs/puppy-care-pattaya.html" },
     { label: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html" },
     { label: "Where to walk", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html" },
-    { label: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/" }
+    { label: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/" },
+    { label: "Vets", path: "/vets/" },
+    { label: "Adoption", path: "/adopt-a-pet-pattaya/" }
   ],
   "mobile-vets": [
     { label: "Vets & hospitals", path: "/vets/" },
     { label: "24-hour vets", path: "/pet-emergency/24-hour-vets-pattaya.html" },
     { label: "Getting to the vet", path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html" },
-    { label: "Senior pet care", path: "/owning-a-pet-in-pattaya/senior-pet-care.html" }
+    { label: "Senior pet care", path: "/owning-a-pet-in-pattaya/senior-pet-care.html" },
+    { label: "Banglamung area", path: "/area/banglamung.html" },
+    { label: "Pet health", path: "/pet-health-pattaya/" }
   ],
   "pet-relocation": [
     { label: "Import guide", path: "/bring-pet-to-thailand/" },
     { label: "Export guide", path: "/take-pet-out-of-thailand/" },
     { label: "Import costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html" },
-    { label: "U-Tapao or Bangkok?", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html" }
+    { label: "U-Tapao or Bangkok?", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html" },
+    { label: "Import checklist", path: "/bring-pet-to-thailand/checklist.html" },
+    { label: "Export checklist", path: "/take-pet-out-of-thailand/checklist.html" }
   ]
 };
 
@@ -634,6 +653,7 @@ BUSINESSES.forEach(function (b) {
         "services in " + esc(areaName(primaryArea)) + " &rarr;</a></p>"
       : "") +
     bizGuidesSidebar(b.category) +
+    sidebarLinkPanels(linkTopicForCategory(b.category), { internalLimit: 5, networkLimit: 4 }) +
     "</div></aside>" +
     "</div></div></section>";
 
@@ -709,6 +729,7 @@ Object.keys(CATEGORIES).forEach(function (key) {
   if (HUB_GUIDE[key]) body += HUB_GUIDE[key];
   body += catGuidesSection(key);
   body += catCrossSection(key);
+  body += inPageLinkSection(linkTopicForCategory(key));
 
   body += '<section class="section"><div class="container">' +
     '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +
@@ -811,7 +832,8 @@ Object.keys(AREAS).forEach(function (key) {
     }).join("") + "</div>" +
     '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +
     "Always consult a qualified veterinarian for your pet&rsquo;s health.</div>" +
-    "</div></section>";
+    "</div></section>" +
+    inPageLinkSection("directory");
 
   pages.push({
     path: "/area/" + key + ".html",

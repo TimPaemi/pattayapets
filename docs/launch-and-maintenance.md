@@ -133,6 +133,7 @@ CLAUDE.md                 The permanent locked rulebook. Read before editing.
 src/layout.js             The shared page shell: header, footer, schema, <head>.
 src/guidekit.js           Helpers that build guide pages.
 src/area-tiles.js         Area grid tiles with filtered directory shortcuts.
+src/linking.js            Contextual PattayaPets + network cross-link clusters.
 src/data/businesses.js    The directory data — every business, every fact.
 src/data/areas-content.js Neighbourhood write-ups for the area pages.
 src/data/hub-content.js   The "how to choose" text on the category hubs.

@@ -19,6 +19,7 @@ function catCard(href, icon, tag, name, desc) {
 
 const { BUSINESSES } = require("../data/businesses.js");
 const { areaTileHtml } = require("../area-tiles.js");
+const { inPageLinkSection } = require("../linking.js");
 const VETS24 = BUSINESSES.filter(function (b) {
   return (b.category === "vets" || b.category === "mobile-vets") && b.c24;
 });
@@ -270,6 +271,7 @@ const body =
     '<a class="btn btn-ghost" href="/guides.html?topic=start">Orientation guides</a>' +
     '<a class="btn btn-ghost" href="/search.html">Search the whole site</a></div>' +
   '</div></section>' +
+  inPageLinkSection("home") +
 
   '<section class="section"><div class="container">' +
     '<div class="section-head"><p class="eyebrow">Questions</p><h2>Frequently asked</h2></div>' +

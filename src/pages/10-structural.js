@@ -2,6 +2,8 @@
 /* Structural pages: About, Standards, Start Here, Contact, Masthead,
    Corrections, Privacy, Accessibility */
 
+const { inPageLinkSection } = require("../linking.js");
+
 const DISC =
   '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +
   "PattayaPets is an editorial publication about pet businesses and pet ownership. " +
@@ -132,7 +134,8 @@ pages.push({
     '<a href="/sitemap.html">full sitemap</a>.</p>' +
     '<p class="updated">Last updated 30 May 2026</p>' +
     DISC +
-    "</div></div></section>"
+    "</div></div></section>" +
+    inPageLinkSection("start")
 });
 
 /* ---------------- About ---------------- */

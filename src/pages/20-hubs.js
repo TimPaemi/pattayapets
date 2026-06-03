@@ -57,6 +57,7 @@ function guideFiltersBar() {
 
 const { BUSINESSES } = require("../data/businesses.js");
 const { areaTileHtml } = require("../area-tiles.js");
+const { inPageLinkSection } = require("../linking.js");
 
 function areaTile(name, slug, blurb) {
   return areaTileHtml(name, slug, blurb);
@@ -137,6 +138,7 @@ pages.push({
     "Listings describe the business experience, not veterinary medical quality. " +
     "Always consult a qualified veterinarian.</div>" +
     "</div></section>" +
+    inPageLinkSection("directory") +
 
     '<section class="section section-tint"><div class="container">' +
     '<div class="section-head"><h2>Helpful guides</h2>' +
@@ -385,7 +387,8 @@ pages.push({
     "Our guides are not veterinary advice. Import and export rules change &mdash; " +
     "always verify the current requirements with the official source. Always " +
     "consult a qualified veterinarian for your pet&rsquo;s health.</div>" +
-    "</div></section>"
+    "</div></section>" +
+    inPageLinkSection("general")
 });
 
 module.exports = pages;

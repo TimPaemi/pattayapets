@@ -1,6 +1,13 @@
 "use strict";
 /* Shared rendering kit for guide pages. Produces Article + FAQPage schema. */
 
+const {
+  linkTopicFromPath,
+  sidebarLinkAside,
+  mergeSidebars,
+  inPageLinkSection
+} = require("./linking.js");
+
 const SITE = "https://pattayapets.com";
 const DEFAULT_UPDATED = "2026-05-30";
 const DEFAULT_UPDATED_LABEL = "30 May 2026";
@@ -157,9 +164,13 @@ function article(o) {
   prose += DISC;
 
   var useToc = toc.length >= 3;
+  var linkTopic = o.linkTopic || linkTopicFromPath(o.path);
+  var tocAside = useToc ? tocSidebar(toc, hasFaqs) : "";
+  var linkAside = sidebarLinkAside(linkTopic);
+  var sidebar = mergeSidebars(tocAside, linkAside);
   var mainCol = '<div class="prose">' + prose + "</div>";
-  var grid = useToc
-    ? '<div class="page-grid">' + tocSidebar(toc, hasFaqs) + mainCol + "</div>"
+  var grid = sidebar
+    ? '<div class="page-grid">' + sidebar + mainCol + "</div>"
     : mainCol;
 
   let body = '<section class="section"><div class="container">' + grid;
@@ -173,7 +184,7 @@ function article(o) {
   body += "</div></section>";
 
   var bodyClass = o.bodyClass || "";
-  if (useToc && bodyClass.indexOf("has-guide-toc") === -1) {
+  if (sidebar && bodyClass.indexOf("has-guide-toc") === -1) {
     bodyClass = (bodyClass ? bodyClass + " " : "") + "has-guide-toc";
   }
   if (/\/checklist\.html$/.test(o.path)) {
@@ -247,6 +258,9 @@ function hub(o) {
           "<p>" + (r.desc || "") + '</p><span class="card-meta">Read &rarr;</span></a>';
       }).join("") + "</div></div></div></section>";
   }
+
+  var hubTopic = o.guidesTopic || hubGuidesTopic(o.path);
+  if (hubTopic) body += inPageLinkSection(hubTopic);
 
   body += '<section class="section"><div class="container">' +
     '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +
