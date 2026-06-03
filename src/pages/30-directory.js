@@ -522,6 +522,14 @@ function dirFiltersBar(list, areaKeys, catKey) {
     '<p class="dir-filter-status notice" id="dir-filter-status" hidden></p>';
 }
 
+function dirFiltersPanel(list, areaKeys, catKey) {
+  var inner = dirFiltersBar(list, areaKeys, catKey);
+  if (!inner) return "";
+  return '<details class="corridor-panel filter-panel">' +
+    '<summary class="corridor-panel__title">Filter listings</summary>' +
+    '<div class="corridor-panel__body">' + inner + "</div></details>";
+}
+
 function bizCard(b) {
   var areas = b.areas.length ? b.areas.map(areaName).join(", ") : "Serves all Thailand";
   return '<article class="biz-card" data-dir-tags="' + esc(bizDirTags(b)) + '" data-dir-cat="' +
@@ -725,7 +733,7 @@ Object.keys(CATEGORIES).forEach(function (key) {
       (list.length === 1 ? cat.one : cat.one + "s") + "</h2>" +
       "<p>Every listing is a verified facts page. Verdicts follow an anonymous " +
       "visit.</p></div>" +
-      dirFiltersBar(list, areaKeys, key) +
+      dirFiltersPanel(list, areaKeys, key) +
       '<div class="grid grid-2 dir-listings" id="dir-listings">' + list.map(bizCard).join("") + "</div>";
     if (areaKeys.length) {
       body += '<div class="section-head" style="margin-top:2rem" id="area"><h2>Browse by area</h2></div>' +

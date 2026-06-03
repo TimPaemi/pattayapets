@@ -37,6 +37,12 @@ function guideFilterChip(topic, label, active) {
     label + "</a>";
 }
 
+function guideFiltersPanel() {
+  return '<details class="corridor-panel filter-panel">' +
+    '<summary class="corridor-panel__title">Filter guides</summary>' +
+    '<div class="corridor-panel__body">' + guideFiltersBar() + "</div></details>";
+}
+
 function guideFiltersBar() {
   var chips = guideFilterChip("all", "All", true) +
     guideFilterChip("start", "Start here") +
@@ -221,7 +227,7 @@ pages.push({
     "search for. Every guide is date-stamped and points you to the official source " +
     "to verify against.</p></div>" +
     "<h2>Browse the guides</h2>" +
-    guideFiltersBar() +
+    '<div class="filters-sticky">' + guideFiltersPanel() + "</div>" +
     '<div id="guide-listings" class="grid grid-3">' +
     guideCard("/start-here.html", "New here", "Start here",
       "A short orientation for new pet owners in Pattaya &mdash; emergency contacts, " +

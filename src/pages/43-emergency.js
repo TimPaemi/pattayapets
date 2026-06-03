@@ -2,7 +2,34 @@
 /* Cluster: Pet emergencies & tropical hazards */
 
 const { article, hub } = require("../guidekit.js");
+const { esc } = require("../layout.js");
 const { BUSINESSES, AREAS } = require("../data/businesses.js");
+
+function emergencyClinicCard(b) {
+  var areaNm = b.areas[0] && AREAS[b.areas[0]] ? AREAS[b.areas[0]].name : "Pattaya";
+  var listing = "/" + b.category + "/" + b.slug + ".html";
+  var actions = "";
+  if (b.phone && b.tel) {
+    actions += '<a class="btn btn-alert" href="tel:' + b.tel + '" aria-label="Call ' +
+      esc(b.name) + ' now">Call ' + esc(b.phone) + "</a>";
+  }
+  actions += '<a class="btn btn-ghost" href="' + listing + '">Full listing</a>';
+  return '<article class="biz-card biz-card--emergency">' +
+    '<div class="biz-top">' +
+    "<div><h3><a href=\"" + listing + "\">" + esc(b.name) + "</a></h3>" +
+    '<p class="biz-sub">' + esc(b.type) + " &middot; " + esc(areaNm) + "</p></div>" +
+    '<span class="badge-24h">Open 24 hours</span></div>' +
+    (actions ? '<div class="biz-actions btn-row">' + actions + "</div>" : "") +
+    '<div class="table-wrap"><table class="facts-table">' +
+    '<caption class="visually-hidden">Contact details for ' + esc(b.name) + "</caption><tbody>" +
+    (b.address ? "<tr><th scope=\"row\">Address</th><td>" + esc(b.address) + "</td></tr>" : "") +
+    (b.phone ? '<tr><th scope="row">Phone</th><td><a href="tel:' + b.tel + '">' +
+      esc(b.phone) + "</a></td></tr>" : "") +
+    (!b.address && !b.phone
+      ? "<tr><td colspan=\"2\">Contact details are being verified &mdash; open the full listing before travelling.</td></tr>"
+      : "") +
+    "</tbody></table></div></article>";
+}
 
 const GUIDES = { name: "Guides", path: "/guides.html" };
 const CLUSTER = { name: "Pet emergencies", path: "/pet-emergency/" };
@@ -91,18 +118,7 @@ pages.push(hub({
 var c24 = BUSINESSES.filter(function (b) {
   return (b.category === "vets" || b.category === "mobile-vets") && b.c24;
 });
-var c24list = c24.map(function (b) {
-  var areaNm = b.areas[0] && AREAS[b.areas[0]] ? AREAS[b.areas[0]].name : "Pattaya";
-  return '<article class="biz-card"><div class="biz-top">' +
-    "<div><h3><a href=\"/" + b.category + "/" + b.slug + ".html\">" + b.name +
-    "</a></h3><p class=\"biz-sub\">" + b.type + " &middot; " + areaNm + "</p></div>" +
-    '<span class="badge-24h">24 hr</span></div>' +
-    '<div class="table-wrap"><table class="facts-table" style="margin:.5rem 0 0"><tbody>' +
-    (b.address ? "<tr><th scope=\"row\">Address</th><td>" + b.address + "</td></tr>" : "") +
-    (b.phone ? '<tr><th scope="row">Phone</th><td><a href="tel:' + b.tel + '">' + b.phone + "</a></td></tr>" : "") +
-    (!b.address && !b.phone ? '<tr><td colspan="2">Contact details are being verified &mdash; check the clinic listing before travelling.</td></tr>' : "") +
-    "</tbody></table></div></article>";
-}).join("");
+var c24list = c24.map(emergencyClinicCard).join("");
 
 pages.push(article({
   path: "/pet-emergency/24-hour-vets-pattaya.html",
@@ -132,7 +148,7 @@ pages.push(article({
       "Opening hours can change &mdash; if you can, call first to confirm someone " +
       "is on duty for emergencies. PattayaPets lists these as <strong>facts pages</strong> " +
       "until anonymous visits are complete; we do not rate medical quality.</p>" +
-      '<div class="grid grid-2">' + c24list + "</div>" +
+      '<div class="grid grid-2 emergency-clinic-grid">' + c24list + "</div>" +
       "<p>Need a daytime clinic or a vet in your neighbourhood? Browse " +
       "<a href=\"/vets/?filter=24h\">24-hour clinics in the vets directory</a>, the full " +
       "<a href=\"/vets/\">vets directory</a>, " +

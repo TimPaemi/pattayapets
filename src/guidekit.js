@@ -137,7 +137,7 @@ function article(o) {
     '<p class="lede">' + o.lede + "</p>" +
     '<p class="updated">Last updated ' + (o.updatedLabel || DEFAULT_UPDATED_LABEL) + "</p>";
   if (isEmergencyGuide) {
-    prose += '<div class="emergency-quick-bar btn-row">' +
+    prose += '<div class="emergency-quick-bar btn-row" role="navigation" aria-label="Emergency shortcuts">' +
       '<a class="btn btn-alert" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in Pattaya</a>' +
       '<a class="btn btn-ghost" href="/vets/?filter=24h">24-hour directory</a>' +
       '<a class="btn btn-ghost" href="/guides.html?topic=emergency">Emergency guides</a></div>';
