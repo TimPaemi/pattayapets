@@ -70,6 +70,7 @@ Not deployed. Last updated: 30 May 2026.
 | **107** | **Filter deep links:** `/vets/?filter=24h`, homepage guide topic chips, emergency bar + 24h page related links |
 | **108** | **No-JS filter chips** (anchor hrefs + JS enhance); search topic links; `npm run audit:go`; IndexNow docs |
 | **109** | **Area-aware directory links:** category hub area chips → `?filter=area:`; area quick links + filtered category chips |
+| **110** | **Area tile vet shortcuts** (`tile-wrap` + `/vets/?filter=area:`); directory 24h card; search area vet chips |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 

@@ -58,11 +58,16 @@ function guideFiltersBar() {
 const { BUSINESSES } = require("../data/businesses.js");
 
 function areaTile(name, slug, blurb) {
-  var n = BUSINESSES.filter(function (b) { return b.areas.indexOf(slug) !== -1; }).length;
+  var list = BUSINESSES.filter(function (b) { return b.areas.indexOf(slug) !== -1; });
+  var n = list.length;
   var sub = n ? (n + (n === 1 ? " business listed" : " businesses listed")) : blurb;
-  return '<a class="tile" href="/area/' + slug + '.html">' +
+  var tile = '<a class="tile" href="/area/' + slug + '.html">' +
     '<span class="tile-name">' + name + "</span>" +
     '<span class="tile-count">' + sub + "</span></a>";
+  if (!list.some(function (b) { return b.category === "vets"; })) return tile;
+  return '<div class="tile-wrap">' + tile +
+    '<a class="tile-sub chip chip-link" href="/vets/?filter=' +
+    encodeURIComponent("area:" + slug) + '">Vets in ' + name + "</a></div>";
 }
 
 const AREAS = [
@@ -108,6 +113,10 @@ pages.push({
     '<div class="grid grid-3">' +
     card("/vets/", "Health", "Vets &amp; animal hospitals",
       "General clinics, animal hospitals and 24-hour emergency care.", "View vets") +
+    '<a class="card" href="/vets/?filter=24h"><span class="card-tag">Urgent</span>' +
+    "<h3>24-hour vets (directory)</h3>" +
+    "<p>Filter the vets hub to clinics open around the clock.</p>" +
+    '<span class="card-meta">View 24-hour listings &rarr;</span></a>' +
     card("/groomers/", "Grooming", "Pet groomers",
       "Dog and cat grooming &mdash; baths, clips, de-shedding and nail care.", "View groomers") +
     card("/boarding/", "Boarding", "Boarding &amp; daycare",

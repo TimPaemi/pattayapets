@@ -49,6 +49,8 @@ module.exports = [{
     '<a class="chip chip-link" href="/dog-friendly-pattaya/">Dog-friendly</a>' +
     '<a class="chip chip-link" href="/pet-relocation/">Relocation agents</a>' +
     '<a class="chip chip-link" href="/area/jomtien.html">Jomtien area</a>' +
+    '<a class="chip chip-link" href="/vets/?filter=area%3Ajomtien">Vets in Jomtien</a>' +
+    '<a class="chip chip-link" href="/vets/?filter=area%3Acentral-pattaya">Vets in Central Pattaya</a>' +
     '<a class="chip chip-link" href="/area/naklua.html">Naklua area</a>' +
     '<a class="chip chip-link" href="/area/central-pattaya.html">Central Pattaya</a>' +
     '<a class="chip chip-link" href="/area/wongamat.html">Wongamat area</a>' +

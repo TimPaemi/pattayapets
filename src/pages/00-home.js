@@ -31,12 +31,17 @@ function vet24Card(b) {
 }
 
 function areaTile(name, slug) {
-  var n = BUSINESSES.filter(function (b) { return b.areas.indexOf(slug) !== -1; }).length;
+  var list = BUSINESSES.filter(function (b) { return b.areas.indexOf(slug) !== -1; });
+  var n = list.length;
   var sub = n ? (n + (n === 1 ? " business listed" : " businesses listed")) :
     "Pet services in " + name;
-  return '<a class="tile" href="/area/' + slug + '.html">' +
+  var tile = '<a class="tile" href="/area/' + slug + '.html">' +
     '<span class="tile-name">' + name + '</span>' +
-    '<span class="tile-count">' + sub + '</span></a>';
+    '<span class="tile-count">' + sub + "</span></a>";
+  if (!list.some(function (b) { return b.category === "vets"; })) return tile;
+  return '<div class="tile-wrap">' + tile +
+    '<a class="tile-sub chip chip-link" href="/vets/?filter=' +
+    encodeURIComponent("area:" + slug) + '">Vets in ' + name + "</a></div>";
 }
 
 function guideCard(href, tag, title, desc, cta) {
