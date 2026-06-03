@@ -194,6 +194,18 @@ function article(o) {
   };
 }
 
+function hubGuidesTopic(path) {
+  if (path === "/bring-pet-to-thailand/") return "import";
+  if (path === "/take-pet-out-of-thailand/") return "export";
+  if (path === "/pet-emergency/") return "emergency";
+  if (path === "/owning-a-pet-in-pattaya/") return "owning";
+  if (path === "/pet-health-pattaya/") return "health";
+  if (path === "/adopt-a-pet-pattaya/") return "adoption";
+  if (path === "/dog-friendly-pattaya/") return "lifestyle";
+  if (path === "/dogs/" || path === "/cats/") return "species";
+  return "";
+}
+
 /* a cluster hub: intro + a grid of cards linking the cluster's pages */
 function hub(o) {
   let body =
@@ -203,6 +215,12 @@ function hub(o) {
     '<p class="lede">' + o.lede + "</p>" +
     '<p class="updated">Last updated ' + (o.updatedLabel || DEFAULT_UPDATED_LABEL) + "</p>";
   if (o.intro) body += '<div class="prose" style="margin-top:1.2rem">' + o.intro + "</div>";
+  var guidesTopic = o.guidesTopic || hubGuidesTopic(o.path);
+  if (guidesTopic) {
+    body += '<div class="btn-row" style="margin-top:1.2rem">' +
+      '<a class="btn btn-ghost" href="/guides.html?topic=' + guidesTopic + '">' +
+      "Browse matching guides on the library page &rarr;</a></div>";
+  }
   body += "</div></section>";
 
   (o.groups || []).forEach(function (g, i) {

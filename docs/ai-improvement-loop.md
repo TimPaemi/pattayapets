@@ -66,6 +66,7 @@ Not deployed. Last updated: 30 May 2026.
 | **103** | **UX pass #3:** area hub category filters; collapsible mobile guide TOC (`toc-panel`); contact action chips; emergency quick-bar on `/pet-emergency/` articles |
 | **104** | **Guides hub topic filters** (`guide-card` + chips); `audit:content:richness` wired into `build:all` |
 | **105** | **Shareable filter URLs:** `?topic=` guides, `?filter=` directory hubs, `?cat=` area hubs; Start here chip |
+| **106** | **Cluster hub → guides deep links** (`/guides.html?topic=…` from import/export/emergency/owning hubs) |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 
