@@ -10,7 +10,7 @@ function esc(s) {
 const NETWORK_SITES = {
   authority: {
     name: "Pattaya Authority",
-    url: "https://pattaya-authority.com/",
+    url: "https://pattaya-authority.com/work/pattaya-pets/",
     hint: "The network hub and editorial method."
   },
   timpaemi: {
@@ -132,9 +132,13 @@ const INTERNAL_BY_TOPIC = {
   relocation: [
     { path: "/bring-pet-to-thailand/", name: "Import guide" },
     { path: "/take-pet-out-of-thailand/", name: "Export guide" },
-    { path: "/pet-relocation/", name: "Relocation agents" },
-    { path: "/guides.html?topic=import", name: "Import guides" },
-    { path: "/guides.html?topic=export", name: "Export guides" }
+    { path: "/bring-pet-to-thailand/checklist.html", name: "Import checklist" },
+    { path: "/take-pet-out-of-thailand/checklist.html", name: "Export checklist" },
+    { path: "/bring-pet-to-thailand/from-uk.html", name: "Import from UK" },
+    { path: "/take-pet-out-of-thailand/to-uk.html", name: "Export to UK" },
+    { path: "/bring-pet-to-thailand/from-uae.html", name: "Import from UAE" },
+    { path: "/take-pet-out-of-thailand/to-eu.html", name: "Export to EU" },
+    { path: "/pet-relocation/", name: "Relocation agents" }
   ],
   start: [
     { path: "/start-here.html", name: "Start here" },
@@ -176,7 +180,7 @@ const NETWORK_BY_TOPIC = {
   adoption: ["authority", "school"],
   species: ["restaurant", "school", "vehicle"],
   directory: ["vehicle", "medical", "visa", "authority"],
-  relocation: ["visa", "vehicle", "authority"],
+  relocation: ["visa", "vehicle", "stream", "authority"],
   start: ["visa", "school", "vehicle", "authority"],
   home: ["authority", "visa", "restaurant", "medical", "vehicle"],
   general: ["authority", "visa", "restaurant"],
@@ -330,7 +334,7 @@ function inPageLinkSection(topic) {
           esc(s.name) + "</a>"
         : "";
     }).join("") +
-    '</div><p style="margin:.75rem 0 0;font-size:.92rem"><a href="https://pattaya-authority.com/" ' +
+    '</div><p style="margin:.75rem 0 0;font-size:.92rem"><a href="https://pattaya-authority.com/work/pattaya-pets/" ' +
     'target="_blank" rel="noopener noreferrer">About the network &rarr;</a></p></div>' +
     "</div></div></section>";
 }
@@ -381,8 +385,57 @@ function networkDirectoryProse() {
     "Each site uses the same method &mdash; anonymous visits, bills paid in full, " +
     "no paid placements. They are editorial neighbours, not competitors:</p>" +
     networkChipsHtml() +
-    '<p style="margin-top:.9rem"><a href="https://pattaya-authority.com/" target="_blank" ' +
+    '<p style="margin-top:.9rem"><a href="https://pattaya-authority.com/work/pattaya-pets/" target="_blank" ' +
     'rel="noopener noreferrer">About the Pattaya Authority network &rarr;</a></p>';
+}
+
+const CORRIDOR_IMPORT = [
+  { path: "/bring-pet-to-thailand/from-uk.html", name: "From UK" },
+  { path: "/bring-pet-to-thailand/from-usa.html", name: "From USA" },
+  { path: "/bring-pet-to-thailand/from-eu.html", name: "From EU" },
+  { path: "/bring-pet-to-thailand/from-australia.html", name: "From Australia" },
+  { path: "/bring-pet-to-thailand/from-uae.html", name: "From UAE" },
+  { path: "/bring-pet-to-thailand/from-canada.html", name: "From Canada" },
+  { path: "/bring-pet-to-thailand/from-japan.html", name: "From Japan" },
+  { path: "/bring-pet-to-thailand/from-singapore.html", name: "From Singapore" },
+  { path: "/bring-pet-to-thailand/from-india.html", name: "From India" },
+  { path: "/bring-pet-to-thailand/from-philippines.html", name: "From Philippines" },
+  { path: "/bring-pet-to-thailand/from-china.html", name: "From China" }
+];
+
+const CORRIDOR_EXPORT = [
+  { path: "/take-pet-out-of-thailand/to-uk.html", name: "To UK" },
+  { path: "/take-pet-out-of-thailand/to-usa.html", name: "To USA" },
+  { path: "/take-pet-out-of-thailand/to-eu.html", name: "To EU" },
+  { path: "/take-pet-out-of-thailand/to-australia.html", name: "To Australia" },
+  { path: "/take-pet-out-of-thailand/to-uae.html", name: "To UAE" },
+  { path: "/take-pet-out-of-thailand/to-canada.html", name: "To Canada" },
+  { path: "/take-pet-out-of-thailand/to-japan.html", name: "To Japan" },
+  { path: "/take-pet-out-of-thailand/to-singapore.html", name: "To Singapore" },
+  { path: "/take-pet-out-of-thailand/to-india.html", name: "To India" },
+  { path: "/take-pet-out-of-thailand/to-philippines.html", name: "To Philippines" },
+  { path: "/take-pet-out-of-thailand/to-china.html", name: "To China" }
+];
+
+function corridorChipsSection() {
+  return '<section class="section section-tint"><div class="container">' +
+    '<div class="section-head"><h2>Country corridors</h2>' +
+    "<p>Thai DLD steps are the same; what changes is your origin or destination " +
+    "paperwork. Pick the corridor that matches your move.</p></div>" +
+    '<div class="ch">Importing into Thailand</div>' +
+    '<div class="chips" style="margin-bottom:1.1rem">' +
+    CORRIDOR_IMPORT.map(function (l) {
+      return '<a class="chip chip-link" href="' + l.path + '">' + esc(l.name) + "</a>";
+    }).join("") +
+    '<a class="chip chip-link" href="/bring-pet-to-thailand/">All import corridors &rarr;</a>' +
+    "</div>" +
+    '<div class="ch">Exporting from Thailand</div>' +
+    '<div class="chips">' +
+    CORRIDOR_EXPORT.map(function (l) {
+      return '<a class="chip chip-link" href="' + l.path + '">' + esc(l.name) + "</a>";
+    }).join("") +
+    '<a class="chip chip-link" href="/take-pet-out-of-thailand/">All export corridors &rarr;</a>' +
+    "</div></div></section>";
 }
 
 function proseNetworkLine(topic) {
@@ -396,7 +449,7 @@ function proseNetworkLine(topic) {
   }).filter(Boolean);
   if (!names.length) return "";
   return "<p>Planning the wider move? See " + names.join(", ") +
-    " in the <a href=\"https://pattaya-authority.com/\" target=\"_blank\" rel=\"noopener noreferrer\">" +
+    " in the <a href=\"https://pattaya-authority.com/work/pattaya-pets/\" target=\"_blank\" rel=\"noopener noreferrer\">" +
     "Pattaya Authority</a> network.</p>";
 }
 
@@ -414,5 +467,6 @@ module.exports = {
   networkDirectoryProse,
   proseNetworkLine,
   internalListHtml,
-  networkListHtml
+  networkListHtml,
+  corridorChipsSection
 };

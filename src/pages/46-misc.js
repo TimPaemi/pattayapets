@@ -131,7 +131,9 @@ pages.push(hub({
     "indoor-outdoor pets. The heat, parasites, traffic and free-roaming animals " +
     "all still apply &mdash; the guides below cover what a cat owner here needs. " +
     "Start with <a href=\"/cats/indoor-vs-outdoor-cats.html\">indoor or outdoor " +
-    "cats</a> if you are new to keeping a cat in Pattaya.</p>",
+    "cats</a> if you are new to keeping a cat in Pattaya. Many owners adopt from " +
+    "<a href=\"/adopt-a-pet-pattaya/hope-for-strays.html\">Hope for Strays</a> or " +
+    "<a href=\"/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html\">Dog &amp; Cat Rescue Pattaya</a>.</p>",
   groups: [
     {
       title: "Cat-owner guides",
@@ -202,7 +204,9 @@ pages.push(hub({
     "<p>Pattaya is a rewarding place to own a dog: an outdoor life, a long " +
     "beach, and a growing number of dog-friendly places. The guides below cover " +
     "the daily reality &mdash; the heat, the walks, the street dogs &mdash; and " +
-    "the bigger steps like bringing a dog in or adopting one here.</p>",
+    "the bigger steps like bringing a dog in or adopting one here. For adoption, " +
+    "see <a href=\"/adopt-a-pet-pattaya/hope-for-strays.html\">Hope for Strays</a> " +
+    "and <a href=\"/adopt-a-pet-pattaya/pattaya-street-dogs-k9aid.html\">Pattaya Street Dogs (K9aid)</a>.</p>",
   groups: [
     {
       title: "Dog-owner guides",

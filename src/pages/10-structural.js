@@ -91,6 +91,8 @@ pages.push({
     '<a href="/bring-pet-to-thailand/from-uae.html">import from the UAE</a>; ' +
     "the separate hub covers " +
     '<a href="/take-pet-out-of-thailand/">taking a pet out of Thailand</a>. ' +
+    "Specialists who handle the paperwork are listed in the " +
+    '<a href="/pet-relocation/">pet relocation agents directory</a>. ' +
     "For visa and relocation timing alongside the move, see " +
     '<a href="https://pattayavisahelp.com/" target="_blank" rel="noopener noreferrer">' +
     "Pattaya Visa Help</a>. Relocating with children? See " +
@@ -170,7 +172,7 @@ pages.push(prosePage({
     "Pattaya, and operated via the Pattaya Authority network &mdash; a family of " +
     "independent Pattaya publications that share one method: visit anonymously, pay " +
     "every bill, take no money from the businesses covered. See the " +
-    '<a href="https://pattaya-authority.com/" target="_blank" rel="noopener noreferrer">' +
+    '<a href="https://pattaya-authority.com/work/pattaya-pets/" target="_blank" rel="noopener noreferrer">' +
     "Pattaya Authority case study</a> for how PattayaPets fits the network. The founder is " +
     '<a href="https://timpaemi.com/" target="_blank" rel="noopener">Tim</a>. ' +
     "Reviews are bylined to The Editors. See the " +
@@ -332,7 +334,7 @@ pages.push(prosePage({
     "<h2>Publisher</h2>" +
     "<p>TIMPAEMI Co., Ltd., Pattaya City, Bang Lamung District, Chon Buri 20150, " +
     "Thailand. Operated via the " +
-    '<a href="https://pattaya-authority.com/" target="_blank" rel="noopener">' +
+    '<a href="https://pattaya-authority.com/work/pattaya-pets/" target="_blank" rel="noopener">' +
     "Pattaya Authority</a> network.</p>" +
     "<h2>Method</h2>" +
     "<p>Anonymous visits. Bills paid in full. Zero paid placements, zero " +

@@ -47,7 +47,7 @@ pages.push(hub({
   path: "/bring-pet-to-thailand/",
   title: "How to Bring a Pet to Thailand (DLD Guide 2026) | PattayaPets",
   image: "/assets/img/og-import.png",
-  updated: "2026-05-30",
+  updated: "2026-06-03",
   desc: "How to bring a dog or cat to Thailand in 2026: DLD import permit, microchip, " +
     "rabies vaccination, health certificate, airlines and arrival at Bangkok or U-Tapao.",
   crumb: "Bringing a pet to Thailand",

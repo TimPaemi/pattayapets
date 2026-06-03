@@ -65,7 +65,7 @@ pages.push(hub({
   path: "/take-pet-out-of-thailand/",
   title: "How to Export a Pet from Thailand (DLD Guide 2026) | PattayaPets",
   image: "/assets/img/og-export.png",
-  updated: "2026-05-30",
+  updated: "2026-06-03",
   desc: "Export a dog or cat from Thailand in 2026: DLD export permit, health certificate, " +
     "rabies titer timing and destination guides for the UK, USA, EU and Australia.",
   crumb: "Taking a pet out of Thailand",

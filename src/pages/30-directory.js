@@ -10,7 +10,8 @@ const {
   linkTopicForCategory,
   sidebarLinkPanels,
   inPageLinkSection,
-  hubQuickBar
+  hubQuickBar,
+  corridorChipsSection
 } = require("../linking.js");
 
 function esc(s) {
@@ -42,8 +43,8 @@ const HUB_TITLE = {
   boarding: "Pet Boarding & Kennels in Pattaya",
   "pet-shops": "Pet Shops in Pattaya",
   trainers: "Dog Trainers in Pattaya",
-  "pet-relocation": "Pet Relocation Agents in Thailand",
-  "mobile-vets": "Mobile & Home-Visit Vets in Pattaya"
+  "pet-relocation": "Pet Relocation Agents Thailand | Import & Export Help",
+  "mobile-vets": "Mobile & Home-Visit Vets Pattaya | House Calls"
 };
 
 const HUB_DESC = {
@@ -119,16 +120,17 @@ const CAT_GUIDES = {
   ],
   "pet-relocation": [
     { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/" },
-    { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/", desc: "Destination guides when you leave." },
-    { name: "DLD export permit", path: "/take-pet-out-of-thailand/export-permit-thailand-dld.html", desc: "The Thai-side permit before you fly out." },
-    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "Health certificate and airport steps on the way out." },
+    { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/" },
+    { name: "Import from the UK", path: "/bring-pet-to-thailand/from-uk.html" },
+    { name: "Export to the UK", path: "/take-pet-out-of-thailand/to-uk.html" },
+    { name: "Import from the UAE", path: "/bring-pet-to-thailand/from-uae.html" },
+    { name: "Export to the EU", path: "/take-pet-out-of-thailand/to-eu.html" },
+    { name: "Export to Australia", path: "/take-pet-out-of-thailand/to-australia.html" },
+    { name: "DLD export permit", path: "/take-pet-out-of-thailand/export-permit-thailand-dld.html" },
     { name: "DLD import permit", path: "/bring-pet-to-thailand/import-permit-thailand-dld.html" },
     { name: "Rabies & titer test", path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html" },
-    { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html" },
     { name: "Import costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html" },
     { name: "Export costs", path: "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html" },
-    { name: "Pet quarantine", path: "/bring-pet-to-thailand/thailand-pet-quarantine.html" },
-    { name: "U-Tapao or Bangkok?", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html" },
     { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html" }
   ]
 };
@@ -211,8 +213,10 @@ const CAT_CROSS = {
   "pet-relocation": [
     { label: "Import guide", path: "/bring-pet-to-thailand/" },
     { label: "Export guide", path: "/take-pet-out-of-thailand/" },
-    { label: "Import costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html" },
-    { label: "U-Tapao or Bangkok?", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html" },
+    { label: "From UK", path: "/bring-pet-to-thailand/from-uk.html" },
+    { label: "To UK", path: "/take-pet-out-of-thailand/to-uk.html" },
+    { label: "From UAE", path: "/bring-pet-to-thailand/from-uae.html" },
+    { label: "To EU", path: "/take-pet-out-of-thailand/to-eu.html" },
     { label: "Import checklist", path: "/bring-pet-to-thailand/checklist.html" },
     { label: "Export checklist", path: "/take-pet-out-of-thailand/checklist.html" }
   ]
@@ -729,6 +733,7 @@ Object.keys(CATEGORIES).forEach(function (key) {
   }
 
   if (HUB_GUIDE[key]) body += HUB_GUIDE[key];
+  if (key === "pet-relocation") body += corridorChipsSection();
   body += catGuidesSection(key);
   body += catCrossSection(key);
   body += inPageLinkSection(linkTopicForCategory(key));
@@ -746,7 +751,7 @@ Object.keys(CATEGORIES).forEach(function (key) {
     description: clampDesc(HUB_DESC[key] || cat.intro),
     crumb: cat.name,
     breadcrumbs: [{ name: "Directory", path: "/directory.html" }],
-    updated: "2026-05-31",
+    updated: "2026-06-03",
     body: body
   });
 });
@@ -845,7 +850,7 @@ Object.keys(AREAS).forEach(function (key) {
       area.name + ", Pattaya. " + area.blurb,
     crumb: area.name,
     breadcrumbs: [{ name: "Directory", path: "/directory.html" }],
-    updated: "2026-05-31",
+    updated: "2026-06-03",
     body: body
   });
 });

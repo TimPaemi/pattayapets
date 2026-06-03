@@ -211,7 +211,7 @@ pages.push({
     "Plain-English guides for pet owners in Pattaya: bringing a pet to Thailand, taking one out, dog-friendly places, pet emergencies, costs and adoption.",
   crumb: "Guides",
   breadcrumbs: [],
-  updated: "2026-06-03",
+  updated: "2026-06-04",
   image: "/assets/img/og-guides.png",
   body:
     '<section class="section"><div class="container">' +
@@ -325,6 +325,15 @@ pages.push({
       "Open the guide") +
     guideCard("/bring-pet-to-thailand/from-uae.html", "Import", "Import from the UAE",
       "MOCCAE export permit and the Thai DLD steps for Gulf relocations.",
+      "Open the guide") +
+    guideCard("/bring-pet-to-thailand/from-uk.html", "Import", "Import from the UK",
+      "APHA endorsement, EHC 2917 and the titer test for a future return.",
+      "Open the guide") +
+    guideCard("/take-pet-out-of-thailand/to-uk.html", "Export", "Export to the UK",
+      "Tapeworm treatment, titer timing and APHA paperwork from Thailand.",
+      "Open the guide") +
+    guideCard("/take-pet-out-of-thailand/to-eu.html", "Export", "Export to the EU",
+      "Third-country certificate and the three-month titer wait.",
       "Open the guide") +
     guideCard("/bring-pet-to-thailand/from-india.html", "Import", "Import from India",
       "AQCS export certificate and planning from a high-rabies origin.",
