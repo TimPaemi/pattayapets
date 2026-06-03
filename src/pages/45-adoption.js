@@ -269,6 +269,51 @@ const SHELTERS = [
   }
 ];
 
+const SHELTER_PEERS = {
+  "hope-for-strays": [
+    { name: "Dog & Cat Rescue Pattaya", path: "/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html",
+      desc: "Dogs and street cats around the city." },
+    { name: "Soi Dog Foundation", path: "/adopt-a-pet-pattaya/soi-dog-foundation.html",
+      desc: "Thailand-wide welfare with Pattaya work." }
+  ],
+  "dog-cat-rescue-pattaya": [
+    { name: "Hope for Strays", path: "/adopt-a-pet-pattaya/hope-for-strays.html",
+      desc: "East Pattaya dog rescue shelter." },
+    { name: "Pattaya Street Dogs (K9aid)", path: "/adopt-a-pet-pattaya/pattaya-street-dogs-k9aid.html",
+      desc: "Street dogs and temple-dog colonies." }
+  ],
+  "animal-army-foundation": [
+    { name: "Hope for Strays", path: "/adopt-a-pet-pattaya/hope-for-strays.html",
+      desc: "Large East Pattaya dog shelter." },
+    { name: "Animal Army Hospital", path: "/vets/animal-army-hospital.html",
+      desc: "Na Jomtien rescue hospital in the vets directory." }
+  ],
+  "pattaya-street-dogs-k9aid": [
+    { name: "Hope for Strays", path: "/adopt-a-pet-pattaya/hope-for-strays.html",
+      desc: "East Pattaya dog rescue." },
+    { name: "Dog & Cat Rescue Pattaya", path: "/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html",
+      desc: "Dogs and cats around Pattaya." }
+  ],
+  "soi-dog-foundation": [
+    { name: "Hope for Strays", path: "/adopt-a-pet-pattaya/hope-for-strays.html",
+      desc: "Local Pattaya dog rescue." },
+    { name: "Malee's Animal Shelter", path: "/adopt-a-pet-pattaya/malees-animal-shelter.html",
+      desc: "Dogs and cats across the wider region." }
+  ],
+  "malees-animal-shelter": [
+    { name: "Soi Dog Foundation", path: "/adopt-a-pet-pattaya/soi-dog-foundation.html",
+      desc: "National charity with Pattaya programmes." },
+    { name: "Hope for Strays", path: "/adopt-a-pet-pattaya/hope-for-strays.html",
+      desc: "Pattaya-city dog rescue." }
+  ],
+  "ady-g-second-chance-pattaya": [
+    { name: "Hope for Strays", path: "/adopt-a-pet-pattaya/hope-for-strays.html",
+      desc: "General dog rescue in East Pattaya." },
+    { name: "Pattaya Street Dogs (K9aid)", path: "/adopt-a-pet-pattaya/pattaya-street-dogs-k9aid.html",
+      desc: "Street-dog rescue near the sea." }
+  ]
+};
+
 const SHELTER_HELP =
   "<p>If you cannot adopt, " +
   '<a href="/adopt-a-pet-pattaya/fostering.html">fostering</a>, ' +
@@ -300,6 +345,15 @@ const SHELTER_AFTER =
   "if not already done. Flying abroad later? Start the " +
   '<a href="/take-pet-out-of-thailand/export-process.html">export process</a> ' +
   "months ahead &mdash; the rabies titer test cannot be rushed.</p>";
+
+const SHELTER_RELATED_BASE = [
+  { name: "Fostering a pet", path: "/adopt-a-pet-pattaya/fostering.html", desc: "Temporary homes between rescue and adoption." },
+  { name: "Cat vaccinations & health", path: "/cats/cat-vaccinations-thailand.html", desc: "Routine care after you adopt." },
+  { name: "Dog vaccinations & parasites", path: "/dogs/dog-vaccinations-thailand.html", desc: "Routine care after you adopt." },
+  { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Do this soon after adoption." },
+  { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "What good rescues do before rehoming." },
+  { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side when you leave." }
+];
 
 SHELTERS.forEach(function (s) {
   var contact = "";
@@ -376,14 +430,7 @@ SHELTERS.forEach(function (s) {
       ["What if my condo does not allow pets?",
        "<p>Do not adopt until housing is sorted — returning an animal is traumatic for everyone. Read <a href=\"/owning-a-pet-in-pattaya/pet-friendly-housing.html\">pet-friendly housing</a> and get written permission from your landlord or juristic person where possible.</p>"]
     ],
-    related: [
-      { name: "Fostering a pet", path: "/adopt-a-pet-pattaya/fostering.html", desc: "Temporary homes between rescue and adoption." },
-      { name: "Cat vaccinations & health", path: "/cats/cat-vaccinations-thailand.html", desc: "Routine care after you adopt." },
-      { name: "Dog vaccinations & parasites", path: "/dogs/dog-vaccinations-thailand.html", desc: "Routine care after you adopt." },
-      { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Do this soon after adoption." },
-      { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "What good rescues do before rehoming." },
-      { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side when you leave." }
-    ]
+    related: (SHELTER_PEERS[s.slug] || []).concat(SHELTER_RELATED_BASE)
   }));
 });
 

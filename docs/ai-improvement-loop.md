@@ -78,6 +78,7 @@ Not deployed. Last updated: 30 May 2026.
 | **115** | **See also callouts** on guides; network directory on about/masthead; `audit:linking`; sitemap + search network chips |
 | **116** | **Hub jump bars** on cluster + category pages; guide cluster chips; home network row; groomers copy dedupe |
 | **117** | **Dead URL fix:** remove parked `animalarmy.org` links; phone/email on shelter page; `audit:official` GET retry on HEAD 404 |
+| **118** | **Adoption cross-links:** shelter peer cards, expanded adoption topic chips, directory + guides + home discovery |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 

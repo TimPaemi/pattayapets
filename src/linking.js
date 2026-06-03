@@ -107,10 +107,13 @@ const INTERNAL_BY_TOPIC = {
   ],
   adoption: [
     { path: "/adopt-a-pet-pattaya/", name: "Adopt a pet in Pattaya" },
+    { path: "/adopt-a-pet-pattaya/hope-for-strays.html", name: "Hope for Strays" },
+    { path: "/adopt-a-pet-pattaya/soi-dog-foundation.html", name: "Soi Dog Foundation" },
+    { path: "/adopt-a-pet-pattaya/animal-army-foundation.html", name: "Animal Army Foundation" },
     { path: "/adopt-a-pet-pattaya/how-to-help.html", name: "How to help street animals" },
+    { path: "/adopt-a-pet-pattaya/fostering.html", name: "Fostering" },
     { path: "/vets/", name: "Vets for rescue follow-up" },
-    { path: "/pet-health-pattaya/", name: "Pet health guide" },
-    { path: "/start-here.html", name: "Start here" }
+    { path: "/pet-health-pattaya/", name: "Pet health guide" }
   ],
   species: [
     { path: "/dogs/", name: "Dogs in Pattaya" },

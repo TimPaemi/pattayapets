@@ -129,7 +129,9 @@ const HOME_GUIDE_MORE =
   '<a href="/pet-emergency/heatstroke.html">Heatstroke</a> &middot; ' +
   '<a href="/pet-emergency/venomous-creatures.html">Venomous creatures</a> &middot; ' +
   '<a href="/owning-a-pet-in-pattaya/getting-to-the-vet.html">Getting to the vet</a> &middot; ' +
-  '<a href="/cats/indoor-vs-outdoor-cats.html">Indoor vs outdoor cats</a></p>';
+  '<a href="/cats/indoor-vs-outdoor-cats.html">Indoor vs outdoor cats</a> &middot; ' +
+  '<a href="/adopt-a-pet-pattaya/hope-for-strays.html">Hope for Strays</a> &middot; ' +
+  '<a href="/adopt-a-pet-pattaya/soi-dog-foundation.html">Soi Dog Foundation</a></p>';
 
 const FAQ = [
   ['Is PattayaPets a vet?',

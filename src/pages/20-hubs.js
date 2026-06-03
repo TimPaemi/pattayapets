@@ -86,7 +86,7 @@ pages.push({
     "The editorial directory of pet businesses in Pattaya - vets and animal hospitals, groomers, boarding, pet shops, dog trainers, relocation and mobile vets.",
   crumb: "Directory",
   breadcrumbs: [],
-  updated: "2026-05-30",
+  updated: "2026-06-03",
   body:
     '<section class="section"><div class="container">' +
     '<div class="section-head"><p class="eyebrow">The directory</p>' +
@@ -139,6 +139,21 @@ pages.push({
     "Always consult a qualified veterinarian.</div>" +
     "</div></section>" +
     inPageLinkSection("directory") +
+
+    '<section class="section"><div class="container">' +
+    '<div class="section-head"><h2>Rescues &amp; adoption</h2>' +
+    "<p>Established shelters and charities in and around Pattaya &mdash; each with " +
+    "its own page for adoption, visiting and volunteering.</p></div>" +
+    '<div class="grid grid-4">' +
+    card("/adopt-a-pet-pattaya/hope-for-strays.html", "Adoption", "Hope for Strays",
+      "East Pattaya dog rescue — several hundred dogs, visits by arrangement.", "Open the page") +
+    card("/adopt-a-pet-pattaya/soi-dog-foundation.html", "Adoption", "Soi Dog Foundation",
+      "National charity with sterilisation and rehoming work in Pattaya.", "Open the page") +
+    card("/adopt-a-pet-pattaya/animal-army-foundation.html", "Adoption", "Animal Army Foundation",
+      "Licensed Na Jomtien hospital, ambulance and adoption support since 1994.", "Open the page") +
+    card("/adopt-a-pet-pattaya/", "Adoption", "All shelters &amp; rescues",
+      "Seven organisations plus fostering and how to help street animals.", "View the hub") +
+    "</div></div></section>" +
 
     '<section class="section section-tint"><div class="container">' +
     '<div class="section-head"><h2>Helpful guides</h2>' +
@@ -196,7 +211,7 @@ pages.push({
     "Plain-English guides for pet owners in Pattaya: bringing a pet to Thailand, taking one out, dog-friendly places, pet emergencies, costs and adoption.",
   crumb: "Guides",
   breadcrumbs: [],
-  updated: "2026-05-30",
+  updated: "2026-06-03",
   image: "/assets/img/og-guides.png",
   body:
     '<section class="section"><div class="container">' +
@@ -242,6 +257,18 @@ pages.push({
     guideCard("/adopt-a-pet-pattaya/", "Adoption", "Adopt a pet in Pattaya",
       "The shelters and rescue organisations in and around Pattaya, and how " +
       "adoption works.", "Open the guide") +
+    guideCard("/adopt-a-pet-pattaya/hope-for-strays.html", "Adoption", "Hope for Strays",
+      "East Pattaya dog rescue shelter — adoption, visiting and volunteering.",
+      "Open the page") +
+    guideCard("/adopt-a-pet-pattaya/soi-dog-foundation.html", "Adoption", "Soi Dog Foundation",
+      "Thailand&rsquo;s best-known animal-welfare charity, with Pattaya programmes.",
+      "Open the page") +
+    guideCard("/adopt-a-pet-pattaya/animal-army-foundation.html", "Adoption", "Animal Army Foundation",
+      "Na Jomtien rescue hospital since 1994 — clinic, ambulance and adoptions.",
+      "Open the page") +
+    guideCard("/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html", "Adoption", "Dog &amp; Cat Rescue Pattaya",
+      "A Pattaya shelter rescuing dogs and helping the city&rsquo;s street cats.",
+      "Open the page") +
     guideCard("/pet-insurance-thailand.html", "Money", "Pet insurance in Thailand",
       "How pet insurance works here, what it covers and whether it is worth it.",
       "Open the guide") +
