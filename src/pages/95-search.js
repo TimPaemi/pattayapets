@@ -33,6 +33,11 @@ module.exports = [{
     '<a class="chip chip-link" href="/boarding/">Boarding</a>' +
     '<a class="chip chip-link" href="/mobile-vets/">Mobile vets</a>' +
     '<a class="chip chip-link" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a>' +
+    '<a class="chip chip-link" href="/vets/?filter=24h">24-hour directory</a>' +
+    '<a class="chip chip-link" href="/guides.html?topic=import">Import guides</a>' +
+    '<a class="chip chip-link" href="/guides.html?topic=export">Export guides</a>' +
+    '<a class="chip chip-link" href="/guides.html?topic=emergency">Emergency guides</a>' +
+    '<a class="chip chip-link" href="/guides.html?topic=owning">Owning guides</a>' +
     '<a class="chip chip-link" href="/bring-pet-to-thailand/">Import guide</a>' +
     '<a class="chip chip-link" href="/bring-pet-to-thailand/checklist.html">Import checklist</a>' +
     '<a class="chip chip-link" href="/take-pet-out-of-thailand/checklist.html">Export checklist</a>' +

@@ -180,13 +180,30 @@ The real growth levers, in order of value:
 
 ---
 
-## 9. Quick reference
+## 9. IndexNow (Bing / Yandex URL ping)
+
+After deploy, run `npm run indexnow` (or `npm run deploy`, which runs it automatically).
+The build copies the key file to `https://pattayapets.com/a8f3c91e2b7046d59e1a0c4f8b2d7e63.txt`.
+
+If the ping returns **HTTP 403** (`UserForbiddedToAccessSite`):
+
+1. Open [Bing Webmaster Tools](https://www.bing.com/webmasters).
+2. Add and **verify** `pattayapets.com` (DNS or HTML file — the site already serves the key file).
+3. Run `npm run indexnow` again.
+
+Until verification succeeds, Google Search Console sitemap submission still works for Google.
+
+---
+
+## 10. Quick reference
 
 | Task | Command / location |
 |---|---|
 | Build the site | `npm run build` (in `C:\Projects\pattayapets`) |
-| Full build + audits | `npm run build:all` (links, SEO, directory, country-pairs, orphans) |
-| Deploy | `npx wrangler pages deploy dist --project-name=pattayapets --branch=main --commit-dirty=true` |
+| Full build + audits | `npm run build:all` (links, SEO, directory, country-pairs, orphans, richness) |
+| Post-deploy audit pass | `npm run audit:go` (build:all + audit:full + audit:live) |
+| Lighthouse (local) | `npx serve dist -l 8787` then `PP_LH_BASE=http://127.0.0.1:8787 npm run audit:lighthouse:all` |
+| Deploy | `npm run deploy` or wrangler command in section 2 |
 | Directory data | `src/data/businesses.js` |
 | Site-wide shell | `src/layout.js` |
 | Guide pages | `src/pages/*.js` |

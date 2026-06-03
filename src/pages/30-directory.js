@@ -426,39 +426,42 @@ function bizDirTags(b) {
   return tags.join(" ");
 }
 
-function areaFiltersBar(list) {
+function areaFiltersBar(list, areaSlug) {
   var cats = Object.keys(CATEGORIES).filter(function (ck) {
     return list.some(function (b) { return b.category === ck; });
   });
   if (cats.length < 2) return "";
+  var base = "/area/" + areaSlug + ".html";
   var chips =
-    '<button type="button" class="chip chip-link dir-filter is-active" data-dir-filter="all">All (' +
-    list.length + ")</button>";
+    '<a href="' + base + '" class="chip chip-link dir-filter is-active" data-dir-filter="all">All (' +
+    list.length + ")</a>";
   cats.forEach(function (ck) {
     var n = list.filter(function (b) { return b.category === ck; }).length;
-    chips += '<button type="button" class="chip chip-link dir-filter" data-dir-filter="' + ck + '">' +
-      esc(CATEGORIES[ck].name) + " (" + n + ")</button>";
+    chips += '<a href="' + base + "?cat=" + ck + '" class="chip chip-link dir-filter" data-dir-filter="' +
+      ck + '">' + esc(CATEGORIES[ck].name) + " (" + n + ")</a>";
   });
   return '<div class="dir-filters" role="group" aria-label="Filter by category">' + chips + "</div>" +
     '<p class="dir-filter-status notice" id="area-filter-status" hidden></p>';
 }
 
-function dirFiltersBar(list, areaKeys) {
+function dirFiltersBar(list, areaKeys, catKey) {
   var has24 = list.some(function (b) { return b.c24; });
   if (!has24 && areaKeys.length < 2) return "";
+  var base = "/" + catKey + "/";
   var chips =
-    '<button type="button" class="chip chip-link dir-filter is-active" data-dir-filter="all">All (' +
-    list.length + ")</button>";
+    '<a href="' + base + '" class="chip chip-link dir-filter is-active" data-dir-filter="all">All (' +
+    list.length + ")</a>";
   if (has24) {
     var n24 = list.filter(function (b) { return b.c24; }).length;
-    chips += '<button type="button" class="chip chip-link dir-filter" data-dir-filter="24h">24-hour (' +
-      n24 + ")</button>";
+    chips += '<a href="' + base + '?filter=24h" class="chip chip-link dir-filter" data-dir-filter="24h">' +
+      "24-hour (" + n24 + ")</a>";
   }
   areaKeys.forEach(function (ak) {
     var n = list.filter(function (b) { return b.areas.indexOf(ak) !== -1; }).length;
     if (!n) return;
-    chips += '<button type="button" class="chip chip-link dir-filter" data-dir-filter="area:' + ak + '">' +
-      esc(AREAS[ak].name) + " (" + n + ")</button>";
+    chips += '<a href="' + base + "?filter=" + encodeURIComponent("area:" + ak) +
+      '" class="chip chip-link dir-filter" data-dir-filter="area:' + ak + '">' +
+      esc(AREAS[ak].name) + " (" + n + ")</a>";
   });
   return '<div class="dir-filters" role="group" aria-label="Filter listings">' + chips + "</div>" +
     '<p class="dir-filter-status notice" id="dir-filter-status" hidden></p>';
@@ -665,7 +668,7 @@ Object.keys(CATEGORIES).forEach(function (key) {
       (list.length === 1 ? cat.one : cat.one + "s") + "</h2>" +
       "<p>Every listing is a verified facts page. Verdicts follow an anonymous " +
       "visit.</p></div>" +
-      dirFiltersBar(list, areaKeys) +
+      dirFiltersBar(list, areaKeys, key) +
       '<div class="grid grid-2 dir-listings" id="dir-listings">' + list.map(bizCard).join("") + "</div>";
     if (areaKeys.length) {
       body += '<div class="section-head" style="margin-top:2rem" id="area"><h2>Browse by area</h2></div>' +
@@ -728,7 +731,7 @@ Object.keys(AREAS).forEach(function (key) {
 
   if (list.length) {
     body += '<section class="section section-tint"><div class="container">' +
-      areaFiltersBar(list) +
+      areaFiltersBar(list, key) +
       '<div id="area-listings">';
     Object.keys(CATEGORIES).forEach(function (ck) {
       var inCat = list.filter(function (b) { return b.category === ck; });

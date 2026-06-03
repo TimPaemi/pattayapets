@@ -365,7 +365,8 @@
       filterQuerySet("filter", filter);
     }
     filters.forEach(function (btn) {
-      btn.addEventListener("click", function () {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
         apply(btn.getAttribute("data-dir-filter") || "all");
       });
     });
@@ -408,7 +409,8 @@
       filterQuerySet("topic", filter);
     }
     filters.forEach(function (btn) {
-      btn.addEventListener("click", function () {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
         apply(btn.getAttribute("data-guide-filter") || "all");
       });
     });
@@ -451,7 +453,8 @@
       filterQuerySet("cat", filter);
     }
     filters.forEach(function (btn) {
-      btn.addEventListener("click", function () {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
         apply(btn.getAttribute("data-dir-filter") || "all");
       });
     });

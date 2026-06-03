@@ -68,6 +68,7 @@ Not deployed. Last updated: 30 May 2026.
 | **105** | **Shareable filter URLs:** `?topic=` guides, `?filter=` directory hubs, `?cat=` area hubs; Start here chip |
 | **106** | **Cluster hub → guides deep links** (`/guides.html?topic=…` from import/export/emergency/owning hubs) |
 | **107** | **Filter deep links:** `/vets/?filter=24h`, homepage guide topic chips, emergency bar + 24h page related links |
+| **108** | **No-JS filter chips** (anchor hrefs + JS enhance); search topic links; `npm run audit:go`; IndexNow docs |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 

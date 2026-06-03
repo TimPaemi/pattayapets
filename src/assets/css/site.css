@@ -193,6 +193,8 @@ line-height:1;flex:none}
 .dir-cat-block[hidden]{display:none!important}
 .guide-card[hidden]{display:none!important}
 .guide-filters{margin-bottom:1.6rem}
+a.dir-filter,a.guide-filter{text-decoration:none;color:inherit;cursor:pointer}
+a.dir-filter.is-active,a.guide-filter.is-active{background:var(--banyan);color:#fff;border-color:var(--banyan)}
 
 .toc-panel{border:0;background:transparent}
 .toc-panel__title{font-family:var(--fd);font-weight:700;font-size:.93rem;

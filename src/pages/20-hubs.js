@@ -30,20 +30,26 @@ function guideCard(href, tag, name, desc, cta) {
     '<span class="card-meta">' + cta + " &rarr;</span></a>";
 }
 
+function guideFilterChip(topic, label, active) {
+  var href = topic === "all" ? "/guides.html" : "/guides.html?topic=" + topic;
+  var cls = "chip chip-link guide-filter" + (active ? " is-active" : "");
+  return '<a href="' + href + '" class="' + cls + '" data-guide-filter="' + topic + '">' +
+    label + "</a>";
+}
+
 function guideFiltersBar() {
-  var chips =
-    '<button type="button" class="chip chip-link guide-filter is-active" data-guide-filter="all">All</button>' +
-    '<button type="button" class="chip chip-link guide-filter" data-guide-filter="start">Start here</button>' +
-    '<button type="button" class="chip chip-link guide-filter" data-guide-filter="import">Import</button>' +
-    '<button type="button" class="chip chip-link guide-filter" data-guide-filter="export">Export</button>' +
-    '<button type="button" class="chip chip-link guide-filter" data-guide-filter="emergency">Emergency</button>' +
-    '<button type="button" class="chip chip-link guide-filter" data-guide-filter="owning">Owning</button>' +
-    '<button type="button" class="chip chip-link guide-filter" data-guide-filter="health">Health</button>' +
-    '<button type="button" class="chip chip-link guide-filter" data-guide-filter="adoption">Adoption</button>' +
-    '<button type="button" class="chip chip-link guide-filter" data-guide-filter="lifestyle">Out &amp; about</button>' +
-    '<button type="button" class="chip chip-link guide-filter" data-guide-filter="species">Dogs &amp; cats</button>' +
-    '<button type="button" class="chip chip-link guide-filter" data-guide-filter="insurance">Insurance</button>' +
-    '<button type="button" class="chip chip-link guide-filter" data-guide-filter="services">Services</button>';
+  var chips = guideFilterChip("all", "All", true) +
+    guideFilterChip("start", "Start here") +
+    guideFilterChip("import", "Import") +
+    guideFilterChip("export", "Export") +
+    guideFilterChip("emergency", "Emergency") +
+    guideFilterChip("owning", "Owning") +
+    guideFilterChip("health", "Health") +
+    guideFilterChip("adoption", "Adoption") +
+    guideFilterChip("lifestyle", "Out &amp; about") +
+    guideFilterChip("species", "Dogs &amp; cats") +
+    guideFilterChip("insurance", "Insurance") +
+    guideFilterChip("services", "Services");
   return '<div class="guide-filters dir-filters" role="group" aria-label="Filter guides">' +
     chips + "</div>" +
     '<p class="dir-filter-status notice" id="guide-filter-status" hidden></p>';

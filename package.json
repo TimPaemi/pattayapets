@@ -22,6 +22,7 @@
     "audit:official": "node tools/audit-official-links.js",
     "audit:full": "node tools/audit-full.js",
     "audit:live": "node tools/audit-live.js",
+    "audit:go": "npm run build:all && npm run audit:full && npm run audit:live",
     "ship": "npm run build:all && npm run indexnow",
     "deploy": "npm run ship"
   },
