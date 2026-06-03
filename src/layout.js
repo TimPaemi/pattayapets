@@ -95,6 +95,8 @@ function header() {
     brandLink("") +
     headerSearch() +
     '<div class="header-mobile-actions">' +
+    '<a class="header-nav-quick" href="/directory.html">Directory</a>' +
+    '<a class="header-nav-quick header-nav-quick--alert" href="/pet-emergency/">Emergency</a>' +
     '<a class="header-search-link" href="/search.html" aria-label="Search PattayaPets">' +
     SEARCH_ICON + "</a>" +
     '<button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">' +

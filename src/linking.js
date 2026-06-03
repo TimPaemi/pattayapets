@@ -424,25 +424,28 @@ const CORRIDOR_EXPORT = [
   { path: "/take-pet-out-of-thailand/to-china.html", name: "To China" }
 ];
 
+function corridorChipRow(links, allPath, allLabel) {
+  return links.map(function (l) {
+    return '<a class="chip chip-link" href="' + l.path + '">' + esc(l.name) + "</a>";
+  }).join("") +
+    '<a class="chip chip-link" href="' + allPath + '">' + esc(allLabel) + "</a>";
+}
+
 function corridorChipsSection() {
   return '<section class="section section-tint"><div class="container">' +
     '<div class="section-head"><h2>Country corridors</h2>' +
     "<p>Thai DLD steps are the same; what changes is your origin or destination " +
     "paperwork. Pick the corridor that matches your move.</p></div>" +
-    '<div class="ch">Importing into Thailand</div>' +
-    '<div class="chips" style="margin-bottom:1.1rem">' +
-    CORRIDOR_IMPORT.map(function (l) {
-      return '<a class="chip chip-link" href="' + l.path + '">' + esc(l.name) + "</a>";
-    }).join("") +
-    '<a class="chip chip-link" href="/bring-pet-to-thailand/">All import corridors &rarr;</a>' +
-    "</div>" +
-    '<div class="ch">Exporting from Thailand</div>' +
-    '<div class="chips">' +
-    CORRIDOR_EXPORT.map(function (l) {
-      return '<a class="chip chip-link" href="' + l.path + '">' + esc(l.name) + "</a>";
-    }).join("") +
-    '<a class="chip chip-link" href="/take-pet-out-of-thailand/">All export corridors &rarr;</a>' +
-    "</div></div></section>";
+    '<details class="corridor-panel">' +
+    '<summary class="corridor-panel__title">Importing into Thailand</summary>' +
+    '<div class="corridor-panel__body chips">' +
+    corridorChipRow(CORRIDOR_IMPORT, "/bring-pet-to-thailand/", "All import corridors \u2192") +
+    "</div></details>" +
+    '<details class="corridor-panel">' +
+    '<summary class="corridor-panel__title">Exporting from Thailand</summary>' +
+    '<div class="corridor-panel__body chips">' +
+    corridorChipRow(CORRIDOR_EXPORT, "/take-pet-out-of-thailand/", "All export corridors \u2192") +
+    "</div></details></div></section>";
 }
 
 function proseNetworkLine(topic) {

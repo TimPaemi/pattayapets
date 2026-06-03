@@ -101,7 +101,12 @@
       }
     });
     if (here === "/directory.html") {
-      document.querySelectorAll('#primary-nav a[href="/directory.html"]').forEach(function (a) {
+      document.querySelectorAll('#primary-nav a[href="/directory.html"], .header-nav-quick[href="/directory.html"]').forEach(function (a) {
+        a.setAttribute("aria-current", "page");
+      });
+    }
+    if (here.indexOf("/pet-emergency") === 0) {
+      document.querySelectorAll('#primary-nav a[href="/pet-emergency/"], .header-nav-quick[href="/pet-emergency/"]').forEach(function (a) {
         a.setAttribute("aria-current", "page");
       });
     }
