@@ -7,6 +7,47 @@ function card(href, tag, name, desc, cta) {
     '<span class="card-meta">' + cta + " &rarr;</span></a>";
 }
 
+function guideCatFromHref(href) {
+  if (href.indexOf("/bring-pet-to-thailand/") === 0) return "import";
+  if (href.indexOf("/take-pet-out-of-thailand/") === 0) return "export";
+  if (href.indexOf("/pet-emergency/") === 0) return "emergency";
+  if (href.indexOf("/owning-a-pet-in-pattaya/") === 0) return "owning";
+  if (href.indexOf("/pet-health-pattaya/") === 0) return "health";
+  if (href.indexOf("/adopt-a-pet-pattaya/") === 0) return "adoption";
+  if (href.indexOf("/dog-friendly-pattaya/") === 0) return "lifestyle";
+  if (href.indexOf("/dogs/") === 0 || href.indexOf("/cats/") === 0) return "species";
+  if (href === "/start-here.html") return "start";
+  if (href.indexOf("/pet-insurance") === 0) return "insurance";
+  if (href.indexOf("/trainers/") === 0 || href.indexOf("/mobile-vets/") === 0 ||
+    href.indexOf("/pet-relocation/") === 0) return "services";
+  return "other";
+}
+
+function guideCard(href, tag, name, desc, cta) {
+  return '<a class="card guide-card" href="' + href + '" data-guide-cat="' +
+    guideCatFromHref(href) + '"><span class="card-tag">' + tag +
+    "</span><h3>" + name + "</h3><p>" + desc + "</p>" +
+    '<span class="card-meta">' + cta + " &rarr;</span></a>";
+}
+
+function guideFiltersBar() {
+  var chips =
+    '<button type="button" class="chip chip-link guide-filter is-active" data-guide-filter="all">All</button>' +
+    '<button type="button" class="chip chip-link guide-filter" data-guide-filter="import">Import</button>' +
+    '<button type="button" class="chip chip-link guide-filter" data-guide-filter="export">Export</button>' +
+    '<button type="button" class="chip chip-link guide-filter" data-guide-filter="emergency">Emergency</button>' +
+    '<button type="button" class="chip chip-link guide-filter" data-guide-filter="owning">Owning</button>' +
+    '<button type="button" class="chip chip-link guide-filter" data-guide-filter="health">Health</button>' +
+    '<button type="button" class="chip chip-link guide-filter" data-guide-filter="adoption">Adoption</button>' +
+    '<button type="button" class="chip chip-link guide-filter" data-guide-filter="lifestyle">Out &amp; about</button>' +
+    '<button type="button" class="chip chip-link guide-filter" data-guide-filter="species">Dogs &amp; cats</button>' +
+    '<button type="button" class="chip chip-link guide-filter" data-guide-filter="insurance">Insurance</button>' +
+    '<button type="button" class="chip chip-link guide-filter" data-guide-filter="services">Services</button>';
+  return '<div class="guide-filters dir-filters" role="group" aria-label="Filter guides">' +
+    chips + "</div>" +
+    '<p class="dir-filter-status notice" id="guide-filter-status" hidden></p>';
+}
+
 const { BUSINESSES } = require("../data/businesses.js");
 
 function areaTile(name, slug, blurb) {
@@ -154,179 +195,180 @@ pages.push({
     "search for. Every guide is date-stamped and points you to the official source " +
     "to verify against.</p></div>" +
     "<h2>Browse the guides</h2>" +
-    '<div class="grid grid-3">' +
-    card("/start-here.html", "New here", "Start here",
+    guideFiltersBar() +
+    '<div id="guide-listings" class="grid grid-3">' +
+    guideCard("/start-here.html", "New here", "Start here",
       "A short orientation for new pet owners in Pattaya &mdash; emergency contacts, " +
       "finding a vet, the climate and the essentials.", "Open the page") +
-    card("/bring-pet-to-thailand/", "Flagship guide", "Bringing a pet to Thailand",
+    guideCard("/bring-pet-to-thailand/", "Flagship guide", "Bringing a pet to Thailand",
       "The full import process: DLD permit, microchip, rabies and titer test, " +
       "health certificate, airlines and arrival.", "Open the guide") +
-    card("/bring-pet-to-thailand/checklist.html", "Import", "Import checklist",
+    guideCard("/bring-pet-to-thailand/checklist.html", "Import", "Import checklist",
       "A printable step-by-step checklist for the whole move to Thailand.",
       "Open the checklist") +
-    card("/take-pet-out-of-thailand/", "Moving on", "Taking a pet out of Thailand",
+    guideCard("/take-pet-out-of-thailand/", "Moving on", "Taking a pet out of Thailand",
       "DLD export permit, health certificate, costs and country-by-country destination notes.",
       "Open the guide") +
-    card("/take-pet-out-of-thailand/checklist.html", "Export", "Export checklist",
+    guideCard("/take-pet-out-of-thailand/checklist.html", "Export", "Export checklist",
       "A printable step-by-step checklist for taking your pet out of Thailand.",
       "Open the checklist") +
-    card("/dog-friendly-pattaya/", "Out &amp; about", "Dog-friendly Pattaya",
+    guideCard("/dog-friendly-pattaya/", "Out &amp; about", "Dog-friendly Pattaya",
       "Beaches, cafes, restaurants, hotels, condos and parks that welcome dogs.",
       "Open the guide") +
-    card("/pet-emergency/", "Emergency", "Pet emergencies &amp; hazards",
+    guideCard("/pet-emergency/", "Emergency", "Pet emergencies &amp; hazards",
       "24-hour vets, first-aid steps, heatstroke, ticks, snakes and street-dog " +
       "encounters.", "Open the guide") +
-    card("/pet-emergency/24-hour-vets-pattaya.html", "Urgent", "24-hour vets in Pattaya",
+    guideCard("/pet-emergency/24-hour-vets-pattaya.html", "Urgent", "24-hour vets in Pattaya",
       "Animal hospitals open around the clock &mdash; addresses and contact details.",
       "View the list") +
-    card("/owning-a-pet-in-pattaya/", "Day to day", "Owning a pet in Pattaya",
+    guideCard("/owning-a-pet-in-pattaya/", "Day to day", "Owning a pet in Pattaya",
       "Costs, hot-climate care, pet-friendly housing and where to walk your dog.",
       "Open the guide") +
-    card("/pet-health-pattaya/", "Health", "Pet health in Pattaya",
+    guideCard("/pet-health-pattaya/", "Health", "Pet health in Pattaya",
       "Heartworm, tick disease, skin and ear problems, parvovirus and neutering " +
       "&mdash; the tropical-climate health picture.", "Open the guide") +
-    card("/adopt-a-pet-pattaya/", "Adoption", "Adopt a pet in Pattaya",
+    guideCard("/adopt-a-pet-pattaya/", "Adoption", "Adopt a pet in Pattaya",
       "The shelters and rescue organisations in and around Pattaya, and how " +
       "adoption works.", "Open the guide") +
-    card("/pet-insurance-thailand.html", "Money", "Pet insurance in Thailand",
+    guideCard("/pet-insurance-thailand.html", "Money", "Pet insurance in Thailand",
       "How pet insurance works here, what it covers and whether it is worth it.",
       "Open the guide") +
-    card("/dogs/", "For dog owners", "The dog owner&rsquo;s hub",
+    guideCard("/dogs/", "For dog owners", "The dog owner&rsquo;s hub",
       "Everything dog-specific in one place &mdash; care, training, walks and more.",
       "Open the hub") +
-    card("/cats/", "For cat owners", "The cat owner&rsquo;s hub",
+    guideCard("/cats/", "For cat owners", "The cat owner&rsquo;s hub",
       "Everything cat-specific in one place &mdash; care, vets and indoor living.",
       "Open the hub") +
-    card("/adopt-a-pet-pattaya/fostering.html", "Adoption", "Fostering a pet",
+    guideCard("/adopt-a-pet-pattaya/fostering.html", "Adoption", "Fostering a pet",
       "Give a rescue animal a temporary home while it waits for adoption.",
       "Open the guide") +
-    card("/adopt-a-pet-pattaya/how-to-help.html", "Adoption", "How to help street animals",
+    guideCard("/adopt-a-pet-pattaya/how-to-help.html", "Adoption", "How to help street animals",
       "Donate, volunteer, foster and what to do for an injured animal.",
       "Open the guide") +
-    card("/owning-a-pet-in-pattaya/lost-pet-pattaya.html", "Owning", "If your pet goes missing",
+    guideCard("/owning-a-pet-in-pattaya/lost-pet-pattaya.html", "Owning", "If your pet goes missing",
       "A step-by-step plan for a lost dog or cat in Pattaya.",
       "Open the guide") +
-    card("/owning-a-pet-in-pattaya/hot-climate-pet-care.html", "Owning", "Hot-climate pet care",
+    guideCard("/owning-a-pet-in-pattaya/hot-climate-pet-care.html", "Owning", "Hot-climate pet care",
       "The single biggest everyday adjustment for pets in Pattaya.",
       "Open the guide") +
-    card("/take-pet-out-of-thailand/export-permit-thailand-dld.html", "Export", "DLD export permit",
+    guideCard("/take-pet-out-of-thailand/export-permit-thailand-dld.html", "Export", "DLD export permit",
       "How to apply for the Thai export permit before your pet flies out.",
       "Open the guide") +
-    card("/owning-a-pet-in-pattaya/travelling-in-thailand.html", "Owning", "Travelling in Thailand",
+    guideCard("/owning-a-pet-in-pattaya/travelling-in-thailand.html", "Owning", "Travelling in Thailand",
       "Domestic flights, road trips and pet-friendly hotels with your pet.",
       "Open the guide") +
-    card("/bring-pet-to-thailand/import-permit-thailand-dld.html", "Import", "DLD import permit",
+    guideCard("/bring-pet-to-thailand/import-permit-thailand-dld.html", "Import", "DLD import permit",
       "How to apply for the Thai import permit before your pet flies in.",
       "Open the guide") +
-    card("/bring-pet-to-thailand/rabies-vaccination-titer-test.html", "Import", "Rabies & titer test",
+    guideCard("/bring-pet-to-thailand/rabies-vaccination-titer-test.html", "Import", "Rabies & titer test",
       "Why the titer test matters, and how the timing affects your move.",
       "Open the guide") +
-    card("/bring-pet-to-thailand/health-certificate.html", "Import", "Health certificate",
+    guideCard("/bring-pet-to-thailand/health-certificate.html", "Import", "Health certificate",
       "The veterinary health certificate and who has to endorse it.",
       "Open the guide") +
-    card("/bring-pet-to-thailand/microchip-requirements.html", "Import", "Microchip requirements",
+    guideCard("/bring-pet-to-thailand/microchip-requirements.html", "Import", "Microchip requirements",
       "The ISO microchip your pet needs, and why it must come first.",
       "Open the guide") +
-    card("/take-pet-out-of-thailand/export-process.html", "Export", "The export process",
+    guideCard("/take-pet-out-of-thailand/export-process.html", "Export", "The export process",
       "Thai DLD health certificate, export permit and the airport steps on the way out.",
       "Open the guide") +
-    card("/mobile-vets/", "At home", "Mobile & home-visit vets",
+    guideCard("/mobile-vets/", "At home", "Mobile & home-visit vets",
       "Vets who come to you &mdash; useful for nervous pets and multi-cat homes.",
       "View mobile vets") +
-    card("/bring-pet-to-thailand/snub-nosed-breeds-flying.html", "Import", "Snub-nosed breeds & flying",
+    guideCard("/bring-pet-to-thailand/snub-nosed-breeds-flying.html", "Import", "Snub-nosed breeds & flying",
       "Why flat-faced breeds need extra care, and how airlines restrict them.",
       "Open the guide") +
-    card("/bring-pet-to-thailand/thailand-pet-quarantine.html", "Import", "Pet quarantine in Thailand",
+    guideCard("/bring-pet-to-thailand/thailand-pet-quarantine.html", "Import", "Pet quarantine in Thailand",
       "What really happens at the Animal Quarantine Station on arrival.",
       "Open the guide") +
-    card("/bring-pet-to-thailand/u-tapao-airport-pets.html", "Import", "U-Tapao or Bangkok?",
+    guideCard("/bring-pet-to-thailand/u-tapao-airport-pets.html", "Import", "U-Tapao or Bangkok?",
       "Which airport to fly your pet into, and how to reach Pattaya.",
       "Open the guide") +
-    card("/bring-pet-to-thailand/from-uae.html", "Import", "Import from the UAE",
+    guideCard("/bring-pet-to-thailand/from-uae.html", "Import", "Import from the UAE",
       "MOCCAE export permit and the Thai DLD steps for Gulf relocations.",
       "Open the guide") +
-    card("/bring-pet-to-thailand/from-india.html", "Import", "Import from India",
+    guideCard("/bring-pet-to-thailand/from-india.html", "Import", "Import from India",
       "AQCS export certificate and planning from a high-rabies origin.",
       "Open the guide") +
-    card("/bring-pet-to-thailand/from-philippines.html", "Import", "Import from the Philippines",
+    guideCard("/bring-pet-to-thailand/from-philippines.html", "Import", "Import from the Philippines",
       "BAI export paperwork and direct flights to Thailand.",
       "Open the guide") +
-    card("/bring-pet-to-thailand/from-china.html", "Import", "Import from China",
+    guideCard("/bring-pet-to-thailand/from-china.html", "Import", "Import from China",
       "Chinese customs export and direct flights from major cities.",
       "Open the guide") +
-    card("/bring-pet-to-thailand/from-south-africa.html", "Import", "Import from South Africa",
+    guideCard("/bring-pet-to-thailand/from-south-africa.html", "Import", "Import from South Africa",
       "DAFF export certificate and planning from Africa.",
       "Open the guide") +
-    card("/take-pet-out-of-thailand/to-india.html", "Export", "Export to India",
+    guideCard("/take-pet-out-of-thailand/to-india.html", "Export", "Export to India",
       "AQCS import clearance when you leave Pattaya.",
       "Open the guide") +
-    card("/take-pet-out-of-thailand/to-philippines.html", "Export", "Export to the Philippines",
+    guideCard("/take-pet-out-of-thailand/to-philippines.html", "Export", "Export to the Philippines",
       "BAI import paperwork from Thailand.",
       "Open the guide") +
-    card("/take-pet-out-of-thailand/to-china.html", "Export", "Export to China",
+    guideCard("/take-pet-out-of-thailand/to-china.html", "Export", "Export to China",
       "Customs import clearance and quarantine on arrival.",
       "Open the guide") +
-    card("/take-pet-out-of-thailand/to-south-africa.html", "Export", "Export to South Africa",
+    guideCard("/take-pet-out-of-thailand/to-south-africa.html", "Export", "Export to South Africa",
       "DALRRD import permit and routing from Bangkok.",
       "Open the guide") +
-    card("/pet-emergency/heatstroke.html", "Urgent", "Heatstroke",
+    guideCard("/pet-emergency/heatstroke.html", "Urgent", "Heatstroke",
       "Pattaya's number-one preventable pet emergency.",
       "Open the guide") +
-    card("/pet-emergency/choking.html", "Emergency", "If your pet is choking",
+    guideCard("/pet-emergency/choking.html", "Emergency", "If your pet is choking",
       "Recognising an airway blockage and acting fast.",
       "Open the guide") +
-    card("/pet-health-pattaya/heartworm.html", "Health", "Heartworm prevention",
+    guideCard("/pet-health-pattaya/heartworm.html", "Health", "Heartworm prevention",
       "Why year-round prevention matters in Pattaya.",
       "Open the guide") +
-    card("/pet-health-pattaya/spaying-and-neutering.html", "Health", "Spaying & neutering",
+    guideCard("/pet-health-pattaya/spaying-and-neutering.html", "Health", "Spaying & neutering",
       "Routine surgery and the welfare case in Pattaya.",
       "Open the guide") +
-    card("/trainers/", "Training", "Dog trainers in Pattaya",
+    guideCard("/trainers/", "Training", "Dog trainers in Pattaya",
       "Obedience training and behaviour help from Pattaya-based trainers.",
       "View trainers") +
-    card("/pet-relocation/", "Relocation", "Pet relocation agents",
+    guideCard("/pet-relocation/", "Relocation", "Pet relocation agents",
       "Import and export specialists who handle permits, flights and paperwork.",
       "View agents") +
-    card("/pet-emergency/beach-and-sea-hazards.html", "Beach", "Beach & sea hazards",
+    guideCard("/pet-emergency/beach-and-sea-hazards.html", "Beach", "Beach & sea hazards",
       "Jellyfish, hot sand and seawater risks for dogs on Pattaya beaches.",
       "Open the guide") +
-    card("/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", "Owning", "Where to walk your dog",
+    guideCard("/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", "Owning", "Where to walk your dog",
       "Building a safe, cool-hours walking routine in Pattaya.",
       "Open the guide") +
-    card("/owning-a-pet-in-pattaya/microchipping-your-pet.html", "Owning", "Microchipping your pet",
+    guideCard("/owning-a-pet-in-pattaya/microchipping-your-pet.html", "Owning", "Microchipping your pet",
       "The best route home for a lost pet, and keeping details current.",
       "Open the guide") +
-    card("/owning-a-pet-in-pattaya/dog-registration-thailand.html", "Owning", "Dog registration",
+    guideCard("/owning-a-pet-in-pattaya/dog-registration-thailand.html", "Owning", "Dog registration",
       "Rabies vaccination law and local registration in Thailand.",
       "Open the guide") +
-    card("/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", "Owning", "What it costs",
+    guideCard("/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", "Owning", "What it costs",
       "A realistic monthly budget for a pet in Pattaya.",
       "Open the guide") +
-    card("/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html", "Owning", "Pet sitters & dog walkers",
+    guideCard("/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html", "Owning", "Pet sitters & dog walkers",
       "Cover for travel and long work days.",
       "Open the guide") +
-    card("/pet-health-pattaya/parvovirus.html", "Health", "Parvovirus",
+    guideCard("/pet-health-pattaya/parvovirus.html", "Health", "Parvovirus",
       "A deadly, preventable puppy disease — and how to protect against it.",
       "Open the guide") +
-    card("/pet-health-pattaya/dental-care.html", "Health", "Dental care",
+    guideCard("/pet-health-pattaya/dental-care.html", "Health", "Dental care",
       "Teeth, tartar and gum health for dogs and cats.",
       "Open the guide") +
-    card("/pet-emergency/venomous-creatures.html", "Emergency", "Venomous creatures",
+    guideCard("/pet-emergency/venomous-creatures.html", "Emergency", "Venomous creatures",
       "Toads, centipedes and stings beyond snakes.",
       "Open the guide") +
-    card("/owning-a-pet-in-pattaya/rainy-season-pet-care.html", "Owning", "Rainy-season pet care",
+    guideCard("/owning-a-pet-in-pattaya/rainy-season-pet-care.html", "Owning", "Rainy-season pet care",
       "Humidity, skin and ear health when the monsoon arrives.",
       "Open the guide") +
-    card("/owning-a-pet-in-pattaya/getting-to-the-vet.html", "Owning", "Getting your pet to the vet",
+    guideCard("/owning-a-pet-in-pattaya/getting-to-the-vet.html", "Owning", "Getting your pet to the vet",
       "Transport options without a car in Pattaya.",
       "Open the guide") +
-    card("/pet-health-pattaya/healthy-weight.html", "Health", "Healthy weight",
+    guideCard("/pet-health-pattaya/healthy-weight.html", "Health", "Healthy weight",
       "Extra weight and heat do not mix well.",
       "Open the guide") +
-    card("/pet-health-pattaya/tick-borne-disease.html", "Health", "Tick-borne disease",
+    guideCard("/pet-health-pattaya/tick-borne-disease.html", "Health", "Tick-borne disease",
       "The hidden danger of ticks in the tropics.",
       "Open the guide") +
-    card("/cats/indoor-vs-outdoor-cats.html", "Cats", "Indoor or outdoor cats",
+    guideCard("/cats/indoor-vs-outdoor-cats.html", "Cats", "Indoor or outdoor cats",
       "Keeping a cat safe from traffic, dogs and balconies.",
       "Open the guide") +
     "</div>" +

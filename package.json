@@ -18,7 +18,7 @@
     "audit:lighthouse:all": "node tools/audit-lighthouse-all.js",
     "images": "node tools/make-images.js",
     "indexnow": "node scripts/ping-indexnow.js",
-    "build:all": "npm run build && npm run check && npm run audit:seo && npm run audit:directory && npm run audit:country-pairs && npm run audit:orphans",
+    "build:all": "npm run build && npm run check && npm run audit:seo && npm run audit:directory && npm run audit:country-pairs && npm run audit:orphans && npm run audit:content:richness",
     "audit:official": "node tools/audit-official-links.js",
     "audit:full": "node tools/audit-full.js",
     "audit:live": "node tools/audit-live.js",

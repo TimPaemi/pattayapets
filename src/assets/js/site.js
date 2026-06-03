@@ -343,6 +343,45 @@
     });
   })();
 
+  /* Guides hub: filter cards by topic */
+  (function () {
+    var list = document.getElementById("guide-listings");
+    if (!list) return;
+    var cards = list.querySelectorAll(".guide-card[data-guide-cat]");
+    var status = document.getElementById("guide-filter-status");
+    var container = list.closest(".container");
+    var filters = container
+      ? container.querySelectorAll(".guide-filter[data-guide-filter]")
+      : [];
+    if (!filters.length || !cards.length) return;
+    function apply(filter) {
+      var shown = 0;
+      cards.forEach(function (card) {
+        var cat = card.getAttribute("data-guide-cat") || "";
+        var ok = filter === "all" || cat === filter;
+        card.hidden = !ok;
+        if (ok) shown += 1;
+      });
+      filters.forEach(function (btn) {
+        btn.classList.toggle("is-active", btn.getAttribute("data-guide-filter") === filter);
+      });
+      if (status) {
+        if (shown === 0) {
+          status.hidden = false;
+          status.textContent = "No guides match this filter. View all to reset.";
+        } else {
+          status.hidden = true;
+          status.textContent = "";
+        }
+      }
+    }
+    filters.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        apply(btn.getAttribute("data-guide-filter") || "all");
+      });
+    });
+  })();
+
   /* Area hub: filter listing blocks by category */
   (function () {
     var list = document.getElementById("area-listings");
