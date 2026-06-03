@@ -288,6 +288,22 @@
     else mq.addListener(sync);
   })();
 
+  /* Guide TOC: collapsible on narrow screens, always open on desktop sidebar */
+  (function () {
+    var panels = document.querySelectorAll(".toc-panel");
+    if (!panels.length) return;
+    var mq = window.matchMedia("(max-width: 900px)");
+    function sync() {
+      panels.forEach(function (p) {
+        if (!mq.matches) p.setAttribute("open", "");
+        else p.removeAttribute("open");
+      });
+    }
+    sync();
+    if (mq.addEventListener) mq.addEventListener("change", sync);
+    else mq.addListener(sync);
+  })();
+
   /* Directory hub listing filters */
   (function () {
     var list = document.getElementById("dir-listings");
@@ -314,6 +330,45 @@
         if (shown === 0) {
           status.hidden = false;
           status.textContent = "No listings match this filter. Try another area or view all.";
+        } else {
+          status.hidden = true;
+          status.textContent = "";
+        }
+      }
+    }
+    filters.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        apply(btn.getAttribute("data-dir-filter") || "all");
+      });
+    });
+  })();
+
+  /* Area hub: filter listing blocks by category */
+  (function () {
+    var list = document.getElementById("area-listings");
+    if (!list) return;
+    var blocks = list.querySelectorAll(".dir-cat-block[data-dir-cat]");
+    var status = document.getElementById("area-filter-status");
+    var container = list.closest(".container");
+    var filters = container
+      ? container.querySelectorAll(".dir-filter[data-dir-filter]")
+      : [];
+    if (!filters.length || !blocks.length) return;
+    function apply(filter) {
+      var shown = 0;
+      blocks.forEach(function (block) {
+        var cat = block.getAttribute("data-dir-cat") || "";
+        var ok = filter === "all" || cat === filter;
+        block.hidden = !ok;
+        if (ok) shown += 1;
+      });
+      filters.forEach(function (btn) {
+        btn.classList.toggle("is-active", btn.getAttribute("data-dir-filter") === filter);
+      });
+      if (status) {
+        if (shown === 0) {
+          status.hidden = false;
+          status.textContent = "No categories match this filter. View all to reset.";
         } else {
           status.hidden = true;
           status.textContent = "";

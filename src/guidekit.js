@@ -28,13 +28,14 @@ function tocSidebar(toc, hasFaqs) {
   var quick = hasFaqs
     ? '<p class="toc-quick"><a href="#faq">Jump to FAQ &darr;</a></p>'
     : "";
-  return '<aside class="sidebar"><div class="card">' +
-    '<div class="ch">On this page</div>' + quick +
+  return '<aside class="sidebar"><details class="toc-panel card">' +
+    '<summary class="toc-panel__title">On this page</summary>' +
+    '<div class="toc-panel__body">' + quick +
     '<nav aria-label="On this page"><ul class="toc">' +
     toc.map(function (t) {
       return '<li><a href="#' + t.id + '">' + t.label + "</a></li>";
     }).join("") +
-    "</ul></nav></div></aside>";
+    "</ul></nav></div></details></aside>";
 }
 
 function faqBlock(faqs) {
@@ -121,10 +122,16 @@ function article(o) {
   if (hasFaqs) toc.push({ id: "faq", label: "Frequently asked" });
 
   var isChecklist = /\/checklist\.html$/.test(o.path);
+  var isEmergencyGuide = o.path.indexOf("/pet-emergency/") === 0 && o.path !== "/pet-emergency/";
   let prose =
     '<p class="eyebrow">' + o.eyebrow + "</p><h1>" + o.h1 + "</h1>" +
     '<p class="lede">' + o.lede + "</p>" +
     '<p class="updated">Last updated ' + (o.updatedLabel || DEFAULT_UPDATED_LABEL) + "</p>";
+  if (isEmergencyGuide) {
+    prose += '<div class="emergency-quick-bar btn-row">' +
+      '<a class="btn btn-alert" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in Pattaya</a>' +
+      '<a class="btn btn-ghost" href="/pet-emergency/">All emergency guides</a></div>';
+  }
   if (isChecklist) {
     prose += '<div class="guide-actions btn-row">' +
       '<button type="button" class="btn btn-ghost print-page-btn">' +

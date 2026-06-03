@@ -269,6 +269,10 @@ pages.push(prosePage({
   body:
     "<p>PattayaPets is a small editorial team. We read everything, and we are glad " +
     "to hear from readers, pet owners and the businesses we cover.</p>" +
+    '<div class="contact-actions btn-row">' +
+    '<a class="btn btn-primary" href="mailto:hello@pattayapets.com">Email hello@pattayapets.com</a>' +
+    '<a class="btn btn-ghost" href="https://wa.me/66967286999" target="_blank" rel="noopener">WhatsApp</a>' +
+    '<a class="btn btn-alert" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a></div>' +
     "<h2>Email</h2>" +
     '<p><a href="mailto:hello@pattayapets.com">hello@pattayapets.com</a> &mdash; ' +
     "the best way to reach us for anything.</p>" +

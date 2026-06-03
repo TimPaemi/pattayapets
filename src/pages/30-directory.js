@@ -426,6 +426,23 @@ function bizDirTags(b) {
   return tags.join(" ");
 }
 
+function areaFiltersBar(list) {
+  var cats = Object.keys(CATEGORIES).filter(function (ck) {
+    return list.some(function (b) { return b.category === ck; });
+  });
+  if (cats.length < 2) return "";
+  var chips =
+    '<button type="button" class="chip chip-link dir-filter is-active" data-dir-filter="all">All (' +
+    list.length + ")</button>";
+  cats.forEach(function (ck) {
+    var n = list.filter(function (b) { return b.category === ck; }).length;
+    chips += '<button type="button" class="chip chip-link dir-filter" data-dir-filter="' + ck + '">' +
+      esc(CATEGORIES[ck].name) + " (" + n + ")</button>";
+  });
+  return '<div class="dir-filters" role="group" aria-label="Filter by category">' + chips + "</div>" +
+    '<p class="dir-filter-status notice" id="area-filter-status" hidden></p>';
+}
+
 function dirFiltersBar(list, areaKeys) {
   var has24 = list.some(function (b) { return b.c24; });
   if (!has24 && areaKeys.length < 2) return "";
@@ -449,7 +466,8 @@ function dirFiltersBar(list, areaKeys) {
 
 function bizCard(b) {
   var areas = b.areas.length ? b.areas.map(areaName).join(", ") : "Serves all Thailand";
-  return '<article class="biz-card" data-dir-tags="' + esc(bizDirTags(b)) + '"><div class="biz-top">' +
+  return '<article class="biz-card" data-dir-tags="' + esc(bizDirTags(b)) + '" data-dir-cat="' +
+    esc(b.category) + '"><div class="biz-top">' +
     "<div><h3><a href=\"" + bizUrl(b) + "\">" + esc(b.name) + "</a></h3>" +
     '<p class="biz-sub">' + esc(b.type) + " &middot; " + esc(areas) + "</p></div>" +
     (b.c24 ? '<span class="badge-24h">24 hr</span>' : "") +
@@ -708,13 +726,16 @@ Object.keys(AREAS).forEach(function (key) {
   }
 
   if (list.length) {
-    body += '<section class="section section-tint"><div class="container">';
+    body += '<section class="section section-tint"><div class="container">' +
+      areaFiltersBar(list) +
+      '<div id="area-listings">';
     Object.keys(CATEGORIES).forEach(function (ck) {
       var inCat = list.filter(function (b) { return b.category === ck; });
       if (!inCat.length) return;
-      body += '<div class="section-head" style="margin-top:1.4rem"><h2>' +
+      body += '<div class="dir-cat-block" data-dir-cat="' + ck + '">' +
+        '<div class="section-head" style="margin-top:1.4rem"><h2>' +
         esc(CATEGORIES[ck].name) + "</h2></div>" +
-        '<div class="grid grid-2">' + inCat.map(bizCard).join("") + "</div>";
+        '<div class="grid grid-2">' + inCat.map(bizCard).join("") + "</div></div>";
     });
     var missing = Object.keys(CATEGORIES).filter(function (ck) {
       return !list.some(function (b) { return b.category === ck; });
@@ -731,7 +752,7 @@ Object.keys(AREAS).forEach(function (key) {
         }).join("") +
         "</ul></div>";
     }
-    body += "</div></section>";
+    body += "</div></div></section>";
   } else {
     body += '<section class="section section-tint"><div class="container">' +
       '<div class="callout callout-note"><div class="ch">No listings here yet</div>' +
