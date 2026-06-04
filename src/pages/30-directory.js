@@ -490,8 +490,9 @@ function areaHubQuickBar(areaKey) {
     '<a class="chip chip-link" href="/pet-health-pattaya/">Pet health</a>' +
     '<a class="chip chip-link" href="/dog-friendly-pattaya/">Dog-friendly</a>' +
     '<a class="chip chip-link" href="/start-here.html">Start here</a>';
-  return '<div class="hub-quick-links" style="margin-top:1.1rem"><div class="ch">Jump to</div>' +
-    '<div class="chips">' + chips + "</div></div>";
+  return '<details class="corridor-panel hub-quick-panel hub-quick-links" style="margin-top:1.1rem">' +
+    '<summary class="corridor-panel__title">Jump to</summary>' +
+    '<div class="corridor-panel__body chips">' + chips + "</div></details>";
 }
 
 function areaDirQuickLinks(areaKey, list) {

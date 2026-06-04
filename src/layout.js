@@ -66,11 +66,11 @@ function brandLink(cls) {
     '<span class="brand-name"><span>Pattaya</span><b>Pets</b></span></a>';
 }
 
-function headerSearch() {
+function headerSearchForm(inputId) {
   return (
     '<form class="header-search" action="/search.html" method="get" role="search">' +
-    '<label class="visually-hidden" for="header-q">Search PattayaPets</label>' +
-    '<input type="search" name="q" id="header-q" autocomplete="search" ' +
+    '<label class="visually-hidden" for="' + inputId + '">Search PattayaPets</label>' +
+    '<input type="search" name="q" id="' + inputId + '" autocomplete="search" ' +
     'placeholder="Search the site" maxlength="80">' +
     '<button type="submit" aria-label="Search">' +
     '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" ' +
@@ -93,12 +93,14 @@ function header() {
     "Pet emergency? See 24-hour vets in Pattaya &rarr;</a></div>" +
     '<header class="site-header"><div class="header-row">' +
     brandLink("") +
-    headerSearch() +
+    headerSearchForm("header-q") +
     '<div class="header-mobile-actions">' +
     '<a class="header-nav-quick" href="/directory.html">Directory</a>' +
     '<a class="header-nav-quick header-nav-quick--alert" href="/pet-emergency/">Emergency</a>' +
-    '<a class="header-search-link" href="/search.html" aria-label="Search PattayaPets">' +
-    SEARCH_ICON + "</a>" +
+    '<details class="header-search-drawer">' +
+    '<summary class="header-search-link" aria-label="Open search">' + SEARCH_ICON + "</summary>" +
+    '<div class="header-search-drawer__panel">' + headerSearchForm("header-q-mobile") + "</div>" +
+    "</details>" +
     '<button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">' +
     '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" ' +
     'stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>Menu</button>' +

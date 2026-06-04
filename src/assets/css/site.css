@@ -222,6 +222,7 @@ margin:0 0 11px;padding:0 0 10px;cursor:pointer;list-style:none;color:var(--fore
 .toc-panel[open] .toc-panel__title::after{content:"\2013"}
 .toc-panel__body{padding:0}
 .emergency-quick-bar{margin:1.2rem 0 0;padding-top:1rem;border-top:1px solid var(--border-soft)}
+.emergency-quick-bar .btn-ghost{border-color:var(--banyan);color:var(--banyan-dk)}
 .emergency-quick-bar .btn{flex:1 1 auto;justify-content:center;min-width:min(100%,11rem)}
 @media(max-width:560px){
 .emergency-quick-bar{flex-direction:column;align-items:stretch}
@@ -299,6 +300,29 @@ border-radius:var(--r-sm);text-decoration:none;white-space:nowrap}
 .header-nav-quick--alert:hover{background:var(--alert-tint);color:var(--alert-dk)}
 .header-nav-quick--alert[aria-current=page]{background:var(--alert);color:#fff;border-color:var(--alert)}
 
+.header-search-drawer{position:relative;flex:none}
+.header-search-drawer__panel{display:none;position:absolute;right:0;top:calc(100% + 8px);
+width:min(320px,calc(100vw - 48px));z-index:220;padding:12px;background:#fff;
+border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh-md)}
+.header-search-drawer[open] .header-search-drawer__panel{display:block}
+.header-search-drawer__panel .header-search{max-width:none;margin:0;width:100%}
+.header-search-drawer summary.header-search-link{list-style:none;cursor:pointer}
+.header-search-drawer summary.header-search-link::-webkit-details-marker{display:none}
+@media(max-width:1080px){
+.header-row>form.header-search{display:none}
+}
+@media(min-width:1081px){
+.header-search-drawer{display:none}
+}
+
+.search-sticky{margin:0 0 1.2rem}
+@media(min-width:901px){
+.search-sticky{position:sticky;top:88px;z-index:40;padding:10px 0 14px;
+background:linear-gradient(var(--sand) 70%,transparent)}
+}
+.search-browse-panel{margin-top:1rem}
+.hub-quick-panel{margin:1.1rem 0 1.5rem}
+
 .field{margin-bottom:18px}
 .field label{display:block;font-family:var(--fd);font-weight:600;font-size:.93rem;
 margin-bottom:7px;color:var(--forest)}
@@ -315,7 +339,7 @@ border-color:var(--banyan);box-shadow:0 0 0 3px var(--banyan-tint)}
 .search-browse .chips{margin-top:.6rem}
 .search-popular{margin-top:1rem}
 .search-filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:1rem}
-.search-filters .chip{cursor:pointer;border:none;font:inherit}
+.search-filters .chip{cursor:pointer;border:none;font:inherit;min-height:44px}
 .search-filters .chip-active{background:var(--banyan);color:#fff;border-color:var(--banyan)}
 .search-results{margin-top:1.8rem}
 .search-results__count{margin:0 0 1.1rem;font-size:.95rem;font-weight:600;color:var(--sage)}

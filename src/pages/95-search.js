@@ -17,15 +17,16 @@ module.exports = [{
     '<p class="lede">Find a vet, a guide, an area or a business &mdash; across ' +
     "every page on the site. Live search needs JavaScript; browse the topics " +
     "below if it is disabled.</p>" +
+    '<div class="search-sticky">' +
     '<form class="search-form field" action="/search.html" method="get" role="search">' +
     '<label for="pp-q">What are you looking for?</label>' +
     '<input type="search" id="pp-q" name="q" autocomplete="search" ' +
     'placeholder="Try &ldquo;24 hour vet&rdquo;, &ldquo;Jomtien&rdquo;, &ldquo;bring dog from UK&rdquo;">' +
     '<button type="submit" class="btn btn-primary" style="margin-top:.8rem">Search</button></form>' +
-    '<p class="search-kbd-hint">Tip: press <kbd>/</kbd> on any page to jump to search.</p>' +
-    '<div class="search-browse">' +
-    '<h2>Browse by topic</h2>' +
-    '<p class="notice">These links work without JavaScript.</p>' +
+    '<p class="search-kbd-hint">Tip: press <kbd>/</kbd> on any page to jump to search.</p></div>' +
+    '<details class="corridor-panel search-browse-panel">' +
+    '<summary class="corridor-panel__title">Browse by topic (no search needed)</summary>' +
+    '<div class="corridor-panel__body"><p class="notice">These links work without JavaScript.</p>' +
     '<div class="chips">' +
     '<a class="chip chip-link" href="/directory.html">Directory</a>' +
     '<a class="chip chip-link" href="/vets/">Vets</a>' +
@@ -68,9 +69,10 @@ module.exports = [{
     '<a class="chip chip-link" href="/area/banglamung.html">Banglamung area</a>' +
     '<a class="chip chip-link" href="/guides.html">All guides</a>' +
     '<a class="chip chip-link" href="/sitemap.html">Full sitemap</a>' +
-    '</div>' +
-    '<h2 style="margin-top:1.6rem">Pattaya Authority network</h2>' +
-    '<p class="notice">Sister guides for the wider move &mdash; visas, rentals, dining and more.</p>' +
+    '</div></div></details>' +
+    '<details class="corridor-panel search-browse-panel">' +
+    '<summary class="corridor-panel__title">Pattaya Authority network</summary>' +
+    '<div class="corridor-panel__body"><p class="notice">Sister guides for the wider move &mdash; visas, rentals, dining and more.</p>' +
     '<div class="chips">' +
     '<a class="chip chip-link" href="https://pattayavisahelp.com/" target="_blank" rel="noopener noreferrer">Pattaya Visa Help</a>' +
     '<a class="chip chip-link" href="https://pattaya-restaurant-guide.com/" target="_blank" rel="noopener noreferrer">Restaurant Guide</a>' +
@@ -81,7 +83,7 @@ module.exports = [{
     '<a class="chip chip-link" href="https://pattaya-coffee.com/" target="_blank" rel="noopener noreferrer">Pattaya Coffee</a>' +
     '<a class="chip chip-link" href="https://pattaya-gym.com/" target="_blank" rel="noopener noreferrer">Pattaya Gym</a>' +
     '<a class="chip chip-link" href="https://pattaya-school-guide.com/" target="_blank" rel="noopener noreferrer">School Guide</a>' +
-    '</div></div>' +
+    '</div></div></details>' +
     '<div id="pp-filters" class="search-filters" role="group" aria-label="Filter by section"></div>' +
     '<div id="pp-results" class="search-results" aria-live="polite" aria-atomic="true" role="region" aria-label="Search results">' +
     '<noscript><p class="notice">Live search needs JavaScript. Use the topic links above, the ' +

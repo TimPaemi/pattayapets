@@ -294,11 +294,13 @@ function mergeSidebars(tocAside, linkAside) {
 function hubQuickBar(topic) {
   var links = pickLinks(INTERNAL_BY_TOPIC[topic] || INTERNAL_BY_TOPIC.general, 6);
   if (!links.length) return "";
-  return '<div class="hub-quick-links"><div class="ch">Jump to</div><div class="chips">' +
+  return '<details class="corridor-panel hub-quick-panel hub-quick-links">' +
+    '<summary class="corridor-panel__title">Jump to</summary>' +
+    '<div class="corridor-panel__body chips">' +
     links.map(function (l) {
       return '<a class="chip chip-link" href="' + l.path + '">' + esc(l.name) + "</a>";
     }).join("") +
-    "</div></div>";
+    "</div></details>";
 }
 
 function guideClusterChips() {

@@ -128,7 +128,7 @@
       document.querySelectorAll('#primary-nav a[href="/search.html"]').forEach(function (a) {
         a.setAttribute("aria-current", "page");
       });
-      document.querySelectorAll(".header-search-link").forEach(function (a) {
+      document.querySelectorAll(".header-search-drawer summary.header-search-link").forEach(function (a) {
         a.setAttribute("aria-current", "page");
       });
     }
@@ -275,6 +275,17 @@
     });
   }
 
+  /* Mobile header search drawer — focus field when opened */
+  document.querySelectorAll(".header-search-drawer").forEach(function (drawer) {
+    drawer.addEventListener("toggle", function () {
+      if (!drawer.open) return;
+      var inp = drawer.querySelector("#header-q-mobile");
+      if (inp) {
+        try { inp.focus(); } catch (err) {}
+      }
+    });
+  });
+
   /* Keyboard shortcut: / focuses search (when not typing in a field) */
   document.addEventListener("keydown", function (e) {
     if (e.key !== "/" || e.ctrlKey || e.metaKey || e.altKey) return;
@@ -282,9 +293,12 @@
     var tag = t && t.tagName;
     if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || (t && t.isContentEditable)) return;
     e.preventDefault();
-    var q = document.getElementById("header-q") || document.getElementById("pp-q");
+    var q = document.getElementById("pp-q") || document.getElementById("header-q") ||
+      document.getElementById("header-q-mobile");
     if (q) {
       q.focus();
+      var drawer = q.closest(".header-search-drawer");
+      if (drawer && !drawer.open) drawer.setAttribute("open", "");
       return;
     }
     location.href = "/search.html";
