@@ -231,6 +231,12 @@ function hub(o) {
     '<p class="lede">' + o.lede + "</p>" +
     '<p class="updated">Last updated ' + (o.updatedLabel || DEFAULT_UPDATED_LABEL) + "</p>";
   if (o.intro) body += '<div class="prose" style="margin-top:1.2rem">' + o.intro + "</div>";
+  if (o.path === "/pet-emergency/") {
+    body += '<div class="emergency-quick-bar emergency-quick-bar--sticky btn-row" role="navigation" aria-label="Emergency shortcuts">' +
+      '<a class="btn btn-alert" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in Pattaya</a>' +
+      '<a class="btn btn-ghost" href="/vets/?filter=24h">24-hour directory</a>' +
+      '<a class="btn btn-ghost" href="/guides.html?topic=emergency">Emergency guides</a></div>';
+  }
   var guidesTopic = o.guidesTopic || hubGuidesTopic(o.path);
   if (guidesTopic) body += hubQuickBar(guidesTopic);
   if (guidesTopic) {
@@ -241,18 +247,28 @@ function hub(o) {
   body += "</div></section>";
 
   (o.groups || []).forEach(function (g, i) {
-    body += '<section class="section' + (i % 2 === 0 ? " section-tint" : "") +
-      '"><div class="container">' +
-      '<div class="section-head"><h2>' + g.title + "</h2>" +
-      (g.note ? "<p>" + g.note + "</p>" : "") + "</div>" +
-      '<div class="grid grid-3">' +
-      g.cards.map(function (c) {
-        return '<a class="card" href="' + c.path + '">' +
-          (c.tag ? '<span class="card-tag">' + c.tag + "</span>" : "") +
-          "<h3>" + c.name + "</h3><p>" + c.desc + "</p>" +
-          '<span class="card-meta">' + (c.cta || "Read") + " &rarr;</span></a>";
-      }).join("") +
-      "</div></div></section>";
+    var cardsHtml = g.cards.map(function (c) {
+      return '<a class="card" href="' + c.path + '">' +
+        (c.tag ? '<span class="card-tag">' + c.tag + "</span>" : "") +
+        "<h3>" + c.name + "</h3><p>" + c.desc + "</p>" +
+        '<span class="card-meta">' + (c.cta || "Read") + " &rarr;</span></a>";
+    }).join("");
+    var grid = '<div class="grid grid-3">' + cardsHtml + "</div>";
+    var sectionCls = "section" + (i % 2 === 0 ? " section-tint" : "");
+    if (g.cards.length > 3) {
+      body += '<section class="' + sectionCls + '"><div class="container">' +
+        '<details class="corridor-panel hub-group-panel">' +
+        '<summary class="corridor-panel__title">' + g.title +
+        " (" + g.cards.length + ")</summary>" +
+        '<div class="corridor-panel__body">' +
+        (g.note ? '<p class="hub-group-note">' + g.note + "</p>" : "") +
+        grid + "</div></details></div></section>";
+    } else {
+      body += '<section class="' + sectionCls + '"><div class="container">' +
+        '<div class="section-head"><h2>' + g.title + "</h2>" +
+        (g.note ? "<p>" + g.note + "</p>" : "") + "</div>" + grid +
+        "</div></section>";
+    }
   });
 
   if (o.related && o.related.length) {

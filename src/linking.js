@@ -327,8 +327,10 @@ function inPageLinkSection(topic) {
   var netKeys = NETWORK_BY_TOPIC[topic] || NETWORK_BY_TOPIC.general;
   if (!internal.length && !netKeys.length) return "";
   return '<section class="section section-tint"><div class="container">' +
-    '<div class="section-head"><h2>More to read</h2>' +
-    "<p>Jump to related guides on PattayaPets or sister sites in the Pattaya Authority network.</p></div>" +
+    '<details class="corridor-panel more-read-panel">' +
+    '<summary class="corridor-panel__title">More to read</summary>' +
+    '<div class="corridor-panel__body">' +
+    "<p class=\"notice\">Related guides on PattayaPets and sister sites in the Pattaya Authority network.</p>" +
     '<div class="link-section-grid">' +
     '<div class="link-section-col"><div class="ch">On PattayaPets</div><div class="chips">' +
     internal.slice(0, 8).map(function (l) {
@@ -347,7 +349,7 @@ function inPageLinkSection(topic) {
     }).join("") +
     '</div><p style="margin:.75rem 0 0;font-size:.92rem"><a href="https://pattaya-authority.com/work/pattaya-pets/" ' +
     'target="_blank" rel="noopener noreferrer">About the network &rarr;</a></p></div>' +
-    "</div></div></section>";
+    "</div></div></details></div></section>";
 }
 
 function pathNorm(p) {

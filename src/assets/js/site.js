@@ -51,6 +51,16 @@
     } catch (e) {}
   }
 
+  function scrollToEl(el) {
+    if (!el) return;
+    try {
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+    } catch (e) {
+      el.scrollIntoView(true);
+    }
+  }
+
   /* Stylesheet preload fallback */
   var cssLink = document.querySelector('link[rel="preload"][href="/assets/css/site.css"]');
   if (cssLink) {
@@ -222,6 +232,7 @@
             "<h3>" + esc(x.p.t) + "</h3><p>" + esc(x.p.d) + '</p>' +
             '<span class="card-meta">Open page &rarr;</span></a>';
         }).join("");
+      if (q.length >= 2 && hits.length) scrollToEl(searchOut);
     }
 
     searchOut.setAttribute("aria-busy", "true");
@@ -325,7 +336,7 @@
     btn.className = "btn btn-ghost copy-phone-btn";
     btn.textContent = "Copy number";
     btn.addEventListener("click", function () {
-      var num = tel.getAttribute("href").replace(/^tel:/i, "");
+      var num = (tel.textContent || "").trim() || tel.getAttribute("href").replace(/^tel:/i, "");
       function done(ok) {
         btn.textContent = ok ? "Copied" : "Copy number";
         if (ok) setTimeout(function () { btn.textContent = "Copy number"; }, 2000);
@@ -379,7 +390,13 @@
   /* Horizontal table scroll hint */
   document.querySelectorAll(".table-wrap").forEach(function (wrap) {
     function mark() {
-      wrap.classList.toggle("table-wrap--scroll", wrap.scrollWidth > wrap.clientWidth + 2);
+      var scrollable = wrap.scrollWidth > wrap.clientWidth + 2;
+      wrap.classList.toggle("table-wrap--scroll", scrollable);
+      if (scrollable) {
+        wrap.setAttribute("aria-label", "Table scrolls sideways for more columns");
+      } else {
+        wrap.removeAttribute("aria-label");
+      }
     }
     mark();
     window.addEventListener("resize", mark, { passive: true });
@@ -451,6 +468,7 @@
       filterResultStatus(status, shown, cards.length,
         "No listings match this filter. Try another area or view all.", "listings");
       filterQuerySet("filter", filter);
+      if (filter !== "all") scrollToEl(list);
     }
     filters.forEach(function (btn) {
       btn.addEventListener("click", function (e) {
@@ -505,6 +523,7 @@
       filterResultStatus(status, shown, cards.length,
         "No guides match this filter. View all to reset.", "guides");
       filterQuerySet("topic", filter);
+      if (filter !== "all") scrollToEl(list);
     }
     filters.forEach(function (btn) {
       btn.addEventListener("click", function (e) {
@@ -543,6 +562,7 @@
       filterResultStatus(status, shown, blocks.length,
         "No categories match this filter. View all to reset.", "categories");
       filterQuerySet("cat", filter);
+      if (filter !== "all") scrollToEl(list);
     }
     filters.forEach(function (btn) {
       btn.addEventListener("click", function (e) {

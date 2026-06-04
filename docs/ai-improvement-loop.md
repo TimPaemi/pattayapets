@@ -87,6 +87,7 @@ Not deployed. Last updated: 30 May 2026.
 | **124** | **UX-only:** Call/WhatsApp/website actions on every business listing; clickable phone chips on directory cards; phone in facts for all listings; area hub collapsible category filters + sticky; filter panels auto-close on mobile after pick |
 | **125** | **UX-only:** Mobile header search drawer; sticky search field on `/search.html`; collapsible browse/network chips on search; collapsible hub “Jump to” bars; stronger ghost-button contrast on emergency bars |
 | **126** | **UX-only:** Sticky emergency shortcuts on guide pages; mobile full-width button rows; search drawer dismiss + nav coordination; copy-phone on listings; collapsible area/search popular links; 404/offline emergency CTAs |
+| **127** | **UX-only:** Emergency hub sticky shortcuts; collapsible hub guide groups (4+ cards) and “More to read”; tappable directory cards; filter/search scroll-to-results; table scroll aria-label |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 
