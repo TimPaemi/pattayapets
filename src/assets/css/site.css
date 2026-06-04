@@ -87,12 +87,14 @@ padding:23px 25px;box-shadow:var(--sh-sm);transition:transform .16s ease,box-sha
 .biz-sub{font-size:.85rem;color:var(--sage);font-family:var(--fd);font-weight:600;margin:0 0 10px}
 .biz-card p{font-size:.96rem;color:var(--ink-soft);margin:.55rem 0 .8rem}
 .biz-facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}
+.contact-actions{margin:1.1rem 0 1.4rem}
+.contact-actions .btn{flex:1 1 auto;justify-content:center;min-width:min(100%,9.5rem)}
 .biz-card--emergency .biz-actions{margin:0 0 1rem}
 .biz-card--emergency .biz-actions .btn{flex:1 1 auto;justify-content:center;min-width:min(100%,9.5rem)}
 .biz-card--emergency .table-wrap{margin:0}
 @media(max-width:560px){
-.biz-card--emergency .biz-actions{flex-direction:column;align-items:stretch}
-.biz-card--emergency .biz-actions .btn{width:100%}
+.contact-actions,.biz-card--emergency .biz-actions{flex-direction:column;align-items:stretch}
+.contact-actions .btn,.biz-card--emergency .biz-actions .btn{width:100%}
 }
 
 .chip{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:500;

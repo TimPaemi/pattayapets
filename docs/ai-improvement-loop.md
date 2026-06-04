@@ -84,6 +84,7 @@ Not deployed. Last updated: 30 May 2026.
 | **121** | **UX audit fixes:** dedupe `/guides.html` filters (remove duplicate cluster chips); collapsible country corridors on `/pet-relocation/` (mobile `details`, desktop always open); Directory + Emergency quick links in mobile header |
 | **122** | **Homepage scannability:** 12 featured guide cards + collapsible six more; deduped topic link strip; expanded home “More to read”; `lh-tmp.json` gitignore; Lighthouse all-templates gate |
 | **123** | **UX-only:** 24-hour vet call buttons + table captions; collapsible filter panels (guides + directory hubs); sticky guides filters (desktop); 44px chip targets; emergency quick-bar mobile stack; reduced-motion hover off |
+| **124** | **UX-only:** Call/WhatsApp/website actions on every business listing; clickable phone chips on directory cards; phone in facts for all listings; area hub collapsible category filters + sticky; filter panels auto-close on mobile after pick |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 

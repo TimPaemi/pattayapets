@@ -42,6 +42,15 @@
     }
   }
 
+  function collapseFilterPanel(el) {
+    if (!el) return;
+    var panel = el.closest(".filter-panel");
+    if (!panel) return;
+    try {
+      if (window.matchMedia("(max-width: 900px)").matches) panel.removeAttribute("open");
+    } catch (e) {}
+  }
+
   /* Stylesheet preload fallback */
   var cssLink = document.querySelector('link[rel="preload"][href="/assets/css/site.css"]');
   if (cssLink) {
@@ -380,6 +389,7 @@
       btn.addEventListener("click", function (e) {
         e.preventDefault();
         apply(btn.getAttribute("data-dir-filter") || "all");
+        collapseFilterPanel(btn);
       });
     });
     var dirInit = filterPick(filters, "data-dir-filter", filterQueryGet("filter"));
@@ -433,6 +443,7 @@
       btn.addEventListener("click", function (e) {
         e.preventDefault();
         apply(btn.getAttribute("data-guide-filter") || "all");
+        collapseFilterPanel(btn);
       });
     });
     var guideInit = filterPick(filters, "data-guide-filter", filterQueryGet("topic"));
@@ -470,6 +481,7 @@
       btn.addEventListener("click", function (e) {
         e.preventDefault();
         apply(btn.getAttribute("data-dir-filter") || "all");
+        collapseFilterPanel(btn);
       });
     });
     var areaInit = filterPick(filters, "data-dir-filter", filterQueryGet("cat"));

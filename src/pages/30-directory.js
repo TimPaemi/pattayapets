@@ -415,16 +415,45 @@ function verdictBadge(b) {
 }
 
 function contactChip(b) {
-  if (b.c24 && b.phone) return '<span class="chip">' + esc(b.phone) + "</span>";
-  if (b.whatsapp) return '<span class="chip">WhatsApp</span>';
-  if (b.line) return '<span class="chip">LINE</span>';
-  if (b.website) return '<span class="chip">Website</span>';
+  if (b.phone && b.tel) {
+    return '<a class="chip chip-link" href="tel:' + b.tel + '" aria-label="Call ' +
+      esc(b.name) + '">' + esc(b.phone) + "</a>";
+  }
+  if (b.whatsapp) {
+    return '<a class="chip chip-link" href="https://wa.me/' + esc(b.whatsapp) +
+      '" target="_blank" rel="noopener">WhatsApp</a>';
+  }
+  if (b.line) return '<span class="chip">LINE ' + esc("@" + String(b.line).replace(/^@/, "")) + "</span>";
+  if (b.website) {
+    return '<a class="chip chip-link" href="' + b.website +
+      '" target="_blank" rel="noopener nofollow">Website</a>';
+  }
   return "";
+}
+
+function bizContactActions(b) {
+  var parts = [];
+  if (b.phone && b.tel) {
+    var cls = b.c24 ? "btn btn-alert" : "btn btn-primary";
+    parts.push('<a class="' + cls + '" href="tel:' + b.tel + '" aria-label="Call ' +
+      esc(b.name) + '">Call ' + esc(b.phone) + "</a>");
+  }
+  if (b.whatsapp) {
+    parts.push('<a class="btn btn-ghost" href="https://wa.me/' + esc(b.whatsapp) +
+      '" target="_blank" rel="noopener">WhatsApp</a>');
+  }
+  if (b.website) {
+    parts.push('<a class="btn btn-ghost" href="' + b.website +
+      '" target="_blank" rel="noopener nofollow">Official website</a>');
+  }
+  if (!parts.length) return "";
+  return '<div class="biz-actions btn-row contact-actions" role="group" aria-label="Contact ' +
+    esc(b.name) + '">' + parts.join("") + "</div>";
 }
 
 function contactRows(b) {
   var rows = [];
-  if (b.c24 && b.phone) {
+  if (b.phone && b.tel) {
     rows.push(["Phone", '<a href="tel:' + b.tel + '">' + esc(b.phone) + "</a>"]);
   }
   if (b.whatsapp) {
@@ -499,6 +528,14 @@ function areaFiltersBar(list, areaSlug) {
     '<p class="dir-filter-status notice" id="area-filter-status" hidden></p>';
 }
 
+function areaFiltersPanel(list, areaSlug) {
+  var inner = areaFiltersBar(list, areaSlug);
+  if (!inner) return "";
+  return '<details class="corridor-panel filter-panel">' +
+    '<summary class="corridor-panel__title">Filter by category</summary>' +
+    '<div class="corridor-panel__body">' + inner + "</div></details>";
+}
+
 function dirFiltersBar(list, areaKeys, catKey) {
   var has24 = list.some(function (b) { return b.c24; });
   if (!has24 && areaKeys.length < 2) return "";
@@ -559,7 +596,8 @@ function factsTable(b) {
     rows.push(["Contact", "No verified public phone or website listed &mdash; confirm when booking."]);
   }
   rows.push(["Languages", esc(b.languages)]);
-  return '<div class="table-wrap"><table class="facts-table"><tbody>' +
+  return '<div class="table-wrap"><table class="facts-table">' +
+    '<caption class="visually-hidden">Key facts for ' + esc(b.name) + "</caption><tbody>" +
     rows.map(function (r) {
       return "<tr><th scope=\"row\">" + r[0] + "</th><td>" + r[1] + "</td></tr>";
     }).join("") +
@@ -609,6 +647,7 @@ BUSINESSES.forEach(function (b) {
     (b.c24 ? ' &middot; <strong style="color:var(--alert)">open 24 hours</strong>' : "") +
     "</p>" +
     verdictBlock(b) +
+    bizContactActions(b) +
     "<p class=\"lede\">" + esc(b.summary) + "</p>" +
     "<h2>The facts</h2>" +
     factsTable(b) +
@@ -733,7 +772,7 @@ Object.keys(CATEGORIES).forEach(function (key) {
       (list.length === 1 ? cat.one : cat.one + "s") + "</h2>" +
       "<p>Every listing is a verified facts page. Verdicts follow an anonymous " +
       "visit.</p></div>" +
-      dirFiltersPanel(list, areaKeys, key) +
+      '<div class="filters-sticky">' + dirFiltersPanel(list, areaKeys, key) + "</div>" +
       '<div class="grid grid-2 dir-listings" id="dir-listings">' + list.map(bizCard).join("") + "</div>";
     if (areaKeys.length) {
       body += '<div class="section-head" style="margin-top:2rem" id="area"><h2>Browse by area</h2></div>' +
@@ -801,7 +840,7 @@ Object.keys(AREAS).forEach(function (key) {
 
   if (list.length) {
     body += '<section class="section section-tint"><div class="container">' +
-      areaFiltersBar(list, key) +
+      '<div class="filters-sticky">' + areaFiltersPanel(list, key) + "</div>" +
       '<div id="area-listings">';
     Object.keys(CATEGORIES).forEach(function (ck) {
       var inCat = list.filter(function (b) { return b.category === ck; });
