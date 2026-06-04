@@ -86,6 +86,7 @@ Not deployed. Last updated: 30 May 2026.
 | **123** | **UX-only:** 24-hour vet call buttons + table captions; collapsible filter panels (guides + directory hubs); sticky guides filters (desktop); 44px chip targets; emergency quick-bar mobile stack; reduced-motion hover off |
 | **124** | **UX-only:** Call/WhatsApp/website actions on every business listing; clickable phone chips on directory cards; phone in facts for all listings; area hub collapsible category filters + sticky; filter panels auto-close on mobile after pick |
 | **125** | **UX-only:** Mobile header search drawer; sticky search field on `/search.html`; collapsible browse/network chips on search; collapsible hub “Jump to” bars; stronger ghost-button contrast on emergency bars |
+| **126** | **UX-only:** Sticky emergency shortcuts on guide pages; mobile full-width button rows; search drawer dismiss + nav coordination; copy-phone on listings; collapsible area/search popular links; 404/offline emergency CTAs |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 

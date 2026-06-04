@@ -65,6 +65,10 @@
   /* Mobile navigation */
   var toggle = document.querySelector(".nav-toggle");
   var nav = document.getElementById("primary-nav");
+  var searchDrawers = document.querySelectorAll(".header-search-drawer");
+  function closeSearchDrawers() {
+    searchDrawers.forEach(function (d) { d.removeAttribute("open"); });
+  }
   if (toggle && nav) {
     function setNav(open) {
       nav.classList.toggle("open", open);
@@ -79,7 +83,9 @@
       }
     }
     toggle.addEventListener("click", function () {
-      setNav(!nav.classList.contains("open"));
+      var opening = !nav.classList.contains("open");
+      if (opening) closeSearchDrawers();
+      setNav(opening);
     });
     nav.addEventListener("click", function (e) {
       if (e.target.tagName === "A" && nav.classList.contains("open")) setNav(false);
@@ -275,15 +281,62 @@
     });
   }
 
-  /* Mobile header search drawer — focus field when opened */
-  document.querySelectorAll(".header-search-drawer").forEach(function (drawer) {
+  /* Mobile header search drawer */
+  searchDrawers.forEach(function (drawer) {
     drawer.addEventListener("toggle", function () {
-      if (!drawer.open) return;
-      var inp = drawer.querySelector("#header-q-mobile");
-      if (inp) {
-        try { inp.focus(); } catch (err) {}
+      if (drawer.open) {
+        if (nav && nav.classList.contains("open")) {
+          nav.classList.remove("open");
+          if (toggle) {
+            toggle.setAttribute("aria-expanded", "false");
+            toggle.setAttribute("aria-label", "Open menu");
+          }
+          document.body.classList.remove("nav-open");
+        }
+        var inp = drawer.querySelector("#header-q-mobile");
+        if (inp) {
+          try { inp.focus(); } catch (err) {}
+        }
       }
     });
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    var openDrawer = document.querySelector(".header-search-drawer[open]");
+    if (!openDrawer) return;
+    closeSearchDrawers();
+    var summary = openDrawer.querySelector("summary");
+    if (summary) summary.focus();
+  });
+  document.addEventListener("click", function (e) {
+    searchDrawers.forEach(function (drawer) {
+      if (!drawer.open) return;
+      if (drawer.contains(e.target)) return;
+      drawer.removeAttribute("open");
+    });
+  });
+
+  /* Copy phone number on listing and emergency clinic pages */
+  document.querySelectorAll(".contact-actions").forEach(function (row) {
+    var tel = row.querySelector('a[href^="tel:"]');
+    if (!tel) return;
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "btn btn-ghost copy-phone-btn";
+    btn.textContent = "Copy number";
+    btn.addEventListener("click", function () {
+      var num = tel.getAttribute("href").replace(/^tel:/i, "");
+      function done(ok) {
+        btn.textContent = ok ? "Copied" : "Copy number";
+        if (ok) setTimeout(function () { btn.textContent = "Copy number"; }, 2000);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(num).then(function () { done(true); }, function () { done(false); });
+      } else {
+        done(false);
+      }
+    });
+    row.appendChild(btn);
   });
 
   /* Keyboard shortcut: / focuses search (when not typing in a field) */

@@ -89,7 +89,9 @@ module.exports = [{
     '<noscript><p class="notice">Live search needs JavaScript. Use the topic links above, the ' +
     '<a href="/directory.html">directory</a>, or the ' +
     '<a href="/sitemap.html">sitemap</a>.</p></noscript></div>' +
-    '<p class="notice search-popular">Popular: ' +
+    '<details class="corridor-panel search-browse-panel">' +
+    '<summary class="corridor-panel__title">Popular searches</summary>' +
+    '<div class="corridor-panel__body"><p class="notice search-popular">Popular: ' +
     '<a href="/bring-pet-to-thailand/from-eu.html">Import from EU</a> &middot; ' +
     '<a href="/bring-pet-to-thailand/from-uae.html">Import from UAE</a> &middot; ' +
     '<a href="/bring-pet-to-thailand/from-india.html">Import from India</a> &middot; ' +
@@ -144,6 +146,6 @@ module.exports = [{
     '<a href="/pet-emergency/venomous-creatures.html">Venomous creatures</a> &middot; ' +
     '<a href="/pet-health-pattaya/dental-care.html">Dental care</a> &middot; ' +
     '<a href="/owning-a-pet-in-pattaya/rainy-season-pet-care.html">Rainy season</a> &middot; ' +
-    '<a href="/pet-health-pattaya/healthy-weight.html">Healthy weight</a></p>' +
+    '<a href="/pet-health-pattaya/healthy-weight.html">Healthy weight</a></p></div></details>' +
     "</div></section>"
 }];

@@ -507,8 +507,10 @@ function areaDirQuickLinks(areaKey, list) {
       " in " + esc(areaLabel) + " (" + n + ")</a>";
   }).join("");
   if (!chips) return "";
-  return '<div class="dir-filters" role="group" aria-label="Directory in ' +
-    esc(areaLabel) + '">' + chips + "</div>";
+  return '<details class="corridor-panel filter-panel area-dir-panel">' +
+    '<summary class="corridor-panel__title">Directory in ' + esc(areaLabel) + "</summary>" +
+    '<div class="corridor-panel__body"><div class="dir-filters" role="group" aria-label="Directory in ' +
+    esc(areaLabel) + '">' + chips + "</div></div></details>";
 }
 
 function areaFiltersBar(list, areaSlug) {

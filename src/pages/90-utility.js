@@ -16,6 +16,13 @@ module.exports = [
       "<h1>This page could not be found</h1>" +
       "<p>The page you were looking for has moved, or never existed. It is a new " +
       "and growing site, so a few links may still be catching up.</p>" +
+      '<div class="callout callout-emergency"><div class="ch">Pet emergency?</div>' +
+      "<p>If you were looking for urgent vet help, go straight to " +
+      '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in Pattaya</a>.</p></div>' +
+      '<div class="btn-row">' +
+      '<a class="btn btn-primary" href="/search.html">Search the site</a>' +
+      '<a class="btn btn-ghost" href="/directory.html">Directory</a>' +
+      '<a class="btn btn-alert" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a></div>' +
       "<p>Try one of these instead:</p>" +
       "<ul>" +
       '<li><a href="/">The PattayaPets home page</a></li>' +
@@ -61,6 +68,9 @@ module.exports = [
       "<h1>You are offline</h1>" +
       "<p>It looks like your device has lost its internet connection, so this page " +
       "could not load.</p>" +
+      '<div class="btn-row">' +
+      '<a class="btn btn-alert" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets (cached)</a>' +
+      '<a class="btn btn-ghost" href="/">Home page</a></div>' +
       "<p>Pages you have already visited may still open from your device. Once you " +
       "are back online, everything will work normally again. Try " +
       '<a href="/">the home page</a>, the ' +
