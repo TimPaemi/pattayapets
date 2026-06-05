@@ -91,6 +91,11 @@ padding:23px 25px;box-shadow:var(--sh-sm);transition:transform .16s ease,box-sha
 .biz-facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}
 .contact-actions{margin:1.1rem 0 1.4rem}
 .contact-actions .btn{flex:1 1 auto;justify-content:center;min-width:min(100%,9.5rem)}
+.listing-contact-bar--sticky{position:sticky;top:88px;z-index:28;background:var(--sand);
+padding:10px 0 12px;margin:0 0 1rem;border-bottom:1px solid var(--border-soft)}
+.listing-contact-bar--sticky .contact-actions{margin-top:0}
+.home-quick-section{padding-top:0;padding-bottom:0}
+.home-quick-bar{margin:0;border-top:0}
 .biz-card--emergency .biz-actions{margin:0 0 1rem}
 .biz-card--emergency .biz-actions .btn{flex:1 1 auto;justify-content:center;min-width:min(100%,9.5rem)}
 .biz-card--emergency .table-wrap{margin:0}
@@ -473,6 +478,7 @@ a{color:#000}
 .print-emergency .related{display:none}
 .print-emergency .emergency-clinic-grid .biz-card{break-inside:avoid-page}
 .print-emergency .contact-actions .btn-ghost.copy-phone-btn{display:none}
+.print-emergency .listing-contact-bar,.print-guide .listing-contact-bar{display:none!important}
 .print-emergency .biz-card a[href^="tel:"]::after{font-size:10pt;color:#333;content:" — " attr(href)}
 }
 @media(max-width:560px){

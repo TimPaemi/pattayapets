@@ -232,6 +232,12 @@ pages.push({
     "<p class=\"lede\">Clear, practical answers to what pet owners in Pattaya " +
     "search for. Every guide is date-stamped and points you to the official source " +
     "to verify against.</p></div>" +
+    '<div class="corridor-quick-bar corridor-quick-bar--sticky btn-row" role="navigation" aria-label="Guide shortcuts">' +
+    '<a class="btn btn-primary" href="/start-here.html">Start here</a>' +
+    '<a class="btn btn-ghost" href="/bring-pet-to-thailand/">Import</a>' +
+    '<a class="btn btn-ghost" href="/take-pet-out-of-thailand/">Export</a>' +
+    '<a class="btn btn-alert" href="/pet-emergency/">Emergency</a>' +
+    '<a class="btn btn-ghost" href="/directory.html">Directory</a></div>' +
     "<h2>Browse the guides</h2>" +
     '<div class="filters-sticky">' + guideFiltersPanel() + "</div>" +
     '<div id="guide-listings" class="grid grid-3">' +

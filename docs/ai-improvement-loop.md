@@ -92,6 +92,7 @@ Not deployed. Last updated: 30 May 2026.
 | **129** | **UX-only:** Start-here sticky shortcuts + jump nav; 404 popular pages panel; breadcrumb horizontal scroll on mobile; TOC scroll-spy via scroll; prose heading scroll-margin; filter status focus ring |
 | **130** | **UX-only:** Fix `.prose a` overriding alert button contrast (LH a11y 96→100); drop mismatched `aria-label` on Call buttons; sticky import/export hub shortcut bars |
 | **131** | **UX-only:** Sticky shortcut bars on owning, adoption, health, dog-friendly, dogs &amp; cats hubs; directory + vets hub sticky nav; offline cached-pages panel; listing anchor scroll-margin |
+| **132** | **UX-only:** Sticky shortcuts on all category hubs; homepage + guides hub quick bars; sticky contact bar on business listings and emergency clinic cards |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 

@@ -222,6 +222,82 @@ const CAT_CROSS = {
   ]
 };
 
+const CAT_SHORTCUT_BARS = {
+  vets: {
+    label: "Vet directory shortcuts",
+    links: [
+      ["btn btn-alert", "/pet-emergency/24-hour-vets-pattaya.html", "24-hour vets"],
+      ["btn btn-primary", "/vets/?filter=24h", "24-hour filter"],
+      ["btn btn-ghost", "/mobile-vets/", "Mobile vets"],
+      ["btn btn-ghost", "#dir-listings", "All listings"]
+    ]
+  },
+  groomers: {
+    label: "Groomer directory shortcuts",
+    links: [
+      ["btn btn-primary", "#dir-listings", "All groomers"],
+      ["btn btn-ghost", "/vets/", "Vets"],
+      ["btn btn-ghost", "/pet-health-pattaya/skin-and-ear-problems.html", "Skin &amp; ears"],
+      ["btn btn-ghost", "/area/jomtien.html", "Jomtien area"]
+    ]
+  },
+  boarding: {
+    label: "Boarding directory shortcuts",
+    links: [
+      ["btn btn-primary", "#dir-listings", "All boarding"],
+      ["btn btn-ghost", "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html", "Pet sitters"],
+      ["btn btn-ghost", "/cats/cat-boarding-pattaya.html", "Cat boarding"],
+      ["btn btn-ghost", "/vets/", "Vets"]
+    ]
+  },
+  "pet-shops": {
+    label: "Pet shop shortcuts",
+    links: [
+      ["btn btn-primary", "#dir-listings", "All pet shops"],
+      ["btn btn-ghost", "/owning-a-pet-in-pattaya/where-to-buy-pet-food.html", "Where to buy food"],
+      ["btn btn-ghost", "/vets/", "Vets"],
+      ["btn btn-ghost", "/groomers/", "Groomers"]
+    ]
+  },
+  trainers: {
+    label: "Trainer directory shortcuts",
+    links: [
+      ["btn btn-primary", "#dir-listings", "All trainers"],
+      ["btn btn-ghost", "/dogs/puppy-care-pattaya.html", "Puppy care"],
+      ["btn btn-ghost", "/dog-friendly-pattaya/", "Dog-friendly Pattaya"],
+      ["btn btn-ghost", "/vets/", "Vets"]
+    ]
+  },
+  "mobile-vets": {
+    label: "Mobile vet shortcuts",
+    links: [
+      ["btn btn-primary", "#dir-listings", "All mobile vets"],
+      ["btn btn-ghost", "/vets/", "Vets &amp; hospitals"],
+      ["btn btn-ghost", "/pet-emergency/24-hour-vets-pattaya.html", "24-hour vets"],
+      ["btn btn-ghost", "/pet-health-pattaya/", "Pet health"]
+    ]
+  },
+  "pet-relocation": {
+    label: "Relocation shortcuts",
+    links: [
+      ["btn btn-primary", "/bring-pet-to-thailand/checklist.html", "Import checklist"],
+      ["btn btn-ghost", "/take-pet-out-of-thailand/checklist.html", "Export checklist"],
+      ["btn btn-ghost", "/bring-pet-to-thailand/", "Import hub"],
+      ["btn btn-ghost", "#dir-listings", "All agents"]
+    ]
+  }
+};
+
+function catShortcutBar(key) {
+  var cfg = CAT_SHORTCUT_BARS[key];
+  if (!cfg) return "";
+  var links = cfg.links.map(function (l) {
+    return '<a class="' + l[0] + '" href="' + l[1] + '">' + l[2] + "</a>";
+  }).join("");
+  return '<div class="corridor-quick-bar corridor-quick-bar--sticky btn-row" role="navigation" aria-label="' +
+    cfg.label + '">' + links + "</div>";
+}
+
 function catCrossSection(key) {
   var links = CAT_CROSS[key];
   if (!links || !links.length) return "";
@@ -445,8 +521,9 @@ function bizContactActions(b) {
       '" target="_blank" rel="noopener nofollow">Official website</a>');
   }
   if (!parts.length) return "";
-  return '<div class="biz-actions btn-row contact-actions" role="group" aria-label="Contact ' +
-    esc(b.name) + '">' + parts.join("") + "</div>";
+  return '<div class="listing-contact-bar listing-contact-bar--sticky">' +
+    '<div class="biz-actions btn-row contact-actions" role="group" aria-label="Contact ' +
+    esc(b.name) + '">' + parts.join("") + "</div></div>";
 }
 
 function contactRows(b) {
@@ -761,13 +838,9 @@ Object.keys(CATEGORIES).forEach(function (key) {
       '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in ' +
       "Pattaya</a> or " +
       '<a href="/vets/?filter=24h">show only 24-hour clinics</a> in this directory. ' +
-      "Listings marked <span class=\"badge-24h\">24 hr</span> operate around the clock.</p></div>" +
-      '<div class="corridor-quick-bar corridor-quick-bar--sticky btn-row" role="navigation" aria-label="Vet directory shortcuts">' +
-      '<a class="btn btn-alert" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a>' +
-      '<a class="btn btn-primary" href="/vets/?filter=24h">24-hour filter</a>' +
-      '<a class="btn btn-ghost" href="/mobile-vets/">Mobile vets</a>' +
-      '<a class="btn btn-ghost" href="#dir-listings">All listings</a></div>';
+      "Listings marked <span class=\"badge-24h\">24 hr</span> operate around the clock.</p></div>";
   }
+  body += catShortcutBar(key);
   body += "</div></section>";
 
   if (key === "mobile-vets") { body += MOBILE_VETS_INTRO; }

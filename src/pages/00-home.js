@@ -181,6 +181,14 @@ const body =
     '</aside>' +
   '</div></div></section>' +
 
+  '<section class="section home-quick-section"><div class="container">' +
+    '<div class="corridor-quick-bar corridor-quick-bar--sticky btn-row home-quick-bar" role="navigation" aria-label="Quick links">' +
+    '<a class="btn btn-primary" href="/directory.html">Directory</a>' +
+    '<a class="btn btn-ghost" href="/guides.html">Guides</a>' +
+    '<a class="btn btn-alert" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a>' +
+    '<a class="btn btn-ghost" href="/bring-pet-to-thailand/">Import guide</a>' +
+    '<a class="btn btn-ghost" href="/start-here.html">Start here</a></div></div></section>' +
+
   '<section class="section"><div class="container">' +
     '<div class="section-head"><p class="eyebrow">Pet emergency</p>' +
     '<h2>24-hour animal hospitals in Pattaya</h2>' +

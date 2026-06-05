@@ -18,7 +18,8 @@ function emergencyClinicCard(b) {
     "<div><h3><a href=\"" + listing + "\">" + esc(b.name) + "</a></h3>" +
     '<p class="biz-sub">' + esc(b.type) + " &middot; " + esc(areaNm) + "</p></div>" +
     '<span class="badge-24h">Open 24 hours</span></div>' +
-    (actions ? '<div class="biz-actions btn-row contact-actions">' + actions + "</div>" : "") +
+    (actions ? '<div class="listing-contact-bar listing-contact-bar--sticky"><div class="biz-actions btn-row contact-actions">' +
+      actions + "</div></div>" : "") +
     '<div class="table-wrap"><table class="facts-table">' +
     '<caption class="visually-hidden">Contact details for ' + esc(b.name) + "</caption><tbody>" +
     (b.address ? "<tr><th scope=\"row\">Address</th><td>" + esc(b.address) + "</td></tr>" : "") +
