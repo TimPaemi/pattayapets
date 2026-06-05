@@ -761,7 +761,12 @@ Object.keys(CATEGORIES).forEach(function (key) {
       '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in ' +
       "Pattaya</a> or " +
       '<a href="/vets/?filter=24h">show only 24-hour clinics</a> in this directory. ' +
-      "Listings marked <span class=\"badge-24h\">24 hr</span> operate around the clock.</p></div>";
+      "Listings marked <span class=\"badge-24h\">24 hr</span> operate around the clock.</p></div>" +
+      '<div class="corridor-quick-bar corridor-quick-bar--sticky btn-row" role="navigation" aria-label="Vet directory shortcuts">' +
+      '<a class="btn btn-alert" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a>' +
+      '<a class="btn btn-primary" href="/vets/?filter=24h">24-hour filter</a>' +
+      '<a class="btn btn-ghost" href="/mobile-vets/">Mobile vets</a>' +
+      '<a class="btn btn-ghost" href="#dir-listings">All listings</a></div>';
   }
   body += "</div></section>";
 

@@ -227,6 +227,101 @@ function hubGuidesTopic(path) {
   return "";
 }
 
+var HUB_SHORTCUT_BARS = {
+  "/pet-emergency/": {
+    barClass: "emergency-quick-bar",
+    label: "Emergency shortcuts",
+    links: [
+      ["btn btn-alert", "/pet-emergency/24-hour-vets-pattaya.html", "24-hour vets in Pattaya"],
+      ["btn btn-ghost", "/vets/?filter=24h", "24-hour directory"],
+      ["btn btn-ghost", "/guides.html?topic=emergency", "Emergency guides"]
+    ]
+  },
+  "/bring-pet-to-thailand/": {
+    label: "Import shortcuts",
+    links: [
+      ["btn btn-primary", "/bring-pet-to-thailand/checklist.html", "Import checklist"],
+      ["btn btn-ghost", "/bring-pet-to-thailand/import-permit-thailand-dld.html", "DLD permit"],
+      ["btn btn-ghost", "/guides.html?topic=import", "Import guides"],
+      ["btn btn-ghost", "/pet-relocation/", "Relocation agents"]
+    ]
+  },
+  "/take-pet-out-of-thailand/": {
+    label: "Export shortcuts",
+    links: [
+      ["btn btn-primary", "/take-pet-out-of-thailand/checklist.html", "Export checklist"],
+      ["btn btn-ghost", "/take-pet-out-of-thailand/export-process.html", "Export process"],
+      ["btn btn-ghost", "/guides.html?topic=export", "Export guides"],
+      ["btn btn-ghost", "/pet-relocation/", "Relocation agents"]
+    ]
+  },
+  "/owning-a-pet-in-pattaya/": {
+    label: "Owning shortcuts",
+    links: [
+      ["btn btn-primary", "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", "Hot-climate care"],
+      ["btn btn-ghost", "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", "What it costs"],
+      ["btn btn-ghost", "/vets/", "Find a vet"],
+      ["btn btn-ghost", "/guides.html?topic=owning", "Owning guides"]
+    ]
+  },
+  "/adopt-a-pet-pattaya/": {
+    label: "Adoption shortcuts",
+    links: [
+      ["btn btn-primary", "/adopt-a-pet-pattaya/hope-for-strays.html", "Hope for Strays"],
+      ["btn btn-ghost", "/adopt-a-pet-pattaya/how-to-help.html", "How to help"],
+      ["btn btn-ghost", "/guides.html?topic=adoption", "Adoption guides"],
+      ["btn btn-ghost", "/vets/", "Find a vet"]
+    ]
+  },
+  "/pet-health-pattaya/": {
+    label: "Health shortcuts",
+    links: [
+      ["btn btn-primary", "/pet-health-pattaya/heartworm.html", "Heartworm"],
+      ["btn btn-ghost", "/pet-emergency/ticks-and-fleas.html", "Ticks &amp; fleas"],
+      ["btn btn-ghost", "/pet-emergency/24-hour-vets-pattaya.html", "24-hour vets"],
+      ["btn btn-ghost", "/guides.html?topic=health", "Health guides"]
+    ]
+  },
+  "/dog-friendly-pattaya/": {
+    label: "Dog-friendly shortcuts",
+    links: [
+      ["btn btn-primary", "/dog-friendly-pattaya/beaches.html", "Dog-friendly beaches"],
+      ["btn btn-ghost", "/dog-friendly-pattaya/restaurants.html", "Restaurants"],
+      ["btn btn-ghost", "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", "Where to walk"],
+      ["btn btn-ghost", "/guides.html?topic=lifestyle", "Out &amp; about guides"]
+    ]
+  },
+  "/dogs/": {
+    label: "Dog owner shortcuts",
+    links: [
+      ["btn btn-primary", "/dogs/puppy-care-pattaya.html", "Puppy care"],
+      ["btn btn-ghost", "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", "Where to walk"],
+      ["btn btn-ghost", "/vets/", "Vets directory"],
+      ["btn btn-ghost", "/guides.html?topic=species", "Dogs &amp; cats guides"]
+    ]
+  },
+  "/cats/": {
+    label: "Cat owner shortcuts",
+    links: [
+      ["btn btn-primary", "/cats/indoor-vs-outdoor-cats.html", "Indoor or outdoor?"],
+      ["btn btn-ghost", "/cats/cat-vaccinations-thailand.html", "Vaccinations"],
+      ["btn btn-ghost", "/adopt-a-pet-pattaya/", "Adopt a cat"],
+      ["btn btn-ghost", "/guides.html?topic=species", "Dogs &amp; cats guides"]
+    ]
+  }
+};
+
+function hubShortcutBar(path) {
+  var cfg = HUB_SHORTCUT_BARS[path];
+  if (!cfg) return "";
+  var barClass = cfg.barClass || "corridor-quick-bar";
+  var links = cfg.links.map(function (l) {
+    return '<a class="' + l[0] + '" href="' + l[1] + '">' + l[2] + "</a>";
+  }).join("");
+  return '<div class="' + barClass + ' ' + barClass + '--sticky btn-row" role="navigation" aria-label="' +
+    cfg.label + '">' + links + "</div>";
+}
+
 /* a cluster hub: intro + a grid of cards linking the cluster's pages */
 function hub(o) {
   let body =
@@ -236,26 +331,7 @@ function hub(o) {
     '<p class="lede">' + o.lede + "</p>" +
     '<p class="updated">Last updated ' + (o.updatedLabel || DEFAULT_UPDATED_LABEL) + "</p>";
   if (o.intro) body += '<div class="prose" style="margin-top:1.2rem">' + o.intro + "</div>";
-  if (o.path === "/pet-emergency/") {
-    body += '<div class="emergency-quick-bar emergency-quick-bar--sticky btn-row" role="navigation" aria-label="Emergency shortcuts">' +
-      '<a class="btn btn-alert" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in Pattaya</a>' +
-      '<a class="btn btn-ghost" href="/vets/?filter=24h">24-hour directory</a>' +
-      '<a class="btn btn-ghost" href="/guides.html?topic=emergency">Emergency guides</a></div>';
-  }
-  if (o.path === "/bring-pet-to-thailand/") {
-    body += '<div class="corridor-quick-bar corridor-quick-bar--sticky btn-row" role="navigation" aria-label="Import shortcuts">' +
-      '<a class="btn btn-primary" href="/bring-pet-to-thailand/checklist.html">Import checklist</a>' +
-      '<a class="btn btn-ghost" href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD permit</a>' +
-      '<a class="btn btn-ghost" href="/guides.html?topic=import">Import guides</a>' +
-      '<a class="btn btn-ghost" href="/pet-relocation/">Relocation agents</a></div>';
-  }
-  if (o.path === "/take-pet-out-of-thailand/") {
-    body += '<div class="corridor-quick-bar corridor-quick-bar--sticky btn-row" role="navigation" aria-label="Export shortcuts">' +
-      '<a class="btn btn-primary" href="/take-pet-out-of-thailand/checklist.html">Export checklist</a>' +
-      '<a class="btn btn-ghost" href="/take-pet-out-of-thailand/export-process.html">Export process</a>' +
-      '<a class="btn btn-ghost" href="/guides.html?topic=export">Export guides</a>' +
-      '<a class="btn btn-ghost" href="/pet-relocation/">Relocation agents</a></div>';
-  }
+  body += hubShortcutBar(o.path);
   var guidesTopic = o.guidesTopic || hubGuidesTopic(o.path);
   if (guidesTopic) body += hubQuickBar(guidesTopic);
   if (guidesTopic) {

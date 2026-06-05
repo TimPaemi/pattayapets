@@ -99,6 +99,12 @@ pages.push({
     "<h1>The Pattaya pet business directory</h1>" +
     "<p class=\"lede\">Seven categories of pet business across Pattaya, each one " +
     "browsable by neighbourhood. Reviewed honestly &mdash; never paid.</p></div>" +
+    '<div class="corridor-quick-bar corridor-quick-bar--sticky btn-row" role="navigation" aria-label="Directory shortcuts">' +
+    '<a class="btn btn-primary" href="/vets/">Vets</a>' +
+    '<a class="btn btn-alert" href="/vets/?filter=24h">24-hour vets</a>' +
+    '<a class="btn btn-ghost" href="/groomers/">Groomers</a>' +
+    '<a class="btn btn-ghost" href="#browse-area">By area</a>' +
+    '<a class="btn btn-ghost" href="/guides.html">Guides</a></div>' +
     '<div class="callout callout-note"><p>Every business starts as a verified ' +
     "<strong>facts page</strong> &mdash; name, area, services, hours, languages and " +
     "contact details &mdash; marked <em>&lsquo;not yet reviewed&rsquo;</em>. An " +
@@ -131,7 +137,7 @@ pages.push({
       "Vets who come to you &mdash; useful for nervous pets and multi-cat homes.", "View mobile vets") +
     "</div></div></section>" +
 
-    '<section class="section"><div class="container">' +
+    '<section class="section" id="browse-area"><div class="container">' +
     '<div class="section-head"><h2>Browse by area</h2>' +
     "<p>Pattaya stretches a long way along the coast. Find pet services in your " +
     "part of the city.</p></div>" +

@@ -72,6 +72,17 @@ module.exports = [
       '<div class="btn-row">' +
       '<a class="btn btn-alert" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets (cached)</a>' +
       '<a class="btn btn-ghost" href="/">Home page</a></div>' +
+      '<details class="corridor-panel page-jump-panel">' +
+      '<summary class="corridor-panel__title">Pages that may open offline</summary>' +
+      '<div class="corridor-panel__body"><p class="notice">If you visited these before losing connection, they may still load from cache.</p>' +
+      '<div class="chips">' +
+      '<a class="chip chip-link" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a>' +
+      '<a class="chip chip-link" href="/directory.html">Directory</a>' +
+      '<a class="chip chip-link" href="/vets/">Vets</a>' +
+      '<a class="chip chip-link" href="/guides.html">Guides</a>' +
+      '<a class="chip chip-link" href="/bring-pet-to-thailand/">Import guide</a>' +
+      '<a class="chip chip-link" href="/start-here.html">Start here</a>' +
+      "</div></div></details>" +
       "<p>Pages you have already visited may still open from your device. Once you " +
       "are back online, everything will work normally again. Try " +
       '<a href="/">the home page</a>, the ' +

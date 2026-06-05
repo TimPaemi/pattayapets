@@ -234,7 +234,7 @@ padding:12px 0 14px;margin-bottom:.5rem;border-bottom:1px solid var(--border-sof
 .page-jump-panel{margin:0 0 1.2rem}
 .page-jump-panel .toc a{display:block;padding:8px 11px;border-radius:var(--r-sm);text-decoration:none;color:var(--forest)}
 .page-jump-panel .toc a:hover{background:var(--banyan-tint);color:var(--banyan-dk)}
-.prose h2[id]{scroll-margin-top:6rem}
+.prose h2[id],#browse-area,#dir-listings,#guide-listings,#area-listings{scroll-margin-top:6rem}
 .dir-filter-status:focus{outline:none}
 .dir-filter-status:focus-visible{outline:3px solid var(--banyan);outline-offset:2px}
 @media(max-width:560px){
