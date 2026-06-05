@@ -442,6 +442,22 @@
     else mq.addListener(sync);
   })();
 
+  /* Page jump panels (start-here, 404): collapsible on narrow screens */
+  (function () {
+    var panels = document.querySelectorAll(".page-jump-panel");
+    if (!panels.length) return;
+    var mq = window.matchMedia("(max-width: 900px)");
+    function sync() {
+      panels.forEach(function (p) {
+        if (!mq.matches) p.setAttribute("open", "");
+        else p.removeAttribute("open");
+      });
+    }
+    sync();
+    if (mq.addEventListener) mq.addEventListener("change", sync);
+    else mq.addListener(sync);
+  })();
+
   /* Keep reading: collapsible on narrow screens, expanded on desktop */
   (function () {
     var panels = document.querySelectorAll(".related-panel");
@@ -629,26 +645,25 @@
       if (active) active.setAttribute("aria-current", "location");
     }
     function pickByScroll() {
-      var y = window.scrollY + 110;
+      var y = window.scrollY + 120;
       var current = headings[0];
-      headings.forEach(function (h) {
-        if (h.el.offsetTop <= y) current = h;
-      });
+      for (var i = headings.length - 1; i >= 0; i--) {
+        if (headings[i].el.offsetTop <= y) {
+          current = headings[i];
+          break;
+        }
+      }
       setActive(current.link);
     }
-    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!reduceMotion && "IntersectionObserver" in window) {
-      var obs = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          var hit = headings.find(function (h) { return h.el === entry.target; });
-          if (hit) setActive(hit.link);
-        });
-      }, { rootMargin: "-20% 0px -65% 0px", threshold: 0 });
-      headings.forEach(function (h) { obs.observe(h.el); });
-    } else {
-      window.addEventListener("scroll", pickByScroll, { passive: true });
-      pickByScroll();
-    }
+    var ticking = false;
+    window.addEventListener("scroll", function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        pickByScroll();
+        ticking = false;
+      });
+    }, { passive: true });
+    pickByScroll();
   })();
 })();

@@ -42,6 +42,7 @@ pages.push({
     "finding a vet, the hot climate, bringing a pet in or out, and adoption.",
   crumb: "Start here",
   breadcrumbs: [],
+  bodyClass: "page-start-here",
   updated: "2026-05-29",
   body:
     '<section class="section"><div class="container"><div class="prose">' +
@@ -61,7 +62,22 @@ pages.push({
     "a 24-hour animal hospital. Do not wait. See our list of " +
     '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in Pattaya</a> ' +
     "for addresses and contact details.</p></div>" +
-    "<h2>1. Know where your nearest vet is &mdash; before you need one</h2>" +
+    '<div class="orientation-quick-bar orientation-quick-bar--sticky btn-row" role="navigation" ' +
+    'aria-label="Orientation shortcuts">' +
+    '<a class="btn btn-primary" href="/directory.html">Directory</a>' +
+    '<a class="btn btn-ghost" href="/guides.html">Guides</a>' +
+    '<a class="btn btn-ghost" href="/search.html">Search</a>' +
+    '<a class="btn btn-alert" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a></div>' +
+    '<details class="corridor-panel page-jump-panel">' +
+    '<summary class="corridor-panel__title">Jump to section</summary>' +
+    '<div class="corridor-panel__body"><nav aria-label="Sections on this page"><ul class="toc">' +
+    '<li><a href="#start-vet">Nearest vet</a></li>' +
+    '<li><a href="#start-heat">Heat risk</a></li>' +
+    '<li><a href="#start-import">Import &amp; export</a></li>' +
+    '<li><a href="#start-adopt">Adoption</a></li>' +
+    '<li><a href="#start-essentials">Everyday essentials</a></li>' +
+    "</ul></nav></div></details>" +
+    '<h2 id="start-vet">1. Know where your nearest vet is &mdash; before you need one</h2>' +
     "<p>The single most useful thing you can do as a new pet owner here is to know, " +
     "in advance, which clinic you would go to. Browse the " +
     '<a href="/vets/">directory of vets and animal hospitals</a> (use the area chips on ' +
@@ -71,14 +87,14 @@ pages.push({
     "Note which clinics are open 24 hours, and read our " +
     '<a href="/pet-health-pattaya/">pet health guide</a> for the tropical-climate risks ' +
     "to plan around.</p>" +
-    "<h2>2. Heat is the biggest everyday risk</h2>" +
+    '<h2 id="start-heat">2. Heat is the biggest everyday risk</h2>' +
     "<p>Pattaya is hot and humid year round. Heatstroke, hot pavement burning paw " +
     "pads, and dehydration are common and preventable. Walk dogs early morning or " +
     "after sunset, never leave a pet in a parked car, and read our guide to " +
     '<a href="/owning-a-pet-in-pattaya/hot-climate-pet-care.html">hot-climate pet ' +
     "care</a> and " +
     '<a href="/pet-health-pattaya/">pet health in Pattaya</a>.</p>' +
-    "<h2>3. Bringing a pet to Thailand &mdash; or taking one out</h2>" +
+    '<h2 id="start-import">3. Bringing a pet to Thailand &mdash; or taking one out</h2>' +
     "<p>Pet import and export is a process with real deadlines: microchip, rabies " +
     "vaccination, a titer test, a health certificate and an import permit from the " +
     "Thai Department of Livestock Development. Start early. Our flagship guide to " +
@@ -99,7 +115,7 @@ pages.push({
     '<a href="https://pattaya-school-guide.com/" target="_blank" rel="noopener noreferrer">' +
     "Pattaya School Guide</a> for schools and family planning &mdash; then use " +
     "this site for the pet side of the move.</p>" +
-    "<h2>4. Thinking of adopting?</h2>" +
+    '<h2 id="start-adopt">4. Thinking of adopting?</h2>' +
     "<p>Pattaya has several established shelters and rescue organisations. If you " +
     "can offer a home, see our guide to " +
     '<a href="/adopt-a-pet-pattaya/">adopting a pet in Pattaya</a>. You can also ' +
@@ -110,7 +126,7 @@ pages.push({
     '<a href="/adopt-a-pet-pattaya/soi-dog-foundation.html">Soi Dog Foundation</a> ' +
     "and " +
     '<a href="/adopt-a-pet-pattaya/animal-army-foundation.html">Animal Army Foundation</a>.</p>' +
-    "<h2>5. Everyday essentials</h2>" +
+    '<h2 id="start-essentials">5. Everyday essentials</h2>' +
     "<p>For food, litter and supplies, see the " +
     '<a href="/pet-shops/">pet shops directory</a>. For grooming, ' +
     '<a href="/groomers/">groomers</a>. For obedience and behaviour, ' +

@@ -23,8 +23,9 @@ module.exports = [
       '<a class="btn btn-primary" href="/search.html">Search the site</a>' +
       '<a class="btn btn-ghost" href="/directory.html">Directory</a>' +
       '<a class="btn btn-alert" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a></div>' +
-      "<p>Try one of these instead:</p>" +
-      "<ul>" +
+      '<details class="corridor-panel page-jump-panel">' +
+      '<summary class="corridor-panel__title">Popular pages</summary>' +
+      '<div class="corridor-panel__body"><p class="notice">Try one of these instead:</p><ul>' +
       '<li><a href="/">The PattayaPets home page</a></li>' +
       '<li><a href="/bring-pet-to-thailand/">Bringing a pet to Thailand</a></li>' +
       '<li><a href="/adopt-a-pet-pattaya/">Adopt a pet in Pattaya</a></li>' +
@@ -46,7 +47,7 @@ module.exports = [
       '<li><a href="/cats/">Cats in Pattaya</a></li>' +
       '<li><a href="/sitemap.html">The full sitemap</a></li>' +
       '<li><a href="/search.html">Search the site</a></li>' +
-      "</ul>" +
+      "</ul></div></details>" +
       '<p style="margin-top:1.2rem">Sister guides: ' +
       '<a href="https://pattayavisahelp.com/" target="_blank" rel="noopener noreferrer">Pattaya Visa Help</a>, ' +
       '<a href="https://pattaya-vehicle-rentals.com/" target="_blank" rel="noopener noreferrer">Vehicle Rentals</a>, ' +

@@ -102,6 +102,11 @@ color:var(--banyan-dk);text-decoration:none}
 .breadcrumb a:hover{color:var(--banyan);text-decoration:underline}
 .breadcrumb li+li::before{content:"/";margin-right:7px;color:var(--border)}
 .breadcrumb [aria-current=page]{color:var(--ink-soft)}
+@media(max-width:720px){
+.breadcrumb ol{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+.breadcrumb li{flex-shrink:0}
+.breadcrumb a,.breadcrumb [aria-current=page]{padding:2px 0}
+}
 main{display:block;min-height:50vh}
 .section{padding:74px 0}
 .section-tint{background:var(--mist);border-top:1px solid var(--border-soft);
