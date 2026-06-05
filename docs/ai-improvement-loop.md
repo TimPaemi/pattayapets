@@ -90,6 +90,7 @@ Not deployed. Last updated: 30 May 2026.
 | **127** | **UX-only:** Emergency hub sticky shortcuts; collapsible hub guide groups (4+ cards) and “More to read”; tappable directory cards; filter/search scroll-to-results; table scroll aria-label |
 | **128** | **UX-only:** Collapsible “Keep reading” on guide articles/hubs; search drawer body scroll lock; filter status screen-reader focus; search no-results topic chips; print-friendly 24h vets; FAQ scroll margin |
 | **129** | **UX-only:** Start-here sticky shortcuts + jump nav; 404 popular pages panel; breadcrumb horizontal scroll on mobile; TOC scroll-spy via scroll; prose heading scroll-margin; filter status focus ring |
+| **130** | **UX-only:** Fix `.prose a` overriding alert button contrast (LH a11y 96→100); drop mismatched `aria-label` on Call buttons; sticky import/export hub shortcut bars |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 

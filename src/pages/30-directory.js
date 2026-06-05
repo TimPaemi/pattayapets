@@ -416,8 +416,7 @@ function verdictBadge(b) {
 
 function contactChip(b) {
   if (b.phone && b.tel) {
-    return '<a class="chip chip-link" href="tel:' + b.tel + '" aria-label="Call ' +
-      esc(b.name) + '">' + esc(b.phone) + "</a>";
+    return '<a class="chip chip-link" href="tel:' + b.tel + '">' + esc(b.phone) + "</a>";
   }
   if (b.whatsapp) {
     return '<a class="chip chip-link" href="https://wa.me/' + esc(b.whatsapp) +
@@ -435,8 +434,7 @@ function bizContactActions(b) {
   var parts = [];
   if (b.phone && b.tel) {
     var cls = b.c24 ? "btn btn-alert" : "btn btn-primary";
-    parts.push('<a class="' + cls + '" href="tel:' + b.tel + '" aria-label="Call ' +
-      esc(b.name) + '">Call ' + esc(b.phone) + "</a>");
+    parts.push('<a class="' + cls + '" href="tel:' + b.tel + '">Call ' + esc(b.phone) + "</a>");
   }
   if (b.whatsapp) {
     parts.push('<a class="btn btn-ghost" href="https://wa.me/' + esc(b.whatsapp) +

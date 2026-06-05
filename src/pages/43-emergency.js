@@ -10,8 +10,7 @@ function emergencyClinicCard(b) {
   var listing = "/" + b.category + "/" + b.slug + ".html";
   var actions = "";
   if (b.phone && b.tel) {
-    actions += '<a class="btn btn-alert" href="tel:' + b.tel + '" aria-label="Call ' +
-      esc(b.name) + ' now">Call ' + esc(b.phone) + "</a>";
+    actions += '<a class="btn btn-alert" href="tel:' + b.tel + '">Call ' + esc(b.phone) + "</a>";
   }
   actions += '<a class="btn btn-ghost" href="' + listing + '">Full listing</a>';
   return '<article class="biz-card biz-card--emergency">' +

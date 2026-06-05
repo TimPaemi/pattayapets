@@ -242,6 +242,20 @@ function hub(o) {
       '<a class="btn btn-ghost" href="/vets/?filter=24h">24-hour directory</a>' +
       '<a class="btn btn-ghost" href="/guides.html?topic=emergency">Emergency guides</a></div>';
   }
+  if (o.path === "/bring-pet-to-thailand/") {
+    body += '<div class="corridor-quick-bar corridor-quick-bar--sticky btn-row" role="navigation" aria-label="Import shortcuts">' +
+      '<a class="btn btn-primary" href="/bring-pet-to-thailand/checklist.html">Import checklist</a>' +
+      '<a class="btn btn-ghost" href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD permit</a>' +
+      '<a class="btn btn-ghost" href="/guides.html?topic=import">Import guides</a>' +
+      '<a class="btn btn-ghost" href="/pet-relocation/">Relocation agents</a></div>';
+  }
+  if (o.path === "/take-pet-out-of-thailand/") {
+    body += '<div class="corridor-quick-bar corridor-quick-bar--sticky btn-row" role="navigation" aria-label="Export shortcuts">' +
+      '<a class="btn btn-primary" href="/take-pet-out-of-thailand/checklist.html">Export checklist</a>' +
+      '<a class="btn btn-ghost" href="/take-pet-out-of-thailand/export-process.html">Export process</a>' +
+      '<a class="btn btn-ghost" href="/guides.html?topic=export">Export guides</a>' +
+      '<a class="btn btn-ghost" href="/pet-relocation/">Relocation agents</a></div>';
+  }
   var guidesTopic = o.guidesTopic || hubGuidesTopic(o.path);
   if (guidesTopic) body += hubQuickBar(guidesTopic);
   if (guidesTopic) {
