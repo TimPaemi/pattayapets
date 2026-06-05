@@ -528,7 +528,7 @@ function areaFiltersBar(list, areaSlug) {
       ck + '">' + esc(CATEGORIES[ck].name) + " (" + n + ")</a>";
   });
   return '<div class="dir-filters" role="group" aria-label="Filter by category">' + chips + "</div>" +
-    '<p class="dir-filter-status notice" id="area-filter-status" hidden></p>';
+    '<p class="dir-filter-status notice" id="area-filter-status" role="status" tabindex="-1" hidden></p>';
 }
 
 function areaFiltersPanel(list, areaSlug) {
@@ -559,7 +559,7 @@ function dirFiltersBar(list, areaKeys, catKey) {
       esc(AREAS[ak].name) + " (" + n + ")</a>";
   });
   return '<div class="dir-filters" role="group" aria-label="Filter listings">' + chips + "</div>" +
-    '<p class="dir-filter-status notice" id="dir-filter-status" hidden></p>';
+    '<p class="dir-filter-status notice" id="dir-filter-status" role="status" tabindex="-1" hidden></p>';
 }
 
 function dirFiltersPanel(list, areaKeys, catKey) {

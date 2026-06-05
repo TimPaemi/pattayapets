@@ -58,7 +58,7 @@ function guideFiltersBar() {
     guideFilterChip("services", "Services");
   return '<div class="guide-filters dir-filters" role="group" aria-label="Filter guides">' +
     chips + "</div>" +
-    '<p class="dir-filter-status notice" id="guide-filter-status" hidden></p>';
+    '<p class="dir-filter-status notice" id="guide-filter-status" role="status" tabindex="-1" hidden></p>';
 }
 
 const { BUSINESSES } = require("../data/businesses.js");

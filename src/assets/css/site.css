@@ -265,7 +265,12 @@ text-transform:uppercase;color:#fff;margin:0;padding:16px 0;cursor:pointer;list-
 }
 
 .related{margin-top:3.2rem;padding-top:2.2rem;border-top:1px solid var(--border)}
-.related h2{font-size:1.5rem;margin-bottom:1.4rem}
+.related h2,.related-panel>.corridor-panel__title{font-size:1.5rem;margin-bottom:1.4rem}
+.related-panel.corridor-panel{margin-top:0;border:0;background:transparent;box-shadow:none}
+.related-panel>.corridor-panel__title{padding:0 0 1rem;font-size:1.5rem}
+.related-panel>.corridor-panel__body{padding:0}
+.search-empty-chips{margin-top:1rem}
+#faq,.faq{scroll-margin-top:6rem}
 .sidebar-stack{display:flex;flex-direction:column;gap:1rem}
 .link-panel__list li{margin-bottom:.55rem}
 .link-panel__list .link-hint{display:block;font-size:.78rem;color:var(--sage);margin-top:.15rem;line-height:1.35}
@@ -336,6 +341,9 @@ background:linear-gradient(var(--sand) 70%,transparent)}
 .hub-group-panel,.more-read-panel{border:0;background:transparent;box-shadow:none}
 .hub-group-panel .corridor-panel__title,.more-read-panel .corridor-panel__title{display:none}
 .hub-group-panel .corridor-panel__body,.more-read-panel .corridor-panel__body{display:block!important;padding:0}
+.related-panel>.corridor-panel__title{display:none}
+.related-panel>.corridor-panel__body::before{content:"Keep reading";display:block;font-family:var(--fd);
+font-weight:600;font-size:1.5rem;color:var(--forest);margin-bottom:1.4rem}
 }
 
 .field{margin-bottom:18px}
@@ -359,7 +367,7 @@ border-color:var(--banyan);box-shadow:0 0 0 3px var(--banyan-tint)}
 .search-results{margin-top:1.8rem}
 .search-results__count{margin:0 0 1.1rem;font-size:.95rem;font-weight:600;color:var(--sage)}
 .search-result{margin-bottom:14px}
-body.nav-open{overflow:hidden}
+body.nav-open,body.search-open{overflow:hidden}
 
 .back-to-top{position:fixed;z-index:180;right:max(18px,env(safe-area-inset-right));
 bottom:max(18px,env(safe-area-inset-bottom));width:48px;height:48px;border:none;border-radius:50%;
@@ -446,6 +454,11 @@ a{color:#000}
 .print-guide .prose h2{break-after:avoid-page}
 .print-guide .faq,.print-guide .callout{break-inside:avoid-page}
 .print-guide .prose a[href^="http"]::after{font-size:9pt;color:#444;content:" (" attr(href) ")"}
+.print-emergency .guide-actions,.print-emergency .sidebar,.print-emergency .emergency-quick-bar{display:none!important}
+.print-emergency .related{display:none}
+.print-emergency .emergency-clinic-grid .biz-card{break-inside:avoid-page}
+.print-emergency .contact-actions .btn-ghost.copy-phone-btn{display:none}
+.print-emergency .biz-card a[href^="tel:"]::after{font-size:10pt;color:#333;content:" — " attr(href)}
 }
 @media(max-width:560px){
 .facts-table tr{display:block;padding:12px 16px;border-bottom:1px solid var(--border-soft)}

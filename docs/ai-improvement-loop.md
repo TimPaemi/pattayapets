@@ -88,6 +88,7 @@ Not deployed. Last updated: 30 May 2026.
 | **125** | **UX-only:** Mobile header search drawer; sticky search field on `/search.html`; collapsible browse/network chips on search; collapsible hub “Jump to” bars; stronger ghost-button contrast on emergency bars |
 | **126** | **UX-only:** Sticky emergency shortcuts on guide pages; mobile full-width button rows; search drawer dismiss + nav coordination; copy-phone on listings; collapsible area/search popular links; 404/offline emergency CTAs |
 | **127** | **UX-only:** Emergency hub sticky shortcuts; collapsible hub guide groups (4+ cards) and “More to read”; tappable directory cards; filter/search scroll-to-results; table scroll aria-label |
+| **128** | **UX-only:** Collapsible “Keep reading” on guide articles/hubs; search drawer body scroll lock; filter status screen-reader focus; search no-results topic chips; print-friendly 24h vets; FAQ scroll margin |
 | 5835bdf | Batches 60–61 freshness + CTR titles |
 | 6cc9dfa | Internal links: masthead, trainers, adoption orgs |
 

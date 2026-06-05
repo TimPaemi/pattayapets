@@ -178,11 +178,13 @@ function article(o) {
 
   let body = '<section class="section"><div class="container">' + grid;
   if (o.related && o.related.length) {
-    body += '<div class="related"><h2>Keep reading</h2><div class="grid grid-3">' +
+    body += '<details class="corridor-panel related-panel related">' +
+      '<summary class="corridor-panel__title">Keep reading</summary>' +
+      '<div class="corridor-panel__body"><div class="grid grid-3">' +
       o.related.map(function (r) {
         return '<a class="card" href="' + r.path + '"><h3>' + r.name + "</h3>" +
           "<p>" + (r.desc || "") + '</p><span class="card-meta">Read &rarr;</span></a>';
-      }).join("") + "</div></div>";
+      }).join("") + "</div></div></details>";
   }
   body += "</div></section>";
 
@@ -192,6 +194,9 @@ function article(o) {
   }
   if (/\/checklist\.html$/.test(o.path)) {
     bodyClass = (bodyClass ? bodyClass + " " : "") + "print-guide";
+  }
+  if (/\/24-hour-vets-pattaya\.html$/.test(o.path)) {
+    bodyClass = (bodyClass ? bodyClass + " " : "") + "print-emergency";
   }
 
   return {
@@ -273,11 +278,13 @@ function hub(o) {
 
   if (o.related && o.related.length) {
     body += '<section class="section"><div class="container">' +
-      '<div class="related"><h2>Keep reading</h2><div class="grid grid-3">' +
+      '<details class="corridor-panel related-panel related">' +
+      '<summary class="corridor-panel__title">Keep reading</summary>' +
+      '<div class="corridor-panel__body"><div class="grid grid-3">' +
       o.related.map(function (r) {
         return '<a class="card" href="' + r.path + '"><h3>' + r.name + "</h3>" +
           "<p>" + (r.desc || "") + '</p><span class="card-meta">Read &rarr;</span></a>';
-      }).join("") + "</div></div></div></section>";
+      }).join("") + "</div></div></details></div></section>";
   }
 
   var hubTopic = o.guidesTopic || hubGuidesTopic(o.path);

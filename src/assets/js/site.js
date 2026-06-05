@@ -42,6 +42,11 @@
     }
   }
 
+  function announceFilterStatus(status) {
+    if (!status || status.hidden) return;
+    try { status.focus({ preventScroll: true }); } catch (e) {}
+  }
+
   function collapseFilterPanel(el) {
     if (!el) return;
     var panel = el.closest(".filter-panel");
@@ -221,7 +226,14 @@
       searchOut.setAttribute("aria-busy", "false");
       if (!hits.length) {
         searchOut.innerHTML = '<p class="notice" role="status">No pages matched &ldquo;' + esc(q) +
-          '&rdquo;. Try fewer or different words.</p>';
+          '&rdquo;. Try fewer or different words, or pick a topic below.</p>' +
+          '<div class="chips search-empty-chips" role="navigation" aria-label="Popular searches">' +
+          '<a class="chip chip-link" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a>' +
+          '<a class="chip chip-link" href="/bring-pet-to-thailand/">Import guide</a>' +
+          '<a class="chip chip-link" href="/vets/">Vets directory</a>' +
+          '<a class="chip chip-link" href="/area/jomtien.html">Jomtien</a>' +
+          '<a class="chip chip-link" href="/guides.html?topic=emergency">Emergency guides</a>' +
+          '<a class="chip chip-link" href="/directory.html">Directory</a></div>';
         return;
       }
       searchOut.innerHTML = '<p class="search-results__count" role="status">' + hits.length +
@@ -295,6 +307,7 @@
   /* Mobile header search drawer */
   searchDrawers.forEach(function (drawer) {
     drawer.addEventListener("toggle", function () {
+      syncSearchOpen();
       if (drawer.open) {
         if (nav && nav.classList.contains("open")) {
           nav.classList.remove("open");
@@ -362,7 +375,10 @@
     if (q) {
       q.focus();
       var drawer = q.closest(".header-search-drawer");
-      if (drawer && !drawer.open) drawer.setAttribute("open", "");
+      if (drawer && !drawer.open) {
+        drawer.setAttribute("open", "");
+        syncSearchOpen();
+      }
       return;
     }
     location.href = "/search.html";
@@ -426,6 +442,22 @@
     else mq.addListener(sync);
   })();
 
+  /* Keep reading: collapsible on narrow screens, expanded on desktop */
+  (function () {
+    var panels = document.querySelectorAll(".related-panel");
+    if (!panels.length) return;
+    var mq = window.matchMedia("(max-width: 900px)");
+    function sync() {
+      panels.forEach(function (p) {
+        if (!mq.matches) p.setAttribute("open", "");
+        else p.removeAttribute("open");
+      });
+    }
+    sync();
+    if (mq.addEventListener) mq.addEventListener("change", sync);
+    else mq.addListener(sync);
+  })();
+
   /* Guide TOC: collapsible on narrow screens, always open on desktop sidebar */
   (function () {
     var panels = document.querySelectorAll(".toc-panel");
@@ -467,6 +499,7 @@
       });
       filterResultStatus(status, shown, cards.length,
         "No listings match this filter. Try another area or view all.", "listings");
+      announceFilterStatus(status);
       filterQuerySet("filter", filter);
       if (filter !== "all") scrollToEl(list);
     }
@@ -522,6 +555,7 @@
       });
       filterResultStatus(status, shown, cards.length,
         "No guides match this filter. View all to reset.", "guides");
+      announceFilterStatus(status);
       filterQuerySet("topic", filter);
       if (filter !== "all") scrollToEl(list);
     }
@@ -561,6 +595,7 @@
       });
       filterResultStatus(status, shown, blocks.length,
         "No categories match this filter. View all to reset.", "categories");
+      announceFilterStatus(status);
       filterQuerySet("cat", filter);
       if (filter !== "all") scrollToEl(list);
     }
