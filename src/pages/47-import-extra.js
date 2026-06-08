@@ -210,7 +210,7 @@ const pages = [];
 
 pages.push(country({
   slug: "from-canada", crumb: "From Canada",
-  title: "Bring a Pet to Thailand from Canada (CFIA & DLD 2026) | PattayaPets",
+  title: "Bring Pet to Thailand from Canada (2026) | PattayaPets",
   desc: "Canada to Thailand pet import: CFIA export endorsement, DLD permit timeline, " +
     "document checklist, Toronto/Vancouver routing and return-to-Canada planning.",
   h1: "Bringing a pet to Thailand from Canada",
@@ -281,7 +281,7 @@ pages.push(country({
 
 pages.push(country({
   slug: "from-germany", crumb: "From Germany",
-  title: "Bring a Pet to Thailand from Germany (EU & DLD 2026) | PattayaPets",
+  title: "Bring Pet to Thailand from Germany (2026) | PattayaPets",
   desc: "Germany to Thailand pet import: EU export certificate, Veterinäramt endorsement, " +
     "DLD permit timeline, document checklist and EU return planning.",
   h1: "Bringing a pet to Thailand from Germany",
@@ -375,7 +375,7 @@ pages.push(country({
 
 pages.push(country({
   slug: "from-russia", crumb: "From Russia",
-  title: "Bring a Pet to Thailand from Russia (FSVPS & DLD 2026) | PattayaPets",
+  title: "Bring Pet to Thailand from Russia (2026) | PattayaPets",
   desc: "Russia to Thailand pet import: FSVPS export certificate, DLD permit timeline, " +
     "document checklist, titer test planning and return-trip notes.",
   h1: "Bringing a pet to Thailand from Russia",

@@ -11,7 +11,7 @@ const pages = [];
 
 pages.push(hub({
   path: "/owning-a-pet-in-pattaya/",
-  title: "Owning a Pet in Pattaya | Costs, Housing, Heat & Daily Life | PattayaPets",
+  title: "Owning a Pet in Pattaya | Costs, Housing & Heat | PattayaPets",
   image: "/assets/img/og-owning.png",
   updated: "2026-06-04",
   desc: "What it is really like to own a pet in Pattaya: costs, hot-climate care, " +
@@ -55,6 +55,9 @@ pages.push(hub({
         { name: "Microchipping your pet", desc: "The best route home for a lost pet, and keeping details current.", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html" },
         { name: "Pet sitters & dog walkers", desc: "Finding reliable care for when you are away or at work.", path: "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html" },
         { name: "Getting to the vet", desc: "Pet transport options in Pattaya without a car.", path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html" },
+        { name: "Pet taxi Pattaya", desc: "Airport runs, vet trips and private pet transport.", path: "/owning-a-pet-in-pattaya/pet-taxi-pattaya.html" },
+        { name: "Bangkok to Pattaya with a pet", desc: "Road transfer after import or from the airports.", path: "/owning-a-pet-in-pattaya/bangkok-to-pattaya-with-pet.html" },
+        { name: "Vet costs in Pattaya", desc: "Typical fees and how to budget.", path: "/owning-a-pet-in-pattaya/vet-costs-pattaya.html" },
         { name: "Travelling in Thailand", desc: "Road trips, domestic flights and pet-friendly stays beyond Pattaya.", path: "/owning-a-pet-in-pattaya/travelling-in-thailand.html" }
       ]
     },

@@ -12,7 +12,7 @@ const pages = [];
 
 pages.push(hub({
   path: "/dog-friendly-pattaya/",
-  title: "Dog-Friendly Pattaya | Beaches, Cafes, Restaurants & Hotels | PattayaPets",
+  title: "Dog-Friendly Pattaya | Beaches, Cafes & Hotels | PattayaPets",
   image: "/assets/img/og-dog-friendly.png",
   updated: "2026-06-04",
   desc: "Dog-friendly Pattaya: beaches, cafes, restaurants, hotels and condos that welcome " +
@@ -335,7 +335,7 @@ pages.push(df({
 
 pages.push(df({
   slug: "hotels", crumb: "Dog-friendly hotels",
-  title: "Dog-Friendly Hotels Pattaya | Pet-Friendly Stays & Booking Tips | PattayaPets",
+  title: "Pet Friendly Hotels Pattaya | Dog-Friendly Stays | PattayaPets",
   desc: "Finding pet-friendly accommodation in Pattaya, what to confirm before " +
     "you book, and the questions that avoid a nasty surprise at check-in.",
   h1: "Dog-friendly hotels in Pattaya",

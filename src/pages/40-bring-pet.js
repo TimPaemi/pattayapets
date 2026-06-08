@@ -45,7 +45,7 @@ const pages = [];
 /* ---------------- HUB ---------------- */
 pages.push(hub({
   path: "/bring-pet-to-thailand/",
-  title: "How to Bring a Pet to Thailand (DLD Guide 2026) | PattayaPets",
+  title: "Bring a Pet to Thailand (DLD Guide 2026) | PattayaPets",
   image: "/assets/img/og-import.png",
   updated: "2026-06-03",
   desc: "How to bring a dog or cat to Thailand in 2026: DLD import permit, microchip, " +
@@ -90,7 +90,9 @@ pages.push(hub({
       title: "Plan and budget",
       cards: [
         { tag: "Money", name: "What it costs", desc: "An honest breakdown of where the money goes, with rough ranges.", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html" },
-        { tag: "Arrival", name: "U-Tapao or Bangkok?", desc: "Which airport to fly your pet into, and how to reach Pattaya.", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html" }
+        { tag: "Arrival", name: "U-Tapao or Bangkok?", desc: "Which airport to fly your pet into, and how to reach Pattaya.", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html" },
+        { tag: "Dogs", name: "Bring a dog to Thailand", desc: "Dog-specific vaccines, CDC notes and settling in Pattaya.", path: "/bring-pet-to-thailand/bring-a-dog-to-thailand.html" },
+        { tag: "Cats", name: "Bring a cat to Thailand", desc: "Cat vaccines, cabin travel and indoor life in Pattaya.", path: "/bring-pet-to-thailand/bring-a-cat-to-thailand.html" }
       ]
     },
     {
@@ -119,7 +121,10 @@ pages.push(hub({
         { name: "From India", desc: "AQCS export certificate and planning from a high-rabies origin.", path: "/bring-pet-to-thailand/from-india.html" },
         { name: "From the Philippines", desc: "BAI export paperwork and direct flights to Thailand.", path: "/bring-pet-to-thailand/from-philippines.html" },
         { name: "From China", desc: "Chinese customs export and direct flights from major cities.", path: "/bring-pet-to-thailand/from-china.html" },
-        { name: "From South Africa", desc: "DAFF export certificate and planning from Africa.", path: "/bring-pet-to-thailand/from-south-africa.html" }
+        { name: "From South Africa", desc: "DAFF export certificate and planning from Africa.", path: "/bring-pet-to-thailand/from-south-africa.html" },
+        { name: "From Italy", desc: "EU export paperwork via the Italian veterinary services.", path: "/bring-pet-to-thailand/from-italy.html" },
+        { name: "From Malaysia", desc: "Short ASEAN corridor — DVS export and direct flights.", path: "/bring-pet-to-thailand/from-malaysia.html" },
+        { name: "From South Korea", desc: "APQA export certificate and Bangkok routes.", path: "/bring-pet-to-thailand/from-south-korea.html" }
       ]
     },
     {
@@ -146,7 +151,7 @@ pages.push(hub({
 /* ---------------- MICROCHIP ---------------- */
 pages.push(importStep({
   path: "/bring-pet-to-thailand/microchip-requirements.html",
-  title: "Thailand Pet Import Microchip | ISO 11784/11785 & Order | PattayaPets",
+  title: "Bring a Pet to Thailand: Microchip Rules | PattayaPets",
   desc: "Thailand requires an ISO 11784/11785 15-digit microchip, implanted before " +
     "the rabies vaccination. Here is what that means and why the order matters.",
   crumb: "Microchip",
@@ -217,7 +222,7 @@ pages.push(importStep({
 /* ---------------- RABIES & TITER ---------------- */
 pages.push(importStep({
   path: "/bring-pet-to-thailand/rabies-vaccination-titer-test.html",
-  title: "Rabies Vaccination & Titer Test for Thailand Import | PattayaPets",
+  title: "Bring a Pet to Thailand: Rabies & Titer Test | PattayaPets",
   desc: "The rabies vaccination, the 21-day wait, the other vaccines Thailand " +
     "asks for, and the rabies titer test — what it is and why you should do it.",
   crumb: "Rabies & titer test",
@@ -293,7 +298,7 @@ pages.push(importStep({
 /* ---------------- HEALTH CERTIFICATE ---------------- */
 pages.push(importStep({
   path: "/bring-pet-to-thailand/health-certificate.html",
-  title: "Pet Health Certificate for Thailand Import | Endorsement & Timing | PattayaPets",
+  title: "Bring a Pet to Thailand: Health Certificate | PattayaPets",
   desc: "The veterinary health certificate Thailand requires, who has to issue " +
     "and government-endorse it, and the tight timing window before travel.",
   crumb: "Health certificate",
@@ -363,7 +368,7 @@ pages.push(importStep({
 /* ---------------- IMPORT PERMIT ---------------- */
 pages.push(importStep({
   path: "/bring-pet-to-thailand/import-permit-thailand-dld.html",
-  title: "Thailand DLD Pet Import Permit: How to Apply (2026) | PattayaPets",
+  title: "Bring a Pet to Thailand: DLD Import Permit (2026) | PattayaPets",
   desc: "Apply for Thailand's DLD pet import permit (form R1/1): 7–60 day window, AQS " +
     "email contacts, required vaccines, 500 baht arrival fee and what to submit.",
   crumb: "DLD import permit",
@@ -456,7 +461,7 @@ pages.push(importStep({
 /* ---------------- AIRLINE POLICIES ---------------- */
 pages.push(importStep({
   path: "/bring-pet-to-thailand/airline-pet-policies.html",
-  title: "Flying a Pet to Thailand | Airline Policies, Cabin & Cargo | PattayaPets",
+  title: "Bring a Pet to Thailand: Airline & Crate Rules | PattayaPets",
   desc: "How pets fly to Thailand — in-cabin, as checked baggage or as cargo — " +
     "IATA travel crates, snub-nosed breed rules, and how to book.",
   crumb: "Airline pet policies",
@@ -529,7 +534,7 @@ pages.push(importStep({
 /* ---------------- ARRIVAL ---------------- */
 pages.push(importStep({
   path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html",
-  title: "Arriving in Thailand with a Pet | AQS Clearance & Pattaya Transfer | PattayaPets",
+  title: "Bring a Pet to Thailand: Suvarnabhumi Arrival | PattayaPets",
   desc: "What happens when your pet lands in Thailand: the Animal Quarantine " +
     "Station inspection, what officers check, and getting from the airport to Pattaya.",
   crumb: "Arrival in Thailand",
@@ -756,7 +761,7 @@ const TH_FAILS =
 
 pages.push(countryPage({
   slug: "from-uk", crumb: "From the UK",
-  title: "Bring a Pet to Thailand from the UK (APHA & DLD 2026) | PattayaPets",
+  title: "Bring Pet to Thailand from the UK (2026) | PattayaPets",
   desc: "UK to Thailand pet import: EHC 2917, APHA timeline, DLD permit checklist, " +
     "Bangkok arrival and why to do the rabies titer test before you leave.",
   h1: "Bringing a pet to Thailand from the UK",
@@ -867,7 +872,7 @@ pages.push(countryPage({
 
 pages.push(countryPage({
   slug: "from-usa", crumb: "From the USA",
-  title: "Bring a Pet to Thailand from the USA (USDA & DLD 2026) | PattayaPets",
+  title: "Bring Pet to Thailand from the USA (2026) | PattayaPets",
   desc: "USA to Thailand pet import: USDA APHIS endorsement, DLD permit, 10-day " +
     "certificate window, document checklist and CDC rules if you return later.",
   h1: "Bringing a pet to Thailand from the USA",
@@ -991,7 +996,7 @@ pages.push(countryPage({
 
 pages.push(countryPage({
   slug: "from-australia", crumb: "From Australia",
-  title: "Bring a Pet to Thailand from Australia (DAFF & DLD 2026) | PattayaPets",
+  title: "Bring Pet to Thailand from Australia (2026) | PattayaPets",
   desc: "Australia to Thailand pet import: DAFF export permit, NOI timeline, DLD " +
     "import permit, 72-hour export window and the truth about returning home.",
   h1: "Bringing a pet to Thailand from Australia",
@@ -1137,7 +1142,7 @@ const EU_IMPORT_FAILS =
 
 pages.push(countryPage({
   slug: "from-eu", crumb: "From the EU",
-  title: "Bring a Pet to Thailand from the EU (DLD Import 2026) | PattayaPets",
+  title: "Bring Pet to Thailand from the EU (DLD Import 2026) | PattayaPets",
   desc: "EU to Thailand pet import: export health certificate, competent authority " +
     "endorsement, DLD import permit and Bangkok AQS clearance — plus EU return planning.",
   updated: "2026-05-31",

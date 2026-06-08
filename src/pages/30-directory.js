@@ -23,8 +23,8 @@ function areaName(k) { return AREAS[k] ? AREAS[k].name : "Pattaya"; }
 function firstSentence(t) { var m = t.match(/^.*?[.](\s|$)/); return m ? m[0].trim() : t; }
 
 function bizPageTitle(b, cat) {
-  var loc = b.areas.length ? areaName(b.areas[0]) : "Pattaya";
-  return b.name + " | " + cat.name + " in " + loc + " | PattayaPets";
+  var role = cat.one === "boarding provider" ? "boarding" : cat.one;
+  return b.name + " | " + role + ", Pattaya | PattayaPets";
 }
 
 const HUB_OG = {
@@ -38,12 +38,12 @@ const HUB_OG = {
 };
 
 const HUB_TITLE = {
-  vets: "Vets in Pattaya | 24-Hour Animal Hospitals & Clinics",
+  vets: "Vets in Pattaya | 24-Hour Emergency & Clinics",
   groomers: "Dog & Cat Groomers in Pattaya",
   boarding: "Pet Boarding & Kennels in Pattaya",
   "pet-shops": "Pet Shops in Pattaya",
   trainers: "Dog Trainers in Pattaya",
-  "pet-relocation": "Pet Relocation Agents Thailand | Import & Export Help",
+  "pet-relocation": "Pet Relocation Thailand | Import & Export",
   "mobile-vets": "Mobile & Home-Visit Vets Pattaya | House Calls"
 };
 
@@ -60,6 +60,7 @@ const HUB_DESC = {
 const CAT_GUIDES = {
   vets: [
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html" },
+    { name: "English-speaking vets", path: "/vets/english-speaking-vets-pattaya.html" },
     { name: "Mobile & home-visit vets", path: "/mobile-vets/" },
     { name: "Heartworm prevention", path: "/pet-health-pattaya/heartworm.html" },
     { name: "Tick-borne disease", path: "/pet-health-pattaya/tick-borne-disease.html" },
@@ -70,6 +71,7 @@ const CAT_GUIDES = {
     { name: "Pet health in Pattaya", path: "/pet-health-pattaya/" }
   ],
   groomers: [
+    { name: "Dog grooming in Pattaya", path: "/groomers/dog-grooming-pattaya.html" },
     { name: "Mobile & home-visit vets", path: "/mobile-vets/" },
     { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html" },
     { name: "Dental care", path: "/pet-health-pattaya/dental-care.html" },
@@ -985,7 +987,7 @@ Object.keys(AREAS).forEach(function (key) {
 
   pages.push({
     path: "/area/" + key + ".html",
-    title: "Pet Vets & Services in " + area.name + ", Pattaya | PattayaPets",
+    title: "Vets & Pet Services in " + area.name + " | PattayaPets",
     ogTitle: "Pet services in " + area.name + ", Pattaya",
     description: "Find vets, groomers, boarding, pet shops and pet services in " +
       area.name + ", Pattaya. " + area.blurb,

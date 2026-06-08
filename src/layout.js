@@ -243,6 +243,28 @@ function breadcrumbGraph(page) {
   };
 }
 
+/* SERP display limit — trim at pipe boundaries when possible */
+function clampMetaTitle(title, maxLen) {
+  maxLen = maxLen || 60;
+  if (!title || title.length <= maxLen) return title;
+  var brand = " | PattayaPets";
+  var hasBrand = title.slice(-brand.length) === brand;
+  var core = hasBrand ? title.slice(0, -brand.length) : title;
+  var budget = maxLen - (hasBrand ? brand.length : 0);
+  if (core.length <= budget) return title;
+  var parts = core.split(" | ");
+  while (parts.length > 1) {
+    var trial = parts.slice(0, -1).join(" | ");
+    if (trial.length <= budget) return trial + (hasBrand ? brand : "");
+    parts.pop();
+  }
+  if (core.length > budget) {
+    core = core.slice(0, budget).replace(/\s+\S*$/, "").trim();
+    if (!core) core = title.slice(0, budget).trim();
+  }
+  return core + (hasBrand ? brand : "");
+}
+
 function renderPage(page, opts) {
   opts = opts || {};
   const cssCritical = opts.criticalCss || "";
@@ -266,7 +288,7 @@ function renderPage(page, opts) {
   return (
     "<!doctype html><html lang=\"en\"" + gaAttr + "><head><meta charset=\"utf-8\">" +
     '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">' +
-    "<title>" + esc(page.title) + "</title>" +
+    "<title>" + clampMetaTitle(esc(page.title)) + "</title>" +
     '<meta name="description" content="' + esc(page.description) + '">' +
     '<link rel="canonical" href="' + url + '">' +
     '<meta name="robots" content="' + robots + '">' +

@@ -113,6 +113,12 @@ const HOME_GUIDE_MORE =
   '<details class="corridor-panel guide-topics-panel">' +
   '<summary class="corridor-panel__title">More guides by topic</summary>' +
   '<div class="corridor-panel__body"><p class="guide-topics">' +
+  '<a href="/bring-pet-to-thailand/bring-a-dog-to-thailand.html">Bring a dog</a> &middot; ' +
+  '<a href="/bring-pet-to-thailand/bring-a-cat-to-thailand.html">Bring a cat</a> &middot; ' +
+  '<a href="/vets/english-speaking-vets-pattaya.html">English-speaking vets</a> &middot; ' +
+  '<a href="/adopt-a-pet-pattaya/animal-shelters-pattaya.html">Animal shelters</a> &middot; ' +
+  '<a href="/dog-friendly-pattaya/hotels.html">Pet-friendly hotels</a> &middot; ' +
+  '<a href="/owning-a-pet-in-pattaya/bangkok-to-pattaya-with-pet.html">Bangkok to Pattaya</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/microchip-requirements.html">Microchip</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">Rabies &amp; titer</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/thailand-pet-quarantine.html">Quarantine</a> &middot; ' +
@@ -124,6 +130,9 @@ const HOME_GUIDE_MORE =
   '<a href="/bring-pet-to-thailand/from-philippines.html">Import from Philippines</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/from-china.html">Import from China</a> &middot; ' +
   '<a href="/bring-pet-to-thailand/from-south-africa.html">Import from South Africa</a> &middot; ' +
+  '<a href="/bring-pet-to-thailand/from-italy.html">Import from Italy</a> &middot; ' +
+  '<a href="/bring-pet-to-thailand/from-malaysia.html">Import from Malaysia</a> &middot; ' +
+  '<a href="/bring-pet-to-thailand/from-south-korea.html">Import from South Korea</a> &middot; ' +
   '<a href="/take-pet-out-of-thailand/to-uk.html">Export to UK</a> &middot; ' +
   '<a href="/take-pet-out-of-thailand/to-eu.html">Export to EU</a> &middot; ' +
   '<a href="/take-pet-out-of-thailand/to-india.html">Export to India</a> &middot; ' +
@@ -309,7 +318,7 @@ const body =
 
 module.exports = [{
   path: "/",
-  title: "PattayaPets | Vets, Import Guides, Dog-Friendly Pattaya & Directory",
+  title: "Vet Pattaya & Pet Import Guide | Dog-Friendly Directory",
   ogTitle: "PattayaPets — The honest pet resource for Pattaya",
   description:
     "Pattaya pet directory — vets, groomers, boarding, pet shops — plus import guides, " +

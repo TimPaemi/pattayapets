@@ -25,7 +25,10 @@ const IMPORT_TO_EXPORT = {
   "from-india": { slug: "to-india", label: "To India (export)" },
   "from-philippines": { slug: "to-philippines", label: "To the Philippines (export)" },
   "from-china": { slug: "to-china", label: "To China (export)" },
-  "from-south-africa": { slug: "to-south-africa", label: "To South Africa (export)" }
+  "from-south-africa": { slug: "to-south-africa", label: "To South Africa (export)" },
+  "from-italy": { slug: "to-italy", label: "To Italy (export)" },
+  "from-malaysia": { slug: "to-malaysia", label: "To Malaysia (export)" },
+  "from-south-korea": { slug: "to-south-korea", label: "To South Korea (export)" }
 };
 
 const EXPORT_TO_IMPORT = {
@@ -51,7 +54,10 @@ const EXPORT_TO_IMPORT = {
   "to-india": { slug: "from-india", label: "From India (import)" },
   "to-philippines": { slug: "from-philippines", label: "From the Philippines (import)" },
   "to-china": { slug: "from-china", label: "From China (import)" },
-  "to-south-africa": { slug: "from-south-africa", label: "From South Africa (import)" }
+  "to-south-africa": { slug: "from-south-africa", label: "From South Africa (import)" },
+  "to-italy": { slug: "from-italy", label: "From Italy (import)" },
+  "to-malaysia": { slug: "from-malaysia", label: "From Malaysia (import)" },
+  "to-south-korea": { slug: "from-south-korea", label: "From South Korea (import)" }
 };
 
 function importCountryRelated(slug, base, desc) {

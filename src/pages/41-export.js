@@ -63,7 +63,7 @@ const pages = [];
 
 pages.push(hub({
   path: "/take-pet-out-of-thailand/",
-  title: "How to Export a Pet from Thailand (DLD Guide 2026) | PattayaPets",
+  title: "Export a Pet from Thailand (DLD Guide 2026) | PattayaPets",
   image: "/assets/img/og-export.png",
   updated: "2026-06-03",
   desc: "Export a dog or cat from Thailand in 2026: DLD export permit, health certificate, " +
@@ -131,7 +131,10 @@ pages.push(hub({
         { name: "To India", desc: "AQCS import clearance and planning from Pattaya.", path: "/take-pet-out-of-thailand/to-india.html" },
         { name: "To the Philippines", desc: "BAI import paperwork and direct flights to Manila.", path: "/take-pet-out-of-thailand/to-philippines.html" },
         { name: "To China", desc: "Customs import clearance and quarantine on arrival.", path: "/take-pet-out-of-thailand/to-china.html" },
-        { name: "To South Africa", desc: "DALRRD import permit and routing from Bangkok.", path: "/take-pet-out-of-thailand/to-south-africa.html" }
+        { name: "To South Africa", desc: "DALRRD import permit and routing from Bangkok.", path: "/take-pet-out-of-thailand/to-south-africa.html" },
+        { name: "To Italy", desc: "EU titer test, three-month wait and entry certificate.", path: "/take-pet-out-of-thailand/to-italy.html" },
+        { name: "To Malaysia", desc: "DVS import approval and short ASEAN flight.", path: "/take-pet-out-of-thailand/to-malaysia.html" },
+        { name: "To South Korea", desc: "APQA import permission and antibody testing.", path: "/take-pet-out-of-thailand/to-south-korea.html" }
       ]
     }
   ],
@@ -460,7 +463,7 @@ pages.push(exp({
 
 pages.push(exp({
   slug: "to-uk", crumb: "To the UK",
-  title: "Export a Pet from Thailand to the UK (Titer & Tapeworm 2026) | PattayaPets",
+  title: "Export Pet from Thailand to the UK (Titer & Tapeworm 2026) | PattayaPets",
   desc: "Thailand to UK pet export: rabies titer test, three-month wait, tapeworm " +
     "treatment, approved routes, DLD export timeline and document checklist.",
   h1: "Taking a pet from Thailand to the UK",
@@ -563,7 +566,7 @@ pages.push(exp({
 
 pages.push(exp({
   slug: "to-usa", crumb: "To the USA",
-  title: "Export a Pet from Thailand to the USA (CDC Rules 2026) | PattayaPets",
+  title: "Export Pet from Thailand to the USA (CDC Rules 2026) | PattayaPets",
   desc: "Thailand to USA pet export: CDC dog-import rules for high-rabies countries, " +
     "titer test, DLD export timeline, document checklist and planning months ahead.",
   h1: "Taking a pet from Thailand to the USA",
@@ -698,7 +701,7 @@ const EU_EXPORT_FAILS =
 
 pages.push(exp({
   slug: "to-eu", crumb: "To the EU",
-  title: "Export a Pet from Thailand to the EU (Pet Passport & DLD 2026) | PattayaPets",
+  title: "Export Pet from Thailand to the EU (2026) | PattayaPets",
   desc: "Thailand to EU pet export: DLD export permit, rabies titer test, three-month " +
     "wait and EU entry health certificate — member-state BCP rules apply.",
   updated: "2026-05-31",
@@ -754,7 +757,7 @@ pages.push(exp({
 
 pages.push(exp({
   slug: "to-australia", crumb: "To Australia",
-  title: "Export a Pet from Thailand to Australia (DAFF & DLD 2026) | PattayaPets",
+  title: "Export Pet from Thailand to Australia (2026) | PattayaPets",
   desc: "Thailand to Australia pet export: why direct import fails, approved-country " +
     "pathway, DAFF import permit, mandatory quarantine and DLD export checklist.",
   h1: "Taking a pet from Thailand to Australia",

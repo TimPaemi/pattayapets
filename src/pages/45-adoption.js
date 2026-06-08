@@ -12,7 +12,7 @@ const pages = [];
 /* ---- HUB ---- */
 pages.push(hub({
   path: "/adopt-a-pet-pattaya/",
-  title: "Adopt a Pet in Pattaya | Shelters, Street Dogs & How to Help | PattayaPets",
+  title: "Adopt a Pet Pattaya | Shelters & Street Dogs | PattayaPets",
   image: "/assets/img/og-adoption.png",
   desc: "Adopt a dog or cat in Pattaya: how adoption works, shelters and rescues " +
     "(Soi Dog, Hope for Strays), fostering, and helping street animals without adopting.",
@@ -57,6 +57,7 @@ pages.push(hub({
       title: "Shelters & rescue organisations",
       note: "Established dog and cat rescues operating in and around Pattaya.",
       cards: [
+        { tag: "Directory", name: "Animal shelters in Pattaya", desc: "All rescues in one place — adoption, fostering and volunteering.", path: "/adopt-a-pet-pattaya/animal-shelters-pattaya.html" },
         { name: "Hope for Strays", desc: "East Pattaya dog rescue shelter — several hundred dogs, open to visitors by arrangement.", path: "/adopt-a-pet-pattaya/hope-for-strays.html" },
         { name: "Dog & Cat Rescue Pattaya", desc: "A Pattaya shelter rescuing dogs and helping the city's street cats.", path: "/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html" },
         { name: "Animal Army Foundation", desc: "Licensed Na Jomtien hospital & rescue since 1994 — ambulance, clinic and adoptions.", path: "/adopt-a-pet-pattaya/animal-army-foundation.html" },

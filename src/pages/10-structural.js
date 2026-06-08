@@ -36,7 +36,7 @@ const pages = [];
 /* ---------------- Start Here ---------------- */
 pages.push({
   path: "/start-here.html",
-  title: "New to Pattaya with a Pet? Start Here | Vets, Import & Emergencies | PattayaPets",
+  title: "Start Here: Vets, Import & Emergencies Pattaya | PattayaPets",
   description:
     "A plain-English orientation for pet owners new to Pattaya: emergency contacts, " +
     "finding a vet, the hot climate, bringing a pet in or out, and adoption.",

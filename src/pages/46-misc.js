@@ -116,7 +116,7 @@ pages.push(article({
 /* ---------------- CATS HUB ---------------- */
 pages.push(hub({
   path: "/cats/",
-  title: "Cats in Pattaya | Cat Owner's Guide to Housing, Health & Care | PattayaPets",
+  title: "Cats in Pattaya | Housing, Health & Vet Guide | PattayaPets",
   image: "/assets/img/og-cats.png",
   desc: "Everything for cat owners in Pattaya: vets, hot-climate care, bringing " +
     "or adopting a cat, and keeping a cat safe and happy in the tropics.",
@@ -190,7 +190,7 @@ pages.push(hub({
 /* ---------------- DOGS HUB ---------------- */
 pages.push(hub({
   path: "/dogs/",
-  title: "Dogs in Pattaya | Dog Owner's Guide to Walks, Training & Health | PattayaPets",
+  title: "Dogs in Pattaya | Walks, Training & Vet Guide | PattayaPets",
   image: "/assets/img/og-dogs.png",
   desc: "Everything for dog owners in Pattaya: vets, walking, training, " +
     "dog-friendly places, hot-climate care, and bringing or adopting a dog.",

@@ -183,7 +183,7 @@ const pages = [];
 /* ---------------- GERMANY ---------------- */
 pages.push(exp({
   slug: "to-germany", crumb: "To Germany",
-  title: "Export a Pet from Thailand to Germany (EU Titer & DLD 2026) | PattayaPets",
+  title: "Export Pet from Thailand to Germany (2026) | PattayaPets",
   desc: "Thailand to Germany pet export: EU titer test, three-month wait, entry " +
     "certificate, designated entry points and DLD export timeline.",
   h1: "Taking a pet from Thailand to Germany",
@@ -269,7 +269,7 @@ pages.push(exp({
 /* ---------------- SWEDEN ---------------- */
 pages.push(exp({
   slug: "to-sweden", crumb: "To Sweden",
-  title: "Export a Pet from Thailand to Sweden (EU Titer & DLD 2026) | PattayaPets",
+  title: "Export Pet from Thailand to Sweden (2026) | PattayaPets",
   desc: "Thailand to Sweden pet export: EU titer test, three-month wait, entry " +
     "certificate, Jordbruksverket rules and DLD export timeline.",
   h1: "Taking a pet from Thailand to Sweden",
@@ -309,7 +309,7 @@ pages.push(exp({
 /* ---------------- NORWAY ---------------- */
 pages.push(exp({
   slug: "to-norway", crumb: "To Norway",
-  title: "Export a Pet from Thailand to Norway (EU-style Titer & DLD 2026) | PattayaPets",
+  title: "Export Pet from Thailand to Norway (2026) | PattayaPets",
   desc: "Thailand to Norway pet export: rabies titer test, three-month wait, Mattilsynet " +
     "entry rules, tapeworm treatment for dogs and DLD export timeline.",
   h1: "Taking a pet from Thailand to Norway",
@@ -350,7 +350,7 @@ pages.push(exp({
 /* ---------------- DENMARK ---------------- */
 pages.push(exp({
   slug: "to-denmark", crumb: "To Denmark",
-  title: "Export a Pet from Thailand to Denmark (EU Titer & DLD 2026) | PattayaPets",
+  title: "Export Pet from Thailand to Denmark (2026) | PattayaPets",
   desc: "Thailand to Denmark pet export: EU titer test, three-month wait, entry " +
     "certificate, Danish authority rules and DLD export timeline.",
   h1: "Taking a pet from Thailand to Denmark",
@@ -389,7 +389,7 @@ pages.push(exp({
 /* ---------------- FINLAND ---------------- */
 pages.push(exp({
   slug: "to-finland", crumb: "To Finland",
-  title: "Export a Pet from Thailand to Finland (EU Titer & DLD 2026) | PattayaPets",
+  title: "Export Pet from Thailand to Finland (2026) | PattayaPets",
   desc: "Thailand to Finland pet export: EU titer test, three-month wait, Ruokavirasto " +
     "entry rules, tapeworm treatment for dogs and DLD export timeline.",
   h1: "Taking a pet from Thailand to Finland",
@@ -430,7 +430,7 @@ pages.push(exp({
 /* ---------------- NETHERLANDS ---------------- */
 pages.push(exp({
   slug: "to-netherlands", crumb: "To the Netherlands",
-  title: "Export a Pet from Thailand to the Netherlands (EU Titer & DLD 2026) | PattayaPets",
+  title: "Export Pet from Thailand to the Netherlands (2026) | PattayaPets",
   desc: "Thailand to Netherlands pet export: EU titer test, three-month wait, NVWA " +
     "entry rules, Amsterdam routing and DLD export timeline.",
   h1: "Taking a pet from Thailand to the Netherlands",
@@ -469,7 +469,7 @@ pages.push(exp({
 /* ---------------- FRANCE ---------------- */
 pages.push(exp({
   slug: "to-france", crumb: "To France",
-  title: "Export a Pet from Thailand to France (EU Titer & DLD 2026) | PattayaPets",
+  title: "Export Pet from Thailand to France (2026) | PattayaPets",
   desc: "Thailand to France pet export: EU titer test, three-month wait, entry " +
     "certificate, Paris routing and DLD export timeline.",
   h1: "Taking a pet from Thailand to France",
@@ -508,7 +508,7 @@ pages.push(exp({
 /* ---------------- IRELAND ---------------- */
 pages.push(exp({
   slug: "to-ireland", crumb: "To Ireland",
-  title: "Export a Pet from Thailand to Ireland (EU Titer & DLD 2026) | PattayaPets",
+  title: "Export Pet from Thailand to Ireland (2026) | PattayaPets",
   desc: "Thailand to Ireland pet export: EU titer test, three-month wait, Department of " +
     "Agriculture rules, tapeworm treatment for dogs and DLD export timeline.",
   h1: "Taking a pet from Thailand to Ireland",
@@ -548,7 +548,7 @@ pages.push(exp({
 /* ---------------- SWITZERLAND ---------------- */
 pages.push(exp({
   slug: "to-switzerland", crumb: "To Switzerland",
-  title: "Export a Pet from Thailand to Switzerland (EU-aligned Titer & DLD 2026) | PattayaPets",
+  title: "Export Pet from Thailand to Switzerland (2026) | PattayaPets",
   desc: "Thailand to Switzerland pet export: EU-aligned titer test, waiting period, " +
     "FSVO entry rules and DLD export timeline.",
   h1: "Taking a pet from Thailand to Switzerland",
@@ -595,7 +595,7 @@ pages.push(exp({
 /* ---------------- CANADA ---------------- */
 pages.push(exp({
   slug: "to-canada", crumb: "To Canada",
-  title: "Export a Pet from Thailand to Canada (CFIA & DLD 2026) | PattayaPets",
+  title: "Export Pet from Thailand to Canada (2026) | PattayaPets",
   desc: "Thailand to Canada pet export: CFIA rabies certificate, no titer wait, DLD " +
     "export timeline, document checklist and onward-travel notes.",
   h1: "Taking a pet from Thailand to Canada",
@@ -679,7 +679,7 @@ pages.push(exp({
 /* ---------------- RUSSIA ---------------- */
 pages.push(exp({
   slug: "to-russia", crumb: "To Russia",
-  title: "Export a Pet from Thailand to Russia (FSVPS & DLD 2026) | PattayaPets",
+  title: "Export Pet from Thailand to Russia (2026) | PattayaPets",
   desc: "Thailand to Russia pet export: FSVPS entry certificate, rabies vaccination, " +
     "DLD export timeline, document checklist and onward-travel notes.",
   h1: "Taking a pet from Thailand to Russia",
@@ -760,7 +760,7 @@ pages.push(exp({
 /* ---------------- NEW ZEALAND ---------------- */
 pages.push(exp({
   slug: "to-new-zealand", crumb: "To New Zealand",
-  title: "Export a Pet from Thailand to New Zealand (MPI & DLD 2026) | PattayaPets",
+  title: "Export Pet from Thailand to New Zealand (2026) | PattayaPets",
   desc: "Thailand to New Zealand pet export: why direct import fails, MPI import permit, " +
     "titer testing, mandatory quarantine and DLD export checklist.",
   h1: "Taking a pet from Thailand to New Zealand",
@@ -864,7 +864,7 @@ pages.push(exp({
 /* ---------------- JAPAN ---------------- */
 pages.push(exp({
   slug: "to-japan", crumb: "To Japan",
-  title: "Export a Pet from Thailand to Japan (MAFF & DLD 2026) | PattayaPets",
+  title: "Export Pet from Thailand to Japan (2026) | PattayaPets",
   desc: "Thailand to Japan pet export: MAFF 180-day wait, advance notification, DLD " +
     "export timeline, document checklist and common failure points.",
   h1: "Taking a pet from Thailand to Japan",
@@ -943,7 +943,7 @@ pages.push(exp({
 /* ---------------- SINGAPORE ---------------- */
 pages.push(exp({
   slug: "to-singapore", crumb: "To Singapore",
-  title: "Export a Pet from Thailand to Singapore (AVS & DLD 2026) | PattayaPets",
+  title: "Export Pet from Thailand to Singapore (2026) | PattayaPets",
   desc: "Thailand to Singapore pet export: Schedule III RNATT timing, AQC quarantine, " +
     "AVS import licence, DLD export timeline and document checklist.",
   h1: "Taking a pet from Thailand to Singapore",
@@ -1020,7 +1020,7 @@ pages.push(exp({
 /* ---------------- UAE ---------------- */
 pages.push(exp({
   slug: "to-uae", crumb: "To the UAE",
-  title: "Export a Pet from Thailand to UAE (MOCCAE & DLD 2026) | PattayaPets",
+  title: "Export Pet from Thailand to UAE (2026) | PattayaPets",
   desc: "Thailand to UAE pet export: MOCCAE import permit, vaccinations, breed rules, " +
     "IATA cargo requirements, DLD export timeline and document checklist.",
   h1: "Taking a pet from Thailand to the UAE",
@@ -1116,7 +1116,7 @@ pages.push(exp({
 /* ---------------- INDIA ---------------- */
 pages.push(exp({
   slug: "to-india", crumb: "To India",
-  title: "Export a Pet from Thailand to India (AQCS & DLD 2026) | PattayaPets",
+  title: "Export Pet from Thailand to India (2026) | PattayaPets",
   desc: "Thailand to India pet export: AQCS Advance NOC timeline, approved arrival ports, " +
     "DLD export checklist and common failure points.",
   h1: "Taking a pet from Thailand to India",
@@ -1187,7 +1187,7 @@ pages.push(exp({
 /* ---------------- PHILIPPINES ---------------- */
 pages.push(exp({
   slug: "to-philippines", crumb: "To the Philippines",
-  title: "Export a Pet from Thailand to the Philippines (BAI & DLD 2026) | PattayaPets",
+  title: "Export Pet from Thailand to the Philippines (2026) | PattayaPets",
   desc: "Thailand to Philippines pet export: BAI SPSIC timeline, IVHC requirements, " +
     "DLD export checklist and Manila arrival steps.",
   h1: "Taking a pet from Thailand to the Philippines",
@@ -1262,7 +1262,7 @@ pages.push(exp({
 /* ---------------- CHINA ---------------- */
 pages.push(exp({
   slug: "to-china", crumb: "To China",
-  title: "Export a Pet from Thailand to China (GACC & DLD 2026) | PattayaPets",
+  title: "Export Pet from Thailand to China (2026) | PattayaPets",
   desc: "Thailand to China pet export: GACC titer and quarantine rules, two-rabies-vaccination " +
     "timeline, DLD export checklist and designated ports.",
   h1: "Taking a pet from Thailand to China",
@@ -1342,7 +1342,7 @@ pages.push(exp({
 /* ---------------- SOUTH AFRICA ---------------- */
 pages.push(exp({
   slug: "to-south-africa", crumb: "To South Africa",
-  title: "Export a Pet from Thailand to South Africa (DALRRD & DLD 2026) | PattayaPets",
+  title: "Export Pet from Thailand to South Africa (2026) | PattayaPets",
   desc: "Thailand to South Africa pet export: DALRRD import permit, dog quarantine, " +
     "five pre-import blood tests, manifest cargo rules and DLD export timeline.",
   h1: "Taking a pet from Thailand to South Africa",

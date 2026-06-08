@@ -85,7 +85,7 @@ const pages = [];
 /* ---------------- Directory hub ---------------- */
 pages.push({
   path: "/directory.html",
-  title: "Pattaya Pet Business Directory | Vets, Groomers & Boarding | PattayaPets",
+  title: "Vets in Pattaya | Groomers, Boarding & Pet Shops",
   ogTitle: "The Pattaya pet business directory",
   image: "/assets/img/og-vets.png",
   description:
@@ -217,10 +217,10 @@ pages.push({
 /* ---------------- Guides hub ---------------- */
 pages.push({
   path: "/guides.html",
-  title: "Pattaya Pet Guides | Import, Export, Emergency & Owning | PattayaPets",
+  title: "Bring a Pet to Thailand | Pattaya Guides & Vets",
   ogTitle: "PattayaPets guides & resources",
   description:
-    "Plain-English guides for pet owners in Pattaya: bringing a pet to Thailand, taking one out, dog-friendly places, pet emergencies, costs and adoption.",
+    "Pattaya pet guides — bring a pet to Thailand, find a vet, emergencies, dog-friendly places, export, adoption and daily owning costs.",
   crumb: "Guides",
   breadcrumbs: [],
   updated: "2026-06-04",
