@@ -490,7 +490,21 @@ async function build() {
     "/masthead.html": "editorial standards about network Pattaya Authority",
     "/search.html": "search PattayaPets vets guides directory find",
     "/sitemap.html": "sitemap all pages directory guides PattayaPets",
-    "/": "PattayaPets pet resource directory guides Pattaya Thailand honest"
+    "/": "vet pattaya pet directory import bring dog Thailand guides honest",
+    "/bring-pet-to-thailand/bring-a-dog-to-thailand.html": "bring dog to Thailand DLD import permit microchip rabies",
+    "/bring-pet-to-thailand/bring-a-cat-to-thailand.html": "bring cat to Thailand DLD import permit microchip rabies",
+    "/vets/english-speaking-vets-pattaya.html": "english speaking vet Pattaya clinic hospital expat",
+    "/owning-a-pet-in-pattaya/vet-costs-pattaya.html": "vet costs prices consultation vaccination Pattaya budget",
+    "/groomers/dog-grooming-pattaya.html": "dog grooming bath clip nail Pattaya salon",
+    "/bring-pet-to-thailand/from-italy.html": "import pet Italy EU Rome Milan Thailand DLD",
+    "/bring-pet-to-thailand/from-malaysia.html": "import pet Malaysia ASEAN DVS Thailand DLD",
+    "/bring-pet-to-thailand/from-south-korea.html": "import pet South Korea APQA Seoul Thailand DLD",
+    "/take-pet-out-of-thailand/to-italy.html": "export pet Italy EU titer Thailand DLD",
+    "/take-pet-out-of-thailand/to-malaysia.html": "export pet Malaysia ASEAN Thailand DLD",
+    "/take-pet-out-of-thailand/to-south-korea.html": "export pet South Korea APQA Thailand DLD",
+    "/adopt-a-pet-pattaya/animal-shelters-pattaya.html": "animal shelter rescue adopt dog cat Pattaya Soi Dog",
+    "/owning-a-pet-in-pattaya/bangkok-to-pattaya-with-pet.html": "Bangkok to Pattaya pet travel taxi van bus pet friendly",
+    "/owning-a-pet-in-pattaya/pet-taxi-pattaya.html": "pet taxi transport vet airport Bangkok Pattaya carrier"
   };
 
   const searchIndex = indexable.map(function (p) {

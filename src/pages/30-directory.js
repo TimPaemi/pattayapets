@@ -24,7 +24,8 @@ function firstSentence(t) { var m = t.match(/^.*?[.](\s|$)/); return m ? m[0].tr
 
 function bizPageTitle(b, cat) {
   var role = cat.one === "boarding provider" ? "boarding" : cat.one;
-  return b.name + " | " + role + ", Pattaya | PattayaPets";
+  role = role.replace(/\b[a-z]/g, function (c) { return c.toUpperCase(); });
+  return b.name + " | " + role + " in Pattaya | PattayaPets";
 }
 
 const HUB_OG = {
@@ -45,6 +46,13 @@ const HUB_TITLE = {
   trainers: "Dog Trainers in Pattaya",
   "pet-relocation": "Pet Relocation Thailand | Import & Export",
   "mobile-vets": "Mobile & Home-Visit Vets Pattaya | House Calls"
+};
+
+// Human-readable H1s where the SEO title uses pipe separators.
+const HUB_H1 = {
+  vets: "Vets in Pattaya — 24-hour emergency & clinics",
+  "pet-relocation": "Pet relocation Thailand — import & export",
+  "mobile-vets": "Mobile & home-visit vets in Pattaya"
 };
 
 const HUB_DESC = {
@@ -830,7 +838,7 @@ Object.keys(CATEGORIES).forEach(function (key) {
   var body =
     '<section class="section"><div class="container">' +
     '<p class="eyebrow">Directory</p>' +
-    "<h1>" + esc(HUB_TITLE[key] || cat.name) + "</h1>" +
+    "<h1>" + esc(HUB_H1[key] || HUB_TITLE[key] || cat.name) + "</h1>" +
     '<p class="lede">' + esc(cat.intro) + "</p>" +
     hubQuickBar(linkTopicForCategory(key));
 
@@ -893,7 +901,7 @@ Object.keys(CATEGORIES).forEach(function (key) {
     description: clampDesc(HUB_DESC[key] || cat.intro),
     crumb: cat.name,
     breadcrumbs: [{ name: "Directory", path: "/directory.html" }],
-    updated: "2026-06-03",
+    updated: "2026-06-09",
     body: body
   });
 });

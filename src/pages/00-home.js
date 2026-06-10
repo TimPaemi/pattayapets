@@ -192,11 +192,11 @@ const body =
 
   '<section class="section home-quick-section"><div class="container">' +
     '<div class="corridor-quick-bar corridor-quick-bar--sticky btn-row home-quick-bar" role="navigation" aria-label="Quick links">' +
-    '<a class="btn btn-primary" href="/directory.html">Directory</a>' +
+    '<a class="btn btn-primary" href="/vets/">Vets</a>' +
+    '<a class="btn btn-ghost" href="/directory.html">Directory</a>' +
     '<a class="btn btn-ghost" href="/guides.html">Guides</a>' +
     '<a class="btn btn-alert" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a>' +
-    '<a class="btn btn-ghost" href="/bring-pet-to-thailand/">Import guide</a>' +
-    '<a class="btn btn-ghost" href="/start-here.html">Start here</a></div></div></section>' +
+    '<a class="btn btn-ghost" href="/bring-pet-to-thailand/">Import guide</a></div></div></section>' +
 
   '<section class="section"><div class="container">' +
     '<div class="section-head"><p class="eyebrow">Pet emergency</p>' +
@@ -319,7 +319,6 @@ const body =
 module.exports = [{
   path: "/",
   title: "Vet Pattaya & Pet Import Guide | Dog-Friendly Directory",
-  ogTitle: "PattayaPets — The honest pet resource for Pattaya",
   description:
     "Pattaya pet directory — vets, groomers, boarding, pet shops — plus import guides, " +
     "dog-friendly places and emergencies. Reviewed honestly, never paid.",

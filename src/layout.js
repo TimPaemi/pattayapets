@@ -103,7 +103,8 @@ function header() {
     "</details>" +
     '<button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">' +
     '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" ' +
-    'stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>Menu</button>' +
+    'stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>' +
+    '<span class="nav-toggle__label">Menu</span></button>' +
     "</div>" +
     '<nav class="nav" id="primary-nav" aria-label="Primary">' +
     NAV.map(function (n) { return '<a href="' + n.href + '">' + esc(n.name) + "</a>"; }).join("") +
@@ -288,7 +289,7 @@ function renderPage(page, opts) {
   return (
     "<!doctype html><html lang=\"en\"" + gaAttr + "><head><meta charset=\"utf-8\">" +
     '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">' +
-    "<title>" + clampMetaTitle(esc(page.title)) + "</title>" +
+    "<title>" + esc(clampMetaTitle(page.title)) + "</title>" +
     '<meta name="description" content="' + esc(page.description) + '">' +
     '<link rel="canonical" href="' + url + '">' +
     '<meta name="robots" content="' + robots + '">' +
