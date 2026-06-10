@@ -19,6 +19,13 @@ function metaDesc(h) {
     h.match(/content="([^"]*)"\s+name="description"/) || [])[1];
 }
 
+/* Decode build-emitted entities so lengths match what users/Google see. */
+function decode(s) {
+  return s == null ? s : String(s)
+    .replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"').replace(/&#39;/g, "'");
+}
+
 const files = walk(dist);
 const titles = {};
 const issues = { noH1: [], multiH1: [], shortDesc: [], longDesc: [], longTitle: [], noDesc: [] };
@@ -26,8 +33,8 @@ const issues = { noH1: [], multiH1: [], shortDesc: [], longDesc: [], longTitle: 
 files.forEach(function (f) {
   const h = fs.readFileSync(f, "utf8");
   const rel = "/" + path.relative(dist, f).replace(/\\/g, "/");
-  const title = (h.match(/<title>([^<]*)<\/title>/) || [])[1];
-  const desc = metaDesc(h);
+  const title = decode((h.match(/<title>([^<]*)<\/title>/) || [])[1]);
+  const desc = decode(metaDesc(h));
   const h1s = [...h.matchAll(/<h1[^>]*>([\s\S]*?)<\/h1>/gi)].map(function (m) {
     return m[1].replace(/<[^>]+>/g, "").trim();
   });

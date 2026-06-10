@@ -48,29 +48,27 @@ function extractUrls() {
   return [...urls].sort();
 }
 
-async function headCheck(url) {
-  var ctrl = new AbortController();
-  var timer = setTimeout(function () { ctrl.abort(); }, TIMEOUT_MS);
+async function fetchCheck(url, method) {
+  return fetch(url, {
+    method: method,
+    redirect: "follow",
+    signal: AbortSignal.timeout(TIMEOUT_MS),
+    headers: { "User-Agent": "PattayaPets-official-link-audit/1.0" }
+  });
+}
+
+async function headCheck(url, attempt) {
+  attempt = attempt || 1;
+  var preferGet = /bmel\.de$/i.test(new URL(url).hostname);
   try {
-    var res = await fetch(url, {
-      method: "HEAD",
-      redirect: "follow",
-      signal: ctrl.signal,
-      headers: { "User-Agent": "PattayaPets-official-link-audit/1.0" }
-    });
-    clearTimeout(timer);
-    if (res.status === 405 || res.status === 403 || res.status === 400 ||
-        res.status === 404 || res.status === 410) {
-      res = await fetch(url, {
-        method: "GET",
-        redirect: "follow",
-        signal: AbortSignal.timeout(TIMEOUT_MS),
-        headers: { "User-Agent": "PattayaPets-official-link-audit/1.0" }
-      });
+    var res = preferGet ? await fetchCheck(url, "GET") : await fetchCheck(url, "HEAD");
+    if (!preferGet && (res.status === 405 || res.status === 403 || res.status === 400 ||
+        res.status === 404 || res.status === 410)) {
+      res = await fetchCheck(url, "GET");
     }
     return { url: url, status: res.status, ok: res.ok };
   } catch (err) {
-    clearTimeout(timer);
+    if (attempt < 3) return headCheck(url, attempt + 1);
     return { url: url, status: 0, ok: false, error: err.message || String(err) };
   }
 }

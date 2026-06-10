@@ -27,7 +27,7 @@ const CRITICAL = [
   "/404.html"
 ];
 
-function fetch(url, redirects) {
+function fetchOnce(url, redirects) {
   redirects = redirects || 0;
   return new Promise(function (resolve, reject) {
     var mod = url.startsWith("https") ? https : http;
@@ -37,7 +37,7 @@ function fetch(url, redirects) {
           var next = res.headers.location;
           if (next.startsWith("/")) next = BASE + next;
           res.resume();
-          return resolve(fetch(next, redirects + 1));
+          return resolve(fetchOnce(next, redirects + 1));
         }
         var chunks = [];
         res.on("data", function (c) { chunks.push(c); });
@@ -52,6 +52,16 @@ function fetch(url, redirects) {
       });
     req.on("error", reject);
     req.on("timeout", function () { req.destroy(new Error("timeout")); });
+  });
+}
+
+function fetch(url, attempt) {
+  attempt = attempt || 1;
+  return fetchOnce(url).catch(function (err) {
+    if (attempt < 3 && /timeout|ECONNRESET|ETIMEDOUT|socket hang up/i.test(err.message)) {
+      return fetch(url, attempt + 1);
+    }
+    throw err;
   });
 }
 

@@ -9,6 +9,7 @@
     "build": "node build.js",
     "check": "node tools/check-links.js",
     "audit:seo": "node tools/audit-seo.js",
+    "audit:comprehensive": "node tools/audit-comprehensive.js",
     "audit:directory": "node tools/audit-directory.js",
     "audit:country-pairs": "node tools/audit-country-pairs.js",
     "audit:orphans": "node tools/audit-orphans.js",
@@ -17,9 +18,10 @@
     "audit:content:richness": "node tools/audit-content-richness.js",
     "audit:lighthouse": "node tools/audit-lighthouse.js",
     "audit:lighthouse:all": "node tools/audit-lighthouse-all.js",
+    "audit:mobile": "node tools/check-mobile-overflow.js",
     "images": "node tools/make-images.js",
     "indexnow": "node scripts/ping-indexnow.js",
-    "build:all": "npm run build && npm run check && npm run audit:seo && npm run audit:directory && npm run audit:country-pairs && npm run audit:orphans && npm run audit:content:richness && npm run audit:linking",
+    "build:all": "npm run build && npm run check && npm run audit:seo && npm run audit:comprehensive && npm run audit:directory && npm run audit:country-pairs && npm run audit:orphans && npm run audit:content:richness && npm run audit:linking",
     "audit:official": "node tools/audit-official-links.js",
     "audit:full": "node tools/audit-full.js",
     "audit:live": "node tools/audit-live.js",
@@ -32,6 +34,7 @@
     "@fontsource/hanken-grotesk": "^5.2.8",
     "clean-css": "^5.3.3",
     "html-minifier-terser": "^7.2.0",
+    "puppeteer-core": "^25.1.0",
     "sharp": "^0.34.2",
     "terser": "^5.48.0"
   }
