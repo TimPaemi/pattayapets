@@ -204,7 +204,7 @@ const body =
     '<p>If your pet needs urgent care outside normal clinic hours, these animal ' +
     'hospitals are listed as open around the clock. Save your nearest clinic&rsquo;s ' +
     'contact details today &mdash; before you ever need them.</p></div>' +
-    '<div class="grid grid-3">' + VETS24.map(vet24Card).join('') + '</div>' +
+    '<div class="grid grid-4">' + VETS24.map(vet24Card).join('') + '</div>' +
     '<div class="btn-row"><a class="btn btn-ghost" href="/pet-emergency/">All emergency vets, first-aid &amp; hazards &rarr;</a></div>' +
   '</div></section>' +
 
@@ -322,7 +322,7 @@ module.exports = [{
   description:
     "Pattaya pet directory — vets, groomers, boarding, pet shops — plus import guides, " +
     "dog-friendly places and emergencies. Reviewed honestly, never paid.",
-  updated: "2026-06-04",
+  updated: "2026-06-09",
   schema: [{
     "@type": "FAQPage",
     mainEntity: FAQ.map(function (f) {

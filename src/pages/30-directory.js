@@ -731,7 +731,10 @@ BUSINESSES.forEach(function (b) {
     '<p class="eyebrow">' + esc(cat.name) + "</p>" +
     "<h1>" + esc(b.name) + "</h1>" +
     '<p class="biz-sub" style="font-size:1rem">' + esc(b.type) +
-    (primaryArea ? " &middot; " + esc(areaName(primaryArea)) + ", Pattaya" : " &middot; serves all Thailand") +
+    (primaryArea
+      ? " &middot; " + esc(areaName(primaryArea)) +
+        (areaName(primaryArea).indexOf("Pattaya") === -1 ? ", Pattaya" : "")
+      : " &middot; serves all Thailand") +
     (b.c24 ? ' &middot; <strong style="color:var(--alert)">open 24 hours</strong>' : "") +
     "</p>" +
     verdictBlock(b) +

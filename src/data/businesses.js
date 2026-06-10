@@ -485,6 +485,8 @@ const BUSINESSES = [
     name: "Mor Ja Pet Clinic (Mor Ja Raksa Sat)",
     category: "mobile-vets", areas: ["banglamung"], type: "Mobile & clinic pet care", c24: false,
     address: "519/156-157 Moo 6, Soi Siam Country Club, Nong Prue, Bang Lamung, Chon Buri 20150",
+    // HUMAN QUEUE: 083 232 9898 circulates as this clinic's number but no primary
+    // source (FB page / Yellow Pages field) confirms it — verify before publishing.
     phone: null, tel: null,
     website: null, hours: null,
     languages: "Thai; confirm English-language support when booking",
