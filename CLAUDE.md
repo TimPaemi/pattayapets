@@ -179,8 +179,9 @@ links the other owned Pattaya Authority sites (not PattayaPets itself), each
 `target="_blank" rel="noopener noreferrer"`:
 
 pattaya-authority.com · timpaemi.com · pattaya-restaurant-guide.com · pattayavisahelp.com ·
-pattaya-gym.com · pattaya-school-guide.com · pattaya-coffee.com · pattayastream.com
-(Pattaya Villa Stream) · pattaya-medical.com · pattaya-vehicle-rentals.com.
+pattaya-gym.com · pattaya-afterdark.com (Pattaya After Dark) · pattaya-school-guide.com ·
+pattaya-coffee.com · pattayastream.com (Pattaya Villa Stream) · pattaya-medical.com ·
+pattaya-vehicle-rentals.com.
 
 Organization JSON-LD includes `slogan` and a matching `sameAs` array.
 

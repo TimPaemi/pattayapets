@@ -32,6 +32,7 @@ const NETWORK = [
   { name: "Pattaya Restaurant Guide", url: "https://pattaya-restaurant-guide.com/" },
   { name: "Pattaya Visa Help", url: "https://pattayavisahelp.com/" },
   { name: "Pattaya Gym", url: "https://pattaya-gym.com/" },
+  { name: "Pattaya After Dark", url: "https://pattaya-afterdark.com/" },
   { name: "Pattaya School Guide", url: "https://pattaya-school-guide.com/" },
   { name: "Pattaya Coffee", url: "https://pattaya-coffee.com/" },
   { name: "Pattaya Villa Stream", url: "https://pattayastream.com/" },
@@ -191,6 +192,50 @@ function breadcrumbHtml(page) {
   return '<nav class="breadcrumb container" aria-label="Breadcrumb"><ol>' + items.join("") + "</ol></nav>";
 }
 
+/* Canonical author entity for the whole Pattaya Authority network.
+   Lives at timpaemi.com — referenced by Organization.founder and Article.author. */
+function personGraph() {
+  return {
+    "@type": "Person",
+    "@id": "https://timpaemi.com/#timpaemi",
+    name: "TimPaemi",
+    alternateName: ["Tim Paemi", "Paemi Tim", "Tim & Paemi", "TIMPAEMI"],
+    url: "https://timpaemi.com/",
+    image: "https://timpaemi.com/authors/timpaemi.jpg",
+    jobTitle: "Founders & editors, Pattaya Authority network",
+    worksFor: { "@id": "https://timpaemi.com/#org" },
+    knowsAbout: [
+      "Pattaya",
+      "Pets in Thailand",
+      "Veterinary care",
+      "Thailand travel",
+      "Local directory editorial"
+    ],
+    sameAs: [
+      "https://www.youtube.com/@timpaemi",
+      "https://www.tiktok.com/@timpaemi.com",
+      "https://www.instagram.com/timpaemi/",
+      "https://www.facebook.com/profile.php?id=61583166493467",
+      "https://timpaemi.com/",
+      "https://pattaya-authority.com/",
+      "https://pattaya-gym.com/",
+      "https://pattaya-afterdark.com/",
+      "https://pattaya-restaurant-guide.com/",
+      "https://pattayavisahelp.com/",
+      "https://pattaya-school-guide.com/",
+      "https://pattaya-coffee.com/",
+      "https://pattayastream.com/",
+      "https://pattaya-medical.com/",
+      "https://pattayapets.com/",
+      "https://pattaya-vehicle-rentals.com/",
+      "https://pattayavilla.com/",
+      "https://pattayapersonaltrainer.com/",
+      "https://mrweoutside.com/",
+      "https://pattayaolympian.com/"
+    ]
+  };
+}
+
 function orgGraph() {
   return {
     "@type": "Organization",
@@ -203,7 +248,12 @@ function orgGraph() {
     logo: { "@type": "ImageObject", url: SITE.url + "/assets/img/icon-512.png" },
     email: SITE.email,
     foundingLocation: "Pattaya, Chon Buri, Thailand",
-    parentOrganization: { "@type": "Organization", name: SITE.operator },
+    founder: { "@id": "https://timpaemi.com/#timpaemi" },
+    parentOrganization: {
+      "@type": "Organization",
+      "@id": "https://timpaemi.com/#org",
+      name: SITE.operator
+    },
     sameAs: NETWORK.map(function (n) { return n.url; })
   };
 }
@@ -276,7 +326,7 @@ function renderPage(page, opts) {
     ? "noindex, follow"
     : "index, follow, max-image-preview:large, max-snippet:-1";
 
-  const graph = [orgGraph(), websiteGraph(), breadcrumbGraph(page)];
+  const graph = [orgGraph(), personGraph(), websiteGraph(), breadcrumbGraph(page)];
   if (page.schema && page.schema.length) {
     page.schema.forEach(function (s) { graph.push(s); });
   }
@@ -294,7 +344,7 @@ function renderPage(page, opts) {
     '<link rel="canonical" href="' + url + '">' +
     '<meta name="robots" content="' + robots + '">' +
     '<meta name="theme-color" content="#1B5A4C">' +
-    '<meta name="author" content="The Editors">' +
+    '<meta name="author" content="TimPaemi (timpaemi.com)">' +
     '<meta name="publisher" content="' + esc(SITE.operator) + '">' +
     '<meta property="og:type" content="' + ogType + '">' +
     '<meta property="og:site_name" content="PattayaPets">' +

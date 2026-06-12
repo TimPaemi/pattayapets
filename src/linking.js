@@ -33,6 +33,11 @@ const NETWORK_SITES = {
     url: "https://pattaya-gym.com/",
     hint: "Cool-hour routines alongside dog walks."
   },
+  afterdark: {
+    name: "Pattaya After Dark",
+    url: "https://pattaya-afterdark.com/",
+    hint: "Nightlife, bars and Pattaya after dark."
+  },
   school: {
     name: "Pattaya School Guide",
     url: "https://pattaya-school-guide.com/",
