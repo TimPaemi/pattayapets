@@ -37,7 +37,14 @@ const NETWORK = [
   { name: "Pattaya Coffee", url: "https://pattaya-coffee.com/" },
   { name: "Pattaya Villa Stream", url: "https://pattayastream.com/" },
   { name: "Pattaya Medical", url: "https://pattaya-medical.com/" },
-  { name: "Pattaya Vehicle Rentals", url: "https://pattaya-vehicle-rentals.com/" }
+  { name: "Pattaya Vehicle Rentals", url: "https://pattaya-vehicle-rentals.com/" },
+  { name: "TimPaemi Live", url: "https://timpaemi.live/" },
+  { name: "Pattaya Golf", url: "https://pattaya-golf.com/" },
+  { name: "Retire in Pattaya", url: "https://retire-in-pattaya.com/" },
+  { name: "Move to Pattaya", url: "https://movetopattaya.com/" },
+  { name: "PattayaTools", url: "https://pattayatools.pages.dev/" },
+  { name: "Koh Larn Guide", url: "https://koh-larn-thailand.com/" },
+  { name: "Pattaya Insider", url: "https://pattaya-insider.com/" }
 ];
 
 const DISCLAIMER =
