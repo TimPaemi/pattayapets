@@ -293,7 +293,7 @@ function personGraph() {
       "https://www.youtube.com/@timpaemi",
       "https://www.tiktok.com/@timpaemi.com",
       "https://www.instagram.com/timpaemi/",
-      "https://www.facebook.com/profile.php?id=61583166493467",
+      "https://www.facebook.com/timpaemi",
       "https://timpaemi.com/",
       "https://pattaya-authority.com/",
       "https://pattaya-gym.com/",
