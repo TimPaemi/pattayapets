@@ -212,6 +212,56 @@ function injectRecentUpdates(pages) {
   home.body = home.body.replace("<!--__RECENT_UPDATES__-->", buildRecentSection(pages));
 }
 
+// Additive: append a data-driven FAQPage node to each business listing page's
+// schema graph. Facts come only from verified fields in src/data/businesses.js.
+function injectFaqSchema(pages) {
+  var data = require("./src/data/businesses.js");
+  var BUSINESSES = data.BUSINESSES || [];
+  var AREAS = data.AREAS || {};
+  function lj(a) {
+    a = (a || []).filter(function (x) { return typeof x === "string" && x.trim(); });
+    if (a.length <= 1) return a.join("");
+    if (a.length === 2) return a[0] + " and " + a[1];
+    return a.slice(0, -1).join(", ") + ", and " + a[a.length - 1];
+  }
+  function areaLabel(s) {
+    return (AREAS[s] && (AREAS[s].name || AREAS[s].label)) ||
+      String(s || "").replace(/-/g, " ").replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+  }
+  function faqsFor(b) {
+    var n = b.name, out = [];
+    var where = b.address || (b.areas && b.areas.length ? areaLabel(b.areas[0]) + ", Pattaya" : "Pattaya");
+    out.push({ q: "Where is " + n + " located?", a: n + " is located at " + where + ". The full address and map are on this page." });
+    if (b.c24 || /24[\s-]?hour|open 24/i.test(b.hours || "")) {
+      out.push({ q: "Is " + n + " open 24 hours?", a: "Yes — " + n + " is listed as offering 24-hour service. Always call ahead in an emergency to confirm availability." });
+    }
+    var svc = (b.services || []).filter(function (s) { return typeof s === "string" && s.trim(); }).slice(0, 5);
+    if (svc.length) out.push({ q: "What services does " + n + " offer?", a: n + " is listed as offering " + lj(svc) + "." });
+    if (b.languages && String(b.languages).trim()) {
+      out.push({ q: "Is English spoken at " + n + "?", a: n + " is listed as: " + String(b.languages).trim() + "." });
+    }
+    if (out.length < 4 && (b.phone || b.tel)) {
+      out.push({ q: "How do I contact " + n + "?", a: "You can reach " + n + " by phone at " + (b.phone || b.tel) + ". Contact details are on this page." });
+    }
+    return out.slice(0, 4);
+  }
+  var byPath = {};
+  BUSINESSES.forEach(function (b) { if (b.category && b.slug) byPath["/" + b.category + "/" + b.slug + ".html"] = b; });
+  var count = 0;
+  pages.forEach(function (p) {
+    var b = byPath[p.path];
+    if (!b) return;
+    var faqs = faqsFor(b);
+    if (!faqs.length) return;
+    var faqObj = { "@type": "FAQPage", mainEntity: faqs.map(function (x) {
+      return { "@type": "Question", name: x.q, acceptedAnswer: { "@type": "Answer", text: x.a } };
+    }) };
+    p.schema = (p.schema || []).concat([faqObj]);
+    count++;
+  });
+  console.log("FAQ schema:  " + count + " listing pages");
+}
+
 async function build() {
   const t0 = Date.now();
   log("\nPattayaPets build");
@@ -244,6 +294,7 @@ async function build() {
   });
 
   injectRecentUpdates(pages);
+  injectFaqSchema(pages);
 
   let jsonldCount = 0;
   for (const page of pages) {
