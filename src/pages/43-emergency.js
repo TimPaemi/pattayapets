@@ -122,7 +122,7 @@ var c24list = c24.map(emergencyClinicCard).join("");
 
 pages.push(article({
   path: "/pet-emergency/24-hour-vets-pattaya.html",
-  title: "24-Hour Emergency Vets in Pattaya (Addresses & Phone) | PattayaPets",
+  title: "24-Hour Emergency Vets in Pattaya | PattayaPets",
   desc: "24-hour animal hospitals in Pattaya for pet emergencies: addresses, phone numbers " +
     "and what to do before you need one — open around the clock near Pattaya.",
   crumb: "24-hour vets",
