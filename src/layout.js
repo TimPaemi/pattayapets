@@ -257,18 +257,8 @@ function personGraph() {
       "https://www.tiktok.com/@timpaemi.com",
       "https://www.instagram.com/timpaemi/",
       "https://www.facebook.com/timpaemi",
-      "https://timpaemi.com/",
       "https://pattaya-authority.com/",
-      "https://pattaya-gym.com/",
-      "https://pattaya-afterdark.com/",
-      "https://pattaya-restaurant-guide.com/",
-      "https://pattayavisahelp.com/",
-      "https://pattaya-school-guide.com/",
-      "https://pattaya-coffee.com/",
-      "https://pattayastream.com/",
-      "https://pattaya-medical.com/",
       "https://pattayapets.com/",
-      "https://pattaya-vehicle-rentals.com/",
       "https://pattayavilla.com/",
       "https://pattayapersonaltrainer.com/",
       "https://mrweoutside.com/",
@@ -295,7 +285,9 @@ function orgGraph() {
       "@id": "https://timpaemi.com/#org",
       name: SITE.operator
     },
-    sameAs: NETWORK.map(function (n) { return n.url; })
+    // sameAs = honest publisher hub only; sister sites are separate entities
+    // and must not be declared as this organization's profiles.
+    sameAs: ["https://pattaya-authority.com/work/pattaya-pets/"]
   };
 }
 
