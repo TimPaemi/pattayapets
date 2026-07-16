@@ -216,7 +216,7 @@ const body =
     '<p>PattayaPets follows the Pattaya Authority network method &mdash; the same ' +
     'approach used by our restaurant, medical and school guides.</p>' +
     '<p style="margin-top:1rem">Sister publications in the network:</p>' +
-    networkChipsHtml(["authority", "visa", "restaurant", "medical", "vehicle", "school", "stream"]) +
+    networkChipsHtml(["visa", "medical", "authority"]) +
     '</div>' +
     '<div class="grid grid-4">' +
       '<div><h3>Anonymous visits</h3><p>We visit as ordinary customers &mdash; no PR tours, no special treatment.</p></div>' +

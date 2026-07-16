@@ -184,21 +184,24 @@ const INTERNAL_BY_TOPIC = {
   ]
 };
 
+/* Chip policy: at most 3 cross-domain chips per page, pet-relevant targets only.
+   Full NETWORK_SITES registry is kept (entries may be referenced by key), but only
+   genuinely pet-relevant keys are rendered as chips per topic. */
 const NETWORK_BY_TOPIC = {
-  import: ["visa", "vehicle", "school", "stream", "authority"],
-  export: ["visa", "vehicle", "authority"],
-  emergency: ["medical", "vehicle", "authority"],
-  owning: ["vehicle", "restaurant", "stream", "gym", "authority"],
-  lifestyle: ["restaurant", "stream", "coffee", "authority"],
-  health: ["medical", "vehicle", "authority"],
-  adoption: ["authority", "school"],
-  species: ["restaurant", "school", "vehicle"],
-  directory: ["vehicle", "medical", "visa", "authority"],
-  relocation: ["visa", "vehicle", "stream", "authority"],
-  start: ["visa", "school", "vehicle", "authority"],
-  home: ["authority", "visa", "restaurant", "medical", "vehicle"],
-  general: ["authority", "visa", "restaurant"],
-  insurance: ["medical", "authority", "visa"]
+  import: ["visa", "authority"],
+  export: ["visa", "authority"],
+  emergency: ["medical", "authority"],
+  owning: ["stream", "authority"],
+  lifestyle: ["restaurant", "authority"],
+  health: ["medical", "authority"],
+  adoption: ["authority"],
+  species: ["authority"],
+  directory: ["visa", "medical", "authority"],
+  relocation: ["visa", "authority"],
+  start: ["visa", "authority"],
+  home: [],
+  general: [],
+  insurance: ["medical", "authority"]
 };
 
 const CATEGORY_TOPIC = {
@@ -388,7 +391,7 @@ function seeAlsoCallout(topic, excludePath) {
 }
 
 function networkChipsHtml(keys) {
-  var list = keys || Object.keys(NETWORK_SITES);
+  var list = keys || ["visa", "medical", "authority"];
   return '<div class="chips">' + list.map(function (k) {
     var s = NETWORK_SITES[k];
     if (!s) return "";
