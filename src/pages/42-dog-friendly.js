@@ -35,8 +35,8 @@ pages.push(hub({
     "your dog</a> and " +
     "<a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">hot-climate pet " +
     "care</a>. For a wider editorial list of places to eat out in Pattaya, see the " +
-    '<a href="https://pattaya-restaurant-guide.com/" target="_blank" rel="noopener noreferrer">' +
-    "Pattaya Restaurant Guide</a> &mdash; cross-check dog policies before you go.</p>",
+    '' +
+    "Pattaya Restaurant Guide &mdash; cross-check dog policies before you go.</p>",
   groups: [
     {
       title: "Out and about with your dog",
@@ -209,8 +209,8 @@ pages.push(df({
       "seating, and simply ask. A polite &lsquo;is it okay to bring my dog?&rsquo; " +
       "at the door settles it. For a wider editorial guide to Pattaya&rsquo;s cafe " +
       "scene, see " +
-      '<a href="https://pattaya-coffee.com/" target="_blank" rel="noopener noreferrer">' +
-      "Pattaya Coffee</a> &mdash; then confirm dog policy before you go.</p>" },
+      '' +
+      "Pattaya Coffee &mdash; then confirm dog policy before you go.</p>" },
     { h: "Cafe etiquette", html:
       "<ul><li>Choose an outdoor table and keep your dog settled beside you, on " +
       "a short lead.</li>" +
@@ -239,8 +239,8 @@ pages.push(df({
       "Good for a casual breakfast or lunch after an early beach walk.</li>" +
       "</ul>" +
       "<p>For more cafes city-wide, see " +
-      '<a href="https://pattaya-coffee.com/" target="_blank" rel="noopener noreferrer">' +
-      "Pattaya Coffee</a> &mdash; then confirm dog policy before you go. Know " +
+      '' +
+      "Pattaya Coffee &mdash; then confirm dog policy before you go. Know " +
       "another spot? <a href=\"/contact.html\">Send us a tip</a>.</p>" }
   ],
   faqs: [
@@ -282,8 +282,8 @@ pages.push(df({
       "Grill at Jomtien Beach &mdash; as ever, confirm the current policy " +
       "directly. PattayaPets adds restaurants to this guide only once we are " +
       "confident of them. For a wider list of places to eat out in Pattaya, see the " +
-      '<a href="https://pattaya-restaurant-guide.com/" target="_blank" rel="noopener noreferrer">' +
-      "Pattaya Restaurant Guide</a> &mdash; always confirm dog policy before you go.</p>" },
+      '' +
+      "Pattaya Restaurant Guide &mdash; always confirm dog policy before you go.</p>" },
     { h: "Etiquette for eating out with a dog", html:
       "<ul><li>Always ask first, and accept a no gracefully.</li>" +
       "<li>Pick an outdoor table with room for your dog to lie out of the way " +
@@ -309,8 +309,8 @@ pages.push(df({
       "Homemade meals plus a fenced area where dogs can run; family-oriented.</li>" +
       "</ul>" +
       "<p>For a wider editorial list of restaurants in Pattaya, see the " +
-      '<a href="https://pattaya-restaurant-guide.com/" target="_blank" rel="noopener noreferrer">' +
-      "Pattaya Restaurant Guide</a> &mdash; always ask about dogs before you book. " +
+      '' +
+      "Pattaya Restaurant Guide &mdash; always ask about dogs before you book. " +
       "Spot another good terrace? <a href=\"/contact.html\">Tell us</a>.</p>" }
   ],
   faqs: [

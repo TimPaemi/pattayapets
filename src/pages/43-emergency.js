@@ -72,8 +72,8 @@ pages.push(hub({
     "and <a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">where to walk " +
     "your dog</a> safely.</p><p><strong>This hub is for animal emergencies only.</strong> " +
     "For human medical care in Pattaya, see " +
-    '<a href="https://pattaya-medical.com/" target="_blank" rel="noopener noreferrer">' +
-    "Pattaya Medical</a>.</p><p>" + NOTVET + "</p></div>",
+    '' +
+    "Pattaya Medical.</p><p>" + NOTVET + "</p></div>",
   groups: [
     {
       title: "When it is an emergency",
@@ -193,8 +193,8 @@ pages.push(article({
       "need it &mdash; see " +
       "<a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">getting your pet " +
       "to the vet</a> for options without your own car, including " +
-      '<a href="https://pattaya-vehicle-rentals.com/" target="_blank" rel="noopener noreferrer">' +
-      "short-term car hire</a> if you prefer to drive yourself at night.</p>" +
+      '' +
+      "short-term car hire if you prefer to drive yourself at night.</p>" +
       "<p>If you are new to Thailand, save the phrase <em>soo sat</em> (animal hospital) " +
       "for a driver. A calm human voice on the phone helps reception prepare; a photo " +
       "of your pet in distress is useful only if it does not delay leaving.</p>" +
@@ -665,8 +665,8 @@ pages.push(hazard({
       "clinic will advise on wound cleaning, antibiotics if needed, and whether " +
       "a rabies booster is required given timing and severity. Human bite victims " +
       "need medical care separately &mdash; see " +
-      '<a href="https://pattaya-medical.com/" target="_blank" rel="noopener noreferrer">' +
-      "Pattaya Medical</a> for human emergency orientation.</p>" },
+      '' +
+      "Pattaya Medical for human emergency orientation.</p>" },
     { h: "High-risk areas and situations", html:
       "<p>Soi dogs are most territorial near where they sleep and eat &mdash; " +
       "often the same side streets every day. Markets, construction sites with " +

@@ -69,8 +69,8 @@ pages.push(hub({
     "Read them in order.</p>" +
     "<p>Moving to Thailand with a pet usually sits alongside visa and relocation " +
     "planning &mdash; for the human side of the move, see " +
-    '<a href="https://pattayavisahelp.com/" target="_blank" rel="noopener noreferrer">' +
-    "Pattaya Visa Help</a> in the Pattaya Authority network.</p>" +
+    '' +
+    "Pattaya Visa Help in the Pattaya Authority network.</p>" +
     '<div class="callout callout-tip"><div class="ch">Rules change — verify before you act</div>' +
     "<p>" + VERIFY + "</p>" + OFFICIAL + "</div>",
   groups: [
@@ -572,8 +572,8 @@ pages.push(importStep({
       "<p>Plan the onward journey before you fly. Arrange a pet-friendly private " +
       "transfer, a <a href=\"/pet-relocation/\">relocation agent&rsquo;s</a> vehicle, " +
       "a hire car from " +
-      '<a href="https://pattaya-vehicle-rentals.com/" target="_blank" rel="noopener noreferrer">' +
-      "Pattaya Vehicle Rentals</a>, " +
+      '' +
+      "Pattaya Vehicle Rentals, " +
       "or read <a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">getting your " +
       "pet to the vet</a> for transport options &mdash; ordinary airport taxis may " +
       "refuse an animal, especially a large one in a crate. Bring " +

@@ -256,6 +256,7 @@ function internalListHtml(topic, limit) {
 }
 
 function networkListHtml(topic, limit) {
+  return ""; // network cross-links removed 2026-07 (SEO)
   var keys = pickLinks(NETWORK_BY_TOPIC[topic] || NETWORK_BY_TOPIC.general, limit);
   if (!keys.length) return "";
   return '<ul class="toc link-panel__list">' +
@@ -332,7 +333,7 @@ function guideClusterChips() {
 
 function inPageLinkSection(topic) {
   var internal = INTERNAL_BY_TOPIC[topic] || INTERNAL_BY_TOPIC.general;
-  var netKeys = NETWORK_BY_TOPIC[topic] || NETWORK_BY_TOPIC.general;
+  var netKeys = [];
   if (!internal.length && !netKeys.length) return "";
   return '<section class="section section-tint"><div class="container">' +
     '<details class="corridor-panel more-read-panel">' +
@@ -347,16 +348,7 @@ function inPageLinkSection(topic) {
     '</div><p style="margin:.75rem 0 0;font-size:.92rem"><a href="/guides.html">All guides &rarr;</a> &middot; ' +
     '<a href="/directory.html">Directory &rarr;</a> &middot; ' +
     '<a href="/search.html">Search &rarr;</a></p></div>' +
-    '<div class="link-section-col"><div class="ch">Pattaya Authority network</div><div class="chips">' +
-    netKeys.slice(0, 6).map(function (k) {
-      var s = NETWORK_SITES[k];
-      return s
-        ? '<a class="chip chip-link" href="' + s.url + '" target="_blank" rel="noopener noreferrer">' +
-          esc(s.name) + "</a>"
-        : "";
-    }).join("") +
-    '</div><p style="margin:.75rem 0 0;font-size:.92rem"><a href="https://pattaya-authority.com/work/pattaya-pets/" ' +
-    'target="_blank" rel="noopener noreferrer">About the network &rarr;</a></p></div>' +
+    '' +
     "</div></div></details></div></section>";
 }
 
@@ -369,7 +361,7 @@ function seeAlsoCallout(topic, excludePath) {
   var internal = (INTERNAL_BY_TOPIC[topic] || INTERNAL_BY_TOPIC.general).filter(function (l) {
     return pathNorm(l.path) !== here;
   }).slice(0, 4);
-  var netKeys = (NETWORK_BY_TOPIC[topic] || NETWORK_BY_TOPIC.general).slice(0, 3);
+  var netKeys = [];
   if (!internal.length && !netKeys.length) return "";
   var body = "";
   if (internal.length) {
@@ -391,6 +383,7 @@ function seeAlsoCallout(topic, excludePath) {
 }
 
 function networkChipsHtml(keys) {
+  return ""; // network cross-links removed 2026-07 (SEO)
   var list = keys || ["visa", "medical", "authority"];
   return '<div class="chips">' + list.map(function (k) {
     var s = NETWORK_SITES[k];
@@ -405,9 +398,7 @@ function networkDirectoryProse() {
     "<p>PattayaPets is one independent publication in a family of Pattaya guides. " +
     "Each site uses the same method &mdash; anonymous visits, bills paid in full, " +
     "no paid placements. They are editorial neighbours, not competitors:</p>" +
-    networkChipsHtml() +
-    '<p style="margin-top:.9rem"><a href="https://pattaya-authority.com/work/pattaya-pets/" target="_blank" ' +
-    'rel="noopener noreferrer">About the Pattaya Authority network &rarr;</a></p>';
+    '';
 }
 
 const CORRIDOR_IMPORT = [
@@ -463,6 +454,7 @@ function corridorChipsSection() {
 }
 
 function proseNetworkLine(topic) {
+  return ""; // network cross-links removed 2026-07 (SEO)
   var keys = NETWORK_BY_TOPIC[topic] || NETWORK_BY_TOPIC.general;
   if (!keys.length) return "";
   var names = keys.slice(0, 3).map(function (k) {

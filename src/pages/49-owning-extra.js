@@ -469,8 +469,8 @@ pages.push(own({
       "secure carrier is far more likely to be accepted &mdash; mention the pet " +
       "when you book or before you get in, and be ready for a driver to decline. " +
       "For regular vet runs without owning a car, a short hire can help &mdash; see " +
-      '<a href="https://pattaya-vehicle-rentals.com/" target="_blank" rel="noopener noreferrer">' +
-      "Pattaya Vehicle Rentals</a>. Baht buses (songthaews) are public and uncontrolled, " +
+      '' +
+      "Pattaya Vehicle Rentals. Baht buses (songthaews) are public and uncontrolled, " +
       "and are not a good choice for a pet.</p>" },
     { h: "Home-visit and mobile vets", html:
       "<p>Some vets offer <strong>home visits</strong>, which can be ideal for " +

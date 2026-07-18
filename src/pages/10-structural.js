@@ -110,10 +110,10 @@ pages.push({
     "Specialists who handle the paperwork are listed in the " +
     '<a href="/pet-relocation/">pet relocation agents directory</a>. ' +
     "For visa and relocation timing alongside the move, see " +
-    '<a href="https://pattayavisahelp.com/" target="_blank" rel="noopener noreferrer">' +
-    "Pattaya Visa Help</a>. Relocating with children? See " +
-    '<a href="https://pattaya-school-guide.com/" target="_blank" rel="noopener noreferrer">' +
-    "Pattaya School Guide</a> for schools and family planning &mdash; then use " +
+    '' +
+    "Pattaya Visa Help. Relocating with children? See " +
+    '' +
+    "Pattaya School Guide for schools and family planning &mdash; then use " +
     "this site for the pet side of the move.</p>" +
     '<h2 id="start-adopt">4. Thinking of adopting?</h2>' +
     "<p>Pattaya has several established shelters and rescue organisations. If you " +
@@ -188,9 +188,9 @@ pages.push(prosePage({
     "Pattaya, and operated via the Pattaya Authority network &mdash; a family of " +
     "independent Pattaya publications that share one method: visit anonymously, pay " +
     "every bill, take no money from the businesses covered. See the " +
-    '<a href="https://pattaya-authority.com/work/pattaya-pets/" target="_blank" rel="noopener noreferrer">' +
-    "Pattaya Authority case study</a> for how PattayaPets fits the network. The founder is " +
-    '<a href="https://timpaemi.com/" target="_blank" rel="noopener">Tim</a>. ' +
+    '' +
+    "Pattaya Authority case study for how PattayaPets fits the network. The founder is " +
+    'Tim. ' +
     "Reviews are bylined to The Editors. See the " +
     '<a href="/masthead.html">masthead</a> for how bylines and the publication work.</p>' +
     "<h2>How it is funded</h2>" +
@@ -302,14 +302,11 @@ pages.push(prosePage({
     "to hear from readers, pet owners and the businesses we cover.</p>" +
     '<div class="contact-actions btn-row">' +
     '<a class="btn btn-primary" href="mailto:hello@pattayapets.com">Email hello@pattayapets.com</a>' +
-    '<a class="btn btn-ghost" href="https://wa.me/66967286999" target="_blank" rel="noopener">WhatsApp</a>' +
+    '' +
     '<a class="btn btn-alert" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a></div>' +
     "<h2>Email</h2>" +
     '<p><a href="mailto:hello@pattayapets.com">hello@pattayapets.com</a> &mdash; ' +
     "the best way to reach us for anything.</p>" +
-    "<h2>WhatsApp</h2>" +
-    '<p><a href="https://wa.me/66967286999" target="_blank" rel="noopener">' +
-    "+66 96 728 6999</a> &mdash; the Pattaya Authority network line.</p>" +
     "<h2>What to send us</h2>" +
     "<ul>" +
     "<li><strong>A tip</strong> &mdash; a pet business you think we should visit, " +
@@ -350,8 +347,8 @@ pages.push(prosePage({
     "<h2>Publisher</h2>" +
     "<p>TIMPAEMI Co., Ltd., Pattaya City, Bang Lamung District, Chon Buri 20150, " +
     "Thailand. Operated via the " +
-    '<a href="https://pattaya-authority.com/work/pattaya-pets/" target="_blank" rel="noopener">' +
-    "Pattaya Authority</a> network.</p>" +
+    '' +
+    "Pattaya Authority network.</p>" +
     "<h2>Method</h2>" +
     "<p>Anonymous visits. Bills paid in full. Zero paid placements, zero " +
     "sponsorships, zero affiliate links. The full method is on the " +

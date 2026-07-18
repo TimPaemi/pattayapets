@@ -7,7 +7,7 @@ const SITE = {
   tagline: "The honest pet resource for Pattaya",
   operator: "TIMPAEMI Co., Ltd.",
   email: "hello@pattayapets.com",
-  whatsapp: "66967286999",
+  whatsapp: "",
   ga: "G-TX1PLBHN2K",
   cfBeacon: "CF-TOKEN-PLACEHOLDER"
 };
@@ -124,7 +124,7 @@ function footer() {
   const year = new Date().getFullYear();
   return (
     /* PA-XLINK contextual cross-links — renders above the footer on every page */
-    `<!--PA-XLINK:START--><section class="pa-xlink" aria-label="Across the Pattaya Authority network"><style>.pa-xlink{max-width:1180px;margin:2.5rem auto 0;padding:1.25rem 1.25rem 0;border-top:1px solid rgba(127,127,127,.18);font-family:inherit}.pa-xlink__h{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;opacity:.6;margin:0 0 .7rem}.pa-xlink__l{display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;margin:0;padding:0;list-style:none;font-size:.92rem}.pa-xlink__l a{font-weight:600;text-underline-offset:2px}.pa-xlink__l span{opacity:.55;font-weight:400}</style><p class="pa-xlink__h">Living in Pattaya — across the network</p><ul class="pa-xlink__l"><li><a href="https://movetopattaya.com/living-in-pattaya/" target="_blank" rel="noopener">relocating to Pattaya with pets</a> <span>— moving guide</span></li><li><a href="https://retire-in-pattaya.com/" target="_blank" rel="noopener">long-stay living with pets</a> <span>— retire &amp; stay</span></li><li><a href="https://pattaya-insider.com/" target="_blank" rel="noopener">things to do in Pattaya</a> <span>— local tips</span></li></ul></section><!--PA-XLINK:END-->` +
+    `` +
     '<footer class="site-footer">' +
     '<div class="footer-disclaimer">' + esc(DISCLAIMER) + "</div>" +
     '<div class="footer-main">' +
@@ -199,9 +199,9 @@ function footer() {
     <div class="pa-net__in">
       <div class="pa-net__property" style="margin-top:0;border-top:0;padding-top:0">
         <div class="pa-net__brand-name">PattayaPets<span class="pk">.</span></div>
-        <p style="margin:.7rem auto 0;font-size:.85rem;opacity:.72;line-height:1.5;max-width:52ch">Written, photographed and kept up to date by the team at <a href="https://pattaya-authority.com/" target="_blank" rel="author noopener noreferrer" style="font-weight:700;text-decoration:underline;text-underline-offset:2px">Pattaya Authority</a>, a Pattaya-based publishing studio.</p>
+        <p style="margin:.7rem auto 0;font-size:.85rem;opacity:.72;line-height:1.5;max-width:52ch">Written, photographed and kept up to date by the team at <a href="https://pattaya-authority.com/" target="_blank" rel="author nofollow noopener noreferrer" style="font-weight:700;text-decoration:underline;text-underline-offset:2px">Pattaya Authority</a>, a Pattaya-based publishing studio.</p>
       </div>
-      <div class="pa-net__bottom">© 2026 TIMPAEMI Co., Ltd. · <a href="https://timpaemi.com/privacy/" target="_blank" rel="noopener noreferrer">Privacy</a> · <a href="mailto:info@timpaemi.com">Contact</a></div>
+      <div class="pa-net__bottom">© 2026 TIMPAEMI Co., Ltd. · <a href="https://timpaemi.com/privacy/" target="_blank" rel="nofollow noopener noreferrer">Privacy</a> · <a href="mailto:info@timpaemi.com">Contact</a></div>
     </div>
   </section>
 <!--PA-NET:END-->` +

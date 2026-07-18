@@ -33,10 +33,10 @@ pages.push(hub({
     "early. For trips within Thailand, see " +
     "<a href=\"/owning-a-pet-in-pattaya/travelling-in-thailand.html\">travelling with a pet</a>. " +
     "Relocating? Pair this hub with " +
-    '<a href="https://pattayavisahelp.com/" target="_blank" rel="noopener noreferrer">' +
-    "Pattaya Visa Help</a> and pet-friendly rentals on " +
-    '<a href="https://pattayastream.com/" target="_blank" rel="noopener noreferrer">' +
-    "Pattaya Villa Stream</a>.</p>",
+    '' +
+    "Pattaya Visa Help and pet-friendly rentals on " +
+    '' +
+    "Pattaya Villa Stream.</p>",
   groups: [
     {
       title: "The essentials",
@@ -291,8 +291,8 @@ pages.push(own({
       "pet is central to your life here, widening your search to houses is " +
       "usually the simplest fix. Families relocating with children should also " +
       "see " +
-      '<a href="https://pattaya-school-guide.com/" target="_blank" rel="noopener noreferrer">' +
-      "Pattaya School Guide</a> for schools near your chosen area. Browse by " +
+      '' +
+      "Pattaya School Guide for schools near your chosen area. Browse by " +
       "<a href=\"/directory.html\">neighbourhood</a> in the directory.</p>" },
     { h: "What to confirm before you sign", html:
       "<ul><li>The <strong>building</strong> permits pets &mdash; see it in " +
@@ -372,8 +372,8 @@ pages.push(own({
       "<a href=\"/dog-friendly-pattaya/parks.html\">parks and green space</a> " +
       "in the dog-friendly cluster. Many expats pair a dawn walk with morning " +
       "exercise &mdash; if you want gym facilities after the dog is home, see " +
-      '<a href="https://pattaya-gym.com/" target="_blank" rel="noopener noreferrer">' +
-      "Pattaya Gym</a>.</p>" },
+      '' +
+      "Pattaya Gym.</p>" },
     { h: "Walk safely", html:
       "<p>Keep your dog leashed, carry water, and learn the routes around you. " +
       "Be aware of <a href=\"/pet-emergency/street-dog-encounters.html\">" +

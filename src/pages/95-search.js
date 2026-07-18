@@ -74,9 +74,9 @@ module.exports = [{
     '<summary class="corridor-panel__title">Pattaya Authority network</summary>' +
     '<div class="corridor-panel__body"><p class="notice">Sister guides for the wider move &mdash; visas, rentals, dining and more.</p>' +
     '<div class="chips">' +
-    '<a class="chip chip-link" href="https://pattayavisahelp.com/" target="_blank" rel="noopener noreferrer">Pattaya Visa Help</a>' +
-    '<a class="chip chip-link" href="https://pattaya-medical.com/" target="_blank" rel="noopener noreferrer">Pattaya Medical</a>' +
-    '<a class="chip chip-link" href="https://pattaya-authority.com/work/pattaya-pets/" target="_blank" rel="noopener noreferrer">Pattaya Authority</a>' +
+    'Pattaya Visa Help' +
+    'Pattaya Medical' +
+    'Pattaya Authority' +
     '</div></div></details>' +
     '<div id="pp-filters" class="search-filters" role="group" aria-label="Filter by section"></div>' +
     '<div id="pp-results" class="search-results" aria-live="polite" aria-atomic="true" role="region" aria-label="Search results">' +
