@@ -1,0 +1,3078 @@
+[
+  {
+    "country": "United Kingdom",
+    "thailandStatus": "Part 2 listed country; Thailand-origin dogs, cats and ferrets require the unlisted-country rabies blood-test pathway",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "ISO 11784/11785 or readable compatible microchip",
+        "beforeRabiesVaccine": true,
+        "sourceUrl": "https://www.gov.uk/bring-your-pet-to-great-britain",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": 12,
+        "validityMonths": null,
+        "sourceUrl": "https://www.gov.uk/bring-your-pet-to-great-britain",
+        "asOf": "2026-07-20"
+      },
+      "titreTest": {
+        "required": true,
+        "minimumResult": "≥0.5 IU/ml",
+        "approvedLabs": [
+          "Approved rabies blood-testing laboratory"
+        ],
+        "waitAfterSampleDays": 90,
+        "validityMonths": null,
+        "sourceUrl": "https://www.gov.uk/bring-your-pet-to-great-britain",
+        "asOf": "2026-07-20"
+      },
+      "importPermit": {
+        "required": false,
+        "leadTimeDays": null,
+        "issuingAuthority": null,
+        "cost": null,
+        "sourceUrl": "https://www.gov.uk/bring-your-pet-to-great-britain",
+        "asOf": "2026-07-20"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": 10,
+        "endorsingAuthority": "Official veterinarian issuing a Great Britain pet health certificate",
+        "sourceUrl": "https://www.gov.uk/bring-your-pet-to-great-britain",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": false,
+        "daysBefore": null,
+        "method": null,
+        "sourceUrl": "https://www.gov.uk/bring-your-pet-to-great-britain",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": false,
+        "durationDays": 0,
+        "facility": null,
+        "cost": null,
+        "bookingLeadTime": null,
+        "sourceUrl": "https://www.gov.uk/bring-your-pet-to-great-britain",
+        "asOf": "2026-07-20"
+      },
+      "parasiteTreatment": {
+        "required": true,
+        "window": "24-120 hours before arrival",
+        "species": [
+          "dogs"
+        ],
+        "sourceUrl": "https://www.gov.uk/bring-your-pet-to-great-britain",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Approved Great Britain pet-travel route and carrier"
+      ],
+      "entryPointsSourceUrl": "https://www.gov.uk/bring-your-pet-to-great-britain",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": null,
+      "cargoOnlySourceUrl": "https://www.gov.uk/bring-your-pet-to-great-britain",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 120,
+    "breedRestrictions": [
+      "Pit Bull Terrier type",
+      "Japanese Tosa",
+      "Dogo Argentino",
+      "Fila Brasileiro",
+      "XL Bully dogs are subject to exemption and handling restrictions"
+    ],
+    "speciesRestrictions": [
+      "This pathway is for dogs, cats and ferrets; other species follow separate rules."
+    ],
+    "sources": [
+      {
+        "publisher": "GOV.UK",
+        "title": "Bringing your pet dog, cat or ferret to Great Britain",
+        "url": "https://www.gov.uk/bring-your-pet-to-great-britain",
+        "accessed": "2026-07-20",
+        "supports": "Complete microchip, vaccination, blood test, 3-month wait, certificate, tapeworm and approved-route requirements."
+      },
+      {
+        "publisher": "GOV.UK",
+        "title": "Pet travel checks on pets by transport carriers",
+        "url": "https://www.gov.uk/government/publications/pet-travel-checks-on-pets-by-transport-carriers/pet-travel-checks-on-pets-by-transport-carriers",
+        "accessed": "2026-07-20",
+        "supports": "Carrier checks and current approved pet-travel controls; updated 2026-05-18."
+      }
+    ],
+    "confidence": "high",
+    "unverified": [
+      "Cargo-only status cannot be expressed as one country-wide boolean because approved airlines and routes impose different carriage methods; cargoOnly is null.",
+      "The 120-day total assumes an adult animal starting with a new compliant vaccination, sampling 30 days later and the mandatory 90-day wait."
+    ]
+  },
+  {
+    "country": "United States",
+    "thailandStatus": "CDC high-risk country for dog rabies; foreign-vaccinated dogs use the high-risk pathway",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "ISO-compatible microchip",
+        "beforeRabiesVaccine": true,
+        "sourceUrl": "https://www.cdc.gov/importation/dogs/foreign-vaccinated-high-risk-countries.html",
+        "asOf": "2026-07-20",
+        "species": [
+          "dogs"
+        ]
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": null,
+        "validityMonths": null,
+        "sourceUrl": "https://www.cdc.gov/importation/dogs/foreign-vaccinated-high-risk-countries.html",
+        "asOf": "2026-07-20",
+        "species": [
+          "dogs"
+        ]
+      },
+      "titreTest": {
+        "required": false,
+        "minimumResult": "CDC laboratory pass threshold",
+        "approvedLabs": [
+          "CDC-approved rabies serology laboratory"
+        ],
+        "waitAfterSampleDays": 28,
+        "validityMonths": null,
+        "sourceUrl": "https://www.cdc.gov/importation/dogs/foreign-vaccinated-high-risk-countries.html",
+        "asOf": "2026-07-20",
+        "alternative": "Without a valid titre, reserve 28-day quarantine at a CDC-registered animal care facility"
+      },
+      "importPermit": {
+        "required": false,
+        "leadTimeDays": null,
+        "issuingAuthority": null,
+        "cost": null,
+        "sourceUrl": "https://www.cdc.gov/importation/dogs/foreign-vaccinated-high-risk-countries.html",
+        "asOf": "2026-07-20"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": null,
+        "endorsingAuthority": "Official government veterinarian on the Certification of Foreign Rabies Vaccination and Microchip form",
+        "sourceUrl": "https://www.cdc.gov/importation/dogs/foreign-vaccinated-high-risk-countries.html",
+        "asOf": "2026-07-20",
+        "species": [
+          "foreign-vaccinated dogs"
+        ]
+      },
+      "advanceNotification": {
+        "required": true,
+        "daysBefore": 0,
+        "method": "Submit the CDC Dog Import Form and obtain its receipt before arrival",
+        "sourceUrl": "https://www.cdc.gov/importation/dogs/foreign-vaccinated-high-risk-countries.html",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": null,
+        "durationDays": 28,
+        "facility": "CDC-registered animal care facility",
+        "cost": "Owner-paid",
+        "bookingLeadTime": "Reservation required before travel; duration is 28 days when the foreign-vaccinated high-risk dog has no valid titre",
+        "sourceUrl": "https://www.cdc.gov/importation/dogs/foreign-vaccinated-high-risk-countries.html",
+        "asOf": "2026-07-20"
+      },
+      "parasiteTreatment": {
+        "required": false,
+        "window": null,
+        "species": [],
+        "sourceUrl": "https://www.cdc.gov/importation/dogs/foreign-vaccinated-high-risk-countries.html",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Atlanta (ATL)",
+        "Los Angeles (LAX)",
+        "Miami (MIA)",
+        "New York-JFK (JFK)",
+        "Philadelphia (PHL)",
+        "Washington-Dulles (IAD)"
+      ],
+      "entryPointsSourceUrl": "https://www.cdc.gov/importation/dogs/foreign-vaccinated-high-risk-countries.html",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": false,
+      "cargoOnlySourceUrl": "https://www.cdc.gov/importation/dogs/foreign-vaccinated-high-risk-countries.html",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 28,
+    "breedRestrictions": [],
+    "speciesRestrictions": [
+      "CDC pathway described here applies to dogs; cats have no CDC federal certificate requirement but remain subject to state and destination rules.",
+      "Dogs must be at least 6 months old on arrival."
+    ],
+    "sources": [
+      {
+        "publisher": "US Centers for Disease Control and Prevention",
+        "title": "Foreign-vaccinated dogs from high-risk countries",
+        "url": "https://www.cdc.gov/importation/dogs/foreign-vaccinated-high-risk-countries.html",
+        "accessed": "2026-07-20",
+        "supports": "Dog age, microchip, forms, airport, facility, revaccination, titre and quarantine alternatives."
+      },
+      {
+        "publisher": "US Department of Agriculture APHIS",
+        "title": "Bringing cats into the United States",
+        "url": "https://www.aphis.usda.gov/pet-travel/another-country-to-us-import/cats",
+        "accessed": "2026-07-20",
+        "supports": "Federal cat-entry scope and separate state requirements."
+      }
+    ],
+    "confidence": "high",
+    "unverified": [
+      "The 28-day minimum chooses the no-titre route and therefore includes 28 days of post-arrival facility quarantine; a no-quarantine titre route requires a sample at least 30 days after vaccination and at least 28 days before arrival.",
+      "State, territory, Hawaii and Guam rules are not represented in this federal baseline.",
+      "CargoOnly is false for the federal regime, but airline carriage method remains separate."
+    ]
+  },
+  {
+    "country": "European Union",
+    "thailandStatus": "Non-listed third country for rabies purposes; titre and 90-day wait required",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "ISO 11784/11785 or readable compatible transponder",
+        "beforeRabiesVaccine": true,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": 12,
+        "validityMonths": null,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "titreTest": {
+        "required": true,
+        "minimumResult": "≥0.5 IU/ml",
+        "approvedLabs": [
+          "EU-designated rabies serology laboratory"
+        ],
+        "waitAfterSampleDays": 90,
+        "validityMonths": null,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "importPermit": {
+        "required": false,
+        "leadTimeDays": null,
+        "issuingAuthority": null,
+        "cost": null,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": 10,
+        "endorsingAuthority": "Official veterinarian / competent authority",
+        "sourceUrl": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": false,
+        "daysBefore": null,
+        "method": null,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": false,
+        "durationDays": 0,
+        "facility": null,
+        "cost": null,
+        "bookingLeadTime": null,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "parasiteTreatment": {
+        "required": false,
+        "window": null,
+        "species": [],
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Designated travellers' point of entry for non-commercial pet movements"
+      ],
+      "entryPointsSourceUrl": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": false,
+      "cargoOnlySourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 120,
+    "breedRestrictions": [],
+    "speciesRestrictions": [
+      "Non-commercial pathway is limited to dogs, cats and ferrets; other species follow separate rules.",
+      "More than five animals normally moves into commercial rules unless a qualifying event exception applies."
+    ],
+    "sources": [
+      {
+        "publisher": "European Commission",
+        "title": "Bringing pets into the EU from a non-EU country",
+        "url": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "accessed": "2026-07-20",
+        "supports": "Thailand's non-listed-origin requirements."
+      },
+      {
+        "publisher": "European Union",
+        "title": "Travelling with pets and other animals in the EU",
+        "url": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+        "accessed": "2026-07-20",
+        "supports": "Certificate and travellers' entry-point rules."
+      }
+    ],
+    "confidence": "high",
+    "unverified": [
+      "Member states can add breed, ownership, parasite, entry-point and carriage controls.",
+      "The 120-day total assumes an adult animal, blood sampling on day 30 after a new vaccination and departure after the 90-day post-sample wait."
+    ]
+  },
+  {
+    "country": "Australia",
+    "thailandStatus": "Not approved for direct import of cats or dogs; animal must move to an approved Group 1, 2 or 3 country and reside there continuously for at least 180 days before export",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "ISO-compatible microchip",
+        "beforeRabiesVaccine": true,
+        "sourceUrl": "https://www.agriculture.gov.au/cats-dogs/step-by-step-guides",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": null,
+        "validityMonths": null,
+        "sourceUrl": "https://www.agriculture.gov.au/biosecurity-trade/cats-dogs/rabies-neutralising-antibody",
+        "asOf": "2026-07-20"
+      },
+      "titreTest": {
+        "required": true,
+        "minimumResult": "≥0.5 IU/ml",
+        "approvedLabs": [
+          "Recognised laboratory under the approved-country pathway"
+        ],
+        "waitAfterSampleDays": 180,
+        "validityMonths": null,
+        "sourceUrl": "https://www.agriculture.gov.au/biosecurity-trade/cats-dogs/rabies-neutralising-antibody",
+        "asOf": "2026-07-20"
+      },
+      "importPermit": {
+        "required": true,
+        "leadTimeDays": 40,
+        "issuingAuthority": "Australian Department of Agriculture, Fisheries and Forestry",
+        "cost": null,
+        "sourceUrl": "https://www.agriculture.gov.au/biosecurity-trade/cats-dogs/how-to-import/permit",
+        "asOf": "2026-07-20",
+        "normalProcessing": "20-40 business days; complex applications can take up to 123 business days"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": null,
+        "endorsingAuthority": "Competent government veterinarian in the approved export country",
+        "sourceUrl": "https://www.agriculture.gov.au/cats-dogs/step-by-step-guides",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": true,
+        "daysBefore": null,
+        "method": "Coordinate permit, flight and post-entry quarantine booking",
+        "sourceUrl": "https://www.agriculture.gov.au/cats-dogs/step-by-step-guides",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": true,
+        "durationDays": 10,
+        "facility": "Mickleham Post Entry Quarantine Facility, Melbourne",
+        "cost": null,
+        "bookingLeadTime": "Booking availability is separate from the import permit",
+        "sourceUrl": "https://www.agriculture.gov.au/cats-dogs/step-by-step-guides",
+        "asOf": "2026-07-20"
+      },
+      "parasiteTreatment": {
+        "required": true,
+        "window": "Multiple internal and external parasite treatments under the applicable step-by-step guide",
+        "species": [
+          "dogs",
+          "cats"
+        ],
+        "sourceUrl": "https://www.agriculture.gov.au/cats-dogs/step-by-step-guides",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Melbourne International Airport for cats and dogs entering post-entry quarantine"
+      ],
+      "entryPointsSourceUrl": "https://www.agriculture.gov.au/cats-dogs/step-by-step-guides",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": true,
+      "cargoOnlySourceUrl": "https://www.agriculture.gov.au/cats-dogs/step-by-step-guides",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 180,
+    "breedRestrictions": [
+      "Dogo Argentino",
+      "Fila Brasileiro",
+      "Japanese Tosa",
+      "American Pit Bull Terrier / Pit Bull Terrier",
+      "Presa Canario",
+      "Domestic/non-domestic hybrids are restricted; qualifying Bengal cats require ancestry evidence"
+    ],
+    "speciesRestrictions": [
+      "Direct Thailand-origin import is unavailable for cats and dogs.",
+      "Only approved species and breeds under the relevant biosecurity conditions may enter."
+    ],
+    "sources": [
+      {
+        "publisher": "Australian Department of Agriculture, Fisheries and Forestry",
+        "title": "Step-by-step guides for importing cats and dogs",
+        "url": "https://www.agriculture.gov.au/cats-dogs/step-by-step-guides",
+        "accessed": "2026-07-20",
+        "supports": "Approved-country pathways and preparation sequence."
+      },
+      {
+        "publisher": "Australian Department of Agriculture, Fisheries and Forestry",
+        "title": "Frequently asked questions about importing cats and dogs",
+        "url": "https://www.agriculture.gov.au/biosecurity-trade/cats-dogs/frequently-asked-questions",
+        "accessed": "2026-07-20",
+        "supports": "Thailand's unapproved status, 180-day residence rule and Mickleham quarantine."
+      },
+      {
+        "publisher": "Australian Department of Agriculture, Fisheries and Forestry",
+        "title": "Rabies neutralising antibody titre test",
+        "url": "https://www.agriculture.gov.au/biosecurity-trade/cats-dogs/rabies-neutralising-antibody",
+        "accessed": "2026-07-20",
+        "supports": "RNATT and 180-day waiting rule."
+      },
+      {
+        "publisher": "Australian Department of Agriculture, Fisheries and Forestry",
+        "title": "Import permit applications",
+        "url": "https://www.agriculture.gov.au/biosecurity-trade/cats-dogs/how-to-import/permit",
+        "accessed": "2026-07-20",
+        "supports": "Permit processing ranges and planning warning."
+      }
+    ],
+    "confidence": "high",
+    "unverified": [
+      "The 180-day total is a theoretical floor because moving to an approved intermediary country, establishing residence, completing all tests, securing a permit and obtaining a quarantine booking can make the actual path materially longer.",
+      "Health-certificate timing and costs vary by approved-country pathway and were not reduced to one value.",
+      "The direct Thailand-to-Australia pathway is effectively closed even if an airline is willing to carry the animal."
+    ]
+  },
+  {
+    "country": "Germany",
+    "thailandStatus": "Non-listed third country under the EU pet-movement regime; titre and 90-day wait required",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "ISO 11784/11785 or readable compatible transponder",
+        "beforeRabiesVaccine": true,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": 12,
+        "validityMonths": null,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "titreTest": {
+        "required": true,
+        "minimumResult": "≥0.5 IU/ml",
+        "approvedLabs": [
+          "EU-designated rabies serology laboratory"
+        ],
+        "waitAfterSampleDays": 90,
+        "validityMonths": null,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "importPermit": {
+        "required": false,
+        "leadTimeDays": null,
+        "issuingAuthority": null,
+        "cost": null,
+        "sourceUrl": "https://www.bmel.de/EN/topics/animals/pets-and-zoo-animals/pets-entry-regulation.html",
+        "asOf": "2026-07-20"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": 10,
+        "endorsingAuthority": "Official veterinarian / competent authority",
+        "sourceUrl": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": false,
+        "daysBefore": null,
+        "method": null,
+        "sourceUrl": "https://www.bmel.de/EN/topics/animals/pets-and-zoo-animals/pets-entry-regulation.html",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": false,
+        "durationDays": 0,
+        "facility": null,
+        "cost": null,
+        "bookingLeadTime": null,
+        "sourceUrl": "https://www.bmel.de/EN/topics/animals/pets-and-zoo-animals/pets-entry-regulation.html",
+        "asOf": "2026-07-20"
+      },
+      "parasiteTreatment": {
+        "required": false,
+        "window": null,
+        "species": [],
+        "sourceUrl": "https://www.bmel.de/EN/topics/animals/pets-and-zoo-animals/pets-entry-regulation.html",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Designated travellers' point of entry for non-commercial pet movements"
+      ],
+      "entryPointsSourceUrl": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": false,
+      "cargoOnlySourceUrl": "https://www.bmel.de/EN/topics/animals/pets-and-zoo-animals/pets-entry-regulation.html",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 120,
+    "breedRestrictions": [],
+    "speciesRestrictions": [
+      "Non-commercial pathway is limited to dogs, cats and ferrets; other species follow separate rules."
+    ],
+    "sources": [
+      {
+        "publisher": "European Commission",
+        "title": "Bringing pets into the EU from a non-EU country",
+        "url": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "accessed": "2026-07-20",
+        "supports": "Thailand's non-listed-origin microchip, vaccination, titre, 90-day wait and certificate rules."
+      },
+      {
+        "publisher": "European Union",
+        "title": "Travelling with pets and other animals in the EU",
+        "url": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+        "accessed": "2026-07-20",
+        "supports": "Non-commercial certificate timing and travellers' points of entry."
+      },
+      {
+        "publisher": "Germany competent authority",
+        "title": "National pet-entry guidance",
+        "url": "https://www.bmel.de/EN/topics/animals/pets-and-zoo-animals/pets-entry-regulation.html",
+        "accessed": "2026-07-20",
+        "supports": "Country-specific implementation and entry guidance."
+      }
+    ],
+    "confidence": "high",
+    "unverified": [
+      "National breed, municipality, airline and airport controls can be additional to this border-health baseline.",
+      "The 120-day total assumes an adult animal starting a new vaccination and sample collection 30 days later."
+    ]
+  },
+  {
+    "country": "Sweden",
+    "thailandStatus": "Non-listed third country under the EU pet-movement regime; titre and 90-day wait required",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "ISO 11784/11785 or readable compatible transponder",
+        "beforeRabiesVaccine": true,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": 12,
+        "validityMonths": null,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "titreTest": {
+        "required": true,
+        "minimumResult": "≥0.5 IU/ml",
+        "approvedLabs": [
+          "EU-designated rabies serology laboratory"
+        ],
+        "waitAfterSampleDays": 90,
+        "validityMonths": null,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "importPermit": {
+        "required": false,
+        "leadTimeDays": null,
+        "issuingAuthority": null,
+        "cost": null,
+        "sourceUrl": "https://jordbruksverket.se/languages/english/movement-of-dogs-cats-and-ferrets/movement-of-dogs-cats-and-ferrets-from-countries-outside-the-eu-where-the-rabies-situation-is-not-under-control",
+        "asOf": "2026-07-20"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": 10,
+        "endorsingAuthority": "Official veterinarian / competent authority",
+        "sourceUrl": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": false,
+        "daysBefore": null,
+        "method": null,
+        "sourceUrl": "https://jordbruksverket.se/languages/english/movement-of-dogs-cats-and-ferrets/movement-of-dogs-cats-and-ferrets-from-countries-outside-the-eu-where-the-rabies-situation-is-not-under-control",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": false,
+        "durationDays": 0,
+        "facility": null,
+        "cost": null,
+        "bookingLeadTime": null,
+        "sourceUrl": "https://jordbruksverket.se/languages/english/movement-of-dogs-cats-and-ferrets/movement-of-dogs-cats-and-ferrets-from-countries-outside-the-eu-where-the-rabies-situation-is-not-under-control",
+        "asOf": "2026-07-20"
+      },
+      "parasiteTreatment": {
+        "required": false,
+        "window": null,
+        "species": [],
+        "sourceUrl": "https://jordbruksverket.se/languages/english/movement-of-dogs-cats-and-ferrets/movement-of-dogs-cats-and-ferrets-from-countries-outside-the-eu-where-the-rabies-situation-is-not-under-control",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Designated travellers' point of entry for non-commercial pet movements"
+      ],
+      "entryPointsSourceUrl": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": false,
+      "cargoOnlySourceUrl": "https://jordbruksverket.se/languages/english/movement-of-dogs-cats-and-ferrets/movement-of-dogs-cats-and-ferrets-from-countries-outside-the-eu-where-the-rabies-situation-is-not-under-control",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 120,
+    "breedRestrictions": [],
+    "speciesRestrictions": [
+      "Non-commercial pathway is limited to dogs, cats and ferrets; other species follow separate rules."
+    ],
+    "sources": [
+      {
+        "publisher": "European Commission",
+        "title": "Bringing pets into the EU from a non-EU country",
+        "url": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "accessed": "2026-07-20",
+        "supports": "Thailand's non-listed-origin microchip, vaccination, titre, 90-day wait and certificate rules."
+      },
+      {
+        "publisher": "European Union",
+        "title": "Travelling with pets and other animals in the EU",
+        "url": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+        "accessed": "2026-07-20",
+        "supports": "Non-commercial certificate timing and travellers' points of entry."
+      },
+      {
+        "publisher": "Sweden competent authority",
+        "title": "National pet-entry guidance",
+        "url": "https://jordbruksverket.se/languages/english/movement-of-dogs-cats-and-ferrets/movement-of-dogs-cats-and-ferrets-from-countries-outside-the-eu-where-the-rabies-situation-is-not-under-control",
+        "accessed": "2026-07-20",
+        "supports": "Country-specific implementation and entry guidance."
+      }
+    ],
+    "confidence": "high",
+    "unverified": [
+      "National breed, municipality, airline and airport controls can be additional to this border-health baseline.",
+      "The 120-day total assumes an adult animal starting a new vaccination and sample collection 30 days later."
+    ]
+  },
+  {
+    "country": "Denmark",
+    "thailandStatus": "Non-listed third country under the EU pet-movement regime; titre and 90-day wait required",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "ISO 11784/11785 or readable compatible transponder",
+        "beforeRabiesVaccine": true,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": 12,
+        "validityMonths": null,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "titreTest": {
+        "required": true,
+        "minimumResult": "≥0.5 IU/ml",
+        "approvedLabs": [
+          "EU-designated rabies serology laboratory"
+        ],
+        "waitAfterSampleDays": 90,
+        "validityMonths": null,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "importPermit": {
+        "required": false,
+        "leadTimeDays": null,
+        "issuingAuthority": null,
+        "cost": null,
+        "sourceUrl": "https://en.foedevarestyrelsen.dk/animals/travelling-with-pet-animals/dogs-cats-and-ferrets",
+        "asOf": "2026-07-20"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": 10,
+        "endorsingAuthority": "Official veterinarian / competent authority",
+        "sourceUrl": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": false,
+        "daysBefore": null,
+        "method": null,
+        "sourceUrl": "https://en.foedevarestyrelsen.dk/animals/travelling-with-pet-animals/dogs-cats-and-ferrets",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": false,
+        "durationDays": 0,
+        "facility": null,
+        "cost": null,
+        "bookingLeadTime": null,
+        "sourceUrl": "https://en.foedevarestyrelsen.dk/animals/travelling-with-pet-animals/dogs-cats-and-ferrets",
+        "asOf": "2026-07-20"
+      },
+      "parasiteTreatment": {
+        "required": false,
+        "window": null,
+        "species": [],
+        "sourceUrl": "https://en.foedevarestyrelsen.dk/animals/travelling-with-pet-animals/dogs-cats-and-ferrets",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Designated travellers' point of entry for non-commercial pet movements"
+      ],
+      "entryPointsSourceUrl": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": false,
+      "cargoOnlySourceUrl": "https://en.foedevarestyrelsen.dk/animals/travelling-with-pet-animals/dogs-cats-and-ferrets",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 120,
+    "breedRestrictions": [],
+    "speciesRestrictions": [
+      "Non-commercial pathway is limited to dogs, cats and ferrets; other species follow separate rules."
+    ],
+    "sources": [
+      {
+        "publisher": "European Commission",
+        "title": "Bringing pets into the EU from a non-EU country",
+        "url": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "accessed": "2026-07-20",
+        "supports": "Thailand's non-listed-origin microchip, vaccination, titre, 90-day wait and certificate rules."
+      },
+      {
+        "publisher": "European Union",
+        "title": "Travelling with pets and other animals in the EU",
+        "url": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+        "accessed": "2026-07-20",
+        "supports": "Non-commercial certificate timing and travellers' points of entry."
+      },
+      {
+        "publisher": "Denmark competent authority",
+        "title": "National pet-entry guidance",
+        "url": "https://en.foedevarestyrelsen.dk/animals/travelling-with-pet-animals/dogs-cats-and-ferrets",
+        "accessed": "2026-07-20",
+        "supports": "Country-specific implementation and entry guidance."
+      }
+    ],
+    "confidence": "high",
+    "unverified": [
+      "National breed, municipality, airline and airport controls can be additional to this border-health baseline.",
+      "The 120-day total assumes an adult animal starting a new vaccination and sample collection 30 days later."
+    ]
+  },
+  {
+    "country": "Netherlands",
+    "thailandStatus": "Non-listed third country under the EU pet-movement regime; titre and 90-day wait required",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "ISO 11784/11785 or readable compatible transponder",
+        "beforeRabiesVaccine": true,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": 12,
+        "validityMonths": null,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "titreTest": {
+        "required": true,
+        "minimumResult": "≥0.5 IU/ml",
+        "approvedLabs": [
+          "EU-designated rabies serology laboratory"
+        ],
+        "waitAfterSampleDays": 90,
+        "validityMonths": null,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "importPermit": {
+        "required": false,
+        "leadTimeDays": null,
+        "issuingAuthority": null,
+        "cost": null,
+        "sourceUrl": "https://english.nvwa.nl/topics/travelling-to-the-netherlands-with-your-dog-or-cat",
+        "asOf": "2026-07-20"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": 10,
+        "endorsingAuthority": "Official veterinarian / competent authority",
+        "sourceUrl": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": false,
+        "daysBefore": null,
+        "method": null,
+        "sourceUrl": "https://english.nvwa.nl/topics/travelling-to-the-netherlands-with-your-dog-or-cat",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": false,
+        "durationDays": 0,
+        "facility": null,
+        "cost": null,
+        "bookingLeadTime": null,
+        "sourceUrl": "https://english.nvwa.nl/topics/travelling-to-the-netherlands-with-your-dog-or-cat",
+        "asOf": "2026-07-20"
+      },
+      "parasiteTreatment": {
+        "required": false,
+        "window": null,
+        "species": [],
+        "sourceUrl": "https://english.nvwa.nl/topics/travelling-to-the-netherlands-with-your-dog-or-cat",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Designated travellers' point of entry for non-commercial pet movements"
+      ],
+      "entryPointsSourceUrl": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": false,
+      "cargoOnlySourceUrl": "https://english.nvwa.nl/topics/travelling-to-the-netherlands-with-your-dog-or-cat",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 120,
+    "breedRestrictions": [],
+    "speciesRestrictions": [
+      "Non-commercial pathway is limited to dogs, cats and ferrets; other species follow separate rules."
+    ],
+    "sources": [
+      {
+        "publisher": "European Commission",
+        "title": "Bringing pets into the EU from a non-EU country",
+        "url": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "accessed": "2026-07-20",
+        "supports": "Thailand's non-listed-origin microchip, vaccination, titre, 90-day wait and certificate rules."
+      },
+      {
+        "publisher": "European Union",
+        "title": "Travelling with pets and other animals in the EU",
+        "url": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+        "accessed": "2026-07-20",
+        "supports": "Non-commercial certificate timing and travellers' points of entry."
+      },
+      {
+        "publisher": "Netherlands competent authority",
+        "title": "National pet-entry guidance",
+        "url": "https://english.nvwa.nl/topics/travelling-to-the-netherlands-with-your-dog-or-cat",
+        "accessed": "2026-07-20",
+        "supports": "Country-specific implementation and entry guidance."
+      }
+    ],
+    "confidence": "high",
+    "unverified": [
+      "National breed, municipality, airline and airport controls can be additional to this border-health baseline.",
+      "The 120-day total assumes an adult animal starting a new vaccination and sample collection 30 days later."
+    ]
+  },
+  {
+    "country": "France",
+    "thailandStatus": "Non-listed third country under the EU pet-movement regime; titre and 90-day wait required",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "ISO 11784/11785 or readable compatible transponder",
+        "beforeRabiesVaccine": true,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": 12,
+        "validityMonths": null,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "titreTest": {
+        "required": true,
+        "minimumResult": "≥0.5 IU/ml",
+        "approvedLabs": [
+          "EU-designated rabies serology laboratory"
+        ],
+        "waitAfterSampleDays": 90,
+        "validityMonths": null,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "importPermit": {
+        "required": false,
+        "leadTimeDays": null,
+        "issuingAuthority": null,
+        "cost": null,
+        "sourceUrl": "https://agriculture.gouv.fr/bringing-your-pet-dog-cat-or-ferret-france",
+        "asOf": "2026-07-20"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": 10,
+        "endorsingAuthority": "Official veterinarian / competent authority",
+        "sourceUrl": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": false,
+        "daysBefore": null,
+        "method": null,
+        "sourceUrl": "https://agriculture.gouv.fr/bringing-your-pet-dog-cat-or-ferret-france",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": false,
+        "durationDays": 0,
+        "facility": null,
+        "cost": null,
+        "bookingLeadTime": null,
+        "sourceUrl": "https://agriculture.gouv.fr/bringing-your-pet-dog-cat-or-ferret-france",
+        "asOf": "2026-07-20"
+      },
+      "parasiteTreatment": {
+        "required": false,
+        "window": null,
+        "species": [],
+        "sourceUrl": "https://agriculture.gouv.fr/bringing-your-pet-dog-cat-or-ferret-france",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Designated travellers' point of entry for non-commercial pet movements"
+      ],
+      "entryPointsSourceUrl": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": false,
+      "cargoOnlySourceUrl": "https://agriculture.gouv.fr/bringing-your-pet-dog-cat-or-ferret-france",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 120,
+    "breedRestrictions": [],
+    "speciesRestrictions": [
+      "Non-commercial pathway is limited to dogs, cats and ferrets; other species follow separate rules."
+    ],
+    "sources": [
+      {
+        "publisher": "European Commission",
+        "title": "Bringing pets into the EU from a non-EU country",
+        "url": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "accessed": "2026-07-20",
+        "supports": "Thailand's non-listed-origin microchip, vaccination, titre, 90-day wait and certificate rules."
+      },
+      {
+        "publisher": "European Union",
+        "title": "Travelling with pets and other animals in the EU",
+        "url": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+        "accessed": "2026-07-20",
+        "supports": "Non-commercial certificate timing and travellers' points of entry."
+      },
+      {
+        "publisher": "France competent authority",
+        "title": "National pet-entry guidance",
+        "url": "https://agriculture.gouv.fr/bringing-your-pet-dog-cat-or-ferret-france",
+        "accessed": "2026-07-20",
+        "supports": "Country-specific implementation and entry guidance."
+      }
+    ],
+    "confidence": "high",
+    "unverified": [
+      "National breed, municipality, airline and airport controls can be additional to this border-health baseline.",
+      "The 120-day total assumes an adult animal starting a new vaccination and sample collection 30 days later."
+    ]
+  },
+  {
+    "country": "Italy",
+    "thailandStatus": "Non-listed third country under the EU pet-movement regime; titre and 90-day wait required",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "ISO 11784/11785 or readable compatible transponder",
+        "beforeRabiesVaccine": true,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": 12,
+        "validityMonths": null,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "titreTest": {
+        "required": true,
+        "minimumResult": "≥0.5 IU/ml",
+        "approvedLabs": [
+          "EU-designated rabies serology laboratory"
+        ],
+        "waitAfterSampleDays": 90,
+        "validityMonths": null,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "importPermit": {
+        "required": false,
+        "leadTimeDays": null,
+        "issuingAuthority": null,
+        "cost": null,
+        "sourceUrl": "https://www.salute.gov.it/portale/caniGatti/dettaglioContenutiCaniGatti.jsp?lingua=english&id=4590&area=cani&menu=viaggiare",
+        "asOf": "2026-07-20"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": 10,
+        "endorsingAuthority": "Official veterinarian / competent authority",
+        "sourceUrl": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": false,
+        "daysBefore": null,
+        "method": null,
+        "sourceUrl": "https://www.salute.gov.it/portale/caniGatti/dettaglioContenutiCaniGatti.jsp?lingua=english&id=4590&area=cani&menu=viaggiare",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": false,
+        "durationDays": 0,
+        "facility": null,
+        "cost": null,
+        "bookingLeadTime": null,
+        "sourceUrl": "https://www.salute.gov.it/portale/caniGatti/dettaglioContenutiCaniGatti.jsp?lingua=english&id=4590&area=cani&menu=viaggiare",
+        "asOf": "2026-07-20"
+      },
+      "parasiteTreatment": {
+        "required": false,
+        "window": null,
+        "species": [],
+        "sourceUrl": "https://www.salute.gov.it/portale/caniGatti/dettaglioContenutiCaniGatti.jsp?lingua=english&id=4590&area=cani&menu=viaggiare",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Designated travellers' point of entry for non-commercial pet movements"
+      ],
+      "entryPointsSourceUrl": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": false,
+      "cargoOnlySourceUrl": "https://www.salute.gov.it/portale/caniGatti/dettaglioContenutiCaniGatti.jsp?lingua=english&id=4590&area=cani&menu=viaggiare",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 120,
+    "breedRestrictions": [],
+    "speciesRestrictions": [
+      "Non-commercial pathway is limited to dogs, cats and ferrets; other species follow separate rules."
+    ],
+    "sources": [
+      {
+        "publisher": "European Commission",
+        "title": "Bringing pets into the EU from a non-EU country",
+        "url": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "accessed": "2026-07-20",
+        "supports": "Thailand's non-listed-origin microchip, vaccination, titre, 90-day wait and certificate rules."
+      },
+      {
+        "publisher": "European Union",
+        "title": "Travelling with pets and other animals in the EU",
+        "url": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+        "accessed": "2026-07-20",
+        "supports": "Non-commercial certificate timing and travellers' points of entry."
+      },
+      {
+        "publisher": "Italy competent authority",
+        "title": "National pet-entry guidance",
+        "url": "https://www.salute.gov.it/portale/caniGatti/dettaglioContenutiCaniGatti.jsp?lingua=english&id=4590&area=cani&menu=viaggiare",
+        "accessed": "2026-07-20",
+        "supports": "Country-specific implementation and entry guidance."
+      }
+    ],
+    "confidence": "high",
+    "unverified": [
+      "National breed, municipality, airline and airport controls can be additional to this border-health baseline.",
+      "The 120-day total assumes an adult animal starting a new vaccination and sample collection 30 days later."
+    ]
+  },
+  {
+    "country": "Norway",
+    "thailandStatus": "Country with an uncontrolled rabies situation under Norway's third-country pet rules; titre and 90-day wait required",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "ISO 11784/11785 or readable compatible transponder",
+        "beforeRabiesVaccine": true,
+        "sourceUrl": "https://www.mattilsynet.no/en/animals/travelling-with-dogs-cats-and-ferrets-from-third-countries-and-territories-to-norway",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": 12,
+        "validityMonths": null,
+        "sourceUrl": "https://www.mattilsynet.no/en/animals/travelling-with-dogs-cats-and-ferrets-from-third-countries-and-territories-to-norway",
+        "asOf": "2026-07-20"
+      },
+      "titreTest": {
+        "required": true,
+        "minimumResult": "≥0.5 IU/ml",
+        "approvedLabs": [
+          "EU-approved rabies serology laboratory"
+        ],
+        "waitAfterSampleDays": 90,
+        "validityMonths": null,
+        "sourceUrl": "https://www.mattilsynet.no/en/animals/travelling-with-dogs-cats-and-ferrets-from-third-countries-and-territories-to-norway",
+        "asOf": "2026-07-20"
+      },
+      "importPermit": {
+        "required": false,
+        "leadTimeDays": null,
+        "issuingAuthority": null,
+        "cost": null,
+        "sourceUrl": "https://www.mattilsynet.no/en/animals/travelling-with-dogs-cats-and-ferrets-from-third-countries-and-territories-to-norway",
+        "asOf": "2026-07-20"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": 10,
+        "endorsingAuthority": "Official veterinarian / competent authority",
+        "sourceUrl": "https://www.mattilsynet.no/en/animals/travelling-with-dogs-cats-and-ferrets-from-third-countries-and-territories-to-norway",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": false,
+        "daysBefore": null,
+        "method": null,
+        "sourceUrl": "https://www.mattilsynet.no/en/animals/travelling-with-dogs-cats-and-ferrets-from-third-countries-and-territories-to-norway",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": false,
+        "durationDays": 0,
+        "facility": null,
+        "cost": null,
+        "bookingLeadTime": null,
+        "sourceUrl": "https://www.mattilsynet.no/en/animals/travelling-with-dogs-cats-and-ferrets-from-third-countries-and-territories-to-norway",
+        "asOf": "2026-07-20"
+      },
+      "parasiteTreatment": {
+        "required": true,
+        "window": "24-120 hours before entry",
+        "species": [
+          "dogs"
+        ],
+        "sourceUrl": "https://www.mattilsynet.no/en/animals/travelling-with-dogs-cats-and-ferrets-from-third-countries-and-territories-to-norway",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Approved travellers' point of entry under the non-commercial pathway"
+      ],
+      "entryPointsSourceUrl": "https://www.mattilsynet.no/en/animals/travelling-with-dogs-cats-and-ferrets-from-third-countries-and-territories-to-norway",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": false,
+      "cargoOnlySourceUrl": "https://www.mattilsynet.no/en/animals/travelling-with-dogs-cats-and-ferrets-from-third-countries-and-territories-to-norway",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 120,
+    "breedRestrictions": [],
+    "speciesRestrictions": [
+      "This pathway is for dogs, cats and ferrets; other species follow separate rules."
+    ],
+    "sources": [
+      {
+        "publisher": "Norwegian Food Safety Authority",
+        "title": "Travelling with dogs, cats and ferrets from third countries to Norway",
+        "url": "https://www.mattilsynet.no/en/animals/travelling-with-dogs-cats-and-ferrets-from-third-countries-and-territories-to-norway",
+        "accessed": "2026-07-20",
+        "supports": "Microchip, vaccine, titre, wait, certificate, tapeworm and entry controls."
+      }
+    ],
+    "confidence": "high",
+    "unverified": [
+      "Norway is outside the EU but aligns this non-commercial health pathway with EU/EEA rules.",
+      "Breed and ownership restrictions are separate from the reviewed import-health page."
+    ]
+  },
+  {
+    "country": "Finland",
+    "thailandStatus": "Non-listed third country under the EU pet-movement regime; titre and 90-day wait required",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "ISO 11784/11785 or readable compatible transponder",
+        "beforeRabiesVaccine": true,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": 12,
+        "validityMonths": null,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "titreTest": {
+        "required": true,
+        "minimumResult": "≥0.5 IU/ml",
+        "approvedLabs": [
+          "EU-designated rabies serology laboratory"
+        ],
+        "waitAfterSampleDays": 90,
+        "validityMonths": null,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "importPermit": {
+        "required": false,
+        "leadTimeDays": null,
+        "issuingAuthority": null,
+        "cost": null,
+        "sourceUrl": "https://www.ruokavirasto.fi/en/themes/import-and-export/import/animals-and-animal-products/animals/dogs-cats-and-ferrets/non-commercial-movement/",
+        "asOf": "2026-07-20"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": 10,
+        "endorsingAuthority": "Official veterinarian / competent authority",
+        "sourceUrl": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": false,
+        "daysBefore": null,
+        "method": null,
+        "sourceUrl": "https://www.ruokavirasto.fi/en/themes/import-and-export/import/animals-and-animal-products/animals/dogs-cats-and-ferrets/non-commercial-movement/",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": false,
+        "durationDays": 0,
+        "facility": null,
+        "cost": null,
+        "bookingLeadTime": null,
+        "sourceUrl": "https://www.ruokavirasto.fi/en/themes/import-and-export/import/animals-and-animal-products/animals/dogs-cats-and-ferrets/non-commercial-movement/",
+        "asOf": "2026-07-20"
+      },
+      "parasiteTreatment": {
+        "required": true,
+        "window": "24-120 hours before scheduled entry",
+        "species": [
+          "dogs"
+        ],
+        "sourceUrl": "https://www.ruokavirasto.fi/en/themes/import-and-export/import/animals-and-animal-products/animals/dogs-cats-and-ferrets/non-commercial-movement/",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Designated travellers' point of entry for non-commercial pet movements"
+      ],
+      "entryPointsSourceUrl": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": false,
+      "cargoOnlySourceUrl": "https://www.ruokavirasto.fi/en/themes/import-and-export/import/animals-and-animal-products/animals/dogs-cats-and-ferrets/non-commercial-movement/",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 120,
+    "breedRestrictions": [],
+    "speciesRestrictions": [
+      "Non-commercial pathway is limited to dogs, cats and ferrets; other species follow separate rules."
+    ],
+    "sources": [
+      {
+        "publisher": "European Commission",
+        "title": "Bringing pets into the EU from a non-EU country",
+        "url": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "accessed": "2026-07-20",
+        "supports": "Thailand's non-listed-origin microchip, vaccination, titre, 90-day wait and certificate rules."
+      },
+      {
+        "publisher": "European Union",
+        "title": "Travelling with pets and other animals in the EU",
+        "url": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+        "accessed": "2026-07-20",
+        "supports": "Non-commercial certificate timing and travellers' points of entry."
+      },
+      {
+        "publisher": "Finnish Food Authority",
+        "title": "National pet-entry guidance",
+        "url": "https://www.ruokavirasto.fi/en/themes/import-and-export/import/animals-and-animal-products/animals/dogs-cats-and-ferrets/non-commercial-movement/",
+        "accessed": "2026-07-20",
+        "supports": "Country-specific implementation and entry guidance."
+      }
+    ],
+    "confidence": "high",
+    "unverified": [
+      "The 120-day total assumes an adult animal starting a new vaccination and sample collection 30 days later."
+    ]
+  },
+  {
+    "country": "Ireland",
+    "thailandStatus": "Non-listed third country under the EU pet-movement regime; titre and 90-day wait required",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "ISO 11784/11785 or readable compatible transponder",
+        "beforeRabiesVaccine": true,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": 12,
+        "validityMonths": null,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "titreTest": {
+        "required": true,
+        "minimumResult": "≥0.5 IU/ml",
+        "approvedLabs": [
+          "EU-designated rabies serology laboratory"
+        ],
+        "waitAfterSampleDays": 90,
+        "validityMonths": null,
+        "sourceUrl": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "asOf": "2026-07-20"
+      },
+      "importPermit": {
+        "required": false,
+        "leadTimeDays": null,
+        "issuingAuthority": null,
+        "cost": null,
+        "sourceUrl": "https://www.gov.ie/en/department-of-agriculture-food-and-the-marine/publications/pet-travel/",
+        "asOf": "2026-07-20"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": 10,
+        "endorsingAuthority": "Official veterinarian / competent authority",
+        "sourceUrl": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": false,
+        "daysBefore": null,
+        "method": null,
+        "sourceUrl": "https://www.gov.ie/en/department-of-agriculture-food-and-the-marine/publications/pet-travel/",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": false,
+        "durationDays": 0,
+        "facility": null,
+        "cost": null,
+        "bookingLeadTime": null,
+        "sourceUrl": "https://www.gov.ie/en/department-of-agriculture-food-and-the-marine/publications/pet-travel/",
+        "asOf": "2026-07-20"
+      },
+      "parasiteTreatment": {
+        "required": true,
+        "window": "24-120 hours before scheduled entry",
+        "species": [
+          "dogs"
+        ],
+        "sourceUrl": "https://www.gov.ie/en/department-of-agriculture-food-and-the-marine/publications/pet-travel/",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Designated travellers' point of entry for non-commercial pet movements"
+      ],
+      "entryPointsSourceUrl": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": false,
+      "cargoOnlySourceUrl": "https://www.gov.ie/en/department-of-agriculture-food-and-the-marine/publications/pet-travel/",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 120,
+    "breedRestrictions": [],
+    "speciesRestrictions": [
+      "Non-commercial pathway is limited to dogs, cats and ferrets; other species follow separate rules."
+    ],
+    "sources": [
+      {
+        "publisher": "European Commission",
+        "title": "Bringing pets into the EU from a non-EU country",
+        "url": "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
+        "accessed": "2026-07-20",
+        "supports": "Thailand's non-listed-origin microchip, vaccination, titre, 90-day wait and certificate rules."
+      },
+      {
+        "publisher": "European Union",
+        "title": "Travelling with pets and other animals in the EU",
+        "url": "https://europa.eu/youreurope/citizens/travel/carry/pets-and-other-animals/index_en.htm",
+        "accessed": "2026-07-20",
+        "supports": "Non-commercial certificate timing and travellers' points of entry."
+      },
+      {
+        "publisher": "Government of Ireland",
+        "title": "National pet-entry guidance",
+        "url": "https://www.gov.ie/en/department-of-agriculture-food-and-the-marine/publications/pet-travel/",
+        "accessed": "2026-07-20",
+        "supports": "Country-specific implementation and entry guidance."
+      }
+    ],
+    "confidence": "high",
+    "unverified": [
+      "The 120-day total assumes an adult animal starting a new vaccination and sample collection 30 days later.",
+      "Carrier and airport approval is separate from the health regime."
+    ]
+  },
+  {
+    "country": "Switzerland",
+    "thailandStatus": "Rabies-risk country; direct air import requires the non-listed-country titre pathway and an FSVO import licence",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "ISO 11784/11785 or readable compatible transponder",
+        "beforeRabiesVaccine": true,
+        "sourceUrl": "https://www.blv.admin.ch/en/travelling-with-dogs-cats-and-ferrets",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": 12,
+        "validityMonths": null,
+        "sourceUrl": "https://www.blv.admin.ch/en/travelling-with-dogs-cats-and-ferrets",
+        "asOf": "2026-07-20"
+      },
+      "titreTest": {
+        "required": true,
+        "minimumResult": "≥0.5 IU/ml",
+        "approvedLabs": [
+          "EU-recognised rabies serology laboratory"
+        ],
+        "waitAfterSampleDays": 90,
+        "validityMonths": null,
+        "sourceUrl": "https://www.blv.admin.ch/en/travelling-with-dogs-cats-and-ferrets",
+        "asOf": "2026-07-20"
+      },
+      "importPermit": {
+        "required": true,
+        "leadTimeDays": null,
+        "issuingAuthority": "Swiss Federal Food Safety and Veterinary Office (FSVO)",
+        "cost": null,
+        "sourceUrl": "https://www.blv.admin.ch/en/travelling-with-dogs-cats-and-ferrets",
+        "asOf": "2026-07-20"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": 10,
+        "endorsingAuthority": "Official veterinarian / competent authority",
+        "sourceUrl": "https://www.blv.admin.ch/en/travelling-with-dogs-cats-and-ferrets",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": false,
+        "daysBefore": null,
+        "method": null,
+        "sourceUrl": "https://www.blv.admin.ch/en/travelling-with-dogs-cats-and-ferrets",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": false,
+        "durationDays": 0,
+        "facility": null,
+        "cost": null,
+        "bookingLeadTime": null,
+        "sourceUrl": "https://www.blv.admin.ch/en/travelling-with-dogs-cats-and-ferrets",
+        "asOf": "2026-07-20"
+      },
+      "parasiteTreatment": {
+        "required": false,
+        "window": null,
+        "species": [],
+        "sourceUrl": "https://www.blv.admin.ch/en/travelling-with-dogs-cats-and-ferrets",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Designated Swiss travellers' entry point; direct air arrival is subject to the FSVO import licence"
+      ],
+      "entryPointsSourceUrl": "https://www.blv.admin.ch/en/travelling-with-dogs-cats-and-ferrets",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": false,
+      "cargoOnlySourceUrl": "https://www.blv.admin.ch/en/travelling-with-dogs-cats-and-ferrets",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 120,
+    "breedRestrictions": [
+      "Import of dogs with cropped ears or docked tails is prohibited, subject to narrow exceptions."
+    ],
+    "speciesRestrictions": [
+      "Dogs, cats and ferrets under seven months cannot enter from a rabies-risk country."
+    ],
+    "sources": [
+      {
+        "publisher": "Swiss Federal Food Safety and Veterinary Office",
+        "title": "Travelling with dogs, cats and ferrets",
+        "url": "https://www.blv.admin.ch/en/travelling-with-dogs-cats-and-ferrets",
+        "accessed": "2026-07-20",
+        "supports": "Current risk status, titre pathway, direct-air permit, young-animal and docked/cropped-dog restrictions."
+      }
+    ],
+    "confidence": "high",
+    "unverified": [
+      "The FSVO licence processing time and fee were not established from the reviewed page, so the 120-day total may understate practical lead time.",
+      "Carrier and airport acceptance remain separate."
+    ]
+  },
+  {
+    "country": "Canada",
+    "thailandStatus": "Country where rabies is not officially absent; adult personal dogs and cats require proof of current rabies vaccination or an accepted titre alternative",
+    "★requirements": {
+      "microchip": {
+        "required": false,
+        "standard": null,
+        "beforeRabiesVaccine": null,
+        "sourceUrl": "https://inspection.canada.ca/en/importing-food-plants-animals/pets/rabies-free",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": null,
+        "validityMonths": null,
+        "sourceUrl": "https://inspection.canada.ca/en/importing-food-plants-animals/pets/rabies-free",
+        "asOf": "2026-07-20",
+        "alternative": "Accepted rabies antibody test result may satisfy the federal personal-pet rule"
+      },
+      "titreTest": {
+        "required": false,
+        "minimumResult": "≥0.5 IU/ml when used as the alternative",
+        "approvedLabs": [],
+        "waitAfterSampleDays": 0,
+        "validityMonths": null,
+        "sourceUrl": "https://inspection.canada.ca/en/importing-food-plants-animals/pets/rabies-free",
+        "asOf": "2026-07-20"
+      },
+      "importPermit": {
+        "required": false,
+        "leadTimeDays": null,
+        "issuingAuthority": null,
+        "cost": null,
+        "sourceUrl": "https://inspection.canada.ca/en/importing-food-plants-animals/pets",
+        "asOf": "2026-07-20"
+      },
+      "healthCertificate": {
+        "required": false,
+        "issuedWithinDays": null,
+        "endorsingAuthority": null,
+        "sourceUrl": "https://inspection.canada.ca/en/importing-food-plants-animals/pets/rabies-free",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": false,
+        "daysBefore": null,
+        "method": null,
+        "sourceUrl": "https://inspection.canada.ca/en/importing-food-plants-animals/pets",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": false,
+        "durationDays": 0,
+        "facility": null,
+        "cost": null,
+        "bookingLeadTime": null,
+        "sourceUrl": "https://inspection.canada.ca/en/importing-food-plants-animals/pets",
+        "asOf": "2026-07-20"
+      },
+      "parasiteTreatment": {
+        "required": false,
+        "window": null,
+        "species": [],
+        "sourceUrl": "https://inspection.canada.ca/en/importing-food-plants-animals/pets",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Any lawful Canadian port of entry able to conduct the required inspection"
+      ],
+      "entryPointsSourceUrl": "https://inspection.canada.ca/en/importing-food-plants-animals/pets",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": false,
+      "cargoOnlySourceUrl": "https://inspection.canada.ca/en/importing-food-plants-animals/pets",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 0,
+    "breedRestrictions": [],
+    "speciesRestrictions": [
+      "This record covers personal dogs and cats; commercial, rescue, sale and other animal categories can have different rules."
+    ],
+    "sources": [
+      {
+        "publisher": "Canadian Food Inspection Agency",
+        "title": "Bringing animals to Canada: importing and travelling with pets",
+        "url": "https://inspection.canada.ca/en/importing-food-plants-animals/pets",
+        "accessed": "2026-07-20",
+        "supports": "Federal category routing and personal-pet scope."
+      },
+      {
+        "publisher": "Canadian Food Inspection Agency",
+        "title": "Countries where rabies is not officially absent",
+        "url": "https://inspection.canada.ca/en/importing-food-plants-animals/pets/rabies-free",
+        "accessed": "2026-07-20",
+        "supports": "Vaccination-certificate or titre alternative for applicable cats and dogs."
+      }
+    ],
+    "confidence": "high",
+    "unverified": [
+      "Zero means no additional statutory wait for an adult pet that already receives a currently valid, properly documented vaccination certificate; vaccination, appointment and document logistics still consume time.",
+      "Province, municipality, airline and commercial-import rules can add requirements."
+    ]
+  },
+  {
+    "country": "Russia",
+    "thailandStatus": "Third country under Eurasian Economic Union personal-pet rules",
+    "★requirements": {
+      "microchip": {
+        "required": null,
+        "standard": null,
+        "beforeRabiesVaccine": null,
+        "sourceUrl": "https://eec.eaeunion.org/upload/medialibrary/266/19mfcli1167vulv5sloauzt9w1lssh0e/Ed.vet.treb.-s-izmen.pdf",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": null,
+        "validityMonths": 12,
+        "sourceUrl": "https://eec.eaeunion.org/upload/medialibrary/266/19mfcli1167vulv5sloauzt9w1lssh0e/Ed.vet.treb.-s-izmen.pdf",
+        "asOf": "2026-07-20",
+        "minDaysBeforeTravelIfNewOrLapsed": 20
+      },
+      "titreTest": {
+        "required": false,
+        "minimumResult": null,
+        "approvedLabs": [],
+        "waitAfterSampleDays": 0,
+        "validityMonths": null,
+        "sourceUrl": "https://eec.eaeunion.org/upload/medialibrary/266/19mfcli1167vulv5sloauzt9w1lssh0e/Ed.vet.treb.-s-izmen.pdf",
+        "asOf": "2026-07-20"
+      },
+      "importPermit": {
+        "required": false,
+        "leadTimeDays": null,
+        "issuingAuthority": null,
+        "cost": null,
+        "sourceUrl": "https://eec.eaeunion.org/upload/medialibrary/266/19mfcli1167vulv5sloauzt9w1lssh0e/Ed.vet.treb.-s-izmen.pdf",
+        "asOf": "2026-07-20"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": 14,
+        "endorsingAuthority": "Competent veterinary authority; international passport can serve as the certificate when properly completed",
+        "sourceUrl": "https://eec.eaeunion.org/upload/medialibrary/266/19mfcli1167vulv5sloauzt9w1lssh0e/Ed.vet.treb.-s-izmen.pdf",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": false,
+        "daysBefore": null,
+        "method": null,
+        "sourceUrl": "https://eec.eaeunion.org/upload/medialibrary/266/19mfcli1167vulv5sloauzt9w1lssh0e/Ed.vet.treb.-s-izmen.pdf",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": false,
+        "durationDays": 0,
+        "facility": null,
+        "cost": null,
+        "bookingLeadTime": null,
+        "sourceUrl": "https://eec.eaeunion.org/upload/medialibrary/266/19mfcli1167vulv5sloauzt9w1lssh0e/Ed.vet.treb.-s-izmen.pdf",
+        "asOf": "2026-07-20"
+      },
+      "parasiteTreatment": {
+        "required": null,
+        "window": null,
+        "species": [],
+        "sourceUrl": "https://eec.eaeunion.org/upload/medialibrary/266/19mfcli1167vulv5sloauzt9w1lssh0e/Ed.vet.treb.-s-izmen.pdf",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Lawful border veterinary-control point"
+      ],
+      "entryPointsSourceUrl": "https://eec.eaeunion.org/upload/medialibrary/266/19mfcli1167vulv5sloauzt9w1lssh0e/Ed.vet.treb.-s-izmen.pdf",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": false,
+      "cargoOnlySourceUrl": "https://eec.eaeunion.org/upload/medialibrary/266/19mfcli1167vulv5sloauzt9w1lssh0e/Ed.vet.treb.-s-izmen.pdf",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 20,
+    "breedRestrictions": [],
+    "speciesRestrictions": [
+      "Personal simplified pathway is limited to no more than two dogs or cats.",
+      "Other species and commercial consignments follow different chapters."
+    ],
+    "sources": [
+      {
+        "publisher": "Eurasian Economic Commission",
+        "title": "Unified veterinary requirements, Chapter 15",
+        "url": "https://eec.eaeunion.org/upload/medialibrary/266/19mfcli1167vulv5sloauzt9w1lssh0e/Ed.vet.treb.-s-izmen.pdf",
+        "accessed": "2026-07-20",
+        "supports": "Personal maximum, vaccination windows, certificate/examination, no-permit and no-quarantine rule."
+      }
+    ],
+    "confidence": "medium",
+    "unverified": [
+      "The current EAEU PDF is authoritative but difficult to version from its URL; requirements were taken from the current consolidated Chapter 15 text.",
+      "A general microchip mandate and parasite-treatment rule were not established, so they remain null.",
+      "Russian domestic carrier, customs and local ownership controls were not researched."
+    ]
+  },
+  {
+    "country": "New Zealand",
+    "thailandStatus": "Not an approved country for direct import of cats or dogs; animal must first move to an approved country and complete that pathway, including at least 6 months' residence under the applicable standard",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "ISO-compatible microchip",
+        "beforeRabiesVaccine": true,
+        "sourceUrl": "https://www.mpi.govt.nz/dmsdocument/71909/direct",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": null,
+        "validityMonths": null,
+        "sourceUrl": "https://www.mpi.govt.nz/dmsdocument/71909/direct",
+        "asOf": "2026-07-20"
+      },
+      "titreTest": {
+        "required": true,
+        "minimumResult": "≥0.5 IU/ml under the applicable approved-country category",
+        "approvedLabs": [
+          "MPI-recognised laboratory"
+        ],
+        "waitAfterSampleDays": null,
+        "validityMonths": null,
+        "sourceUrl": "https://www.mpi.govt.nz/dmsdocument/71909/direct",
+        "asOf": "2026-07-20"
+      },
+      "importPermit": {
+        "required": true,
+        "leadTimeDays": 30,
+        "issuingAuthority": "New Zealand Ministry for Primary Industries",
+        "cost": "NZD 268.24 stated for the import permit service",
+        "sourceUrl": "https://www.mpi.govt.nz/bring-send-to-nz/pets-travelling-to-nz/bringing-cats-and-dogs-to-nz/bringing-cats-and-dogs-to-nz-using-the-2026-import-health-standard/step-by-step-guide-to-bringing-cats-and-dogs-to-nz-2026",
+        "asOf": "2026-07-20",
+        "processingUnit": "working days"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": null,
+        "endorsingAuthority": "Official government veterinarian in the approved export country",
+        "sourceUrl": "https://www.mpi.govt.nz/dmsdocument/71909/direct",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": true,
+        "daysBefore": 5,
+        "method": "Notify MPI and coordinate approved quarantine facility",
+        "sourceUrl": "https://www.mpi.govt.nz/bring-send-to-nz/pets-travelling-to-nz/bringing-cats-and-dogs-to-nz/bringing-cats-and-dogs-to-nz-using-the-2026-import-health-standard/step-by-step-guide-to-bringing-cats-and-dogs-to-nz-2026",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": true,
+        "durationDays": 10,
+        "facility": "MPI-approved quarantine facility in Auckland or Christchurch",
+        "cost": null,
+        "bookingLeadTime": "Facility space must be reserved before import",
+        "sourceUrl": "https://www.mpi.govt.nz/bring-send-to-nz/pets-travelling-to-nz/bringing-cats-and-dogs-to-nz/bringing-cats-and-dogs-to-nz-using-the-2026-import-health-standard/step-by-step-guide-to-bringing-cats-and-dogs-to-nz-2026",
+        "asOf": "2026-07-20"
+      },
+      "parasiteTreatment": {
+        "required": true,
+        "window": "Multiple treatments under the applicable import health standard",
+        "species": [
+          "dogs",
+          "cats"
+        ],
+        "sourceUrl": "https://www.mpi.govt.nz/dmsdocument/71909/direct",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Auckland",
+        "Christchurch"
+      ],
+      "entryPointsSourceUrl": "https://www.mpi.govt.nz/bring-send-to-nz/pets-travelling-to-nz/bringing-cats-and-dogs-to-nz/bringing-cats-and-dogs-to-nz-using-the-2026-import-health-standard/step-by-step-guide-to-bringing-cats-and-dogs-to-nz-2026",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": true,
+      "cargoOnlySourceUrl": "https://www.mpi.govt.nz/bring-send-to-nz/pets-travelling-to-nz/bringing-cats-and-dogs-to-nz/bringing-cats-and-dogs-to-nz-using-the-2026-import-health-standard/step-by-step-guide-to-bringing-cats-and-dogs-to-nz-2026",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 180,
+    "breedRestrictions": [
+      "Brazilian Fila",
+      "Dogo Argentino",
+      "Japanese Tosa",
+      "Presa Canario",
+      "American Pit Bull Terrier",
+      "Dog hybrids other than recognised breeds",
+      "Cat hybrids other than qualifying Bengal cats with ancestry evidence"
+    ],
+    "speciesRestrictions": [
+      "Direct Thailand-origin cat or dog import is unavailable.",
+      "The ordinary pathway here is for cats and dogs from approved countries."
+    ],
+    "sources": [
+      {
+        "publisher": "New Zealand Ministry for Primary Industries",
+        "title": "Bringing cats and dogs to New Zealand",
+        "url": "https://www.mpi.govt.nz/bring-send-to-nz/pets-travelling-to-nz/bringing-cats-and-dogs-to-nz",
+        "accessed": "2026-07-20",
+        "supports": "Approved-country eligibility and pathway selection."
+      },
+      {
+        "publisher": "New Zealand Ministry for Primary Industries",
+        "title": "Import Health Standard: Cats and Dogs 2026",
+        "url": "https://www.mpi.govt.nz/dmsdocument/71909/direct",
+        "accessed": "2026-07-20",
+        "supports": "Current and transition requirements, identification, tests, breeds and approved origins."
+      },
+      {
+        "publisher": "New Zealand Ministry for Primary Industries",
+        "title": "Step-by-step guide using the 2026 import health standard",
+        "url": "https://www.mpi.govt.nz/bring-send-to-nz/pets-travelling-to-nz/bringing-cats-and-dogs-to-nz/bringing-cats-and-dogs-to-nz-using-the-2026-import-health-standard/step-by-step-guide-to-bringing-cats-and-dogs-to-nz-2026",
+        "accessed": "2026-07-20",
+        "supports": "Permit, notice, quarantine and transition timing."
+      }
+    ],
+    "confidence": "high",
+    "unverified": [
+      "The 180-day value is the approved-country residence floor; travel to the intermediary, testing sequence, permit and quarantine availability can make the real lead time longer.",
+      "The 2026 standard has transition arrangements through 2027. An official identity check at least six months before export becomes mandatory from 2027-04-01, with checks beginning from 2026-10-01.",
+      "Costs other than the cited permit fee were not established."
+    ]
+  },
+  {
+    "country": "Japan",
+    "thailandStatus": "Non-designated region; full rabies vaccination, titre and 180-day post-sample wait apply",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "ISO 11784/11785 or readable compatible microchip",
+        "beforeRabiesVaccine": true,
+        "sourceUrl": "https://www.maff.go.jp/aqs/english/animal/dog/import-other.html",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": 12,
+        "validityMonths": null,
+        "sourceUrl": "https://www.maff.go.jp/aqs/english/animal/dog/import-other.html",
+        "asOf": "2026-07-20",
+        "doses": "At least two after microchip; second at least 30 days after first and within first vaccine validity"
+      },
+      "titreTest": {
+        "required": true,
+        "minimumResult": "≥0.5 IU/ml",
+        "approvedLabs": [
+          "MAFF-designated rabies serology laboratory"
+        ],
+        "waitAfterSampleDays": 180,
+        "validityMonths": 24,
+        "sourceUrl": "https://www.maff.go.jp/aqs/english/animal/dog/import-other.html",
+        "asOf": "2026-07-20"
+      },
+      "importPermit": {
+        "required": false,
+        "leadTimeDays": null,
+        "issuingAuthority": null,
+        "cost": null,
+        "sourceUrl": "https://www.maff.go.jp/aqs/english/animal/dog/import-other.html",
+        "asOf": "2026-07-20"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": null,
+        "endorsingAuthority": "Government authority of the exporting country",
+        "sourceUrl": "https://www.maff.go.jp/aqs/english/animal/dog/import-other.html",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": true,
+        "daysBefore": 40,
+        "method": "Submit advance notification to the Animal Quarantine Service at the intended port",
+        "sourceUrl": "https://www.maff.go.jp/aqs/english/animal/dog/import-other.html",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": false,
+        "durationDays": 0,
+        "facility": null,
+        "cost": null,
+        "bookingLeadTime": null,
+        "sourceUrl": "https://www.maff.go.jp/aqs/english/animal/dog/import-other.html",
+        "asOf": "2026-07-20",
+        "nonCompliance": "Detention can extend to 180 days when preparation is incomplete"
+      },
+      "parasiteTreatment": {
+        "required": false,
+        "window": null,
+        "species": [],
+        "sourceUrl": "https://www.maff.go.jp/aqs/english/animal/dog/import-other.html",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Animal Quarantine Service-equipped Japanese seaport or airport named in the advance notification"
+      ],
+      "entryPointsSourceUrl": "https://www.maff.go.jp/aqs/english/animal/dog/import-other.html",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": false,
+      "cargoOnlySourceUrl": "https://www.maff.go.jp/aqs/english/animal/dog/import-other.html",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 210,
+    "breedRestrictions": [],
+    "speciesRestrictions": [
+      "This pathway covers dogs and cats; other animals have separate quarantine rules."
+    ],
+    "sources": [
+      {
+        "publisher": "Japan Ministry of Agriculture, Forestry and Fisheries, Animal Quarantine Service",
+        "title": "Importing dogs and cats from non-designated regions",
+        "url": "https://www.maff.go.jp/aqs/english/animal/dog/import-other.html",
+        "accessed": "2026-07-20",
+        "supports": "Complete chip, two-dose vaccine, titre, 180-day wait, 40-day notice and certification sequence."
+      }
+    ],
+    "confidence": "high",
+    "unverified": [
+      "The 210-day total assumes an adult pet starts the first valid vaccination today, receives the second and blood sample at the minimum 30-day interval, then completes the 180-day wait.",
+      "Laboratory and document processing can add time."
+    ]
+  },
+  {
+    "country": "Singapore",
+    "thailandStatus": "Schedule III country; high-rabies-risk preparation and at least 30 days' post-arrival quarantine apply",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "ISO 11784/11785 microchip",
+        "beforeRabiesVaccine": true,
+        "sourceUrl": "https://avs.nparks.gov.sg/pets/importing-exporting-a-pet/import/dogs-and-cats/",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": null,
+        "validityMonths": null,
+        "sourceUrl": "https://avs.nparks.gov.sg/pets/importing-exporting-a-pet/import/dogs-and-cats/",
+        "asOf": "2026-07-20"
+      },
+      "titreTest": {
+        "required": true,
+        "minimumResult": "≥0.5 IU/ml",
+        "approvedLabs": [
+          "WOAH rabies reference laboratory or AVS-accepted laboratory"
+        ],
+        "waitAfterSampleDays": 90,
+        "validityMonths": 12,
+        "sourceUrl": "https://avs.nparks.gov.sg/pets/importing-exporting-a-pet/import/dogs-and-cats/",
+        "asOf": "2026-07-20",
+        "sampleTiming": "At least 28 days after a valid rabies vaccination and at least 90 days before export"
+      },
+      "importPermit": {
+        "required": true,
+        "leadTimeDays": 2,
+        "issuingAuthority": "Singapore Animal & Veterinary Service",
+        "cost": "S$50 normal service; permit valid 90 days",
+        "sourceUrl": "https://avs.nparks.gov.sg/pets/importing-exporting-a-pet/import/dogs-and-cats/",
+        "asOf": "2026-07-20"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": 7,
+        "endorsingAuthority": "Official government veterinarian",
+        "sourceUrl": "https://avs.nparks.gov.sg/pets/importing-exporting-a-pet/import/dogs-and-cats/",
+        "asOf": "2026-07-20",
+        "window": "2-7 days before export"
+      },
+      "advanceNotification": {
+        "required": true,
+        "daysBefore": 5,
+        "method": "Book border inspection at least 5 days before arrival",
+        "sourceUrl": "https://avs.nparks.gov.sg/pets/importing-exporting-a-pet/import/dogs-and-cats/",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": true,
+        "durationDays": 30,
+        "facility": "Animal Quarantine Centre",
+        "cost": null,
+        "bookingLeadTime": "Reserve quarantine space before import",
+        "sourceUrl": "https://avs.nparks.gov.sg/pets/importing-exporting-a-pet/import/dogs-and-cats/",
+        "asOf": "2026-07-20"
+      },
+      "parasiteTreatment": {
+        "required": true,
+        "window": "2-7 days before export under the Schedule III veterinary conditions",
+        "species": [
+          "dogs",
+          "cats"
+        ],
+        "sourceUrl": "https://avs.nparks.gov.sg/pets/importing-exporting-a-pet/import/dogs-and-cats/",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Approved Singapore border inspection point coordinated with AVS"
+      ],
+      "entryPointsSourceUrl": "https://avs.nparks.gov.sg/pets/importing-exporting-a-pet/import/dogs-and-cats/",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": false,
+      "cargoOnlySourceUrl": "https://avs.nparks.gov.sg/pets/importing-exporting-a-pet/import/dogs-and-cats/",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 118,
+    "breedRestrictions": [
+      "Pit Bull types including American Pit Bull Terrier, American Staffordshire Terrier and Staffordshire Bull Terrier",
+      "American Bulldog and crosses",
+      "Akita",
+      "Boerboel",
+      "Dogo Argentino",
+      "Fila Brasileiro",
+      "Neapolitan Mastiff",
+      "Japanese Tosa",
+      "Presa Canario",
+      "Crosses of prohibited dog breeds"
+    ],
+    "speciesRestrictions": [
+      "Bengal and Savannah cats must be at least fifth generation from the wild ancestor.",
+      "This pathway covers dogs and cats."
+    ],
+    "sources": [
+      {
+        "publisher": "Singapore Animal & Veterinary Service",
+        "title": "Importing dogs and cats",
+        "url": "https://avs.nparks.gov.sg/pets/importing-exporting-a-pet/import/dogs-and-cats/",
+        "accessed": "2026-07-20",
+        "supports": "Schedule III classification, licence, chip, vaccine, titre timing, certificate, treatments, inspection, quarantine and breed controls."
+      }
+    ],
+    "confidence": "high",
+    "unverified": [
+      "The 118-day total is the statutory clock from a fresh vaccination to the earliest compliant departure: 28 days to sampling plus 90 days after sampling; lab processing and quarantine-space availability can add time.",
+      "Carrier carriage mode is separate from the import regime."
+    ]
+  },
+  {
+    "country": "United Arab Emirates",
+    "thailandStatus": "High-risk country because Thailand is not on the ministry's low-risk-country list",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "ISO-compatible microchip",
+        "beforeRabiesVaccine": null,
+        "sourceUrl": "https://moccae.gov.ae/ar/services/import-permit-pets",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": null,
+        "validityMonths": null,
+        "sourceUrl": "https://moccae.gov.ae/ar/services/import-permit-pets",
+        "asOf": "2026-07-20",
+        "firstOrLapsedWaitDays": 21
+      },
+      "titreTest": {
+        "required": true,
+        "minimumResult": "≥0.5 IU/ml",
+        "approvedLabs": [
+          "Laboratory accepted by the UAE competent authority"
+        ],
+        "waitAfterSampleDays": 0,
+        "validityMonths": 12,
+        "sourceUrl": "https://moccae.gov.ae/ar/services/import-permit-pets",
+        "asOf": "2026-07-20",
+        "sampleTiming": "After 21 days from first or lapsed rabies vaccination"
+      },
+      "importPermit": {
+        "required": true,
+        "leadTimeDays": 1,
+        "issuingAuthority": "UAE Ministry of Climate Change and Environment",
+        "cost": "AED 200 per animal",
+        "sourceUrl": "https://moccae.gov.ae/ar/services/import-permit-pets",
+        "asOf": "2026-07-20",
+        "validityDays": 90
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": null,
+        "endorsingAuthority": "Competent government veterinary authority",
+        "sourceUrl": "https://moccae.gov.ae/ar/services/import-permit-pets",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": false,
+        "daysBefore": null,
+        "method": null,
+        "sourceUrl": "https://moccae.gov.ae/ar/services/import-permit-pets",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": false,
+        "durationDays": 0,
+        "facility": null,
+        "cost": null,
+        "bookingLeadTime": null,
+        "sourceUrl": "https://moccae.gov.ae/ar/services/import-permit-pets",
+        "asOf": "2026-07-20"
+      },
+      "parasiteTreatment": {
+        "required": true,
+        "window": "Within 14 days before shipment",
+        "species": [
+          "dogs",
+          "cats"
+        ],
+        "sourceUrl": "https://moccae.gov.ae/ar/services/import-permit-pets",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Approved UAE entry point capable of veterinary inspection"
+      ],
+      "entryPointsSourceUrl": "https://moccae.gov.ae/ar/services/import-permit-pets",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": null,
+      "cargoOnlySourceUrl": "https://moccae.gov.ae/ar/services/import-permit-pets",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 21,
+    "breedRestrictions": [
+      "Staffordshire Bull Terrier",
+      "American Pit Bull Terrier",
+      "American Staffordshire Terrier",
+      "American Bully",
+      "Fila Brasileiro",
+      "Dogo Argentino",
+      "Tibetan Mastiff",
+      "Neapolitan Mastiff",
+      "Dogue de Bordeaux",
+      "Boerboel",
+      "Bullmastiff",
+      "Cane Corso",
+      "Bully Kutta",
+      "Presa Canario",
+      "Japanese Tosa"
+    ],
+    "speciesRestrictions": [
+      "Dogs and cats must meet the applicable minimum age; the current high-risk rule describes a minimum of 15 weeks.",
+      "A person may import no more than two pets per year under the reviewed service."
+    ],
+    "sources": [
+      {
+        "publisher": "UAE Ministry of Climate Change and Environment",
+        "title": "Import permit for pets",
+        "url": "https://moccae.gov.ae/ar/services/import-permit-pets",
+        "accessed": "2026-07-20",
+        "supports": "Current live permit, fee, validity, high-risk titre, vaccine, treatment, age and breed rules."
+      },
+      {
+        "publisher": "UAE Ministry of Climate Change and Environment",
+        "title": "Legacy pet import permit document",
+        "url": "https://www.moccae.gov.ae/assets/5064985a/pet-import-permit-dogs-and-cats.aspx",
+        "accessed": "2026-07-20",
+        "supports": "Conflicting older official values retained for conflict reporting."
+      }
+    ],
+    "confidence": "medium",
+    "unverified": [
+      "The live Arabic service and the still-served legacy official PDF conflict on permit validity, fee and manifest-cargo wording; current live-page values are recorded, while cargoOnly remains null.",
+      "The 21-day total excludes titre laboratory turnaround and certificate logistics.",
+      "The live page indicates IATA-compliant shipment but did not establish a universal manifest-cargo-only rule."
+    ]
+  },
+  {
+    "country": "India",
+    "thailandStatus": "Personal-baggage pathway is conditional on transfer of residence after at least two years abroad; otherwise a DGFT import licence is required",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "ISO-compatible identification",
+        "beforeRabiesVaccine": null,
+        "sourceUrl": "https://aqcsindia.gov.in/pdfs/india-cats-guidance.pdf",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": null,
+        "validityMonths": 12,
+        "sourceUrl": "https://aqcsindia.gov.in/Home/ImportPetUnderBaggage",
+        "asOf": "2026-07-20",
+        "minDaysBeforeTravel": 30
+      },
+      "titreTest": {
+        "required": false,
+        "minimumResult": null,
+        "approvedLabs": [],
+        "waitAfterSampleDays": 0,
+        "validityMonths": null,
+        "sourceUrl": "https://aqcsindia.gov.in/Home/ImportPetUnderBaggage",
+        "asOf": "2026-07-20"
+      },
+      "importPermit": {
+        "required": true,
+        "leadTimeDays": 7,
+        "issuingAuthority": "Animal Quarantine and Certification Service; DGFT licence if outside the baggage concession",
+        "cost": null,
+        "sourceUrl": "https://aqcsindia.gov.in/Home/ImportPetUnderBaggage",
+        "asOf": "2026-07-20",
+        "permitName": "Advance No Objection Certificate"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": null,
+        "endorsingAuthority": "Official veterinarian / competent authority of export",
+        "sourceUrl": "https://aqcsindia.gov.in/Home/ImportPetUnderBaggage",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": true,
+        "daysBefore": 7,
+        "method": "Apply to the intended AQCS station for advance NOC",
+        "sourceUrl": "https://aqcsindia.gov.in/Home/ImportPetUnderBaggage",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": null,
+        "durationDays": null,
+        "facility": "AQCS may impose observation where disease status or documentation is in doubt",
+        "cost": null,
+        "bookingLeadTime": null,
+        "sourceUrl": "https://aqcsindia.gov.in/Home/ImportPetUnderBaggage",
+        "asOf": "2026-07-20"
+      },
+      "parasiteTreatment": {
+        "required": null,
+        "window": null,
+        "species": [],
+        "sourceUrl": "https://aqcsindia.gov.in/Home/ImportPetUnderBaggage",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "AQCS port covered by the advance NOC"
+      ],
+      "entryPointsSourceUrl": "https://aqcsindia.gov.in/Home/ImportPetUnderBaggage",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": false,
+      "cargoOnlySourceUrl": "https://aqcsindia.gov.in/Home/ImportPetUnderBaggage",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 30,
+    "breedRestrictions": [],
+    "speciesRestrictions": [
+      "Personal baggage concession is limited to up to two dogs or cats.",
+      "Owner must generally show at least two years' continuous stay abroad and transfer of residence, with the pet accompanying or arriving within one month; otherwise DGFT licensing applies."
+    ],
+    "sources": [
+      {
+        "publisher": "Animal Quarantine and Certification Service, India",
+        "title": "Import of pets under baggage",
+        "url": "https://aqcsindia.gov.in/Home/ImportPetUnderBaggage",
+        "accessed": "2026-07-20",
+        "supports": "Eligibility, two-pet limit, residence condition, rabies timing and advance NOC."
+      },
+      {
+        "publisher": "Animal Quarantine and Certification Service, India",
+        "title": "Guidance for importing cats",
+        "url": "https://aqcsindia.gov.in/pdfs/india-cats-guidance.pdf",
+        "accessed": "2026-07-20",
+        "supports": "Application timing, microchip and certification details for cats."
+      }
+    ],
+    "confidence": "medium",
+    "unverified": [
+      "Quarantine is discretionary for doubt/noncompliance rather than a single routine duration, so required and duration remain null.",
+      "The 30-day total uses the rabies vaccination minimum; licence processing can be longer for owners outside the baggage concession.",
+      "Dog-specific microchip wording should be reconfirmed against the current dog SOP."
+    ]
+  },
+  {
+    "country": "Philippines",
+    "thailandStatus": "Foreign-origin personal pet subject to a Sanitary and Phytosanitary Import Clearance",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "ISO-compatible RFID microchip",
+        "beforeRabiesVaccine": null,
+        "sourceUrl": "https://www.bai.gov.ph/Stakeholders/PetImport",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": 12,
+        "validityMonths": null,
+        "sourceUrl": "https://www.bai.gov.ph/Stakeholders/PetImport",
+        "asOf": "2026-07-20",
+        "minAgeAtApplicationDays": 84,
+        "minDaysBeforeApplicationForInitialVaccine": 14
+      },
+      "titreTest": {
+        "required": false,
+        "minimumResult": null,
+        "approvedLabs": [],
+        "waitAfterSampleDays": 0,
+        "validityMonths": null,
+        "sourceUrl": "https://www.bai.gov.ph/Stakeholders/PetImport",
+        "asOf": "2026-07-20"
+      },
+      "importPermit": {
+        "required": true,
+        "leadTimeDays": null,
+        "issuingAuthority": "Philippines Bureau of Animal Industry",
+        "cost": null,
+        "sourceUrl": "https://www.bai.gov.ph/Stakeholders/PetImport",
+        "asOf": "2026-07-20",
+        "permitName": "Sanitary and Phytosanitary Import Clearance",
+        "validityDays": 60
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": 10,
+        "endorsingAuthority": "Government veterinary authority at origin",
+        "sourceUrl": "https://www.bai.gov.ph/Stakeholders/PetImport",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": false,
+        "daysBefore": null,
+        "method": null,
+        "sourceUrl": "https://www.bai.gov.ph/Stakeholders/PetImport",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": false,
+        "durationDays": 0,
+        "facility": null,
+        "cost": null,
+        "bookingLeadTime": null,
+        "sourceUrl": "https://www.bai.gov.ph/Stakeholders/PetImport",
+        "asOf": "2026-07-20",
+        "release": "Compliant pets are released on the day of inspection"
+      },
+      "parasiteTreatment": {
+        "required": true,
+        "window": "7-91 days before SPSIC application",
+        "species": [
+          "dogs",
+          "cats"
+        ],
+        "sourceUrl": "https://www.bai.gov.ph/Stakeholders/PetImport",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Philippine port of entry declared in the SPSIC"
+      ],
+      "entryPointsSourceUrl": "https://www.bai.gov.ph/Stakeholders/PetImport",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": false,
+      "cargoOnlySourceUrl": "https://www.bai.gov.ph/Stakeholders/PetImport",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 14,
+    "breedRestrictions": [],
+    "speciesRestrictions": [
+      "Pet must be at least 120 days old at SPSIC application.",
+      "Ordinary personal import is limited to three pets under the reviewed process."
+    ],
+    "sources": [
+      {
+        "publisher": "Philippines Bureau of Animal Industry",
+        "title": "Pet import",
+        "url": "https://www.bai.gov.ph/Stakeholders/PetImport",
+        "accessed": "2026-07-20",
+        "supports": "SPSIC, age, chip, vaccination, treatment, certificate and compliant-release requirements."
+      }
+    ],
+    "confidence": "high",
+    "unverified": [
+      "The 14-day total uses the explicit initial-vaccination-to-SPSIC interval and excludes agency processing time because no single guaranteed processing duration was established.",
+      "Local-government registration and airline requirements are separate."
+    ]
+  },
+  {
+    "country": "China",
+    "thailandStatus": "Non-designated country under the published incoming-pet rules; official sources conflict on whether full compliance waives 30-day quarantine",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "ISO 11784/11785 microchip",
+        "beforeRabiesVaccine": null,
+        "sourceUrl": "https://english.shanghai.gov.cn/en-KeepingAPetInShanghai/20240927/988d600b49964546b41d3c342e4ebdb2.html",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": null,
+        "validityMonths": null,
+        "sourceUrl": "https://english.shanghai.gov.cn/en-KeepingAPetInShanghai/20240927/988d600b49964546b41d3c342e4ebdb2.html",
+        "asOf": "2026-07-20",
+        "doses": "Two documented rabies vaccinations for a pet from a non-designated country"
+      },
+      "titreTest": {
+        "required": true,
+        "minimumResult": "≥0.5 IU/ml",
+        "approvedLabs": [
+          "GACC-accepted laboratory"
+        ],
+        "waitAfterSampleDays": null,
+        "validityMonths": 12,
+        "sourceUrl": "https://english.shanghai.gov.cn/en-KeepingAPetInShanghai/20240927/988d600b49964546b41d3c342e4ebdb2.html",
+        "asOf": "2026-07-20",
+        "sampleTiming": "Sample date not earlier than the second rabies vaccination"
+      },
+      "importPermit": {
+        "required": false,
+        "leadTimeDays": null,
+        "issuingAuthority": null,
+        "cost": null,
+        "sourceUrl": "https://english.shanghai.gov.cn/en-KeepingAPetInShanghai/20240927/988d600b49964546b41d3c342e4ebdb2.html",
+        "asOf": "2026-07-20"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": 14,
+        "endorsingAuthority": "Official quarantine/animal-health authority of origin",
+        "sourceUrl": "https://english.shanghai.gov.cn/en-KeepingAPetInShanghai/20240927/988d600b49964546b41d3c342e4ebdb2.html",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": false,
+        "daysBefore": null,
+        "method": null,
+        "sourceUrl": "https://english.shanghai.gov.cn/en-KeepingAPetInShanghai/20240927/988d600b49964546b41d3c342e4ebdb2.html",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": null,
+        "durationDays": 30,
+        "facility": "Customs-designated quarantine facility",
+        "cost": null,
+        "bookingLeadTime": null,
+        "sourceUrl": "https://english.shanghai.gov.cn/en-KeepingAPetInShanghai/20240927/988d600b49964546b41d3c342e4ebdb2.html",
+        "asOf": "2026-07-20",
+        "conflict": "Shanghai's official guide says compliant non-designated-origin pets can be released without quarantine, while national and Chongqing Customs guidance describes 30-day quarantine"
+      },
+      "parasiteTreatment": {
+        "required": null,
+        "window": null,
+        "species": [],
+        "sourceUrl": "https://english.shanghai.gov.cn/en-KeepingAPetInShanghai/20240927/988d600b49964546b41d3c342e4ebdb2.html",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Customs port able to process incoming pets; quarantine-facility routing depends on port and compliance"
+      ],
+      "entryPointsSourceUrl": "https://english.shanghai.gov.cn/en-KeepingAPetInShanghai/20240927/988d600b49964546b41d3c342e4ebdb2.html",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": false,
+      "cargoOnlySourceUrl": "https://english.shanghai.gov.cn/en-KeepingAPetInShanghai/20240927/988d600b49964546b41d3c342e4ebdb2.html",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": null,
+    "breedRestrictions": [],
+    "speciesRestrictions": [
+      "One dog or cat per arriving person under the personal-pet pathway.",
+      "Other species require separate rules."
+    ],
+    "sources": [
+      {
+        "publisher": "Shanghai Municipal People's Government / Shanghai Customs",
+        "title": "Entry requirements for keeping a pet in Shanghai",
+        "url": "https://english.shanghai.gov.cn/en-KeepingAPetInShanghai/20240927/988d600b49964546b41d3c342e4ebdb2.html",
+        "accessed": "2026-07-20",
+        "supports": "Two vaccines, titre, chip, health certificate and quarantine-waiver version."
+      },
+      {
+        "publisher": "General Administration of Customs of China",
+        "title": "Incoming pets service guide",
+        "url": "https://online.customs.gov.cn/static/pages/guides/000629014001/000629014001.html",
+        "accessed": "2026-07-20",
+        "supports": "National online guide describing 30-day quarantine."
+      },
+      {
+        "publisher": "Chongqing Municipal People's Government / Customs",
+        "title": "Entry requirements for pets",
+        "url": "https://english.cq.gov.cn/services/entryandexit/EntryRequirements/202606/t20260609_15740129.html",
+        "accessed": "2026-07-20",
+        "supports": "2026 official guidance also describing 30-day quarantine."
+      }
+    ],
+    "confidence": "low",
+    "unverified": [
+      "No minimum interval between the two required rabies vaccinations was established from the reviewed official China sources, so total lead time is null.",
+      "Official government sources conflict directly on quarantine waiver versus 30-day quarantine; the conflict is not resolved.",
+      "Port-specific implementation and laboratory acceptance require confirmation before booking."
+    ]
+  },
+  {
+    "country": "South Africa",
+    "thailandStatus": "Permit-controlled import; Thailand-origin dogs are subject to post-arrival quarantine under the current country list",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "Permanent microchip identification",
+        "beforeRabiesVaccine": null,
+        "sourceUrl": "https://dirco.gov.za/newyork/wp-content/uploads/sites/77/2025/04/Importing-cats-and-dogs-to-SA-subject-to-quarantine.pdf",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": null,
+        "validityMonths": 12,
+        "sourceUrl": "https://dirco.gov.za/newyork/wp-content/uploads/sites/77/2025/04/Importing-cats-and-dogs-to-SA-subject-to-quarantine.pdf",
+        "asOf": "2026-07-20",
+        "minDaysBeforeTravelForPrimary": 30
+      },
+      "titreTest": {
+        "required": false,
+        "minimumResult": null,
+        "approvedLabs": [],
+        "waitAfterSampleDays": 0,
+        "validityMonths": null,
+        "sourceUrl": "https://dirco.gov.za/newyork/wp-content/uploads/sites/77/2025/04/Importing-cats-and-dogs-to-SA-subject-to-quarantine.pdf",
+        "asOf": "2026-07-20"
+      },
+      "importPermit": {
+        "required": true,
+        "leadTimeDays": 28,
+        "issuingAuthority": "South African national agriculture department veterinary import control",
+        "cost": null,
+        "sourceUrl": "https://www.gov.za/services/import/import-animals-and-animal-products",
+        "asOf": "2026-07-20"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": 10,
+        "endorsingAuthority": "Official government veterinarian",
+        "sourceUrl": "https://dirco.gov.za/newyork/wp-content/uploads/sites/77/2025/04/Importing-cats-and-dogs-to-SA-subject-to-quarantine.pdf",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": true,
+        "daysBefore": null,
+        "method": "Coordinate state quarantine and port veterinary officer",
+        "sourceUrl": "https://dirco.gov.za/newyork/wp-content/uploads/sites/77/2025/04/Importing-cats-and-dogs-to-SA-subject-to-quarantine.pdf",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": true,
+        "durationDays": null,
+        "facility": "Kempton Park (Johannesburg) or Milnerton (Cape Town) state quarantine station for applicable dogs",
+        "cost": null,
+        "bookingLeadTime": "Arrange space before travel",
+        "sourceUrl": "https://dirco.gov.za/newyork/wp-content/uploads/sites/77/2025/04/Importing-cats-and-dogs-to-SA-subject-to-quarantine.pdf",
+        "asOf": "2026-07-20"
+      },
+      "parasiteTreatment": {
+        "required": true,
+        "window": "Official certificate and permit conditions; exact single window not reduced from reviewed sources",
+        "species": [
+          "dogs",
+          "cats"
+        ],
+        "sourceUrl": "https://dirco.gov.za/newyork/wp-content/uploads/sites/77/2025/04/Importing-cats-and-dogs-to-SA-subject-to-quarantine.pdf",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Johannesburg (JNB)",
+        "Cape Town (CPT)"
+      ],
+      "entryPointsSourceUrl": "https://dirco.gov.za/newyork/wp-content/uploads/sites/77/2025/04/Importing-cats-and-dogs-to-SA-subject-to-quarantine.pdf",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": true,
+      "cargoOnlySourceUrl": "https://dirco.gov.za/newyork/wp-content/uploads/sites/77/2025/04/Importing-cats-and-dogs-to-SA-subject-to-quarantine.pdf",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 30,
+    "breedRestrictions": [],
+    "speciesRestrictions": [
+      "Dogs and cats use different disease and quarantine conditions.",
+      "Thailand-origin dogs require negative testing for named diseases within 30 days under the reviewed official guidance."
+    ],
+    "sources": [
+      {
+        "publisher": "Government of South Africa",
+        "title": "Import animals and animal products",
+        "url": "https://www.gov.za/services/import/import-animals-and-animal-products",
+        "accessed": "2026-07-20",
+        "supports": "Import-permit process and official authority."
+      },
+      {
+        "publisher": "South African government veterinary services",
+        "title": "Importing cats and dogs subject to quarantine",
+        "url": "https://dirco.gov.za/newyork/wp-content/uploads/sites/77/2025/04/Importing-cats-and-dogs-to-SA-subject-to-quarantine.pdf",
+        "accessed": "2026-07-20",
+        "supports": "Thailand dog quarantine, entry points, cargo, tests, vaccination and certificate controls."
+      }
+    ],
+    "confidence": "medium",
+    "unverified": [
+      "A current official source did not establish one fixed quarantine duration or cost, so those values remain null.",
+      "The 30-day total is driven by primary rabies timing, the four-week permit planning instruction and dog-test timing; state quarantine capacity can add time.",
+      "Departmental organisational naming changed across official pages; issuing authority is described functionally."
+    ]
+  },
+  {
+    "country": "Malaysia",
+    "thailandStatus": "Non-scheduled country under Malaysia's current dog-and-cat classification; quarantine is mandatory",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "ISO-compatible microchip",
+        "beforeRabiesVaccine": null,
+        "sourceUrl": "https://animalpassport.dvs.gov.my/portal-main/article-content?id=547a0544-1743-11ef-ba49-fa163eda1aa9",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": null,
+        "validityMonths": null,
+        "sourceUrl": "https://animalpassport.dvs.gov.my/portal-main/article-content?id=547a0544-1743-11ef-ba49-fa163eda1aa9",
+        "asOf": "2026-07-20",
+        "minDaysBeforeTravel": 30
+      },
+      "titreTest": {
+        "required": false,
+        "minimumResult": null,
+        "approvedLabs": [],
+        "waitAfterSampleDays": 0,
+        "validityMonths": null,
+        "sourceUrl": "https://www.dvs.gov.my/dvs/resources/user_1/2026/BKPBV/IMPORT%20EKSPORT/%28R2%29-CatsNdogs-NONSCHEDULED_COUNTRIES-revised131213_notis_2.pdf",
+        "asOf": "2026-07-20"
+      },
+      "importPermit": {
+        "required": true,
+        "leadTimeDays": null,
+        "issuingAuthority": "Malaysia Department of Veterinary Services / MAQIS",
+        "cost": null,
+        "sourceUrl": "https://animalpassport.dvs.gov.my/portal-main/article-content?id=547a0544-1743-11ef-ba49-fa163eda1aa9",
+        "asOf": "2026-07-20"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": 7,
+        "endorsingAuthority": "Competent government veterinary authority",
+        "sourceUrl": "https://www.dvs.gov.my/index.php/pages/view/804?mid=53",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": true,
+        "daysBefore": null,
+        "method": "Coordinate import licence and quarantine reservation",
+        "sourceUrl": "https://animalpassport.dvs.gov.my/portal-main/article-content?id=547a0544-1743-11ef-ba49-fa163eda1aa9",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": true,
+        "durationDays": 7,
+        "facility": "Government animal quarantine station",
+        "cost": null,
+        "bookingLeadTime": "Reserve space; quarantine may be extended up to six months",
+        "sourceUrl": "https://www.dvs.gov.my/index.php/pages/view/804?mid=53",
+        "asOf": "2026-07-20"
+      },
+      "parasiteTreatment": {
+        "required": null,
+        "window": null,
+        "species": [],
+        "sourceUrl": "https://animalpassport.dvs.gov.my/portal-main/article-content?id=547a0544-1743-11ef-ba49-fa163eda1aa9",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Malaysian entry point with animal quarantine and inspection facilities"
+      ],
+      "entryPointsSourceUrl": "https://animalpassport.dvs.gov.my/portal-main/article-content?id=547a0544-1743-11ef-ba49-fa163eda1aa9",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": false,
+      "cargoOnlySourceUrl": "https://animalpassport.dvs.gov.my/portal-main/article-content?id=547a0544-1743-11ef-ba49-fa163eda1aa9",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 30,
+    "breedRestrictions": [
+      "Akita",
+      "American Bulldog",
+      "Dogo Argentino",
+      "Fila Brasileiro",
+      "Japanese Tosa",
+      "Neapolitan Mastiff",
+      "Pit Bull types",
+      "Restricted breeds requiring prior approval include Bull Mastiff, Bull Terrier, Doberman, German/Belgian/East European Shepherd, Presa Canario and Rottweiler"
+    ],
+    "speciesRestrictions": [
+      "This record covers dogs and cats under the non-scheduled-country pathway."
+    ],
+    "sources": [
+      {
+        "publisher": "Malaysia Department of Veterinary Services",
+        "title": "Animal Passport portal: importing dogs and cats",
+        "url": "https://animalpassport.dvs.gov.my/portal-main/article-content?id=547a0544-1743-11ef-ba49-fa163eda1aa9",
+        "accessed": "2026-07-20",
+        "supports": "Import licence, vaccination and quarantine baseline."
+      },
+      {
+        "publisher": "Malaysia Department of Veterinary Services",
+        "title": "Non-scheduled countries dog and cat import notice, revised 2026",
+        "url": "https://www.dvs.gov.my/dvs/resources/user_1/2026/BKPBV/IMPORT%20EKSPORT/%28R2%29-CatsNdogs-NONSCHEDULED_COUNTRIES-revised131213_notis_2.pdf",
+        "accessed": "2026-07-20",
+        "supports": "Thailand's current non-scheduled classification and continued use of existing requirements."
+      },
+      {
+        "publisher": "Malaysia Department of Veterinary Services",
+        "title": "Import and quarantine FAQ",
+        "url": "https://www.dvs.gov.my/index.php/pages/view/804?mid=53",
+        "accessed": "2026-07-20",
+        "supports": "Seven-day health certificate and minimum quarantine duration."
+      }
+    ],
+    "confidence": "high",
+    "unverified": [
+      "Permit processing time, quarantine booking lead and treatment details were not established as single values.",
+      "The 30-day total uses the vaccination minimum; quarantine-space availability can extend practical lead time."
+    ]
+  },
+  {
+    "country": "South Korea",
+    "thailandStatus": "Rabies-antibody certification country for animals aged 90 days or older; compliant pets can be released after arrival inspection",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "ISO-compatible microchip",
+        "beforeRabiesVaccine": null,
+        "sourceUrl": "https://www.qia.go.kr/localFile/dog_cat_certification_program_booklet.pdf",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": null,
+        "validityMonths": null,
+        "sourceUrl": "https://www.qia.go.kr/localFile/dog_cat_certification_program_booklet.pdf",
+        "asOf": "2026-07-20"
+      },
+      "titreTest": {
+        "required": true,
+        "minimumResult": "≥0.5 IU/ml",
+        "approvedLabs": [
+          "Internationally recognised laboratory or laboratory designated by the competent exporting authority"
+        ],
+        "waitAfterSampleDays": 30,
+        "validityMonths": 24,
+        "sourceUrl": "https://www.qia.go.kr/localFile/dog_cat_certification_program_booklet.pdf",
+        "asOf": "2026-07-20",
+        "sampleTiming": "Blood sample 30 days to 24 months before shipment for animals aged at least 90 days"
+      },
+      "importPermit": {
+        "required": false,
+        "leadTimeDays": 0,
+        "issuingAuthority": null,
+        "cost": null,
+        "sourceUrl": "https://www.qia.go.kr/localFile/dog_cat_certification_program_booklet.pdf",
+        "asOf": "2026-07-20"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": null,
+        "endorsingAuthority": "Competent government veterinary authority; certificate must record microchip and titre information",
+        "sourceUrl": "https://www.qia.go.kr/localFile/dog_cat_certification_program_booklet.pdf",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": false,
+        "daysBefore": 0,
+        "method": null,
+        "sourceUrl": "https://www.qia.go.kr/localFile/dog_cat_certification_program_booklet.pdf",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": false,
+        "durationDays": 0,
+        "facility": "Animal and Plant Quarantine Agency arrival inspection",
+        "cost": null,
+        "bookingLeadTime": null,
+        "sourceUrl": "https://www.qia.go.kr/localFile/dog_cat_certification_program_booklet.pdf",
+        "asOf": "2026-07-20"
+      },
+      "parasiteTreatment": {
+        "required": false,
+        "window": null,
+        "species": [],
+        "sourceUrl": "https://www.qia.go.kr/localFile/dog_cat_certification_program_booklet.pdf",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Korean port or airport with animal quarantine inspection"
+      ],
+      "entryPointsSourceUrl": "https://www.qia.go.kr/localFile/dog_cat_certification_program_booklet.pdf",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": false,
+      "cargoOnlySourceUrl": "https://www.qia.go.kr/localFile/dog_cat_certification_program_booklet.pdf",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 30,
+    "breedRestrictions": [],
+    "speciesRestrictions": [
+      "Titre exemption applies to animals under 90 days and qualifying rabies-free origins; Thailand is not treated as such here.",
+      "Advance permission applies to consignments of more than 10 animals, not ordinary personal movements of 10 or fewer."
+    ],
+    "sources": [
+      {
+        "publisher": "Republic of Korea Animal and Plant Quarantine Agency",
+        "title": "Dog and cat certification programme booklet",
+        "url": "https://www.qia.go.kr/localFile/dog_cat_certification_program_booklet.pdf",
+        "accessed": "2026-07-20",
+        "supports": "Current 2025 microchip, titre timing, certificate and compliant-release rules."
+      },
+      {
+        "publisher": "Republic of Korea",
+        "title": "Aeronautical Information Publication: quarantine requirements",
+        "url": "https://aim.koca.go.kr/eaipPub/Package/2018-12-20/html/eAIP/KR-GEN-1.4-en-GB.html",
+        "accessed": "2026-07-20",
+        "supports": "Government quarantine inspection and antibody-certificate requirements."
+      }
+    ],
+    "confidence": "high",
+    "unverified": [
+      "The 30-day total is the express minimum sample-before-shipment period; vaccination and laboratory turnaround may make a fresh-start case longer.",
+      "Airline, airport and large-consignment rules remain separate."
+    ]
+  },
+  {
+    "country": "Hong Kong",
+    "thailandStatus": "Group IIIB; manifest cargo and a minimum 120-day post-arrival quarantine are mandatory",
+    "★requirements": {
+      "microchip": {
+        "required": null,
+        "standard": null,
+        "beforeRabiesVaccine": null,
+        "sourceUrl": "https://www.afcd.gov.hk/english/quarantine/qua_ie/qua_ie_ipab/qua_ie_ipab_idc/qua_ie_ipab_idc_Group_IIIB.html",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": null,
+        "minAgeWeeks": null,
+        "validityMonths": null,
+        "sourceUrl": "https://www.afcd.gov.hk/english/quarantine/qua_ie/qua_ie_ipab/qua_ie_ipab_idc/qua_ie_ipab_idc_Group_IIIB.html",
+        "asOf": "2026-07-20"
+      },
+      "titreTest": {
+        "required": null,
+        "minimumResult": null,
+        "approvedLabs": [],
+        "waitAfterSampleDays": null,
+        "validityMonths": null,
+        "sourceUrl": "https://www.afcd.gov.hk/english/quarantine/qua_ie/qua_ie_ipab/qua_ie_ipab_idc/qua_ie_ipab_idc_Group_IIIB.html",
+        "asOf": "2026-07-20"
+      },
+      "importPermit": {
+        "required": true,
+        "leadTimeDays": 3,
+        "issuingAuthority": "Hong Kong Agriculture, Fisheries and Conservation Department",
+        "cost": "HKD 432 for one animal plus HKD 102 for each additional animal",
+        "sourceUrl": "https://www.afcd.gov.hk/english/quarantine/qua_ie/qua_ie_ipab/qua_ie_ipab_idc/qua_ie_ipab_idc_Group_IIIB.html",
+        "asOf": "2026-07-20",
+        "processingNote": "Allow at least 3 working days; issue may take 5 working days"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": null,
+        "endorsingAuthority": "Competent veterinary authority of origin",
+        "sourceUrl": "https://www.afcd.gov.hk/english/quarantine/qua_ie/files/G125_Guideline_to_Importing_Pet_Animals_Birds_Sep25E.pdf",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": true,
+        "daysBefore": 1,
+        "method": "Notify AFCD at least 24 hours before arrival",
+        "sourceUrl": "https://www.afcd.gov.hk/english/quarantine/qua_ie/qua_ie_ipab/qua_ie_ipab_idc/qua_ie_ipab_idc_Group_IIIB.html",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": true,
+        "durationDays": 120,
+        "facility": "AFCD Animal Management Centre or approved licensed quarantine facility",
+        "cost": null,
+        "bookingLeadTime": "Current official guidance reports approximate government-facility waits of 3 months for dogs and 6 months for cats",
+        "sourceUrl": "https://www.afcd.gov.hk/english/quarantine/qua_ie/files/G125_Guideline_to_Importing_Pet_Animals_Birds_Sep25E.pdf",
+        "asOf": "2026-07-20"
+      },
+      "parasiteTreatment": {
+        "required": null,
+        "window": null,
+        "species": [],
+        "sourceUrl": "https://www.afcd.gov.hk/english/quarantine/qua_ie/files/G125_Guideline_to_Importing_Pet_Animals_Birds_Sep25E.pdf",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "Hong Kong International Airport as manifested cargo under permit and quarantine arrangements"
+      ],
+      "entryPointsSourceUrl": "https://www.afcd.gov.hk/english/quarantine/qua_ie/qua_ie_ipab/qua_ie_ipab_idc/qua_ie_ipab_idc_Group_IIIB.html",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": true,
+      "cargoOnlySourceUrl": "https://www.afcd.gov.hk/english/quarantine/qua_ie/qua_ie_ipab/qua_ie_ipab_idc/qua_ie_ipab_idc_Group_IIIB.html",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": null,
+    "breedRestrictions": [],
+    "speciesRestrictions": [
+      "This Group IIIB record covers dogs and cats; other animals use separate permit conditions."
+    ],
+    "sources": [
+      {
+        "publisher": "Hong Kong Agriculture, Fisheries and Conservation Department",
+        "title": "Import of dogs and cats from Group IIIB countries",
+        "url": "https://www.afcd.gov.hk/english/quarantine/qua_ie/qua_ie_ipab/qua_ie_ipab_idc/qua_ie_ipab_idc_Group_IIIB.html",
+        "accessed": "2026-07-20",
+        "supports": "Thailand classification, permit, cargo and notification rules."
+      },
+      {
+        "publisher": "Hong Kong Agriculture, Fisheries and Conservation Department",
+        "title": "Guideline for importing pet animals and birds",
+        "url": "https://www.afcd.gov.hk/english/quarantine/qua_ie/files/G125_Guideline_to_Importing_Pet_Animals_Birds_Sep25E.pdf",
+        "accessed": "2026-07-20",
+        "supports": "Minimum 120-day quarantine and facility-planning information."
+      }
+    ],
+    "confidence": "medium",
+    "unverified": [
+      "Microchip, vaccination, titre and treatment details could not be established confidently from the reviewed current Group IIIB page and are left null rather than inferred.",
+      "Total pre-departure lead time is null because quarantine allocation is a prerequisite with a variable wait; 120 days is post-arrival duration, not an earliest-departure clock.",
+      "Breed restrictions and full facility costs were not established."
+    ]
+  },
+  {
+    "country": "Taiwan",
+    "thailandStatus": "Rabies-infected country; qualifying titre, 90-day pre-arrival sample interval and import permit required",
+    "★requirements": {
+      "microchip": {
+        "required": true,
+        "standard": "ISO 11784/11785 microchip",
+        "beforeRabiesVaccine": true,
+        "sourceUrl": "https://pet-epermit.aphia.gov.tw/Entry?Command=Apply_Addnew&sLang=2",
+        "asOf": "2026-07-20"
+      },
+      "rabiesVaccine": {
+        "required": true,
+        "minAgeWeeks": 12,
+        "validityMonths": 12,
+        "sourceUrl": "https://pet-epermit.aphia.gov.tw/Entry?Command=Apply_Addnew&sLang=2",
+        "asOf": "2026-07-20",
+        "minDaysBeforeArrival": 30
+      },
+      "titreTest": {
+        "required": true,
+        "minimumResult": "≥0.5 IU/ml",
+        "approvedLabs": [
+          "WOAH reference laboratory or APHIA-designated laboratory"
+        ],
+        "waitAfterSampleDays": 90,
+        "validityMonths": 12,
+        "sourceUrl": "https://pet-epermit.aphia.gov.tw/Entry?Command=Apply_Addnew&sLang=2",
+        "asOf": "2026-07-20"
+      },
+      "importPermit": {
+        "required": true,
+        "leadTimeDays": 20,
+        "issuingAuthority": "Taiwan Animal and Plant Health Inspection Agency",
+        "cost": null,
+        "sourceUrl": "https://pet-epermit.aphia.gov.tw/Entry?Command=Apply_Addnew&sLang=2",
+        "asOf": "2026-07-20",
+        "applicationWindow": "20-120 days before intended arrival"
+      },
+      "healthCertificate": {
+        "required": true,
+        "issuedWithinDays": null,
+        "endorsingAuthority": "Competent government animal-quarantine authority",
+        "sourceUrl": "https://pet-epermit.aphia.gov.tw/Entry?Command=Apply_Addnew&sLang=2",
+        "asOf": "2026-07-20"
+      },
+      "advanceNotification": {
+        "required": true,
+        "daysBefore": 20,
+        "method": "Apply through the pet e-permit system",
+        "sourceUrl": "https://pet-epermit.aphia.gov.tw/Entry?Command=Apply_Addnew&sLang=2",
+        "asOf": "2026-07-20"
+      },
+      "quarantine": {
+        "required": false,
+        "durationDays": 0,
+        "facility": null,
+        "cost": null,
+        "bookingLeadTime": null,
+        "sourceUrl": "https://pet-epermit.aphia.gov.tw/Entry?Command=Apply_Addnew&sLang=2",
+        "asOf": "2026-07-20",
+        "condition": "Compliant dogs and cats can receive quarantine waiver"
+      },
+      "parasiteTreatment": {
+        "required": false,
+        "window": null,
+        "species": [],
+        "sourceUrl": "https://pet-epermit.aphia.gov.tw/Entry?Command=Apply_Addnew&sLang=2",
+        "asOf": "2026-07-20"
+      },
+      "entryPoints": [
+        "APHIA-approved port of entry stated on the import permit"
+      ],
+      "entryPointsSourceUrl": "https://pet-epermit.aphia.gov.tw/Entry?Command=Apply_Addnew&sLang=2",
+      "entryPointsAsOf": "2026-07-20",
+      "cargoOnly": false,
+      "cargoOnlySourceUrl": "https://pet-epermit.aphia.gov.tw/Entry?Command=Apply_Addnew&sLang=2",
+      "cargoOnlyAsOf": "2026-07-20"
+    },
+    "★totalLeadTimeDays": 90,
+    "breedRestrictions": [],
+    "speciesRestrictions": [
+      "This pathway covers dogs and cats; other species follow separate rules."
+    ],
+    "sources": [
+      {
+        "publisher": "Taiwan Animal and Plant Health Inspection Agency",
+        "title": "Import quarantine information for dogs and cats",
+        "url": "https://www.aphia.gov.tw/ws.php?id=14261",
+        "accessed": "2026-07-20",
+        "supports": "2026 revised permit process and transition notice."
+      },
+      {
+        "publisher": "Taiwan Animal and Plant Health Inspection Agency",
+        "title": "Pet import e-permit application",
+        "url": "https://pet-epermit.aphia.gov.tw/Entry?Command=Apply_Addnew&sLang=2",
+        "accessed": "2026-07-20",
+        "supports": "Thailand status, chip, vaccine, titre, 90-day sample and 20-day permit timing."
+      },
+      {
+        "publisher": "Taiwan Animal and Plant Health Inspection Agency",
+        "title": "Import quarantine FAQ",
+        "url": "https://www.aphia.gov.tw/office/khaphia/en/ws.php?id=738",
+        "accessed": "2026-07-20",
+        "supports": "Official implementation and 2026 transition guidance."
+      }
+    ],
+    "confidence": "high",
+    "unverified": [
+      "Taiwan permits both old and revised forms during a 2026 grace period; travellers should use the current e-permit conditions rather than assume a stale form is accepted.",
+      "The 90-day total excludes laboratory turnaround and permit processing because the 20-day application clock fits inside the titre wait."
+    ]
+  }
+]

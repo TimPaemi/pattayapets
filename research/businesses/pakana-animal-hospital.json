@@ -1,0 +1,96 @@
+{
+  "slug": "pakana-animal-hospital",
+  "name": "Pakana Animal Hospital",
+  "category": "vet",
+  "area": "Takhian Tia / Bang Lamung",
+  "addressFull": "91/91-92 Moo 3, Takhian Tia, Bang Lamung, Chon Buri 20150, Thailand",
+  "lat": 0.0,
+  "lng": 0.0,
+  "phone": "098 427 3637",
+  "lineId": "",
+  "website": "",
+  "facebook": "https://www.facebook.com/Pakanaanimalhospital/",
+  "hours": "Google Maps lists daily 07:00-22:00; government and directory records list 09:00-20:00. Call before visiting.",
+  "afterHours": "",
+  "open247": false,
+  "languages": ["Thai"],
+  "englishConfidence": "unknown",
+  "services": [
+    "general consultations",
+    "preventive care and vaccination",
+    "infectious-disease care",
+    "dental care",
+    "neutering",
+    "emergency and soft-tissue surgery",
+    "orthopedic surgery",
+    "intensive care",
+    "inpatient care",
+    "laboratory diagnostics"
+  ],
+  "species": ["dog", "cat", "rabbit", "small mammal", "bird", "reptile"],
+  "facilities": {
+    "surgery": true,
+    "xray": true,
+    "ultrasound": true,
+    "inHouseLab": true,
+    "hospitalisation": true,
+    "isolation": false,
+    "cardAccepted": false,
+    "parking": true
+  },
+  "pricing": {
+    "consultation": "",
+    "vaccination": "",
+    "neutering": "",
+    "boardingPerNight": "",
+    "groomFrom": "",
+    "asOf": "2026-07-20",
+    "priceSourceUrl": ""
+  },
+  "emergency": {
+    "acceptsEmergencies": true,
+    "afterHoursNumber": "",
+    "typicalWait": "",
+    "notes": "Emergency surgery and ICU care are advertised, but no after-hours intake or 24-hour service was verified."
+  },
+  "petTravel": {
+    "healthCertificates": false,
+    "microchipping": false,
+    "rabiesTitre": false,
+    "exportPaperwork": false,
+    "notes": "No reliable public confirmation of pet-travel services was found."
+  },
+  "reviews": [
+    {
+      "platform": "Google",
+      "score": 4.7,
+      "count": 188,
+      "url": "https://www.google.com/maps/search/?api=1&query=Pakana%20Animal%20Hospital%20Bang%20Lamung",
+      "asOf": "2026-07-20"
+    }
+  ],
+  "reviewThemes": {
+    "praise": ["attentive and friendly staff", "clear advice and explanations"],
+    "complaints": []
+  },
+  "status": "open",
+  "sources": [
+    {"label": "Pakana Animal Hospital official Facebook page", "url": "https://www.facebook.com/Pakanaanimalhospital/", "accessed": "2026-07-20"},
+    {"label": "Google Maps location listing", "url": "https://www.google.com/maps/search/?api=1&query=Pakana%20Animal%20Hospital%20Bang%20Lamung", "accessed": "2026-07-20"},
+    {"label": "Department of Livestock Development animal-hospital listing", "url": "https://pangchang.dld.go.th/", "accessed": "2026-07-20"},
+    {"label": "Cybo location listing", "url": "https://xn--l3cga1amo9al2e5c0fqf.cybo.com/TH-biz/%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%AA%E0%B8%B1%E0%B8%95%E0%B8%A7%E0%B9%8C%E0%B8%A0%E0%B8%B1%E0%B8%84%E0%B8%93%E0%B8%B2-pakana-animal", "accessed": "2026-07-20"},
+    {"label": "InternTH Pakana employer profile", "url": "https://internth.com/company-info/2940", "accessed": "2026-07-20"},
+    {"label": "ThaiThurkic location listing", "url": "https://www.thaithurkic.com/%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%AA%E0%B8%B1%E0%B8%95%E0%B8%A7%E0%B9%8C%E0%B8%A0%E0%B8%B1%E0%B8%84%E0%B8%93%E0%B8%B2-pakana-animal-098-427-3637", "accessed": "2026-07-20"}
+  ],
+  "confidence": "medium",
+  "unverified": [
+    "hours: Current Google Maps hours conflict with government and directory hours; call to confirm.",
+    "lat, lng: Exact coordinates were not captured; Google Maps shows Plus Code 2X97+7J Takhian Tia.",
+    "lineId, website: No reliable current public value found.",
+    "languages: English-speaking ability was not directly confirmed.",
+    "facilities.isolation, facilities.cardAccepted: No reliable confirmation found; false means not verified.",
+    "pricing: No reliable published prices found for any listed price field.",
+    "afterHours, open247, emergency.afterHoursNumber, emergency.typicalWait: No reliable confirmation found; false/blank means not verified.",
+    "petTravel.healthCertificates, petTravel.microchipping, petTravel.rabiesTitre, petTravel.exportPaperwork: No reliable confirmation found; false means not verified."
+  ]
+}

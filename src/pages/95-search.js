@@ -71,12 +71,12 @@ module.exports = [{
     '<a class="chip chip-link" href="/sitemap.html">Full sitemap</a>' +
     '</div></div></details>' +
     '<details class="corridor-panel search-browse-panel">' +
-    '<summary class="corridor-panel__title">Pattaya Authority network</summary>' +
+    '<summary class="corridor-panel__title">TimPaemi network</summary>' +
     '<div class="corridor-panel__body"><p class="notice">Sister guides for the wider move &mdash; visas, rentals, dining and more.</p>' +
     '<div class="chips">' +
     'Pattaya Visa Help' +
     'Pattaya Medical' +
-    'Pattaya Authority' +
+    'TimPaemi' +
     '</div></div></details>' +
     '<div id="pp-filters" class="search-filters" role="group" aria-label="Filter by section"></div>' +
     '<div id="pp-results" class="search-results" aria-live="polite" aria-atomic="true" role="region" aria-label="Search results">' +

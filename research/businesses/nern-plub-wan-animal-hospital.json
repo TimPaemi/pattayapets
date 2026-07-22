@@ -1,0 +1,81 @@
+{
+  "slug": "nern-plub-wan-animal-hospital",
+  "name": "Nern Plub Wan Animal Hospital",
+  "category": "vet",
+  "area": "East Pattaya / Nern Plub Wan",
+  "addressFull": "21/97-100 Moo 5, Soi Sukhumvit Pattaya 53, Nong Prue, Bang Lamung, Chon Buri 20150, Thailand",
+  "lat": 12.9299011,
+  "lng": 100.9072094,
+  "phone": "038 406 384",
+  "lineId": "",
+  "website": "",
+  "facebook": "",
+  "hours": "Daily 08:00-00:00",
+  "afterHours": "",
+  "open247": false,
+  "languages": ["Thai"],
+  "englishConfidence": "unknown",
+  "services": ["general consultations", "vaccinations", "treatment", "surgery", "rehabilitation"],
+  "species": ["dog", "cat"],
+  "facilities": {
+    "surgery": false,
+    "xray": false,
+    "ultrasound": false,
+    "inHouseLab": false,
+    "hospitalisation": false,
+    "isolation": false,
+    "cardAccepted": false,
+    "parking": false
+  },
+  "pricing": {
+    "consultation": "",
+    "vaccination": "",
+    "neutering": "",
+    "boardingPerNight": "",
+    "groomFrom": "",
+    "asOf": "2026-07-20",
+    "priceSourceUrl": ""
+  },
+  "emergency": {
+    "acceptsEmergencies": false,
+    "afterHoursNumber": "",
+    "typicalWait": "",
+    "notes": "Older directory pages describe the hospital as open 24 hours, but the current Google Maps listing shows 08:00 to midnight every day. No current direct evidence of overnight staffing or after-hours intake was found, so open247 and acceptsEmergencies remain false."
+  },
+  "petTravel": {
+    "healthCertificates": false,
+    "microchipping": false,
+    "rabiesTitre": false,
+    "exportPaperwork": false,
+    "notes": "No primary source confirming international health certificates, ISO-standard microchipping, rabies-titre testing, a destination laboratory, DLD accreditation, or export-paperwork handling was found."
+  },
+  "reviews": [
+    {
+      "platform": "Google",
+      "score": 4.2,
+      "count": 695,
+      "url": "https://www.google.com/maps/search/?api=1&query=Nern%20Plub%20Wan%20Animal%20Hospital%20Pattaya",
+      "asOf": "2026-07-20"
+    }
+  ],
+  "reviewThemes": {
+    "praise": ["friendly veterinarians and staff", "helpful advice", "prices often described as reasonable"],
+    "complaints": ["the rating distribution includes a material minority of one-star reviews"]
+  },
+  "status": "open",
+  "sources": [
+    {"label": "Google Maps current location and hours listing", "url": "https://www.google.com/maps/search/?api=1&query=Nern%20Plub%20Wan%20Animal%20Hospital%20Pattaya", "accessed": "2026-07-20"},
+    {"label": "i FOUND PET location listing", "url": "https://ifoundpet.com/services/631", "accessed": "2026-07-20"},
+    {"label": "ThaiThurkic business listing", "url": "https://www.thaithurkic.com/%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%AA%E0%B8%B1%E0%B8%95%E0%B8%A7%E0%B9%8C%E0%B9%80%E0%B8%99%E0%B8%B4%E0%B8%99%E0%B8%9E%E0%B8%A5%E0%B8%B1%E0%B8%9A%E0%B8%AB%E0%B8%A7%E0%B8%B2%E0%B8%99_1o-038-406-384", "accessed": "2026-07-20"},
+    {"label": "Kasetsart University veterinary internship listing", "url": "https://info.vettech.ku.ac.th/vt-internship/view.php?id_view=37", "accessed": "2026-07-20"}
+  ],
+  "confidence": "medium",
+  "unverified": [
+    "lineId, website, facebook: No reliable current public value found.",
+    "languages, englishConfidence: Thai review snippets were checked but did not mention English-speaking staff or a foreign-client consultation.",
+    "facilities.*: Service directories mention treatment capabilities, but current branch-level facility details were not reliably established; false means not verified.",
+    "pricing.*: No reliable published prices found; a single review's case total was not treated as a price list.",
+    "emergency.acceptsEmergencies, afterHours, emergency.afterHoursNumber, emergency.typicalWait: No current direct after-hours evidence found. Older 24-hour claims conflict with current hours.",
+    "petTravel.*: No primary-source confirmation found; false means not verified."
+  ]
+}

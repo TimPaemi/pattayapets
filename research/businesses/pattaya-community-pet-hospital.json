@@ -1,0 +1,92 @@
+{
+  "slug": "pattaya-community-pet-hospital",
+  "name": "Pattaya Community Pet Hospital",
+  "category": "emergency-vet",
+  "area": "East Pattaya / Nern Plub Wan",
+  "addressFull": "248/6-8 Soi Nern Plub Wan, Nong Prue, Bang Lamung, Chon Buri 20150, Thailand",
+  "lat": 12.9302822,
+  "lng": 100.9144158,
+  "phone": "061 095 6565",
+  "lineId": "",
+  "website": "https://en.muangakepethospital.com/",
+  "facebook": "https://www.facebook.com/PATTAYACOMMUNITYPETHOSPITAL24Hrs/",
+  "hours": "Open 24 hours daily",
+  "afterHours": "The official group emergency centre serves the Pattaya Community branch 24 hours.",
+  "open247": true,
+  "languages": ["Thai", "English"],
+  "englishConfidence": "likely",
+  "services": [
+    "24-hour accident and emergency care",
+    "emergency surgery",
+    "general consultations",
+    "surgery",
+    "x-ray",
+    "inpatient care",
+    "vaccinations",
+    "international travel health checks"
+  ],
+  "species": ["dog", "cat"],
+  "facilities": {
+    "surgery": true,
+    "xray": true,
+    "ultrasound": false,
+    "inHouseLab": false,
+    "hospitalisation": true,
+    "isolation": false,
+    "cardAccepted": true,
+    "parking": false
+  },
+  "pricing": {
+    "consultation": "",
+    "vaccination": "",
+    "neutering": "",
+    "boardingPerNight": "",
+    "groomFrom": "",
+    "asOf": "2026-07-20",
+    "priceSourceUrl": ""
+  },
+  "emergency": {
+    "acceptsEmergencies": true,
+    "afterHoursNumber": "",
+    "typicalWait": "",
+    "notes": "The Muang Ake group emergency page names Pattaya Community as a branch and says its 24-hour emergency and surgical centres are supervised by veterinarians and nurses. Current Maps, Petmap and the branch's own Facebook identity corroborate 24-hour operation. No separate after-hours number, surcharge, wait time, or explicit first-time-client policy was published."
+  },
+  "petTravel": {
+    "healthCertificates": true,
+    "microchipping": true,
+    "rabiesTitre": true,
+    "exportPaperwork": false,
+    "notes": "Official Muang Ake group pages advertise international health certificates, microchipping, and rabies-titre testing and list the Pattaya Community branch phone. They do not state which steps are performed at this branch. The microchip page prints 'ISO 11758', not ISO 11784/11785. DLD export-permit processing and the destination laboratory were not published."
+  },
+  "reviews": [
+    {
+      "platform": "Google",
+      "score": 4.3,
+      "count": 285,
+      "url": "https://www.google.com/maps/search/?api=1&query=Pattaya%20Community%20Pet%20Hospital",
+      "asOf": "2026-07-20"
+    }
+  ],
+  "reviewThemes": {
+    "praise": ["caring veterinarians", "round-the-clock availability", "helpful explanations"],
+    "complaints": ["some reviewers report inconsistent communication or waiting"]
+  },
+  "status": "open",
+  "sources": [
+    {"label": "Muang Ake official 24-hour emergency centre page", "url": "https://en.muangakepethospital.com/17030538/accident-emergency-center-24-hr", "accessed": "2026-07-20"},
+    {"label": "Muang Ake official international health-certificate page", "url": "https://en.muangakepethospital.com/14694353/%E0%B8%95%E0%B8%A3%E0%B8%A7%E0%B8%88%E0%B8%AA%E0%B8%B8%E0%B8%82%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%AA%E0%B8%B1%E0%B8%95%E0%B8%A7%E0%B9%8C%E0%B9%80%E0%B8%A5%E0%B8%B5%E0%B9%89%E0%B8%A2%E0%B8%87%E0%B9%84%E0%B8%9B%E0%B8%95%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%97%E0%B8%A8", "accessed": "2026-07-20"},
+    {"label": "Google Maps location listing", "url": "https://www.google.com/maps/search/?api=1&query=Pattaya%20Community%20Pet%20Hospital", "accessed": "2026-07-20"},
+    {"label": "Petmap location listing", "url": "https://www.petmap.co/place/pattayacommunitypethospital/", "accessed": "2026-07-20"},
+    {"label": "i FOUND PET branch listing", "url": "https://ifoundpet.com/services/640", "accessed": "2026-07-20"},
+    {"label": "Krungsri Card pet-hospital promotion listing", "url": "https://www.krungsricard.com/th/promotion/pet-pattaya", "accessed": "2026-07-20"}
+  ],
+  "confidence": "high",
+  "unverified": [
+    "lineId: No reliable current public value found.",
+    "englishConfidence: The full English group site names this branch, supporting likely; Thai-review snippets did not directly confirm an English consultation.",
+    "facilities.ultrasound, facilities.inHouseLab, facilities.isolation, facilities.parking: No branch-specific confirmation found; false means not verified.",
+    "pricing.*: No reliable published prices found.",
+    "emergency.afterHoursNumber, emergency.typicalWait: No separate after-hours number or reliable wait time was published. The out-of-hours surcharge and first-time-client policy were not published.",
+    "petTravel.exportPaperwork: DLD final export processing was not published. Branch execution, ISO 11784/11785 compliance, and the destination rabies-titre laboratory require confirmation."
+  ]
+}

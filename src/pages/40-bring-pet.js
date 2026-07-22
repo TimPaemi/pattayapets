@@ -70,7 +70,7 @@ pages.push(hub({
     "<p>Moving to Thailand with a pet usually sits alongside visa and relocation " +
     "planning &mdash; for the human side of the move, see " +
     '' +
-    "Pattaya Visa Help in the Pattaya Authority network.</p>" +
+    "Pattaya Visa Help in the TimPaemi network.</p>" +
     '<div class="callout callout-tip"><div class="ch">Rules change — verify before you act</div>' +
     "<p>" + VERIFY + "</p>" + OFFICIAL + "</div>",
   groups: [

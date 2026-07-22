@@ -122,6 +122,72 @@ function header() {
 
 function footer() {
   const year = new Date().getFullYear();
+  /* FOOTER-SPEC-2026 — five blocks: publisher, nav (4 cols), trust, contact, legal.
+     No PA-NET, no network links, single followed timpaemi.com brand link. */
+  return (
+    '<footer class="site-footer"><!--FOOTER-SPEC-2026-->' +
+    '<style id="fs26-css">' +
+    '.fs26-wrap{max-width:1080px;margin:0 auto;padding:44px 20px 24px;text-align:left;color:#FFFDF8}' +
+    '.fs26-pub{margin:0 0 40px}' +
+    '.fs26-photo{width:64px;height:64px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,253,248,.25);display:block;margin:0 0 14px}' +
+    '.fs26-brand{font-weight:800;font-size:1.4rem;color:#FFFDF8}' +
+    '.fs26-names{font-weight:700;font-size:clamp(1.05rem,2.2vw,1.3rem);line-height:1.4;color:#FFFDF8;margin:12px 0 8px;max-width:640px}' +
+    '.fs26-names a{color:#A8DCC3;text-decoration:none}.fs26-names a:hover{text-decoration:underline}' +
+    '.fs26-scale{color:rgba(255,253,248,.68);font-size:.85rem;line-height:1.55;margin:0;max-width:560px}' +
+    '.fs26-nav{display:grid;grid-template-columns:1fr;gap:24px;margin:0 0 40px}' +
+    '@media(min-width:760px){.fs26-nav{grid-template-columns:repeat(4,1fr);gap:30px}}' +
+    '.fs26-h{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:#A8DCC3;font-weight:700;margin:0 0 10px}' +
+    '.fs26-nav ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}' +
+    '.fs26-nav a{color:rgba(255,253,248,.75);text-decoration:none;font-size:.85rem}.fs26-nav a:hover{color:#A8DCC3}' +
+    '.fs26-trust{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,253,248,.6);font-weight:700;margin:0 0 30px}' +
+    '.fs26-contact{margin:0 0 30px;font-size:.85rem}.fs26-contact a{color:rgba(255,253,248,.75);text-decoration:none}' +
+    '.fs26-legal{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,253,248,.55);margin:0;border-top:1px solid rgba(255,253,248,.18);padding-top:14px;line-height:1.8}' +
+    '.fs26-legal a{color:inherit}' +
+    '</style>' +
+    '<div class="fs26-wrap">' +
+    '<div class="fs26-pub">' +
+    '<img class="fs26-photo" src="/assets/img/timpaemi.jpg" alt="Tim and Paemi" width="64" height="64" loading="lazy">' +
+    '<div class="fs26-brand">PattayaPets.</div>' +
+    '<p class="fs26-names">Written, photographed and kept up to date by Tim and Paemi, who live in Pattaya. <a href="https://timpaemi.com/" rel="author noopener">&rarr; timpaemi.com</a></p>' +
+    '<p class="fs26-scale">The independent guide for pet owners in Pattaya &mdash; vets, groomers, shops and the paperwork, reviewed through anonymous visits.</p>' +
+    '</div>' +
+    '<nav class="fs26-nav" aria-label="Footer">' +
+    '<div><p class="fs26-h">// Explore</p><ul>' +
+    '<li><a href="/directory.html">Directory</a></li>' +
+    '<li><a href="/vets/">Vets</a></li>' +
+    '<li><a href="/guides.html">Guides</a></li>' +
+    '<li><a href="/dogs/">Dogs</a></li>' +
+    '<li><a href="/cats/">Cats</a></li>' +
+    '</ul></div>' +
+    '<div><p class="fs26-h">// Essentials</p><ul>' +
+    '<li><a href="/bring-pet-to-thailand/">Bring a pet in</a></li>' +
+    '<li><a href="/take-pet-out-of-thailand/">Take a pet out</a></li>' +
+    '<li><a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a></li>' +
+    '<li><a href="/adopt-a-pet-pattaya/">Adopt a pet</a></li>' +
+    '<li><a href="/start-here.html">Start here</a></li>' +
+    '</ul></div>' +
+    '<div><p class="fs26-h">// About</p><ul>' +
+    '<li><a href="/about.html">About us</a></li>' +
+    '<li><a href="/standards.html">How we work</a></li>' +
+    '<li><a href="/masthead.html">Masthead</a></li>' +
+    '<li><a href="/corrections.html">Corrections</a></li>' +
+    '</ul></div>' +
+    '<div><p class="fs26-h">// Legal</p><ul>' +
+    '<li><a href="/privacy.html">Privacy</a></li>' +
+    '<li><a href="/terms.html">Terms</a></li>' +
+    '<li><a href="/contact.html">Contact</a></li>' +
+    '</ul></div>' +
+    '</nav>' +
+    '<p class="fs26-trust">Anonymous visits &middot; No paid placements &middot; Updated rolling</p>' +
+    '<p class="fs26-contact"><a href="mailto:info@pattayapets.com">info@pattayapets.com</a></p>' +
+    '<p class="fs26-legal">&copy; ' + year + ' TimPaemi Co., Ltd. &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a><br>' + esc(DISCLAIMER) + '</p>' +
+    '</div>' +
+    '</footer>'
+  );
+}
+
+function footerOld() {
+  const year = new Date().getFullYear();
   return (
     /* PA-XLINK contextual cross-links — renders above the footer on every page */
     `` +
@@ -233,36 +299,23 @@ function breadcrumbHtml(page) {
   return '<nav class="breadcrumb container" aria-label="Breadcrumb"><ol>' + items.join("") + "</ol></nav>";
 }
 
-/* Canonical author entity for the whole Pattaya Authority network.
-   Lives at timpaemi.com — referenced by Organization.founder and Article.author. */
+/* FOOTER-SPEC-2026: canonical TimPaemi publisher entity (Organization).
+   Same @id on every owned site — author/publisher fields reference it. */
 function personGraph() {
   return {
-    "@type": "Person",
+    "@type": "Organization",
     "@id": "https://timpaemi.com/#timpaemi",
     name: "TimPaemi",
-    alternateName: ["Tim Paemi", "Paemi Tim", "Tim & Paemi", "TIMPAEMI"],
     url: "https://timpaemi.com/",
-    image: "https://timpaemi.com/authors/timpaemi.jpg",
-    jobTitle: "Founders & editors, Pattaya Authority network",
-    worksFor: { "@id": "https://timpaemi.com/#org" },
-    knowsAbout: [
-      "Pattaya",
-      "Pets in Thailand",
-      "Veterinary care",
-      "Thailand travel",
-      "Local directory editorial"
+    founder: [
+      { "@type": "Person", name: "Tim" },
+      { "@type": "Person", name: "Paemi" }
     ],
     sameAs: [
       "https://www.youtube.com/@timpaemi",
       "https://www.tiktok.com/@timpaemi.com",
       "https://www.instagram.com/timpaemi/",
-      "https://www.facebook.com/timpaemi",
-      "https://pattaya-authority.com/",
-      "https://pattayapets.com/",
-      "https://pattayavilla.com/",
-      "https://pattayapersonaltrainer.com/",
-      "https://mrweoutside.com/",
-      "https://pattayaolympian.com/"
+      "https://www.facebook.com/timpaemi"
     ]
   };
 }
@@ -279,15 +332,11 @@ function orgGraph() {
     logo: { "@type": "ImageObject", url: SITE.url + "/assets/img/icon-512.png" },
     email: SITE.email,
     foundingLocation: "Pattaya, Chon Buri, Thailand",
-    founder: { "@id": "https://timpaemi.com/#timpaemi" },
-    parentOrganization: {
-      "@type": "Organization",
-      "@id": "https://timpaemi.com/#org",
-      name: SITE.operator
-    },
-    // sameAs = honest publisher hub only; sister sites are separate entities
-    // and must not be declared as this organization's profiles.
-    sameAs: ["https://pattaya-authority.com/work/pattaya-pets/"]
+    founder: [
+      { "@type": "Person", name: "Tim" },
+      { "@type": "Person", name: "Paemi" }
+    ],
+    parentOrganization: { "@id": "https://timpaemi.com/#timpaemi" }
   };
 }
 

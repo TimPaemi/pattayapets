@@ -1,0 +1,91 @@
+{
+  "slug": "better-pets-hospital",
+  "name": "Better Pets Hospital",
+  "category": "vet",
+  "area": "East Pattaya / Chaiyapruek 2, Nong Prue",
+  "addressFull": "263/120-121 Soi Chai Rerk 2, Nong Prue, Bang Lamung, Chon Buri 20150, Thailand",
+  "lat": 12.8829357,
+  "lng": 100.9074576,
+  "phone": "095 326 5567",
+  "lineId": "",
+  "website": "https://betterpetshospital.com/en/",
+  "facebook": "",
+  "hours": "Daily 07:00-22:00",
+  "afterHours": "",
+  "open247": false,
+  "languages": ["Thai", "English"],
+  "englishConfidence": "likely",
+  "services": [
+    "general consultations",
+    "preventive care and vaccination",
+    "surgery",
+    "dental and oral care",
+    "nutrition advice",
+    "grooming",
+    "pet hotel"
+  ],
+  "species": ["dog", "cat"],
+  "facilities": {
+    "surgery": true,
+    "xray": true,
+    "ultrasound": true,
+    "inHouseLab": true,
+    "hospitalisation": false,
+    "isolation": false,
+    "cardAccepted": false,
+    "parking": false
+  },
+  "pricing": {
+    "consultation": "",
+    "vaccination": "",
+    "neutering": "",
+    "boardingPerNight": "Dogs: THB 300-500/day depending on weight/room; cats: THB 300-700/day depending on room. Food is excluded; special care is an additional THB 300/day.",
+    "groomFrom": "",
+    "asOf": "2026-07-20",
+    "priceSourceUrl": "https://betterpetshospital.com/en/pet-hotels/"
+  },
+  "emergency": {
+    "acceptsEmergencies": false,
+    "afterHoursNumber": "",
+    "typicalWait": "",
+    "notes": "No reliable public confirmation of emergency intake or after-hours service was found."
+  },
+  "petTravel": {
+    "healthCertificates": false,
+    "microchipping": true,
+    "rabiesTitre": true,
+    "exportPaperwork": false,
+    "notes": "The hospital's service page confirms microchipping and rabies titre testing for international travel. It does not identify the microchip as ISO 11784/11785, name the titre laboratory, publish an export-health-certificate service, or state that it handles DLD export paperwork."
+  },
+  "reviews": [
+    {
+      "platform": "Google",
+      "score": 4.7,
+      "count": 166,
+      "url": "https://www.google.com/maps/search/?api=1&query=Better%20Pets%20Hospital%20Pattaya",
+      "asOf": "2026-07-20"
+    }
+  ],
+  "reviewThemes": {
+    "praise": ["kind and attentive veterinary staff", "clear recommendations", "clean premises"],
+    "complaints": ["one recent snippet criticized staff communication"]
+  },
+  "status": "open",
+  "sources": [
+    {"label": "Better Pets Hospital official website", "url": "https://betterpetshospital.com/en/", "accessed": "2026-07-20"},
+    {"label": "Better Pets Hospital official contact page", "url": "https://betterpetshospital.com/en/contact-us/", "accessed": "2026-07-20"},
+    {"label": "Better Pets Hospital official health-check, microchip and rabies-titre page", "url": "https://betterpetshospital.com/en/general-health-check-ups/", "accessed": "2026-07-20"},
+    {"label": "Google Maps location listing", "url": "https://www.google.com/maps/search/?api=1&query=Better%20Pets%20Hospital%20Pattaya", "accessed": "2026-07-20"},
+    {"label": "PETECO location listing", "url": "https://peteco.co.th/listing/%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%AA%E0%B8%B1%E0%B8%95%E0%B8%A7%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B9%87%E0%B8%97%E0%B9%80%E0%B8%97%E0%B8%AD%E0%B8%A3/", "accessed": "2026-07-20"},
+    {"label": "ThaiThurkic location listing", "url": "https://www.thaithurkic.com/%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%AA%E0%B8%B1%E0%B8%95%E0%B8%A7%E0%B9%8C%E0%B9%80%E0%B8%9A%E0%B9%87%E0%B8%97%E0%B9%80%E0%B8%97%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%80%E0%B8%9E%E0%B9%87%E0%B8%97-better-pets-095-326-5567", "accessed": "2026-07-20"}
+  ],
+  "confidence": "high",
+  "unverified": [
+    "lineId, facebook: No reliable current public value found.",
+    "languages: Spoken-English ability was not directly confirmed; a complete official English-language site supports only a likely rating.",
+    "facilities.hospitalisation, facilities.isolation, facilities.cardAccepted, facilities.parking: No reliable confirmation found; false means not verified.",
+    "pricing.consultation, pricing.vaccination, pricing.neutering, pricing.groomFrom: No reliable published prices found.",
+    "emergency.acceptsEmergencies, afterHours, open247, emergency.afterHoursNumber, emergency.typicalWait: No reliable confirmation found; false/blank means not verified.",
+    "petTravel.healthCertificates, petTravel.exportPaperwork: No reliable confirmation found; false means not verified. ISO 11784/11785 compliance and the rabies-titre laboratory were not published."
+  ]
+}

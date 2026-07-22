@@ -75,13 +75,7 @@ function articleSchema(o, url) {
     description: o.desc,
     datePublished: o.published || DEFAULT_UPDATED,
     dateModified: updated,
-    author: {
-      "@type": "Person",
-      "@id": "https://timpaemi.com/#timpaemi",
-      name: "TimPaemi",
-      url: "https://timpaemi.com/",
-      image: "https://timpaemi.com/authors/timpaemi.jpg"
-    },
+    author: { "@id": "https://timpaemi.com/#timpaemi" },
     publisher: { "@id": SITE + "/#org" },
     mainEntityOfPage: url,
     inLanguage: "en"

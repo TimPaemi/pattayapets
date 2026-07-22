@@ -1,0 +1,85 @@
+{
+  "slug": "nana-pet-clinic",
+  "name": "Nana Pet Clinic",
+  "category": "vet",
+  "area": "East Pattaya / Khao Noi-Boonsampan, Nong Prue",
+  "addressFull": "15/227 Boonsampan Road (Soi Khao Noi), Nong Prue, Bang Lamung, Chon Buri 20150, Thailand",
+  "lat": 0.0,
+  "lng": 0.0,
+  "phone": "098 955 8950",
+  "lineId": "",
+  "website": "",
+  "facebook": "https://www.facebook.com/103842738030395",
+  "hours": "Monday-Tuesday and Thursday-Sunday 10:00-20:00; Wednesday closed",
+  "afterHours": "",
+  "open247": false,
+  "languages": ["Thai"],
+  "englishConfidence": "unknown",
+  "services": ["general veterinary care"],
+  "species": ["dog", "cat"],
+  "facilities": {
+    "surgery": false,
+    "xray": false,
+    "ultrasound": false,
+    "inHouseLab": false,
+    "hospitalisation": false,
+    "isolation": false,
+    "cardAccepted": false,
+    "parking": false
+  },
+  "pricing": {
+    "consultation": "",
+    "vaccination": "",
+    "neutering": "",
+    "boardingPerNight": "",
+    "groomFrom": "",
+    "asOf": "2026-07-20",
+    "priceSourceUrl": ""
+  },
+  "emergency": {
+    "acceptsEmergencies": false,
+    "afterHoursNumber": "",
+    "typicalWait": "",
+    "notes": "No reliable public confirmation of emergency intake or after-hours service was found."
+  },
+  "petTravel": {
+    "healthCertificates": false,
+    "microchipping": false,
+    "rabiesTitre": false,
+    "exportPaperwork": false,
+    "notes": "No reliable public confirmation of pet-travel services was found."
+  },
+  "reviews": [
+    {
+      "platform": "Google",
+      "score": 4.7,
+      "count": 99,
+      "url": "https://www.google.com/maps/search/?api=1&query=Nana%20Pet%20Clinic%20Pattaya",
+      "asOf": "2026-07-20"
+    }
+  ],
+  "reviewThemes": {
+    "praise": ["low-cost care", "helpful advice", "friendly veterinarians"],
+    "complaints": ["some reviewers criticized staff interactions"]
+  },
+  "status": "open",
+  "sources": [
+    {"label": "Nana Pet Clinic official Facebook page", "url": "https://www.facebook.com/103842738030395", "accessed": "2026-07-20"},
+    {"label": "Google Maps location listing", "url": "https://www.google.com/maps/search/?api=1&query=Nana%20Pet%20Clinic%20Pattaya", "accessed": "2026-07-20"},
+    {"label": "Waze location listing", "url": "https://www.waze.com/live-map/directions/th/%E0%B8%88.%E0%B8%8A%E0%B8%A5%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5/muang-pattaya/nana-pet-clinic-%E0%B8%99%E0%B8%B2%E0%B8%99%E0%B8%B2%E0%B9%80%E0%B8%9E%E0%B9%87%E0%B8%97%E0%B8%84%E0%B8%A5%E0%B8%B4%E0%B8%99%E0%B8%B4%E0%B8%81?to=place.ChIJR8cH8i6VAjERxhABNHXFo_8", "accessed": "2026-07-20"},
+    {"label": "Cybo Pattaya-area veterinarian directory", "url": "https://www.cybo.com/TH/ko-lan/veterinarians-and-animal-clinics/", "accessed": "2026-07-20"},
+    {"label": "FindGlocal Pattaya directory", "url": "https://www.findglocal.com/TH/Pattaya/200027-26", "accessed": "2026-07-20"}
+  ],
+  "confidence": "medium",
+  "unverified": [
+    "lat, lng: Exact coordinates were not captured; Google Maps shows Plus Code WWF6+5M Nong Prue.",
+    "lineId, website: No reliable current public value found.",
+    "languages: English-speaking ability was not directly confirmed.",
+    "services: Specific procedures beyond general veterinary care were not reliably documented.",
+    "species: Exotic, bird, and reptile care were not reliably documented.",
+    "facilities: No listed facility boolean was reliably confirmed; false means not verified.",
+    "pricing: No reliable published prices found for any listed price field.",
+    "emergency.acceptsEmergencies, afterHours, open247, emergency.afterHoursNumber, emergency.typicalWait: No reliable confirmation found; false/blank means not verified.",
+    "petTravel.healthCertificates, petTravel.microchipping, petTravel.rabiesTitre, petTravel.exportPaperwork: No reliable confirmation found; false means not verified."
+  ]
+}

@@ -163,7 +163,7 @@ pages.push(prosePage({
   updated: "2026-05-29",
   updatedLabel: "27 May 2026",
   title: "About PattayaPets | Independent Pet Directory & Guides for Pattaya",
-  desc: "About PattayaPets — an independent editorial directory and guide for pet owners in Pattaya, operated by TIMPAEMI Co., Ltd. via the Pattaya Authority network.",
+  desc: "About PattayaPets — an independent editorial directory and guide for pet owners in Pattaya, operated by TIMPAEMI Co., Ltd. via the TimPaemi network.",
   crumb: "About",
   eyebrow: "About",
   h1: "About PattayaPets",
@@ -185,11 +185,11 @@ pages.push(prosePage({
     "English.</p>" +
     "<h2>Who runs it</h2>" +
     "<p>PattayaPets is published by <strong>TIMPAEMI Co., Ltd.</strong>, based in " +
-    "Pattaya, and operated via the Pattaya Authority network &mdash; a family of " +
+    "Pattaya, and operated via the TimPaemi network &mdash; a family of " +
     "independent Pattaya publications that share one method: visit anonymously, pay " +
     "every bill, take no money from the businesses covered. See the " +
     '' +
-    "Pattaya Authority case study for how PattayaPets fits the network. The founder is " +
+    "TimPaemi case study for how PattayaPets fits the network. The founder is " +
     'Tim. ' +
     "Reviews are bylined to The Editors. See the " +
     '<a href="/masthead.html">masthead</a> for how bylines and the publication work.</p>' +
@@ -230,7 +230,7 @@ pages.push(prosePage({
     })
   }],
   body:
-    "<p>PattayaPets follows the same method as the rest of the Pattaya Authority " +
+    "<p>PattayaPets follows the same method as the rest of the TimPaemi " +
     "network. This page is the source of record for how the directory and the " +
     "guides are produced. If we ever fall short of it, tell us and we will correct " +
     "it in plain sight.</p>" +
@@ -338,7 +338,7 @@ pages.push(prosePage({
   linkTopic: "general",
   body:
     "<p>PattayaPets is produced by a small editorial team based in Pattaya and " +
-    "published by TIMPAEMI Co., Ltd. via the Pattaya Authority network.</p>" +
+    "published by TIMPAEMI Co., Ltd. via the TimPaemi network.</p>" +
     "<h2>Bylines</h2>" +
     "<p>Directory reviews and guides are bylined to <strong>The Editors</strong>. " +
     "We do not put individual names on reviews: the method matters more than the " +
@@ -348,7 +348,7 @@ pages.push(prosePage({
     "<p>TIMPAEMI Co., Ltd., Pattaya City, Bang Lamung District, Chon Buri 20150, " +
     "Thailand. Operated via the " +
     '' +
-    "Pattaya Authority network.</p>" +
+    "TimPaemi network.</p>" +
     "<h2>Method</h2>" +
     "<p>Anonymous visits. Bills paid in full. Zero paid placements, zero " +
     "sponsorships, zero affiliate links. The full method is on the " +
@@ -386,6 +386,27 @@ pages.push(prosePage({
     "directory</a>, the <a href=\"/guides.html\">guides</a>, " +
     '<a href="/start-here.html">start here</a> if you are new, or ' +
     '<a href="/search.html">search the site</a>.</p>'
+}));
+
+/* ---------------- Terms ---------------- */
+pages.push(prosePage({
+  path: "/terms.html",
+  title: "Terms of Use | PattayaPets",
+  desc: "Terms of use for PattayaPets: what the guide is, how facts are checked, and where our responsibility ends. Not veterinary advice.",
+  crumb: "Terms",
+  eyebrow: "The legal bit",
+  h1: "Terms of use",
+  updated: "2026-07-21",
+  updatedLabel: "21 July 2026",
+  linkTopic: "general",
+  body:
+    "<p><b>Operator:</b> TimPaemi Co., Ltd., Pattaya City, Thailand. <b>Contact:</b> <a href=\"/contact.html\">contact page</a>.</p>" +
+    "<h2>What this site is</h2><p>PattayaPets is an editorial directory and guide for pet owners in Pattaya, published by TimPaemi Co., Ltd. Access is free; no business pays to be listed or ranked.</p>" +
+    "<h2>Not veterinary advice</h2><p>Nothing here is veterinary advice. Always consult a qualified veterinarian for your animal's health.</p>" +
+    "<h2>Accuracy</h2><p>Hours, prices and services change without notice; import/export rules change with regulation. Confirm with the business or the DLD before relying on details. Content is provided in good faith, \"as is\", without warranty.</p>" +
+    "<h2>Our content</h2><p>Text and photographs are the property of TimPaemi Co., Ltd. Quote with attribution and a link; wholesale republication requires written permission.</p>" +
+    "<h2>Liability</h2><p>To the maximum extent permitted by law, TimPaemi Co., Ltd. is not liable for losses arising from use of this site.</p>" +
+    "<h2>Changes</h2><p>These terms may be updated; the date above reflects the latest revision.</p>"
 }));
 
 /* ---------------- Privacy ---------------- */

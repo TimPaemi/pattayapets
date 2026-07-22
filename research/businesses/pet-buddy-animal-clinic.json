@@ -1,0 +1,85 @@
+{
+  "slug": "pet-buddy-animal-clinic",
+  "name": "Pet Buddy Animal Clinic",
+  "category": "vet",
+  "area": "East Pattaya / Soi Boonsampan 9, Nong Prue",
+  "addressFull": "192/6 Moo 6, Soi Boonsampan 9, Nong Prue, Bang Lamung, Chon Buri 20150, Thailand",
+  "lat": 0.0,
+  "lng": 0.0,
+  "phone": "",
+  "lineId": "",
+  "website": "",
+  "facebook": "https://www.facebook.com/725755370800264",
+  "hours": "Monday-Friday 10:00-18:30; Saturday 10:00-15:00; Sunday closed",
+  "afterHours": "",
+  "open247": false,
+  "languages": ["Thai"],
+  "englishConfidence": "unknown",
+  "services": ["general consultations", "pet health advice", "preliminary health care", "neutering"],
+  "species": ["dog", "cat"],
+  "facilities": {
+    "surgery": false,
+    "xray": false,
+    "ultrasound": false,
+    "inHouseLab": false,
+    "hospitalisation": false,
+    "isolation": false,
+    "cardAccepted": false,
+    "parking": false
+  },
+  "pricing": {
+    "consultation": "",
+    "vaccination": "",
+    "neutering": "",
+    "boardingPerNight": "",
+    "groomFrom": "",
+    "asOf": "2026-07-20",
+    "priceSourceUrl": ""
+  },
+  "emergency": {
+    "acceptsEmergencies": false,
+    "afterHoursNumber": "",
+    "typicalWait": "",
+    "notes": "No reliable public confirmation of emergency intake or after-hours service was found."
+  },
+  "petTravel": {
+    "healthCertificates": false,
+    "microchipping": false,
+    "rabiesTitre": false,
+    "exportPaperwork": false,
+    "notes": "No reliable public confirmation of pet-travel services was found."
+  },
+  "reviews": [
+    {
+      "platform": "Google",
+      "score": 4.9,
+      "count": 172,
+      "url": "https://www.google.com/maps/search/?api=1&query=Pet%20Buddy%20Animal%20Clinic%20Pattaya",
+      "asOf": "2026-07-20"
+    }
+  ],
+  "reviewThemes": {
+    "praise": ["kind and skilled veterinarian", "affordable and friendly care", "successful outcomes after prior treatment elsewhere"],
+    "complaints": []
+  },
+  "status": "open",
+  "sources": [
+    {"label": "Pet Buddy official Facebook page", "url": "https://www.facebook.com/725755370800264", "accessed": "2026-07-20"},
+    {"label": "Google Maps current location listing", "url": "https://www.google.com/maps/search/?api=1&query=Pet%20Buddy%20Animal%20Clinic%20Pattaya", "accessed": "2026-07-20"},
+    {"label": "PETECO current location listing", "url": "https://peteco.co.th/listing/pet-buddy-animal-clinic/", "accessed": "2026-07-20"},
+    {"label": "WorldPlaces former-address listing", "url": "https://thailand.worldplaces.me/review/88886500-pet-buddy-animal-clinic.html", "accessed": "2026-07-20"},
+    {"label": "Department of Livestock Development 2022 animal-hospital list", "url": "https://medias.thansettakij.com/media/pdf/2022/qBBMf6Fdvx01gb7VCuIY.pdf", "accessed": "2026-07-20"}
+  ],
+  "confidence": "medium",
+  "unverified": [
+    "phone: Google Maps lists 065 449 9992, while PETECO and the former-address WorldPlaces listing show 093 957 8443; neither current number was independently corroborated, so the field is blank.",
+    "hours: Current-address PETECO lists weekdays to 18:30, while the former-address WorldPlaces listing shows weekdays to 19:00; the current-address schedule is used but should be reconfirmed before travel.",
+    "lat, lng: Exact coordinates for the current address were not captured; Google Maps shows Plus Code WWCC+HX. WorldPlaces coordinates belong to the former address and were not reused.",
+    "lineId, website: No reliable current public value found.",
+    "languages: English-speaking ability was not directly confirmed.",
+    "facilities: No listed facility boolean was reliably confirmed; false means not verified.",
+    "pricing: No reliable published prices found for any listed price field.",
+    "emergency.acceptsEmergencies, afterHours, open247, emergency.afterHoursNumber, emergency.typicalWait: No reliable confirmation found; false/blank means not verified.",
+    "petTravel.healthCertificates, petTravel.microchipping, petTravel.rabiesTitre, petTravel.exportPaperwork: No reliable confirmation found; false means not verified."
+  ]
+}

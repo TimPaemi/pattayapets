@@ -1,0 +1,99 @@
+{
+  "slug": "animal-army-hospital",
+  "name": "Animal Army Hospital",
+  "category": "emergency-vet",
+  "area": "Na Jomtien / Sattahip",
+  "addressFull": "90/55 Moo 5, Na Jomtien, Sattahip, Chon Buri 20250, Thailand",
+  "lat": 12.7902233,
+  "lng": 100.9256535,
+  "phone": "085 093 5954",
+  "lineId": "",
+  "website": "https://animalarmy.org/",
+  "facebook": "https://www.facebook.com/animalarmyfoundation",
+  "hours": "Daily 08:00-17:00; intake by appointment except critical emergencies",
+  "afterHours": "",
+  "open247": false,
+  "languages": ["Thai", "English"],
+  "englishConfidence": "likely",
+  "services": [
+    "emergency animal rescue in Chonburi",
+    "animal ambulance transport",
+    "field assessment and first aid",
+    "urgent treatment",
+    "surgery",
+    "orthopedic surgery",
+    "digital x-ray",
+    "dental treatment",
+    "hospitalisation",
+    "quarantine care",
+    "sterilisation",
+    "microchipping"
+  ],
+  "species": ["dog", "cat"],
+  "facilities": {
+    "surgery": true,
+    "xray": true,
+    "ultrasound": false,
+    "inHouseLab": false,
+    "hospitalisation": true,
+    "isolation": true,
+    "cardAccepted": false,
+    "parking": false
+  },
+  "pricing": {
+    "consultation": "THB 200 inspection fee",
+    "vaccination": "Dog THB 400; cat THB 460",
+    "neutering": "Dogs THB 1,200 male or female; cats THB 800 male or THB 1,000 female",
+    "boardingPerNight": "",
+    "groomFrom": "",
+    "asOf": "2026-07-20",
+    "priceSourceUrl": "https://animalarmy.org/pages/price-list"
+  },
+  "emergency": {
+    "acceptsEmergencies": false,
+    "afterHoursNumber": "",
+    "typicalWait": "",
+    "notes": "The hospital directly publishes 08:00-17:00 daily and appointment-only intake except critical emergencies. Its rescue service responds seven days a week in Chonburi with field assessment, first aid and transport, but no overnight coverage is stated. The published ambulance call-out fee is THB 1,000 as of 2026-07-20 (pricing.priceSourceUrl). This is a rescue/transport service, not a published routine house-call consultation service."
+  },
+  "petTravel": {
+    "healthCertificates": false,
+    "microchipping": true,
+    "rabiesTitre": false,
+    "exportPaperwork": false,
+    "notes": "The official price page confirms microchipping, but does not identify the chip as ISO 11784/11785. No international health-certificate, rabies-titre, destination-laboratory, DLD accreditation, or export-paperwork service was found."
+  },
+  "reviews": [
+    {
+      "platform": "Google",
+      "score": 4.8,
+      "count": 137,
+      "url": "https://www.google.com/maps/search/?api=1&query=Animal%20Army%20Hospital%20Na%20Jomtien",
+      "asOf": "2026-07-20"
+    }
+  ],
+  "reviewThemes": {
+    "praise": ["kind staff", "affordable care", "support for rescued and street animals"],
+    "complaints": ["the rating distribution includes a small number of one-star reviews"]
+  },
+  "status": "open",
+  "sources": [
+    {"label": "Animal Army official contact page", "url": "https://animalarmy.org/pages/contact", "accessed": "2026-07-20"},
+    {"label": "Animal Army official rescue and emergency-care page", "url": "https://animalarmy.org/pages/rescue-emergency-care", "accessed": "2026-07-20"},
+    {"label": "Animal Army official medical treatment and surgery page", "url": "https://animalarmy.org/pages/medical-treatment-surgery", "accessed": "2026-07-20"},
+    {"label": "Animal Army official price list", "url": "https://animalarmy.org/pages/price-list", "accessed": "2026-07-20"},
+    {"label": "Google Maps location listing", "url": "https://www.google.com/maps/search/?api=1&query=Animal%20Army%20Hospital%20Na%20Jomtien", "accessed": "2026-07-20"},
+    {"label": "Pets in Thailand hospital listing", "url": "https://petsinthailand.com/listing/animal-army-hospital/", "accessed": "2026-07-20"},
+    {"label": "Koktail Media veterinarian profile", "url": "https://www.koktailmagazine.com/the-future-list/kwanchai-chaiplum-dr-and-jaroensi-dr-chaiplum/", "accessed": "2026-07-20"},
+    {"label": "Worldpackers recent on-site volunteer reviews", "url": "https://www.worldpackers.com/it/positions/67307/reviews", "accessed": "2026-07-20"}
+  ],
+  "confidence": "high",
+  "unverified": [
+    "lineId: No reliable current public value found.",
+    "englishConfidence: The official site is bilingual and recent international volunteers describe direct staff interaction, supporting likely; a client consultation in English was not directly documented.",
+    "facilities.ultrasound, facilities.inHouseLab, facilities.cardAccepted, facilities.parking: No reliable confirmation found; false means not verified.",
+    "pricing.boardingPerNight, pricing.groomFrom: No applicable reliable published prices found. The price page's THB 200 overnight hospital stay was not treated as ordinary boarding.",
+    "mobile service: Rescue coverage is published as Chonburi, but dispatch boundaries, response time, after-hours availability, and transport acceptance criteria were not published.",
+    "emergency.afterHoursNumber, emergency.typicalWait: No overnight service, separate after-hours number, or reliable wait time was published.",
+    "petTravel.healthCertificates, petTravel.rabiesTitre, petTravel.exportPaperwork: No primary-source confirmation found; ISO 11784/11785 compliance was not published."
+  ]
+}

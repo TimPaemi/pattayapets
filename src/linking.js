@@ -1,5 +1,5 @@
 "use strict";
-/* Contextual internal (PattayaPets) and Pattaya Authority network cross-links. */
+/* Contextual internal (PattayaPets) and TimPaemi network cross-links. */
 
 function esc(s) {
   return String(s == null ? "" : s)
@@ -9,9 +9,9 @@ function esc(s) {
 
 const NETWORK_SITES = {
   authority: {
-    name: "Pattaya Authority",
-    url: "https://pattaya-authority.com/work/pattaya-pets/",
-    hint: "The network hub and editorial method."
+    name: "TimPaemi",
+    url: "https://timpaemi.com/",
+    hint: "The publisher hub and editorial method."
   },
   timpaemi: {
     name: "TimPaemi",
@@ -339,7 +339,7 @@ function inPageLinkSection(topic) {
     '<details class="corridor-panel more-read-panel">' +
     '<summary class="corridor-panel__title">More to read</summary>' +
     '<div class="corridor-panel__body">' +
-    "<p class=\"notice\">Related guides on PattayaPets and sister sites in the Pattaya Authority network.</p>" +
+    "<p class=\"notice\">Related guides on PattayaPets and sister sites in the TimPaemi network.</p>" +
     '<div class="link-section-grid">' +
     '<div class="link-section-col"><div class="ch">On PattayaPets</div><div class="chips">' +
     internal.slice(0, 8).map(function (l) {
@@ -394,7 +394,7 @@ function networkChipsHtml(keys) {
 }
 
 function networkDirectoryProse() {
-  return "<h2>Sister publications in the Pattaya Authority network</h2>" +
+  return "<h2>Sister publications in the TimPaemi network</h2>" +
     "<p>PattayaPets is one independent publication in a family of Pattaya guides. " +
     "Each site uses the same method &mdash; anonymous visits, bills paid in full, " +
     "no paid placements. They are editorial neighbours, not competitors:</p>" +
@@ -465,8 +465,8 @@ function proseNetworkLine(topic) {
   }).filter(Boolean);
   if (!names.length) return "";
   return "<p>Planning the wider move? See " + names.join(", ") +
-    " in the <a href=\"https://pattaya-authority.com/work/pattaya-pets/\" target=\"_blank\" rel=\"noopener noreferrer\">" +
-    "Pattaya Authority</a> network.</p>";
+    " in the <a href=\"https://timpaemi.com/\" target=\"_blank\" rel=\"noopener noreferrer\">" +
+    "TimPaemi</a> network.</p>";
 }
 
 module.exports = {

@@ -155,13 +155,13 @@ const FAQ = [
   ['Is PattayaPets a vet?',
    'No. PattayaPets is an independent editorial publication about pet businesses and pet ownership in Pattaya. It is not a veterinary practice and gives no veterinary advice. For any medical concern, always consult a qualified veterinarian. In a pet emergency, contact a 24-hour animal hospital directly.'],
   ['How does PattayaPets review businesses?',
-   'The same way as the rest of the Pattaya Authority network: anonymous visits, with every bill paid in full. There are no paid placements, no sponsored listings and no affiliate links. Until a business has had a real anonymous visit, its page shows verified facts only and is marked &lsquo;not yet reviewed&rsquo;.'],
+   'The same way as the rest of the TimPaemi network: anonymous visits, with every bill paid in full. There are no paid placements, no sponsored listings and no affiliate links. Until a business has had a real anonymous visit, its page shows verified facts only and is marked &lsquo;not yet reviewed&rsquo;.'],
   ['What does a verdict cover?',
    'Verdicts &mdash; recommend, OK or avoid &mdash; describe the business experience only: booking, communication, English-speaking staff, billing transparency, cleanliness and comfort. PattayaPets never verdicts on veterinary medical quality. That judgement belongs to qualified vets and regulators.'],
   ['Who is PattayaPets for?',
    'Western expats and tourists in and around Pattaya who already have a pet, are planning to bring one to Thailand, or want to adopt one here. The guides are written in plain English with the assumption you may be new to Thailand.'],
   ['Does it cost anything to use PattayaPets?',
-   'No. PattayaPets is free to read, with no account, no paywall and no advertising. It is funded by TIMPAEMI Co., Ltd. and operated through the Pattaya Authority network of independent local publications.']
+   'No. PattayaPets is free to read, with no account, no paywall and no advertising. It is funded by TIMPAEMI Co., Ltd. and operated through the TimPaemi network of independent local publications.']
 ];
 
 const body =
@@ -213,7 +213,7 @@ const body =
   '<section class="section section-tint"><div class="container">' +
     '<div class="section-head"><p class="eyebrow">The editorial method</p>' +
     '<h2>Why you can trust what you read here</h2>' +
-    '<p>PattayaPets follows the Pattaya Authority network method &mdash; the same ' +
+    '<p>PattayaPets follows the TimPaemi network method &mdash; the same ' +
     'approach used by our restaurant, medical and school guides.</p>' +
     '<p style="margin-top:1rem">Sister publications in the network:</p>' +
     networkChipsHtml(["visa", "medical", "authority"]) +

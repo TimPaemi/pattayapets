@@ -52,8 +52,8 @@ module.exports = [
       'Pattaya Visa Help, ' +
       'Vehicle Rentals, ' +
       'Pattaya Medical ' +
-      "in the <a href=\"https://pattaya-authority.com/work/pattaya-pets/\" target=\"_blank\" rel=\"noopener noreferrer\">" +
-      "Pattaya Authority</a> network.</p></div></div></section>"
+      "in the <a href=\"https://timpaemi.com/\" target=\"_blank\" rel=\"noopener noreferrer\">" +
+      "TimPaemi</a> network.</p></div></div></section>"
   },
   {
     path: "/offline.html",
@@ -93,7 +93,7 @@ module.exports = [
       '<a href="/owning-a-pet-in-pattaya/getting-to-the-vet.html">getting your pet ' +
       "to the vet</a> if transport is the issue, or " +
       '' +
-      "rent a car via Pattaya Vehicle Rentals in the Pattaya Authority network.</p>" +
+      "rent a car via Pattaya Vehicle Rentals in the TimPaemi network.</p>" +
       '<div class="callout callout-emergency"><div class="ch">In a pet emergency</div>' +
       "<p>If your pet needs urgent help and you cannot get online, open a " +
       '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour animal hospital</a> ' +
