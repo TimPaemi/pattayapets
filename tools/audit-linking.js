@@ -17,11 +17,6 @@ const HUB_PATHS = {
   "/cats/": 1
 };
 
-const STRUCTURAL_NETWORK = {
-  "/about.html": 1,
-  "/masthead.html": 1
-};
-
 const SKIP = {
   "/404.html": 1,
   "/offline.html": 1,
@@ -65,12 +60,12 @@ files.forEach(function (f) {
   var rel = "/" + path.relative(dist, f).replace(/\\/g, "/");
   if (SKIP[rel]) return;
 
-  if (!h.includes("Pattaya Authority network")) {
-    fail.push(rel + " — missing footer network block");
-  }
-
-  if (STRUCTURAL_NETWORK[rel] && !h.includes("Sister publications in the Pattaya Authority network")) {
-    fail.push(rel + " — missing in-page network directory prose");
+  // The PA-NET footer block was deliberately removed when the network was
+  // dismantled. Asserting on it failed all 209 pages, which exit(1)'d the last
+  // step of build:all, so IndexNow never pinged. Assert on the current Insider
+  // footer instead, so this check still guards something real.
+  if (!h.includes('class="site-footer"')) {
+    fail.push(rel + " — missing site footer");
   }
 
   if (HUB_PATHS[rel] && !h.includes("More to read")) {
