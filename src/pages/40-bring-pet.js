@@ -49,7 +49,7 @@ pages.push(hub({
   image: "/assets/img/og-import.png",
   updated: "2026-06-03",
   desc: "How to bring a dog or cat to Thailand in 2026: DLD import permit, microchip, " +
-    "rabies vaccination, health certificate, airlines and arrival at Bangkok or U-Tapao.",
+    "rabies vaccination, health certificate, airlines and arrival at Suvarnabhumi.",
   crumb: "Bringing a pet to Thailand",
   breadcrumbs: [GUIDES],
   eyebrow: "Flagship guide",
@@ -236,8 +236,12 @@ pages.push(importStep({
     { h: "The rabies vaccination", html:
       "<p>Your pet needs a current rabies vaccination that was given " +
       "<strong>after</strong> the microchip, <strong>at least 21 days before " +
-      "arrival</strong> in Thailand, and <strong>no more than one year</strong> " +
-      "before travel (or within the validity of the vaccine used). A booster " +
+      "arrival</strong> in Thailand, and <strong>still valid on the day you " +
+      "travel</strong>. Thailand sets no upper limit on how long ago the shot was " +
+      "given &mdash; a valid three-year vaccine administered eighteen months ago is " +
+      "acceptable, provided the record shows it is still in date. The USDA-endorsed " +
+      "certificate for Thailand asks only that the vaccine was given &ldquo;at least " +
+      "21 days before departure&rdquo; and is &ldquo;still valid&rdquo;. A booster " +
       "given while a previous shot is still valid keeps the clock running; a " +
       "lapsed-then-renewed vaccination is treated as a first shot, restarting the " +
       "21-day wait.</p>" },
@@ -448,7 +452,7 @@ pages.push(importStep({
     ["How long is the import permit valid once issued?",
      "<p>Typically 60 days from issuance. That is why you apply in the weeks before travel, not months ahead — an expired permit can block arrival or boarding.</p>"],
     ["Must the import permit match my arrival airport?",
-     "<p>Yes — apply to the AQS at the airport where your pet will land. Suvarnabhumi and U-Tapao have different desks; using the wrong one delays clearance.</p>"]
+     "<p>Yes — apply to the AQS at the airport where your pet will land. For Pattaya that airport is Suvarnabhumi: U-Tapao has no Animal Quarantine Station and cannot be named as your port of entry.</p>"]
   ],
   related: [
     { name: "Arrival in Thailand", path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html", desc: "What happens when you land." },
@@ -594,7 +598,7 @@ pages.push(importStep({
     ["What fees do I pay on arrival?",
      "<p>The AQS inspection fee is currently 500 baht (confirm with the station). Budget for a pet-friendly transfer separately — ordinary taxis may refuse animals.</p>"],
     ["Can I fly into U-Tapao instead of Suvarnabhumi?",
-     "<p>Yes — closer to Pattaya but fewer international routes. Your import permit must name the correct arrival airport; see <a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao and pets</a>.</p>"]
+     "<p>No. U-Tapao has no Animal Quarantine Station, so it cannot clear an imported pet or be named on your import permit. Fly into Suvarnabhumi; see <a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao and pets</a>.</p>"]
   ],
   related: [
     { name: "Pet quarantine in Thailand", path: "/bring-pet-to-thailand/thailand-pet-quarantine.html", desc: "When pets do and do not quarantine on arrival." },
@@ -806,7 +810,7 @@ pages.push(countryPage({
       '<td>DLD AQS</td></tr>' +
       '<tr><th scope="row">Arrival day</th>' +
       '<td>AQS inspection at the airport; Forms R-6/R-7 issued; 500&nbsp;baht fee</td>' +
-      '<td>Bangkok / U-Tapao AQS</td></tr>' +
+      '<td>Suvarnabhumi AQS</td></tr>' +
       '</tbody></table></div>' +
       "<p>Full step pages: " + IMP_STEPS + ".</p>" },
     { h: "The UK export certificate (EHC 2917)", html:
@@ -866,7 +870,7 @@ pages.push(countryPage({
     ["Will my pet be quarantined on arrival in Thailand?",
      "<p>Not usually, if every document is in order and your pet appears healthy. The AQS inspection is typically same-day clearance. Quarantine is reserved for paperwork failures or signs of disease — see our <a href=\"/bring-pet-to-thailand/thailand-pet-quarantine.html\">quarantine guide</a>.</p>"],
     ["Can I fly into U-Tapao instead of Bangkok?",
-     "<p>U-Tapao is closer to Pattaya. Check that your airline accepts pets on that route and apply for the import permit through the correct AQS for your port of entry. See <a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok?</a></p>"]
+     "<p>No. U-Tapao is closer to Pattaya, but it has no Animal Quarantine Station and cannot clear an imported pet. Apply for your import permit naming Suvarnabhumi. See <a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok?</a></p>"]
   ]
 }));
 
@@ -990,7 +994,7 @@ pages.push(countryPage({
     ["Is a rabies titer test required to enter Thailand from the US?",
      "<p>Generally no for pets from rabies-controlled countries. Thailand may require it for pets from high-rabies origins. The test is still worth doing before departure if you might return to the US, UK or EU later.</p>"],
     ["Which Bangkok airport should I use for Pattaya?",
-     "<p>Most owners fly into Suvarnabhumi (BKK). U-Tapao (UTP) is closer to Pattaya but has fewer pet-friendly routes — see <a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok?</a></p>"]
+     "<p>Suvarnabhumi (BKK). U-Tapao (UTP) is closer to Pattaya but has no Animal Quarantine Station, so it cannot clear an imported pet — see <a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok?</a></p>"]
   ]
 }));
 

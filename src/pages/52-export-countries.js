@@ -18,7 +18,7 @@ const VERIFY =
 
 const OFFICIAL =
   "<p><strong>Official sources to verify against:</strong> " +
-  "<a href=\"https://aqi.dld.go.th/webnew/index.php/th/service-menu-2/office-service-menu/72-research/kmresearch/432-exportation-of-live-animals\" " +
+  "<a href=\"https://aqi.dld.go.th/webnew/index.php/en/72-research/kmresearch/432-exportation-of-live-animals\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">DLD export of live animals</a>; " +
   "Suvarnabhumi AQS export: " +
   "<a href=\"mailto:qsap_bkk_export@dld.go.th\">qsap_bkk_export@dld.go.th</a>; " +
@@ -26,7 +26,7 @@ const OFFICIAL =
   "UK pet travel</a>; " +
   "<a href=\"https://www.cdc.gov/importation/bringing-an-animal-into-the-us/index.html\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">CDC animal import (USA)</a>; " +
-  "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
+  "<a href=\"https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en\" target=\"_blank\" " +
   "rel=\"noopener nofollow\">EU pet movement</a>; " +
   "<a href=\"https://www.maff.go.jp/aqs/english/\" target=\"_blank\" rel=\"noopener nofollow\">" +
   "Japan MAFF Animal Quarantine</a>; " +
@@ -48,7 +48,7 @@ const OFFICIAL =
   "target=\"_blank\" rel=\"noopener nofollow\">South Africa DALRRD import</a>; " +
   "<a href=\"https://inspection.canada.ca/en/importing-food-plants-animals/pets\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">Canada CFIA</a>; " +
-  "<a href=\"https://www.blv.admin.ch/blv/en/home/tiere/reisen-mit-heimtieren.html\" " +
+  "<a href=\"https://www.blv.admin.ch/en/travelling-with-dogs-cats-and-ferrets\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">Switzerland FSVO</a>.</p>";
 
 const RELATED = [
@@ -92,8 +92,9 @@ function exp(o) {
     path: "/take-pet-out-of-thailand/" + o.slug + ".html",
     title: o.title, desc: o.desc, crumb: o.crumb, breadcrumbs: SUB,
     eyebrow: "Taking a pet out of Thailand &middot; By destination",
-    h1: o.h1, lede: o.lede, verify: VERIFY,
+    h1: o.h1, lede: o.lede, verify: o.verify || VERIFY,
     updated: o.updated || "2026-06-01",
+    noindex: !!o.noindex,
     sections: sections, faqs: rb.mergeFaqs(o.faqs, rb.EXPORT_EXTRA_FAQS),
     related: o.related || expRelated(o.slug)
   });
@@ -549,46 +550,57 @@ pages.push(exp({
 pages.push(exp({
   slug: "to-switzerland", crumb: "To Switzerland",
   title: "Export Pet from Thailand to Switzerland (2026) | PattayaPets",
-  desc: "Thailand to Switzerland pet export: EU-aligned titer test, waiting period, " +
-    "FSVO entry rules and DLD export timeline.",
+  desc: "Thailand to Switzerland pet export: rabies titer and wait, direct-air import licence, under-seven-month ban and DLD timeline.",
+  updated: "2026-07-26",
   h1: "Taking a pet from Thailand to Switzerland",
-  lede: "Switzerland is not in the EU, but it applies closely aligned rules for a " +
-    "pet arriving from Thailand &mdash; plan in quarters, not weeks.",
+  lede: "FSVO classifies origins outside its low-risk lists as rabies-risk. Thailand " +
+    "is not on those lists, so the titer, waiting period and route-specific controls apply.",
+  verify: "Swiss rules and the FSVO country classification were checked on 26 July " +
+    "2026. Direct arrival by air from Thailand needs an FSVO import licence, and " +
+    "dogs, cats and ferrets under seven months cannot enter from a rabies-risk country.",
   officialExtra:
     "<p><strong>Swiss sources:</strong> " +
-    "<a href=\"https://www.blv.admin.ch/blv/en/home/tiere/reisen-mit-heimtieren.html\" " +
+    "<a href=\"https://www.blv.admin.ch/en/travelling-with-dogs-cats-and-ferrets\" " +
     "target=\"_blank\" rel=\"noopener nofollow\">FSVO travelling with pets</a>; " +
-    "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
-    "rel=\"noopener nofollow\">EU pet movement</a> (Switzerland applies EU-aligned rules). " +
+    "<a href=\"https://www.blv.admin.ch/dam/en/sd-web/rGF02-RRaF0f/liste-laender-tollwut-en.pdf\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">FSVO rabies country list (June 2026 PDF)</a>. " +
     "Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-switzerland.html\">bringing a pet from Switzerland</a>.</p>",
   sections: euExportSections({
-    routingIntro: "Switzerland applies EU-aligned third-country rules; the titer test and waiting period are usually the long pole.",
+    routingIntro: "For Thailand, the titer test, waiting period and FSVO route approval are the long poles.",
     reqHeading: "What Switzerland requires from Thailand",
     reqHtml:
-      "<p>Switzerland applies EU-aligned rules for pets arriving from outside the " +
-      "low-risk list. In practice that means:</p>" +
+      "<p>Thailand is absent from the FSVO low-risk country lists and therefore " +
+      "falls in the rabies-risk group. For a non-commercial dog, cat or ferret, plan for:</p>" +
       "<ul>" +
       "<li>ISO microchip before rabies vaccination</li>" +
       "<li>Current rabies vaccination</li>" +
       "<li><a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">Rabies titer test</a> from an approved laboratory, blood drawn at least 30 days after vaccination</li>" +
-      "<li>A waiting period before entry (commonly three months from the blood sample for third-country origins &mdash; confirm with FSVO)</li>" +
-      "<li>Appropriate entry paperwork endorsed by the exporting country&rsquo;s competent authority</li>" +
-      "<li>Entry through a designated point where FSVO requires it</li>" +
+      "<li>The FSVO waiting period after the blood sample</li>" +
+      "<li>A veterinary certificate endorsed by the exporting country&rsquo;s competent authority</li>" +
+      "<li><strong>An FSVO import licence before direct entry by air</strong> from a rabies-risk country</li>" +
+      "<li>Declaration through the red customs exit and entry through an allowed travellers&rsquo; point</li>" +
+      "<li><strong>No entry for dogs, cats or ferrets under seven months old</strong> from a rabies-risk country</li>" +
       "</ul>" +
       "<p>The Federal Food Safety and Veterinary Office (FSVO) oversees the process.</p>" + EU_TITER_TIP
-  }),
+  }).concat([{
+    h: "Who should not use this route yet",
+    html: "<p>Do not book direct air transport if the FSVO import licence is not in " +
+      "hand, the titer waiting period is incomplete, or the animal will be under " +
+      "seven months at entry. Those are eligibility conditions, not paperwork that " +
+      "can be fixed at the airport.</p>"
+  }]),
   faqs: [
     ["Does Switzerland being outside the EU make this easier?",
-     "<p>Not really &mdash; Switzerland runs EU-aligned pet rules, so a titer test and waiting period still apply for a pet from Thailand. Confirm the current detail with FSVO.</p>"],
+     "<p>No. Switzerland applies its own FSVO controls alongside an EU-aligned veterinary framework. Thailand falls in the rabies-risk group, so the titer and waiting period apply; direct arrival by air also needs an FSVO import licence. The red customs exit and an allowed travellers&rsquo; entry point are part of the arrival plan.</p>"],
     ["What is the single most important step?",
-     "<p>The rabies titer test, done as early as possible. Its waiting period is what makes the timeline long, so it is the thing to get moving first.</p>"],
+     "<p>The rabies titer test, done as early as possible. Its waiting period is what makes the timeline long, so it is the thing to get moving first. At the same time, ask FSVO about the direct-air import licence so the route is eligible.</p>"],
     ["Is the EU pet passport enough from Thailand?",
-     "<p>No. You need entry paperwork for a third-country origin, endorsed on the Thai side.</p>"],
+     "<p>No. A passport does not replace the veterinary certificate, rabies-risk evidence or route approval required for entry from Thailand. For direct entry by air, obtain the FSVO import licence before travel as well. Keep the microchip, vaccination, titer and Thai-endorsed export records consistent across every document.</p>"],
     ["Can my pet skip the waiting period?",
-     "<p>Only if a valid titer test is already in place and rabies vaccination has been kept current. Confirm validity with FSVO.</p>"],
+     "<p>Only when an earlier valid titer remains usable and every rabies booster has been given without a lapse; otherwise the rabies-risk timeline applies. Confirm the individual record with FSVO before booking. An animal under seven months still cannot enter from Thailand, even if the owner has a pressing travel date.</p>"],
     ["How does this differ from exporting to the EU?",
-     "<p>The veterinary framework is closely aligned; this page adds FSVO-specific notes. See also <a href=\"/take-pet-out-of-thailand/to-eu.html\">export to the EU</a>.</p>"]
+     "<p>The veterinary framework is closely aligned, but Switzerland applies its own FSVO controls. Direct air entry from Thailand needs an import licence, rabies-risk origins cannot send animals under seven months, and arrival uses Swiss customs procedures. Compare the shared timeline in <a href=\"/take-pet-out-of-thailand/to-eu.html\">export to the EU</a>, then follow FSVO for the Swiss route.</p>"]
   ]
 }));
 
@@ -760,76 +772,86 @@ pages.push(exp({
 /* ---------------- NEW ZEALAND ---------------- */
 pages.push(exp({
   slug: "to-new-zealand", crumb: "To New Zealand",
+  noindex: true,
   title: "Export Pet from Thailand to New Zealand (2026) | PattayaPets",
   desc: "Thailand to New Zealand pet export: why direct import fails, MPI import permit, " +
     "titer testing, mandatory quarantine and DLD export checklist.",
+  updated: "2026-07-26",
   h1: "Taking a pet from Thailand to New Zealand",
-  lede: "Be honest with yourself early: New Zealand has some of the strictest pet " +
-    "biosecurity rules anywhere, and Thailand is <strong>not</strong> a straightforward origin.",
+  lede: "This page is temporarily held out of search indexing because MPI&rsquo;s live " +
+    "guide and source documents could not be opened for primary-source verification " +
+    "on 26 July 2026. Do not act on this route until that check is complete.",
+  verify: "MPI&rsquo;s current guide, import health standard and Schedule 9 URLs all " +
+    "returned HTTP 403 during this review, including through an interactive browser. " +
+    "The route summary below is held for editorial review and is not marked verified.",
   officialExtra:
     "<p><strong>New Zealand sources:</strong> " +
-    "<a href=\"https://www.mpi.govt.nz/bring-send-to-nz/pets-travelling-to-nz/bringing-cats-and-dogs-to-nz/step-by-step-guide-to-bringing-cats-and-dogs-to-nz\" " +
-    "target=\"_blank\" rel=\"noopener nofollow\">MPI &mdash; importing dogs and cats</a>; " +
-    "<a href=\"https://www.mpi.govt.nz/bring-send-to-nz/pets-travelling-to-nz/bringing-cats-and-dogs-to-nz\" target=\"_blank\" " +
-    "rel=\"noopener nofollow\">MPI pet import hub</a>. " +
+    "<a href=\"https://www.mpi.govt.nz/bring-send-to-nz/pets-travelling-to-nz/bringing-cats-and-dogs-to-nz/bringing-cats-and-dogs-to-nz-using-the-2026-import-health-standard/step-by-step-guide-to-bringing-cats-and-dogs-to-nz-2026\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">MPI 2026 step-by-step guide</a>; " +
+    "<a href=\"https://www.mpi.govt.nz/dmsdocument/71909/direct\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">2026 import health standard</a>; " +
+    "<a href=\"https://www.mpi.govt.nz/dmsdocument/2040/direct\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">Schedule 9 categorized countries</a>. " +
     "Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-new-zealand.html\">bringing a pet from New Zealand</a>.</p>",
   sections: [
-    { h: "Why direct import is not simple", html:
-      "<p>New Zealand protects its rabies-free status with strict import rules. " +
-      "Thailand is <strong>not</strong> on MPI&rsquo;s list of countries from which " +
-      "pets can import under the lightest pathways. A pet that has lived in Thailand " +
-      "typically faces a long, multi-stage process that can include:</p>" +
+    { h: "Why standard direct import is unavailable", html:
+      "<p>MPI permits standard imports only from countries or territories in its " +
+      "categorized-country schedule. Thailand is not in Schedule 9. A Thailand-origin " +
+      "pet must first complete MPI&rsquo;s non-categorized-country pathway through a " +
+      "<strong>Category 2 or Category 3 country</strong>, rather than flying directly " +
+      "from Bangkok under the ordinary standard.</p>" +
+      "<p>The pathway includes:</p>" +
       "<ol>" +
-      "<li><strong>MPI import permit</strong> applied for well before any flight is booked</li>" +
-      "<li><a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">Rabies titer testing</a> " +
-      "from an MPI-approved laboratory, on MPI&rsquo;s schedule</li>" +
-      "<li>A <strong>waiting period</strong> after the blood sample before export (MPI sets the current period &mdash; verify directly)</li>" +
-      "<li>Thai <a href=\"/take-pet-out-of-thailand/export-permit-thailand-dld.html\">DLD export paperwork</a> matching MPI&rsquo;s conditions</li>" +
-      "<li><strong>Mandatory post-arrival quarantine</strong> at an MPI-approved facility (Auckland or Christchurch area) &mdash; not optional</li>" +
+      "<li>Official identification and veterinary preparation beginning at least <strong>six months before final shipment</strong></li>" +
+      "<li><a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">Rabies titer testing</a> from an MPI-approved laboratory on MPI&rsquo;s schedule</li>" +
+      "<li>Movement to a qualifying intermediary country and at least <strong>six months of residence</strong> under the applicable approved-country standard</li>" +
+      "<li><strong>MPI import permit</strong> application at least 30 working days before the pet is needed for shipment</li>" +
+      "<li>Thai <a href=\"/take-pet-out-of-thailand/export-permit-thailand-dld.html\">DLD export paperwork</a> for the move to the intermediary country</li>" +
+      "<li>The final health certificate from an official government veterinarian in the approved export country, followed by cargo shipment</li>" +
+      "<li><strong>At least 10 days of post-arrival quarantine</strong> at an MPI-approved facility, with arrival through Auckland or Christchurch</li>" +
       "</ol>" +
-      "<p>Some pathways require a qualifying period in another approved country first. " +
-      "Owners commonly report <strong>many months</strong> of planning. This is not a " +
-      "last-minute relocation.</p>" +
+      "<p>This is a multi-country, many-month relocation, not a last-minute direct flight.</p>" +
       '<div class="callout callout-emergency"><div class="ch">NZ → Thailand was the easy bit</div>' +
       "<p>If you imported from New Zealand recently, do not assume symmetry. Read " +
       '<a href="/bring-pet-to-thailand/from-new-zealand.html">New Zealand to Thailand</a> ' +
       "for the outbound direction you already managed &mdash; then accept that the return is an entirely different process.</p></div>" },
     { h: "The realistic timeline (high level)", html:
-      "<p>Every case differs by MPI&rsquo;s current country categories, but the shape is similar:</p>" +
+      "<p>For a pet starting in Thailand, the high-level sequence is:</p>" +
       '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
       '<th scope="col">Phase</th><th scope="col">What happens</th><th scope="col">Who</th></tr></thead><tbody>' +
-      '<tr><th scope="row">Planning (months 1&ndash;2)</th>' +
-      '<td>Contact MPI; engage specialist <a href="/pet-relocation/">relocation agent</a>; confirm whether your pet can export directly from Thailand or needs an interim country</td>' +
+      '<tr><th scope="row">At least 6 months before final shipment</th>' +
+      '<td>Contact MPI, arrange official identification and veterinary preparation, and engage a specialist <a href="/pet-relocation/">relocation agent</a></td>' +
       '<td>You + agent + MPI</td></tr>' +
-      '<tr><th scope="row">Veterinary prep in Thailand</th>' +
-      '<td>Rabies vaccination, titer test, other MPI-specified tests and treatments on a fixed schedule</td>' +
+      '<tr><th scope="row">Thailand preparation</th>' +
+      '<td>Rabies vaccination, titer testing and other MPI-specified work on the fixed schedule</td>' +
       '<td>MPI-approved vet + lab</td></tr>' +
-      '<tr><th scope="row">Waiting period</th>' +
-      '<td>MPI-required wait after the titer blood sample before export</td>' +
-      '<td>MPI rules</td></tr>' +
-      '<tr><th scope="row">Import permit</th>' +
-      '<td>Apply for MPI import permit with full veterinary history; book quarantine facility space</td>' +
+      '<tr><th scope="row">Intermediary-country phase</th>' +
+      '<td>Complete at least six months of residence and the applicable Category 2 or 3 veterinary controls</td>' +
+      '<td>Intermediary competent authority + MPI</td></tr>' +
+      '<tr><th scope="row">At least 30 working days before needed</th>' +
+      '<td>Apply for the MPI import permit with veterinary history and book an approved quarantine facility</td>' +
       '<td>MPI</td></tr>' +
       '<tr><th scope="row">&ge;15 days before export</th>' +
-      '<td>Apply for Thai DLD export permit (form 1/1) with MPI import permit attached</td>' +
+      '<td>Apply for the Thai DLD export permit (form 1/1) with the intermediary country&rsquo;s import conditions attached</td>' +
       '<td>DLD AQS</td></tr>' +
-      '<tr><th scope="row">Within 10 days of departure</th>' +
-      '<td>Final clinical examination; DLD export health certificate matching MPI conditions</td>' +
-      '<td>DLD AQS + vet</td></tr>' +
+      '<tr><th scope="row">Final certification window</th>' +
+      '<td>Complete the examinations and treatments; obtain the final certificate from an official government veterinarian in the approved export country</td>' +
+      '<td>Approved export country&rsquo;s competent authority</td></tr>' +
       '<tr><th scope="row">Arrival in New Zealand</th>' +
-      '<td>Mandatory quarantine at MPI-approved facility; release only when MPI clears the pet</td>' +
+      '<td>Ship as cargo through Auckland or Christchurch; complete at least 10 days at an MPI-approved quarantine facility</td>' +
       '<td>MPI quarantine facility</td></tr>' +
       '</tbody></table></div>' },
     { h: "What MPI import typically requires", html:
-      "<p>Confirm the current MPI checklist directly. Commonly includes:</p>" +
+      "<p>The 2026 standard requires the following core controls, with the exact " +
+      "sequence set by the pathway and certificate:</p>" +
       "<ul>" +
-      "<li><strong>Import permit</strong> issued before export to New Zealand</li>" +
+      "<li><strong>Import permit</strong> applied for at least 30 working days before it is needed and issued before shipment</li>" +
       "<li><strong>ISO microchip</strong> and rabies vaccination history</li>" +
       "<li><strong>Rabies neutralising antibody titre test</strong> from an MPI-approved lab, on schedule</li>" +
       "<li>Additional treatments and examinations timed to MPI&rsquo;s calendar</li>" +
-      "<li>Export health certificate from Thailand endorsed by the DLD, matching MPI&rsquo;s template</li>" +
-      "<li>Booking at an <strong>MPI-approved quarantine facility</strong> before the pet flies</li>" +
+      "<li>Final export health certificate issued by an official government veterinarian in the approved intermediary country</li>" +
+      "<li>Booking at an <strong>MPI-approved quarantine facility</strong> before the pet flies, for at least 10 days</li>" +
       "</ul>" +
       "<p>Quarantine is not optional &mdash; even perfect paperwork ends with a stay at an approved facility.</p>" },
     { h: "The Thai export side (DLD)", html:
@@ -845,19 +867,24 @@ pages.push(exp({
       "<li><strong>Titer test timing wrong</strong> &mdash; the waiting period runs from the blood sample date, not from when results arrive.</li>" +
       "</ul>" +
       "<p>A specialist <a href=\"/pet-relocation/\">pet relocation agent</a> experienced in " +
-      "the New Zealand route is strongly recommended.</p>" }
+      "the New Zealand route is strongly recommended.</p>" },
+    { h: "Who should not attempt this route yet", html:
+      "<p>Do not book a Thailand-to-New Zealand pet flight if you have no Category 2 " +
+      "or 3 intermediary plan, less than six months for veterinary preparation, no " +
+      "import permit application or no quarantine reservation. Those are structural " +
+      "parts of the pathway, not airport-day fixes.</p>" }
   ],
   faqs: [
     ["Can I fly my pet directly from Thailand to New Zealand?",
-     "<p>Not in a simple way under normal MPI rules. Thailand is not a low-risk origin; the route typically requires titer testing, an import permit, DLD export paperwork and mandatory quarantine. Some cases need an interim approved country. Confirm the current pathway with MPI.</p>"],
+     "<p>No standard direct-import pathway is available. Thailand is absent from MPI&rsquo;s Schedule 9 categorized-country list, so the pet must qualify through the non-categorized-country process in a Category 2 or 3 intermediary country. Obtain MPI&rsquo;s case-specific confirmation before moving the animal or paying for flights.</p>"],
     ["How early should I start planning?",
-     "<p>As early as possible &mdash; many months of lead time. The sooner you involve MPI and a specialist agent, the fewer surprises in the timeline.</p>"],
+     "<p>Begin at least six months before the final shipment. MPI&rsquo;s 2026 guide places official identification and preparation well ahead of travel, and a Thailand-origin pet also needs an intermediary-country phase. Add time for laboratory results, the import permit, quarantine availability and changes to airline space.</p>"],
     ["How long is quarantine in New Zealand?",
-     "<p>MPI sets the minimum quarantine period at an approved facility &mdash; commonly at least ten days, but confirm the current rules and book space early.</p>"],
+     "<p>The 2026 standard requires at least 10 days in an MPI-approved quarantine facility for cats and dogs using this pathway. Reserve before shipment and plan arrival through Auckland or Christchurch. The stay can be longer if MPI identifies a compliance or health issue, so do not book an inflexible onward plan.</p>"],
     ["Does New Zealand require a rabies titer test from Thailand?",
-     "<p>Yes for normal pathways from non-rabies-free countries. The test must be from an MPI-approved laboratory and the waiting period after the blood sample must elapse before export.</p>"],
+     "<p>Yes. The non-categorized-country pathway includes rabies neutralising antibody testing from an MPI-approved laboratory on the required schedule. The titer is only one part: the pet must also complete the intermediary-country controls, official certification, import permit and post-arrival quarantine required by the current MPI standard.</p>"],
     ["When should I apply for the Thai DLD export permit?",
-     "<p>At least 15 days before export, once the MPI import permit is issued and titer/waiting-period requirements are satisfied.</p>"]
+     "<p>Apply to the Thai departure-airport AQS at least 15 days before the Thailand export leg, once the destination and intermediary requirements are settled. The DLD paperwork must match the next country&rsquo;s conditions. Separately, MPI says to apply for its New Zealand import permit at least 30 working days before it is needed.</p>"]
   ]
 }));
 

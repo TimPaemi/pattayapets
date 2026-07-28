@@ -209,6 +209,7 @@ function article(o) {
     updated: o.updated || DEFAULT_UPDATED,
     schema: schema,
     image: o.image,
+    noindex: !!o.noindex,
     bodyClass: bodyClass || undefined,
     body: body
   };

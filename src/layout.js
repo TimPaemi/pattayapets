@@ -122,65 +122,112 @@ function header() {
 
 function footer() {
   const year = new Date().getFullYear();
-  /* FOOTER-SPEC-2026 — five blocks: publisher, nav (4 cols), trust, contact, legal.
-     No PA-NET, no network links, single followed timpaemi.com brand link. */
+  /* FOOTER-SPEC-2027 — Insider layout: brand + byline + socials, 4 nav columns,
+     rule, legal row, disclosure note. timpaemi.com is the only cross-site link. */
   return (
-    '<footer class="site-footer"><!--FOOTER-SPEC-2026-->' +
-    '<style id="fs26-css">' +
-    '.fs26-wrap{max-width:1080px;margin:0 auto;padding:44px 20px 24px;text-align:left;color:#FFFDF8}' +
-    '.fs26-pub{margin:0 0 40px}' +
-    '.fs26-photo{width:64px;height:64px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,253,248,.25);display:block;margin:0 0 14px}' +
-    '.fs26-brand{font-weight:800;font-size:1.4rem;color:#FFFDF8}' +
-    '.fs26-names{font-weight:700;font-size:clamp(1.05rem,2.2vw,1.3rem);line-height:1.4;color:#FFFDF8;margin:12px 0 8px;max-width:640px}' +
-    '.fs26-names a{color:#A8DCC3;text-decoration:none}.fs26-names a:hover{text-decoration:underline}' +
-    '.fs26-scale{color:rgba(255,253,248,.68);font-size:.85rem;line-height:1.55;margin:0;max-width:560px}' +
-    '.fs26-nav{display:grid;grid-template-columns:1fr;gap:24px;margin:0 0 40px}' +
-    '@media(min-width:760px){.fs26-nav{grid-template-columns:repeat(4,1fr);gap:30px}}' +
-    '.fs26-h{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:#A8DCC3;font-weight:700;margin:0 0 10px}' +
-    '.fs26-nav ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}' +
-    '.fs26-nav a{color:rgba(255,253,248,.75);text-decoration:none;font-size:.85rem}.fs26-nav a:hover{color:#A8DCC3}' +
-    '.fs26-trust{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,253,248,.6);font-weight:700;margin:0 0 30px}' +
-    '.fs26-contact{margin:0 0 30px;font-size:.85rem}.fs26-contact a{color:rgba(255,253,248,.75);text-decoration:none}' +
-    '.fs26-legal{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,253,248,.55);margin:0;border-top:1px solid rgba(255,253,248,.18);padding-top:14px;line-height:1.8}' +
-    '.fs26-legal a{color:inherit}' +
+    '<footer class="site-footer"><!--FOOTER-SPEC-2027-->' +
+    '<style id="pf-css">' +
+    '.pf{--pf-ink:#FFFDF8;--pf-mut:rgba(255,253,248,.66);--pf-acc:#A8DCC3;max-width:1180px;margin:0 auto;padding:56px 24px 26px;text-align:left;color:var(--pf-ink)}' +
+    '.pf a{text-decoration:none}' +
+    '.pf-top{display:grid;grid-template-columns:1fr;gap:38px;margin:0 0 40px}' +
+    '@media(min-width:900px){.pf-top{grid-template-columns:minmax(280px,1.15fr) 3fr;gap:48px}}' +
+    '.pf-mark{display:flex;align-items:center;gap:11px;margin:0 0 16px}' +
+    '.pf-mark svg{width:34px;height:34px;flex:none}' +
+    '.pf-word{font-weight:700;font-size:1.32rem;letter-spacing:-.02em;color:var(--pf-ink)}' +
+    '.pf-word b{color:var(--pf-acc);font-weight:700}' +
+    '.pf-tag{color:var(--pf-mut);font-size:.9rem;line-height:1.62;margin:0 0 15px;max-width:34ch}' +
+    '.pf-by{display:flex;align-items:flex-start;gap:12px;color:var(--pf-mut);font-size:.9rem;line-height:1.6;margin:0 0 20px;max-width:36ch}' +
+    '.pf-by img{width:46px;height:46px;border-radius:50%;object-fit:cover;flex:none;border:1px solid rgba(255,253,248,.22)}' +
+    '.pf-by b{color:var(--pf-ink);font-weight:600}' +
+    '.pf-by a{color:var(--pf-acc);font-weight:600;display:block;margin-top:1px}' +
+    '.pf-by a:hover{text-decoration:underline}' +
+    '.pf-soc{display:flex;gap:10px;margin:0}' +
+    '.pf-soc a{width:38px;height:38px;border:1px solid rgba(255,253,248,.24);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--pf-mut);transition:.16s}' +
+    '.pf-soc a:hover{border-color:var(--pf-acc);color:var(--pf-acc)}' +
+    '.pf-soc svg{width:17px;height:17px;fill:currentColor}' +
+    '.pf-nav{display:grid;grid-template-columns:repeat(2,1fr);gap:30px 20px}' +
+    '@media(min-width:720px){.pf-nav{grid-template-columns:repeat(4,1fr);gap:30px}}' +
+    '.pf-h{font-size:.66rem;letter-spacing:.19em;text-transform:uppercase;color:var(--pf-ink);font-weight:700;margin:0 0 13px}' +
+    '.pf-nav ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}' +
+    '.pf-nav a{color:var(--pf-mut);font-size:.875rem;line-height:1.4}.pf-nav a:hover{color:var(--pf-acc)}' +
+    '.pf-rule{border:0;border-top:1px solid rgba(255,253,248,.16);margin:0 0 20px}' +
+    '.pf-base{display:flex;flex-direction:column;gap:12px;font-size:.78rem;color:var(--pf-mut)}' +
+    '@media(min-width:720px){.pf-base{flex-direction:row;justify-content:space-between;align-items:center}}' +
+    '.pf-base a{color:var(--pf-mut)}.pf-base a:hover{color:var(--pf-acc)}' +
+    '.pf-legal-links{display:flex;gap:20px;flex-wrap:wrap}' +
+    '.pf-note{font-size:.78rem;color:rgba(255,253,248,.5);line-height:1.6;margin:16px 0 0;max-width:78ch}' +
+    '.pf-note a{color:rgba(255,253,248,.62);text-decoration:underline;text-underline-offset:2px}' +
+    '.pf-note a:hover{color:var(--pf-acc)}' +
     '</style>' +
-    '<div class="fs26-wrap">' +
-    '<div class="fs26-pub">' +
-    '<img class="fs26-photo" src="/assets/img/timpaemi.jpg" alt="Tim and Paemi" width="64" height="64" loading="lazy">' +
-    '<div class="fs26-brand">PattayaPets.</div>' +
-    '<p class="fs26-names">Written, photographed and kept up to date by Tim and Paemi, who live in Pattaya. <a href="https://timpaemi.com/" rel="author noopener">&rarr; timpaemi.com</a></p>' +
-    '<p class="fs26-scale">The independent guide for pet owners in Pattaya &mdash; vets, groomers, shops and the paperwork, reviewed through anonymous visits.</p>' +
+    '<div class="pf">' +
+    '<div class="pf-top">' +
+    '<div>' +
+    '<div class="pf-mark">' +
+    '<svg viewBox="0 0 32 40" aria-hidden="true" focusable="false">' +
+    '<path d="M16 1.5C8.8 1.5 3.5 7 3.5 14.2 3.5 23 16 38.5 16 38.5S28.5 23 28.5 14.2C28.5 7 23.2 1.5 16 1.5Z" fill="#A8DCC3"/>' +
+    '<g fill="#15241F"><ellipse cx="16" cy="19.4" rx="5.2" ry="4.1"/>' +
+    '<circle cx="9.7" cy="12.6" r="2.5"/><circle cx="14.2" cy="9.4" r="2.6"/>' +
+    '<circle cx="18.8" cy="9.4" r="2.6"/><circle cx="22.3" cy="12.6" r="2.5"/></g></svg>' +
+    '<span class="pf-word">Pattaya<b>Pets</b></span>' +
     '</div>' +
-    '<nav class="fs26-nav" aria-label="Footer">' +
-    '<div><p class="fs26-h">// Explore</p><ul>' +
+    '<p class="pf-tag">The honest local guide to pets in Pattaya &mdash; vets, groomers, boarding, adoption and the import paperwork, checked in person by people who live here.</p>' +
+    '<div class="pf-by">' +
+    '<img src="/assets/img/timpaemi.jpg" width="46" height="46" loading="lazy" alt="Tim and Paemi, who write and check PattayaPets">' +
+    '<span>Written and kept up to date by <b>Tim &amp; Paemi</b>, who live in Pattaya.' +
+    '<a href="https://timpaemi.com/" rel="author noopener">timpaemi.com</a></span>' +
+    '</div>' +
+    '<div class="pf-soc">' +
+    '<a href="https://www.youtube.com/@timpaemi" rel="me noopener" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></a>' +
+    '<a href="https://www.instagram.com/timpaemi/" rel="me noopener" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4a3.7 3.7 0 0 1-1.4-.9 3.7 3.7 0 0 1-.9-1.4c-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 3.2A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4Zm0 10.9A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3Zm6.9-11.1a1.5 1.5 0 1 1-1.5-1.6 1.5 1.5 0 0 1 1.5 1.6Z"/></svg></a>' +
+    '<a href="https://www.tiktok.com/@timpaemi.com" rel="me noopener" target="_blank" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 8.4a5.9 5.9 0 0 1-4-1.6v6.9a5.4 5.4 0 1 1-4.6-5.3v2.8a2.6 2.6 0 1 0 1.8 2.5V2h2.8a4.1 4.1 0 0 0 4 3.6Z"/></svg></a>' +
+    '<a href="https://www.facebook.com/timpaemi" rel="me noopener" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.5V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg></a>' +
+    '</div>' +
+    '</div>' +
+    '<nav class="pf-nav" aria-label="Footer">' +
+    '<div><p class="pf-h">Explore</p><ul>' +
     '<li><a href="/directory.html">Directory</a></li>' +
-    '<li><a href="/vets/">Vets</a></li>' +
-    '<li><a href="/guides.html">Guides</a></li>' +
-    '<li><a href="/dogs/">Dogs</a></li>' +
-    '<li><a href="/cats/">Cats</a></li>' +
+    '<li><a href="/vets/">Vets &amp; hospitals</a></li>' +
+    '<li><a href="/groomers/">Groomers</a></li>' +
+    '<li><a href="/boarding/">Boarding</a></li>' +
+    '<li><a href="/pet-shops/">Pet shops</a></li>' +
     '</ul></div>' +
-    '<div><p class="fs26-h">// Essentials</p><ul>' +
+    '<div><p class="pf-h">Plan</p><ul>' +
     '<li><a href="/bring-pet-to-thailand/">Bring a pet in</a></li>' +
     '<li><a href="/take-pet-out-of-thailand/">Take a pet out</a></li>' +
-    '<li><a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a></li>' +
-    '<li><a href="/adopt-a-pet-pattaya/">Adopt a pet</a></li>' +
-    '<li><a href="/start-here.html">Start here</a></li>' +
+    '<li><a href="/bring-pet-to-thailand/checklist.html">Import checklist</a></li>' +
+    '<li><a href="/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html">What it costs</a></li>' +
+    '<li><a href="/bring-pet-to-thailand/airline-pet-policies.html">Airline policies</a></li>' +
     '</ul></div>' +
-    '<div><p class="fs26-h">// About</p><ul>' +
+    '<div><p class="pf-h">Browse</p><ul>' +
+    '<li><a href="/guides.html">Guides</a></li>' +
+    '<li><a href="/pet-emergency/">Pet emergency</a></li>' +
+    '<li><a href="/pet-health-pattaya/">Pet health</a></li>' +
+    '<li><a href="/dog-friendly-pattaya/">Dog-friendly</a></li>' +
+    '<li><a href="/adopt-a-pet-pattaya/">Adopt a pet</a></li>' +
+    '</ul></div>' +
+    '<div><p class="pf-h">Company</p><ul>' +
     '<li><a href="/about.html">About us</a></li>' +
     '<li><a href="/standards.html">How we work</a></li>' +
+    '<li><a href="/press.html">Press kit</a></li>' +
     '<li><a href="/masthead.html">Masthead</a></li>' +
     '<li><a href="/corrections.html">Corrections</a></li>' +
-    '</ul></div>' +
-    '<div><p class="fs26-h">// Legal</p><ul>' +
-    '<li><a href="/privacy.html">Privacy</a></li>' +
-    '<li><a href="/terms.html">Terms</a></li>' +
     '<li><a href="/contact.html">Contact</a></li>' +
     '</ul></div>' +
     '</nav>' +
-    '<p class="fs26-trust">Anonymous visits &middot; No paid placements &middot; Updated rolling</p>' +
-    '<p class="fs26-contact"><a href="mailto:info@pattayapets.com">info@pattayapets.com</a></p>' +
-    '<p class="fs26-legal">&copy; ' + year + ' TimPaemi Co., Ltd. &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a><br>' + esc(DISCLAIMER) + '</p>' +
+    '</div>' +
+    '<hr class="pf-rule">' +
+    '<div class="pf-base">' +
+    '<span>&copy; ' + year + ' TimPaemi Co., Ltd. &middot; Made in Pattaya, Thailand</span>' +
+    '<span class="pf-legal-links">' +
+    '<a href="/privacy.html">Privacy</a>' +
+    '<a href="/terms.html">Terms</a>' +
+    '<a href="/accessibility.html">Accessibility</a>' +
+    '<a href="/sitemap.html">Sitemap</a>' +
+    '</span>' +
+    '</div>' +
+    '<p class="pf-note">Anonymous visits &middot; Bills paid in full &middot; No paid placements, no sponsorships, no affiliate links. ' +
+    esc(DISCLAIMER) + ' ' +
+    '<a href="https://google.com/preferences/source?q=pattayapets.com" rel="nofollow noopener" target="_blank">Make PattayaPets a preferred source in Google</a>.</p>' +
     '</div>' +
     '</footer>'
   );
@@ -336,7 +383,35 @@ function orgGraph() {
       { "@type": "Person", name: "Tim" },
       { "@type": "Person", name: "Paemi" }
     ],
-    parentOrganization: { "@id": "https://timpaemi.com/#timpaemi" }
+    parentOrganization: { "@id": "https://timpaemi.com/#timpaemi" },
+    legalName: SITE.operator,
+    alternateName: "Pattaya Pets",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Pattaya City",
+      addressRegion: "Chon Buri",
+      postalCode: "20150",
+      addressCountry: "TH"
+    },
+    areaServed: { "@type": "City", name: "Pattaya" },
+    knowsAbout: [
+      "Veterinary care in Pattaya",
+      "Pet import to Thailand",
+      "Pet export from Thailand",
+      "Dog-friendly places in Pattaya",
+      "Pet adoption in Thailand"
+    ],
+    publishingPrinciples: SITE.url + "/standards.html",
+    correctionsPolicy: SITE.url + "/corrections.html",
+    actionableFeedbackPolicy: SITE.url + "/contact.html",
+    ethicsPolicy: SITE.url + "/standards.html",
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "editorial",
+      email: SITE.email,
+      url: SITE.url + "/contact.html",
+      availableLanguage: ["en", "th"]
+    }
   };
 }
 
@@ -357,6 +432,20 @@ function websiteGraph() {
       "query-input": "required name=search_term_string"
     }
   };
+}
+
+function webPageGraph(page) {
+  const node = {
+    "@type": "WebPage",
+    "@id": canonical(page.path) + "#webpage",
+    url: canonical(page.path),
+    isPartOf: { "@id": SITE.url + "/#website" },
+    about: { "@id": SITE.url + "/#org" },
+    inLanguage: "en"
+  };
+  if (page.updated) node.dateModified = page.updated;
+  if (page.published) node.datePublished = page.published;
+  return node;
 }
 
 function breadcrumbGraph(page) {
@@ -408,7 +497,7 @@ function renderPage(page, opts) {
     ? "noindex, follow"
     : "index, follow, max-image-preview:large, max-snippet:-1";
 
-  const graph = [orgGraph(), personGraph(), websiteGraph(), breadcrumbGraph(page)];
+  const graph = [orgGraph(), personGraph(), websiteGraph(), breadcrumbGraph(page), webPageGraph(page)];
   if (page.schema && page.schema.length) {
     page.schema.forEach(function (s) { graph.push(s); });
   }
@@ -425,6 +514,10 @@ function renderPage(page, opts) {
     '<meta name="description" content="' + esc(page.description) + '">' +
     '<link rel="canonical" href="' + url + '">' +
     '<meta name="robots" content="' + robots + '">' +
+    (page.updated
+      ? '<meta property="article:modified_time" content="' + page.updated + 'T00:00:00+07:00">' +
+        '<meta property="og:updated_time" content="' + page.updated + 'T00:00:00+07:00">'
+      : "") +
     '<meta name="theme-color" content="#1B5A4C">' +
     '<meta name="author" content="TimPaemi (timpaemi.com)">' +
     '<meta name="publisher" content="' + esc(SITE.operator) + '">' +

@@ -19,14 +19,13 @@ const VERIFY =
 
 const OFFICIAL =
   "<p><strong>Official sources to verify against:</strong> " +
-  "<a href=\"https://aqi.dld.go.th/webnew/index.php/th/service-menu-2/office-service-menu/72-research/kmresearch/432-exportation-of-live-animals\" " +
+  "<a href=\"https://aqi.dld.go.th/webnew/index.php/en/72-research/kmresearch/432-exportation-of-live-animals\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">DLD export of live animals</a>; " +
   "Suvarnabhumi AQS export: " +
-  "<a href=\"mailto:qsap_bkk_export@dld.go.th\">qsap_bkk_export@dld.go.th</a> " +
-  "(Mon&ndash;Fri 08:30&ndash;12:00 and 13:00&ndash;15:30, Thai public holidays excepted); " +
+  "<a href=\"mailto:qsap_bkk_export@dld.go.th\">qsap_bkk_export@dld.go.th</a>; " +
   "<a href=\"https://www.gov.uk/bring-pet-to-great-britain\" target=\"_blank\" rel=\"noopener nofollow\">UK pet travel</a>; " +
   "<a href=\"https://www.cdc.gov/importation/bringing-an-animal-into-the-us/index.html\" target=\"_blank\" rel=\"noopener nofollow\">CDC animal import (USA)</a>; " +
-  "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" rel=\"noopener nofollow\">EU pet movement</a>; " +
+  "<a href=\"https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en\" target=\"_blank\" rel=\"noopener nofollow\">EU pet movement</a>; " +
   "<a href=\"https://www.maff.go.jp/aqs/english/\" target=\"_blank\" rel=\"noopener nofollow\">Japan MAFF Animal Quarantine</a>; " +
   "<a href=\"https://avs.nparks.gov.sg/pets/importing-exporting-a-pet/import/dogs-and-cats/\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">Singapore AVS</a>; " +
@@ -37,7 +36,7 @@ const OFFICIAL =
   "<a href=\"https://www.mpi.govt.nz/bring-send-to-nz/pets-travelling-to-nz/bringing-cats-and-dogs-to-nz\" target=\"_blank\" rel=\"noopener nofollow\">New Zealand MPI</a>; " +
   "<a href=\"https://inspection.canada.ca/en/importing-food-plants-animals/pets\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">Canada CFIA</a>; " +
-  "<a href=\"https://www.blv.admin.ch/blv/en/home/tiere/reisen-mit-heimtieren.html\" " +
+  "<a href=\"https://www.blv.admin.ch/en/travelling-with-dogs-cats-and-ferrets\" " +
   "target=\"_blank\" rel=\"noopener nofollow\">Switzerland FSVO</a>.</p>";
 
 const THAI_SIDE =
@@ -162,7 +161,7 @@ function exp(o) {
     path: "/take-pet-out-of-thailand/" + o.slug + ".html",
     title: o.title, desc: o.desc, crumb: o.crumb, breadcrumbs: SUB,
     eyebrow: "Taking a pet out of Thailand",
-    h1: o.h1, lede: o.lede, verify: VERIFY,
+    h1: o.h1, lede: o.lede, verify: o.verify || VERIFY,
     updated: o.updated || "2026-06-01",
     sections: sections, faqs: rb.mergeFaqs(o.faqs, rb.EXPORT_EXTRA_FAQS),
     related: o.related || expCountryRelated(o.slug)
@@ -176,7 +175,6 @@ const DLD_EXPORT_TABLE =
   '<tr><th scope="row">Destination import rules</th><td>Show the UK/US/Australian import permit or published requirements to the AQS &mdash; the Thai health certificate must match.</td></tr>' +
   '<tr><th scope="row">Microchip &amp; vaccinations</th><td>ISO chip and current rabies vaccination on record; destination may require a <a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">rabies titer test</a>.</td></tr>' +
   '<tr><th scope="row">DLD export licence (form 9) &amp; health certificate</th><td>Issued after AQS inspection if paperwork complies.</td></tr>' +
-  '<tr><th scope="row">Flight confirmation</th><td>Confirm departure date with the AQS at least <strong>three days</strong> before you fly.</td></tr>' +
   '</tbody></table></div>';
 
 const EXPORT_FAILS =
@@ -381,16 +379,21 @@ pages.push(exp({
 
 pages.push(exp({
   slug: "cost-to-export-a-pet-from-thailand", crumb: "What it costs",
-  title: "Cost to Export a Pet from Thailand (2026) | DLD, Vet & Flight Fees | PattayaPets",
-  desc: "An honest look at the cost of taking a dog or cat out of Thailand — " +
-    "Thai-side fees, vet work, the flight and destination requirements.",
+  title: "Pet Export Costs from Thailand (2026) | PattayaPets",
+  desc: "Verified pet-export costs from Thailand: DLD paperwork, Thai Airways AVIH fees, Singapore quarantine and why a single total misleads.",
+  updated: "2026-07-26",
   h1: "What it costs to export a pet from Thailand",
-  lede: "Export has two cost piles: the relatively quick Thai side, and the " +
-    "destination country&rsquo;s requirements — which can run to months and " +
-    "thousands of dollars for a titer test and waiting period.",
-  verify: "Costs below are rough orientation only, gathered in May 2026, and vary " +
-    "widely by destination, airline, pet size and provider. Get written quotes for " +
-    "your specific situation before you budget.",
+  lede: "There is no responsible single total for every route. The examples below " +
+    "separate published airline and quarantine charges from veterinary, crate, " +
+    "permit and agent costs that need case-specific quotes.",
+  verify: "Published figures were checked on 26 July 2026 against Thai Airways, " +
+    "Singapore AVS and Australia DAFF. Each amount below names its source and date; " +
+    "get written quotes before committing to travel.",
+  officialExtra:
+    "<p><strong>Price and pathway sources:</strong> " +
+    "<a href=\"https://www.thaiairways.com/en-us/content/special-assistance/travel-with-pets/pets-as-checked-baggage-AVIH/\" target=\"_blank\" rel=\"noopener nofollow\">Thai Airways AVIH</a>; " +
+    "<a href=\"https://avs.nparks.gov.sg/about-us/our-centres/animal-quarantine-centre/\" target=\"_blank\" rel=\"noopener nofollow\">Singapore Animal Quarantine Centre</a>; " +
+    "<a href=\"https://www.agriculture.gov.au/biosecurity-trade/cats-dogs/frequently-asked-questions\" target=\"_blank\" rel=\"noopener nofollow\">Australia DAFF pet-import FAQ</a>.</p>",
   sections: [
     { h: "Where the money goes", html:
       "<p>A pet export is a stack of separate costs:</p>" +
@@ -410,21 +413,27 @@ pages.push(exp({
       "policies</a> early.</li>" +
       "<li><strong>Relocation agent</strong> &mdash; optional but common for cargo " +
       "bookings and complex destinations.</li>" +
-      "<li><strong>Quarantine</strong> &mdash; only for certain destinations " +
-      "(notably Australia); can dominate the budget.</li></ul>" },
-    { h: "The honest range", html:
-      "<p>For a straightforward export to a country without quarantine &mdash; " +
-      "say Canada or Russia &mdash; owners commonly report a total in the " +
-      "<strong>low-to-mid four figures (US dollars)</strong> once vet work, Thai " +
-      "export fees, crate and flight are added. A small cat in cabin sits lower; " +
-      "a large dog as manifest cargo with agent support sits higher.</p>" +
-      "<p>For the UK, EU or Australia the <strong>destination timeline</strong> " +
-      "matters as much as the cash: a titer test and three-month (or longer) wait " +
-      "mean paying for ongoing care in Thailand while you wait, plus possible " +
-      "repeat vet visits to keep certificates current.</p>" +
-      "<p>We deliberately avoid a single headline number &mdash; get quotes from " +
-      "your airline and a <a href=\"/pet-relocation/\">relocation agent</a> for " +
-      "your exact route.</p>" },
+      "<li><strong>Quarantine or intermediary-country residence</strong> &mdash; " +
+      "Singapore requires at least 30 days of quarantine for a pet arriving from Thailand. " +
+      "Australia does not accept a standard direct import from Thailand: its current " +
+      "path requires at least 180 consecutive days in an approved country before export.</li></ul>" },
+    { h: "Named published examples", html:
+      "<p><strong>Thai Airways checked-baggage pets (AVIH):</strong> for travel on or " +
+      "after 2 March 2026, the airline publishes <strong>US$320</strong> when the " +
+      "animal plus container weighs under 32 kg and <strong>US$540</strong> for " +
+      "32&ndash;70 kg. Request the service at least three working days ahead; route " +
+      "and aircraft restrictions still apply.</p>" +
+      "<p>THAI&rsquo;s localized pages disagree on the upper-band baht conversion, " +
+      "so this page deliberately does not publish that conversion. Ask the airline " +
+      "which currency and amount it will charge for your booking.</p>" +
+      "<p><strong>Singapore quarantine:</strong> AVS publishes S$26 per day for a " +
+      "fan-cooled room or S$35 per day for an air-conditioned room from 1 December " +
+      "2025. At the 30-day minimum for a Thailand-origin pet, accommodation alone is " +
+      "<strong>S$780 or S$1,050</strong> (30 multiplied by the daily rate), before " +
+      "the published S$75 transport fee and S$68 rabies-vaccination fee. Figures " +
+      "checked 26 July 2026.</p>" +
+      "<p>These are components, not package totals. Veterinary work, laboratory " +
+      "testing, crate, permits, cargo handling and agent fees vary by animal and route.</p>" },
     { h: "Thai-side fees only", html:
       "<p>The DLD export inspection and certificate are relatively modest compared " +
       "with the flight. The expensive parts on the Thai side are usually the vet " +
@@ -439,19 +448,24 @@ pages.push(exp({
       "<a href=\"/take-pet-out-of-thailand/to-uae.html\">export to the UAE</a>, or " +
       "<a href=\"/take-pet-out-of-thailand/to-australia.html\">export to Australia</a>. " +
       "Many owners use a " +
-      "<a href=\"/pet-relocation/\">pet relocation agent</a> to keep timing aligned.</p>" }
+      "<a href=\"/pet-relocation/\">pet relocation agent</a> to keep timing aligned.</p>" },
+    { h: "Who should skip the DIY route", html:
+      "<p>Do not rely on a self-managed budget if your pet must travel as manifest " +
+      "cargo, the destination requires quarantine or an intermediary country, or " +
+      "your travel date cannot move. Get a written, itemised quote from a specialist " +
+      "and confirm every government and airline charge directly.</p>" }
   ],
   faqs: [
     ["Is export cheaper than import?",
-     "<p>Not necessarily. The Thai export steps are fairly quick, but destination requirements — especially a titer test and waiting period for the UK or EU — can make export more expensive and slower than bringing a pet into Thailand.</p>"],
+     "<p>Not necessarily. The Thai export steps are fairly quick, but destination requirements — especially a titer test and waiting period for the UK or EU — can make export more expensive and slower than bringing a pet into Thailand. Price the complete destination pathway before comparing.</p>"],
     ["Should I budget for an agent?",
-     "<p>Many owners export without one for simpler destinations. For cargo bookings, Australia, Japan or the USA (CDC dog rules), an agent often pays for itself in avoided mistakes and re-bookings.</p>"],
+     "<p>Many owners export without one for simpler destinations. For cargo bookings, Australia, Japan or the USA (CDC dog rules), an agent often pays for itself in avoided mistakes and re-bookings. Ask for an itemised quote so government, airline, handling and service fees remain visible.</p>"],
     ["How much does the DLD export inspection cost?",
-     "<p>Thai-side government fees are relatively small compared with flights and lab work — confirm current AQS charges when you apply. The titer test and airline cargo quote dominate most budgets.</p>"],
+     "<p>The DLD export page explains the application, examination, Form 9 export licence and health certificate, but it does not publish one dependable end-to-end price for a pet move. Ask the departure-airport AQS for current government charges, then keep those separate from veterinary, laboratory, crate, airline and agent quotes.</p>"],
     ["Do I pay while waiting for a titer test?",
-     "<p>Yes — boarding, food, vet boosters and repeat certificates accrue during the waiting period. That ongoing care is why export to the UK or EU can exceed import cost.</p>"],
+     "<p>Yes — boarding, food, vet boosters and repeat certificates accrue during the waiting period. That ongoing care is why export to the UK or EU can exceed import cost. Include flexible accommodation and rebooking reserves if laboratory or government timing changes.</p>"],
     ["Can I get a fixed quote upfront?",
-     "<p>Relocation agents can quote a package; DIY exporters should get separate quotes from your vet, the lab, the airline and the destination authority before committing to dates.</p>"]
+     "<p>Relocation agents can quote a package; DIY exporters should get separate quotes from your vet, the lab, the airline and the destination authority before committing to dates. Check which items are estimates, which taxes or handling fees are excluded, and how long every price remains valid.</p>"]
   ],
   related: [
     { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
@@ -463,19 +477,27 @@ pages.push(exp({
 
 pages.push(exp({
   slug: "to-uk", crumb: "To the UK",
-  title: "Export Pet from Thailand to the UK (Titer & Tapeworm 2026) | PattayaPets",
+  title: "Thailand to UK Pet Export (2026): Titer & Cargo | PattayaPets",
   desc: "Thailand to UK pet export: rabies titer test, three-month wait, tapeworm " +
     "treatment, approved routes, DLD export timeline and document checklist.",
+  updated: "2026-07-26",
   h1: "Taking a pet from Thailand to the UK",
   lede: "Great Britain treats Thailand as an <strong>&lsquo;unlisted&rsquo; " +
     "country</strong>. That single classification drives a timeline measured in " +
     "months, not weeks &mdash; unless you planned ahead before you ever moved here.",
+  verify: "Rules and approved air routes were checked on 26 July 2026 against GOV.UK. " +
+    "Great Britain treats Thailand as unlisted; ordinary pets arriving by air must " +
+    "use cargo on an approved route.",
   officialExtra:
     "<p><strong>UK sources:</strong> " +
     "<a href=\"https://www.gov.uk/bring-pet-to-great-britain\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">bringing a pet to Great Britain</a>; " +
-    "<a href=\"https://www.gov.uk/taking-your-pet-abroad\" target=\"_blank\" " +
-    "rel=\"noopener nofollow\">taking your pet abroad</a>. " +
+    "<a href=\"https://www.gov.uk/bring-pet-to-great-britain/rabies-blood-tests\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">rabies blood tests</a>; " +
+    "<a href=\"https://www.gov.uk/bring-pet-to-great-britain/travel-routes-pets\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">pet travel routes</a>; " +
+    "<a href=\"https://www.gov.uk/government/publications/pet-travel-approved-air-sea-and-rail-carriers-and-routes/approved-air-routes-for-pet-travel\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">approved air routes</a>. " +
     "Mirror import guide: " +
     "<a href=\"/bring-pet-to-thailand/from-uk.html\">bringing a pet from the UK</a>.</p>",
   sections: [
@@ -500,9 +522,6 @@ pages.push(exp({
       '<tr><th scope="row">24 hours &ndash; 5 days before UK arrival (dogs)</th>' +
       '<td>Vet-administered <strong>tapeworm treatment</strong> (Echinococcus multilocularis) documented on the health certificate</td>' +
       '<td>Accredited vet</td></tr>' +
-      '<tr><th scope="row">&ge;3 days before departure</th>' +
-      '<td>Confirm export date with the AQS; collect DLD export licence and health certificate</td>' +
-      '<td>DLD</td></tr>' +
       '<tr><th scope="row">UK arrival</th>' +
       '<td>Enter via an <strong>approved route</strong>; present microchip, rabies, titer and travel documents at border control</td>' +
       '<td>UK Border Force / carrier</td></tr>' +
@@ -532,14 +551,13 @@ pages.push(exp({
       "<p>Full walkthrough: " +
       '<a href="/take-pet-out-of-thailand/export-process.html">export process</a> ' +
       "and " +
-      '<a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">export permit application</a>. ' +
-      "Suvarnabhumi export desk: Mon&ndash;Fri 08:30&ndash;12:00 and 13:00&ndash;15:30 (Thai public holidays excepted).</p>" },
+      '<a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">export permit application</a>.</p>' },
     { h: "Approved routes and booking", html:
-      "<p>The UK restricts which airlines, ports and routes may carry pets into Great " +
-      "Britain. Not every Bangkok&ndash;London connection qualifies. Confirm the " +
-      "current approved-route list on GOV.UK and tell your airline you are importing " +
-      "a pet from an unlisted country &mdash; cargo and accompanied travel have " +
-      "different rules. A " +
+      "<p>For an ordinary pet arriving in Great Britain by plane, GOV.UK requires " +
+      "<strong>cargo</strong>; the exceptions are private charter travel and assistance " +
+      "dogs. The approved-air-routes list updated 24 July 2026 names Thai Airways to " +
+      "Heathrow Animal Reception Centre. That does not guarantee space on a particular " +
+      "flight, so confirm the current route and booking with the airline before paying. A " +
       '<a href="/pet-relocation/">pet relocation agent</a> experienced in UK entry ' +
       "is often worth the fee for routing alone. See also " +
       '<a href="/bring-pet-to-thailand/airline-pet-policies.html">airline pet policies</a>.</p>' },
@@ -548,17 +566,22 @@ pages.push(exp({
       "<li><strong>Booking a flight before the three-month wait ends</strong> &mdash; the titer clock cannot be rushed.</li>" +
       "<li><strong>Missing or mistimed tapeworm treatment</strong> for dogs &mdash; a common reason for refusal at the border.</li>" +
       "<li><strong>Assuming any EU airport connection works</strong> &mdash; check approved routes into Great Britain specifically.</li>" +
-      "</ul>" }
+      "</ul>" },
+    { h: "Who should not use this as a last-minute route", html:
+      "<p>Skip a DIY booking if the three-month blood-test wait has not finished, " +
+      "rabies vaccination continuity is uncertain, the dog&rsquo;s tapeworm window " +
+      "cannot be coordinated, or your chosen carrier cannot confirm approved cargo " +
+      "entry. A normal passenger ticket does not make the pet route compliant.</p>" }
   ],
   faqs: [
     ["How long does it take to move a pet from Thailand to the UK?",
      "<p>If the rabies titer test still has to be done from Thailand, plan for at least three months after the blood sample, plus Thai export processing and flight booking. If a valid titer test is already in place from before you moved, it can be considerably faster — but confirm validity with GOV.UK.</p>"],
     ["Does my dog need a tapeworm treatment?",
-     "<p>Yes. Dogs entering Great Britain need vet-administered tapeworm treatment documented on the certificate, given no less than 24 hours and no more than 5 days before arrival. Confirm the current window on GOV.UK.</p>"],
+     "<p>Yes. Dogs entering Great Britain need vet-administered tapeworm treatment documented on the certificate, given no less than 24 hours and no more than 5 days before arrival. Confirm the current window on GOV.UK and calculate it from arrival time, not Bangkok departure time.</p>"],
     ["Can my pet fly in cabin to the UK from Bangkok?",
-     "<p>It depends on the airline and route, and whether the route is UK-approved for pet entry. Many UK-bound pets travel as checked baggage or cargo. Confirm with the airline and GOV.UK approved routes — do not assume cabin travel is available or compliant.</p>"],
+     "<p>No, not as an ordinary pet on an inbound flight to Great Britain. GOV.UK says pets arriving by plane must travel as cargo unless they are assistance dogs or travelling by private charter. Use an approved route and carrier, then confirm that the particular flight can deliver the pet to the named animal reception facility.</p>"],
     ["What if my titer test fails?",
-     "<p>A failed or borderline result usually means revaccination and retesting, which restarts waiting periods. Use an approved laboratory and an experienced vet; build slack into your timeline.</p>"],
+     "<p>A failed or borderline result usually means revaccination and retesting, which restarts waiting periods. Use an approved laboratory and an experienced vet; build slack into your timeline. Do not book a non-refundable cargo movement until the qualifying result and entry date are clear.</p>"],
     ["Do I need a UK import permit as well as the Thai export permit?",
      "<p>Great Britain does not issue a separate import permit for personal pet dogs and cats in the same way Australia does, but you must meet every documentary and routing requirement on GOV.UK. The Thai export permit is Thailand&rsquo;s permission to leave; UK rules govern entry.</p>"]
   ]
@@ -665,19 +688,19 @@ const EU_EXPORT_TIMELINE =
   '<tr><th scope="row">4&ndash;6 months before travel</th>' +
   '<td>Plan rabies vaccination and FAVN titer test at an EU-approved lab, then the mandatory waiting period before EU entry. See <a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">titer timing</a>.</td></tr>' +
   '<tr><th scope="row">As soon as dates firm</th>' +
-  '<td>Confirm destination member-state rules (Border Control Post entry point, advance notification, tapeworm treatment for dogs if required).</td></tr>' +
+  '<td>Confirm destination member-state rules (designated travellers&rsquo; point of entry, advance notification, tapeworm treatment for dogs if required).</td></tr>' +
   '<tr><th scope="row">At least 15 days before departure</th>' +
   '<td>Apply for Thai DLD export permit (form 1/1) at the departure airport AQS; gather destination import proof.</td></tr>' +
   '<tr><th scope="row">Within 10 days of export</th>' +
   '<td>Thai official vet issues export health certificate aligned with EU entry requirements.</td></tr>' +
   '<tr><th scope="row">Before check-in</th>' +
   '<td>Confirm flight pet booking and that connection airports accept live animals if not flying direct.</td></tr>' +
-  '<tr><th scope="row">At EU Border Control Post</th>' +
-  '<td>Present EU health certificate, microchip, vaccination and titer records for documentary and identity check.</td></tr>' +
+  '<tr><th scope="row">At the travellers&rsquo; point of entry</th>' +
+  '<td>Present the EU health certificate, microchip, vaccination and titer records for documentary and identity checks.</td></tr>' +
   '</tbody></table></div>';
 
 const EU_MEMBER_EXPORT_LINKS =
-  "<p>National pages cover competent-authority contacts, BCP airports and local extras:</p>" +
+  "<p>National pages cover competent-authority contacts, travellers&rsquo; points of entry and local extras:</p>" +
   "<ul>" +
   "<li><a href=\"/take-pet-out-of-thailand/to-germany.html\">Germany</a> &middot; " +
   "<a href=\"/take-pet-out-of-thailand/to-france.html\">France</a> &middot; " +
@@ -693,7 +716,7 @@ const EU_MEMBER_EXPORT_LINKS =
 const EU_EXPORT_FAILS =
   "<ul>" +
   "<li><strong>Starting with DLD only</strong> &mdash; the EU titer test and three-month wait usually set the calendar, not the Thai export desk.</li>" +
-  "<li><strong>Wrong BCP airport</strong> &mdash; pets must enter through a member-state Border Control Post that accepts your species; not every EU airport qualifies.</li>" +
+  "<li><strong>Wrong travellers&rsquo; point of entry</strong> &mdash; non-commercial pets must enter through a member state&rsquo;s designated point for travellers; not every airport qualifies.</li>" +
   "<li><strong>Certificate mismatch</strong> &mdash; Thai export health certificate wording must match the EU model your destination accepts for third-country entry.</li>" +
   "<li><strong>Expired titer or rabies gap</strong> &mdash; a lapsed vaccination invalidates prior tests and restarts waiting periods.</li>" +
   "<li><strong>Commercial vs non-commercial</strong> &mdash; more than five pets, resale or change of ownership can trigger commercial TRACES rules instead of pet-travel rules.</li>" +
@@ -703,16 +726,19 @@ pages.push(exp({
   slug: "to-eu", crumb: "To the EU",
   title: "Export Pet from Thailand to the EU (2026) | PattayaPets",
   desc: "Thailand to EU pet export: DLD export permit, rabies titer test, three-month " +
-    "wait and EU entry health certificate — member-state BCP rules apply.",
-  updated: "2026-05-31",
+    "wait, EU health certificate and designated travellers' entry points.",
+  updated: "2026-07-26",
   h1: "Taking a pet from Thailand to the EU",
   lede: "For the EU, Thailand is a non-listed third country &mdash; so the rabies " +
     "titer test and its three-month wait drive your timeline. Line up DLD export " +
     "paperwork inside that longer EU calendar.",
+  verify: "EU non-commercial pet rules were checked on 26 July 2026 against the " +
+    "European Commission. The correct arrival control is a designated travellers&rsquo; " +
+    "point of entry, not a commercial Border Control Post.",
   officialExtra:
     "<p><strong>EU sources:</strong> " +
-    "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" " +
-    "target=\"_blank\" rel=\"noopener nofollow\">European Commission &mdash; movement of pets</a>. " +
+    "<a href=\"https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">European Commission &mdash; bringing a pet from a non-EU country</a>. " +
     "Mirror import guide: " +
     "<a href=\"/bring-pet-to-thailand/from-eu.html\">bringing a pet from the EU</a>.</p>",
   sections: [
@@ -731,27 +757,32 @@ pages.push(exp({
     { h: "The EU entry health certificate", html:
       "<p>Your pet needs an EU animal health certificate completed for entry " +
       "from a third country and endorsed by the Thai authorities. The microchip, " +
-      "vaccination dates and titer result must all line up on it. Entry must be " +
-      "through an approved <strong>Border Control Post (BCP)</strong> in the member " +
-      "state of arrival.</p>" +
+      "vaccination dates and titer result must all line up on it. Non-commercial " +
+      "entry must be through a <strong>designated travellers&rsquo; point of entry</strong> " +
+      "in the member state of arrival.</p>" +
       "<p>Dogs entering Finland, Ireland, Malta or Norway may need tapeworm " +
       "treatment; some member states require advance notification. Confirm with " +
       "the competent authority for your entry country.</p>" +
       EU_MEMBER_EXPORT_LINKS },
     { h: "Thai export documents", html: DLD_EXPORT_TABLE + THAI_SIDE },
-    { h: "Common mistakes on this corridor", html: EXPORT_FAILS + EU_EXPORT_FAILS }
+    { h: "Common mistakes on this corridor", html: EXPORT_FAILS + EU_EXPORT_FAILS },
+    { h: "Who should not use the non-commercial route", html:
+      "<p>This guide is not the right pathway when more than five pets travel, the " +
+      "move involves sale or transfer of ownership, or the owner or authorised person " +
+      "cannot travel within five days of the animals. Those cases can fall under " +
+      "commercial movement and TRACES controls instead.</p>" }
   ],
   faqs: [
     ["Is the three-month wait avoidable?",
-     "<p>Only if a valid rabies titer test is already in place and has remained valid (with the rabies vaccination kept current). That is why owners are advised to do the test before leaving for Thailand.</p>"],
+     "<p>Only if a valid rabies titer test is already in place and has remained valid (with the rabies vaccination kept current). That is why owners are advised to do the test before leaving for Thailand. Ask the destination authority to confirm any uncertain vaccination history before booking.</p>"],
     ["Does the EU pet passport work for this?",
-     "<p>The EU pet passport is for movement within the EU and for pets resident there. Coming from Thailand you need a third-country entry health certificate; check the rules for your specific EU entry country.</p>"],
+     "<p>The EU pet passport is for movement within the EU and for pets resident there. Coming from Thailand you need a third-country entry health certificate; check the rules for your specific EU entry country. The passport alone does not replace that endorsed certificate or the arrival checks.</p>"],
     ["Can my pet enter any EU airport?",
-     "<p>No. Entry must be through a Border Control Post designated for your species. Many popular tourist airports are not BCPs. Your member-state page lists approved entry points.</p>"],
+     "<p>No. A non-commercial pet arriving from Thailand must use a member state&rsquo;s designated travellers&rsquo; point of entry, where officials perform document and identity checks. That is distinct from the Border Control Post terminology used for commercial consignments. Check the competent authority&rsquo;s current list before choosing an airport or connection.</p>"],
     ["How long does DLD export take compared with EU entry rules?",
-     "<p>Thai export permit and health certificate work usually takes weeks if paperwork is clean. EU titer testing and waiting periods often take months. Start with the EU timeline, then fit DLD export inside it.</p>"],
+     "<p>Thai export permit and health certificate work usually takes weeks if paperwork is clean. EU titer testing and waiting periods often take months. Start with the EU timeline, then fit DLD export inside it. Leave slack for laboratory processing, certificate endorsement and airline pet-space confirmation.</p>"],
     ["What if I am moving with more than one pet?",
-     "<p>Up to five pets travelling with their owner within five days of the owner may qualify for non-commercial rules. Above that, or if ownership changes, commercial TRACES and import rules may apply &mdash; confirm with the destination competent authority.</p>"]
+     "<p>Up to five pets travelling with their owner within five days of the owner may qualify for non-commercial rules. Above that, or if ownership changes, commercial TRACES and import rules may apply &mdash; confirm with the destination competent authority before selecting the entry point.</p>"]
   ]
 }));
 

@@ -68,9 +68,10 @@ const IMPORT_PATTAYA_ARRIVAL = {
     "<p>Once the Animal Quarantine Station clears your pet, the practical question " +
     "is the drive to Pattaya. From Suvarnabhumi, most owners use a pre-booked " +
     "pet-friendly taxi, Grab with a crate (confirm with the driver), or a " +
-    "<a href=\"/pet-relocation/\">relocation transfer</a>. From U-Tapao, the hop " +
-    "is shorter &mdash; one reason some Pattaya-bound owners choose UTP when the " +
-    "airline and route allow pets.</p>" +
+    "<a href=\"/pet-relocation/\">relocation transfer</a>. U-Tapao is far closer to " +
+    "Pattaya, but it cannot clear an imported pet, so the road transfer from " +
+    "Suvarnabhumi is part of every arrival &mdash; plan for it rather than hoping " +
+    "to avoid it.</p>" +
     "<p>Have water, a spare towel and your pet&rsquo;s usual food accessible after " +
     "a long flight. Do not assume your condo or hotel accepts pets on arrival day " +
     "&mdash; confirm " +
@@ -158,7 +159,7 @@ const EXPORT_EXTRA_FAQS = [
 
 const IMPORT_EXTRA_FAQS = [
   ["Which airport is better for Pattaya — BKK or U-Tapao?",
-   "<p>U-Tapao is closer; Suvarnabhumi has more international routes. Your import permit must name the airport you actually use. See <a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok</a>.</p>"],
+   "<p>Suvarnabhumi. U-Tapao is closer to Pattaya, but it has no Animal Quarantine Station and cannot clear an imported pet, so your import permit must name Suvarnabhumi. See <a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok</a>.</p>"],
   ["What should I do in my first week in Pattaya with a pet?",
    "<p>Book a local vet for parasite prevention, confirm housing allows pets, update microchip contacts, and save a 24-hour clinic number. See our <a href=\"/owning-a-pet-in-pattaya/\">owning a pet in Pattaya</a> hub.</p>"],
   ["Will I need the titer test if I only stay in Thailand?",

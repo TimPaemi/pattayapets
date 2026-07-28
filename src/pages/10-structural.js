@@ -484,4 +484,153 @@ pages.push(prosePage({
     "with the page and what went wrong. We aim to respond within seven days.</p>"
 }));
 
+/* ---------------- Press & media kit ---------------- */
+pages.push(prosePage({
+  path: "/press.html",
+  title: "Press & Media Kit | PattayaPets",
+  desc:
+    "PattayaPets press kit: boilerplate, coverage, verifiable facts, logo files, brand " +
+    "rules and press contact. Published by TIMPAEMI Co., Ltd., Pattaya.",
+  crumb: "Press kit",
+  eyebrow: "For journalists and partners",
+  h1: "Press kit",
+  updated: "2026-07-27",
+  updatedLabel: "27 July 2026",
+  linkTopic: "general",
+  body:
+    "<p>Everything here is checkable. The numbers are counted from the site itself " +
+    "on the date below, not estimated. If you need something that is not on this " +
+    "page, email <a href=\"mailto:hello@pattayapets.com\">hello@pattayapets.com</a> " +
+    "and we will answer in writing.</p>" +
+
+    "<h2>Boilerplate</h2>" +
+    "<p><strong>Short (25 words).</strong> PattayaPets is an independent editorial " +
+    "directory and guide for pet owners in Pattaya, Thailand &mdash; vets, groomers, " +
+    "boarding, adoption and the import paperwork. Published by TIMPAEMI Co., Ltd.</p>" +
+    "<p><strong>Long (60 words).</strong> PattayaPets is the independent pet resource " +
+    "for Pattaya, Thailand, written and kept up to date by Tim and Paemi, who live " +
+    "there. It combines a directory of local pet businesses with in-depth guides to " +
+    "veterinary care, emergencies, dog-friendly places, adoption, and the Thai import " +
+    "and export rules. Businesses are visited anonymously and bills are paid in full. " +
+    "Nothing on the site can be bought.</p>" +
+
+    "<h2>What we cover</h2>" +
+    "<ul>" +
+    "<li><strong>A directory</strong> of Pattaya pet businesses across seven categories " +
+    "&mdash; vets and animal hospitals, groomers, boarding, pet shops, trainers, " +
+    "relocation agents and mobile vets &mdash; browsable by neighbourhood.</li>" +
+    "<li><strong>Emergency guidance</strong> &mdash; 24-hour vets, first aid, heatstroke, " +
+    "snake and toad encounters, road accidents.</li>" +
+    "<li><strong>Import and export</strong> &mdash; the Thai DLD permit process, health " +
+    "certificates, quarantine, airline policies, and country-by-country guides in both " +
+    "directions.</li>" +
+    "<li><strong>Living with a pet in Pattaya</strong> &mdash; hot-climate care, housing, " +
+    "costs, adoption and rescue, dog-friendly beaches, cafés and hotels.</li>" +
+    "</ul>" +
+
+    "<h2>Fast facts</h2>" +
+    '<div class="table-wrap"><table class="facts-table">' +
+    "<tbody>" +
+    "<tr><th scope=\"row\">Publication</th><td>PattayaPets (pattayapets.com)</td></tr>" +
+    "<tr><th scope=\"row\">Publisher</th><td>TIMPAEMI Co., Ltd.</td></tr>" +
+    "<tr><th scope=\"row\">Registered</th><td>Pattaya City, Bang Lamung District, Chon Buri 20150, Thailand</td></tr>" +
+    "<tr><th scope=\"row\">Written and edited by</th><td>Tim and Paemi, resident in Pattaya</td></tr>" +
+    "<tr><th scope=\"row\">Language</th><td>English</td></tr>" +
+    "<tr><th scope=\"row\">Pages published</th><td>208</td></tr>" +
+    "<tr><th scope=\"row\">Editorial words</th><td>233,000+</td></tr>" +
+    "<tr><th scope=\"row\">Directory categories</th><td>7</td></tr>" +
+    "<tr><th scope=\"row\">Business listings</th><td>37</td></tr>" +
+    "<tr><th scope=\"row\">Neighbourhoods covered</th><td>8 &mdash; Naklua, Wongamat, Central Pattaya, Pratumnak, Jomtien, Bang Saray, Sattahip, Banglamung</td></tr>" +
+    "<tr><th scope=\"row\">Country import guides</th><td>26</td></tr>" +
+    "<tr><th scope=\"row\">Country export guides</th><td>26</td></tr>" +
+    "<tr><th scope=\"row\">Press contact</th><td><a href=\"mailto:hello@pattayapets.com\">hello@pattayapets.com</a></td></tr>" +
+    "</tbody></table></div>" +
+    "<p class=\"notice\">Counts verified against the published site on 27 July 2026. " +
+    "We do not publish audience or traffic figures.</p>" +
+
+    "<h2>How we work</h2>" +
+    "<p>Businesses are visited anonymously. Bills are paid in full, every time. A " +
+    "listing starts as a verified <em>facts page</em> &mdash; name, area, services, " +
+    "hours, languages, contact &mdash; and is marked <em>not yet reviewed</em> until " +
+    "an editor has actually been. Verdicts describe the business experience only: " +
+    "booking, communication, English, billing transparency, cleanliness. We do not " +
+    "rate veterinary medical quality and never will. The full method is on the " +
+    "<a href=\"/standards.html\">editorial standards</a> page, and every correction we " +
+    "make is logged on the <a href=\"/corrections.html\">corrections</a> page.</p>" +
+
+    "<h2>What is not for sale</h2>" +
+    "<p>This is the part most enquiries are about, so it is stated plainly.</p>" +
+    "<ul>" +
+    "<li><strong>Listings cannot be bought.</strong> A business appears because it is " +
+    "relevant to pet owners in Pattaya, or it does not appear.</li>" +
+    "<li><strong>Verdicts cannot be bought, influenced or removed.</strong> Neither can " +
+    "position in the directory.</li>" +
+    "<li><strong>No sponsored posts, no advertorial, no paid guest articles, no " +
+    "affiliate links.</strong> There are no display advertising slots.</li>" +
+    "<li><strong>No free treatment, discounts, hosted visits or gifts</strong> are " +
+    "accepted from any business we cover.</li>" +
+    "</ul>" +
+    "<p>If a fact about your business is wrong, we will fix it for free and quickly " +
+    "&mdash; tell us on the <a href=\"/corrections.html\">corrections page</a>. That is " +
+    "the only lever anyone has over what appears here, and it is available to everyone " +
+    "equally.</p>" +
+
+    "<h2>Using our content</h2>" +
+    "<p>Journalists may quote from PattayaPets with attribution to " +
+    "<em>PattayaPets (pattayapets.com)</em> and a link to the page quoted. Please do " +
+    "not republish guides in full. For interviews, data requests, or comment on pet " +
+    "ownership, veterinary access or pet relocation in Thailand, email " +
+    "<a href=\"mailto:hello@pattayapets.com\">hello@pattayapets.com</a>.</p>" +
+
+    "<h2>Logo and brand assets</h2>" +
+    "<ul>" +
+    "<li><a href=\"/assets/img/logo-mark.svg\">logo-mark.svg</a> &mdash; the pin-and-paw " +
+    "mark, vector, for avatars and small sizes.</li>" +
+    "<li><a href=\"/assets/img/icon-512.png\">icon-512.png</a> &mdash; 512&times;512 raster " +
+    "mark on a solid background.</li>" +
+    "<li><a href=\"/assets/img/og-default.png\">og-default.png</a> &mdash; 1200&times;630 " +
+    "social card, safe to use as a generic site image.</li>" +
+    "</ul>" +
+    "<p>Print-ready wordmark files are available on request &mdash; ask and we will " +
+    "send them the same week.</p>" +
+
+    "<h2>Brand rules</h2>" +
+    "<ul>" +
+    "<li>Write the name as <strong>PattayaPets</strong> &mdash; one word, two capitals. " +
+    "Not &ldquo;Pattaya Pets&rdquo;, not &ldquo;PattayaPets.com&rdquo; in running text.</li>" +
+    "<li>The mark is a location pin containing a paw. Do not separate the two, recolour " +
+    "them individually, rotate, stretch or add a drop shadow.</li>" +
+    "<li>Leave clear space around the mark equal to the width of the paw.</li>" +
+    "<li>Minimum size on screen: 24&nbsp;px for the mark alone.</li>" +
+    "<li>Do not place the mark on a background that leaves it below AA contrast.</li>" +
+    "</ul>" +
+    '<div class="table-wrap"><table class="facts-table">' +
+    "<thead><tr><th scope=\"col\">Colour</th><th scope=\"col\">Hex</th><th scope=\"col\">Use</th></tr></thead>" +
+    "<tbody>" +
+    "<tr><th scope=\"row\">Banyan</th><td>#1B5A4C</td><td>Primary green &mdash; links, buttons, the mark</td></tr>" +
+    "<tr><th scope=\"row\">Forest</th><td>#15241F</td><td>Headings and the footer background</td></tr>" +
+    "<tr><th scope=\"row\">Sand</th><td>#FAF5EC</td><td>Page background</td></tr>" +
+    "<tr><th scope=\"row\">Marigold</th><td>#E7A23B</td><td>Accent and update markers</td></tr>" +
+    "<tr><th scope=\"row\">Alert</th><td>#C5402F</td><td>Emergency and warning states only</td></tr>" +
+    "</tbody></table></div>" +
+    "<p>Headings are set in Bricolage Grotesque, body text in Hanken Grotesk.</p>" +
+
+    "<h2>Official channels</h2>" +
+    "<p>PattayaPets publishes at <strong>pattayapets.com</strong> only. Tim and Paemi&rsquo;s " +
+    "channels are listed on <a href=\"https://timpaemi.com/\" rel=\"author noopener\">timpaemi.com</a>. " +
+    "Any other account, page or site using this name is not us, and we would like to " +
+    "hear about it.</p>",
+  schema: [{
+    "@type": "AboutPage",
+    "@id": "https://pattayapets.com/press.html#aboutpage",
+    name: "Press & Media Kit",
+    description:
+      "PattayaPets press kit: boilerplate, coverage, verifiable facts, logo files, " +
+      "brand rules and press contact.",
+    publisher: { "@id": "https://pattayapets.com/#org" },
+    mainEntity: { "@id": "https://pattayapets.com/#org" },
+    inLanguage: "en"
+  }]
+}));
+
 module.exports = pages;

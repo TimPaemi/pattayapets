@@ -1013,11 +1013,19 @@ pages.push(importTopic({
       "established import process. <strong>Suvarnabhumi is the well-trodden port of " +
       "entry for pets</strong> &mdash; its quarantine station handles pet arrivals " +
       "routinely, and the steps are familiar to vets, airlines and relocation " +
-      "agents. U-Tapao is a smaller airport that mainly serves regional, charter and " +
-      "selected scheduled flights. Whether a pet can be imported through U-Tapao at " +
-      "all depends on the DLD clearance facilities there and on your airline " +
-      "carrying animals to it &mdash; do not assume it is possible. Confirm directly " +
-      "with the DLD and the airline before planning any U-Tapao arrival. See also " +
+      "agents.</p>" +
+      "<p><strong>U-Tapao cannot clear an imported pet.</strong> It has no Animal " +
+      "Quarantine Station, so it cannot be named as your port of entry on the R1/1 " +
+      "import permit application. It does not appear on the Thai Ministry of Foreign " +
+      "Affairs list of pet-clearing airports (revised January 2025, re-published " +
+      "February 2026), nor on the Department of Livestock Development&rsquo;s own map " +
+      "of its 59 quarantine stations (published October 2025) &mdash; which lists no " +
+      "station anywhere in Rayong province. The airport&rsquo;s operator lists no " +
+      "animal quarantine or veterinary facility. The six airports that do accept pet " +
+      "import applications are Suvarnabhumi, Don Mueang, Chiang Mai, Phuket, Samui " +
+      "and Krabi (through Trang&rsquo;s station). The U-Tapao expansion under the " +
+      "Eastern Economic Corridor programme broke ground in April 2026 and its " +
+      "published plans include no animal quarantine facility. See also " +
       "<a href=\"/bring-pet-to-thailand/thailand-pet-quarantine.html\">pet quarantine " +
       "in Thailand</a> for what happens when paperwork is not in order.</p>" },
     { h: "The practical reality for most owners", html:
