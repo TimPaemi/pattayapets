@@ -132,7 +132,7 @@ function euExportTimeline(routingIntro) {
     '<td>Thai vet + EU-approved lab</td></tr>' +
     '<tr><th scope="row">Months 1&ndash;3</th>' +
     '<td><strong>Wait three months</strong> from the blood sample date (non-listed third-country rule)</td>' +
-    '<td>EU Regulation 576/2013 framework</td></tr>' +
+    '<td>EU Regulation 2026/131 framework</td></tr>' +
     '<tr><th scope="row">6&ndash;8 weeks before flight</th>' +
     '<td>Book pet on a route entering via a <strong>designated traveller point of entry</strong></td>' +
     '<td>Airline / agent</td></tr>' +
@@ -210,7 +210,7 @@ pages.push(exp({
       '<td>Thai vet + EU-approved lab</td></tr>' +
       '<tr><th scope="row">Months 1&ndash;3</th>' +
       '<td><strong>Wait three months</strong> from the blood sample date (non-listed third-country rule)</td>' +
-      '<td>EU Regulation 576/2013 framework</td></tr>' +
+      '<td>EU Regulation 2026/131 framework</td></tr>' +
       '<tr><th scope="row">6&ndash;8 weeks before flight</th>' +
       '<td>Book pet on a route entering Germany via a <strong>designated traveller point of entry</strong></td>' +
       '<td>Airline / agent</td></tr>' +
@@ -391,40 +391,88 @@ pages.push(exp({
 pages.push(exp({
   slug: "to-finland", crumb: "To Finland",
   title: "Export Pet from Thailand to Finland (2026) | PattayaPets",
-  desc: "Thailand to Finland pet export: EU titer test, three-month wait, Ruokavirasto " +
-    "entry rules, tapeworm treatment for dogs and DLD export timeline.",
+  desc: "Thailand to Finland pet export: rabies titer, 90-day wait, Helsinki-Vantaa entry, " +
+    "the 24-120h tapeworm window and Finland's four-week dog register deadline.",
   h1: "Taking a pet from Thailand to Finland",
-  lede: "Finland applies the EU entry rules, with one extra requirement for dogs " +
-    "to plan around.",
+  lede: "Finland is the most straightforward EU country to fly a pet into from Bangkok, " +
+    "because there is a nonstop and because an accompanied pet clears at the Customs red " +
+    "channel with no appointment and no inspection fee. The two things that catch people " +
+    "out are which clock the tapeworm window runs on, and a registration deadline that " +
+    "only starts once you have landed.",
   officialExtra:
     "<p><strong>Finnish / EU sources:</strong> " +
-    "<a href=\"https://www.ruokavirasto.fi/en/animals/travellers/\" " +
-    "target=\"_blank\" rel=\"noopener nofollow\">Ruokavirasto pet travel</a>; " +
+    "<a href=\"https://www.ruokavirasto.fi/en/themes/import-and-export/import/animals-and-animal-products/animals-and-gametes/dogs-cats-and-ferrets/non-commercial-movement/\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">Ruokavirasto, non-commercial movement</a>; " +
+    "<a href=\"https://tulli.fi/en/restrictions/pets/travelling\" target=\"_blank\" " +
+    "rel=\"noopener nofollow\">Finnish Customs (Tulli), travelling with pets</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">EU pet movement</a>. " +
     "Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-finland.html\">bringing a pet from Finland</a>.</p>",
   sections: euExportSections({
-    routingIntro: "The EU titer test and three-month wait are usually the long pole for Finland entry.",
-    reqHeading: "What Finland / the EU requires from Thailand",
+    routingIntro: "The titer test and the 90-day wait are the long pole. Everything else on the Finnish side is unusually light.",
+    reqHeading: "What Finland requires that the rest of the EU does not",
     reqHtml: EU_ENTRY_REQ_LIST +
-      "<p>The Finnish Food Authority (Ruokavirasto) oversees pet entry. Finland " +
-      "also keeps the <strong>tapeworm (Echinococcus) treatment rule</strong>: a " +
-      "dog entering Finland must be treated against tapeworm by a vet within a set " +
-      "window before arrival (commonly 24 to 120 hours).</p>" + EU_TITER_TIP,
-    extraFails: "<ul><li><strong>Missing tapeworm treatment for dogs</strong> &mdash; confirm the current window with Ruokavirasto before you fly.</li></ul>"
+      "<p><strong>Ruokavirasto</strong> (the Finnish Food Authority) writes the rules, but for a " +
+      "pet arriving <em>with</em> you the border check is done by <strong>Tulli, Finnish " +
+      "Customs</strong> &mdash; not by a border vet. You walk the red channel at " +
+      "Helsinki-Vantaa, show the paperwork, and that is the whole procedure. " +
+      "<strong>No appointment, no pre-notification and no inspection fee.</strong></p>" +
+      "<p>Finland is one of only four EU states (with Ireland, Malta and Northern Ireland, " +
+      "plus Norway) that may still require <strong>tapeworm treatment against " +
+      "<em>Echinococcus multilocularis</em></strong>. Dogs only &mdash; cats and ferrets are " +
+      "exempt. There are two different windows, and which one applies depends on whether " +
+      "your pet is travelling with you:</p>" +
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">How the pet travels</th><th scope="col">Tapeworm window</th><th scope="col">Border check</th></tr></thead><tbody>' +
+      '<tr><th scope="row">With you, as cabin or checked baggage</th>' +
+      '<td><strong>24 to 120 hours</strong> before arrival (1 to 5 days)</td>' +
+      '<td>Tulli red channel. No fee, no booking.</td></tr>' +
+      '<tr><th scope="row">Without you, as manifest cargo</th>' +
+      '<td><strong>24 to 48 hours</strong> before arrival &mdash; a much tighter window</td>' +
+      '<td>Border vet at the Finnair COOL cargo terminal, Vantaa. 166 EUR, TRACES notice required.</td></tr>' +
+      '</tbody></table></div>' +
+      "<p><strong>The clock runs to the moment your pet crosses the Finnish border, not to " +
+      "the moment the plane leaves Bangkok.</strong> Ruokavirasto states this explicitly. On " +
+      "a nonstop that distinction costs you about eleven hours; routed through the Gulf it " +
+      "can be twenty or more, and it is the single most common reason a dog treated in " +
+      "Pattaya arrives outside the window. Treat late, not early, and have the vet write " +
+      "the <strong>date and the clock time</strong> on the certificate.</p>" +
+      "<p><strong>Helsinki-Vantaa is the only airport in Finland</strong> a pet from a " +
+      "non-EU country may enter through. There is also a trap in connecting flights: if " +
+      "you route through another EU country and your pet is in the cabin, the compliance " +
+      "check must happen <em>at the stopover</em>, not in Helsinki &mdash; and Ruokavirasto " +
+      "warns that the stopover airport may not offer one unless you arrange it. A nonstop " +
+      "removes the problem entirely.</p>" +
+      "<p><strong>Finland has no quarantine facility.</strong> There is no holding kennel " +
+      "to fix paperwork in. Ruokavirasto is blunt about the consequence: a non-compliant " +
+      "animal is returned to Thailand at your cost, or euthanised. This is the reason to be " +
+      "pedantic about the tapeworm timing rather than hopeful.</p>" +
+      "<p><strong>After you land: the dog register.</strong> Every dog imported into Finland " +
+      "must be entered in the national register <strong>within four weeks of arrival</strong>. " +
+      "10 EUR online, 20 EUR on paper. An unregistered, unidentified dog attracts a penalty " +
+      "from 300 EUR plus a municipal supervision fee. Cats and ferrets are exempt. Almost " +
+      "nobody arrives knowing about this, because it is not an entry requirement &mdash; it is " +
+      "an obligation that begins the day you get there.</p>" + EU_TITER_TIP,
+    extraFails: "<ul>" +
+      "<li><strong>Tapeworm treated against the departure time instead of the arrival time</strong> &mdash; the window closes on Finnish border crossing. Count backwards from landing.</li>" +
+      "<li><strong>Treated too early to be safe</strong> &mdash; 120 hours sounds generous until a delay or a missed connection pushes arrival past it. A dog treated at the 24-hour end has slack; one treated at 120 hours has none.</li>" +
+      "<li><strong>Missing clock time on the certificate</strong> &mdash; the date alone does not prove the window was met.</li>" +
+      "<li><strong>Connecting through an EU airport with the pet in the cabin</strong> and assuming Helsinki will check it &mdash; the check belongs to the first EU country you land in.</li>" +
+      "<li><strong>Forgetting the four-week register deadline</strong> once you have arrived and relaxed.</li>" +
+      "</ul>"
   }),
   faqs: [
-    ["Does my dog need tapeworm treatment to enter Finland?",
-     "<p>Yes &mdash; Finland requires a vet-administered tapeworm treatment for dogs within a set window before arrival. Confirm the current window with Ruokavirasto.</p>"],
-    ["How early should I start?",
-     "<p>Several months ahead if the titer test still has to be done &mdash; the three-month wait is unavoidable. Do the titer test as early as possible.</p>"],
-    ["Is the EU pet passport enough from Thailand?",
-     "<p>No. You need a third-country entry health certificate endorsed on the Thai side.</p>"],
-    ["Can my pet skip the three-month wait?",
-     "<p>Only with a valid pre-existing rabies titer test and current rabies vaccination.</p>"],
+    ["When exactly should the tapeworm treatment be given?",
+     "<p>Between 24 and 120 hours before your pet <em>arrives in Finland</em>, if it is travelling with you. Ruokavirasto counts from the border crossing, not from take-off. On the Bangkok nonstop, allow roughly eleven hours of flight plus your journey to the airport; treating the day before departure lands you comfortably inside the window. If your pet flies unaccompanied as cargo the window is tighter still, 24 to 48 hours.</p>"],
+    ["Is there a nonstop flight from Bangkok to Helsinki?",
+     "<p>Yes. Finnair operates a nonstop Bangkok to Helsinki service, currently on an A350, at roughly eleven hours. That is unusual among EU destinations and it matters for a pet: no transit hub, no second set of ground handling, and no stopover compliance check. Finnair quotes 120 to 130 EUR for a pet in the cabin (8 kg including the carrier) and 650 EUR in the hold. Confirm at booking that they will accept your pet in the hold on a Bangkok departure &mdash; policies are set by route and season.</p>"],
+    ["Do I need to tell anyone in Finland that I am coming?",
+     "<p>Not if your pet travels with you. There is no advance notice and no fee &mdash; you use the red channel at Customs on arrival. This is a real difference from Ireland, which requires you to file advance notice before you fly. If your pet travels as cargo without you, that changes: it becomes a commercial import needing a TRACES notification at least one working day ahead, and the inspection fee doubles if you skip it.</p>"],
+    ["Does my cat need the tapeworm treatment?",
+     "<p>No. The Echinococcus rule applies to dogs only. Cats and ferrets are exempt, and since 2026 cats are also outside Finland's registration requirement.</p>"],
     ["How does this differ from the EU hub page?",
-     "<p>The veterinary rules are the same EU-wide; this page adds Finland-specific tapeworm notes. See <a href=\"/take-pet-out-of-thailand/to-eu.html\">export to the EU</a>.</p>"]
+     "<p>The rabies groundwork is EU-wide, but Finland's handling is not. Customs rather than a vet does the border check, there is no fee and no advance notice for an accompanied pet, Helsinki-Vantaa is the only airport, there is no quarantine facility anywhere in the country, and every imported dog must be registered within four weeks of landing. See <a href=\"/take-pet-out-of-thailand/to-eu.html\">export to the EU</a> for the shared groundwork.</p>"]
   ]
 }));
 
@@ -510,39 +558,100 @@ pages.push(exp({
 pages.push(exp({
   slug: "to-ireland", crumb: "To Ireland",
   title: "Export Pet from Thailand to Ireland (2026) | PattayaPets",
-  desc: "Thailand to Ireland pet export: EU titer test, three-month wait, Department of " +
-    "Agriculture rules, tapeworm treatment for dogs and DLD export timeline.",
+  desc: "Thailand to Ireland pet export: mandatory advance notice, six entry points, " +
+    "wet-signature paperwork, no nonstop from Bangkok and Ireland's breed rules.",
   h1: "Taking a pet from Thailand to Ireland",
-  lede: "Ireland applies the EU entry rules, with one extra requirement for dogs.",
+  lede: "Ireland runs the strictest arrivals process of any EU country covered here. " +
+    "Advance notice is compulsory, only six ports and airports may be used, photocopied " +
+    "paperwork is refused outright, and there is no nonstop from Bangkok &mdash; so the " +
+    "hardest decision you will make is which airline carries your pet, not which forms " +
+    "you file.",
   officialExtra:
     "<p><strong>Irish / EU sources:</strong> " +
-    "<a href=\"https://www.gov.ie/en/department-of-agriculture-food-and-the-marine/publications/pet-travel/\" " +
-    "target=\"_blank\" rel=\"noopener nofollow\">Department of Agriculture pet travel</a>; " +
+    "<a href=\"http://www.pettravel.gov.ie/pets/dogscatsferrets/other/\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">DAFM pet travel, non-listed countries</a> " +
+    "(this is the page that covers Thailand, not the &ldquo;outside EU&rdquo; one); " +
+    "<a href=\"https://www.gov.ie/en/department-of-agriculture-food-and-the-marine/publications/advance-notice/\" " +
+    "target=\"_blank\" rel=\"noopener nofollow\">DAFM advance notice portal</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
     "rel=\"noopener nofollow\">EU pet movement</a>. " +
     "Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-ireland.html\">bringing a pet from Ireland</a>.</p>",
   sections: euExportSections({
-    routingIntro: "The EU titer test and three-month wait are usually the long pole for Ireland entry.",
-    reqHeading: "What Ireland / the EU requires from Thailand",
+    routingIntro: "The titer test sets your earliest departure date. After that, the flight routing is the hard part, because no aircraft flies Bangkok to Dublin without stopping.",
+    reqHeading: "What Ireland requires that the rest of the EU does not",
     reqHtml: EU_ENTRY_REQ_LIST +
-      "<p>The Department of Agriculture, Food and the Marine oversees pet entry. " +
-      "Ireland also keeps the <strong>tapeworm (Echinococcus) treatment rule</strong>: " +
-      "a dog entering Ireland must be treated against tapeworm by a vet within a " +
-      "set window before arrival (commonly 24 to 120 hours).</p>" + EU_TITER_TIP,
-    extraFails: "<ul><li><strong>Missing tapeworm treatment for dogs</strong> &mdash; confirm the current window with the Department before you fly.</li></ul>"
+      "<p>The <strong>Department of Agriculture, Food and the Marine (DAFM)</strong> runs pet " +
+      "entry, and it is materially stricter than most EU states on process rather than on " +
+      "veterinary substance:</p>" +
+      '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
+      '<th scope="col">Requirement</th><th scope="col">Detail</th></tr></thead><tbody>' +
+      '<tr><th scope="row">Advance notice</th>' +
+      '<td><strong>Compulsory</strong> since 23 October 2023, filed through DAFM&rsquo;s online imports portal before you travel. Most EU countries ask nothing of an accompanied pet.</td></tr>' +
+      '<tr><th scope="row">Points of entry</th>' +
+      '<td>Six only: <strong>Dublin, Cork and Shannon airports; Dublin Port, Ringaskiddy and Rosslare Europort</strong>. There is no designated entry point on the land border, so arriving via Northern Ireland is not a route for a Thai-origin pet.</td></tr>' +
+      '<tr><th scope="row">Paperwork format</th>' +
+      '<td><strong>Originals only, stamped, wet signature.</strong> DAFM states that photocopies and digital printouts are not acceptable.</td></tr>' +
+      '<tr><th scope="row">Tapeworm treatment</th>' +
+      '<td>Praziquantel, by a vet, <strong>24 to 120 hours</strong> before scheduled arrival. Dogs only. The certificate needs the <strong>date and the clock time</strong>.</td></tr>' +
+      '<tr><th scope="row">On arrival</th>' +
+      '<td>You may not leave the airport or port until the compliance check is done. A per-animal fee applies; DAFM does not publish the amount.</td></tr>' +
+      '</tbody></table></div>' +
+      "<p><strong>There is no nonstop from Bangkok to Dublin</strong>, and this shapes the " +
+      "whole trip. Your pet has to change aircraft somewhere, and the carrier you pick " +
+      "decides whether it travels as checked baggage or as freight &mdash; which in turn " +
+      "decides where in Dublin it is cleared and during which hours:</p>" +
+      "<ul>" +
+      "<li><strong>Qatar Airways via Doha</strong> is usually the cleanest. Qatar carries " +
+      "dogs and cats in the hold as checked baggage and flies both Bangkok to Doha and Doha " +
+      "to Dublin, so the animal stays on one carrier. <strong>The trap:</strong> Qatar does " +
+      "not accept hold animals transferred in from another airline. A cheap Thai Airways or " +
+      "Bangkok Airways feeder onto the Doha flight will break the chain and your pet will " +
+      "not be loaded. Book the whole thing on one Qatar ticket.</li>" +
+      "<li><strong>Emirates via Dubai</strong> only allows pets in the hold as baggage when " +
+      "the journey <em>starts</em> in Dubai. Departing Bangkok it must go as manifest cargo, " +
+      "which pushes clearance into Dublin&rsquo;s Border Control Post &mdash; office hours " +
+      "Monday to Friday, and out-of-hours movements need written pre-approval before you " +
+      "book the flight.</li>" +
+      "<li><strong>Aer Lingus</strong> never carries pets in the cabin, and refuses " +
+      "snub-nosed breeds and Ireland&rsquo;s restricted breeds in the hold too. Do not " +
+      "assume the final leg into Dublin will take your dog.</li>" +
+      "</ul>" +
+      "<p><strong>Two Irish breed rules bite harder from Thailand than from anywhere else.</strong> " +
+      "<strong>XL Bully type dogs cannot be imported at all</strong> &mdash; the ban took effect " +
+      "on 1 October 2024 and the exemption window has closed. Separately, <strong>a dog with " +
+      "cropped ears needs a Ministerial import licence</strong> under the Ear-Cropping of Dogs " +
+      "Regulations 2023, and the licence is only granted where a vet removed the ear to treat " +
+      "injury or disease. The rule catches dogs cropped before it came in and dogs cropped " +
+      "abroad. Cropped Dobermans, Bully types and Great Danes are not unusual in Thailand, so " +
+      "check your dog against this before you spend anything on a titer test. Ireland also " +
+      "keeps ten <em>restricted</em> breeds &mdash; including the German Shepherd, Rottweiler, " +
+      "Dobermann and Staffordshire Bull Terrier &mdash; which may be imported but must be " +
+      "muzzled and led on a short leash in public by someone over sixteen.</p>" +
+      "<p>One more thing that changed in 2026: an <strong>EU pet passport is now only valid " +
+      "for an owner whose main residence is in the EU</strong>, including passports issued " +
+      "before the change. An Irish citizen who has been living in Thailand can no longer " +
+      "travel on an old Irish pet passport and needs the third-country health certificate.</p>" + EU_TITER_TIP,
+    extraFails: "<ul>" +
+      "<li><strong>No advance notice filed</strong> &mdash; Ireland requires it and most people arrive assuming EU means no paperwork on the destination side.</li>" +
+      "<li><strong>Photocopied or reprinted certificates</strong> &mdash; DAFM wants originals with a wet signature. A scan emailed by your Thai vet is not enough.</li>" +
+      "<li><strong>A mixed-airline itinerary through Doha</strong> &mdash; Qatar will not accept a hold animal handed over from another carrier.</li>" +
+      "<li><strong>Booking a cargo arrival outside the Border Control Post&rsquo;s hours</strong> without written pre-approval.</li>" +
+      "<li><strong>Buying a ticket for a cropped-ear dog or an XL Bully type</strong> before checking the breed rules &mdash; one needs a licence, the other cannot come at all.</li>" +
+      "<li><strong>Missing clock time on the tapeworm entry</strong> &mdash; the date alone does not prove the 24 to 120 hour window.</li>" +
+      "</ul>"
   }),
   faqs: [
-    ["Does my dog need tapeworm treatment to enter Ireland?",
-     "<p>Yes &mdash; Ireland requires a vet-administered tapeworm treatment for dogs within a set window before arrival. Confirm the current window with the Department of Agriculture, Food and the Marine.</p>"],
-    ["Is there a route to avoid the three-month wait?",
-     "<p>Only a valid pre-existing rabies titer test avoids it. If the test still has to be done from Thailand, the three-month wait applies.</p>"],
-    ["Is the EU pet passport enough from Thailand?",
-     "<p>No. You need a third-country entry health certificate endorsed on the Thai side.</p>"],
-    ["How early should I start?",
-     "<p>Several months ahead if the titer test still has to be done from Pattaya.</p>"],
+    ["Is there a direct flight from Bangkok to Dublin?",
+     "<p>No, and there is no sign of one. Every route connects, most often through Doha, Dubai, or a European hub. That makes the airline choice the critical decision: Qatar Airways will carry a pet in the hold on a single through-ticket via Doha, whereas an Emirates routing from Bangkok forces the animal into manifest cargo and a weekday-hours clearance at Dublin&rsquo;s Border Control Post.</p>"],
+    ["Do I really have to file advance notice?",
+     "<p>Yes. It has been compulsory since October 2023 and is filed through DAFM&rsquo;s online imports portal. File at least 24 hours before you travel, and in practice about a week ahead is what DAFM guidance leans toward. You also may not leave the airport or port on arrival until the compliance check has been carried out.</p>"],
+    ["Can I bring my dog in through Northern Ireland or the UK?",
+     "<p>Practically, no. A pet from a non-listed country such as Thailand may only enter through the six designated points, all of which are airports and seaports, and the health certificate has to be endorsed by an official at that point of entry. There is no designated entry point on the land border, so a dog driven down from Belfast has no lawful endorsement.</p>"],
+    ["My dog has cropped ears. Is that a problem?",
+     "<p>Yes, and it is worth resolving before you spend money on anything else. Ireland requires a Ministerial import licence for a dog with cropped ears, granted only where a vet removed the ear to treat injury or disease, and it applies regardless of where or when the cropping happened. Separately, XL Bully type dogs cannot be imported at all.</p>"],
     ["How does this differ from the EU hub page?",
-     "<p>The veterinary rules are the same EU-wide; this page adds Ireland-specific tapeworm notes. See <a href=\"/take-pet-out-of-thailand/to-eu.html\">export to the EU</a>.</p>"]
+     "<p>The rabies groundwork is EU-wide, but Ireland's arrival process is its own thing: compulsory advance notice, six permitted entry points, original wet-signature documents, breed rules that block some dogs outright, and no nonstop from Bangkok. See <a href=\"/take-pet-out-of-thailand/to-eu.html\">export to the EU</a> for the shared groundwork.</p>"]
   ]
 }));
 
