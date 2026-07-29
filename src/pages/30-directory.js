@@ -59,10 +59,10 @@ const HUB_DESC = {
   vets: "Vets and animal hospitals in Pattaya — 24-hour emergency care, vaccinations and surgery. Verified facts pages; verdicts after anonymous visits.",
   groomers: "Dog and cat groomers in Pattaya — baths, breed clips, nail trims and heat-aware coat care. Verified facts pages; verdicts after anonymous visits.",
   boarding: "Pet boarding, kennels and dog hotels in Pattaya for travel and work days. Verified facts pages; verdicts after anonymous visits.",
-  "pet-shops": "Pet shops in Pattaya for food, litter, toys and supplies. Verified facts pages; verdicts after anonymous visits.",
-  trainers: "Dog trainers and obedience classes in Pattaya. Verified facts pages; verdicts after anonymous visits.",
-  "pet-relocation": "Pet relocation agents for import and export to and from Thailand — DLD permits, health certificates and flights.",
-  "mobile-vets": "Mobile and home-visit vets in Pattaya — useful for nervous pets and owners without a car. Verified facts pages."
+  "pet-shops": "Pet shops in Pattaya for food, litter, toys and supplies for dogs, cats and household basics. Verified facts pages; verdicts after anonymous visits.",
+  trainers: "Dog trainers, obedience classes, puppy training and behaviour support for local owners in Pattaya. Verified facts pages; verdicts after anonymous visits.",
+  "pet-relocation": "Pet relocation agents for import and export to and from Thailand — DLD permits, health certificates and flights for moves to and from Thailand.",
+  "mobile-vets": "Mobile and home-visit vets in Pattaya — useful for nervous pets and owners without a car. Coverage, fees and availability vary; confirm before booking."
 };
 
 const CAT_GUIDES = {
@@ -80,6 +80,7 @@ const CAT_GUIDES = {
   ],
   groomers: [
     { name: "Dog grooming in Pattaya", path: "/groomers/dog-grooming-pattaya.html" },
+    { name: "Doggie Star Grooming", path: "/groomers/doggie-star-grooming-pattaya.html" },
     { name: "Mobile & home-visit vets", path: "/mobile-vets/" },
     { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html" },
     { name: "Dental care", path: "/pet-health-pattaya/dental-care.html" },
@@ -1032,7 +1033,8 @@ Object.keys(AREAS).forEach(function (key) {
     title: "Vets & Pet Services in " + area.name + " | PattayaPets",
     ogTitle: "Pet services in " + area.name + ", Pattaya",
     description: "Find vets, groomers, boarding, pet shops and pet services in " +
-      area.name + ", Pattaya. " + area.blurb,
+      area.name + ", Pattaya. " + area.blurb +
+      (key === "central-pattaya" || key === "naklua" ? "" : " Browse local options."),
     crumb: area.name,
     breadcrumbs: [{ name: "Directory", path: "/directory.html" }],
     updated: "2026-06-04",

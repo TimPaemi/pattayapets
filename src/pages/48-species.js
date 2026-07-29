@@ -127,8 +127,7 @@ pages.push(cat({
 pages.push(cat({
   slug: "cat-vaccinations-thailand", crumb: "Vaccinations & health",
   title: "Cat Vaccinations Thailand | Schedule for Cats in Pattaya | PattayaPets",
-  desc: "An orientation to cat vaccinations, parasite prevention, neutering and " +
-    "routine health for cat owners in Pattaya and Thailand.",
+  desc: "An orientation to cat vaccinations in Thailand: the core shots and their timing, rabies, parasite prevention, neutering and routine health care in Pattaya.",
   h1: "Cat vaccinations and routine health in Thailand",
   lede: "Keeping a cat healthy in Pattaya starts with a few consistent routines. " +
     "This guide outlines them, so you know what to ask.",
@@ -197,8 +196,7 @@ pages.push(cat({
 pages.push(cat({
   slug: "getting-a-cat-in-pattaya", crumb: "Getting a cat",
   title: "Getting a Cat in Pattaya | Adopt, Buy or Rescue | PattayaPets",
-  desc: "How to get a cat in Pattaya: adopting from shelters, taking in a street " +
-    "kitten, what to do first, and settling a new cat into your home.",
+  desc: "How to get a cat in Pattaya: adopting from a shelter, taking in a street kitten, the first vet visit, and settling a nervous new cat into your home safely.",
   h1: "Getting a cat in Pattaya: adopt, kitten or street cat",
   lede: "There is no shortage of cats in Pattaya that need a home &mdash; the " +
     "question is mostly how to do it well for the cat and for you.",
@@ -343,8 +341,7 @@ pages.push(cat({
 pages.push(dog({
   slug: "dog-vaccinations-thailand", crumb: "Vaccinations & parasites",
   title: "Dog Vaccinations Thailand | Schedule & Parasite Prevention | PattayaPets",
-  desc: "An orientation to dog vaccinations, rabies law, heartworm and year-round " +
-    "parasite prevention for dog owners in Pattaya and Thailand.",
+  desc: "An orientation to dog vaccinations in Thailand: the core shots, rabies law, heartworm and year-round parasite prevention for dog owners in Pattaya.",
   h1: "Dog vaccinations and parasite prevention in Thailand",
   lede: "Preventive routines matter most for dogs in Pattaya. This guide outlines " +
     "the core routines to discuss with your vet.",
@@ -418,8 +415,7 @@ pages.push(dog({
 pages.push(dog({
   slug: "choosing-a-dog-for-the-climate", crumb: "Choosing a dog",
   title: "Choosing a Dog for Pattaya's Heat | Breeds & Climate Fit | PattayaPets",
-  desc: "Which dogs cope with Pattaya's heat and which struggle &mdash; coat, " +
-    "build and flat-faced breeds, and the case for adopting a local dog.",
+  desc: "Which dogs cope with Pattaya's heat and which struggle: coat type, build and flat-faced breeds, plus the case for adopting a local dog already used to it.",
   h1: "Choosing a dog suited to Pattaya's heat",
   lede: "If you are choosing a dog while living in Pattaya, the climate should be " +
     "near the top of the list &mdash; it shapes daily life for both of you.",
@@ -485,8 +481,7 @@ pages.push(dog({
 pages.push(dog({
   slug: "puppy-care-pattaya", crumb: "Puppy care",
   title: "Raising a Puppy in Pattaya | Training, Heat & Socialisation | PattayaPets",
-  desc: "Raising a puppy in Pattaya: the vaccination series, parasite prevention, " +
-    "the heat, safe socialisation, training and neutering.",
+  desc: "Raising a puppy in Pattaya: the vaccination series and its timing, parasite prevention, coping with the heat, safe socialisation, training and neutering.",
   h1: "Bringing up a puppy in Pattaya",
   lede: "The first months shape a dog&rsquo;s life. In Pattaya, that means the usual " +
     "puppy basics plus a few local climate and city considerations.",
@@ -558,7 +553,7 @@ pages.push(dog({
   slug: "common-dog-health-issues-tropics", crumb: "Tropical health issues",
   title: "Common Dog Health Issues in Pattaya | Tropical Climate Risks | PattayaPets",
   desc: "The health problems Pattaya's heat and humidity make more common in " +
-    "dogs &mdash; tick-borne disease, skin and ear infections, parasites and heat.",
+    "dogs &mdash; tick-borne disease, skin and ear infections, parasites and heat-related risks.",
   h1: "Common dog health issues in a tropical climate",
   lede: "A hot, humid, parasite-rich climate brings its own pattern of dog " +
     "health problems. Knowing the pattern helps you prevent and spot them early.",

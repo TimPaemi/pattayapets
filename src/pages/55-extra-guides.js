@@ -30,7 +30,7 @@ pages.push(article({
   path: "/pet-emergency/venomous-creatures.html",
   title: "Venomous Creatures & Pets Pattaya | Toads, Centipedes & Stings | PattayaPets",
   desc: "Beyond snakes: the toads, centipedes, bees and other small creatures in " +
-    "Thailand that can hurt or poison a curious pet, and what to do.",
+    "Thailand that can hurt or poison a curious pet, and what to do in gardens and homes.",
   crumb: "Toads, centipedes & stings",
   breadcrumbs: [GUIDES, EMERG],
   eyebrow: "Pet emergencies",
@@ -103,8 +103,7 @@ pages.push(article({
 pages.push(article({
   path: "/adopt-a-pet-pattaya/fostering.html",
   title: "Fostering a Pet in Pattaya | Short-Term Care That Saves Lives | PattayaPets",
-  desc: "What fostering a rescue dog or cat in Pattaya involves, why it matters so " +
-    "much, what it asks of you, and how to start.",
+  desc: "What fostering a rescue dog or cat in Pattaya involves: why shelters depend on it, what it asks of your time and home, the costs, and how to get started.",
   crumb: "Fostering",
   breadcrumbs: [GUIDES, ADOPT],
   eyebrow: "Adopt a pet in Pattaya",
@@ -382,7 +381,7 @@ pages.push(article({
   path: "/pet-health-pattaya/healthy-weight.html",
   title: "Pet Obesity Pattaya | Healthy Weight in a Hot Climate | PattayaPets",
   desc: "Why a healthy weight matters even more in Pattaya's heat, how to tell if " +
-    "a pet is overweight, why pets gain weight, and how to manage it.",
+    "a pet is overweight, why pets gain weight, and how to manage it for dogs and cats.",
   crumb: "Healthy weight",
   breadcrumbs: [GUIDES, HEALTH],
   eyebrow: "Pet health in Pattaya",
@@ -456,8 +455,7 @@ pages.push(article({
 pages.push(article({
   path: "/owning-a-pet-in-pattaya/travelling-in-thailand.html",
   title: "Travelling in Thailand with a Pet | Road Trips & Domestic Flights | PattayaPets",
-  desc: "Taking a pet beyond Pattaya: road trips, domestic flights, pet-friendly " +
-    "accommodation, where pets are restricted, and the heat.",
+  desc: "Taking a pet beyond Pattaya: road trips, domestic flights and their rules, pet-friendly accommodation, where pets are restricted, and managing the heat.",
   crumb: "Travelling in Thailand",
   breadcrumbs: [GUIDES, OWNING],
   eyebrow: "Owning a pet in Pattaya",

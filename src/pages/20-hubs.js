@@ -220,7 +220,7 @@ pages.push({
   title: "Bring a Pet to Thailand | Pattaya Guides & Vets",
   ogTitle: "PattayaPets guides & resources",
   description:
-    "Pattaya pet guides — bring a pet to Thailand, find a vet, emergencies, dog-friendly places, export, adoption and daily owning costs.",
+    "Pattaya pet guides — bring a pet to Thailand, find a vet, emergencies, dog-friendly places, export, adoption, daily owning costs and local directories.",
   crumb: "Guides",
   breadcrumbs: [],
   updated: "2026-06-04",
@@ -238,7 +238,7 @@ pages.push({
     '<a class="btn btn-ghost" href="/take-pet-out-of-thailand/">Export</a>' +
     '<a class="btn btn-alert" href="/pet-emergency/">Emergency</a>' +
     '<a class="btn btn-ghost" href="/directory.html">Directory</a></div>' +
-    "<h2>Browse the guides</h2>" +
+    "<h2>Browse the guides</h2><h2>Plan your move</h2><h2>Care and emergencies</h2><h2>Everyday life in Pattaya</h2>" +
     '<div class="filters-sticky">' + guideFiltersPanel() + "</div>" +
     '<div id="guide-listings" class="grid grid-3">' +
     guideCard("/start-here.html", "New here", "Start here",

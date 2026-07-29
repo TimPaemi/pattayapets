@@ -249,7 +249,7 @@ pages.push(health({
   slug: "parvovirus", crumb: "Parvovirus",
   title: "Parvovirus in Dogs Pattaya | Signs, Prevention & What to Do | PattayaPets",
   desc: "What parvovirus is, why it is so dangerous for unvaccinated puppies in " +
-    "Pattaya, the warning signs, and why vaccination is the protection.",
+    "Pattaya, the warning signs, and why vaccination is the protection for young dogs.",
   h1: "Parvovirus: deadly, and preventable",
   lede: "Parvovirus is one of the most dangerous illnesses an unvaccinated puppy " +
     "can meet &mdash; and one of the most preventable.",
@@ -322,7 +322,7 @@ pages.push(health({
   slug: "skin-and-ear-problems", crumb: "Skin & ear problems",
   title: "Pet Skin & Ear Problems Pattaya | Heat, Humidity & Allergies | PattayaPets",
   desc: "Why heat and humidity make skin infections, hot spots and ear infections " +
-    "so common in Pattaya pets, and what helps prevent and manage them.",
+    "so common in Pattaya pets, and what helps prevent and manage them in dogs and cats.",
   h1: "Skin and ear problems in a humid climate",
   lede: "Heat and humidity are hard on skin. Skin and ear trouble is one of the " +
     "most common reasons Pattaya pets end up at the vet.",

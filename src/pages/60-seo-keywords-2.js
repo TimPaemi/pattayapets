@@ -153,11 +153,11 @@ pages.push(article({
   ],
   faqs: rb.mergeFaqs([
     ["How long is the drive from Bangkok airport to Pattaya with a pet?",
-     "<p>Usually 90–120 minutes from Suvarnabhumi to central Pattaya; 30–45 minutes from U-Tapao. Traffic can add significantly on weekends and holidays.</p>"],
+     "<p>Allow 90–120 minutes from Suvarnabhumi to central Pattaya and 30–45 minutes from U-Tapao. Traffic can add significantly on weekends and holidays.</p>"],
     ["Can I take my dog in a Bangkok taxi from the airport?",
      "<p>Sometimes, if the dog is in a secure carrier and the driver agrees. Pre-booking a pet-friendly private transfer is more reliable.</p>"],
     ["Should I go straight to Pattaya after pet import?",
-     "<p>Many owners do, if housing is ready. Others rest one night near the airport or in Pattaya — plan water, shade and a vet visit within the first week.</p>"],
+     "<p>Yes, if your housing is ready. Others rest one night near the airport or in Pattaya — plan water, shade and a vet visit within the first week.</p>"],
     ["Is U-Tapao better than Bangkok for pets moving to Pattaya?",
      "<p>No. U-Tapao is closer to Pattaya, but it has no DLD Animal Quarantine Station, so it cannot clear an imported pet. Fly into Suvarnabhumi.</p>"],
     ["Who can pick up my pet from Suvarnabhumi AQS?",
@@ -175,8 +175,7 @@ pages.push(article({
 pages.push(article({
   path: "/owning-a-pet-in-pattaya/pet-taxi-pattaya.html",
   title: "Pet Taxi Pattaya | Airport & Vet Transport | PattayaPets",
-  desc: "Pet taxi and private pet transport in Pattaya — airport runs, vet trips, Bangkok transfers and relocation agents who move animals by road.",
-  crumb: "Pet taxi",
+  desc: "Pet taxi and private pet transport in Pattaya: airport runs, vet trips, Bangkok transfers, and the relocation agents who move animals safely by road.",
   breadcrumbs: [GUIDES, OWNING],
   eyebrow: "Owning a pet in Pattaya",
   h1: "Pet taxi and private pet transport in Pattaya",

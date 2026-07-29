@@ -40,7 +40,7 @@ pages.push(hazard({
   slug: "choking", crumb: "Choking",
   title: "Pet Choking Pattaya | What to Do Before the Vet | PattayaPets",
   desc: "Recognising choking and an airway blockage in a dog or cat, what to do, " +
-    "what not to do, and how to prevent it.",
+    "what not to do, how to prevent it, and why urgent veterinary help matters.",
   h1: "If your pet is choking",
   lede: "Choking is frightening and fast. Recognising it, and getting to a vet " +
     "without delay, matters more than any single technique.",
@@ -123,7 +123,7 @@ pages.push(hazard({
   slug: "road-accident", crumb: "Road accidents",
   title: "Pet Hit by a Car Pattaya | Road Accident First Steps | PattayaPets",
   desc: "What to do if your dog or cat is hit by a vehicle in Pattaya: staying " +
-    "safe, moving an injured pet, and why a vet check is essential.",
+    "safe, moving an injured pet, and why a vet check is essential after a collision.",
   h1: "If your pet is hit by a vehicle",
   lede: "Pattaya&rsquo;s roads are busy and fast, and a pet that gets loose near " +
     "traffic is at real risk. The first few minutes matter.",

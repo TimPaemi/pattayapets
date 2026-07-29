@@ -462,7 +462,7 @@ pages.push(hazard({
   slug: "ticks-and-fleas", crumb: "Ticks & fleas",
   title: "Ticks & Fleas on Pets in Pattaya | Prevention & Treatment | PattayaPets",
   desc: "Thailand's tropical climate means ticks and fleas all year. Why " +
-    "prevention matters for pets in Pattaya, and what to watch for.",
+    "prevention matters for pets in Pattaya, and what to watch for on walks and at home.",
   h1: "Ticks &amp; fleas in a tropical climate",
   lede: "In a temperate country, parasites have an off-season. In Pattaya they do " +
     "not &mdash; which changes how you protect your pet.",
@@ -543,7 +543,7 @@ pages.push(hazard({
   slug: "snake-bites", crumb: "Snake bites",
   title: "Snake Bite in Dogs & Cats Pattaya | What to Do & Prevention | PattayaPets",
   desc: "Thailand has venomous snakes. How to lower the risk to your pet around " +
-    "Pattaya, and what to do if you suspect a snake bite.",
+    "Pattaya, and what to do if you suspect a snake bite in gardens and green spaces.",
   h1: "Snakes and your pet",
   lede: "Thailand is home to venomous snakes, and a curious dog or cat in a " +
     "garden is exactly the sort of thing that finds one.",
@@ -622,7 +622,7 @@ pages.push(hazard({
   slug: "street-dog-encounters", crumb: "Street dogs",
   title: "Street Dog Encounters Pattaya | Walking Your Dog Safely | PattayaPets",
   desc: "Pattaya has free-roaming street dogs. How to walk your own dog safely, " +
-    "handle an encounter, and why rabies vaccination matters.",
+    "handle an encounter, and why rabies vaccination matters. Covers beach and soi walks.",
   h1: "Walking safely around Pattaya&rsquo;s street dogs",
   lede: "Free-roaming &lsquo;soi dogs&rsquo; are part of life in Pattaya. Most " +
     "want nothing to do with you &mdash; but a walk routine that respects them " +

@@ -121,7 +121,7 @@ pages.push(hub({
   title: "Cats in Pattaya | Housing, Health & Vet Guide | PattayaPets",
   image: "/assets/img/og-cats.png",
   desc: "Everything for cat owners in Pattaya: vets, hot-climate care, bringing " +
-    "or adopting a cat, and keeping a cat safe and happy in the tropics.",
+    "or adopting a cat, and keeping a cat safe and happy indoors in the tropics.",
   crumb: "Cats",
   breadcrumbs: [],
   eyebrow: "Species hub",
@@ -195,7 +195,7 @@ pages.push(hub({
   title: "Dogs in Pattaya | Walks, Training & Vet Guide | PattayaPets",
   image: "/assets/img/og-dogs.png",
   desc: "Everything for dog owners in Pattaya: vets, walking, training, " +
-    "dog-friendly places, hot-climate care, and bringing or adopting a dog.",
+    "dog-friendly places, hot-climate care, and bringing or adopting a dog for everyday local life.",
   crumb: "Dogs",
   breadcrumbs: [],
   eyebrow: "Species hub",

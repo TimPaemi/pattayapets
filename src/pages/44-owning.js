@@ -106,8 +106,7 @@ function own(o) {
 pages.push(own({
   slug: "cost-of-owning-a-pet", crumb: "What it costs",
   title: "Cost of Owning a Pet in Pattaya | Monthly Budget Guide | PattayaPets",
-  desc: "A realistic look at the monthly cost of owning a dog or cat in Pattaya — " +
-    "food, vet care, preventatives, grooming and boarding.",
+  desc: "A realistic look at the monthly cost of owning a dog or cat in Pattaya: food, vet care, preventatives, grooming, boarding and the costs people forget.",
   h1: "What it costs to own a pet in Pattaya",
   lede: "The good news for pet owners: routine pet care in Pattaya is generally " +
     "affordable by Western standards. Here is where the money goes.",
@@ -196,8 +195,7 @@ pages.push(own({
 pages.push(own({
   slug: "hot-climate-pet-care", crumb: "Hot-climate pet care",
   title: "Hot-Climate Pet Care Pattaya | Heatstroke, Walks & Paw Safety | PattayaPets",
-  desc: "How to keep a dog or cat safe and comfortable in Pattaya's heat and " +
-    "humidity — water, walk timing, cooling, paws, coat and parasites.",
+  desc: "How to keep a dog or cat safe in Pattaya's heat and humidity: water, walk timing, hot pavement, cooling, coat care, paws and year-round parasite risk.",
   h1: "Hot-climate pet care",
   lede: "If you are new to the tropics, this is the adjustment that matters most. " +
     "Pattaya&rsquo;s heat is constant, and pets rely on you to manage it.",
@@ -350,7 +348,7 @@ pages.push(own({
   slug: "where-to-walk-your-dog", crumb: "Where to walk your dog",
   title: "Where to Walk Your Dog in Pattaya | Routes, Timing & Safety | PattayaPets",
   desc: "Building a safe, cool-hours dog-walking routine in Pattaya — the beach, " +
-    "quiet sois, green space, and managing heat and street dogs.",
+    "quiet sois, green space, and managing heat and street dogs at cool hours.",
   h1: "Where and how to walk your dog in Pattaya",
   lede: "A good walking routine in Pattaya is less about finding a perfect park " +
     "and more about timing, route and a little local knowledge.",
@@ -443,7 +441,7 @@ pages.push(own({
   slug: "dog-registration-thailand", crumb: "Registration & the law",
   title: "Dog Registration Thailand | Rabies Law & Local Rules | PattayaPets",
   desc: "Pet law for owners in Pattaya: the legal requirement to vaccinate " +
-    "against rabies, local dog registration, and responsible-ownership rules.",
+    "against rabies, local dog registration, and responsible-ownership rules in your area.",
   h1: "Dog registration and the law",
   lede: "Thailand has real legal duties for pet owners &mdash; rabies vaccination " +
     "chief among them &mdash; and some local registration rules on top.",
@@ -515,7 +513,7 @@ pages.push(own({
     ["What happens if my pet's rabies vaccine lapses?",
      "<p>You are out of compliance with Thai law and may need to restart vaccination intervals for travel. Book a booster before the expiry date on the certificate.</p>"],
     ["Does my condo need proof of registration?",
-     "<p>Some buildings ask for vaccination or registration copies when you move in with a pet — have scans ready alongside your lease permission.</p>"],
+     "<p>Yes, some buildings ask for vaccination or registration copies when you move in with a pet. Have scans ready alongside your lease permission.</p>"],
     ["Who can vaccinate against rabies in Thailand?",
      "<p>Licensed veterinarians administer rabies vaccines and issue the certificates you need for registration and travel. Keep the official certificate, not just a clinic receipt.</p>"],
     ["Are there breed-specific bans in Pattaya?",
@@ -533,7 +531,7 @@ pages.push(own({
   slug: "where-to-buy-pet-food", crumb: "Where to buy pet food",
   title: "Where to Buy Pet Food in Pattaya | Shops, Supermarkets & Online | PattayaPets",
   desc: "Where to buy pet food and supplies in Pattaya — pet shops, supermarkets, " +
-    "online delivery, and finding premium and prescription diets.",
+    "online delivery, and finding premium and prescription diets for daily feeding.",
   h1: "Where to buy pet food in Pattaya",
   lede: "Feeding a pet in Pattaya is easy for everyday food, and a little more " +
     "planning for premium or prescription diets.",

@@ -193,6 +193,8 @@ pages.push(prosePage({
     'Tim. ' +
     "Reviews are bylined to The Editors. See the " +
     '<a href="/masthead.html">masthead</a> for how bylines and the publication work.</p>' +
+    "<p>The network shares its editorial method across its Pattaya publications. " +
+    "PattayaPets applies that method to local pet businesses and owner guides.</p>" +
     "<h2>How it is funded</h2>" +
     "<p>By TIMPAEMI Co., Ltd. directly. There are no ads, no sponsorships, no " +
     "affiliate links, no commissions and no paid placements anywhere on the site. " +
@@ -294,6 +296,7 @@ pages.push(prosePage({
   title: "Contact PattayaPets | Corrections, Tips & Listing Updates",
   desc: "Contact PattayaPets — submit a tip, report a correction, or update a business listing. Editorial publication for Pattaya pet owners.",
   crumb: "Contact",
+  desc: "Contact PattayaPets — submit a tip, report a correction, or update a business listing. Editorial publication for Pattaya pet owners, with no paid placement.",
   eyebrow: "Get in touch",
   h1: "Contact PattayaPets",
   linkTopic: "general",
@@ -333,6 +336,7 @@ pages.push(prosePage({
   title: "PattayaPets Masthead | Who Writes the Directory & Guides",
   desc: "The PattayaPets masthead — who produces the directory and guides, and what our bylines mean.",
   crumb: "Masthead",
+  desc: "The PattayaPets masthead: the editors, publisher and editorial method behind the directory and guides, including the bylines and standards behind every page.",
   eyebrow: "The publication",
   h1: "Masthead",
   linkTopic: "general",
@@ -364,6 +368,7 @@ pages.push(prosePage({
   title: "Report a Correction | PattayaPets Accuracy Policy",
   desc: "How PattayaPets handles corrections. Spotted a factual error? Here is how to report it, and our log of published corrections.",
   crumb: "Corrections",
+  desc: "How PattayaPets handles corrections. Spotted a factual error? Here is how to report it, and our log of published corrections. We correct errors in plain sight.",
   eyebrow: "Accuracy",
   h1: "Corrections",
   linkTopic: "general",
@@ -431,7 +436,7 @@ pages.push(prosePage({
 pages.push(prosePage({
   path: "/terms.html",
   title: "Terms of Use | PattayaPets",
-  desc: "Terms of use for PattayaPets: what the guide is, how facts are checked, and where our responsibility ends. Not veterinary advice.",
+  desc: "Terms of use for PattayaPets: what the guide is, how facts are checked, and where our responsibility ends. Not veterinary advice, with no paid listings.",
   crumb: "Terms",
   eyebrow: "The legal bit",
   h1: "Terms of use",
@@ -452,7 +457,7 @@ pages.push(prosePage({
 pages.push(prosePage({
   path: "/privacy.html",
   title: "Privacy Notice | PattayaPets Analytics & Data",
-  desc: "What PattayaPets collects: anonymised GA4, optional Cloudflare analytics, and email when you contact us. No ads, accounts, or data sales.",
+  desc: "What PattayaPets collects: anonymised GA4 and Cloudflare analytics, and email when you contact us. No ads, accounts, data sales, or cross-site tracking cookies.",
   crumb: "Privacy",
   eyebrow: "Your privacy",
   h1: "Privacy notice",
@@ -491,6 +496,7 @@ pages.push(prosePage({
   path: "/accessibility.html",
   title: "Accessibility Statement | WCAG 2.2 AA | PattayaPets",
   desc: "How PattayaPets meets WCAG 2.2 AA — keyboard navigation, screen readers, skip links, and how to report an accessibility problem.",
+  desc: "PattayaPets accessibility: WCAG 2.2 AA, keyboard navigation, screen-reader support, skip links, browser zoom and ways to report a problem to us.",
   crumb: "Accessibility",
   eyebrow: "Accessibility",
   h1: "Accessibility statement",

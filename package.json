@@ -2,7 +2,7 @@
   "name": "pattayapets",
   "version": "0.1.0",
   "private": true,
-  "description": "PattayaPets.com — the honest pet resource for Pattaya. Editorial directory and guides.",
+  "description": "PattayaPets.com \u2014 the honest pet resource for Pattaya. Editorial directory and guides.",
   "license": "UNLICENSED",
   "scripts": {
     "prebuild": "node tools/make-images.js",
@@ -31,7 +31,8 @@
     "deploy": "npm run build:all && npm run deploy:check && node tools/deploy.mjs && npm run indexnow",
     "deploy:check": "node tools/deploy.mjs --dry-run",
     "deploy:cf": "node tools/deploy.mjs",
-    "ship": "npm run deploy"
+    "ship": "npm run deploy",
+    "loop:queue": "node tools/loop-queue.js --all"
   },
   "devDependencies": {
     "@fontsource/bricolage-grotesque": "^5.2.10",

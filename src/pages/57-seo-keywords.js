@@ -380,12 +380,13 @@ pages.push(article({
     ["How often should I groom my dog in Thailand's climate?",
      "<p>Brush regularly; professional grooms every 4–8 weeks depending on coat. Short coats still need paw, ear and skin checks.</p>"],
     ["Can groomers handle cats too?",
-     "<p>Some salons groom both — confirm when booking. Cat grooming is less common than dogs in Pattaya.</p>"],
+     "<p>Yes, some Pattaya salons groom cats; confirm when booking. Cat grooming is less common than dog grooming locally.</p>"],
     ["Should I shave my dog for the Thai heat?",
      "<p>Not double-coated breeds — it can damage the coat and increase sunburn risk. Regular brush-outs and cool-walk timing matter more.</p>"]
   ],
   related: [
     { name: "All groomers", path: "/groomers/", desc: "Full directory." },
+    { name: "Doggie Star Grooming", path: "/groomers/doggie-star-grooming-pattaya.html", desc: "Jomtien salon listing." },
     { name: "Hot-climate care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Walking times and coat care." },
     { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html", desc: "When grooming reveals an issue." },
     { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Walks and outings after a groom." }

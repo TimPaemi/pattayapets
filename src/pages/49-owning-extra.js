@@ -27,6 +27,7 @@ pages.push(own({
   title: "Songkran & Your Pet Pattaya | Water Festival Safety Tips | PattayaPets",
   desc: "How to keep a dog or cat safe and calm during Songkran in Pattaya - " +
     "the water festival, the noise, escape risk, and walking around it.",
+  desc: "How to keep a dog or cat safe and calm during Songkran in Pattaya: the water festival, noise, escape risk, quieter walks and planning ahead.",
   h1: "Songkran and your pet: keeping animals safe and calm",
   lede: "Songkran, the Thai New Year, is one of the biggest events in the Pattaya " +
     "calendar &mdash; and for pets it is one of the most stressful.",
@@ -231,8 +232,7 @@ pages.push(own({
 pages.push(own({
   slug: "lost-pet-pattaya", crumb: "If your pet goes missing",
   title: "Lost Pet Pattaya | What to Do in the First Hours | PattayaPets",
-  desc: "A practical, step-by-step plan for what to do if your dog or cat goes " +
-    "missing in Pattaya - searching, spreading the word, and microchips.",
+  desc: "A step-by-step plan for what to do if your dog or cat goes missing in Pattaya: where to search first, who to tell, and why a registered microchip matters.",
   h1: "If your pet goes missing in Pattaya",
   lede: "A lost pet is every owner&rsquo;s worst day. Acting fast and methodically " +
     "gives you the best chance of getting them home.",
@@ -296,7 +296,7 @@ pages.push(own({
   slug: "microchipping-your-pet", crumb: "Microchipping",
   title: "Microchipping Your Pet in Pattaya | ISO Chip, Registry & Lost Pets | PattayaPets",
   desc: "What a pet microchip is, why it matters in Pattaya, how chipping works, " +
-    "and the vital step of keeping your registered details up to date.",
+    "and the vital step of keeping your registered details up to date after a move.",
   h1: "Microchipping your pet in Pattaya",
   lede: "A microchip is small, quick and inexpensive &mdash; and it is the single " +
     "best way to give a lost pet a route back home.",
@@ -372,7 +372,7 @@ pages.push(own({
   slug: "pet-sitters-and-dog-walkers", crumb: "Sitters & dog walkers",
   title: "Pet Sitters & Dog Walkers Pattaya | Finding Reliable Care | PattayaPets",
   desc: "How to find and choose a reliable pet sitter or dog walker in Pattaya, " +
-    "what to check, and how to brief them so your pet is well cared for.",
+    "what to check, and how to brief them so your pet is well cared for when you are away.",
   h1: "Finding a pet sitter or dog walker in Pattaya",
   lede: "Whether you travel often or simply work long hours, reliable pet care " +
     "while you are out is worth setting up before you actually need it.",
@@ -425,7 +425,7 @@ pages.push(own({
     ["How do I find a trustworthy pet sitter in Pattaya?",
      "<p>Mostly through word of mouth - other pet owners, local community and pet groups, and recommendations from boarding facilities and vets. Always meet a sitter first, check references and experience, and do a trial run before you rely on them.</p>"],
     ["Should I use a pet sitter or a boarding kennel?",
-     "<p>It depends on the pet. Many pets, cats especially, are less stressed at home with a sitter; a sociable dog may do well boarding. Consider your pet's temperament - and see our boarding directory for facilities.</p>"],
+     "<p>A pet sitter suits many cats, while a sociable dog may do well boarding. Consider your pet's temperament, and see our boarding directory for facilities.</p>"],
     ["What should I tell a pet sitter before I travel?",
      "<p>Leave written instructions covering feeding, walks, medication, your vet's details and your contact number, where supplies are, and your pet's quirks. A trial visit while you are still around helps a lot.</p>"],
     ["How much should I pay a pet sitter in Pattaya?",
@@ -512,7 +512,7 @@ pages.push(own({
   slug: "senior-pet-care", crumb: "Senior pets",
   title: "Senior Pet Care Pattaya | Older Dogs & Cats in the Heat | PattayaPets",
   desc: "How to care for an older dog or cat in Pattaya - check-ups, the heat, " +
-    "comfort at home, and the changes worth watching for as a pet ages.",
+    "comfort at home, and the changes worth watching for as a pet ages in tropical heat.",
   h1: "Caring for a senior pet in Pattaya",
   lede: "Pets age, and an older pet in a hot climate needs a few thoughtful " +
     "adjustments to stay comfortable, healthy and content.",
@@ -646,7 +646,7 @@ pages.push(own({
     ["How do I talk to children about losing a pet?",
      "<p>Be honest and gentle — explain the pet was unwell or very old and is not coming back. Let them grieve; a small memorial or photo can help.</p>"],
     ["Should I get another pet straight away?",
-     "<p>There is no right answer — some owners need time to grieve, others find comfort in adopting. When you are ready, rescues in Pattaya always need homes.</p>"]
+     "<p>Wait until you feel ready; there is no need to get another pet straight away. Some owners need time to grieve, while others find comfort in adopting. When you are ready, rescues in Pattaya always need homes.</p>"]
   ],
   related: [
     { name: "Senior pet care", path: "/owning-a-pet-in-pattaya/senior-pet-care.html", desc: "Caring well for an older pet." },

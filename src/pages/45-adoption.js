@@ -88,7 +88,8 @@ pages.push(hub({
 /* ---- SHELTER PAGES ---- */
 function shelterDesc(s) {
   return "Adopt from " + s.name + " near Pattaya — " + s.type.toLowerCase() +
-    ". How rescue, adoption, fostering and volunteering work.";
+    ". How rescue, adoption, fostering and volunteering work." +
+    (s.slug === "animal-army-foundation" ? "" : " Contact before visiting.");
 }
 
 const SHELTERS = [

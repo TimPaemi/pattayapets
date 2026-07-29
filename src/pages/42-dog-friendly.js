@@ -190,8 +190,7 @@ pages.push(df({
 pages.push(df({
   slug: "cafes", crumb: "Dog-friendly cafes",
   title: "Dog-Friendly Cafes Pattaya | Outdoor Seating & Etiquette | PattayaPets",
-  desc: "How to find dog-friendly cafes in Pattaya, what to look for, and the " +
-    "etiquette that keeps you and your dog welcome back.",
+  desc: "How to find dog-friendly cafes in Pattaya, what to check before you sit down, and the etiquette that keeps you and your dog welcome back a second time.",
   h1: "Dog-friendly cafes in Pattaya",
   lede: "Pattaya&rsquo;s cafe scene has grown fast, and a good share of it &mdash; " +
     "especially places with gardens and outdoor seating &mdash; is happy to see " +
@@ -266,8 +265,7 @@ pages.push(df({
 pages.push(df({
   slug: "restaurants", crumb: "Dog-friendly restaurants",
   title: "Dog-Friendly Restaurants in Pattaya | Where to Eat With Your Dog | PattayaPets",
-  desc: "Eating out with your dog in Pattaya — where it works, the etiquette, and " +
-    "how to find restaurants that welcome a well-behaved dog.",
+  desc: "Eating out with your dog in Pattaya: where it genuinely works, outdoor versus indoor seating, the etiquette, and how to find welcoming restaurants.",
   h1: "Dog-friendly restaurants in Pattaya",
   lede: "Plenty of Pattaya restaurants with terraces, gardens or beachfront " +
     "seating are relaxed about a well-behaved dog at your feet.",
@@ -336,8 +334,7 @@ pages.push(df({
 pages.push(df({
   slug: "hotels", crumb: "Dog-friendly hotels",
   title: "Pet Friendly Hotels Pattaya | Dog-Friendly Stays | PattayaPets",
-  desc: "Finding pet-friendly accommodation in Pattaya, what to confirm before " +
-    "you book, and the questions that avoid a nasty surprise at check-in.",
+  desc: "Finding pet-friendly hotels in Pattaya: which places genuinely welcome dogs, what to confirm before booking, the fees to expect, and check-in surprises.",
   h1: "Dog-friendly hotels in Pattaya",
   lede: "Pet-friendly accommodation in Pattaya exists &mdash; but &lsquo;pet " +
     "friendly&rsquo; means different things at different properties, so the " +
@@ -433,8 +430,7 @@ pages.push(df({
 pages.push(df({
   slug: "condos", crumb: "Dog-friendly condos",
   title: "Dog-Friendly Condos Pattaya | Renting With a Dog | PattayaPets",
-  desc: "Renting a condo in Pattaya with a dog: why most condos are no-pet, how " +
-    "to find a pet-friendly building, and what to check before you sign.",
+  desc: "Renting a condo in Pattaya with a dog: why most buildings are no-pet, how to find one that allows them, deposits, and what to check before you sign.",
   h1: "Renting a dog-friendly condo in Pattaya",
   lede: "This is the one that surprises new arrivals: in Pattaya, most condo " +
     "buildings do not allow pets at all. Finding one that does takes a deliberate " +
@@ -520,8 +516,7 @@ pages.push(df({
 pages.push(df({
   slug: "parks", crumb: "Places to walk",
   title: "Where to Walk a Dog in Pattaya | Beaches, Sois & Green Space | PattayaPets",
-  desc: "Where to walk a dog in Pattaya: the beach, quiet sois and green space — " +
-    "and an honest look at the city's limited formal dog parks.",
+  desc: "Where to walk a dog in Pattaya: the beach, quiet sois and green space, cool-hours timing, and an honest look at the city's limited formal dog parks.",
   h1: "Where to walk your dog in Pattaya",
   lede: "Pattaya is not a city of grand parks, but with a bit of local knowledge " +
     "there are good options for a daily walk.",

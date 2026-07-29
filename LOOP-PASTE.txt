@@ -1,1 +1,16 @@
-Read LOOP.md and do exactly one run of it. Pick the page yourself. One improvement is a complete run — do not hold out for more. Never fabricate anything. Run the three checks, append one log line, then stop. Do not ask me what to do next.
+Project: C:\Projects\pattayapets  (use absolute paths — your working directory may be elsewhere)
+
+Read C:\Projects\pattayapets\LOOP.md
+
+Run: node C:\Projects\pattayapets\tools\loop-queue.js
+Do the FIRST task it prints. Source files are under C:\Projects\pattayapets\.
+
+Verify:
+  node C:\Projects\pattayapets\build.js
+  node C:\Projects\pattayapets\tools\check-links.js
+  node C:\Projects\pattayapets\tools\audit-invariants.js
+
+Green -> append one line to C:\Projects\pattayapets\research\loop\log.md
+Red   -> undo that one edit and log it.
+
+Then do another task, or stop — both are fine. Never estimate whether you have time for more; just do one task at a time. Never invent facts. Do not ask me anything.

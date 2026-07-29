@@ -161,7 +161,9 @@ const FAQ = [
   ['Who is PattayaPets for?',
    'Western expats and tourists in and around Pattaya who already have a pet, are planning to bring one to Thailand, or want to adopt one here. The guides are written in plain English with the assumption you may be new to Thailand.'],
   ['Does it cost anything to use PattayaPets?',
-   'No. PattayaPets is free to read, with no account, no paywall and no advertising. It is funded by TIMPAEMI Co., Ltd. and operated through the TimPaemi network of independent local publications.']
+   'No. PattayaPets is free to read, with no account, no paywall and no advertising. It is funded by TIMPAEMI Co., Ltd. and operated through the TimPaemi network of independent local publications.'],
+  ['How can I find pet services near me?',
+   'Use the directory&rsquo;s area filters to browse services by neighbourhood. Each listing provides the available contact details, services and location facts.']
 ];
 
 const body =

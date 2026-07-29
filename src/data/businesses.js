@@ -210,7 +210,7 @@ const BUSINESSES = [
     languages: "Thai; confirm English-language support when booking",
     services: ["Dog grooming", "Cat grooming", "Bath & tidy"],
     summary: "A grooming salon in the Pong area east of Pattaya city, listed on Wongnai " +
-      "as jaijai spa & grooming. Appointments are arranged through its Facebook page."
+      "as Jaijai Spa & Grooming, with dog and cat grooming plus bath-and-tidy services. Appointments are arranged through its Facebook page."
   },
   {
     slug: "woof-pattaya",
@@ -222,7 +222,7 @@ const BUSINESSES = [
     languages: "Thai; confirm English-language support when booking",
     services: ["Dog grooming", "Cat grooming", "Bath & blow-dry", "Pet boarding", "Pick-up service (by arrangement)"],
     summary: "A grooming salon and boarding service in Nong Prue (Ruean Phisa Village), " +
-      "offering baths, clips and short-stay boarding for dogs and cats. Pick-up " +
+      "offering baths, clips and short-stay boarding for dogs and cats in Bang Lamung. Pick-up " +
       "service may be available by arrangement — confirm coverage when booking."
   },
   {
@@ -235,7 +235,7 @@ const BUSINESSES = [
     languages: "Thai and English",
     services: ["Dog grooming", "Cat grooming", "Bath & blow-dry", "Short-stay pet hotel"],
     summary: "A Naklua grooming salon on Pattaya-Naklua Road with bath, trim and " +
-      "short-stay boarding, listed on Facebook and third-party directories. " +
+      "short-stay boarding for dogs and cats, listed on Facebook and third-party directories. " +
       "Appointments are required; confirm current hours and vaccination rules on " +
       "Facebook before visiting."
   },
@@ -251,7 +251,7 @@ const BUSINESSES = [
     services: ["Dog grooming", "Cat grooming", "Bathing", "Short-stay boarding",
       "Breed show trim"],
     summary: "A grooming salon and short-stay pet hotel on Chalermprakiat 23 in East " +
-      "Pattaya, with ISFC/IGA-certified groomers for dogs and cats. Book on " +
+      "Pattaya, with ISFC/IGA-certified groomers for dogs and cats, plus bathing. Book on " +
       "095 676 6999, LINE @furpet or Facebook; closed every Monday."
   },
 
@@ -265,7 +265,7 @@ const BUSINESSES = [
     languages: "Thai and English",
     services: ["Air-conditioned rooms", "Dog daycare", "Multi-day boarding", "Saltwater pool", "Garden exercise area", "Grooming"],
     summary: "A dog hotel and daycare in central Pattaya with air-conditioned rooms, a " +
-      "garden exercise area and a saltwater pool. It handles both daycare and multi-day " +
+      "garden exercise area, a saltwater pool and on-site grooming for guests. It handles both daycare and multi-day " +
       "stays, and offers grooming on site."
   },
   {
@@ -291,7 +291,7 @@ const BUSINESSES = [
     languages: "English and Thai",
     services: ["Dog boarding", "Board-and-train", "Supervised playtime", "Grooming"],
     summary: "A dog hotel and boarding facility near Bang Saray on the same 18-rai " +
-      "site as K9 Coach dog training. Confirm whether you are booking boarding " +
+      "site as K9 Coach dog training, with supervised playtime and grooming for boarding guests. Confirm whether you are booking boarding " +
       "only or a combined training stay when you enquire."
   },
 
@@ -305,7 +305,7 @@ const BUSINESSES = [
     languages: "Thai and English",
     services: ["Pet food", "Treats & supplements", "Toys & accessories", "Supplies"],
     summary: "A pet supplies shop on South Pattaya Road with a broad range of food, " +
-      "treats and accessories for dogs and cats. Open daily from 10:00 to 21:00."
+      "treats and accessories for dogs and cats, open daily from 10:00 to 21:00."
   },
   {
     slug: "petsmart-pattaya",
@@ -317,7 +317,7 @@ const BUSINESSES = [
     languages: "Thai and English",
     services: ["Pet food", "Snacks & treats", "Accessories"],
     summary: "A pet shop on Thep Prasit Road towards the Jomtien side of the city, with " +
-      "a large selection of pet food and snacks. It is not affiliated with the US " +
+      "a large selection of pet food, snacks and accessories for local owners. It is not affiliated with the US " +
       "PetSmart chain."
   },
   {
@@ -342,7 +342,7 @@ const BUSINESSES = [
     website: "https://www.facebook.com/peturdaypty", hours: null,
     languages: "Thai and English",
     services: ["Pet food", "Supplies", "Accessories"],
-    summary: "The neighbourhood pet shop for the Pratumnak area, on Pratumnak Road. " +
+    summary: "The neighbourhood pet shop for the Pratumnak area, on Pratumnak Road, with pet food, supplies and accessories for residents who prefer not to drive into central Pattaya. " +
       "Useful for residents of the hill who would rather not drive into central Pattaya " +
       "for supplies."
   },
@@ -356,7 +356,7 @@ const BUSINESSES = [
     languages: "Thai and English",
     services: ["Pet food", "Accessories", "Supplies"],
     summary: "A local pet shop on South Pattaya Soi 12 in Nong Prue, opposite the " +
-      "mosque, stocking everyday food and supplies for dogs and cats."
+      "mosque, stocking everyday food and supplies for dogs and cats, with accessories."
   },
 
   {
@@ -447,7 +447,7 @@ const BUSINESSES = [
     languages: "English and Thai",
     services: ["Import to Thailand", "Export from Thailand", "Door-to-door transport"],
     summary: "A pet transport company handling import to and export from Thailand, " +
-      "including the paperwork and logistics of moving a pet internationally. Urgent " +
+      "including the paperwork and logistics of moving a pet internationally, door to door. Urgent " +
       "enquiries via WhatsApp; office hours Monday to Friday."
   },
   {
@@ -524,7 +524,7 @@ const BUSINESSES = [
     languages: "Thai and English",
     services: ["Mobile bath", "Breed grooming & haircuts", "Spa treatments", "Weight-based pricing"],
     summary: "A DBD-registered mobile grooming service that sends a fully equipped van to " +
-      "your address for baths, clips and spa work on dogs and cats. Appointments are " +
+      "your address for baths, clips and spa work on dogs and cats across its service zone. Appointments are " +
       "booked through petpassionsth.com or its app; confirm whether your Pattaya " +
       "address is inside the current service zone and any travel surcharge before booking."
   },
@@ -539,7 +539,7 @@ const BUSINESSES = [
     languages: "Thai and English",
     services: ["Daycare", "Overnight boarding", "Cat boarding", "Grooming by arrangement"],
     summary: "A luxury pet hotel brand operating daycare and overnight boarding for " +
-      "dogs and cats, with English-language booking via plutopethotel.com. " +
+      "dogs and cats, with English-language booking and grooming by arrangement via plutopethotel.com. " +
       "Confirm the Pattaya-area location, rates, vaccination rules and pickup " +
       "service before you book — this listing is orientation only."
   },
@@ -554,7 +554,7 @@ const BUSINESSES = [
     languages: "Thai; confirm English-language support when booking",
     services: ["Dog grooming", "Cat grooming", "Bath & blow-dry", "Nail trims"],
     summary: "A Jomtien grooming salon listed on Facebook as Doggie Star Grooming, " +
-      "handling baths and breed clips for dogs and cats by appointment. Confirm the " +
+      "handling baths and breed clips for dogs and cats by appointment, plus nail trims. Confirm the " +
       "current street address, hours and vaccination rules on its Facebook page before visiting."
   }
 ];
