@@ -12,3 +12,10 @@ lighthouse-*.txt
 lighthouse-reports/
 lh-tmp.json
 src/assets/img/*.png
+
+# Operator docs - local only, never published.
+# Regenerate with: deploy.ps1 -SyncRules
+CLAUDE.md
+AGENTS.md
+RULES.md
+CHANGELOG-STRUCTURAL.md
