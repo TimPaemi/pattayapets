@@ -143,7 +143,7 @@ pages.push(own({
   ],
   faqs: [
     ["When is the rainy season in Pattaya?",
-     "<p>Roughly from around May into October, though timing and intensity vary year to year. Rain usually comes in heavy bursts rather than all day, so walks are still manageable around the showers.</p>"],
+     "<p>Rainy season usually runs from May into October, though timing and intensity vary year to year. Rain often arrives in heavy bursts rather than all day, so walks can fit around the showers.</p>"],
     ["Is floodwater dangerous for my dog?",
      "<p>Yes - keep dogs out of it. Floodwater and standing puddles can carry sewage, chemicals and debris, and are a route for leptospirosis. Rinse and dry paws and legs after wet walks, and ask your vet about leptospirosis vaccination.</p>"],
     ["My dog hates thunderstorms - what can I do?",
@@ -273,7 +273,7 @@ pages.push(own({
   ],
   faqs: [
     ["What should I do first if my pet goes missing?",
-     "<p>Search the immediate area calmly with treats and a familiar voice - cats especially stay close and hidden - then immediately tell neighbours and security, and post a clear recent photo in local Pattaya lost-and-found pet groups with your contact details.</p>"],
+     "<p>Search the immediate area calmly with treats and a familiar voice. Then tell neighbours and security, and post a clear recent photo with your contact details in local Pattaya lost-and-found pet groups.</p>"],
     ["Where do lost pets in Pattaya end up?",
      "<p>Often at vet clinics, shelters and rescues, or with local animal services - and sometimes simply with a neighbour who took them in. Call and visit these, leave a photo and your details, and keep checking back.</p>"],
     ["Does a microchip help find a lost pet?",
@@ -478,7 +478,7 @@ pages.push(own({
       "See the <a href=\"/mobile-vets/\">mobile &amp; home-visit vets directory</a> " +
       "for clinics that advertise off-site visits, including " +
       "<a href=\"/vets/siam-country-pet-hospital.html\">Siam Country Pet Hospital</a> " +
-      "and <a href=\"/mobile-vets/mor-ja-pet-clinic-pattaya.html\">Mor Ja Pet Clinic</a>. " +
+      "and <a href=\"/mobile-vets/baan-mor-raksasat-animal-hospital-pattaya.html\">Baan Mor Raksasat</a>. " +
       "A home visit is not a substitute for a hospital in a true emergency.</p>" },
     { h: "In a real emergency", html:
       "<p>If it is an emergency, <strong>call the clinic first</strong> so they " +
@@ -491,7 +491,7 @@ pages.push(own({
     ["Can I take my pet in a taxi or ride app in Pattaya?",
      "<p>Often yes, but not every driver will accept an animal. A pet in a clean, secure carrier is much more likely to be taken - mention the pet when booking, and be prepared for a driver to decline. Baht buses are not a good choice for pets.</p>"],
     ["How should my pet travel in a vehicle?",
-     "<p>Cats and small dogs in a secure carrier or crate; a larger dog leashed with a calm handler. A loose, frightened pet in a moving vehicle is dangerous. Get your pet used to the carrier before you need it.</p>"],
+     "<p>Use a secure carrier or crate for cats and small dogs; keep a larger dog leashed with a calm handler. A loose, frightened pet in a moving vehicle is dangerous, so get your pet used to the carrier before you need it.</p>"],
     ["What if I can't get my pet to a vet in an emergency?",
      "<p>Call a 24-hour animal hospital or a mobile vet straight away for advice on what to do immediately, and ask about a home visit. Plan your emergency transport in advance so you are never working it out under pressure.</p>"],
     ["Are motorbike taxis safe for pets?",

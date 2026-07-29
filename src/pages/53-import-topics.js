@@ -318,7 +318,7 @@ pages.push(article({
     ["Do cats need the same vaccines as dogs?",
      "<p>Cats need rabies and FVRCP; dogs need rabies plus DHPP and leptospirosis (or a negative leptospirosis test within 30 days). See our <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">vaccination guide</a>.</p>"],
     ["Which airport is best for Pattaya?",
-     "<p>Most owners use Suvarnabhumi (BKK) or U-Tapao (UTP). See <a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok</a> for the trade-offs.</p>"]
+     "<p>Pet imports clear at Suvarnabhumi (BKK); U-Tapao has no Animal Quarantine Station. See <a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok</a> for why.</p>"]
   ],
   related: [
     { name: "The full process", path: "/bring-pet-to-thailand/", desc: "Every step with full detail." },

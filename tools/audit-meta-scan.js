@@ -19,7 +19,14 @@ const longTitle = [];
 files.forEach(function (f) {
   const h = fs.readFileSync(f, "utf8");
   const rel = "/" + path.relative(dist, f).replace(/\\/g, "/");
-  const title = (h.match(/<title>([^<]*)<\/title>/) || [])[1];
+  /* Decode entities before measuring: titles carry &amp; and the raw form
+     over-counts by 4 characters each, which produced 14 false positives. */
+  const decode = (x) => x == null ? x : x
+    .replace(/&amp;/g, "&").replace(/&#0*38;/g, "&")
+    .replace(/&quot;/g, '"').replace(/&#0*39;/g, "'").replace(/&apos;/g, "'")
+    .replace(/&mdash;/g, "\u2014").replace(/&ndash;/g, "\u2013")
+    .replace(/&nbsp;/g, " ").replace(/&rsquo;/g, "\u2019").replace(/&lsquo;/g, "\u2018");
+  const title = decode((h.match(/<title>([^<]*)<\/title>/) || [])[1]);
   const desc = (h.match(/name="description"\s+content="([^"]*)"/) ||
     h.match(/content="([^"]*)"\s+name="description"/) || [])[1];
   if (desc && desc.length > 160) longDesc.push({ rel, l: desc.length, desc });

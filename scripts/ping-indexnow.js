@@ -40,20 +40,46 @@ function post(endpoint, body) {
     console.error('No URLs in dist/sitemap.xml — run npm run build first');
     process.exit(1);
   }
+  /* keyLocation is part of the IndexNow spec and tells the endpoint exactly where
+     to verify the key, instead of leaving it to guess. */
   const payloadBase = {
     host: HOST,
     key,
+    keyLocation: `https://${HOST}/${key}.txt`,
   };
+  let accepted = 0;
+  let rejected = 0;
+  const reasons = new Set();
+
   for (let i = 0; i < urlList.length; i += BATCH) {
     const batch = urlList.slice(i, i + BATCH);
     const label = `${i + 1}-${Math.min(i + BATCH, urlList.length)}`;
     for (const ep of endpoints) {
       const res = await post(ep, { ...payloadBase, urlList: batch });
+      const ok = res.status === 200 || res.status === 202;
       const detail = res.status >= 400 && res.body ? " " + res.body.trim().slice(0, 120) : "";
-      console.log(`${ep} batch ${label} → HTTP ${res.status}${detail}`);
+      console.log(`${ok ? "ok  " : "FAIL"} ${ep} batch ${label} → HTTP ${res.status}${detail}`);
+      if (ok) accepted++;
+      else { rejected++; if (res.body) reasons.add(res.body.trim().slice(0, 160)); }
     }
   }
-  console.log(`IndexNow: submitted ${urlList.length} URLs`);
+
+  /* A 4xx is a refusal, not a submission. Reporting "submitted" regardless is how
+     a silent indexing outage hides for weeks. */
+  if (rejected && !accepted) {
+    console.error(`\nIndexNow: NOTHING was submitted. All ${rejected} request(s) were refused.`);
+    reasons.forEach((r) => console.error("  reason: " + r));
+    console.error(`\n  Your deploy already succeeded - this is the search-ping step only.`);
+    console.error(`  Check ${payloadBase.keyLocation} is live and returns exactly the key,`);
+    console.error(`  and that ${HOST} is verified in Bing Webmaster Tools. Then re-run: npm run indexnow`);
+    process.exit(1);
+  }
+  if (rejected) {
+    console.error(`\nIndexNow: PARTIAL - ${accepted} request(s) accepted, ${rejected} refused.`);
+    reasons.forEach((r) => console.error("  reason: " + r));
+    process.exit(1);
+  }
+  console.log(`\nIndexNow: ${urlList.length} URLs accepted across ${accepted} request(s).`);
 })().catch((e) => {
   console.error(e);
   process.exit(1);

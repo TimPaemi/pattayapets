@@ -21,14 +21,13 @@ const EXPORT_FROM_PATTAYA = {
   html:
     "<p>Most owners in Chon Buri export through <strong>Suvarnabhumi (BKK)</strong>, " +
     "roughly 90&ndash;120 minutes by road depending on traffic. " +
-    "<strong>U-Tapao (UTP)</strong> is closer to Pattaya and suits some regional " +
-    "routes, but your DLD export paperwork must name the <em>actual</em> departure " +
-    "airport &mdash; see " +
+    "<strong>U-Tapao (UTP)</strong> is closer to Pattaya, but it is <em>not</em> one of " +
+    "the DLD&rsquo;s animal quarantine stations, so it cannot clear a pet export &mdash; see " +
     "<a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok</a> " +
     "for the import-side mirror.</p>" +
     "<p>Apply for the Thai export permit (form <strong>1/1</strong>) at least " +
-    "<strong>15 days</strong> before departure to the Animal Quarantine Station " +
-    "(AQS) at that airport. In practice, allow more when destination import permits, " +
+    "<strong>15 days</strong> before departure to the <strong>Suvarnabhumi</strong> " +
+    "Animal Quarantine Station (AQS). In practice, allow more when destination import permits, " +
     "titer tests or airline cargo bookings still need to align. Email " +
     "<a href=\"mailto:qsap_bkk_export@dld.go.th\">qsap_bkk_export@dld.go.th</a> " +
     "for Suvarnabhumi export questions and confirm your flight date at least " +
@@ -149,8 +148,8 @@ const DOG_OUTING_SEASONS = {
 };
 
 const EXPORT_EXTRA_FAQS = [
-  ["Can I export from U-Tapao instead of Suvarnabhumi?",
-   "<p>Sometimes — if your airline accepts pets on that route. Export paperwork must match the actual departure airport. See <a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok</a> for the Pattaya angle.</p>"],
+  ["Can I fly my pet out of U-Tapao instead of Suvarnabhumi?",
+   "<p>No. U-Tapao is not one of the DLD's animal quarantine stations, so there is no AQS there to inspect your pet or clear the export. Plan your export through Suvarnabhumi. See <a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok</a> for the Pattaya angle.</p>"],
   ["How do I get my pet to Suvarnabhumi from Pattaya?",
    "<p>Pre-book a pet-friendly taxi or private transfer with a crate secured. Allow extra time for traffic and cargo check-in cut-offs — often several hours before departure.</p>"],
   ["Should I stay in Bangkok the night before an export flight?",

@@ -66,8 +66,10 @@ pages.push(article({
       "the condition is already excluded as pre-existing.</li>" +
       "<li><strong>Assuming routine care is covered</strong> &mdash; most policies exclude " +
       "vaccinations, neutering and dental cleanings unless you buy a premium add-on.</li>" +
-      "<li><strong>Missing waiting periods</strong> &mdash; illness cover may not start for " +
-      "14&ndash;30 days after the policy begins; accidents may be covered sooner.</li>" +
+      "<li><strong>Missing waiting periods</strong> &mdash; illness cover normally starts later " +
+      "than accident cover. Waiting periods differ by insurer and by policy edition, so read the " +
+      "schedule of benefits for the accident waiting period, the illness waiting period, and the " +
+      "date each one starts running &mdash; do not assume a standard length.</li>" +
       "<li><strong>Annual caps that run out</strong> &mdash; a single surgery can consume " +
       "a year&rsquo;s limit; check per-condition caps as well as the headline figure.</li>" +
       "<li><strong>Not checking the vet list</strong> &mdash; some policies only settle with " +
@@ -98,7 +100,7 @@ pages.push(article({
     ["Will insurance cover my pet's existing condition?",
      "<p>Almost certainly not &mdash; pre-existing conditions are a standard exclusion. This is the main reason to insure while a pet is young and healthy, if you are going to insure at all.</p>"],
     ["What is the alternative to insurance?",
-     "<p>Self-insuring: setting aside a dedicated savings buffer for pet emergencies. For a disciplined saver with routine, affordable vet costs, this is a genuine alternative.</p>"],
+     "<p>Self-insure by setting aside a dedicated savings buffer for pet emergencies. For a disciplined saver with routine, affordable vet costs, this is a genuine alternative.</p>"],
     ["Does pet insurance cover import or export costs?",
      "<p>Almost never — relocation, quarantine and travel are separate from medical cover. Budget import and export separately; see our <a href=\"/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html\">import cost guide</a>.</p>"],
     ["How much should I save if I self-insure instead?",

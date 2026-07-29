@@ -48,12 +48,7 @@ module.exports = [
       '<li><a href="/sitemap.html">The full sitemap</a></li>' +
       '<li><a href="/search.html">Search the site</a></li>' +
       "</ul></div></details>" +
-      '<p style="margin-top:1.2rem">Sister guides: ' +
-      'Pattaya Visa Help, ' +
-      'Vehicle Rentals, ' +
-      'Pattaya Medical ' +
-      "in the <a href=\"https://timpaemi.com/\" target=\"_blank\" rel=\"noopener noreferrer\">" +
-      "TimPaemi</a> network.</p></div></div></section>"
+      "</div></div></section>"
   },
   {
     path: "/offline.html",

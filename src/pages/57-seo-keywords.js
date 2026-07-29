@@ -83,9 +83,9 @@ pages.push(article({
       "in addition to Thai requirements. Check the current CDC guidance before you book — " +
       "see our <a href=\"/bring-pet-to-thailand/from-usa.html\">import from the USA</a> " +
       "guide for the full US-side checklist.</p>" },
-    { h: "Flying a dog to Bangkok or U-Tapao", html:
-      "<p>Most owners land at <strong>Suvarnabhumi (BKK)</strong>; " +
-      "<strong>U-Tapao (UTP)</strong> is closer to Pattaya. Airlines accept dogs in " +
+    { h: "Flying a dog into Bangkok", html:
+      "<p>Dogs entering Thailand land at <strong>Suvarnabhumi (BKK)</strong> &mdash; " +
+      "U-Tapao is closer to Pattaya but has no Animal Quarantine Station and cannot clear a pet. Airlines accept dogs in " +
       "cabin (small), checked baggage or cargo depending on size and route — book pet " +
       "space early. Brachycephalic (flat-faced) breeds face extra restrictions: read " +
       "<a href=\"/bring-pet-to-thailand/snub-nosed-breeds-flying.html\">snub-nosed breeds and flying</a>.</p>" },

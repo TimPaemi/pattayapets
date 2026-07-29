@@ -425,7 +425,7 @@ SHELTERS.forEach(function (s) {
       ["Can I foster before adopting from " + s.name + "?",
        "<p>Many rescues welcome fosters — it frees kennel space and lets you learn the animal's temperament. See our <a href=\"/adopt-a-pet-pattaya/fostering.html\">fostering guide</a> and ask the organisation what they need.</p>"],
       ["What should I ask before adopting a rescue pet?",
-       "<p>Ask about vaccinations, sterilisation, behavioural history, any medical needs, bite history, and what support the rescue offers after adoption. See our <a href=\"/adopt-a-pet-pattaya/\">adopt a pet in Pattaya</a> hub for the wider picture.</p>"],
+       "<p>Ask about vaccinations, sterilisation, behavioural history, medical needs, bite history and post-adoption support. See our <a href=\"/adopt-a-pet-pattaya/\">adopt a pet in Pattaya</a> hub for the wider picture.</p>"],
       ["Can foreigners adopt in Thailand?",
        "<p>Yes — rescues regularly place animals with expat and tourist adopters. You need a stable home, commitment to vaccinations and registration, and realistic plans if you may leave Thailand later.</p>"],
       ["What if my condo does not allow pets?",

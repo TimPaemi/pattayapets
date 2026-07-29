@@ -118,9 +118,9 @@ pages.push(article({
       "<p><strong>Suvarnabhumi (BKK)</strong> is the usual international arrival point for " +
       "pets entering Thailand — see " +
       "<a href=\"/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html\">arriving at Suvarnabhumi</a>. " +
-      "<strong>U-Tapao (UTP)</strong> is much closer to Pattaya and suits some regional " +
-      "flights — see <a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok</a>. " +
-      "Your import paperwork must name the airport you actually use.</p>" },
+      "<strong>U-Tapao (UTP)</strong> is much closer to Pattaya, but it has no Animal " +
+      "Quarantine Station and cannot clear an imported pet — see <a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok</a>. " +
+      "Your import permit must name Suvarnabhumi.</p>" },
     { h: "Road time and traffic", html:
       "<p>From Suvarnabhumi to central Pattaya is typically <strong>90&ndash;120 minutes</strong> " +
       "by car in normal traffic — longer on Friday evenings and public holidays. From U-Tapao " +
@@ -159,7 +159,7 @@ pages.push(article({
     ["Should I go straight to Pattaya after pet import?",
      "<p>Many owners do, if housing is ready. Others rest one night near the airport or in Pattaya — plan water, shade and a vet visit within the first week.</p>"],
     ["Is U-Tapao better than Bangkok for pets moving to Pattaya?",
-     "<p>U-Tapao is closer, but fewer international routes use it for pet import. Confirm DLD AQS processing and airline pet policy for your route.</p>"],
+     "<p>No. U-Tapao is closer to Pattaya, but it has no DLD Animal Quarantine Station, so it cannot clear an imported pet. Fly into Suvarnabhumi.</p>"],
     ["Who can pick up my pet from Suvarnabhumi AQS?",
      "<p>The owner named on the import permit should be present or arrange a representative — confirm current DLD rules with the AQS before travel.</p>"]
   ], rb.IMPORT_EXTRA_FAQS),
@@ -185,7 +185,7 @@ pages.push(article({
   sections: [
     { h: "When a pet taxi makes sense", html:
       "<ul>" +
-      "<li><strong>Airport pickup</strong> after import at Suvarnabhumi or U-Tapao</li>" +
+      "<li><strong>Airport pickup</strong> after import at Suvarnabhumi</li>" +
       "<li><strong>Export drop-off</strong> with a crate for early cargo flights</li>" +
       "<li><strong>Vet emergencies</strong> when ride apps refuse animals</li>" +
       "<li><strong>Bangkok&ndash;Pattaya transfers</strong> with a large dog or multiple pets</li>" +
@@ -222,7 +222,7 @@ pages.push(article({
     ["How much does a pet taxi from Bangkok airport to Pattaya cost?",
      "<p>Prices vary by vehicle size, time of day and agent — get a written quote before you land. Airport pickup with a large crate costs more than a small-dog carrier.</p>"],
     ["Can Grab or Bolt take pets in Pattaya?",
-     "<p>Some drivers accept pets in carriers; many decline. Mention the pet when booking and have a backup plan.</p>"],
+     "<p>Mention the pet when booking and have a backup plan. Some drivers accept pets in carriers, while many decline.</p>"],
     ["Do relocation agents only do international moves?",
      "<p>Many also offer domestic airport transfers and vet runs — ask specifically for ground transport within Thailand.</p>"],
     ["What should my pet travel in?",

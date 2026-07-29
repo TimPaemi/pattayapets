@@ -352,7 +352,10 @@ function hub(o) {
     var grid = '<div class="grid grid-3">' + cardsHtml + "</div>";
     var sectionCls = "section" + (i % 2 === 0 ? " section-tint" : "");
     if (g.cards.length > 3) {
+      /* <summary> is not a heading, so without this the card <h3>s would follow the
+         page <h1> directly (WCAG 2.2 / 1.3.1 meaningful structure). */
       body += '<section class="' + sectionCls + '"><div class="container">' +
+        '<h2 class="visually-hidden">' + g.title + "</h2>" +
         '<details class="corridor-panel hub-group-panel">' +
         '<summary class="corridor-panel__title">' + g.title +
         " (" + g.cards.length + ")</summary>" +

@@ -1,0 +1,10 @@
+{
+  "runNumber": 4,
+  "mode": "NORMAL",
+  "lastMission": "ENRICH",
+  "consecutiveDryDiscovers": 0,
+  "newUrlsCreatedTotal": 0,
+  "consecutiveBlocked": 0,
+  "lastMissions": [],
+  "note": "Reset 2026-07-29: runs 4-13 blocked because the old spec treated the ENRICH ceiling as a quota. Ceilings, POLISH fallback and the never-no-op ladder now apply."
+}

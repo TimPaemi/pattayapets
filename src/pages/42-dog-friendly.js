@@ -171,7 +171,7 @@ pages.push(df({
     ["Can I let my dog off the lead on the beach?",
      "<p>Only where the stretch is genuinely empty and your dog's recall is reliable. A lead is the considerate default — it keeps your dog away from other people, other dogs and beach hazards, and keeps dogs welcome there in general.</p>"],
     ["What time of day is best for a beach walk?",
-     "<p>Early morning and around or after sunset. The sand is cooler, the sun is kinder, and the quieter beach is more relaxing for your dog anyway.</p>"],
+     "<p>Early morning and around or after sunset are best. The sand is cooler, the sun is kinder, and a quieter beach is more relaxing for your dog.</p>"],
     ["Are dogs banned from Pattaya beaches?",
      "<p>There is no single published city-wide ban we can point to, but central Pattaya Beach is impractical with a dog and attitudes vary by stretch. Dongtan and Jomtien at quiet hours are where owners actually go. Obey any posted signs and use common sense.</p>"],
     ["Can my dog swim in the sea at Jomtien?",
@@ -245,7 +245,7 @@ pages.push(df({
   ],
   faqs: [
     ["How do I know if a cafe allows dogs?",
-     "<p>The simplest way is to ask at the door. Cafes with garden or open-air seating are the most likely to say yes. Policies change often, so asking beats relying on an old list."],
+     "<p>Ask at the door. Cafes with garden or open-air seating are the most likely to say yes, but policies change often, so asking beats relying on an old list."],
     ["Is it normal to bring a dog to a cafe in Pattaya?",
      "<p>At outdoor and garden cafes, a calm, leashed dog is widely accepted and increasingly common. Indoors, and at food-focused venues, assume not unless told otherwise.</p>"],
     ["Should I bring a mat or blanket for my dog?",
@@ -317,7 +317,7 @@ pages.push(df({
     ["Can I take my dog to a beachfront restaurant in Pattaya?",
      "<p>Often yes, at outdoor tables — beachfront and garden restaurants tend to be the most relaxed. Always ask when you arrive, and choose a table where your dog can settle out of the way.</p>"],
     ["Will restaurants provide water for my dog?",
-     "<p>Some will, many will not. Bring your own travel bowl and water so your dog is comfortable regardless.</p>"],
+     "<p>Bring your own travel bowl and water. Some restaurants provide water, but many do not, so your dog stays comfortable regardless.</p>"],
     ["Should I feed my dog before we go out to eat?",
      "<p>A light meal or skip feeding until after helps avoid begging and stomach upset in the heat. Fresh water matters more than table scraps.</p>"],
     ["Can I take my dog to a night market?",
@@ -420,7 +420,7 @@ pages.push(df({
     ["Do I need vaccination papers at check-in?",
      "<p>Often yes — rabies vaccination proof is commonly required at pet-friendly properties. Carry your vaccination booklet or vet certificate even if nobody asked when you booked.</p>"],
     ["Is Jomtien or central Pattaya better with a dog?",
-     "<p>Jomtien and Dongtan suit dogs better day to day: quieter beach walks and more pet-aware guesthouses. Central Pattaya has some pet-friendly hotels but heavy traffic and fewer easy walk routes.</p>"]
+     "<p>Jomtien and Dongtan are usually easier with a dog: they have quieter beach walks and more pet-aware guesthouses. Central Pattaya has some pet-friendly hotels but heavier traffic and fewer easy walk routes.</p>"]
   ],
   related: [
     { name: "Dog-friendly condos", path: "/dog-friendly-pattaya/condos.html", desc: "If you are staying longer than a holiday." },
@@ -505,7 +505,7 @@ pages.push(df({
     ["How much extra will a pet-friendly condo cost?",
      "<p>Expect a narrower choice and sometimes a higher rent or pet deposit. There is no fixed market rate — one extra month's deposit is common, and some buildings add a monthly pet surcharge.</p>"],
     ["Can I register my dog if the condo allows pets?",
-     "<p>Registration with the local authority is a separate legal requirement from your lease. See our guide to dog registration in Thailand for the paperwork your district expects.</p>"],
+     "<p>Yes, but registration with the local authority is separate from your lease. See our guide to dog registration in Thailand for the paperwork your district expects.</p>"],
     ["Is a house rental better than a condo with a dog?",
      "<p>Often yes — no juristic office, easier ground access, and fewer neighbour complaints about lifts. The trade-off is location and security; many owners in Pattaya choose a village house in East Pattaya or Huai Yai for exactly this reason.</p>"]
   ],
@@ -577,7 +577,7 @@ pages.push(df({
     ["Are there dog parks in Pattaya?",
      "<p>Dedicated fenced dog parks are scarce. Most owners build a routine around the beach at cool hours, quiet sois and open green spaces. Always check whether dogs are allowed in a given park and keep yours leashed.</p>"],
     ["Where is the best everyday walk?",
-     "<p>For most owners it is a mix: the quiet sois near home for daily walks, and the cooler ends of the beach for something longer. Pratumnak's leafier roads are pleasant too.</p>"],
+     "<p>Use the quiet sois near home for daily walks and cooler beach ends for longer outings. Pratumnak's leafier roads are another pleasant option.</p>"],
     ["Are dogs allowed in public parks in Chonburi?",
      "<p>Rules vary by park and signage is not always clear. Assume leashed-only unless you see explicit permission; when in doubt, use sois and beach stretches instead.</p>"],
     ["How do I find other dog owners to walk with?",

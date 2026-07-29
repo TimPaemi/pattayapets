@@ -57,7 +57,16 @@ function pagePath(f) {
 }
 
 function strip(s) {
-  return String(s).replace(/<[^>]+>/g, "").replace(/&[^;]+;/g, " ").trim();
+  /* Decode entities, never blank them: "&amp;" became a gap and made correct
+     headings look broken ("24-hour emergency   clinics"). */
+  return String(s).replace(/<[^>]+>/g, "")
+    .replace(/&amp;/g, "&").replace(/&#0*38;/g, "&")
+    .replace(/&quot;/g, '"').replace(/&#0*39;/g, "'").replace(/&apos;/g, "'")
+    .replace(/&lt;/g, "<").replace(/&gt;/g, ">")
+    .replace(/&mdash;/g, "\u2014").replace(/&ndash;/g, "\u2013")
+    .replace(/&rsquo;/g, "\u2019").replace(/&lsquo;/g, "\u2018")
+    .replace(/&nbsp;/g, " ").replace(/&[a-zA-Z#0-9]+;/g, "")
+    .replace(/\s+/g, " ").trim();
 }
 
 /* Decode the entities the build emits so lengths match what users/Google see. */

@@ -296,22 +296,28 @@ async function build() {
   injectRecentUpdates(pages);
   injectFaqSchema(pages);
 
+  /* Long-lived assets are content-hashed so "immutable, 1 year" is true rather than
+     a bet. Must run BEFORE the render loop: pages embed the hashed filenames. */
+  const cssRaw = fs.readFileSync(path.join(SRC, "assets/css/site.css"), "utf8");
+  const cssMin = new CleanCSS({ level: 2 }).minify(cssRaw).styles;
+  const cssHash = crypto.createHash("sha1").update(cssMin).digest("hex").slice(0, 10);
+  const cssHref = "/assets/css/site." + cssHash + ".css";
+  write("assets/css/site." + cssHash + ".css", cssMin);
+
+  const jsRaw = fs.readFileSync(path.join(SRC, "assets/js/site.js"), "utf8");
+  const jsMin = (await minifyJs(jsRaw)).code;
+  const jsHash = crypto.createHash("sha1").update(jsMin).digest("hex").slice(0, 10);
+  const jsSrc = "/assets/js/site." + jsHash + ".js";
+  write("assets/js/site." + jsHash + ".js", jsMin);
+
   let jsonldCount = 0;
   for (const page of pages) {
-    const html = layout.renderPage(page, { criticalCss: criticalMin });
+    const html = layout.renderPage(page, { criticalCss: criticalMin, cssHref: cssHref, jsSrc: jsSrc });
     jsonldCount += validateJsonLd(html, page.path);
     const min = await minifyHtml(html, HTML_MIN);
     write(pathToFile(page.path), min);
   }
   log("Pages:      " + pages.length + " rendered, " + jsonldCount + " JSON-LD blocks valid");
-
-  const cssRaw = fs.readFileSync(path.join(SRC, "assets/css/site.css"), "utf8");
-  const cssMin = new CleanCSS({ level: 2 }).minify(cssRaw).styles;
-  write("assets/css/site.css", cssMin);
-
-  const jsRaw = fs.readFileSync(path.join(SRC, "assets/js/site.js"), "utf8");
-  const jsMin = (await minifyJs(jsRaw)).code;
-  write("assets/js/site.js", jsMin);
 
   let assetCount = 0;
   for (const sub of ["fonts", "img"]) {
@@ -348,7 +354,7 @@ async function build() {
     indexable.map(function (p) {
       return "  <url><loc>" + layout.canonical(p.path) + "</loc>" +
         (p.updated ? "<lastmod>" + p.updated + "</lastmod>" : "") +
-        "<changefreq>monthly</changefreq></url>";
+        "</url>";
     }).join("\n") +
     "\n</urlset>\n";
   write("sitemap.xml", sitemap);
@@ -358,8 +364,16 @@ async function build() {
     "> The honest pet resource for Pattaya, Thailand — an independent editorial " +
     "directory of pet businesses and a guide hub for pet owners. No paid placements, " +
     "no sponsored content, no affiliate links. Editorial and informational only; " +
-    "not veterinary advice.\n\n## Network (May 2026)\n\n" +
-    "Part of the TimPaemi Pattaya network. Portfolio: https://pattaya-authority.com/work/pattaya-pets/\n\n" +
+    "not veterinary advice.\n\n## Publisher\n\n" +
+    "Published by TIMPAEMI Co., Ltd. from Pattaya, Chon Buri, Thailand. Written and " +
+    "kept up to date by Tim & Paemi, who live in Pattaya. Author: https://timpaemi.com/\n\n" +
+    "## Editorial policy\n\n" +
+    "No paid placements, no sponsored tags, no affiliate links, ever. Business verdicts " +
+    "follow anonymous visits with the bill paid in full, and cover the business experience " +
+    "only - never veterinary medical quality. Regulated pet import and export guidance is " +
+    "date-stamped and cites primary government sources (Thailand DLD, destination-country " +
+    "authorities, airlines). Corrections are logged in public at " +
+    "https://pattayapets.com/corrections.html\n\n" +
     "## Key pages\n\n" +
     indexable.map(function (p) {
       return "- [" + (p.crumb || p.shortTitle || p.title) + "](" +
@@ -538,7 +552,7 @@ async function build() {
     "/corrections.html": "correction mistake report update factual error",
     "/privacy.html": "privacy policy data analytics PattayaPets",
     "/accessibility.html": "accessibility WCAG PattayaPets website",
-    "/masthead.html": "editorial standards about network Pattaya Authority",
+    "/masthead.html": "editorial standards masthead publisher TimPaemi ownership funding",
     "/search.html": "search PattayaPets vets guides directory find",
     "/sitemap.html": "sitemap all pages directory guides PattayaPets",
     "/": "vet pattaya pet directory import bring dog Thailand guides honest",
@@ -642,7 +656,7 @@ async function build() {
     "/adopt-a-pet-pattaya/", "/dog-friendly-pattaya/", "/owning-a-pet-in-pattaya/",
     "/owning-a-pet-in-pattaya/hot-climate-pet-care.html",
     "/area/central-pattaya.html", "/area/jomtien.html", "/area/naklua.html",
-    "/search-index.json", "/assets/css/site.css", "/assets/js/site.js",
+    "/search-index.json", cssHref, jsSrc,
     "/assets/img/favicon.svg", "/assets/img/og-default.png",
     "/assets/img/og-import.png", "/assets/img/og-export.png", "/assets/img/og-health.png",
     "/assets/img/og-owning.png", "/assets/img/og-dog-friendly.png",

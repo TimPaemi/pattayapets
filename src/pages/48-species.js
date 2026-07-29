@@ -110,7 +110,7 @@ pages.push(cat({
     ["My condo has a balcony &mdash; is that safe for my cat?",
      "<p>Not as it is. Cats fall from condo balconies, and a fall from height is often fatal. Screen or net the balcony fully before letting a cat use it. Cat-proof balcony netting is easy to find in Pattaya.</p>"],
     ["How do I keep an indoor cat happy?",
-     "<p>Build the home around the cat: vertical space and perches, daily wand-toy play, sturdy scratching posts, a window view, and ideally a compatible companion cat. A well-set-up indoor home is a good life for a cat.</p>"],
+     "<p>Give your cat vertical space, perches, daily wand-toy play, sturdy scratching posts and a window view. A compatible companion cat can also suit some cats; a well-set-up indoor home can be a good life for a cat.</p>"],
     ["Should I leash-walk an indoor cat in Pattaya?",
      "<p>Some owners use a harness for supervised balcony or garden time. Never rely on a collar alone outdoors — traffic and dogs are real risks. See <a href=\"/cats/getting-a-cat-in-pattaya.html\">getting a cat in Pattaya</a> for adoption options.</p>"],
     ["Do indoor cats still need parasite prevention?",
@@ -130,8 +130,8 @@ pages.push(cat({
   desc: "An orientation to cat vaccinations, parasite prevention, neutering and " +
     "routine health for cat owners in Pattaya and Thailand.",
   h1: "Cat vaccinations and routine health in Thailand",
-  lede: "Keeping a cat healthy in Pattaya is mostly about a few routines done " +
-    "consistently &mdash; here is the shape of them, so you know what to ask.",
+  lede: "Keeping a cat healthy in Pattaya starts with a few consistent routines. " +
+    "This guide outlines them, so you know what to ask.",
   verify: "This is general orientation, last reviewed May 2026, and is not " +
     "veterinary advice. Your vet sets the actual vaccination plan for your cat " +
     "based on its age, health and lifestyle &mdash; always follow their guidance.",
@@ -248,7 +248,7 @@ pages.push(cat({
     ["I found a street kitten &mdash; what should I do first?",
      "<p>Take it to a vet for a health check and parasite treatment, and arrange vaccination and neutering when it is old enough. If you have other cats, keep the kitten separate until the vet has checked it for FeLV, FIV and other infections.</p>"],
     ["How do I introduce a new cat to my home?",
-     "<p>Start it in one quiet room with everything it needs, then expand its space gradually. Introduce other pets slowly &mdash; by scent and through a closed door first &mdash; never with a sudden face-to-face meeting.</p>"],
+     "<p>Start the cat in one quiet room with everything it needs, then expand its space gradually. Introduce other pets slowly by scent and through a closed door first, not with a sudden face-to-face meeting.</p>"],
     ["Should I adopt a street kitten or buy from a shop?",
      "<p>Rescues and shelters rehome vaccinated, neutered cats and address the street-animal problem directly. See our <a href=\"/adopt-a-pet-pattaya/\">adopt a pet</a> hub for organisations in Pattaya.</p>"],
     ["What vet visit does a new cat need first?",
@@ -320,7 +320,7 @@ pages.push(cat({
   ],
   faqs: [
     ["Where can I board my cat in Pattaya?",
-     "<p>Through boarding facilities and catteries that take cats, and some vet clinics. See our boarding directory and check which accept cats and keep them separate from dogs.</p>"],
+     "<p>Use boarding facilities, catteries that accept cats, or some vet clinics. See our boarding directory and check which accept cats and keep them separate from dogs.</p>"],
     ["Is it better to board my cat or use a pet sitter?",
      "<p>It depends on the cat. Cats bond to territory, so a shy or older cat is often less stressed at home with a visiting sitter. A confident, sociable cat may board well. Choose around your cat's temperament.</p>"],
     ["What do I need to arrange before boarding my cat?",
@@ -346,8 +346,8 @@ pages.push(dog({
   desc: "An orientation to dog vaccinations, rabies law, heartworm and year-round " +
     "parasite prevention for dog owners in Pattaya and Thailand.",
   h1: "Dog vaccinations and parasite prevention in Thailand",
-  lede: "Most of what keeps a dog healthy in Pattaya is preventive &mdash; a few " +
-    "routines, kept up consistently. Here is what they are.",
+  lede: "Preventive routines matter most for dogs in Pattaya. This guide outlines " +
+    "the core routines to discuss with your vet.",
   verify: "This is general orientation, last reviewed May 2026, and is not " +
     "veterinary advice. Your vet sets the actual vaccination and prevention plan " +
     "for your dog &mdash; always follow their guidance.",
@@ -428,8 +428,7 @@ pages.push(dog({
       "<p>A dog cannot take off its coat or explain that it is overheating. In a " +
       "climate that is hot and humid all year, the breed and build you choose " +
       "decides how comfortable &mdash; and how safe &mdash; your dog will be. " +
-      "This is not about ruling breeds out; it is about going in with open " +
-      "eyes.</p>" },
+      "The point is to go in with open eyes, not to rule breeds out.</p>" },
     { h: "Breeds that struggle most", html:
       "<ul><li><strong>Flat-faced (brachycephalic) breeds</strong> &mdash; pugs, " +
       "French and English bulldogs, and similar. Their short airways make it " +
@@ -489,8 +488,8 @@ pages.push(dog({
   desc: "Raising a puppy in Pattaya: the vaccination series, parasite prevention, " +
     "the heat, safe socialisation, training and neutering.",
   h1: "Bringing up a puppy in Pattaya",
-  lede: "The first months set up a dog for life. In Pattaya that means the usual " +
-    "puppy basics, plus a few things the climate and the city add.",
+  lede: "The first months shape a dog&rsquo;s life. In Pattaya, that means the usual " +
+    "puppy basics plus a few local climate and city considerations.",
   sections: [
     { h: "Start with a vet", html:
       "<p>Get a new puppy to a <a href=\"/vets/\">vet</a> early. The first visit " +

@@ -15,10 +15,12 @@ Read this before touching anything. Three facts here cost several hours to learn
 - **Build:** `node build.js` (fast, no network). `npm run build` also runs `prebuild`
   → `tools/make-images.js` → needs `sharp` (Windows binary installed; fails in a Linux VM).
 - **Deploy is NOT git push.** `dist/` is gitignored and `ci.yml` has no deploy step.
-  Deploy is a direct upload:
+  Deploy is a direct upload, and only through the guarded script:
   ```
-  npx wrangler pages deploy dist --project-name pattayapets
+  npm run deploy
   ```
+  Never hand-type `wrangler pages deploy` — the project name is hardcoded in
+  `tools/deploy.mjs` and is never read from argv. Rehearse with `npm run deploy:check`.
   `git push` is version control only.
 
 ---

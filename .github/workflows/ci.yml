@@ -18,3 +18,7 @@ jobs:
       - run: npm ci
       - run: npm run build:all
       - run: npm run audit:directory
+      # Invariant guard: the six S1 findings from AUDIT-2026-07 must not regress.
+      - run: npm run audit:invariants
+      # Deploy-identity assertion: the guard must pass on every push. Uploads nothing.
+      - run: node tools/deploy.mjs --dry-run

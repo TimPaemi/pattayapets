@@ -181,8 +181,7 @@ const HUB_GUIDE = {
     "<p>See also " +
     "<a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">getting your pet " +
     "to the vet</a>, the listed " +
-    "<a href=\"/mobile-vets/mor-ja-pet-clinic-pattaya.html\">Mor Ja Pet Clinic</a> " +
-    "and <a href=\"/mobile-vets/baan-mor-raksasat-animal-hospital-pattaya.html\">" +
+    "<a href=\"/mobile-vets/baan-mor-raksasat-animal-hospital-pattaya.html\">" +
     "Baan Mor Raksasat Animal Hospital</a>, and the full " +
     "<a href=\"/vets/\">vets directory</a>. For routine neutering at home, see " +
     "<a href=\"/pet-health-pattaya/spaying-and-neutering.html\">spaying &amp; neutering</a>.</p>"),

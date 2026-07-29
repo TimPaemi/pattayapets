@@ -377,11 +377,50 @@ pages.push(prosePage({
     "&mdash; a source we can verify. We aim to acknowledge every credible " +
     "correction request within seven days.</p>" +
     "<h2>How corrections appear</h2>" +
-    "<p>A correction is noted on the page it affects and logged here, with the " +
-    "date. We do not quietly edit and move on.</p>" +
+    "<p>Every substantive correction is logged below, with the date. We do not " +
+    "quietly edit and move on.</p>" +
     "<h2>Correction log</h2>" +
-    "<p>No corrections have been published yet. This log will list them as they " +
-    "occur.</p>" +
+    "<p>Newest first. Each entry names what was wrong and what the guidance says now.</p>" +
+    "<ul>" +
+    "<li><strong>29 July 2026 &mdash; U-Tapao removed from export guidance.</strong> " +
+    "The export guides said a pet could sometimes leave Thailand through U-Tapao if the " +
+    "DLD export permit named it. U-Tapao is not on the Department of Livestock " +
+    "Development&rsquo;s list of animal quarantine stations, so there is no AQS there to " +
+    "inspect a pet or clear an export. The guides now say exports clear at Suvarnabhumi. " +
+    "Affects the <a href=\"/take-pet-out-of-thailand/\">export guides</a> and the " +
+    "destination pages that carried the shared block.</li>" +
+    "<li><strong>29 July 2026 &mdash; South Korea entry requirements rewritten.</strong> " +
+    "The Korea pages presented an advance import licence and a quarantine reservation as " +
+    "normal requirements. Korea&rsquo;s Animal and Plant Quarantine Agency admits a pet on a " +
+    "government export quarantine certificate, microchip identification, rabies vaccination " +
+    "and a rabies neutralising antibody titre of 0.5&nbsp;IU/ml or higher, declared to a " +
+    "quarantine officer on arrival. The source link pointed at animal.go.kr and now points " +
+    "at the quarantine agency itself. Affects " +
+    "<a href=\"/take-pet-out-of-thailand/to-south-korea.html\">to South Korea</a> and " +
+    "<a href=\"/bring-pet-to-thailand/from-south-korea.html\">from South Korea</a>.</li>" +
+    "<li><strong>29 July 2026 &mdash; Mor Ja Pet Clinic removed from recommendations.</strong> " +
+    "The clinic was suggested on area and mobile-vet pages, but no phone number, website or " +
+    "opening hours could be confirmed from a primary source. Its " +
+    "<a href=\"/mobile-vets/mor-ja-pet-clinic-pattaya.html\">facts page</a> stays and now " +
+    "says plainly that no contact route is confirmed. It returns to recommendations only " +
+    "when one is verified.</li>" +
+    "<li><strong>29 July 2026 &mdash; footer wording corrected site-wide.</strong> " +
+    "Every page said this guide was &ldquo;checked in person by people who live here&rdquo;. " +
+    "No completed anonymous-visit records are published yet, so the line now reads " +
+    "&ldquo;written and kept up to date by people who live here&rdquo;. How visits and " +
+    "verdicts work is on <a href=\"/standards.html\">editorial standards</a>.</li>" +
+    "<li><strong>28 July 2026 &mdash; EU pet travel regulation citation.</strong> " +
+    "Export guides cited EU Regulation 576/2013. That framework has been replaced by " +
+    "Regulation (EU) 2026/131, which applies from 22 April 2026. Affects the Finland and " +
+    "Ireland export guides.</li>" +
+    "<li><strong>28 July 2026 &mdash; U-Tapao arrival airport, import side.</strong> " +
+    "Import pages said a DLD permit could name U-Tapao, and referred to separate Bangkok " +
+    "and U-Tapao AQS desks. U-Tapao has no Animal Quarantine Station and cannot clear an " +
+    "imported pet; import permits must name Suvarnabhumi.</li>" +
+    "<li><strong>28 July 2026 &mdash; rabies vaccination timing on export guides.</strong> " +
+    "The wording was tightened to state that the rabies vaccination must have been given " +
+    "at least 21 days before departure and still be valid at the time of travel.</li>" +
+    "</ul>" +
     "<p>While you are here: browse the <a href=\"/directory.html\">business " +
     "directory</a>, the <a href=\"/guides.html\">guides</a>, " +
     '<a href="/start-here.html">start here</a> if you are new, or ' +
@@ -617,7 +656,7 @@ pages.push(prosePage({
 
     "<h2>Official channels</h2>" +
     "<p>PattayaPets publishes at <strong>pattayapets.com</strong> only. Tim and Paemi&rsquo;s " +
-    "channels are listed on <a href=\"https://timpaemi.com/\" rel=\"author noopener\">timpaemi.com</a>. " +
+    "channels are listed on <strong>timpaemi.com</strong>, linked from the footer of every page. " +
     "Any other account, page or site using this name is not us, and we would like to " +
     "hear about it.</p>",
   schema: [{

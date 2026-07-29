@@ -26,26 +26,6 @@ const NAV = [
 const NETWORK_SLOGAN = "Built in Pattaya. For Pattaya.";
 
 /* Canonical Pattaya Authority network list — exclude this site (PattayaPets). */
-const NETWORK = [
-  { name: "Pattaya Authority", url: "https://pattaya-authority.com/work/pattaya-pets/" },
-  { name: "TimPaemi", url: "https://timpaemi.com/" },
-  { name: "Pattaya Restaurant Guide", url: "https://pattaya-restaurant-guide.com/" },
-  { name: "Pattaya Visa Help", url: "https://pattayavisahelp.com/" },
-  { name: "Pattaya Gym", url: "https://pattaya-gym.com/" },
-  { name: "Pattaya After Dark", url: "https://pattaya-afterdark.com/" },
-  { name: "Pattaya School Guide", url: "https://pattaya-school-guide.com/" },
-  { name: "Pattaya Coffee", url: "https://pattaya-coffee.com/" },
-  { name: "Pattaya Villa Stream", url: "https://pattayastream.com/" },
-  { name: "Pattaya Medical", url: "https://pattaya-medical.com/" },
-  { name: "Pattaya Vehicle Rentals", url: "https://pattaya-vehicle-rentals.com/" },
-  { name: "TimPaemi Live", url: "https://timpaemi.live/" },
-  { name: "Pattaya Golf", url: "https://pattaya-golf.com/" },
-  { name: "Retire in Pattaya", url: "https://retire-in-pattaya.com/" },
-  { name: "Move to Pattaya", url: "https://movetopattaya.com/" },
-  { name: "PattayaTools", url: "https://pattayatools.pages.dev/" },
-  { name: "Koh Larn Guide", url: "https://koh-larn-thailand.com/" },
-  { name: "Pattaya Insider", url: "https://pattaya-insider.com/" }
-];
 
 const DISCLAIMER =
   "Editorial and informational only. Not veterinary advice. Always consult a qualified veterinarian.";
@@ -170,7 +150,7 @@ function footer() {
     '<circle cx="18.8" cy="9.4" r="2.6"/><circle cx="22.3" cy="12.6" r="2.5"/></g></svg>' +
     '<span class="pf-word">Pattaya<b>Pets</b></span>' +
     '</div>' +
-    '<p class="pf-tag">The honest local guide to pets in Pattaya &mdash; vets, groomers, boarding, adoption and the import paperwork, checked in person by people who live here.</p>' +
+    '<p class="pf-tag">The honest local guide to pets in Pattaya &mdash; vets, groomers, boarding, adoption and the import paperwork, written and kept up to date by people who live here.</p>' +
     '<div class="pf-by">' +
     '<img src="/assets/img/timpaemi.jpg" width="46" height="46" loading="lazy" alt="Tim and Paemi, who write and check PattayaPets">' +
     '<span>Written and kept up to date by <b>Tim &amp; Paemi</b>, who live in Pattaya.' +
@@ -230,95 +210,6 @@ function footer() {
     '<a href="https://google.com/preferences/source?q=pattayapets.com" rel="nofollow noopener" target="_blank">Make PattayaPets a preferred source in Google</a>.</p>' +
     '</div>' +
     '</footer>'
-  );
-}
-
-function footerOld() {
-  const year = new Date().getFullYear();
-  return (
-    /* PA-XLINK contextual cross-links — renders above the footer on every page */
-    `` +
-    '<footer class="site-footer">' +
-    '<div class="footer-disclaimer">' + esc(DISCLAIMER) + "</div>" +
-    '<div class="footer-main">' +
-    '<div class="footer-brand">' + brandLink("") +
-        "<p>An independent editorial directory and guide for pet owners in Pattaya. " +
-    "Reviewed honestly through anonymous visits. No paid placements, ever.</p></div>" +
-    '<details class="footer-panel"><summary class="footer-panel__title">The site</summary>' +
-    '<div class="footer-panel__body"><ul class="footer-links">' +
-    '<li><a href="/directory.html">Business directory</a></li>' +
-    '<li><a href="/guides.html">Guides &amp; resources</a></li>' +
-    '<li><a href="/start-here.html">Start here</a></li>' +
-    '<li><a href="/search.html">Search the site</a></li>' +
-    '<li><a href="/about.html">About</a></li>' +
-    '<li><a href="/masthead.html">Masthead</a></li>' +
-    '<li><a href="/standards.html">Editorial standards</a></li>' +
-    '<li><a href="/corrections.html">Corrections</a></li>' +
-    '<li><a href="/contact.html">Contact</a></li>' +
-    '<li><a href="/sitemap.html">Sitemap</a></li></ul></div></details>' +
-    '<details class="footer-panel"><summary class="footer-panel__title">Pet owner essentials</summary>' +
-    '<div class="footer-panel__body"><ul class="footer-links">' +
-    '<li><a href="/vets/">Vets &amp; animal hospitals</a></li>' +
-    '<li><a href="/groomers/">Pet groomers</a></li>' +
-    '<li><a href="/pet-shops/">Pet shops</a></li>' +
-    '<li><a href="/mobile-vets/">Mobile &amp; home-visit vets</a></li>' +
-    '<li><a href="/dogs/">Dogs in Pattaya</a></li>' +
-    '<li><a href="/cats/">Cats in Pattaya</a></li>' +
-    '<li><a href="/boarding/">Pet boarding &amp; daycare</a></li>' +
-    '<li><a href="/trainers/">Dog trainers</a></li>' +
-    '<li><a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a></li>' +
-    '<li><a href="/bring-pet-to-thailand/">Bring a pet to Thailand</a></li>' +
-    '<li><a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a></li>' +
-    '<li><a href="/take-pet-out-of-thailand/export-process.html">The export process</a></li>' +
-    '<li><a href="/take-pet-out-of-thailand/">Take a pet out of Thailand</a></li>' +
-    '<li><a href="/owning-a-pet-in-pattaya/">Owning a pet in Pattaya</a></li>' +
-    '<li><a href="/pet-health-pattaya/">Pet health in Pattaya</a></li>' +
-    '<li><a href="/dog-friendly-pattaya/">Dog-friendly Pattaya</a></li>' +
-    '<li><a href="/adopt-a-pet-pattaya/">Adopt a pet</a></li>' +
-    '<li><a href="/pet-insurance-thailand.html">Pet insurance</a></li></ul></div></details></div>' +
-    /* PA-NET bold block */ `<!--PA-NET:START-->
-  <style>.pa-net{--pa-pink:#ff2f8e;--pa-cyan:#00e5ff;font-family:inherit;box-sizing:border-box;width:100%;margin:0;padding:3rem 1.25rem 1.5rem;border-top:1px solid rgba(127,127,127,.22);color:inherit;-webkit-font-smoothing:antialiased}
-.pa-net *{box-sizing:border-box}
-.pa-net a{color:inherit;text-decoration:none}
-.pa-net__in{max-width:1180px;margin:0 auto}
-.pa-net__grid{display:grid;grid-template-columns:1fr;gap:2rem;text-align:left}
-.pa-net__brand-name{font-weight:800;font-size:1.35rem;letter-spacing:.02em}
-.pa-net__brand-name .pk{color:var(--pa-pink)}
-.pa-net__brand p{margin:.7rem 0 0;font-size:.85rem;opacity:.72;line-height:1.5;max-width:34ch}
-.pa-net__founder{margin:.6rem 0 0;font-size:.8rem;opacity:.85;font-weight:600}
-.pa-net__tag{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pa-cyan);margin:0 0 .9rem}
-.pa-net__col a{display:block;padding:.32rem 0;font-size:.9rem;opacity:.85;transition:opacity .15s,color .15s}
-.pa-net__col a:hover,.pa-net__col a:focus-visible{opacity:1;color:var(--pa-cyan)}
-.pa-net__col a .pk{color:var(--pa-pink);font-weight:700}
-.pa-net__col-direct a{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;text-decoration-color:rgba(127,127,127,.55)}
-.pa-net__col-direct a:hover,.pa-net__col-direct a:focus-visible{color:var(--pa-cyan);text-decoration-color:var(--pa-cyan)}
-.pa-net__property{text-align:center;margin:2.4rem 0 0;padding-top:1.6rem;border-top:1px solid rgba(127,127,127,.18)}
-.pa-net__badge{display:inline-block;font-size:.62rem;letter-spacing:.24em;color:var(--pa-cyan);border:1px solid rgba(127,127,127,.3);border-radius:4px;padding:.35rem .8rem;margin-bottom:1rem}
-.pa-net__bigname{font-weight:900;font-size:clamp(1.8rem,5vw,2.8rem);letter-spacing:.01em;line-height:1}
-.pa-net__bigname .pk{color:var(--pa-pink)}.pa-net__bigname .cy{color:var(--pa-cyan)}
-.pa-net__strap{margin:.7rem 0 0;font-weight:700;font-size:1rem}
-.pa-net__strap .pk{color:var(--pa-pink)}.pa-net__strap .cy{color:var(--pa-cyan)}
-.pa-net__sub{margin:.5rem 0 0;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;opacity:.6}
-.pa-net__sub b{color:var(--pa-cyan)}
-.pa-net__credit{margin:1rem 0 0;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;opacity:.7;line-height:1.7}
-.pa-net__credit a{font-weight:700;text-decoration:underline;text-underline-offset:2px}
-.pa-net__credit a:hover{color:var(--pa-cyan)}
-.pa-net__bottom{text-align:center;margin:1.4rem 0 0;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;opacity:.55}
-.pa-net__bottom a{color:inherit;text-decoration:underline;text-underline-offset:2px}
-@media(min-width:760px){.pa-net__grid{grid-template-columns:1.4fr 1fr 1fr;gap:2.5rem}.pa-net__col-net{column-count:2;column-gap:1.5rem}}
-.pa-net-lite{font-family:inherit;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:center;width:100%;margin:0;padding:1rem;border-top:1px solid rgba(127,127,127,.2);font-size:.82rem;opacity:.9;color:inherit;text-align:center}
-.pa-net-lite a{color:inherit;font-weight:600;text-underline-offset:2px}</style>
-  <section class="pa-net" aria-label="Publisher">
-    <div class="pa-net__in">
-      <div class="pa-net__property" style="margin-top:0;border-top:0;padding-top:0">
-        <div class="pa-net__brand-name">PattayaPets<span class="pk">.</span></div>
-        <p style="margin:.7rem auto 0;font-size:.85rem;opacity:.72;line-height:1.5;max-width:52ch">Written, photographed and kept up to date by the team at <a href="https://pattaya-authority.com/" target="_blank" rel="author nofollow noopener noreferrer" style="font-weight:700;text-decoration:underline;text-underline-offset:2px">Pattaya Authority</a>, a Pattaya-based publishing studio.</p>
-      </div>
-      <div class="pa-net__bottom">© 2026 TIMPAEMI Co., Ltd. · <a href="https://timpaemi.com/privacy/" target="_blank" rel="nofollow noopener noreferrer">Privacy</a> · <a href="mailto:info@timpaemi.com">Contact</a></div>
-    </div>
-  </section>
-<!--PA-NET:END-->` +
-    "</footer>"
   );
 }
 
@@ -490,6 +381,8 @@ function clampMetaTitle(title, maxLen) {
 function renderPage(page, opts) {
   opts = opts || {};
   const cssCritical = opts.criticalCss || "";
+  const cssHref = opts.cssHref || "/assets/css/site.css";
+  const jsSrc = opts.jsSrc || "/assets/js/site.js";
   const url = canonical(page.path);
   const image = (page.image ? SITE.url + page.image : SITE.url + "/assets/img/og-default.png");
   const ogType = page.ogType || "website";
@@ -543,8 +436,8 @@ function renderPage(page, opts) {
     '<link rel="preload" href="/assets/fonts/hanken-700.woff2" as="font" type="font/woff2" crossorigin>' +
     '<link rel="preload" href="/assets/fonts/bricolage-600.woff2" as="font" type="font/woff2" crossorigin>' +
     "<style>" + cssCritical + "</style>" +
-    '<link rel="preload" href="/assets/css/site.css" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">' +
-    '<noscript><link rel="stylesheet" href="/assets/css/site.css">' +
+    '<link rel="preload" href="' + cssHref + '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">' +
+    '<noscript><link rel="stylesheet" href="' + cssHref + '">' +
     "<style>@media(max-width:860px){#primary-nav{display:flex;position:static;" +
     "flex-direction:column;padding:4px 20px 12px;background:var(--mist)}" +
     ".nav-toggle{display:none}}</style></noscript>" +
@@ -554,7 +447,7 @@ function renderPage(page, opts) {
     breadcrumbHtml(page) +
     '<main id="main" tabindex="-1">' + page.body + dateStamp(page) + "</main>" +
     footer() +
-    '<script src="/assets/js/site.js" defer></script>' +
+    '<script src="' + jsSrc + '" defer></script>' +
     (SITE.cfBeacon && SITE.cfBeacon.indexOf("PLACEHOLDER") === -1
       ? '<script defer src="https://static.cloudflareinsights.com/beacon.min.js" ' +
         "data-cf-beacon='{\"token\":\"" + SITE.cfBeacon + "\"}'></script>"
@@ -563,4 +456,4 @@ function renderPage(page, opts) {
   );
 }
 
-module.exports = { SITE, NAV, NETWORK, NETWORK_SLOGAN, DISCLAIMER, esc, canonical, renderPage, brandLink };
+module.exports = { SITE, NAV, NETWORK_SLOGAN, DISCLAIMER, esc, canonical, renderPage, brandLink };

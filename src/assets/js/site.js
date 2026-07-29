@@ -67,7 +67,8 @@
   }
 
   /* Stylesheet preload fallback */
-  var cssLink = document.querySelector('link[rel="preload"][href="/assets/css/site.css"]');
+  /* Match by relationship, not filename: the stylesheet is content-hashed at build. */
+  var cssLink = document.querySelector('link[rel="preload"][as="style"]');
   if (cssLink) {
     function applyCss() {
       cssLink.rel = "stylesheet";

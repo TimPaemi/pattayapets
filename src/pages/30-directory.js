@@ -360,7 +360,7 @@ const AREA_MISSING_HINTS = {
       "the <a href=\"/boarding/\">boarding directory</a>",
     trainers: "<a href=\"/trainers/k9-pattaya-dog-training-school.html\">K9 Pattaya</a> (Sattahip) or " +
       "the <a href=\"/trainers/\">trainers directory</a>",
-    "mobile-vets": "<a href=\"/mobile-vets/mor-ja-pet-clinic-pattaya.html\">Mor Ja Pet Clinic</a> (confirm coverage)"
+    "mobile-vets": "<a href=\"/mobile-vets/baan-mor-raksasat-animal-hospital-pattaya.html\">Baan Mor Raksasat</a> or the <a href=\"/mobile-vets/\">mobile vets directory</a>"
   },
   "bang-saray": {
     vets: "<a href=\"/vets/animal-army-hospital.html\">Animal Army Hospital</a> (Na Jomtien) " +
@@ -372,8 +372,8 @@ const AREA_MISSING_HINTS = {
       "the <a href=\"/boarding/\">boarding directory</a>",
     trainers: "<a href=\"/trainers/k9-coach.html\">K9 Coach</a> (Bang Saray) or " +
       "the <a href=\"/trainers/\">trainers directory</a>",
-    "mobile-vets": "<a href=\"/mobile-vets/mor-ja-pet-clinic-pattaya.html\">Mor Ja Pet Clinic</a> " +
-      "(confirm coverage) or the <a href=\"/mobile-vets/\">mobile vets directory</a>",
+    "mobile-vets": "<a href=\"/mobile-vets/baan-mor-raksasat-animal-hospital-pattaya.html\">Baan Mor Raksasat</a> " +
+      "or the <a href=\"/mobile-vets/\">mobile vets directory</a>",
     "pet-shops": "<a href=\"/pet-shops/tong-ma-aquarium-and-pets-shop.html\">Tong-ma</a> " +
       "or <a href=\"/pet-shops/petsmart-pattaya.html\">PetSmart</a> (Thep Prasit, Jomtien)"
   },
@@ -398,8 +398,8 @@ const AREA_MISSING_HINTS = {
       "the <a href=\"/boarding/\">boarding directory</a>",
     trainers: "<a href=\"/trainers/zoeta-dogsoul.html\">Zoeta Dogsoul</a> or " +
       "<a href=\"/trainers/k9-coach.html\">K9 Coach</a> (Bang Saray)",
-    "mobile-vets": "<a href=\"/mobile-vets/mor-ja-pet-clinic-pattaya.html\">Mor Ja Pet Clinic</a> or " +
-      "<a href=\"/mobile-vets/baan-mor-raksasat-animal-hospital-pattaya.html\">Baan Mor Raksasat</a>",
+    "mobile-vets": "<a href=\"/mobile-vets/baan-mor-raksasat-animal-hospital-pattaya.html\">Baan Mor Raksasat</a> or " +
+      "the <a href=\"/mobile-vets/\">mobile vets directory</a>",
     "pet-shops": "<a href=\"/pet-shops/pattaya-pet-center.html\">Pattaya Pet Center</a> or " +
       "the <a href=\"/pet-shops/\">pet shops directory</a>"
   },
@@ -454,8 +454,7 @@ const MOBILE_VETS_INTRO =
   'visit with the bill paid in full. In the meantime, see ' +
   '<a href="/owning-a-pet-in-pattaya/getting-to-the-vet.html">getting your pet ' +
   'to the vet</a>, the listed ' +
-  '<a href="/mobile-vets/mor-ja-pet-clinic-pattaya.html">Mor Ja Pet Clinic</a> ' +
-  'and <a href="/mobile-vets/baan-mor-raksasat-animal-hospital-pattaya.html">' +
+  '<a href="/mobile-vets/baan-mor-raksasat-animal-hospital-pattaya.html">' +
   'Baan Mor Raksasat Animal Hospital</a>, and the full ' +
   '<a href="/vets/">vets directory</a>.</p>' +
   '</div></div></section>';
@@ -662,7 +661,7 @@ function bizCard(b) {
     "<div><h3><a href=\"" + bizUrl(b) + "\">" + esc(b.name) + "</a></h3>" +
     '<p class="biz-sub">' + esc(b.type) + " &middot; " + esc(areas) + "</p></div>" +
     (b.c24 ? '<span class="badge-24h">24 hr</span>' : "") +
-    "</div><p>" + esc(firstSentence(b.summary)) + "</p>" +
+    "</div><p>" + markThai(esc(firstSentence(b.summary))) + "</p>" +
     '<div class="biz-facts">' + verdictBadge(b) + contactChip(b) +
     "</div></article>";
 }
@@ -681,7 +680,9 @@ function factsTable(b) {
   if (b.website) rows.push(["Website",
     '<a href="' + b.website + '" target="_blank" rel="noopener nofollow">Official site</a>']);
   if (!contacts.length && !b.website) {
-    rows.push(["Contact", "No verified public phone or website listed &mdash; confirm when booking."]);
+    rows.push(["Contact", "No verified public phone, website or hours. PattayaPets has not been " +
+      "able to confirm a contact route for this business, so do not count on reaching it &mdash; " +
+      "especially in an emergency."]);
   }
   rows.push(["Languages", esc(b.languages)]);
   return '<div class="table-wrap"><table class="facts-table">' +
@@ -690,6 +691,14 @@ function factsTable(b) {
       return "<tr><th scope=\"row\">" + r[0] + "</th><td>" + r[1] + "</td></tr>";
     }).join("") +
     "</tbody></table></div>";
+}
+
+/* Wrap Thai-script runs in lang="th" so screen readers switch pronunciation.
+   Input must already be HTML-escaped; this only inserts known-safe markup. */
+function markThai(s) {
+  return String(s).replace(/[\u0E00-\u0E7F]+/g, function (m) {
+    return '<span lang="th">' + m + "</span>";
+  });
 }
 
 function bizSchema(b) {
@@ -739,7 +748,7 @@ BUSINESSES.forEach(function (b) {
     "</p>" +
     verdictBlock(b) +
     bizContactActions(b) +
-    "<p class=\"lede\">" + esc(b.summary) + "</p>" +
+    "<p class=\"lede\">" + markThai(esc(b.summary)) + "</p>" +
     "<h2>The facts</h2>" +
     factsTable(b) +
     "<h2>Services</h2>" +
@@ -896,6 +905,27 @@ Object.keys(CATEGORIES).forEach(function (key) {
     "Listings describe the business experience, not veterinary medical quality. " +
     "Always consult a qualified veterinarian.</div></div></section>";
 
+  /* Mirrors the visible listing cards above, in the same order. Names and URLs
+     only — no Review or AggregateRating: there is no first-party rating corpus. */
+  var hubSchema = list.length ? [{
+    "@type": "CollectionPage",
+    name: HUB_TITLE[key] || cat.name,
+    description: clampDesc(HUB_DESC[key] || cat.intro),
+    url: SITE + "/" + cat.slug + "/",
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: list.length,
+      itemListElement: list.map(function (b, i) {
+        return {
+          "@type": "ListItem",
+          position: i + 1,
+          url: SITE + bizUrl(b),
+          name: b.name
+        };
+      })
+    }
+  }] : [];
+
   pages.push({
     path: "/" + cat.slug + "/",
     title: (HUB_TITLE[key] || cat.name) + " | PattayaPets",
@@ -905,6 +935,7 @@ Object.keys(CATEGORIES).forEach(function (key) {
     crumb: cat.name,
     breadcrumbs: [{ name: "Directory", path: "/directory.html" }],
     updated: "2026-06-09",
+    schema: hubSchema,
     body: body
   });
 });

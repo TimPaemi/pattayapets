@@ -668,7 +668,7 @@ pages.push(country({
       '<td>MPI export application; confirm Thailand import requirements with MPI and your vet</td>' +
       '<td>MPI + vet</td></tr>' +
       '<tr><th scope="row">2 weeks before</th>' +
-      '<td>Book airline (cabin, hold or cargo); confirm crate and routing to Suvarnabhumi or U-Tapao</td>' +
+      '<td>Book airline (cabin, hold or cargo); confirm crate and routing to Suvarnabhumi</td>' +
       '<td>Airline</td></tr>' +
       '<tr><th scope="row">Within 10 days of departure</th>' +
       '<td>Final clinical examination; MPI <strong>endorses the export health certificate</strong></td>' +
@@ -765,7 +765,7 @@ pages.push(country({
       '<td>Prior application for <strong>AQS export inspection</strong>; confirm Thailand import requirements with AQS</td>' +
       '<td>MAFF AQS (departure airport)</td></tr>' +
       '<tr><th scope="row">2 weeks before</th>' +
-      '<td>Book airline (cabin, hold or cargo); confirm crate and routing to Suvarnabhumi or U-Tapao</td>' +
+      '<td>Book airline (cabin, hold or cargo); confirm crate and routing to Suvarnabhumi</td>' +
       '<td>Airline</td></tr>' +
       '<tr><th scope="row">Within 10 days of departure</th>' +
       '<td>Final clinical examination; AQS issues <strong>export quarantine certificate</strong></td>' +
@@ -1050,15 +1050,15 @@ pages.push(importTopic({
   ],
   faqs: [
     ["Can I fly my pet directly into Pattaya?",
-     "<p>Possibly not in the way you would hope. Pet imports to Thailand clear through an airport with a DLD Animal Quarantine Station, and Suvarnabhumi in Bangkok is the established one. Whether U-Tapao near Pattaya can process a pet import depends on its facilities and your airline &mdash; confirm with the DLD and the airline rather than assuming.</p>"],
+     "<p>Not with a pet. Pet imports clear through an airport with a DLD Animal Quarantine Station, and U-Tapao does not have one, so it cannot be named as your port of entry. Fly into Suvarnabhumi and travel on to Pattaya by road.</p>"],
     ["How do I get my pet from Bangkok to Pattaya?",
      "<p>By road &mdash; arrange a pet-friendly private transfer or a relocation agent's vehicle in advance. It is roughly a one-and-a-half to two-hour drive. Bring water and never leave the crate in a hot, unventilated vehicle.</p>"],
     ["Which airport should I plan for?",
-     "<p>For almost every owner, Bangkok's Suvarnabhumi &mdash; it has the established pet-import process and far more flight choice. Treat a direct U-Tapao arrival as something to verify carefully with the DLD and airline, not to assume.</p>"],
+     "<p>Bangkok's Suvarnabhumi. It has the established pet-import process and far more flight choice, and it is the only realistic option for Pattaya &mdash; U-Tapao has no Animal Quarantine Station and cannot clear a pet.</p>"],
     ["Does the DLD import permit name the arrival airport?",
-     "<p>Yes — your permit application must target the correct AQS. If you change from BKK to UTP or vice versa, you may need to amend or reapply.</p>"],
+     "<p>Yes — your permit application must name the arrival airport, and that airport must have a DLD Animal Quarantine Station. For pets bound for Pattaya, that is Suvarnabhumi.</p>"],
     ["Is U-Tapao close enough to justify fewer flight options?",
-     "<p>UTP saves road time after landing, but only if your airline and the DLD will accept pets there. Most long-haul owners still use Suvarnabhumi for reliability and route choice.</p>"]
+     "<p>It is closer, but that does not help with a pet: U-Tapao has no Animal Quarantine Station, so it cannot clear an import at all. Plan on Suvarnabhumi.</p>"]
   ],
   related: [
     { name: "Import checklist", path: "/bring-pet-to-thailand/checklist.html", desc: "Printable step-by-step checklist." },

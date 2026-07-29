@@ -495,7 +495,9 @@ const BUSINESSES = [
     summary: "Also listed locally as Mor Ja Raksa Sat (หมอจ๋ารักษาสัตว์) — a clinic in " +
       "the Nong Prue / Siam Country Club area that publicly advertises free off-site " +
       "home visits alongside in-clinic care, vaccinations, neutering and bathing. " +
-      "Confirm current coverage area, hours and any visit fees when booking."
+      "PattayaPets has not been able to confirm a phone number, website or opening hours " +
+      "for this clinic from a primary source, so it is listed here for reference only " +
+      "&mdash; not as a clinic to call in an emergency."
   },
   {
     slug: "baan-mor-raksasat-animal-hospital-pattaya",

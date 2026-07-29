@@ -171,7 +171,7 @@ pages.push(article({
   updated: "2026-06-01",
   faqs: [
     ["What does fostering a pet involve?",
-     "<p>Giving a rescue animal a temporary home - days to months - while it recovers, grows up or waits for a permanent family. The rescue usually covers vet costs; you provide the home and care, and follow their guidance.</p>"],
+     "<p>Fostering means giving a rescue animal a temporary home while it recovers, grows up or waits for a permanent family. The rescue usually covers vet costs; you provide the home and care, and follow its guidance.</p>"],
     ["Who pays the veterinary bills for a foster pet?",
      "<p>Usually the rescue organisation covers the veterinary costs. Confirm the arrangement with the specific rescue before you start, so expectations are clear on both sides.</p>"],
     ["Isn't it too hard to give them back?",
@@ -272,7 +272,7 @@ pages.push(article({
   updated: "2026-06-01",
   faqs: [
     ["How can I help if I can't adopt a pet?",
-     "<p>Donate money or supplies, volunteer your time, foster temporarily, sponsor an animal, and support sterilisation programmes. Even small, regular contributions genuinely help a stretched rescue.</p>"],
+     "<p>Donate money or supplies, volunteer, foster temporarily, sponsor an animal or support sterilisation programmes. Even small, regular contributions genuinely help a stretched rescue.</p>"],
     ["I found an injured street dog - what should I do?",
      "<p>Keep yourself safe first, as a hurt animal may bite. If you can safely contain or comfort it, do so, then contact a local rescue, welfare group or vet - some rescues run a rescue ambulance. Acting for the animal in front of you is what matters.</p>"],
     ["Does feeding street animals help?",
@@ -510,7 +510,7 @@ pages.push(article({
     ["Can I take my pet on a domestic flight in Thailand?",
      "<p>Some Thai domestic airlines carry pets, in cabin or as cargo, but policies vary widely and change. Check the specific airline well in advance, and expect to need an approved crate and to follow their booking process.</p>"],
     ["How do I find pet-friendly hotels in Thailand?",
-     "<p>Search specifically for pet-friendly accommodation - many places do not accept animals - and confirm the policy in writing before you travel. Privately rented condos and villas can be an alternative.</p>"],
+     "<p>Search specifically for pet-friendly accommodation and confirm the policy in writing before you travel. Privately rented condos and villas can be an alternative when hotels do not accept animals.</p>"],
     ["Is a long road trip safe for my pet?",
      "<p>It can be, with planning: a secure carrier or harness, regular water and toilet stops, never leaving the pet in a parked vehicle, and travelling in cooler hours. If your pet finds car travel very stressful, consider a sitter or boarding instead.</p>"],
     ["Do I need health papers for domestic pet travel in Thailand?",

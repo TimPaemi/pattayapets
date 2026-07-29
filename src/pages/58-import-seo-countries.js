@@ -101,7 +101,7 @@ pages.push(country({
       '<tr><th scope="row">3+ months before (if EU return possible)</th><td>Microchip, rabies vaccination, optional <a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">rabies titer test</a></td></tr>' +
       '<tr><th scope="row">~30 days before departure</th><td>Apply for <a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a> (form R1/1)</td></tr>' +
       '<tr><th scope="row">Final 1&ndash;2 weeks</th><td>EU export health certificate endorsed by the competent Italian veterinary authority</td></tr>' +
-      '<tr><th scope="row">Arrival day</th><td>AQS inspection at Bangkok or U-Tapao; 500&nbsp;baht fee</td></tr>' +
+      '<tr><th scope="row">Arrival day</th><td>AQS inspection at Suvarnabhumi; 500&nbsp;baht fee</td></tr>' +
       '</tbody></table></div><p>' + STD_STEPS + EU_IMPORT_REF },
     { h: "The Italian side of the paperwork", html:
       "<p>For travel from Italy to Thailand, your vet completes an <strong>EU animal health " +
@@ -185,7 +185,7 @@ pages.push(country({
     ["Is quarantine required on arrival in Thailand?",
      "<p>Not usually with complete paperwork — same-day AQS inspection is typical.</p>"],
     ["Can I enter Thailand via U-Tapao from Malaysia?",
-     "<p>Some regional flights use U-Tapao, closer to Pattaya. Your DLD permit must name the actual arrival airport.</p>"]
+     "<p>No. U-Tapao has no Animal Quarantine Station, so it cannot clear an imported pet. Your DLD import permit must name Suvarnabhumi.</p>"]
   ]
 }));
 
@@ -199,7 +199,7 @@ pages.push(country({
     "start early.",
   officialExtra:
     "<p><strong>Korean sources:</strong> " +
-    "<a href=\"https://www.animal.go.kr/\" target=\"_blank\" rel=\"noopener nofollow\">" +
+    "<a href=\"https://www.qia.go.kr/english/html/Animal_livestock/02AnimalLivestock_007-8_FAQ.jsp\" target=\"_blank\" rel=\"noopener nofollow\">" +
     "Animal and Plant Quarantine Agency (APQA)</a>. Export mirror: " +
     "<a href=\"/take-pet-out-of-thailand/to-south-korea.html\">taking a pet to South Korea</a>.</p>",
   sections: [
@@ -225,9 +225,10 @@ pages.push(country({
       "limits; larger pets travel as checked baggage or cargo. Summer heat restrictions may " +
       "apply. See <a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline pet policies</a>.</p>" },
     { h: "If you may return to South Korea", html:
-      "<p>Re-importing a pet to South Korea after time abroad involves APQA rules that can " +
-      "include rabies antibody tests, designated quarantine facilities and advance import " +
-      "permission. If return is possible, verify APQA requirements before you leave Korea. " +
+      "<p>Bringing a pet back into South Korea means meeting APQA&rsquo;s entry rules again: a " +
+      "government export quarantine certificate from the country you leave, microchip " +
+      "identification, rabies vaccination, and a rabies neutralising antibody titre of " +
+      "0.5&nbsp;IU/ml or higher. Keep the antibody result and chip number on file before you leave Korea. " +
       "See <a href=\"/take-pet-out-of-thailand/to-south-korea.html\">export to South Korea</a>.</p>" }
   ],
   faqs: [

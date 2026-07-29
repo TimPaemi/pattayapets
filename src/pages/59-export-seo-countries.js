@@ -114,24 +114,36 @@ pages.push(exp({
     "<strong>DVS Malaysia</strong> rules and Thai DLD export paperwork must align before you fly.",
   officialExtra:
     "<p><strong>Malaysian sources:</strong> " +
-    "<a href=\"https://www.dvs.gov.my/\" target=\"_blank\" rel=\"noopener nofollow\">DVS Malaysia</a>. " +
+    "<a href=\"https://www.dvs.gov.my/index.php/pages/view/804?mid=53\" target=\"_blank\" rel=\"noopener nofollow\">DVS pet import requirements</a> " +
+    "and the <a href=\"https://www.dvs.gov.my/index.php/announcements/view/207\" target=\"_blank\" rel=\"noopener nofollow\">5 February 2026 DVS notice</a> suspending the May 2025 requirement documents. " +
     "Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-malaysia.html\">bringing a pet from Malaysia</a>.</p>",
   sections: [
-    { h: "What Malaysia typically requires", html:
-      "<p>Malaysia&rsquo;s Department of Veterinary Services (DVS) generally expects:</p>" +
+    { h: "What Malaysia requires", html:
+      "<p>Malaysia&rsquo;s Department of Veterinary Services (DVS) requires:</p>" +
       "<ul>" +
-      "<li>Advance <strong>import permit</strong> or approval for dogs and cats</li>" +
-      "<li>ISO microchip and current <strong>rabies vaccination</strong></li>" +
+      "<li>An <strong>import permit</strong> &mdash; an animal that arrives without one is refused " +
+      "entry. Apply to the State Veterinary Director or the DVS Director-General for peninsular " +
+      "Malaysia; Sabah and Sarawak apply through their own state authorities. The fee is " +
+      "RM&nbsp;5 per animal and the permit is valid <strong>30 days</strong> from issue.</li>" +
+      "<li>A <strong>minimum age of three months</strong> for dogs and cats</li>" +
+      "<li>Current <strong>rabies vaccination</strong> records, submitted with the permit application</li>" +
       "<li>Thai <strong>DLD export health certificate</strong> and export permit</li>" +
-      "<li>Flight details matching the declared arrival point</li>" +
+      "<li><strong>Quarantine on arrival</strong> &mdash; Thailand is not on the DVS exemption list, " +
+      "so a pet arriving from Thailand faces a minimum of <strong>7 days</strong>. Quarantine " +
+      "stations are at KLIA (Sepang), Penang International Airport, and Padang Besar on the " +
+      "Perlis&ndash;Thailand border.</li>" +
+      "<li>Microchipping is <strong>not</strong> a general DVS requirement &mdash; it applies to " +
+      "restricted breeds. Chip anyway: the Thai export paperwork and your airline rely on it.</li>" +
       "</ul>" +
-      "<p>Rules differ for peninsular Malaysia vs East Malaysia and can change &mdash; verify with DVS before you start the Thai export.</p>" +
+      "<p><strong>Check before you book.</strong> On <strong>5 February 2026</strong> DVS suspended " +
+      "both of its May 2025 import-requirement documents for dogs and cats and has not published " +
+      "replacements. Confirm the current requirement set with DVS before you start the Thai export.</p>" +
       DLD_SIDE },
     { h: "The timeline — work backwards", html:
       '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
       '<th scope="col">When</th><th scope="col">Step</th></tr></thead><tbody>' +
-      '<tr><th scope="row">6&ndash;8 weeks before</th><td>Apply for Malaysian import approval through DVS</td></tr>' +
+      '<tr><th scope="row">Within 30 days of travel</th><td>Apply to DVS for the import permit &mdash; it is valid 30 days from issue</td></tr>' +
       '<tr><th scope="row">&ge;15 days before export</th><td>Thai DLD export permit (form 1/1)</td></tr>' +
       '<tr><th scope="row">Final week</th><td>DLD health certificate; AQS inspection</td></tr>' +
       '<tr><th scope="row">Arrival</th><td>Present documents to Malaysian quarantine / veterinary officer</td></tr>' +
@@ -139,7 +151,7 @@ pages.push(exp({
     { h: "Short flight from Bangkok", html:
       "<p>Kuala Lumpur is under three hours from Bangkok. Cabin travel may be possible for " +
       "small pets; confirm heat embargoes and crate rules. If you live in Pattaya, export " +
-      "through Suvarnabhumi or U-Tapao as named on your DLD permit.</p>" },
+      "through Suvarnabhumi &mdash; U-Tapao has no Animal Quarantine Station.</p>" },
     { h: "Common mistakes", html:
       "<ul>" +
       "<li><strong>Assuming ASEAN proximity means no import permit</strong>.</li>" +
@@ -149,13 +161,13 @@ pages.push(exp({
   ],
   faqs: [
     ["Do I need a Malaysian import permit from Thailand?",
-     "<p>Usually yes for dogs and cats — apply through DVS Malaysia before booking export.</p>"],
+     "<p>Yes. A dog or cat that arrives without an import permit is refused entry. Apply to the State Veterinary Director or the DVS Director-General; the fee is RM 5 per animal.</p>"],
     ["How long does Thailand-to-Malaysia pet export take?",
-     "<p>Often 4–8 weeks minimum for Malaysian approval plus Thai DLD export lead time.</p>"],
-    ["Can I export through U-Tapao to Malaysia?",
-     "<p>Only if your DLD export permit names U-Tapao and the airline route accepts pets — confirm both sides.</p>"],
+     "<p>The Thai DLD export permit needs at least 15 days. The Malaysian permit is issued quickly but is only valid for 30 days, so apply for it inside that window and run the two timelines together.</p>"],
+    ["Can I fly my pet to Malaysia from U-Tapao?",
+     "<p>No. U-Tapao is not one of the DLD's animal quarantine stations, so the export cannot be cleared there. Use Suvarnabhumi.</p>"],
     ["Is quarantine required in Malaysia?",
-     "<p>Depends on DVS classification and vaccination history — verify current rules for your pet.</p>"],
+     "<p>Yes — a minimum of 7 days for a pet arriving from Thailand, which is not on the DVS quarantine-exemption list. Quarantine stations are at KLIA, Penang and Padang Besar.</p>"],
     ["What does the Thai DLD export process involve?",
      "<p>Export permit, health certificate from an approved vet, AQS inspection — see <a href=\"/take-pet-out-of-thailand/export-process.html\">export process</a>.</p>"]
   ]
@@ -166,32 +178,40 @@ pages.push(exp({
   title: "Export Pet from Thailand to South Korea (2026) | PattayaPets",
   desc: "Thailand to South Korea pet export: APQA import rules, rabies antibody test, DLD export permit and Incheon arrival planning.",
   h1: "Taking a pet from Thailand to South Korea",
-  lede: "South Korea&rsquo;s <strong>APQA</strong> import system is strict &mdash; antibody " +
-    "tests, designated routes and advance permission are normal for pets coming from Thailand.",
+  lede: "South Korea&rsquo;s <strong>APQA</strong> system is document-led &mdash; a Thai " +
+    "government export quarantine certificate, a microchip and a rabies antibody result " +
+    "decide whether your pet clears on the day it lands.",
   officialExtra:
     "<p><strong>Korean sources:</strong> " +
-    "<a href=\"https://www.animal.go.kr/\" target=\"_blank\" rel=\"noopener nofollow\">APQA Korea</a>. " +
+    "<a href=\"https://www.qia.go.kr/english/html/Animal_livestock/02AnimalLivestock_007-8_FAQ.jsp\" target=\"_blank\" rel=\"noopener nofollow\">APQA &mdash; bringing a dog or cat to Korea</a> and " +
+    "<a href=\"https://www.airport.kr/ap_en/1443/subview.do\" target=\"_blank\" rel=\"noopener nofollow\">Incheon Airport animal quarantine</a>. " +
     "Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-south-korea.html\">bringing a pet from South Korea</a>.</p>",
   sections: [
-    { h: "What South Korea typically requires", html:
-      "<p>APQA import of dogs and cats from non-rabies-free countries commonly includes:</p>" +
+    { h: "What South Korea requires", html:
+      "<p>Korea&rsquo;s <strong>Animal and Plant Quarantine Agency (APQA)</strong> admits a pet " +
+      "dog or cat on documents and inspection, not on an advance licence:</p>" +
       "<ul>" +
-      "<li>Advance <strong>import licence</strong> / quarantine reservation</li>" +
-      "<li>ISO microchip and rabies vaccination history</li>" +
-      "<li><strong>Rabies antibody test</strong> from an approved laboratory (often with a waiting period)</li>" +
-      "<li>Thai DLD export health certificate and export permit</li>" +
-      "<li>Arrival through an approved port such as <strong>Incheon</strong></li>" +
+      "<li>A <strong>government export quarantine certificate</strong> issued by the Thai DLD</li>" +
+      "<li><strong>Microchip</strong> identification</li>" +
+      "<li><strong>Rabies vaccination</strong> history</li>" +
+      "<li>A <strong>rabies neutralising antibody titre of 0.5&nbsp;IU/ml or higher</strong></li>" +
+      "<li><strong>Declaration on arrival</strong> &mdash; tick the animal box on the customs " +
+      "declaration form and present your pet to a quarantine officer before customs</li>" +
       "</ul>" +
-      "<p>Verify the current APQA checklist &mdash; Korea updates requirements periodically.</p>" +
+      "<p>With a readable microchip and a titre at or above 0.5&nbsp;IU/ml, pets are released " +
+      "on the day of arrival. If either is missing, quarantine is extended until the pet is " +
+      "chipped and vaccinated and the titre reaches that level. There is <strong>no routine " +
+      "import licence or quarantine reservation</strong> for a pet travelling with its owner. " +
+      "If you are moving animals commercially or in numbers, confirm the rules with APQA directly.</p>" +
       DLD_SIDE },
     { h: "The timeline — work backwards", html:
       '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
       '<th scope="col">When</th><th scope="col">Step</th></tr></thead><tbody>' +
-      '<tr><th scope="row">2&ndash;3 months before</th><td>Rabies antibody test and any APQA waiting period</td></tr>' +
-      '<tr><th scope="row">6&ndash;8 weeks before</th><td>APQA import permission / quarantine booking</td></tr>' +
+      '<tr><th scope="row">Well before travel</th><td>Rabies vaccination, then the rabies neutralising antibody test &mdash; the result must be 0.5&nbsp;IU/ml or higher</td></tr>' +
       '<tr><th scope="row">&ge;15 days before export</th><td>Thai DLD export permit (form 1/1)</td></tr>' +
-      '<tr><th scope="row">Departure day</th><td>AQS inspection; fly to Incheon</td></tr>' +
+      '<tr><th scope="row">Final week</th><td>DLD export quarantine certificate; AQS inspection at Suvarnabhumi</td></tr>' +
+      '<tr><th scope="row">Arrival</th><td>Declare the animal on your customs form; APQA inspection at Incheon</td></tr>' +
       '</tbody></table></div>' },
     { h: "Departing from Pattaya or Bangkok", html:
       "<p>Most exports use <strong>Suvarnabhumi</strong>. Allow road time from Pattaya. " +
@@ -199,20 +219,22 @@ pages.push(exp({
       "AQS</a> (import mirror) for how the station operates.</p>" },
     { h: "Common mistakes", html:
       "<ul>" +
-      "<li><strong>Booking Korea import before the antibody test clears</strong>.</li>" +
-      "<li><strong>Assuming Thailand&rsquo;s entry paperwork covers Korean import</strong>.</li>" +
-      "<li><strong>Last-minute DLD export</strong> while APQA permission is still pending.</li>" +
+      "<li><strong>Flying before the antibody result is back</strong> &mdash; a titre below 0.5&nbsp;IU/ml means extended quarantine on arrival.</li>" +
+      "<li><strong>Assuming Thailand&rsquo;s entry paperwork covers Korean entry</strong>.</li>" +
+      "<li><strong>Not declaring the animal</strong> on the customs form at Incheon.</li>" +
       "</ul>" }
   ],
   faqs: [
     ["Does South Korea require a rabies titer test from Thailand?",
-     "<p>APQA commonly requires a rabies antibody test from an approved lab for imports from non-designated countries — verify the current APQA list.</p>"],
+     "<p>Yes. A dog or cat identified by microchip with a rabies neutralising antibody titre of 0.5 IU/ml or higher is released on the day of arrival. Below that level, quarantine is extended until the pet is chipped, vaccinated and the titre reaches 0.5 IU/ml.</p>"],
+    ["Do I need advance permission or an import licence for Korea?",
+     "<p>Not for a pet travelling with you. The controlling document is the government export quarantine certificate issued by the Thai DLD, together with microchip and rabies antibody evidence. Commercial movements are handled separately — confirm those with APQA.</p>"],
     ["How long does Thailand-to-Korea pet export take?",
-     "<p>Often two to three months minimum because of antibody testing and APQA lead time.</p>"],
+     "<p>The pacing item is the rabies antibody test, plus the Thai DLD export permit lead time of at least 15 days. Book the blood draw first and work forward from the result.</p>"],
     ["Can my pet enter Korea through Incheon airport?",
-     "<p>Incheon is the usual international entry point for pets — confirm APQA approval for your flight.</p>"],
+     "<p>Yes. APQA&rsquo;s Incheon Airport Regional Office inspects arriving pets. Tick the animal box on your customs declaration form and present the pet and certificate to a quarantine officer before customs.</p>"],
     ["What Thai documents does APQA expect?",
-     "<p>DLD export permit, export health certificate, vaccination records with matching microchip — all aligned with APQA import approval.</p>"],
+     "<p>The DLD export permit and export quarantine certificate, plus vaccination records and an antibody result whose microchip number matches every other document.</p>"],
     ["Should I use a relocation agent?",
      "<p>Korea imports are paperwork-heavy; see <a href=\"/pet-relocation/\">relocation agents</a> if you want managed export.</p>"]
   ]

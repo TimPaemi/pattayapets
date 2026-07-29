@@ -45,22 +45,29 @@ one at a time:
 ```
 cd C:\Projects\pattayapets
 npm install
-npm run build:all
-npx wrangler pages deploy dist --project-name=pattayapets --branch=main --commit-dirty=true
+npm run deploy
 ```
 
 What each line does:
 
 1. `cd C:\Projects\pattayapets` — moves into the project folder.
 2. `npm install` — fetches the build tools (slow once, instant after).
-3. `npm run build:all` — regenerates OG images, the site, checks every internal link,
-   and runs SEO and directory audits. The build should finish without errors; the link
-   check should report **0 broken**. Before a big deploy, you can also run
-   `npm run audit:go` (build:all plus a full dist audit and a live smoke test on
-   pattayapets.com).
-4. `npx wrangler pages deploy ...` — uploads the finished site. **The first
-   time only**, it opens a browser asking you to log in to Cloudflare — approve
-   it, return to the terminal, and it finishes by printing your live URL.
+3. `npm run deploy` — the only supported deploy route. It runs `build:all`
+   (regenerates OG images and the site, checks every internal link, runs the SEO and
+   directory audits), then the guarded pre-flight in `tools/deploy.mjs`, then the
+   upload, then the IndexNow ping. The link check should report **0 broken**.
+   **The first time only**, the upload step opens a browser asking you to log in to
+   Cloudflare — approve it, return to the terminal, and it finishes by printing your
+   live URL.
+
+   **Never type a `wrangler pages deploy` command by hand.** The Cloudflare project
+   name is hardcoded in `tools/deploy.mjs` and is deliberately not readable from the
+   command line. That is what stops a repeat of 27 July 2026, when a hand-typed
+   `--project-name` served the school guide on pattayapets.com for 11.5 hours.
+
+   To rehearse without uploading, run `npm run deploy:check` — every check runs,
+   nothing is sent. Before a big deploy you can also run `npm run audit:go`
+   (build:all plus a full dist audit and a live smoke test on pattayapets.com).
 
 After it finishes, open `pattayapets.com` and press **Ctrl+Shift+R** once (a
 hard refresh) to clear any old cached version.
@@ -208,7 +215,8 @@ Until verification succeeds, Google Search Console sitemap submission still work
 | Full build + audits | `npm run build:all` (links, SEO, directory, country-pairs, orphans, richness) |
 | Post-deploy audit pass | `npm run audit:go` (build:all + audit:full + audit:live) |
 | Lighthouse (local) | `npx serve dist -l 8787` then `PP_LH_BASE=http://127.0.0.1:8787 npm run audit:lighthouse:all` |
-| Deploy | `npm run deploy` or wrangler command in section 2 |
+| Deploy | `npm run deploy` (guarded — build, audits, pre-flight, upload, IndexNow) |
+| Rehearse a deploy | `npm run deploy:check` (every check, uploads nothing) |
 | Directory data | `src/data/businesses.js` |
 | Site-wide shell | `src/layout.js` |
 | Guide pages | `src/pages/*.js` |

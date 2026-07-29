@@ -224,7 +224,7 @@ pages.push(article({
     ["Are these clinics confirmed as 24-hour by PattayaPets?",
      "<p>They are listed as 24-hour based on public information. PattayaPets has not yet completed anonymous visits, and hours can change — check the clinic listing for current contact details before you travel.</p>"],
     ["What should I bring to a 24-hour vet visit?",
-     "<p>Your pet secured in a carrier or on a lead, vaccination records if you have them, any medication, and a payment method. Save the clinic address in English and Thai for your driver if someone else is taking you.</p>"],
+     "<p>Bring your pet secured in a carrier or on a lead, plus any medication, vaccination records you have and a payment method. Save the clinic address in English and Thai for your driver if someone else is taking you.</p>"],
     ["Do I need an appointment for an emergency?",
      "<p>No — go straight there for a genuine emergency. A quick call on the way helps the team prepare, but do not delay travel when minutes matter.</p>"],
     ["How much does an emergency vet visit cost in Pattaya?",
@@ -232,7 +232,7 @@ pages.push(article({
     ["Which 24-hour clinic is closest to Jomtien or Naklua?",
      "<p>Most listed 24-hour hospitals cluster along Sukhumvit and central Pattaya. From Jomtien or Naklua, pick the nearest from the list above and save the drive time in advance. For daytime neighbourhood care, use our <a href=\"/area/jomtien.html\">Jomtien</a> and <a href=\"/area/naklua.html\">Naklua</a> area pages.</p>"],
     ["Can I get human medical help on this page?",
-     "<p>No — this list is for <strong>animals only</strong>. For human emergencies in Pattaya, see <a href=\"https://pattaya-medical.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Pattaya Medical</a>.</p>"]
+     "<p>No — this list is for <strong>animals only</strong>. For a human medical emergency in Thailand, call <strong>1669</strong> (the national emergency medical services line, free, 24 hours) or go straight to the nearest hospital emergency department. Do not take a person to a veterinary clinic.</p>"]
   ],
   updated: "2026-06-01",
   related: [

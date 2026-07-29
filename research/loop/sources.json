@@ -1,0 +1,12 @@
+{
+  "https://overpass-api.de/api/interpreter": {
+    "lastFetched": "2026-07-29",
+    "status": "timeout",
+    "note": "Run 1 Overpass sweep timed out before returning data; do not treat the empty result as a completed data sweep."
+  },
+  "https://overpass.kumi.systems/api/interpreter": {
+    "lastFetched": "2026-07-29",
+    "status": "200",
+    "note": "Run 2 widened the southern bbox and queried healthcare=veterinary; run 3 widened the northern boundary and queried shop=animal_feed. Neither request returned named elements."
+  }
+}
