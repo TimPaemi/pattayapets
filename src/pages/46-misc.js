@@ -104,7 +104,7 @@ pages.push(article({
     ["Does pet insurance cover import or export costs?",
      "<p>Almost never — relocation, quarantine and travel are separate from medical cover. Budget import and export separately; see our <a href=\"/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html\">import cost guide</a>.</p>"],
     ["How much should I save if I self-insure instead?",
-     "<p>There is no fixed rule — many owners aim for enough to cover emergency surgery at a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour hospital</a>. Start with a realistic figure from your vet for a major event, then build the buffer over time.</p>"]
+     "<p>Aim for enough to cover emergency surgery at a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour hospital</a>. There is no fixed rule, so start with a realistic figure from your vet for a major event, then build the buffer over time.</p>"]
   ],
   related: [
     { name: "What it costs to own a pet", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", desc: "The wider pet budget in Pattaya." },

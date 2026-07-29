@@ -172,7 +172,9 @@ pages.push(hazard({
     ["My pet was hit but the driver left — what now?",
      "<p>Your priority is the vet. A police report may help later with insurance, but do not delay treatment to chase the vehicle.</p>"],
     ["Can I use Grab or a taxi after a road accident?",
-     "<p>Only if the driver accepts an animal in a crate and the pet can be moved safely. Many owners arrange a private pet transfer — see <a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">getting to the vet</a>.</p>"]
+     "<p>Only if the driver accepts an animal in a crate and the pet can be moved safely. Many owners arrange a private pet transfer — see <a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">getting to the vet</a>.</p>"],
+    ["Should I call the emergency vet before leaving?",
+     "<p>Yes. Phone the clinic, explain that your pet was hit by a vehicle, tell them you are coming, and then go promptly.</p>"]
   ],
   related: [
     { name: "If your pet goes missing", path: "/owning-a-pet-in-pattaya/lost-pet-pattaya.html", desc: "If a loose pet is hit and runs off." },
@@ -238,7 +240,9 @@ pages.push(hazard({
     ["Should I rinse my dog after every beach visit?",
      "<p>Yes — salt irritates skin and ears. A fresh-water rinse and thorough dry, especially of ears and paws, prevents many post-beach vet visits.</p>"],
     ["Are jellyfish worse at certain times of year?",
-     "<p>Risk varies by season and beach stretch. Avoid washed-up jellyfish year-round, and keep dogs away from the tideline after storms when debris accumulates.</p>"]
+     "<p>Risk varies by season and beach stretch. Avoid washed-up jellyfish year-round, and keep dogs away from the tideline after storms when debris accumulates.</p>"],
+    ["Can a washed-up jellyfish still sting my dog?",
+     "<p>Yes. Keep your dog from mouthing or rolling on any jellyfish on the sand because it can still sting after death.</p>"]
   ],
   related: [
     { name: "Dog-friendly beaches", path: "/dog-friendly-pattaya/beaches.html", desc: "Beach etiquette and where dogs can go." },

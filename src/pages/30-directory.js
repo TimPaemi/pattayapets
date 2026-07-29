@@ -58,7 +58,7 @@ const HUB_H1 = {
 const HUB_DESC = {
   vets: "Vets and animal hospitals in Pattaya — 24-hour emergency care, vaccinations and surgery. Verified facts pages; verdicts after anonymous visits.",
   groomers: "Dog and cat groomers in Pattaya — baths, breed clips, nail trims and heat-aware coat care. Verified facts pages; verdicts after anonymous visits.",
-  boarding: "Pet boarding, kennels and dog hotels in Pattaya for travel and work days. Verified facts pages; verdicts after anonymous visits.",
+  boarding: "Pet boarding, kennels and dog hotels in Pattaya for travel and work days. Compare daycare options. Verified facts pages; verdicts after anonymous visits.",
   "pet-shops": "Pet shops in Pattaya for food, litter, toys and supplies for dogs, cats and household basics. Verified facts pages; verdicts after anonymous visits.",
   trainers: "Dog trainers, obedience classes, puppy training and behaviour support for local owners in Pattaya. Verified facts pages; verdicts after anonymous visits.",
   "pet-relocation": "Pet relocation agents for import and export to and from Thailand — DLD permits, health certificates and flights for moves to and from Thailand.",

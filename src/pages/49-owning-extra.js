@@ -84,7 +84,9 @@ pages.push(own({
     ["Should I sedate my pet for Songkran noise?",
      "<p>Only on explicit veterinary advice — sedation affects breathing and heat tolerance. A quiet indoor room and background noise are the first steps; ask your vet if anxiety is severe.</p>"],
     ["Can I board my pet during Songkran?",
-     "<p>Book early — facilities fill for the holiday. Confirm they can manage noise-anxious animals and that vaccinations are current.</p>"]
+     "<p>Book early — facilities fill for the holiday. Confirm they can manage noise-anxious animals and that vaccinations are current.</p>"],
+    ["What should I check at home before Songkran starts?",
+     "<p>Check that gates, doors, windows and balconies are secure, and make sure your pet's ID and microchip details are current. Set up a quiet interior room with familiar bedding, water and cooling before the streets become busy.</p>"]
   ],
   related: [
     { name: "Fireworks & noise-anxious pets", path: "/owning-a-pet-in-pattaya/fireworks-and-noise-anxiety.html", desc: "The wider noise-anxiety picture." },
@@ -152,7 +154,11 @@ pages.push(own({
     ["Are toads more dangerous in rainy season?",
      "<p>Yes — bufotoxin from cane toads is a common poisoning risk when rain brings them out. See <a href=\"/pet-emergency/venomous-creatures.html\">venomous creatures</a> and rinse the mouth if your pet mouths one.</p>"],
     ["Should I skip walks when it is pouring?",
-     "<p>Short toilet breaks on a lead are fine; skip long walks in driving rain and flooded sois. Dry paws and ears well when you get home.</p>"]
+     "<p>Short toilet breaks on a lead are fine; skip long walks in driving rain and flooded sois. Dry paws and ears well when you get home.</p>"],
+    ["Should parasite prevention continue during rainy season?",
+     "<p>Yes. Wet-season mosquitoes, fleas and ticks make it especially important to keep parasite prevention on your vet's schedule.</p>"],
+    ["How can I keep my pet occupied on rainy days?",
+     "<p>Use short training sessions, food puzzles, chews and indoor play to give a rained-in pet an outlet.</p>"]
   ],
   related: [
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "The hot-season half of the year." },
@@ -283,9 +289,11 @@ pages.push(own({
     ["Does a microchip help find a lost pet?",
      "<p>Yes - it is one of the best reasons to chip a pet. A vet or shelter can scan the chip and trace it to you, provided your contact details on the database are current. Flag the chip as missing as soon as your pet is lost.</p>"],
     ["Should I offer a reward for a lost pet?",
-     "<p>It can help in local Facebook groups, but verify callers carefully to avoid scams. A clear photo, microchip number and your phone number matter more than a large cash reward.</p>"],
+     "<p>Yes — a reward can help in local Facebook groups. Verify callers carefully to avoid scams; a clear photo, microchip number and your phone number matter more than a large cash reward.</p>"],
     ["How long should I keep searching?",
-     "<p>Many pets turn up within days, but keep checking shelters and online posts for weeks — cats especially hide close to home. Update posts if you move or change number.</p>"]
+     "<p>Many pets turn up within days, but keep checking shelters and online posts for weeks — cats especially hide close to home. Update posts if you move or change number.</p>"],
+    ["What should I put on a lost-pet poster?",
+     "<p>Use a large, clear recent photo, the word LOST, the area where your pet disappeared and a phone number. Place posters where local people walk and wait, and leave the same details with nearby vets and rescues.</p>"]
   ],
   related: [
     { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Why it matters, and keeping details current." },
@@ -361,7 +369,11 @@ pages.push(own({
     ["Does microchipping hurt?",
      "<p>It is a quick injection-sized procedure — most pets tolerate it easily. Complications are rare; ask your vet if you have concerns.</p>"],
     ["Do I need a microchip to export my pet from Thailand?",
-     "<p>Yes — ISO microchip is mandatory for DLD export. See <a href=\"/bring-pet-to-thailand/microchip-requirements.html\">microchip requirements</a> for import and export rules.</p>"]
+     "<p>Yes — ISO microchip is mandatory for DLD export. See <a href=\"/bring-pet-to-thailand/microchip-requirements.html\">microchip requirements</a> for import and export rules.</p>"],
+    ["Does each pet need its own microchip?",
+     "<p>Yes. Each animal needs its own chip and its own registration record.</p>"],
+    ["What should I do with a rescue pet's existing microchip?",
+     "<p>Transfer the registry details to your name on adoption day. Confirm the database and keep the chip number with your pet's records.</p>"]
   ],
   related: [
     { name: "If your pet goes missing", path: "/owning-a-pet-in-pattaya/lost-pet-pattaya.html", desc: "Where the microchip earns its place." },
@@ -435,7 +447,9 @@ pages.push(own({
     ["How much should I pay a pet sitter in Pattaya?",
      "<p>Rates vary by visits per day, overnight stays and number of pets. Agree price, keys and emergency contact in writing before you leave.</p>"],
     ["Should the sitter have a spare key?",
-     "<p>Yes — and your vet's number, your landlord's contact if needed, and permission to seek emergency care. Leave carrier and leash accessible.</p>"]
+     "<p>Yes — and your vet's number, your landlord's contact if needed, and permission to seek emergency care. Leave carrier and leash accessible.</p>"],
+    ["What should I ask a Pattaya dog walker about the heat?",
+     "<p>Confirm that walks happen in the cool hours, that the walker carries water, and that they will cut a walk short if your dog is struggling.</p>"]
   ],
   related: [
     { name: "Boarding in Pattaya", path: "/boarding/", desc: "Kennels and catteries directory." },
@@ -499,9 +513,13 @@ pages.push(own({
     ["What if I can't get my pet to a vet in an emergency?",
      "<p>Call a 24-hour animal hospital or a mobile vet straight away for advice on what to do immediately, and ask about a home visit. Plan your emergency transport in advance so you are never working it out under pressure.</p>"],
     ["Are motorbike taxis safe for pets?",
-     "<p>Generally no — unsecured pets on bikes are dangerous. Use a car, pet taxi or mobile vet for anything beyond a very short, calm trip in a secure carrier.</p>"],
+     "<p>No — motorbike taxis are generally unsafe for pets because unsecured animals on bikes are dangerous. Use a car, pet taxi or mobile vet for anything beyond a very short, calm trip in a secure carrier.</p>"],
     ["Should I keep a carrier in the car?",
-     "<p>Yes if you drive regularly — it speeds emergency departures and keeps a stressed pet secure. See <a href=\"/pet-emergency/pet-first-aid.html\">pet first aid</a> for preparation basics.</p>"]
+     "<p>Yes if you drive regularly — it speeds emergency departures and keeps a stressed pet secure. See <a href=\"/pet-emergency/pet-first-aid.html\">pet first aid</a> for preparation basics.</p>"],
+    ["Should I call the clinic before leaving for an emergency?",
+     "<p>Yes. Call first so the clinic is ready for you, then leave with a secure carrier and your transport plan.</p>"],
+    ["Can a home-visit vet replace a hospital in a true emergency?",
+     "<p>No. Home visits can help with routine care or difficult transport, but they are not a substitute for a hospital in a true emergency.</p>"]
   ],
   related: [
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Where to go when it cannot wait." },
@@ -573,7 +591,11 @@ pages.push(own({
     ["Should senior pets still exercise in Pattaya heat?",
      "<p>Yes, but shorter and in cool hours only. Swimming or gentle walks beat midday pavement — watch for panting and stop before exhaustion.</p>"],
     ["Do older pets need different food?",
-     "<p>Often yes — senior diets support joints and weight. Ask your vet before switching; sudden diet changes upset older stomachs.</p>"]
+     "<p>Often yes — senior diets support joints and weight. Ask your vet before switching; sudden diet changes upset older stomachs.</p>"],
+    ["How can I make home easier for a senior pet?",
+     "<p>Make food and water easy to reach, add soft supportive bedding, use rugs for grip on slippery floors, and consider steps or a ramp if climbing is difficult.</p>"],
+    ["Should I assume confusion is just old age?",
+     "<p>No. Disorientation, night waking or house-soiling can signal pain or cognitive decline, so discuss changes with your vet.</p>"]
   ],
   related: [
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Doubly important for older pets." },
@@ -645,6 +667,8 @@ pages.push(own({
      "<p>The guiding question is whether your pet is still comfortable and content - appetite, freedom from pain, mobility, interest in life, and whether the good days still outnumber the hard ones. Your vet can help you assess this calmly, and quality-of-life checklists can help you see clearly.</p>"],
     ["Can my pet be put to sleep at home?",
      "<p>Often yes - some clinics can arrange a home visit so a pet can stay in familiar surroundings. Ask your vet whether that is possible. Putting a pet to sleep is a gentle, peaceful, pain-free process, and you can usually choose to be present.</p>"],
+    ["Can I stay with my pet during euthanasia?",
+     "<p>Usually yes. You can normally choose to stay, hold and comfort your pet during the gentle, pain-free process; ask your vet what the clinic or home-visit arrangement allows.</p>"],
     ["What are the options for a pet's body afterwards?",
      "<p>Pet cremation services are available in the Pattaya area, including individual cremation with the ashes returned to you. Your vet can explain the options and help arrange aftercare, so you do not have to organise it alone at a hard time.</p>"],
     ["How do I talk to children about losing a pet?",

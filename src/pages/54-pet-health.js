@@ -162,7 +162,9 @@ pages.push(health({
     ["How is heartworm tested?",
      "<p>Your vet uses blood tests — often before starting or changing prevention. Follow their schedule; do not skip tests if prevention lapses.</p>"],
     ["What if I miss a heartworm dose?",
-     "<p>Contact your vet — they may recommend restarting with a test first. Prevention works best on a consistent monthly schedule in Pattaya.</p>"]
+     "<p>Contact your vet — they may recommend restarting with a test first. Prevention works best on a consistent monthly schedule in Pattaya.</p>"],
+    ["Can a pet have heartworm without showing symptoms?",
+     "<p>Yes. Early heartworm often shows no visible signs, so a pet can appear well while the infection develops. Follow your vet's prevention and testing schedule rather than waiting for coughing, exercise intolerance or weight loss.</p>"]
   ],
   related: [
     { name: "Dog vaccinations & parasites", path: "/dogs/dog-vaccinations-thailand.html", desc: "How prevention fits the wider routine." },
@@ -307,7 +309,7 @@ pages.push(health({
     ["Is parvovirus contagious to other dogs?",
      "<p>Yes — it spreads through contact with infected faeces and environments. Keep unvaccinated puppies away from public ground and unknown dogs until the course is complete.</p>"],
     ["Can parvovirus be prevented after exposure?",
-     "<p>There is no simple post-exposure fix — vaccination before exposure is the protection. If exposure is suspected, call your vet immediately for advice.</p>"]
+     "<p>No, there is no simple post-exposure fix. Vaccination before exposure is the protection; if exposure is suspected, call your vet immediately for advice.</p>"]
   ],
   related: [
     { name: "Puppy care in Pattaya", path: "/dogs/puppy-care-pattaya.html", desc: "Vaccination timing for a new puppy." },
@@ -376,7 +378,7 @@ pages.push(health({
     ["Are ear infections common in rainy season?",
      "<p>Yes — humidity plus damp ears after rain or swimming drives flare-ups. Dry ears gently after wet walks and see a vet if shaking or odour starts.</p>"],
     ["Can diet affect skin problems?",
-     "<p>Some pets have food sensitivities, but many skin issues here are infection or parasite driven. Your vet should diagnose before you change diet alone.</p>"]
+     "<p>Yes, diet can affect skin problems when a pet has food sensitivities. Many skin issues here are infection- or parasite-driven, so your vet should diagnose the cause before you change diet alone.</p>"]
   ],
   related: [
     { name: "Rainy-season pet care", path: "/owning-a-pet-in-pattaya/rainy-season-pet-care.html", desc: "Humidity and damp coats drive flare-ups." },
@@ -433,7 +435,7 @@ pages.push(health({
     ["Should I spay or neuter my pet?",
      "<p>For most pet owners in Pattaya, yes. It prevents unwanted litters in a city with a large street-animal problem, tends to reduce roaming and fighting and the risks that come with them, and is a routine, affordable procedure. Discuss it with your vet.</p>"],
     ["When is the right age?",
-     "<p>It depends on species, breed and size, and veterinary guidance evolves. Ask your vet what they recommend for your specific pet rather than following a fixed rule.</p>"],
+     "<p>Ask your vet to set the right age for your specific pet. Timing depends on species, breed and size, and veterinary guidance evolves, so do not follow a fixed rule.</p>"],
     ["Is it expensive in Pattaya?",
      "<p>Spaying and neutering are routine and generally affordable at Pattaya clinics. Some rescues and welfare groups also run low-cost or subsidised sterilisation programmes as part of tackling the street-animal population.</p>"],
     ["Should I let my pet have one litter first?",

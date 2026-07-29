@@ -187,7 +187,7 @@ pages.push(prosePage({
     "<p>PattayaPets is published by <strong>TIMPAEMI Co., Ltd.</strong>, based in " +
     "Pattaya, and operated via the TimPaemi network &mdash; a family of " +
     "independent Pattaya publications that share one method: visit anonymously, pay " +
-    "every bill, take no money from the businesses covered. See the " +
+    "every bill, take no money from the businesses covered.</p><p>See the " +
     '' +
     "TimPaemi case study for how PattayaPets fits the network. The founder is " +
     'Tim. ' +

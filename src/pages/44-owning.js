@@ -334,7 +334,11 @@ pages.push(own({
     ["Are houses easier than condos for pet owners?",
      "<p>Often yes — a house with a small garden gives more space and fewer lift-and-neighbour issues. Still confirm the owner allows pets and check noise rules if you have a vocal dog.</p>"],
     ["Can my landlord evict me for having a pet?",
-     "<p>If your lease or building rules ban pets and you moved in without written permission, you are exposed. Fix it before signing, not after a complaint.</p>"]
+     "<p>If your lease or building rules ban pets and you moved in without written permission, you are exposed. Fix it before signing, not after a complaint.</p>"],
+    ["Is landlord permission enough for a condo pet?",
+     "<p>No. The building's rules still apply, so both the unit owner and the building must allow pets. Get both permissions in writing before you sign.</p>"],
+    ["What shared-area rules should I check for my pet?",
+     "<p>Ask about rules for lifts, gardens and pool decks, as well as any size, breed or number limits. Have the agreed pet permission written into the lease.</p>"]
   ],
   related: [
     { name: "Dog-friendly condos", path: "/dog-friendly-pattaya/condos.html", desc: "The condo side in detail." },
@@ -427,7 +431,7 @@ pages.push(own({
     ["How long should walks be in Pattaya heat?",
      "<p>Let your dog set the pace — if panting becomes heavy or they lag, head home. Ten to twenty minutes at cool hours beats an hour at midday.</p>"],
     ["Can I hire a dog walker in Pattaya?",
-     "<p>Some trainers and boarding facilities offer walking services — ask locally and verify insurance and handling experience. Never hand your dog to an unvetted stranger from a social-media post.</p>"]
+     "<p>Yes, some trainers and boarding facilities offer dog-walking services in Pattaya. Ask locally, verify insurance and handling experience, and never hand your dog to an unvetted stranger from a social-media post.</p>"]
   ],
   related: [
     { name: "Dog-friendly beaches", path: "/dog-friendly-pattaya/beaches.html", desc: "Cool-hour walks on the sand." },
@@ -517,7 +521,7 @@ pages.push(own({
     ["Who can vaccinate against rabies in Thailand?",
      "<p>Licensed veterinarians administer rabies vaccines and issue the certificates you need for registration and travel. Keep the official certificate, not just a clinic receipt.</p>"],
     ["Are there breed-specific bans in Pattaya?",
-     "<p>Some condos and landlords restrict size or breed regardless of national law. Check building rules before adopting a large or restricted breed.</p>"]
+     "<p>Yes, some Pattaya condos and landlords restrict dogs by size or breed regardless of national law. Check building rules before adopting a large or restricted breed.</p>"]
   ],
   related: [
     { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Registration schemes often tie to microchips." },
@@ -595,7 +599,7 @@ pages.push(own({
     ["Which supermarkets stock pet food in Pattaya?",
      "<p>Major hypermarkets across central Pattaya, Naklua and Jomtien carry mainstream dog and cat lines; dedicated pet shops still win on range and advice.</p>"],
     ["Is online pet food delivery reliable?",
-     "<p>Generally yes for established retailers and marketplace sellers with good ratings — useful for heavy bags. Inspect packaging on arrival and store food in airtight containers in the humidity.</p>"],
+     "<p>Yes, delivery from established retailers and marketplace sellers with good ratings is generally reliable. It is useful for heavy bags; inspect packaging on arrival and store food in airtight containers in the humidity.</p>"],
     ["What if my pet refuses Thai brands?",
      "<p>Transition gradually, or ask your vet whether a specific imported line is worth the premium. Sometimes refusal is stress, not taste — especially after a move.</p>"]
   ],

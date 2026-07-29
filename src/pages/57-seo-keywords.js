@@ -319,13 +319,15 @@ pages.push(article({
     ["How much is a vet visit in Pattaya?",
      "<p>A routine consultation is often roughly 300–800 baht at local clinics, more at large hospitals and for emergencies. Always ask for an estimate.</p>"],
     ["Is vet care cheaper than in the UK or USA?",
-     "<p>Generally yes for routine care, but complex surgery and imaging can still be expensive in baht terms. Budget for prevention and emergencies separately.</p>"],
+     "<p>Routine vet care in Pattaya is generally cheaper than in the UK or USA. Complex surgery and imaging can still be expensive in baht terms, so budget for prevention and emergencies separately.</p>"],
     ["Do Pattaya vets accept credit cards?",
      "<p>Many hospitals accept cards; smaller clinics may prefer cash or Thai QR. Confirm when you book.</p>"],
     ["What does dog neutering cost in Pattaya?",
      "<p>Often a few thousand baht upward depending on size and clinic — get a quote that includes anaesthesia and pain relief.</p>"],
     ["Should I get pet insurance in Thailand?",
-     "<p>It can help with large unexpected bills but read exclusions carefully. See our <a href=\"/pet-insurance-thailand.html\">pet insurance guide</a>.</p>"]
+     "<p>It can help with large unexpected bills but read exclusions carefully. See our <a href=\"/pet-insurance-thailand.html\">pet insurance guide</a>.</p>"],
+    ["Should I ask for a written vet estimate?",
+     "<p>Yes, ask for a written estimate before non-urgent treatment. Check what it includes, such as the examination, medicines and follow-up, rather than comparing only the headline fee.</p>"]
   ],
   related: [
     { name: "Cost of owning a pet", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", desc: "Full monthly budget." },
@@ -382,7 +384,9 @@ pages.push(article({
     ["Can groomers handle cats too?",
      "<p>Yes, some Pattaya salons groom cats; confirm when booking. Cat grooming is less common than dog grooming locally.</p>"],
     ["Should I shave my dog for the Thai heat?",
-     "<p>Not double-coated breeds — it can damage the coat and increase sunburn risk. Regular brush-outs and cool-walk timing matter more.</p>"]
+     "<p>Not double-coated breeds — it can damage the coat and increase sunburn risk. Regular brush-outs and cool-walk timing matter more.</p>"],
+    ["What should I ask before my dog's first grooming appointment?",
+     "<p>Confirm that the salon handles your dog's breed and size, how it manages nervous dogs, whether nail trimming and ear cleaning are included, and which shampoo it uses for sensitive skin.</p>"]
   ],
   related: [
     { name: "All groomers", path: "/groomers/", desc: "Full directory." },

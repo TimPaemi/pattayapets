@@ -89,7 +89,9 @@ pages.push(article({
     ["Are scorpions common in Pattaya homes?",
      "<p>They can appear in gardens and ground-floor rooms, especially after rain. Shake out shoes and bedding; see a vet if your pet is stung and seems unwell.</p>"],
     ["What about centipedes in rainy season?",
-     "<p>Large centipedes are more active when it is wet. Bites are painful — rinse the area and watch for spreading swelling or lethargy.</p>"]
+     "<p>Large centipedes are more active when it is wet. Bites are painful — rinse the area and watch for spreading swelling or lethargy.</p>"],
+    ["When are toads most active around Pattaya?",
+     "<p>Toads are most active at night and during the rainy season. Supervise pets in gardens at those times and discourage them from mouthing small creatures.</p>"]
   ],
   related: [
     { name: "Snake bites", path: "/pet-emergency/snake-bites.html", desc: "Thailand's venomous snakes, and how to react." },
@@ -172,7 +174,7 @@ pages.push(article({
     ["What does fostering a pet involve?",
      "<p>Fostering means giving a rescue animal a temporary home while it recovers, grows up or waits for a permanent family. The rescue usually covers vet costs; you provide the home and care, and follow its guidance.</p>"],
     ["Who pays the veterinary bills for a foster pet?",
-     "<p>Usually the rescue organisation covers the veterinary costs. Confirm the arrangement with the specific rescue before you start, so expectations are clear on both sides.</p>"],
+     "<p>The rescue organisation usually pays the veterinary bills for a foster pet. Confirm the arrangement with the specific rescue before you start, so expectations are clear on both sides.</p>"],
     ["Isn't it too hard to give them back?",
      "<p>Saying goodbye is the hard part - but it is the point: each animal you foster and pass on to a permanent home frees you to help the next one. And if you truly cannot let go, adopting your foster pet is a happy ending too.</p>"],
     ["Can I foster if I have other pets?",
@@ -180,7 +182,7 @@ pages.push(article({
     ["How long does fostering usually last?",
      "<p>From a few weeks to several months, depending on the animal's needs and adoption demand. Confirm expected duration before you commit.</p>"],
     ["Can tourists or short-term renters foster?",
-     "<p>Some rescues accept short-term fosters if dates are clear upfront — useful for snowbirds and long-stay visitors. Be honest about your leave date; an animal needs a stable plan.</p>"],
+     "<p>Yes, some rescues accept short-term fosters when the dates are clear upfront. This can suit snowbirds and long-stay visitors, but be honest about your leave date because the animal needs a stable plan.</p>"],
     ["What if the foster pet needs emergency vet care?",
      "<p>Contact the rescue immediately if that is your agreement; otherwise go to a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vet</a> and keep receipts. Never delay stabilisation to wait for office hours.</p>"],
     ["Do I need to register a foster dog?",
@@ -188,6 +190,7 @@ pages.push(article({
   ],
   related: [
     { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Shelters and rescue organisations." },
+    { name: "Animal shelters in Pattaya", path: "/adopt-a-pet-pattaya/animal-shelters-pattaya.html", desc: "Compare local rescues and ways to help." },
     { name: "Helping street animals", path: "/adopt-a-pet-pattaya/how-to-help.html", desc: "More ways to make a difference." },
     { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Essential once a foster pet is in your care." },
     { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "Tackling the root of the problem." }
@@ -275,7 +278,7 @@ pages.push(article({
     ["I found an injured street dog - what should I do?",
      "<p>Keep yourself safe first, as a hurt animal may bite. If you can safely contain or comfort it, do so, then contact a local rescue, welfare group or vet - some rescues run a rescue ambulance. Acting for the animal in front of you is what matters.</p>"],
     ["Does feeding street animals help?",
-     "<p>It can ease immediate hunger, but feeding alone tends to grow colonies. The thoughtful approach is to pair any feeding with support for sterilisation programmes, which address the root of the street-animal problem.</p>"],
+     "<p>Yes — feeding street animals can ease immediate hunger. Feeding alone tends to grow colonies, so pair any feeding with support for sterilisation programmes, which address the root of the street-animal problem.</p>"],
     ["Can tourists volunteer at Pattaya rescues?",
      "<p>Many shelters welcome short-term help — walking dogs, cleaning, social media. Contact organisations directly; see our <a href=\"/adopt-a-pet-pattaya/\">adoption hub</a> for listings.</p>"],
     ["Should I rescue every street animal I see?",
@@ -289,6 +292,7 @@ pages.push(article({
   ],
   related: [
     { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Shelters and rescue organisations." },
+    { name: "Animal shelters in Pattaya", path: "/adopt-a-pet-pattaya/animal-shelters-pattaya.html", desc: "Compare local rescues and ways to help." },
     { name: "Hope for Strays", path: "/adopt-a-pet-pattaya/hope-for-strays.html", desc: "East Pattaya dog rescue shelter." },
     { name: "Dog & Cat Rescue Pattaya", path: "/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html", desc: "Dogs and street cats in Pattaya." },
     { name: "Soi Dog Foundation", path: "/adopt-a-pet-pattaya/soi-dog-foundation.html", desc: "Thailand's best-known animal-welfare charity." },
@@ -365,7 +369,9 @@ pages.push(article({
     ["How often should pets have dental checks?",
      "<p>At least at annual vet visits; senior pets may need more frequent mouth exams. Professional cleaning under anaesthesia may be recommended when tartar builds up.</p>"],
     ["Are dental chews enough on their own?",
-     "<p>They help but rarely replace brushing and vet care. Use them as part of a plan your vet approves, not instead of check-ups.</p>"]
+     "<p>They help but rarely replace brushing and vet care. Use them as part of a plan your vet approves, not instead of check-ups.</p>"],
+    ["When does a dental problem need a vet promptly?",
+     "<p>Seek a vet promptly for sudden difficulty eating, heavy drooling, facial swelling, bleeding that will not stop, or a pet that will not open its mouth. Chronic bad breath and tartar still need a dental check, but acute mouth trauma or swelling is urgent.</p>"]
   ],
   related: [
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Sudden mouth pain or swelling needs a vet promptly." },
@@ -440,7 +446,9 @@ pages.push(article({
     ["Do neutered pets gain weight more easily?",
      "<p>Metabolism often slows after neutering — adjust portions with your vet's guidance rather than feeding the same amount as before surgery.</p>"],
     ["Are table scraps a big cause of weight gain?",
-     "<p>Yes — human food is calorie dense and encourages begging. Keep treats to less than 10% of daily calories.</p>"]
+     "<p>Yes — human food is calorie dense and encourages begging. Keep treats to less than 10% of daily calories.</p>"],
+    ["Does Pattaya's heat make excess weight more risky?",
+     "<p>Yes. An overweight pet tires and overheats more easily than a lean one, so maintaining a healthy weight is part of basic comfort and heat safety in Pattaya.</p>"]
   ],
   related: [
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Sudden collapse or rapid weight loss needs urgent care." },
@@ -506,7 +514,7 @@ pages.push(article({
   ],
   faqs: [
     ["Can I take my pet on a domestic flight in Thailand?",
-     "<p>Some Thai domestic airlines carry pets, in cabin or as cargo, but policies vary widely and change. Check the specific airline well in advance, and expect to need an approved crate and to follow their booking process.</p>"],
+     "<p>Yes, some Thai domestic airlines carry pets in the cabin or as cargo. Policies vary widely and change, so check the specific airline well in advance, and expect to need an approved crate and to follow its booking process.</p>"],
     ["How do I find pet-friendly hotels in Thailand?",
      "<p>Search specifically for pet-friendly accommodation and confirm the policy in writing before you travel. Privately rented condos and villas can be an alternative when hotels do not accept animals.</p>"],
     ["Is a long road trip safe for my pet?",
@@ -514,7 +522,11 @@ pages.push(article({
     ["Do I need health papers for domestic pet travel in Thailand?",
      "<p>Inter-provincial travel usually does not need export paperwork, but airlines and some hotels may ask for vaccination records. Carry rabies certificates for any trip.</p>"],
     ["Can I take my pet on a Thai train or bus?",
-     "<p>Policies are restrictive and inconsistent — assume not unless you confirm in advance. Flights and private road travel are the practical options for most owners.</p>"]
+     "<p>Policies are restrictive and inconsistent — assume not unless you confirm in advance. Flights and private road travel are the practical options for most owners.</p>"],
+    ["Can I take my pet into a national park or attraction?",
+     "<p>Do not assume so. National parks, many temples, some beaches and certain attractions restrict or prohibit animals, so check the destination's rules before setting off.</p>"],
+    ["What should I pack for a road trip with my pet?",
+     "<p>Bring water, food, your pet's records, any medication, and a secure carrier, crate or travel harness. Plan regular water and toilet breaks.</p>"]
   ],
   related: [
     { name: "Boarding & daycare", path: "/boarding/", desc: "If the pet stays behind." },

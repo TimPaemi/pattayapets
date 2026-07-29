@@ -218,7 +218,7 @@ pages.push(article({
   ],
   faqs: [
     ["How do I know if it is a real emergency?",
-     "<p>Treat it as urgent if your pet has difficulty breathing, has collapsed or cannot stand, is bleeding heavily, has had a suspected poisoning, seizure or heatstroke, has been hit by a vehicle, or is in obvious severe pain. When in doubt, call a 24-hour clinic and describe what you see — they can advise whether to come in.</p>"],
+     "<p>It is a real emergency when your pet has difficulty breathing, has collapsed or cannot stand, is bleeding heavily, has had a suspected poisoning, seizure or heatstroke, has been hit by a vehicle, or is in obvious severe pain. When in doubt, call a 24-hour clinic and describe what you see — they can advise whether to come in.</p>"],
     ["Should I call before going?",
      "<p>If you can do it without delaying, yes — a quick call lets the clinic prepare and confirm a vet is on duty. But never let making a call hold you up when minutes matter.</p>"],
     ["Are these clinics confirmed as 24-hour by PattayaPets?",
@@ -688,7 +688,7 @@ pages.push(hazard({
     ["Should I carry treats to distract street dogs?",
      "<p>Do not throw food at loose dogs — it can attract more animals or create competition. Keep your dog close, change direction calmly, and avoid running.</p>"],
     ["Is it safe to walk at night?",
-     "<p>Many owners walk early morning or after sunset for heat reasons; at night visibility is lower and some street dogs are more active. A good lead, a torch and familiar routes help.</p>"],
+     "<p>Night walks can be safe, but visibility is lower and some street dogs are more active. Many owners walk early morning or after sunset for heat reasons; use a good lead, carry a torch and stick to familiar routes.</p>"],
     ["What if a street dog follows us home?",
      "<p>Do not encourage it inside. If it seems lost or injured, contact a local rescue rather than adopting on impulse — see <a href=\"/adopt-a-pet-pattaya/\">adopt a pet in Pattaya</a> for organisations that can help.</p>"],
     ["Should my dog greet street dogs on a walk?",

@@ -221,7 +221,7 @@ pages.push(article({
   ],
   faqs: [
     ["Is there a pet taxi service in Pattaya?",
-     "<p>There is no single city-wide pet taxi brand — owners use pet relocation agents, private transfers and occasionally willing taxi drivers with a carrier. See the <a href=\"/pet-relocation/\">relocation directory</a>.</p>"],
+     "<p>No single city-wide pet taxi brand operates in Pattaya. Owners use pet relocation agents, private transfers and occasionally willing taxi drivers with a carrier. See the <a href=\"/pet-relocation/\">relocation directory</a>.</p>"],
     ["How much does a pet taxi from Bangkok airport to Pattaya cost?",
      "<p>Prices vary by vehicle size, time of day and agent — get a written quote before you land. Airport pickup with a large crate costs more than a small-dog carrier.</p>"],
     ["Can Grab or Bolt take pets in Pattaya?",
@@ -229,7 +229,9 @@ pages.push(article({
     ["Do relocation agents only do international moves?",
      "<p>Many also offer domestic airport transfers and vet runs — ask specifically for ground transport within Thailand.</p>"],
     ["What should my pet travel in?",
-     "<p>A secure, well-ventilated carrier or crate — familiarise your pet with it before travel day. See <a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline crate rules</a> for sizing guidance.</p>"]
+     "<p>A secure, well-ventilated carrier or crate — familiarise your pet with it before travel day. See <a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline crate rules</a> for sizing guidance.</p>"],
+    ["What should I confirm in a pet-taxi quote?",
+     "<p>Confirm the vehicle fits the carrier, and ask whether tolls, waiting at Animal Quarantine Station and any late-night surcharge are included. Also confirm air-conditioning, where the pet rides and the cancellation policy if your slot moves.</p>"]
   ],
   related: [
     { name: "Bangkok to Pattaya with a pet", path: "/owning-a-pet-in-pattaya/bangkok-to-pattaya-with-pet.html", desc: "After import or visiting." },
