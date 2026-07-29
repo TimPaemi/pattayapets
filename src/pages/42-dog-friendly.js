@@ -173,7 +173,7 @@ pages.push(df({
     ["What time of day is best for a beach walk?",
      "<p>Early morning and around or after sunset are best. The sand is cooler, the sun is kinder, and a quieter beach is more relaxing for your dog.</p>"],
     ["Are dogs banned from Pattaya beaches?",
-     "<p>There is no single published city-wide ban we can point to, but central Pattaya Beach is impractical with a dog and attitudes vary by stretch. Dongtan and Jomtien at quiet hours are where owners actually go. Obey any posted signs and use common sense.</p>"],
+     "<p>No single published city-wide ban applies to Pattaya beaches. Central Pattaya Beach is impractical with a dog and attitudes vary by stretch; Dongtan and Jomtien at quiet hours are where owners actually go. Obey any posted signs and use common sense.</p>"],
     ["Can my dog swim in the sea at Jomtien?",
      "<p>Many dogs do, in shallow water at calm times. Watch currents after storms, rinse salt off afterwards, and never assume your dog can swim — use a harness and stay close.</p>"],
     ["What should I bring on a beach walk?",

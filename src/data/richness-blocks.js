@@ -167,7 +167,7 @@ const IMPORT_EXTRA_FAQS = [
 
 const DOG_EXTRA_FAQS = [
   ["Can I take my dog indoors in Pattaya restaurants?",
-   "<p>Usually not in air-conditioned dining rooms. Outdoor terraces and garden seating are where dogs are most often accepted — always ask first.</p>"],
+   "<p>No — dogs are usually not accepted in air-conditioned dining rooms. Outdoor terraces and garden seating are where dogs are most often accepted; always ask first.</p>"],
   ["What if staff say no after I sat down outside?",
    "<p>Leave politely — policies change and staff may be enforcing building rules. Arguing makes the next dog owner less welcome.</p>"],
   ["Are service or emotional-support dogs treated differently?",

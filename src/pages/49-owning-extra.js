@@ -78,7 +78,7 @@ pages.push(own({
     ["When is Songkran and how long does it last in Pattaya?",
      "<p>Songkran falls nationally in mid-April, and Pattaya extends the celebrations later in the month with its own Wan Lai festival, so the disruption for pets can run over a couple of weeks. Check the exact local dates each year.</p>"],
     ["My dog is terrified of Songkran - what helps?",
-     "<p>Keep it indoors in a quiet room with familiar bedding and a fan or air-conditioning running to mask the noise, check on it often, stay calm yourself, and walk only very early or late in quiet streets. Make sure ID and microchip details are current in case it bolts.</p>"],
+     "<p>Keep your dog indoors in a quiet room with familiar bedding during Songkran. A fan or air-conditioning can help mask the noise; check on it often, stay calm yourself, and walk only very early or late in quiet streets. Make sure ID and microchip details are current in case it bolts.</p>"],
     ["Is it safe to walk my dog during Songkran?",
      "<p>Only well away from the water-fight zones, early or late in the day, on a lead, in quiet sois. Never walk a dog through the celebrations - the noise, crowds and water are frightening and the escape risk is high.</p>"],
     ["Should I sedate my pet for Songkran noise?",
@@ -218,7 +218,11 @@ pages.push(own({
     ["Do cats suffer from fireworks noise too?",
      "<p>Yes — keep cats indoors with windows closed during known events. Provide hiding places and do not force them out of their safe spot.</p>"],
     ["What events besides Songkran are noisy in Pattaya?",
-     "<p>New Year, Loy Krathong celebrations, market fireworks and condo construction can trigger the same anxiety — plan ahead when you hear dates announced locally.</p>"]
+     "<p>New Year, Loy Krathong celebrations, market fireworks and condo construction can trigger the same anxiety — plan ahead when you hear dates announced locally.</p>"],
+    ["Should I force my pet out of its hiding place during fireworks?",
+     "<p>No. Let your pet choose its quiet space and do not force it out. Stay nearby and calm, with familiar bedding and background sound to soften the noise.</p>"],
+    ["Should I leave my pet alone during a noisy event?",
+     "<p>Stay nearby if you can. A prepared quiet room, secure exits and a calm owner help reduce the risk of panic and escape during loud events.</p>"]
   ],
   related: [
     { name: "Songkran and your pet", path: "/owning-a-pet-in-pattaya/songkran-and-your-pet.html", desc: "The year's biggest noisy event." },

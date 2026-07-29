@@ -91,7 +91,11 @@ pages.push(article({
     ["Do shelters charge an adoption fee?",
      "<p>Many ask a donation or fee to cover vaccinations and sterilisation — confirm with the shelter.</p>"],
     ["Can I foster instead of adopting?",
-     "<p>Yes — fostering frees kennel space and socialises animals. See <a href=\"/adopt-a-pet-pattaya/fostering.html\">fostering a pet</a>.</p>"]
+     "<p>Yes — fostering frees kennel space and socialises animals. See <a href=\"/adopt-a-pet-pattaya/fostering.html\">fostering a pet</a>.</p>"],
+    ["What should I confirm before visiting a shelter?",
+     "<p>Contact the organisation directly to confirm visiting arrangements, location and the animals currently available. Hours and visiting policies can change, and some shelters are appointment-only.</p>"],
+    ["Can I donate supplies instead of money?",
+     "<p>Many rescues post their current needs on social media. Ask the organisation what it needs before donating, rather than assuming cash is always the most useful option.</p>"]
   ],
   related: [
     { name: "Adopt a pet hub", path: "/adopt-a-pet-pattaya/", desc: "The full adoption cluster." },

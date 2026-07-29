@@ -114,7 +114,11 @@ pages.push(cat({
     ["Should I leash-walk an indoor cat in Pattaya?",
      "<p>Some owners use a harness for supervised balcony or garden time. Never rely on a collar alone outdoors — traffic and dogs are real risks. See <a href=\"/cats/getting-a-cat-in-pattaya.html\">getting a cat in Pattaya</a> for adoption options.</p>"],
     ["Do indoor cats still need parasite prevention?",
-     "<p>Often yes — fleas and ticks can enter on people or other pets. Ask your vet about prevention suited to an indoor lifestyle.</p>"]
+     "<p>Often yes — fleas and ticks can enter on people or other pets. Ask your vet about prevention suited to an indoor lifestyle.</p>"],
+    ["Should I microchip an indoor cat?",
+     "<p>Yes. An indoor cat can still escape, and a microchip gives it a better chance of being identified and returned if it gets lost.</p>"],
+    ["Can my cat use a garden safely?",
+     "<p>Only if it is safely enclosed. A quiet soi or walled garden can reduce risk, but outdoor cats still need current vaccinations and parasite prevention, and should come in overnight.</p>"]
   ],
   related: [
     { name: "Cat vaccinations", path: "/cats/cat-vaccinations-thailand.html", desc: "Routine vaccines and parasite prevention." },
@@ -320,7 +324,7 @@ pages.push(cat({
     ["Where can I board my cat in Pattaya?",
      "<p>Use boarding facilities, catteries that accept cats, or some vet clinics. See our boarding directory and check which accept cats and keep them separate from dogs.</p>"],
     ["Is it better to board my cat or use a pet sitter?",
-     "<p>It depends on the cat. Cats bond to territory, so a shy or older cat is often less stressed at home with a visiting sitter. A confident, sociable cat may board well. Choose around your cat's temperament.</p>"],
+     "<p>A visiting sitter is often better for a shy or older cat, which may be less stressed at home. Cats bond to territory, while a confident, sociable cat may board well. Choose around your cat's temperament.</p>"],
     ["What do I need to arrange before boarding my cat?",
      "<p>Up-to-date vaccinations, enough of the usual food, any medication with instructions, the vaccination record, and your and your vet's contact details. Visit the facility first, and book early for busy travel periods.</p>"],
     ["Will boarding stress my cat?",
@@ -613,7 +617,11 @@ pages.push(dog({
     ["Are certain dog breeds more prone in Pattaya?",
      "<p>Floppy-eared, skin-folded and thick-coated breeds often struggle most with ears, skin and heat. Any dog benefits from the same prevention basics — see <a href=\"/pet-health-pattaya/skin-and-ear-problems.html\">skin and ear problems</a>.</p>"],
     ["When is itching an emergency?",
-     "<p>Intense scratching with swelling, hives, collapse or difficulty breathing suggests an allergic reaction — go to a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vet</a>. Routine itching can wait for a daytime appointment.</p>"]
+     "<p>Intense scratching with swelling, hives, collapse or difficulty breathing suggests an allergic reaction — go to a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vet</a>. Routine itching can wait for a daytime appointment.</p>"],
+    ["Can hot pavement burn my dog's paws?",
+     "<p>Yes. Hot pavement and sand can burn paw pads, so walk in the cool hours and check the ground before setting out.</p>"],
+    ["Are fleas, ticks and worms a year-round problem in Pattaya?",
+     "<p>Yes. The tropical climate means fleas, mites, intestinal worms and mosquito-borne heartworm are part of the picture throughout the year. Discuss suitable prevention with your vet.</p>"]
   ],
   related: [
     { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html", desc: "Heat and humidity drive flare-ups." },
