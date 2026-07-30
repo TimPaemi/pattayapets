@@ -46,7 +46,8 @@ pages.push(own({
       "<p>During the main days, keep pets <strong>inside</strong>. Check that " +
       "gates, doors, windows and balconies are properly secured &mdash; a scared " +
       "pet will look for any way out. Do not take dogs through the water-fight " +
-      "zones, and keep cats in entirely. Make sure ID and " +
+      "zones, and keep cats in entirely.</p>" +
+      "<p>Make sure ID and " +
       "<a href=\"/owning-a-pet-in-pattaya/microchipping-your-pet.html\">microchip " +
       "details</a> are current before the festival, just in case. If your pet bolts, " +
       "see <a href=\"/owning-a-pet-in-pattaya/lost-pet-pattaya.html\">lost pet in Pattaya</a>. " +
@@ -161,6 +162,7 @@ pages.push(own({
      "<p>Use short training sessions, food puzzles, chews and indoor play to give a rained-in pet an outlet.</p>"]
   ],
   related: [
+    { name: "Snake bites", path: "/pet-emergency/snake-bites.html", desc: "The risk after rain and around long grass." },
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "The hot-season half of the year." },
     { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html", desc: "Rainy-season skin and ear flare-ups." },
     { name: "Tropical dog health issues", path: "/dogs/common-dog-health-issues-tropics.html", desc: "Skin, ears and parasites in the climate." },
@@ -522,6 +524,7 @@ pages.push(own({
      "<p>No. Home visits can help with routine care or difficult transport, but they are not a substitute for a hospital in a true emergency.</p>"]
   ],
   related: [
+    { name: "Pet taxi Pattaya", path: "/owning-a-pet-in-pattaya/pet-taxi-pattaya.html", desc: "Dedicated transport for vet and airport trips." },
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Where to go when it cannot wait." },
     { name: "Hit by a vehicle", path: "/pet-emergency/road-accident.html", desc: "If transport fails in an emergency." },
     { name: "Mobile vets", path: "/mobile-vets/", desc: "Vets who come to you." },
@@ -668,7 +671,7 @@ pages.push(own({
     ["Can my pet be put to sleep at home?",
      "<p>Often yes - some clinics can arrange a home visit so a pet can stay in familiar surroundings. Ask your vet whether that is possible. Putting a pet to sleep is a gentle, peaceful, pain-free process, and you can usually choose to be present.</p>"],
     ["Can I stay with my pet during euthanasia?",
-     "<p>Usually yes. You can normally choose to stay, hold and comfort your pet during the gentle, pain-free process; ask your vet what the clinic or home-visit arrangement allows.</p>"],
+     "<p>Yes — you can normally choose to stay, hold and comfort your pet during the gentle, pain-free process. Ask your vet what the clinic or home-visit arrangement allows.</p>"],
     ["What are the options for a pet's body afterwards?",
      "<p>Pet cremation services are available in the Pattaya area, including individual cremation with the ashes returned to you. Your vet can explain the options and help arrange aftercare, so you do not have to organise it alone at a hard time.</p>"],
     ["How do I talk to children about losing a pet?",

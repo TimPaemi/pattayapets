@@ -60,7 +60,7 @@ pages.push(hub({
         { tag: "Directory", name: "Animal shelters in Pattaya", desc: "All rescues in one place — adoption, fostering and volunteering.", path: "/adopt-a-pet-pattaya/animal-shelters-pattaya.html" },
         { name: "Hope for Strays", desc: "East Pattaya dog rescue shelter — several hundred dogs, open to visitors by arrangement.", path: "/adopt-a-pet-pattaya/hope-for-strays.html" },
         { name: "Dog & Cat Rescue Pattaya", desc: "A Pattaya shelter rescuing dogs and helping the city's street cats.", path: "/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html" },
-        { name: "Animal Army Foundation", desc: "Licensed Na Jomtien hospital & rescue since 1994 — ambulance, clinic and adoptions.", path: "/adopt-a-pet-pattaya/animal-army-foundation.html" },
+        { name: "Animal Army Foundation", desc: "Na Jomtien animal hospital and rescue service with an ambulance and daily clinic hours.", path: "/adopt-a-pet-pattaya/animal-army-foundation.html" },
         { name: "Pattaya Street Dogs (K9aid)", desc: "A rescue caring for street dogs and feeding temple-dog colonies.", path: "/adopt-a-pet-pattaya/pattaya-street-dogs-k9aid.html" },
         { name: "Soi Dog Foundation", desc: "Thailand's best-known animal-welfare charity, with Pattaya work.", path: "/adopt-a-pet-pattaya/soi-dog-foundation.html" },
         { name: "Malee's Animal Shelter", desc: "A large shelter rescuing dogs and cats across the Pattaya–Chanthaburi area.", path: "/adopt-a-pet-pattaya/malees-animal-shelter.html" },
@@ -153,24 +153,20 @@ const SHELTERS = [
     address: "90/55 Moo 5, Na Jomtien, Sattahip District, Chon Buri 20250",
     email: "info@animalarmy.org",
     hours: "Daily 08:00&ndash;17:00; animal intake by appointment (emergencies excepted)",
-    lede: "Animal Army Foundation is a licensed non-profit animal hospital in Na " +
-      "Jomtien, operating since 1994.",
+    lede: "Animal Army Foundation operates an animal hospital and rescue service in Na " +
+      "Jomtien.",
     what:
-      "<p>Animal Army Foundation is a registered, licensed animal hospital in Na " +
-      "Jomtien that has worked in animal welfare since 1994. Its veterinary team " +
+      "<p>Animal Army Foundation operates an animal hospital in Na Jomtien. Its veterinary team " +
       "operates a dedicated rescue ambulance providing emergency care to street " +
-      "animals and pets in urgent need, alongside everyday clinic work. It also " +
-      "encourages adoption of homeless companion animals and has supported adopters " +
-      "in flying newly adopted animals overseas. Its Na Jomtien site combines rescue " +
+      "animals and pets in urgent need, alongside everyday clinic work. Its Na Jomtien site combines rescue " +
       "ambulance work with everyday clinic services &mdash; useful if you adopt an " +
       "animal that still needs follow-up treatment. See also our " +
       "<a href=\"/vets/animal-army-hospital.html\">Animal Army Hospital listing</a> " +
       "in the vets directory.</p>",
     adopt:
-      "<p>Animal Army runs an adoption programme for dogs and cats in its care, " +
-      "including support for international adopters. Its public website is not " +
-      "currently available &mdash; contact the foundation by phone or email for " +
-      "current animals and the adoption process.</p>"
+      "<p>Contact the foundation by phone or email to ask whether animals are currently " +
+      "available and what process applies. Its <a href=\"https://animalarmy.org/\" " +
+      "rel=\"noopener\">official website</a> is currently available.</p>"
   },
   {
     slug: "pattaya-street-dogs-k9aid", name: "Pattaya Street Dogs (K9aid)",
@@ -288,7 +284,7 @@ const SHELTER_PEERS = {
     { name: "Hope for Strays", path: "/adopt-a-pet-pattaya/hope-for-strays.html",
       desc: "Large East Pattaya dog shelter." },
     { name: "Animal Army Hospital", path: "/vets/animal-army-hospital.html",
-      desc: "Na Jomtien rescue hospital in the vets directory." }
+      desc: "Na Jomtien animal hospital open daily 08:00-17:00, with a rescue ambulance, urgent treatment, surgery, digital X-ray, inpatient and quarantine care." }
   ],
   "pattaya-street-dogs-k9aid": [
     { name: "Hope for Strays", path: "/adopt-a-pet-pattaya/hope-for-strays.html",

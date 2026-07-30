@@ -244,7 +244,7 @@ pages.push(article({
       "animal may bite or scratch, however gentle its intentions. If you can " +
       "safely contain, shade or comfort it, do; then contact a local animal " +
       "rescue or welfare group, or a <a href=\"/vets/\">vet</a>. For possible " +
-      "poisoning, see <a href=\"/pet-emergency/poisoning.html\">poisoning</a>. " +
+      "poisoning, see <a href=\"/pet-emergency/poisoning.html\">poisoning</a>.</p><p>" +
       "<a href=\"/adopt-a-pet-pattaya/animal-army-foundation.html\">Animal Army " +
       "Foundation</a> in Na Jomtien operates a rescue ambulance for street " +
       "animals and urgent cases (085 093 5954; see also " +
@@ -518,7 +518,7 @@ pages.push(article({
     ["How do I find pet-friendly hotels in Thailand?",
      "<p>Search specifically for pet-friendly accommodation and confirm the policy in writing before you travel. Privately rented condos and villas can be an alternative when hotels do not accept animals.</p>"],
     ["Is a long road trip safe for my pet?",
-     "<p>It can be, with planning: a secure carrier or harness, regular water and toilet stops, never leaving the pet in a parked vehicle, and travelling in cooler hours. If your pet finds car travel very stressful, consider a sitter or boarding instead.</p>"],
+     "<p>Yes, a long road trip can be safe for your pet with careful planning. Use a secure carrier or harness, make regular water and toilet stops, never leave the pet in a parked vehicle, and travel in cooler hours. If your pet finds car travel very stressful, consider a sitter or boarding instead.</p>"],
     ["Do I need health papers for domestic pet travel in Thailand?",
      "<p>Inter-provincial travel usually does not need export paperwork, but airlines and some hotels may ask for vaccination records. Carry rabies certificates for any trip.</p>"],
     ["Can I take my pet on a Thai train or bus?",
@@ -529,6 +529,8 @@ pages.push(article({
      "<p>Bring water, food, your pet's records, any medication, and a secure carrier, crate or travel harness. Plan regular water and toilet breaks.</p>"]
   ],
   related: [
+    { name: "Pet taxi Pattaya", path: "/owning-a-pet-in-pattaya/pet-taxi-pattaya.html", desc: "Private road transport with a pet or crate." },
+    { name: "Bangkok to Pattaya with a pet", path: "/owning-a-pet-in-pattaya/bangkok-to-pattaya-with-pet.html", desc: "Planning the airport or city transfer by road." },
     { name: "Boarding & daycare", path: "/boarding/", desc: "If the pet stays behind." },
     { name: "Pet sitters & dog walkers", path: "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html", desc: "When the pet stays in Pattaya." },
     { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html", desc: "Domestic flights and crate rules." },

@@ -29,7 +29,7 @@ pages.push(hub({
     "growing carefully. Rather than a padded list of names we have not checked, " +
     "each page below gives you the lay of the land, the etiquette that keeps " +
     "dogs welcome, and the specifics we can stand behind &mdash; with more added " +
-    "as we confirm them. Know somewhere genuinely dog-friendly? " +
+    "as we confirm them.</p><p>Know somewhere genuinely dog-friendly? " +
     "<a href=\"/contact.html\">Tell us</a>. For daily walks, see " +
     "<a href=\"/owning-a-pet-in-pattaya/where-to-walk-your-dog.html\">where to walk " +
     "your dog</a> and " +
@@ -180,6 +180,7 @@ pages.push(df({
      "<p>Lead, poop bags, fresh drinking water and a bowl, a towel to rinse sandy paws, and ideally booties or stick to cool hours if sand is hot. A mat helps if you stop at a beachfront cafe afterwards.</p>"]
   ],
   related: [
+    { name: "Dog-friendly cafes", path: "/dog-friendly-pattaya/cafes.html", desc: "Outdoor stops after a cool-hour beach walk." },
     { name: "Beach & sea hazards", path: "/pet-emergency/beach-and-sea-hazards.html", desc: "Jellyfish, hot sand and seawater risks." },
     { name: "Places to walk", path: "/dog-friendly-pattaya/parks.html", desc: "Beaches and quieter routes beyond the sand." },
     { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "The hot-climate risk to plan around." },

@@ -236,7 +236,9 @@ pages.push(health({
     ["Can tick fever be cured?",
      "<p>Many cases respond to veterinary treatment, especially when caught early. Delay makes treatment harder — see a vet promptly if you see ticks or warning signs.</p>"],
     ["Do ticks affect cats in Pattaya?",
-     "<p>Yes — outdoor and balcony cats are at risk. Ask your vet about cat-safe prevention products.</p>"]
+     "<p>Yes — outdoor and balcony cats are at risk. Ask your vet about cat-safe prevention products.</p>"],
+    ["Should my dog be tested after heavy tick exposure?",
+     "<p>Call your vet after heavy tick exposure, even if your dog still looks well. Pattaya vets may advise blood testing after substantial exposure or when signs appear, and early action matters if an infection is present.</p>"]
   ],
   related: [
     { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html", desc: "Year-round prevention in the tropics." },
@@ -309,7 +311,9 @@ pages.push(health({
     ["Is parvovirus contagious to other dogs?",
      "<p>Yes — it spreads through contact with infected faeces and environments. Keep unvaccinated puppies away from public ground and unknown dogs until the course is complete.</p>"],
     ["Can parvovirus be prevented after exposure?",
-     "<p>No, there is no simple post-exposure fix. Vaccination before exposure is the protection; if exposure is suspected, call your vet immediately for advice.</p>"]
+     "<p>No, there is no simple post-exposure fix. Vaccination before exposure is the protection; if exposure is suspected, call your vet immediately for advice.</p>"],
+    ["Can I bring a new unvaccinated puppy into a home where parvo occurred?",
+     "<p>Not until your vet says the space is safe. Parvovirus persists in the environment and resists many ordinary cleaners, so disinfect shoes and floors and follow your vet's guidance before bringing an unvaccinated puppy into the same home.</p>"]
   ],
   related: [
     { name: "Puppy care in Pattaya", path: "/dogs/puppy-care-pattaya.html", desc: "Vaccination timing for a new puppy." },
@@ -378,7 +382,9 @@ pages.push(health({
     ["Are ear infections common in rainy season?",
      "<p>Yes — humidity plus damp ears after rain or swimming drives flare-ups. Dry ears gently after wet walks and see a vet if shaking or odour starts.</p>"],
     ["Can diet affect skin problems?",
-     "<p>Yes, diet can affect skin problems when a pet has food sensitivities. Many skin issues here are infection- or parasite-driven, so your vet should diagnose the cause before you change diet alone.</p>"]
+     "<p>Yes, diet can affect skin problems when a pet has food sensitivities. Many skin issues here are infection- or parasite-driven, so your vet should diagnose the cause before you change diet alone.</p>"],
+    ["Why is my dog shaking its head or why does its ear smell?",
+     "<p>Head-shaking, a bad smell, discharge, redness or an ear that is sore to touch can signal an ear problem. See a vet early because damp, humid conditions can let a small irritation develop into a larger infection.</p>"]
   ],
   related: [
     { name: "Rainy-season pet care", path: "/owning-a-pet-in-pattaya/rainy-season-pet-care.html", desc: "Humidity and damp coats drive flare-ups." },
@@ -441,7 +447,9 @@ pages.push(health({
     ["Should I let my pet have one litter first?",
      "<p>Vets and rescues advise against it — one litter adds to the street-animal problem and offers no health benefit for most pets. Sterilise on your vet's recommended schedule.</p>"],
     ["How long is recovery after spaying or neutering?",
-     "<p>Most pets rest a few days to two weeks with restricted exercise. Your vet gives specific aftercare — follow it to prevent complications.</p>"]
+     "<p>Most pets rest a few days to two weeks with restricted exercise. Your vet gives specific aftercare — follow it to prevent complications.</p>"],
+    ["Is spaying or neutering usually a day procedure?",
+     "<p>Yes, it is a routine day procedure at most Pattaya clinics. Your vet will explain the pre-operative checks, anaesthetic and aftercare, including rest and keeping the wound clean and protected.</p>"]
   ],
   related: [
     { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Rescues often neuter before rehoming." },

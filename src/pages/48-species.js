@@ -186,7 +186,9 @@ pages.push(cat({
     ["When should kittens start vaccinations?",
      "<p>Kittens should usually start vaccinations in the first weeks of life, with boosters on a schedule your vet sets. Do not let an unvaccinated kitten mix with unknown cats until the course is complete.</p>"],
     ["Are rabies boosters required by law for cats?",
-     "<p>Yes — Thai law requires current rabies vaccination for cats as well as dogs. Keep the certificate and schedule boosters before expiry.</p>"]
+     "<p>Yes — Thai law requires current rabies vaccination for cats as well as dogs. Keep the certificate and schedule boosters before expiry.</p>"],
+    ["Does an indoor cat still need vaccinations in Pattaya?",
+     "<p>Yes. Indoor cats still need a vaccination plan, including current rabies protection, and parasites can enter on shoes, other pets or through windows. Tell your vet that the cat lives indoors so they can tailor its vaccines and prevention to its lifestyle.</p>"]
   ],
   related: [
     { name: "Getting a cat in Pattaya", path: "/cats/getting-a-cat-in-pattaya.html", desc: "First steps for adopted cats and street kittens." },

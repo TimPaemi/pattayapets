@@ -436,6 +436,7 @@ pages.push(own({
   related: [
     { name: "Dog-friendly beaches", path: "/dog-friendly-pattaya/beaches.html", desc: "Cool-hour walks on the sand." },
     { name: "Places to walk", path: "/dog-friendly-pattaya/parks.html", desc: "Beaches, sois and green space." },
+    { name: "Snake bites", path: "/pet-emergency/snake-bites.html", desc: "Walking near long grass, drains and undergrowth." },
     { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "Walking safely around soi dogs." },
     { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Timing and heat awareness." }
   ]

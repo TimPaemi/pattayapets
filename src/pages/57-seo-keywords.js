@@ -247,8 +247,10 @@ pages.push(article({
      "<p>Consultation fees vary by clinic — often a few hundred to around 1,000+ baht for a standard visit, with extras for tests and surgery. See <a href=\"/owning-a-pet-in-pattaya/vet-costs-pattaya.html\">vet costs in Pattaya</a>.</p>"],
     ["Can a Pattaya vet do export paperwork?",
      "<p>Only DLD-approved veterinarians can complete Thai export health certificates. Ask the clinic directly or see <a href=\"/take-pet-out-of-thailand/export-process.html\">export process</a>.</p>"],
+    ["What should I ask when booking an English-speaking vet?",
+     "<p>Confirm that an English-speaking vet or nurse will be on duty at your appointment time. For a complex or urgent case, also ask about inpatient care, emergency surgery, consultation fees and deposit rules.</p>"],
     ["Are mobile vets available in English?",
-     "<p>Some mobile clinics list English — browse <a href=\"/mobile-vets/\">mobile vets</a> and confirm when booking.</p>"]
+     "<p>Yes, some mobile clinics list English-language support. Browse <a href=\"/mobile-vets/\">mobile vets</a> and confirm that an English-speaking vet is available when booking.</p>"]
   ],
   related: [
     { name: "All vets in Pattaya", path: "/vets/", desc: "Full directory with area filters." },
@@ -308,7 +310,7 @@ pages.push(article({
       "included, typical cost of a <strong>blood panel</strong> or <strong>X-ray</strong>, " +
       "and how deposits work for surgery. Larger hospitals may itemise every consumable; " +
       "smaller clinics sometimes bundle visits. Neither approach is wrong &mdash; you just " +
-      "need to know which you are buying. For import and export paperwork, confirm whether " +
+      "need to know which you are buying.</p><p>For import and export paperwork, confirm whether " +
       "the clinic is on the DLD approved list before you pay for certificate work. " +
       "Relocation agents quote separate service fees for logistics &mdash; that is not the " +
       "same as a vet consultation. See " +
@@ -325,7 +327,7 @@ pages.push(article({
     ["What does dog neutering cost in Pattaya?",
      "<p>Often a few thousand baht upward depending on size and clinic — get a quote that includes anaesthesia and pain relief.</p>"],
     ["Should I get pet insurance in Thailand?",
-     "<p>It can help with large unexpected bills but read exclusions carefully. See our <a href=\"/pet-insurance-thailand.html\">pet insurance guide</a>.</p>"],
+     "<p>Yes, pet insurance can help with large unexpected bills. Read exclusions carefully and see our <a href=\"/pet-insurance-thailand.html\">pet insurance guide</a> before deciding whether a policy suits you and your pet.</p>"],
     ["Should I ask for a written vet estimate?",
      "<p>Yes, ask for a written estimate before non-urgent treatment. Check what it includes, such as the examination, medicines and follow-up, rather than comparing only the headline fee.</p>"]
   ],
@@ -390,7 +392,7 @@ pages.push(article({
   ],
   related: [
     { name: "All groomers", path: "/groomers/", desc: "Full directory." },
-    { name: "Doggie Star Grooming", path: "/groomers/doggie-star-grooming-pattaya.html", desc: "Jomtien salon listing." },
+    { name: "Doggie Star Grooming", path: "/groomers/doggie-star-grooming-pattaya.html", desc: "Unverified Facebook lead." },
     { name: "Hot-climate care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Walking times and coat care." },
     { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html", desc: "When grooming reveals an issue." },
     { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Walks and outings after a groom." }

@@ -103,10 +103,13 @@ pages.push(article({
      "<p>Self-insure by setting aside a dedicated savings buffer for pet emergencies. For a disciplined saver with routine, affordable vet costs, this is a genuine alternative.</p>"],
     ["Does pet insurance cover import or export costs?",
      "<p>Almost never — relocation, quarantine and travel are separate from medical cover. Budget import and export separately; see our <a href=\"/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html\">import cost guide</a>.</p>"],
+    ["Does pet insurance cover vaccinations and routine check-ups?",
+     "<p>Pet insurance usually does not cover vaccinations and routine check-ups. Most policies focus on accidents and illness, while vaccinations, neutering and routine dental cleaning are excluded unless the policy has a wellness add-on.</p>"],
     ["How much should I save if I self-insure instead?",
      "<p>Aim for enough to cover emergency surgery at a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour hospital</a>. There is no fixed rule, so start with a realistic figure from your vet for a major event, then build the buffer over time.</p>"]
   ],
   related: [
+    { name: "Vet costs in Pattaya", path: "/owning-a-pet-in-pattaya/vet-costs-pattaya.html", desc: "Budgeting for routine and unexpected treatment." },
     { name: "What it costs to own a pet", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", desc: "The wider pet budget in Pattaya." },
     { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "When the big, unplanned bills happen." },
     { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Preventive care and tropical risks." },
@@ -161,7 +164,8 @@ pages.push(hub({
         { name: "Pet insurance", desc: "Whether to insure your cat in Thailand.", path: "/pet-insurance-thailand.html" },
         { name: "Pet health in Pattaya", desc: "Heartworm, parasites, skin and ear problems and neutering.", path: "/pet-health-pattaya/" },
         { name: "Dental care", desc: "Teeth, tartar and gum health for cats.", path: "/pet-health-pattaya/dental-care.html" },
-        { name: "Healthy weight", desc: "Keeping a cat at a healthy weight in the tropics.", path: "/pet-health-pattaya/healthy-weight.html" }
+        { name: "Healthy weight", desc: "Keeping a cat at a healthy weight in the tropics.", path: "/pet-health-pattaya/healthy-weight.html" },
+        { name: "End-of-life care", desc: "Compassionate guidance for a cat's final stage.", path: "/owning-a-pet-in-pattaya/saying-goodbye.html" }
       ]
     },
     {
@@ -234,7 +238,8 @@ pages.push(hub({
         { name: "Travelling in Thailand", desc: "Domestic trips with your dog.", path: "/owning-a-pet-in-pattaya/travelling-in-thailand.html" },
         { name: "Pet health in Pattaya", desc: "Heartworm, tick disease, skin and ear problems and more.", path: "/pet-health-pattaya/" },
         { name: "Dental care", desc: "Teeth, tartar and gum health for dogs.", path: "/pet-health-pattaya/dental-care.html" },
-        { name: "Healthy weight", desc: "Exercise, diet and weight in the heat.", path: "/pet-health-pattaya/healthy-weight.html" }
+        { name: "Healthy weight", desc: "Exercise, diet and weight in the heat.", path: "/pet-health-pattaya/healthy-weight.html" },
+        { name: "End-of-life care", desc: "Compassionate guidance for a dog's final stage.", path: "/owning-a-pet-in-pattaya/saying-goodbye.html" }
       ]
     },
     {

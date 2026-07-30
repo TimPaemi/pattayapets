@@ -354,9 +354,7 @@ const AREA_MISSING_HINTS = {
       "<a href=\"/trainers/\">trainers directory</a>"
   },
   jomtien: {
-    groomers: "<a href=\"/groomers/doggie-star-grooming-pattaya.html\">Doggie Star</a> (Jomtien), " +
-      "<a href=\"/groomers/pet-passions-mobile-grooming.html\">Pet Passions mobile</a> (van) or " +
-      "salons in <a href=\"/groomers/\">central Pattaya</a>",
+    groomers: "Confirm current Jomtien coverage with salons in the <a href=\"/groomers/\">groomers directory</a>",
     boarding: "<a href=\"/boarding/pattaya-dog-stay.html\">Pattaya Dog Stay</a> (central) or " +
       "the <a href=\"/boarding/\">boarding directory</a>",
     trainers: "<a href=\"/trainers/k9-pattaya-dog-training-school.html\">K9 Pattaya</a> (Sattahip) or " +

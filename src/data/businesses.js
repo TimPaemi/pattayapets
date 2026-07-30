@@ -68,55 +68,88 @@ const BUSINESSES = [
     slug: "thonglor-pet-hospital-pattaya",
     name: "Thonglor Pet Hospital - Pattaya",
     category: "vets", areas: ["central-pattaya"], type: "Animal hospital", c24: true,
-    address: "147/41 Sukhumvit Road, Bang Lamung, Chon Buri 20150",
-    phone: "038 423 078", tel: "+6638423078",
+    address: "148-2 Sukhumvit Road, Pattaya City, Bang Lamung, Chon Buri 20150",
+    phone: "02 079 9942", tel: "+6620799942",
     website: "https://thonglorpet.com/en/branch/pethospital-thonglorpet-pattaya",
     hours: "Open 24 hours",
-    languages: "Thai, with an English-language international service",
-    services: ["24-hour emergency care", "Diagnostic imaging", "Surgery", "Inpatient care", "Referral cases"],
-    summary: "The Pattaya branch of Thonglor Pet Hospital, one of Thailand's largest " +
-      "veterinary networks. It operates around the clock and acts as a referral hub for " +
-      "the Eastern Seaboard, with an international service desk for non-Thai-speaking owners."
+    languages: "Thai and English",
+    services: ["24-hour emergency care", "TAHSA-accredited animal hospital", "Diagnostic imaging", "Surgery",
+      "ICU, SCU, observation ward & inpatient care", "Pet hotel & medical boarding assessment",
+      "Neurology", "Cardiology", "Orthopedics",
+      "Dermatology & allergy care", "Eye care", "Cancer care", "Oral & dental care",
+      "Internal medicine", "Senior care", "Dedicated cat care", "Exotic pet care", "Rehabilitation", "Referral cases",
+      "Telemedicine", "Medical grooming", "Sanitised supervised dog pool & pet park",
+      "Door-to-door pet taxi", "Worldwide pet relocation including EU, Japan, Singapore & USA"],
+    summary: "Thonglor Pet Hospital's TAHSA-accredited Pattaya branch provides 24-hour emergency intake, " +
+      "surgery, ICU, SCU, observation and inpatient care, with neurology, cardiology, orthopedic, " +
+      "dermatology, cancer, dental, internal-medicine, senior and rehabilitation services, telemedicine and English-speaking veterinarians. " +
+      "For neurological, heart, bone and other complex referrals, its branch page asks callers to send " +
+      "medical history and test results and phone before arrival."
   },
   {
     slug: "pattaya-veterinary-clinic",
     name: "Pattaya Veterinary Clinic",
     category: "vets", areas: ["naklua"], type: "Veterinary clinic", c24: false,
-    address: "157/15 Moo 5, Pattaya-Naklua Road, Bang Lamung, Chon Buri 20150",
+    address: "157/15 Moo 5, Pattaya-Naklua Road, Na Kluea, Bang Lamung, Chon Buri 20150",
     phone: "065 020 3773", tel: "+66650203773",
-    website: "https://www.facebook.com/woof.pattaya", hours: "Monâ€“Tue, Thuâ€“Sun 09:00â€“18:00; Wed closed",
-    languages: "Thai and English",
-    services: ["General consultations", "Vaccinations", "Routine treatment"],
-    summary: "A long-established, well-regarded small clinic on Naklua Road near the " +
-      "Soi 16/2 junction. It is compact rather than a full hospital, and known among " +
-      "Naklua residents as a steady, no-frills option for everyday care."
+    website: null, hours: null,
+    languages: "Confirm English-language support when booking",
+    services: ["ISO 11784/11785 microchipping", "AnyVet registry registration",
+      "AnyVet digital microchip certificate", "AnyVet public registration-status lookup",
+      "AnyVet pet-profile management & 30-day registration-edit window",
+      "AnyVet microchip-based lost & found", "Routine vaccinations", "Deworming",
+      "Flea treatment"],
+    summary: "A veterinary clinic at 157/15 Moo 5 on Pattaya-Naklua Road near the Soi 16/2 " +
+      "junction, listed as a current AnyVet partner for ISO microchip implantation, registry entry and a digital certificate, with routine vaccinations, deworming and flea treatment also documented; call 065 020 3773 before visiting. " +
+      "AnyVet also provides pet-profile management with a 30-day registration-edit window, public status lookup without exposing owner details and a microchip-based lost-and-found service. " +
+      "Older Thai directories publish conflicting landlines and hours, so current opening hours and broader services remain unverified."
   },
   {
     slug: "vetazoo-animal-and-exotic-pet-hospital",
     name: "Vetazoo Animal & Exotic Pet Hospital",
-    category: "vets", areas: ["central-pattaya"], type: "Animal & exotic pet hospital", c24: true,
-    address: "140/84 Moo 11, Sukhumvit Road, South Pattaya (opposite Lotus's South Pattaya)",
+    category: "vets", areas: ["central-pattaya"], type: "Animal & exotic pet hospital", c24: false,
+    address: "140/83-84 Moo 11, Sukhumvit Road, Nong Prue, Bang Lamung, Chon Buri 20150 (opposite Lotus's South Pattaya)",
     phone: "082 662 7999", tel: "+66826627999",
+    email: "vetazoohospital@gmail.com",
+    line: "022zyfzh",
     website: "https://vetazoo.com/",
-    hours: "Daily 10:00-22:00; 24-hour emergency line",
+    hours: "Daily 10:00–22:00; last case 21:30",
     languages: "Thai and English",
-    services: ["Cats & dogs", "Exotic pets", "Birds & reptiles", "Surgery", "24-hour emergency line"],
+    services: ["Cats & dogs", "Rabbits, guinea pigs, hamsters, hedgehogs, ferrets, sugar gliders & chinchillas",
+      "Birds, reptiles, amphibians & wildlife", "Surgery",
+      "Emergency, critical & intensive care during opening hours", "Inpatient care",
+      "Digital X-ray", "Ultrasound & echocardiography", "Laboratory diagnostics",
+      "Cardiology clinic", "Oxygen therapy & nebulisation", "Vaccinations", "Dental care",
+      "Nutrition consultations", "Home visits for pets difficult to transport or sensitive to unfamiliar settings",
+      "Pet pickup & drop-off", "Online pet food & supplies shop"],
     summary: "One of the few Pattaya hospitals set up for exotic pets such as birds, " +
-      "reptiles and small mammals, alongside cats and dogs. Office hours run 10:00 to " +
-      "22:00 daily, with a 24-hour emergency phone line."
+      "reptiles, rabbits, guinea pigs, hamsters, hedgehogs, ferrets, sugar gliders and chinchillas, alongside cats and dogs, with surgical, cardiology and intensive-care services. It is open daily " +
+      "10:00–22:00, with the last case accepted at 21:30. Its official services page also links an online pet food and supplies shop."
   },
   {
     slug: "muang-ake-pet-hospital-pattaya",
     name: "Muang Ake Pet Hospital - Pattaya",
     category: "vets", areas: ["central-pattaya"], type: "Animal hospital", c24: true,
     address: "44/57 Moo 11, Sukhumvit Road, Nong Prue, Bang Lamung, Chon Buri 20150",
-    phone: "038 233 200", tel: "+6638233200",
+    phone: "086 338 8638", tel: "+66863388638",
+    line: "macvetpy",
     website: "https://en.muangakepethospital.com", hours: "Open 24 hours",
     languages: "Thai; confirm English-language support when booking",
-    services: ["24-hour service", "General treatment", "Surgery", "Inpatient care"],
+    services: ["24-hour emergency care", "Emergency referrals from local pet clinics",
+      "Emergency surgery", "General treatment", "Inpatient care",
+      "X-ray & ultrasound", "Laboratory testing", "Exotic-pet care",
+      "Pet transport by advance booking",
+      "24-hour gastrointestinal endoscopy", "Neurology clinic & neurosurgery",
+      "Rehabilitation & underwater treadmill",
+      "Bathing & grooming after a veterinary check",
+      "Pet hotel with 24-hour staff care, two meals & twice-daily walks",
+      "24-hour pet shop",
+      "At-home vaccination, deworming & heartworm prevention by appointment",
+      "International health certificates", "Microchipping", "Rabies titre testing"],
     summary: "The Pattaya branch of the Muang Ake veterinary group, on Sukhumvit Road in " +
-      "Nong Prue, providing 24-hour service, general treatment, surgery and inpatient care. It operates 24 hours, which makes it one of the options worth knowing " +
-      "for after-hours care."
+      "Nong Prue, providing 24-hour emergency and surgical care, inpatient treatment, " +
+      "diagnostic imaging, endoscopy, neurology, rehabilitation, exotic-pet care, a staffed pet hotel, a 24-hour pet shop and pet transport. " +
+      "It also offers bathing and grooming after an initial veterinary check; its current mobile contact is 086 338 8638."
   },
   {
     slug: "pattaya-animal-hospital",
@@ -125,26 +158,31 @@ const BUSINESSES = [
     address: "49/86-7 Moo 10, Pattaya Tai Road, Nong Prue, Bang Lamung, Chon Buri 20150",
     phone: null, tel: null,
     website: null, hours: "Daily 08:30–20:00 (confirm when booking)",
-    languages: "Thai; confirm English-language support when booking",
-    services: ["General consultations", "Vaccinations", "Treatment & surgery"],
-    summary: "An animal hospital on Pattaya Tai Road in central Pattaya, handling " +
-      "general consultations, vaccinations and routine treatment. It lists " +
-      "daily hours of 08:30–20:00; confirm current hours and " +
-      "English-language support when booking."
+    languages: "Confirm English-language support when booking",
+    services: ["General dog & cat treatment", "Vaccinations", "Neutering",
+      "Surgery", "Off-site dog & cat veterinary treatment"],
+    summary: "An animal hospital at 49/86-7 Moo 10 on Pattaya Tai Road in central Pattaya, " +
+      "with directory-published general dog and cat treatment, vaccinations, neutering, surgery and off-site treatment. " +
+      "Daily directory hours are 08:30–20:00; this is not a verified 24-hour emergency service, so confirm availability before visiting."
   },
   {
     slug: "pattaya-community-pet-hospital",
     name: "Pattaya Community Pet Hospital",
-    category: "vets", areas: ["central-pattaya", "banglamung"], type: "Animal hospital", c24: true,
-    address: "248/6-8 Moo 5, Nernplubwan, Nong Prue, Bang Lamung, Chon Buri 20150",
-    phone: "038 410 545", tel: "+6638410545",
+    category: "vets", areas: ["banglamung"], type: "Animal hospital", c24: true,
+    address: "248/6-8 Soi Nern Plub Wan, Nong Prue, Bang Lamung, Chon Buri 20150",
+    phone: "061 094 9996", tel: "+66610949996",
+    line: "uew1130h",
     website: "https://en.muangakepethospital.com/",
     hours: "Open 24 hours",
     languages: "Thai; confirm English-language support when booking",
-    services: ["24-hour service", "General treatment", "Surgery"],
+    services: ["24-hour emergency care", "Emergency referrals from local clinics",
+      "General treatment", "Emergency surgery",
+      "X-ray", "Inpatient care", "Vaccinations", "Dog & cat health screening",
+      "Skin examinations", "Bathing & grooming"],
     summary: "A 24-hour community animal hospital in Nernplubwan, part of the Muang Ake " +
-      "veterinary group. Also listed on 061 094 9996. It handles general and after-hours " +
-      "care across the Pattaya area."
+      "veterinary group, providing emergency referrals, general treatment, emergency surgery, X-ray, inpatient care, " +
+      "vaccinations, health and skin screening, bathing and grooming. Current Thai posts continue to identify it as open daily for 24 hours, " +
+      "and a Krungsri promotion confirms payment with participating cards for grooming."
   },
   {
     slug: "animal-army-hospital",
@@ -152,25 +190,36 @@ const BUSINESSES = [
     category: "vets", areas: ["jomtien", "sattahip"], type: "Animal hospital & rescue clinic", c24: false,
     address: "90/55 Moo 5, Na Jomtien, Sattahip District, Chon Buri 20250",
     phone: "085 093 5954", tel: "+66850935954",
+    email: "info@animalarmy.org",
+    website: "https://animalarmy.org/",
     hours: "Daily 08:00-17:00; animal intake by appointment (emergencies excepted)",
     languages: "Thai and English",
-    services: ["General consultations", "Rescue ambulance", "Surgery", "Street-animal care", "Adoption support"],
-    summary: "A licensed non-profit animal hospital in Na Jomtien, operating since 1994, " +
-      "with a rescue ambulance for street animals and pets in urgent need. Open daily " +
-      "08:00-17:00; animal intake by appointment except emergencies."
+    services: ["General consultations", "Rescue ambulance", "Field assessment & first aid",
+      "Safe handling & stabilisation", "Urgent treatment",
+      "Surgery", "Orthopedic & soft-tissue surgery", "Fish-skin grafting",
+      "Digital X-ray", "Blood pathology",
+      "Vaccinations", "Flea & tick treatment", "Wound care", "Dental & cancer treatment",
+      "Inpatient & short-term intensive care", "Rehabilitation", "Quarantine care",
+      "Two dedicated sterilisation operating rooms",
+      "Pre- & post-operative sterilisation monitoring", "Community CNVR", "Microchipping"],
+    summary: "An animal hospital in Na Jomtien " +
+      "with a seven-day Chonburi rescue ambulance providing field assessment, first aid, safe handling and stabilisation, plus surgery, fish-skin grafting, digital X-ray, short-term intensive care and rehabilitation. " +
+      "Its prevention programme uses two dedicated sterilisation operating rooms with pre- and post-operative monitoring. Open daily 08:00-17:00; animal intake by appointment except emergencies."
   },
   {
     slug: "siam-country-pet-hospital",
     name: "Siam Country Pet Hospital",
     category: "vets", areas: ["banglamung"], type: "Veterinary clinic", c24: false,
-    address: "Pornpraphanimit Road (Siam Country Club Road), Nong Prue, Bang Lamung, Chon Buri 20150",
+    address: "173/16-17 Moo 6, Pornprapanimit Road (Siam Country Club Road), Nong Prue, Bang Lamung, Chon Buri 20150",
     phone: "080 573 6727", tel: "+66805736727",
-    website: null, hours: "Daily 08:00-00:00 (midnight); confirm current hours when booking",
-    languages: "Thai and English",
-    services: ["General consultations", "Vaccinations", "Surgery", "X-ray & ultrasound", "Blood testing", "Home visits (by arrangement)"],
-    summary: "A clinic on Siam Country Club Road (Pornpraphanimit) in East Pattaya, with " +
-      "on-site diagnostics and English-speaking staff. Also listed on 080 573 6727. " +
-      "Home visits can be arranged — confirm coverage and fees when booking."
+    website: null, hours: "Tuesday–Sunday 09:00–20:00; closed Monday",
+    languages: "Thai; confirm English-language support when booking",
+    services: ["General consultations", "Vaccinations", "Neutering", "Surgery", "Boarding", "Pet supplies"],
+    summary: "A clinic on Siam Country Club Road (Pornpraphanimit) in East Pattaya, offering " +
+      "routine consultations, vaccinations, neutering, surgery, boarding and pet supplies. " +
+      "Open Tuesday to Sunday from 09:00 to 20:00 and closed Monday; call 080 573 6727. " +
+      "Its registered operator, Siamcountry Pet Care Co., Ltd., remains active at the same address for veterinary consultation and treatment surgery; " +
+      "the former website and email are no longer published as current contacts."
   },
   {
     slug: "north-pattaya-animal-hospital",
@@ -179,12 +228,14 @@ const BUSINESSES = [
     address: "120/19 North Pattaya Road, Naklua, Bang Lamung, Chon Buri 20150",
     phone: "095 445 5622", tel: "+66954455622",
     website: "https://www.facebook.com/PTNpetlover", hours: null,
-    languages: "Thai; confirm English-language support when booking",
-    services: ["General consultations", "Vaccinations", "Treatment & surgery",
-      "Specialist heart clinic", "Neurology", "Exotic pets", "Grooming & bathing"],
-    summary: "A well-established animal hospital on North Pattaya Road in Naklua, founded in " +
-      "2006, with specialist clinics alongside everyday care and an on-site grooming " +
-      "service. Near Bangkok Hospital Pattaya."
+    languages: "Confirm English-language support when booking",
+    services: ["General consultations", "Vaccinations", "Cardiology clinic",
+      "Neurology clinic", "Exotic-pet clinic", "X-ray", "Surgery",
+      "Laser treatment", "Ultrasound", "Dental scaling", "Microchipping",
+      "Pet boarding", "Dog & cat grooming & bathing", "Underwater treadmill", "Pet shop", "Parking"],
+    summary: "A hospital founded by a group of veterinarians on 16 December 2006 at 120/19 North Pattaya Road in Naklua, offering general " +
+      "care, cardiology, neurology and exotic-pet clinics, surgery, imaging, dental scaling, microchipping, boarding and grooming. " +
+      "A current directory also lists parking; opening hours still vary between sources, so confirm before visiting."
   },
 
   {
@@ -194,36 +245,42 @@ const BUSINESSES = [
     address: "209/17 Soi Khao Talo, Pattaya City, Bang Lamung, Chon Buri 20150",
     phone: "096 293 9454", tel: "+66962939454",
     website: "https://pattayagrooming.wordpress.com/", hours: null,
-    languages: "Thai and English",
-    services: ["Dog grooming", "Bath & blow-dry", "Breed clips", "Nail trims", "Pet supplies"],
-    summary: "A combined grooming salon and pet shop serving central Pattaya, handling " +
-      "dogs with baths, breed clips and nail care alongside a range of " +
-      "pet supplies."
+    languages: "Confirm English-language support when booking",
+    services: ["Dog grooming", "Hair cutting & styling", "Shampoo & blow-dry",
+      "Nail clipping", "Ear trimming", "Grooming appointments by phone",
+      "Pet beds, baskets & carry bags", "Pet shirts, jackets & clothing",
+      "Collars, leads & toys"],
+    summary: "A dog-grooming salon and pet shop at 209/17 Soi Khao Talo, publishing haircuts, " +
+      "shampoo and blow-dry, nail clipping and ear trimming, plus beds, carry bags, clothing, collars, leads and toys. Its official " +
+      "site and matching social archive remain online, but current operating activity could not be verified; call before making a trip."
   },
   {
     slug: "jaijai-grooming",
     name: "Jaijai Spa & Grooming",
-    category: "groomers", areas: ["banglamung"], type: "Dog & cat grooming", c24: false,
-    address: "97/15 Moo 6, Pong, Bang Lamung, Chon Buri 20150",
+    category: "groomers", areas: ["banglamung"], type: "Pet grooming salon", c24: false,
+    address: "Room 1, 97/15 Moo 6, Pong, Bang Lamung, Chon Buri 20150",
     phone: "062 502 9871", tel: "+66625029871",
     website: "https://www.facebook.com/jaijaigrooming/", hours: "Daily 09:30–20:00",
-    languages: "Thai; confirm English-language support when booking",
-    services: ["Dog grooming", "Cat grooming", "Bath & tidy"],
-    summary: "A grooming salon in the Pong area east of Pattaya city, listed on Wongnai " +
-      "as Jaijai Spa & Grooming, with dog and cat grooming plus bath-and-tidy services. Appointments are arranged through its Facebook page."
+    languages: "Confirm English-language support when booking",
+    services: ["Bathing & coat clipping", "Pet food & supplies"],
+    summary: "A pet-grooming salon at Room 1, 97/15 Moo 6 in Pong, east of Pattaya city, " +
+      "marked official on Wongnai for bathing and coat clipping with daily hours of 09:30–20:00; call 062 502 9871. Its current public listing also " +
+      "publishes pet food and supplies and places it beside the entrance to Soi Pong Klang 1, opposite Baan Fern kitchen shop; Cybo now again corroborates the Pong address and mobile."
   },
   {
     slug: "woof-pattaya",
     name: "Woof Pattaya",
-    category: "groomers", areas: ["banglamung", "central-pattaya"], type: "Grooming salon & pet boarding", c24: false,
+    category: "groomers", areas: ["banglamung"], type: "Grooming salon & pet boarding", c24: false,
     address: "77/10 Moo 1, Ruean Phisa Village, Nong Prue, Bang Lamung, Chon Buri 20150",
     phone: "083 012 1897", tel: "+66830121897",
-    website: null, hours: null,
-    languages: "Thai; confirm English-language support when booking",
-    services: ["Dog grooming", "Cat grooming", "Bath & blow-dry", "Pet boarding", "Pick-up service (by arrangement)"],
+    website: "https://www.facebook.com/woof.pattaya",
+    hours: "Mon–Tue, Thu–Sun 09:00–18:00; Wed closed",
+    languages: "Confirm English-language support when booking",
+    services: ["Dog bathing & clipping", "Cat bathing & clipping",
+      "Coat-and-skin spa", "Pet boarding", "Pick-up service (arrange and confirm area)"],
     summary: "A grooming salon and boarding service in Nong Prue (Ruean Phisa Village), " +
-      "offering baths, clips and short-stay boarding for dogs and cats in Bang Lamung. Pick-up " +
-      "service may be available by arrangement — confirm coverage when booking."
+      "offering bathing, clipping, coat-and-skin spa care and boarding for dogs and cats in Bang Lamung. It opens " +
+      "09:00–18:00 except Wednesday; pick-up may be arranged, subject to coverage. PETECO marks its current listing verified and notes a recent move, so confirm the exact map pin when booking."
   },
   {
     slug: "furiday-pet-grooming",
@@ -231,42 +288,41 @@ const BUSINESSES = [
     category: "groomers", areas: ["naklua"], type: "Pet grooming salon", c24: false,
     address: "Pattaya-Naklua Road, Na Kluea, Bang Lamung, Chon Buri 20150",
     phone: "083 092 0420", tel: "+66830920420",
-    website: "https://www.facebook.com/FURidaypetgrooming/", hours: "Daily 10:00â€“19:00",
-    languages: "Thai; confirm English-language support when booking",
-    services: ["Dog grooming", "Cat grooming", "Bath & blow-dry", "Short-stay pet hotel"],
-    summary: "A Naklua grooming salon on Pattaya-Naklua Road with bath, trim and " +
-      "short-stay boarding for dogs and cats, listed on Facebook and third-party directories. " +
-      "Appointments are required; confirm current hours and vaccination rules on " +
-      "Facebook before visiting."
+    website: "https://www.facebook.com/FURidaypetgrooming/", hours: "Daily 10:00–19:00",
+    languages: "Confirm English-language support when booking",
+    services: ["Pet grooming", "Bathing", "Coat trimming", "Coat & skin care", "Pet hotel"],
+    summary: "A pet-grooming salon on Pattaya-Naklua Road, publishing bathing, coat trimming, " +
+      "coat-and-skin care and pet-hotel services with daily hours of 10:00–19:00 and phone " +
+      "083 092 0420. Its LOOKLOOK listing also indicates parking and says appointments and basic vaccinations are required; confirm which species are accepted when booking."
+      + " Cybo now again corroborates its Pattaya-Naklua Road location and mobile."
   },
   {
     slug: "furpet-grooming-and-hotel",
     name: "Furpet Grooming & Hotel",
-    category: "groomers", areas: ["banglamung"], type: "Grooming salon & pet hotel", c24: false,
-    address: "373/43 Chalermprakiat 23, Bang Lamung, Pattaya, Chon Buri 20150",
-    phone: "095 676 6999", tel: "+66956766999", line: "furpet",
+    category: "groomers", areas: [], type: "Grooming and pet-hotel listing", c24: false,
+    address: null,
+    phone: null, tel: null, line: null,
     website: "https://www.facebook.com/people/Furpet-Grooming-and-Hotel/61561258409344/",
-    hours: "Daily 10:00–18:00, closed Mondays (confirm on Facebook)",
-    languages: "Thai and English",
-    services: ["Dog grooming", "Cat grooming", "Bathing", "Short-stay boarding",
-      "Breed show trim"],
-    summary: "A grooming salon and short-stay pet hotel on Chalermprakiat 23 in East " +
-      "Pattaya, with ISFC/IGA-certified groomers for dogs and cats, plus bathing. Book on " +
-      "095 676 6999, LINE @furpet or Facebook; closed every Monday."
+    hours: null,
+    languages: "Confirm English-language support when booking",
+    services: ["Dog and cat bathing", "Dog and cat boarding"],
+    summary: "Its live Facebook page title identifies Furpet Grooming & Hotel as a Pattaya dog-and-cat bathing and boarding business, but " +
+      "current posts, contacts, hours and fuller details remain unreadable. Treat this as a limited Facebook lead, and do not rely on stale contact details " +
+      "that may remain in search-engine copies."
   },
 
   {
     slug: "pattaya-dog-stay",
     name: "Pattaya Dog Stay",
-    category: "boarding", areas: ["central-pattaya"], type: "Dog hotel & daycare", c24: false,
-    address: "63/26 Moo 5, Tessaban 1 Road (Soi 27), Pattaya",
+    category: "boarding", areas: ["banglamung"], type: "Dog hotel & daycare", c24: false,
+    address: "63/26 Moo 5, Tessaban 1 Road, Soi Yak Kamnan, Bang Lamung, Chon Buri 20150",
     phone: "095 776 4698", tel: "+66957764698",
-    website: "https://www.facebook.com/Pattayadogstay/", hours: "Daily 08:00â€“17:30",
-    languages: "Thai; confirm English-language support when booking",
-    services: ["Air-conditioned rooms", "Dog daycare", "Multi-day boarding", "Saltwater pool", "Garden exercise area", "Grooming"],
-    summary: "A dog hotel and daycare in central Pattaya with air-conditioned rooms, a " +
-      "garden exercise area, a saltwater pool and on-site grooming for guests. It handles both daycare and multi-day " +
-      "stays, and offers grooming on site."
+    website: "https://www.facebook.com/Pattayadogstay/", hours: "Daily 08:00–17:30",
+    languages: "Confirm English-language support when booking",
+    services: ["Air-conditioned rooms", "Dog daycare", "Multi-day boarding", "Saltwater pool", "Large grass running & exercise area", "Grooming"],
+    summary: "A dog-only hotel and daycare on Tessaban 1 Road (Soi 27), off Soi Yak Kamnan in Bang Lamung, with air-conditioned rooms, parking, " +
+      "a garden exercise area, a saltwater pool and on-site grooming. Its published hours are " +
+      "08:00–17:30 daily on Petmap; another directory differs, so confirm when booking. Cybo now again corroborates the Soi Yak Kamnan address and mobile."
   },
   {
     slug: "elite-dog-resort",
@@ -275,11 +331,18 @@ const BUSINESSES = [
     address: "352/680 Moo 12, Phra Tamnak, Pattaya City, Bang Lamung, Chon Buri 20150",
     phone: null, tel: null,
     website: "https://elitedogresort.com/", hours: "Daily 08:00-17:00; extended hours by appointment",
-    languages: "Thai and English",
-    services: ["Climate-controlled rooms", "Boarding", "Daycare", "Grooming & spa", "24/7 supervision", "VIP rooms"],
-    summary: "A luxury dog resort and spa on Pratumnak hill, focused on small and medium breeds, " +
-      "with climate-controlled rooms, round-the-clock supervision, grooming and spa " +
-      "services, and standard or VIP options. Enquire through the official website."
+    languages: "Confirm English-language support when booking",
+    services: ["Climate-controlled rooms", "Boarding", "Daycare", "Grooming & spa",
+      "Ozone treatments, pawdicures & de-shedding", "Dog training",
+      "Group play matched by size, temperament & play style", "One-to-one play alternatives",
+      "Personalised play & socialisation", "First-stay orientation packages", "24/7 on-site supervision",
+      "CCTV & smart monitoring", "VIP & deluxe rooms", "Video calls & owner camera access",
+      "Playground & ball pool", "Special diets by arrangement",
+      "Emergency transport to an approved local veterinary clinic"],
+    summary: "A luxury dog resort and spa on Pratumnak hill whose house rules accept small and medium dogs up to 15 kg, although its terms separately describe admission as small breeds only — confirm eligibility before booking. It offers " +
+      "climate-controlled rooms, round-the-clock supervision, CCTV, owner camera access, a playground and ball pool, grooming and spa " +
+      "services, and standard or VIP options. Check-in requires current vaccination proof, " +
+      "good health and flea-and-tick prevention; its house rules also provide for transport to an approved local veterinary clinic when an emergency exceeds the resort's facilities."
   },
   {
     slug: "pattaya-dog-hotel",
@@ -289,10 +352,11 @@ const BUSINESSES = [
     phone: "081 911 1967", tel: "+66819111967",
     website: "https://www.pattayadoghotel.com/", email: "kenyaker@gmail.com", hours: null,
     languages: "English-language website; confirm spoken languages when booking",
-    services: ["Dog boarding", "Feeding & walking", "Supervised playtime", "Dog grooming"],
-    summary: "A dog-only boarding service in Bang Saray with feeding, walking, " +
-      "supervised playtime and grooming for boarding guests described on its official website. Contact the " +
-      "hotel directly to confirm current hours, availability and boarding arrangements."
+    services: ["Dog boarding", "Cozy sleeping quarters", "Feeding & walking", "Supervised playtime with other dogs",
+      "Individual care by trained staff", "Dog grooming", "Dog training"],
+    summary: "A dog-only boarding service in Bang Saray with cozy sleeping quarters, feeding, walking, " +
+      "supervised playtime and individual care tailored to each dog, plus grooming and training " +
+      "described on its official website. That site publishes no hours, and a directory's 24-hour claim remains unconfirmed; contact the hotel directly to confirm access times, availability and boarding arrangements."
   },
 
   {
@@ -303,22 +367,27 @@ const BUSINESSES = [
     phone: "062 428 8513", tel: "+66624288513",
     website: null, hours: "Daily 10:00-21:00",
     languages: null,
-    services: ["Pet food", "Pet treats", "Toys & accessories", "Supplies"],
-    summary: "A pet supplies shop on South Pattaya Road with a broad range of food, " +
-      "treats and accessories for dogs and cats, open daily from 10:00 to 21:00."
+    services: ["Pet food", "Pet treats", "Toys & accessories", "Supplies", "In-store shopping", "Women-owned business",
+      "NFC mobile payments", "Wheelchair-accessible entrance", "Assistive hearing loop"],
+    summary: "Current Google-listing mirrors identify this South Pattaya Road shop as selling " +
+      "food, treats, toys and accessories for dogs and cats, with in-store shopping, NFC mobile " +
+      "payments, a wheelchair-accessible entrance, an assistive hearing loop, women-owned business identification and daily 10:00–21:00 hours. No attributable first-party website or social page " +
+      "was found, so confirm before visiting."
   },
   {
     slug: "petsmart-pattaya",
     name: "PetSmart Pattaya",
     category: "pet-shops", areas: ["jomtien"], type: "Pet shop", c24: false,
-    address: "315/100-101 Thep Prasit Road, Pattaya City, Bang Lamung, Chon Buri 20150",
-    phone: null, tel: null,
-    website: "https://www.facebook.com/PetSmart.th/", hours: "Daily from 10:00",
-    languages: "Thai and English",
-    services: ["Pet food", "Snacks & treats", "Accessories"],
-    summary: "A pet shop on Thep Prasit Road towards the Jomtien side of the city, with " +
-      "a large selection of pet food, snacks and accessories for local owners. It is not affiliated with the US " +
-      "PetSmart chain."
+    address: "315/100-101 Moo 12, Thep Prasit Road, Nong Prue, Bang Lamung, Chon Buri 20150",
+    phone: "083 151 2569", tel: "+66831512569",
+    website: "https://www.facebook.com/PetSmart.th/", hours: "Daily 10:00-20:00",
+    languages: null,
+    services: ["Pet food", "Pet beds", "Pet toys", "Accessories", "Pet hotel", "Delivery",
+      "Pickup point", "All animals permitted in shop", "Wheelchair access with ramp"],
+    summary: "Thai FindGlocal lists this pet shop at 315/100-101 Moo 12 on Thep Prasit Road near Jomtien, publishing " +
+      "pet food, beds, toys and accessories for dogs and cats, plus delivery and pickup. Its " +
+      "current Yandex map listing also categorises it as a pet hotel, permits all animals in the shop " +
+      "and lists full wheelchair access with a ramp; confirm hotel arrangements before booking."
   },
   {
     slug: "tong-ma-aquarium-and-pets-shop",
@@ -326,12 +395,14 @@ const BUSINESSES = [
     category: "pet-shops", areas: ["jomtien"], type: "Pet shop & aquarium", c24: false,
     address: "229/70 Thep Prasit Road, Pattaya City, Bang Lamung, Chon Buri 20150",
     phone: "062 881 4452", tel: "+66628814452",
-    website: null, hours: null,
-    languages: "Thai; confirm English-language support when booking",
-    services: ["Pet food", "Aquarium fish & supplies", "Accessories"],
-    summary: "A pet and aquarium shop on Thep Prasit Road on the Jomtien side of " +
-      "Pattaya, stocking fish, pond supplies and everyday pet accessories alongside " +
-      "food. Confirm current hours before visiting."
+    website: null, hours: "Monday-Saturday 08:30-20:00; Sunday 08:30-17:00",
+    languages: null,
+    services: ["Ornamental fish", "Aquariums in all sizes & supplies", "Tank & pond cleaning for all sizes",
+      "Aquarium consultation", "Pet supplies", "On-site Wi-Fi"],
+    summary: "A pet and aquarium shop on Thep Prasit Road on the Jomtien side of Pattaya, listed " +
+      "for ornamental fish, aquariums, supplies and tank and pond cleaning. ThaiThurkic also lists " +
+      "aquarium consultation and on-site Wi-Fi. Its weekly hours come from that directory, so " +
+      "confirm before visiting."
   },
   {
     slug: "peturday-pattaya",
@@ -339,12 +410,13 @@ const BUSINESSES = [
     category: "pet-shops", areas: ["pratumnak"], type: "Pet shop", c24: false,
     address: "337/10 Phra Tamnak, Bang Lamung, Chon Buri 20150",
     phone: "098 471 4877", tel: "+66984714877",
-    website: "https://www.facebook.com/peturdaypty", hours: null,
-    languages: "Thai and English",
-    services: ["Pet food", "Supplies", "Accessories"],
-    summary: "The neighbourhood pet shop for the Pratumnak area, on Pratumnak Road, with pet food, supplies and accessories for residents who prefer not to drive into central Pattaya. " +
-      "Useful for residents of the hill who would rather not drive into central Pattaya " +
-      "for supplies."
+    website: "https://www.facebook.com/peturdaypty", hours: "Daily 09:00-21:00",
+    languages: null,
+    services: ["Pet food", "Grooming products", "Pet toys", "Accessories", "Pet equipment"],
+    summary: "A neighbourhood pet shop on Pratumnak Road selling pet food, grooming products, " +
+      "toys, accessories and equipment, with Waze listing daily hours from 09:00 to 21:00. " +
+      "Waze also lists mobile 098 471 4877. A historical local profile documents the product " +
+      "range; its delivery claim could not be confirmed on a current first-party surface."
   },
   {
     slug: "pattaya-pet-center",
@@ -352,132 +424,181 @@ const BUSINESSES = [
     category: "pet-shops", areas: ["central-pattaya"], type: "Pet shop", c24: false,
     address: "49/84 Moo 10, South Pattaya Soi 12, Nong Prue, Bang Lamung, Chon Buri 20150",
     phone: "087 127 7757", tel: "+66871277757",
-    website: null, hours: null,
-    languages: "Thai and English",
-    services: ["Pet food", "Accessories", "Supplies"],
-    summary: "A local pet shop on South Pattaya Soi 12 in Nong Prue, opposite the " +
-      "mosque, stocking everyday food and supplies for dogs and cats, with accessories."
+    website: null, hours: "Monday-Saturday 08:00-17:00; Sunday not published",
+    languages: null,
+    services: ["Pet food & supplies", "Delivery Monday-Saturday 08:00-17:00"],
+    summary: "A pet shop at 49/84 Moo 10 on South Pattaya Soi 12, opposite the mosque, with a " +
+      "current official Wongnai profile publishing pet food and supplies, matching delivery hours, mobile contact and " +
+      "Monday-Saturday hours. No Sunday schedule, attributable website or social page could be verified."
   },
 
   {
     slug: "k9-coach",
     name: "K9 Coach",
     category: "trainers", areas: ["bang-saray", "sattahip", "banglamung"], type: "Dog training & behaviour", c24: false,
-    address: "Bang Saray / Sattahip area, Chon Buri (18-rai facility — confirm directions when booking)",
+    address: "204/15, Bang Sare, Sattahip District, Chon Buri 20250",
     phone: "080 905 3216", tel: "+66809053216",
-    website: "https://k9-coach.co.th/", hours: null,
-    languages: "English and Thai",
-    services: ["Obedience training", "Behaviour modification", "Board-and-train", "Daycare", "Private coaching"],
-    summary: "An English-speaking dog-training operation on an 18-rai facility near " +
-      "Bang Saray, with 36 kennels, multiple training areas and board-and-train " +
-      "programmes. Also runs the Pattaya Dog Hotel boarding service on the same site. " +
-      "Contact steve@k9-coach.co.th or 080 905 3216 to arrange a visit."
+    email: "info@k9-coach.co.th", whatsapp: "971501840326", line: "K9-COACH",
+    website: "https://k9-coach.co.th/", hours: "08:00-18:00 (days not stated)",
+    languages: null,
+    services: ["Initial consultation", "Puppy training", "Obedience training", "Aggressive dog training", "Intermediate & advanced training",
+      "Behaviour modification", "Basic protection training", "Board-and-train", "Daycare", "Owner coaching",
+      "Home visits", "Socialisation", "Bang Saray training days",
+      "Online member training with courses, videos, live coaching and community support"],
+    summary: "A dog-training operation on an 18-rai facility near " +
+      "Bang Saray, with 36 kennels, multiple training areas, board-and-train " +
+      "programmes spanning puppy, aggressive-dog, advanced and basic protection work. Its online member training includes structured courses, " +
+      "videos, live coaching and community support, with 24/7 access to materials. Published working hours are 08:00-18:00, with days unstated. " +
+      "Its official partner page also lists a Dog Hotel Pattaya facility in Bang Sare. " +
+      "Contact info@k9-coach.co.th or 080 905 3216 to arrange a visit."
   },
   {
     slug: "zoeta-dogsoul",
     name: "Zoeta Dogsoul",
-    category: "trainers", areas: ["central-pattaya", "banglamung"], type: "Dog training & behaviour", c24: false,
+    category: "trainers", areas: [], type: "Dog training & behaviour", c24: false,
     address: "Chiang Mai (headquarters); confirm Pattaya service area when booking",
     phone: "095 849 6783", tel: "+66958496783",
     email: "info@zoeta-dogsoul.com",
     website: "https://zoeta-dogsoul.com/", hours: null,
-    languages: "English and Thai",
-    services: ["Private dog training", "Behaviour consultations", "Obedience classes"],
-    summary: "A dog-training operation headquartered in Chiang Mai with a Pattaya " +
-      "programme page offering private training, behaviour consultations and obedience classes. Also listed on info@zoeta-dogsoul.com. Confirm whether " +
-      "in-person Pattaya sessions or home visits are offered when you enquire."
+    languages: null,
+    services: ["Personal dog training", "Obedience training", "Online courses", "Live video sessions",
+      "AI-assisted training app", "GPS walk coach", "Training calendar", "Behaviour & progress logging",
+      "Video learning library", "DogSoul TV", "Behaviour decoder", "Puppy course", "Dog nutrition AI",
+      "Training journal", "Training cards", "SOS training protocols", "Calm tool", "AI assistant in 95 languages"],
+    summary: "A Chiang Mai-based trainer whose older indexed Pattaya programme page now returns HTTP 410 Gone while online courses and its training app remain current. Live video " +
+      "sessions and the iOS and Android app include GPS walk coaching, a training calendar " +
+      "and behaviour tracking remain current. The app also includes a puppy course, dog nutrition AI, " +
+      "training journal, training cards, SOS protocols and a calm tool; confirm any in-person Pattaya training session directly."
   },
   {
     slug: "k9-pattaya-dog-training-school",
-    name: "K9 Pattaya Dog Training School",
-    category: "trainers", areas: ["sattahip", "bang-saray", "jomtien"], type: "Dog training school", c24: false,
-    address: "Near Wat Huay Yai, Sattahip District, Chon Buri (confirm directions when booking)",
-    phone: "087 983 4466", tel: "+66879834466",
-    website: "http://www.k9pattaya.com/", hours: null,
-    languages: "English and Thai",
-    services: ["Obedience training", "Protection training", "Board-and-train", "Dog hotel"],
-    summary: "A long-running dog training school and boarding facility south of Pattaya " +
-      "near Wat Huay Yai in Sattahip, with obedience and board-and-train programmes. Also reachable on 096 724 2255 and 089 405 1954. " +
-      "Confirm current programmes and visit arrangements before enrolling."
+    name: "Dogs Training International Institute (K9 Pattaya)",
+    category: "trainers", areas: ["banglamung"], type: "Dog training school", c24: false,
+    address: "51/3 Moo 5, Huai Yai, Bang Lamung, Chon Buri 20150",
+    phone: "083 293 1694", tel: "+66832931694",
+    website: "https://www.facebook.com/255718304785371/", hours: "Daily 08:00-17:00",
+    languages: null,
+    services: ["All-breed dog training", "Boarding", "Parking", "Wheelchair access"],
+    summary: "A dog training and boarding operation in Huai Yai, currently listed as Dogs " +
+      "Training International Institute and associated with the K9 Pattaya name. Current " +
+      "directories publish map plus code VX94+JFC, all-breed training, parking and wheelchair access and link an attributable " +
+      "Facebook profile whose current content could not be read. A conflicting directory landline is withheld; confirm by mobile."
   },
 
   {
     slug: "pet-relocation-thailand",
     name: "Pet Relocation Thailand",
     category: "pet-relocation", areas: [], type: "Pet import & export agent", c24: false,
-    address: "15 Soi Tha Kham 13, Bang Khun Thian, Bangkok 10150",
-    phone: null, tel: null,
-    whatsapp: "66946942992",
+    address: "15 Soi Tha Kham 13, Samae Dam, Bang Khun Thian, Bangkok 10150",
+    phone: "064 694 2992", tel: "+66646942992",
+    whatsapp: "66646942992",
     line: "petrelocation",
     email: "info@petrelocationthailand.com",
-    website: "https://www.petrelocationthailand.com/", hours: "Monday–Friday 09:00–18:00",
+    website: "https://www.petrelocationthailand.com/", hours: "Monday-Friday 09:00-18:00",
     languages: "English and Thai",
-    services: ["Import & export", "DLD permits", "Health certificates", "Crates & flight booking"],
+    services: ["Import & export", "DLD permits", "Health certificates", "Rabies-titre coordination",
+      "Vaccination & microchip coordination", "Nationwide partner-vet coordination", "Pet passports", "Crates & flight booking",
+      "Customs clearance", "Airport pickup", "Door-to-door delivery", "Ground transport", "Bangkok pet accommodation"],
     summary: "An agency handling pet import to and export from Thailand, coordinating " +
-      "vaccinations, microchipping, blood tests, health certificates and permits. It " +
-      "serves clients nationwide, including the Pattaya area. Enquire via WhatsApp, " +
+      "rabies-titre tests, vaccination, microchips, pet passports, health certificates, permits, flights and travel crates. It " +
+      "also publishes customs clearance, airport pickup, door-to-door delivery, nationwide collection and ground transport for dogs and cats, " +
+      "destination-country permit coordination when needed, " +
+      "coordination through partner vet clinics nationwide and Bangkok accommodation through boarding partners. Enquire via WhatsApp, " +
       "LINE @petrelocation or the website contact form."
   },
   {
     slug: "relo4paws",
     name: "Relo4Paws",
     category: "pet-relocation", areas: [], type: "Pet relocation consultancy", c24: false,
-    address: "Bangkok & Suvarnabhumi Airport — no walk-in office (book online or by phone)",
+    address: null,
     phone: "085 541 9959", tel: "+66855419959",
-    whatsapp: "66855419959",
     email: "info@relo4paws.com",
-    website: "https://www.relo4paws.com/", hours: "Always open (confirm when booking)",
+    website: "https://www.relo4paws.com/", hours: "Always open",
     languages: "English and Thai",
     services: ["Pet relocation consulting", "Export from Thailand", "Import to Thailand",
       "Worldwide destinations", "Pet taxi within Thailand", "Vet coordination",
-      "IATA travel crates", "Airport export handling"],
+      "Microchip, vaccination & rabies-titre coordination", "Parasite-treatment coordination",
+      "IATA travel crates", "Preflight document checks", "Export papers & health certificates",
+      "Departure-day airport check-in assistance", "Airport export handling", "Airport cargo clearing",
+      "Philippines import permits", "Thailand & Taiwan transit permits",
+      "Pet-friendly airline & Bangkok hotel advice", "Short-term pet accommodation"],
     summary: "A Bangkok-based consultancy arranging pet import and export from Thailand " +
-      "worldwide, including airport handling at Suvarnabhumi, pet taxi and vet " +
-      "coordination. English on 085 541 9959 or WhatsApp; Thai line 088 978 9953."
+      "worldwide, including airport handling at Suvarnabhumi, a Thailand-wide minivan pet taxi " +
+      "that can carry the owner with their pet, and vet " +
+      "coordination for microchips, vaccinations, rabies titres and parasite treatments. " +
+      "Its export handling includes preflight document checks, export papers, health certificates and departure-day airport check-in assistance. " +
+      "It also lists Philippines import permits and transit permits for flights through Thailand or Taiwan. " +
+      "English enquiries use 085 541 9959; Thai enquiries use 088 978 9953."
   },
   {
     slug: "united-pet-express",
     name: "United Pet Express",
     category: "pet-relocation", areas: [], type: "Pet import & export agent", c24: false,
     address: "32/3 Soi Bangna-Trad 56, Bangna, Bangkok 10260",
-    phone: null, tel: null,
-    whatsapp: "66818991416",
-    email: "joybelle@unitedreloth.com",
-    website: "https://www.unitedpetexpress.com/", hours: "Monday–Friday 08:30–17:30",
+    phone: "081 899 1416", tel: "+66818991416",
+    website: "https://www.unitedpetexpress.com/", hours: "Monday-Friday 08:30-17:30",
     languages: "English and Thai",
-    services: ["Import to Thailand", "Export from Thailand", "Door-to-door transport"],
+    services: ["Import to Thailand", "Export from Thailand", "Transit shipments",
+      "Transit permits for excess baggage", "Transit clearance for manifest cargo",
+      "Nationwide collection & residential delivery", "Flight arrangements",
+      "Microchip, vaccination & vet coordination", "Permits & health certificates", "Destination customs clearance",
+      "Long-transit pet care", "Temperature-controlled boarding kennel & cattery", "Cat play area",
+      "Outdoor dog area", "Supervised socialisation", "Rabies titre testing", "Custom travel crates"],
     summary: "A pet transport company handling import to and export from Thailand, " +
-      "including the paperwork and logistics of moving a pet internationally, door to door. Urgent " +
-      "enquiries via WhatsApp; office hours Monday to Friday."
+      "including microchip and vaccination coordination, flight arrangements, health certificates " +
+      "and destination customs clearance. Its transit service distinguishes excess-baggage permits from manifest-cargo clearance. " +
+      "For Bangkok cargo transits longer than six hours it " +
+      "publishes dog walking, crate cleaning, food and water. Urgent enquiries use its published " +
+      "mobile number. Its temperature-controlled boarding has four special kennels, one VIP dog room, " +
+      "two large cat condos and supervised socialisation; office hours are Monday to Friday, but the official " +
+      "pages carry a last-revision date of 3 April 2020, so reconfirm details directly."
   },
   {
     slug: "asia-relocation-pet-transport",
     name: "Asia Relocation - Pet Transport",
     category: "pet-relocation", areas: [], type: "Relocation company (pet division)", c24: false,
-    address: "Bangkok team — On Nut area (inquiries via website or email only)",
+    address: "100 On Nut 40 Alley, Suan Luang, Bangkok 10250",
     email: "inquiryth@asia-relocation.com",
-    website: "https://www.asia-relocation.com/thailand/moving-services/pet-relocation/",
+    whatsapp: "66810638189",
+    website: "https://www.asia-relocation.com/thailand/moving/pet-relocation/",
     hours: null,
-    languages: "English and Thai",
-    services: ["Pet relocation", "Vaccination & microchip coordination", "Export permits"],
-    summary: "The pet division of a Bangkok relocation company (On Nut area), coordinating " +
-      "vaccinations, microchipping, health certificates and export permits with the " +
-      "Department of Livestock Development. Enquire via the website inquiry form or " +
-      "inquiryth@asia-relocation.com."
+    languages: null,
+    services: ["Dog & cat import and export", "Microchip, vaccination & rabies-test coordination", "Vet-certificate coordination",
+      "Destination-rule, vaccination-timeline & quarantine-requirement assessment", "Import & export permits", "IATA travel crates",
+      "Crate size & breed assessment", "Airline policy verification", "Air-freight booking",
+      "Same-flight or unaccompanied-cargo enquiry",
+      "Thai Livestock Department & airline cargo-team coordination",
+      "Bangkok, Chiang Mai & Phuket airport handling", "Cargo-procedure supervision", "Customs clearance"],
+    summary: "The pet division of a Bangkok relocation company, coordinating veterinary " +
+      "certificates, microchips, vaccinations, rabies tests, destination-rule reviews, permits, " +
+      "crate sizing, airline-policy checks, air-freight booking and customs " +
+      "clearance. It also publishes vaccination-timeline and pre-export quarantine-requirement reviews and coordination with the Thai Livestock Department " +
+      "and airline cargo teams at Bangkok, Chiang Mai and Phuket airports. Its pet inquiry covers travel on the owner's flight or alone as cargo. Enquire via the website inquiry form or inquiryth@asia-relocation.com; " +
+      "no public phone number or business hours were captured."
   },
   {
     slug: "pawspective-relocations",
     name: "Pawspective Relocations",
     category: "pet-relocation", areas: [], type: "Pet travel specialist", c24: false,
-    address: "Thailand-wide service — enquire via website, phone or LINE",
-    phone: "098 826 9294", tel: "+66988269294", line: "Numfonunited",
-    whatsapp: "66843521056",
+    address: null,
+    phone: "098 826 9294", tel: "+66988269294",
+    whatsapp: "66988269294",
+    email: "pawspective@pettravelthailand.com",
     website: "https://www.pettravelthailand.com/", hours: null,
-    languages: "English and Thai",
-    services: ["Pet travel planning", "Import & export", "Documentation support", "Door-to-door relocation"],
-    summary: "A pet-travel specialist offering planning and documentation support for " +
-      "moving pets into and out of Thailand, including door-to-door options. " +
-      "Enquire via the website, on 098 826 9294, WhatsApp or LINE ID Numfonunited."
+    languages: "English website; confirm Thai-language support",
+    services: ["Pet travel planning", "Dedicated relocation coordinator", "Personalised timeline",
+      "Import & export", "Americas, Europe, UK, Asia & Pacific destinations", "Door-to-door relocation",
+      "Permit, certificate & government-endorsement coordination", "Vet preparation",
+      "Rabies titre testing through approved laboratories", "Waiting-period guidance",
+      "Flight booking", "Departure-process oversight", "IATA travel crates", "Customs clearance",
+      "Home collection & final-destination delivery"],
+    summary: "A Thailand-based pet-travel specialist coordinating import and export, veterinary " +
+      "preparation, permits, flights, travel crates and door-to-door relocation through one " +
+      "dedicated coordinator with a personalised timeline. " +
+      "It publishes approved-laboratory rabies-titre coordination, required waiting-period guidance, " +
+      "government endorsements and departure-process oversight. " +
+      "Enquire via the website, email, 098 826 9294 mobile or WhatsApp. Its rebuilt English " +
+      "site now publishes only Bangkok without a street address, no longer carries its former pet-taxi claim, and the former Thai page returns 404."
   },
 
   {
@@ -490,12 +611,14 @@ const BUSINESSES = [
     phone: null, tel: null,
     website: null, hours: null,
     languages: "Thai; confirm English-language support when booking",
-    services: ["Home visits", "General consultations", "Vaccinations", "Neutering",
+    services: ["Advertised off-site veterinary visits", "General consultations", "Vaccinations", "Neutering",
       "Bathing", "Puppy & kitten vaccination packages"],
     summary: "Also listed locally as Mor Ja Raksa Sat (หมอจ๋ารักษาสัตว์) — a clinic in " +
-      "the Nong Prue / Siam Country Club area that publicly advertises free off-site " +
-      "home visits alongside in-clinic care, vaccinations, neutering and bathing. " +
-      "PattayaPets has not been able to confirm a phone number, website or opening hours " +
+      "the Nong Prue / Siam Country Club area that publicly advertises off-site " +
+      "home visits alongside in-clinic care, vaccinations, neutering, bathing and puppy and kitten vaccination packages. " +
+      "Thailand YellowPages pins it at 12.9335569, 100.9371114, and Adopt Don't Shop independently repeats the clinic name and address. " +
+      "The directory calls the off-site service free, but that fee wording lacks first-party confirmation and is not a current guarantee. " +
+      "Two directories repeat the same mobile, but it remains withheld pending the required human confirmation call; no website or opening hours could be confirmed " +
       "for this clinic from a primary source, so it is listed here for reference only " +
       "&mdash; not as a clinic to call in an emergency."
   },
@@ -503,59 +626,78 @@ const BUSINESSES = [
     slug: "baan-mor-raksasat-animal-hospital-pattaya",
     name: "Baan Mor Raksasat Animal Hospital",
     category: "mobile-vets", areas: ["banglamung"], type: "Animal hospital (home visits)", c24: false,
-    address: "Local road between Soi Khao Noi and Soi Khao Talo, Nong Prue, Bang Lamung, Chon Buri",
+    address: "107/27-28 Railway Road (Khao Noi-Khao Talo), Nong Prue, Bang Lamung, Chon Buri",
     phone: "085 055 8898", tel: "+66850558898",
-    email: "doctorpetlover@hotmail.com",
     website: "https://www.facebook.com/DoctorPetClinic24Hr/", hours: "Daily 10:00–21:00",
     languages: "Thai; confirm English-language support when booking",
-    services: ["Home visits", "Pet pickup & delivery", "General treatment", "Grooming", "Boarding"],
+    services: ["Home visits", "Pet pickup & delivery", "General treatment", "X-ray",
+      "Blood testing", "Oxygen therapy", "Dental scaling", "Ultrasonic nebuliser treatment",
+      "Parvovirus, distemper, heartworm & blood-parasite tests", "Microscopy", "Ear & eye examinations", "Tear testing",
+      "Named-vet continuity appointments", "Parking", "Grooming", "Boarding"],
     summary: "A Pattaya animal hospital on the railway road between Khao Noi and Khao " +
-      "Talo — also known locally as Baan Mor Raksasat — with on-site diagnostics " +
-      "and advertised off-site visits, pet pickup or delivery, grooming and boarding. " +
-      "Reachable on 085 055 8898 or doctorpetlover@hotmail.com; despite the Facebook " +
+      "Talo, about 200 metres from the Khao Noi intersection at map plus code WWF3+F83. Also known locally as Baan Mor Raksasat, it has imaging, blood testing, microscopy, oxygen and dental equipment " +
+      "and published parvovirus, distemper, heartworm and blood-parasite testing alongside advertised off-site visits, pet pickup or delivery, named-vet continuity appointments, " +
+      "grooming and boarding. " +
+      "Reachable on 085 055 8898; despite the Facebook " +
       "page name, published hours are 10:00–21:00, not 24-hour emergency care."
   },
   {
     slug: "pet-passions-mobile-grooming",
     name: "Pet Passions Mobile Grooming & Spa",
-    category: "groomers", areas: ["central-pattaya", "jomtien", "banglamung"], type: "Mobile grooming van", c24: false,
-    address: "Mobile van — Central Pattaya, Jomtien & Bang Lamung (confirm zone when booking)",
-    website: "https://petpassionsth.com/eng/", hours: "By online appointment (24/7 booking)",
+    category: "groomers", areas: [], type: "Mobile grooming van", c24: false,
+    address: "600/14 CoCo Hua Hin 88 Village, Hin Lek Fai, Hua Hin, Prachuap Khiri Khan 77110",
+    phone: "062 262 9717", tel: "+66622629717",
+    line: "petpassions",
+    email: "petpassions.official@gmail.com",
+    website: "https://petpassionsth.com/eng/", hours: "24/7 online booking; appointment hours not published",
     languages: "Thai and English",
-    services: ["Mobile bath", "Breed grooming & haircuts", "Spa treatments", "Weight-based pricing"],
-    summary: "A DBD-registered mobile grooming service that sends a fully equipped van to " +
-      "your address for baths, clips and spa work on dogs and cats across its service zone. Appointments are " +
-      "booked through petpassionsth.com or its app; confirm whether your Pattaya " +
-      "address is inside the current service zone and any travel surcharge before booking."
+    services: ["Mobile bath", "Breed grooming & haircuts", "Spa treatments",
+      "Hygiene trimming", "Nail trim & buffing", "Teeth brushing", "Ear cleaning",
+      "Dematting", "100% natural premium grooming products", "Online, LINE OA, Android & iOS booking",
+      "Bank-transfer payment", "Weight-based pricing",
+      "Three-day cancellation or reschedule notice"],
+    summary: "A Hua Hin-based mobile grooming service for dog and cat baths, breed-specific " +
+      "clips, spa and add-on grooming treatments using published 100% natural premium products, with 24-hour online, LINE OA and app booking; appointment hours are not published. " +
+      "The van requires household water and electricity. Its " +
+      "bookings require at least three days' notice to cancel or reschedule. Its current official " +
+      "service area covers Hua Hin, Cha-am and Pranburi; " +
+      "the business does not currently publish Pattaya, Jomtien or Bang Lamung coverage."
   },
   {
     slug: "pluto-luxury-pet-hotel-pattaya",
     name: "Pluto Luxury Pet Hotel",
-    category: "boarding", areas: ["banglamung"], type: "Dog & cat hotel", c24: false,
-    address: "Pattaya area, Chon Buri (confirm exact address on plutopethotel.com)",
-    phone: null, tel: null,
+    category: "boarding", areas: [], type: "Dog & cat hotel", c24: false,
+    address: "1502 Phatthanakan Road, Suan Luang, Bangkok 10250",
+    phone: "095 879 2915", tel: "+66958792915",
+    line: "pluto.pet",
     website: "https://www.plutopethotel.com/en/pet-hotel-en/",
-    hours: "By appointment (confirm on website)",
-    languages: "Thai and English",
-    services: ["Daycare", "Overnight boarding", "Cat boarding", "Grooming by arrangement"],
-    summary: "A luxury pet hotel brand operating daycare and overnight boarding for " +
-      "dogs and cats, with English-language booking and grooming by arrangement via plutopethotel.com. " +
-      "Confirm the Pattaya-area location, rates, vaccination rules and pickup " +
-      "service before you book — this listing is orientation only."
+    hours: "Daily check-in & check-out 09:00–19:00",
+    languages: "Thai, English and Chinese",
+    services: ["Dog boarding", "Cat boarding", "Daycare 09:00–19:00",
+      "Night care 19:00–02:00", "Standard or deluxe daycare/night-care rooms",
+      "24-hour care & CCTV for boarded pets",
+      "Pre-stay screening, room disinfection & separate litter scoops", "Separate-household walks",
+      "Twice-daily individual walks", "Air-conditioned rooms with toys",
+      "Cat climbing areas", "Grooming & spa", "On-site pet shop", "Attended limousine pickup & drop-off"],
+    summary: "A Bangkok pet hotel on Phatthanakan Road offering dog and cat boarding, " +
+      "daycare and night care in standard or deluxe rooms, grooming, pickup and drop-off, with screening, air-conditioned rooms, " +
+      "toys, cat climbing areas, separate litter scoops, twice-daily individual walks, an on-site pet shop " +
+      "and 24-hour care and CCTV for boarded pets. Its current official " +
+      "website does not show a Pattaya or Bang Lamung branch."
   },
   {
     slug: "doggie-star-grooming-pattaya",
     name: "Doggie Star Grooming",
-    category: "groomers", areas: ["jomtien"], type: "Dog & cat grooming salon", c24: false,
-    address: "Jomtien Second Road area, Bang Lamung, Chon Buri (confirm on Facebook)",
+    category: "groomers", areas: [], type: "Unverified grooming lead", c24: false,
+    address: null,
     phone: null, tel: null,
     website: "https://www.facebook.com/DoggieStarGrooming/",
-    hours: "By appointment (confirm on Facebook)",
-    languages: "Thai; confirm English-language support when booking",
-    services: ["Dog grooming", "Cat grooming", "Bath & blow-dry", "Nail trims"],
-    summary: "A Jomtien grooming salon listed on Facebook as Doggie Star Grooming, " +
-      "handling baths and breed clips for dogs and cats by appointment, plus nail trims. Confirm the " +
-      "current street address, hours and vaccination rules on its Facebook page before visiting."
+    hours: null,
+    languages: null,
+    services: [],
+    summary: "The published Facebook URL is the only external lead for this listing, and exact-name English and Thai searches still surface no readable independent current business source. " +
+      "Older cached PattayaPets category text mentions Jomtien grooming services, but that is this site's own stale output rather than independent confirmation. " +
+      "Treat the listing only as an unverified lead: operating status, location, contact details, hours and services all require direct confirmation."
   }
 ];
 

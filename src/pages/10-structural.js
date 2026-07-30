@@ -97,7 +97,7 @@ pages.push({
     '<h2 id="start-import">3. Bringing a pet to Thailand &mdash; or taking one out</h2>' +
     "<p>Pet import and export is a process with real deadlines: microchip, rabies " +
     "vaccination, a titer test, a health certificate and an import permit from the " +
-    "Thai Department of Livestock Development. Start early. Our flagship guide to " +
+    "Thai Department of Livestock Development. Start early.</p><p>Our flagship guide to " +
     '<a href="/bring-pet-to-thailand/">bringing a pet to Thailand</a> walks ' +
     "through every step; see also the " +
     '<a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import ' +
@@ -106,7 +106,7 @@ pages.push({
     "pages for the Thai-side paperwork. Gulf expats may also see " +
     '<a href="/bring-pet-to-thailand/from-uae.html">import from the UAE</a>; ' +
     "the separate hub covers " +
-    '<a href="/take-pet-out-of-thailand/">taking a pet out of Thailand</a>. ' +
+    '<a href="/take-pet-out-of-thailand/">taking a pet out of Thailand</a>.</p><p>' +
     "Specialists who handle the paperwork are listed in the " +
     '<a href="/pet-relocation/">pet relocation agents directory</a>. ' +
     "For visa and relocation timing alongside the move, see " +
@@ -131,10 +131,10 @@ pages.push({
     '<a href="/pet-shops/">pet shops directory</a>. For grooming, ' +
     '<a href="/groomers/">groomers</a>. For obedience and behaviour, ' +
     '<a href="/trainers/">dog trainers</a>. For travel and work cover, ' +
-    '<a href="/boarding/">boarding and daycare</a>. For walking and going out, see ' +
+    '<a href="/boarding/">boarding and daycare</a>.</p><p>For walking and going out, see ' +
     '<a href="/dog-friendly-pattaya/">dog-friendly Pattaya</a>. Dog owners should ' +
     "also see the <a href=\"/dogs/\">dog owner&rsquo;s hub</a>; cat owners the " +
-    "<a href=\"/cats/\">cat owner&rsquo;s hub</a>. And it is worth " +
+    "<a href=\"/cats/\">cat owner&rsquo;s hub</a>.</p><p>It is worth " +
     "understanding how " +
     '<a href="/owning-a-pet-in-pattaya/dog-registration-thailand.html">dog registration</a> ' +
     "and " +
@@ -278,9 +278,11 @@ pages.push(prosePage({
     "<p>When we get something wrong, we fix it visibly. Spotted an error? See the " +
     '<a href="/corrections.html">corrections page</a> for how to report it.</p>' +
     "<h2>What we will never do</h2>" +
-    "<p>No paid placements. No sponsored tags. No affiliate links. No fake reviews. " +
-    "No scraping of competitor review sites. No generic stock pet clipart. The " +
-    "directory and the guides are ours, built honestly.</p>" +
+    "<ul><li>No paid placements or sponsored tags.</li>" +
+    "<li>No affiliate links.</li>" +
+    "<li>No fake reviews or scraping of competitor review sites.</li>" +
+    "<li>No generic stock pet clipart.</li></ul>" +
+    "<p>The directory and the guides are ours, built honestly.</p>" +
     "<h2>Explore PattayaPets</h2>" +
     "<p>Browse the <a href=\"/directory.html\">business directory</a>, the " +
     "<a href=\"/guides.html\">guide library</a>, and the " +
@@ -597,7 +599,8 @@ pages.push(prosePage({
     "<p>Businesses are visited anonymously. Bills are paid in full, every time. A " +
     "listing starts as a verified <em>facts page</em> &mdash; name, area, services, " +
     "hours, languages, contact &mdash; and is marked <em>not yet reviewed</em> until " +
-    "an editor has actually been. Verdicts describe the business experience only: " +
+    "an editor has actually been.</p>" +
+    "<p>Verdicts describe the business experience only: " +
     "booking, communication, English, billing transparency, cleanliness. We do not " +
     "rate veterinary medical quality and never will. The full method is on the " +
     "<a href=\"/standards.html\">editorial standards</a> page, and every correction we " +
