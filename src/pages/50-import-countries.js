@@ -994,6 +994,7 @@ pages.push(importTopic({
   desc: "Whether you can fly a pet directly into U-Tapao near Pattaya, why most pet " +
     "imports use Bangkok's Suvarnabhumi, and how to get from the airport to Pattaya.",
   crumb: "U-Tapao or Bangkok?",
+  updated: "2026-07-31",
   breadcrumbs: SUB,
   eyebrow: "Bringing a pet to Thailand",
   h1: "Flying a pet into Pattaya: U-Tapao or Bangkok?",
@@ -1018,9 +1019,11 @@ pages.push(importTopic({
       "Quarantine Station, so it cannot be named as your port of entry on the R1/1 " +
       "import permit application. It does not appear on the Thai Ministry of Foreign " +
       "Affairs list of pet-clearing airports (revised January 2025, re-published " +
-      "February 2026), nor on the Department of Livestock Development&rsquo;s own map " +
-      "of its 59 quarantine stations (published October 2025) &mdash; which lists no " +
-      "station anywhere in Rayong province. The airport&rsquo;s operator lists no " +
+      "February 2026), nor on the Department of Livestock Development&rsquo;s current " +
+      "map of 59 quarantine stations, published 8 October 2025, which names neither " +
+      "U-Tapao nor a Rayong station. DLD assigns Ban Chang and Mueang Rayong to the " +
+      "Chonburi station&rsquo;s jurisdiction, but does not list an airport quarantine " +
+      "station at U-Tapao. The airport&rsquo;s operator lists no " +
       "animal quarantine or veterinary facility. The six airports that do accept pet " +
       "import applications are Suvarnabhumi, Don Mueang, Chiang Mai, Phuket, Samui " +
       "and Krabi (through Trang&rsquo;s station). The U-Tapao expansion under the " +

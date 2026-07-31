@@ -175,6 +175,7 @@ pages.push(exp({
 
 pages.push(exp({
   slug: "to-south-korea", crumb: "To South Korea",
+  updated: "2026-07-31",
   title: "Export Pet from Thailand to South Korea (2026) | PattayaPets",
   desc: "Thailand to South Korea pet export: APQA import rules, rabies antibody test, DLD export permit and Incheon arrival planning.",
   h1: "Taking a pet from Thailand to South Korea",
@@ -203,7 +204,9 @@ pages.push(exp({
       "on the day of arrival. If either is missing, quarantine is extended until the pet is " +
       "chipped and vaccinated and the titre reaches that level. There is <strong>no routine " +
       "import licence or quarantine reservation</strong> for a pet travelling with its owner. " +
-      "If you are moving animals commercially or in numbers, confirm the rules with APQA directly.</p>" +
+      "Advance APQA permission is required when importing more than 10 dogs or cats. " +
+      "Commercial movements and other non-personal consignments may have additional " +
+      "conditions, so confirm those directly with APQA.</p>" +
       DLD_SIDE },
     { h: "The timeline — work backwards", html:
       '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
@@ -228,7 +231,7 @@ pages.push(exp({
     ["Does South Korea require a rabies titer test from Thailand?",
      "<p>Yes. A dog or cat identified by microchip with a rabies neutralising antibody titre of 0.5 IU/ml or higher is released on the day of arrival. Below that level, quarantine is extended until the pet is chipped, vaccinated and the titre reaches 0.5 IU/ml.</p>"],
     ["Do I need advance permission or an import licence for Korea?",
-     "<p>Not for a pet travelling with you. The controlling document is the government export quarantine certificate issued by the Thai DLD, together with microchip and rabies antibody evidence. Commercial movements are handled separately — confirm those with APQA.</p>"],
+     "<p>Not for a pet travelling with you. The controlling document is the government export quarantine certificate issued by the Thai DLD, together with microchip and rabies antibody evidence. Advance APQA permission applies when importing more than 10 dogs or cats; commercial movements are handled separately — confirm those with APQA.</p>"],
     ["How long does Thailand-to-Korea pet export take?",
      "<p>The pacing item is the rabies antibody test, plus the Thai DLD export permit lead time of at least 15 days. Book the blood draw first and work forward from the result.</p>"],
     ["Can my pet enter Korea through Incheon airport?",

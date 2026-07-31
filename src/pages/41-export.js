@@ -589,6 +589,7 @@ pages.push(exp({
 
 pages.push(exp({
   slug: "to-usa", crumb: "To the USA",
+  updated: "2026-07-31",
   title: "Export Pet from Thailand to the USA (CDC Rules 2026) | PattayaPets",
   desc: "Thailand to USA pet export: CDC dog-import rules for high-rabies countries, " +
     "titer test, DLD export timeline, document checklist and planning months ahead.",
@@ -611,7 +612,7 @@ pages.push(exp({
       '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
       '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Authority</th></tr></thead><tbody>' +
       '<tr><th scope="row">2&ndash;3 months before (typical)</th>' +
-      '<td>Confirm ISO microchip; ensure rabies vaccination is current; arrange <strong>rabies titer test</strong> if required for your CDC pathway</td>' +
+      '<td>Confirm ISO microchip; ensure rabies vaccination is current; plan the <strong>rabies titer test</strong> &mdash; without a valid titer, the mandatory CDC facility reservation must include 28-day quarantine</td>' +
       '<td>Thai vet + approved lab</td></tr>' +
       '<tr><th scope="row">Weeks before travel</th>' +
       '<td>Complete CDC dog import documentation online; note any required US arrival airports</td>' +
@@ -626,28 +627,27 @@ pages.push(exp({
       '<td>Confirm export date with the AQS by email</td>' +
       '<td>DLD</td></tr>' +
       '<tr><th scope="row">US arrival</th>' +
-      '<td>Present CDC documentation, health papers and microchip at designated inspection if required</td>' +
+      '<td>Arrive at the airport where your reserved CDC-registered animal care facility is located; present CDC documentation, health papers and microchip</td>' +
       '<td>CDC / port veterinarian</td></tr>' +
       '</tbody></table></div>' },
     { h: "CDC rules for dogs — what Thailand triggers", html:
-      "<p>Dogs entering the United States from Thailand face the CDC&rsquo;s " +
-      "high-rabies-country requirements. Depending on your dog&rsquo;s age, " +
-      "microchip, vaccination history and whether it was vaccinated in the US " +
-      "before travel, steps commonly include:</p>" +
-      "<ul>" +
-      "<li><strong>ISO-compatible microchip</strong> recorded before or with rabies vaccination</li>" +
-      "<li><strong>Minimum age</strong> rules (young puppies may not import)</li>" +
-      "<li><strong>Rabies vaccination</strong> tied to the microchip</li>" +
-      "<li><strong>Rabies titer test</strong> from an approved laboratory, for many dogs coming from high-rabies countries</li>" +
-      "<li><strong>CDC Dog Import Form</strong> (or equivalent current CDC paperwork) submitted before travel</li>" +
-      "<li>Arrival through <strong>designated airports</strong> for some import categories</li>" +
-      "</ul>" +
-      "<p>These rules are detailed and have been updated repeatedly. Do not rely on " +
-      "a forum post or an old airline PDF &mdash; read " +
-      "<a href=\"https://www.cdc.gov/importation/bringing-an-animal-into-the-us/index.html\" " +
-      "target=\"_blank\" rel=\"noopener nofollow\">CDC requirements</a> and " +
-      "<a href=\"https://www.aphis.usda.gov/pet-travel\" target=\"_blank\" rel=\"noopener nofollow\">USDA APHIS pet travel</a> " +
-      "for cats and any state-level rules at your US destination.</p>" },
+      "<p>A dog vaccinated outside the United States that has been in Thailand during " +
+      "the six months before entry follows the CDC foreign-vaccinated, high-risk-country " +
+      "pathway. The dog must be at least six months old, appear healthy and have a " +
+      "microchip implanted before its valid rabies vaccination.</p>" +
+      "<p>You need an endorsed Certification of Foreign Rabies Vaccination and Microchip " +
+      "form and a CDC Dog Import Form receipt. You must also reserve a CDC-registered " +
+      "animal care facility and fly directly to the US airport where that facility is " +
+      "located. The facility examines the dog and revaccinates it with a US-licensed " +
+      "rabies vaccine.</p>" +
+      "<p>A valid rabies serology titer avoids the standard post-arrival quarantine, but " +
+      "it does not remove the facility reservation. Without a valid titer, the " +
+      "reservation must include 28-day quarantine. For a dog starting with its first " +
+      "valid rabies vaccination, the blood sample must be taken at least 30 days after " +
+      "vaccination and at least 28 days before US entry. Recheck the " +
+      "<a href=\"https://www.cdc.gov/importation/dogs/foreign-vaccinated-high-risk-countries.html\" " +
+      "target=\"_blank\" rel=\"noopener nofollow\">current CDC pathway</a> before booking " +
+      "because vaccination history can change the preparation sequence.</p>" },
     { h: "Cats — lighter, but not automatic", html:
       "<p>Cats face fewer CDC restrictions than dogs, but must still be healthy on " +
       "arrival and may need documentation depending on airline and state rules. " +
@@ -664,13 +664,13 @@ pages.push(exp({
       "<ul>" +
       "<li><strong>Assuming pre-2024 dog-import rules still apply</strong> &mdash; verify the current CDC page.</li>" +
       "<li><strong>Non-ISO microchip</strong> &mdash; common on older US-born dogs; may require re-chip and re-vaccination.</li>" +
-      "<li><strong>Wrong US arrival airport</strong> &mdash; some CDC categories restrict where dogs may land.</li>" +
+      "<li><strong>Wrong US arrival airport</strong> &mdash; a foreign-vaccinated dog must land at the airport where its reserved CDC-registered facility is located.</li>" +
       "<li><strong>Submitting CDC paperwork on the day of travel</strong> &mdash; many forms must be filed in advance.</li>" +
       "</ul>" }
   ],
   faqs: [
     ["Does my dog need a rabies titer test to enter the USA from Thailand?",
-     "<p>Because Thailand is a high-rabies-risk country under CDC rules, a rabies titer test from an approved lab is commonly required for dogs — but the exact rule depends on vaccination history and the current CDC policy. Verify your dog's specific case on the CDC website.</p>"],
+     "<p>A valid titer is not the only entry option for a foreign-vaccinated dog from Thailand, but it avoids the standard 28-day post-arrival quarantine. Without one, your required CDC-registered animal care facility reservation must include quarantine. The facility reservation, examination and US revaccination still apply when the dog has a valid titer.</p>"],
     ["Where do I check the current US rules?",
      "<p>The CDC governs disease-control import rules for dogs; USDA APHIS covers animal-health certification. Check both directly, plus your destination US state's requirements, before you book.</p>"],
     ["Can I use the same health certificate that got my dog into Thailand?",
@@ -691,8 +691,8 @@ const EU_EXPORT_TIMELINE =
   '<td>Confirm destination member-state rules (designated travellers&rsquo; point of entry, advance notification, tapeworm treatment for dogs if required).</td></tr>' +
   '<tr><th scope="row">At least 15 days before departure</th>' +
   '<td>Apply for Thai DLD export permit (form 1/1) at the departure airport AQS; gather destination import proof.</td></tr>' +
-  '<tr><th scope="row">Within 10 days of export</th>' +
-  '<td>Thai official vet issues export health certificate aligned with EU entry requirements.</td></tr>' +
+  '<tr><th scope="row">No more than 10 days before EU entry</th>' +
+  '<td>Have the EU animal health certificate issued by an official veterinarian, or issued by an authorised veterinarian and endorsed by the competent authority. Make sure the certificate model, microchip, vaccination and titer documents all match.</td></tr>' +
   '<tr><th scope="row">Before check-in</th>' +
   '<td>Confirm flight pet booking and that connection airports accept live animals if not flying direct.</td></tr>' +
   '<tr><th scope="row">At the travellers&rsquo; point of entry</th>' +
@@ -727,12 +727,12 @@ pages.push(exp({
   title: "Export Pet from Thailand to the EU (2026) | PattayaPets",
   desc: "Thailand to EU pet export: DLD export permit, rabies titer test, three-month " +
     "wait, EU health certificate and designated travellers' entry points.",
-  updated: "2026-07-26",
+  updated: "2026-07-31",
   h1: "Taking a pet from Thailand to the EU",
   lede: "For the EU, Thailand is a non-listed third country &mdash; so the rabies " +
     "titer test and its three-month wait drive your timeline. Line up DLD export " +
     "paperwork inside that longer EU calendar.",
-  verify: "EU non-commercial pet rules were checked on 26 July 2026 against the " +
+  verify: "EU non-commercial pet rules were checked on 31 July 2026 against the " +
     "European Commission. The correct arrival control is a designated travellers&rsquo; " +
     "point of entry, not a commercial Border Control Post.",
   officialExtra:
@@ -760,6 +760,10 @@ pages.push(exp({
       "vaccination dates and titer result must all line up on it. Non-commercial " +
       "entry must be through a <strong>designated travellers&rsquo; point of entry</strong> " +
       "in the member state of arrival.</p>" +
+      "<p>For certificates issued before 1 October 2026, the European Commission says " +
+      "the former Regulation (EU) No 577/2013 model remains valid. For later travel, " +
+      "use the model under Implementing Regulation (EU) 2026/705 and recheck the " +
+      "Commission page before the appointment.</p>" +
       "<p>Dogs entering Finland, Ireland, Malta or Norway may need tapeworm " +
       "treatment; some member states require advance notification. Confirm with " +
       "the competent authority for your entry country.</p>" +
@@ -776,7 +780,7 @@ pages.push(exp({
     ["Is the three-month wait avoidable?",
      "<p>Only if a valid rabies titer test is already in place and has remained valid (with the rabies vaccination kept current). That is why owners are advised to do the test before leaving for Thailand. Ask the destination authority to confirm any uncertain vaccination history before booking.</p>"],
     ["Does the EU pet passport work for this?",
-     "<p>The EU pet passport is for movement within the EU and for pets resident there. Coming from Thailand you need a third-country entry health certificate; check the rules for your specific EU entry country. The passport alone does not replace that endorsed certificate or the arrival checks.</p>"],
+     "<p>Usually, a pet travelling from Thailand needs the EU animal health certificate. A documented return journey is different: an EU-resident pet may use its EU passport if it records a still-valid rabies vaccination and, where required, a favourable titer completed before the pet left the EU. If that return exception does not apply, the passport does not replace the certificate or arrival checks.</p>"],
     ["Can my pet enter any EU airport?",
      "<p>No. A non-commercial pet arriving from Thailand must use a member state&rsquo;s designated travellers&rsquo; point of entry, where officials perform document and identity checks. That is distinct from the Border Control Post terminology used for commercial consignments. Check the competent authority&rsquo;s current list before choosing an airport or connection.</p>"],
     ["How long does DLD export take compared with EU entry rules?",

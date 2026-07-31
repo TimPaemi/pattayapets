@@ -34,9 +34,11 @@ The one honest caveat: every directory listing shows the verdict state
 
 ## 2. How to deploy (take it live)
 
-**Normal deploy:** push to `main` on GitHub. Cloudflare Pages rebuilds automatically
-(watch the deploy in your Cloudflare dashboard). You only need the commands below
-for a first-time machine setup or if GitHub deploy fails.
+**Normal deploy:** from `C:\Projects`, run `.\deploy.ps1 -Only pets`. There is no
+push-to-main auto-deploy: `dist/` is gitignored and CI has no deploy step — the site
+reaches Cloudflare Pages only through the guarded upload in `tools/deploy.mjs`.
+You only need the commands below for a first-time machine setup. *(Corrected
+31 July 2026 to match the guarded route; see `CLAUDE.md`.)*
 
 The site builds on your computer and uploads to Cloudflare. Open **Command
 Prompt** (press the Windows key, type `cmd`, Enter) and run these lines,
@@ -45,14 +47,16 @@ one at a time:
 ```
 cd C:\Projects\pattayapets
 npm install
-npm run deploy
+cd C:\Projects
+.\deploy.ps1 -Only pets
 ```
 
 What each line does:
 
 1. `cd C:\Projects\pattayapets` — moves into the project folder.
 2. `npm install` — fetches the build tools (slow once, instant after).
-3. `npm run deploy` — the only supported deploy route. It runs `build:all`
+3. `.\deploy.ps1 -Only pets` (run from `C:\Projects`) — the only supported deploy
+   route. It drives this repo's `npm run deploy`, which runs `build:all`
    (regenerates OG images and the site, checks every internal link, runs the SEO and
    directory audits), then the guarded pre-flight in `tools/deploy.mjs`, then the
    upload, then the IndexNow ping. The link check should report **0 broken**.
