@@ -216,7 +216,10 @@ async function pool(items, fn, n) {
           checkHtml(cp, cr.body, issues, socialImages);
         }
         var expected = releaseLedger.get(cp);
-        if (expected && (expected.bytes !== cr.buffer.length || expected.sha256 !== sha256(cr.buffer))) {
+        /* Cloudflare may inject email protection/analytics into HTML at the edge;
+           exact byte parity is meaningful only for non-HTML release artifacts. */
+        if (expected && !expected.path.endsWith(".html") &&
+            (expected.bytes !== cr.buffer.length || expected.sha256 !== sha256(cr.buffer))) {
           issues.push({ kind: "RELEASE_HASH", path: cp, detail: "live bytes differ from build manifest" });
         }
       }
