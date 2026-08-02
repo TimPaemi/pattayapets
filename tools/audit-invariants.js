@@ -187,10 +187,16 @@ const UTAPAO_BANNED = [
 }
 
 /* ---------- 8. Cache assertion (S2.6) ---------------------------------------
-   Anything served immutable for a year must be content-addressed, including fonts. */
+   Anything served immutable for a year must be content-addressed, including images. */
 {
   const referenced = new Set();
-  for (const f of htmlFiles.concat([path.join(DIST, "sw.js")]).filter(fs.existsSync)) {
+  const cacheReferenceFiles = htmlFiles.concat([
+    path.join(DIST, "sw.js"),
+    path.join(DIST, "manifest.webmanifest")
+  ], fs.existsSync(path.join(DIST, "assets", "css"))
+    ? fs.readdirSync(path.join(DIST, "assets", "css")).map((name) => path.join(DIST, "assets", "css", name))
+    : []).filter(fs.existsSync);
+  for (const f of cacheReferenceFiles) {
     for (const m of read(f).matchAll(/\/assets\/[A-Za-z0-9._\-/]+/g)) referenced.add(m[0]);
   }
   const hdrs = read(path.join(ROOT, "src/static/_headers"));
@@ -203,13 +209,14 @@ const UTAPAO_BANNED = [
        build are not a cache-correctness problem, and dist/ is wiped on each build. */
     const prefix = glob.replace(/\*$/, "");
     const unhashed = [...referenced].filter((u) => u.startsWith(prefix) &&
-      /\.(css|js|woff2)$/.test(u) && !/\.[0-9a-f]{8,}\.(css|js|woff2)$/.test(u));
+      /\.(css|js|woff2|png|webp|jpe?g|svg|ico|gif)$/.test(u) &&
+      !/\.[0-9a-f]{8,}\.(css|js|woff2|png|webp|jpe?g|svg|ico|gif)$/.test(u));
     if (unhashed.length) {
       fail("S2.6/cache", glob + " is served immutable but the site references unversioned file(s): " +
         unhashed.join(", ") + ". Content-hash them or drop immutable."); ok = false;
     }
   }
-  if (ok) pass("S2.6  every immutable CSS, JavaScript and font reference is content-addressed");
+  if (ok) pass("S2.6  every immutable CSS, JavaScript, font and image reference is content-addressed");
 }
 
 /* ---------- 9. Directory schema assertion (S2.3) ----------------------------- */

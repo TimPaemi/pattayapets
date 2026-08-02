@@ -34,20 +34,8 @@ function safeRelative(rel) {
   return rel.split("/").every(function (part) { return part && part !== "." && part !== ".."; });
 }
 
-function contentVersion() {
-  const digest = crypto.createHash("sha256");
-  walk(DIST).filter(function (rel) {
-    return rel !== "sw.js" && rel !== "build-manifest.json";
-  }).sort().forEach(function (rel) {
-    digest.update(rel + "\0");
-    digest.update(fs.readFileSync(path.join(DIST, ...rel.split("/"))));
-    digest.update("\0");
-  });
-  return digest.digest("hex").slice(0, 12);
-}
-
 function sourceHash() {
-  const files = ["build.js", "package.json", "package-lock.json"];
+  const files = [".node-version", "build.js", "package.json", "package-lock.json"];
   walk(path.join(ROOT, "src")).forEach(function (rel) { files.push("src/" + rel); });
   const digest = crypto.createHash("sha256");
   files.sort().forEach(function (rel) {
@@ -74,11 +62,20 @@ function tagAttributes(tag) {
   return out;
 }
 
+function publicImageReferences(text) {
+  return [...String(text).matchAll(/(?:https:\/\/pattayapets\.com)?(\/assets\/(?:immutable\/img|img)\/[A-Za-z0-9_./-]+\.(?:png|webp|jpe?g|svg|ico|gif))/gi)]
+    .map(function (match) { return match[1]; });
+}
+
 function main() {
   if (!fs.existsSync(MANIFEST)) throw new Error("dist/build-manifest.json is missing");
   const manifest = JSON.parse(fs.readFileSync(MANIFEST, "utf8"));
   if (manifest.schemaVersion !== 1 || manifest.project !== "pattayapets" ||
       manifest.site !== "https://pattayapets.com") throw new Error("Manifest identity is invalid");
+  const pinnedNode = fs.readFileSync(path.join(ROOT, ".node-version"), "utf8").trim();
+  if (!manifest.runtime || manifest.runtime.node !== "v" + pinnedNode || process.versions.node !== pinnedNode) {
+    throw new Error("Build manifest/runtime differs from the exact .node-version pin");
+  }
   if (!manifest.source || manifest.source.sha256 !== sourceHash()) {
     throw new Error("dist is stale: manifest source hash does not match the current source tree");
   }
@@ -87,8 +84,8 @@ function main() {
   }
 
   if (!/^[0-9a-f]{12}$/.test(manifest.serviceWorkerVersion || "") ||
-      manifest.serviceWorkerVersion !== contentVersion()) {
-    throw new Error("Service-worker version is not the exact staged-content hash");
+      manifest.serviceWorkerVersion !== sourceHash().slice(0, 12)) {
+    throw new Error("Service-worker version is not the exact build-source fingerprint");
   }
 
   const actualFiles = walk(DIST).filter(function (rel) { return rel !== "build-manifest.json"; }).sort();
@@ -149,6 +146,30 @@ function main() {
     throw new Error("Manifest routes do not exactly cover generated HTML");
   }
 
+  /* Every generated image reference must name the bytes it expects. Stable
+     aliases are retained only for old external links; current HTML, CSS, PWA
+     metadata and the worker must never depend on a mutable image cache key. */
+  const imageReferenceFiles = htmlOutputs.concat(actualFiles.filter(function (rel) {
+    return /^assets\/css\/site\.[0-9a-f]{12}\.css$/i.test(rel) ||
+      /^assets\/js\/site\.[0-9a-f]{12}\.js$/i.test(rel) ||
+      rel === "manifest.webmanifest" || rel === "sw.js";
+  }));
+  let imageReferenceCount = 0;
+  imageReferenceFiles.forEach(function (rel) {
+    const contents = fs.readFileSync(path.join(DIST, ...rel.split("/")), "utf8");
+    publicImageReferences(contents).forEach(function (url) {
+      imageReferenceCount++;
+      const nameMatch = url.match(/^\/assets\/immutable\/img\/.*\.([0-9a-f]{12})\.(?:png|webp|jpe?g|svg|ico|gif)$/i);
+      if (!nameMatch) throw new Error("Mutable public image reference in " + rel + ": " + url);
+      const assetRel = url.slice(1);
+      const entry = ledger.get(assetRel);
+      if (!entry || entry.sha256.slice(0, 12) !== nameMatch[1].toLowerCase()) {
+        throw new Error("Image filename/content hash mismatch in " + rel + ": " + url);
+      }
+    });
+  });
+  if (!imageReferenceCount) throw new Error("No generated public image references were audited");
+
   const sitemapUrls = [...fs.readFileSync(path.join(DIST, "sitemap.xml"), "utf8")
     .matchAll(/<loc>([^<]+)<\/loc>/g)].map(function (match) { return match[1]; }).sort();
   const routeUrls = manifest.routes.filter(function (route) { return route.indexable; })
@@ -166,6 +187,7 @@ function main() {
   }) || "";
   const headerBlocks = headers.split(/\r?\n\s*\r?\n/);
   const cachePolicies = {
+    "/assets/immutable/*": "public, max-age=31536000, immutable",
     "/sw.js": "no-cache",
     "/robots.txt": "public, max-age=3600, must-revalidate",
     "/sitemap.xml": "public, max-age=3600, must-revalidate",
@@ -193,6 +215,15 @@ function main() {
   })) throw new Error("Font preload is not content-addressed");
   if (!fs.readFileSync(path.join(DIST, "sw.js"), "utf8").includes(manifest.serviceWorkerVersion)) {
     throw new Error("Service-worker and manifest versions differ");
+  }
+  const siteScripts = actualFiles.filter(function (rel) {
+    return /^assets\/js\/site\.[0-9a-f]{12}\.js$/i.test(rel);
+  });
+  if (siteScripts.length !== 1) throw new Error("Expected exactly one content-addressed site script");
+  const siteScript = fs.readFileSync(path.join(DIST, ...siteScripts[0].split("/")), "utf8");
+  if (!siteScript.includes("/sw.js?v=") || !siteScript.includes(manifest.serviceWorkerVersion) ||
+      !siteScript.includes("updateViaCache") || !siteScript.includes("none")) {
+    throw new Error("Service-worker registration is not bound to the build version with cache bypass");
   }
   const worker = fs.readFileSync(path.join(DIST, "sw.js"), "utf8");
   const precacheMatch = worker.match(/\bPRECACHE=(\[[^\]]*\])/);

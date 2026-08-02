@@ -708,11 +708,11 @@ pages.push(prosePage({
 
     "<h2>Logo and brand assets</h2>" +
     "<ul>" +
-    "<li><a href=\"/assets/img/logo-mark.svg\">logo-mark.svg</a> &mdash; the pin-and-paw " +
+    "<li><a href=\"/assets/img/logo-mark.svg\" download=\"logo-mark.svg\">logo-mark.svg</a> &mdash; the pin-and-paw " +
     "mark, vector, for avatars and small sizes.</li>" +
-    "<li><a href=\"/assets/img/icon-512.png\">icon-512.png</a> &mdash; 512&times;512 raster " +
+    "<li><a href=\"/assets/img/icon-512.png\" download=\"icon-512.png\">icon-512.png</a> &mdash; 512&times;512 raster " +
     "mark on a solid background.</li>" +
-    "<li><a href=\"/assets/img/og-default.png\">og-default.png</a> &mdash; 1200&times;630 " +
+    "<li><a href=\"/assets/img/og-default.png\" download=\"og-default.png\">og-default.png</a> &mdash; 1200&times;630 " +
     "social card, safe to use as a generic site image.</li>" +
     "</ul>" +
     "<p>Ask the press contact before using a format not listed here.</p>" +

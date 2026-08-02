@@ -335,7 +335,15 @@
   /* Register the service worker for offline support */
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", function () {
-      navigator.serviceWorker.register("/sw.js").catch(function () {});
+      /* The custom domain may impose a browser TTL above the Pages _headers
+         value. Bind the registration URL to the exact build version so even a
+         cached /sw.js response cannot conceal a newly deployed worker. */
+      var workerVersion = "__SW_VERSION__";
+      navigator.serviceWorker.register("/sw.js?v=" + workerVersion, {
+        updateViaCache: "none"
+      }).catch(function () {
+        navigator.serviceWorker.register("/sw.js", { updateViaCache: "none" }).catch(function () {});
+      });
     });
   }
 

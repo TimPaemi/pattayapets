@@ -91,7 +91,7 @@ Scoreboard line: **A Green · B Amber · C Green · D Green · E Amber · F Ambe
 
 | Command | Final result |
 |---|---|
-| `npm run build:all` | PASS — 209 pages, 209 valid JSON-LD graphs, 205 sitemap URLs, 201 internal-search entries, 10 service-worker precache entries, 270 manifest files. |
+| `npm run build:all` | PASS — 209 pages, 209 valid JSON-LD graphs, 205 sitemap URLs, 201 internal-search entries, 10 service-worker precache entries, 313 manifest files. |
 | `npm run audit:source` | PASS — 78 JavaScript files, 208 authored pages, zero syntax, duplicate-key, route or metadata failures. |
 | `npm run audit:regulated` | PASS — 25 claims, 469 rendered citations, 71 regulated routes cited, 18 broken fixtures rejected. |
 | `npm run audit:airlines` | PASS — 17 source records and 17 publication records, eight allowlisted fields, zero hard failures. |
@@ -100,8 +100,8 @@ Scoreboard line: **A Green · B Amber · C Green · D Green · E Amber · F Ambe
 | `npm run audit:a11y` | PASS — 209 pages, 210 images, 18,727 links, 1,049 controls, 148 tables, zero hard failures. |
 | `npm run audit:business` | PASS — 43 dossiers, 35 live records, four held, eight dossier-only, zero hard failures; eight named human/migration advisories. |
 | `npm run audit:network` | PASS — 524 authored/generated files; entity, author-link, rating, contact and cross-property rules hold. |
-| `npm run audit:local` | PASS — two 271-file builds are identical (`bb48fa8…183c9c`); 18/18 budgets pass; repository 687-file snapshot unchanged. |
-| `npm run audit:local` performance | Chrome 150, 390×844, 150 ms latency, 1,600 kbps, 4× CPU: LCP 1.032–1.312 s, CLS 0.0000, one render blocker, critical CSS 19,454/22,000 bytes. Search initial transfer fell to 218,699/260,000 bytes and LCP to 1.032/2.000 s. |
+| `npm run audit:local` | PASS — two 314-file builds are identical (`c17d3d59…cf4bc`); 18/18 budgets pass; repository 733-file snapshot unchanged. |
+| `npm run audit:local` performance | Chrome 150, 390×844, 150 ms latency, 1,600 kbps, 4× CPU: LCP 1.164–1.512 s, CLS 0.0000, one render blocker, critical CSS 19,454/22,000 bytes. Search initial transfer is 219,100/260,000 bytes with LCP 1.164/2.000 s. |
 | Targeted final Lighthouse/search regression | Search: performance 97, accessibility 100, best practices 100, expected noindex SEO 69; FCP 1.804 s, LCP 2.254 s, TBT 0, CLS 0. A real “Jomtien” query returned 22 results after exactly one on-demand index request. |
 | Targeted final axe regression | Six representative templates × desktop/mobile: 12/12 runs with zero WCAG A/AA violations. Every run retained one `color-contrast` incomplete/manual-review rule. |
 | `npm run audit:official` | Truthful non-pass — 172 URLs checked: 167 verified, five HTTP-403 inconclusive, zero dead. |
@@ -165,3 +165,11 @@ After Tim explicitly confirmed mailbox delivery and approved release on 1 August
 Post-push verification exposed two clean-checkout failures that local operator data had masked: the airline build adapter and business integrity audit depended on gitignored private research files. The release controls now separate those concerns. Clean CI validates the checked-in publication snapshot, public business model, explicit hold boundary and generated output while stating that private parity was unavailable; operator builds, ordinary deploy dry-runs and production deploys hard-require the private airline and business sources before any approved release can proceed. No raw dossier, unpublished contact value or private research source was added to the repository or generated site.
 
 No IndexNow submission or cache purge was made as part of this release.
+
+### Corrective cache and builder controls
+
+A byte-for-byte production comparison after the first release found a defect the status-only live crawler could not see: several stable social-image URLs still returned older bytes from a previously immutable custom-domain cache entry. The Pages deployment artifacts themselves were current. The same comparison found that the custom Cloudflare zone raises the browser TTL for `/sw.js` and `/robots.txt` to four hours even though the Pages artifact requests `no-cache` and one hour respectively.
+
+The corrective release makes every generated image reference — HTML, Open Graph, JSON-LD, CSS, PWA metadata and worker precache — use `/assets/immutable/img/<name>.<sha12>.<ext>`. Those files receive a one-year immutable policy and are verified against the build-manifest byte hash; stable `/assets/img/*` aliases remain available for old links and named press downloads. Service-worker registration uses the exact build fingerprint in its URL and `updateViaCache: "none"`, so the zone TTL cannot conceal a newer worker. Node is pinned exactly in `.node-version`, `package.json`, the lockfile and CI; the build fails on a different runtime, and Cloudflare Pages supports the repository pin.
+
+The live audit now retains binary bodies and headers; checks release CSS/JS and social-image bytes against the manifest; verifies all 205 live HTML identities, the single followed TimPaemi author link, the protected contact mailbox and security headers; and names bounded custom-zone cache overrides instead of silently reporting them as exact policy matches. Authenticated zone access available to this release could not change the Browser Cache TTL setting, so “Respect Existing Headers” remains a named Cloudflare dashboard action. The versioned worker removes the stale-release risk in the meantime. No cache purge or IndexNow submission was used.

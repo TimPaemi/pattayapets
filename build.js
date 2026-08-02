@@ -155,17 +155,6 @@ function sha256(content) {
   return crypto.createHash("sha256").update(content).digest("hex");
 }
 
-function hashTree(dir, exclude) {
-  const hash = crypto.createHash("sha256");
-  walk(dir).map(function (x) { return x.replace(/\\/g, "/"); }).sort().forEach(function (rel) {
-    if (exclude && exclude.has(rel)) return;
-    hash.update(rel + "\0");
-    hash.update(fs.readFileSync(path.join(dir, rel)));
-    hash.update("\0");
-  });
-  return hash.digest("hex");
-}
-
 function replaceAssetRefs(text, assetMap) {
   let out = String(text);
   Object.keys(assetMap).sort(function (a, b) { return b.length - a.length; }).forEach(function (from) {
@@ -193,7 +182,7 @@ function canonicalOf(html) {
 }
 
 function sourceFingerprint() {
-  const files = ["build.js", "package.json", "package-lock.json"];
+  const files = [".node-version", "build.js", "package.json", "package-lock.json"];
   walk(SRC).forEach(function (rel) { files.push("src/" + rel.replace(/\\/g, "/")); });
   const hash = crypto.createHash("sha256");
   files.sort().forEach(function (rel) {
@@ -444,12 +433,23 @@ async function build() {
   log("\nPattayaPets build");
   log("=================");
   validateTarget(TARGET_DIST);
+  const pinnedNode = fs.readFileSync(path.join(ROOT, ".node-version"), "utf8").trim();
+  if (!/^\d+\.\d+\.\d+$/.test(pinnedNode) || process.versions.node !== pinnedNode) {
+    throw new Error("Build requires Node " + pinnedNode + " exactly; current runtime is " + process.version);
+  }
   safeRemove(STAGE_DIST, [STAGE_DIST]);
   ensureDir(STAGE_DIST);
+  /* This source fingerprint changes whenever any input capable of changing the
+     generated site changes. It can therefore be embedded in both the hashed
+     site script and worker URL without a circular output-hash dependency. */
+  const version = sourceFingerprint().slice(0, 12);
 
-  /* Fonts carry content-derived names. This keeps the one-year immutable cache
-     policy honest without requiring hard-coded version bumps in layout.js. */
+  /* Fonts and public image references carry content-derived names. Stable image
+     aliases remain in the artifact for old links and press downloads, while all
+     generated markup points at immutable-by-name files so a previously cached
+     social/PWA image can never mask a newer release. */
   const fontMap = {};
+  const imageMap = {};
   let assetCount = 0;
   const fontsDir = path.join(SRC, "assets", "fonts");
   for (const rel of walk(fontsDir).sort()) {
@@ -466,7 +466,19 @@ async function build() {
   }
   if (!Object.keys(fontMap).length) throw new Error("No WOFF2 fonts found in src/assets/fonts");
 
-  const criticalRaw = replaceAssetRefs(fs.readFileSync(path.join(SRC, "critical.css"), "utf8"), fontMap);
+  const imagesDir = path.join(SRC, "assets", "img");
+  for (const rel of walk(imagesDir).sort()) {
+    if (ASSET_EXT.indexOf(path.extname(rel).toLowerCase()) === -1) continue;
+    const source = fs.readFileSync(path.join(imagesDir, rel));
+    const parsed = path.parse(rel);
+    const hashedRel = path.join(parsed.dir, parsed.name + "." + sha256(source).slice(0, 12) + parsed.ext)
+      .replace(/\\/g, "/");
+    imageMap["/assets/img/" + rel.replace(/\\/g, "/")] = "/assets/immutable/img/" + hashedRel;
+  }
+  if (!Object.keys(imageMap).length) throw new Error("No public images found in src/assets/img");
+  const assetMap = Object.assign({}, fontMap, imageMap);
+
+  const criticalRaw = replaceAssetRefs(fs.readFileSync(path.join(SRC, "critical.css"), "utf8"), assetMap);
   const criticalResult = new CleanCSS({ level: 1 }).minify(criticalRaw);
   if (criticalResult.errors.length) throw new Error("Critical CSS minification failed: " + criticalResult.errors.join("; "));
   const criticalMin = criticalResult.styles;
@@ -521,7 +533,7 @@ async function build() {
   const siteCssSource = fs.readFileSync(path.join(SRC, "assets/css/site.css"), "utf8");
   const extractedFooterCss = footerCssMatch && !/\.pf\s*\{/.test(siteCssSource)
     ? "\n" + footerCssMatch[1] : "";
-  const cssRaw = replaceAssetRefs(criticalMin + "\n" + siteCssSource + extractedFooterCss, fontMap);
+  const cssRaw = replaceAssetRefs(criticalMin + "\n" + siteCssSource + extractedFooterCss, assetMap);
   const cssResult = new CleanCSS({ level: 2 }).minify(cssRaw);
   if (cssResult.errors.length) throw new Error("Site CSS minification failed: " + cssResult.errors.join("; "));
   const cssMin = cssResult.styles;
@@ -529,7 +541,10 @@ async function build() {
   const cssHref = "/assets/css/site." + cssHash + ".css";
   write("assets/css/site." + cssHash + ".css", cssMin);
 
-  const jsRaw = fs.readFileSync(path.join(SRC, "assets/js/site.js"), "utf8");
+  let jsRaw = fs.readFileSync(path.join(SRC, "assets/js/site.js"), "utf8");
+  const versionTokens = jsRaw.match(/__SW_VERSION__/g) || [];
+  if (versionTokens.length !== 1) throw new Error("site.js must contain exactly one __SW_VERSION__ token");
+  jsRaw = jsRaw.replace("__SW_VERSION__", version);
   const jsResult = await minifyJs(jsRaw);
   if (jsResult.error || !jsResult.code) throw new Error("Site JavaScript minification failed");
   const jsMin = jsResult.code;
@@ -540,7 +555,7 @@ async function build() {
   let jsonldCount = 0;
   for (const page of pages) {
     let html = layout.renderPage(page, { criticalCss: criticalMin, cssHref: cssHref, jsSrc: jsSrc });
-    html = replaceAssetRefs(html, fontMap)
+    html = replaceAssetRefs(html, assetMap)
       .replace(/<style id=["']pf-css["']>[\s\S]*?<\/style>/i, "")
       .replace(/\s+onload=["']this\.onload=null;this\.rel=(?:\\?["'])stylesheet(?:\\?["'])["']/i, "");
     jsonldCount += validateJsonLd(html, page.path);
@@ -549,11 +564,13 @@ async function build() {
   }
   log("Pages:      " + pages.length + " rendered, " + jsonldCount + " JSON-LD blocks valid");
 
-  const imagesDir = path.join(SRC, "assets", "img");
   for (const rel of walk(imagesDir).sort()) {
     if (ASSET_EXT.indexOf(path.extname(rel).toLowerCase()) === -1) continue;
-    write("assets/img/" + rel.replace(/\\/g, "/"), fs.readFileSync(path.join(imagesDir, rel)));
-    assetCount++;
+    const sourceUrl = "/assets/img/" + rel.replace(/\\/g, "/");
+    const source = fs.readFileSync(path.join(imagesDir, rel));
+    write(sourceUrl.slice(1), source);
+    write(imageMap[sourceUrl].slice(1), source);
+    assetCount += 2;
   }
   log("Assets:     1 css, 1 js, " + assetCount + " static assets");
 
@@ -561,7 +578,9 @@ async function build() {
     const from = path.join(SRC, "static", rel);
     if (fs.existsSync(from)) {
       let content = fs.readFileSync(from);
-      if (rel === "_headers") content = replaceAssetRefs(content.toString("utf8"), fontMap);
+      if (rel === "_headers" || rel === "manifest.webmanifest") {
+        content = replaceAssetRefs(content.toString("utf8"), assetMap);
+      }
       if (rel === ".well-known/security.txt") {
         if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(SITE.email)) {
           throw new Error("SITE.email is not a valid security.txt contact mailbox");
@@ -673,14 +692,13 @@ async function build() {
   /* Every staged byte except the generated worker and manifest contributes to
      the cache generation. A correction to any HTML page therefore invalidates
      the old runtime cache even though regulated pages are never precached. */
-  const version = hashTree(OUT, new Set(["sw.js", "build-manifest.json"])).slice(0, 12);
   const criticalFonts = CRITICAL_FONT_URLS.map(function (sourceUrl) {
     if (!fontMap[sourceUrl]) throw new Error("Missing critical font asset: " + sourceUrl);
     return fontMap[sourceUrl];
   });
   const precache = [
     "/", "/offline", cssHref, jsSrc,
-    "/assets/img/favicon.svg", "/assets/img/og-default.png",
+    imageMap["/assets/img/favicon.svg"], imageMap["/assets/img/og-default.png"],
     "/manifest.webmanifest", "/build-manifest.json"
   ].concat(criticalFonts);
   const precacheFiles = {

@@ -5,7 +5,7 @@
   "description": "PattayaPets.com \u2014 source-led pet directory and guidance for Pattaya.",
   "license": "UNLICENSED",
   "engines": {
-    "node": ">=22.12.0"
+    "node": "22.12.0"
   },
   "scripts": {
     "prebuild": "npm run audit:page-manifest && npm run audit:source && npm run audit:airlines && npm run audit:regulated && node tools/make-images.js --check",
