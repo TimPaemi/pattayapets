@@ -6,7 +6,7 @@ const path = require("path");
 const dist = path.join(__dirname, "..", "dist");
 
 const TARGET_KEYWORDS = [
-  { kw: "vet pattaya", paths: ["/", "/vets/", "/vets/english-speaking-vets-pattaya.html"] },
+  { kw: "vet pattaya", paths: ["/vets/", "/vets/english-speaking-vets-pattaya.html"] },
   { kw: "24 hour vet pattaya", paths: ["/pet-emergency/24-hour-vets-pattaya.html"] },
   { kw: "english speaking vet", paths: ["/vets/english-speaking-vets-pattaya.html"] },
   { kw: "bring pet to thailand", paths: ["/bring-pet-to-thailand/"] },
@@ -141,6 +141,7 @@ console.log("No H1:", issues.noH1.length);
 console.log("");
 
 console.log("--- Target keyword coverage ---");
+let weakKeywordTargets = 0;
 TARGET_KEYWORDS.forEach(function (k) {
   var hits = [];
   k.paths.forEach(function (p) {
@@ -155,6 +156,7 @@ TARGET_KEYWORDS.forEach(function (k) {
       hits.push(p + (inTitle || inH1 ? " OK" : " WEAK"));
     } else hits.push(p + " MISSING");
   });
+  weakKeywordTargets += hits.filter(function (hit) { return / (?:WEAK|MISSING)$/.test(hit); }).length;
   console.log(k.kw + ":", hits.join(" | "));
 });
 console.log("");
@@ -185,7 +187,17 @@ if (issues.longDesc.length) {
   issues.longDesc.forEach(function (x) { console.log(" ", x.l, x.p); });
 }
 
-var ok = !dupTitles.length && !issues.noH1.length && !issues.noDesc.length &&
-  !issues.noCanonical.length && !issues.titleOver60.length && !issues.longDesc.length;
-console.log("\n" + (ok ? "PASS" : "WARN/FAIL") + " — comprehensive metadata audit");
-process.exit(ok ? 0 : issues.titleOver60.length || dupTitles.length || issues.noH1.length ? 1 : 0);
+const hardErrors = dupTitles.length + issues.noH1.length + issues.multiH1.length +
+  issues.noDesc.length + issues.noCanonical.length + issues.noOg.length + issues.noRobots.length +
+  issues.titleOver60.length;
+const advisories = issues.longDesc.length + issues.shortDesc.length +
+  dupDescs.length + weakKeywordTargets;
+console.log("\nHard errors:", hardErrors, "| Editorial/SEO advisories:", advisories);
+if (hardErrors) {
+  console.log("FAIL - required metadata/heading checks failed");
+  process.exit(1);
+}
+console.log(advisories ?
+  "PASS WITH ADVISORIES - required checks pass; review non-blocking SEO heuristics above" :
+  "PASS - required metadata and heading checks pass");
+process.exit(0);

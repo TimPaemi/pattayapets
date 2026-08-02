@@ -2,7 +2,11 @@
 /* Structural pages: About, Standards, Start Here, Contact, Masthead,
    Corrections, Privacy, Accessibility */
 
-const { inPageLinkSection, networkDirectoryProse } = require("../linking.js");
+const { inPageLinkSection } = require("../linking.js");
+const { SITE } = require("../site-config.js");
+
+const CONTACT_EMAIL = SITE.email;
+const CONTACT_LINK = '<a href="mailto:' + CONTACT_EMAIL + '">' + CONTACT_EMAIL + "</a>";
 
 const DISC =
   '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +
@@ -10,7 +14,18 @@ const DISC =
   "It is not a veterinary practice and does not give veterinary advice. Always " +
   "consult a qualified veterinarian.</div>";
 
+function fmtDate(iso) {
+  var parts = String(iso || "").split("-");
+  var months = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+  if (parts.length !== 3 || !months[Number(parts[1]) - 1]) return String(iso || "");
+  return Number(parts[2]) + " " + months[Number(parts[1]) - 1] + " " + parts[0];
+}
+
 function prosePage(o) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(String(o.updated || ""))) {
+    throw new Error("Missing or invalid reviewed date for " + (o.path || "structural page"));
+  }
   var tail = o.linkTopic ? inPageLinkSection(o.linkTopic) : "";
   return {
     path: o.path,
@@ -18,7 +33,7 @@ function prosePage(o) {
     description: o.desc,
     crumb: o.crumb,
     breadcrumbs: o.breadcrumbs || [],
-    updated: o.updated || "2026-05-29",
+    updated: o.updated,
     noindex: !!o.noindex,
     schema: o.schema,
     body:
@@ -26,7 +41,8 @@ function prosePage(o) {
       '<p class="eyebrow">' + o.eyebrow + "</p><h1>" + o.h1 + "</h1>" +
       o.body +
       (o.noindex ? "" : DISC) +
-      '<p class="updated">Last updated ' + (o.updatedLabel || "29 May 2026") + "</p>" +
+      '<p class="updated">Last updated <time datetime="' + o.updated + '">' +
+      fmtDate(o.updated) + "</time></p>" +
       "</div></div></section>" + tail
   };
 }
@@ -43,7 +59,7 @@ pages.push({
   crumb: "Start here",
   breadcrumbs: [],
   bodyClass: "page-start-here",
-  updated: "2026-05-29",
+  updated: "2026-08-01",
   body:
     '<section class="section"><div class="container"><div class="prose">' +
     '<p class="eyebrow">Orientation</p>' +
@@ -57,11 +73,12 @@ pages.push({
     '<a class="btn btn-alert" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a>' +
     '<a class="btn btn-ghost" href="/vets/?filter=24h">24-hour directory</a></div>' +
     '<div class="callout callout-emergency"><div class="ch">If this is an emergency</div>' +
-    "<p>If your pet is seriously injured, struggling to breathe, collapsed, " +
-    "bleeding heavily, or has a suspected poisoning or heatstroke, go straight to " +
-    "a 24-hour animal hospital. Do not wait. See our list of " +
-    '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in Pattaya</a> ' +
-    "for addresses and contact details.</p></div>" +
+    "<p>If you believe your pet needs urgent care, call a veterinary provider now " +
+    "and follow its live instructions; do not use this publication to diagnose or " +
+    "delay care. The " +
+    '<a href="/pet-emergency/24-hour-vets-pattaya.html">urgent-care directory</a> ' +
+    "shows approved records with a public 24-hour claim. Confirm availability whenever " +
+    "circumstances allow.</p></div>" +
     '<div class="orientation-quick-bar orientation-quick-bar--sticky btn-row" role="navigation" ' +
     'aria-label="Orientation shortcuts">' +
     '<a class="btn btn-primary" href="/directory.html">Directory</a>' +
@@ -84,20 +101,21 @@ pages.push({
     'each category page), see <a href="/vets/?filter=24h">24-hour clinics</a>, browse ' +
     '<a href="/area/jomtien.html">by neighbourhood</a>, or see ' +
     '<a href="/mobile-vets/">mobile and home-visit vets</a> if transport is difficult. ' +
-    "Note which clinics are open 24 hours, and read our " +
+    "Note which approved records carry a public 24-hour claim, confirm availability, and read our " +
     '<a href="/pet-health-pattaya/">pet health guide</a> for the tropical-climate risks ' +
     "to plan around.</p>" +
-    '<h2 id="start-heat">2. Heat is the biggest everyday risk</h2>' +
-    "<p>Pattaya is hot and humid year round. Heatstroke, hot pavement burning paw " +
-    "pads, and dehydration are common and preventable. Walk dogs early morning or " +
-    "after sunset, never leave a pet in a parked car, and read our guide to " +
+    '<h2 id="start-heat">2. Plan around heat and hot surfaces</h2>' +
+    "<p>Hot, humid conditions can raise the risk of heat illness and hot-surface injury. " +
+    "Check the conditions and ground before activity, choose the coolest suitable times, " +
+    "never leave a pet in a parked vehicle, and ask a veterinarian about extra risk for " +
+    "older, unwell or short-muzzled animals. Read our guide to " +
     '<a href="/owning-a-pet-in-pattaya/hot-climate-pet-care.html">hot-climate pet ' +
     "care</a> and " +
     '<a href="/pet-health-pattaya/">pet health in Pattaya</a>.</p>' +
     '<h2 id="start-import">3. Bringing a pet to Thailand &mdash; or taking one out</h2>' +
-    "<p>Pet import and export is a process with real deadlines: microchip, rabies " +
-    "vaccination, a titer test, a health certificate and an import permit from the " +
-    "Thai Department of Livestock Development. Start early.</p><p>Our flagship guide to " +
+    "<p>Pet import and export involves route-specific identification, vaccination, " +
+    "certificate, permit and airline requirements. Not every route requires the same " +
+    "tests or sequence, so start with the exact origin, destination, species and carrier.</p><p>Our guide to " +
     '<a href="/bring-pet-to-thailand/">bringing a pet to Thailand</a> walks ' +
     "through every step; see also the " +
     '<a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import ' +
@@ -109,12 +127,8 @@ pages.push({
     '<a href="/take-pet-out-of-thailand/">taking a pet out of Thailand</a>.</p><p>' +
     "Specialists who handle the paperwork are listed in the " +
     '<a href="/pet-relocation/">pet relocation agents directory</a>. ' +
-    "For visa and relocation timing alongside the move, see " +
-    '' +
-    "Pattaya Visa Help. Relocating with children? See " +
-    '' +
-    "Pattaya School Guide for schools and family planning &mdash; then use " +
-    "this site for the pet side of the move.</p>" +
+    "PattayaPets does not independently endorse an agent; confirm the scope, carrier " +
+    "and government requirements in writing before paying.</p>" +
     '<h2 id="start-adopt">4. Thinking of adopting?</h2>' +
     "<p>Pattaya has several established shelters and rescue organisations. If you " +
     "can offer a home, see our guide to " +
@@ -151,7 +165,6 @@ pages.push({
     "before you need to claim. You can " +
     '<a href="/search.html">search the site</a> or browse the ' +
     '<a href="/sitemap.html">full sitemap</a>.</p>' +
-    '<p class="updated">Last updated 30 May 2026</p>' +
     DISC +
     "</div></div></section>" +
     inPageLinkSection("start")
@@ -160,16 +173,15 @@ pages.push({
 /* ---------------- About ---------------- */
 pages.push(prosePage({
   path: "/about.html",
-  updated: "2026-05-29",
-  updatedLabel: "27 May 2026",
-  title: "About PattayaPets | Independent Pet Directory & Guides for Pattaya",
-  desc: "About PattayaPets — an independent editorial directory and guide for pet owners in Pattaya, operated by TIMPAEMI Co., Ltd. via the TimPaemi network.",
+  updated: "2026-08-01",
+  title: "About PattayaPets | Editorial Standards & Publisher",
+  desc: "About PattayaPets, an independent editorial directory and source-led guide for pet owners in Pattaya, published by TIMPAEMI CO., LTD.",
   crumb: "About",
   eyebrow: "About",
   h1: "About PattayaPets",
   linkTopic: "home",
   body:
-    "<p>PattayaPets is the honest pet resource for Pattaya. It has two halves that " +
+    "<p>PattayaPets is a source-led pet resource for Pattaya. It has two halves that " +
     "work together: an <strong>editorial directory</strong> of pet businesses &mdash; " +
     "vets, groomers, boarding, pet shops, trainers and relocation agents &mdash; and " +
     "a <strong>library of guides</strong> answering the questions pet owners in " +
@@ -177,72 +189,62 @@ pages.push(prosePage({
     "<a href=\"/pet-health-pattaya/\">pet health in a tropical climate</a>, with " +
     "dedicated <a href=\"/dogs/\">dog</a> and <a href=\"/cats/\">cat</a> hubs.</p>" +
     "<h2>Why it exists</h2>" +
-    "<p>If you have a pet in Pattaya, or you are bringing one to Thailand, good " +
-    "information is scattered and often out of date. Reviews of local pet " +
-    "businesses tend to be promotional. Import rules are explained in officialese. " +
-    "PattayaPets was built to be the clear, independent, genuinely useful resource " +
-    "the city was missing &mdash; written for Western expats and tourists, in plain " +
-    "English.</p>" +
+    "<p>Local public business facts change, while pet-travel rules are distributed " +
+    "across Thai and destination-country authorities. PattayaPets brings those subjects " +
+    "into one plain-English publication while keeping the source, evidence state and " +
+    "remaining uncertainty visible.</p>" +
     "<h2>Who runs it</h2>" +
-    "<p>PattayaPets is published by <strong>TIMPAEMI Co., Ltd.</strong>, based in " +
-    "Pattaya, and operated via the TimPaemi network &mdash; a family of " +
-    "independent Pattaya publications that share one method: visit anonymously, pay " +
-    "every bill, take no money from the businesses covered.</p><p>See the " +
-    '' +
-    "TimPaemi case study for how PattayaPets fits the network. The founder is " +
-    'Tim. ' +
-    "Reviews are bylined to The Editors. See the " +
-    '<a href="/masthead.html">masthead</a> for how bylines and the publication work.</p>' +
-    "<p>The network shares its editorial method across its Pattaya publications. " +
-    "PattayaPets applies that method to local pet businesses and owner guides.</p>" +
-    "<h2>How it is funded</h2>" +
-    "<p>By TIMPAEMI Co., Ltd. directly. There are no ads, no sponsorships, no " +
+    "<p>PattayaPets is published by <strong>TIMPAEMI CO., LTD.</strong>. Tim and Paemi, " +
+    "the married creative and technical team behind TimPaemi, are the named authors and " +
+    "editors of this publication. Their work in Pattaya spans editorial publishing, " +
+    "front-end and back-end development, events and live production. Their roles, bylines " +
+    "and the publisher identity are listed on the <a href=\"/masthead.html\">masthead</a>.</p>" +
+    "<p>TimPaemi is the central identity across their Pattaya publishing and production " +
+    "work. PattayaPets keeps its own subject, evidence records and editorial standards.</p>" +
+    "<p>On PattayaPets, their role is editorial and technical. A byline does not imply " +
+    "veterinary, legal or regulatory credentials; consequential claims still need the " +
+    "authority or qualified reviewer identified with the claim.</p>" +
+    "<p>No completed anonymous-visit record is currently published. Business pages " +
+    "therefore separate sourced facts from unknowns and carry no experiential verdict. " +
+    "The public <a href=\"/standards.html\">standards</a> explain the evidence and visit workflow.</p>" +
+    "<h2 id=\"funding\">Ownership and funding</h2>" +
+    "<p>By TIMPAEMI CO., LTD. directly. There are no ads, no sponsorships, no " +
     "affiliate links, no commissions and no paid placements anywhere on the site. " +
-    "The businesses we cover do not pay us, and we do not pay them &mdash; beyond " +
-    "the bill for an ordinary visit, paid in full.</p>" +
+    "The businesses we cover do not pay us. If first-hand visits begin, the publisher " +
+    "will pay the ordinary bill in full and will not accept a hosted service.</p>" +
     "<h2>What it is not</h2>" +
     "<p>PattayaPets is an editorial publication <em>about</em> pet businesses. It is " +
     "not a vet, not a referral service, not a pet-relocation agency and not an " +
     "insurance broker. Nothing on the site is veterinary advice. For the full " +
     'method, read our <a href="/standards.html">editorial standards</a>. Browse the ' +
     '<a href="/directory.html">directory</a>, the <a href="/guides.html">guides</a>, ' +
-    '<a href="/start-here.html">start here</a>, or <a href="/search.html">search the site</a>.</p>' +
-    networkDirectoryProse()
+    '<a href="/start-here.html">start here</a>, or <a href="/search.html">search the site</a>.</p>'
 }));
 
 /* ---------------- Editorial Standards ---------------- */
 pages.push(prosePage({
   path: "/standards.html",
+  updated: "2026-08-01",
   title: "How PattayaPets Reviews Pet Businesses | Editorial Standards",
-  desc: "How PattayaPets reviews pet businesses: anonymous visits, bills paid in full, zero paid placements, and verdicts scoped to the business experience only.",
+  desc: "How PattayaPets verifies business facts, records source dates, handles future anonymous visits, corrects errors and keeps commercial influence out.",
   crumb: "Editorial Standards",
   eyebrow: "How we work",
   h1: "Editorial standards & method",
   linkTopic: "general",
-  schema: [{
-    "@type": "FAQPage",
-    mainEntity: [
-      ["Does PattayaPets accept payment from businesses?",
-       "No. There are no paid placements, sponsored listings, affiliate links, commissions or advertising anywhere on PattayaPets. Businesses cannot pay to appear, to rank, or to change a verdict."],
-      ["Does PattayaPets give veterinary advice?",
-       "No. PattayaPets is an editorial publication about pet businesses and pet ownership. Nothing on the site is veterinary advice, a diagnosis or a treatment recommendation. Always consult a qualified veterinarian."]
-    ].map(function (q) {
-      return { "@type": "Question", name: q[0],
-        acceptedAnswer: { "@type": "Answer", text: q[1] } };
-    })
-  }],
   body:
-    "<p>PattayaPets follows the same method as the rest of the TimPaemi " +
-    "network. This page is the source of record for how the directory and the " +
-    "guides are produced. If we ever fall short of it, tell us and we will correct " +
-    "it in plain sight.</p>" +
-    "<h2>How we review a business</h2>" +
-    "<p>Our reviewers visit each business <strong>anonymously</strong>, as ordinary " +
-    "customers, and <strong>pay every bill in full</strong> from our own funds. We " +
-    "do not accept comped services, PR-arranged visits, press junkets or sponsored " +
-    "placement of any kind.</p>" +
+    "<p>This page is the source of record for how the directory and guides are " +
+    "produced. If the publication falls short of it, the correction is recorded in " +
+    "plain sight.</p>" +
+    "<h2>Current evidence state</h2>" +
+    "<p><strong>No completed anonymous-visit record is currently published.</strong> " +
+    "Directory pages are source-led facts pages, not reviews. Each page must distinguish " +
+    "current first-party evidence, older or indirect evidence, and facts that remain unknown.</p>" +
+    "<h2>How a future visit will work</h2>" +
+    "<p>A reviewer will visit as an ordinary customer and pay the bill in full from " +
+    "publisher funds. Comped services, PR-arranged visits, hosted treatment and sponsored " +
+    "placement are not accepted. A verdict cannot be published without a dated visit record.</p>" +
     "<h2>What a verdict means</h2>" +
-    "<p>A reviewed business carries one of three verdicts:</p>" +
+    "<p>If documented visits begin, a reviewed business may carry one of three verdicts:</p>" +
     "<ul>" +
     '<li><strong>Recommend</strong> &mdash; a good business experience we would ' +
     "send a friend to.</li>" +
@@ -256,21 +258,29 @@ pages.push(prosePage({
     "surgical outcomes belongs to qualified vets, regulators and accreditors &mdash; " +
     "not to editors.</p>" +
     "<h2>The &lsquo;not yet reviewed&rsquo; state</h2>" +
-    "<p>Building an honest directory takes time. A business appears in the directory " +
-    "first as a <strong>facts page</strong> &mdash; verified name, area, services, " +
-    "hours, languages and contact details &mdash; marked <em>&lsquo;not yet " +
-    "reviewed &mdash; visit pending&rsquo;</em>. It receives a verdict only after a " +
-    "real anonymous visit. We never invent a verdict and never publish a fake " +
-    "review.</p>" +
+    "<p>A business may appear first as a <strong>facts page &mdash; visit pending</strong>. " +
+    "Only fields supported by an approved source are stated as facts; missing contact, " +
+    "hours, locality or operating status stays unknown. Held or unverified records do not " +
+    "receive verified labels, FAQ claims or LocalBusiness markup. A verdict requires a " +
+    "documented first-hand visit.</p>" +
+    "<h2>Who, how and why</h2>" +
+    "<p>Tim and Paemi are the named authors and editors. PattayaPets exists to help pet " +
+    "owners make safer, clearer local and travel decisions &mdash; not to manufacture " +
+    "search variations. Research, drafting and mechanical checks may use software or " +
+    "AI-assisted tools, but automation is never treated as a source, a field visit, a " +
+    "professional reviewer or publication approval. Consequential facts must still be " +
+    "traced to the evidence record and accepted by the responsible editor.</p>" +
     "<h2>This is not veterinary advice</h2>" +
     "<p>PattayaPets is editorial and informational only. Nothing on the site is " +
     "veterinary advice, a diagnosis, a treatment recommendation or a substitute for " +
     "professional care. If your pet is unwell or injured, consult a qualified " +
-    "veterinarian. In an emergency, go to a 24-hour animal hospital.</p>" +
+    "veterinarian. No licensed-veterinarian review record is currently published for " +
+    "the health guide collection. Until that gap is closed, health pages must stay at " +
+    "orientation and prompt professional care rather than present a treatment algorithm.</p>" +
     "<h2>Import and export rules change</h2>" +
     "<p>Pet import and export requirements &mdash; Thai DLD rules, airline pet " +
     "policies, destination-country requirements &mdash; change without notice. We " +
-    "present each process clearly and <strong>date-stamp every guide</strong>, but " +
+    "attach primary sources and a checked date to consequential rules, but " +
     "you must verify the current rules with the official source: the Thai " +
     "Department of Livestock Development, your airline, and the relevant " +
     "destination-country authority. We say so on every guide.</p>" +
@@ -282,7 +292,7 @@ pages.push(prosePage({
     "<li>No affiliate links.</li>" +
     "<li>No fake reviews or scraping of competitor review sites.</li>" +
     "<li>No generic stock pet clipart.</li></ul>" +
-    "<p>The directory and the guides are ours, built honestly.</p>" +
+    "<p>The directory and guides are accountable to these published controls.</p>" +
     "<h2>Explore PattayaPets</h2>" +
     "<p>Browse the <a href=\"/directory.html\">business directory</a>, the " +
     "<a href=\"/guides.html\">guide library</a>, and the " +
@@ -295,22 +305,23 @@ pages.push(prosePage({
 /* ---------------- Contact ---------------- */
 pages.push(prosePage({
   path: "/contact.html",
+  updated: "2026-08-01",
   title: "Contact PattayaPets | Corrections, Tips & Listing Updates",
-  desc: "Contact PattayaPets — submit a tip, report a correction, or update a business listing. Editorial publication for Pattaya pet owners.",
   crumb: "Contact",
   desc: "Contact PattayaPets — submit a tip, report a correction, or update a business listing. Editorial publication for Pattaya pet owners, with no paid placement.",
   eyebrow: "Get in touch",
   h1: "Contact PattayaPets",
   linkTopic: "general",
   body:
-    "<p>PattayaPets is a small editorial team. We read everything, and we are glad " +
-    "to hear from readers, pet owners and the businesses we cover.</p>" +
+    "<p>PattayaPets is a small editorial publication. This mailbox is for tips, " +
+    "corrections and business-record updates; it is not an emergency service and " +
+    "delivery or response time is not guaranteed.</p>" +
     '<div class="contact-actions btn-row">' +
-    '<a class="btn btn-primary" href="mailto:hello@pattayapets.com">Email hello@pattayapets.com</a>' +
+    '<a class="btn btn-primary" href="mailto:' + CONTACT_EMAIL + '">Email ' + CONTACT_EMAIL + '</a>' +
     '' +
     '<a class="btn btn-alert" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a></div>' +
     "<h2>Email</h2>" +
-    '<p><a href="mailto:hello@pattayapets.com">hello@pattayapets.com</a> &mdash; ' +
+    '<p>' + CONTACT_LINK + ' &mdash; ' +
     "the best way to reach us for anything.</p>" +
     "<h2>What to send us</h2>" +
     "<ul>" +
@@ -335,40 +346,46 @@ pages.push(prosePage({
 /* ---------------- Masthead ---------------- */
 pages.push(prosePage({
   path: "/masthead.html",
+  updated: "2026-08-01",
   title: "PattayaPets Masthead | Who Writes the Directory & Guides",
-  desc: "The PattayaPets masthead — who produces the directory and guides, and what our bylines mean.",
   crumb: "Masthead",
-  desc: "The PattayaPets masthead: the editors, publisher and editorial method behind the directory and guides, including the bylines and standards behind every page.",
+  desc: "Meet Tim and Paemi, the married editors behind TimPaemi and PattayaPets, with the publisher, bylines, roles and evidence standards behind every page.",
   eyebrow: "The publication",
   h1: "Masthead",
   linkTopic: "general",
   body:
-    "<p>PattayaPets is produced by a small editorial team based in Pattaya and " +
-    "published by TIMPAEMI Co., Ltd. via the TimPaemi network.</p>" +
-    "<h2>Bylines</h2>" +
-    "<p>Directory reviews and guides are bylined to <strong>The Editors</strong>. " +
-    "We do not put individual names on reviews: the method matters more than the " +
-    "reviewer, and anonymity protects the integrity of our visits. The founder is " +
-    'named on the <a href="/about.html">About page</a>.</p>' +
-    "<h2>Publisher</h2>" +
-    "<p>TIMPAEMI Co., Ltd., Pattaya City, Bang Lamung District, Chon Buri 20150, " +
-    "Thailand. Operated via the " +
-    '' +
-    "TimPaemi network.</p>" +
-    "<h2>Method</h2>" +
-    "<p>Anonymous visits. Bills paid in full. Zero paid placements, zero " +
-    "sponsorships, zero affiliate links. The full method is on the " +
+    '<figure class="author-intro card"><img src="/assets/img/timpaemi.jpg" width="512" height="512" ' +
+    'loading="lazy" decoding="async" alt="Tim and Paemi, the married team behind TimPaemi and PattayaPets">' +
+    "<figcaption><strong>Tim and Paemi</strong><p>PattayaPets is written and maintained " +
+    "by the married creative and technical team behind TimPaemi, and published by " +
+    "<strong>TIMPAEMI CO., LTD.</strong> Their work in Pattaya spans editorial publishing, " +
+    "front-end and back-end development, events and live production. TimPaemi is the " +
+    "central identity for that work; PattayaPets retains its own subject and evidence " +
+    "standards.</p></figcaption></figure>" +
+    "<h2 id=\"tim\">Tim &mdash; editor and author</h2>" +
+    "<p>Tim writes, edits and maintains directory and guide content. A byline identifies " +
+    "authorship; it does not claim veterinary, legal or regulatory credentials.</p>" +
+    "<h2 id=\"paemi\">Paemi &mdash; editor and author</h2>" +
+    "<p>Paemi writes, edits and checks local context and clarity. Regulated and clinical " +
+    "claims still require the named authority or qualified reviewer shown with the claim.</p>" +
+    "<h2 id=\"publisher\">Publisher</h2>" +
+    "<p><strong>TIMPAEMI CO., LTD.</strong>, trading as " +
+    "TimPaemi. Tim and Paemi are the people behind the brand. The publication is funded " +
+    "by the publisher and accepts no paid placement.</p>" +
+    "<h2>Evidence and visits</h2>" +
+    "<p>No completed anonymous-visit record is currently published. Facts pages therefore " +
+    "carry no verdict. If visits begin, the reviewer will attend as an ordinary customer, " +
+    "pay in full and retain a dated evidence record. The full method is on the " +
     '<a href="/standards.html">editorial standards</a> page. Browse the ' +
     '<a href="/directory.html">directory</a>, the <a href="/guides.html">guides</a>, ' +
-    'or <a href="/search.html">search the site</a>.</p>' +
-    networkDirectoryProse()
+    'or <a href="/search.html">search the site</a>.</p>'
 }));
 
 /* ---------------- Corrections ---------------- */
 pages.push(prosePage({
   path: "/corrections.html",
+  updated: "2026-08-01",
   title: "Report a Correction | PattayaPets Accuracy Policy",
-  desc: "How PattayaPets handles corrections. Spotted a factual error? Here is how to report it, and our log of published corrections.",
   crumb: "Corrections",
   desc: "How PattayaPets handles corrections. Spotted a factual error? Here is how to report it, and our log of published corrections. We correct errors in plain sight.",
   eyebrow: "Accuracy",
@@ -379,32 +396,96 @@ pages.push(prosePage({
     "move, clinics relocate, services come and go. When we get something wrong, we " +
     "correct it in plain sight.</p>" +
     "<h2>Report an error</h2>" +
-    "<p>Email <a href=\"mailto:hello@pattayapets.com\">hello@pattayapets.com</a> " +
+    "<p>Email " + CONTACT_LINK + " " +
     "with the page, the specific claim that is wrong, and &mdash; if you have one " +
-    "&mdash; a source we can verify. We aim to acknowledge every credible " +
-    "correction request within seven days.</p>" +
+    "&mdash; a source we can verify. We will use the contact route to acknowledge " +
+    "and investigate credible reports.</p>" +
     "<h2>How corrections appear</h2>" +
     "<p>Every substantive correction is logged below, with the date. We do not " +
     "quietly edit and move on.</p>" +
     "<h2>Correction log</h2>" +
     "<p>Newest first. Each entry names what was wrong and what the guidance says now.</p>" +
     "<ul>" +
-    "<li><strong>29 July 2026 &mdash; U-Tapao removed from export guidance.</strong> " +
-    "The export guides said a pet could sometimes leave Thailand through U-Tapao if the " +
-    "DLD export permit named it. U-Tapao is not on the Department of Livestock " +
-    "Development&rsquo;s list of animal quarantine stations, so there is no AQS there to " +
-    "inspect a pet or clear an export. The guides now say exports clear at Suvarnabhumi. " +
-    "Affects the <a href=\"/take-pet-out-of-thailand/\">export guides</a> and the " +
-    "destination pages that carried the shared block.</li>" +
-    "<li><strong>29 July 2026 &mdash; South Korea entry requirements rewritten.</strong> " +
-    "The Korea pages presented an advance import licence and a quarantine reservation as " +
-    "normal requirements. Korea&rsquo;s Animal and Plant Quarantine Agency admits a pet on a " +
-    "government export quarantine certificate, microchip identification, rabies vaccination " +
-    "and a rabies neutralising antibody titre of 0.5&nbsp;IU/ml or higher, declared to a " +
-    "quarantine officer on arrival. The source link pointed at animal.go.kr and now points " +
-    "at the quarantine agency itself. Affects " +
-    "<a href=\"/take-pet-out-of-thailand/to-south-korea.html\">to South Korea</a> and " +
-    "<a href=\"/bring-pet-to-thailand/from-south-korea.html\">from South Korea</a>.</li>" +
+    "<li><strong>1 August 2026 &mdash; Thailand import identity, sequence and timing.</strong> " +
+    "We removed universal ISO-only, chip-before-rabies, automatic-revaccination, " +
+    "rabies-only and arrival-wait claims. The current guidance requires the microchip " +
+    "number to match an implantation certificate and vaccination records; after all " +
+    "primary vaccines, it states a 21-day wait before the permit application, with a " +
+    "documented-booster exception, and 5&ndash;7 Thailand business days after a complete " +
+    "application. This source is scoped to USA-origin dogs, cats and rabbits; other " +
+    "origins and species still need route-specific confirmation. " +
+    "<a href=\"https://thaiconsulatela.thaiembassy.org/en/publicservice/bringing-pets-to-thailand\">" +
+    "Thai consular instructions, updated 2 February 2026 and checked 1 August 2026</a>.</li>" +
+    "<li><strong>1 August 2026 &mdash; Thailand export sequence.</strong> " +
+    "We removed a universal email intake, 15-day deadline, three-day flight-confirmation " +
+    "rule and optional-exam wording. The current Region 9 sequence says to file R1/1 as " +
+    "the responsible animal quarantine station directs, present the animal for the " +
+    "mandatory health examination no more than 2&ndash;3 days before travel, then receive " +
+    "R9 and the health certificate. Intake and lead time remain station-specific. " +
+    "<a href=\"https://region9.dld.go.th/index.php/th/news-head/phey-phaer-khwam-ru-dan-psusatw/khan-txn-kar-sng-satw-leiyng-sunakh-maew-nk-l-xxk-nxk-rach-xanacakr\">" +
+    "DLD Region 9 export sequence, published 17 October 2025 and checked 1 August 2026</a> " +
+    "(Thai; no certified translation).</li>" +
+    "<li><strong>1 August 2026 &mdash; Australia route from Thailand.</strong> " +
+    "We removed guidance that allowed preparation and titre testing in Thailand before " +
+    "the residency period. Australia&rsquo;s current route requires first moving to an approved " +
+    "Group 1, 2 or 3 country, at least 180 consecutive days there immediately before " +
+    "export, and the required vaccination and testing in that approved country. " +
+    "Returning-animal exceptions need an individual DAFF assessment. " +
+    "<a href=\"https://www.agriculture.gov.au/biosecurity-trade/cats-dogs/frequently-asked-questions\">" +
+    "Australian Department of Agriculture FAQ, checked 1 August 2026</a>.</li>" +
+    "<li><strong>1 August 2026 &mdash; South Korea threshold conflict and titre window.</strong> " +
+    "We replaced a single &lsquo;over ten&rsquo; rule. Korea&rsquo;s AIP says more than ten animals, " +
+    "while the Ministry of Foreign Affairs says ten or more, and the ministry source " +
+    "states a 24-month titre limit. The AIP also describes exemptions for animals under " +
+    "90 days and those from rabies-free countries. Groups at the exact threshold must " +
+    "obtain written APQA direction. Sources checked 1 August 2026: " +
+    "<a href=\"https://aim.koca.go.kr/eaipPub/Package/2024-10-17/html/eAIP/KR-GEN-1.4-en-GB.html\">Korea AIP</a> " +
+    "and <a href=\"https://overseas.mofa.go.kr/no-en/brd/m_25180/view.do?seq=9\">Korean Ministry of Foreign Affairs</a>.</li>" +
+    "<li><strong>1 August 2026 &mdash; Malaysia scope and non-scheduled-country controls.</strong> " +
+    "We removed cabin-possibility, four-to-eight-week and vague quarantine claims. The " +
+    "reviewed DVS material covers cargo consignments and, for non-scheduled countries, " +
+    "states a permit, ISO microchip, government health certificate and examination within " +
+    "seven days, plus quarantine for at least seven days and up to six months case by case. " +
+    "An accompanied cabin or checked-baggage path remains unverified. Sources checked " +
+    "1 August 2026: <a href=\"https://www.dvs.gov.my/index.php/pages/view/804?mid=53\">DVS FAQ</a> " +
+    "and <a href=\"https://www.dvs.gov.my/dvs/resources/user_1/2026/BKPBV/IMPORT%20EKSPORT/%28R2%29-CatsNdogs-NONSCHEDULED_COUNTRIES-revised131213_notis_2.pdf\">" +
+    "DVS non-scheduled-country controls</a> (Malay FAQ; no certified translation).</li>" +
+    "<li><strong>1 August 2026 &mdash; U-Tapao status narrowed to an evidence gap.</strong> " +
+    "Earlier wording treated absence from reviewed lists as proof that clearance was " +
+    "impossible. The DLD 59-station map and a USA-scoped six-airport instruction do not " +
+    "list U-Tapao, but that absence does not prove impossibility. Current guidance requires " +
+    "written DLD confirmation for the exact route. Sources checked 1 August 2026: " +
+    "<a href=\"https://aqi-new.dld.go.th/index.php/th/news-head/mapaqithai\">DLD station map</a> " +
+    "and <a href=\"https://image.mfa.go.th/mfa/0/91fPdh6NtO/About-Thailand/Bringing_Pets_to_Thailand/All_Airports_-_Instructions_for_Bringing_Dog-Cat-Rabbit_into_Thailand_from_the_USA_%28Revised_30Jan2025%29.pdf\">" +
+    "USA-scoped airport instructions</a>.</li>" +
+    "<li><strong>1 August 2026 &mdash; IATA container guidance.</strong> " +
+    "We replaced Edition 50/51 references, a generic snub-nosed rule and " +
+    "&lsquo;IATA-approved&rsquo; brand wording. The guide now cites CR1 Edition 52, including the " +
+    "10% larger-container instruction for snub-nosed animals and the applicable construction " +
+    "and fit rules; the airline and check-in team make the final acceptance decision, and " +
+    "IATA does not approve container brands. " +
+    "<a href=\"https://www.iata.org/contentassets/b0016da92c86449f850fe9560827bbea/pet-container-requirements.pdf\">" +
+    "IATA CR1 extract, checked 1 August 2026</a>.</li>" +
+    "<li><strong>1 August 2026 &mdash; emergency treatment algorithms removed.</strong> " +
+    "Generic heat, airway, CPR, stretcher, snake, toad and jellyfish treatment instructions " +
+    "were removed. Emergency pages now start with calling a live clinic, following its " +
+    "instructions and travelling as directed. Only the condition-specific RVC canine " +
+    "heatstroke source supports the displayed cool-first wording. Every page discloses that " +
+    "no licensed veterinarian has reviewed it. " +
+    "<a href=\"https://www.rvc.ac.uk/vetcompass/news/the-rvc-urges-owners-of-hot-dogs-to-cool-first-transport-second\">" +
+    "Royal Veterinary College source, published 20 July 2023 and checked 1 August 2026</a>.</li>" +
+    "<li><strong>1 August 2026 &mdash; costs and outcomes.</strong> " +
+    "Unsourced market totals, broad price ranges, same-day promises and agent-success " +
+    "claims were removed. The only Thai arrival amount retained is the authority&rsquo;s " +
+    "500-baht import-licence fee per animal for the source&rsquo;s USA-origin dog, cat and " +
+    "rabbit scope; named carrier examples cite their own current pages. All other costs " +
+    "require itemised written quotes, and no provider outcome is promised.</li>" +
+    "<li><strong>1 August 2026 &mdash; regulated-claim provenance.</strong> " +
+    "Generic source blocks and uncited regulated prose were replaced with claim IDs, direct " +
+    "primary-source links, short source excerpts, review dates, reviewer status and recheck " +
+    "deadlines. The claim ledger&rsquo;s consumer paths are explicitly examples, not a statement " +
+    "of complete coverage, and automated checks do not replace legal, clinical, translation " +
+    "or jurisdiction-specialist review.</li>" +
     "<li><strong>29 July 2026 &mdash; Mor Ja Pet Clinic removed from recommendations.</strong> " +
     "The clinic was suggested on area and mobile-vet pages, but no phone number, website or " +
     "opening hours could be confirmed from a primary source. Its " +
@@ -413,20 +494,14 @@ pages.push(prosePage({
     "when one is verified.</li>" +
     "<li><strong>29 July 2026 &mdash; footer wording corrected site-wide.</strong> " +
     "Every page said this guide was &ldquo;checked in person by people who live here&rdquo;. " +
-    "No completed anonymous-visit records are published yet, so the line now reads " +
-    "&ldquo;written and kept up to date by people who live here&rdquo;. How visits and " +
+    "No completed anonymous-visit records are published, so the footer now names " +
+    "Tim and Paemi as authors and editors without claiming a completed visit or an " +
+    "unverified residence. How visits and " +
     "verdicts work is on <a href=\"/standards.html\">editorial standards</a>.</li>" +
     "<li><strong>28 July 2026 &mdash; EU pet travel regulation citation.</strong> " +
     "Export guides cited EU Regulation 576/2013. That framework has been replaced by " +
     "Regulation (EU) 2026/131, which applies from 22 April 2026. Affects the Finland and " +
     "Ireland export guides.</li>" +
-    "<li><strong>28 July 2026 &mdash; U-Tapao arrival airport, import side.</strong> " +
-    "Import pages said a DLD permit could name U-Tapao, and referred to separate Bangkok " +
-    "and U-Tapao AQS desks. U-Tapao has no Animal Quarantine Station and cannot clear an " +
-    "imported pet; import permits must name Suvarnabhumi.</li>" +
-    "<li><strong>28 July 2026 &mdash; rabies vaccination timing on export guides.</strong> " +
-    "The wording was tightened to state that the rabies vaccination must have been given " +
-    "at least 21 days before departure and still be valid at the time of travel.</li>" +
     "</ul>" +
     "<p>While you are here: browse the <a href=\"/directory.html\">business " +
     "directory</a>, the <a href=\"/guides.html\">guides</a>, " +
@@ -442,16 +517,15 @@ pages.push(prosePage({
   crumb: "Terms",
   eyebrow: "The legal bit",
   h1: "Terms of use",
-  updated: "2026-07-21",
-  updatedLabel: "21 July 2026",
+  updated: "2026-08-01",
   linkTopic: "general",
   body:
-    "<p><b>Operator:</b> TimPaemi Co., Ltd., Pattaya City, Thailand. <b>Contact:</b> <a href=\"/contact.html\">contact page</a>.</p>" +
-    "<h2>What this site is</h2><p>PattayaPets is an editorial directory and guide for pet owners in Pattaya, published by TimPaemi Co., Ltd. Access is free; no business pays to be listed or ranked.</p>" +
+    "<p><b>Operator:</b> TIMPAEMI CO., LTD. <b>Contact:</b> <a href=\"/contact.html\">contact page</a>.</p>" +
+    "<h2>What this site is</h2><p>PattayaPets is an editorial directory and guide for pet owners in Pattaya, published by TIMPAEMI CO., LTD. Access is free; no business pays to be listed or ranked.</p>" +
     "<h2>Not veterinary advice</h2><p>Nothing here is veterinary advice. Always consult a qualified veterinarian for your animal's health.</p>" +
     "<h2>Accuracy</h2><p>Hours, prices and services change without notice; import/export rules change with regulation. Confirm with the business or the DLD before relying on details. Content is provided in good faith, \"as is\", without warranty.</p>" +
-    "<h2>Our content</h2><p>Text and photographs are the property of TimPaemi Co., Ltd. Quote with attribution and a link; wholesale republication requires written permission.</p>" +
-    "<h2>Liability</h2><p>To the maximum extent permitted by law, TimPaemi Co., Ltd. is not liable for losses arising from use of this site.</p>" +
+    "<h2>Our content</h2><p>Text and photographs are the property of TIMPAEMI CO., LTD. Quote with attribution and a link; wholesale republication requires written permission.</p>" +
+    "<h2>Liability</h2><p>To the maximum extent permitted by law, TIMPAEMI CO., LTD. is not liable for losses arising from use of this site.</p>" +
     "<h2>Changes</h2><p>These terms may be updated; the date above reflects the latest revision.</p>"
 }));
 
@@ -459,55 +533,60 @@ pages.push(prosePage({
 pages.push(prosePage({
   path: "/privacy.html",
   title: "Privacy Notice | PattayaPets Analytics & Data",
-  desc: "What PattayaPets collects: anonymised GA4 and Cloudflare analytics, and email when you contact us. No ads, accounts, data sales, or cross-site tracking cookies.",
+  desc: "What PattayaPets and its Cloudflare host process when you read the site or email a correction. No accounts, ads, data sale or Google Analytics tag.",
   crumb: "Privacy",
   eyebrow: "Your privacy",
   h1: "Privacy notice",
-  updated: "2026-06-01",
-  updatedLabel: "1 June 2026",
+  updated: "2026-08-01",
   linkTopic: "general",
   body:
     "<p>PattayaPets is a static website. We do not run user accounts, we do not ask " +
-    "you to log in, and we do not sell or share personal data. This notice explains " +
-    "the little we do collect.</p>" +
+    "you to log in, and we do not sell personal data. This notice describes the " +
+    "limited processing used to deliver, secure and measure the site.</p>" +
     "<h2>Analytics</h2>" +
-    "<p>We use privacy-minded analytics to understand which pages are useful:</p>" +
-    "<ul>" +
-    "<li><strong>Google Analytics 4</strong> &mdash; configured with IP " +
-    "anonymisation. GA4 may set first-party cookies to count visits. We do not use " +
-    "Google Analytics for advertising and we have not enabled ad features.</li>" +
-    "<li><strong>Cloudflare Web Analytics</strong> &mdash; when enabled, a cookieless " +
-    "tool that measures page views without tracking individuals across sites.</li>" +
-    "</ul>" +
-    "<p>We do not display advertising and we do not use advertising or " +
-    "cross-site tracking cookies. You can block cookies in your browser settings, " +
-    "or use a content blocker, and the site will work normally.</p>" +
+    "<p>The PattayaPets source does not load Google Analytics. Production currently " +
+    "uses <strong>Cloudflare Web Analytics</strong>, which Cloudflare Pages injects " +
+    "at the edge. Its browser beacon reports page-load performance and page-view " +
+    "signals to <code>/cdn-cgi/rum</code>. Cloudflare states that this service does " +
+    "not use cookies, local storage or fingerprinting, does not log query strings and " +
+    "does not track a person across sites. See Cloudflare&rsquo;s " +
+    '<a href="https://developers.cloudflare.com/web-analytics/data-metrics/data-origin-and-collection/">data collection</a> and ' +
+    '<a href="https://developers.cloudflare.com/web-analytics/faq/">retention FAQ</a>.</p>' +
+    "<p>A content blocker may prevent the browser beacon; core site functions still " +
+    "work. Cloudflare also processes ordinary edge request data to deliver and protect " +
+    "the site.</p>" +
+    "<h2>Offline storage</h2>" +
+    "<p>A service worker may store selected public site files in your browser&rsquo;s " +
+    "Cache Storage so the homepage, offline notice and interface assets can work during " +
+    "a poor connection. This cache contains published site files, not form entries or " +
+    "an account profile, and you can remove it through your browser&rsquo;s site-data controls.</p>" +
     "<h2>Email</h2>" +
-    "<p>If you email us, we keep your message so we can reply and, where relevant, " +
-    "act on a tip or correction. We do not add you to any mailing list.</p>" +
+    "<p>If you email us, we use the message to reply and, where relevant, investigate " +
+    "a tip or correction. We do not add you to a mailing list. We retain correspondence " +
+    "only while it is needed for that purpose or an accuracy record; ask us to delete " +
+    "personal correspondence that is no longer required.</p>" +
     "<h2>Hosting</h2>" +
-    "<p>The site is hosted on Cloudflare Pages. Cloudflare processes standard " +
-    "server request data (such as IP address) to deliver and protect the site.</p>" +
+    "<p>The site is hosted on Cloudflare Pages. Cloudflare processes standard request " +
+    "data, including an IP address, to deliver, secure and troubleshoot the service. " +
+    "Its own privacy notice governs Cloudflare&rsquo;s processing.</p>" +
     "<h2>Contact</h2>" +
     "<p>Questions about privacy: " +
-    '<a href="mailto:hello@pattayapets.com">hello@pattayapets.com</a>.</p>'
+    CONTACT_LINK + '.</p>'
 }));
 
 /* ---------------- Accessibility ---------------- */
 pages.push(prosePage({
   path: "/accessibility.html",
-  title: "Accessibility Statement | WCAG 2.2 AA | PattayaPets",
-  desc: "How PattayaPets meets WCAG 2.2 AA — keyboard navigation, screen readers, skip links, and how to report an accessibility problem.",
-  desc: "PattayaPets accessibility: WCAG 2.2 AA, keyboard navigation, screen-reader support, skip links, browser zoom and ways to report a problem to us.",
+  title: "Accessibility Statement | PattayaPets",
+  desc: "PattayaPets accessibility goals, implemented keyboard and reflow support, known limitations, and how to report a barrier.",
   crumb: "Accessibility",
   eyebrow: "Accessibility",
   h1: "Accessibility statement",
-  updated: "2026-05-30",
-  updatedLabel: "30 May 2026",
+  updated: "2026-08-01",
   linkTopic: "general",
   body:
     "<p>PattayaPets should be usable by everyone, including people who rely on a " +
-    "keyboard, a screen reader, or browser zoom. We build to the " +
+    "keyboard, a screen reader, or browser zoom. We build toward the " +
     "<strong>WCAG 2.2 AA</strong> standard.</p>" +
     "<h2>What we do</h2>" +
     "<ul>" +
@@ -515,7 +594,7 @@ pages.push(prosePage({
     "<li>A &lsquo;skip to content&rsquo; link and full keyboard navigation.</li>" +
     "<li>Colour contrast that meets AA, and text that reflows on small screens " +
     "and at high zoom.</li>" +
-    "<li>The site works fully with JavaScript disabled.</li>" +
+    "<li>Core content, navigation and ordinary form submission remain available when JavaScript is disabled; enhanced search and filters are progressive enhancements.</li>" +
     "<li>Descriptive link text and alternative text on meaningful images.</li>" +
     '<li>Header search submits to <code>/search.html</code> and works without JavaScript.</li>' +
     '<li>Live search results on the search page update with <code>aria-live</code> when JavaScript is enabled.</li>' +
@@ -524,11 +603,11 @@ pages.push(prosePage({
     "<h2>Known limitations</h2>" +
     "<p>Site search needs JavaScript to query the full index; without it, use the " +
     '<a href="/sitemap.html">sitemap</a> or <a href="/guides.html">guides page</a>. ' +
-    "We have not yet completed a formal WCAG audit with automated tooling. If you find " +
+    "We have not yet completed an independent manual audit with assistive-technology users. If you find " +
     "a page that is hard to use, we want to know &mdash; that feedback directly shapes our fixes.</p>" +
     "<h2>Report a problem</h2>" +
-    "<p>Email <a href=\"mailto:hello@pattayapets.com\">hello@pattayapets.com</a> " +
-    "with the page and what went wrong. We aim to respond within seven days.</p>"
+    "<p>Email " + CONTACT_LINK + " " +
+    "with the page, browser or assistive technology and what went wrong.</p>"
 }));
 
 /* ---------------- Press & media kit ---------------- */
@@ -537,69 +616,65 @@ pages.push(prosePage({
   title: "Press & Media Kit | PattayaPets",
   desc:
     "PattayaPets press kit: boilerplate, coverage, verifiable facts, logo files, brand " +
-    "rules and press contact. Published by TIMPAEMI Co., Ltd., Pattaya.",
+    "rules and press contact. Published by TIMPAEMI CO., LTD.",
   crumb: "Press kit",
   eyebrow: "For journalists and partners",
   h1: "Press kit",
-  updated: "2026-07-27",
-  updatedLabel: "27 July 2026",
+  updated: "2026-08-01",
   linkTopic: "general",
   body:
     "<p>Everything here is checkable. The numbers are counted from the site itself " +
     "on the date below, not estimated. If you need something that is not on this " +
-    "page, email <a href=\"mailto:hello@pattayapets.com\">hello@pattayapets.com</a> " +
+    "page, email " + CONTACT_LINK + " " +
     "and we will answer in writing.</p>" +
 
     "<h2>Boilerplate</h2>" +
-    "<p><strong>Short (25 words).</strong> PattayaPets is an independent editorial " +
+    "<p><strong>Short boilerplate.</strong> PattayaPets is an independent editorial " +
     "directory and guide for pet owners in Pattaya, Thailand &mdash; vets, groomers, " +
-    "boarding, adoption and the import paperwork. Published by TIMPAEMI Co., Ltd.</p>" +
-    "<p><strong>Long (60 words).</strong> PattayaPets is the independent pet resource " +
-    "for Pattaya, Thailand, written and kept up to date by Tim and Paemi, who live " +
-    "there. It combines a directory of local pet businesses with in-depth guides to " +
+    "boarding, adoption and the import paperwork. Published by TIMPAEMI CO., LTD.</p>" +
+    "<p><strong>Long boilerplate.</strong> PattayaPets is an independent pet resource " +
+    "for Pattaya, Thailand, written and maintained by Tim and Paemi, the married team " +
+    "behind TimPaemi. It combines a " +
+    "source-status directory of pet services with guides to " +
     "veterinary care, emergencies, dog-friendly places, adoption, and the Thai import " +
-    "and export rules. Businesses are visited anonymously and bills are paid in full. " +
-    "Nothing on the site can be bought.</p>" +
+    "and export rules. Business facts are source-led; no completed anonymous-visit " +
+    "record or verdict is currently published. Nothing on the site can be bought.</p>" +
 
     "<h2>What we cover</h2>" +
     "<ul>" +
     "<li><strong>A directory</strong> of Pattaya pet businesses across seven categories " +
     "&mdash; vets and animal hospitals, groomers, boarding, pet shops, trainers, " +
     "relocation agents and mobile vets &mdash; browsable by neighbourhood.</li>" +
-    "<li><strong>Emergency guidance</strong> &mdash; 24-hour vets, first aid, heatstroke, " +
-    "snake and toad encounters, road accidents.</li>" +
+    "<li><strong>Emergency orientation</strong> &mdash; urgent veterinary contacts, " +
+    "warning signs and locally relevant hazards. It is not a treatment service.</li>" +
     "<li><strong>Import and export</strong> &mdash; the Thai DLD permit process, health " +
     "certificates, quarantine, airline policies, and country-by-country guides in both " +
     "directions.</li>" +
     "<li><strong>Living with a pet in Pattaya</strong> &mdash; hot-climate care, housing, " +
-    "costs, adoption and rescue, dog-friendly beaches, cafés and hotels.</li>" +
+    "adoption and rescue, and how to verify pet policies for housing and venues.</li>" +
     "</ul>" +
 
     "<h2>Fast facts</h2>" +
     '<div class="table-wrap"><table class="facts-table">' +
     "<tbody>" +
     "<tr><th scope=\"row\">Publication</th><td>PattayaPets (pattayapets.com)</td></tr>" +
-    "<tr><th scope=\"row\">Publisher</th><td>TIMPAEMI Co., Ltd.</td></tr>" +
-    "<tr><th scope=\"row\">Registered</th><td>Pattaya City, Bang Lamung District, Chon Buri 20150, Thailand</td></tr>" +
-    "<tr><th scope=\"row\">Written and edited by</th><td>Tim and Paemi, resident in Pattaya</td></tr>" +
+    "<tr><th scope=\"row\">Publisher</th><td>TIMPAEMI CO., LTD.</td></tr>" +
+    "<tr><th scope=\"row\">Brand</th><td>TimPaemi</td></tr>" +
+    "<tr><th scope=\"row\">Brand relationship</th><td>Central identity for Tim and Paemi&rsquo;s Pattaya publishing and production work</td></tr>" +
+    "<tr><th scope=\"row\">Written and edited by</th><td>Tim and Paemi, a married creative and technical team</td></tr>" +
+    "<tr><th scope=\"row\">Team work</th><td>Editorial publishing, front-end and back-end development, events and live production in Pattaya</td></tr>" +
     "<tr><th scope=\"row\">Language</th><td>English</td></tr>" +
-    "<tr><th scope=\"row\">Pages published</th><td>208</td></tr>" +
-    "<tr><th scope=\"row\">Editorial words</th><td>233,000+</td></tr>" +
-    "<tr><th scope=\"row\">Directory categories</th><td>7</td></tr>" +
-    "<tr><th scope=\"row\">Business listings</th><td>37</td></tr>" +
-    "<tr><th scope=\"row\">Neighbourhoods covered</th><td>8 &mdash; Naklua, Wongamat, Central Pattaya, Pratumnak, Jomtien, Bang Saray, Sattahip, Banglamung</td></tr>" +
-    "<tr><th scope=\"row\">Country import guides</th><td>26</td></tr>" +
-    "<tr><th scope=\"row\">Country export guides</th><td>26</td></tr>" +
-    "<tr><th scope=\"row\">Press contact</th><td><a href=\"mailto:hello@pattayapets.com\">hello@pattayapets.com</a></td></tr>" +
+    "<tr><th scope=\"row\">Evidence policy</th><td>Primary sources for regulated claims; field-level provenance for directory facts</td></tr>" +
+    "<tr><th scope=\"row\">Published visit records</th><td>None; facts pages are labelled visit pending</td></tr>" +
+    "<tr><th scope=\"row\">Press contact</th><td>" + CONTACT_LINK + "</td></tr>" +
     "</tbody></table></div>" +
-    "<p class=\"notice\">Counts verified against the published site on 27 July 2026. " +
-    "We do not publish audience or traffic figures.</p>" +
+    "<p class=\"notice\">Route and directory counts change with the source registry and " +
+    "are deliberately not hard-coded here. We do not publish audience or traffic figures.</p>" +
 
     "<h2>How we work</h2>" +
-    "<p>Businesses are visited anonymously. Bills are paid in full, every time. A " +
-    "listing starts as a verified <em>facts page</em> &mdash; name, area, services, " +
-    "hours, languages, contact &mdash; and is marked <em>not yet reviewed</em> until " +
-    "an editor has actually been.</p>" +
+    "<p>No completed anonymous-visit record is currently published. A listing is a " +
+    "<em>facts page &mdash; visit pending</em>, and only fields supported by approved " +
+    "sources are presented as facts. Unknown or unverified fields remain labelled as such.</p>" +
     "<p>Verdicts describe the business experience only: " +
     "booking, communication, English, billing transparency, cleanliness. We do not " +
     "rate veterinary medical quality and never will. The full method is on the " +
@@ -611,15 +686,16 @@ pages.push(prosePage({
     "<ul>" +
     "<li><strong>Listings cannot be bought.</strong> A business appears because it is " +
     "relevant to pet owners in Pattaya, or it does not appear.</li>" +
-    "<li><strong>Verdicts cannot be bought, influenced or removed.</strong> Neither can " +
-    "position in the directory.</li>" +
+    "<li><strong>Verdicts and directory position cannot be bought.</strong> Factual " +
+    "errors remain subject to the public corrections process.</li>" +
     "<li><strong>No sponsored posts, no advertorial, no paid guest articles, no " +
     "affiliate links.</strong> There are no display advertising slots.</li>" +
     "<li><strong>No free treatment, discounts, hosted visits or gifts</strong> are " +
     "accepted from any business we cover.</li>" +
     "</ul>" +
-    "<p>If a fact about your business is wrong, we will fix it for free and quickly " +
-    "&mdash; tell us on the <a href=\"/corrections.html\">corrections page</a>. That is " +
+    "<p>If a fact about your business is wrong, report it through the " +
+    "<a href=\"/corrections.html\">corrections page</a>. Evidence-based corrections " +
+    "do not require payment. That is " +
     "the only lever anyone has over what appears here, and it is available to everyone " +
     "equally.</p>" +
 
@@ -627,8 +703,8 @@ pages.push(prosePage({
     "<p>Journalists may quote from PattayaPets with attribution to " +
     "<em>PattayaPets (pattayapets.com)</em> and a link to the page quoted. Please do " +
     "not republish guides in full. For interviews, data requests, or comment on pet " +
-    "ownership, veterinary access or pet relocation in Thailand, email " +
-    "<a href=\"mailto:hello@pattayapets.com\">hello@pattayapets.com</a>.</p>" +
+    "ownership or the publication&rsquo;s pet-relocation research, email " +
+    CONTACT_LINK + ".</p>" +
 
     "<h2>Logo and brand assets</h2>" +
     "<ul>" +
@@ -639,8 +715,7 @@ pages.push(prosePage({
     "<li><a href=\"/assets/img/og-default.png\">og-default.png</a> &mdash; 1200&times;630 " +
     "social card, safe to use as a generic site image.</li>" +
     "</ul>" +
-    "<p>Print-ready wordmark files are available on request &mdash; ask and we will " +
-    "send them the same week.</p>" +
+    "<p>Ask the press contact before using a format not listed here.</p>" +
 
     "<h2>Brand rules</h2>" +
     "<ul>" +
@@ -675,8 +750,10 @@ pages.push(prosePage({
     description:
       "PattayaPets press kit: boilerplate, coverage, verifiable facts, logo files, " +
       "brand rules and press contact.",
-    publisher: { "@id": "https://pattayapets.com/#org" },
-    mainEntity: { "@id": "https://pattayapets.com/#org" },
+    publisher: { "@type": "Organization", "@id": SITE.publisherId,
+      name: SITE.publisherName, url: SITE.publisherUrl },
+    mainEntity: { "@type": "Organization", "@id": SITE.publisherId,
+      name: SITE.publisherName, url: SITE.publisherUrl },
     inLanguage: "en"
   }]
 }));

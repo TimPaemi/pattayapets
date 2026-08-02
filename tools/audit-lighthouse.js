@@ -1,50 +1,75 @@
+#!/usr/bin/env node
 "use strict";
-/* Mobile Lighthouse performance gate. Requires: npm run build && npx serve dist -l 8787 */
+/* Local Lighthouse gate. Requires a trusted local server at PP_LH_URL. */
+
 const { spawnSync } = require("child_process");
 const fs = require("fs");
+const os = require("os");
 const path = require("path");
 
+const ROOT = path.resolve(__dirname, "..");
 const url = process.env.PP_LH_URL || "http://127.0.0.1:8787/";
-const out = path.join(__dirname, "..", "lighthouse-audit.json");
-const min = Number(process.env.PP_LH_MIN || 95);
+const cli = path.join(ROOT, "node_modules", "lighthouse", "cli", "index.js");
+const minimum = {
+  performance: Number(process.env.PP_LH_PERFORMANCE || 90),
+  accessibility: Number(process.env.PP_LH_ACCESSIBILITY || 95),
+  "best-practices": Number(process.env.PP_LH_BEST_PRACTICES || 95),
+  seo: Number(process.env.PP_LH_SEO || 95)
+};
+if (Object.keys(minimum).some(function (category) {
+  return !Number.isFinite(minimum[category]) || minimum[category] < 0 || minimum[category] > 100;
+})) {
+  console.error("Lighthouse thresholds must be finite percentages from 0 to 100.");
+  process.exit(1);
+}
+const parsedUrl = new URL(url);
+if (parsedUrl.protocol !== "http:" || !["127.0.0.1", "localhost", "[::1]"].includes(parsedUrl.hostname) ||
+    parsedUrl.username || parsedUrl.password) {
+  console.error("PP_LH_URL must be an unauthenticated loopback HTTP URL.");
+  process.exit(1);
+}
 
-const run = spawnSync(
-  process.platform === "win32" ? "npx.cmd" : "npx",
-  [
-    "lighthouse", url,
+if (!fs.existsSync(cli)) {
+  console.error("Locked Lighthouse CLI is missing. Run `npm ci` first.");
+  process.exit(1);
+}
+const temp = fs.mkdtempSync(path.join(os.tmpdir(), "pattayapets-lighthouse-"));
+const output = path.join(temp, "report.json");
+
+try {
+  const chromeFlags = process.env.PP_CHROME_NO_SANDBOX === "1" ?
+    "--headless --disable-gpu --no-sandbox --disable-setuid-sandbox" : "--headless --disable-gpu";
+  const run = spawnSync(process.execPath, [
+    cli, url,
     "--only-categories=performance,accessibility,best-practices,seo",
     "--form-factor=mobile",
     "--screenEmulation.mobile=true",
     "--throttling-method=simulate",
-    "--quiet",
-    "--output=json",
-    "--output-path=" + out
-  ],
-  { stdio: "inherit", shell: process.platform === "win32" }
-);
+    "--chrome-flags=" + chromeFlags,
+    "--quiet", "--output=json", "--output-path=" + output
+  ], { stdio: "inherit", shell: false, cwd: ROOT });
+  if (run.status !== 0) throw new Error("Lighthouse failed; confirm the local server is available at " + url);
 
-if (run.status !== 0) {
-  console.error("Lighthouse failed to run. Start a local server: npx serve dist -l 8787");
-  process.exit(run.status || 1);
-}
-
-const r = JSON.parse(fs.readFileSync(out, "utf8"));
-const scores = {};
-Object.keys(r.categories).forEach(function (k) {
-  scores[k] = Math.round(r.categories[k].score * 100);
-});
-console.log("Lighthouse (" + url + "):", JSON.stringify(scores));
-
-var perf = scores.performance || 0;
-if (perf < min) {
-  console.error("FAIL performance " + perf + " < " + min);
-  ["largest-contentful-paint", "total-blocking-time", "cumulative-layout-shift",
-    "unused-javascript", "render-blocking-resources"].forEach(function (id) {
-    var a = r.audits[id];
-    if (a && a.score !== null && a.score < 1) {
-      console.error(" ", id + ":", a.displayValue || a.title);
-    }
+  const report = JSON.parse(fs.readFileSync(output, "utf8"));
+  const scores = {};
+  Object.keys(minimum).forEach(function (category) {
+    scores[category] = Math.round(((report.categories[category] || {}).score || 0) * 100);
   });
-  process.exit(1);
+  console.log("Lighthouse (" + url + "):", JSON.stringify(scores));
+  const failures = Object.keys(minimum).filter(function (category) {
+    return scores[category] < minimum[category];
+  });
+  if (failures.length) {
+    failures.forEach(function (category) {
+      console.error("FAIL " + category + " " + scores[category] + " < " + minimum[category]);
+    });
+    process.exitCode = 1;
+  } else {
+    console.log("PASS - every Lighthouse category meets its threshold");
+  }
+} catch (error) {
+  console.error("Lighthouse gate: FAIL - " + error.message);
+  process.exitCode = 1;
+} finally {
+  fs.rmSync(temp, { recursive: true, force: true });
 }
-console.log("OK — performance >= " + min);

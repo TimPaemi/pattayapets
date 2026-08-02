@@ -5,23 +5,29 @@ Thumbs.db
 *.log
 npm-debug.log*
 .cache/
+.wrangler/
+.artifacts/
+audit-dist*/
+.*.stage-*/
+.*.backup-*/
 tools/shots/
 lighthouse-audit.json
 lighthouse-*.json
 lighthouse-*.txt
 lighthouse-reports/
 lh-tmp.json
-src/assets/img/*.png
-
 # Operator docs - local only, never published.
 # Regenerate with: deploy.ps1 -SyncRules
 CLAUDE.md
 AGENTS.md
 RULES.md
-CHANGELOG-STRUCTURAL.md
 
 # Private working folders - never published. Kept on disk, out of git.
 research/
 
 # Private working folders - never published. Kept on disk, out of git.
 _to_delete/
+
+# Operator docs - local only, never published.
+# Regenerate with: deploy.ps1 -SyncRules
+CHANGELOG-STRUCTURAL.md

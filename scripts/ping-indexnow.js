@@ -14,6 +14,22 @@ const sitemap = fs.readFileSync(path.join(dist, 'sitemap.xml'), 'utf8');
 const urlList = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
 const BATCH = 100;
 const endpoints = ['https://api.indexnow.org/indexnow', 'https://www.bing.com/indexnow'];
+const CONFIRM = '--confirm=' + HOST;
+
+if (!process.argv.includes(CONFIRM)) {
+  console.error('IndexNow not sent. Explicit confirmation is required: npm run indexnow -- ' + CONFIRM);
+  process.exit(1);
+}
+if (!/^[A-Za-z0-9_-]{8,128}$/.test(key)) {
+  console.error('IndexNow key file is malformed.');
+  process.exit(1);
+}
+if (!urlList.length || urlList.some((value) => {
+  try { return new URL(value).origin !== 'https://' + HOST; } catch (error) { return true; }
+})) {
+  console.error('Sitemap is empty or contains a non-pattayapets URL; nothing sent.');
+  process.exit(1);
+}
 
 function post(endpoint, body) {
   return new Promise((resolve, reject) => {
@@ -30,6 +46,7 @@ function post(endpoint, body) {
       res.on('end', () => resolve({ status: res.statusCode, body: chunks }));
     });
     req.on('error', reject);
+    req.setTimeout(15000, () => req.destroy(new Error('IndexNow request timed out')));
     req.write(data);
     req.end();
   });

@@ -1,271 +1,171 @@
 "use strict";
-/* Pet insurance guide + the cats and dogs species hubs */
+/* Pet-insurance verification guide and species hubs. */
 
 const { article, hub } = require("../guidekit.js");
 const GUIDES = { name: "Guides", path: "/guides.html" };
 
 const pages = [];
 
-/* ---------------- PET INSURANCE ---------------- */
 pages.push(article({
   path: "/pet-insurance-thailand.html",
-  title: "Pet Insurance Thailand | Is It Worth It for Expats? | PattayaPets",
-  desc: "How pet insurance works in Thailand, what it typically covers and " +
-    "excludes, what to check before buying, and whether it is worth it in Pattaya.",
+  title: "Pet Insurance Thailand | Policy Checks | PattayaPets",
+  desc: "How to compare a Thai pet-insurance contract, verify a seller through the OIC and record eligibility, cover, exclusions and claims terms.",
   crumb: "Pet insurance",
   breadcrumbs: [GUIDES],
   eyebrow: "Guide",
   h1: "Pet insurance in Thailand",
-  lede: "Routine pet care in Pattaya is affordable. Pet insurance is not about " +
-    "the routine &mdash; it is about the rare, expensive day.",
-  verify: "This is general orientation, last reviewed May 2026, not financial or " +
-    "insurance advice. Policy terms vary widely between providers &mdash; read the " +
-    "actual policy document before buying.",
+  lede: "Start with the policy wording and schedule, not a headline price or a general description of pet insurance.",
+  updated: "2026-08-01",
+  verify: "General orientation only, not financial, legal, insurance or veterinary advice. PattayaPets does not sell insurance, receive commission or recommend a provider.",
   sections: [
-    { h: "What pet insurance does", html:
-      "<p>Pet insurance in Thailand has grown in recent years. A policy is there " +
-      "to cushion the cost of the <strong>big, unplanned event</strong> &mdash; " +
-      "an accident, a serious illness, surgery, a hospital stay &mdash; rather " +
-      "than to pay for routine vaccinations and check-ups. Cover, limits and " +
-      "price vary a great deal between providers. When a claim happens, it is usually " +
-      "through a <a href=\"/vets/\">vet</a> or " +
-      "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour animal hospital</a> " +
-      "&mdash; see our guides to " +
-      "<a href=\"/pet-health-pattaya/\">pet health in Pattaya</a> and " +
-      "<a href=\"/pet-emergency/\">pet emergencies</a>.</p>" },
-    { h: "What to check before you buy", html:
-      "<p>Before choosing any policy, read the document for:</p>" +
-      "<ul><li><strong>What is covered</strong> &mdash; accident only, or " +
-      "accident and illness; surgery; hospitalisation.</li>" +
-      "<li><strong>Exclusions</strong> &mdash; pre-existing conditions are " +
-      "almost always excluded, and some breeds or conditions may be too.</li>" +
-      "<li><strong>Age limits</strong> &mdash; many insurers will not start " +
-      "cover on an older pet, and cover can change as a pet ages.</li>" +
-      "<li><strong>Waiting periods</strong> &mdash; the time after purchase " +
-      "before you can claim.</li>" +
-      "<li><strong>Limits and excess</strong> &mdash; annual and per-condition " +
-      "caps, and how much you pay per claim.</li>" +
-      "<li><strong>The claims process</strong> &mdash; which vets you can use, " +
-      "and whether you pay and reclaim or the insurer settles directly.</li></ul>" },
-    { h: "Is it worth it?", html:
-      "<p>There is no universal answer. Insurance makes most sense if a sudden " +
-      "four- or five-figure vet bill would genuinely hurt, and if you insure " +
-      "while your pet is young and healthy &mdash; before conditions become " +
-      "&lsquo;pre-existing&rsquo;. The alternative is to <strong>self-insure</strong>: " +
-      "set aside a dedicated pet-emergency fund and let it build. Either way, " +
-      "the goal is the same &mdash; making sure money is never the reason a pet " +
-      "cannot get the treatment it needs.</p>" +
-      "<p>For budgeting context, see " +
-      "<a href=\"/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html\">what it costs to own a pet in Pattaya</a>. " +
-      "PattayaPets does not sell insurance, earn commission, or recommend a " +
-      "particular provider. Compare current policies yourself and read the " +
-      "wording.</p>" },
-    { h: "Common policy traps", html:
-      "<p>Owners often discover these only when they claim:</p>" +
-      "<ul><li><strong>Buying too late</strong> &mdash; insuring after symptoms appear, when " +
-      "the condition is already excluded as pre-existing.</li>" +
-      "<li><strong>Assuming routine care is covered</strong> &mdash; most policies exclude " +
-      "vaccinations, neutering and dental cleanings unless you buy a premium add-on.</li>" +
-      "<li><strong>Missing waiting periods</strong> &mdash; illness cover normally starts later " +
-      "than accident cover. Waiting periods differ by insurer and by policy edition, so read the " +
-      "schedule of benefits for the accident waiting period, the illness waiting period, and the " +
-      "date each one starts running &mdash; do not assume a standard length.</li>" +
-      "<li><strong>Annual caps that run out</strong> &mdash; a single surgery can consume " +
-      "a year&rsquo;s limit; check per-condition caps as well as the headline figure.</li>" +
-      "<li><strong>Not checking the vet list</strong> &mdash; some policies only settle with " +
-      "named clinics; confirm your <a href=\"/vets/\">Pattaya vet</a> is accepted.</li></ul>" +
-      "<p>Read the schedule of benefits, not just the marketing page.</p>" },
-    { h: "Expat policies versus Thai providers", html:
-      "<p>Some expat-focused insurers sell policies valid across countries; Thai " +
-      "providers often cover treatment within Thailand only. If you travel with your " +
-      "pet or may relocate again, read territorial limits carefully.</p>" +
-      "<p>Compare excess (deductible), co-pay percentages, and whether direct billing " +
-      "exists at your usual <a href=\"/vets/\">Pattaya clinic</a>. A cheap premium with " +
-      "a high excess and low annual cap may not help in a true emergency.</p>" },
-    { h: "When self-insuring is reasonable", html:
-      "<p>Disciplined savers with young, healthy pets sometimes skip insurance and " +
-      "maintain a dedicated emergency fund instead — see " +
-      "<a href=\"/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html\">cost of owning a pet</a>. " +
-      "That works until a single hospitalisation exceeds the fund; know your risk tolerance.</p>" +
-      "<p>Insurance rarely covers import, export or routine wellness unless you buy " +
-      "add-ons. Budget relocation separately via " +
-      "<a href=\"/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html\">import costs</a> " +
-      "and " +
-      "<a href=\"/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html\">export costs</a>.</p>" }
+    { h: "A current product exists; eligibility is still individual", html:
+      '<p><a href="https://www.muangthaiinsurance.com/th/product/miscellaneous-insurance/Cats-Dogs-Plus" target="_blank" rel="noopener noreferrer">' +
+      "Muang Thai Insurance&rsquo;s current Cats &amp; Dogs Plus page</a> publishes plan and application documents. " +
+      "It is one first-party example, not a market survey or endorsement. PattayaPets did not verify an " +
+      "English contract, foreign-national eligibility, a quote for any animal, or whether the product will " +
+      "remain open on a future date.</p>" },
+    { h: "Record these fields from the contract", html:
+      "<ul><li>Insurer&rsquo;s legal name, seller or broker, product name, form version and policy period</li>" +
+      "<li>Applicant residency and payment requirements; eligible species, breed, age, identification and health evidence</li>" +
+      "<li>Each insured event, territorial limit, waiting period, exclusion and definition of a pre-existing condition</li>" +
+      "<li>Per-event, per-condition and annual limits; excess, co-pay and renewal terms</li>" +
+      "<li>Eligible veterinary providers, pre-authorisation, original-document and reimbursement requirements</li>" +
+      "<li>Cancellation, complaint and dispute route; which language controls if translations differ</li></ul>" +
+      "<p>Write the answer beside the page or clause number. If the seller cannot supply the wording and " +
+      "schedule before payment, the comparison is incomplete.</p>" },
+    { h: "Verify the seller and keep the issued policy", html:
+      '<p>The Thai Office of Insurance Commission provides <a href="https://cit.oic.or.th/oic-connect-eng.html?lang=th" target="_blank" rel="noopener noreferrer">' +
+      "OIC Connect and Gateway</a>, including policy and agent or broker licence checks. It also operates an " +
+      '<a href="https://complaintportal.oic.or.th/" target="_blank" rel="noopener noreferrer">insurance complaint portal</a>. ' +
+      "Use the OIC service or contact the OIC when identity, licence or policy status is unclear.</p>" },
+    { h: "Insurance and veterinary decisions are separate", html:
+      "<p>Ask a qualified veterinarian what care an individual animal needs; then read whether the contract " +
+      "covers that circumstance. PattayaPets does not interpret symptoms, recommend delaying care for a claim, " +
+      "or estimate an emergency-fund amount. See <a href=\"/vets/\">Pattaya vets</a> and " +
+      "<a href=\"/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html\">budgeting orientation</a>.</p>" },
+    { h: "Sources followed", html:
+      "<ul>" +
+      '<li><a href="https://www.muangthaiinsurance.com/th/product/miscellaneous-insurance/Cats-Dogs-Plus" target="_blank" rel="noopener noreferrer">Muang Thai Insurance product page</a> &mdash; current first-party example and downloadable documents.</li>' +
+      '<li><a href="https://cit.oic.or.th/oic-connect-eng.html?lang=th" target="_blank" rel="noopener noreferrer">OIC Connect / Gateway</a> &mdash; regulator tools.</li>' +
+      '<li><a href="https://complaintportal.oic.or.th/" target="_blank" rel="noopener noreferrer">OIC complaint portal</a> &mdash; regulator complaint route.</li>' +
+      "</ul><p>Checked 1 August 2026.</p>" }
   ],
-  updated: "2026-06-01",
   faqs: [
-    ["Is pet insurance common in Thailand?",
-     "<p>It is increasingly available, with several providers offering dog and cat policies. Terms vary widely, so compare the actual cover rather than just the price.</p>"],
-    ["Will insurance cover my pet's existing condition?",
-     "<p>Almost certainly not &mdash; pre-existing conditions are a standard exclusion. This is the main reason to insure while a pet is young and healthy, if you are going to insure at all.</p>"],
-    ["What is the alternative to insurance?",
-     "<p>Self-insure by setting aside a dedicated savings buffer for pet emergencies. For a disciplined saver with routine, affordable vet costs, this is a genuine alternative.</p>"],
-    ["Does pet insurance cover import or export costs?",
-     "<p>Almost never — relocation, quarantine and travel are separate from medical cover. Budget import and export separately; see our <a href=\"/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html\">import cost guide</a>.</p>"],
-    ["Does pet insurance cover vaccinations and routine check-ups?",
-     "<p>Pet insurance usually does not cover vaccinations and routine check-ups. Most policies focus on accidents and illness, while vaccinations, neutering and routine dental cleaning are excluded unless the policy has a wellness add-on.</p>"],
-    ["How much should I save if I self-insure instead?",
-     "<p>Aim for enough to cover emergency surgery at a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour hospital</a>. There is no fixed rule, so start with a realistic figure from your vet for a major event, then build the buffer over time.</p>"]
+    ["Can a foreign resident buy the example policy?", "<p>PattayaPets did not verify foreign-national or residency eligibility. Ask the insurer and obtain the applicable contract before paying.</p>"],
+    ["Does the example cover my pet&rsquo;s condition?", "<p>This page cannot answer that. Read the issued schedule, definitions, insured events, waiting periods and exclusions, and ask the insurer in writing. Ask a qualified veterinarian about the animal&rsquo;s care.</p>"],
+    ["How do I verify an agent or broker?", "<p>Use the linked OIC Connect / Gateway service or contact the Office of Insurance Commission.</p>"],
+    ["Does PattayaPets recommend Muang Thai Insurance?", "<p>No. Its page is linked only as a current first-party example showing that policy and application documents must be checked.</p>"]
   ],
   related: [
-    { name: "Vet costs in Pattaya", path: "/owning-a-pet-in-pattaya/vet-costs-pattaya.html", desc: "Budgeting for routine and unexpected treatment." },
-    { name: "What it costs to own a pet", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", desc: "The wider pet budget in Pattaya." },
-    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "When the big, unplanned bills happen." },
-    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Preventive care and tropical risks." },
-    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "When a complex move needs coordination." },
-    { name: "What import costs", path: "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html", desc: "Budgeting the big, unplanned move." }
+    { name: "Pattaya vets", path: "/vets/", desc: "Choose a qualified veterinary provider separately from insurance." },
+    { name: "Cost of owning a pet", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", desc: "General budgeting orientation." },
+    { name: "Pet emergencies", path: "/pet-emergency/", desc: "General emergency orientation." }
   ]
 }));
 
-/* ---------------- CATS HUB ---------------- */
 pages.push(hub({
   path: "/cats/",
-  title: "Cats in Pattaya | Housing, Health & Vet Guide | PattayaPets",
+  title: "Cats in Pattaya: Care & Travel Guides | PattayaPets",
   image: "/assets/img/og-cats.png",
-  desc: "Everything for cat owners in Pattaya: vets, hot-climate care, bringing " +
-    "or adopting a cat, and keeping a cat safe and happy indoors in the tropics.",
+  updated: "2026-08-01",
+  desc: "Pattaya guides for cat owners: veterinary care, housing, identification, adoption, boarding, import, export and emergency orientation.",
   crumb: "Cats",
   breadcrumbs: [],
   eyebrow: "Species hub",
   h1: "Cats in Pattaya",
-  lede: "Everything on PattayaPets that matters to cat owners, gathered in one " +
-    "place &mdash; from finding a vet to bringing a cat to Thailand.",
+  lede: "A route index for cat care, housing, adoption and travel. Individual health decisions belong with a qualified veterinarian.",
   intro:
-    "<p>Cats adapt well to Pattaya life, and many live happily as indoor or " +
-    "indoor-outdoor pets. The heat, parasites, traffic and free-roaming animals " +
-    "all still apply &mdash; the guides below cover what a cat owner here needs. " +
-    "Start with <a href=\"/cats/indoor-vs-outdoor-cats.html\">indoor or outdoor " +
-    "cats</a> if you are new to keeping a cat in Pattaya. Many owners adopt from " +
-    "<a href=\"/adopt-a-pet-pattaya/hope-for-strays.html\">Hope for Strays</a> or " +
-    "<a href=\"/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html\">Dog &amp; Cat Rescue Pattaya</a>.</p>",
+    "<p>Use this hub to find the relevant guide, then verify provider, policy and regulatory details at " +
+    "the linked primary source. No rescue, clinic, building or service is endorsed merely by appearing here.</p>",
   groups: [
     {
-      title: "Cat-owner guides",
+      title: "Daily care and housing",
       cards: [
-        { name: "Indoor or outdoor?", desc: "Keeping a cat safe here: traffic, street dogs, balconies and disease.", path: "/cats/indoor-vs-outdoor-cats.html" },
-        { name: "Cat vaccinations & health", desc: "The routine vaccination, parasite and neutering picture for cats.", path: "/cats/cat-vaccinations-thailand.html" },
-        { name: "Getting a cat", desc: "Adopting, raising a kitten, or taking in a street cat.", path: "/cats/getting-a-cat-in-pattaya.html" },
-        { name: "Cat boarding", desc: "Catteries, sitters and care for your cat while you travel.", path: "/cats/cat-boarding-pattaya.html" }
+        { name: "Indoor or outdoor?", desc: "Traffic, balconies, other animals and housing questions.", path: "/cats/indoor-vs-outdoor-cats.html" },
+        { name: "Cat health and vaccinations", desc: "General orientation to discuss with a qualified vet.", path: "/cats/cat-vaccinations-thailand.html" },
+        { name: "Cat boarding", desc: "How to verify a cattery or sitter.", path: "/cats/cat-boarding-pattaya.html" },
+        { name: "Pet-friendly housing", desc: "Written building and owner permission.", path: "/owning-a-pet-in-pattaya/pet-friendly-housing.html" },
+        { name: "Microchipping", desc: "Identification questions for your vet.", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html" },
+        { name: "Pet insurance", desc: "Policy-document and regulator checks.", path: "/pet-insurance-thailand.html" }
       ]
     },
     {
-      title: "Caring for a cat in Pattaya",
+      title: "Adoption and travel",
       cards: [
-        { name: "24-hour vets in Pattaya", desc: "Animal hospitals open around the clock.", path: "/pet-emergency/24-hour-vets-pattaya.html" },
-        { name: "Mobile & home-visit vets", desc: "Vets who come to you — useful for nervous cats.", path: "/mobile-vets/" },
-        { name: "Hot-climate pet care", desc: "Keeping a cat cool, hydrated and safe in the tropics.", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html" },
-        { name: "Microchipping your pet", desc: "Essential ID for an indoor or outdoor cat.", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html" },
-        { name: "Spaying & neutering", desc: "Why it matters in a city with many street animals.", path: "/pet-health-pattaya/spaying-and-neutering.html" },
-        { name: "Groomers", desc: "Cat grooming salons in Pattaya.", path: "/groomers/" },
-        { name: "Ticks & fleas", desc: "Year-round parasite prevention, yes, indoor cats too.", path: "/pet-emergency/ticks-and-fleas.html" },
-        { name: "What it costs", desc: "Budgeting for a cat in Pattaya.", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html" },
-        { name: "Where to buy pet food", desc: "Cat food and litter: shops, supermarkets and online.", path: "/owning-a-pet-in-pattaya/where-to-buy-pet-food.html" },
-        { name: "Pet insurance", desc: "Whether to insure your cat in Thailand.", path: "/pet-insurance-thailand.html" },
-        { name: "Pet health in Pattaya", desc: "Heartworm, parasites, skin and ear problems and neutering.", path: "/pet-health-pattaya/" },
-        { name: "Dental care", desc: "Teeth, tartar and gum health for cats.", path: "/pet-health-pattaya/dental-care.html" },
-        { name: "Healthy weight", desc: "Keeping a cat at a healthy weight in the tropics.", path: "/pet-health-pattaya/healthy-weight.html" },
-        { name: "End-of-life care", desc: "Compassionate guidance for a cat's final stage.", path: "/owning-a-pet-in-pattaya/saying-goodbye.html" }
+        { name: "Getting a cat", desc: "Adoption and preparation questions.", path: "/cats/getting-a-cat-in-pattaya.html" },
+        { name: "Adoption sources", desc: "Current first-party evidence and named gaps.", path: "/adopt-a-pet-pattaya/" },
+        { name: "Bring a pet to Thailand", desc: "DLD import process and sources.", path: "/bring-pet-to-thailand/" },
+        { name: "Take a pet out of Thailand", desc: "DLD export and destination requirements.", path: "/take-pet-out-of-thailand/" }
       ]
     },
     {
-      title: "Getting a cat",
+      title: "Veterinary and emergency routes",
       cards: [
-        { name: "Adopt a cat", desc: "Pattaya shelters and rescues rehoming cats.", path: "/adopt-a-pet-pattaya/" },
-        { name: "Bring a cat to Thailand", desc: "The full import process for a cat.", path: "/bring-pet-to-thailand/" },
-        { name: "Take a cat out of Thailand", desc: "Export checklist, DLD permit and destination guides.", path: "/take-pet-out-of-thailand/" },
-      ]
-    },
-    {
-      title: "If something goes wrong",
-      cards: [
-        { name: "Pet emergencies", desc: "24-hour vets and the hazards to know.", path: "/pet-emergency/" },
-        { name: "Poisoning", desc: "Household hazards that are toxic to cats.", path: "/pet-emergency/poisoning.html" },
-        { name: "Pet first aid", desc: "The calm basics if your cat is hurt or unwell.", path: "/pet-emergency/pet-first-aid.html" }
+        { name: "Pattaya vets", desc: "Business evidence and contact verification.", path: "/vets/" },
+        { name: "Mobile vets", desc: "Home-visit provider directory.", path: "/mobile-vets/" },
+        { name: "Pet emergencies", desc: "General orientation and current provider routes.", path: "/pet-emergency/" },
+        { name: "Lost pet", desc: "Actions and reporting channels.", path: "/owning-a-pet-in-pattaya/lost-pet-pattaya.html" }
       ]
     }
   ],
   related: [
-    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "Heartworm, parasites and tropical health." },
-    { name: "If your pet goes missing", path: "/owning-a-pet-in-pattaya/lost-pet-pattaya.html", desc: "A step-by-step plan for a lost cat." },
-    { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Shelters and rescue organisations." },
-    { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Essential ID for an indoor or outdoor cat." }
+    { name: "Pattaya vets", path: "/vets/", desc: "Find and verify veterinary providers." },
+    { name: "Adopt a pet", path: "/adopt-a-pet-pattaya/", desc: "Rescue evidence status." },
+    { name: "Pet-friendly housing", path: "/owning-a-pet-in-pattaya/pet-friendly-housing.html", desc: "Written permission." }
   ]
 }));
 
-/* ---------------- DOGS HUB ---------------- */
 pages.push(hub({
   path: "/dogs/",
-  title: "Dogs in Pattaya | Walks, Training & Vet Guide | PattayaPets",
+  title: "Dogs in Pattaya: Care & Travel Guides | PattayaPets",
   image: "/assets/img/og-dogs.png",
-  desc: "Everything for dog owners in Pattaya: vets, walking, training, " +
-    "dog-friendly places, hot-climate care, and bringing or adopting a dog for everyday local life.",
+  updated: "2026-08-01",
+  desc: "Pattaya guides for dog owners: veterinary care, walking access, training, housing, adoption, import, export and emergency orientation.",
   crumb: "Dogs",
   breadcrumbs: [],
   eyebrow: "Species hub",
   h1: "Dogs in Pattaya",
-  lede: "Everything on PattayaPets that matters to dog owners, in one place " +
-    "&mdash; care, walking, training, dog-friendly spots and more.",
+  lede: "A route index for dog care, access, housing, adoption and travel. Verify current local rules and ask a qualified veterinarian about an individual dog.",
   intro:
-    "<p>Pattaya is a rewarding place to own a dog: an outdoor life, a long " +
-    "beach, and a growing number of dog-friendly places. The guides below cover " +
-    "the daily reality &mdash; the heat, the walks, the street dogs &mdash; and " +
-    "the bigger steps like bringing a dog in or adopting one here. For adoption, " +
-    "see <a href=\"/adopt-a-pet-pattaya/hope-for-strays.html\">Hope for Strays</a> " +
-    "and <a href=\"/adopt-a-pet-pattaya/pattaya-street-dogs-k9aid.html\">Pattaya Street Dogs (K9aid)</a>.</p>",
+    "<p>This hub does not imply that a beach, restaurant, condo, rescue or provider currently accepts a " +
+    "dog. Follow the relevant guide to its evidence and verification boundary.</p>",
   groups: [
     {
-      title: "Dog-owner guides",
+      title: "Daily care",
       cards: [
-        { name: "Dog vaccinations & parasites", desc: "Core vaccinations, rabies law, heartworm and year-round prevention.", path: "/dogs/dog-vaccinations-thailand.html" },
-        { name: "Choosing a dog for the heat", desc: "Which dogs cope with Pattaya's climate, and which struggle.", path: "/dogs/choosing-a-dog-for-the-climate.html" },
-        { name: "Puppy care in Pattaya", desc: "The first months: vaccinations, socialising, training and the heat.", path: "/dogs/puppy-care-pattaya.html" },
-        { name: "Tropical health issues", desc: "Skin, ears, tick-borne disease and the problems the climate brings.", path: "/dogs/common-dog-health-issues-tropics.html" }
+        { name: "Dog health and vaccinations", desc: "General orientation to discuss with a qualified vet.", path: "/dogs/dog-vaccinations-thailand.html" },
+        { name: "Hot-climate care", desc: "Heat orientation and when to contact a vet.", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html" },
+        { name: "Walking routes", desc: "How to verify access and plan a route.", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html" },
+        { name: "Training", desc: "Trainer directory and provider checks.", path: "/trainers/" },
+        { name: "Boarding", desc: "Boarding-provider directory and verification.", path: "/boarding/" },
+        { name: "Pet insurance", desc: "Policy-document and regulator checks.", path: "/pet-insurance-thailand.html" }
       ]
     },
     {
-      title: "Caring for a dog in Pattaya",
+      title: "Access and housing",
       cards: [
-        { name: "24-hour vets in Pattaya", desc: "Animal hospitals open around the clock.", path: "/pet-emergency/24-hour-vets-pattaya.html" },
-        { name: "Mobile & home-visit vets", desc: "Vets who come to you — useful for nervous dogs.", path: "/mobile-vets/" },
-        { name: "Hot-climate pet care", desc: "The heat is the biggest daily adjustment, here is how.", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html" },
-        { name: "Ticks & fleas", desc: "Year-round parasite prevention for dogs.", path: "/pet-emergency/ticks-and-fleas.html" },
-        { name: "Where to walk your dog", desc: "Building a safe, cool-hours walking routine.", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html" },
-        { name: "Dog trainers", desc: "Obedience and behaviour help from Pattaya trainers.", path: "/trainers/" },
-        { name: "Dog registration & the law", desc: "Rabies law and local registration for dogs.", path: "/owning-a-pet-in-pattaya/dog-registration-thailand.html" },
-        { name: "Grooming", desc: "Dog groomers across Pattaya.", path: "/groomers/" },
-        { name: "Boarding & daycare", desc: "Dog hotels and kennels while you travel.", path: "/boarding/" },
-        { name: "Travelling in Thailand", desc: "Domestic trips with your dog.", path: "/owning-a-pet-in-pattaya/travelling-in-thailand.html" },
-        { name: "Pet health in Pattaya", desc: "Heartworm, tick disease, skin and ear problems and more.", path: "/pet-health-pattaya/" },
-        { name: "Dental care", desc: "Teeth, tartar and gum health for dogs.", path: "/pet-health-pattaya/dental-care.html" },
-        { name: "Healthy weight", desc: "Exercise, diet and weight in the heat.", path: "/pet-health-pattaya/healthy-weight.html" },
-        { name: "End-of-life care", desc: "Compassionate guidance for a dog's final stage.", path: "/owning-a-pet-in-pattaya/saying-goodbye.html" }
+        { name: "Dog-friendly Pattaya", desc: "Current first-party policies and named access gaps.", path: "/dog-friendly-pattaya/" },
+        { name: "Beach access", desc: "No inferred dog-beach permissions.", path: "/dog-friendly-pattaya/beaches.html" },
+        { name: "Condo policy", desc: "Two-part written verification.", path: "/dog-friendly-pattaya/condos.html" },
+        { name: "Pet-friendly housing", desc: "Owner and property permission.", path: "/owning-a-pet-in-pattaya/pet-friendly-housing.html" },
+        { name: "Dog registration", desc: "Official-source scope and local gaps.", path: "/owning-a-pet-in-pattaya/dog-registration-thailand.html" }
       ]
     },
     {
-      title: "Out and about",
+      title: "Adoption, travel and emergencies",
       cards: [
-        { name: "Dog-friendly Pattaya", desc: "Beaches, cafes, restaurants, hotels and more.", path: "/dog-friendly-pattaya/" },
-        { name: "Dog-friendly beaches", desc: "Where dogs can enjoy the sand and sea.", path: "/dog-friendly-pattaya/beaches.html" },
-        { name: "Beach & sea hazards", desc: "Jellyfish, hot sand and seawater risks on walks.", path: "/pet-emergency/beach-and-sea-hazards.html" },
-        { name: "Street-dog encounters", desc: "Walking safely around Pattaya's free-roaming dogs.", path: "/pet-emergency/street-dog-encounters.html" }
-      ]
-    },
-    {
-      title: "Getting a dog, and emergencies",
-      cards: [
-        { name: "Adopt a dog", desc: "Pattaya shelters and rescues rehoming dogs.", path: "/adopt-a-pet-pattaya/" },
-        { name: "Bring a dog to Thailand", desc: "The full import process for a dog.", path: "/bring-pet-to-thailand/" },
-        { name: "Take a dog out of Thailand", desc: "Export checklist, DLD permit and destination guides.", path: "/take-pet-out-of-thailand/" },
-        { name: "Pet emergencies", desc: "24-hour vets, heatstroke, snakes and more.", path: "/pet-emergency/" }
+        { name: "Adoption sources", desc: "Current first-party evidence and named gaps.", path: "/adopt-a-pet-pattaya/" },
+        { name: "Bring a pet to Thailand", desc: "DLD import process and sources.", path: "/bring-pet-to-thailand/" },
+        { name: "Take a pet out of Thailand", desc: "DLD export and destination requirements.", path: "/take-pet-out-of-thailand/" },
+        { name: "Pet emergencies", desc: "General orientation and current provider routes.", path: "/pet-emergency/" },
+        { name: "Street-dog encounters", desc: "General safety orientation.", path: "/pet-emergency/street-dog-encounters.html" }
       ]
     }
   ],
   related: [
-    { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Beaches, cafes and places to walk." },
-    { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "Walking safely around free-roaming dogs." },
-    { name: "Puppy care in Pattaya", path: "/dogs/puppy-care-pattaya.html", desc: "Starting well with a young dog." },
-    { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Building a safe daily routine." }
+    { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Access and policy verification." },
+    { name: "Pattaya vets", path: "/vets/", desc: "Find and verify veterinary providers." },
+    { name: "Adopt a pet", path: "/adopt-a-pet-pattaya/", desc: "Rescue evidence status." }
   ]
 }));
 

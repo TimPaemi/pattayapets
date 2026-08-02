@@ -1,461 +1,261 @@
 "use strict";
-/* Cluster: Pet health in Pattaya - orientation guides to the conditions a hot,
-   humid, parasite-rich climate makes common. Not veterinary advice. */
+/* Source-led pet-health orientation. No page in this module has been clinically
+   reviewed; consequential decisions are deliberately routed to a veterinarian. */
 
 const { article, hub } = require("../guidekit.js");
 
 const GUIDES = { name: "Guides", path: "/guides.html" };
 const CLUSTER = { name: "Pet health in Pattaya", path: "/pet-health-pattaya/" };
 const SUB = [GUIDES, CLUSTER];
+const REVIEWED = "2026-08-01";
 
 const HEALTH_VERIFY =
-  "This is general health orientation, last reviewed on 31 May 2026, and is not " +
-  "veterinary advice or a diagnosis. PattayaPets is an editorial publication, not " +
-  "a veterinary practice. If you are worried about your pet, see a qualified " +
-  "veterinarian &mdash; early advice is always better than waiting.";
+  "Clinical review status: no licensed veterinarian has reviewed this publication. " +
+  "It is source-led general orientation, not a diagnosis, treatment plan or dosing " +
+  "instruction. A qualified veterinarian must assess the individual animal.";
+
+const SOURCES = {
+  wsavaVaccines: "https://wsava.org/Global-Guidelines/Vaccination-Guidelines/",
+  heartworm: "https://www.heartwormsociety.org/guidelines",
+  ticks: "https://capcvet.org/guidelines/ticks/",
+  ehrlichia: "https://capcvet.org/guidelines/ehrlichia-spp-and-anaplasma-spp/",
+  parvo: "https://ebusiness.avma.org/files/productdownloads/MCM-ClientBrochures-20-CanineParvovirus.pdf",
+  skin: "https://www.aaha.org/trends-magazine/december-2023/2023-aaha-management-of-allergic-skin-diseases-in-dogs-and-cats-guidelines/",
+  reproduction: "https://wsava.org/global-guidelines/reproduction-guidelines/"
+};
 
 const RELATED = [
-  { name: "Heartworm", path: "/pet-health-pattaya/heartworm.html", desc: "Year-round prevention in Pattaya." },
-  { name: "Tick-borne disease", path: "/pet-health-pattaya/tick-borne-disease.html", desc: "Ticks are active all year here." },
-  { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html", desc: "Heat and humidity drive flare-ups." },
-  { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "The climate basics every owner needs." },
-  { name: "Mobile & home-visit vets", path: "/mobile-vets/", desc: "Routine checks without the clinic stress." },
-  { name: "Pet emergencies", path: "/pet-emergency/", desc: "24-hour vets and urgent hazards." }
+  { name: "Heartworm", path: "/pet-health-pattaya/heartworm.html", desc: "Questions to take to a vet about mosquito-borne heartworm." },
+  { name: "Tick-borne disease", path: "/pet-health-pattaya/tick-borne-disease.html", desc: "Exposure, non-specific signs and vet-led testing." },
+  { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html", desc: "Why an examination matters before treatment." },
+  { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Prevention and heat-risk planning." },
+  { name: "Find a vet", path: "/vets/", desc: "Compare documented Pattaya veterinary services." },
+  { name: "Pet emergencies", path: "/pet-emergency/", desc: "Urgent-care orientation and clinic contacts." }
 ];
+
+function source(name, href) {
+  return '<a href="' + href + '">' + name + "</a>";
+}
 
 function health(o) {
   return article({
     path: "/pet-health-pattaya/" + o.slug + ".html",
-    title: o.title, desc: o.desc, crumb: o.crumb, breadcrumbs: SUB,
+    title: o.title,
+    desc: o.desc,
+    crumb: o.crumb,
+    breadcrumbs: SUB,
     eyebrow: "Pet health in Pattaya",
-    h1: o.h1, lede: o.lede, verify: HEALTH_VERIFY,
-    updated: o.updated || "2026-05-31",
-    sections: o.sections, faqs: o.faqs, related: o.related || RELATED
+    h1: o.h1,
+    lede: o.lede,
+    verify: HEALTH_VERIFY,
+    updated: REVIEWED,
+    sections: o.sections,
+    faqs: o.faqs,
+    related: o.related || RELATED
   });
 }
 
 const pages = [];
 
-/* ---------------- HUB ---------------- */
 pages.push(hub({
   path: "/pet-health-pattaya/",
-  title: "Pet Health Pattaya | Heartworm, Ticks & Vets | PattayaPets",
-  image: "/assets/img/og-health.png",
-  updated: "2026-06-04",
-  desc: "Orientation to the pet health issues a hot, humid, parasite-rich climate " +
-    "makes common in Pattaya: heartworm, tick disease, skin and ear problems and more.",
-  crumb: "Pet health",
+  title: "Pet Health Pattaya: Prevention Guide | PattayaPets",
+  desc: "A source-led starting point for pet health in Pattaya: vaccination, parasites, skin and ear problems, dental care, weight and when to call a veterinarian.",
+  updated: REVIEWED,
+  crumb: "Pet health in Pattaya",
   breadcrumbs: [GUIDES],
-  eyebrow: "Guide",
-  h1: "Pet health in Pattaya",
-  lede: "A hot, humid, parasite-rich climate gives Pattaya its own pattern of pet " +
-    "health concerns. Knowing the pattern helps you prevent trouble and spot it early.",
-  intro:
-    "<p>This is an orientation hub, not a veterinary service. It explains the " +
-    "conditions that newcomers to the tropics most often run into &mdash; what " +
-    "they are, why Pattaya makes them more likely, how they are prevented, and the " +
-    "signs that should send you to a vet. For diagnosis and treatment, your " +
-    "<a href=\"/vets/\">vet</a> is always the right call.</p>" +
-    "<p>The common thread is <strong>prevention</strong>. Most of what follows is " +
-    "far easier, cheaper and kinder to prevent than to treat. For routine " +
-    "vaccination and parasite schedules, see " +
-    "<a href=\"/dogs/dog-vaccinations-thailand.html\">dog vaccinations</a> and " +
-    "<a href=\"/cats/cat-vaccinations-thailand.html\">cat vaccinations</a>; for " +
-    "street-animal welfare, see " +
-    "<a href=\"/pet-health-pattaya/spaying-and-neutering.html\">spaying &amp; " +
-    "neutering</a>. In an emergency, see " +
-    '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in Pattaya</a> ' +
-    "or browse the <a href=\"/vets/\">vets directory</a>.</p>",
+  eyebrow: "Pet health in Pattaya",
+  h1: "Pet health in Pattaya: a safer starting point",
+  lede: "Climate and lifestyle shape risk, but a web page cannot diagnose an animal or choose a medicine. Use these guides to prepare better questions for a qualified veterinarian.",
+  verify: HEALTH_VERIFY,
+  intro: "<p>Every clinical page names its sources, avoids dosing and distinguishes prevention from diagnosis. We have not published local prevalence figures because we did not find a current, representative Pattaya dataset that supports them.</p>",
   groups: [
     {
-      title: "Parasite-borne disease",
-      note: "The risks the climate's mosquitoes and ticks carry year-round.",
+      title: "Infectious disease and parasites",
       cards: [
-        { name: "Heartworm", desc: "A mosquito-borne parasite Pattaya makes a year-round risk - and why prevention is everything.", path: "/pet-health-pattaya/heartworm.html" },
-        { name: "Tick-borne disease", desc: "The blood-borne illnesses ticks spread here, and the signs to watch for.", path: "/pet-health-pattaya/tick-borne-disease.html" },
-        { name: "Parvovirus", desc: "A deadly, preventable virus - why vaccination matters most for puppies.", path: "/pet-health-pattaya/parvovirus.html" }
+        { name: "Heartworm", desc: "How transmission works and why prevention and testing need an individual veterinary plan.", path: "/pet-health-pattaya/heartworm.html" },
+        { name: "Tick-borne disease", desc: "Why signs overlap with many illnesses and laboratory interpretation matters.", path: "/pet-health-pattaya/tick-borne-disease.html" },
+        { name: "Parvovirus", desc: "A contagious canine disease where prompt veterinary care and isolation matter.", path: "/pet-health-pattaya/parvovirus.html" }
       ]
     },
     {
-      title: "Everyday tropical health",
+      title: "Everyday preventive care",
       cards: [
-        { name: "Skin & ear problems", desc: "Why heat and humidity make these so common, and what helps.", path: "/pet-health-pattaya/skin-and-ear-problems.html" },
-        { name: "Spaying & neutering", desc: "The benefits, the timing, and the welfare case in a city with many street animals.", path: "/pet-health-pattaya/spaying-and-neutering.html" },
-        { name: "Dental care", desc: "Why dental disease is so common, the signs, and home and professional care.", path: "/pet-health-pattaya/dental-care.html" },
-        { name: "Healthy weight", desc: "Why a healthy weight matters even more in the heat, and how to manage it.", path: "/pet-health-pattaya/healthy-weight.html" },
-        { name: "Rainy-season pet care", desc: "Humidity, damp coats and skin flare-ups in monsoon season.", path: "/owning-a-pet-in-pattaya/rainy-season-pet-care.html" }
+        { name: "Skin and ear problems", desc: "Possible causes, useful observations and why guessing at treatment can backfire.", path: "/pet-health-pattaya/skin-and-ear-problems.html" },
+        { name: "Spaying and neutering", desc: "A decision framework that reflects current, individualised guidance.", path: "/pet-health-pattaya/spaying-and-neutering.html" },
+        { name: "Dental care", desc: "Home prevention and what a professional dental assessment involves.", path: "/pet-health-pattaya/dental-care.html" },
+        { name: "Healthy weight", desc: "Body-condition assessment and a vet-led feeding and activity plan.", path: "/pet-health-pattaya/healthy-weight.html" }
       ]
     },
     {
-      title: "Related guides",
+      title: "Plan before a problem",
       cards: [
-        { name: "Dog vaccinations & parasites", desc: "The core preventive routines for dogs.", path: "/dogs/dog-vaccinations-thailand.html" },
-        { name: "Cat vaccinations & health", desc: "The routine health picture for cats.", path: "/cats/cat-vaccinations-thailand.html" },
-        { name: "Ticks & fleas", desc: "Year-round parasite prevention.", path: "/pet-emergency/ticks-and-fleas.html" }
+        { name: "Find a vet", desc: "Check current services and call before relying on availability.", path: "/vets/" },
+        { name: "Pet emergencies", desc: "Recognise uncertainty and contact an emergency veterinarian promptly.", path: "/pet-emergency/" },
+        { name: "Dog vaccination", desc: "Core and risk-based vaccination concepts from current global guidance.", path: "/dogs/dog-vaccinations-thailand.html" },
+        { name: "Cat vaccination", desc: "Core, lifestyle-based and legal questions to take to a vet.", path: "/cats/cat-vaccinations-thailand.html" }
       ]
     }
   ],
-  related: [
-    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "When prevention is not enough." },
-    { name: "Heartworm", path: "/pet-health-pattaya/heartworm.html", desc: "Year-round prevention in Pattaya." },
-    { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html", desc: "Humidity-driven flare-ups." },
-    { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "Routine surgery and welfare." },
-    { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Keeping a pet safe in Pattaya's heat." },
-    { name: "Pet emergencies", path: "/pet-emergency/", desc: "24-hour vets and first-aid orientation." }
+  related: RELATED
+}));
+
+pages.push(health({
+  slug: "heartworm",
+  crumb: "Heartworm",
+  title: "Heartworm Pattaya: Prevention Questions | PattayaPets",
+  desc: "Heartworm orientation for Pattaya pet owners: mosquito transmission, prevention, testing and why a veterinarian must choose the medication plan.",
+  h1: "Heartworm: prevention and testing questions for your vet",
+  lede: "Heartworm is transmitted by mosquitoes. The safe product, start date and testing plan depend on the animal, its history and the products licensed locally.",
+  sections: [
+    { h: "What is established", html:
+      "<p><em>Dirofilaria immitis</em> is a mosquito-borne parasite that can infect dogs and cats. Disease, diagnosis and prevention differ between species. The " +
+      source("American Heartworm Society's living canine and feline guidelines", SOURCES.heartworm) +
+      " separate those pathways and are written for veterinary use.</p><p>We did not find a current representative Pattaya prevalence study, so this page does not claim a local infection rate or describe every pet as equally exposed.</p>" },
+    { h: "Build the plan with a veterinarian", html:
+      "<p>Bring the vet your pet's age, weight, species, health history, travel history and every parasite product already used. Ask which locally licensed preventive is appropriate, whether testing is needed before starting or restarting, and how follow-up will be documented. Do not combine, split or substitute products from an online schedule.</p>" },
+    { h: "Missed or uncertain doses", html:
+      "<p>Do not guess, double a dose or borrow another animal's medicine. Contact the prescribing clinic with the product name, strength, last confirmed administration and any travel since then. The next step may depend on both timing and testing.</p>" },
+    { h: "Symptoms cannot confirm heartworm", html:
+      "<p>Coughing, reduced stamina, breathing difficulty, vomiting or collapse can have many causes. They cannot establish heartworm from a checklist. Breathing difficulty or collapse warrants urgent veterinary assessment; otherwise arrange a prompt examination and let the clinician decide which tests fit.</p>" },
+    { h: "Source and review boundary", html:
+      "<p><strong>Primary clinical reference:</strong> " + source("American Heartworm Society guidelines", SOURCES.heartworm) +
+      ". PattayaPets checked this page on 1 August 2026. No licensed veterinarian has clinically reviewed our interpretation.</p>" }
+  ],
+  faqs: [
+    ["Can cats get heartworm?", "<p>Yes. Dogs and cats can be infected, but the disease and diagnostic approach differ. Ask a veterinarian for a species-specific prevention plan.</p>"],
+    ["Should every pet use the same heartworm product?", "<p>No. Species, weight, health history, prior prevention and locally licensed products matter. A veterinarian should select the product and instructions.</p>"],
+    ["What if I missed a heartworm dose?", "<p>Contact the prescribing clinic with the exact product and last confirmed dose. Do not double up or invent a catch-up schedule.</p>"],
+    ["Does a cough prove heartworm?", "<p>No. Coughing has many possible causes. A veterinarian must examine the animal and decide what testing is appropriate.</p>"],
+    ["How common is heartworm in Pattaya?", "<p>We did not find a current representative Pattaya prevalence dataset, so we do not publish a local percentage. Ask your vet to assess your pet's actual exposure.</p>"]
   ]
 }));
 
-/* ---------------- HEARTWORM ---------------- */
 pages.push(health({
-  slug: "heartworm", crumb: "Heartworm",
-  title: "Heartworm in Dogs & Cats Pattaya | Prevention & Year-Round Risk | PattayaPets",
-  desc: "What heartworm is, why Pattaya's year-round mosquitoes make it a constant " +
-    "risk, how prevention works, and why it beats treatment every time.",
-  h1: "Heartworm: the mosquito-borne risk",
-  lede: "Heartworm is the health risk newcomers to the tropics most often " +
-    "underestimate &mdash; and the one where prevention matters most.",
+  slug: "tick-borne-disease",
+  crumb: "Tick-borne disease",
+  title: "Tick-Borne Disease in Dogs | Pattaya Vet Guide | PattayaPets",
+  desc: "A cautious guide to tick-borne disease in dogs: exposure, non-specific signs, veterinary testing and prevention without self-diagnosis or treatment advice.",
+  h1: "Tick-borne disease: exposure is not a diagnosis",
+  lede: "Ticks can carry several pathogens, and the illnesses can look like many other conditions. Prevention and prompt veterinary assessment matter more than naming a disease from symptoms.",
   sections: [
-    { h: "What heartworm is", html:
-      "<p>Heartworm is a parasitic worm spread from animal to animal by " +
-      "<strong>mosquito bites</strong>. Over months, the worms grow and live in " +
-      "the heart and the large blood vessels of the lungs, where they cause " +
-      "serious, progressive damage. It mainly affects dogs, but cats can be " +
-      "affected too. See " +
-      "<a href=\"/cats/cat-vaccinations-thailand.html\">cat vaccinations</a> for " +
-      "the feline routine.</p>" },
-    { h: "Why Pattaya makes it a year-round risk", html:
-      "<p>Heartworm needs mosquitoes to spread, and Pattaya has mosquitoes " +
-      "<strong>all year</strong> &mdash; there is no cold season to break the " +
-      "cycle. That is the key difference from cooler countries: prevention here is " +
-      "not seasonal, it is continuous. Any dog that goes outdoors, which is every " +
-      "dog, is exposed.</p>" },
-    { h: "Prevention is simple - treatment is not", html:
-      "<p>This is the heart of it. <strong>Prevention</strong> is a regular " +
-      "preventive &mdash; given on the schedule your vet sets, year-round &mdash; " +
-      "and it is straightforward and inexpensive. <strong>Treatment</strong> of an " +
-      "established heartworm infection in a dog is the opposite: a long, costly, " +
-      "medically demanding process that carries real risk to the dog. For cats " +
-      "there is no equivalent treatment at all, which makes prevention even more " +
-      "important. The lesson is blunt &mdash; keep prevention going and you almost " +
-      "never face the alternative.</p>" },
-    { h: "Signs an owner might notice", html:
-      "<p>Early heartworm often shows nothing at all, which is part of the danger. " +
-      "As it advances, an owner may notice a <strong>soft cough</strong>, tiring " +
-      "easily, reluctance to exercise, or weight loss. Because these appear late, " +
-      "you cannot rely on signs &mdash; prevention and the testing your vet " +
-      "recommends are what protect a pet.</p>" },
-    { h: "What to do", html:
-      "<p>Talk to your <a href=\"/vets/\">vet</a> about a year-round heartworm " +
-      "preventive as a basic, non-negotiable part of owning a pet in Pattaya, and " +
-      "follow the schedule without gaps. A vet may also advise a test before " +
-      "starting or restarting prevention. See our guide to " +
-      "<a href=\"/dogs/dog-vaccinations-thailand.html\">dog vaccinations and " +
-      "parasite prevention</a> for how it fits the wider routine.</p>" }
+    { h: "What ticks can transmit", html:
+      "<p>Veterinary authorities document transmission of organisms including <em>Ehrlichia</em> and <em>Anaplasma</em> through tick feeding. See the " +
+      source("CAPC Ehrlichia and Anaplasma guideline", SOURCES.ehrlichia) +
+      ". We found no current representative dataset that quantifies these infections specifically across Pattaya pets.</p>" },
+    { h: "Why symptom lists are limited", html:
+      "<p>Fever, lethargy, reduced appetite, weight change, bruising, bleeding or reluctance to move are possible findings, but none is specific to a tick-borne infection. Do not start antibiotics or leftover medicine from a symptom match. Arrange a veterinary examination; the clinician may combine history, physical findings and laboratory tests.</p>" },
+    { h: "Prevention is product-specific", html:
+      "<p>The " + source("CAPC tick guideline", SOURCES.ticks) +
+      " recommends ongoing tick control and prompt removal of attached ticks. In Thailand, ask a veterinarian which product is licensed and safe for your pet's species, weight, age and health. Never apply a dog product to a cat unless a veterinarian explicitly confirms it is labelled for cats.</p>" },
+    { h: "What to record", html:
+      "<p>If you find a tick, note the date, where the pet may have been exposed, products used and any new signs. A clear timeline helps the vet. If the animal is weak, collapsing, having trouble breathing or bleeding, contact an emergency veterinarian now.</p>" },
+    { h: "Sources and review boundary", html:
+      "<p><strong>Clinical references:</strong> " + source("CAPC tick control", SOURCES.ticks) + " and " +
+      source("CAPC Ehrlichia/Anaplasma", SOURCES.ehrlichia) +
+      ". Checked 1 August 2026; no licensed veterinarian has clinically reviewed this page.</p>" }
   ],
   faqs: [
-    ["Does my pet really need heartworm prevention all year in Pattaya?",
-     "<p>Yes. Heartworm spreads by mosquito, and Pattaya has mosquitoes year-round, so prevention is continuous rather than seasonal. Your vet will recommend a product and schedule.</p>"],
-    ["Why is prevention emphasised so heavily?",
-     "<p>Because treating an established infection is long, costly and risky for a dog, and for cats there is no equivalent treatment. Prevention is simple and inexpensive by comparison - it is genuinely the whole game.</p>"],
-    ["Can indoor cats get heartworm?",
-     "<p>Cats can be affected by heartworm, and mosquitoes get indoors. Ask your vet whether heartworm prevention is right for your cat, especially as there is no feline treatment if it takes hold.</p>"],
-    ["How is heartworm tested?",
-     "<p>Your vet uses blood tests — often before starting or changing prevention. Follow their schedule; do not skip tests if prevention lapses.</p>"],
-    ["What if I miss a heartworm dose?",
-     "<p>Contact your vet — they may recommend restarting with a test first. Prevention works best on a consistent monthly schedule in Pattaya.</p>"],
-    ["Can a pet have heartworm without showing symptoms?",
-     "<p>Yes. Early heartworm often shows no visible signs, so a pet can appear well while the infection develops. Follow your vet's prevention and testing schedule rather than waiting for coughing, exercise intolerance or weight loss.</p>"]
-  ],
-  related: [
-    { name: "Dog vaccinations & parasites", path: "/dogs/dog-vaccinations-thailand.html", desc: "How prevention fits the wider routine." },
-    { name: "Pet emergencies", path: "/pet-emergency/", desc: "When prevention is not enough." },
-    { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html", desc: "Year-round parasite prevention." },
-    { name: "Mobile & home-visit vets", path: "/mobile-vets/", desc: "Routine prevention visits at home." },
-    { name: "Parvovirus", path: "/pet-health-pattaya/parvovirus.html", desc: "Another preventable disease to vaccinate against." }
+    ["Does finding a tick mean my dog is infected?", "<p>No. Exposure does not prove infection. Record what you found and ask a veterinarian whether examination or testing is appropriate.</p>"],
+    ["Can I diagnose tick fever from pale gums or tiredness?", "<p>No. Those signs have many possible causes and some are urgent. A veterinarian must assess the dog and interpret any tests.</p>"],
+    ["Should I use tick prevention all year?", "<p>Veterinary parasite guidance supports ongoing control, but the safe product and interval are product- and patient-specific. Ask your vet for a locally appropriate plan.</p>"],
+    ["Can I give leftover antibiotics?", "<p>No. Do not treat a suspected tick-borne infection with leftover or unprescribed medicine. Diagnosis, drug choice and follow-up belong with a veterinarian.</p>"],
+    ["How common is tick-borne disease in Pattaya?", "<p>We found no current representative Pattaya-wide prevalence dataset, so we do not state a local rate.</p>"]
   ]
 }));
 
-/* ---------------- TICK-BORNE DISEASE ---------------- */
 pages.push(health({
-  slug: "tick-borne-disease", crumb: "Tick-borne disease",
-  title: "Tick-Borne Disease in Dogs Pattaya | Symptoms & Prevention | PattayaPets",
-  desc: "The blood-borne diseases ticks spread in Thailand - sometimes called tick " +
-    "fever - the signs to watch for, and why year-round prevention matters.",
-  h1: "Tick-borne disease: the hidden danger of ticks",
-  lede: "A tick is more than an itch. In the tropics, ticks carry blood-borne " +
-    "diseases that can make a dog seriously, sometimes lastingly, unwell.",
+  slug: "parvovirus",
+  crumb: "Parvovirus",
+  title: "Canine Parvovirus Pattaya: Signs & Prevention | PattayaPets",
+  desc: "Source-led canine parvovirus guidance: contagious spread, warning signs, isolation, veterinary care and vaccination without home-treatment instructions.",
+  h1: "Canine parvovirus: isolate and call a vet",
+  lede: "Parvovirus can cause severe disease, especially in inadequately vaccinated puppies. Online advice cannot determine whether vomiting or diarrhoea is parvo.",
   sections: [
-    { h: "More than a parasite", html:
-      "<p>Ticks are a year-round fact of life in Pattaya&rsquo;s climate. The real " +
-      "concern is not the tick itself but what it can transmit: a group of " +
-      "<strong>blood-borne diseases</strong> &mdash; including ehrlichiosis, " +
-      "babesiosis and anaplasmosis &mdash; sometimes spoken of together as " +
-      "&lsquo;tick fever&rsquo;. These can make a dog genuinely ill, and some can " +
-      "become long-term problems.</p>" },
-    { h: "Signs an owner might notice", html:
-      "<p>Tick-borne illness can be vague and easy to miss at first. Signs an " +
-      "owner may notice include <strong>lethargy</strong>, loss of appetite, " +
-      "fever, weakness, pale gums, bruising or bleeding that seems unusual, " +
-      "lameness or stiffness, and weight loss. None of these is proof of tick " +
-      "disease &mdash; but all of them are reasons to see a <a href=\"/vets/\">" +
-      "vet</a>, and to mention any recent tick exposure.</p>" },
-    { h: "Why early action matters", html:
-      "<p>Caught early, tick-borne diseases are often treatable. Left to run, some " +
-      "can do lasting damage. So the rule is simple: if your dog seems unwell and " +
-      "has been around ticks, do not wait it out &mdash; have a vet look. Only a " +
-      "vet can diagnose these conditions, usually with blood tests.</p>" },
-    { h: "Prevention: the real defence", html:
-      "<p>The way to win against tick-borne disease is to <strong>not let it " +
-      "start</strong>. That means consistent, <strong>year-round tick " +
-      "prevention</strong> on your vet&rsquo;s plan, plus checking your dog over " +
-      "for ticks after walks and removing any you find promptly and properly. Our " +
-      "guide to <a href=\"/pet-emergency/ticks-and-fleas.html\">ticks and fleas</a> " +
-      "covers prevention in more detail.</p>" },
-    { h: "Removing a tick", html:
-      "<p>If you find a tick, remove it promptly: grasp it close to the skin with " +
-      "fine tweezers or a tick tool and pull steadily, without twisting or " +
-      "crushing it. Do not use heat or chemicals. If you are unsure, or the tick " +
-      "is awkwardly placed, a vet or vet nurse can do it &mdash; and can advise on " +
-      "prevention while you are there.</p>" },
-    { h: "Testing and follow-up in Pattaya", html:
-      "<p>Vets here routinely screen for tick-borne disease with blood tests when " +
-      "signs appear or after heavy tick exposure. Treatment courses can run weeks; " +
-      "finish the full course even if your dog looks brighter after a few days.</p>" +
-      "<p>Dogs that recover may need periodic rechecks — some infections can linger. " +
-      "Prevention remains cheaper than repeated treatment; pair vet products with " +
-      "daily tick checks after walks in grass, gardens and scrub near Jomtien or " +
-      "East Pattaya villages.</p>" }
+    { h: "Why veterinary care is time-sensitive", html:
+      "<p>Canine parvovirus spreads through infected faeces and contaminated environments or objects. It can cause lethargy, loss of appetite, vomiting and severe diarrhoea. The " +
+      source("American Veterinary Medical Association parvovirus guide", SOURCES.parvo) +
+      " advises vaccination and hygiene as core prevention measures.</p>" },
+    { h: "If parvo is possible", html:
+      "<p>Separate the dog from other dogs and phone a veterinary clinic promptly before arriving, so the clinic can protect other patients. Do not try to confirm parvo at home and do not give human anti-diarrhoeal, pain or nausea medicine. A clinician must assess hydration, rule out other causes and decide on testing and treatment.</p>" },
+    { h: "Vaccination is the main prevention", html:
+      "<p>WSAVA classifies canine parvovirus vaccination as core. Puppy protection requires a veterinary series because maternal antibodies can interfere with early doses; the exact product and schedule must follow current guidance, local regulation and the veterinarian's assessment. See the " +
+      source("2024 WSAVA vaccination guidance", SOURCES.wsavaVaccines) + ".</p>" },
+    { h: "Reduce environmental spread", html:
+      "<p>Keep an ill or exposed dog away from shared dog areas. Ask the treating clinic for a written cleaning protocol appropriate to the confirmed or suspected diagnosis; ordinary cleaning may not be sufficient, and product concentration and contact time matter.</p>" },
+    { h: "Sources and review boundary", html:
+      "<p><strong>References:</strong> " + source("AVMA canine parvovirus", SOURCES.parvo) + " and " +
+      source("WSAVA vaccination guidelines", SOURCES.wsavaVaccines) +
+      ". Checked 1 August 2026; no licensed veterinarian has clinically reviewed this page.</p>" }
   ],
   faqs: [
-    ["What is 'tick fever'?",
-     "<p>It is an informal term for the group of blood-borne diseases ticks transmit - such as ehrlichiosis, babesiosis and anaplasmosis. They can make a dog seriously unwell, and only a vet can diagnose them, usually by blood test.</p>"],
-    ["What are the warning signs?",
-     "<p>Lethargy, loss of appetite, fever, weakness, pale gums, unusual bruising or bleeding, lameness or weight loss. Any of these, especially after tick exposure, is a reason to see a vet promptly.</p>"],
-    ["How do I protect my dog?",
-     "<p>Consistent year-round tick prevention on your vet's plan, plus checking your dog for ticks after walks and removing any promptly. Prevention is far more reliable than catching disease early.</p>"],
-    ["Can tick fever be cured?",
-     "<p>Many cases respond to veterinary treatment, especially when caught early. Delay makes treatment harder — see a vet promptly if you see ticks or warning signs.</p>"],
-    ["Do ticks affect cats in Pattaya?",
-     "<p>Yes — outdoor and balcony cats are at risk. Ask your vet about cat-safe prevention products.</p>"],
-    ["Should my dog be tested after heavy tick exposure?",
-     "<p>Call your vet after heavy tick exposure, even if your dog still looks well. Pattaya vets may advise blood testing after substantial exposure or when signs appear, and early action matters if an infection is present.</p>"]
-  ],
-  related: [
-    { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html", desc: "Year-round prevention in the tropics." },
-    { name: "Dog vaccinations & parasites", path: "/dogs/dog-vaccinations-thailand.html", desc: "Keeping prevention on schedule." },
-    { name: "Common dog health issues", path: "/dogs/common-dog-health-issues-tropics.html", desc: "Other tropical risks for dogs." },
-    { name: "Pet health in Pattaya", path: "/pet-health-pattaya/", desc: "The tropical-climate health picture." }
+    ["Does vomiting or diarrhoea mean parvo?", "<p>No. Many conditions cause those signs. In a puppy or inadequately vaccinated dog, isolate from other dogs and phone a veterinarian promptly.</p>"],
+    ["Can parvo be treated at home?", "<p>Do not rely on home treatment. A veterinarian must assess the dog, confirm or exclude parvo and provide the care the individual patient needs.</p>"],
+    ["Is parvovirus vaccination core?", "<p>Yes. WSAVA classifies it as a core canine vaccine. A veterinarian sets the series and booster plan.</p>"],
+    ["Should I tell the clinic before arriving?", "<p>Yes. Phone first when contagious disease is possible, so staff can direct arrival and reduce exposure to other dogs.</p>"],
+    ["How do I disinfect after parvo?", "<p>Ask the treating clinic for a written protocol for the surfaces and products in your home. Effective concentration, contact time and material compatibility matter.</p>"]
   ]
 }));
 
-/* ---------------- PARVOVIRUS ---------------- */
 pages.push(health({
-  slug: "parvovirus", crumb: "Parvovirus",
-  title: "Parvovirus in Dogs Pattaya | Signs, Prevention & What to Do | PattayaPets",
-  desc: "What parvovirus is, why it is so dangerous for unvaccinated puppies in " +
-    "Pattaya, the warning signs, and why vaccination is the protection for young dogs.",
-  h1: "Parvovirus: deadly, and preventable",
-  lede: "Parvovirus is one of the most dangerous illnesses an unvaccinated puppy " +
-    "can meet &mdash; and one of the most preventable.",
+  slug: "skin-and-ear-problems",
+  crumb: "Skin and ear problems",
+  title: "Pet Skin & Ear Problems in Pattaya | Vet Guide | PattayaPets",
+  desc: "A source-led guide to itching, skin lesions and ear problems in dogs and cats: possible causes, useful observations and why diagnosis should precede treatment.",
+  h1: "Skin and ear problems: find the cause before treating",
+  lede: "Itching, odour, discharge and inflamed skin are signs, not diagnoses. Parasites, allergy, infection and other conditions can overlap.",
   sections: [
-    { h: "What parvovirus is", html:
-      "<p>Canine parvovirus is a <strong>highly contagious viral disease</strong> " +
-      "that attacks the gut and the immune system. It mainly strikes " +
-      "<strong>unvaccinated puppies and young dogs</strong>, and without prompt " +
-      "intensive veterinary care it is frequently fatal. The virus is extremely " +
-      "hardy &mdash; it survives a long time in the environment and resists many " +
-      "ordinary cleaners.</p>" },
-    { h: "Why it matters in Pattaya", html:
-      "<p>Parvovirus spreads through contact with an infected dog or with a " +
-      "contaminated environment &mdash; ground, surfaces, shoes. In a warm city " +
-      "with a free-roaming dog population, the chance of an unvaccinated puppy " +
-      "meeting the virus is real. This is exactly why a new puppy is kept away " +
-      "from unknown dogs and public ground until its vaccination course is " +
-      "complete &mdash; see <a href=\"/dogs/puppy-care-pattaya.html\">puppy care " +
-      "in Pattaya</a>.</p>" },
-    { h: "The warning signs", html:
-      "<p>Parvovirus in a puppy is dramatic and fast: <strong>severe vomiting</strong>, " +
-      "profuse and often bloody <strong>diarrhoea</strong>, deep lethargy, refusal " +
-      "to eat or drink, and rapid collapse. It is a <strong>dire emergency</strong>. " +
-      "A puppy showing these signs needs a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">" +
-      "vet immediately</a> &mdash; do not wait and see.</p>" },
-    { h: "Vaccination is the protection", html:
-      "<p>The reason parvovirus is described as preventable is the " +
-      "<strong>vaccine</strong>. The standard puppy vaccination course protects " +
-      "against parvovirus, and keeping boosters current maintains that protection. " +
-      "There is no clever alternative &mdash; vaccinate on your vet&rsquo;s " +
-      "schedule, and do not cut the course short. See " +
-      "<a href=\"/dogs/dog-vaccinations-thailand.html\">dog vaccinations</a>.</p>" },
-    { h: "What about cats?", html:
-      "<p>Cats have their own equivalent &mdash; feline panleukopenia, sometimes " +
-      "called feline parvo &mdash; which is also serious and also preventable by " +
-      "the standard cat vaccine. The same lesson applies: vaccinate, and keep it " +
-      "current. See <a href=\"/cats/cat-vaccinations-thailand.html\">cat " +
-      "vaccinations</a>.</p>" },
-    { h: "If you suspect exposure", html:
-      "<p>If an unvaccinated puppy may have walked where infected dogs have been, " +
-      "call your vet immediately &mdash; do not wait for diarrhoea to start. " +
-      "Hospitalisation with fluids and supportive care is often required; home " +
-      "remedies cannot replace IV treatment.</p>" +
-      "<p>Disinfect shoes and floors if parvo has visited your home; the virus persists " +
-      "in the environment. Do not bring a new unvaccinated puppy into the same space " +
-      "until your vet advises it is safe.</p>" }
+    { h: "Why guessing can prolong the problem", html:
+      "<p>The " + source("2023 AAHA allergic skin disease guidelines", SOURCES.skin) +
+      " describe a structured veterinary process using history, examination and appropriate diagnostic work before long-term management. A humid climate may affect an individual pet, but it does not prove yeast, bacteria or allergy from appearance alone.</p>" },
+    { h: "Record useful observations", html:
+      "<p>Note when signs began, body areas involved, season or environment changes, parasite products, diet changes, bathing or grooming products, and any previous treatment. Photos over time can help. Do not clean the ear immediately before an appointment unless the clinic asks; material in the canal may help diagnosis.</p>" },
+    { h: "Avoid unsupervised remedies", html:
+      "<p>Do not place human ear drops, essential oils, alcohol, peroxide or leftover prescription medicine into an ear or on damaged skin. A painful ear, ruptured eardrum, foreign body or incompatible medicine can make self-treatment harmful. Ask a veterinarian before changing parasite prevention or diet for a suspected allergy.</p>" },
+    { h: "When to seek care", html:
+      "<p>Arrange a veterinary visit for persistent itching, hair loss, sores, odour, discharge, repeated head shaking or pain. Sudden facial swelling, breathing difficulty, collapse, uncontrolled bleeding or rapidly worsening illness needs emergency veterinary attention.</p>" },
+    { h: "Source and review boundary", html:
+      "<p><strong>Clinical reference:</strong> " + source("AAHA allergic skin disease guidelines", SOURCES.skin) +
+      ". Checked 1 August 2026; no licensed veterinarian has clinically reviewed this page.</p>" }
   ],
   faqs: [
-    ["How do I protect my puppy from parvovirus?",
-     "<p>Vaccination. The standard puppy vaccination course protects against parvovirus - complete the full course on your vet's schedule, keep boosters current, and keep an unvaccinated puppy away from unknown dogs and public ground until the course is finished.</p>"],
-    ["What are the signs of parvovirus?",
-     "<p>Severe vomiting, profuse and often bloody diarrhoea, deep lethargy, and refusing food and water - coming on fast in a puppy or young dog. It is a dire emergency; get to a vet immediately.</p>"],
-    ["Can older dogs get parvovirus?",
-     "<p>It mainly affects unvaccinated puppies and young dogs, but keeping every dog's vaccinations current is the protection at any age. Ask your vet about your dog's booster schedule.</p>"],
-    ["Is parvovirus contagious to other dogs?",
-     "<p>Yes — it spreads through contact with infected faeces and environments. Keep unvaccinated puppies away from public ground and unknown dogs until the course is complete.</p>"],
-    ["Can parvovirus be prevented after exposure?",
-     "<p>No, there is no simple post-exposure fix. Vaccination before exposure is the protection; if exposure is suspected, call your vet immediately for advice.</p>"],
-    ["Can I bring a new unvaccinated puppy into a home where parvo occurred?",
-     "<p>Not until your vet says the space is safe. Parvovirus persists in the environment and resists many ordinary cleaners, so disinfect shoes and floors and follow your vet's guidance before bringing an unvaccinated puppy into the same home.</p>"]
-  ],
-  related: [
-    { name: "Puppy care in Pattaya", path: "/dogs/puppy-care-pattaya.html", desc: "Vaccination timing for a new puppy." },
-    { name: "Dog vaccinations", path: "/dogs/dog-vaccinations-thailand.html", desc: "The full vaccination and prevention routine." },
-    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Go straight here if you suspect parvo." },
-    { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "Dehydration risks when a puppy is sick." }
+    ["Does Pattaya humidity prove a yeast infection?", "<p>No. Climate can be relevant history, but appearance and odour do not identify the cause. A veterinarian may need to examine and sample the affected area.</p>"],
+    ["Can I use human ear drops on my pet?", "<p>No, not without veterinary direction. The eardrum and cause must be assessed, and some products can be painful or harmful.</p>"],
+    ["Should I change food for itchy skin?", "<p>Not on a guess. Food trials need veterinary planning and strict execution; casual switching can confuse the diagnosis.</p>"],
+    ["What should I record before the appointment?", "<p>Record onset, affected areas, diet and product changes, parasite prevention, prior medicines and photographs over time.</p>"],
+    ["When is itching an emergency?", "<p>Sudden facial swelling, breathing difficulty, collapse or rapidly worsening illness needs emergency veterinary attention.</p>"]
   ]
 }));
 
-/* ---------------- SKIN & EAR ---------------- */
 pages.push(health({
-  slug: "skin-and-ear-problems", crumb: "Skin & ear problems",
-  title: "Pet Skin & Ear Problems Pattaya | Heat, Humidity & Allergies | PattayaPets",
-  desc: "Why heat and humidity make skin infections, hot spots and ear infections " +
-    "so common in Pattaya pets, and what helps prevent and manage them in dogs and cats.",
-  h1: "Skin and ear problems in a humid climate",
-  lede: "Heat and humidity are hard on skin. Skin and ear trouble is one of the " +
-    "most common reasons Pattaya pets end up at the vet.",
+  slug: "spaying-and-neutering",
+  crumb: "Spaying and neutering",
+  title: "Spay & Neuter in Pattaya | Decision Guide | PattayaPets",
+  desc: "A balanced framework for discussing spaying or neutering a dog or cat with a veterinarian, including timing, alternatives, preparation and aftercare.",
+  h1: "Spaying and neutering: an individual decision with your vet",
+  lede: "Reproductive control can prevent unwanted litters, but procedure and timing are not one-size-fits-all, particularly for dogs.",
   sections: [
-    { h: "Why the climate drives it", html:
-      "<p>Warmth and moisture are exactly what yeast and bacteria like. In " +
-      "Pattaya&rsquo;s humidity, a coat that stays damp, a skin fold that does " +
-      "not dry, or an ear canal with poor airflow becomes a place for infection " +
-      "to take hold. That is why <strong>skin and ear conditions</strong> &mdash; " +
-      "uncommon background problems in cooler countries &mdash; are everyday " +
-      "issues here.</p>" },
-    { h: "What it looks like", html:
-      "<p>Common forms include yeast and bacterial <strong>skin infections</strong>, " +
-      "<strong>hot spots</strong> (a sore, inflamed patch that flares up fast), " +
-      "and <strong>ear infections</strong>. Signs an owner notices: persistent " +
-      "scratching, licking or chewing, redness, a bad smell, discharge, hair " +
-      "loss, head-shaking or an ear that is sore to touch.</p>" },
-    { h: "Breeds and pets most at risk", html:
-      "<p>Some pets are more prone than others: <strong>floppy-eared dogs</strong>, " +
-      "whose ear canals get less air; <strong>skin-folded breeds</strong>, whose " +
-      "folds trap moisture; and any pet that swims or is bathed often without " +
-      "being dried properly afterwards. If your pet is in one of these groups, " +
-      "routine checking and drying matters even more.</p>" },
-    { h: "Do not wait it out", html:
-      "<p>The single most useful thing to know: skin and ear problems in this " +
-      "climate tend to <strong>get worse, not better</strong>, when left. A small " +
-      "irritation a pet keeps scratching becomes a bigger infection. See a " +
-      "<a href=\"/vets/\">vet</a> early &mdash; they can find the cause (which " +
-      "might be parasites, an allergy or a primary infection) and treat it " +
-      "properly. Guessing with leftover or human products often makes things " +
-      "worse.</p>" },
-    { h: "What helps prevent it", html:
-      "<ul><li><strong>Dry your pet thoroughly</strong> after swimming, bathing " +
-      "or a wet walk &mdash; ears and skin folds included. See " +
-      "<a href=\"/pet-emergency/beach-and-sea-hazards.html\">beach &amp; sea " +
-      "hazards</a> if your dog swims.</li>" +
-      "<li><strong>Keep parasite prevention going</strong> &mdash; fleas and " +
-      "mites are a common trigger of skin disease.</li>" +
-      "<li><strong>Check ears and skin regularly</strong>, so you catch trouble " +
-      "while it is small.</li>" +
-      "<li><strong>Groom appropriately</strong> for the coat and the climate " +
-      "&mdash; a <a href=\"/groomers/\">groomer</a> can advise.</li></ul>" }
+    { h: "Current guidance is individualised", html:
+      "<p>The " + source("2024 WSAVA reproduction-control guidelines", SOURCES.reproduction) +
+      " review surgical and non-surgical options, benefits, drawbacks and welfare considerations. Species, sex, age, breed, projected adult size, health, living situation and reliable prevention of mating all affect the discussion.</p>" },
+    { h: "Questions for the consultation", html:
+      "<ul><li>What are the benefits and trade-offs for this individual animal?</li><li>Why is this procedure and timing being recommended?</li><li>What pre-anaesthetic assessment is appropriate?</li><li>What pain control, monitoring and written aftercare are included?</li><li>Who should be contacted after hours if recovery is not as expected?</li></ul>" },
+    { h: "Before surgery", html:
+      "<p>Tell the clinic about every medicine, supplement, previous anaesthetic problem, current illness and possible pregnancy. Follow the clinic's patient-specific food, water and medication instructions; do not copy fasting advice from another animal or a web page.</p>" },
+    { h: "After surgery", html:
+      "<p>Use the discharge instructions from the operating veterinarian. Give only prescribed medicines, prevent interference with the wound as directed and attend planned rechecks. Contact the clinic promptly about a wound opening, persistent bleeding, breathing trouble, collapse, severe pain or any concern named in its discharge plan.</p>" },
+    { h: "Cost and service verification", html:
+      "<p>We do not publish a Pattaya price range because we did not verify a comparable current package across clinics. Request a written estimate showing examination, blood work if advised, anaesthesia, monitoring, pain relief, procedure, recovery care and rechecks.</p>" },
+    { h: "Source and review boundary", html:
+      "<p><strong>Clinical reference:</strong> " + source("WSAVA reproduction-control guidelines", SOURCES.reproduction) +
+      ". Checked 1 August 2026; no licensed veterinarian has clinically reviewed this page.</p>" }
   ],
   faqs: [
-    ["Why does my pet keep getting skin or ear infections in Pattaya?",
-     "<p>Heat and humidity let yeast and bacteria thrive, especially where a coat, skin fold or ear canal stays damp. Floppy-eared and skin-folded breeds are most prone. They tend to recur, so finding the underlying cause with a vet matters.</p>"],
-    ["Should I treat it myself?",
-     "<p>It is best not to guess. Skin and ear problems have several possible causes - parasites, allergies, infection - and the wrong product can worsen things. A vet can identify the cause and treat it properly; early is easier than late.</p>"],
-    ["How can I help prevent it?",
-     "<p>Dry your pet thoroughly after any soaking, ears and folds included; keep flea and parasite prevention going; check ears and skin regularly; and groom appropriately for the climate.</p>"],
-    ["Are ear infections common in rainy season?",
-     "<p>Yes — humidity plus damp ears after rain or swimming drives flare-ups. Dry ears gently after wet walks and see a vet if shaking or odour starts.</p>"],
-    ["Can diet affect skin problems?",
-     "<p>Yes, diet can affect skin problems when a pet has food sensitivities. Many skin issues here are infection- or parasite-driven, so your vet should diagnose the cause before you change diet alone.</p>"],
-    ["Why is my dog shaking its head or why does its ear smell?",
-     "<p>Head-shaking, a bad smell, discharge, redness or an ear that is sore to touch can signal an ear problem. See a vet early because damp, humid conditions can let a small irritation develop into a larger infection.</p>"]
-  ],
-  related: [
-    { name: "Rainy-season pet care", path: "/owning-a-pet-in-pattaya/rainy-season-pet-care.html", desc: "Humidity and damp coats drive flare-ups." },
-    { name: "Groomers in Pattaya", path: "/groomers/", desc: "Coat care in the climate." },
-    { name: "Ticks & fleas", path: "/pet-emergency/ticks-and-fleas.html", desc: "Parasites that trigger skin disease." },
-    { name: "Mobile & home-visit vets", path: "/mobile-vets/", desc: "Skin checks without the clinic stress." }
-  ]
-}));
-
-/* ---------------- SPAYING & NEUTERING ---------------- */
-pages.push(health({
-  slug: "spaying-and-neutering", crumb: "Spaying & neutering",
-  title: "Spay & Neuter Pets in Pattaya | When, Why & What to Expect | PattayaPets",
-  desc: "What spaying and neutering involve, the benefits for your pet, the timing, " +
-    "and the welfare case in a city with a large street-animal population.",
-  h1: "Spaying and neutering in Pattaya",
-  lede: "Neutering is one of the most worthwhile, and most routine, things you can " +
-    "do for a pet in Pattaya &mdash; for the pet, and for the city.",
-  sections: [
-    { h: "What it is", html:
-      "<p>Spaying (females) and neutering (males) are routine surgical procedures, " +
-      "carried out by a vet under anaesthetic, that prevent a pet from breeding. " +
-      "They are among the most commonly performed operations in veterinary " +
-      "practice, and in Pattaya they are widely available and affordable.</p>" },
-    { h: "The benefits for your pet", html:
-      "<p>Beyond preventing unwanted litters, neutering tends to <strong>reduce " +
-      "roaming</strong> &mdash; and a pet that roams less meets less traffic, " +
-      "fewer fights and less disease. It can reduce fighting and territorial " +
-      "behaviour such as spraying, and it removes or lowers some later health " +
-      "risks. Your vet can explain what it means specifically for your pet.</p>" },
-    { h: "The welfare case", html:
-      "<p>Pattaya, like much of Thailand, has a large population of free-roaming, " +
-      "unwanted dogs and cats. Every unplanned litter adds to it. Neutering your " +
-      "own pet &mdash; and supporting the rescues and shelters that run " +
-      "sterilisation programmes &mdash; is one of the most genuinely effective " +
-      "things an animal lover here can do. See " +
-      "<a href=\"/adopt-a-pet-pattaya/\">adopt a pet in Pattaya</a> for the " +
-      "organisations doing this work, and " +
-      "<a href=\"/adopt-a-pet-pattaya/how-to-help.html\">how to help street animals</a> " +
-      "for supporting sterilisation programmes.</p>" },
-    { h: "When to do it", html:
-      "<p>The right age depends on the species, the breed and the size of the " +
-      "animal, and veterinary thinking on timing continues to evolve. Rather than " +
-      "follow a fixed rule, <strong>ask your vet</strong> what they recommend for " +
-      "your specific pet &mdash; it is a normal, straightforward conversation.</p>" },
-    { h: "What to expect", html:
-      "<p>It is a routine day procedure at most clinics. Your vet will explain the " +
-      "pre-operative checks, the anaesthetic, and the simple aftercare &mdash; " +
-      "rest, keeping the wound clean and protected, and a short recovery. If you " +
-      "have adopted from a Pattaya rescue, your pet has very likely already been " +
-      "neutered as part of the rehoming process.</p>" }
-  ],
-  faqs: [
-    ["Should I spay or neuter my pet?",
-     "<p>For most pet owners in Pattaya, yes. It prevents unwanted litters in a city with a large street-animal problem, tends to reduce roaming and fighting and the risks that come with them, and is a routine, affordable procedure. Discuss it with your vet.</p>"],
-    ["When is the right age?",
-     "<p>Ask your vet to set the right age for your specific pet. Timing depends on species, breed and size, and veterinary guidance evolves, so do not follow a fixed rule.</p>"],
-    ["Is it expensive in Pattaya?",
-     "<p>Spaying and neutering are routine and generally affordable at Pattaya clinics. Some rescues and welfare groups also run low-cost or subsidised sterilisation programmes as part of tackling the street-animal population.</p>"],
-    ["Should I let my pet have one litter first?",
-     "<p>Vets and rescues advise against it — one litter adds to the street-animal problem and offers no health benefit for most pets. Sterilise on your vet's recommended schedule.</p>"],
-    ["How long is recovery after spaying or neutering?",
-     "<p>Most pets rest a few days to two weeks with restricted exercise. Your vet gives specific aftercare — follow it to prevent complications.</p>"],
-    ["Is spaying or neutering usually a day procedure?",
-     "<p>Yes, it is a routine day procedure at most Pattaya clinics. Your vet will explain the pre-operative checks, anaesthetic and aftercare, including rest and keeping the wound clean and protected.</p>"]
-  ],
-  related: [
-    { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Rescues often neuter before rehoming." },
-    { name: "How to help street animals", path: "/adopt-a-pet-pattaya/how-to-help.html", desc: "Supporting sterilisation programmes." },
-    { name: "Cat vaccinations", path: "/cats/cat-vaccinations-thailand.html", desc: "Routine care for cats." },
-    { name: "Mobile & home-visit vets", path: "/mobile-vets/", desc: "Some offer home-visit neutering." }
+    ["What is the best age to spay or neuter?", "<p>There is no universal age for every animal, especially dogs. Ask a veterinarian to balance species, sex, breed, size, health, lifestyle and pregnancy risk.</p>"],
+    ["Is surgery the only reproduction-control option?", "<p>Not always. Current WSAVA guidance discusses surgical and non-surgical approaches, but availability and suitability require a veterinarian.</p>"],
+    ["Should I follow online fasting instructions?", "<p>No. Follow the operating clinic's instructions for this patient, including food, water and regular medicines.</p>"],
+    ["How much does spaying or neutering cost in Pattaya?", "<p>We did not verify a comparable current market range. Ask for an itemised written estimate and what aftercare is included.</p>"],
+    ["Who decides when my pet returns to normal activity?", "<p>The operating veterinarian. Follow the written discharge and recheck plan rather than a generic timetable.</p>"]
   ]
 }));
 

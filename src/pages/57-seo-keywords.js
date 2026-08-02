@@ -5,6 +5,12 @@
 const { article } = require("../guidekit.js");
 const { BUSINESSES, CATEGORIES } = require("../data/businesses.js");
 const rb = require("../data/richness-blocks.js");
+const {
+  claimLink,
+  REGULATED_IMPORT_PATTAYA_ARRIVAL,
+  REGULATED_IMPORT_PATTAYA_LIFE,
+  REGULATED_IMPORT_EXTRA_FAQS
+} = require("../data/regulated-claims.js");
 
 const GUIDES = { name: "Guides", path: "/guides.html" };
 const IMPORT = { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/" };
@@ -12,27 +18,30 @@ const OWNING = { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattay
 const VETS = { name: "Vets in Pattaya", path: "/vets/" };
 
 const IMPORT_VERIFY =
-  "This guide was last reviewed on 4 June 2026 against the Thai embassy pet-import " +
-  "guidance (revised January 2025) and DLD Animal Quarantine Station contacts. " +
+  "The scoped Thai import claims and authority links cited on this page were checked " +
+  "on 1 August 2026. " +
   "Rules change without notice — confirm with the DLD, your airline and your " +
   "origin-country authority before you book or travel.";
 
 const STD_IMPORT =
   "<p>The Thai steps are the same for dogs and cats: " +
-  "<a href=\"/bring-pet-to-thailand/microchip-requirements.html\">ISO microchip</a> " +
-  "(before rabies vaccination), " +
-  "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies and core vaccinations</a> " +
-  "with the 21-day wait, " +
+  "an <a href=\"/bring-pet-to-thailand/microchip-requirements.html\">implantation certificate</a> " +
+  "whose identifier matches every record; all required " +
+  "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">primary vaccinations</a>; " +
+  "a wait of at least 21 days before the permit application (documented boosters are exempt); " +
   "<a href=\"/bring-pet-to-thailand/health-certificate.html\">health certificate</a> " +
   "endorsed by your government, " +
   "<a href=\"/bring-pet-to-thailand/import-permit-thailand-dld.html\">DLD import permit</a> " +
-  "(form R1/1), then " +
+  "(form R1/1, with 5&ndash;7 Thai business days allowed by the scoped guide), then " +
   "<a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline booking</a> " +
   "and " +
   "<a href=\"/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html\">AQS clearance on arrival</a>. " +
   "See the full " +
   "<a href=\"/bring-pet-to-thailand/\">bringing a pet to Thailand hub</a> and the " +
-  "<a href=\"/bring-pet-to-thailand/checklist.html\">printable checklist</a>.</p>";
+  "<a href=\"/bring-pet-to-thailand/checklist.html\">printable checklist</a>. The " +
+  "reviewed source&rsquo;s detailed scope is dogs, cats and rabbits from the United States; " +
+  "other origins must confirm with their AQS and origin authority. " +
+  claimLink("TH-IMPORT-SEQUENCE-2026-02", "Thai source") + ".</p>";
 
 function vetListHtml() {
   var vetCats = { vets: 1, "mobile-vets": 1 };
@@ -58,25 +67,29 @@ const pages = [];
 /* ---------------- BRING A DOG TO THAILAND ---------------- */
 pages.push(article({
   path: "/bring-pet-to-thailand/bring-a-dog-to-thailand.html",
-  title: "Bring a Dog to Thailand (2026) | DLD Import Guide | PattayaPets",
+  title: "Bring a Dog to Thailand: DLD Guide (2026) | PattayaPets",
   desc: "How to bring a dog to Thailand in 2026 — microchip, rabies shots, DLD import permit, airline rules, Bangkok arrival and settling in Pattaya.",
   crumb: "Bring a dog to Thailand",
   breadcrumbs: [GUIDES, IMPORT],
   eyebrow: "Bringing a pet to Thailand",
   h1: "Bring a dog to Thailand",
-  lede: "Thousands of dogs move to Thailand with their owners every year. The process is " +
-    "paperwork-heavy but predictable — if you start early and follow the DLD steps in order.",
+  updated: "2026-08-01",
+  lede: "The route is document-led: identification, all required primary vaccinations, " +
+    "the waiting period, the DLD permit, origin export certificate and airline rules must align.",
   verify: IMPORT_VERIFY,
   sections: [
     { h: "What Thailand requires for dogs", html:
-      "<p>Dogs need an <strong>ISO 11784/11785 microchip</strong> implanted before the " +
-      "rabies vaccination, a valid <strong>rabies shot</strong> (with at least 21 days " +
-      "after a primary vaccination before travel), and core vaccines: " +
+      "<p>Dogs need a microchip implantation certificate whose identifier matches every " +
+      "record, a valid <strong>rabies vaccination</strong>, and the other primary vaccines: " +
       "<strong>distemper, hepatitis, parvovirus</strong> and either " +
       "<strong>leptospirosis</strong> vaccination or a negative leptospirosis test within " +
       "30 days of departure. Your origin country must issue and endorse an export " +
       "health certificate; Thailand&rsquo;s <strong>Department of Livestock Development " +
-      "(DLD)</strong> issues the import permit (form R1/1).</p>" +
+      "(DLD)</strong> issues the import permit (form R1/1). After <strong>all required " +
+      "primary vaccinations</strong>, wait at least 21 days before applying; documented " +
+      "boosters are exempt when continuity is shown. The reviewed Thai source does not " +
+      "state a universal ISO-format or chip-before-rabies rule. " +
+      claimLink("TH-IMPORT-SEQUENCE-2026-02", "Thai source") + ".</p>" +
       STD_IMPORT },
     { h: "CDC rules if you are coming from the USA", html:
       "<p>From the United States, dogs also fall under <strong>CDC dog-import rules</strong> " +
@@ -84,39 +97,43 @@ pages.push(article({
       "see our <a href=\"/bring-pet-to-thailand/from-usa.html\">import from the USA</a> " +
       "guide for the full US-side checklist.</p>" },
     { h: "Flying a dog into Bangkok", html:
-      "<p>Dogs entering Thailand land at <strong>Suvarnabhumi (BKK)</strong> &mdash; " +
-      "U-Tapao is closer to Pattaya but has no Animal Quarantine Station and cannot clear a pet. Airlines accept dogs in " +
+      "<p>Suvarnabhumi (BKK) is a documented Thai AQS arrival option. The official " +
+      "sources reviewed on 1 August 2026 do not establish a U-Tapao pet-import AQS; " +
+      "obtain written DLD confirmation before considering it. Airlines accept dogs in " +
       "cabin (small), checked baggage or cargo depending on size and route — book pet " +
       "space early. Brachycephalic (flat-faced) breeds face extra restrictions: read " +
       "<a href=\"/bring-pet-to-thailand/snub-nosed-breeds-flying.html\">snub-nosed breeds and flying</a>.</p>" },
     { h: "After arrival — Pattaya and daily life", html:
-      "<p>With complete paperwork, dogs normally clear the Animal Quarantine Station the " +
-      "same day. In Pattaya, plan for <strong>heat</strong>, <strong>ticks</strong> and " +
+      "<p>DLD inspects the animal and original documents and determines the action; this " +
+      "guide does not promise same-day release. In Pattaya, discuss <strong>heat</strong>, <strong>ticks</strong> and " +
       "<strong>heartworm prevention</strong> — see " +
       "<a href=\"/pet-health-pattaya/\">pet health in Pattaya</a>, " +
       "<a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">hot-climate care</a> " +
       "and <a href=\"/dog-friendly-pattaya/\">dog-friendly Pattaya</a> for walks and housing.</p>" },
     { h: "Budget and timeline", html:
-      "<p>Allow <strong>one to two months</strong> minimum; add several months if you need a " +
+      "<p>The Thai sequence includes at least 21 days after all required primary vaccinations " +
+      "before the permit application, then 5&ndash;7 Thai business days for a complete " +
+      "application under the scoped guide. Airline and origin-export steps add route-specific " +
+      "time. A " +
       "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies titer test</a> " +
-      "for a future return to the UK or EU. See " +
+      "may be required for a future return to the UK or EU. See " +
       "<a href=\"/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html\">what it costs</a> " +
-      "for realistic ranges.</p>" },
-    rb.IMPORT_PATTAYA_ARRIVAL,
-    rb.IMPORT_PATTAYA_LIFE
+      "for itemised cost categories and directly sourced examples.</p>" },
+    REGULATED_IMPORT_PATTAYA_ARRIVAL,
+    REGULATED_IMPORT_PATTAYA_LIFE
   ],
   faqs: rb.mergeFaqs([
     ["Can I bring my dog to Thailand in cabin?",
      "<p>Some airlines allow small dogs in cabin on certain routes; many require checked baggage or cargo for larger dogs. Confirm with the airline when you book — see our <a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline pet policies</a> guide.</p>"],
     ["Does my dog need quarantine in Thailand?",
-     "<p>Not usually with complete paperwork. The AQS inspection is typically same-day clearance — see <a href=\"/bring-pet-to-thailand/thailand-pet-quarantine.html\">pet quarantine in Thailand</a>.</p>"],
+     "<p>DLD decides after arrival inspection. Complete documents do not guarantee a particular release time or rule out detention. See <a href=\"/bring-pet-to-thailand/thailand-pet-quarantine.html\">pet quarantine in Thailand</a>.</p>"],
     ["What vaccines does Thailand require for dogs?",
-     "<p>Rabies plus distemper, hepatitis, parvovirus and leptospirosis (or a negative leptospirosis test). At least 21 days after primary vaccinations before travel.</p>"],
+     "<p>Rabies plus distemper, hepatitis, parvovirus and leptospirosis (or the stated negative-test alternative). Complete all required primary vaccinations, wait at least 21 days before applying for the permit, and use the documented-booster exception only with continuity records.</p>"],
     ["How long does it take to bring a dog to Thailand?",
-     "<p>Plan at least one to two months for microchip, vaccinations, health certificate, DLD permit and flight booking. Add months if you need a rabies titer test for onward travel.</p>"],
+     "<p>The Thai sequence includes the 21-day post-primary wait and 5&ndash;7 Thai business days for a complete permit application under the scoped guide. Origin certification and airline booking add route-specific time, so this page does not state one unsupported total.</p>"],
     ["Where do I find a vet in Pattaya after arrival?",
      "<p>Browse our <a href=\"/vets/\">vets directory</a> and <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour emergency list</a>. Many clinics serve English-speaking owners.</p>"]
-  ], rb.IMPORT_EXTRA_FAQS),
+  ], REGULATED_IMPORT_EXTRA_FAQS),
   related: [
     { name: "Bring a cat to Thailand", path: "/bring-pet-to-thailand/bring-a-cat-to-thailand.html", desc: "Cat-specific vaccines and tips." },
     { name: "The full import hub", path: "/bring-pet-to-thailand/", desc: "Every step in order." },
@@ -128,60 +145,66 @@ pages.push(article({
 /* ---------------- BRING A CAT TO THAILAND ---------------- */
 pages.push(article({
   path: "/bring-pet-to-thailand/bring-a-cat-to-thailand.html",
-  title: "Bring a Cat to Thailand (2026) | DLD Import Guide | PattayaPets",
+  title: "Bring a Cat to Thailand: DLD Guide (2026) | PattayaPets",
   desc: "How to bring a cat to Thailand in 2026 — microchip, rabies, panleukopenia vaccine, DLD permit, airline travel and settling in Pattaya.",
   crumb: "Bring a cat to Thailand",
   breadcrumbs: [GUIDES, IMPORT],
   eyebrow: "Bringing a pet to Thailand",
   h1: "Bring a cat to Thailand",
-  lede: "Cats follow the same DLD import framework as dogs, with a slightly different " +
-    "vaccination list and often a calmer flight in cabin — if your airline allows it.",
+  updated: "2026-08-01",
+  lede: "Cats follow the DLD import framework with a species-specific vaccination list; " +
+    "the airline decides whether cabin, checked-baggage or cargo carriage is available.",
   verify: IMPORT_VERIFY,
   sections: [
     { h: "What Thailand requires for cats", html:
-      "<p>Cats need an <strong>ISO microchip</strong> before rabies vaccination, a valid " +
-      "<strong>rabies shot</strong> (21-day wait after a primary vaccination), and " +
+      "<p>Cats need a microchip implantation certificate whose identifier matches every " +
+      "record, a valid <strong>rabies vaccination</strong>, and " +
       "<strong>feline panleukopenia</strong> (cat distemper) vaccination. The DLD import " +
       "permit, endorsed export health certificate and AQS inspection on arrival match the " +
-      "dog process.</p>" + STD_IMPORT },
+      "dog process. After all required primary vaccinations, wait at least 21 days before " +
+      "the permit application; documented boosters are exempt when continuity is shown. " +
+      "The reviewed Thai source does not state a universal ISO-format or chip-before-rabies rule. " +
+      claimLink("TH-IMPORT-SEQUENCE-2026-02", "Thai source") + ".</p>" + STD_IMPORT },
     { h: "Cabin vs cargo for cats", html:
-      "<p>Many owners fly cats in <strong>cabin</strong> in an airline-approved soft carrier " +
-      "under the seat — but policies vary by airline and aircraft. Book early; some routes " +
-      "only accept cats as checked baggage or cargo. See " +
+      "<p>Cabin, checked-baggage and cargo acceptance depends on the operating airline, " +
+      "route, aircraft, animal and container. Obtain written acceptance before booking. See " +
       "<a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline pet policies</a> " +
       "and <a href=\"/bring-pet-to-thailand/snub-nosed-breeds-flying.html\">brachycephalic breeds</a> " +
       "if you have a flat-faced cat.</p>" },
     { h: "Indoor life in Pattaya", html:
-      "<p>Most expat cat owners in Pattaya keep cats <strong>indoors</strong> or on screened " +
-      "balconies — traffic, dogs and heat make free roaming risky. Read " +
+      "<p>Assess traffic, other animals, heat, escape points and balcony screening for the " +
+      "specific home, and ask a veterinarian about the individual cat. Read " +
       "<a href=\"/cats/indoor-vs-outdoor-cats.html\">indoor cats in Pattaya</a>, " +
       "<a href=\"/cats/cat-vaccinations-thailand.html\">cat vaccinations</a> and " +
       "<a href=\"/pet-health-pattaya/tick-borne-disease.html\">tick-borne disease</a> for " +
       "local health risks.</p>" },
     { h: "Finding a vet for your cat in Pattaya", html:
-      "<p>General vets and animal hospitals treat cats; dedicated catteries for boarding are " +
-      "rarer than dog boarding. Browse <a href=\"/vets/\">vets in Pattaya</a> and " +
+      "<p>Browse <a href=\"/vets/\">vets in Pattaya</a> and " +
       "<a href=\"/boarding/\">boarding</a> — confirm cat acceptance when you call.</p>" },
     { h: "Return trips and the titer test", html:
-      "<p>Thailand does not require a rabies titer test on entry, but the UK, EU and Australia " +
-      "do for return or onward travel. If you might leave Thailand again, plan the " +
+      "<p>The reviewed detailed Thai source, scoped to cats travelling from the USA, does " +
+      "not list a rabies titer; other origins must confirm with their AQS. UK and EU return " +
+      "routes can require a titer and waiting period. Australia instead " +
+      "requires an approved-country pathway and qualifying work performed there, so a test " +
+      "in Thailand must not be presented as sufficient. If you might leave again, plan the " +
       "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies titer test</a> " +
-      "before you leave your origin country.</p>" },
-    rb.IMPORT_PATTAYA_ARRIVAL,
-    rb.IMPORT_PATTAYA_LIFE
+      "against the actual destination authority before you leave your origin country. " +
+      claimLink("AU-NONAPPROVED-PATH-2026-08", "DAFF FAQ") + ".</p>" },
+    REGULATED_IMPORT_PATTAYA_ARRIVAL,
+    REGULATED_IMPORT_PATTAYA_LIFE
   ],
   faqs: rb.mergeFaqs([
     ["Can I bring my cat to Thailand in cabin?",
-     "<p>Many airlines allow cats in cabin in a soft carrier under the seat, subject to weight limits and route rules. Confirm when you book.</p>"],
+     "<p>Only the operating airline can confirm the permitted mode for the specific animal, container, route and aircraft. Obtain written acceptance before booking.</p>"],
     ["What vaccines does Thailand require for cats?",
-     "<p>Rabies and feline panleukopenia (cat distemper), with at least 21 days after primary rabies vaccination before travel.</p>"],
+     "<p>Rabies and feline panleukopenia. Complete all required primary vaccinations, wait at least 21 days before applying for the permit, and use the documented-booster exception only with continuity records.</p>"],
     ["Is Thailand safe for outdoor cats?",
-     "<p>Most owners keep cats indoors or on screened balconies — traffic, heat, dogs and disease risks make free roaming unwise. See our <a href=\"/cats/indoor-vs-outdoor-cats.html\">indoor cats guide</a>.</p>"],
+     "<p>No universal safety conclusion is supported here. Assess the specific property and local hazards, and ask a veterinarian about the individual cat; see the <a href=\"/cats/indoor-vs-outdoor-cats.html\">indoor cats guide</a>.</p>"],
     ["Will my cat be quarantined on arrival?",
-     "<p>Not usually with complete paperwork. Same-day AQS clearance is typical — see <a href=\"/bring-pet-to-thailand/thailand-pet-quarantine.html\">quarantine guide</a>.</p>"],
+     "<p>DLD decides after arrival inspection. Complete documents do not guarantee a particular release time or rule out detention. See <a href=\"/bring-pet-to-thailand/thailand-pet-quarantine.html\">quarantine guide</a>.</p>"],
     ["How much does it cost to bring a cat to Thailand?",
-     "<p>Similar to dogs for permits and flights; cabin travel can be cheaper than cargo. See <a href=\"/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html\">cost breakdown</a>.</p>"]
-  ], rb.IMPORT_EXTRA_FAQS),
+     "<p>No universal comparison is verified here. Obtain written quotes for veterinary work, certificate endorsement, airline mode, container, handling and any optional agent; see the <a href=\"/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html\">cost breakdown</a>.</p>"]
+  ], REGULATED_IMPORT_EXTRA_FAQS),
   related: [
     { name: "Bring a dog to Thailand", path: "/bring-pet-to-thailand/bring-a-dog-to-thailand.html", desc: "Dog-specific vaccines and CDC notes." },
     { name: "Cats in Pattaya", path: "/cats/", desc: "Housing, health and daily care." },
@@ -193,20 +216,20 @@ pages.push(article({
 /* ---------------- ENGLISH-SPEAKING VETS ---------------- */
 pages.push(article({
   path: "/vets/english-speaking-vets-pattaya.html",
-  title: "English-Speaking Vets in Pattaya | Clinics List | PattayaPets",
+  updated: "2026-08-01",
+  title: "English-Speaking Vets Pattaya: Clinics | PattayaPets",
   desc: "Vets and animal hospitals in Pattaya where English is spoken or advertised — directory facts pages with contact details and 24-hour options.",
   crumb: "English-speaking vets",
   breadcrumbs: [GUIDES, VETS],
   eyebrow: "Vets in Pattaya",
   h1: "English-speaking vets in Pattaya",
-  lede: "Most expat pet owners need a clinic where staff can explain billing, consent forms " +
-    "and follow-up care in English. Here is what the directory shows today — always confirm " +
-    "when you book.",
+  lede: "This page surfaces directory records that mention English-language support. " +
+    "Availability can change by shift, so confirm it for the appointment time.",
   sections: [
     { html:
       '<div class="callout callout-note"><p><strong>Editorial note:</strong> PattayaPets ' +
-      "lists language support from public sources and clinic statements. We do not rate " +
-      "veterinary medical quality — only the business experience after an anonymous visit. " +
+      "lists language support recorded in its business data. We have not independently " +
+      "tested staff language proficiency and do not rate veterinary medical quality. " +
       "Always consult a qualified veterinarian about your pet&rsquo;s health.</p></div>" },
     { h: "Clinics listing English support", html:
       "<p>These directory listings mention English on their website, materials or our verified " +
@@ -220,13 +243,12 @@ pages.push(article({
       "<li>Is an <strong>English-speaking vet or nurse</strong> on duty at your planned time?</li>" +
       "<li>Do you handle <strong>emergency surgery</strong> and <strong>inpatient care</strong>?</li>" +
       "<li>What are <strong>consultation fees</strong> and typical <strong>deposit</strong> rules?</li>" +
-      "<li>Can you issue <strong>export health paperwork</strong> or refer to a DLD-approved vet?</li>" +
+      "<li>Can you prepare the private-veterinary records required by the responsible departure-port AQS?</li>" +
       "</ul>" },
     { h: "24-hour and referral hospitals", html:
-      "<p><strong>Thonglor Pet Hospital - Pattaya</strong> operates 24 hours and advertises an " +
-      "international service desk. Several other hospitals list English alongside Thai. " +
-      "Filter the <a href=\"/vets/?filter=24h\">vets directory for 24-hour clinics</a> if you " +
-      "need overnight cover.</p>" },
+      "<p>Use the <a href=\"/vets/?filter=24h\">vets directory 24-hour filter</a>, then " +
+      "confirm the clinic&rsquo;s current hours, emergency intake and English-language " +
+      "availability directly before travelling.</p>" },
     { h: "If English is limited", html:
       "<p>Bring a Thai-speaking friend for complex cases, or use a <strong>pet relocation agent</strong> " +
       "for export paperwork only (not medical advice). See " +
@@ -240,13 +262,13 @@ pages.push(article({
   ],
   faqs: [
     ["Which vet in Pattaya speaks English?",
-     "<p>Several clinics list English — see the table on this page. Thonglor Pet Hospital Pattaya advertises an international desk. Always confirm English support for your appointment time when you book.</p>"],
+     "<p>See the directory-derived table on this page, then confirm that an English-speaking staff member will be available at the appointment time. PattayaPets has not independently tested language proficiency.</p>"],
     ["Is there a 24-hour English-speaking vet in Pattaya?",
-     "<p>Thonglor Pet Hospital Pattaya is open 24 hours with an international service. See our <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vet list</a> for addresses and phones.</p>"],
+     "<p>Check the <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vet list</a>, then call the clinic to confirm current emergency intake and English-language availability for that shift.</p>"],
     ["How much does a vet visit cost in Pattaya?",
-     "<p>Consultation fees vary by clinic — often a few hundred to around 1,000+ baht for a standard visit, with extras for tests and surgery. See <a href=\"/owning-a-pet-in-pattaya/vet-costs-pattaya.html\">vet costs in Pattaya</a>.</p>"],
+     "<p>No disclosed local sample supports a price range here. Ask the clinic for its current consultation fee and an itemised estimate; see <a href=\"/owning-a-pet-in-pattaya/vet-costs-pattaya.html\">vet costs in Pattaya</a>.</p>"],
     ["Can a Pattaya vet do export paperwork?",
-     "<p>Only DLD-approved veterinarians can complete Thai export health certificates. Ask the clinic directly or see <a href=\"/take-pet-out-of-thailand/export-process.html\">export process</a>.</p>"],
+     "<p>Ask the responsible departure-port AQS which examination and certificate steps it performs and what it requires from a private veterinarian; see the current <a href=\"/take-pet-out-of-thailand/export-process.html\">export process</a>.</p>"],
     ["What should I ask when booking an English-speaking vet?",
      "<p>Confirm that an English-speaking vet or nurse will be on duty at your appointment time. For a complex or urgent case, also ask about inpatient care, emergency surgery, consultation fees and deposit rules.</p>"],
     ["Are mobile vets available in English?",
@@ -255,7 +277,7 @@ pages.push(article({
   related: [
     { name: "All vets in Pattaya", path: "/vets/", desc: "Full directory with area filters." },
     { name: "24-hour emergency vets", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Addresses and phone numbers." },
-    { name: "Vet costs in Pattaya", path: "/owning-a-pet-in-pattaya/vet-costs-pattaya.html", desc: "Typical fees and budgeting." },
+    { name: "Vet costs in Pattaya", path: "/owning-a-pet-in-pattaya/vet-costs-pattaya.html", desc: "Quote questions and budgeting." },
     { name: "Pet emergencies", path: "/pet-emergency/", desc: "Heatstroke, ticks, snakes and first aid." }
   ]
 }));
@@ -263,46 +285,45 @@ pages.push(article({
 /* ---------------- VET COSTS ---------------- */
 pages.push(article({
   path: "/owning-a-pet-in-pattaya/vet-costs-pattaya.html",
+  updated: "2026-08-01",
   title: "Vet Costs in Pattaya (2026) | Prices & Budget | PattayaPets",
-  desc: "Typical vet prices in Pattaya — consultation fees, vaccinations, heartworm prevention, surgery ranges and how to budget as an expat pet owner.",
+  desc: "How to obtain and compare current itemised veterinary estimates in Pattaya, " +
+    "without relying on an undisclosed price sample.",
   crumb: "Vet costs",
   breadcrumbs: [GUIDES, OWNING],
   eyebrow: "Owning a pet in Pattaya",
   h1: "Vet costs in Pattaya",
-  lede: "Veterinary care in Pattaya is generally cheaper than Western Europe or North America, " +
-    "but emergency surgery and specialist imaging can still run to tens of thousands of baht. " +
-    "Here is how to budget.",
+  lede: "PattayaPets has no disclosed, current clinic sample that supports a local price " +
+    "range or international comparison. Obtain an itemised estimate for the individual case.",
   sections: [
     { html:
       '<div class="callout callout-note"><p>Prices change and vary by clinic. This is ' +
-      "orientation only — not a quote. PattayaPets does not provide veterinary advice.</p></div>" },
-    { h: "Typical consultation fees", html:
-      "<p>A <strong>standard consultation</strong> at a Pattaya clinic often falls roughly " +
-      "in the <strong>300&ndash;800 baht</strong> range for a simple visit, with full " +
-      "animal hospitals at the higher end. <strong>Emergency out-of-hours</strong> fees and " +
-      "referral cases cost more. Hospitals such as Thonglor may quote separately for the " +
-      "international desk — ask upfront.</p>" },
+      "orientation only — not a quote. No price figure is published without a disclosed " +
+      "source sample.</p></div>" },
+    { h: "Consultation estimates", html:
+      "<p>Ask the clinic for its current consultation or emergency-intake fee and whether " +
+      "diagnostics, medicines, procedures, hospitalisation or follow-up are separate. " +
+      "For urgent care, do not delay assessment while comparing prices.</p>" },
     { h: "Vaccinations and prevention", html:
-      "<p><strong>Rabies and core vaccinations</strong> are typically a few hundred baht per " +
-      "jab. <strong>Heartworm prevention</strong> and <strong>tick/flea products</strong> " +
-      "are ongoing monthly costs — essential in Pattaya&rsquo;s climate. See " +
+      "<p>Request current product- and animal-specific quotes for <strong>vaccinations</strong>, " +
+      "heartworm prevention and tick/flea products. A veterinarian should set the " +
+      "individual schedule. See " +
       "<a href=\"/pet-health-pattaya/heartworm.html\">heartworm</a> and " +
       "<a href=\"/dogs/dog-vaccinations-thailand.html\">dog vaccinations</a>.</p>" },
     { h: "Surgery and hospitalisation", html:
-      "<p><strong>Neutering</strong> commonly runs from a few thousand baht upward depending " +
-      "on size and clinic. <strong>Emergency surgery</strong>, <strong>IV fluids</strong> and " +
-      "<strong>overnight stays</strong> can reach <strong>10,000&ndash;50,000+ baht</strong> " +
-      "or more for serious cases. Ask for a written estimate before non-urgent procedures.</p>" },
+      "<p>Procedure, anaesthesia, diagnostics, medicines and hospitalisation vary by the " +
+      "animal and case. Ask for an itemised written estimate before non-urgent work and " +
+      "ask how the clinic handles changes discovered during treatment.</p>" },
     { h: "How to compare clinics fairly", html:
       "<p>Compare <strong>what is included</strong> (exam, meds, follow-up), not just the " +
       "headline fee. Browse the <a href=\"/vets/\">vets directory</a> and " +
       "<a href=\"/vets/english-speaking-vets-pattaya.html\">English-speaking clinics</a>. " +
-      "After anonymous visits we publish business-experience verdicts — never medical ratings.</p>" },
+      "PattayaPets does not publish medical-quality ratings.</p>" },
     { h: "Insurance and emergency fund", html:
-      "<p>Pet insurance exists in Thailand but uptake among expats is mixed — see " +
-      "<a href=\"/pet-insurance-thailand.html\">pet insurance Thailand</a>. Many owners keep " +
-      "a dedicated <strong>emergency fund</strong> of 20,000&ndash;50,000 baht for unexpected " +
-      "vet bills. Know your nearest " +
+      "<p>If considering insurance, read the policy&rsquo;s eligibility, exclusions, limits, " +
+      "waiting periods, provider rules and claim process; see " +
+      "<a href=\"/pet-insurance-thailand.html\">pet insurance Thailand</a>. Set any " +
+      "emergency reserve from your own finances and written clinic estimates. Know your nearest " +
       "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour hospital</a> before you need it.</p>" },
     { h: "Price questions to ask any clinic", html:
       "<p>Before you commit to a clinic for ongoing care, ask for transparency on the " +
@@ -319,15 +340,15 @@ pages.push(article({
   ],
   faqs: [
     ["How much is a vet visit in Pattaya?",
-     "<p>A routine consultation is often roughly 300–800 baht at local clinics, more at large hospitals and for emergencies. Always ask for an estimate.</p>"],
+     "<p>No disclosed current clinic sample supports a range here. Ask the clinic for its consultation fee and an itemised estimate for diagnostics, medicines and procedures.</p>"],
     ["Is vet care cheaper than in the UK or USA?",
-     "<p>Routine vet care in Pattaya is generally cheaper than in the UK or USA. Complex surgery and imaging can still be expensive in baht terms, so budget for prevention and emergencies separately.</p>"],
+     "<p>No disclosed like-for-like sample supports that comparison. Compare written estimates with the same included services, currency date and case complexity.</p>"],
     ["Do Pattaya vets accept credit cards?",
-     "<p>Many hospitals accept cards; smaller clinics may prefer cash or Thai QR. Confirm when you book.</p>"],
+     "<p>Payment methods are business-specific and can change. Confirm accepted methods and any deposit before the visit.</p>"],
     ["What does dog neutering cost in Pattaya?",
-     "<p>Often a few thousand baht upward depending on size and clinic — get a quote that includes anaesthesia and pain relief.</p>"],
+     "<p>Request an itemised case-specific estimate that identifies examination, diagnostics, anaesthesia, procedure, medicines and follow-up.</p>"],
     ["Should I get pet insurance in Thailand?",
-     "<p>Yes, pet insurance can help with large unexpected bills. Read exclusions carefully and see our <a href=\"/pet-insurance-thailand.html\">pet insurance guide</a> before deciding whether a policy suits you and your pet.</p>"],
+     "<p>That depends on the policy and your circumstances. Compare eligibility, exclusions, limits, waiting periods, provider rules and claims requirements; see the <a href=\"/pet-insurance-thailand.html\">pet insurance guide</a>.</p>"],
     ["Should I ask for a written vet estimate?",
      "<p>Yes, ask for a written estimate before non-urgent treatment. Check what it includes, such as the examination, medicines and follow-up, rather than comparing only the headline fee.</p>"]
   ],
@@ -342,26 +363,27 @@ pages.push(article({
 /* ---------------- DOG GROOMING PATTAYA ---------------- */
 pages.push(article({
   path: "/groomers/dog-grooming-pattaya.html",
-  title: "Dog Grooming Pattaya | Salons & Mobile Groomers | PattayaPets",
+  updated: "2026-08-01",
+  title: "Dog Grooming Pattaya: Salons & Mobile | PattayaPets",
   desc: "Dog grooming in Pattaya — baths, breed clips, de-shedding and nail trims. Browse the groomers directory with area filters and heat-aware coat care tips.",
   crumb: "Dog grooming",
   breadcrumbs: [GUIDES, { name: "Groomers", path: "/groomers/" }],
   eyebrow: "Groomers in Pattaya",
   h1: "Dog grooming in Pattaya",
-  lede: "Regular grooming matters more in Pattaya&rsquo;s heat and humidity — matted coats trap " +
-    "moisture and skin problems follow. Here is how to find a groomer and what to expect.",
+  lede: "Use the directory to find grooming services, then confirm the current service " +
+    "area, animal acceptance, price and handling process directly.",
   sections: [
     { h: "Browse groomers by area", html:
-      "<p>The <a href=\"/groomers/\">groomers directory</a> lists salons across Pattaya with " +
-      "verified facts — services, hours and contact channels. Use the <strong>area chips</strong> " +
+      "<p>The <a href=\"/groomers/\">groomers directory</a> lists recorded services, hours " +
+      "and contact channels; confirm each with the provider. Use the <strong>area chips</strong> " +
       "on the hub to narrow by Naklua, Jomtien, Central Pattaya and other neighbourhoods.</p>" },
     { h: "Mobile and home-visit grooming", html:
-      "<p>Some groomers offer <strong>mobile visits</strong> — useful if your dog is anxious in " +
-      "traffic or you lack transport. See listings such as Pet Passions Mobile Grooming in the " +
-      "directory and confirm coverage for your soi.</p>" },
+      "<p>Use the directory to identify records that mention mobile or home service, then " +
+      "confirm the current coverage area, animal size, equipment and price before booking.</p>" },
     { h: "Heat-aware coat care", html:
-      "<p>Do <strong>not</strong> shave double-coated breeds to the skin — it can worsen heat " +
-      "stress. Regular brush-outs, paw pad checks and ear cleaning matter more. Read " +
+      "<p>No licensed veterinarian has clinically reviewed this page, so it does not give " +
+      "a universal clipping, shaving, skin or ear-care instruction. Ask a veterinarian " +
+      "what is appropriate for the individual dog&rsquo;s coat and health. Read " +
       "<a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">hot-climate pet care</a> " +
       "and <a href=\"/pet-health-pattaya/skin-and-ear-problems.html\">skin and ear problems</a>.</p>" },
     { h: "What to ask before the first appointment", html:
@@ -372,27 +394,26 @@ pages.push(article({
       "<li>What <strong>shampoo</strong> do you use for sensitive skin?</li>" +
       "</ul>" },
     { h: "Grooming and health overlap", html:
-      "<p>Groomers are not vets — but they often spot ear infections, hot spots and parasites early. " +
-      "If they flag something, see a <a href=\"/vets/\">vet in Pattaya</a>. For ticks after walks, " +
+      "<p>Groomers are not veterinarians and should not diagnose or treat a medical problem. " +
+      "If a skin, ear or parasite concern is raised, contact a <a href=\"/vets/\">vet in Pattaya</a>. For tick orientation, " +
       "see <a href=\"/pet-emergency/ticks-and-fleas.html\">ticks and fleas</a>.</p>" }
   ],
   faqs: [
     ["How much does dog grooming cost in Pattaya?",
-     "<p>Baths and tidy-ups often run from a few hundred baht; full breed grooms cost more. Ask for a quote for your dog's size and coat.</p>"],
+     "<p>No disclosed local sample supports a price range here. Ask for a written quote for the dog&rsquo;s size, coat condition and requested services.</p>"],
     ["Are there mobile dog groomers in Pattaya?",
-     "<p>Yes — several listings offer mobile grooming. Browse <a href=\"/groomers/\">groomers</a> and filter by area.</p>"],
+     "<p>Browse the <a href=\"/groomers/\">directory</a> for records that mention mobile service, then confirm current coverage and availability directly.</p>"],
     ["How often should I groom my dog in Thailand's climate?",
-     "<p>Brush regularly; professional grooms every 4–8 weeks depending on coat. Short coats still need paw, ear and skin checks.</p>"],
+     "<p>This unreviewed page gives no universal interval. Ask a veterinarian or suitably qualified groomer about the individual coat, skin, health and lifestyle.</p>"],
     ["Can groomers handle cats too?",
-     "<p>Yes, some Pattaya salons groom cats; confirm when booking. Cat grooming is less common than dog grooming locally.</p>"],
+     "<p>Species acceptance is provider-specific. Confirm cat handling, qualifications and current availability directly before booking.</p>"],
     ["Should I shave my dog for the Thai heat?",
-     "<p>Not double-coated breeds — it can damage the coat and increase sunburn risk. Regular brush-outs and cool-walk timing matter more.</p>"],
+     "<p>This page has no clinical review and gives no universal shaving rule. Ask a veterinarian what is appropriate for the individual dog&rsquo;s coat, skin and health.</p>"],
     ["What should I ask before my dog's first grooming appointment?",
      "<p>Confirm that the salon handles your dog's breed and size, how it manages nervous dogs, whether nail trimming and ear cleaning are included, and which shampoo it uses for sensitive skin.</p>"]
   ],
   related: [
     { name: "All groomers", path: "/groomers/", desc: "Full directory." },
-    { name: "Doggie Star Grooming", path: "/groomers/doggie-star-grooming-pattaya.html", desc: "Unverified Facebook lead." },
     { name: "Hot-climate care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Walking times and coat care." },
     { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html", desc: "When grooming reveals an issue." },
     { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/", desc: "Walks and outings after a groom." }

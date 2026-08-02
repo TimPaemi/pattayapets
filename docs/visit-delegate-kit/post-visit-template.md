@@ -1,73 +1,81 @@
-# Post-visit report — PattayaPets
+# Private post-visit evidence — PattayaPets
 
-Copy this template once per business. Send completed form to hello@pattayapets.com.
+Store this completed form in the operator-approved private evidence location, not in `dist`, a
+public issue, analytics, generated schema or the public repository. Send it only through the
+tested operator channel configured for this workflow.
 
----
+## Visit identity and proof — private
 
-## Visit details
+| Field | Answer |
+|---|---|
+| Business name and approved slug | |
+| Visit date and local time | |
+| Visit type and item/service purchased | |
+| Reviewer identity | |
+| Total actually paid and currency | |
+| Receipt/reference retained | |
+| Any discount, gift, hosted element or disclosure | |
+| Prior relationship or conflict | |
+| Operator-approved brief attached | |
 
-| Field | Your answer |
-|-------|-------------|
-| Business name | |
-| Listing slug (from brief) | |
-| Visit date (YYYY-MM-DD) | |
-| Visit type (walk-in / appointment / tour / quote) | |
-| Delegate name (internal only — not published) | |
-| Total paid (THB) | |
-| Receipt kept? (yes/no) | |
+Do not include another customer&rsquo;s identity, a staff member&rsquo;s private contact, medical
+records, diagnosis details, photographs without a publication basis, or unverified rumours.
 
----
+## Factual observations — private working notes
 
-## Verdict recommendation
+Describe only what happened during this visit. Separate each observation from inference.
 
-Choose one (business experience only — not medical quality):
+- Booking/access:
+- Quoted price and what the itemised bill showed:
+- Languages actually used:
+- Public-area cleanliness and physical access:
+- Observable pet handling, without a clinical conclusion:
+- Anything that prevented a fair observation:
 
-- [ ] **recommend** — would happily send a friend
-- [ ] **ok** — does the job, with caveats worth mentioning
-- [ ] **avoid** — documented problems with the business experience
+## Public-fact changes to re-verify
 
----
+Do not update the directory from memory or a conversation alone. List each possible change so a
+second person can verify it against an approved source.
 
-## Scored observations (1–5, optional)
+| Field | What appeared different | Source needed before publication |
+|---|---|---|
+| Operating status | | |
+| Address/area | | |
+| Hours | | |
+| Public-business contact | | |
+| Service/scope | | |
+| Price | | |
 
-| Area | Score 1–5 | Notes |
-|------|-----------|-------|
-| Booking / access | | |
-| English communication | | |
-| Pricing transparency | | |
-| Cleanliness | | |
-| Pet comfort / handling | | |
+## Candidate public observation — not approved
 
----
+Draft a short, date-scoped account of the customer experience. Do not use stars or numeric
+scores. Do not assess clinical quality, diagnosis, treatment, licensing or future performance.
 
-## Narrative (publishable draft)
+**What happened:**
 
-Write 2–4 short paragraphs in plain English. Cover what happened, what was good, what
-was awkward, and who this place suits. **Do not** claim medical outcomes.
+**What was clear or helpful:**
 
-**Good:**
+**What was difficult or different from the quote:**
 
-**Could be better:**
+**Who this single observed experience may help:**
 
-**Best for (e.g. expats, emergencies, small dogs, budget):**
+## Reviewer declaration
 
----
+- [ ] I attended as an ordinary customer and did not identify the publication.
+- [ ] I paid the ordinary bill; every discount, gift or hosted element is disclosed above.
+- [ ] These notes describe one dated visit, not a permanent or universal business claim.
+- [ ] I made no veterinary, legal or regulatory conclusion.
+- [ ] I removed unrelated personal and clinical data from the candidate public section.
+- [ ] I understand that only the operator can approve publication or a verdict.
 
-## Facts to correct on the listing (if any)
+## Independent approval — operator only
 
-Hours, phone, services, address — only if you verified a change:
-
----
-
-## Anything we must NOT publish
-
-Private names, clinical details, unverified rumours:
-
----
-
-## Delegate confirmation
-
-- [ ] I visited anonymously and did not identify PattayaPets
-- [ ] I paid the full bill myself
-- [ ] I am not commenting on veterinary medical quality
-- [ ] I attach receipt photo if requested
+| Decision | Operator record |
+|---|---|
+| Evidence checked by/date | |
+| Conflict review | |
+| Public fields approved | |
+| Public byline and visit date approved | |
+| Verdict approved/held with reason | |
+| Fact changes separately sourced | |
+| Final publish/hold decision and date | |

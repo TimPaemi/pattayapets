@@ -5,20 +5,21 @@
  * Nothing here needs research, judgement or a source. Every task names the page, the source
  * file that defines it, the exact problem, and the fix. The loop just executes items.
  *
- *   node tools/loop-queue.js          top 8 open tasks
- *   node tools/loop-queue.js --all    write the full queue to research/loop/queue.md
+ *   node tools/loop-queue.js          print the top 8 open tasks
+ *   node tools/loop-queue.js --all    print the full queue without writing
+ *   node tools/loop-queue.js --write  explicitly update research/loop/queue.md
  */
 const fs = require("fs");
 const path = require("path");
+const {
+  loadPageManifest,
+  hasAuditScope,
+  routeOutputFile
+} = require("../src/page-manifest.js");
 
 const ROOT = path.resolve(__dirname, "..");
 const DIST = path.join(ROOT, "dist");
 const LOG = path.join(ROOT, "research/loop/log.md");
-
-const SKIP = ["/404.html", "/offline.html", "/search.html", "/sitemap.html", "/offline"];
-/* Regulated guidance needs a reopened government source, which the loop must not do.
-   Offering these tasks just clogs the top of the queue with permanent skips. */
-const REGULATED = ["/bring-pet-to-thailand/", "/take-pet-out-of-thailand/"];
 
 function walk(d, out = []) {
   if (!fs.existsSync(d)) return out;
@@ -28,10 +29,6 @@ function walk(d, out = []) {
   }
   return out;
 }
-const pub = (f) => {
-  const r = "/" + path.relative(DIST, f).split(path.sep).join("/");
-  return r.endsWith("/index.html") ? r.slice(0, -"index.html".length) : r;
-};
 const decode = (s) => String(s || "")
   .replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#0*39;/g, "'").replace(/&apos;/g, "'")
   .replace(/&mdash;/g, "—").replace(/&ndash;/g, "–").replace(/&nbsp;/g, " ")
@@ -40,9 +37,12 @@ const textOf = (h) => decode(h.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").tr
 
 if (!fs.existsSync(DIST)) { console.error("dist/ missing — run: node build.js"); process.exit(1); }
 
-const htmlFiles = walk(DIST).filter((f) => f.endsWith(".html"));
-const pages = htmlFiles.map((f) => ({ file: f, url: pub(f), html: fs.readFileSync(f, "utf8") }))
-  .filter((p) => !SKIP.includes(p.url) && !REGULATED.some((r) => p.url.startsWith(r)));
+const pages = loadPageManifest().filter((entry) => hasAuditScope(entry, "loop-queue"))
+  .map((entry) => {
+    const file = path.join(DIST, ...routeOutputFile(entry.path).split("/"));
+    if (!fs.existsSync(file)) throw new Error("Manifest loop-queue output is missing: " + entry.path);
+    return { file, url: entry.path, html: fs.readFileSync(file, "utf8") };
+  });
 
 /* map each url -> the src module that defines it */
 const srcFiles = [...walk(path.join(ROOT, "src/pages")), ...walk(path.join(ROOT, "src/data"))]
@@ -159,7 +159,7 @@ tasks.forEach((t) => { byType[t.type] = (byType[t.type] || 0) + 1; });
 const render = (t, i) =>
   `${i + 1}. [${t.type}] ${t.url}\n   defined in: ${t.src}\n   problem: ${t.detail}\n   fix: ${t.fix}\n`;
 
-if (process.argv.includes("--all")) {
+if (process.argv.includes("--write")) {
   const out = `# Loop queue — ${tasks.length} open tasks\n\n` +
     Object.entries(byType).sort((a, b) => b[1] - a[1]).map(([k, v]) => `- ${k}: ${v}`).join("\n") +
     `\n\n---\n\n` + tasks.map(render).join("\n");
@@ -171,4 +171,4 @@ if (process.argv.includes("--all")) {
 console.log(`\nLoop queue — ${tasks.length} open tasks across ${pages.length} pages`);
 console.log(Object.entries(byType).sort((a, b) => b[1] - a[1]).map(([k, v]) => `  ${k}: ${v}`).join("\n"));
 console.log(`\nDo these now:\n`);
-console.log(tasks.slice(0, 8).map(render).join("\n"));
+console.log((process.argv.includes("--all") ? tasks : tasks.slice(0, 8)).map(render).join("\n"));

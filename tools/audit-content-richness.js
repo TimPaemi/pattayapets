@@ -50,11 +50,14 @@ if (!fs.existsSync(dist)) {
 const MIN_WORDS = 1400;
 const MIN_FAQS = 5;
 const MIN_SECTIONS = 5;
+const STRICT = process.argv.includes("--strict");
 
 const rows = [];
+let checked = 0;
 walk(dist).forEach(function (f) {
   var rel = "/" + path.relative(dist, f).replace(/\\/g, "/");
   if (!isGuide(rel)) return;
+  checked++;
   var html = fs.readFileSync(f, "utf8");
   var faqs = (html.match(/<details class="faq"/g) || []).length;
   var sections = countSections(html);
@@ -68,7 +71,10 @@ walk(dist).forEach(function (f) {
 
 rows.sort(function (a, b) { return a.words - b.words; });
 console.log("Agency-grade richness audit (words>=" + MIN_WORDS + ", faqs>=" + MIN_FAQS + ", sections>=" + MIN_SECTIONS + ")");
-console.log("Below bar:", rows.length);
+console.log("Guides checked:", checked, "| Below advisory bar:", rows.length);
 rows.forEach(function (r) {
   console.log(" ", r.words + "w", r.faqs + "faq", r.sections + "sec", r.issues, "—", r.rel);
 });
+if (rows.length) console.log("\nADVISORY - richness thresholds are editorial heuristics; use --strict to gate them.");
+else console.log("\nPASS - all checked guides meet the advisory richness thresholds.");
+process.exit(STRICT && rows.length ? 1 : 0);

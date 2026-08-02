@@ -92,30 +92,32 @@ async function runPool(list, fn, limit) {
 
   var results = await runPool(urls, headCheck, CONCURRENCY);
   var dead = [];
-  var warn = [];
-  var ok = [];
+  var inconclusive = [];
+  var verified = [];
 
   results.forEach(function (r) {
     if (r.status === 404 || r.status === 410) dead.push(r);
-    else if (r.status === 0 || r.status >= 500) warn.push(r);
-    else if (!r.ok && r.status !== 403) warn.push(r);
-    else ok.push(r);
+    else if (!r.ok) inconclusive.push(r);
+    else verified.push(r);
   });
 
-  ok.forEach(function (r) { console.log("OK  ", r.status, r.url); });
-  warn.forEach(function (r) {
-    console.log("WARN", r.status || "ERR", r.url, r.error ? "(" + r.error + ")" : "");
+  verified.forEach(function (r) { console.log("OK  ", r.status, r.url); });
+  inconclusive.forEach(function (r) {
+    console.log("INCONCLUSIVE", r.status || "ERR", r.url, r.error ? "(" + r.error + ")" : "");
   });
   dead.forEach(function (r) { console.log("FAIL", r.status, r.url); });
 
   console.log("\n--- Summary ---");
-  console.log("OK:", ok.length, "| WARN:", warn.length, "| FAIL:", dead.length);
+  console.log("VERIFIED:", verified.length, "| INCONCLUSIVE:", inconclusive.length, "| DEAD:", dead.length);
 
   if (dead.length) {
     console.log("\nFAIL — dead official URLs (404/410)");
     process.exit(1);
   }
-  if (warn.length) console.log("\nWARN — some URLs timed out or returned server errors; re-run if needed.");
-  console.log("\nPASS — no dead official URLs");
+  if (inconclusive.length) {
+    console.log("\nINCONCLUSIVE - one or more URLs could not be verified (blocked, timed out, or returned a non-success response).");
+    process.exit(2);
+  }
+  console.log("\nPASS - every checked URL returned a successful response");
   process.exit(0);
 })();

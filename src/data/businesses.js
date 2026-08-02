@@ -6,49 +6,54 @@
    verified and the listing simply omits that row.
    Contact: prefer website, email, WhatsApp (whatsapp: digits only) and LINE (line:
    ID without @). Do not publish landline phones except verified numbers on 24-hour
-   emergency vet listings. */
+   emergency vet listings.
+
+   Integrity fields are joined below from BUSINESS_INTEGRITY. `publishState: "hold"`
+   is an evidence hold, not an instruction to remove or noindex an existing URL.
+   `areas: []` always means that no Pattaya area was verified; serviceScope carries
+   the separately sourced service geography and must never be inferred from [] alone. */
 
 const CATEGORIES = {
   vets: {
     name: "Vets & animal hospitals", slug: "vets", schemaType: "VeterinaryCare", one: "vet",
     intro: "General clinics, full animal hospitals and 24-hour emergency care across " +
-      "Pattaya. Each listing is a verified facts page; an honest verdict is added after " +
+      "Pattaya. Each page shows its evidence status; an honest verdict is added only after " +
       "an anonymous visit. PattayaPets never rates veterinary medical quality, only the " +
       "business experience."
   },
   groomers: {
     name: "Pet groomers", slug: "groomers", schemaType: "LocalBusiness", one: "groomer",
     intro: "Dog and cat grooming salons in Pattaya for baths, breed clips, de-shedding, " +
-      "nail trims and tidy-ups. Verified facts pages; verdicts follow an anonymous visit."
+      "nail trims and tidy-ups. Each page states its evidence status; verdicts follow an anonymous visit."
   },
   boarding: {
     name: "Pet boarding & daycare", slug: "boarding", schemaType: "LocalBusiness", one: "boarding provider",
     intro: "Pet hotels, kennels, catteries, resorts and daycare for when you travel " +
       "or work. Dog boarding is more common in Pattaya than dedicated catteries &mdash; " +
-      "confirm a place accepts cats and keeps them apart from dogs. Verified facts " +
-      "pages; verdicts follow an anonymous visit."
+      "confirm a place accepts cats and keeps them apart from dogs. Each page states its " +
+      "evidence status; verdicts follow an anonymous visit."
   },
   "pet-shops": {
     name: "Pet shops & supplies", slug: "pet-shops", schemaType: "PetStore", one: "pet shop",
     intro: "Where to buy pet food, litter, toys, tanks and supplies in Pattaya, in person " +
-      "and near you. Verified facts pages; verdicts follow an anonymous visit."
+      "and near you. Each page states its evidence status; verdicts follow an anonymous visit."
   },
   trainers: {
     name: "Dog trainers & behaviourists", slug: "trainers", schemaType: "LocalBusiness", one: "trainer",
     intro: "Obedience training, puppy classes and behaviour help from Pattaya-based dog " +
-      "trainers. Verified facts pages; verdicts follow an anonymous visit."
+      "trainers. Each page states its evidence status; verdicts follow an anonymous visit."
   },
   "pet-relocation": {
     name: "Pet relocation agents", slug: "pet-relocation", schemaType: "LocalBusiness", one: "relocation agent",
     intro: "Specialist agents who handle pet import and export, including DLD permits, " +
-      "health certificates, crates and flight booking. Most serve all of Thailand."
+      "health certificates, crates and flight booking. Service scope is shown per listing."
   },
   "mobile-vets": {
     name: "Mobile & home-visit vets", slug: "mobile-vets", schemaType: "VeterinaryCare", one: "mobile vet",
     intro: "Vets who come to you &mdash; useful for nervous pets, multi-cat homes and " +
       "owners without transport. Some Pattaya clinics offer home visits alongside " +
-      "their clinic work; coverage, fees and availability vary. Verified facts pages; " +
-      "verdicts follow an anonymous visit."
+      "their clinic work; coverage, fees and availability vary. Each page states its " +
+      "evidence status; verdicts follow an anonymous visit."
   }
 };
 
@@ -92,7 +97,7 @@ const BUSINESSES = [
     category: "vets", areas: ["naklua"], type: "Veterinary clinic", c24: false,
     address: "157/15 Moo 5, Pattaya-Naklua Road, Na Kluea, Bang Lamung, Chon Buri 20150",
     phone: "065 020 3773", tel: "+66650203773",
-    website: null, hours: null,
+    website: null, hours: "Mon-Sat 09:00-20:00; Sun 11:00-20:00 (confirm when booking)",
     languages: "Confirm English-language support when booking",
     services: ["ISO 11784/11785 microchipping", "AnyVet registry registration",
       "AnyVet digital microchip certificate", "AnyVet public registration-status lookup",
@@ -211,13 +216,13 @@ const BUSINESSES = [
     name: "Siam Country Pet Hospital",
     category: "vets", areas: ["banglamung"], type: "Veterinary clinic", c24: false,
     address: "173/16-17 Moo 6, Pornprapanimit Road (Siam Country Club Road), Nong Prue, Bang Lamung, Chon Buri 20150",
-    phone: "080 573 6727", tel: "+66805736727",
+    phone: null, tel: null,
     website: null, hours: "Tuesday–Sunday 09:00–20:00; closed Monday",
     languages: "Thai; confirm English-language support when booking",
     services: ["General consultations", "Vaccinations", "Neutering", "Surgery", "Boarding", "Pet supplies"],
     summary: "A clinic on Siam Country Club Road (Pornpraphanimit) in East Pattaya, offering " +
       "routine consultations, vaccinations, neutering, surgery, boarding and pet supplies. " +
-      "Open Tuesday to Sunday from 09:00 to 20:00 and closed Monday; call 080 573 6727. " +
+      "Open Tuesday to Sunday from 09:00 to 20:00 and closed Monday; confirm current contact details before visiting. " +
       "Its registered operator, Siamcountry Pet Care Co., Ltd., remains active at the same address for veterinary consultation and treatment surgery; " +
       "the former website and email are no longer published as current contacts."
   },
@@ -294,7 +299,6 @@ const BUSINESSES = [
     summary: "A pet-grooming salon on Pattaya-Naklua Road, publishing bathing, coat trimming, " +
       "coat-and-skin care and pet-hotel services with daily hours of 10:00–19:00 and phone " +
       "083 092 0420. Its LOOKLOOK listing also indicates parking and says appointments and basic vaccinations are required; confirm which species are accepted when booking."
-      + " Cybo now again corroborates its Pattaya-Naklua Road location and mobile."
   },
   {
     slug: "furpet-grooming-and-hotel",
@@ -560,7 +564,7 @@ const BUSINESSES = [
     address: "100 On Nut 40 Alley, Suan Luang, Bangkok 10250",
     email: "inquiryth@asia-relocation.com",
     whatsapp: "66810638189",
-    website: "https://www.asia-relocation.com/thailand/moving/pet-relocation/",
+    website: "https://www.asia-relocation.com/thailand/moving-services/pet-relocation/",
     hours: null,
     languages: null,
     services: ["Dog & cat import and export", "Microchip, vaccination & rabies-test coordination", "Vet-certificate coordination",
@@ -598,7 +602,7 @@ const BUSINESSES = [
       "It publishes approved-laboratory rabies-titre coordination, required waiting-period guidance, " +
       "government endorsements and departure-process oversight. " +
       "Enquire via the website, email, 098 826 9294 mobile or WhatsApp. Its rebuilt English " +
-      "site now publishes only Bangkok without a street address, no longer carries its former pet-taxi claim, and the former Thai page returns 404."
+      "site now publishes only Bangkok without a street address, no longer carries its former pet-taxi claim, and its localized Thai services and about routes remain live even though the former /th landing route returns 404."
   },
 
   {
@@ -701,4 +705,209 @@ const BUSINESSES = [
   }
 ];
 
-module.exports = { CATEGORIES, AREAS, BUSINESSES };
+/*
+ * Publication state is deliberately explicit and separate from route retention.
+ * Existing held URLs remain available as clearly labelled evidence leads until Tim
+ * makes an indexing/pruning decision. Dossier-only records are intentionally absent
+ * from this registry and therefore cannot become public business pages accidentally.
+ *
+ * `dossierCheckedAt` records when the dossier was checked, not when every individual
+ * field was independently reverified. Contact classification is also explicit below:
+ * existing published contacts remain `legacy-publication-unreviewed` until the human
+ * contact-publication policy and per-field review are complete.
+ */
+const BUSINESS_INTEGRITY = {
+  "thonglor-pet-hospital-pattaya": {
+    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    addressLocality: "Pattaya", addressRegion: "Chon Buri", dossierConfidence: "high"
+  },
+  "pattaya-veterinary-clinic": {
+    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    addressLocality: "Na Kluea", addressRegion: "Chon Buri", dossierConfidence: "medium"
+  },
+  "vetazoo-animal-and-exotic-pet-hospital": {
+    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    addressLocality: "Nong Prue", addressRegion: "Chon Buri", dossierConfidence: "high"
+  },
+  "muang-ake-pet-hospital-pattaya": {
+    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    addressLocality: "Nong Prue", addressRegion: "Chon Buri", dossierConfidence: "high"
+  },
+  "pattaya-animal-hospital": {
+    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    addressLocality: "Nong Prue", addressRegion: "Chon Buri", dossierConfidence: "medium"
+  },
+  "pattaya-community-pet-hospital": {
+    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    addressLocality: "Nong Prue", addressRegion: "Chon Buri", dossierConfidence: "high"
+  },
+  "animal-army-hospital": {
+    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    addressLocality: "Na Jomtien", addressRegion: "Chon Buri", dossierConfidence: "high"
+  },
+  "siam-country-pet-hospital": {
+    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    addressLocality: "Nong Prue", addressRegion: "Chon Buri", dossierConfidence: "medium"
+  },
+  "north-pattaya-animal-hospital": {
+    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    addressLocality: "Naklua", addressRegion: "Chon Buri", dossierConfidence: "medium"
+  },
+  "pattaya-city-pet-shop-grooming": {
+    operatingStatus: "current-operation-unverified", publishState: "hold", serviceScope: "local",
+    addressLocality: "Pattaya", addressRegion: "Chon Buri", dossierConfidence: "low",
+    publicationBasis: "current-operation-unverified"
+  },
+  "jaijai-grooming": {
+    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    addressLocality: "Pong", addressRegion: "Chon Buri", dossierConfidence: "medium"
+  },
+  "woof-pattaya": {
+    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    addressLocality: "Nong Prue", addressRegion: "Chon Buri", dossierConfidence: "medium"
+  },
+  "furiday-pet-grooming": {
+    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    addressLocality: "Na Kluea", addressRegion: "Chon Buri", dossierConfidence: "medium"
+  },
+  "furpet-grooming-and-hotel": {
+    operatingStatus: "unverified", publishState: "hold", serviceScope: "unknown",
+    addressLocality: null, addressRegion: null, dossierConfidence: "low",
+    publicationBasis: "unverified-lead"
+  },
+  "pattaya-dog-stay": {
+    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    addressLocality: "Bang Lamung", addressRegion: "Chon Buri", dossierConfidence: "medium"
+  },
+  "elite-dog-resort": {
+    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    addressLocality: "Pattaya", addressRegion: "Chon Buri", dossierConfidence: "high"
+  },
+  "pattaya-dog-hotel": {
+    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    addressLocality: "Bang Saray", addressRegion: "Chon Buri", dossierConfidence: "medium"
+  },
+  "brand-dog-pattaya-pet-supplies": {
+    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    addressLocality: "Pattaya", addressRegion: "Chon Buri", dossierConfidence: "medium"
+  },
+  "petsmart-pattaya": {
+    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    addressLocality: "Nong Prue", addressRegion: "Chon Buri", dossierConfidence: "medium"
+  },
+  "tong-ma-aquarium-and-pets-shop": {
+    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    addressLocality: "Pattaya", addressRegion: "Chon Buri", dossierConfidence: "medium"
+  },
+  "peturday-pattaya": {
+    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    addressLocality: "Bang Lamung", addressRegion: "Chon Buri", dossierConfidence: "medium"
+  },
+  "pattaya-pet-center": {
+    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    addressLocality: "Nong Prue", addressRegion: "Chon Buri", dossierConfidence: "low"
+  },
+  "k9-coach": {
+    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    addressLocality: "Bang Saray", addressRegion: "Chon Buri", dossierConfidence: "high"
+  },
+  "zoeta-dogsoul": {
+    operatingStatus: "open", publishState: "published", serviceScope: "remote-only",
+    addressLocality: "Chiang Mai", addressRegion: "Chiang Mai", dossierConfidence: "medium",
+    serviceAreas: ["Online"],
+    serviceAreaNote: "Online / remote service; in-person Pattaya service not verified"
+  },
+  "k9-pattaya-dog-training-school": {
+    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    addressLocality: "Huai Yai", addressRegion: "Chon Buri", dossierConfidence: "medium"
+  },
+  "pet-relocation-thailand": {
+    operatingStatus: "open", publishState: "published", serviceScope: "nationwide",
+    addressLocality: "Bangkok", addressRegion: "Bangkok", dossierConfidence: "high",
+    serviceAreas: ["Thailand"]
+  },
+  "relo4paws": {
+    operatingStatus: "open", publishState: "published", serviceScope: "nationwide",
+    addressLocality: "Bangkok", addressRegion: "Bangkok", dossierConfidence: "high",
+    serviceAreas: ["Thailand"]
+  },
+  "united-pet-express": {
+    operatingStatus: "open", publishState: "published", serviceScope: "nationwide",
+    addressLocality: "Bangkok", addressRegion: "Bangkok", dossierConfidence: "medium",
+    serviceAreas: ["Thailand"]
+  },
+  "asia-relocation-pet-transport": {
+    operatingStatus: "open", publishState: "published", serviceScope: "regional",
+    addressLocality: "Bangkok", addressRegion: "Bangkok", dossierConfidence: "high",
+    serviceAreas: ["Bangkok", "Chiang Mai", "Phuket"],
+    serviceAreaNote: "Airport handling documented in Bangkok, Chiang Mai and Phuket"
+  },
+  "pawspective-relocations": {
+    operatingStatus: "open", publishState: "published", serviceScope: "unknown",
+    addressLocality: "Bangkok", addressRegion: "Bangkok", dossierConfidence: "high"
+  },
+  "mor-ja-pet-clinic-pattaya": {
+    operatingStatus: "current-operation-unverified", publishState: "hold", serviceScope: "local",
+    addressLocality: "Nong Prue", addressRegion: "Chon Buri", dossierConfidence: "medium",
+    publicationBasis: "human-verification-required",
+    dossierStatusOverrideReason: "Current operation lacks first-party confirmation; HUMAN QUEUE call pending."
+  },
+  "baan-mor-raksasat-animal-hospital-pattaya": {
+    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    addressLocality: "Nong Prue", addressRegion: "Chon Buri", dossierConfidence: "high"
+  },
+  "pet-passions-mobile-grooming": {
+    operatingStatus: "open", publishState: "published", serviceScope: "regional",
+    addressLocality: "Hua Hin", addressRegion: "Prachuap Khiri Khan", dossierConfidence: "high",
+    serviceAreas: ["Hua Hin", "Cha-am", "Pranburi"],
+    serviceAreaNote: "Serves Hua Hin, Cha-am and Pranburi; Pattaya coverage not verified"
+  },
+  "pluto-luxury-pet-hotel-pattaya": {
+    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    addressLocality: "Bangkok", addressRegion: "Bangkok", dossierConfidence: "high",
+    serviceAreas: ["Bangkok"],
+    serviceAreaNote: "Bangkok location; no Pattaya branch verified"
+  },
+  "doggie-star-grooming-pattaya": {
+    operatingStatus: "unverified", publishState: "hold", serviceScope: "unknown",
+    addressLocality: null, addressRegion: null, dossierConfidence: "low",
+    publicationBasis: "unverified-lead"
+  }
+};
+
+const DOSSIER_CHECKED_AT = "2026-08-01";
+const CONTACT_FIELDS = ["phone", "tel", "whatsapp", "line", "email", "website"];
+
+BUSINESSES.forEach(function (business) {
+  var integrity = BUSINESS_INTEGRITY[business.slug];
+  if (!integrity) throw new Error("Missing BUSINESS_INTEGRITY record for " + business.slug);
+  var hasStoredContact = CONTACT_FIELDS.some(function (field) { return Boolean(business[field]); });
+  Object.assign(business, integrity, {
+    addressCountry: integrity.addressLocality ? "TH" : null,
+    locality: integrity.addressLocality ? {
+      addressLocality: integrity.addressLocality,
+      addressRegion: integrity.addressRegion || null,
+      addressCountry: "TH"
+    } : null,
+    serviceAreas: (integrity.serviceAreas || []).slice(),
+    dossierCheckedAt: DOSSIER_CHECKED_AT,
+    dossierPath: "research/businesses/" + business.slug + ".json",
+    publicationBasis: integrity.publicationBasis || "reviewed-dossier",
+    contactPublicationState: integrity.publishState === "hold"
+      ? "withheld-by-hold"
+      : (hasStoredContact ? "legacy-publication-unreviewed" : "no-public-contact")
+  });
+});
+
+function isPublishedBusiness(business) {
+  return Boolean(business) && business.publishState === "published" &&
+    business.operatingStatus === "open";
+}
+
+module.exports = {
+  CATEGORIES,
+  AREAS,
+  BUSINESSES,
+  BUSINESS_INTEGRITY,
+  isPublishedBusiness
+};

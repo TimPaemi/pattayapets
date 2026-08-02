@@ -10,10 +10,10 @@ const {
   hubQuickBar
 } = require("./linking.js");
 
-const SITE = "https://pattayapets.com";
-const DEFAULT_UPDATED = "2026-05-30";
-const DEFAULT_UPDATED_LABEL = "30 May 2026";
-
+const { SITE: SITE_CONFIG } = require("./site-config.js");
+const { htmlToText } = require("./html-text.js");
+const { imageForRoute } = require("./route-image.js");
+const SITE = SITE_CONFIG.url;
 const DISC =
   '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +
   "PattayaPets is not a veterinary practice and does not give veterinary advice. " +
@@ -22,10 +22,33 @@ const DISC =
   "qualified veterinarian about your pet&rsquo;s health.</div>";
 
 function stripTags(s) {
-  return String(s).replace(/<[^>]+>/g, "")
-    .replace(/&mdash;/g, "—").replace(/&ndash;/g, "–")
-    .replace(/&rsquo;/g, "’").replace(/&lsquo;/g, "‘")
-    .replace(/&amp;/g, "&").replace(/&nbsp;/g, " ").trim();
+  return htmlToText(s);
+}
+
+function fmtDate(iso) {
+  var parts = String(iso || "").split("-");
+  var months = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+  if (parts.length !== 3 || !months[Number(parts[1]) - 1]) return String(iso || "");
+  return Number(parts[2]) + " " + months[Number(parts[1]) - 1] + " " + parts[0];
+}
+
+function articleMeta(updated) {
+  var authors = SITE_CONFIG.authors.map(function (person) {
+    return '<a rel="author" href="' + person.path + '">' + person.name + "</a>";
+  }).join(" and ");
+  return '<div class="article-meta"><p class="byline">Written and edited by ' + authors +
+    ' for <a href="/masthead.html#publisher">TimPaemi</a>' +
+    '</p><p class="updated">Last updated <time datetime="' + updated + '">' +
+    fmtDate(updated) + "</time></p></div>";
+}
+
+function requireReviewedDate(o) {
+  var value = o && o.updated;
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(String(value || ""))) {
+    throw new Error("Missing or invalid reviewed date for " + ((o && o.path) || "unknown page"));
+  }
+  return value;
 }
 
 function slugifyHeading(s) {
@@ -68,18 +91,28 @@ function faqSchema(faqs) {
 }
 
 function articleSchema(o, url) {
-  var updated = o.updated || DEFAULT_UPDATED;
-  return {
+  var updated = requireReviewedDate(o);
+  var node = {
     "@type": "Article",
+    "@id": url + "#article",
     headline: stripTags(o.h1),
     description: o.desc,
-    datePublished: o.published || DEFAULT_UPDATED,
     dateModified: updated,
-    author: { "@id": "https://timpaemi.com/#timpaemi" },
-    publisher: { "@id": SITE + "/#org" },
-    mainEntityOfPage: url,
+    image: [SITE + imageForRoute(o.path, o.image)],
+    author: SITE_CONFIG.authors.map(function (person) {
+      return { "@type": "Person", "@id": person.id, name: person.name, url: person.url };
+    }),
+    publisher: {
+      "@type": "Organization",
+      "@id": SITE_CONFIG.publisherId,
+      name: SITE_CONFIG.publisherName,
+      url: SITE_CONFIG.publisherUrl
+    },
+    mainEntityOfPage: { "@id": url + "#webpage" },
     inLanguage: "en"
   };
+  if (o.published) node.datePublished = o.published;
+  return node;
 }
 
 function hubCollectionSchema(o) {
@@ -96,21 +129,19 @@ function hubCollectionSchema(o) {
   });
   if (!items.length) return null;
   return {
-    "@type": "CollectionPage",
+    "@type": "ItemList",
+    "@id": SITE + o.path + "#items",
     name: stripTags(o.h1),
     description: o.desc,
-    url: SITE + o.path,
-    mainEntity: {
-      "@type": "ItemList",
-      itemListElement: items
-    }
+    itemListElement: items
   };
 }
 
 /* o: { path, title, ogTitle, desc, crumb, breadcrumbs, eyebrow, h1, lede,
-        updatedLabel, updated, verify, sections:[{h,html}], faqs:[[q,a]],
+        updated, verify, sections:[{h,html}], faqs:[[q,a]],
         related:[{name,path,desc}] } */
 function article(o) {
+  var reviewedDate = requireReviewedDate(o);
   const url = SITE + o.path;
   var sections = o.sections || [];
   var toc = [];
@@ -135,7 +166,7 @@ function article(o) {
   let prose =
     '<p class="eyebrow">' + o.eyebrow + "</p><h1>" + o.h1 + "</h1>" +
     '<p class="lede">' + o.lede + "</p>" +
-    '<p class="updated">Last updated ' + (o.updatedLabel || DEFAULT_UPDATED_LABEL) + "</p>";
+    articleMeta(reviewedDate);
   if (isEmergencyGuide) {
     prose += '<div class="emergency-quick-bar emergency-quick-bar--sticky btn-row" role="navigation" aria-label="Emergency shortcuts">' +
       '<a class="btn btn-alert" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in Pattaya</a>' +
@@ -206,9 +237,11 @@ function article(o) {
     description: o.desc,
     crumb: o.crumb || stripTags(o.h1),
     breadcrumbs: o.breadcrumbs || [],
-    updated: o.updated || DEFAULT_UPDATED,
+    updated: reviewedDate,
+    published: o.published || undefined,
     schema: schema,
     image: o.image,
+    ogType: "article",
     noindex: !!o.noindex,
     bodyClass: bodyClass || undefined,
     body: body
@@ -325,18 +358,19 @@ function hubShortcutBar(path) {
 
 /* a cluster hub: intro + a grid of cards linking the cluster's pages */
 function hub(o) {
+  var reviewedDate = requireReviewedDate(o);
   let body =
     '<section class="section"><div class="container">' +
     '<p class="eyebrow">' + o.eyebrow + "</p>" +
     "<h1>" + o.h1 + "</h1>" +
     '<p class="lede">' + o.lede + "</p>" +
-    '<p class="updated">Last updated ' + (o.updatedLabel || DEFAULT_UPDATED_LABEL) + "</p>";
-  if (o.intro) body += '<div class="prose" style="margin-top:1.2rem">' + o.intro + "</div>";
+    articleMeta(reviewedDate);
+  if (o.intro) body += '<div class="prose guide-intro">' + o.intro + "</div>";
   body += hubShortcutBar(o.path);
   var guidesTopic = o.guidesTopic || hubGuidesTopic(o.path);
   if (guidesTopic) body += hubQuickBar(guidesTopic);
   if (guidesTopic) {
-    body += '<div class="btn-row" style="margin-top:1.2rem">' +
+    body += '<div class="btn-row guide-actions">' +
       '<a class="btn btn-ghost" href="/guides.html?topic=' + guidesTopic + '">' +
       "Browse matching guides on the library page &rarr;</a></div>";
   }
@@ -401,7 +435,8 @@ function hub(o) {
     description: o.desc,
     crumb: o.crumb || o.h1,
     breadcrumbs: o.breadcrumbs || [],
-    updated: o.updated || DEFAULT_UPDATED,
+    updated: reviewedDate,
+    published: o.published || undefined,
     schema: schema,
     image: o.image,
     body: body

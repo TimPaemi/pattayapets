@@ -1,0 +1,1 @@
+{"expectedCode":"INV_CLINICAL_REVIEW","operations":[{"op":"set","path":["pages",1],"value":{"path":"/pet-emergency/heatstroke.html","updated":"2026-08-01","body":"<p>Start cooling while you travel. Use lukewarm water.</p>"}}]}

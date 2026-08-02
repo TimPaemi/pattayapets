@@ -1,243 +1,188 @@
 "use strict";
-/* SEO batch 134 — shelters, pet-friendly hotels keyword, Bangkok transfer, pet taxi. */
+/* Shelter evidence index and evidence-first ground-transport guides. */
 
 const { article } = require("../guidekit.js");
-const rb = require("../data/richness-blocks.js");
 
 const GUIDES = { name: "Guides", path: "/guides.html" };
 const ADOPT = { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/" };
 const OWNING = { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/" };
-const DOG = { name: "Dog-friendly Pattaya", path: "/dog-friendly-pattaya/" };
 
 const SHELTER_ROWS = [
-  ["Hope for Strays", "/adopt-a-pet-pattaya/hope-for-strays.html", "Dog rescue shelter, East Pattaya"],
-  ["Dog & Cat Rescue Pattaya", "/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html", "Dogs and street cats"],
-  ["Animal Army Foundation", "/adopt-a-pet-pattaya/animal-army-foundation.html", "Na Jomtien hospital & rescue since 1994"],
-  ["Pattaya Street Dogs (K9aid)", "/adopt-a-pet-pattaya/pattaya-street-dogs-k9aid.html", "Street dogs & temple colonies"],
-  ["Soi Dog Foundation", "/adopt-a-pet-pattaya/soi-dog-foundation.html", "National charity with Pattaya work"],
-  ["Malee's Animal Shelter", "/adopt-a-pet-pattaya/malees-animal-shelter.html", "Pattaya & Chanthaburi"],
-  ["Ady G. Second Chance Pattaya", "/adopt-a-pet-pattaya/ady-g-second-chance-pattaya.html", "Disabled & rescued dogs"]
+  ["Hope for Strays", "/adopt-a-pet-pattaya/hope-for-strays.html", "Current first-party shelter, adoption and contact pages"],
+  ["Animal Army", "/adopt-a-pet-pattaya/animal-army-foundation.html", "Current first-party rescue, adoption and contact pages"],
+  ["Pattaya Street Dogs / K9aid", "/adopt-a-pet-pattaya/pattaya-street-dogs-k9aid.html", "Current project page; adoption availability not stated"],
+  ["Ady G. Second Chance Pattaya", "/adopt-a-pet-pattaya/ady-g-second-chance-pattaya.html", "Current first-party sanctuary, adoption and contact pages"],
+  ["Soi Dog Foundation", "/adopt-a-pet-pattaya/soi-dog-foundation.html", "Current Phuket adoption programme; not a Pattaya shelter"],
+  ["Dog & Cat Rescue Pattaya", "/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html", "Current operation and adoption status not independently verified"],
+  ["Malee's Animal Shelter", "/adopt-a-pet-pattaya/malees-animal-shelter.html", "Accessible first-party description is dated February 2020; current status unknown"]
 ];
 
 function shelterTableHtml() {
   return '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
-    '<th scope="col">Organisation</th><th scope="col">Focus</th></tr></thead><tbody>' +
-    SHELTER_ROWS.map(function (r) {
+    '<th scope="col">Organisation route</th><th scope="col">Evidence status on 1 August 2026</th>' +
+    "</tr></thead><tbody>" + SHELTER_ROWS.map(function (r) {
       return '<tr><th scope="row"><a href="' + r[1] + '">' + r[0] +
-        '</a></th><td>' + r[2] + '</td></tr>';
+        "</a></th><td>" + r[2] + "</td></tr>";
     }).join("") + "</tbody></table></div>";
 }
 
 const pages = [];
 
-/* ---------------- ANIMAL SHELTERS PATTAYA ---------------- */
 pages.push(article({
   path: "/adopt-a-pet-pattaya/animal-shelters-pattaya.html",
-  title: "Animal Shelters Pattaya | Dog & Cat Rescues | PattayaPets",
-  desc: "Animal shelters and rescues in Pattaya — adoption, fostering, volunteering and how each organisation works. Hope for Strays, Soi Dog, Malee's and more.",
-  crumb: "Animal shelters",
+  title: "Pattaya Animal Shelters | Evidence Status | PattayaPets",
+  desc: "Pattaya-area rescue and adoption routes with current first-party evidence, including organisations whose operation or adoption availability remains unknown.",
+  crumb: "Animal shelter evidence",
   breadcrumbs: [GUIDES, ADOPT],
   eyebrow: "Adopt a pet in Pattaya",
-  h1: "Animal shelters in Pattaya",
-  lede: "Pattaya has a network of dog and cat rescues doing hard, daily work on " +
-    "sterilisation, treatment and rehoming. If you are searching for an animal shelter " +
-    "in Pattaya, start here — then read each organisation's own page.",
+  h1: "Pattaya animal shelter and rescue evidence",
+  lede: "This is an evidence index, not a claim that every named organisation currently operates, accepts visitors or has animals available.",
+  updated: "2026-08-01",
+  verify: "Each dedicated page follows the available first-party sources and names what could not be verified. PattayaPets is not affiliated with the organisations and receives no payment from them.",
   sections: [
-    { html:
-      '<div class="callout callout-note"><p>PattayaPets lists shelters as a public-interest ' +
-      "service. We are not affiliated with them and take no payment. Hours, locations and " +
-      "animals available change — always confirm directly before you visit.</p></div>" },
-    { h: "Shelters and rescues we cover", html:
-      "<p>Each link below goes to a dedicated PattayaPets page with what we know about " +
-      "how that rescue works, adoption and how to help.</p>" + shelterTableHtml() },
-    { h: "How adoption usually works", html:
-      "<p>Reputable shelters typically:</p><ul>" +
-      "<li>Match you with an animal that fits your home and lifestyle</li>" +
-      "<li>Rehome animals <strong>vaccinated and sterilised</strong> where possible</li>" +
-      "<li>Ask honest questions — a good shelter cares where animals end up</li>" +
-      "<li>May offer fostering if you cannot adopt permanently</li></ul>" +
-      "<p>Read the full <a href=\"/adopt-a-pet-pattaya/\">adopt a pet in Pattaya</a> hub " +
-      "and <a href=\"/adopt-a-pet-pattaya/fostering.html\">fostering guide</a>. New owners " +
-      "should plan <a href=\"/owning-a-pet-in-pattaya/microchipping-your-pet.html\">microchipping</a> " +
-      "and <a href=\"/owning-a-pet-in-pattaya/dog-registration-thailand.html\">registration</a>.</p>" },
-    { h: "If you cannot adopt", html:
-      "<p>Fostering, volunteering, donating and reporting injured street animals all help. " +
-      "See <a href=\"/adopt-a-pet-pattaya/how-to-help.html\">how to help street animals</a> " +
-      "and <a href=\"/pet-emergency/\">pet emergencies</a> if you find an injured dog or cat.</p>" +
-      "<p>Even small, regular donations for food and medicine keep shelters running when " +
-      "adoption homes are full. Many rescues post specific needs on social media — follow " +
-      "the organisation you want to support and ask what they need this month rather than " +
-      "assuming cash is always best.</p>" },
-    { h: "Flying an adopted pet abroad", html:
-      "<p>Some rescues support international adoptions. The export paperwork is the same " +
-      "as for any pet leaving Thailand — see " +
-      "<a href=\"/take-pet-out-of-thailand/export-process.html\">export process</a> and " +
-      "<a href=\"/pet-relocation/\">relocation agents</a> if you need logistics help.</p>" },
-    { h: "After adoption — vets and daily life", html:
-      "<p>Book a <a href=\"/vets/\">local vet</a> for a post-adoption check, parasite " +
-      "prevention and vaccinations. Browse " +
-      "<a href=\"/vets/english-speaking-vets-pattaya.html\">English-speaking vets</a> if " +
-      "that matters to you. For dogs, read " +
-      "<a href=\"/dog-friendly-pattaya/\">dog-friendly Pattaya</a> and " +
-      "<a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">hot-climate care</a>.</p>" }
+    { h: "Evidence status", html: shelterTableHtml() },
+    { h: "What each status means", html:
+      "<ul><li><strong>Current first-party page:</strong> the organisation presently publishes relevant " +
+      "information on its own domain. Availability and terms still require direct confirmation.</li>" +
+      "<li><strong>Current project page, availability unstated:</strong> activity is described, but no " +
+      "current adoptable-animal or process claim is made.</li>" +
+      "<li><strong>Status unknown:</strong> the accessible source is old or not independently readable. " +
+      "The route is retained to document that gap, not to recommend a visit or donation.</li></ul>" },
+    { h: "Before applying, visiting or donating", html:
+      "<p>Use the organisation&rsquo;s current official channel to confirm its legal or organisational name, " +
+      "location, appointment policy, current programme, animal availability, agreement, fees or donation terms " +
+      "and receipt. Do not send money or travel because a directory page exists.</p>" },
+    { h: "Before taking responsibility for an animal", html:
+      "<p>Confirm written housing permission and obtain the animal&rsquo;s identity and available health and " +
+      "behaviour records. Ask a qualified veterinarian to interpret those records and advise on the individual " +
+      "animal. If an international move may follow, check the destination authority and Thai DLD process before committing.</p>" }
   ],
   faqs: [
-    ["Where can I adopt a dog in Pattaya?",
-     "<p>Several rescues operate in and around Pattaya — see the table on this page. Hope for Strays, Dog & Cat Rescue Pattaya and Soi Dog Foundation are common starting points.</p>"],
-    ["Are Pattaya animal shelters open to visitors?",
-     "<p>Many welcome arranged visits — contact each organisation first. Some are appointment-only.</p>"],
-    ["Can I adopt a street dog in Pattaya?",
-     "<p>Yes, through shelters or sometimes directly — but rescues can help with health checks, sterilisation and paperwork. See <a href=\"/adopt-a-pet-pattaya/how-to-help.html\">how to help street animals</a>.</p>"],
-    ["Do shelters charge an adoption fee?",
-     "<p>Many ask a donation or fee to cover vaccinations and sterilisation — confirm with the shelter.</p>"],
-    ["Can I foster instead of adopting?",
-     "<p>Yes — fostering frees kennel space and socialises animals. See <a href=\"/adopt-a-pet-pattaya/fostering.html\">fostering a pet</a>.</p>"],
-    ["What should I confirm before visiting a shelter?",
-     "<p>Contact the organisation directly to confirm visiting arrangements, location and the animals currently available. Hours and visiting policies can change, and some shelters are appointment-only.</p>"],
-    ["Can I donate supplies instead of money?",
-     "<p>Many rescues post their current needs on social media. Ask the organisation what it needs before donating, rather than assuming cash is always the most useful option.</p>"]
+    ["Does this page prove every organisation is operating?", "<p>No. The table explicitly distinguishes current first-party evidence from an unknown current status.</p>"],
+    ["Does a current adoption page guarantee an animal is available?", "<p>No. Confirm the specific animal and process directly with the organisation.</p>"],
+    ["Which listed organisation is in Phuket?", "<p>Soi Dog Foundation&rsquo;s current sanctuary and adoption programme are in Phuket; this page does not represent it as a Pattaya shelter.</p>"],
+    ["Does PattayaPets coordinate visits or donations?", "<p>No. Use the first-party channels followed on each organisation page.</p>"]
   ],
   related: [
-    { name: "Adopt a pet hub", path: "/adopt-a-pet-pattaya/", desc: "The full adoption cluster." },
-    { name: "Hope for Strays", path: "/adopt-a-pet-pattaya/hope-for-strays.html", desc: "East Pattaya dog rescue." },
-    { name: "Soi Dog Foundation", path: "/adopt-a-pet-pattaya/soi-dog-foundation.html", desc: "Thailand's best-known welfare charity." },
-    { name: "Fostering", path: "/adopt-a-pet-pattaya/fostering.html", desc: "Temporary homes save lives." }
+    { name: "Adoption hub", path: "/adopt-a-pet-pattaya/", desc: "Current evidence and named gaps." },
+    { name: "Fostering", path: "/adopt-a-pet-pattaya/fostering.html", desc: "Temporary-care planning." },
+    { name: "Pet-friendly housing", path: "/owning-a-pet-in-pattaya/pet-friendly-housing.html", desc: "Written permission before placement." }
   ]
 }));
 
-/* ---------------- BANGKOK TO PATTAYA WITH PET ---------------- */
 pages.push(article({
   path: "/owning-a-pet-in-pattaya/bangkok-to-pattaya-with-pet.html",
-  title: "Bangkok to Pattaya With a Pet | Road Transfer Guide | PattayaPets",
-  desc: "How to get from Bangkok Suvarnabhumi or U-Tapao to Pattaya with a dog or cat — taxis, private transfer, carriers, traffic and after import arrival.",
-  crumb: "Bangkok to Pattaya",
+  title: "Bangkok to Pattaya With a Pet: Options | PattayaPets",
+  desc: "How to verify a Bangkok-to-Pattaya pet transfer after DLD clearance: arrival point, vehicle, carrier, quote, waiting time and provider scope.",
+  crumb: "Bangkok to Pattaya with a pet",
   breadcrumbs: [GUIDES, OWNING],
   eyebrow: "Owning a pet in Pattaya",
   h1: "Bangkok to Pattaya with a pet",
-  lede: "Whether you have just cleared the Animal Quarantine Station or you are visiting " +
-    "Pattaya with your dog, the Bangkok&ndash;Pattaya leg needs a secure carrier and a " +
-    "realistic traffic plan.",
+  lede: "Match the ground-transfer booking to the actual airport, DLD clearance process, animal and carrier; do not plan from an assumed drive time or taxi policy.",
+  updated: "2026-08-01",
+  verify: "No travel time, fare or driver acceptance is guaranteed here. Confirm DLD clearance with the relevant station and obtain written transport terms for the actual journey.",
   sections: [
-    { h: "Which Bangkok airport matters", html:
-      "<p><strong>Suvarnabhumi (BKK)</strong> is the usual international arrival point for " +
-      "pets entering Thailand — see " +
-      "<a href=\"/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html\">arriving at Suvarnabhumi</a>. " +
-      "<strong>U-Tapao (UTP)</strong> is much closer to Pattaya, but it has no Animal " +
-      "Quarantine Station and cannot clear an imported pet — see <a href=\"/bring-pet-to-thailand/u-tapao-airport-pets.html\">U-Tapao or Bangkok</a>. " +
-      "Your import permit must name Suvarnabhumi.</p>" },
-    { h: "Road time and traffic", html:
-      "<p>From Suvarnabhumi to central Pattaya is typically <strong>90&ndash;120 minutes</strong> " +
-      "by car in normal traffic — longer on Friday evenings and public holidays. From U-Tapao " +
-      "to Pattaya is often <strong>30&ndash;45 minutes</strong>. Plan water, shade and a " +
-      "comfort break for dogs on long transfers; cats should stay in a secure carrier throughout.</p>" },
-    { h: "Taxis and ride apps", html:
-      "<p>Metered taxis and ride-hailing apps operate from both airports, but " +
-      "<strong>not every driver accepts animals</strong>. A pet in a clean, secure carrier " +
-      "improves your chances — mention the pet when booking. For a more reliable option, " +
-      "pre-book a private transfer that accepts pets. See also " +
-      "<a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">getting to the vet without a car</a>.</p>" },
-    { h: "Pet taxi and relocation services", html:
-      "<p>Some <a href=\"/pet-relocation/\">pet relocation agents</a> offer airport pickup and " +
-      "pet taxi runs within Thailand — useful after import when you are tired and paperwork-heavy. " +
-      "For dedicated pet taxi options, see " +
-      "<a href=\"/owning-a-pet-in-pattaya/pet-taxi-pattaya.html\">pet taxi in Pattaya</a>. " +
-      "Agree crate size, price and whether the driver accepts your breed before you land.</p>" },
-    { h: "Right after AQS clearance", html:
-      "<p>You will have documents, a possibly stressed animal and jet lag. If your housing " +
-      "is not ready, a pet-friendly hotel for one night in Bangkok or Pattaya can bridge the " +
-      "gap — see <a href=\"/dog-friendly-pattaya/hotels.html\">pet-friendly hotels</a> and " +
-      "confirm policy in writing. Book a vet within the first week for parasite prevention — " +
-      "<a href=\"/vets/english-speaking-vets-pattaya.html\">English-speaking vets</a> if needed.</p>" },
-    { h: "Export trips the other direction", html:
-      "<p>Leaving Pattaya for a Bangkok departure? Allow extra time for AQS inspection and " +
-      "cargo check-in cut-offs — often several hours before the flight. Many owners stay near " +
-      "the airport the night before an early export. See " +
-      "<a href=\"/take-pet-out-of-thailand/export-process.html\">export process</a>.</p>" },
-    rb.IMPORT_PATTAYA_LIFE
+    { h: "Confirm the arrival and clearance point first", html:
+      '<p>Current official material includes <a href="https://image.mfa.go.th/mfa/0/91fPdh6NtO/About-Thailand/Bringing_Pets_to_Thailand/All_Airports_-_Instructions_for_Bringing_Dog-Cat-Rabbit_into_Thailand_from_the_USA_%28Revised_30Jan2025%29.pdf" target="_blank" rel="noopener noreferrer">' +
+      "Thai government instructions revised 30 January 2025</a>. Follow the requirements issued " +
+      "for the actual route and mode; the linked document is expressly for dogs, cats and rabbits arriving from the United States.</p>" +
+      "<p><strong>Named gap:</strong> this review did not locate current DLD instructions establishing a " +
+      "passenger or cargo pet-clearance process at U-Tapao. Do not infer that it can or cannot clear a pet; " +
+      "ask DLD before booking a flight or naming an entry point on an application.</p>" },
+    { h: "Current ground-transport starting points", html:
+      "<p>Two providers&rsquo; own sites currently advertise nationwide Thai ground transport: " +
+      '<a href="https://relo4paws.com/" target="_blank" rel="noopener noreferrer">Relo4Paws</a> and ' +
+      '<a href="https://www.petrelocationthailand.com/service/pick-up-delivery-car/" target="_blank" rel="noopener noreferrer">Pet Relocation Thailand</a>. ' +
+      "These links verify only what the businesses publish. PattayaPets did not verify a quote, availability, " +
+      "licence, insurance, driver, vehicle or completed journey and does not endorse either provider.</p>" },
+    { h: "Taxi and app limits", html:
+      '<p>Airports of Thailand publishes a <a href="https://suvarnabhumi.airportthai.co.th/service/transportation/detail/304" target="_blank" rel="noopener noreferrer">Suvarnabhumi public-taxi location</a>, ' +
+      "but the page does not publish a pet-acceptance policy. Do not infer acceptance.</p>" +
+      '<p>Grab&rsquo;s current Thailand transport page lists <a href="https://www.grab.com/th/transport/" target="_blank" rel="noopener noreferrer">GrabPet</a>, ' +
+      "while its public service guide describes Bangkok and vicinity. This review did not verify GrabPet " +
+      "coverage in Pattaya or for the exact airport journey. Check the app at the pickup point and keep a confirmed backup.</p>" },
+    { h: "Written booking fields", html:
+      "<ul><li>Airport terminal or cargo facility, clearance completion point and destination</li>" +
+      "<li>Date window and how DLD, customs or airline delay is charged</li><li>Animal species, number, size and individual handling needs</li>" +
+      "<li>Carrier&rsquo;s external dimensions and whether it fits without folding or unsafe placement</li>" +
+      "<li>Air-conditioning, ventilation, restraint, cleaning and emergency plan</li>" +
+      "<li>Total price, tolls, parking, waiting, cancellation and payment recipient</li></ul>" },
+    { h: "Animal-specific advice", html:
+      "<p>Use a secure, ventilated carrier or other restraint appropriate to the animal and vehicle. Ask a " +
+      "qualified veterinarian about an individual animal&rsquo;s fitness to travel, medication or symptoms. This " +
+      "page does not recommend sedation or a fixed break schedule.</p>" },
+    { h: "Sources followed", html:
+      "<ul>" +
+      '<li><a href="https://image.mfa.go.th/mfa/0/91fPdh6NtO/About-Thailand/Bringing_Pets_to_Thailand/All_Airports_-_Instructions_for_Bringing_Dog-Cat-Rabbit_into_Thailand_from_the_USA_%28Revised_30Jan2025%29.pdf" target="_blank" rel="noopener noreferrer">Thai government pet-import instructions (revised 30 January 2025)</a>.</li>' +
+      '<li><a href="https://suvarnabhumi.airportthai.co.th/service/transportation/detail/304" target="_blank" rel="noopener noreferrer">Airports of Thailand public-taxi page</a>.</li>' +
+      '<li><a href="https://www.grab.com/th/transport/" target="_blank" rel="noopener noreferrer">Grab Thailand transport page</a> and <a href="https://www.grab.com/th/en/blog/grabpet/" target="_blank" rel="noopener noreferrer">GrabPet public guide</a>.</li>' +
+      '<li><a href="https://relo4paws.com/" target="_blank" rel="noopener noreferrer">Relo4Paws</a> and <a href="https://www.petrelocationthailand.com/service/pick-up-delivery-car/" target="_blank" rel="noopener noreferrer">Pet Relocation Thailand</a> first-party service pages.</li>' +
+      "</ul><p>Checked 1 August 2026.</p>" }
   ],
-  faqs: rb.mergeFaqs([
-    ["How long is the drive from Bangkok airport to Pattaya with a pet?",
-     "<p>Allow 90–120 minutes from Suvarnabhumi to central Pattaya and 30–45 minutes from U-Tapao. Traffic can add significantly on weekends and holidays.</p>"],
-    ["Can I take my dog in a Bangkok taxi from the airport?",
-     "<p>Sometimes, if the dog is in a secure carrier and the driver agrees. Pre-booking a pet-friendly private transfer is more reliable.</p>"],
-    ["Should I go straight to Pattaya after pet import?",
-     "<p>Yes, if your housing is ready. Others rest one night near the airport or in Pattaya — plan water, shade and a vet visit within the first week.</p>"],
-    ["Is U-Tapao better than Bangkok for pets moving to Pattaya?",
-     "<p>No. U-Tapao is closer to Pattaya, but it has no DLD Animal Quarantine Station, so it cannot clear an imported pet. Fly into Suvarnabhumi.</p>"],
-    ["Who can pick up my pet from Suvarnabhumi AQS?",
-     "<p>The owner named on the import permit should be present or arrange a representative — confirm current DLD rules with the AQS before travel.</p>"]
-  ], rb.IMPORT_EXTRA_FAQS),
+  faqs: [
+    ["How long does Bangkok to Pattaya take with a pet?", "<p>This page does not publish a fixed time. Ask the provider for a route-specific estimate and how clearance, traffic and stops affect it.</p>"],
+    ["Can I take a pet in an airport public taxi?", "<p>The AOT taxi page reviewed does not state a pet policy. Obtain driver or operator agreement and keep a confirmed alternative.</p>"],
+    ["Is GrabPet available in Pattaya?", "<p>Current Grab material lists GrabPet, but the public service guide describes Bangkok and vicinity. Pattaya availability was not verified; check the app for the exact pickup and time.</p>"],
+    ["Can U-Tapao clear an imported pet?", "<p>This review did not find current DLD instructions that establish the answer. Confirm with DLD before booking or naming the entry point.</p>"],
+    ["Does PattayaPets endorse the linked transfer providers?", "<p>No. Their own pages verify advertised scope only; availability and all contract fields still need direct verification.</p>"]
+  ],
   related: [
-    { name: "Arriving at Suvarnabhumi", path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html", desc: "AQS clearance on landing." },
-    { name: "Pet taxi Pattaya", path: "/owning-a-pet-in-pattaya/pet-taxi-pattaya.html", desc: "Dedicated pet transport." },
-    { name: "Pet-friendly hotels", path: "/dog-friendly-pattaya/hotels.html", desc: "If you need a night before Pattaya." },
-    { name: "Bring a dog to Thailand", path: "/bring-pet-to-thailand/bring-a-dog-to-thailand.html", desc: "Full import guide." }
+    { name: "Arriving at Suvarnabhumi", path: "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html", desc: "DLD clearance on arrival." },
+    { name: "Pet taxi in Pattaya", path: "/owning-a-pet-in-pattaya/pet-taxi-pattaya.html", desc: "Local transport verification." },
+    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Business evidence directory." }
   ]
 }));
 
-/* ---------------- PET TAXI PATTAYA ---------------- */
 pages.push(article({
   path: "/owning-a-pet-in-pattaya/pet-taxi-pattaya.html",
-  title: "Pet Taxi Pattaya | Airport & Vet Transport | PattayaPets",
-  desc: "Pet taxi and private pet transport in Pattaya: airport runs, vet trips, Bangkok transfers, and the relocation agents who move animals safely by road.",
+  title: "Pet Taxi in Pattaya | Verify Current Transport | PattayaPets",
+  desc: "How to verify a current Pattaya pet taxi, ride-app or relocation transfer: coverage, vehicle, carrier fit, quote, delay and emergency terms.",
+  crumb: "Pet taxi in Pattaya",
   breadcrumbs: [GUIDES, OWNING],
   eyebrow: "Owning a pet in Pattaya",
   h1: "Pet taxi and private pet transport in Pattaya",
-  lede: "If you do not drive, or you need a stress-free airport run with a crate, a " +
-    "pet taxi or relocation driver is often worth the cost.",
+  lede: "PattayaPets has not verified a city-wide pet-taxi operator or guaranteed on-demand service; it provides current first-party leads and a booking checklist.",
+  updated: "2026-08-01",
+  verify: "A provider&rsquo;s live service page does not prove availability for a particular animal, route or time. Obtain a written booking and keep an alternative.",
   sections: [
-    { h: "When a pet taxi makes sense", html:
-      "<ul>" +
-      "<li><strong>Airport pickup</strong> after import at Suvarnabhumi</li>" +
-      "<li><strong>Export drop-off</strong> with a crate for early cargo flights</li>" +
-      "<li><strong>Vet emergencies</strong> when ride apps refuse animals</li>" +
-      "<li><strong>Bangkok&ndash;Pattaya transfers</strong> with a large dog or multiple pets</li>" +
-      "</ul><p>See <a href=\"/owning-a-pet-in-pattaya/bangkok-to-pattaya-with-pet.html\">Bangkok to Pattaya with a pet</a>.</p>" },
-    { h: "Relocation agents with ground transport", html:
-      "<p>Several <a href=\"/pet-relocation/\">pet relocation agents</a> serving Thailand " +
-      "advertise airport handling, pet taxi within Thailand and coordination with airlines. " +
-      "They are not vets — they handle logistics. Browse the directory for English-speaking " +
-      "contacts and confirm what is included in the quote (crate, waiting time, tolls).</p>" },
-    { h: "Taxis and ride apps — the everyday option", html:
-      "<p>For routine vet visits, a metered taxi or ride app can work if your pet travels in " +
-      "a <strong>secure carrier</strong> and the driver agrees. Mention the pet when booking. " +
-      "Baht buses (songthaews) are not suitable. Full guidance: " +
-      "<a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">getting to the vet without a car</a>.</p>" },
-    { h: "Mobile vets as an alternative", html:
-      "<p>For non-emergency care, a <a href=\"/mobile-vets/\">mobile vet</a> home visit avoids " +
-      "transport altogether. That does not replace a hospital for surgery or overnight care.</p>" },
+    { h: "Verified publication, not verified booking", html:
+      "<p><a href=\"https://relo4paws.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Relo4Paws</a> " +
+      "currently advertises pet-taxi transport anywhere in Thailand. " +
+      "<a href=\"https://www.petrelocationthailand.com/service/pick-up-delivery-car/\" target=\"_blank\" rel=\"noopener noreferrer\">Pet Relocation Thailand</a> " +
+      "currently advertises door-to-door and long-distance ground transport across Thailand. " +
+      "PattayaPets did not test either service, verify licensing or insurance, obtain a quote, or confirm a Pattaya vehicle.</p>" },
+    { h: "Ride-app boundary", html:
+      "<p>Grab&rsquo;s current Thailand transport page lists GrabPet. Its public GrabPet guide describes Bangkok " +
+      "and vicinity, so this review cannot claim Pattaya coverage. A standard ride category is not a pet policy. " +
+      "Check the exact product offered in the app and obtain driver acceptance before pickup.</p>" },
     { h: "Booking checklist", html:
+      "<ul><li>Pickup, destination, date window and required arrival time</li><li>Animal species, number, size and individual needs</li>" +
+      "<li>Carrier dimensions, vehicle cargo layout, ventilation and restraint</li><li>Whether the owner travels with the animal</li>" +
+      "<li>Total price, tolls, parking, waiting, cleaning, late hours and cancellation</li>" +
+      "<li>Delay plan, driver contact and a backup vehicle</li></ul>" },
+    { h: "Emergency boundary", html:
+      "<p>A transport listing is not veterinary triage. Contact a qualified veterinarian or animal hospital " +
+      "for clinical advice, then arrange transport. Ask a vet about an individual animal&rsquo;s fitness to travel " +
+      "or medication; this page does not recommend treatment or sedation.</p>" },
+    { h: "Sources followed", html:
       "<ul>" +
-      "<li>Carrier or crate size and whether the vehicle fits it</li>" +
-      "<li>Species, breed and weight — some drivers decline large or brachycephalic breeds in heat</li>" +
-      "<li>Price includes tolls, waiting at AQS and late-night surcharge</li>" +
-      "<li>Air-conditioning and whether the pet rides in cabin or boot</li>" +
-      "<li>Cancellation policy if your AQS slot moves</li>" +
-      "</ul>" },
-    { h: "Emergencies", html:
-      "<p>In a true emergency, call a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vet</a> " +
-      "first, then solve transport. Pre-save clinic numbers and keep a carrier ready. See " +
-      "<a href=\"/pet-emergency/\">pet emergencies</a>.</p>" }
+      '<li><a href="https://relo4paws.com/" target="_blank" rel="noopener noreferrer">Relo4Paws first-party service page</a>.</li>' +
+      '<li><a href="https://www.petrelocationthailand.com/service/pick-up-delivery-car/" target="_blank" rel="noopener noreferrer">Pet Relocation Thailand first-party ground-transport page</a>.</li>' +
+      '<li><a href="https://www.grab.com/th/transport/" target="_blank" rel="noopener noreferrer">Grab Thailand transport page</a> and <a href="https://www.grab.com/th/en/blog/grabpet/" target="_blank" rel="noopener noreferrer">GrabPet public guide</a>.</li>' +
+      "</ul><p>Checked 1 August 2026.</p>" }
   ],
   faqs: [
-    ["Is there a pet taxi service in Pattaya?",
-     "<p>No single city-wide pet taxi brand operates in Pattaya. Owners use pet relocation agents, private transfers and occasionally willing taxi drivers with a carrier. See the <a href=\"/pet-relocation/\">relocation directory</a>.</p>"],
-    ["How much does a pet taxi from Bangkok airport to Pattaya cost?",
-     "<p>Prices vary by vehicle size, time of day and agent — get a written quote before you land. Airport pickup with a large crate costs more than a small-dog carrier.</p>"],
-    ["Can Grab or Bolt take pets in Pattaya?",
-     "<p>Mention the pet when booking and have a backup plan. Some drivers accept pets in carriers, while many decline.</p>"],
-    ["Do relocation agents only do international moves?",
-     "<p>Many also offer domestic airport transfers and vet runs — ask specifically for ground transport within Thailand.</p>"],
-    ["What should my pet travel in?",
-     "<p>A secure, well-ventilated carrier or crate — familiarise your pet with it before travel day. See <a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline crate rules</a> for sizing guidance.</p>"],
-    ["What should I confirm in a pet-taxi quote?",
-     "<p>Confirm the vehicle fits the carrier, and ask whether tolls, waiting at Animal Quarantine Station and any late-night surcharge are included. Also confirm air-conditioning, where the pet rides and the cancellation policy if your slot moves.</p>"]
+    ["Is there a verified city-wide Pattaya pet taxi?", "<p>Not in this review. The page links businesses advertising nationwide service, but it does not verify Pattaya availability for a specific booking.</p>"],
+    ["Can I book GrabPet in Pattaya?", "<p>Pattaya coverage was not verified from the public source. Check the exact product in the app for the pickup point and time.</p>"],
+    ["How much does a Pattaya pet taxi cost?", "<p>No current market-wide or route-specific figure is published here. Obtain an itemised written quote.</p>"],
+    ["Does PattayaPets verify the provider&rsquo;s licence or insurance?", "<p>No. Those are named verification fields for the customer to request from the contracting business.</p>"],
+    ["Can a pet taxi replace veterinary emergency advice?", "<p>No. Contact a qualified veterinarian or animal hospital for clinical advice, then arrange suitable transport.</p>"]
   ],
   related: [
-    { name: "Bangkok to Pattaya with a pet", path: "/owning-a-pet-in-pattaya/bangkok-to-pattaya-with-pet.html", desc: "After import or visiting." },
-    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Logistics specialists." },
-    { name: "Getting to the vet", path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html", desc: "Everyday transport options." },
-    { name: "24-hour vets", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "When transport is urgent." }
+    { name: "Bangkok to Pattaya with a pet", path: "/owning-a-pet-in-pattaya/bangkok-to-pattaya-with-pet.html", desc: "Airport-transfer verification." },
+    { name: "Pet relocation agents", path: "/pet-relocation/", desc: "Business evidence directory." },
+    { name: "Getting to a vet", path: "/owning-a-pet-in-pattaya/getting-to-the-vet.html", desc: "Local transport planning." },
+    { name: "Pet emergencies", path: "/pet-emergency/", desc: "General emergency orientation." }
   ]
 }));
 

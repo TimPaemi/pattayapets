@@ -1,7 +1,7 @@
 "use strict";
 /* Area neighbourhood tiles with filtered directory shortcuts. */
 
-const { BUSINESSES, CATEGORIES } = require("./data/businesses.js");
+const { BUSINESSES, CATEGORIES, isPublishedBusiness } = require("./data/businesses.js");
 
 const AREA_TILE_CATS = [
   "vets", "groomers", "boarding", "pet-shops", "trainers", "mobile-vets"
@@ -17,7 +17,9 @@ const AREA_TILE_CHIP_LABEL = {
 };
 
 function areaTileHtml(name, slug, subFallback) {
-  var list = BUSINESSES.filter(function (b) { return b.areas.indexOf(slug) !== -1; });
+  var list = BUSINESSES.filter(function (b) {
+    return isPublishedBusiness(b) && b.areas.indexOf(slug) !== -1;
+  });
   var n = list.length;
   var sub = n
     ? n + (n === 1 ? " business listed" : " businesses listed")

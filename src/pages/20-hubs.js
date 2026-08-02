@@ -92,24 +92,23 @@ pages.push({
     "The editorial directory of pet businesses in Pattaya - vets and animal hospitals, groomers, boarding, pet shops, dog trainers, relocation and mobile vets.",
   crumb: "Directory",
   breadcrumbs: [],
-  updated: "2026-06-03",
+  updated: "2026-08-01",
   body:
     '<section class="section"><div class="container">' +
     '<div class="section-head"><p class="eyebrow">The directory</p>' +
     "<h1>The Pattaya pet business directory</h1>" +
-    "<p class=\"lede\">Seven categories of pet business across Pattaya, each one " +
-    "browsable by neighbourhood. Reviewed honestly &mdash; never paid.</p></div>" +
+    "<p class=\"lede\">Approved public facts for pet services relevant to Pattaya, " +
+    "with evidence status and unresolved details shown clearly. No paid placement.</p></div>" +
     '<div class="corridor-quick-bar corridor-quick-bar--sticky btn-row" role="navigation" aria-label="Directory shortcuts">' +
     '<a class="btn btn-primary" href="/vets/">Vets</a>' +
     '<a class="btn btn-alert" href="/vets/?filter=24h">24-hour vets</a>' +
     '<a class="btn btn-ghost" href="/groomers/">Groomers</a>' +
     '<a class="btn btn-ghost" href="#browse-area">By area</a>' +
     '<a class="btn btn-ghost" href="/guides.html">Guides</a></div>' +
-    '<div class="callout callout-note"><p>Every business starts as a verified ' +
-    "<strong>facts page</strong> &mdash; name, area, services, hours, languages and " +
-    "contact details &mdash; marked <em>&lsquo;not yet reviewed&rsquo;</em>. An " +
-    "honest verdict (recommend, OK or avoid) is added only after a real anonymous " +
-    'visit. Read the full method in our <a href="/standards.html">editorial ' +
+    '<div class="callout callout-note"><p>Listings are generated only from the ' +
+    "approved business record. A page may show sourced public facts, unknown fields, " +
+    "or a hold state; it must not imply that PattayaPets has visited or endorsed a " +
+    'business. Read the method in our <a href="/standards.html">editorial ' +
     "standards</a>.</p></div>" +
     "</div></section>" +
 
@@ -117,10 +116,10 @@ pages.push({
     '<div class="section-head"><h2>Browse by category</h2></div>' +
     '<div class="grid grid-3">' +
     card("/vets/", "Health", "Vets &amp; animal hospitals",
-      "General clinics, animal hospitals and 24-hour emergency care.", "View vets") +
+      "Approved clinic records, including public 24-hour service claims where supported.", "View vets") +
     '<a class="card" href="/vets/?filter=24h"><span class="card-tag">Urgent</span>' +
     "<h3>24-hour vets (directory)</h3>" +
-    "<p>Filter the vets hub to clinics open around the clock.</p>" +
+    "<p>Filter the vets hub for approved records with a current public 24-hour claim; confirm before travelling.</p>" +
     '<span class="card-meta">View 24-hour listings &rarr;</span></a>' +
     card("/groomers/", "Grooming", "Pet groomers",
       "Dog and cat grooming across Pattaya &mdash; filter by area on the groomers hub.",
@@ -132,7 +131,7 @@ pages.push({
     card("/trainers/", "Training", "Dog trainers",
       "Obedience training and behaviour help from Pattaya-based trainers.", "View trainers") +
     card("/pet-relocation/", "Relocation", "Pet relocation agents",
-      "Import and export specialists who handle permits, flights and paperwork.", "View agents") +
+      "Approved public service scopes and evidence status for relocation providers.", "View agents") +
     card("/mobile-vets/", "At home", "Mobile &amp; home-visit vets",
       "Vets who come to you &mdash; useful for nervous pets and multi-cat homes.", "View mobile vets") +
     "</div></div></section>" +
@@ -158,13 +157,13 @@ pages.push({
     "its own page for adoption, visiting and volunteering.</p></div>" +
     '<div class="grid grid-4">' +
     card("/adopt-a-pet-pattaya/hope-for-strays.html", "Adoption", "Hope for Strays",
-      "East Pattaya dog rescue — several hundred dogs, visits by arrangement.", "Open the page") +
+      "Organisation record with current source links and evidence status.", "Open the page") +
     card("/adopt-a-pet-pattaya/soi-dog-foundation.html", "Adoption", "Soi Dog Foundation",
       "National charity with sterilisation and rehoming work in Pattaya.", "Open the page") +
     card("/adopt-a-pet-pattaya/animal-army-foundation.html", "Adoption", "Animal Army Foundation",
-      "Licensed Na Jomtien hospital, ambulance and adoption support since 1994.", "Open the page") +
-    card("/adopt-a-pet-pattaya/", "Adoption", "All shelters &amp; rescues",
-      "Seven organisations plus fostering and how to help street animals.", "View the hub") +
+      "Organisation record with current source links and evidence status.", "Open the page") +
+    card("/adopt-a-pet-pattaya/", "Adoption", "Shelters &amp; rescues guide",
+      "Approved organisation records, fostering orientation and ways to help.", "View the hub") +
     "</div></div></section>" +
 
     '<section class="section section-tint"><div class="container">' +
@@ -176,41 +175,41 @@ pages.push({
     card("/adopt-a-pet-pattaya/", "Adoption", "Adopt a pet in Pattaya",
       "Shelters, fostering and how to help street animals.", "Open the guide") +
     card("/bring-pet-to-thailand/", "Import", "Bringing a pet to Thailand",
-      "DLD permit, microchip, rabies titer and health certificate.", "Open the guide") +
+      "The current DLD pathway, source-backed steps and route-specific checks.", "Open the guide") +
     card("/pet-emergency/", "Emergency", "Pet emergencies",
-      "24-hour vets, heatstroke, poisoning and first-aid basics.", "Open the guide") +
+      "Urgent-care contacts, warning signs and locally relevant hazards.", "Open the guide") +
     "</div>" +
-    '<div class="grid grid-4" style="margin-top:1rem">' +
+    '<div class="grid grid-4 hub-grid-spaced">' +
     card("/dog-friendly-pattaya/", "Out &amp; about", "Dog-friendly Pattaya",
-      "Beaches, cafes, restaurants and places that welcome dogs.", "Open the guide") +
+      "How to verify current pet policies for beaches, venues and housing.", "Open the guide") +
     card("/pet-emergency/24-hour-vets-pattaya.html", "Urgent", "24-hour vets in Pattaya",
-      "Animal hospitals open around the clock.", "View the list") +
+      "Approved records with a public 24-hour claim; confirm before travelling.", "View the list") +
     card("/owning-a-pet-in-pattaya/", "Day to day", "Owning a pet in Pattaya",
       "Costs, hot-climate care, pet-friendly housing and where to walk your dog.", "Open the guide") +
     card("/take-pet-out-of-thailand/export-process.html", "Export", "The export process",
-      "Thai DLD health certificate, export permit and airport steps.", "Open the guide") +
+      "The current DLD application, required examination, documents and departure checks.", "Open the guide") +
     "</div>" +
-    '<div class="grid grid-4" style="margin-top:1rem">' +
+    '<div class="grid grid-4 hub-grid-spaced">' +
     card("/take-pet-out-of-thailand/", "Moving on", "Taking a pet out of Thailand",
-      "DLD export permit, costs and country-by-country destination notes.", "Open the guide") +
+      "The Thai export process and destination-specific primary-source guidance.", "Open the guide") +
     card("/start-here.html", "New here", "Start here",
       "A short orientation for new pet owners in Pattaya.", "Open the page") +
     card("/pet-insurance-thailand.html", "Money", "Pet insurance in Thailand",
       "How pet insurance works here and whether it is worth it.", "Open the guide") +
     card("/pet-relocation/", "Relocation", "Pet relocation agents",
-      "Import and export specialists who handle permits and flights.", "View agents") +
+      "Approved public service scopes and evidence status for relocation providers.", "View agents") +
     "</div>" +
-    '<div class="grid grid-4" style="margin-top:1rem">' +
+    '<div class="grid grid-4 hub-grid-spaced">' +
     card("/dogs/", "Dog owners", "Dogs in Pattaya",
       "Care, training, walks and health guides for dogs.", "Open the hub") +
     card("/cats/", "Cat owners", "Cats in Pattaya",
       "Indoor living, health and care guides for cats.", "Open the hub") +
     card("/owning-a-pet-in-pattaya/microchipping-your-pet.html", "Owning", "Microchipping your pet",
-      "The best route home for a lost pet, and keeping details current.", "Open the guide") +
+      "Identification records, registry questions and keeping contact details current.", "Open the guide") +
     card("/owning-a-pet-in-pattaya/lost-pet-pattaya.html", "Owning", "Lost pet in Pattaya",
       "Microchip, local groups and what to do first.", "Open the guide") +
     "</div>" +
-    '<div class="btn-row" style="margin-top:1.5rem"><a class="btn btn-ghost" href="/guides.html">All guides &rarr;</a></div>' +
+    '<div class="btn-row section-actions"><a class="btn btn-ghost" href="/guides.html">All guides &rarr;</a></div>' +
     "</div></section>"
 });
 
@@ -223,54 +222,51 @@ pages.push({
     "Pattaya pet guides — bring a pet to Thailand, find a vet, emergencies, dog-friendly places, export, adoption, daily owning costs and local directories.",
   crumb: "Guides",
   breadcrumbs: [],
-  updated: "2026-06-04",
+  updated: "2026-08-01",
   image: "/assets/img/og-guides.png",
   body:
     '<section class="section"><div class="container">' +
     '<div class="section-head"><p class="eyebrow">Guides &amp; resources</p>' +
     "<h1>PattayaPets guides</h1>" +
-    "<p class=\"lede\">Clear, practical answers to what pet owners in Pattaya " +
-    "search for. Every guide is date-stamped and points you to the official source " +
-    "to verify against.</p></div>" +
+    "<p class=\"lede\">Plain-English orientation for pet owners in Pattaya. Pages carry " +
+    "a reviewed date; regulated guidance identifies the primary evidence and remaining " +
+    "route-specific checks.</p></div>" +
     '<div class="corridor-quick-bar corridor-quick-bar--sticky btn-row" role="navigation" aria-label="Guide shortcuts">' +
     '<a class="btn btn-primary" href="/start-here.html">Start here</a>' +
     '<a class="btn btn-ghost" href="/bring-pet-to-thailand/">Import</a>' +
     '<a class="btn btn-ghost" href="/take-pet-out-of-thailand/">Export</a>' +
     '<a class="btn btn-alert" href="/pet-emergency/">Emergency</a>' +
     '<a class="btn btn-ghost" href="/directory.html">Directory</a></div>' +
-    "<h2>Browse the guides</h2><h2>Plan your move</h2><h2>Care and emergencies</h2><h2>Everyday life in Pattaya</h2>" +
+    "<h2>Browse the guides</h2>" +
     '<div class="filters-sticky">' + guideFiltersPanel() + "</div>" +
     '<div id="guide-listings" class="grid grid-3">' +
     guideCard("/start-here.html", "New here", "Start here",
       "A short orientation for new pet owners in Pattaya &mdash; emergency contacts, " +
       "finding a vet, the climate and the essentials.", "Open the page") +
     guideCard("/bring-pet-to-thailand/", "Flagship guide", "Bringing a pet to Thailand",
-      "The full import process: DLD permit, microchip, rabies and titer test, " +
-      "health certificate, airlines and arrival.", "Open the guide") +
+      "The current Thai DLD pathway, source-backed steps and route-specific checks.", "Open the guide") +
     guideCard("/bring-pet-to-thailand/checklist.html", "Import", "Import checklist",
       "A printable step-by-step checklist for the whole move to Thailand.",
       "Open the checklist") +
     guideCard("/take-pet-out-of-thailand/", "Moving on", "Taking a pet out of Thailand",
-      "DLD export permit, health certificate, costs and country-by-country destination notes.",
+      "The Thai export process and destination-specific primary-source guidance.",
       "Open the guide") +
     guideCard("/take-pet-out-of-thailand/checklist.html", "Export", "Export checklist",
       "A printable step-by-step checklist for taking your pet out of Thailand.",
       "Open the checklist") +
     guideCard("/dog-friendly-pattaya/", "Out &amp; about", "Dog-friendly Pattaya",
-      "Beaches, cafes, restaurants, hotels, condos and parks that welcome dogs.",
+      "How to check current pet policies for beaches, venues, accommodation and housing.",
       "Open the guide") +
     guideCard("/pet-emergency/", "Emergency", "Pet emergencies &amp; hazards",
-      "24-hour vets, first-aid steps, heatstroke, ticks, snakes and street-dog " +
-      "encounters.", "Open the guide") +
+      "Urgent-care contacts, warning signs and locally relevant hazards; not a treatment service.", "Open the guide") +
     guideCard("/pet-emergency/24-hour-vets-pattaya.html", "Urgent", "24-hour vets in Pattaya",
-      "Animal hospitals open around the clock &mdash; addresses and contact details.",
+      "Approved records with a public 24-hour claim; confirm before travelling.",
       "View the list") +
     guideCard("/owning-a-pet-in-pattaya/", "Day to day", "Owning a pet in Pattaya",
       "Costs, hot-climate care, pet-friendly housing and where to walk your dog.",
       "Open the guide") +
     guideCard("/pet-health-pattaya/", "Health", "Pet health in Pattaya",
-      "Heartworm, tick disease, skin and ear problems, parvovirus and neutering " +
-      "&mdash; the tropical-climate health picture.", "Open the guide") +
+      "General health orientation, warning signs and when to contact a qualified veterinarian.", "Open the guide") +
     guideCard("/adopt-a-pet-pattaya/", "Adoption", "Adopt a pet in Pattaya",
       "The shelters and rescue organisations in and around Pattaya, and how " +
       "adoption works.", "Open the guide") +
@@ -278,16 +274,16 @@ pages.push({
       "East Pattaya dog rescue shelter — adoption, visiting and volunteering.",
       "Open the page") +
     guideCard("/adopt-a-pet-pattaya/soi-dog-foundation.html", "Adoption", "Soi Dog Foundation",
-      "Thailand&rsquo;s best-known animal-welfare charity, with Pattaya programmes.",
+      "An approved organisation record with its evidence status and current source links.",
       "Open the page") +
     guideCard("/adopt-a-pet-pattaya/animal-army-foundation.html", "Adoption", "Animal Army Foundation",
-      "Na Jomtien rescue hospital since 1994 — clinic, ambulance and adoptions.",
+      "An approved organisation record with current sources and evidence status.",
       "Open the page") +
     guideCard("/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html", "Adoption", "Dog &amp; Cat Rescue Pattaya",
       "A Pattaya shelter rescuing dogs and helping the city&rsquo;s street cats.",
       "Open the page") +
     guideCard("/pet-insurance-thailand.html", "Money", "Pet insurance in Thailand",
-      "How pet insurance works here, what it covers and whether it is worth it.",
+      "Questions to ask about cover, exclusions, limits and current policy wording.",
       "Open the guide") +
     guideCard("/dogs/", "For dog owners", "The dog owner&rsquo;s hub",
       "Everything dog-specific in one place &mdash; care, training, walks and more.",
@@ -317,43 +313,43 @@ pages.push({
       "How to apply for the Thai import permit before your pet flies in.",
       "Open the guide") +
     guideCard("/bring-pet-to-thailand/rabies-vaccination-titer-test.html", "Import", "Rabies & titer test",
-      "Why the titer test matters, and how the timing affects your move.",
+      "Rabies records, when a route requires a titre, and route-specific timing.",
       "Open the guide") +
     guideCard("/bring-pet-to-thailand/health-certificate.html", "Import", "Health certificate",
-      "The veterinary health certificate and who has to endorse it.",
+      "How to identify the certificate and endorsement required for the exact route.",
       "Open the guide") +
     guideCard("/bring-pet-to-thailand/microchip-requirements.html", "Import", "Microchip requirements",
-      "The ISO microchip your pet needs, and why it must come first.",
+      "What current Thai sources require for identification and matching records.",
       "Open the guide") +
     guideCard("/take-pet-out-of-thailand/export-process.html", "Export", "The export process",
-      "Thai DLD health certificate, export permit and the airport steps on the way out.",
+      "The current DLD application, required examination, documents and departure checks.",
       "Open the guide") +
     guideCard("/mobile-vets/", "At home", "Mobile & home-visit vets",
-      "Vets who come to you &mdash; useful for nervous pets and multi-cat homes.",
+      "Approved records that publicly advertise off-site service; confirm coverage and suitability.",
       "View mobile vets") +
     guideCard("/bring-pet-to-thailand/snub-nosed-breeds-flying.html", "Import", "Snub-nosed breeds & flying",
-      "Why flat-faced breeds need extra care, and how airlines restrict them.",
+      "Health-risk orientation and current carrier acceptance checks for flat-faced breeds.",
       "Open the guide") +
     guideCard("/bring-pet-to-thailand/thailand-pet-quarantine.html", "Import", "Pet quarantine in Thailand",
-      "What really happens at the Animal Quarantine Station on arrival.",
+      "What current Thai sources prove about arrival checks, and what remains route-specific.",
       "Open the guide") +
     guideCard("/bring-pet-to-thailand/u-tapao-airport-pets.html", "Import", "U-Tapao or Bangkok?",
-      "Which airport to fly your pet into, and how to reach Pattaya.",
+      "The limited evidence for U-Tapao and the confirmations needed before booking.",
       "Open the guide") +
     guideCard("/bring-pet-to-thailand/from-uae.html", "Import", "Import from the UAE",
-      "MOCCAE export permit and the Thai DLD steps for Gulf relocations.",
+      "Current UAE authority and Thai DLD sources for the route.",
       "Open the guide") +
     guideCard("/bring-pet-to-thailand/from-uk.html", "Import", "Import from the UK",
-      "APHA endorsement, EHC 2917 and the titer test for a future return.",
+      "Source-led Thai entry steps and separate planning for a possible UK return.",
       "Open the guide") +
     guideCard("/take-pet-out-of-thailand/to-uk.html", "Export", "Export to the UK",
-      "Tapeworm treatment, titer timing and APHA paperwork from Thailand.",
+      "Current Thai export and UK entry sources for the exact animal and route.",
       "Open the guide") +
     guideCard("/take-pet-out-of-thailand/to-eu.html", "Export", "Export to the EU",
-      "Third-country certificate and the three-month titer wait.",
+      "Current Thai export and EU entry sources, including route-specific timing.",
       "Open the guide") +
     guideCard("/bring-pet-to-thailand/from-india.html", "Import", "Import from India",
-      "AQCS export certificate and planning from a high-rabies origin.",
+      "Current Indian authority and Thai DLD sources for the route.",
       "Open the guide") +
     guideCard("/bring-pet-to-thailand/from-philippines.html", "Import", "Import from the Philippines",
       "BAI export paperwork and direct flights to Thailand.",
@@ -362,7 +358,7 @@ pages.push({
       "Chinese customs export and direct flights from major cities.",
       "Open the guide") +
     guideCard("/bring-pet-to-thailand/from-south-africa.html", "Import", "Import from South Africa",
-      "DAFF export certificate and planning from Africa.",
+      "Current South African authority and Thai DLD sources for the route.",
       "Open the guide") +
     guideCard("/take-pet-out-of-thailand/to-india.html", "Export", "Export to India",
       "AQCS import clearance when you leave Pattaya.",
@@ -371,10 +367,10 @@ pages.push({
       "BAI import paperwork from Thailand.",
       "Open the guide") +
     guideCard("/take-pet-out-of-thailand/to-china.html", "Export", "Export to China",
-      "Customs import clearance and quarantine on arrival.",
+      "Current Thai export and Chinese entry sources for the route.",
       "Open the guide") +
     guideCard("/take-pet-out-of-thailand/to-south-africa.html", "Export", "Export to South Africa",
-      "DALRRD import permit and routing from Bangkok.",
+      "Current Thai export and South African entry sources for the route.",
       "Open the guide") +
     guideCard("/pet-emergency/heatstroke.html", "Urgent", "Heatstroke",
       "Pattaya's number-one preventable pet emergency.",
@@ -392,7 +388,7 @@ pages.push({
       "Obedience training and behaviour help from Pattaya-based trainers.",
       "View trainers") +
     guideCard("/pet-relocation/", "Relocation", "Pet relocation agents",
-      "Import and export specialists who handle permits, flights and paperwork.",
+      "Approved public service scopes and evidence status for relocation providers.",
       "View agents") +
     guideCard("/pet-emergency/beach-and-sea-hazards.html", "Beach", "Beach & sea hazards",
       "Jellyfish, hot sand and seawater risks for dogs on Pattaya beaches.",
@@ -401,13 +397,13 @@ pages.push({
       "Building a safe, cool-hours walking routine in Pattaya.",
       "Open the guide") +
     guideCard("/owning-a-pet-in-pattaya/microchipping-your-pet.html", "Owning", "Microchipping your pet",
-      "The best route home for a lost pet, and keeping details current.",
+      "Identification records, registry questions and keeping contact details current.",
       "Open the guide") +
     guideCard("/owning-a-pet-in-pattaya/dog-registration-thailand.html", "Owning", "Dog registration",
-      "Rabies vaccination law and local registration in Thailand.",
+      "What the current national source proves and which local ordinance details remain unverified.",
       "Open the guide") +
     guideCard("/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", "Owning", "What it costs",
-      "A realistic monthly budget for a pet in Pattaya.",
+      "A budgeting framework that asks providers for current written prices.",
       "Open the guide") +
     guideCard("/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html", "Owning", "Pet sitters & dog walkers",
       "Cover for travel and long work days.",

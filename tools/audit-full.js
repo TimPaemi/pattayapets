@@ -17,6 +17,16 @@ function walk(d, acc) {
   return acc;
 }
 
+function walkAll(d, acc) {
+  acc = acc || [];
+  for (const f of fs.readdirSync(d, { withFileTypes: true })) {
+    const p = path.join(d, f.name);
+    if (f.isDirectory()) walkAll(p, acc);
+    else acc.push(p);
+  }
+  return acc;
+}
+
 function run(name, cmd, args) {
   console.log("\n>>> " + name);
   var r = spawnSync(cmd, args, { cwd: root, stdio: "inherit", shell: process.platform === "win32" });
@@ -91,7 +101,7 @@ report("missing disclaimer", issues.noDisclaimer, false);
 
 /* static files */
 var staticChecks = [
-  "sitemap.xml", "robots.txt", "sw.js", "assets/css/site.css", "assets/js/site.js",
+  "sitemap.xml", "robots.txt", "sw.js", "build-manifest.json",
   "_headers", "manifest.webmanifest"
 ];
 console.log("\n--- Static artifacts ---");
@@ -100,6 +110,16 @@ staticChecks.forEach(function (s) {
   console.log(fs.existsSync(p) ? "OK  " + s : "FAIL " + s);
   if (!fs.existsSync(p)) ok = false;
 });
+var builtAssets = walkAll(dist).map(function (f) { return path.relative(dist, f).replace(/\\/g, "/"); });
+var cssAssets = builtAssets.filter(function (f) { return /^assets\/css\/site\.[0-9a-f]{8,}\.css$/.test(f); });
+var jsAssets = builtAssets.filter(function (f) { return /^assets\/js\/site\.[0-9a-f]{8,}\.js$/.test(f); });
+if (cssAssets.length !== 1 || jsAssets.length !== 1) {
+  console.log("FAIL expected exactly one content-hashed site CSS and JavaScript asset");
+  ok = false;
+} else {
+  console.log("OK  " + cssAssets[0]);
+  console.log("OK  " + jsAssets[0]);
+}
 
 /* sitemap vs files */
 var sm = fs.readFileSync(path.join(dist, "sitemap.xml"), "utf8");
@@ -114,14 +134,28 @@ var missingFromDist = smUrls.filter(function (u) {
 report("sitemap URLs missing from dist", missingFromDist, true);
 
 console.log("\n--- Standard audits ---");
+ok = run("audit-page-manifest", "npm", ["run", "audit:page-manifest"]) && ok;
+ok = run("audit-source-quality", "npm", ["run", "audit:source"]) && ok;
+ok = run("audit-airline-policies", "npm", ["run", "audit:airlines"]) && ok;
+ok = run("audit-regulated-claims", "npm", ["run", "audit:regulated"]) && ok;
 ok = run("check-links", "npm", ["run", "check"]) && ok;
+ok = run("audit-build-manifest", "npm", ["run", "audit:manifest"]) && ok;
+ok = run("audit-csp-markup", "npm", ["run", "audit:csp"]) && ok;
+ok = run("audit-accessibility-static", "npm", ["run", "audit:a11y"]) && ok;
 ok = run("audit-seo", "npm", ["run", "audit:seo"]) && ok;
+ok = run("audit-comprehensive", "npm", ["run", "audit:comprehensive"]) && ok;
 ok = run("audit-directory", "npm", ["run", "audit:directory"]) && ok;
+ok = run("audit-business-integrity", "node", ["tools/audit-business-integrity.js", "--dist"]) && ok;
 ok = run("audit-country-pairs", "npm", ["run", "audit:country-pairs"]) && ok;
 ok = run("audit-orphans", "npm", ["run", "audit:orphans"]) && ok;
 ok = run("audit-linking", "npm", ["run", "audit:linking"]) && ok;
-run("audit-content-depth", "npm", ["run", "audit:content"]);
+ok = run("audit-content-depth", "npm", ["run", "audit:content"]) && ok;
+ok = run("audit-content-richness", "npm", ["run", "audit:content:richness"]) && ok;
+ok = run("audit-invariants", "npm", ["run", "audit:invariants"]) && ok;
+ok = run("network-gate", "npm", ["run", "audit:network"]) && ok;
+ok = run("secret-scan", "npm", ["run", "audit:secrets"]) && ok;
 ok = run("audit-official-links", "npm", ["run", "audit:official"]) && ok;
+ok = run("deterministic-loopback-performance", "npm", ["run", "audit:local"]) && ok;
 
 console.log("\n" + (ok ? "PASS" : "FAIL") + " — extended audit complete");
 process.exit(ok ? 0 : 1);

@@ -11,17 +11,17 @@ const pages = [];
 
 pages.push(hub({
   path: "/owning-a-pet-in-pattaya/",
-  title: "Owning a Pet in Pattaya | Costs, Housing & Heat | PattayaPets",
+  title: "Owning a Pet in Pattaya | PattayaPets",
   image: "/assets/img/og-owning.png",
-  updated: "2026-06-04",
+  updated: "2026-08-01",
   desc: "What it is really like to own a pet in Pattaya: costs, hot-climate care, " +
     "pet-friendly housing, walking, registration and where to buy pet food.",
   crumb: "Owning a pet in Pattaya",
   breadcrumbs: [GUIDES],
   eyebrow: "Guide",
   h1: "Owning a pet in Pattaya",
-  lede: "Pattaya is an easy place to own a pet &mdash; affordable care, an " +
-    "outdoor life &mdash; once you have adjusted for the heat and the housing.",
+  lede: "Daily life with a pet in Pattaya depends on current housing rules, " +
+    "live weather and surface conditions, provider evidence and a plan made for your animal.",
   intro:
     "<p>Whether you have arrived with a pet, adopted one here, or are weighing it " +
     "up, these guides cover the practical side of day-to-day pet ownership in " +
@@ -32,25 +32,23 @@ pages.push(hub({
     '<a href="/owning-a-pet-in-pattaya/microchipping-your-pet.html">microchipping</a> ' +
     "early. For trips within Thailand, see " +
     "<a href=\"/owning-a-pet-in-pattaya/travelling-in-thailand.html\">travelling with a pet</a>. " +
-    "Relocating? Pair this hub with " +
-    '' +
-    "Pattaya Visa Help and pet-friendly rentals on " +
-    '' +
-    "Pattaya Villa Stream.</p>",
+    "Relocating? Pair this hub with the " +
+    '<a href="/bring-pet-to-thailand/">Thailand import guide</a> and the ' +
+    '<a href="/owning-a-pet-in-pattaya/pet-friendly-housing.html">pet-friendly housing guide</a>.</p>',
   groups: [
     {
       title: "The essentials",
       cards: [
-        { name: "What it costs", desc: "A realistic monthly budget for a pet in Pattaya.", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html" },
-        { name: "Hot-climate pet care", desc: "The single biggest adjustment: keeping a pet safe in the heat.", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html" },
+        { name: "What it costs", desc: "Build a current budget from written quotes instead of unsourced market ranges.", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html" },
+        { name: "Hot-climate pet care", desc: "Plan around live conditions and pet-specific veterinary guidance.", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html" },
         { name: "Pet-friendly housing", desc: "Renting and living with a pet when many condos say no.", path: "/owning-a-pet-in-pattaya/pet-friendly-housing.html" }
       ]
     },
     {
       title: "Everyday life",
       cards: [
-        { name: "Where to walk your dog", desc: "Building a safe, cool-hours walking routine.", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html" },
-        { name: "Where to buy pet food", desc: "Pet shops, supermarkets, online and special diets.", path: "/owning-a-pet-in-pattaya/where-to-buy-pet-food.html" },
+        { name: "Where to walk your dog", desc: "Verify access and choose each outing from live route conditions.", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html" },
+        { name: "Where to buy pet food", desc: "Check current stock, seller evidence and any veterinary diet instructions.", path: "/owning-a-pet-in-pattaya/where-to-buy-pet-food.html" },
         { name: "Dog registration & the law", desc: "Rabies vaccination law and local dog registration.", path: "/owning-a-pet-in-pattaya/dog-registration-thailand.html" },
         { name: "Microchipping your pet", desc: "The best route home for a lost pet, and keeping details current.", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html" },
         { name: "Pet sitters & dog walkers", desc: "Finding reliable care for when you are away or at work.", path: "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html" },
@@ -105,84 +103,78 @@ function own(o) {
 
 pages.push(own({
   slug: "cost-of-owning-a-pet", crumb: "What it costs",
-  title: "Cost of Owning a Pet in Pattaya | Monthly Budget Guide | PattayaPets",
-  desc: "A realistic look at the monthly cost of owning a dog or cat in Pattaya: food, vet care, preventatives, grooming, boarding and the costs people forget.",
+  title: "Cost of Owning a Pet in Pattaya | PattayaPets",
+  desc: "Build a current Pattaya pet budget from itemised food, veterinary, housing, care and travel quotes, with unsupported market ranges clearly excluded.",
   h1: "What it costs to own a pet in Pattaya",
-  lede: "The good news for pet owners: routine pet care in Pattaya is generally " +
-    "affordable by Western standards. Here is where the money goes.",
-  verify: "Costs are general orientation gathered in May 2026 and vary by your " +
-    "pet, your choices and the provider. Use them to plan, not as fixed quotes.",
+  lede: "There is no representative Pattaya price survey behind this page. A defensible " +
+    "budget starts with your animal&rsquo;s needs and current written quotes from the providers you may use.",
+  updated: "2026-08-01",
+  verify: "PattayaPets has not completed a local price survey and does not publish a " +
+    "monthly total, nationality comparison or emergency-fund target. Prices, eligibility, " +
+    "frequency and inclusions must be confirmed for the animal and service.",
   sections: [
-    { h: "The monthly running costs", html:
-      "<p>A pet&rsquo;s ongoing budget in Pattaya is mostly:</p>" +
-      "<ul><li><strong>Food</strong> &mdash; the biggest regular cost. " +
-      "Supermarket brands are inexpensive; imported premium and prescription " +
-      "diets cost more.</li>" +
-      "<li><strong>Parasite prevention</strong> &mdash; year-round flea, tick " +
-      "and worm control, which in this climate is not optional.</li>" +
-      "<li><strong>Grooming</strong> &mdash; occasional for short-coated pets, " +
-      "regular for long coats.</li>" +
-      "<li><strong>Litter, treats and sundries</strong>.</li></ul>" },
-    { h: "The occasional costs", html:
-      "<ul><li><strong>Vaccinations and check-ups</strong> &mdash; annual, and " +
-      "very reasonably priced at most Pattaya clinics.</li>" +
-      "<li><strong>Boarding</strong> &mdash; if you travel, a daily rate per " +
-      "pet.</li>" +
-      "<li><strong>Unexpected vet treatment</strong> &mdash; the wildcard. " +
-      "Routine care is cheap; a serious illness, surgery or a hospital stay is " +
-      "not, and this is where <a href=\"/pet-insurance-thailand.html\">pet " +
-      "insurance</a> or a savings buffer earns its place.</li></ul>" },
-    { h: "The honest summary", html:
-      "<p>Day to day, keeping a healthy pet in Pattaya costs noticeably less " +
-      "than in most Western countries. The figure that derails budgets is never " +
-      "the kibble &mdash; it is an unplanned medical bill. Build a buffer, or " +
-      "insure, and the rest is comfortably manageable.</p>" },
-    { h: "Sample monthly budgets", html:
-      "<p>Figures below are <strong>orientation only</strong> (May 2026) &mdash; " +
-      "your pet, brand choices and clinic will shift them:</p>" +
-      "<ul><li><strong>Small cat, indoor, healthy:</strong> food and litter often " +
-      "the main line items; add year-round parasite prevention and an annual vet " +
-      "visit.</li>" +
-      "<li><strong>Medium dog, active:</strong> food scales with weight; grooming " +
-      "depends on coat; factor in monthly preventatives and occasional boarding " +
-      "if you travel.</li>" +
-      "<li><strong>Senior or chronic condition:</strong> medication and more " +
-      "frequent vet checks dominate &mdash; see " +
-      "<a href=\"/owning-a-pet-in-pattaya/senior-pet-care.html\">senior pet care</a>.</li></ul>" +
-      "<p>Compare food prices in our " +
-      "<a href=\"/owning-a-pet-in-pattaya/where-to-buy-pet-food.html\">where to buy " +
-      "pet food</a> guide and shop around before assuming imported brands are " +
-      "mandatory.</p>" },
-    { h: "One-off and relocation costs", html:
-      "<p>Beyond monthly spend, budget for:</p>" +
-      "<ul><li><strong>Setup:</strong> carrier, bowls, bed, lead, initial " +
-      "vaccinations and sterilisation if not done by a rescue.</li>" +
-      "<li><strong>Housing:</strong> pet deposits or higher rent &mdash; " +
-      "<a href=\"/owning-a-pet-in-pattaya/pet-friendly-housing.html\">pet-friendly housing</a>.</li>" +
-      "<li><strong>Leaving Thailand:</strong> export health certificates, titer " +
-      "tests and airline fees can run to tens of thousands of baht &mdash; start " +
-      "early via " +
-      "<a href=\"/take-pet-out-of-thailand/export-process.html\">export process</a>.</li>" +
-      "<li><strong>Importing with you:</strong> if you arrived with a pet, you " +
-      "already know that side can dwarf a year of kibble.</li></ul>" }
+    { h: "Start with a quote sheet, not a market average", html:
+      "<p>No current, representative dataset establishes a typical monthly cost for a " +
+      "dog or cat in Pattaya. Species, size, health, diet, housing, travel and the exact " +
+      "provider change the result. Create a dated sheet with one row for each item, the " +
+      "source of the quote, what is included, when it expires and what remains unknown.</p>" },
+    { h: "Separate recurring, periodic and contingent items", html:
+      "<p>A useful budget keeps unlike costs apart:</p>" +
+      "<ul><li><strong>Recurring:</strong> the food and supplies actually used by your animal, " +
+      "plus any medicine or therapeutic diet prescribed for it.</li>" +
+      "<li><strong>Periodic:</strong> the examination, vaccination, testing, parasite-control " +
+      "and grooming plan set by the relevant veterinarian or care professional.</li>" +
+      "<li><strong>Care while away:</strong> boarding, a sitter, transport or another arrangement, " +
+      "only if you expect to use it.</li>" +
+      "<li><strong>Housing:</strong> any written pet deposit, cleaning term or rent condition in " +
+      "the actual lease and building policy.</li>" +
+      "<li><strong>Contingent:</strong> urgent veterinary care, replacement travel, or a move. " +
+      "These are scenarios, not a predictable monthly average.</li></ul>" },
+    { h: "Ask for comparable written quotes", html:
+      "<p>For a clinic, boarding facility, groomer, sitter or transporter, ask for an " +
+      "itemised written quote for the same animal and service specification. Confirm whether " +
+      "tax, medicine, laboratory work, weight or species supplements, deposits, cancellation, " +
+      "collection and after-hours charges are included. A directory page is not a price quote " +
+      "or an endorsement; use the <a href=\"/directory.html\">directory</a> only to find " +
+      "candidate contact routes.</p>" },
+    { h: "Veterinary and insurance decisions", html:
+      "<p>This publication has not audited Pattaya clinic prices or compared fees by " +
+      "nationality. Ask the treating clinic for a written estimate before non-urgent work and " +
+      "ask what could change it. Do not delay urgent care to compare prices. If considering " +
+      "<a href=\"/pet-insurance-thailand.html\">pet insurance</a>, read the current policy " +
+      "wording, eligibility, exclusions, limits, waiting periods, reimbursement process and " +
+      "cancellation terms; PattayaPets does not recommend a product or a reserve amount.</p>" },
+    { h: "Food, grooming and care frequency", html:
+      "<p>Do not infer a feeding, preventive-care or grooming schedule from a generic budget. " +
+      "Use the quantity and storage instructions for the selected food, the veterinarian&rsquo;s " +
+      "plan for the individual animal, and a groomer or veterinarian&rsquo;s coat-and-skin advice. " +
+      "Confirm current stock and price through the " +
+      "<a href=\"/owning-a-pet-in-pattaya/where-to-buy-pet-food.html\">food guide</a> and " +
+      "<a href=\"/groomers/\">groomer directory</a>; neither page supplies a market average.</p>" },
+    { h: "Travel and relocation are route-specific", html:
+      "<p>Import and export totals cannot be inferred from a single permit fee. The route can " +
+      "involve authority documents, veterinary work, laboratory testing, a container, ground " +
+      "transport and carrier charges, each with different scope and timing. Use the " +
+      "<a href=\"/bring-pet-to-thailand/\">import</a> or " +
+      "<a href=\"/take-pet-out-of-thailand/\">export</a> guide for source-backed authority " +
+      "items, then obtain a live carrier or provider quote. No outcome or same-day clearance " +
+      "is promised.</p>" }
   ],
   faqs: [
-    ["Is vet care expensive in Pattaya?",
-     "<p>Routine vet care — vaccinations, check-ups, basic treatment — is generally affordable by Western standards. Major treatment, surgery or a hospital stay is where costs climb &mdash; which is exactly what a savings buffer or insurance is for.</p>"],
-    ["Should I get pet insurance in Thailand?",
-     "<p>Pet insurance is most useful for the rare big bill, not routine costs. Whether it suits you depends on your finances and pet; see our guide to <a href=\"/pet-insurance-thailand.html\">pet insurance in Thailand</a>.</p>"],
-    ["How much should I budget monthly for a dog or cat?",
-     "<p>Food, flea prevention and routine vet care are the steady costs — often a few thousand baht a month for a medium dog, less for a cat. Build a separate buffer for emergencies and boarding.</p>"],
-    ["Are vet prices higher for expats?",
-     "<p>Reputable clinics generally quote the same fees regardless of nationality. Ask for an estimate before non-routine treatment and keep vaccination records so you are not paying to repeat work unnecessarily.</p>"],
-    ["What unexpected costs catch new owners out?",
-     "<p>Pet-friendly housing deposits, air-conditioned transport, grooming in the humid season, and export paperwork if you leave Thailand are common surprises — plan them early if they apply to you.</p>"],
-    ["How much does boarding cost when I travel?",
-     "<p>Daily boarding rates vary by facility and room type — browse the <a href=\"/boarding/\">boarding directory</a> and book early in peak season. Home visits and pet sitters are alternatives for nervous animals.</p>"],
-    ["Is grooming a big line item in Pattaya humidity?",
-     "<p>Short coats need occasional baths; long coats and breeds with skin folds may need professional grooming every few weeks in the humid season. See <a href=\"/groomers/\">groomers</a> for options.</p>"],
-    ["Should I keep a separate emergency fund?",
-     "<p>Yes — many owners aim for enough to cover at least one serious vet hospitalisation. That matters more than premium kibble brand choices.</p>"]
+    ["How much should I budget each month?",
+     "<p>No representative Pattaya dataset supports one monthly figure. Add current quotes for the items your animal actually needs and keep recurring, periodic and contingent costs separate.</p>"],
+    ["Is veterinary care cheaper in Pattaya than elsewhere?",
+     "<p>PattayaPets has not run a comparable clinic-price study and does not make that claim. Ask the clinic for an itemised estimate for the exact work and animal.</p>"],
+    ["Are prices different for expatriates?",
+     "<p>No published audit reviewed by PattayaPets establishes pricing parity or a nationality difference. Request the same written service specification and itemised price before drawing a comparison.</p>"],
+    ["Should I buy pet insurance?",
+     "<p>That depends on the animal, policy wording and your finances. Check current eligibility, exclusions, limits, waiting periods and claims terms in the <a href=\"/pet-insurance-thailand.html\">insurance guide</a>; this site does not recommend a product.</p>"],
+    ["How much should an emergency reserve contain?",
+     "<p>There is no universal amount on this page. Consider your finances, the current clinic and transport options, and any insurance limits. In an active emergency, call a clinic and do not delay care to price-shop.</p>"],
+    ["What should a boarding or grooming quote include?",
+     "<p>Give each provider the same animal and service details, then ask what the quote includes, when it expires, and whether deposits, collection, medicine handling, after-hours or cancellation charges apply.</p>"],
+    ["Why are there no local price ranges here?",
+     "<p>Without a dated, representative method, a range would look precise while mixing different animals, services and inclusions. This page names the evidence gap instead.</p>"]
   ],
   related: [
     { name: "Pet insurance in Thailand", path: "/pet-insurance-thailand.html", desc: "When insurance earns its place." },
@@ -194,68 +186,73 @@ pages.push(own({
 
 pages.push(own({
   slug: "hot-climate-pet-care", crumb: "Hot-climate pet care",
-  title: "Hot-Climate Pet Care Pattaya | Heatstroke, Walks & Paw Safety | PattayaPets",
-  desc: "How to keep a dog or cat safe in Pattaya's heat and humidity: water, walk timing, hot pavement, cooling, coat care, paws and year-round parasite risk.",
+  title: "Hot-Climate Pet Care in Pattaya | PattayaPets",
+  desc: "Source-led Pattaya heat-risk orientation for pets: assess live conditions, make an individual plan with a veterinarian, and know when to call a clinic.",
   h1: "Hot-climate pet care",
-  lede: "If you are new to the tropics, this is the adjustment that matters most. " +
-    "Pattaya&rsquo;s heat is constant, and pets rely on you to manage it.",
+  lede: "Heat risk depends on the animal, activity and live conditions. This page supports " +
+    "planning and prompt veterinary contact; it is not a treatment or exercise algorithm.",
+  updated: "2026-08-01",
+  verify: "No licensed veterinarian has clinically reviewed this page. The Royal Veterinary " +
+    "College and Cornell sources below concern canine heat illness; they do not establish " +
+    "one rule for cats, every dog, every surface or every Pattaya day.",
   sections: [
-    { h: "Water and shade, always", html:
-      "<p>Fresh drinking water should be available everywhere your pet goes, " +
-      "indoors and out, refreshed often. Indoors, give your pet a cool, shaded, " +
-      "airy spot &mdash; tiled floors, a fan, or air-conditioning during the " +
-      "worst heat. Outdoors, there must always be shade.</p>" },
-    { h: "Walk in the cool hours", html:
-      "<p>Walk dogs in <strong>early morning and after sunset</strong>, not " +
-      "through the heat of the day. Test the pavement with the back of your " +
-      "hand &mdash; if you cannot hold it there comfortably, it will burn paw " +
-      "pads. Keep hot-weather walks shorter and steadier.</p>" },
-    { h: "Never leave a pet in a hot space", html:
-      "<p>Never leave a pet in a parked car, even briefly &mdash; it becomes " +
-      "lethal astonishingly fast. The same caution applies to a sun-trapped " +
-      "balcony or an unventilated room. <a href=\"/pet-emergency/heatstroke.html\">" +
-      "Heatstroke</a> is the most common preventable pet emergency in Pattaya.</p>" },
-    { h: "Coat, paws and parasites", html:
-      "<p>Do not shave a double-coated dog down to the skin &mdash; the coat " +
-      "also insulates against heat and protects from sun; a groomer can advise. " +
-      "Watch paws on hot ground, rinse and dry skin folds to prevent " +
-      "irritation, and keep <a href=\"/pet-emergency/ticks-and-fleas.html\">" +
-      "parasite prevention</a> going all year, because in this climate it never " +
-      "stops.</p>" },
-    { h: "Watch the at-risk pets", html:
-      "<p>Snub-nosed breeds, very young, elderly, overweight or thick-coated " +
-      "pets cope worst with heat. If your pet is one of them, be extra " +
-      "conservative with exercise and timing. Dog owners choosing a breed should " +
-      "read <a href=\"/dogs/choosing-a-dog-for-the-climate.html\">choosing a dog " +
-      "for the climate</a>.</p>" },
-    { h: "Condos, balconies and power cuts", html:
-      "<p>High-rise living is common in Pattaya. Check balcony mesh and gaps " +
-      "cats can slip through; dogs need shade on terrace floors that heat up by " +
-      "mid-morning. If your building loses power in hot season, have a plan &mdash; " +
-      "a neighbour with AC, boarding, or a pet sitter &mdash; rather than leaving a " +
-      "pet in a closed unit. Indoor-only cats still need airflow; a fan alone may " +
-      "not be enough when humidity is high.</p>" +
-      "<p>After beach or pool visits, rinse salt from coats and dry ears to prevent " +
-      "skin and ear problems aggravated by heat &mdash; see " +
-      "<a href=\"/pet-health-pattaya/skin-and-ear-problems.html\">skin &amp; ear problems</a>.</p>" }
+    { h: "What the reviewed sources establish", html:
+      "<p>The <a href=\"https://www.rvc.ac.uk/vetcompass/news/the-rvc-urges-owners-of-hot-dogs-to-cool-first-transport-second\">" +
+      "Royal Veterinary College</a> describes canine heat-related illness as a veterinary " +
+      "emergency and separates cooling advice by the dog&rsquo;s age, health and level of " +
+      "consciousness. <a href=\"https://www.vet.cornell.edu/departments-centers-and-institutes/riney-canine-health-center/canine-health-information/heatstroke-medical-emergency\">" +
+      "Cornell&rsquo;s canine guidance</a> likewise calls heatstroke an emergency. These " +
+      "sources support preparation and fast professional contact, not one universal household rule.</p>" },
+    { h: "Make an individual heat plan before an emergency", html:
+      "<p>Ask the veterinarian who knows the animal how exercise, transport, indoor climate " +
+      "and any medical condition should change in hot or humid weather. Record which signs " +
+      "should trigger a call, which clinic to contact and how to transport the animal. " +
+      "Flat-faced anatomy, age, body condition, illness, medicine and prior heat problems can " +
+      "change the plan; this page does not rank or diagnose those risks.</p>" },
+    { h: "Use live conditions, not a fixed clock or hand test", html:
+      "<p>Air temperature alone does not describe sun, humidity, airflow, surface exposure, " +
+      "activity or the individual animal. Check the live route and weather, provide access to " +
+      "drinking water and a cooler retreat, and postpone or shorten an outing when safe " +
+      "conditions are uncertain. PattayaPets does not endorse a back-of-hand pavement test, " +
+      "a universal walk duration or a fixed safe time of day.</p>" },
+    { h: "Vehicles, balconies and indoor contingencies", html:
+      "<p>Do not leave an animal unattended where heat can build without a reliable escape or " +
+      "response. For a vehicle, balcony, carrier or closed room, consider sun movement, " +
+      "ventilation, monitoring and what happens if power or cooling fails. Arrange a named " +
+      "backup person and location before relying on equipment. No universal thermostat setting " +
+      "or claim that a fan or air-conditioning is sufficient appears here.</p>" },
+    { h: "Coat, skin, ears, paws and parasites need separate advice", html:
+      "<p>Coat clipping, bathing, skin-fold care, ear care, paw protection and parasite control " +
+      "depend on species, coat, skin, activity, product and medical history. Ask a veterinarian " +
+      "or appropriately qualified groomer for the individual plan and follow the product or " +
+      "prescriber instructions. Do not use this page as a shaving, rinsing, cleaning or dosing " +
+      "schedule. See the source-bounded <a href=\"/pet-emergency/ticks-and-fleas.html\">" +
+      "tick and flea</a> orientation and the " +
+      "<a href=\"/pet-health-pattaya/skin-and-ear-problems.html\">skin and ear</a> guide.</p>" },
+    { h: "If the animal may be overheating", html:
+      "<p>Call a veterinary clinic immediately, describe the species, condition, consciousness, " +
+      "breathing, exposure and location, and follow its live instructions. The " +
+      "<a href=\"/pet-emergency/heatstroke.html\">heatstroke emergency page</a> explains the " +
+      "reviewed dog-specific RVC wording and its limits. PattayaPets does not provide a generic " +
+      "ice, bath, towel, airflow or transport algorithm for every animal.</p>" }
   ],
   faqs: [
-    ["Should I shave my dog for the Thai heat?",
-     "<p>Not a double-coated breed down to the skin — the coat insulates and shields from sun. A groomer can tidy and thin a coat appropriately. Single-coated breeds are different; ask a groomer or vet what suits yours.</p>"],
-    ["Does my cat need anything special in the heat?",
-     "<p>Cats generally self-regulate well but still need constant water, shade and a cool indoor spot. Watch for excessive panting, which is abnormal in cats and a reason to see a vet.</p>"],
-    ["Should I leave the AC on for my pet when I am out?",
-     "<p>If your home gets very hot without it, yes — a fan alone may not be enough in midday humidity. Ensure fresh water and that the pet cannot block the AC unit or chew cables.</p>"],
-    ["Can I walk my dog at midday if I carry water?",
-     "<p>No — carrying water does not stop heatstroke on hot pavement or in full sun. Early morning and evening walks are the safe default in Pattaya.</p>"],
-    ["Do short-haired breeds need less care in the heat?",
-     "<p>They overheat faster in direct sun because they lack a thick coat's insulation — shade, timing and paw-pad checks still matter. See <a href=\"/pet-emergency/heatstroke.html\">heatstroke</a> for warning signs.</p>"],
-    ["How hot is too hot for a balcony pet?",
-     "<p>If you would not sit there comfortably for an hour at midday, your pet should not either. Provide shade, water and retreat indoors when temperatures climb.</p>"],
-    ["Should I use cooling mats or ice?",
-     "<p>Cooling mats and damp towels can help indoors; avoid ice-cold baths if a pet is already overheating — see <a href=\"/pet-emergency/heatstroke.html\">heatstroke</a> for emergency cooling guidance.</p>"],
-    ["Does humidity make heat worse for pets?",
-     "<p>Yes — panting clears heat less efficiently in humid air. AC or strong airflow matters as much as shade in Pattaya's wet season.</p>"]
+    ["Has a veterinarian reviewed this page?",
+     "<p>No. It deliberately stays at planning and referral. Ask the veterinarian who knows the animal for an individual heat, exercise and transport plan.</p>"],
+    ["Is there a safe time for every Pattaya dog walk?",
+     "<p>No. Use live heat, humidity, sun, surface, shade and traffic conditions plus the individual dog&rsquo;s veterinary plan. Postpone the outing when safe conditions are uncertain.</p>"],
+    ["Does the back-of-hand pavement test prove a surface is safe?",
+     "<p>This page does not treat that informal test as a validated universal threshold. Avoid prolonged surface exposure when conditions are uncertain and ask a veterinarian about paw protection for the individual animal.</p>"],
+    ["Should I shave my dog or trim my cat for the heat?",
+     "<p>There is no universal answer here. Coat and skin needs differ; ask a veterinarian or appropriately qualified groomer who can assess the animal.</p>"],
+    ["Should I leave a fan or air-conditioning on?",
+     "<p>No single setting or device is guaranteed. Assess the room, animal, monitoring and power-failure plan with veterinary advice where health risk is involved.</p>"],
+    ["Should I use ice, a cooling mat or wet towels?",
+     "<p>This page does not give a treatment algorithm. If overheating is suspected, call a clinic immediately and follow its live instructions; the linked emergency page explains the narrow dog-specific source.</p>"],
+    ["Does the canine evidence apply to cats?",
+     "<p>Not automatically. The cited RVC and Cornell material is canine. Call a veterinarian for species-specific advice and any abnormal breathing, collapse or behaviour change.</p>"],
+    ["Where is the emergency guidance?",
+     "<p>Use the <a href=\"/pet-emergency/heatstroke.html\">heatstroke page</a>, call a live clinic and follow its instructions. PattayaPets has no licensed-veterinarian review record.</p>"]
   ],
   related: [
     { name: "Heatstroke", path: "/pet-emergency/heatstroke.html", desc: "Recognising and preventing the emergency." },
@@ -267,7 +264,7 @@ pages.push(own({
 
 pages.push(own({
   slug: "pet-friendly-housing", crumb: "Pet-friendly housing",
-  title: "Pet-Friendly Housing Pattaya | Condos, Houses & Rental Rules | PattayaPets",
+  title: "Pet-Friendly Housing in Pattaya | PattayaPets",
   desc: "Finding pet-friendly housing in Pattaya: why many condos say no, houses " +
     "versus condos, deposits, and what to confirm before you sign a lease.",
   h1: "Pet-friendly housing in Pattaya",
@@ -286,12 +283,12 @@ pages.push(own({
       "<p>Stand-alone houses, townhouses and village-style rentals &mdash; common " +
       "in East Pattaya and the outer areas &mdash; are generally far easier with " +
       "pets than high-rise condos, and often come with a garden or yard. If a " +
-      "pet is central to your life here, widening your search to houses is " +
-      "usually the simplest fix. Families relocating with children should also " +
-      "see " +
-      '' +
-      "Pattaya School Guide for schools near your chosen area. Browse by " +
-      "<a href=\"/directory.html\">neighbourhood</a> in the directory.</p>" },
+      "pet is central to your life here, widening your search to houses may provide " +
+      "more options. Confirm every rule with the landlord and juristic office. Browse by " +
+      "<a href=\"/directory.html\">neighbourhood</a> in the directory, and " +
+      "compare local pet services such as " +
+      "<a href=\"/vets/siam-country-pet-hospital.html\">Siam Country Pet Hospital</a> " +
+      "before settling on a location.</p>" },
     { h: "What to confirm before you sign", html:
       "<ul><li>The <strong>building</strong> permits pets &mdash; see it in " +
       "writing.</li>" +
@@ -350,88 +347,76 @@ pages.push(own({
 
 pages.push(own({
   slug: "where-to-walk-your-dog", crumb: "Where to walk your dog",
-  title: "Where to Walk Your Dog in Pattaya | Routes, Timing & Safety | PattayaPets",
-  desc: "Building a safe, cool-hours dog-walking routine in Pattaya — the beach, " +
-    "quiet sois, green space, and managing heat and street dogs at cool hours.",
+  title: "Dog Walking in Pattaya: Route Checklist | PattayaPets",
+  desc: "How to verify current dog-walking access in Pattaya and choose each route from live heat, surface, traffic, weather and animal-specific conditions.",
   h1: "Where and how to walk your dog in Pattaya",
-  lede: "A good walking routine in Pattaya is less about finding a perfect park " +
-    "and more about timing, route and a little local knowledge.",
+  lede: "PattayaPets has no current citywide access matrix or ranked route survey. " +
+    "Verify permission and choose each outing from the conditions in front of you.",
+  updated: "2026-08-01",
+  verify: "No beach, park, condominium or private-venue policy is treated as permanent. " +
+    "Check current official rules, entrance signs and staff direction; this page does not " +
+    "set exercise duration or replace veterinary advice.",
   sections: [
-    { h: "Timing beats location", html:
-      "<p>The most important decision is <em>when</em>. Walk in the " +
-      "<strong>early morning and after sunset</strong>, when the air, the sun " +
-      "and the pavement are all kinder. A modest route at the right hour beats a " +
-      "great route in the midday heat every time.</p>" },
-    { h: "Good options", html:
-      "<ul><li><strong>Quiet residential sois</strong> near home &mdash; the " +
-      "practical everyday walk.</li>" +
-      "<li><strong>The beach</strong> at cool hours, especially the calmer " +
-      "Jomtien and Dongtan stretches &mdash; see " +
-      "<a href=\"/dog-friendly-pattaya/beaches.html\">dog-friendly beaches</a>.</li>" +
-      "<li><strong>Green and open spaces</strong>, where dogs are permitted.</li>" +
-      "<li><strong>Pratumnak hill</strong>, for leafier, quieter roads.</li></ul>" +
-      "<p>For dog-friendly parks and green space specifically, see " +
-      "<a href=\"/dog-friendly-pattaya/parks.html\">parks and green space</a> " +
-      "in the dog-friendly cluster. Many expats pair a dawn walk with morning " +
-      "exercise &mdash; if you want gym facilities after the dog is home, see " +
-      '' +
-      "Pattaya Gym.</p>" },
-    { h: "Walk safely", html:
-      "<p>Keep your dog leashed, carry water, and learn the routes around you. " +
-      "Be aware of <a href=\"/pet-emergency/street-dog-encounters.html\">" +
-      "free-roaming street dogs</a> &mdash; give groups space and stay calm. And " +
-      "always keep an eye on the heat: cut a walk short if your dog is " +
-      "struggling. See " +
-      "<a href=\"/pet-emergency/heatstroke.html\">heatstroke</a> and " +
-      "<a href=\"/owning-a-pet-in-pattaya/dog-registration-thailand.html\">dog " +
-      "registration &amp; the law</a> for the wider picture on responsible walks.</p>" },
-    { h: "Routes by area", html:
-      "<p>Where you live shapes the routine:</p>" +
-      "<ul><li><strong>Jomtien / Dongtan:</strong> long beach walks at dawn; watch " +
-      "tideline hazards &mdash; " +
-      "<a href=\"/pet-emergency/beach-and-sea-hazards.html\">beach hazards</a>.</li>" +
-      "<li><strong>Pratumnak:</strong> hill roads with shade and less traffic if " +
-      "you pick quiet times; steeper routes suit fit dogs, not puppies.</li>" +
-      "<li><strong>Central Pattaya / Naklua:</strong> rely on residential sois; " +
-      "avoid Walking Street and bar areas at night.</li>" +
-      "<li><strong>East Pattaya / villages:</strong> often easier off-lead in " +
-      "private driveways, but traffic on main roads still demands a lead.</li></ul>" +
-      "<p>Browse <a href=\"/area/jomtien.html\">Jomtien</a>, " +
+    { h: "Start with live conditions", html:
+      "<p>Before leaving, check current weather, sun, humidity, surface exposure, traffic, " +
+      "visibility and any event activity on the route. Combine that with the individual " +
+      "dog&rsquo;s age, health, behaviour and veterinary exercise plan. There is no fixed " +
+      "Pattaya clock time or duration that makes every walk safe.</p>" },
+    { h: "Build a route from verified access", html:
+      "<p>Start with places whose current access you can verify: a public route with clear " +
+      "signage, a private property whose operator has confirmed permission, or a building " +
+      "area covered by written rules. The <a href=\"/dog-friendly-pattaya/beaches.html\">" +
+      "beach</a> and <a href=\"/dog-friendly-pattaya/parks.html\">park</a> guides name the " +
+      "absence of a complete current policy inventory; they do not guarantee entry. Recheck " +
+      "at the entrance because enforcement and private policies can change.</p>" },
+    { h: "Plan for traffic, animals and a change of route", html:
+      "<p>Use secure equipment suited to the dog and follow the current rule for that place. " +
+      "Identify traffic crossings, loose animals, waste, standing water, shade and an exit " +
+      "route before committing to a loop. If another animal or hazard makes the route unsafe, " +
+      "create distance and leave rather than test a generic handling technique. The " +
+      "<a href=\"/pet-emergency/street-dog-encounters.html\">street-dog</a> and " +
+      "<a href=\"/pet-emergency/heatstroke.html\">heat-risk</a> pages prioritise live " +
+      "professional help and state their evidence limits.</p>" },
+    { h: "Compare routes without inventing a ranking", html:
+      "<p>PattayaPets has not audited every footpath, beach, park, private road or village, " +
+      "so it does not call one neighbourhood safest or promise off-lead access. Compare a " +
+      "candidate route for legal access, surface, shade, traffic, loose animals, lighting, " +
+      "escape options and distance from help. The <a href=\"/area/jomtien.html\">Jomtien</a>, " +
       "<a href=\"/area/naklua.html\">Naklua</a> and " +
-      "<a href=\"/area/pratumnak.html\">Pratumnak</a> area pages for vets and " +
-      "services near your route.</p>" },
-    { h: "Rainy season and festivals", html:
-      "<p>During rainy season, puddles, toads and slippery tiles increase risk &mdash; " +
-      "see <a href=\"/owning-a-pet-in-pattaya/rainy-season-pet-care.html\">rainy-season " +
-      "pet care</a>. Shorten walks when storms build, towel paws at home, and avoid " +
-      "drains where street dogs congregate after rain.</p>" +
-      "<p>Over <a href=\"/owning-a-pet-in-pattaya/songkran-and-your-pet.html\">Songkran</a> " +
-      "and fireworks periods, stick to very early walks or indoor toilet training " +
-      "pads for small dogs if streets are chaotic.</p>" },
-    { h: "Puppies, seniors and flat-faced breeds", html:
-      "<p>Puppies need shorter, frequent outings for socialisation, not long hot " +
-      "treks. Senior dogs may need flatter routes and more rest stops. Brachycephalic " +
-      "breeds overheat fast &mdash; see " +
-      "<a href=\"/dogs/choosing-a-dog-for-the-climate.html\">choosing a dog for the climate</a> " +
-      "and treat midday walks as off limits.</p>" }
+      "<a href=\"/area/pratumnak.html\">Pratumnak</a> pages list approved service records; " +
+      "they are not route-safety certifications.</p>" },
+    { h: "Reassess during weather and events", html:
+      "<p>Rain, flooding, thunder, traffic diversions, water-fight zones, fireworks and crowds " +
+      "can change a familiar route. Use live weather and event information and be ready to " +
+      "cancel rather than rely on a fixed seasonal schedule. The " +
+      "<a href=\"/owning-a-pet-in-pattaya/rainy-season-pet-care.html\">rain</a>, " +
+      "<a href=\"/owning-a-pet-in-pattaya/songkran-and-your-pet.html\">Songkran</a> and " +
+      "<a href=\"/owning-a-pet-in-pattaya/fireworks-and-noise-anxiety.html\">noise</a> " +
+      "guides identify what is sourced and what still needs veterinary or live local confirmation.</p>" },
+    { h: "Use the individual dog&rsquo;s plan", html:
+      "<p>A puppy, senior, flat-faced dog, dog with a medical condition, or dog unused to the " +
+      "conditions may need a different activity and exposure plan. Ask the treating veterinarian " +
+      "rather than using a generic duration, distance or time-of-day threshold. The " +
+      "<a href=\"/dogs/choosing-a-dog-for-the-climate.html\">climate guide</a> explains the " +
+      "decision factors without ranking a breed or promising suitability.</p>" }
   ],
   faqs: [
-    ["Can I walk my dog on the beach in Pattaya?",
-     "<p>Yes, particularly on the quieter Jomtien and Dongtan stretches and at cool hours. Keep your dog leashed, always pick up, and mind hot sand. See our dog-friendly beaches guide.</p>"],
-    ["How do I handle street dogs while walking my dog?",
-     "<p>Keep your dog close and leashed, give groups of street dogs a wide berth, and stay calm rather than confrontational. Our guide to street-dog encounters covers it in full.</p>"],
-    ["Do I need booties for hot pavement?",
-     "<p>Many dogs manage with timing walks for cooler hours; booties help if your dog will wear them and you must cross hot asphalt. Test them at home first.</p>"],
-    ["Where can I let my dog off-lead?",
-     "<p>Only where it is safe, legal and your recall is reliable — which rules out most busy Pattaya streets. A long lead on the beach at quiet hours is a practical compromise.</p>"],
-    ["What should I carry on every walk?",
-     "<p>Water, poop bags, a spare lead clip and your phone with a vet contact saved. In the rainy season, a towel for muddy paws helps when you get home.</p>"],
-    ["Is Walking Street safe for dogs at night?",
-     "<p>No — crowds, noise, food scraps and drunk pedestrians make it stressful and risky. Walk residential sois instead.</p>"],
-    ["How long should walks be in Pattaya heat?",
-     "<p>Let your dog set the pace — if panting becomes heavy or they lag, head home. Ten to twenty minutes at cool hours beats an hour at midday.</p>"],
+    ["Can I walk my dog on a Pattaya beach?",
+     "<p>No universal permission is published here. Check the current official rule, entrance signage and staff direction for the exact stretch and time; see the <a href=\"/dog-friendly-pattaya/beaches.html\">beach evidence page</a>.</p>"],
+    ["Which Pattaya neighbourhood has the best dog walks?",
+     "<p>PattayaPets has not completed a comparative route audit and does not rank one area safest or best. Compare verified access and the live route factors listed above.</p>"],
+    ["How should I respond to free-roaming dogs?",
+     "<p>Create distance and leave the route when possible. Do not rely on a generic confrontation technique; use the <a href=\"/pet-emergency/street-dog-encounters.html\">source-bounded orientation</a> and seek live help if needed.</p>"],
+    ["Do booties make hot surfaces safe?",
+     "<p>This page makes no such guarantee. Ask a veterinarian about the animal&rsquo;s paws and any protective equipment, and avoid the exposure when surface safety is uncertain.</p>"],
+    ["Where can my dog be off lead?",
+     "<p>Only where the current rule and property operator explicitly allow it and the situation is safe. PattayaPets has no complete off-lead inventory and does not treat a beach or private road as permission.</p>"],
+    ["How long should a walk last?",
+     "<p>There is no universal Pattaya duration. Use the individual veterinary exercise plan and live conditions, and call a clinic if the dog shows concerning changes.</p>"],
+    ["Is a busy nightlife area always unsafe for dogs?",
+     "<p>This page does not issue a permanent area verdict. Assess the actual crowd, noise, traffic, waste, escape route and the individual dog, and choose another route when conditions are unsuitable.</p>"],
     ["Can I hire a dog walker in Pattaya?",
-     "<p>Yes, some trainers and boarding facilities offer dog-walking services in Pattaya. Ask locally, verify insurance and handling experience, and never hand your dog to an unvetted stranger from a social-media post.</p>"]
+     "<p>PattayaPets has no current market-wide availability, credential or insurance audit. Ask a candidate for identity, experience, handling plan, references, insurance evidence, emergency authority and a trial arrangement before deciding.</p>"]
   ],
   related: [
     { name: "Dog-friendly beaches", path: "/dog-friendly-pattaya/beaches.html", desc: "Cool-hour walks on the sand." },
@@ -444,85 +429,53 @@ pages.push(own({
 
 pages.push(own({
   slug: "dog-registration-thailand", crumb: "Registration & the law",
-  title: "Dog Registration Thailand | Rabies Law & Local Rules | PattayaPets",
-  desc: "Pet law for owners in Pattaya: the legal requirement to vaccinate " +
-    "against rabies, local dog registration, and responsible-ownership rules in your area.",
-  h1: "Dog registration and the law",
-  lede: "Thailand has real legal duties for pet owners &mdash; rabies vaccination " +
-    "chief among them &mdash; and some local registration rules on top.",
-  verify: "Pet law and local registration rules change and vary by municipality. " +
-    "This is general orientation, last reviewed May 2026 — confirm the current " +
-    "rules with your local district office and a vet.",
+  title: "Dog Registration in Pattaya | What Is Verified | PattayaPets",
+  desc: "What can and cannot currently be verified about rabies law, dog registration and local pet rules in Pattaya, with the official DLD legal source.",
+  h1: "Dog registration and rabies rules in Pattaya",
+  lede: "Thailand has national rabies legislation, but this publication has not " +
+    "verified a current Pattaya ordinance or an official English text that supports " +
+    "a universal local registration or booster schedule.",
+  updated: "2026-08-01",
+  verify: "Ask the relevant Pattaya City or district office for the current local " +
+    "instrument and ask a licensed veterinarian for the schedule that applies to your animal. " +
+    "Do not rely on a condo rule or an old news report as the law.",
   sections: [
-    { h: "Rabies vaccination is the law", html:
-      "<p>Under Thailand&rsquo;s rabies legislation, dogs and cats must be " +
-      "<strong>vaccinated against rabies</strong> and kept up to date. This is " +
-      "not just good practice &mdash; it is a legal duty, and it protects your " +
-      "pet, your family and the community. Keep the certificates and stay on " +
-      "schedule &mdash; see " +
-      "<a href=\"/dogs/dog-vaccinations-thailand.html\">dog vaccinations</a> and " +
-      "<a href=\"/cats/cat-vaccinations-thailand.html\">cat vaccinations</a>.</p>" },
-    { h: "Local dog registration", html:
-      "<p>Some Thai municipalities operate <strong>dog registration or " +
-      "licensing</strong> schemes, and there have been moves toward wider " +
-      "registration and microchipping of dogs and cats. What applies to you " +
-      "depends on your local district. A working " +
-      "<a href=\"/owning-a-pet-in-pattaya/microchipping-your-pet.html\">microchip</a> " +
-      "with up-to-date contact details is increasingly part of that picture. Ask at your local municipal or district " +
-      "office, or ask your vet &mdash; vets generally know the current local " +
-      "position.</p>" },
-    { h: "Responsible ownership", html:
-      "<p>Beyond paperwork, the everyday law-and-good-neighbour basics apply: " +
-      "keep your dog under control in public, do not let it roam or become a " +
-      "nuisance, clean up after it, and make sure it cannot stray. Responsible " +
-      "ownership is also what keeps dogs welcome in Pattaya&rsquo;s cafes, " +
-      "condos and beaches.</p>" },
-    { h: "After adopting or importing a pet", html:
-      "<p>New owners should book a vet visit within the first week to confirm " +
-      "vaccination history and schedule rabies boosters if needed. Rescues often " +
-      "rehome animals already vaccinated &mdash; still keep certificates in a " +
-      "folder with microchip paperwork.</p>" +
-      "<p>If you imported your pet, DLD and airline records may already document " +
-      "rabies vaccination &mdash; translate key dates onto a calendar reminder " +
-      "before the certificate expires. See " +
-      "<a href=\"/bring-pet-to-thailand/\">bring pet to Thailand</a> for the " +
-      "import side and " +
-      "<a href=\"/take-pet-out-of-thailand/export-process.html\">export process</a> " +
-      "if you may leave later.</p>" },
-    { h: "Microchips, collars and ID", html:
-      "<p>Thailand is moving toward wider identification of dogs and cats. A " +
-      "<a href=\"/owning-a-pet-in-pattaya/microchipping-your-pet.html\">microchip</a> " +
-      "registered with your current phone number helps if your pet is lost or " +
-      "involved in a bite incident. Collar tags with a local number are still " +
-      "worthwhile &mdash; finders call before scanning.</p>" +
-      "<p>Update chip registry details every time you change SIM or leave the " +
-      "country temporarily. Boarding facilities and airlines increasingly ask for " +
-      "chip numbers upfront.</p>" },
-    { h: "If something goes wrong", html:
-      "<p>If your dog bites a person or another animal, exchange contact details, " +
-      "seek medical or vet care promptly, and produce vaccination records. " +
-      "Out-of-date rabies vaccination creates serious legal and health exposure.</p>" +
-      "<p>Roaming dogs annoy neighbours and trigger complaints to juristic offices " +
-      "&mdash; another reason registration, vaccination and leash control matter " +
-      "beyond paperwork.</p>" }
+    { h: "The national source we can point to", html:
+      "<p>The Department of Livestock Development publishes the Thai-language " +
+      "<a href=\"https://legal.dld.go.th/index.php/th/phra-rach-bayyati-rokh-phis-sunakh-ba-ph-s-2535\">Rabies Act B.E. 2535 legal hub</a> " +
+      "and its <a href=\"https://legal.dld.go.th/images/Pho%20Roh%20Bor/Rok-Phit-SuNak-Ba/5%20Rok-Phit-SuNak-Ba/1.pdf\">official Act PDF</a>. " +
+      "Both were reopened on 1 August 2026. PattayaPets has not obtained a certified " +
+      "translation, so it does not paraphrase a species, age, interval or penalty from " +
+      "those Thai provisions.</p>" },
+    { h: "What remains unverified locally", html:
+      "<p>No current official Pattaya registration ordinance was located in the audit. " +
+      "That means this page cannot tell every Pattaya resident that a dog or cat must " +
+      "be registered, microchipped or renewed on one universal schedule. Ask the office " +
+      "responsible for your registered address for the instrument, effective date, animals " +
+      "covered, documents, fee and renewal rule.</p>" },
+    { h: "Keep evidence separate", html:
+      "<p>Keep the vaccination certificate, identifier records, adoption or import papers " +
+      "and any municipal receipt together. A landlord or condominium may request evidence, " +
+      "but a private building policy is not proof of a city or national legal requirement. " +
+      "Likewise, an airline or destination-country rule applies to that journey, not to every " +
+      "pet living in Pattaya.</p>" },
+    { h: "If an incident occurs", html:
+      "<p>Protect people and animals from further contact, exchange details and contact the " +
+      "appropriate medical, veterinary and local authorities. Show the actual vaccination " +
+      "and identification records rather than estimating dates from memory. PattayaPets does " +
+      "not provide legal or clinical advice.</p>" }
   ],
   faqs: [
     ["Is rabies vaccination legally required for pets in Thailand?",
-     "<p>Yes. Thai law requires dogs and cats to be vaccinated against rabies and kept current. Keep the vaccination certificates, and use a vet to stay on schedule.</p>"],
+     "<p>DLD publishes the Rabies Act B.E. 2535, linked above. This English-language page does not assert the Act&rsquo;s exact species, age or booster interval without a certified translation. Ask DLD or a licensed veterinarian for the rule that applies to your animal.</p>"],
     ["Do I have to register my dog in Pattaya?",
-     "<p>Registration and licensing schemes vary by municipality, and rules have been evolving. Check the current requirement with your local district office or your vet, who will know the local position.</p>"],
+     "<p>A current official Pattaya registration instrument was not located. Ask the office responsible for your address to provide the current ordinance or notice and its effective date.</p>"],
     ["What documents should I keep after vaccination?",
-     "<p>Keep the rabies certificate, microchip number and any municipal registration receipt in one folder — you may need them for boarding, export or if your dog is involved in an incident.</p>"],
-    ["Can I register a cat as well as a dog?",
-     "<p>Rabies vaccination rules apply to cats too. Registration schemes focus on dogs in many areas — confirm locally whether cats need separate licensing.</p>"],
-    ["What happens if my pet's rabies vaccine lapses?",
-     "<p>You are out of compliance with Thai law and may need to restart vaccination intervals for travel. Book a booster before the expiry date on the certificate.</p>"],
-    ["Does my condo need proof of registration?",
-     "<p>Yes, some buildings ask for vaccination or registration copies when you move in with a pet. Have scans ready alongside your lease permission.</p>"],
-    ["Who can vaccinate against rabies in Thailand?",
-     "<p>Licensed veterinarians administer rabies vaccines and issue the certificates you need for registration and travel. Keep the official certificate, not just a clinic receipt.</p>"],
-    ["Are there breed-specific bans in Pattaya?",
-     "<p>Yes, some Pattaya condos and landlords restrict dogs by size or breed regardless of national law. Check building rules before adopting a large or restricted breed.</p>"]
+     "<p>Keep the issued vaccination certificate, identifier records, import or adoption papers and any municipal receipt. Preserve the original dates and issuer details.</p>"],
+    ["Does a condo rule prove the law?",
+     "<p>No. A lease, landlord or juristic-office policy can bind occupancy without being a municipal or national law. Ask for each rule in writing and identify who issued it.</p>"],
+    ["What if official sources conflict?",
+     "<p>Ask the competent authority for written clarification and keep it with your records. Do not choose the more convenient interpretation from an unofficial summary.</p>"]
   ],
   related: [
     { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Registration schemes often tie to microchips." },
@@ -534,75 +487,73 @@ pages.push(own({
 
 pages.push(own({
   slug: "where-to-buy-pet-food", crumb: "Where to buy pet food",
-  title: "Where to Buy Pet Food in Pattaya | Shops, Supermarkets & Online | PattayaPets",
-  desc: "Where to buy pet food and supplies in Pattaya — pet shops, supermarkets, " +
-    "online delivery, and finding premium and prescription diets for daily feeding.",
+  title: "Buying Pet Food in Pattaya | PattayaPets",
+  desc: "How to verify current pet-food stock and sellers in Pattaya, protect product integrity, and keep therapeutic or diet changes under veterinary direction.",
   h1: "Where to buy pet food in Pattaya",
-  lede: "Feeding a pet in Pattaya is easy for everyday food, and a little more " +
-    "planning for premium or prescription diets.",
+  lede: "Stock, seller quality and delivery conditions change. This page explains what to " +
+    "verify without claiming a brand is available or prescribing a diet.",
+  updated: "2026-08-01",
+  verify: "PattayaPets has not completed a current stock, price, seller-authenticity or " +
+    "delivery audit. It provides no feeding transition, therapeutic-diet or parasite-treatment " +
+    "instruction; confirm those with the treating veterinarian and product manufacturer.",
   sections: [
-    { h: "The everyday options", html:
-      "<ul><li><strong>Pet shops</strong> &mdash; dedicated stores carry the " +
-      "widest range of food, treats and supplies, and staff can advise. See the " +
-      "<a href=\"/pet-shops/\">pet shops directory</a>.</li>" +
-      "<li><strong>Supermarkets and hypermarkets</strong> &mdash; the big stores " +
-      "stock mainstream dog and cat food, litter and basics, convenient on a " +
-      "normal shop.</li>" +
-      "<li><strong>Vet clinics</strong> &mdash; many <a href=\"/vets/\">vets</a> " +
-      "sell food, especially prescription diets.</li></ul>" },
-    { h: "Online and delivery", html:
-      "<p>Thailand has well-established online pet retailers and the major " +
-      "marketplace apps carry pet food with home delivery &mdash; useful for " +
-      "heavy bags and for brands the shops near you do not stock. Delivery to " +
-      "condos and houses across Pattaya is straightforward.</p>" },
-    { h: "Premium, imported and prescription diets", html:
-      "<p>Mainstream brands are easy to find. For a specific imported premium " +
-      "brand, or a <strong>prescription diet</strong> your vet has recommended, " +
-      "availability varies &mdash; ask your vet and your pet shop, and consider " +
-      "buying a steady supply online so you never run out. If you are switching " +
-      "your pet&rsquo;s food, do it gradually.</p>" },
-    { h: "Litter, treats and everyday supplies", html:
-      "<p>Cat litter is stocked at supermarkets, pet shops and online &mdash; clumping " +
-      "and tofu-based litters are common. For dogs, treats sold at street stalls are " +
-      "often fatty or salty; stick to reputable pet-shop brands if you reward heavily.</p>" +
-      "<p>Parasite preventatives are usually purchased through your " +
-      "<a href=\"/vets/\">vet</a> rather than random market stalls &mdash; counterfeits " +
-      "exist. Year-round flea and tick control is not optional in Pattaya; see " +
-      "<a href=\"/pet-emergency/ticks-and-fleas.html\">ticks &amp; fleas</a>.</p>" },
-    { h: "Shopping by neighbourhood", html:
-      "<p>Central Pattaya and Naklua have the densest cluster of " +
-      "<a href=\"/pet-shops/\">pet shops</a> and hypermarkets. Jomtien owners often " +
-      "drive to larger stores or use delivery apps for heavy bags. East Pattaya village " +
-      "houses may rely on weekly online orders if local shops carry limited premium lines.</p>" +
-      "<p>Before a long trip, check stock of your pet&rsquo;s usual diet &mdash; " +
-      "see <a href=\"/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html\">cost of owning " +
-      "a pet</a> for why a two-week buffer beats last-minute panic.</p>" },
-    { h: "Switching foods safely", html:
-      "<p>Thailand&rsquo;s heat and travel stress make sudden diet changes a common " +
-      "cause of upset stomachs. Mix old and new food over seven to ten days. If your " +
-      "vet prescribed a therapeutic diet, do not substitute supermarket brands without " +
-      "asking &mdash; kidney, urinary and allergy diets are formulated precisely.</p>" +
-      "<p>Raw feeding has a following among expats but carries parasite and bacterial " +
-      "risk in the tropics; discuss with a vet who understands your pet&rsquo;s health " +
-      "before committing.</p>" }
+    { h: "Find candidates, then verify the exact product", html:
+      "<p>The <a href=\"/pet-shops/\">pet-shop directory</a> contains approved business " +
+      "records and explicit evidence states; it is not a live inventory. Contact a seller " +
+      "before travelling and confirm the full product name, formulation, pack size, batch or " +
+      "expiry information, price, storage condition and collection or delivery method. A clinic " +
+      "or supermarket should be treated the same way: no stock is inferred from its category.</p>" },
+    { h: "Online orders need seller and delivery checks", html:
+      "<p>PattayaPets does not certify an online retailer or marketplace seller. Check who the " +
+      "seller is, whether the listing identifies the exact product, how the item is stored and " +
+      "transported, what happens if packaging is damaged, and the current return or refund route. " +
+      "Confirm building access and delivery conditions rather than assuming every Pattaya address " +
+      "or heavy order is served.</p>" },
+    { h: "Therapeutic diets stay under veterinary direction", html:
+      "<p>If a veterinarian has prescribed or recommended a therapeutic diet, confirm the exact " +
+      "name, formulation, quantity, duration, monitoring and acceptable alternative with that " +
+      "veterinarian. A seller&rsquo;s category or a similar label does not establish clinical " +
+      "equivalence. Do not substitute or start a diet from this guide, and do not infer that an " +
+      "imported or premium label is necessary or superior.</p>" },
+    { h: "Check packaging, storage and product authority", html:
+      "<p>For food, litter, treats or another supply, inspect the product identity, intact " +
+      "packaging, expiry or best-before information, storage instructions and seller contact. " +
+      "PattayaPets has not sampled local products or tested seller authenticity. Parasite " +
+      "products are not ordinary shopping advice: ask a veterinarian for the product and " +
+      "schedule appropriate to the species, weight, health and exposure, then use it exactly as " +
+      "directed. See the <a href=\"/pet-emergency/ticks-and-fleas.html\">source-bounded " +
+      "parasite page</a>.</p>" },
+    { h: "Location and continuity are verification questions", html:
+      "<p>The current business data does not prove that one Pattaya neighbourhood has the " +
+      "widest range or that a particular item will remain available. Use the directory&rsquo;s " +
+      "area filters to find approved records, then confirm stock and transport for the exact " +
+      "address. If continuity matters, ask the veterinarian and seller how to plan around a " +
+      "shortage; this page does not prescribe a fixed buffer quantity.</p>" },
+    { h: "Do not use a universal transition schedule", html:
+      "<p>A suitable transition depends on the animal, current diet, new product, health and " +
+      "reason for change. Follow the treating veterinarian&rsquo;s and manufacturer&rsquo;s current " +
+      "instructions rather than a generic number of days. If the animal is unwell, refuses " +
+      "food, or develops concerning signs, contact a veterinarian. Questions about raw, home-" +
+      "prepared or therapeutic feeding require individual clinical and food-safety advice; " +
+      "this page does not approve a feeding method.</p>" }
   ],
   faqs: [
-    ["Can I get my usual brand of pet food in Pattaya?",
-     "<p>Mainstream brands are widely available. For a specific imported or premium brand, check pet shops and online retailers — and if your pet is settled on something particular, keep a buffer stock so a temporary shortage is not a problem.</p>"],
-    ["Where do I get a prescription diet?",
-     "<p>Through vet clinics and some pet shops. Ask your vet where to buy the diet they have recommended, and whether it can be ordered online for regular delivery.</p>"],
-    ["Is Thai-made pet food reliable?",
-     "<p>Established Thai brands sold through reputable shops are widely used. If your pet has allergies or a sensitive stomach, introduce new food gradually and ask your vet if a specific diet is needed.</p>"],
-    ["Should I stock up before Songkran or holidays?",
-     "<p>Shops can run short around long holidays and during heavy rain when delivery slows. Keep two weeks of your pet's usual food as a buffer.</p>"],
-    ["Can I bring pet food from abroad?",
-     "<p>Small amounts for personal use are usually fine; large shipments may face customs rules. For everyday feeding, local supply is simpler — see our <a href=\"/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html\">cost guide</a>.</p>"],
-    ["Which supermarkets stock pet food in Pattaya?",
-     "<p>Major hypermarkets across central Pattaya, Naklua and Jomtien carry mainstream dog and cat lines; dedicated pet shops still win on range and advice.</p>"],
-    ["Is online pet food delivery reliable?",
-     "<p>Yes, delivery from established retailers and marketplace sellers with good ratings is generally reliable. It is useful for heavy bags; inspect packaging on arrival and store food in airtight containers in the humidity.</p>"],
-    ["What if my pet refuses Thai brands?",
-     "<p>Transition gradually, or ask your vet whether a specific imported line is worth the premium. Sometimes refusal is stress, not taste — especially after a move.</p>"]
+    ["Can I get a specific brand in Pattaya?",
+     "<p>This page has no live stock inventory. Contact the seller and confirm the exact formulation, pack size, expiry information, storage, price and collection or delivery before relying on it.</p>"],
+    ["Where do I obtain a therapeutic diet?",
+     "<p>Ask the treating veterinarian to identify the exact product and acceptable source or alternative. Do not infer clinical equivalence from a similar label or seller category.</p>"],
+    ["Does PattayaPets certify Thai or imported brands?",
+     "<p>No. The publication has not sampled products, audited manufacturers or compared nutrition, safety or quality by country of origin.</p>"],
+    ["How much food should I keep in reserve?",
+     "<p>No fixed buffer is recommended here. Ask the veterinarian and seller how to maintain continuity for the individual animal, particularly where a therapeutic diet is involved.</p>"],
+    ["Can I bring pet food into Thailand?",
+     "<p>This page does not establish a customs, DLD or food-authority allowance. Confirm the current rule for the exact product, quantity and origin with the competent Thai authority before travel.</p>"],
+    ["Which Pattaya shop has the widest range?",
+     "<p>PattayaPets has not completed a comparative inventory and does not rank one seller. Use the <a href=\"/pet-shops/\">directory</a> to find approved records, then verify stock directly.</p>"],
+    ["Is online delivery reliable?",
+     "<p>No platform-wide guarantee is made. Verify the seller, exact product, delivery conditions, packaging, returns and the address service area for each order.</p>"],
+    ["How should I change my pet&rsquo;s food?",
+     "<p>Use the treating veterinarian&rsquo;s and manufacturer&rsquo;s instructions for that animal and product. This page does not supply a universal transition schedule or diagnose a refusal to eat.</p>"]
   ],
   related: [
     { name: "Pet shops in Pattaya", path: "/pet-shops/", desc: "The directory of pet supply shops." },

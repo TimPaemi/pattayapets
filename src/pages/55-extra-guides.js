@@ -1,7 +1,5 @@
 "use strict";
-/* Cross-cluster guides that fill genuine gaps: a venomous-creatures emergency
-   page, two adoption/welfare guides, two pet-health guides, and a domestic
-   travel guide. Each is placed in the cluster it belongs to. */
+/* Cross-cluster guides with explicit evidence and verification boundaries. */
 
 const { article } = require("../guidekit.js");
 
@@ -10,533 +8,289 @@ const EMERG = { name: "Pet emergencies", path: "/pet-emergency/" };
 const ADOPT = { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/" };
 const HEALTH = { name: "Pet health in Pattaya", path: "/pet-health-pattaya/" };
 const OWNING = { name: "Owning a pet in Pattaya", path: "/owning-a-pet-in-pattaya/" };
+const REVIEWED = "2026-08-01";
 
-const NOTVET =
-  "PattayaPets is not a veterinary practice and this is not veterinary advice. " +
-  "In a genuine emergency, the right move is almost always the same: get your pet " +
-  "to a veterinarian as fast as safely possible. The information here is general " +
-  "orientation only.";
+const CLINICAL_BOUNDARY =
+  "Clinical review status: no licensed veterinarian has reviewed this publication. " +
+  "It is source-led general orientation, not a diagnosis, treatment plan or dosing " +
+  "instruction. Contact a qualified veterinarian for the individual animal.";
 
-const HEALTH_VERIFY =
-  "This is general health orientation, last reviewed on 31 May 2026, and is not " +
-  "veterinary advice or a diagnosis. PattayaPets is an editorial publication, not " +
-  "a veterinary practice. If you are worried about your pet, see a qualified " +
-  "veterinarian &mdash; early advice is always better than waiting.";
+const SOURCES = {
+  toads: "https://www.msdvetmanual.com/toxicology/toad-poisoning/toad-poisoning-in-dogs-and-cats",
+  shelterCare: "https://www.sheltervet.org/guidelines-for-standards-of-care-in-animal-shelters.",
+  rabiesBite: "https://ddc.moph.go.th/brc/news.php?deptcode=brc&news=58885&news_views=416",
+  dental: "https://www.aaha.org/resources/2019-aaha-dental-care-guidelines-for-dogs-and-cats/",
+  dentalHome: "https://www.aaha.org/resources/your-pets-dental-care/",
+  weight: "https://www.aaha.org/trends-magazine/publications/nutritional-guidelines/",
+  wsavaNutrition: "https://wsava.org/global-guidelines/global-nutrition-guidelines/",
+  dldMovement: "https://aqi-new.dld.go.th/index.php/th/service/manualpeo",
+  catTransport: "https://catvets.com/resource/2025-transportation-of-cats-in-motor-vehicles-position-statement/"
+};
 
 const pages = [];
 
-/* ============ EMERGENCY: VENOMOUS CREATURES ============ */
+function source(name, href) {
+  return '<a href="' + href + '">' + name + "</a>";
+}
+
 pages.push(article({
   path: "/pet-emergency/venomous-creatures.html",
-  title: "Venomous Creatures & Pets Pattaya | Toads, Centipedes & Stings | PattayaPets",
-  desc: "Beyond snakes: the toads, centipedes, bees and other small creatures in " +
-    "Thailand that can hurt or poison a curious pet, and what to do in gardens and homes.",
-  crumb: "Toads, centipedes & stings",
+  title: "Toads, Stings & Bites in Pattaya | Pet Safety | PattayaPets",
+  desc: "Source-led emergency orientation for a pet that mouths a toad or has an unidentified sting or bite in Pattaya, with safe limits and veterinary escalation.",
+  crumb: "Toads, stings and bites",
   breadcrumbs: [GUIDES, EMERG],
   eyebrow: "Pet emergencies",
-  h1: "Toads, centipedes and stinging creatures",
-  lede: "Snakes get the attention, but Thailand has other small creatures a " +
-    "curious dog or cat can get badly hurt by.",
+  h1: "Toads, stings and unidentified bites: call a vet",
+  lede: "Species, toxin and severity are difficult to identify at home. Treat a concerning exposure as a veterinary problem, not an online identification exercise.",
+  verify: CLINICAL_BOUNDARY,
+  updated: REVIEWED,
   sections: [
-    { html: '<div class="callout callout-emergency"><p>' + NOTVET + "</p></div>" },
-    { h: "Toxic toads", html:
-      "<p>Thailand&rsquo;s common toads secrete a <strong>toxin</strong> from " +
-      "their skin as a defence. A dog &mdash; or, less often, a cat &mdash; that " +
-      "mouths, bites or eats a toad can be poisoned. The first signs are usually " +
-      "sudden <strong>drooling or foaming</strong>, pawing at the mouth, head " +
-      "shaking and obvious distress; in more serious cases there can be " +
-      "wobbliness, vomiting, an abnormal heartbeat, collapse or seizures.</p>" +
-      "<p>If you see your pet mouth a toad, act straight away: <strong>rinse the " +
-      "mouth out</strong> &mdash; flush and wipe the gums and tongue with running " +
-      "water, with the head tilted down so water runs <em>out</em> of the mouth, " +
-      "not down the throat &mdash; for several minutes, then get to a " +
-      "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">vet</a>. Any serious " +
-      "sign is an emergency. Toads are most active at night and in the rainy " +
-      "season.</p>" },
-    { h: "Centipedes", html:
-      "<p>Thailand has large centipedes whose bite is genuinely painful. A bitten " +
-      "pet may yelp, paw at the spot, and develop swelling at the bite. For a " +
-      "healthy pet a single bite is usually not life-threatening, but it is " +
-      "painful and worth a vet call &mdash; especially if swelling spreads, or " +
-      "the pet seems unwell, or it is a small, very young or elderly animal.</p>" },
-    { h: "Bees, wasps and hornets", html:
-      "<p>A single sting causes pain and local swelling. The situations that need " +
-      "a vet urgently are <strong>multiple stings</strong>, a sting <strong>inside " +
-      "the mouth or throat</strong> (which can swell and affect breathing), or " +
-      "signs of an <strong>allergic reaction</strong> &mdash; facial swelling, " +
-      "hives, weakness, breathing difficulty or collapse. Move your pet away from " +
-      "the area; for a single sting, watch closely; for any of those warning " +
-      "signs, go straight to a vet.</p>" },
-    { h: "Scorpions", html:
-      "<p>Thailand has scorpions, and a sting is painful, but it is generally not " +
-      "dangerous to a healthy dog or cat. Still phone a vet if your pet is small, " +
-      "very young or old, or seems genuinely unwell rather than just sore.</p>" },
-    { h: "Lowering the risk", html:
-      "<p>Supervise pets in gardens, especially at <strong>dusk and night and in " +
-      "the rainy season</strong>, when toads and centipedes are most active. " +
-      "Discourage your pet from mouthing small creatures, keep the garden tidy " +
-      "&mdash; woodpiles and damp corners shelter centipedes &mdash; and know " +
-      "your nearest 24-hour vet before you ever need it. For snakes specifically, " +
-      "see <a href=\"/pet-emergency/snake-bites.html\">snake bites</a>.</p>" }
+    { h: "Toad exposure can affect more than the mouth", html:
+      "<p>The " + source("MSD Veterinary Manual review of toad poisoning", SOURCES.toads) +
+      " documents immediate drooling, head shaking, pawing at the mouth and retching, with possible vomiting, weakness, breathing difficulty, abnormal heart rhythm or seizures in more serious exposures. Severity varies by toad, dose and patient; a photograph from a safe distance may help, but do not delay care to identify the animal.</p>" },
+    { h: "What to do after mouthing a toad", html:
+      "<p>Remove the pet from further exposure and contact an emergency veterinarian immediately. MSD recommends prompt, thorough flushing of oral mucous membranes, while also warning against inhalation of contaminated water or saliva. Because an agitated, weak or seizing animal may aspirate or bite, follow the emergency clinic's handling instructions while travelling; do not force water down the throat and do not induce vomiting.</p>" },
+    { h: "Stings, centipedes, scorpions and unknown bites", html:
+      "<p>We did not verify which arthropod species caused an individual exposure or publish a claim that a particular Pattaya species is harmless. Move the pet away without handling the creature, photograph it only if safe, and call a vet with the time, location and signs. Breathing difficulty, collapse, seizures, rapidly spreading swelling, multiple stings or a mouth/eye exposure needs emergency care.</p>" },
+    { h: "Do not improvise medication", html:
+      "<p>Do not give human antihistamines, pain medicines or leftover veterinary drugs unless a veterinarian who knows the patient's species, weight, history and current signs instructs you. Do not cut, suck, burn or tourniquet a bite site.</p>" },
+    { h: "Reduce exposure without making prevalence claims", html:
+      "<p>Supervise outdoor access, use lighting, remove accessible food and water that attract wildlife, keep storage areas orderly and block safe-to-seal entry gaps. We found no current representative dataset for the frequency of these encounters across Pattaya homes, so this page does not rank local prevalence.</p>" },
+    { h: "Source and review boundary", html:
+      "<p><strong>Clinical reference:</strong> " + source("MSD Veterinary Manual: toad poisoning", SOURCES.toads) +
+      ". Checked 1 August 2026; no licensed veterinarian has clinically reviewed this page.</p>" }
   ],
   faqs: [
-    ["My dog mouthed a toad - what do I do?",
-     "<p>Rinse the mouth out at once: flush and wipe the gums and tongue with running water, head tilted down so water runs out of the mouth, for several minutes. Then get to a vet. Drooling, foaming and pawing at the mouth are the early signs; collapse or seizures are a dire emergency.</p>"],
-    ["Is a centipede bite dangerous to a pet?",
-     "<p>For a healthy pet a single bite is painful but usually not life-threatening. See a vet if swelling spreads, the pet seems unwell, or it is small, very young or elderly.</p>"],
-    ["My pet was stung by a bee - should I worry?",
-     "<p>A single sting usually just causes pain and swelling - watch closely. Seek a vet urgently for multiple stings, a sting in the mouth or throat, or signs of an allergic reaction such as facial swelling, hives, weakness or breathing difficulty.</p>"],
-    ["Are scorpions common in Pattaya homes?",
-     "<p>They can appear in gardens and ground-floor rooms, especially after rain. Shake out shoes and bedding; see a vet if your pet is stung and seems unwell.</p>"],
-    ["What about centipedes in rainy season?",
-     "<p>Large centipedes are more active when it is wet. Bites are painful — rinse the area and watch for spreading swelling or lethargy.</p>"],
-    ["When are toads most active around Pattaya?",
-     "<p>Toads are most active at night and during the rainy season. Supervise pets in gardens at those times and discourage them from mouthing small creatures.</p>"]
+    ["My dog mouthed a toad. What should I do?", "<p>Remove further exposure and phone an emergency veterinarian now. Do not induce vomiting or force water down the throat; follow the clinic's instructions for safe oral decontamination and transport.</p>"],
+    ["Can I identify the risk from a photo?", "<p>A photo may help a clinician, but it cannot establish dose or severity. Do not delay veterinary contact to identify the creature.</p>"],
+    ["Can I give an antihistamine for a sting?", "<p>Only if a veterinarian who knows the individual pet instructs you. Human products, combinations and doses can be inappropriate.</p>"],
+    ["Is a centipede or scorpion sting harmless?", "<p>Do not assume that. Species and patient response may be uncertain; call a vet and seek emergency care for serious or rapidly worsening signs.</p>"],
+    ["Which signs need emergency care?", "<p>Breathing difficulty, collapse, seizures, rapidly spreading swelling, multiple stings, severe weakness or a mouth or eye exposure needs emergency veterinary attention.</p>"]
   ],
   related: [
-    { name: "Snake bites", path: "/pet-emergency/snake-bites.html", desc: "Thailand's venomous snakes, and how to react." },
-    { name: "Poisoning", path: "/pet-emergency/poisoning.html", desc: "Toad toxin, baits and other hazards." },
-    { name: "Rainy-season pet care", path: "/owning-a-pet-in-pattaya/rainy-season-pet-care.html", desc: "When toads and centipedes are most active." },
-    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Clinics open around the clock." }
+    { name: "Poisoning", path: "/pet-emergency/poisoning.html", desc: "Veterinary-first poisoning orientation." },
+    { name: "Snake bites", path: "/pet-emergency/snake-bites.html", desc: "Avoid unsafe first aid and contact a vet." },
+    { name: "24-hour vets", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Call to confirm current emergency intake." },
+    { name: "Pet emergencies", path: "/pet-emergency/", desc: "Urgent-care contacts and boundaries." }
   ]
 }));
 
-/* ============ ADOPT: FOSTERING ============ */
 pages.push(article({
   path: "/adopt-a-pet-pattaya/fostering.html",
-  title: "Fostering a Pet in Pattaya | Short-Term Care That Saves Lives | PattayaPets",
-  desc: "What fostering a rescue dog or cat in Pattaya involves: why shelters depend on it, what it asks of your time and home, the costs, and how to get started.",
+  title: "Fostering a Pet in Pattaya: Checklist | PattayaPets",
+  desc: "A practical checklist for fostering a rescue dog or cat in Pattaya: verify the organisation, written authority, costs, veterinary plan, housing and handover.",
   crumb: "Fostering",
   breadcrumbs: [GUIDES, ADOPT],
   eyebrow: "Adopt a pet in Pattaya",
-  h1: "Fostering a pet in Pattaya",
-  lede: "Not ready to adopt for life, but want to help? Fostering is one of the " +
-    "most valuable things you can do for Pattaya&rsquo;s animals.",
+  h1: "Fostering in Pattaya: put the care plan in writing",
+  lede: "Fostering can provide valuable temporary care, but responsibility, authority and emergency decisions must be clear before an animal enters your home.",
+  verify: "Editorial checklist checked 1 August 2026. Organisation capacity, foster needs, funding and policies change. PattayaPets has not verified an open foster placement through this page and has not clinically reviewed a foster medical protocol.",
+  updated: REVIEWED,
   sections: [
-    { h: "What fostering means", html:
-      "<p>As a foster carer you give a rescue animal a <strong>temporary " +
-      "home</strong> &mdash; days, weeks or a few months &mdash; while it " +
-      "recovers from illness or injury, grows up enough to be rehomed, or simply " +
-      "waits for the right permanent family. The rescue organisation usually " +
-      "covers the veterinary costs; you provide the home, the routine and the " +
-      "care.</p>" },
-    { h: "Why it matters here", html:
-      "<p>Pattaya&rsquo;s shelters and rescues run at, or beyond, capacity. Every " +
-      "foster home does three things at once: it <strong>frees a space</strong> " +
-      "for another animal in need, it gets an animal <strong>out of kennels and " +
-      "into a real home</strong> &mdash; which lowers its stress and makes it far " +
-      "more adoptable &mdash; and it gives puppies, kittens, recovering animals " +
-      "and shy individuals the settled environment a shelter cannot.</p>" },
-    { h: "What it asks of you", html:
-      "<p>Fostering asks for time, a home that suits an animal, and a willingness " +
-      "to <strong>say goodbye</strong> when your foster pet is adopted &mdash; the " +
-      "hard part, and the whole point. You will follow the rescue&rsquo;s " +
-      "guidance, and you should think about how a foster animal will fit with any " +
-      "<a href=\"/dogs/\">dogs</a> or <a href=\"/cats/\">cats</a> already in your " +
-      "home. Be honest with the " +
-      "rescue about what you can and cannot take on &mdash; a good organisation " +
-      "wants the match to work.</p>" },
-    { h: "How to start", html:
-      "<p>Contact the Pattaya shelters and rescues directly and ask about their " +
-      "<strong>foster programme</strong> &mdash; most are glad to hear from " +
-      "potential fosters. They will talk through your situation and match an " +
-      "animal to it. See the <a href=\"/adopt-a-pet-pattaya/\">adopt a pet</a> " +
-      "hub for the organisations working in and around the city.</p>" },
-    { h: "And if you cannot let go?", html:
-      "<p>Sometimes a foster carer realises they cannot part with the animal and " +
-      "adopts it themselves &mdash; affectionately called a &lsquo;foster " +
-      "failure&rsquo;. It is, of course, a perfectly happy ending.</p>" },
-    { h: "Practical setup in a Pattaya home", html:
-      "<p>Most fosters need a <strong>quiet room or crate zone</strong> away from " +
-      "busy balconies and street noise at first. Stock food the rescue recommends, " +
-      "washable bedding, poo bags, and a carrier for vet trips. Condos with strict " +
-      "pet rules need written permission before you foster &mdash; see " +
-      "<a href=\"/owning-a-pet-in-pattaya/pet-friendly-housing.html\">pet-friendly housing</a>.</p>" +
-      "<p>Heat and humidity mean water bowls refreshed often and no midday walks for " +
-      "dogs recovering from surgery. Keep vaccination records and foster agreement " +
-      "paperwork where you can grab them for emergencies &mdash; " +
-      "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vets</a> ask " +
-      "useful questions fast when you have dates and names ready.</p>" },
-    { h: "Which rescues to contact", html:
-      "<p>Start with the organisations on our " +
-      "<a href=\"/adopt-a-pet-pattaya/\">adopt a pet in Pattaya</a> hub &mdash; " +
-      "<a href=\"/adopt-a-pet-pattaya/hope-for-strays.html\">Hope for Strays</a>, " +
-      "<a href=\"/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html\">Dog &amp; Cat Rescue Pattaya</a>, " +
-      "<a href=\"/adopt-a-pet-pattaya/animal-army-foundation.html\">Animal Army Foundation</a>, " +
-      "<a href=\"/adopt-a-pet-pattaya/pattaya-street-dogs-k9aid.html\">Pattaya Street Dogs (K9aid)</a>, " +
-      "<a href=\"/adopt-a-pet-pattaya/soi-dog-foundation.html\">Soi Dog Foundation</a>, " +
-      "<a href=\"/adopt-a-pet-pattaya/malees-animal-shelter.html\">Malee&rsquo;s Animal Shelter</a> " +
-      "and <a href=\"/adopt-a-pet-pattaya/ady-g-second-chance-pattaya.html\">Ady G. Second Chance Pattaya</a>. " +
-      "Each has different capacity and foster needs week to week.</p>" }
+    { h: "Verify the organisation and animal", html:
+      "<p>Contact the organisation through a current official channel. Confirm its legal or operating identity, who owns or has authority over the animal, the named coordinator, the animal's microchip and records, and whether the foster request is current. A directory listing does not prove capacity or an active programme.</p>" },
+    { h: "Use a written foster agreement", html:
+      "<p>Record start and expected review dates, where the animal may live or travel, adoption and publicity authority, supplies, routine and emergency veterinary responsibility, spending approval, transport, insurance or liability, data and photo use, and how either side ends or extends the placement. Do not assume the rescue pays every bill.</p>" },
+    { h: "Require a veterinary and emergency plan", html:
+      "<p>The " + source("Association of Shelter Veterinarians' care standards", SOURCES.shelterCare) +
+      " apply to foster-based organisations and require timely veterinary and emergency planning. Obtain the regular and after-hours clinic, authorised decision-maker, medical records, current prescriptions and instructions for signs of infectious disease. Medication and isolation protocols must come from the responsible veterinarian, not this page.</p>" },
+    { h: "Match the home to the individual", html:
+      "<p>Confirm landlord, lease, juristic-person and household permission. Discuss resident animals, children, secure separation, escape risk, noise, stairs, balconies, transport and time alone. Do not promise introductions until a veterinarian and the organisation have addressed health and behaviour.</p>" },
+    { h: "Track care and handover", html:
+      "<p>Keep a daily record of food, water, elimination, medication, health and material behaviour changes, plus receipts and appointments. At handover, transfer the animal, equipment, original records and a signed care summary to the authorised person.</p>" },
+    { h: "Source and review boundary", html:
+      "<p><strong>Welfare reference:</strong> " + source("ASV Guidelines for Standards of Care", SOURCES.shelterCare) +
+      ". Checked 1 August 2026. No licensed veterinarian has reviewed this page or any local organisation's protocol.</p>" }
   ],
-  updated: "2026-06-01",
   faqs: [
-    ["What does fostering a pet involve?",
-     "<p>Fostering means giving a rescue animal a temporary home while it recovers, grows up or waits for a permanent family. The rescue usually covers vet costs; you provide the home and care, and follow its guidance.</p>"],
-    ["Who pays the veterinary bills for a foster pet?",
-     "<p>The rescue organisation usually pays the veterinary bills for a foster pet. Confirm the arrangement with the specific rescue before you start, so expectations are clear on both sides.</p>"],
-    ["Isn't it too hard to give them back?",
-     "<p>Saying goodbye is the hard part - but it is the point: each animal you foster and pass on to a permanent home frees you to help the next one. And if you truly cannot let go, adopting your foster pet is a happy ending too.</p>"],
-    ["Can I foster if I have other pets?",
-     "<p>Often yes, with slow introductions and the rescue's guidance. Some fosters need a pet-free home — ask the organisation what they need.</p>"],
-    ["How long does fostering usually last?",
-     "<p>From a few weeks to several months, depending on the animal's needs and adoption demand. Confirm expected duration before you commit.</p>"],
-    ["Can tourists or short-term renters foster?",
-     "<p>Yes, some rescues accept short-term fosters when the dates are clear upfront. This can suit snowbirds and long-stay visitors, but be honest about your leave date because the animal needs a stable plan.</p>"],
-    ["What if the foster pet needs emergency vet care?",
-     "<p>Contact the rescue immediately if that is your agreement; otherwise go to a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vet</a> and keep receipts. Never delay stabilisation to wait for office hours.</p>"],
-    ["Do I need to register a foster dog?",
-     "<p>If the dog is in your care for an extended period, discuss registration and microchip responsibility with the rescue — see <a href=\"/owning-a-pet-in-pattaya/dog-registration-thailand.html\">dog registration in Thailand</a>.</p>"]
+    ["Who pays foster veterinary bills?", "<p>Do not assume. Put routine, emergency and after-hours financial responsibility and approval limits in the written agreement.</p>"],
+    ["How long does fostering last?", "<p>There is no reliable default. Agree a start date, review date, expected duration and extension or exit process in writing.</p>"],
+    ["Can I foster with resident pets?", "<p>Possibly, but health, behaviour and secure separation must be assessed for the individuals. Follow the responsible veterinarian and organisation's plan.</p>"],
+    ["Does a directory listing prove a rescue needs fosters?", "<p>No. Contact the organisation through a current official channel and verify the specific request.</p>"],
+    ["What should I track each day?", "<p>Record food, water, elimination, medication, health and meaningful behaviour changes, plus appointments and expenses.</p>"]
   ],
   related: [
-    { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Shelters and rescue organisations." },
-    { name: "Animal shelters in Pattaya", path: "/adopt-a-pet-pattaya/animal-shelters-pattaya.html", desc: "Compare local rescues and ways to help." },
-    { name: "Helping street animals", path: "/adopt-a-pet-pattaya/how-to-help.html", desc: "More ways to make a difference." },
-    { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Essential once a foster pet is in your care." },
-    { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "Tackling the root of the problem." }
+    { name: "Adopt a pet", path: "/adopt-a-pet-pattaya/", desc: "Check organisation operating and verification status." },
+    { name: "Animal shelters", path: "/adopt-a-pet-pattaya/animal-shelters-pattaya.html", desc: "Compare documented services and gaps." },
+    { name: "Pet-friendly housing", path: "/owning-a-pet-in-pattaya/pet-friendly-housing.html", desc: "Get building permission in writing." },
+    { name: "24-hour vets", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Pre-plan and reconfirm emergency intake." }
   ]
 }));
 
-/* ============ ADOPT: HOW TO HELP ============ */
 pages.push(article({
   path: "/adopt-a-pet-pattaya/how-to-help.html",
-  title: "How to Help Street Animals in Pattaya | Without Adopting | PattayaPets",
-  desc: "Ways to help Pattaya's street dogs and cats without adopting: donating, " +
-    "volunteering, fostering, supporting desexing, and what to do for an injured animal.",
+  title: "Help Street Animals in Pattaya | Safe Options | PattayaPets",
+  desc: "Safer ways to help Pattaya street animals: verify organisations, donate transparently, volunteer with a scope, foster formally and respond safely to injury.",
   crumb: "How to help",
   breadcrumbs: [GUIDES, ADOPT],
   eyebrow: "Adopt a pet in Pattaya",
-  h1: "Helping Pattaya's street animals",
-  lede: "You do not have to adopt to make a real difference. There are many ways " +
-    "to help the animals of Pattaya.",
+  h1: "Helping street animals in Pattaya safely and accountably",
+  lede: "Useful help starts with human safety, a verified recipient and a plan the responsible organisation or veterinarian can sustain.",
+  verify: "Editorial guidance checked 1 August 2026. PattayaPets does not collect donations or dispatch rescue services. Organisation status, needs and response capacity must be confirmed directly.",
+  updated: REVIEWED,
   sections: [
-    { h: "The picture", html:
-      "<p>Pattaya, like much of Thailand, has a large population of free-roaming " +
-      "dogs and cats. The city&rsquo;s shelters and rescues do extraordinary " +
-      "work, but they are always stretched &mdash; and they rely on residents and " +
-      "visitors who want to help.</p>" },
-    { h: "Donate", html:
-      "<p>Money is what lets a rescue treat, feed and sterilise animals, and even " +
-      "small <strong>regular</strong> donations add up. Many organisations also " +
-      "welcome supplies &mdash; food, blankets, cleaning materials &mdash; or let " +
-      "you sponsor a specific animal. Give to the established, registered rescues; " +
-      "the <a href=\"/adopt-a-pet-pattaya/\">adopt a pet</a> hub lists " +
-      "organisations working in the area, including " +
-      "<a href=\"/adopt-a-pet-pattaya/hope-for-strays.html\">Hope for Strays</a>, " +
-      "<a href=\"/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html\">Dog &amp; Cat Rescue Pattaya</a>, " +
-      "<a href=\"/adopt-a-pet-pattaya/soi-dog-foundation.html\">Soi Dog Foundation</a>, " +
-      "<a href=\"/adopt-a-pet-pattaya/malees-animal-shelter.html\">Malee&rsquo;s Animal Shelter</a>, " +
-      "<a href=\"/adopt-a-pet-pattaya/pattaya-street-dogs-k9aid.html\">Pattaya Street Dogs (K9aid)</a> " +
-      "and " +
-      "<a href=\"/adopt-a-pet-pattaya/ady-g-second-chance-pattaya.html\">Ady G. Second Chance Pattaya</a>.</p>" },
-    { h: "Volunteer", html:
-      "<p>Shelters need hands as much as funds: walking and socialising dogs, " +
-      "helping with cleaning and feeding, transport, admin, fundraising and " +
-      "events. Even occasional help is genuinely useful &mdash; ask a rescue what " +
-      "they need and when.</p>" },
-    { h: "Foster", html:
-      "<p>Opening your home to a rescue animal temporarily frees a shelter space " +
-      "and gets an animal the settled environment it needs. See " +
-      "<a href=\"/adopt-a-pet-pattaya/fostering.html\">fostering a pet in " +
-      "Pattaya</a>.</p>" },
-    { h: "If you find an injured or stray animal", html:
-      "<p>Put your <strong>own safety first</strong> &mdash; a frightened, hurt " +
-      "animal may bite or scratch, however gentle its intentions. If you can " +
-      "safely contain, shade or comfort it, do; then contact a local animal " +
-      "rescue or welfare group, or a <a href=\"/vets/\">vet</a>. For possible " +
-      "poisoning, see <a href=\"/pet-emergency/poisoning.html\">poisoning</a>.</p><p>" +
-      "<a href=\"/adopt-a-pet-pattaya/animal-army-foundation.html\">Animal Army " +
-      "Foundation</a> in Na Jomtien operates a rescue ambulance for street " +
-      "animals and urgent cases (085 093 5954; see also " +
-      "<a href=\"/vets/animal-army-hospital.html\">Animal Army Hospital</a>). " +
-      "Do not assume someone else will act. You cannot save every animal, but you " +
-      "can do something for the one in front of you.</p>" },
-    { h: "Support desexing - the real fix", html:
-      "<p>The lasting solution to a street-animal population is " +
-      "<strong>sterilisation</strong>. Supporting the rescues that run spay and " +
-      "neuter programmes &mdash; and <a href=\"/pet-health-pattaya/spaying-and-neutering.html\">" +
-      "neutering your own pets</a> &mdash; addresses the cause, not just the " +
-      "symptom. If you feed street animals, do it thoughtfully: feeding alone " +
-      "grows colonies, so pair it with support for sterilisation.</p>" +
-      "<p>Some rescues run targeted TNVR (trap-neuter-vaccinate-return) for stable " +
-      "colonies. Donating specifically to desexing funds often goes further than " +
-      "random food drops that attract more unsterilised animals.</p>" },
-    { h: "What not to do — even with good intentions", html:
-      "<p>Do not <strong>dump pets</strong> at temples or beaches &mdash; it burdens " +
-      "communities and rescues already at capacity. Do not take street puppies home " +
-      "without a vet plan and landlord permission. Do not feed aggressive colonies " +
-      "in ways that create traffic hazards or neighbour conflict.</p>" +
-      "<p>Posting dramatic photos without contacting a rescue first rarely helps. " +
-      "Better: message an organisation from our hub, share location pin and photos, " +
-      "and ask what they need (transport, foster, donation) rather than assuming " +
-      "adoption is the only fix.</p>" }
+    { h: "Verify before donating", html:
+      "<p>Use the organisation's current official channel, confirm who controls the payment account and ask what the money or supplies will fund. For a material donation, request a receipt or acknowledgement and check whether financial or activity reporting is available. Do not send money solely because an account appears in a repost.</p>" },
+    { h: "Volunteer to a defined scope", html:
+      "<p>Ask what task is needed, who supervises it, what training and protective equipment are provided, whether animal handling is involved, what insurance or liability applies and how personal data or images may be used. Decline work outside your competence.</p>" },
+    { h: "Foster through a written agreement", html:
+      "<p>A foster placement needs ownership authority, veterinary and emergency responsibility, costs, housing, transport, dates and handover in writing. See the <a href=\"/adopt-a-pet-pattaya/fostering.html\">fostering checklist</a>. The " +
+      source("ASV shelter-care standards", SOURCES.shelterCare) +
+      " are a useful benchmark for foster-based organisations.</p>" },
+    { h: "If an animal is injured", html:
+      "<p>Do not step into traffic or grab a frightened animal. Keep distance, note the exact location and condition, and contact a local rescue, animal-welfare authority or veterinarian through a verified number. Only contain or transport when it is safe and the receiving organisation or clinic agrees; availability is not guaranteed.</p>" },
+    { h: "If you are bitten, scratched or exposed to saliva", html:
+      "<p>Thailand's Department of Disease Control advises immediate washing with soap and water and prompt medical assessment even for a small exposure; see its " +
+      source("March 2026 rabies guidance", SOURCES.rabiesBite) +
+      ". Do not let an animal rescue task delay human medical care. A clinician decides post-exposure treatment.</p>" },
+    { h: "What we could not verify", html:
+      "<p>We did not verify real-time intake capacity, ambulance availability, volunteer vacancies or donation needs for every listed Pattaya organisation. Those named gaps are why each action begins with direct confirmation.</p>" }
   ],
-  updated: "2026-06-01",
   faqs: [
-    ["How can I help if I can't adopt a pet?",
-     "<p>Donate money or supplies, volunteer, foster temporarily, sponsor an animal or support sterilisation programmes. Even small, regular contributions genuinely help a stretched rescue.</p>"],
-    ["I found an injured street dog - what should I do?",
-     "<p>Keep yourself safe first, as a hurt animal may bite. If you can safely contain or comfort it, do so, then contact a local rescue, welfare group or vet - some rescues run a rescue ambulance. Acting for the animal in front of you is what matters.</p>"],
-    ["Does feeding street animals help?",
-     "<p>Yes — feeding street animals can ease immediate hunger. Feeding alone tends to grow colonies, so pair any feeding with support for sterilisation programmes, which address the root of the street-animal problem.</p>"],
-    ["Can tourists volunteer at Pattaya rescues?",
-     "<p>Many shelters welcome short-term help — walking dogs, cleaning, social media. Contact organisations directly; see our <a href=\"/adopt-a-pet-pattaya/\">adoption hub</a> for listings.</p>"],
-    ["Should I rescue every street animal I see?",
-     "<p>You cannot save them all alone — focus on one animal at a time and involve a rescue or vet for medical care, sterilisation and rehoming.</p>"],
-    ["Can I donate supplies instead of money?",
-     "<p>Often yes — food, bedding and cleaning materials are welcome, but ask what is needed this week. Cash lets rescues buy medicine and pay vets when donations lag.</p>"],
-    ["Who handles injured street animals at night?",
-     "<p><a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour animal hospitals</a> stabilise emergencies; <a href=\"/vets/animal-army-hospital.html\">Animal Army Hospital</a> runs a rescue ambulance for street cases when available. Call ahead if you can.</p>"],
-    ["Is it legal to take a street dog home in Thailand?",
-     "<p>People do adopt strays through rescues, but ownership implies responsibility for registration, vaccination and care. Work with a rescue rather than grabbing an animal without a plan.</p>"]
+    ["How do I know a donation request is genuine?", "<p>Confirm it through the organisation's current official channel, verify the account holder and purpose, and ask for acknowledgement or reporting.</p>"],
+    ["Should I move an injured street animal myself?", "<p>Only if it is safe and a receiving rescue or clinic agrees. A frightened animal may bite, and traffic or handling can create more harm.</p>"],
+    ["What if I am bitten or scratched?", "<p>Wash with soap and water immediately and seek prompt human medical assessment. Do not wait for the animal's condition to become clear.</p>"],
+    ["Can I volunteer without animal-handling experience?", "<p>Ask for non-handling tasks and a defined scope. Do not accept work outside your training or without appropriate supervision.</p>"],
+    ["Does PattayaPets dispatch a rescue ambulance?", "<p>No. PattayaPets is an editorial publication. Contact organisations or veterinary clinics directly and confirm whether they can respond.</p>"]
   ],
   related: [
-    { name: "Adopt a pet in Pattaya", path: "/adopt-a-pet-pattaya/", desc: "Shelters and rescue organisations." },
-    { name: "Animal shelters in Pattaya", path: "/adopt-a-pet-pattaya/animal-shelters-pattaya.html", desc: "Compare local rescues and ways to help." },
-    { name: "Hope for Strays", path: "/adopt-a-pet-pattaya/hope-for-strays.html", desc: "East Pattaya dog rescue shelter." },
-    { name: "Dog & Cat Rescue Pattaya", path: "/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html", desc: "Dogs and street cats in Pattaya." },
-    { name: "Soi Dog Foundation", path: "/adopt-a-pet-pattaya/soi-dog-foundation.html", desc: "Thailand's best-known animal-welfare charity." },
-    { name: "Malee's Animal Shelter", path: "/adopt-a-pet-pattaya/malees-animal-shelter.html", desc: "Dogs and cats across Pattaya and Chanthaburi." },
-    { name: "Pattaya Street Dogs (K9aid)", path: "/adopt-a-pet-pattaya/pattaya-street-dogs-k9aid.html", desc: "Street dogs and temple-dog colonies." },
-    { name: "Ady G. Second Chance Pattaya", path: "/adopt-a-pet-pattaya/ady-g-second-chance-pattaya.html", desc: "Sanctuary for disabled and rescued dogs." },
-    { name: "Fostering a pet", path: "/adopt-a-pet-pattaya/fostering.html", desc: "Give a rescue animal a temporary home." },
-    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "For injured street animals." },
-    { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "Approaching injured or loose animals safely." },
-    { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "The lasting fix for the street-animal problem." }
+    { name: "Adopt a pet", path: "/adopt-a-pet-pattaya/", desc: "Organisation listings with explicit status and evidence." },
+    { name: "Fostering", path: "/adopt-a-pet-pattaya/fostering.html", desc: "Use a written placement and veterinary plan." },
+    { name: "Street-dog encounters", path: "/pet-emergency/street-dog-encounters.html", desc: "Protect people and avoid escalating the animal." },
+    { name: "Find a vet", path: "/vets/", desc: "Call to confirm current intake." }
   ]
 }));
 
-/* ============ HEALTH: DENTAL CARE ============ */
 pages.push(article({
   path: "/pet-health-pattaya/dental-care.html",
-  title: "Pet Dental Care Pattaya | Teeth Cleaning & Gum Health | PattayaPets",
-  desc: "Why dental disease is so common in dogs and cats, the signs to watch for, " +
-    "home care, and professional dental care - orientation, not veterinary advice.",
+  title: "Pet Dental Care in Pattaya | Vet-Led Guide | PattayaPets",
+  desc: "Source-led dental care for dogs and cats: warning signs, daily home prevention, professional assessment, anaesthesia and questions for a veterinarian.",
   crumb: "Dental care",
   breadcrumbs: [GUIDES, HEALTH],
   eyebrow: "Pet health in Pattaya",
-  h1: "Dental care for dogs and cats",
-  lede: "Dental disease is one of the most common &mdash; and most overlooked " +
-    "&mdash; health problems in pets.",
-  verify: HEALTH_VERIFY,
-  updated: "2026-05-31",
+  h1: "Dental care for dogs and cats: prevention plus examination",
+  lede: "Visible tartar is only part of the mouth. A complete diagnosis and treatment plan belongs with a veterinarian and often requires assessment below the gum line.",
+  verify: CLINICAL_BOUNDARY,
+  updated: REVIEWED,
   sections: [
-    { h: "Why dental health matters", html:
-      "<p>Dental disease is extremely common in adult dogs and cats. It is " +
-      "<strong>painful</strong>, and pets are very good at hiding mouth pain, so " +
-      "it often goes unnoticed for a long time. Beyond the mouth, advanced dental " +
-      "disease is not just a local problem &mdash; it affects a pet&rsquo;s wider " +
-      "wellbeing and comfort. It is also one of the most preventable problems " +
-      "there is.</p>" },
-    { h: "Signs an owner might notice", html:
-      "<p>Things worth a closer look, and a word with your vet:</p>" +
-      "<ul><li><strong>Bad breath</strong> &mdash; not normal, and often the " +
-      "first sign.</li>" +
-      "<li><strong>Yellow or brown tartar</strong> built up on the teeth.</li>" +
-      "<li><strong>Red, swollen or bleeding gums</strong>.</li>" +
-      "<li><strong>Difficulty eating</strong>, dropping food, or chewing on one " +
-      "side.</li>" +
-      "<li>Pawing at the mouth, or loose or missing teeth.</li></ul>" },
-    { h: "Home care", html:
-      "<p>The gold standard is <strong>tooth brushing</strong>, introduced " +
-      "gradually and made positive, using a pet toothpaste &mdash; <strong>never " +
-      "human toothpaste</strong>, which contains ingredients toxic to pets. " +
-      "Vet-recommended dental chews and dental diets can help too. As with most " +
-      "things, consistency beats intensity: a little, often.</p>" },
-    { h: "Professional dental care", html:
-      "<p>Home care slows dental disease; it does not replace the vet. A " +
-      "<a href=\"/vets/\">vet</a> checks the mouth at routine visits and, when " +
-      "needed, performs a professional clean &mdash; carried out under anaesthetic " +
-      "so the whole mouth can be cleaned and assessed properly. Follow your " +
-      "vet&rsquo;s advice on how often your pet needs this; do not put it off " +
-      "because the mouth &lsquo;looks fine&rsquo;.</p>" },
-    { h: "When mouth pain is an emergency", html:
-      "<p>Sudden difficulty eating, heavy drooling, facial swelling, bleeding that " +
-      "will not stop, or a pet that will not open its mouth at all needs a " +
-      "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">vet promptly</a> &mdash; " +
-      "not a wait-and-see approach. Chronic bad breath and tartar are slower problems; " +
-      "acute mouth trauma or swelling is urgent. See also " +
-      "<a href=\"/pet-emergency/poisoning.html\">poisoning</a> if you suspect your pet " +
-      "swallowed something harmful.</p>" }
+    { h: "Signs deserve a dental assessment", html:
+      "<p>Persistent bad breath, red or bleeding gums, drooling, difficulty eating, dropping food, facial swelling, loose or broken teeth and mouth pain are reasons to call a veterinarian. These signs do not reveal the full extent or cause. The " +
+      source("AAHA dental care guidelines", SOURCES.dental) +
+      " describe a comprehensive approach to examination, imaging, cleaning, pain management and treatment.</p>" },
+    { h: "Home care starts with a healthy-enough mouth", html:
+      "<p>AAHA's current " + source("pet-owner dental guidance", SOURCES.dentalHome) +
+      " supports daily brushing with pet-specific toothpaste. Ask a vet to examine a painful or inflamed mouth before starting. Do not use human toothpaste, and do not force brushing when it causes pain or fear.</p>" },
+    { h: "Choose dental products by evidence", html:
+      "<p>Ask the veterinary team for a suitable toothbrush or alternative and products with evidence for the individual species and chewing behaviour. Chews can fracture teeth or create choking and gastrointestinal risks if they are too hard, the wrong size or swallowed in pieces; supervise and follow the product and vet's instructions.</p>" },
+    { h: "Why anaesthesia is discussed", html:
+      "<p>AAHA explains that anaesthesia permits dental radiographs, probing and cleaning below the gum line, where disease can be hidden. Anaesthesia also has patient-specific risks, so ask about pre-anaesthetic assessment, monitoring, pain control, dental imaging, consent for extractions and recovery.</p>" },
+    { h: "Urgent concerns", html:
+      "<p>Contact a veterinarian promptly for sudden inability to eat, significant mouth trauma, facial swelling, uncontrolled bleeding or severe pain. Breathing difficulty, collapse or rapidly worsening swelling needs emergency care. Do not give human pain medicine.</p>" },
+    { h: "Sources and review boundary", html:
+      "<p><strong>Clinical references:</strong> " + source("AAHA dental guidelines", SOURCES.dental) + " and " + source("AAHA pet dental care", SOURCES.dentalHome) +
+      ". Checked 1 August 2026; no licensed veterinarian has clinically reviewed this page.</p>" }
   ],
   faqs: [
-    ["How do I know if my pet has dental disease?",
-     "<p>Common signs include bad breath, yellow or brown tartar, red or bleeding gums, difficulty eating, dropping food, pawing at the mouth, and loose teeth. Pets hide mouth pain well, so have a vet check the mouth at routine visits.</p>"],
-    ["Can I brush my pet's teeth?",
-     "<p>Yes - it is the most effective home care. Introduce it gradually and use a pet toothpaste only; human toothpaste contains ingredients toxic to pets. Vet-recommended dental chews and diets can help alongside brushing.</p>"],
-    ["Is bad breath in a pet normal?",
-     "<p>No - persistent bad breath is usually a sign of dental disease, not something to accept as normal. Mention it to your vet.</p>"],
-    ["How often should pets have dental checks?",
-     "<p>At least at annual vet visits; senior pets may need more frequent mouth exams. Professional cleaning under anaesthesia may be recommended when tartar builds up.</p>"],
-    ["Are dental chews enough on their own?",
-     "<p>They help but rarely replace brushing and vet care. Use them as part of a plan your vet approves, not instead of check-ups.</p>"],
-    ["When does a dental problem need a vet promptly?",
-     "<p>Seek a vet promptly for sudden difficulty eating, heavy drooling, facial swelling, bleeding that will not stop, or a pet that will not open its mouth. Chronic bad breath and tartar still need a dental check, but acute mouth trauma or swelling is urgent.</p>"]
+    ["Is persistent bad breath normal?", "<p>No. It is a reason to arrange a dental assessment, although it does not identify the cause by itself.</p>"],
+    ["Can I brush my pet's teeth?", "<p>Often yes, using pet-specific toothpaste, but ask a vet to assess a painful or inflamed mouth first and introduce brushing gradually.</p>"],
+    ["Why does a professional dental involve anaesthesia?", "<p>It permits dental imaging, probing, cleaning below the gum line and safe treatment. Ask about the individual anaesthetic assessment and monitoring.</p>"],
+    ["Are dental chews enough?", "<p>No single product replaces veterinary assessment. Ask which evidence-backed options are safe for the individual pet and supervise use.</p>"],
+    ["Can I give human pain medicine for tooth pain?", "<p>No. Human medicines can be dangerous to pets. Contact a veterinarian for assessment and patient-specific pain control.</p>"]
   ],
   related: [
-    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Sudden mouth pain or swelling needs a vet promptly." },
-    { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html", desc: "Mouth pain can show up as head-shaking or pawing." },
-    { name: "Mobile & home-visit vets", path: "/mobile-vets/", desc: "Routine dental checks at home." },
-    { name: "Healthy weight", path: "/pet-health-pattaya/healthy-weight.html", desc: "Weight and diet affect dental health too." },
-    { name: "What it costs to own a pet", path: "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html", desc: "Budgeting for routine and unexpected care." }
+    { name: "Find a vet", path: "/vets/", desc: "Arrange a dental examination and written estimate." },
+    { name: "Healthy weight", path: "/pet-health-pattaya/healthy-weight.html", desc: "Nutrition and body-condition assessment." },
+    { name: "24-hour vets", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Call for acute trauma, swelling or severe pain." },
+    { name: "Pet health", path: "/pet-health-pattaya/", desc: "Source-led preventive health guides." }
   ]
 }));
 
-/* ============ HEALTH: HEALTHY WEIGHT ============ */
 pages.push(article({
   path: "/pet-health-pattaya/healthy-weight.html",
-  title: "Pet Obesity Pattaya | Healthy Weight in a Hot Climate | PattayaPets",
-  desc: "Why a healthy weight matters even more in Pattaya's heat, how to tell if " +
-    "a pet is overweight, why pets gain weight, and how to manage it for dogs and cats.",
+  title: "Healthy Pet Weight in Pattaya | Vet-Led Guide | PattayaPets",
+  desc: "A source-led guide to body condition and weight in dogs and cats: veterinary assessment, complete diets, measured intake, activity and safe monitoring.",
   crumb: "Healthy weight",
   breadcrumbs: [GUIDES, HEALTH],
   eyebrow: "Pet health in Pattaya",
-  h1: "Keeping a pet at a healthy weight",
-  lede: "Carrying extra weight is one of the most common and most preventable pet " +
-    "health problems &mdash; and in Pattaya&rsquo;s heat it matters even more.",
-  verify: HEALTH_VERIFY,
-  updated: "2026-05-31",
+  h1: "Healthy weight: assess body condition, then build a plan",
+  lede: "A scale number alone does not define a healthy pet. Body condition, muscle, life stage, disease, diet and activity all belong in the assessment.",
+  verify: CLINICAL_BOUNDARY,
+  updated: REVIEWED,
   sections: [
-    { h: "Why weight matters", html:
-      "<p>Excess weight is not a cosmetic issue. It strains joints and the heart, " +
-      "is linked to other health problems, and shortens lives. In Pattaya it " +
-      "carries an extra penalty: an overweight pet <strong>copes far worse with " +
-      "the heat</strong>, tiring and overheating more easily than a lean one. In " +
-      "a hot climate, a healthy weight is part of basic comfort and safety.</p>" },
-    { h: "How to tell if a pet is overweight", html:
-      "<p>The scales alone do not tell the story &mdash; body shape does. As a " +
-      "rough guide, you should be able to <strong>feel the ribs</strong> easily " +
-      "without pressing through a layer of fat, and see a <strong>waist</strong> " +
-      "when you look down at your pet. Your <a href=\"/vets/\">vet</a> can assess " +
-      "your pet&rsquo;s body condition properly and tell you whether it is at, " +
-      "above or below a healthy weight.</p>" },
-    { h: "Why pets gain weight here", html:
-      "<p>The usual causes: <strong>overfeeding</strong> and too many treats or " +
-      "table scraps; free-feeding (food left down all day); and less exercise, " +
-      "because the heat limits midday activity. Neutering also changes a " +
-      "pet&rsquo;s metabolism, so portions often need trimming afterwards. None " +
-      "of these is a failing &mdash; they are just easy to miss.</p>" },
-    { h: "Managing it", html:
-      "<ul><li><strong>Measure the food</strong> rather than guessing, and feed " +
-      "the amount that suits your pet&rsquo;s size and life stage &mdash; ask " +
-      "your vet.</li>" +
-      "<li><strong>Count the treats</strong> as part of the daily total, not " +
-      "extra.</li>" +
-      "<li><strong>Exercise in the cool hours</strong> &mdash; see " +
-      "<a href=\"/owning-a-pet-in-pattaya/hot-climate-pet-care.html\">hot-climate " +
-      "pet care</a>.</li>" +
-      "<li><strong>Change gradually</strong>, and have a vet check before a " +
-      "weight-loss plan &mdash; to rule out a medical cause and set a safe, " +
-      "realistic target.</li></ul>" },
-    { h: "When weight becomes urgent", html:
-      "<p>Rapid weight loss, a swollen abdomen, collapse, or a pet that stops " +
-      "drinking in the heat needs a vet urgently &mdash; see " +
-      "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">24-hour vets in Pattaya</a> " +
-      "and " +
-      "<a href=\"/pet-emergency/heatstroke.html\">heatstroke</a>. Gradual overweight " +
-      "is a slow problem; sudden change in appetite or energy is not.</p>" }
+    { h: "Use weight, body condition and muscle together", html:
+      "<p>The " + source("2021 AAHA nutrition and weight-management guidance", SOURCES.weight) +
+      " calls for nutritional history, body weight, body-condition score, muscle-condition score and physical examination. Ask the veterinary team to show you the assessment and record a baseline rather than relying on breed averages or appearance alone.</p>" },
+    { h: "Record the whole intake", html:
+      "<p>List the exact food, measured daily amount, treats, chews, table food, supplements, how household members feed, and any food obtained elsewhere. Bring labels or photographs. The " +
+      source("WSAVA Global Nutrition Toolkit", SOURCES.wsavaNutrition) +
+      " includes body-condition and nutrition tools for veterinary teams and caregivers.</p>" },
+    { h: "Weight change needs an individual plan", html:
+      "<p>A veterinarian should rule out or account for disease, select an appropriate complete diet, set the intake and activity plan, and define monitoring. Do not use a human diet, abrupt restriction, supplements or a copied calorie calculation. Rapid restriction is particularly risky in cats.</p>" },
+    { h: "Activity in a hot climate", html:
+      "<p>Exercise must fit species, age, joints, airway, heart, current fitness and conditions. Move activity to safer environments or times and stop before heat distress. Food adjustment still requires professional guidance; exercise alone is not a universal weight-loss prescription.</p>" },
+    { h: "Unexpected change is a health signal", html:
+      "<p>Unplanned weight loss or gain, muscle loss, sudden appetite or thirst change, vomiting, diarrhoea, weakness or abdominal enlargement warrants veterinary assessment. Collapse or breathing difficulty needs emergency care.</p>" },
+    { h: "Sources and review boundary", html:
+      "<p><strong>Clinical references:</strong> " + source("AAHA nutrition and weight management", SOURCES.weight) + " and " + source("WSAVA nutrition guidance", SOURCES.wsavaNutrition) +
+      ". Checked 1 August 2026; no licensed veterinarian has clinically reviewed this page.</p>" }
   ],
   faqs: [
-    ["How do I know if my pet is overweight?",
-     "<p>Look at body shape, not just the scales: you should be able to feel the ribs easily without a thick fat layer, and see a waist from above. Your vet can assess body condition properly.</p>"],
-    ["My pet always seems hungry - am I underfeeding it?",
-     "<p>Not necessarily - many pets would happily eat well beyond what they need. Measure food to your vet's guidance rather than feeding to appetite, and count treats within the daily total. If appetite changes suddenly, mention it to your vet.</p>"],
-    ["How do I help my pet lose weight safely?",
-     "<p>Measure food, trim treats, exercise in the cool hours, and make changes gradually. See your vet first - they can rule out a medical cause and set a safe target and pace. Crash dieting is not safe, especially for cats.</p>"],
-    ["Do neutered pets gain weight more easily?",
-     "<p>Metabolism often slows after neutering — adjust portions with your vet's guidance rather than feeding the same amount as before surgery.</p>"],
-    ["Are table scraps a big cause of weight gain?",
-     "<p>Yes — human food is calorie dense and encourages begging. Keep treats to less than 10% of daily calories.</p>"],
-    ["Does Pattaya's heat make excess weight more risky?",
-     "<p>Yes. An overweight pet tires and overheats more easily than a lean one, so maintaining a healthy weight is part of basic comfort and heat safety in Pattaya.</p>"]
+    ["How can I tell if my pet is overweight?", "<p>Ask a veterinary team to assess body weight, body-condition score and muscle condition together and show you how to monitor them.</p>"],
+    ["Can I use an online calorie calculator?", "<p>Not as a patient-specific prescription. Health, life stage, diet and monitoring affect the plan; use a veterinary recommendation.</p>"],
+    ["Should I cut food sharply for fast results?", "<p>No. Abrupt or excessive restriction can be harmful, particularly for cats. A veterinarian should set and monitor the plan.</p>"],
+    ["Do treats count?", "<p>Yes. Record treats, chews, table food and supplements as part of the full daily intake for the veterinary assessment.</p>"],
+    ["When is weight change concerning?", "<p>Unexpected loss or gain, muscle loss or a sudden change in appetite, thirst or energy warrants veterinary assessment.</p>"]
   ],
   related: [
-    { name: "24-hour vets in Pattaya", path: "/pet-emergency/24-hour-vets-pattaya.html", desc: "Sudden collapse or rapid weight loss needs urgent care." },
-    { name: "Where to walk your dog", path: "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html", desc: "Exercise and cool-hour routines." },
-    { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "Neutering changes metabolism and appetite." },
-    { name: "Dental care", path: "/pet-health-pattaya/dental-care.html", desc: "Weight and dental health go together." },
-    { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Exercise in the cool hours." }
+    { name: "Find a vet", path: "/vets/", desc: "Request body- and muscle-condition assessment." },
+    { name: "Dental care", path: "/pet-health-pattaya/dental-care.html", desc: "Oral pain can change eating." },
+    { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Plan safer activity and transport." },
+    { name: "Pet health", path: "/pet-health-pattaya/", desc: "Source-led preventive health guides." }
   ]
 }));
 
-/* ============ OWNING: TRAVELLING IN THAILAND ============ */
 pages.push(article({
   path: "/owning-a-pet-in-pattaya/travelling-in-thailand.html",
-  title: "Travelling in Thailand with a Pet | Road Trips & Domestic Flights | PattayaPets",
-  desc: "Taking a pet beyond Pattaya: road trips, domestic flights and their rules, pet-friendly accommodation, where pets are restricted, and managing the heat.",
+  title: "Thailand Pet Travel: Verification Guide | PattayaPets",
+  desc: "How to verify domestic pet travel in Thailand: DLD movement rules, carrier policy, route acceptance, accommodation, health records and contingency planning.",
   crumb: "Travelling in Thailand",
   breadcrumbs: [GUIDES, OWNING],
   eyebrow: "Owning a pet in Pattaya",
-  h1: "Travelling around Thailand with a pet",
-  lede: "Leaving Pattaya for a trip elsewhere in Thailand? With a little planning, " +
-    "your pet can come along.",
-  verify: "This is general orientation, last reviewed May 2026. Airline pet " +
-    "policies and the rules of individual hotels, parks and attractions change " +
-    "&mdash; always confirm directly before you rely on them.",
+  h1: "Travelling in Thailand with a pet: verify every link",
+  lede: "A workable trip depends on the exact animal, route, operator, destination and current government rules. Confirm each one directly before payment and departure.",
+  verify: "Regulatory and operator information checked 1 August 2026. Policies and controlled-disease zones can change. Confirm the exact trip with Thailand's Department of Livestock Development, the carrier, accommodation and your veterinarian. No licensed veterinarian has clinically reviewed this page.",
+  updated: REVIEWED,
   sections: [
-    { h: "Road trips", html:
-      "<p>The car is the most flexible way to travel with a pet. Use a " +
-      "<strong>secure carrier, crate or travel harness</strong>, never leave a " +
-      "pet in a parked vehicle &mdash; it becomes lethally hot astonishingly fast, " +
-      "see <a href=\"/pet-emergency/heatstroke.html\">heatstroke</a> &mdash; and " +
-      "stop regularly for water and toilet breaks. Bring water, food, your " +
-      "pet&rsquo;s records and any medication.</p>" },
-    { h: "Domestic flights", html:
-      "<p>Some Thai domestic airlines carry pets, in the cabin for small animals " +
-      "or as cargo, but <strong>policies vary widely and change</strong>. Check " +
-      "<a href=\"/bring-pet-to-thailand/airline-pet-policies.html\">airline pet " +
-      "policies</a> well ahead, and expect to need an airline-approved " +
-      "crate and to follow the airline&rsquo;s booking process &mdash; a domestic " +
-      "flight is still a formal process, not a walk-on.</p>" },
-    { h: "Pet-friendly accommodation", html:
-      "<p>Pet-friendly hotels and resorts exist across Thailand, but many places " +
-      "do not accept animals, so you must search <strong>specifically</strong> " +
-      "for pet-friendly stays and <strong>confirm in writing</strong> before you " +
-      "travel. In Pattaya, see our guide to " +
-      "<a href=\"/dog-friendly-pattaya/hotels.html\">dog-friendly hotels</a>. " +
-      "Privately rented condos and villas sometimes allow pets where " +
-      "hotels will not.</p>" },
-    { h: "Where pets are restricted", html:
-      "<p>Do not assume your pet is welcome everywhere. National parks, many " +
-      "temples, some beaches and certain attractions restrict or prohibit " +
-      "animals, and islands may have their own ferry rules. Check the rules for " +
-      "your destination before you set off, so it is not a surprise on " +
-      "arrival.</p>" },
-    { h: "The heat travels with you", html:
-      "<p>Wherever you go in Thailand, it is hot. The same rules apply: cool-hour " +
-      "activity, constant water and shade, and no hot vehicles. Keep " +
-      "<a href=\"/dogs/dog-vaccinations-thailand.html\">parasite prevention</a> going, and find " +
-      "out where the nearest vet is at your destination &mdash; before you need " +
-      "one. If a trip is not suitable for your pet, a " +
-      "<a href=\"/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html\">pet " +
-      "sitter</a> or <a href=\"/boarding/\">boarding</a> may be the kinder " +
-      "choice.</p>" }
+    { h: "Check DLD movement requirements", html:
+      "<p>Do not assume domestic pet movement is paperwork-free. Thailand's DLD publishes a current public-service manual covering applications to move animals within the Kingdom, including R.3, R.4 and R.5 processes; see the " +
+      source("DLD Animal Quarantine and Inspection manual page", SOURCES.dldMovement) +
+      ". Ask the relevant origin and destination DLD offices whether a permit, health evidence or controlled-zone condition applies to this animal and route.</p>" },
+    { h: "Get operator acceptance in writing", html:
+      "<p>Ask the airline, railway, bus, ferry, taxi or other operator whether it accepts the species, breed, weight and carrier on the specific service. Confirm booking channel, check-in point, temperature or route restrictions, documents, fees, refund terms and who has custody. An old policy summary or call-centre answer for another route is not sufficient.</p>" },
+    { h: "Use safe vehicle restraint", html:
+      "<p>Use a secure carrier or restraint appropriate to the species and vehicle, and never allow an animal to interfere with the driver. The " + source("FelineVMA motor-vehicle position statement", SOURCES.catTransport) +
+      " recommends acclimating cats to carriers and securing a carrier appropriately. Never leave any pet unattended in a parked vehicle.</p>" },
+    { h: "Plan health and medication with a vet", html:
+      "<p>Ask whether the animal is fit for the journey, what records and prescribed medicines to carry, and how time, heat, stress or motion sickness affect the individual. Do not sedate a pet for travel unless the prescribing veterinarian has assessed the animal and route and provided specific instructions.</p>" },
+    { h: "Verify accommodation and destination", html:
+      "<p>Get written acceptance showing species, number, size, room type, fees, deposits, restricted areas and unattended-pet rules. Check the destination's animal, park, beach, temple, building and local health rules directly. “Pet-friendly” is not a complete policy.</p>" },
+    { h: "Create a disruption plan", html:
+      "<p>Carry identification, current contacts, records, food and essential prescription supply, water, cleaning materials and a safe carrier. Record veterinary options along the route and at destination. Plan what happens if transport is cancelled, a permit is delayed or the pet is refused.</p>" },
+    { h: "Named verification gap", html:
+      "<p>We did not verify one universal domestic permit rule for every species, province and disease-control status, nor real-time acceptance across Thai carriers. Those are route-specific checks with DLD and each operator.</p>" }
   ],
   faqs: [
-    ["Can I take my pet on a domestic flight in Thailand?",
-     "<p>Yes, some Thai domestic airlines carry pets in the cabin or as cargo. Policies vary widely and change, so check the specific airline well in advance, and expect to need an approved crate and to follow its booking process.</p>"],
-    ["How do I find pet-friendly hotels in Thailand?",
-     "<p>Search specifically for pet-friendly accommodation and confirm the policy in writing before you travel. Privately rented condos and villas can be an alternative when hotels do not accept animals.</p>"],
-    ["Is a long road trip safe for my pet?",
-     "<p>Yes, a long road trip can be safe for your pet with careful planning. Use a secure carrier or harness, make regular water and toilet stops, never leave the pet in a parked vehicle, and travel in cooler hours. If your pet finds car travel very stressful, consider a sitter or boarding instead.</p>"],
-    ["Do I need health papers for domestic pet travel in Thailand?",
-     "<p>Inter-provincial travel usually does not need export paperwork, but airlines and some hotels may ask for vaccination records. Carry rabies certificates for any trip.</p>"],
-    ["Can I take my pet on a Thai train or bus?",
-     "<p>Policies are restrictive and inconsistent — assume not unless you confirm in advance. Flights and private road travel are the practical options for most owners.</p>"],
-    ["Can I take my pet into a national park or attraction?",
-     "<p>Do not assume so. National parks, many temples, some beaches and certain attractions restrict or prohibit animals, so check the destination's rules before setting off.</p>"],
-    ["What should I pack for a road trip with my pet?",
-     "<p>Bring water, food, your pet's records, any medication, and a secure carrier, crate or travel harness. Plan regular water and toilet breaks.</p>"]
+    ["Is domestic pet travel in Thailand paperwork-free?", "<p>Do not assume so. DLD publishes internal animal-movement permit processes; ask the relevant offices what applies to the animal and route.</p>"],
+    ["Can my pet travel on a Thai airline, train, bus or ferry?", "<p>Acceptance is operator- and service-specific. Get written confirmation for the exact species, animal, carrier, date and route.</p>"],
+    ["Should I sedate my pet for travel?", "<p>Only if the prescribing veterinarian assesses the individual and route and gives specific instructions. Do not use borrowed or over-the-counter medication.</p>"],
+    ["Does pet-friendly accommodation accept every pet?", "<p>No. Confirm species, number, size, room, fees, deposits and unattended-pet rules in writing.</p>"],
+    ["What should a disruption plan cover?", "<p>Plan for cancellation, permit delay, operator refusal, heat, illness and an alternative safe place for the pet.</p>"]
   ],
   related: [
-    { name: "Pet taxi Pattaya", path: "/owning-a-pet-in-pattaya/pet-taxi-pattaya.html", desc: "Private road transport with a pet or crate." },
-    { name: "Bangkok to Pattaya with a pet", path: "/owning-a-pet-in-pattaya/bangkok-to-pattaya-with-pet.html", desc: "Planning the airport or city transfer by road." },
-    { name: "Boarding & daycare", path: "/boarding/", desc: "If the pet stays behind." },
-    { name: "Pet sitters & dog walkers", path: "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html", desc: "When the pet stays in Pattaya." },
-    { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html", desc: "Domestic flights and crate rules." },
-    { name: "U-Tapao or Bangkok?", path: "/bring-pet-to-thailand/u-tapao-airport-pets.html", desc: "Flying into Thailand for Pattaya." },
-    { name: "Dog-friendly hotels", path: "/dog-friendly-pattaya/hotels.html", desc: "Pet-friendly stays in Pattaya and beyond." },
-    { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Managing the heat, anywhere in Thailand." }
+    { name: "Airline pet policies", path: "/bring-pet-to-thailand/airline-pet-policies.html", desc: "Verify the exact airline and flight." },
+    { name: "Pet taxi", path: "/owning-a-pet-in-pattaya/pet-taxi-pattaya.html", desc: "Confirm vehicle, restraint, scope and price." },
+    { name: "Boarding", path: "/boarding/", desc: "Build a stay-behind contingency." },
+    { name: "Hot-climate pet care", path: "/owning-a-pet-in-pattaya/hot-climate-pet-care.html", desc: "Reduce heat exposure during travel." }
   ]
 }));
 

@@ -1,0 +1,1 @@
+{"expectedCode":"LINK_SOURCE_MISMATCH","operations":[{"op":"set","path":["pages",0,"body"],"value":"<a href=\"https://wrong.example.test/rule\" data-claim-id=\"TEST-CLAIM-2026-07\">Source</a>"}]}

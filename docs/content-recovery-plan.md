@@ -1,158 +1,50 @@
-# Content recovery plan — PattayaPets
+# Content quality and recovery plan — PattayaPets
 
-**Created:** 31 May 2026  
-**Trigger:** Quality audit — too many batches were metadata/CTR only; several clusters are thin or broken.
+**Status:** superseded implementation record  
+**Current baseline:** `docs/FULL-AUDIT-2026-08.md`  
+**Reviewed:** 2026-08-01
 
-This document replaces the old “title/meta batch” queue until Phase 3 is complete.
+The former batch checklist in this file mixed completed work, stale page counts, and claims that were not preserved at source. It is not a release certificate. The August full audit and current automated gates are the only local implementation baseline.
 
----
+## Quality contract
 
-## What went wrong
+A page is publishable only when its useful purpose, evidence, and approval state are clear. Word count and FAQ count are diagnostics, not proof of quality.
 
-| Problem | Evidence |
-|---------|----------|
-| Metadata churn without substance | Batches 60–74 mostly titles, dates, internal links |
-| Thin indexed pages | Dog-friendly cafes/restaurants were etiquette + “help us build the list” |
-| Boilerplate country corridors | EU import/export pages share 2-section templates |
-| Design FOUC | Footer, tiles, callouts, prose only in deferred CSS |
-| HTML bugs | Broken list markup in pet-health skin guide |
-| Zero directory verdicts | 35/35 listings still `pending` (correct editorially, weak E-E-A-T) |
+- The page answers one distinct reader intent without doorway-style variation or filler.
+- Consequential claims are supported beside the claim, at the correct jurisdiction, species, movement direction, and date.
+- Regulated pages consume approved claim records; emergency treatment or triage language has the required clinical-review state.
+- Business facts come from the approved business model. Held records, restricted contacts, fabricated FAQ, and implied reviews are absent.
+- The visible reviewed date, metadata, structured data, search record, and sitemap derive from the same editorial date.
+- The title and description accurately preview the visible answer and contain balanced, valid text.
+- Internal links help the reader continue within PattayaPets and do not create cross-project associations.
+- The page passes keyboard, zoom/reflow, contrast, dynamic-state, security/privacy, performance, and structured-data gates appropriate to its template.
 
----
+## Recovery queue
 
-## Phase 0 — Bugs & design (Batch 75) ✅
+Create a queue item only from evidence. Each item needs:
 
-- [x] Fix `<ul>` in `/pet-health-pattaya/skin-and-ear-infections.html`
-- [x] Promote footer, tiles, callouts, verdict, prose, FAQ to critical CSS
-- [x] Tablet nav: mobile drawer from 1080px (was 860px)
-- [x] Wrap 24h vet tables in `.table-wrap`
-- [x] Dog-friendly cafes & restaurants: named venues with “confirm policy” framing
-- [x] Parks page: named routes (Dongtan, Pratumnak, Na Jomtien)
+| Field | Requirement |
+|---|---|
+| URL / source | Exact path and source file |
+| Reader intent | One sentence |
+| Evidence | Dated Search Console data, source defect, user correction, or failed gate |
+| Risk class | General / business / regulated / clinical |
+| Required reviewer | LOOP / SOL / TIM, plus external professional where required |
+| Proposed action | Improve / consolidate / hold / remove from discovery / leave unchanged |
+| Success measure | Defined before editing |
+| Review date | YYYY-MM-DD |
 
----
+Do not infer demand from an empty queue, lexical similarity, or a keyword tool alone. Do not merge, prune, redirect, or noindex from this document without a dated search baseline and an explicit operator decision.
 
-## Phase 1 — Thin clusters (Batches 76–78)
+## Priority order
 
-### Import corridors (priority) — Batch 76 ✅ UK / USA / Australia
+1. Reader-safety corrections and expired regulated evidence.
+2. False identity, review, operating-status, locality, contact, or freshness signals.
+3. Index/canonical inconsistencies after the required baseline and canary decision.
+4. Accessibility, security/privacy, offline-cache, and build-integrity failures.
+5. Pages with demonstrated query overlap, lost clicks, or unsatisfied reader intent.
+6. New content only when evidence shows a durable in-scope gap and source capacity exists.
 
-- [x] `/bring-pet-to-thailand/from-uk.html` — EHC 2917, timeline table, document checklist, return planning
-- [x] `/bring-pet-to-thailand/from-usa.html` — USDA/APHIS, 10-day window, CDC return rules
-- [x] `/bring-pet-to-thailand/from-australia.html` — DAFF NOI, 72-hour export window, return warning
+## Verification
 
-### Import / export corridors — Batch 77 ✅ export mirrors
-
-- [x] `/take-pet-out-of-thailand/to-uk.html` — timeline, GOV.UK unlisted rules, DLD export table, tapeworm window
-- [x] `/take-pet-out-of-thailand/to-usa.html` — CDC high-rabies timeline, DLD export table, failure points
-- [x] `/take-pet-out-of-thailand/to-australia.html` — non-approved country pathway, Mickleham quarantine, phases table
-
-### Import / export corridors — Batch 78 ✅ Germany + UAE
-
-- [x] `/bring-pet-to-thailand/from-germany.html` — EU export certificate, Veterinäramt, timeline, checklist
-- [x] `/bring-pet-to-thailand/from-uae.html` — MOCCAE export + DLD dual permit timeline
-- [x] `/take-pet-out-of-thailand/to-germany.html` — EU titer wait, designated entry points
-- [x] `/take-pet-out-of-thailand/to-uae.html` — MOCCAE import permit, vaccines, breed rules, IATA cargo
-- [x] Fixed broken MOCCAE links (`moec.gov.ae` → `moccae.gov.ae`)
-- [x] Table FOUC fix in critical CSS
-
-### Import / export corridors — Batch 82 ✅ South Africa
-
-- [x] `/bring-pet-to-thailand/from-south-africa.html` — DALRRD state vet export, hub routing, manifest cargo notes
-- [x] `/take-pet-out-of-thailand/to-south-africa.html` — VIP timeline, dog quarantine, five blood tests, cargo terminal rules
-- [x] Pet-health cluster date-stamps updated to 31 May 2026
-
-### Import / export corridors — Batch 83 ✅ EU member states
-
-- [x] Import depth (8): Sweden, Norway, Denmark, Finland, Netherlands, France, Switzerland, Ireland — timeline tables, DLD checklist, authority links, 5 FAQs each
-- [x] Export mirror depth (8): same countries — EU titer timeline, DLD export table, tapeworm notes where applicable
-- [x] Shared helpers: `euImportTimeline`, `euExportSections`, `EU_IMPORT_FAILS`, `EU_ENTRY_REQ_LIST`
-
-### Import / export corridors — Batch 84 ✅ NZ + Russia
-
-- [x] `/bring-pet-to-thailand/from-new-zealand.html` — MPI export timeline, DLD checklist, MPI return/quarantine warning, 5 FAQs
-- [x] `/bring-pet-to-thailand/from-russia.html` — FSVPS export timeline, DLD checklist, titer advisory, 5 FAQs
-- [x] `/take-pet-out-of-thailand/to-new-zealand.html` — MPI pathway timeline (Australia-style depth), quarantine, 5 FAQs
-- [x] `/take-pet-out-of-thailand/to-russia.html` — FSVPS entry + DLD export timeline, 5 FAQs
-- [x] Official links verified live: `mpi.govt.nz/import/bringing-pets-to-nz/importing-dogs-and-cats/`, `fsvps.gov.ru`
-
-### Import / export corridors — Batch 85 ✅ Canada + CFIA link fix
-
-- [x] `/bring-pet-to-thailand/from-canada.html` — CFIA timeline, DLD checklist, snowbird notes, 5 FAQs
-- [x] `/take-pet-out-of-thailand/to-canada.html` — DLD export timeline, CFIA entry checklist, 5 FAQs
-- [x] Fixed dead CFIA URL (`importing-food-plants-or-animals` → `importing-food-plants-animals`, was 410) site-wide in `41-export.js`, `47-import-extra.js`, `52-export-countries.js`
-
-### Import / export corridors — Batch 86 ✅ EU hubs + official-link audit
-
-- [x] `/bring-pet-to-thailand/from-eu.html` — timeline table, TH docs, member-state links, EU failure points, 5 FAQs
-- [x] `/take-pet-out-of-thailand/to-eu.html` — export timeline, DLD table, BCP/member-state links, 5 FAQs
-- [x] `tools/audit-official-links.js` — HEAD-checks 96 external URLs; wired into `audit:full`
-- [x] Fixed 14 dead official URLs (MPI NZ, Jordbruksverket, Mattilsynet, Fødevarestyrelsen, Ruokavirasto, NVWA, France mesdemarches, gov.ie pet-travel, India AQCS, Muang Ake branch, Zoeta, Soi Dog adopt, Pattaya Authority footer)
-- [x] Pattaya Animal Hospital: phone `038 373 290` from public directory listing
-
-### Import / export corridors
-
-- [x] All 23 import / 23 export country pairs at full depth; EU hub pages now match corridor depth (Batch 86)
-
-### Pet health cluster — Batch 85 ✅ audit pass
-
-- [x] `updated: 2026-05-31` on all pet-health articles via `health()` helper
-- [x] Dental + healthy-weight: emergency cross-links, `updated` stamps, extra H2 sections
-- [x] Heartworm related links to `/pet-emergency/`
-- [x] Spot-check: all hub + 7 guides ≥3 H2 sections, ≥3 FAQs each; no broken HTML found in build
-
----
-
-## Phase 2 — Directory E-E-A-T (ongoing, human-assisted)
-
-- [ ] Tier 1 visits: 5 vets, 2 groomers, 2 boarding (delegate kit)
-- [ ] Publish first verdicts only after anonymous visits
-- [x] Pattaya Animal Hospital contact (`038 373 290`)
-- [ ] Mor Ja Pet Clinic — no verified public phone; leave WARN until found
-
-### Import / export step pages — Batch 87 ✅
-
-- [x] `/bring-pet-to-thailand/microchip-requirements.html` — failure points, 5 FAQs
-- [x] `/bring-pet-to-thailand/health-certificate.html` — failure points, 5 FAQs
-- [x] `/take-pet-out-of-thailand/export-permit-thailand-dld.html` — timeline table, AQS confirmation, failure points, 5 FAQs
-- [x] Import + export checklists — common-mistakes section, 5 FAQs each
-- [x] Germany BMEL URL fix (`bmleh.de` → `bmel.de`)
-- [x] `tools/audit-content-depth.js` — guide section/FAQ depth WARN audit wired into `audit:full`
-
-### Thin-FAQ guide recovery — Batch 88 ✅
-
-- [x] Emergency cluster (6): pet-first-aid, heatstroke, ticks-and-fleas, snake-bites, street-dog-encounters, poisoning — expanded to ≥4 FAQs each
-- [x] Owning cluster (6): cost, hot-climate, housing, walks, registration, pet food — expanded to ≥4 FAQs each
-- [x] Dog-friendly (3): cafes, restaurants, parks — expanded to ≥4 FAQs each
-- [x] Import/export steps (5): airline-pet-policies, arrival-suvarnabhumi, cost-to-bring, export-process, cost-to-export — expanded to ≥4 FAQs each
-- [x] Adoption org template (7 shelter pages): +3 FAQs via shared `SHELTERS.forEach` block
-- [x] `audit:content` — **0 thin-FAQ WARNs** (118 guides checked)
-
-### Second FAQ pass — Batch 89 ✅
-
-- [x] Import steps: rabies/titer, import permit, snub-nosed, quarantine, U-Tapao — expanded to ≥5 FAQs
-- [x] Emergency extras: 24-hour vets, choking, road accident, beach hazards — ≥5 FAQs
-- [x] Species (7), owning-extra (9), pet-health (5), extra-guides (6) — all at ≥5 FAQs
-- [x] **37 guides** that were at minimum 3 FAQs now at ≥5; content recovery Phase 1 FAQ depth complete
-
----
-
-## Phase 3 — Measure again
-
-- Run `npm run audit:full` + `npm run audit:live` after every batch
-- Manual spot-check 5 random URLs (mix directory + guide + corridor)
-- GSC CTR pass only **after** content phases — not before
-
----
-
-## Definition of done (per page)
-
-1. **Substance:** ≥3 meaningful sections OR equivalent guide depth; no “placeholder only” pages indexed  
-2. **Honesty:** No fake reviews; policies marked “confirm when visiting” where unverified  
-3. **Design:** No FOUC on above-the-fold + footer; tables wrapped; mobile nav usable on tablet  
-4. **Technical:** Valid JSON-LD, no broken internal links, dated `updated` field  
-5. **Legal:** Editorial disclaimer present; not veterinary advice  
-
----
-
-## Sister sites
-
-Pattaya Authority, Restaurant Guide, Visa Help, etc. are **separate repos**. Each needs its own recovery pass in its own Cursor window — not from this project.
+For each accepted change, preserve the evidence, run the complete local suite, inspect the rendered page at representative mobile and desktop widths, and record remaining external gates. Deployment, IndexNow, canonical migration, noindex changes, and authenticated account work are separate authorised operations.

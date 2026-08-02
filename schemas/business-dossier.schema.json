@@ -1,0 +1,205 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pattayapets.com/schemas/business-dossier.v1.json",
+  "title": "PattayaPets business research dossier",
+  "description": "Version 1 contract for the current mixed-shape corpus and future normalized business dossiers. Publication fields remain optional until a human decision is recorded, but become mandatory together once publishState is introduced.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "slug",
+    "name",
+    "status",
+    "confidence",
+    "sources",
+    "unverified"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "checkedAt": {
+      "type": "string",
+      "format": "date"
+    },
+    "category": {
+      "enum": ["vet", "emergency-vet", "mobile-vet", "groomer", "boarding", "pet-shops"]
+    },
+    "area": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "open",
+        "current-operation-unverified",
+        "unverified",
+        "closed",
+        "unknown"
+      ]
+    },
+    "confidence": {
+      "enum": ["high", "medium", "low"]
+    },
+    "operatingStatus": {
+      "enum": [
+        "open",
+        "current-operation-unverified",
+        "unverified",
+        "closed",
+        "unknown"
+      ]
+    },
+    "publishState": {
+      "enum": ["published", "hold", "rejected"]
+    },
+    "serviceScope": {
+      "enum": ["local", "regional", "nationwide", "remote-only", "unknown"]
+    },
+    "locality": {
+      "anyOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "required": ["addressLocality", "addressCountry"],
+          "properties": {
+            "addressLocality": { "type": "string", "minLength": 1 },
+            "addressRegion": { "type": ["string", "null"] },
+            "addressCountry": { "type": "string", "pattern": "^[A-Z]{2}$" }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "serviceAreas": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "publicationDecision": {
+      "type": "object",
+      "required": ["state", "decidedAt", "decidedBy", "reason"],
+      "properties": {
+        "state": { "enum": ["published", "hold", "rejected"] },
+        "decidedAt": { "type": "string", "format": "date" },
+        "decidedBy": { "type": "string", "minLength": 1 },
+        "reason": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "contactPublication": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/contactDecision" }
+    },
+    "verified": {
+      "type": "object"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/source" }
+    },
+    "unverified": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          { "type": "string", "minLength": 1 },
+          { "type": "object" }
+        ]
+      }
+    },
+    "notes": {
+      "type": ["string", "null"]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": ["publishState"],
+        "properties": { "publishState": { "const": "published" } }
+      },
+      "then": {
+        "required": [
+          "schemaVersion",
+          "checkedAt",
+          "operatingStatus",
+          "serviceScope",
+          "locality",
+          "publicationDecision",
+          "contactPublication"
+        ],
+        "properties": {
+          "operatingStatus": { "const": "open" }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["url"],
+      "properties": {
+        "url": { "type": "string", "format": "uri" },
+        "type": { "type": "string" },
+        "label": { "type": "string" },
+        "accessed": { "type": "string", "format": "date" },
+        "supports": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "note": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "contactDecision": {
+      "type": "object",
+      "required": [
+        "classification",
+        "publicationState",
+        "publicationBasis",
+        "optOutState",
+        "source",
+        "reviewedAt"
+      ],
+      "properties": {
+        "value": { "type": ["string", "null"] },
+        "classification": {
+          "enum": ["public-business", "private-person", "unknown"]
+        },
+        "publicationState": {
+          "enum": ["approved", "withheld", "review-required"]
+        },
+        "publicationBasis": { "type": "string", "minLength": 1 },
+        "optOutState": {
+          "enum": ["none-recorded", "requested", "honoured", "unknown"]
+        },
+        "source": { "type": "string", "format": "uri" },
+        "reviewedAt": { "type": "string", "format": "date" },
+        "reviewedBy": { "type": "string" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "publicationState": { "const": "approved" } },
+            "required": ["publicationState"]
+          },
+          "then": {
+            "properties": {
+              "classification": { "const": "public-business" },
+              "optOutState": { "const": "none-recorded" }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

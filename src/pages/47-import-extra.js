@@ -4,25 +4,29 @@
 const { article } = require("../guidekit.js");
 const { importCountryRelated, attachReturnExportLink } = require("../data/country-pairs.js");
 const rb = require("../data/richness-blocks.js");
+const {
+  claimLink,
+  REGULATED_IMPORT_PATTAYA_ARRIVAL,
+  REGULATED_IMPORT_PATTAYA_LIFE,
+  REGULATED_IMPORT_EXTRA_FAQS
+} = require("../data/regulated-claims.js");
 
 const GUIDES = { name: "Guides", path: "/guides.html" };
 const CLUSTER = { name: "Bringing a pet to Thailand", path: "/bring-pet-to-thailand/" };
 const SUB = [GUIDES, CLUSTER];
 
 const VERIFY =
-  "This guide was last reviewed on 31 May 2026. Thailand's Department of Livestock " +
+  "The regulated claims and authority links cited on this page were checked on " +
+  "1 August 2026. Thailand's Department of Livestock " +
   "Development, airlines and origin-country authorities change their rules without " +
   "notice. Treat this as orientation, then confirm every current requirement with " +
   "the DLD, your airline and your origin-country authority before you book or travel.";
 
 const OFFICIAL =
   "<p><strong>Official sources to verify against:</strong> " +
-  "<a href=\"https://thaiconsulatela.thaiembassy.org/en/publicservice/bringing-pets-to-thailand\" " +
-  "target=\"_blank\" rel=\"noopener nofollow\">Thai embassy pet import guide</a> " +
-  "(revised January 2025); DLD import application form <strong>R1/1</strong> (via the embassy guide or " +
-  "<a href=\"https://aqi.dld.go.th/\" target=\"_blank\" rel=\"noopener nofollow\">" +
-  "DLD Animal Quarantine stations</a>); Suvarnabhumi AQS import: " +
-  "<a href=\"mailto:qsap_bkk_import@dld.go.th\">qsap_bkk_import@dld.go.th</a>.</p>";
+  claimLink("TH-IMPORT-SEQUENCE-2026-02", "Thai consular import guide") +
+  " (detailed scope: dogs, cats and rabbits travelling from the United States); " +
+  claimLink("TH-AQS-MAP-2025-10", "DLD Animal Quarantine Station map") + ".</p>";
 
 const RELATED = [
   { name: "The full process", path: "/bring-pet-to-thailand/", desc: "Every step, in order." },
@@ -64,9 +68,9 @@ const EU_RETURN =
 const TH_DOCS_TABLE =
   '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
   '<th scope="col">Document</th><th scope="col">What it is</th></tr></thead><tbody>' +
-  '<tr><th scope="row">DLD import permit</th><td>Form <strong>R1/1</strong>, emailed to the AQS at your arrival airport. Valid <strong>60 days</strong> from issue. Apply <strong>7&ndash;60 days</strong> before departure (around <strong>30 days</strong> is sensible).</td></tr>' +
-  '<tr><th scope="row">Microchip certificate</th><td>ISO 11784/11785 15-digit chip, implanted <strong>before</strong> rabies vaccination.</td></tr>' +
-  '<tr><th scope="row">Vaccination records</th><td>In English. Dogs: rabies, distemper, hepatitis, parvovirus, leptospirosis (or negative leptospirosis test within 30 days). Cats: rabies and feline panleukopenia. At least <strong>21 days</strong> after primary shots.</td></tr>' +
+  '<tr><th scope="row">DLD import permit</th><td>After all required primary vaccinations, wait at least 21 days before filing R1/1 as the arrival AQS directs. The scoped Thai guide says to allow 5&ndash;7 Thai business days; confirm applicability outside its US-origin scope. ' + claimLink("TH-IMPORT-SEQUENCE-2026-02", "Thai source") + '</td></tr>' +
+  '<tr><th scope="row">Microchip certificate</th><td>Implantation certificate with the identifier matching every record. The reviewed Thai source does not state a universal ISO-format or chip-before-vaccination rule. ' + claimLink("TH-IMPORT-ID-2026-02", "Thai source") + '</td></tr>' +
+  '<tr><th scope="row">Vaccination records</th><td>In English. Complete every required primary vaccination, then wait at least 21 days before the permit application; documented boosters are exempt from that wait when continuity is shown. ' + claimLink("TH-IMPORT-SEQUENCE-2026-02", "Thai source") + '</td></tr>' +
   '<tr><th scope="row">Government-endorsed health certificate</th><td>EU export certificate for third-country travel, endorsed by the German competent authority.</td></tr>' +
   '<tr><th scope="row">Your passport</th><td>Original at the AQS (or the person collecting a cargo shipment).</td></tr>' +
   '<tr><th scope="row">Pet photo</th><td>Colour, face clearly visible (for the permit application).</td></tr>' +
@@ -74,9 +78,10 @@ const TH_DOCS_TABLE =
   '</tbody></table></div>';
 
 const TH_ARRIVAL =
-  "<p>From Germany, pets with complete paperwork are normally cleared at the AQS the same day &mdash; " +
-  "an inspection, not multi-week quarantine. The AQS charges <strong>500&nbsp;baht</strong> per animal. " +
-  "Email the AQS to <strong>confirm your arrival date at least three days before landing</strong>. See " +
+  "<p>On arrival, present the animal and original documents for the AQS inspection. " +
+  "Clearance, detention or other action depends on DLD&rsquo;s inspection; this guide does not " +
+  "promise same-day release. Follow the responsible station&rsquo;s current itinerary-notification " +
+  "instructions &mdash; the reviewed Thai source does not state a universal three-day rule. See " +
   '<a href="/bring-pet-to-thailand/thailand-pet-quarantine.html">pet quarantine in Thailand</a> ' +
   "and " +
   '<a href="/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html">arriving at Suvarnabhumi</a>.</p>';
@@ -92,24 +97,25 @@ const TH_FAILS =
 const TH_IMPORT_TABLE =
   '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
   '<th scope="col">Document</th><th scope="col">What it is</th></tr></thead><tbody>' +
-  '<tr><th scope="row">DLD import permit</th><td>Form <strong>R1/1</strong>, emailed to the AQS at your arrival airport. Valid <strong>60 days</strong> from issue. Apply <strong>7&ndash;60 days</strong> before departure (around <strong>30 days</strong> is sensible).</td></tr>' +
-  '<tr><th scope="row">Microchip certificate</th><td>ISO 11784/11785 15-digit chip, implanted <strong>before</strong> rabies vaccination.</td></tr>' +
-  '<tr><th scope="row">Vaccination records</th><td>In English. See our <a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">vaccination guide</a> for dog and cat schedules.</td></tr>' +
+  '<tr><th scope="row">DLD import permit</th><td>After all required primary vaccinations, wait at least 21 days before filing R1/1 as the arrival AQS directs. The scoped Thai guide says to allow 5&ndash;7 Thai business days. ' + claimLink("TH-IMPORT-SEQUENCE-2026-02", "Thai source") + '</td></tr>' +
+  '<tr><th scope="row">Microchip certificate</th><td>Implantation certificate with the identifier matching every record. The reviewed Thai source does not state a universal ISO-format or chip-before-vaccination rule.</td></tr>' +
+  '<tr><th scope="row">Vaccination records</th><td>Complete every required primary vaccination, then wait at least 21 days before the permit application; documented boosters are exempt when continuity is shown. See our <a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">vaccination guide</a>.</td></tr>' +
   '<tr><th scope="row">Government-endorsed health certificate</th><td>Export certificate from the origin country, endorsed as that authority requires.</td></tr>' +
   '<tr><th scope="row">Flight booking</th><td>Itinerary; confirm airline pet policy early.</td></tr>' +
   '</tbody></table></div>';
 
 const TH_ARRIVAL_STD =
-  "<p>With complete paperwork, pets normally clear the AQS the same day &mdash; an inspection, " +
-  "not multi-week quarantine. Email the AQS to <strong>confirm your arrival date at least three " +
-  "days before landing</strong>. See " +
+  "<p>Present the animal and original documents for AQS inspection. Clearance, detention or " +
+  "other action depends on DLD&rsquo;s inspection; this guide does not promise same-day release. " +
+  "Follow the responsible station&rsquo;s current notification instructions; the reviewed source " +
+  "does not establish a universal three-day arrival-confirmation rule. See " +
   '<a href="/bring-pet-to-thailand/thailand-pet-quarantine.html">pet quarantine in Thailand</a>.</p>';
 
 const TH_IMPORT_FAILS =
   "<ul>" +
-  "<li><strong>DLD permit too early or expired</strong> &mdash; valid only 60 days from issue; apply inside the 7&ndash;60 day window.</li>" +
-  "<li><strong>Microchip after rabies vaccination</strong> &mdash; invalidates the vaccination record for import.</li>" +
-  "<li><strong>Health certificate outside the validity window</strong> &mdash; usually 7&ndash;10 days before departure; confirm with the AQS.</li>" +
+  "<li><strong>Wrong vaccination sequence</strong> &mdash; after all required primary vaccinations, wait at least 21 days before applying; documented boosters are exempt when continuity is shown.</li>" +
+  "<li><strong>Identifier mismatch</strong> &mdash; the implantation certificate, permit and vaccination records must identify the same animal.</li>" +
+  "<li><strong>Assuming one certificate window applies everywhere</strong> &mdash; confirm the current requirement with the origin authority and arrival AQS.</li>" +
   "<li><strong>Assuming return will be easy</strong> &mdash; rabies-free origins (Japan, Singapore, NZ) have strict re-entry rules from Thailand.</li>" +
   "</ul>";
 
@@ -138,8 +144,8 @@ function caImportTimeline() {
     '<tr><th scope="row">3+ months before (if EU/UK return possible)</th>' +
     '<td>Microchip (if needed), rabies vaccination, optional <a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">rabies titer test</a> for onward travel</td>' +
     '<td>Your vet; approved lab</td></tr>' +
-    '<tr><th scope="row">6&ndash;8 weeks before</th>' +
-    '<td>Core vaccinations and the <strong>21-day wait</strong> after any primary rabies shot Thailand requires</td>' +
+    '<tr><th scope="row">Before filing the Thai permit</th>' +
+    '<td>Complete <strong>all required primary vaccinations</strong>, then wait at least 21 days; documented boosters are exempt when continuity is shown</td>' +
     '<td>Your vet</td></tr>' +
     '<tr><th scope="row">~30 days before departure</th>' +
     '<td>Apply for <a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a> (form R1/1) to the AQS at your arrival airport</td>' +
@@ -150,9 +156,9 @@ function caImportTimeline() {
     '<tr><th scope="row">Final 1&ndash;2 weeks</th>' +
     '<td>Export health certificate completed by your vet and <strong>endorsed by CFIA</strong> (Canadian Food Inspection Agency)</td>' +
     '<td>Vet + CFIA</td></tr>' +
-    '<tr><th scope="row">&ge;3 days before landing</th>' +
-    '<td>Email the AQS to confirm your exact arrival date and flight</td>' +
-    '<td>DLD</td></tr>' +
+    '<tr><th scope="row">Before travel</th>' +
+    '<td>Follow the responsible AQS&rsquo;s current itinerary-notification instructions; the reviewed source gives no universal three-day rule</td>' +
+    '<td>Arrival AQS</td></tr>' +
     '<tr><th scope="row">Arrival day</th>' +
     '<td>AQS inspection; Forms R-6/R-7; 500&nbsp;baht fee</td>' +
     '<td>Bangkok AQS</td></tr>' +
@@ -167,8 +173,8 @@ function ruImportTimeline() {
     '<tr><th scope="row">3+ months before (if EU/UK return possible)</th>' +
     '<td>Microchip (if needed), rabies vaccination, optional <a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">rabies titer test</a> &mdash; blood &ge;30 days after vaccination</td>' +
     '<td>Your vet; approved lab</td></tr>' +
-    '<tr><th scope="row">6&ndash;8 weeks before</th>' +
-    '<td>Core vaccinations and the <strong>21-day wait</strong> after any primary rabies shot Thailand requires</td>' +
+    '<tr><th scope="row">Before filing the Thai permit</th>' +
+    '<td>Complete <strong>all required primary vaccinations</strong>, then wait at least 21 days; documented boosters are exempt when continuity is shown</td>' +
     '<td>Your vet</td></tr>' +
     '<tr><th scope="row">~30 days before departure</th>' +
     '<td>Apply for <a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a> (form R1/1) to the AQS at your arrival airport</td>' +
@@ -179,9 +185,9 @@ function ruImportTimeline() {
     '<tr><th scope="row">Final 5&ndash;10 days</th>' +
     '<td>Clinic veterinary certificate exchanged for the <strong>international export certificate</strong> through the regional office of the Federal Service for Veterinary and Phytosanitary Surveillance (FSVPS / Rosselkhoznadzor)</td>' +
     '<td>Clinic vet + FSVPS regional office</td></tr>' +
-    '<tr><th scope="row">&ge;3 days before landing</th>' +
-    '<td>Email the AQS to confirm your exact arrival date and flight</td>' +
-    '<td>DLD</td></tr>' +
+    '<tr><th scope="row">Before travel</th>' +
+    '<td>Follow the responsible AQS&rsquo;s current itinerary-notification instructions; the reviewed source gives no universal three-day rule</td>' +
+    '<td>Arrival AQS</td></tr>' +
     '<tr><th scope="row">Arrival day</th>' +
     '<td>AQS inspection; Forms R-6/R-7; 500&nbsp;baht fee</td>' +
     '<td>Bangkok AQS</td></tr>' +
@@ -191,8 +197,8 @@ function ruImportTimeline() {
 function country(o) {
   var sections = attachReturnExportLink((o.sections || []).slice(), o.slug);
   if (!o.skipRichness) {
-    sections.push(rb.IMPORT_PATTAYA_ARRIVAL);
-    sections.push(rb.IMPORT_PATTAYA_LIFE);
+    sections.push(REGULATED_IMPORT_PATTAYA_ARRIVAL);
+    sections.push(REGULATED_IMPORT_PATTAYA_LIFE);
   }
   sections.push({ h: "Official sources", html: (o.officialExtra || "") + OFFICIAL });
   return article({
@@ -201,7 +207,7 @@ function country(o) {
     eyebrow: "Bringing a pet to Thailand &middot; By country",
     h1: o.h1, lede: o.lede, verify: VERIFY,
     updated: o.updated || "2026-06-01",
-    sections: sections, faqs: rb.mergeFaqs(o.faqs, rb.IMPORT_EXTRA_FAQS),
+    sections: sections, faqs: rb.mergeFaqs(o.faqs, REGULATED_IMPORT_EXTRA_FAQS),
     related: o.related || countryRelated(o.slug)
   });
 }
@@ -220,7 +226,7 @@ pages.push(country({
   officialExtra:
     "<p><strong>Canadian sources:</strong> " +
     "<a href=\"https://inspection.canada.ca/en/importing-food-plants-animals/pets\" " +
-    "target=\"_blank\" rel=\"noopener nofollow\">CFIA &mdash; importing or travelling with pets</a>. " +
+    "target=\"_blank\" rel=\"noopener\">CFIA &mdash; importing or travelling with pets</a>. " +
     "Export mirror: " +
     "<a href=\"/take-pet-out-of-thailand/to-canada.html\">taking a pet to Canada</a>.</p>",
   sections: [
@@ -273,7 +279,7 @@ pages.push(country({
     ["Are there direct flights from Toronto or Vancouver with a pet?",
      "<p>Both cities have direct Bangkok routes, but not every flight accepts pets in cabin or hold. Confirm pet space and crate rules when you book.</p>"],
     ["Will my pet be quarantined on arrival in Thailand?",
-     "<p>Not usually with complete paperwork. The AQS inspection is typically same-day clearance &mdash; see our <a href=\"/bring-pet-to-thailand/thailand-pet-quarantine.html\">quarantine guide</a>.</p>"],
+     "<p>DLD decides after inspection. Complete documents reduce avoidable problems, but this guide cannot promise release timing or rule out detention. See our <a href=\"/bring-pet-to-thailand/thailand-pet-quarantine.html\">quarantine guide</a>.</p>"],
     ["What does Canada need for the return journey?",
      "<p>Typically a valid rabies vaccination certificate in English or French and a healthy pet matching the paperwork. Confirm current CFIA rules before you assume return is automatic.</p>"]
   ]
@@ -292,9 +298,9 @@ pages.push(country({
   officialExtra:
     "<p><strong>German / EU sources:</strong> " +
     "<a href=\"https://www.bmel.de/EN/topics/animals/pets-and-zoo-animals/pets-entry-regulation.html\" " +
-    "target=\"_blank\" rel=\"noopener nofollow\">BMELH pet entry rules</a>; " +
+    "target=\"_blank\" rel=\"noopener\">BMELH pet entry rules</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
-    "rel=\"noopener nofollow\">EU pet movement</a>. " +
+    "rel=\"noopener\">EU pet movement</a>. " +
     "Export mirror: " +
     "<a href=\"/take-pet-out-of-thailand/to-germany.html\">taking a pet to Germany</a>.</p>",
   sections: [
@@ -307,8 +313,8 @@ pages.push(country({
       '<tr><th scope="row">3+ months before (if EU return possible)</th>' +
       '<td>Microchip (if needed), rabies vaccination, optional <a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">rabies titer test</a> &mdash; blood &ge;30 days after vaccination</td>' +
       '<td>Your vet; approved lab</td></tr>' +
-      '<tr><th scope="row">6&ndash;8 weeks before</th>' +
-      '<td>DHPP (dogs) or FVRCP (cats), leptospirosis (dogs) or negative test; <strong>21-day wait</strong> after any primary rabies shot</td>' +
+      '<tr><th scope="row">Before filing the Thai permit</th>' +
+      '<td>Complete all required primary vaccinations, then wait at least 21 days; documented boosters are exempt when continuity is shown</td>' +
       '<td>Your vet</td></tr>' +
       '<tr><th scope="row">~30 days before departure</th>' +
       '<td>Apply for <a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a> (form R1/1) to the AQS at your arrival airport</td>' +
@@ -319,9 +325,9 @@ pages.push(country({
       '<tr><th scope="row">Final 1&ndash;2 weeks</th>' +
       '<td><strong>EU animal health / export certificate</strong> completed by an authorised vet and endorsed by the competent German authority (<em>Veterin&auml;ramt</em> / BLV framework)</td>' +
       '<td>Authorised vet + German authority</td></tr>' +
-      '<tr><th scope="row">&ge;3 days before landing</th>' +
-      '<td>Email the AQS to confirm your exact arrival date and flight</td>' +
-      '<td>DLD</td></tr>' +
+      '<tr><th scope="row">Before travel</th>' +
+      '<td>Follow the responsible AQS&rsquo;s current itinerary-notification instructions; the reviewed source gives no universal three-day rule</td>' +
+      '<td>Arrival AQS</td></tr>' +
       '<tr><th scope="row">Arrival day</th>' +
       '<td>AQS inspection; Forms R-6/R-7; 500&nbsp;baht fee</td>' +
       '<td>Bangkok AQS</td></tr>' +
@@ -352,7 +358,7 @@ pages.push(country({
       "way back. Entry is through designated traveller points of entry &mdash; confirm " +
       "the current list on " +
       "<a href=\"https://www.bmel.de/EN/topics/animals/pets-and-zoo-animals/pets-entry-regulation.html\" " +
-      "target=\"_blank\" rel=\"noopener nofollow\">BMELH</a>. See " +
+      "target=\"_blank\" rel=\"noopener\">BMELH</a>. See " +
       "<a href=\"/take-pet-out-of-thailand/to-germany.html\">exporting a pet to Germany</a>.</p>" +
       '<div class="callout callout-tip"><div class="ch">Thailand does not require the titer test on the way in</div>' +
       "<p>From Germany, Thailand generally does not ask for a titer test to enter. You " +
@@ -369,7 +375,7 @@ pages.push(country({
     ["What does Germany need for the return journey?",
      "<p>A valid rabies vaccination, a rabies titer test with a three-month wait from the blood sample, and an EU third-country entry health certificate. Doing the titer test before you leave Germany avoids the wait later.</p>"],
     ["Will my pet be quarantined on arrival in Thailand?",
-     "<p>Not usually, if every document is in order and your pet appears healthy. The AQS inspection is typically same-day clearance — see our <a href=\"/bring-pet-to-thailand/thailand-pet-quarantine.html\">quarantine guide</a>.</p>"]
+     "<p>DLD decides after inspection. Complete documents do not guarantee a particular release time or rule out detention. See our <a href=\"/bring-pet-to-thailand/thailand-pet-quarantine.html\">quarantine guide</a>.</p>"]
   ]
 }));
 
@@ -384,7 +390,7 @@ pages.push(country({
     "certificate</strong> and planning ahead if you may return to Russia or move on to the EU.",
   officialExtra:
     "<p><strong>Russian sources:</strong> " +
-    "<a href=\"https://fsvps.gov.ru/\" target=\"_blank\" rel=\"noopener nofollow\">" +
+    "<a href=\"https://fsvps.gov.ru/\" target=\"_blank\" rel=\"noopener\">" +
     "Federal Service for Veterinary and Phytosanitary Surveillance (FSVPS)</a>. " +
     "Export mirror: " +
     "<a href=\"/take-pet-out-of-thailand/to-russia.html\">taking a pet to Russia</a>.</p>",
@@ -408,7 +414,7 @@ pages.push(country({
       TH_IMPORT_TABLE + TH_ARRIVAL_STD },
     { h: "The rabies titer test — strongly advised", html:
       "<p>Thailand does not generally require a titer test for entry from Russia, but " +
-      "make sure the <strong>microchip is implanted before the rabies vaccination</strong>, " +
+      "make sure the identifier on the implantation certificate matches every vaccination and travel record, " +
       "and consider a <a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">" +
       "rabies titer test</a> from an approved laboratory before you leave. It supports " +
       "onward travel to the EU, UK and similar destinations, each with a waiting period " +
@@ -434,7 +440,7 @@ pages.push(country({
     ["Which authority endorses the export certificate?",
      "<p>The regional office of FSVPS (Federal Service for Veterinary and Phytosanitary Surveillance). Your export-experienced vet coordinates the exchange from the clinic certificate.</p>"],
     ["Will my pet be quarantined on arrival in Thailand?",
-     "<p>Not usually with complete paperwork. The AQS inspection is typically same-day clearance &mdash; see our <a href=\"/bring-pet-to-thailand/thailand-pet-quarantine.html\">quarantine guide</a>.</p>"],
+     "<p>DLD decides after inspection. Complete documents do not guarantee a particular release time or rule out detention. See our <a href=\"/bring-pet-to-thailand/thailand-pet-quarantine.html\">quarantine guide</a>.</p>"],
     ["What does Russia need for the return journey from Thailand?",
      "<p>Generally a current rabies vaccination, microchip and veterinary certificate through FSVPS &mdash; confirm the current import rules before you assume return is straightforward.</p>"]
   ]

@@ -1,104 +1,47 @@
-# Tier 1 visit briefs — print and hand to delegate
+# Visit brief template — generate on the day
 
-One-day route suggestion: **Thonglor → Vetazoo → Pattaya Vet Clinic (Naklua) → Pattaya City Grooming → Pattaya Dog Stay.**
+Do not use a static route, phone, address, opening hour or service claim from this file. Those
+facts change. Before each visit, generate one brief from the approved public record and matching
+dossier, then have the operator sign it.
 
-Delegate: read `README.md` rules first. Pay everything yourself. Keep receipts.
+## Pre-visit gate
 
----
+- [ ] Public slug and dossier match one-to-one.
+- [ ] `operatingStatus` is current enough for the approved policy.
+- [ ] `publishState` permits a visit; the record is not held, rejected or HUMAN QUEUE.
+- [ ] Address and arrival instructions come from a current approved source.
+- [ ] Booking channel is classified as a public-business contact and approved for use.
+- [ ] The planned purchase is ordinary, non-clinical where possible and causes no unnecessary
+      procedure or treatment for an animal.
+- [ ] Reviewer, operator and business have no undisclosed relationship.
+- [ ] The reviewer has read `README.md` and has the private evidence form.
 
-## 1. Thonglor Pet Hospital — Pattaya
+## Day-of brief
 
-**Category:** Vet (24h) · **Slug:** `thonglor-pet-hospital-pattaya`  
-**Address:** 147/41 Sukhumvit Road, Bang Lamung  
-**Phone:** 038 423 078 · **Web:** thonglorpet.com (Pattaya branch)
+| Field | Operator-approved value |
+|---|---|
+| Business name and slug | |
+| Category | |
+| Dossier checked at | |
+| Exact visit date/window | |
+| Current source for address | |
+| Current source for booking channel | |
+| Ordinary service/product to purchase | |
+| Maximum authorised spend | |
+| Accessibility or animal-welfare constraints | |
+| Known evidence conflicts to avoid repeating | |
 
-**Why this visit matters:** Homepage emergency block, flagship hospital brand, highest
-expat search volume for “vet pattaya.”
+## What the reviewer may observe
 
-**Book as:** Walk-in or phone for a **routine consultation** (vaccination check, general
-consult, or nail trim if they offer it). Do not invent an emergency.
+- How the booking and arrival worked on that date.
+- Whether the price quoted for the purchased item matched the itemised bill.
+- Languages actually used during that interaction, without identifying staff.
+- Public-area cleanliness, access and comfort directly observed.
+- Handling visible to the customer, described factually without a clinical conclusion.
 
-**Observe:**
+The reviewer must not create an emergency, request unnecessary treatment, test a business with a
+false medical story, trespass into staff-only areas or record another customer.
 
-- How easy was booking / wait time?
-- English at reception and with the vet?
-- Was pricing explained before treatment?
-- Cleanliness of waiting area and consult room?
-- Bill itemised and transparent?
-
-**Do NOT review:** Medical diagnosis, treatment quality, surgical skill.
-
-**Receipt:** Required.
-
----
-
-## 2. Vetazoo Animal & Exotic Pet Hospital
-
-**Category:** Vet (24h line) · **Slug:** `vetazoo-animal-and-exotic-pet-hospital`  
-**Address:** 140/84 Moo 11, Sukhumvit Road, South Pattaya (opposite Lotus's South Pattaya)  
-**Phone:** 082 662 7999 · **Web:** vetazoo.com
-
-**Why:** Only listed exotic-capable hospital; homepage emergency list.
-
-**Book as:** Routine consult or ask reception about exotic capability (informational only).
-
-**Observe:** Same checklist as #1, plus whether English signage/materials exist.
-
----
-
-## 3. Pattaya Veterinary Clinic
-
-**Category:** Vet · **Slug:** `pattaya-veterinary-clinic`  
-**Address:** 157/15 Moo 5, Pattaya-Naklua Road (near Soi 16/2)  
-**Phone:** 065 020 3773
-
-**Why:** Long-established Naklua clinic; strong local word-of-mouth category.
-
-**Book as:** Routine consult or vaccination enquiry.
-
-**Observe:** Same checklist. Note clinic size vs hospital — comfort for cats/small dogs?
-
----
-
-## 4. Pattaya City Pet Shop & Grooming Salon
-
-**Category:** Groomer · **Slug:** `pattaya-city-pet-shop-grooming`  
-**Address:** Central Pattaya (see listing)  
-**Has phone + website** — call ahead for grooming slot.
-
-**Book as:** Basic groom (bath, nail trim) for a small dog if you have one, or shop visit
-+ quote for grooming if delegate has no pet (note “quote only” in template).
-
-**Observe:**
-
-- Appointment process, wait time
-- English communication
-- Price quoted upfront vs final bill
-- Cleanliness of grooming area
-- Pet handling (calm, respectful?)
-
----
-
-## 5. Pattaya Dog Stay
-
-**Category:** Boarding · **Slug:** `pattaya-dog-stay`  
-**Address:** Central Pattaya (see listing)
-
-**Book as:** Facility tour + day-rate quote, or one night boarding if delegate has a dog.
-
-**Observe:**
-
-- Air-con / ventilation, smell, cleanliness
-- Exercise area access explained?
-- Contract and pricing clear?
-- English communication
-- Would you leave your pet here?
-
----
-
-## Submitting results
-
-Fill `post-visit-template.md` once per business. Email to **hello@pattayapets.com** with
-subject: `Visit report: [business slug]`.
-
-AI will draft the listing update. Operator approves before publish.
+After the visit, complete `post-visit-template.md` privately. Use the mailbox configured in
+`src/site-config.js` only after delivery has been tested. The operator, not AI, decides whether
+any observation is publishable.

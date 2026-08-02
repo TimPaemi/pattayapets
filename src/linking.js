@@ -1,69 +1,16 @@
 "use strict";
-/* Contextual internal (PattayaPets) and TimPaemi network cross-links. */
+/* Contextual links within PattayaPets. Cross-publication links are prohibited. */
+
+const {
+  manifestEntryForPath,
+  businessCategoryTopic
+} = require("./page-manifest.js");
 
 function esc(s) {
   return String(s == null ? "" : s)
     .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 }
-
-const NETWORK_SITES = {
-  authority: {
-    name: "TimPaemi",
-    url: "https://timpaemi.com/",
-    hint: "The publisher hub and editorial method."
-  },
-  timpaemi: {
-    name: "TimPaemi",
-    url: "https://timpaemi.com/",
-    hint: "Publisher behind the network."
-  },
-  restaurant: {
-    name: "Pattaya Restaurant Guide",
-    url: "https://pattaya-restaurant-guide.com/",
-    hint: "Dog-friendly dining and terrace policies."
-  },
-  visa: {
-    name: "Pattaya Visa Help",
-    url: "https://pattayavisahelp.com/",
-    hint: "Visas, extensions and relocation timing."
-  },
-  gym: {
-    name: "Pattaya Gym",
-    url: "https://pattaya-gym.com/",
-    hint: "Cool-hour routines alongside dog walks."
-  },
-  afterdark: {
-    name: "Pattaya After Dark",
-    url: "https://pattaya-afterdark.com/",
-    hint: "Nightlife, bars and Pattaya after dark."
-  },
-  school: {
-    name: "Pattaya School Guide",
-    url: "https://pattaya-school-guide.com/",
-    hint: "Schools when the whole family relocates."
-  },
-  coffee: {
-    name: "Pattaya Coffee",
-    url: "https://pattaya-coffee.com/",
-    hint: "Outdoor seating and relaxed patios."
-  },
-  stream: {
-    name: "Pattaya Villa Stream",
-    url: "https://pattayastream.com/",
-    hint: "Pet-friendly rentals and long-stay villas."
-  },
-  medical: {
-    name: "Pattaya Medical",
-    url: "https://pattaya-medical.com/",
-    hint: "Human medical care in Pattaya."
-  },
-  vehicle: {
-    name: "Pattaya Vehicle Rentals",
-    url: "https://pattaya-vehicle-rentals.com/",
-    hint: "Cars for vet trips, airport runs and crates."
-  }
-};
 
 const INTERNAL_BY_TOPIC = {
   import: [
@@ -184,59 +131,12 @@ const INTERNAL_BY_TOPIC = {
   ]
 };
 
-/* Chip policy: at most 3 cross-domain chips per page, pet-relevant targets only.
-   Full NETWORK_SITES registry is kept (entries may be referenced by key), but only
-   genuinely pet-relevant keys are rendered as chips per topic. */
-const NETWORK_BY_TOPIC = {
-  import: ["visa", "authority"],
-  export: ["visa", "authority"],
-  emergency: ["medical", "authority"],
-  owning: ["stream", "authority"],
-  lifestyle: ["restaurant", "authority"],
-  health: ["medical", "authority"],
-  adoption: ["authority"],
-  species: ["authority"],
-  directory: ["visa", "medical", "authority"],
-  relocation: ["visa", "authority"],
-  start: ["visa", "authority"],
-  home: [],
-  general: [],
-  insurance: ["medical", "authority"]
-};
-
-const CATEGORY_TOPIC = {
-  vets: "health",
-  groomers: "directory",
-  boarding: "owning",
-  "pet-shops": "owning",
-  trainers: "species",
-  "mobile-vets": "health",
-  "pet-relocation": "relocation"
-};
-
 function linkTopicFromPath(path) {
-  if (!path) return "general";
-  if (path === "/" || path === "/index.html") return "home";
-  if (path.indexOf("/bring-pet-to-thailand") === 0) return "import";
-  if (path.indexOf("/take-pet-out-of-thailand") === 0) return "export";
-  if (path.indexOf("/pet-emergency") === 0) return "emergency";
-  if (path.indexOf("/owning-a-pet-in-pattaya") === 0) return "owning";
-  if (path.indexOf("/pet-health-pattaya") === 0) return "health";
-  if (path.indexOf("/dog-friendly-pattaya") === 0) return "lifestyle";
-  if (path.indexOf("/adopt-a-pet-pattaya") === 0) return "adoption";
-  if (path === "/dogs/" || path.indexOf("/dogs/") === 0) return "species";
-  if (path === "/cats/" || path.indexOf("/cats/") === 0) return "species";
-  if (path === "/start-here.html") return "start";
-  if (path.indexOf("/pet-insurance") === 0) return "insurance";
-  if (path === "/directory.html" || path.indexOf("/area/") === 0) return "directory";
-  if (/^\/(vets|groomers|boarding|pet-shops|trainers|mobile-vets|pet-relocation)\//.test(path)) {
-    return "directory";
-  }
-  return "general";
+  return manifestEntryForPath(path || "/unknown.html").category;
 }
 
 function linkTopicForCategory(catKey) {
-  return CATEGORY_TOPIC[catKey] || "directory";
+  return businessCategoryTopic(catKey);
 }
 
 function pickLinks(list, limit) {
@@ -255,20 +155,6 @@ function internalListHtml(topic, limit) {
     "</ul>";
 }
 
-function networkListHtml(topic, limit) {
-  return ""; // network cross-links removed 2026-07 (SEO)
-  var keys = pickLinks(NETWORK_BY_TOPIC[topic] || NETWORK_BY_TOPIC.general, limit);
-  if (!keys.length) return "";
-  return '<ul class="toc link-panel__list">' +
-    keys.map(function (k) {
-      var s = NETWORK_SITES[k];
-      if (!s) return "";
-      return '<li><a href="' + s.url + '" target="_blank" rel="noopener noreferrer">' +
-        esc(s.name) + "</a><span class=\"link-hint\">" + esc(s.hint) + "</span></li>";
-    }).join("") +
-    "</ul>";
-}
-
 function linkPanel(title, bodyHtml) {
   if (!bodyHtml) return "";
   return '<details class="toc-panel card link-panel">' +
@@ -279,8 +165,7 @@ function linkPanel(title, bodyHtml) {
 function sidebarLinkPanels(topic, opts) {
   opts = opts || {};
   var internal = opts.internal !== false ? internalListHtml(topic, opts.internalLimit || 6) : "";
-  var network = opts.network !== false ? networkListHtml(topic, opts.networkLimit || 5) : "";
-  return linkPanel("Also on PattayaPets", internal) + linkPanel("Pattaya network", network);
+  return linkPanel("Related on PattayaPets", internal);
 }
 
 function sidebarLinkAside(topic, opts) {
@@ -333,19 +218,18 @@ function guideClusterChips() {
 
 function inPageLinkSection(topic) {
   var internal = INTERNAL_BY_TOPIC[topic] || INTERNAL_BY_TOPIC.general;
-  var netKeys = [];
-  if (!internal.length && !netKeys.length) return "";
+  if (!internal.length) return "";
   return '<section class="section section-tint"><div class="container">' +
     '<details class="corridor-panel more-read-panel">' +
     '<summary class="corridor-panel__title">More to read</summary>' +
     '<div class="corridor-panel__body">' +
-    "<p class=\"notice\">Related guides on PattayaPets and sister sites in the TimPaemi network.</p>" +
+    "<p class=\"notice\">Related PattayaPets guides selected for this topic.</p>" +
     '<div class="link-section-grid">' +
     '<div class="link-section-col"><div class="ch">On PattayaPets</div><div class="chips">' +
     internal.slice(0, 8).map(function (l) {
       return '<a class="chip chip-link" href="' + l.path + '">' + esc(l.name) + "</a>";
     }).join("") +
-    '</div><p style="margin:.75rem 0 0;font-size:.92rem"><a href="/guides.html">All guides &rarr;</a> &middot; ' +
+    '</div><p class="related-all-link"><a href="/guides.html">All guides &rarr;</a> &middot; ' +
     '<a href="/directory.html">Directory &rarr;</a> &middot; ' +
     '<a href="/search.html">Search &rarr;</a></p></div>' +
     '' +
@@ -361,44 +245,14 @@ function seeAlsoCallout(topic, excludePath) {
   var internal = (INTERNAL_BY_TOPIC[topic] || INTERNAL_BY_TOPIC.general).filter(function (l) {
     return pathNorm(l.path) !== here;
   }).slice(0, 4);
-  var netKeys = [];
-  if (!internal.length && !netKeys.length) return "";
+  if (!internal.length) return "";
   var body = "";
   if (internal.length) {
     body += "<p>" + internal.map(function (l) {
       return '<a href="' + l.path + '">' + esc(l.name) + "</a>";
     }).join(" &middot; ") + "</p>";
   }
-  if (netKeys.length) {
-    body += '<p class="see-also-network">Pattaya network: ' +
-      netKeys.map(function (k) {
-        var s = NETWORK_SITES[k];
-        return s
-          ? '<a href="' + s.url + '" target="_blank" rel="noopener noreferrer">' +
-            esc(s.name) + "</a>"
-          : "";
-      }).filter(Boolean).join(" &middot; ") + "</p>";
-  }
   return '<div class="callout callout-note see-also"><div class="ch">See also</div>' + body + "</div>";
-}
-
-function networkChipsHtml(keys) {
-  return ""; // network cross-links removed 2026-07 (SEO)
-  var list = keys || ["visa", "medical", "authority"];
-  return '<div class="chips">' + list.map(function (k) {
-    var s = NETWORK_SITES[k];
-    if (!s) return "";
-    return '<a class="chip chip-link" href="' + s.url + '" target="_blank" rel="noopener noreferrer">' +
-      esc(s.name) + "</a>";
-  }).join("") + "</div>";
-}
-
-function networkDirectoryProse() {
-  return "<h2>Sister publications in the TimPaemi network</h2>" +
-    "<p>PattayaPets is one independent publication in a family of Pattaya guides. " +
-    "Each site uses the same method &mdash; anonymous visits, bills paid in full, " +
-    "no paid placements. They are editorial neighbours, not competitors:</p>" +
-    '';
 }
 
 const CORRIDOR_IMPORT = [
@@ -453,22 +307,6 @@ function corridorChipsSection() {
     "</div></details></div></section>";
 }
 
-function proseNetworkLine(topic) {
-  return ""; // network cross-links removed 2026-07 (SEO)
-  var keys = NETWORK_BY_TOPIC[topic] || NETWORK_BY_TOPIC.general;
-  if (!keys.length) return "";
-  var names = keys.slice(0, 3).map(function (k) {
-    var s = NETWORK_SITES[k];
-    return s
-      ? '<a href="' + s.url + '" target="_blank" rel="noopener noreferrer">' + esc(s.name) + "</a>"
-      : "";
-  }).filter(Boolean);
-  if (!names.length) return "";
-  return "<p>Planning the wider move? See " + names.join(", ") +
-    " in the <a href=\"https://timpaemi.com/\" target=\"_blank\" rel=\"noopener noreferrer\">" +
-    "TimPaemi</a> network.</p>";
-}
-
 module.exports = {
   linkTopicFromPath,
   linkTopicForCategory,
@@ -479,10 +317,6 @@ module.exports = {
   seeAlsoCallout,
   hubQuickBar,
   guideClusterChips,
-  networkChipsHtml,
-  networkDirectoryProse,
-  proseNetworkLine,
   internalListHtml,
-  networkListHtml,
   corridorChipsSection
 };

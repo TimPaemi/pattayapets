@@ -1,5 +1,5 @@
 "use strict";
-/* Cross-link coverage audit — sidebars, hub strips, network footer. */
+/* Cross-link coverage audit — sidebars, hub strips and publication footer. */
 const fs = require("fs");
 const path = require("path");
 
@@ -60,10 +60,7 @@ files.forEach(function (f) {
   var rel = "/" + path.relative(dist, f).replace(/\\/g, "/");
   if (SKIP[rel]) return;
 
-  // The PA-NET footer block was deliberately removed when the network was
-  // dismantled. Asserting on it failed all 209 pages, which exit(1)'d the last
-  // step of build:all, so IndexNow never pinged. Assert on the current Insider
-  // footer instead, so this check still guards something real.
+  // Every generated page must carry the current publication footer.
   if (!h.includes('class="site-footer"')) {
     fail.push(rel + " — missing site footer");
   }
@@ -77,13 +74,13 @@ files.forEach(function (f) {
   var isListing = h.includes("biz-sub") && h.includes("The facts");
   var isCategoryHub = /^\/(vets|groomers|boarding|pet-shops|trainers|mobile-vets|pet-relocation)\/$/.test(rel);
 
-  if (isGuideArticle && !h.includes("Also on PattayaPets")) {
-    fail.push(rel + " — guide article missing Also on PattayaPets sidebar");
+  if (isGuideArticle && !h.includes("Related on PattayaPets")) {
+    fail.push(rel + " — guide article missing Related on PattayaPets sidebar");
   }
   if (isGuideArticle && !h.includes("see-also")) {
     warn.push(rel + " — guide missing in-body See also callout");
   }
-  if (isListing && !h.includes("Also on PattayaPets")) {
+  if (isListing && !h.includes("Related on PattayaPets")) {
     fail.push(rel + " — business listing missing link sidebar");
   }
   if (isCategoryHub && !h.includes("More to read")) {

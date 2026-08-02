@@ -17,19 +17,21 @@ function catCard(href, icon, tag, name, desc) {
     '<span class="card-meta">View ' + name.toLowerCase() + ' &rarr;</span></a>';
 }
 
-const { BUSINESSES } = require("../data/businesses.js");
+const { BUSINESSES, isPublishedBusiness } = require("../data/businesses.js");
 const { areaTileHtml } = require("../area-tiles.js");
-const { inPageLinkSection, networkChipsHtml } = require("../linking.js");
+const { inPageLinkSection } = require("../linking.js");
+const { htmlToText } = require("../html-text.js");
 const VETS24 = BUSINESSES.filter(function (b) {
-  return (b.category === "vets" || b.category === "mobile-vets") && b.c24;
+  return isPublishedBusiness(b) &&
+    (b.category === "vets" || b.category === "mobile-vets") && b.c24;
 });
 
 function vet24Card(b) {
   return '<a class="card" href="/' + b.category + '/' + b.slug + '.html">' +
-    '<span class="badge-24h" style="align-self:flex-start;margin-bottom:13px">Open 24 hours</span>' +
+    '<span class="badge-24h badge-24h--standalone">Public 24-hour claim</span>' +
     '<h3>' + b.name + '</h3>' +
     '<p>' + b.type + '</p>' +
-    '<span class="card-meta">View hospital &rarr;</span></a>';
+    '<span class="card-meta">View evidence record &rarr;</span></a>';
 }
 
 function areaTile(name, slug) {
@@ -48,28 +50,28 @@ const HOME_GUIDES_FEATURED = [
     "Emergency contacts, finding a vet, the climate and the essentials for new owners.",
     "Open the page"],
   ["/bring-pet-to-thailand/", "Flagship guide", "Bringing a pet to Thailand",
-    "DLD permit, microchip, rabies and titer test, health certificate, airlines and arrival.",
+    "The current Thai DLD pathway, source-backed steps and route-specific checks.",
     "Read the guide"],
   ["/bring-pet-to-thailand/checklist.html", "Import", "Import checklist",
     "A printable step-by-step checklist for the whole move to Thailand.",
     "Open the checklist"],
   ["/take-pet-out-of-thailand/", "Moving on", "Taking a pet out of Thailand",
-    "Export process, costs and what the UK, EU, USA, Australia and more demand.",
+    "The Thai export process and destination-specific requirements from primary sources.",
     "Read the guide"],
   ["/take-pet-out-of-thailand/checklist.html", "Export", "Export checklist",
     "A printable step-by-step checklist for taking your pet out of Thailand.",
     "Open the checklist"],
   ["/pet-health-pattaya/", "Health", "Pet health in Pattaya",
-    "Heartworm, tick disease, skin and ear problems in a tropical climate.",
+    "General orientation, warning signs and when to contact a qualified veterinarian.",
     "Read the guide"],
   ["/dog-friendly-pattaya/", "Out &amp; about", "Dog-friendly Pattaya",
-    "Beaches, cafes, restaurants, hotels, condos and parks that welcome dogs.",
+    "How to check current pet policies for beaches, venues, accommodation and housing.",
     "Read the guide"],
   ["/pet-emergency/24-hour-vets-pattaya.html", "Urgent", "24-hour vets in Pattaya",
-    "Animal hospitals open around the clock — addresses and contact details.",
+    "Approved records with a current public 24-hour claim; always confirm before travelling.",
     "View the list"],
   ["/pet-emergency/", "Emergency", "Pet emergencies &amp; hazards",
-    "First aid, heatstroke, ticks, snakes, street dogs and venomous creatures.",
+    "Urgent-care orientation, contact routes and locally relevant hazards.",
     "Read the guide"],
   ["/owning-a-pet-in-pattaya/", "Day to day", "Owning a pet in Pattaya",
     "Costs, hot-climate care, pet-friendly housing and where to walk your dog.",
@@ -155,13 +157,13 @@ const FAQ = [
   ['Is PattayaPets a vet?',
    'No. PattayaPets is an independent editorial publication about pet businesses and pet ownership in Pattaya. It is not a veterinary practice and gives no veterinary advice. For any medical concern, always consult a qualified veterinarian. In a pet emergency, contact a 24-hour animal hospital directly.'],
   ['How does PattayaPets review businesses?',
-   'The same way as the rest of the TimPaemi network: anonymous visits, with every bill paid in full. There are no paid placements, no sponsored listings and no affiliate links. Until a business has had a real anonymous visit, its page shows verified facts only and is marked &lsquo;not yet reviewed&rsquo;.'],
-  ['What does a verdict cover?',
-   'Verdicts &mdash; recommend, OK or avoid &mdash; describe the business experience only: booking, communication, English-speaking staff, billing transparency, cleanliness and comfort. PattayaPets never verdicts on veterinary medical quality. That judgement belongs to qualified vets and regulators.'],
+   'Business pages separate sourced facts from first-hand experience. No completed anonymous-visit record is currently published, so pages are labelled &lsquo;facts page &mdash; visit pending&rsquo; and carry no verdict. There are no paid placements, sponsored listings or affiliate links.'],
+  ['Will PattayaPets publish business verdicts?',
+   'Only after a documented first-hand visit. No completed visit record or verdict is currently published. A future verdict would cover the customer experience only, never veterinary medical quality.'],
   ['Who is PattayaPets for?',
-   'Western expats and tourists in and around Pattaya who already have a pet, are planning to bring one to Thailand, or want to adopt one here. The guides are written in plain English with the assumption you may be new to Thailand.'],
+   'Pet owners, newcomers and travellers in or around Pattaya who need local services, daily-care orientation, adoption information or pet-travel guidance. The guides use plain English and explain Thailand-specific context.'],
   ['Does it cost anything to use PattayaPets?',
-   'No. PattayaPets is free to read, with no account, no paywall and no advertising. It is funded by TIMPAEMI Co., Ltd. and operated through the TimPaemi network of independent local publications.'],
+   'No. PattayaPets is free to read, with no account, no paywall and no advertising. It is funded and published by TIMPAEMI CO., LTD.'],
   ['How can I find pet services near me?',
    'Use the directory&rsquo;s area filters to browse services by neighbourhood. Each listing provides the available contact details, services and location facts.']
 ];
@@ -170,10 +172,10 @@ const body =
   '<section class="hero"><div class="container"><div class="hero-grid">' +
     '<div>' +
       '<p class="eyebrow">Independent &middot; Pattaya, Thailand</p>' +
-      '<h1>Pets in Pattaya, honestly reviewed and clearly explained</h1>' +
-      '<p class="lede">The complete resource for pet owners in and around Pattaya &mdash; ' +
-      'an editorial directory of vets, groomers, boarding and more, plus plain-English ' +
-      'guides to bringing a pet to Thailand, dog-friendly places, and what to do in an ' +
+      '<h1>Pet care and relocation in Pattaya, clearly explained</h1>' +
+      '<p class="lede">A source-led resource for pet owners in and around Pattaya &mdash; ' +
+      'an evidence-status directory of local services, plus plain-English ' +
+      'guides to pet travel, checking pet-friendly places, and what to do in an ' +
       'emergency.</p>' +
       '<div class="btn-row">' +
         '<a class="btn btn-primary" href="/directory.html">Browse the directory</a>' +
@@ -182,13 +184,13 @@ const body =
     '</div>' +
     '<aside class="hero-card">' +
       '<h2>Pet emergency in Pattaya?</h2>' +
-      '<p>If your pet is badly hurt or unwell, go straight to a 24-hour animal hospital. ' +
-      'Our emergency page lists clinics that are open around the clock, with addresses ' +
-      'and contact details.</p>' +
-      '<div class="btn-row" style="margin-top:.9rem">' +
+      '<p>If your pet is badly hurt or unwell, call urgent veterinary care now. ' +
+      'The emergency page shows approved records with a public 24-hour claim; ' +
+      'confirm availability before travelling.</p>' +
+      '<div class="btn-row home-emergency-actions">' +
       '<a class="btn btn-alert" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in Pattaya</a>' +
       '</div>' +
-      '<p class="notice" style="margin:.9rem 0 0">Editorial only &mdash; not veterinary advice.</p>' +
+      '<p class="notice home-disclaimer">Editorial only &mdash; not veterinary advice. Confirm availability before travelling.</p>' +
     '</aside>' +
   '</div></div></section>' +
 
@@ -202,10 +204,9 @@ const body =
 
   '<section class="section"><div class="container">' +
     '<div class="section-head"><p class="eyebrow">Pet emergency</p>' +
-    '<h2>24-hour animal hospitals in Pattaya</h2>' +
-    '<p>If your pet needs urgent care outside normal clinic hours, these animal ' +
-    'hospitals are listed as open around the clock. Save your nearest clinic&rsquo;s ' +
-    'contact details today &mdash; before you ever need them.</p></div>' +
+    '<h2>Urgent-care records with public 24-hour claims</h2>' +
+    '<p>These approved records carry a current public claim of 24-hour service. ' +
+    'Availability can change: call the provider before travelling whenever circumstances allow.</p></div>' +
     '<div class="grid grid-4">' + VETS24.map(vet24Card).join('') + '</div>' +
     '<div class="btn-row"><a class="btn btn-ghost" href="/pet-emergency/">All emergency vets, first-aid &amp; hazards &rarr;</a></div>' +
   '</div></section>' +
@@ -214,17 +215,15 @@ const body =
 
   '<section class="section section-tint"><div class="container">' +
     '<div class="section-head"><p class="eyebrow">The editorial method</p>' +
-    '<h2>Why you can trust what you read here</h2>' +
-    '<p>PattayaPets follows the TimPaemi network method &mdash; the same ' +
-    'approach used by our restaurant, medical and school guides.</p>' +
-    '<p style="margin-top:1rem">Sister publications in the network:</p>' +
-    networkChipsHtml(["visa", "medical", "authority"]) +
+    '<h2>How this publication earns trust</h2>' +
+    '<p>Each consequential claim should lead to a dated source. Business pages state ' +
+    'what is verified, what remains unknown and whether a first-hand visit exists.</p>' +
     '</div>' +
     '<div class="grid grid-4">' +
-      '<div><h3>Anonymous visits</h3><p>We visit as ordinary customers &mdash; no PR tours, no special treatment.</p></div>' +
-      '<div><h3>Bills paid in full</h3><p>Every bill is paid from our own funds. Nobody pays to appear here.</p></div>' +
+      '<div><h3>Sources beside claims</h3><p>Regulated rules and changing facts link to the authority or business that supports them.</p></div>' +
+      '<div><h3>Visit status is explicit</h3><p>No completed anonymous-visit record is published yet, so no page carries a verdict.</p></div>' +
       '<div><h3>Zero paid placements</h3><p>No sponsored listings, no affiliate links, no advertising. Ever.</p></div>' +
-      '<div><h3>A verdict, not advice</h3><p>We rate the business experience &mdash; never the veterinary medicine.</p></div>' +
+      '<div><h3>Corrections stay visible</h3><p>Material corrections are dated and explained on the public corrections page.</p></div>' +
     '</div>' +
     '<div class="btn-row"><a class="btn btn-ghost" href="/standards.html">Read our full editorial standards &rarr;</a></div>' +
   '</div></section>' +
@@ -232,9 +231,9 @@ const body =
   '<section class="section"><div class="container">' +
     '<div class="section-head"><p class="eyebrow">The directory</p>' +
     '<h2>Find pet care in Pattaya</h2>' +
-    '<p>Seven categories of pet business, each filterable by area. Every listing starts ' +
-    'as a verified facts page &mdash; address, hours, services, languages &mdash; with ' +
-    'honest verdicts added after our anonymous visits.</p></div>' +
+    '<p>Seven categories of pet business, each filterable by area. Every listing states ' +
+    'its evidence status; unknown or unverified details are labelled instead of inferred. ' +
+    'No listing has a verdict unless a documented first-hand visit exists.</p></div>' +
     '<div class="grid grid-3">' +
       catCard('/vets/', 'vet', 'Health', 'Vets &amp; animal hospitals',
         'General clinics, animal hospitals and 24-hour emergency care across Pattaya.') +
@@ -281,7 +280,7 @@ const body =
     homeGuideGrid(HOME_GUIDES_MORE) +
     "</div></div></details>" +
     HOME_GUIDE_MORE +
-    '<div class="guide-filters dir-filters" style="margin-top:1.4rem">' +
+    '<div class="guide-filters dir-filters home-guide-filters">' +
     '<a class="chip chip-link" href="/guides.html?topic=import">Import</a>' +
     '<a class="chip chip-link" href="/guides.html?topic=export">Export</a>' +
     '<a class="chip chip-link" href="/guides.html?topic=emergency">Emergency</a>' +
@@ -320,18 +319,18 @@ const body =
 
 module.exports = [{
   path: "/",
-  title: "Vet Pattaya & Pet Import Guide | Dog-Friendly Directory",
+  title: "PattayaPets | Pet Care, Local Services & Travel Guidance",
   description:
-    "Pattaya pet directory — vets, groomers, boarding, pet shops — plus import guides, " +
-    "dog-friendly places and emergencies. Reviewed honestly, never paid.",
-  updated: "2026-06-09",
+    "Pattaya pet directory and source-led guides to local services, daily care, adoption, " +
+    "emergencies and pet-travel paperwork in Thailand.",
+  updated: "2026-08-01",
   schema: [{
     "@type": "FAQPage",
     mainEntity: FAQ.map(function (f) {
       return {
         "@type": "Question",
-        name: f[0].replace(/&[a-z]+;/g, ""),
-        acceptedAnswer: { "@type": "Answer", text: f[1].replace(/&[a-z]+;/g, "") }
+        name: htmlToText(f[0]),
+        acceptedAnswer: { "@type": "Answer", text: htmlToText(f[1]) }
       };
     })
   }],

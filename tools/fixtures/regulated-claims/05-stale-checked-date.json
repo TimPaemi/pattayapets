@@ -1,0 +1,1 @@
+{"expectedCode":"CLAIM_CHECK_STALE","operations":[{"op":"set","path":["registry","TEST-CLAIM-2026-07","checkedAt"],"value":"2024-01-01"}]}

@@ -28,6 +28,16 @@
     return ok ? raw : "";
   }
 
+  function filterState(controls, attr, active) {
+    controls.forEach(function (control) {
+      var selected = control.getAttribute(attr) === active;
+      control.classList.toggle("is-active", selected);
+      if (control.tagName === "BUTTON") control.setAttribute("aria-pressed", selected ? "true" : "false");
+      else if (selected) control.setAttribute("aria-current", "true");
+      else control.removeAttribute("aria-current");
+    });
+  }
+
   function filterResultStatus(status, shown, total, emptyText, unit) {
     if (!status) return;
     if (shown === 0) {
@@ -37,14 +47,14 @@
       status.hidden = false;
       status.textContent = "Showing " + shown + " of " + total + " " + unit + ".";
     } else {
-      status.hidden = true;
-      status.textContent = "";
+      status.hidden = false;
+      status.textContent = "Showing all " + total + " " + unit + ".";
     }
   }
 
   function announceFilterStatus(status) {
+    /* role=status announces text changes without moving keyboard focus. */
     if (!status || status.hidden) return;
-    try { status.focus({ preventScroll: true }); } catch (e) {}
   }
 
   function collapseFilterPanel(el) {
@@ -66,27 +76,28 @@
     }
   }
 
-  /* Stylesheet preload fallback */
-  /* Match by relationship, not filename: the stylesheet is content-hashed at build. */
-  var cssLink = document.querySelector('link[rel="preload"][as="style"]');
-  if (cssLink) {
-    function applyCss() {
-      cssLink.rel = "stylesheet";
-    }
-    if (cssLink.onload !== undefined) cssLink.onload = applyCss;
-    window.addEventListener("load", applyCss);
-    setTimeout(applyCss, 3000);
-  }
-
   /* Mobile navigation */
   var toggle = document.querySelector(".nav-toggle");
   var nav = document.getElementById("primary-nav");
   var searchDrawers = document.querySelectorAll(".header-search-drawer");
+  function syncSearchOpen() {
+    var open = false;
+    searchDrawers.forEach(function (drawer) {
+      if (drawer.open) open = true;
+      var summary = drawer.querySelector("summary");
+      if (summary) {
+        summary.setAttribute("aria-expanded", drawer.open ? "true" : "false");
+        summary.setAttribute("aria-label", drawer.open ? "Close search" : "Open search");
+      }
+    });
+    document.body.classList.toggle("search-open", open);
+  }
   function closeSearchDrawers() {
     searchDrawers.forEach(function (d) { d.removeAttribute("open"); });
+    syncSearchOpen();
   }
   if (toggle && nav) {
-    function setNav(open) {
+    function setNav(open, restoreFocus) {
       nav.classList.toggle("open", open);
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
       toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
@@ -94,29 +105,31 @@
       if (open) {
         var first = nav.querySelector("a");
         if (first) first.focus();
-      } else {
+      } else if (restoreFocus) {
         toggle.focus();
       }
     }
     toggle.addEventListener("click", function () {
       var opening = !nav.classList.contains("open");
       if (opening) closeSearchDrawers();
-      setNav(opening);
+      setNav(opening, !opening);
     });
     nav.addEventListener("click", function (e) {
-      if (e.target.tagName === "A" && nav.classList.contains("open")) setNav(false);
+      if (e.target.tagName === "A" && nav.classList.contains("open")) setNav(false, false);
     });
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && nav.classList.contains("open")) {
-        setNav(false);
-        toggle.focus();
+        setNav(false, true);
       }
     });
     document.addEventListener("click", function (e) {
       if (!nav.classList.contains("open")) return;
       if (nav.contains(e.target) || toggle.contains(e.target)) return;
-      setNav(false);
+      setNav(false, false);
     });
+    /* Collapse only after the external script has installed all menu handlers.
+       Without JavaScript, the mobile navigation remains visible and usable. */
+    document.documentElement.classList.add("js");
   }
 
   /* Mark the current top-level nav item */
@@ -162,10 +175,29 @@
   var searchFilters = document.getElementById("pp-filters");
   if (searchInput && searchOut) {
     var idx = [];
+    var indexState = "idle";
     var filterKinds = [];
     var activeFilter = "";
     var debounceTimer;
+    searchOut.removeAttribute("aria-live");
+    searchOut.removeAttribute("aria-atomic");
     searchOut.setAttribute("aria-busy", "false");
+    var searchStatus = document.createElement("p");
+    searchStatus.id = "pp-search-status";
+    searchStatus.className = "visually-hidden";
+    searchStatus.setAttribute("role", "status");
+    searchStatus.setAttribute("aria-live", "polite");
+    searchStatus.setAttribute("aria-atomic", "true");
+    searchOut.parentNode.insertBefore(searchStatus, searchOut);
+
+    function searchHeading() {
+      return '<h2 id="pp-results-heading" class="search-results__heading">Search results</h2>';
+    }
+
+    function announceSearch(message) {
+      searchStatus.textContent = "";
+      window.setTimeout(function () { searchStatus.textContent = message; }, 0);
+    }
 
     function esc(s) {
       return String(s).replace(/[&<>"]/g, function (c) {
@@ -185,10 +217,12 @@
     function renderFilters(kinds) {
       if (!searchFilters) return;
       var chips = ['<button type="button" class="chip chip-link' +
-        (activeFilter === "" ? " chip-active" : "") + '" data-filter="">All</button>'];
+        (activeFilter === "" ? " chip-active" : "") + '" data-filter="" aria-pressed="' +
+        (activeFilter === "" ? "true" : "false") + '">All</button>'];
       kinds.forEach(function (k) {
         chips.push('<button type="button" class="chip chip-link' +
-          (activeFilter === k ? " chip-active" : "") + '" data-filter="' + esc(k) + '">' +
+          (activeFilter === k ? " chip-active" : "") + '" data-filter="' + esc(k) +
+          '" aria-pressed="' + (activeFilter === k ? "true" : "false") + '">' +
           esc(k) + "</button>");
       });
       searchFilters.innerHTML = chips.join("");
@@ -205,8 +239,14 @@
       syncUrl(q);
       if (q.length < 2) {
         searchOut.setAttribute("aria-busy", "false");
-        searchOut.innerHTML = '<p class="notice">Type at least two letters to search every page.</p>';
+        searchOut.innerHTML = searchHeading() +
+          '<p class="notice">Type at least two letters to search every page.</p>';
         if (searchFilters) searchFilters.innerHTML = "";
+        announceSearch("Type at least two letters to search.");
+        return;
+      }
+      if (indexState !== "ready") {
+        loadSearchIndex();
         return;
       }
       searchOut.setAttribute("aria-busy", "true");
@@ -214,7 +254,7 @@
       var terms = q.split(/\s+/);
       var hits = idx.map(function (p) {
         if (activeFilter && p.k !== activeFilter) return null;
-        var hay = (p.t + " " + p.d + " " + p.k).toLowerCase();
+        var hay = (p.t + " " + p.d + " " + p.k + " " + (p.x || "")).toLowerCase();
         if (!terms.every(function (t) { return hay.indexOf(t) > -1; })) return null;
         var s = 0;
         terms.forEach(function (t) {
@@ -226,7 +266,7 @@
 
       searchOut.setAttribute("aria-busy", "false");
       if (!hits.length) {
-        searchOut.innerHTML = '<p class="notice" role="status">No pages matched &ldquo;' + esc(q) +
+        searchOut.innerHTML = searchHeading() + '<p class="notice">No pages matched &ldquo;' + esc(q) +
           '&rdquo;. Try fewer or different words, or pick a topic below.</p>' +
           '<div class="chips search-empty-chips" role="navigation" aria-label="Popular searches">' +
           '<a class="chip chip-link" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets</a>' +
@@ -235,9 +275,10 @@
           '<a class="chip chip-link" href="/area/jomtien.html">Jomtien</a>' +
           '<a class="chip chip-link" href="/guides.html?topic=emergency">Emergency guides</a>' +
           '<a class="chip chip-link" href="/directory.html">Directory</a></div>';
+        announceSearch("No pages matched " + q + ".");
         return;
       }
-      searchOut.innerHTML = '<p class="search-results__count" role="status">' + hits.length +
+      searchOut.innerHTML = searchHeading() + '<p class="search-results__count">' + hits.length +
         " result" + (hits.length > 1 ? "s" : "") + "</p>" +
         hits.map(function (x) {
           return '<a class="card search-result" href="' + x.p.u + '">' +
@@ -245,56 +286,49 @@
             "<h3>" + esc(x.p.t) + "</h3><p>" + esc(x.p.d) + '</p>' +
             '<span class="card-meta">Open page &rarr;</span></a>';
         }).join("");
-      if (q.length >= 2 && hits.length) scrollToEl(searchOut);
+      announceSearch(hits.length + " search result" + (hits.length > 1 ? "s" : "") + ".");
     }
 
-    searchOut.setAttribute("aria-busy", "true");
-    searchOut.innerHTML = '<p class="notice">Loading search index&hellip;</p>';
-    fetch("/search-index.json").then(function (r) { return r.json(); }).then(function (d) {
-      idx = d;
-      filterKinds = [];
-      d.forEach(function (p) {
-        if (filterKinds.indexOf(p.k) === -1) filterKinds.push(p.k);
+    function loadSearchIndex() {
+      if (indexState === "loading" || indexState === "ready") return;
+      indexState = "loading";
+      searchOut.setAttribute("aria-busy", "true");
+      searchOut.innerHTML = searchHeading() + '<p class="notice">Loading search index&hellip;</p>';
+      fetch("/search-index.json").then(function (r) {
+        if (!r.ok) throw new Error("Search index returned " + r.status);
+        return r.json();
+      }).then(function (d) {
+        if (!Array.isArray(d)) throw new Error("Search index is not an array");
+        idx = d;
+        indexState = "ready";
+        filterKinds = [];
+        d.forEach(function (p) {
+          if (filterKinds.indexOf(p.k) === -1) filterKinds.push(p.k);
+        });
+        filterKinds.sort();
+        runSearch();
+      }).catch(function () {
+        indexState = "error";
+        searchOut.setAttribute("aria-busy", "false");
+        searchOut.innerHTML = searchHeading() + '<p class="notice">Search could not load. Browse the ' +
+          '<a href="/directory.html">directory</a> or ' +
+          '<a href="/sitemap.html">sitemap</a> instead.</p>';
+        announceSearch("Search could not load.");
       });
-      filterKinds.sort();
-      var u = new URLSearchParams(location.search).get("q");
-      if (u) searchInput.value = u;
+    }
+
+    var initialQuery = new URLSearchParams(location.search).get("q");
+    if (initialQuery) {
+      searchInput.value = initialQuery;
+      if (document.readyState === "complete") window.setTimeout(loadSearchIndex, 0);
+      else window.addEventListener("load", loadSearchIndex, { once: true });
+    } else {
       runSearch();
-      try { searchInput.focus(); } catch (e) {}
-    }).catch(function () {
-      searchOut.setAttribute("aria-busy", "false");
-      searchOut.innerHTML = '<p class="notice">Search could not load. Browse the ' +
-        '<a href="/directory.html">directory</a> or ' +
-        '<a href="/sitemap.html">sitemap</a> instead.</p>';
-    });
+    }
 
     searchInput.addEventListener("input", function () {
       clearTimeout(debounceTimer);
       debounceTimer = setTimeout(runSearch, 180);
-    });
-  }
-
-  /* Deferred analytics — after load + idle or first interaction (off Lighthouse critical path) */
-  var gaId = document.documentElement.getAttribute("data-ga");
-  if (gaId) {
-    var gaLoaded = false;
-    function loadGa() {
-      if (gaLoaded) return;
-      gaLoaded = true;
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function () { window.dataLayer.push(arguments); };
-      window.gtag("js", new Date());
-      window.gtag("config", gaId, { anonymize_ip: true });
-      var s = document.createElement("script");
-      s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(gaId);
-      s.async = true;
-      document.head.appendChild(s);
-    }
-    window.addEventListener("load", function () {
-      setTimeout(loadGa, 4000);
-    }, { once: true });
-    ["scroll", "keydown", "pointerdown"].forEach(function (ev) {
-      window.addEventListener(ev, loadGa, { once: true, passive: true });
     });
   }
 
@@ -427,22 +461,6 @@
     btn.addEventListener("click", function () { window.print(); });
   });
 
-  /* Footer panels: collapsed by default on narrow screens */
-  (function () {
-    var panels = document.querySelectorAll(".footer-panel");
-    if (!panels.length) return;
-    var mq = window.matchMedia("(max-width: 760px)");
-    function sync() {
-      panels.forEach(function (p) {
-        if (!mq.matches) p.setAttribute("open", "");
-        else p.removeAttribute("open");
-      });
-    }
-    sync();
-    if (mq.addEventListener) mq.addEventListener("change", sync);
-    else mq.addListener(sync);
-  })();
-
   /* Page jump panels (start-here, 404): collapsible on narrow screens */
   (function () {
     var panels = document.querySelectorAll(".page-jump-panel");
@@ -511,9 +529,7 @@
         card.hidden = !ok;
         if (ok) shown += 1;
       });
-      filters.forEach(function (btn) {
-        btn.classList.toggle("is-active", btn.getAttribute("data-dir-filter") === filter);
-      });
+      filterState(filters, "data-dir-filter", filter);
       filterResultStatus(status, shown, cards.length,
         "No listings match this filter. Try another area or view all.", "listings");
       announceFilterStatus(status);
@@ -529,6 +545,7 @@
     });
     var dirInit = filterPick(filters, "data-dir-filter", filterQueryGet("filter"));
     if (dirInit) apply(dirInit);
+    else filterState(filters, "data-dir-filter", "all");
   })();
 
   /* Guides hub: filter cards by topic */
@@ -567,9 +584,7 @@
         card.hidden = !ok;
         if (ok) shown += 1;
       });
-      filters.forEach(function (btn) {
-        btn.classList.toggle("is-active", btn.getAttribute("data-guide-filter") === filter);
-      });
+      filterState(filters, "data-guide-filter", filter);
       filterResultStatus(status, shown, cards.length,
         "No guides match this filter. View all to reset.", "guides");
       announceFilterStatus(status);
@@ -585,6 +600,7 @@
     });
     var guideInit = filterPick(filters, "data-guide-filter", filterQueryGet("topic"));
     if (guideInit) apply(guideInit);
+    else filterState(filters, "data-guide-filter", "all");
   })();
 
   /* Area hub: filter listing blocks by category */
@@ -607,9 +623,7 @@
         block.hidden = !ok;
         if (ok) shown += 1;
       });
-      filters.forEach(function (btn) {
-        btn.classList.toggle("is-active", btn.getAttribute("data-dir-filter") === filter);
-      });
+      filterState(filters, "data-dir-filter", filter);
       filterResultStatus(status, shown, blocks.length,
         "No categories match this filter. View all to reset.", "categories");
       announceFilterStatus(status);
@@ -625,6 +639,7 @@
     });
     var areaInit = filterPick(filters, "data-dir-filter", filterQueryGet("cat"));
     if (areaInit) apply(areaInit);
+    else filterState(filters, "data-dir-filter", "all");
   })();
 
   /* On-this-page TOC: highlight current section while scrolling */

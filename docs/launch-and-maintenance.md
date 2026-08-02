@@ -1,236 +1,124 @@
-# PattayaPets — Launch & Maintenance Handover
+# PattayaPets — operator and maintenance runbook
 
-A plain-English guide to taking PattayaPets.com live and running it afterwards.
-Written for the operator, not a developer. Last updated: May 2026.
+**Reviewed:** 2026-08-01  
+**Scope:** local source, verification and operator hand-off; this file is not deployed
 
-This file lives in `docs/` and is **not** part of the deployed website.
+This runbook deliberately contains no fixed page, business, schema or audit counts. The current source registry and build output are authoritative, and every release must reproduce its own figures.
 
----
+## Non-negotiable boundaries
 
-## 1. Where the project stands
+- Read `CLAUDE.md`, `AGENTS.md`, `RULES.md` and the current audit before changing the project.
+- Never hand-edit `dist/`; it is generated output.
+- Never run a Cloudflare deployment command directly from this repository.
+- Never parameterise or bypass the hard-coded project guard in `tools/deploy.mjs`.
+- Never send IndexNow as part of an ordinary build or local audit.
+- Never publish a business verdict without its approved first-hand record.
+- Never publish a regulated number, sequence, deadline, threshold, port, cost or exception without the approved claim record for that exact scope.
+- Never present medical treatment or triage as clinically reviewed unless the named qualified reviewer and review date exist.
 
-PattayaPets is **built and finished as a Phase 1 site**. Current state:
+## Local setup
 
-- **190 pages**, all generated to static HTML by the build script.
-- Verified clean: every internal link works, every
-  structured-data block is valid, no broken pages, accessibility and SEO
-  fundamentals all in place.
-- **Google Analytics is wired in** (`G-TX1PLBHN2K`, with IP anonymisation).
-- The **domain `pattayapets.com` is connected** to the Cloudflare Pages project.
+From `C:\Projects\pattayapets`, use the Node version required by `package.json`, then install the lockfile exactly:
 
-What the site contains:
-
-- An **editorial directory** of 32 Pattaya pet businesses across vets, groomers,
-  boarding, pet shops, trainers, pet-relocation agents and mobile vets, with category hubs
-  and eight neighbourhood (area) hubs.
-- A large **guide library** — clusters for bringing a pet to Thailand, taking a
-  pet out, dog-friendly Pattaya, pet emergencies, owning a pet, adoption, pet
-  health, and species hubs for cats and dogs.
-
-The one honest caveat: every directory listing shows the verdict state
-**"not yet reviewed"**. That is correct and intentional — see section 4.
-
----
-
-## 2. How to deploy (take it live)
-
-**Normal deploy:** from `C:\Projects`, run `.\deploy.ps1 -Only pets`. There is no
-push-to-main auto-deploy: `dist/` is gitignored and CI has no deploy step — the site
-reaches Cloudflare Pages only through the guarded upload in `tools/deploy.mjs`.
-You only need the commands below for a first-time machine setup. *(Corrected
-31 July 2026 to match the guarded route; see `CLAUDE.md`.)*
-
-The site builds on your computer and uploads to Cloudflare. Open **Command
-Prompt** (press the Windows key, type `cmd`, Enter) and run these lines,
-one at a time:
-
+```powershell
+npm ci
 ```
-cd C:\Projects\pattayapets
-npm install
+
+Do not substitute an unreviewed dependency update for `npm ci`. Dependency upgrades are isolated changes with their own generated-asset and audit review.
+
+## Normal editing workflow
+
+1. Change source files in `src/`, approved evidence in `research/`, schemas in `schemas/`, or gates in `tools/` and `scripts/`.
+2. If an SVG source or image-generation dependency changed, run `npm run images` and inspect the regenerated source assets.
+3. Run `npm run build:all`.
+4. Run `npm run deploy:check` to exercise the guarded preflight without uploading.
+5. Inspect representative rendered pages at mobile and desktop widths. Include the homepage, a hub, a guide, a published business record, a held business route, search/filter behavior, an emergency page and a regulated route.
+6. Record structural work in `CHANGELOG-STRUCTURAL.md` on the same day.
+
+A green command proves only the assertions implemented by that command. Read warnings and unresolved external gates; do not summarize an incomplete or rate-limited check as a pass.
+
+## Command reference
+
+The current command graph lives in `package.json`. Important entry points are:
+
+| Purpose | Command |
+|---|---|
+| Build plus release-blocking local gates | `npm run build:all` |
+| Exact build-manifest check | `npm run audit:manifest` |
+| CSP/source-markup check | `npm run audit:csp` |
+| Business dossier/publication check | `npm run audit:business` |
+| Cross-project scope gate | `npm run audit:network` |
+| Dependency advisory gate | `npm run audit:dependencies` |
+| Build containment fixtures | `npm run test:build-containment` |
+| Guarded non-upload preflight | `npm run deploy:check` |
+| Local Lighthouse batch | start a loopback-only static server, then `npm run audit:lighthouse:all` |
+
+`audit:official` and `audit:live` require network access and can return an unverified state for throttling, denial or timeout. Authenticated Search Console, Bing, Cloudflare and analytics checks are operator tasks and are not implied by local output.
+
+## Generated output and build integrity
+
+The build stages output under a validated project-local path, writes an exact manifest and promotes the complete result only after validation. If a build is interrupted or fails, treat the prior `dist/` as the only candidate output and investigate the failure; do not copy individual staged files into it.
+
+Run two builds and compare manifests when testing determinism, a dependency upgrade, hashing, service-worker behavior or release machinery. A change to regulated/emergency HTML must change the content-derived service-worker generation. Regulated and emergency pages must not be pinned in an unsafe long-lived offline cache.
+
+## Business records
+
+`src/data/businesses.js` is the approved publication model. `research/businesses/` contains dossiers and unresolved evidence; a dossier is not automatically publishable.
+
+Every record needs explicit operating status, publication state, service scope and locality. The business gate must suppress held records from cards, schema, FAQ, search enrichment, verified copy and restricted contacts. Do not use a generic all-Thailand area fallback. Resolve HUMAN QUEUE items through documented human verification and a TIM publish/hold/reject decision.
+
+Future visit evidence remains private until reviewed. Follow `docs/visit-delegate-kit/README.md`; do not publish receipts, private contact data, raw notes or clinical judgments.
+
+## Regulated and clinical content
+
+The regulated claim registry is the source of record for high-consequence travel assertions. A reachable authority homepage is not proof of a sentence. Preserve exact jurisdiction, species, movement direction, quoted support, checked date and recheck/expiry state, then cite the evidence beside the claim.
+
+Government permission never proves airline carriage. Confirm carrier, route, aircraft, breed, crate, embargo, cargo/cabin mode and price independently before publication.
+
+No licensed-veterinarian review record is currently published for the health collection. Until a qualified reviewer approves a page, it must remain general orientation, avoid dosing/treatment algorithms and direct a reader to live veterinary instructions.
+
+## Identity, contact and privacy
+
+`src/site-config.js` is the single public identity/contact source. The publisher legal name and entity IDs must match `RULES.md` exactly. Do not add an address, shared phone, LINE or WhatsApp to publisher markup.
+
+Do not change the configured mailbox merely to satisfy a string rule. First test delivery and escalation, then record the operator decision and update the central configuration. Security contact delivery must also be tested externally.
+
+The source does not load Google Analytics. Production Cloudflare Web Analytics behavior and retention must be checked in the authenticated dashboard before changing the privacy notice. Do not add a new beacon, form processor or third-party embed without a data-flow and CSP review.
+
+## Canonicals, indexing and content pruning
+
+Canonical shape, redirects, internal links, sitemap locations, search records and service-worker routes must change together. Before any migration, noindex, merge or deletion:
+
+1. export a dated Search Console query/page and index-coverage baseline;
+2. record the exact URLs and expected outcome;
+3. obtain TIM’s explicit decision;
+4. use a small canary where appropriate;
+5. wait the structural observation window in `RULES.md` before the next index-shape change.
+
+Do not treat lexical similarity or an empty content queue as evidence to merge or expand pages.
+
+## Release boundary
+
+Building and auditing do not authorize release. When the operator separately authorizes deployment, leave this repository and use only the wrapper named by `CLAUDE.md`:
+
+```powershell
 cd C:\Projects
 .\deploy.ps1 -Only pets
 ```
 
-What each line does:
+After release, the operator records the immutable deployment and rollback identifiers, verifies representative live pages/headers/canonicals/structured data/service-worker behavior, and compares the live manifest to the approved local manifest.
 
-1. `cd C:\Projects\pattayapets` — moves into the project folder.
-2. `npm install` — fetches the build tools (slow once, instant after).
-3. `.\deploy.ps1 -Only pets` (run from `C:\Projects`) — the only supported deploy
-   route. It drives this repo's `npm run deploy`, which runs `build:all`
-   (regenerates OG images and the site, checks every internal link, runs the SEO and
-   directory audits), then the guarded pre-flight in `tools/deploy.mjs`, then the
-   upload, then the IndexNow ping. The link check should report **0 broken**.
-   **The first time only**, the upload step opens a browser asking you to log in to
-   Cloudflare — approve it, return to the terminal, and it finishes by printing your
-   live URL.
+IndexNow is a separate operator decision. Send it only after Bing ownership is verified, the deployed manifest is confirmed and explicit submission authority is given. The local script requires an explicit domain confirmation; do not weaken that guard.
 
-   **Never type a `wrangler pages deploy` command by hand.** The Cloudflare project
-   name is hardcoded in `tools/deploy.mjs` and is deliberately not readable from the
-   command line. That is what stops a repeat of 27 July 2026, when a hand-typed
-   `--project-name` served the school guide on pattayapets.com for 11.5 hours.
+## External release checklist
 
-   To rehearse without uploading, run `npm run deploy:check` — every check runs,
-   nothing is sent. Before a big deploy you can also run `npm run audit:go`
-   (build:all plus a full dist audit and a live smoke test on pattayapets.com).
+- Authenticated GSC baseline and index decision recorded.
+- Bing ownership verified before any IndexNow call.
+- Cloudflare project, deployment target, cache rules, analytics behavior and rollback ID verified.
+- Configured public and security mailboxes tested end to end.
+- Required clinical/legal/bilingual review records present.
+- Current carrier acceptance rechecked for any promoted travel route.
+- Full local suite and representative visual/keyboard tests complete.
+- Exact pre-release manifest retained and matched after release.
 
-After it finishes, open `pattayapets.com` and press **Ctrl+Shift+R** once (a
-hard refresh) to clear any old cached version.
-
-If `npx` ever asks "Ok to proceed? (y)", type **y** and Enter.
-
----
-
-## 3. The first hour after launch
-
-1. **Check the live site.** Open `pattayapets.com` on your phone with WiFi off
-   (mobile data) — that bypasses any cache and shows you the true live site.
-2. **Submit the sitemap to Google.** Go to Google Search Console
-   (search.google.com/search-console), add `pattayapets.com` as a property,
-   and submit `https://pattayapets.com/sitemap.xml`. This is what gets your pages
-   crawled and indexed.
-3. **Confirm analytics.** In Google Analytics, the Realtime report should show
-   your own visit within a minute or two.
-
----
-
-## 4. The editorial method and the directory verdicts (LOCKED rules)
-
-This is the heart of what makes PattayaPets trustworthy. The rules in
-`CLAUDE.md` section 2 are **locked** — do not break them:
-
-- **No paid placements, no sponsored tags, no affiliate links. Ever.**
-- A verdict (`recommend` / `OK` / `avoid`) is published **only** after a real
-  **anonymous visit with the bill paid in full**.
-- A verdict covers the **business experience only** — booking, communication,
-  English-speaking staff, billing transparency, cleanliness, comfort. **Never**
-  the veterinary medical quality.
-- Until a business has had a real visit, its page shows **facts only** and the
-  state **"not yet reviewed"**. Never invent a verdict or a review.
-
-**This is the single most valuable thing you can do post-launch.** Every
-anonymous visit turns one "not yet reviewed" listing into a real verdict, and
-that is what makes the directory live up to its promise. The guides bring the
-search traffic; the verdicts are the reason people trust and return.
-
-To publish a verdict after a visit, the business data lives in
-`src/data/businesses.js` — add the verdict and review notes there, then rebuild
-and redeploy (section 2).
-
----
-
-## 5. Routine maintenance
-
-**The golden rule:** never hand-edit files in the `dist/` folder. `dist/` is
-generated. You edit the source in `src/`, then run `npm run build`, then
-deploy. Editing `dist/` directly is wasted work — the next build overwrites it.
-
-**To change anything and publish it:**
-
-1. Edit the relevant source file in `src/` (see section 6 for where things are).
-2. Run `npm run build` and confirm it prints the page count with no errors.
-3. Run the deploy command (section 2).
-
-**Date-stamps.** When you update a guide, update its `updated` date in the page
-source so the page and the sitemap show the change. CLAUDE.md asks every page
-to be date-stamped — the build and layout handle the display.
-
----
-
-## 6. Where things live
-
-```
-build.js                 The build script. Turns src/ into dist/.
-CLAUDE.md                 The permanent locked rulebook. Read before editing.
-src/layout.js             The shared page shell: header, footer, schema, <head>.
-src/guidekit.js           Helpers that build guide pages.
-src/area-tiles.js         Area grid tiles with filtered directory shortcuts.
-src/linking.js            Contextual PattayaPets + network cross-link clusters.
-tools/audit-linking.js    Cross-link coverage audit (in build:all).
-src/data/businesses.js    The directory data — every business, every fact.
-src/data/areas-content.js Neighbourhood write-ups for the area pages.
-src/data/hub-content.js   The "how to choose" text on the category hubs.
-src/pages/*.js            Page definitions, grouped by section.
-src/assets/               CSS, JS, fonts, images.
-dist/                     The built site. Generated. Do not edit by hand.
-docs/                     Planning docs (not deployed). This file lives here.
-```
-
-- **To add or update a business:** edit `src/data/businesses.js`.
-- **To edit a guide's words:** find it in `src/pages/` (the files are named by
-  section, e.g. `43-emergency.js`, `40-bring-pet.js`).
-- **To change the footer, header or site-wide schema:** `src/layout.js`.
-
----
-
-## 7. Placeholders still to fill (optional)
-
-These do not block launch — the site works fine without them:
-
-- **Cloudflare Web Analytics token** — a second, privacy-friendly analytics
-  layer. Optional; GA4 already covers you. To add it later, put the token in
-  `src/layout.js` (the `cfBeacon` value), rebuild and deploy.
-- **Contact email** — currently `hello@pattayapets.com`. If that is not the
-  address you want, change `SITE.email` in `src/layout.js`.
-- **Photography** — the site is illustration-only by design. Real local
-  photography (storefronts, Pattaya scenes) would lift it, but only genuine
-  photos — never stock pet clipart (a locked rule).
-
----
-
-## 8. Growing the site — honest guidance
-
-The site is content-comprehensive. The instinct to "add more pages" should be
-resisted: **thin or duplicate pages hurt SEO rather than help it.** Google
-rewards depth and trustworthiness, not page count.
-
-The real growth levers, in order of value:
-
-1. **Do the anonymous visits** and publish verdicts. This is the whole point of
-   the directory and the strongest reason for people to trust and return.
-2. **Keep guides current.** When import/export rules change, update the
-   affected pages and their date-stamps. Accuracy is the brand.
-3. **Add real businesses** to the directory as you verify them — only with real,
-   confirmed facts.
-4. **Add a guide only when there is a genuine, specific question** Pattaya pet
-   owners are searching for that no existing page answers. Quality over count.
-
----
-
-## 9. IndexNow (Bing / Yandex URL ping)
-
-After deploy, run `npm run indexnow` (or `npm run deploy`, which runs it automatically).
-The build copies the key file to `https://pattayapets.com/a8f3c91e2b7046d59e1a0c4f8b2d7e63.txt`.
-
-If the ping returns **HTTP 403** (`UserForbiddedToAccessSite`):
-
-1. Open [Bing Webmaster Tools](https://www.bing.com/webmasters).
-2. Add and **verify** `pattayapets.com` (DNS or HTML file — the site already serves the key file).
-3. Run `npm run indexnow` again.
-
-Until verification succeeds, Google Search Console sitemap submission still works for Google.
-
----
-
-## 10. Quick reference
-
-| Task | Command / location |
-|---|---|
-| Build the site | `npm run build` (in `C:\Projects\pattayapets`) |
-| Full build + audits | `npm run build:all` (links, SEO, directory, country-pairs, orphans, richness) |
-| Post-deploy audit pass | `npm run audit:go` (build:all + audit:full + audit:live) |
-| Lighthouse (local) | `npx serve dist -l 8787` then `PP_LH_BASE=http://127.0.0.1:8787 npm run audit:lighthouse:all` |
-| Deploy | `npm run deploy` (guarded — build, audits, pre-flight, upload, IndexNow) |
-| Rehearse a deploy | `npm run deploy:check` (every check, uploads nothing) |
-| Directory data | `src/data/businesses.js` |
-| Site-wide shell | `src/layout.js` |
-| Guide pages | `src/pages/*.js` |
-| The rulebook | `CLAUDE.md` |
-
-A healthy build prints: **"Pages: 190 rendered, 190 JSON-LD blocks valid"** (or higher) and
-the link check reports **0 broken**. If the page count drops unexpectedly or it
-reports an invalid block, something in `src/` is broken — check the file you last edited.
-
----
-
-*PattayaPets.com — the honest pet resource for Pattaya. Operated by TIMPAEMI
-Co., Ltd. via the Pattaya Authority network.*
+If any item cannot be checked, name it as an unresolved release gate. Do not replace evidence with a confidence statement.

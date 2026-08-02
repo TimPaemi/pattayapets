@@ -5,51 +5,55 @@
 const { article } = require("../guidekit.js");
 const { exportCountryRelated, attachImportMirrorLink } = require("../data/country-pairs.js");
 const rb = require("../data/richness-blocks.js");
+const {
+  claimLink,
+  REGULATED_EXPORT_FROM_PATTAYA,
+  REGULATED_EXPORT_RELOCATION,
+  REGULATED_EXPORT_EXTRA_FAQS
+} = require("../data/regulated-claims.js");
 
 const GUIDES = { name: "Guides", path: "/guides.html" };
 const CLUSTER = { name: "Taking a pet out of Thailand", path: "/take-pet-out-of-thailand/" };
 const SUB = [GUIDES, CLUSTER];
 
 const VERIFY =
-  "This guide was last reviewed on 31 May 2026. Export rules &mdash; Thai DLD " +
+  "The regulated claims and authority links cited on this page were checked on " +
+  "1 August 2026. Export rules &mdash; Thai DLD " +
   "procedures, destination-country requirements and airline policies &mdash; change " +
   "without notice. Use this as orientation, then confirm every current requirement " +
   "with the DLD and the destination country's authority before booking.";
 
 const OFFICIAL =
   "<p><strong>Official sources to verify against:</strong> " +
-  "<a href=\"https://aqi.dld.go.th/webnew/index.php/en/72-research/kmresearch/432-exportation-of-live-animals\" " +
-  "target=\"_blank\" rel=\"noopener nofollow\">DLD export of live animals</a>; " +
-  "Suvarnabhumi AQS export: " +
-  "<a href=\"mailto:qsap_bkk_export@dld.go.th\">qsap_bkk_export@dld.go.th</a>; " +
-  "<a href=\"https://www.gov.uk/bring-pet-to-great-britain\" target=\"_blank\" rel=\"noopener nofollow\">" +
+  claimLink("TH-EXPORT-SEQUENCE-2025-10", "DLD Region 9 export procedure") + "; " +
+  "<a href=\"https://www.gov.uk/bring-pet-to-great-britain\" target=\"_blank\" rel=\"noopener\">" +
   "UK pet travel</a>; " +
   "<a href=\"https://www.cdc.gov/importation/bringing-an-animal-into-the-us/index.html\" " +
-  "target=\"_blank\" rel=\"noopener nofollow\">CDC animal import (USA)</a>; " +
+  "target=\"_blank\" rel=\"noopener\">CDC animal import (USA)</a>; " +
   "<a href=\"https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en\" target=\"_blank\" " +
-  "rel=\"noopener nofollow\">EU pet movement</a>; " +
-  "<a href=\"https://www.maff.go.jp/aqs/english/\" target=\"_blank\" rel=\"noopener nofollow\">" +
+  "rel=\"noopener\">EU pet movement</a>; " +
+  "<a href=\"https://www.maff.go.jp/aqs/english/\" target=\"_blank\" rel=\"noopener\">" +
   "Japan MAFF Animal Quarantine</a>; " +
   "<a href=\"https://avs.nparks.gov.sg/pets/importing-exporting-a-pet/import/dogs-and-cats/\" " +
-  "target=\"_blank\" rel=\"noopener nofollow\">Singapore AVS</a>; " +
+  "target=\"_blank\" rel=\"noopener\">Singapore AVS</a>; " +
   "<a href=\"https://moccae.gov.ae/en/services/import-permit-pets\" " +
-  "target=\"_blank\" rel=\"noopener nofollow\">UAE MOCCAE pet import</a>; " +
+  "target=\"_blank\" rel=\"noopener\">UAE MOCCAE pet import</a>; " +
   "<a href=\"https://www.agriculture.gov.au/biosecurity-trade/cats-dogs\" target=\"_blank\" " +
-  "rel=\"noopener nofollow\">Australia DAFF</a>; " +
+  "rel=\"noopener\">Australia DAFF</a>; " +
   "<a href=\"https://www.mpi.govt.nz/bring-send-to-nz/pets-travelling-to-nz/bringing-cats-and-dogs-to-nz\" target=\"_blank\" " +
-  "rel=\"noopener nofollow\">New Zealand MPI</a>; " +
+  "rel=\"noopener\">New Zealand MPI</a>; " +
   "<a href=\"https://aqcsindia.gov.in/Home/ImportExportPets\" target=\"_blank\" " +
-  "rel=\"noopener nofollow\">India AQCS</a>; " +
+  "rel=\"noopener\">India AQCS</a>; " +
   "<a href=\"https://www.bai.gov.ph/Stakeholders/PetImport\" target=\"_blank\" " +
-  "rel=\"noopener nofollow\">Philippines BAI</a>; " +
+  "rel=\"noopener\">Philippines BAI</a>; " +
   "<a href=\"https://english.beijing.gov.cn/latest/lawsandpolicies/202104/t20210407_2346645.html\" " +
-  "target=\"_blank\" rel=\"noopener nofollow\">China GACC pet entry</a>; " +
+  "target=\"_blank\" rel=\"noopener\">China GACC pet entry</a>; " +
   "<a href=\"https://www.gov.za/services/import/import-animals-and-animal-products\" " +
-  "target=\"_blank\" rel=\"noopener nofollow\">South Africa DALRRD import</a>; " +
+  "target=\"_blank\" rel=\"noopener\">South Africa DALRRD import</a>; " +
   "<a href=\"https://inspection.canada.ca/en/importing-food-plants-animals/pets\" " +
-  "target=\"_blank\" rel=\"noopener nofollow\">Canada CFIA</a>; " +
+  "target=\"_blank\" rel=\"noopener\">Canada CFIA</a>; " +
   "<a href=\"https://www.blv.admin.ch/en/travelling-with-dogs-cats-and-ferrets\" " +
-  "target=\"_blank\" rel=\"noopener nofollow\">Switzerland FSVO</a>.</p>";
+  "target=\"_blank\" rel=\"noopener\">Switzerland FSVO</a>.</p>";
 
 const RELATED = [
   { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side of leaving." },
@@ -69,11 +73,12 @@ const EU_ENTRY =
   "Entry requires an ISO microchip, a current rabies vaccination, a " +
   "<a href=\"/bring-pet-to-thailand/rabies-vaccination-titer-test.html\">rabies " +
   "titer test</a> &mdash; the blood sample taken at least 30 days after vaccination, " +
-  "from an EU-approved laboratory &mdash; and then a <strong>three-month wait</strong> " +
-  "from the sample date before the pet may travel. An EU third-country animal health " +
+  "from an EU-approved laboratory and with a result of at least 0.5 IU/ml &mdash; with " +
+  "sampling at least <strong>90 days before certificate issue</strong>. An EU third-country animal health " +
   "certificate completes the paperwork.</p>" +
   "<p>For the shared EU rules that apply to every member state, see our " +
-  "<a href=\"/take-pet-out-of-thailand/to-eu.html\">exporting a pet to the EU</a> guide.</p>";
+  "<a href=\"/take-pet-out-of-thailand/to-eu.html\">exporting a pet to the EU</a> guide. " +
+  claimLink("EU-RABIES-TITER-2026-08", "Commission source") + ".</p>";
 
 const THAI_SIDE =
   "<p>All of this sits on top of the Thai " +
@@ -84,8 +89,8 @@ const THAI_SIDE =
 function exp(o) {
   var sections = attachImportMirrorLink((o.sections || []).slice(), o.slug);
   if (!o.skipRichness) {
-    sections.push(rb.EXPORT_FROM_PATTAYA);
-    sections.push(rb.EXPORT_RELOCATION);
+    sections.push(REGULATED_EXPORT_FROM_PATTAYA);
+    sections.push(REGULATED_EXPORT_RELOCATION);
   }
   sections.push({ h: "Official sources", html: (o.officialExtra || "") + OFFICIAL });
   return article({
@@ -95,7 +100,7 @@ function exp(o) {
     h1: o.h1, lede: o.lede, verify: o.verify || VERIFY,
     updated: o.updated || "2026-06-01",
     noindex: !!o.noindex,
-    sections: sections, faqs: rb.mergeFaqs(o.faqs, rb.EXPORT_EXTRA_FAQS),
+    sections: sections, faqs: rb.mergeFaqs(o.faqs, REGULATED_EXPORT_EXTRA_FAQS),
     related: o.related || expRelated(o.slug)
   });
 }
@@ -103,10 +108,10 @@ function exp(o) {
 const DLD_EXPORT_TABLE =
   '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
   '<th scope="col">Thai-side document</th><th scope="col">Notes</th></tr></thead><tbody>' +
-  '<tr><th scope="row">Export application (form 1/1)</th><td>Apply at least <strong>15 days</strong> before export to the AQS at your departure airport.</td></tr>' +
+  '<tr><th scope="row">Export application (form R1/1)</th><td>Ask the responsible departure-port AQS how and when to file. The reviewed current procedure establishes no universal email channel or 15-day deadline.</td></tr>' +
   '<tr><th scope="row">Destination import rules</th><td>Attach the destination authority&rsquo;s import requirements (NOC, import licence, SPSIC, etc.) so the Thai health certificate matches.</td></tr>' +
-  '<tr><th scope="row">Microchip &amp; vaccinations</th><td>ISO chip and current rabies vaccination; many destinations also require a <a href="/bring-pet-to-thailand/rabies-vaccination-titer-test.html">rabies titer test</a>.</td></tr>' +
-  '<tr><th scope="row">DLD export licence &amp; health certificate</th><td>Issued after AQS inspection if paperwork complies.</td></tr>' +
+  '<tr><th scope="row">Identification, vaccinations and tests</th><td>Carry the records required by the destination and the responsible AQS.</td></tr>' +
+  '<tr><th scope="row">Mandatory health examination</th><td>DLD requires examination no more than <strong>2&ndash;3 days before travel</strong>. If compliant, the station issues R9 and the health certificate. ' + claimLink("TH-EXPORT-SEQUENCE-2025-10", "DLD source") + '.</td></tr>' +
   '</tbody></table></div>';
 
 const EXPORT_FAILS =
@@ -114,7 +119,7 @@ const EXPORT_FAILS =
   "<li><strong>Starting with Thailand only</strong> &mdash; destination import permits and tests are usually the long pole.</li>" +
   "<li><strong>Expired vaccinations</strong> &mdash; a lapsed rabies shot can void import clearance.</li>" +
   "<li><strong>Microchip mismatch</strong> across Thai export papers and destination import forms.</li>" +
-  "<li><strong>Last-minute DLD export</strong> &mdash; applying inside the 15-day window when tests are still pending.</li>" +
+  "<li><strong>Missing the final DLD examination</strong> &mdash; it must occur no more than 2&ndash;3 days before travel.</li>" +
   "</ul>";
 
 const EU_EXPORT_FAILS_EXTRA =
@@ -130,14 +135,14 @@ function euExportTimeline(routingIntro) {
     '<tr><th scope="row">Month 1 (if no valid titer yet)</th>' +
     '<td>Rabies vaccination current; <strong>rabies titer test</strong> blood sample &ge;30 days after vaccination; approved lab</td>' +
     '<td>Thai vet + EU-approved lab</td></tr>' +
-    '<tr><th scope="row">Months 1&ndash;3</th>' +
-    '<td><strong>Wait three months</strong> from the blood sample date (non-listed third-country rule)</td>' +
+    '<tr><th scope="row">At least 90 days after sampling</th>' +
+    '<td>Earliest issue date for the animal health certificate under the checked non-listed-third-country route</td>' +
     '<td>EU Regulation 2026/131 framework</td></tr>' +
     '<tr><th scope="row">6&ndash;8 weeks before flight</th>' +
     '<td>Book pet on a route entering via a <strong>designated traveller point of entry</strong></td>' +
     '<td>Airline / agent</td></tr>' +
-    '<tr><th scope="row">&ge;15 days before export</th>' +
-    '<td>Apply for Thai <a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">DLD export permit</a> (form 1/1) with titer result and destination entry requirements attached</td>' +
+    '<tr><th scope="row">As the responsible AQS directs</th>' +
+    '<td>File Thai DLD form R1/1 with the destination requirements as the responsible AQS directs; the reviewed procedure gives no universal 15-day deadline</td>' +
     '<td>DLD AQS</td></tr>' +
     '<tr><th scope="row">Within 10 days of entry</th>' +
     '<td><strong>EU animal health certificate</strong> for third-country entry completed and endorsed by Thai competent authority</td>' +
@@ -147,7 +152,9 @@ function euExportTimeline(routingIntro) {
     '<td>Border authority</td></tr>' +
     '</tbody></table></div>' +
     "<p>Shared EU rules: " +
-    '<a href="/take-pet-out-of-thailand/to-eu.html">exporting a pet to the EU</a>.</p>';
+    '<a href="/take-pet-out-of-thailand/to-eu.html">exporting a pet to the EU</a>. ' +
+    claimLink("EU-RABIES-TITER-2026-08", "Titer source") + '; ' +
+    claimLink("EU-NONCOMMERCIAL-ENTRY-2026-08", "Entry source") + '.</p>';
 }
 
 function euExportSections(o) {
@@ -169,7 +176,7 @@ const EU_ENTRY_REQ_LIST =
   "<li>ISO microchip before rabies vaccination</li>" +
   "<li>Valid rabies vaccination</li>" +
   "<li><strong>Rabies titer test</strong> from an EU-approved laboratory, blood drawn at least 30 days after vaccination</li>" +
-  "<li><strong>Three-month wait</strong> from the blood sample date</li>" +
+  "<li>Blood sample at least <strong>90 days before certificate issue</strong></li>" +
   "<li><strong>EU animal health certificate</strong> for non-commercial entry from a third country, endorsed by the exporting country&rsquo;s competent authority</li>" +
   "<li>Entry through a <strong>designated point of entry</strong></li>" +
   "</ul>";
@@ -177,7 +184,8 @@ const EU_ENTRY_REQ_LIST =
 const EU_TITER_TIP =
   '<div class="callout callout-tip"><div class="ch">Did the titer test before Thailand?</div>' +
   "<p>If you had the blood test done in Europe before moving and kept rabies vaccination " +
-  "current, you may avoid the three-month wait &mdash; verify validity before you fly.</p></div>";
+  "current, you may qualify for the re-entry exception &mdash; verify the passport record and continuous vaccination before you fly. " +
+  claimLink("EU-RABIES-TITER-2026-08", "Commission source") + ".</p></div>";
 
 const pages = [];
 
@@ -185,18 +193,18 @@ const pages = [];
 pages.push(exp({
   slug: "to-germany", crumb: "To Germany",
   title: "Export Pet from Thailand to Germany (2026) | PattayaPets",
-  desc: "Thailand to Germany pet export: EU titer test, three-month wait, entry " +
+  desc: "Thailand to Germany pet export: EU titer test, 90-day pre-certificate rule, entry " +
     "certificate, designated entry points and DLD export timeline.",
   h1: "Taking a pet from Thailand to Germany",
   lede: "Germany follows standard EU rules for pets from non-listed third countries. " +
-    "Thailand triggers the <strong>rabies titer test</strong> and its " +
-    "<strong>three-month wait</strong> &mdash; plan in quarters, not weeks.",
+    "Thailand triggers the <strong>rabies titer test</strong> and the current " +
+    "<strong>90-day pre-certificate timing gate</strong>.",
   officialExtra:
     "<p><strong>German / EU sources:</strong> " +
     "<a href=\"https://www.bmel.de/EN/topics/animals/pets-and-zoo-animals/pets-entry-regulation.html\" " +
-    "target=\"_blank\" rel=\"noopener nofollow\">BMELH entry regulation</a>; " +
+    "target=\"_blank\" rel=\"noopener\">BMELH entry regulation</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
-    "rel=\"noopener nofollow\">EU pet movement</a>. " +
+    "rel=\"noopener\">EU pet movement</a>. " +
     "Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-germany.html\">bringing a pet from Germany</a>.</p>",
   sections: [
@@ -208,14 +216,14 @@ pages.push(exp({
       '<tr><th scope="row">Month 1 (if no valid titer yet)</th>' +
       '<td>Rabies vaccination current; <strong>rabies titer test</strong> blood sample &ge;30 days after vaccination; approved lab</td>' +
       '<td>Thai vet + EU-approved lab</td></tr>' +
-      '<tr><th scope="row">Months 1&ndash;3</th>' +
-      '<td><strong>Wait three months</strong> from the blood sample date (non-listed third-country rule)</td>' +
+      '<tr><th scope="row">At least 90 days after sampling</th>' +
+      '<td>Earliest issue date for the animal health certificate under the checked non-listed-third-country route</td>' +
       '<td>EU Regulation 2026/131 framework</td></tr>' +
       '<tr><th scope="row">6&ndash;8 weeks before flight</th>' +
       '<td>Book pet on a route entering Germany via a <strong>designated traveller point of entry</strong></td>' +
       '<td>Airline / agent</td></tr>' +
-      '<tr><th scope="row">&ge;15 days before export</th>' +
-      '<td>Apply for Thai <a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">DLD export permit</a> (form 1/1) with titer result and EU entry requirements attached</td>' +
+      '<tr><th scope="row">As the responsible AQS directs</th>' +
+      '<td>File Thai DLD form R1/1 with the destination requirements as the responsible AQS directs; the reviewed procedure gives no universal 15-day deadline</td>' +
       '<td>DLD AQS</td></tr>' +
       '<tr><th scope="row">Within 10 days of EU entry</th>' +
       '<td><strong>EU animal health certificate</strong> for third-country entry completed and endorsed by Thai competent authority; valid for entry within the EU window (confirm current validity on EU guidance)</td>' +
@@ -233,7 +241,7 @@ pages.push(exp({
       "<li>ISO microchip before rabies vaccination</li>" +
       "<li>Valid rabies vaccination</li>" +
       "<li><strong>Rabies titer test</strong> from an EU-approved laboratory, blood drawn at least 30 days after vaccination</li>" +
-      "<li><strong>Three-month wait</strong> from the blood sample date</li>" +
+      "<li>Blood sample at least <strong>90 days before certificate issue</strong></li>" +
       "<li><strong>EU animal health certificate</strong> for non-commercial entry from a third country, endorsed by the exporting country&rsquo;s competent authority</li>" +
       "<li>Entry through a <strong>designated point of entry</strong> listed for Germany</li>" +
       "</ul>" +
@@ -241,8 +249,9 @@ pages.push(exp({
       "&mdash; Germany itself does not, but confirm if you connect through those countries.</p>" +
       '<div class="callout callout-tip"><div class="ch">Did the titer test before Thailand?</div>' +
       "<p>If you had the blood test done in Germany (or another EU country) before moving " +
-      "and kept rabies vaccination current, you may avoid the three-month wait &mdash; " +
-      "verify validity before you fly.</p></div>" },
+      "and kept rabies vaccination current, you may qualify for the documented re-entry exception &mdash; " +
+      "verify the passport record and vaccination continuity before you fly. " +
+      claimLink("EU-RABIES-TITER-2026-08", "Commission source") + ".</p></div>" },
     { h: "The Thai export side (DLD)", html:
       "<p>Parallel Thai requirements:</p>" + DLD_EXPORT_TABLE +
       "<p>See " +
@@ -254,8 +263,8 @@ pages.push(exp({
       "</ul>" }
   ],
   faqs: [
-    ["Can my pet skip the three-month wait into Germany?",
-     "<p>Only if a valid rabies titer test is already in place and rabies vaccination has been kept current without a gap — commonly because you did the test before leaving Germany for Thailand.</p>"],
+    ["Can my pet avoid the standard titer timing into Germany?",
+     "<p>A satisfactory test recorded in the EU passport before departure can qualify for the re-entry exception when rabies vaccination remains continuously current. Otherwise the sample must be at least 90 days before certificate issue. " + claimLink("EU-RABIES-TITER-2026-08", "Commission source") + ".</p>"],
     ["Is the EU pet passport enough to enter Germany from Thailand?",
      "<p>No. Coming from Thailand you need an EU third-country animal health certificate endorsed on the Thai side, not just a pet passport issued years ago in Germany.</p>"],
     ["Which German airports accept pets from third countries?",
@@ -271,7 +280,7 @@ pages.push(exp({
 pages.push(exp({
   slug: "to-sweden", crumb: "To Sweden",
   title: "Export Pet from Thailand to Sweden (2026) | PattayaPets",
-  desc: "Thailand to Sweden pet export: EU titer test, three-month wait, entry " +
+  desc: "Thailand to Sweden pet export: EU titer test, 90-day pre-certificate rule, entry " +
     "certificate, Jordbruksverket rules and DLD export timeline.",
   h1: "Taking a pet from Thailand to Sweden",
   lede: "Many of Pattaya's Swedish residents eventually head home with a pet. " +
@@ -279,9 +288,9 @@ pages.push(exp({
   officialExtra:
     "<p><strong>Swedish / EU sources:</strong> " +
     "<a href=\"https://jordbruksverket.se/languages/english/swedish-board-of-agriculture/animals/pets---trade-and-travel/movement-of-dogs-cats-and-ferrets-to-sweden\" " +
-    "target=\"_blank\" rel=\"noopener nofollow\">Jordbruksverket pet travel</a>; " +
+    "target=\"_blank\" rel=\"noopener\">Jordbruksverket pet travel</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
-    "rel=\"noopener nofollow\">EU pet movement</a>. " +
+    "rel=\"noopener\">EU pet movement</a>. " +
     "Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-sweden.html\">bringing a pet from Sweden</a>.</p>",
   sections: euExportSections({
@@ -295,12 +304,12 @@ pages.push(exp({
   }),
   faqs: [
     ["How long does moving a pet from Thailand to Sweden take?",
-     "<p>Plan for several months if the titer test still has to be done &mdash; the three-month wait after the blood sample is unavoidable. A valid existing titer test makes it much faster.</p>"],
+     "<p>If a new titer is needed, the sample must be at least 90 days before certificate issue. A qualifying pre-departure test recorded in the EU passport may preserve the re-entry exception when rabies cover remains continuous. " + claimLink("EU-RABIES-TITER-2026-08", "Commission source") + ".</p>"],
     ["Does Sweden require tapeworm treatment?",
      "<p>Sweden does not currently apply the special tapeworm-treatment rule. Confirm the current position with Jordbruksverket, as rules change.</p>"],
     ["Is the EU pet passport enough to enter Sweden from Thailand?",
      "<p>No. Coming from Thailand you need an EU third-country entry health certificate endorsed on the Thai side, not just a pet passport issued years ago in Sweden.</p>"],
-    ["Can my pet skip the three-month wait into Sweden?",
+    ["Can my pet avoid the standard titer timing into Sweden?",
      "<p>Only if a valid rabies titer test is already in place and rabies vaccination has been kept current without a gap.</p>"],
     ["How does this differ from the EU hub page?",
      "<p>The veterinary rules are the same EU-wide; this page adds Sweden-specific authority notes. See also <a href=\"/take-pet-out-of-thailand/to-eu.html\">export to the EU</a>.</p>"]
@@ -311,7 +320,7 @@ pages.push(exp({
 pages.push(exp({
   slug: "to-norway", crumb: "To Norway",
   title: "Export Pet from Thailand to Norway (2026) | PattayaPets",
-  desc: "Thailand to Norway pet export: rabies titer test, three-month wait, Mattilsynet " +
+  desc: "Thailand to Norway pet export: rabies titer test, 90-day pre-certificate rule, Mattilsynet " +
     "entry rules, tapeworm treatment for dogs and DLD export timeline.",
   h1: "Taking a pet from Thailand to Norway",
   lede: "Norway is not in the EU, but it applies the EU pet-travel rules &mdash; " +
@@ -319,13 +328,13 @@ pages.push(exp({
   officialExtra:
     "<p><strong>Norwegian sources:</strong> " +
     "<a href=\"https://www.mattilsynet.no/en/animals/guide-travelling-with-pets-to-norway\" " +
-    "target=\"_blank\" rel=\"noopener nofollow\">Mattilsynet pet import</a>; " +
+    "target=\"_blank\" rel=\"noopener\">Mattilsynet pet import</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
-    "rel=\"noopener nofollow\">EU pet movement</a> (Norway applies EU-aligned rules). " +
+    "rel=\"noopener\">EU pet movement</a> (Norway applies EU-aligned rules). " +
     "Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-norway.html\">bringing a pet from Norway</a>.</p>",
   sections: euExportSections({
-    routingIntro: "Norway follows EU-style third-country rules; the titer test and three-month wait are usually the long pole.",
+    routingIntro: "Norway follows EU-style third-country rules; a new titer sample must precede certificate issue by at least 90 days.",
     reqHeading: "What Norway requires from Thailand",
     reqHtml: EU_ENTRY_REQ_LIST +
       "<p>The Norwegian Food Safety Authority (Mattilsynet) oversees pet entry. " +
@@ -338,10 +347,10 @@ pages.push(exp({
     ["Does my dog need tapeworm treatment to enter Norway?",
      "<p>Yes &mdash; Norway requires a vet-administered tapeworm treatment for dogs within a set window before arrival. Confirm the current window with Mattilsynet.</p>"],
     ["Does Norway being outside the EU change the process?",
-     "<p>Not greatly. Norway applies the EU pet-travel rules, so the titer test, the three-month wait and the health certificate work as for an EU country, plus the tapeworm step for dogs.</p>"],
+     "<p>Not greatly. Norway applies the EU-style titer and health-certificate framework, including the checked 90-day pre-certificate timing for a new test, plus the tapeworm step for dogs.</p>"],
     ["Is the EU pet passport enough from Thailand?",
      "<p>No. You need a third-country entry health certificate endorsed on the Thai side.</p>"],
-    ["Can my pet skip the three-month wait?",
+    ["Can my pet avoid the standard titer timing?",
      "<p>Only with a valid pre-existing rabies titer test and current rabies vaccination.</p>"],
     ["How early should I start?",
      "<p>Several months ahead if the titer test still has to be done from Pattaya.</p>"]
@@ -352,7 +361,7 @@ pages.push(exp({
 pages.push(exp({
   slug: "to-denmark", crumb: "To Denmark",
   title: "Export Pet from Thailand to Denmark (2026) | PattayaPets",
-  desc: "Thailand to Denmark pet export: EU titer test, three-month wait, entry " +
+  desc: "Thailand to Denmark pet export: EU titer test, 90-day pre-certificate rule, entry " +
     "certificate, Danish authority rules and DLD export timeline.",
   h1: "Taking a pet from Thailand to Denmark",
   lede: "Denmark applies the standard EU entry rules for a pet arriving from " +
@@ -360,9 +369,9 @@ pages.push(exp({
   officialExtra:
     "<p><strong>Danish / EU sources:</strong> " +
     "<a href=\"https://en.foedevarestyrelsen.dk/animals/travelling-with-pet-animals\" target=\"_blank\" " +
-    "rel=\"noopener nofollow\">Danish Veterinary and Food Administration</a>; " +
+    "rel=\"noopener\">Danish Veterinary and Food Administration</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
-    "rel=\"noopener nofollow\">EU pet movement</a>. " +
+    "rel=\"noopener\">EU pet movement</a>. " +
     "Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-denmark.html\">bringing a pet from Denmark</a>.</p>",
   sections: euExportSections({
@@ -374,8 +383,8 @@ pages.push(exp({
       "current requirements with the Danish authorities before you book.</p>" + EU_TITER_TIP
   }),
   faqs: [
-    ["Is the three-month wait avoidable for Denmark?",
-     "<p>Only if a valid rabies titer test is already in place, with the rabies vaccination kept current. Otherwise the three-month wait from the blood-sample date is unavoidable.</p>"],
+    ["Can the standard titer timing be avoided for Denmark?",
+     "<p>A qualifying test recorded before EU departure can preserve the re-entry exception when rabies vaccination remains continuously current. Otherwise the sample must be at least 90 days before certificate issue. " + claimLink("EU-RABIES-TITER-2026-08", "Commission source") + ".</p>"],
     ["Who should I check the current rules with?",
      "<p>The Danish Veterinary and Food Administration for the destination side, and the Thai DLD for the export side. Check both before booking, as rules change.</p>"],
     ["Is the EU pet passport enough from Thailand?",
@@ -402,11 +411,11 @@ pages.push(exp({
   officialExtra:
     "<p><strong>Finnish / EU sources:</strong> " +
     "<a href=\"https://www.ruokavirasto.fi/en/themes/import-and-export/import/animals-and-animal-products/animals-and-gametes/dogs-cats-and-ferrets/non-commercial-movement/\" " +
-    "target=\"_blank\" rel=\"noopener nofollow\">Ruokavirasto, non-commercial movement</a>; " +
+    "target=\"_blank\" rel=\"noopener\">Ruokavirasto, non-commercial movement</a>; " +
     "<a href=\"https://tulli.fi/en/restrictions/pets/travelling\" target=\"_blank\" " +
-    "rel=\"noopener nofollow\">Finnish Customs (Tulli), travelling with pets</a>; " +
+    "rel=\"noopener\">Finnish Customs (Tulli), travelling with pets</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
-    "rel=\"noopener nofollow\">EU pet movement</a>. " +
+    "rel=\"noopener\">EU pet movement</a>. " +
     "Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-finland.html\">bringing a pet from Finland</a>.</p>",
   sections: euExportSections({
@@ -479,8 +488,8 @@ pages.push(exp({
 /* ---------------- NETHERLANDS ---------------- */
 pages.push(exp({
   slug: "to-netherlands", crumb: "To the Netherlands",
-  title: "Export Pet from Thailand to the Netherlands (2026) | PattayaPets",
-  desc: "Thailand to Netherlands pet export: EU titer test, three-month wait, NVWA " +
+  title: "Thailand to Netherlands Pet Export (2026) | PattayaPets",
+  desc: "Thailand to Netherlands pet export: EU titer test, 90-day pre-certificate rule, NVWA " +
     "entry rules, Amsterdam routing and DLD export timeline.",
   h1: "Taking a pet from Thailand to the Netherlands",
   lede: "The Netherlands applies the standard EU entry rules, and Amsterdam is a " +
@@ -488,9 +497,9 @@ pages.push(exp({
   officialExtra:
     "<p><strong>Dutch / EU sources:</strong> " +
     "<a href=\"https://english.nvwa.nl/topics/animal-health/travelling-to-the-netherlands-with-your-dog-or-cat\" target=\"_blank\" " +
-    "rel=\"noopener nofollow\">NVWA importing animals</a>; " +
+    "rel=\"noopener\">NVWA importing animals</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
-    "rel=\"noopener nofollow\">EU pet movement</a>. " +
+    "rel=\"noopener\">EU pet movement</a>. " +
     "Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-netherlands.html\">bringing a pet from the Netherlands</a>.</p>",
   sections: euExportSections({
@@ -504,8 +513,8 @@ pages.push(exp({
   faqs: [
     ["Are there direct flights for a pet from Thailand to the Netherlands?",
      "<p>Amsterdam has direct routes from Bangkok; whether a given flight accepts a pet in cabin, as checked baggage or as cargo depends on the airline and aircraft. Confirm with the airline well ahead.</p>"],
-    ["Is the three-month wait avoidable?",
-     "<p>Only with a valid rabies titer test already in place and the vaccination kept current. Otherwise plan for the full three-month wait after the blood sample.</p>"],
+    ["Can the standard titer timing be avoided?",
+     "<p>A satisfactory pre-departure test recorded in the EU passport can preserve the re-entry exception when rabies vaccination remains continuously current. Otherwise the sample must be at least 90 days before certificate issue. " + claimLink("EU-RABIES-TITER-2026-08", "Commission source") + ".</p>"],
     ["Is the EU pet passport enough from Thailand?",
      "<p>No. You need a third-country entry health certificate endorsed on the Thai side.</p>"],
     ["Who should I check rules with?",
@@ -519,7 +528,7 @@ pages.push(exp({
 pages.push(exp({
   slug: "to-france", crumb: "To France",
   title: "Export Pet from Thailand to France (2026) | PattayaPets",
-  desc: "Thailand to France pet export: EU titer test, three-month wait, entry " +
+  desc: "Thailand to France pet export: EU titer test, 90-day pre-certificate rule, entry " +
     "certificate, Paris routing and DLD export timeline.",
   h1: "Taking a pet from Thailand to France",
   lede: "France applies the standard EU entry rules for a pet arriving from " +
@@ -527,9 +536,9 @@ pages.push(exp({
   officialExtra:
     "<p><strong>French / EU sources:</strong> " +
     "<a href=\"https://mesdemarches.agriculture.gouv.fr/demarches/particulier/vivre-avec-un-animal-de-compagnie/article/voyager-hors-de-france-avec-un\" " +
-    "target=\"_blank\" rel=\"noopener nofollow\">French Ministry of Agriculture pet travel</a>; " +
+    "target=\"_blank\" rel=\"noopener\">French Ministry of Agriculture pet travel</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
-    "rel=\"noopener nofollow\">EU pet movement</a>. " +
+    "rel=\"noopener\">EU pet movement</a>. " +
     "Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-france.html\">bringing a pet from France</a>.</p>",
   sections: euExportSections({
@@ -542,10 +551,10 @@ pages.push(exp({
   }),
   faqs: [
     ["How long does it take to move a pet from Thailand to France?",
-     "<p>Plan for several months if the titer test is still to be done &mdash; the three-month wait is fixed. A valid existing titer test makes it considerably faster.</p>"],
+     "<p>If a new titer is needed, the sample must be at least 90 days before certificate issue. A qualifying pre-departure test recorded in the EU passport may preserve the re-entry exception when rabies cover remains continuous. " + claimLink("EU-RABIES-TITER-2026-08", "Commission source") + ".</p>"],
     ["Does the EU pet passport cover entry from Thailand?",
      "<p>No. Coming from a non-listed country your pet needs an EU third-country entry health certificate. Confirm the current rules with the French authorities.</p>"],
-    ["Can my pet skip the three-month wait?",
+    ["Can my pet avoid the standard titer timing?",
      "<p>Only with a valid pre-existing rabies titer test and current rabies vaccination.</p>"],
     ["Which Paris airports accept pets from third countries?",
      "<p>Pets from third countries must enter via designated traveller points of entry. Confirm the current French list before booking.</p>"],
@@ -569,12 +578,12 @@ pages.push(exp({
   officialExtra:
     "<p><strong>Irish / EU sources:</strong> " +
     "<a href=\"http://www.pettravel.gov.ie/pets/dogscatsferrets/other/\" " +
-    "target=\"_blank\" rel=\"noopener nofollow\">DAFM pet travel, non-listed countries</a> " +
+    "target=\"_blank\" rel=\"noopener\">DAFM pet travel, non-listed countries</a> " +
     "(this is the page that covers Thailand, not the &ldquo;outside EU&rdquo; one); " +
     "<a href=\"https://www.gov.ie/en/department-of-agriculture-food-and-the-marine/publications/advance-notice/\" " +
-    "target=\"_blank\" rel=\"noopener nofollow\">DAFM advance notice portal</a>; " +
+    "target=\"_blank\" rel=\"noopener\">DAFM advance notice portal</a>; " +
     "<a href=\"https://food.ec.europa.eu/animals/movement-pets_en\" target=\"_blank\" " +
-    "rel=\"noopener nofollow\">EU pet movement</a>. " +
+    "rel=\"noopener\">EU pet movement</a>. " +
     "Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-ireland.html\">bringing a pet from Ireland</a>.</p>",
   sections: euExportSections({
@@ -670,9 +679,9 @@ pages.push(exp({
   officialExtra:
     "<p><strong>Swiss sources:</strong> " +
     "<a href=\"https://www.blv.admin.ch/en/travelling-with-dogs-cats-and-ferrets\" " +
-    "target=\"_blank\" rel=\"noopener nofollow\">FSVO travelling with pets</a>; " +
+    "target=\"_blank\" rel=\"noopener\">FSVO travelling with pets</a>; " +
     "<a href=\"https://www.blv.admin.ch/dam/en/sd-web/rGF02-RRaF0f/liste-laender-tollwut-en.pdf\" target=\"_blank\" " +
-    "rel=\"noopener nofollow\">FSVO rabies country list (June 2026 PDF)</a>. " +
+    "rel=\"noopener\">FSVO rabies country list (June 2026 PDF)</a>. " +
     "Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-switzerland.html\">bringing a pet from Switzerland</a>.</p>",
   sections: euExportSections({
@@ -726,7 +735,7 @@ pages.push(exp({
   officialExtra:
     "<p><strong>Canadian sources:</strong> " +
     "<a href=\"https://inspection.canada.ca/en/importing-food-plants-animals/pets\" " +
-    "target=\"_blank\" rel=\"noopener nofollow\">CFIA &mdash; importing or travelling with pets</a>. " +
+    "target=\"_blank\" rel=\"noopener\">CFIA &mdash; importing or travelling with pets</a>. " +
     "Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-canada.html\">bringing a pet from Canada</a>.</p>",
   sections: [
@@ -741,8 +750,8 @@ pages.push(exp({
       '<tr><th scope="row">4&ndash;6 weeks before</th>' +
       '<td>Book pet on Bangkok&ndash;Toronto, Bangkok&ndash;Vancouver or connecting route; confirm airline pet policy</td>' +
       '<td>Airline</td></tr>' +
-      '<tr><th scope="row">&ge;15 days before export</th>' +
-      '<td>Apply for Thai <a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">DLD export permit</a> (form 1/1) with CFIA entry requirements attached</td>' +
+      '<tr><th scope="row">As the responsible AQS directs</th>' +
+      '<td>File Thai DLD form R1/1 with the destination requirements as the responsible AQS directs; the reviewed procedure gives no universal 15-day deadline</td>' +
       '<td>DLD AQS</td></tr>' +
       '<tr><th scope="row">Within 10 days of departure</th>' +
       '<td>Final clinical examination; DLD export health certificate with valid rabies vaccination recorded</td>' +
@@ -779,17 +788,17 @@ pages.push(exp({
       "<ul>" +
       "<li><strong>Expired rabies vaccination</strong> &mdash; CFIA expects a current certificate; a lapsed shot can block entry.</li>" +
       "<li><strong>Certificate language</strong> &mdash; CFIA expects English or French; confirm the DLD export certificate meets that requirement.</li>" +
-      "<li><strong>Last-minute DLD export</strong> &mdash; applying inside the 15-day window when the AQS still needs inspection time.</li>" +
-      "<li><strong>Assuming EU rules apply</strong> &mdash; Canada has no three-month titer wait, but the Thai export process still applies.</li>" +
+      "<li><strong>Missing the DLD examination window</strong> &mdash; the examination must be no more than 2&ndash;3 days before travel.</li>" +
+      "<li><strong>Assuming EU rules apply</strong> &mdash; Canada has no EU-style 90-day pre-certificate titer gate, but the Thai export process still applies.</li>" +
       "</ul>" }
   ],
   faqs: [
     ["Does Canada require a rabies titer test for a pet from Thailand?",
      "<p>Generally no &mdash; Canada's main requirement is a valid rabies vaccination certificate, and it does not normally require titer testing or quarantine for personal imports. Confirm the current rules for your pet with CFIA.</p>"],
     ["Is Canada really easier than the EU?",
-     "<p>For entry requirements, yes &mdash; there is no three-month titer wait. The Thai DLD export process still applies, and you should still start in good time.</p>"],
+     "<p>For entry requirements, yes &mdash; there is no EU-style 90-day pre-certificate titer gate. The Thai DLD export process still applies, and you should still start in good time.</p>"],
     ["How long does Thailand-to-Canada take to plan?",
-     "<p>Weeks rather than months if vaccinations are current &mdash; allow at least 15 days for the DLD export permit plus time for the final health certificate.</p>"],
+     "<p>No universal Thai duration is published in the reviewed procedure. Ask the responsible AQS when to file R1/1 and attend the mandatory examination no more than 2&ndash;3 days before travel; separately allow for the airline and CFIA requirements.</p>"],
     ["Can my pet fly in the cabin to Canada?",
      "<p>Depends on the airline and aircraft on your Bangkok&ndash;Toronto/Vancouver or connecting route. Confirm pet space and crate rules when you book.</p>"],
     ["What if I later move from Canada to the EU?",
@@ -809,7 +818,7 @@ pages.push(exp({
     "export steps still run in parallel.",
   officialExtra:
     "<p><strong>Russian sources:</strong> " +
-    "<a href=\"https://fsvps.gov.ru/\" target=\"_blank\" rel=\"noopener nofollow\">" +
+    "<a href=\"https://fsvps.gov.ru/\" target=\"_blank\" rel=\"noopener\">" +
     "Federal Service for Veterinary and Phytosanitary Surveillance (FSVPS)</a>. " +
     "Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-russia.html\">bringing a pet from Russia</a>.</p>",
@@ -825,8 +834,8 @@ pages.push(exp({
       '<tr><th scope="row">4&ndash;6 weeks before</th>' +
       '<td>Book pet on Bangkok&ndash;Moscow or connecting route; confirm airline pet policy</td>' +
       '<td>Airline</td></tr>' +
-      '<tr><th scope="row">&ge;15 days before export</th>' +
-      '<td>Apply for Thai <a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">DLD export permit</a> (form 1/1) with Russian entry requirements attached</td>' +
+      '<tr><th scope="row">As the responsible AQS directs</th>' +
+      '<td>File Thai DLD form R1/1 with the destination requirements as the responsible AQS directs; the reviewed procedure gives no universal 15-day deadline</td>' +
       '<td>DLD AQS</td></tr>' +
       '<tr><th scope="row">Within 10 days of departure</th>' +
       '<td>Final clinical examination; DLD export health certificate endorsed for Russia</td>' +
@@ -870,7 +879,7 @@ pages.push(exp({
     ["When is the Russian certificate issued?",
      "<p>Usually close to the travel date, through FSVPS. Your vet can advise on the timing; start early so nothing is rushed.</p>"],
     ["How long does Thailand-to-Russia take to plan?",
-     "<p>Weeks rather than months if no titer test is needed &mdash; but allow at least 15 days for the DLD export permit and time for the final health certificate.</p>"],
+     "<p>No universal Thai duration is published in the reviewed procedure. Ask the responsible AQS when to file R1/1 and attend the mandatory examination no more than 2&ndash;3 days before travel; separately allow for the destination and airline steps.</p>"],
     ["Can my pet fly in the cabin to Russia?",
      "<p>Depends on the airline and aircraft on your Bangkok&ndash;Moscow or connecting route. Confirm pet space and crate rules when you book.</p>"],
     ["What if I later move from Russia to the EU?",
@@ -896,11 +905,11 @@ pages.push(exp({
   officialExtra:
     "<p><strong>New Zealand sources:</strong> " +
     "<a href=\"https://www.mpi.govt.nz/bring-send-to-nz/pets-travelling-to-nz/bringing-cats-and-dogs-to-nz/bringing-cats-and-dogs-to-nz-using-the-2026-import-health-standard/step-by-step-guide-to-bringing-cats-and-dogs-to-nz-2026\" " +
-    "target=\"_blank\" rel=\"noopener nofollow\">MPI 2026 step-by-step guide</a>; " +
+    "target=\"_blank\" rel=\"noopener\">MPI 2026 step-by-step guide</a>; " +
     "<a href=\"https://www.mpi.govt.nz/dmsdocument/71909/direct\" target=\"_blank\" " +
-    "rel=\"noopener nofollow\">2026 import health standard</a>; " +
+    "rel=\"noopener\">2026 import health standard</a>; " +
     "<a href=\"https://www.mpi.govt.nz/dmsdocument/2040/direct\" target=\"_blank\" " +
-    "rel=\"noopener nofollow\">Schedule 9 categorized countries</a>. " +
+    "rel=\"noopener\">Schedule 9 categorized countries</a>. " +
     "Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-new-zealand.html\">bringing a pet from New Zealand</a>.</p>",
   sections: [
@@ -941,8 +950,8 @@ pages.push(exp({
       '<tr><th scope="row">At least 30 working days before needed</th>' +
       '<td>Apply for the MPI import permit with veterinary history and book an approved quarantine facility</td>' +
       '<td>MPI</td></tr>' +
-      '<tr><th scope="row">&ge;15 days before export</th>' +
-      '<td>Apply for the Thai DLD export permit (form 1/1) with the intermediary country&rsquo;s import conditions attached</td>' +
+      '<tr><th scope="row">As the responsible AQS directs</th>' +
+      '<td>File Thai DLD form R1/1 with the destination requirements as the responsible AQS directs; the reviewed procedure gives no universal 15-day deadline</td>' +
       '<td>DLD AQS</td></tr>' +
       '<tr><th scope="row">Final certification window</th>' +
       '<td>Complete the examinations and treatments; obtain the final certificate from an official government veterinarian in the approved export country</td>' +
@@ -993,7 +1002,7 @@ pages.push(exp({
     ["Does New Zealand require a rabies titer test from Thailand?",
      "<p>Yes. The non-categorized-country pathway includes rabies neutralising antibody testing from an MPI-approved laboratory on the required schedule. The titer is only one part: the pet must also complete the intermediary-country controls, official certification, import permit and post-arrival quarantine required by the current MPI standard.</p>"],
     ["When should I apply for the Thai DLD export permit?",
-     "<p>Apply to the Thai departure-airport AQS at least 15 days before the Thailand export leg, once the destination and intermediary requirements are settled. The DLD paperwork must match the next country&rsquo;s conditions. Separately, MPI says to apply for its New Zealand import permit at least 30 working days before it is needed.</p>"]
+     "<p>Ask the responsible Thai departure-port AQS when to file R1/1 once the intermediary-country requirements are settled; the reviewed DLD procedure has no universal 15-day deadline. Separately, MPI says to apply for its New Zealand import permit at least 30 working days before it is needed.</p>"]
   ]
 }));
 
@@ -1004,27 +1013,28 @@ pages.push(exp({
   desc: "Thailand to Japan pet export: MAFF 180-day wait, advance notification, DLD " +
     "export timeline, document checklist and common failure points.",
   h1: "Taking a pet from Thailand to Japan",
-  lede: "Japan has one of the strictest pet-import systems anywhere. From Thailand " +
-    "(a non-designated region), plan on <strong>at least seven months</strong> from " +
-    "starting the titer test to landing in Japan.",
+  lede: "For a dog or cat arriving from Thailand, Japan&rsquo;s non-designated-region route " +
+    "requires ordered vaccination and testing steps, then <strong>180 days</strong> from " +
+    "the titer blood sample before arrival.",
+  updated: "2026-08-01",
   officialExtra:
     "<p><strong>Japan sources:</strong> " +
     '<a href="https://www.maff.go.jp/aqs/english/animal/dog/import-other.html" target="_blank" ' +
-    "rel=\"noopener nofollow\">MAFF AQS &mdash; import from non-designated regions</a>; " +
-    '<a href="https://www.maff.go.jp/aqs/english/" target="_blank" rel="noopener nofollow">' +
+    "rel=\"noopener\">MAFF AQS &mdash; import from non-designated regions</a>; " +
+    '<a href="https://www.maff.go.jp/aqs/english/" target="_blank" rel="noopener">' +
     "MAFF Animal Quarantine Service</a>. Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-japan.html\">bringing a pet from Japan</a>.</p>",
   sections: [
     { h: "The timeline — Thailand to Japan", html:
       "<p>Japan&rsquo;s clock starts when the titer blood is drawn, not when you book " +
-      "the flight. Typical sequence:</p>" +
+      "the flight. The checked sequence is:</p>" +
       '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
       '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Authority</th></tr></thead><tbody>' +
-      '<tr><th scope="row">7+ months before arrival</th>' +
+      '<tr><th scope="row">Before the rabies sequence</th>' +
       '<td>ISO microchip; first rabies vaccination</td>' +
       '<td>Thai vet</td></tr>' +
-      '<tr><th scope="row">6+ months before</th>' +
-      '<td>Second rabies vaccination (at least 30 days after the first); blood sample for MAFF-designated titer test</td>' +
+      '<tr><th scope="row">On the qualifying vaccine schedule</th>' +
+      '<td>Second rabies vaccination at least 30 days after the first and within its validity; after that second vaccination, blood sample for a MAFF-designated-laboratory test</td>' +
       '<td>Thai vet + approved lab</td></tr>' +
       '<tr><th scope="row">Day 0 = blood sample date</th>' +
       '<td><strong>180-day wait</strong> must elapse before the pet may enter Japan</td>' +
@@ -1032,29 +1042,30 @@ pages.push(exp({
       '<tr><th scope="row">&ge;40 days before arrival</th>' +
       '<td><strong>Advance notification</strong> to the AQS at your Japanese arrival port (NACCS online or email)</td>' +
       '<td>MAFF AQS</td></tr>' +
-      '<tr><th scope="row">&ge;15 days before export</th>' +
-      '<td>Apply for Thai <a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">DLD export permit</a> (form 1/1)</td>' +
+      '<tr><th scope="row">As the responsible AQS directs</th>' +
+      '<td>File Thai DLD form R1/1 with the destination requirements as the responsible AQS directs; the reviewed procedure gives no universal 15-day deadline</td>' +
       '<td>DLD AQS</td></tr>' +
-      '<tr><th scope="row">Within 10 days of departure</th>' +
-      '<td>Final clinical examination; DLD export health certificate</td>' +
+      '<tr><th scope="row">No more than 2&ndash;3 days before departure</th>' +
+      '<td>Mandatory DLD examination; obtain the export certificate if compliant</td>' +
       '<td>DLD AQS + vet</td></tr>' +
       '<tr><th scope="row">Arrival in Japan</th>' +
-      '<td>AQS import inspection at a designated airport/seaport; clearance typically within 12 hours if compliant</td>' +
+      '<td>AQS import inspection at the notified arrival port; AQS determines the quarantine period from the documents and inspection</td>' +
       '<td>MAFF AQS</td></tr>' +
-      '</tbody></table></div>' },
+      '</tbody></table></div>' +
+      "<p>" + claimLink("JP-NONDESIGNATED-ENTRY-2026-08", "MAFF source") + ".</p>" },
     { h: "Thai-side export documents", html: DLD_EXPORT_TABLE + THAI_SIDE },
     { h: "What MAFF checks on arrival", html:
       "<ul>" +
       "<li>Microchip matches every document.</li>" +
       "<li>Two rabies vaccinations on the correct schedule.</li>" +
-      "<li>Titer result &ge; 0.5 IU/ml from a MAFF-designated laboratory (valid 2 years from sampling).</li>" +
+      "<li>Titer result &ge; 0.5 IU/ml from a MAFF-designated laboratory; verify the report and vaccination-validity window for the actual arrival date.</li>" +
       "<li>At least 180 days elapsed since the blood sample date.</li>" +
       "<li>Advance notification accepted at least 40 days before arrival.</li>" +
       "<li>Thai export quarantine certificate and endorsed health certificate.</li>" +
       "</ul>" +
-      "<p>Non-compliance can mean detention quarantine in Japan for up to 180 days. A " +
-      "<a href=\"/pet-relocation/\">pet relocation agent</a> experienced in the Japan route " +
-      "is worth the cost on this corridor.</p>" },
+      "<p>If the 180-day wait is incomplete, AQS can detain the pet for the remaining period. " +
+      "Confirm the complete file with the notified arrival-port AQS before payment. " +
+      claimLink("JP-NONDESIGNATED-ENTRY-2026-08", "MAFF source") + ".</p>" },
     { h: "Common mistakes", html: EXPORT_FAILS +
       "<ul>" +
       "<li><strong>Booking the flight before the 180-day date</strong> &mdash; Japan counts from the blood draw, not the result letter.</li>" +
@@ -1064,15 +1075,15 @@ pages.push(exp({
   ],
   faqs: [
     ["How long does it take to bring a pet from Thailand to Japan?",
-     "<p>Often seven months or more: two rabies vaccinations, MAFF-designated titer test, 180-day wait from the blood sample, advance notification at least 40 days before arrival, plus Thai DLD export steps.</p>"],
+     "<p>The authority-controlled minimum includes the qualifying two-vaccination sequence, sampling after the second vaccination, 180 days from sampling before arrival and notification at least 40 days before arrival. Laboratory, DLD, certificate and airline time are additional and case-specific. " + claimLink("JP-NONDESIGNATED-ENTRY-2026-08", "MAFF source") + ".</p>"],
     ["Does Japan require a rabies titer test from Thailand?",
-     "<p>Yes. Thailand is a non-designated region. Japan requires a titer at a designated laboratory, result ≥ 0.5 IU/ml, and a 180-day wait from the sample date.</p>"],
+     "<p>Yes. Thailand is a non-designated region. Japan requires a titer at a designated laboratory, result &ge; 0.5 IU/ml, and arrival after 180 days from the sample date. " + claimLink("JP-NONDESIGNATED-ENTRY-2026-08", "MAFF source") + ".</p>"],
     ["Which Japanese airports accept pet imports?",
-     "<p>MAFF publishes designated airports and seaports — typically Narita, Haneda, Kansai and a limited list of others. Confirm your arrival port accepts dogs/cats before booking.</p>"],
+     "<p>This guide does not maintain a live port list. Use MAFF&rsquo;s current designated-port information, then confirm the notification channel and species handling with the responsible arrival-port AQS before booking.</p>"],
     ["Can I shorten the 180-day wait?",
-     "<p>No. If you arrive early, Japan holds the pet in detention quarantine until the 180 days from the blood sample are complete.</p>"],
+     "<p>Do not book an arrival before the 180-day date. MAFF says a pet arriving before the wait is complete is quarantined for the remaining period. " + claimLink("JP-NONDESIGNATED-ENTRY-2026-08", "MAFF source") + ".</p>"],
     ["When should I start the Thai DLD export permit?",
-     "<p>Apply at least 15 days before export, but only after the Japan-side timeline (titer + 180 days + notification) is already aligned with your travel date.</p>"]
+     "<p>Ask the responsible AQS when to file R1/1 after Japan&rsquo;s titer, 180-day and notification timeline is aligned. Attend the mandatory DLD examination no more than 2&ndash;3 days before travel.</p>"]
   ]
 }));
 
@@ -1086,20 +1097,20 @@ pages.push(exp({
   lede: "Thailand is a <strong>Schedule III</strong> origin under AVS rules. A pet can " +
     "enter Singapore, but expect a <strong>90-day minimum lead time</strong> after the " +
     "titer blood draw and <strong>30 days quarantine</strong> on arrival.",
+  updated: "2026-08-01",
   officialExtra:
     "<p><strong>Singapore sources:</strong> " +
     '<a href="https://avs.nparks.gov.sg/pets/importing-exporting-a-pet/import/dogs-and-cats/" ' +
-    'target="_blank" rel="noopener nofollow">AVS &mdash; importing dogs and cats</a> ' +
+    'target="_blank" rel="noopener">AVS &mdash; importing dogs and cats</a> ' +
     "(verify Thailand&rsquo;s schedule close to travel). Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-singapore.html\">bringing a pet from Singapore</a>.</p>",
   sections: [
     { h: "The timeline — Thailand to Singapore", html:
-      "<p>AVS timing gates stack on top of the Thai DLD export process. Typical sequence " +
-      "for a Schedule III origin (verify on AVS before you start):</p>" +
+      "<p>AVS timing gates stack on top of the Thai DLD export process. The checked Schedule III sequence is:</p>" +
       '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
       '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Authority</th></tr></thead><tbody>' +
-      '<tr><th scope="row">4+ months before export</th>' +
-      '<td>ISO microchip; valid rabies vaccination (after chip)</td>' +
+      '<tr><th scope="row">Before sampling</th>' +
+      '<td>Microchip recorded consistently; valid qualifying rabies vaccination</td>' +
       '<td>Thai vet</td></tr>' +
       '<tr><th scope="row">&ge;28 days after vaccination</th>' +
       '<td>Blood sample for rabies serology (RNATT) at an approved lab; result &ge; 0.5 IU/ml</td>' +
@@ -1107,23 +1118,24 @@ pages.push(exp({
       '<tr><th scope="row">&ge;90 days after blood sample</th>' +
       '<td>Earliest export date (sample must also be within 12 months of export)</td>' +
       '<td>AVS rule</td></tr>' +
-      '<tr><th scope="row">6&ndash;8 weeks before export</th>' +
-      '<td>Dog licence via PALS (dogs only); apply for AVS <strong>import licence</strong>; book AQC quarantine via QMS</td>' +
+      '<tr><th scope="row">Once the travel dates qualify</th>' +
+      '<td>Obtain the applicable pet licence, apply for the AVS <strong>import licence</strong> and book AQC quarantine</td>' +
       '<td>AVS</td></tr>' +
-      '<tr><th scope="row">&ge;15 days before export</th>' +
-      '<td>Apply for Thai <a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">DLD export permit</a> (form 1/1) with AVS conditions attached</td>' +
+      '<tr><th scope="row">As the responsible AQS directs</th>' +
+      '<td>File Thai DLD form R1/1 with the destination requirements as the responsible AQS directs; the reviewed procedure gives no universal 15-day deadline</td>' +
       '<td>DLD AQS</td></tr>' +
       '<tr><th scope="row">2&ndash;7 days before export</th>' +
       '<td>Internal and external parasite treatments per AVS window</td>' +
       '<td>Thai vet</td></tr>' +
       '<tr><th scope="row">Arrival in Singapore</th>' +
-      '<td>Inspection; Schedule III imports typically face &ge;30 days quarantine at AQC plus rabies vaccination on arrival</td>' +
+      '<td>Inspection, rabies vaccination on arrival and at least 30 days of AQC quarantine</td>' +
       '<td>AVS / AQC</td></tr>' +
-      '</tbody></table></div>' },
+      '</tbody></table></div>' +
+      "<p>" + claimLink("SG-SCHEDULE-III-ENTRY-2026-08", "AVS Schedule III source") + ".</p>" },
     { h: "Thai-side export documents", html: DLD_EXPORT_TABLE + THAI_SIDE },
     { h: "What AVS checks", html:
       "<ul>" +
-      "<li>Microchip before vaccination; chip on every document.</li>" +
+      "<li>Microchip number consistent across the vaccination, laboratory and certificate records.</li>" +
       "<li>Valid rabies vaccination using an AVS-accepted vaccine.</li>" +
       "<li>RNATT blood sample at least 28 days after vaccination and at least 90 days before export.</li>" +
       "<li>Import licence and AQC quarantine reservation.</li>" +
@@ -1131,7 +1143,7 @@ pages.push(exp({
       "<li>Thai DLD export health certificate matching AVS veterinary conditions.</li>" +
       "</ul>" +
       "<p>AVS rabies schedules change &mdash; confirm Thailand&rsquo;s category on the " +
-      "AVS website close to your travel date.</p>" },
+      "AVS website close to your travel date. " + claimLink("SG-SCHEDULE-III-ENTRY-2026-08", "Checked source") + ".</p>" },
     { h: "Common mistakes", html: EXPORT_FAILS +
       "<ul>" +
       "<li><strong>Blood sample too soon after vaccination</strong> &mdash; AVS requires at least 28 days.</li>" +
@@ -1141,15 +1153,15 @@ pages.push(exp({
   ],
   faqs: [
     ["Does Singapore require a rabies titer test from Thailand?",
-     "<p>Yes. Thailand is Schedule III under AVS rules. You need rabies vaccination, RNATT serology at an approved lab (≥ 0.5 IU/ml), and correct timing between vaccination, sampling and export.</p>"],
+     "<p>Yes. Under the checked Schedule III route, the approved-lab RNATT result must be at least 0.5 IU/ml, with sampling at least 28 days after the qualifying vaccination and 90 days to 12 months before export. " + claimLink("SG-SCHEDULE-III-ENTRY-2026-08", "AVS source") + ".</p>"],
     ["Is there quarantine in Singapore from Thailand?",
-     "<p>Schedule III imports typically require at least 30 days post-arrival quarantine at the Animal Quarantine Centre, plus rabies vaccination on arrival. Book AQC space via the Quarantine Management System.</p>"],
+     "<p>Yes. The checked Schedule III route requires a booked AQC space, rabies vaccination on arrival and at least 30 days of quarantine. " + claimLink("SG-SCHEDULE-III-ENTRY-2026-08", "AVS source") + ".</p>"],
     ["How long before I can export to Singapore?",
-     "<p>At minimum roughly four months: vaccination, wait 28 days, blood sample, then wait at least 90 days before export — plus time for import licence and quarantine booking.</p>"],
+     "<p>For a primary vaccination, sampling cannot occur until at least 28 days later, and export cannot occur until at least 90 days after sampling. A qualifying booster history can change the first interval. Add case-specific licence, quarantine-space, certificate, DLD and airline time. " + claimLink("SG-SCHEDULE-III-ENTRY-2026-08", "AVS source") + ".</p>"],
     ["Do I need a dog licence before importing to Singapore?",
      "<p>Yes for dogs — apply via the Pet Licensing System (PALS) before the AVS import licence.</p>"],
     ["When should I apply for the Thai DLD export permit?",
-     "<p>At least 15 days before export, with AVS import licence and quarantine booking already in place and the RNATT timing gates satisfied.</p>"]
+     "<p>Ask the responsible AQS when to file R1/1 after the AVS import licence, quarantine booking and RNATT timing gates are satisfied. The reviewed DLD procedure has no universal 15-day deadline.</p>"]
   ]
 }));
 
@@ -1161,12 +1173,12 @@ pages.push(exp({
     "IATA cargo requirements, DLD export timeline and document checklist.",
   h1: "Taking a pet from Thailand to the UAE",
   lede: "The UAE corridor is manageable compared with the EU or Australia &mdash; " +
-    "no three-month titer wait for UAE entry itself. But MOCCAE is strict on " +
+    "no EU-style 90-day pre-certificate titer gate for UAE entry itself. But MOCCAE is strict on " +
     "<strong>permits, vaccines, breeds and cargo rules</strong>. Start early.",
   officialExtra:
     "<p><strong>UAE sources:</strong> " +
     "<a href=\"https://moccae.gov.ae/en/services/import-permit-pets\" target=\"_blank\" " +
-    "rel=\"noopener nofollow\">MOCCAE import permit for pets</a> (updated January 2025). " +
+    "rel=\"noopener\">MOCCAE import permit for pets</a> (updated January 2025). " +
     "Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-uae.html\">bringing a pet from the UAE</a>.</p>",
   sections: [
@@ -1181,8 +1193,8 @@ pages.push(exp({
       '<tr><th scope="row">3&ndash;4 weeks before</th>' +
       '<td>Apply for <strong>MOCCAE import permit</strong> online (valid <strong>90 days</strong> from issue per current service guidance)</td>' +
       '<td>MOCCAE portal</td></tr>' +
-      '<tr><th scope="row">&ge;15 days before export</th>' +
-      '<td>Apply for Thai <a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">DLD export permit</a> (form 1/1) with MOCCAE requirements attached</td>' +
+      '<tr><th scope="row">As the responsible AQS directs</th>' +
+      '<td>File Thai DLD form R1/1 with the destination requirements as the responsible AQS directs; the reviewed procedure gives no universal 15-day deadline</td>' +
       '<td>DLD AQS</td></tr>' +
       '<tr><th scope="row">2 weeks before</th>' +
       '<td>Book airline — confirm <strong>IATA cargo</strong> vs cabin/hold; MOCCAE often requires manifested cargo</td>' +
@@ -1200,7 +1212,7 @@ pages.push(exp({
     { h: "What MOCCAE requires from Thailand", html:
       "<p>Per MOCCAE&rsquo;s published import service (verify current detail on " +
       "<a href=\"https://moccae.gov.ae/en/services/import-permit-pets\" target=\"_blank\" " +
-      "rel=\"noopener nofollow\">moccae.gov.ae</a>):</p>" +
+      "rel=\"noopener\">moccae.gov.ae</a>):</p>" +
       "<ul>" +
       "<li><strong>Prior import permit</strong> obtained online before the pet travels</li>" +
       "<li><strong>Permanent microchip</strong> — chip number must match the health certificate exactly</li>" +
@@ -1262,11 +1274,11 @@ pages.push(exp({
   officialExtra:
     "<p><strong>India sources:</strong> " +
     '<a href="https://aqcsindia.gov.in/Home/ImportExportPets" target="_blank" ' +
-    "rel=\"noopener nofollow\">AQCS import/export of pets</a>; " +
+    "rel=\"noopener\">AQCS import/export of pets</a>; " +
     '<a href="https://aqcsindia.gov.in/Home/ImportExportPets" target="_blank" ' +
-    "rel=\"noopener nofollow\">AQCS Import Clearance System (online NOC)</a>; " +
+    "rel=\"noopener\">AQCS Import Clearance System (online NOC)</a>; " +
     '<a href="https://aqcsindia.gov.in/pdfs/india-dogs-guidance.pdf" target="_blank" ' +
-    "rel=\"noopener nofollow\">India dog import guidance (PDF)</a>. Import mirror: " +
+    "rel=\"noopener\">India dog import guidance (PDF)</a>. Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-india.html\">bringing a pet from India</a>.</p>",
   sections: [
     { h: "The timeline — Thailand to India", html:
@@ -1278,8 +1290,8 @@ pages.push(exp({
       '<tr><th scope="row">&ge;7 working days before arrival</th>' +
       '<td>Apply online for <strong>Advance NOC</strong> with vaccination records, microchip proof, health certificate draft and flight details</td>' +
       '<td>AQCS online portal</td></tr>' +
-      '<tr><th scope="row">&ge;15 days before export</th>' +
-      '<td>Apply for Thai <a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">DLD export permit</a> (form 1/1) with AQCS requirements attached</td>' +
+      '<tr><th scope="row">As the responsible AQS directs</th>' +
+      '<td>File Thai DLD form R1/1 with the destination requirements as the responsible AQS directs; the reviewed procedure gives no universal 15-day deadline</td>' +
       '<td>DLD AQS</td></tr>' +
       '<tr><th scope="row">Within 10 days of departure</th>' +
       '<td>Final health examination; DLD export health certificate matching AQCS Annex format</td>' +
@@ -1316,14 +1328,14 @@ pages.push(exp({
     ["Can I fly Bangkok to India with a pet in cabin?",
      "<p>Depends on airline and routing. Some sectors require cargo. Confirm for each leg before booking.</p>"],
     ["When should I apply for the Thai DLD export permit?",
-     "<p>At least 15 days before export, with AQCS Advance NOC application already underway and vaccinations current.</p>"]
+     "<p>Ask the responsible AQS when to file R1/1 after the AQCS Advance NOC is underway. The reviewed DLD procedure has no universal 15-day deadline.</p>"]
   ]
 }));
 
 /* ---------------- PHILIPPINES ---------------- */
 pages.push(exp({
   slug: "to-philippines", crumb: "To the Philippines",
-  title: "Export Pet from Thailand to the Philippines (2026) | PattayaPets",
+  title: "Thailand to Philippines Pet Export (2026) | PattayaPets",
   desc: "Thailand to Philippines pet export: BAI SPSIC timeline, IVHC requirements, " +
     "DLD export checklist and Manila arrival steps.",
   h1: "Taking a pet from Thailand to the Philippines",
@@ -1333,7 +1345,7 @@ pages.push(exp({
   officialExtra:
     "<p><strong>Philippines sources:</strong> " +
     '<a href="https://www.bai.gov.ph/Stakeholders/PetImport" target="_blank" ' +
-    "rel=\"noopener nofollow\">BAI &mdash; pet import procedures</a>; SPSIC application " +
+    "rel=\"noopener\">BAI &mdash; pet import procedures</a>; SPSIC application " +
     "via the BAI online portal (see BAI site for current link). Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-philippines.html\">bringing a pet from the Philippines</a>.</p>",
   sections: [
@@ -1346,8 +1358,8 @@ pages.push(exp({
       '<tr><th scope="row">4&ndash;6 weeks before</th>' +
       '<td>Apply online for BAI <strong>SPSIC</strong> (valid 60 days; max 3 pets per application)</td>' +
       '<td>BAI online portal</td></tr>' +
-      '<tr><th scope="row">&ge;15 days before export</th>' +
-      '<td>Apply for Thai <a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">DLD export permit</a> (form 1/1) with BAI conditions attached</td>' +
+      '<tr><th scope="row">As the responsible AQS directs</th>' +
+      '<td>File Thai DLD form R1/1 with the destination requirements as the responsible AQS directs; the reviewed procedure gives no universal 15-day deadline</td>' +
       '<td>DLD AQS</td></tr>' +
       '<tr><th scope="row">Within 10 days of departure</th>' +
       '<td>International veterinary health certificate (IVHC) endorsed for export from Thailand</td>' +
@@ -1362,7 +1374,7 @@ pages.push(exp({
     { h: "Thai-side export documents", html: DLD_EXPORT_TABLE + THAI_SIDE },
     { h: "What BAI requires on the SPSIC application", html:
       "<p>BAI publishes the current checklist at " +
-      '<a href="https://www.bai.gov.ph/Stakeholders/PetImport" target="_blank" rel="noopener nofollow">' +
+      '<a href="https://www.bai.gov.ph/Stakeholders/PetImport" target="_blank" rel="noopener">' +
       "bai.gov.ph</a>. Typically upload (PDF/JPG, &lt;5&nbsp;MB each):</p>" +
       "<ul>" +
       "<li>Proof of ISO microchip implantation.</li>" +
@@ -1391,7 +1403,7 @@ pages.push(exp({
     ["Are Bangkok–Manila flights pet-friendly?",
      "<p>Several carriers fly the route. Confirm cabin, checked baggage or cargo for your pet's size before booking.</p>"],
     ["When should I apply for the Thai DLD export permit?",
-     "<p>At least 15 days before export, with an approved SPSIC already in hand and the IVHC timeline aligned.</p>"]
+     "<p>Ask the responsible AQS when to file R1/1 after the SPSIC and IVHC calendar are aligned. The reviewed DLD procedure has no universal 15-day deadline.</p>"]
   ]
 }));
 
@@ -1399,37 +1411,39 @@ pages.push(exp({
 pages.push(exp({
   slug: "to-china", crumb: "To China",
   title: "Export Pet from Thailand to China (2026) | PattayaPets",
-  desc: "Thailand to China pet export: GACC titer and quarantine rules, two-rabies-vaccination " +
-    "timeline, DLD export checklist and designated ports.",
+  desc: "Thailand to China pet export: GACC titer and quarantine rules, DLD export " +
+    "checklist and port-level verification.",
   h1: "Taking a pet from Thailand to China",
   lede: "China&rsquo;s GACC rules (Announcement No.&nbsp;5, 2019) classify Thailand as " +
     "<strong>non-designated</strong>. Without a valid rabies antibody test from a " +
     "recognised lab, expect <strong>30 days quarantine</strong> at a designated port.",
+  updated: "2026-08-01",
   officialExtra:
     "<p><strong>China sources:</strong> " +
     '<a href="https://english.beijing.gov.cn/latest/lawsandpolicies/202104/t20210407_2346645.html" ' +
-    'target="_blank" rel="noopener nofollow">GACC Announcement No.&nbsp;5 (2019) &mdash; ' +
+    'target="_blank" rel="noopener">GACC Announcement No.&nbsp;5 (2019) &mdash; ' +
     "pet entry (English reference)</a>; " +
     '<a href="https://english.shanghai.gov.cn/en-KeepingAPetInShanghai/20240927/988d600b49964546b41d3c342e4ebdb2.html" ' +
-    'target="_blank" rel="noopener nofollow">Shanghai pet entry guide</a>. Import mirror: ' +
+    'target="_blank" rel="noopener">Shanghai pet entry guide</a>. Import mirror: ' +
     "<a href=\"/bring-pet-to-thailand/from-china.html\">bringing a pet from China</a>.</p>",
   sections: [
     { h: "The timeline — Thailand to China", html:
-      "<p>Thailand is non-designated under GACC rules. To avoid 30-day quarantine you " +
-      "typically need two rabies vaccinations and a recognised-laboratory titer test.</p>" +
+      "<p>Thailand follows the checked non-designated-origin preparation route. A pet seeking " +
+      "the quarantine waiver needs a qualifying Chinese Customs-accepted-laboratory titer report; " +
+      "a second vaccination is required when a new titer must be obtained, not universally.</p>" +
       '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
       '<th scope="col">When</th><th scope="col">Step</th><th scope="col">Authority</th></tr></thead><tbody>' +
-      '<tr><th scope="row">3+ months before</th>' +
-      '<td>ISO microchip; first rabies vaccination</td>' +
+      '<tr><th scope="row">Before certification</th>' +
+      '<td>Microchip; valid rabies vaccination; confirm whether an existing accepted-lab titer report qualifies</td>' +
       '<td>Thai vet</td></tr>' +
-      '<tr><th scope="row">&ge;30 days later</th>' +
-      '<td>Second rabies vaccination; blood sample for rabies antibody test (&ge; 0.5 IU/ml at GACC-recognised lab)</td>' +
+      '<tr><th scope="row">If a new titer is needed</th>' +
+      '<td>Complete the second rabies vaccination on the veterinarian/manufacturer schedule, then sample no earlier than that vaccination for a Chinese Customs-accepted-lab test above 0.5 IU/ml</td>' +
       '<td>Thai vet + lab</td></tr>' +
-      '<tr><th scope="row">6+ weeks before</th>' +
-      '<td>Confirm destination city port has quarantine facilities if waiver uncertain</td>' +
-      '<td>GACC / agent</td></tr>' +
-      '<tr><th scope="row">&ge;15 days before export</th>' +
-      '<td>Apply for Thai <a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">DLD export permit</a> (form 1/1) with GACC requirements attached</td>' +
+      '<tr><th scope="row">Before booking</th>' +
+      '<td>Confirm the port&rsquo;s current pet-entry capability and quarantine facility if the waiver evidence may fail</td>' +
+      '<td>Arrival-port Customs</td></tr>' +
+      '<tr><th scope="row">As the responsible AQS directs</th>' +
+      '<td>File Thai DLD form R1/1 with the destination requirements as the responsible AQS directs; the reviewed procedure gives no universal 15-day deadline</td>' +
       '<td>DLD AQS</td></tr>' +
       '<tr><th scope="row">Within 14 days of arrival</th>' +
       '<td>Official export health certificate from Thailand (government-endorsed)</td>' +
@@ -1438,24 +1452,27 @@ pages.push(exp({
       '<td>Declare pet to customs; microchip scan; on-site quarantine inspection</td>' +
       '<td>GACC customs</td></tr>' +
       '</tbody></table></div>' +
-      "<p><strong>One pet per person per entry</strong> under GACC rules.</p>" },
+      "<p><strong>One accompanied dog or cat per person per entry.</strong> " +
+      claimLink("CN-GACC-PET-ENTRY-2019-05", "GACC source") + "; " +
+      claimLink("CN-THAILAND-ENTRY-2025-10", "Thailand-specific Customs source") + ".</p>" },
     { h: "Thai-side export documents", html: DLD_EXPORT_TABLE + THAI_SIDE },
     { h: "Quarantine waiver vs mandatory quarantine", html:
       "<p>GACC classifies origin countries into designated and non-designated. Thailand " +
-      "is non-designated. Pets that meet all waiver conditions (microchip, two rabies " +
-      "vaccinations, valid titer from a recognised laboratory, official health certificate " +
-      "within 14 days, successful on-site inspection) may enter without the 30-day " +
+      "is non-designated. Pets that meet all waiver conditions (microchip, valid titer above " +
+      "0.5 IU/ml from an accepted laboratory, official certificates and successful on-site " +
+      "inspection) may enter without the 30-day " +
       "isolation period.</p>" +
       "<p>If waiver conditions are not met, the pet must enter through a port with " +
-      "<strong>quarantine facilities</strong> (Beijing and Shanghai are commonly used) " +
-      "and complete <strong>30 days</strong> at a customs-designated station. Pets arriving " +
-      "at ports without quarantine kennels when isolation is required may be returned or " +
-      "worse &mdash; confirm your destination port with GACC and an experienced agent.</p>" +
-      "<p>A specialist <a href=\"/pet-relocation/\">pet relocation agent</a> is strongly " +
-      "recommended on this corridor.</p>" },
+      "<strong>quarantine facilities</strong> and complete <strong>30 days</strong> at a " +
+      "customs-designated station. The checked source does not establish a live universal port " +
+      "list, so obtain written arrival-port confirmation before booking.</p>" +
+      "<p>For Thailand, current Shanghai Customs guidance says no local laboratory is approved by " +
+      "Chinese Customs. Confirm the authority-approved sample route and do not assume private serum " +
+      "submission will qualify. " + claimLink("CN-GACC-PET-ENTRY-2019-05", "GACC source") + "; " +
+      claimLink("CN-THAILAND-ENTRY-2025-10", "Shanghai Customs source") + ".</p>" },
     { h: "Common mistakes", html: EXPORT_FAILS +
       "<ul>" +
-      "<li><strong>Only one rabies vaccination</strong> &mdash; GACC waiver typically requires two, 30+ days apart.</li>" +
+      "<li><strong>Inventing a universal two-shot interval</strong> &mdash; current Thailand guidance requires a second vaccination only when a new titer is needed; apply the actual vaccine schedule.</li>" +
       "<li><strong>Titer from unrecognised lab</strong> &mdash; check GACC&rsquo;s current approved laboratory list.</li>" +
       "<li><strong>Wrong arrival city</strong> &mdash; not every Chinese airport has quarantine facilities.</li>" +
       "<li><strong>Two pets, one person</strong> &mdash; GACC allows one dog or cat per person per entry.</li>" +
@@ -1463,22 +1480,22 @@ pages.push(exp({
   ],
   faqs: [
     ["Is pet import into China complicated?",
-     "<p>It is formal and city-specific. GACC Announcement No. 5 (2019) sets the framework: microchip, vaccinations, possible titer test, health certificate within 14 days, and customs declaration on arrival.</p>"],
+     "<p>The national framework requires one accompanied pet per person, a microchip, official health/quarantine and rabies certificates, and declaration for Customs inspection. The Thailand-specific guide adds the current accepted-titer and 14-day examination conditions. " + claimLink("CN-GACC-PET-ENTRY-2019-05", "GACC source") + "; " + claimLink("CN-THAILAND-ENTRY-2025-10", "Shanghai Customs source") + ".</p>"],
     ["Which Chinese authority handles pet import?",
      "<p>The General Administration of Customs (GACC) at your port of entry, with local animal quarantine inspection.</p>"],
     ["Will my pet be quarantined in China from Thailand?",
-     "<p>If you cannot meet non-designated country waiver conditions (including the rabies antibody test from a recognised lab), expect 30 days quarantine at a designated facility. Plan the titer test months ahead.</p>"],
+     "<p>If the pet cannot meet the non-designated-origin waiver conditions, including an accepted-lab titer above 0.5 IU/ml and a passed on-site inspection, the national rule requires 30 days of quarantine. " + claimLink("CN-GACC-PET-ENTRY-2019-05", "GACC source") + ".</p>"],
     ["How many pets can I bring into China?",
-     "<p>One dog or cat per person per entry under GACC rules.</p>"],
+     "<p>One accompanied dog or cat per person per entry under the checked national rule. " + claimLink("CN-GACC-PET-ENTRY-2019-05", "GACC source") + ".</p>"],
     ["When should I apply for the Thai DLD export permit?",
-     "<p>At least 15 days before export, once GACC-side requirements (vaccinations, titer if needed) are already satisfied.</p>"]
+     "<p>Ask the responsible AQS when to file R1/1 once the GACC-side requirements are satisfied. The reviewed DLD procedure has no universal 15-day deadline.</p>"]
   ]
 }));
 
 /* ---------------- SOUTH AFRICA ---------------- */
 pages.push(exp({
   slug: "to-south-africa", crumb: "To South Africa",
-  title: "Export Pet from Thailand to South Africa (2026) | PattayaPets",
+  title: "Thailand to South Africa Pet Export | PattayaPets",
   desc: "Thailand to South Africa pet export: DALRRD import permit, dog quarantine, " +
     "five pre-import blood tests, manifest cargo rules and DLD export timeline.",
   h1: "Taking a pet from Thailand to South Africa",
@@ -1488,10 +1505,10 @@ pages.push(exp({
   officialExtra:
     "<p><strong>South Africa sources:</strong> " +
     '<a href="https://www.gov.za/services/import/import-animals-and-animal-products" ' +
-    'target="_blank" rel="noopener nofollow">gov.za &mdash; import animals and animal products</a> ' +
+    'target="_blank" rel="noopener">gov.za &mdash; import animals and animal products</a> ' +
     "(contact <strong>VetPermits@Dalrrd.gov.za</strong> for current VIP forms and fees); " +
     '<a href="https://dirco.gov.za/newyork/wp-content/uploads/sites/77/2025/04/Importing-cats-and-dogs-to-SA-subject-to-quarantine.pdf" ' +
-    'target="_blank" rel="noopener nofollow">quarantine import application form (PDF)</a>. ' +
+    'target="_blank" rel="noopener">quarantine import application form (PDF)</a>. ' +
     "Import mirror: " +
     "<a href=\"/bring-pet-to-thailand/from-south-africa.html\">bringing a pet from South Africa</a>.</p>",
   sections: [
@@ -1513,8 +1530,8 @@ pages.push(exp({
       '<tr><th scope="row">30+ days before import (primary rabies)</th>' +
       '<td>Valid rabies vaccination (primary: 30 days&ndash;12 months before import; booster within validity)</td>' +
       '<td>Thai vet</td></tr>' +
-      '<tr><th scope="row">&ge;15 days before export</th>' +
-      '<td>Apply for Thai <a href="/take-pet-out-of-thailand/export-permit-thailand-dld.html">DLD export permit</a> (form 1/1) with DALRRD VIP attached</td>' +
+      '<tr><th scope="row">As the responsible AQS directs</th>' +
+      '<td>File Thai DLD form R1/1 with the destination requirements as the responsible AQS directs; the reviewed procedure gives no universal 15-day deadline</td>' +
       '<td>DLD AQS</td></tr>' +
       '<tr><th scope="row">Within 10 days of departure</th>' +
       '<td>Government-endorsed veterinary health certificate on DALRRD specimen format</td>' +
@@ -1562,7 +1579,7 @@ pages.push(exp({
     ["Can my pet fly in the cabin to South Africa?",
      "<p>DALRRD allows cabin travel if the airline permits it, but the pet must still be registered as manifest cargo and inspected at the cargo terminal on landing. Confirm with your airline and agent.</p>"],
     ["When should I apply for the Thai DLD export permit?",
-     "<p>At least 15 days before export, once the DALRRD import permit is issued and dog blood tests (if applicable) are complete.</p>"]
+     "<p>Ask the responsible AQS when to file R1/1 once the DALRRD permit and applicable blood tests are complete. The reviewed DLD procedure has no universal 15-day deadline.</p>"]
   ]
 }));
 

@@ -22,11 +22,10 @@ const SRC = join(ROOT, 'src');
 
 const PROJECT = 'pattayapets';        // <-- hardcoded. Do not parameterise.
 const SITE = 'pattayapets.com';
-const EXPECT_TITLE = 'Vet Pattaya & Pet Import Guide | Dog-Friendly Directory';
+const EXPECT_TITLE = 'PattayaPets | Pet Care, Local Services & Travel Guidance';
 const EXPECT_CANONICAL = 'https://pattayapets.com/';
-const MIN_PAGES = 200;                // real build is 209
 const BLOCK = ['pattaya-school-guide'];   // hard abort — the actual incident
-const WARN = ['pattaya-authority'];       // report only — dead footerOld() code
+const WARN = ['pattaya-authority'];       // report legacy identity residue
 
 const DRY = process.argv.includes('--dry-run');
 const problems = [];
@@ -80,14 +79,61 @@ if (!existsSync(DIST)) {
   process.exit(1);
 }
 
+const manifestAudit = spawnSync(process.execPath, [join(ROOT, 'tools', 'audit-build-manifest.js')], {
+  cwd: ROOT, encoding: 'utf8', shell: false,
+});
+if (manifestAudit.status === 0) pass('build manifest hashes match current source and dist');
+else fail('build manifest audit failed: ' + (manifestAudit.stderr || manifestAudit.stdout || 'unknown error').trim());
+
+// Contact delivery must be proven by the operator before a production release.
+// Dry runs keep validating the artifact while reporting the external blocker.
+const siteConfigText = readFileSync(join(SRC, 'site-config.js'), 'utf8');
+const contactStatus = (siteConfigText.match(/\bcontactDeliveryStatus\s*:\s*["']([^"']+)["']/) || [])[1];
+if (contactStatus !== 'verified') {
+  const message = 'contact delivery is not operator-verified (SITE.contactDeliveryStatus=' +
+    JSON.stringify(contactStatus || 'missing') + ')';
+  DRY ? warn(message + '; production deploy remains blocked') : fail(message);
+} else {
+  pass('contact delivery has operator-verified status');
+}
+
 const files = walk(DIST);
 const pages = files.filter((f) => f.endsWith('.html'));
 const index = join(DIST, 'index.html');
+const manifestPath = join(DIST, 'build-manifest.json');
+let manifest = null;
 
-// 1. Enough pages — guards against shipping a partial or foreign build.
-pages.length >= MIN_PAGES
-  ? pass(`${pages.length} HTML pages in dist/`)
-  : fail(`only ${pages.length} HTML pages in dist/ (expected >= ${MIN_PAGES}). Wrong or partial build?`);
+if (!existsSync(manifestPath)) {
+  fail('dist/build-manifest.json is missing. Build output identity cannot be proven.');
+} else {
+  try {
+    manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
+    if (manifest.project !== PROJECT || manifest.site !== 'https://' + SITE) {
+      fail('build manifest identity does not match pattayapets.');
+    } else if (!Array.isArray(manifest.routes) || !Array.isArray(manifest.files)) {
+      fail('build manifest is incomplete.');
+    } else {
+      pass('build manifest identity matches the hardcoded project');
+    }
+  } catch (error) {
+    fail('build manifest is invalid JSON: ' + error.message);
+  }
+}
+
+// 1. The generated route manifest, rather than a stale hard-coded count, is
+// the source of truth for complete output.
+if (manifest && Array.isArray(manifest.routes)) {
+  const routeOutputs = new Set(manifest.routes.map((route) =>
+    resolve(DIST, ...String(route.output).split('/'))));
+  const htmlFiles = new Set(pages.map((file) => resolve(file)));
+  const missing = [...routeOutputs].filter((file) => !htmlFiles.has(file));
+  const extra = [...htmlFiles].filter((file) => !routeOutputs.has(file));
+  if (missing.length || extra.length || routeOutputs.size !== manifest.routes.length) {
+    fail(`route manifest mismatch (${missing.length} missing, ${extra.length} unexpected HTML files)`);
+  } else {
+    pass(`${pages.length} HTML pages exactly match the route manifest`);
+  }
+}
 
 // 2. Homepage identity.
 if (!existsSync(index)) {
@@ -158,12 +204,17 @@ if (problems.length) {
 
 if (DRY) {
   console.log(`\n  All checks passed. --dry-run set, nothing uploaded.`);
-  console.log(`  Would run: npx wrangler pages deploy dist --project-name ${PROJECT}\n`);
+  console.log(`  Would run the locked local Wrangler for project ${PROJECT}\n`);
   process.exit(0);
 }
 
 console.log(`\n  All checks passed. Deploying dist/ -> Cloudflare Pages project "${PROJECT}"\n`);
-const r = spawnSync('npx', ['wrangler', 'pages', 'deploy', 'dist', '--project-name', PROJECT], {
-  cwd: ROOT, stdio: 'inherit', shell: true,
+const wrangler = join(ROOT, 'node_modules', 'wrangler', 'bin', 'wrangler.js');
+if (!existsSync(wrangler)) {
+  console.error('\n  DEPLOY ABORTED\n  Locked local Wrangler is missing. Run `npm ci` first.\n');
+  process.exit(1);
+}
+const r = spawnSync(process.execPath, [wrangler, 'pages', 'deploy', 'dist', '--project-name', PROJECT], {
+  cwd: ROOT, stdio: 'inherit', shell: false,
 });
 process.exit(r.status ?? 1);

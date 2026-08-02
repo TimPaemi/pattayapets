@@ -1,0 +1,1 @@
+{"expectedCode":"LINK_UNKNOWN_CLAIM","operations":[{"op":"set","path":["pages",0,"body"],"value":"<a href=\"https://authority.example.test/pet-rule\" data-claim-id=\"UNKNOWN-CLAIM-2026\">Source</a>"}]}

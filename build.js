@@ -7,32 +7,43 @@
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
+const os = require("os");
 const CleanCSS = require("clean-css");
 const { minify: minifyHtml } = require("html-minifier-terser");
 const { minify: minifyJs } = require("terser");
 
 const ROOT = __dirname;
 const SRC = path.join(ROOT, "src");
-const DIST = process.env.PP_DIST ? path.resolve(process.env.PP_DIST) : path.join(ROOT, "dist");
+const { SITE } = require(path.join(SRC, "site-config.js"));
+const {
+  manifestEntryForPath,
+  createPageManifest,
+  indexPageManifest,
+  routeOutputFile
+} = require(path.join(SRC, "page-manifest.js"));
+const TARGET_DIST = process.env.PP_DIST ? path.resolve(process.env.PP_DIST) : path.join(ROOT, "dist");
+const STAGE_DIST = path.join(
+  path.dirname(TARGET_DIST),
+  "." + path.basename(TARGET_DIST) + ".stage-" + process.pid + "-" + crypto.randomBytes(4).toString("hex")
+);
+const BACKUP_DIST = path.join(
+  path.dirname(TARGET_DIST),
+  "." + path.basename(TARGET_DIST) + ".backup-" + process.pid + "-" + crypto.randomBytes(4).toString("hex")
+);
+let OUT = STAGE_DIST;
+
+const PROJECT = "pattayapets";
+const SITE_ORIGIN = "https://pattayapets.com";
 
 const ASSET_EXT = [".woff2", ".svg", ".png", ".webp", ".jpg", ".jpeg", ".ico", ".gif"];
 const STATIC_FILES = [
   "_headers", "_redirects", "robots.txt", "manifest.webmanifest",
-  "pp-indexnow-key.txt",
   ".well-known/security.txt"
 ];
-const SECTION_LABELS = {
-  "": "Site pages", vets: "Vets & animal hospitals", groomers: "Pet groomers",
-  boarding: "Boarding & daycare", "pet-shops": "Pet shops", trainers: "Dog trainers",
-  "pet-relocation": "Pet relocation", "mobile-vets": "Mobile vets", area: "Areas",
-  "bring-pet-to-thailand": "Bringing a pet to Thailand",
-  "take-pet-out-of-thailand": "Taking a pet out of Thailand",
-  "dog-friendly-pattaya": "Dog-friendly Pattaya", "pet-emergency": "Pet emergency",
-  "owning-a-pet-in-pattaya": "Owning a pet in Pattaya",
-  "adopt-a-pet-pattaya": "Adoption & rescue", cats: "Cats", dogs: "Dogs",
-  "pet-health-pattaya": "Pet health in Pattaya"
-};
-
+const CRITICAL_FONT_URLS = [
+  "/assets/fonts/bricolage-700.woff2",
+  "/assets/fonts/hanken-400.woff2"
+];
 const HTML_MIN = {
   collapseWhitespace: true,
   removeComments: true,
@@ -47,28 +58,83 @@ const HTML_MIN = {
 
 function log(m) { process.stdout.write(m + "\n"); }
 
-function rmrf(p) {
-  if (!fs.existsSync(p)) return;
-  try { fs.rmSync(p, { recursive: true, force: true }); }
-  catch (e) { /* read-only mount: fall back to overwriting files in place */ }
+function isWithin(base, candidate) {
+  const rel = path.relative(path.resolve(base), path.resolve(candidate));
+  return rel !== "" && rel !== ".." && !rel.startsWith(".." + path.sep) && !path.isAbsolute(rel);
+}
+
+function validateTarget(p) {
+  const target = path.resolve(p);
+  const parent = path.dirname(target);
+  const name = path.basename(target);
+  const directChild = parent === ROOT && /^(?:dist|[.]?audit-dist|[.]?pattayapets-(?:dist|build))(?:[-_.].*)?$/i.test(name);
+  const safeSibling = parent === path.dirname(ROOT) && /^pattayapets-(?:dist|build)(?:[-_.].*)?$/i.test(name);
+  const protectedPaths = [
+    path.parse(target).root,
+    ROOT,
+    SRC,
+    path.join(ROOT, ".git"),
+    path.join(ROOT, "node_modules"),
+    os.homedir()
+  ].map(function (x) { return path.resolve(x); });
+  if (!directChild && !safeSibling) {
+    throw new Error("Unsafe PP_DIST target. Use dist/audit-dist inside the repository or a pattayapets-dist sibling: " + target);
+  }
+  if (protectedPaths.includes(target) || isWithin(target, ROOT) || isWithin(target, os.homedir())) {
+    throw new Error("Refusing broad or protected output target: " + target);
+  }
+  if (fs.existsSync(target) && !fs.statSync(target).isDirectory()) {
+    throw new Error("Output target exists and is not a directory: " + target);
+  }
+}
+
+function safeRemove(p, allowed) {
+  const resolved = path.resolve(p);
+  if (!allowed.map(function (item) { return path.resolve(item); }).includes(resolved)) {
+    throw new Error("Refusing to remove unapproved path: " + resolved);
+  }
+  if (fs.existsSync(resolved)) fs.rmSync(resolved, { recursive: true, force: false });
 }
 
 function ensureDir(p) { fs.mkdirSync(p, { recursive: true }); }
 
+function outputPath(rel) {
+  if (typeof rel !== "string" || !rel || rel.includes("\0") || rel.includes("\\") ||
+      path.isAbsolute(rel) || /^[A-Za-z]:/.test(rel) || rel.startsWith("//")) {
+    throw new Error("Unsafe output path: " + JSON.stringify(rel));
+  }
+  const parts = rel.split("/");
+  if (parts.some(function (part) { return !part || part === "." || part === ".."; })) {
+    throw new Error("Unsafe output path segment: " + rel);
+  }
+  const out = path.resolve(OUT, ...parts);
+  if (!isWithin(OUT, out)) throw new Error("Output path escapes staging root: " + rel);
+  return out;
+}
+
 function write(rel, content) {
-  const out = path.join(DIST, rel);
+  const out = outputPath(rel);
   ensureDir(path.dirname(out));
   fs.writeFileSync(out, content);
 }
 
-function pathToFile(p) {
-  if (p === "/" || p === "") return "index.html";
-  if (p.endsWith("/")) return p.replace(/^\//, "") + "index.html";
-  return p.replace(/^\//, "");
+function validateRoutePath(p) {
+  if (p === "/") return;
+  if (typeof p !== "string" || !p.startsWith("/") || p.includes("\\") ||
+      p.includes("..") || p.includes("//") || /[%?#:\0]/.test(p) ||
+      !/^\/[a-z0-9][a-z0-9/-]*(?:\.html|\/)$/.test(p)) {
+    throw new Error("Unsafe or unsupported page path: " + JSON.stringify(p));
+  }
 }
 
-function kindOf(p) {
-  return SECTION_LABELS[p.split("/")[1] || ""] || "Page";
+function pathToFile(p) {
+  validateRoutePath(p);
+  return routeOutputFile(p);
+}
+
+function routeAliasKey(p) {
+  if (p === "/") return "/";
+  return p.toLowerCase().replace(/\/index\.html$/, "/").replace(/\.html$/, "").replace(/\/$/, "") || "/";
 }
 
 function walk(dir, base, list) {
@@ -77,11 +143,35 @@ function walk(dir, base, list) {
   if (!fs.existsSync(dir)) return list;
   for (const name of fs.readdirSync(dir)) {
     const full = path.join(dir, name);
-    const st = fs.statSync(full);
+    const st = fs.lstatSync(full);
+    if (st.isSymbolicLink()) throw new Error("Symbolic links are not allowed in build inputs/output: " + full);
     if (st.isDirectory()) walk(full, base, list);
     else list.push(path.relative(base, full));
   }
   return list;
+}
+
+function sha256(content) {
+  return crypto.createHash("sha256").update(content).digest("hex");
+}
+
+function hashTree(dir, exclude) {
+  const hash = crypto.createHash("sha256");
+  walk(dir).map(function (x) { return x.replace(/\\/g, "/"); }).sort().forEach(function (rel) {
+    if (exclude && exclude.has(rel)) return;
+    hash.update(rel + "\0");
+    hash.update(fs.readFileSync(path.join(dir, rel)));
+    hash.update("\0");
+  });
+  return hash.digest("hex");
+}
+
+function replaceAssetRefs(text, assetMap) {
+  let out = String(text);
+  Object.keys(assetMap).sort(function (a, b) { return b.length - a.length; }).forEach(function (from) {
+    out = out.split(from).join(assetMap[from]);
+  });
+  return out;
 }
 
 function validateJsonLd(html, pagePath) {
@@ -94,10 +184,147 @@ function validateJsonLd(html, pagePath) {
   return count;
 }
 
+function canonicalOf(html) {
+  const tag = html.match(/<link\b[^>]*\brel=["']?canonical["']?[^>]*>/i) ||
+    html.match(/<link\b[^>]*\bhref=["'][^"']+["'][^>]*\brel=["']?canonical["']?[^>]*>/i);
+  if (!tag) return null;
+  const href = tag[0].match(/\bhref=["']([^"']+)["']/i);
+  return href ? href[1] : null;
+}
+
+function sourceFingerprint() {
+  const files = ["build.js", "package.json", "package-lock.json"];
+  walk(SRC).forEach(function (rel) { files.push("src/" + rel.replace(/\\/g, "/")); });
+  const hash = crypto.createHash("sha256");
+  files.sort().forEach(function (rel) {
+    const full = path.join(ROOT, ...rel.split("/"));
+    if (!fs.existsSync(full)) return;
+    hash.update(rel + "\0");
+    hash.update(fs.readFileSync(full));
+    hash.update("\0");
+  });
+  return hash.digest("hex");
+}
+
+function buildFileLedger() {
+  return walk(OUT).map(function (rel) { return rel.replace(/\\/g, "/"); })
+    .filter(function (rel) { return rel !== "build-manifest.json"; })
+    .sort()
+    .map(function (rel) {
+      const buf = fs.readFileSync(path.join(OUT, ...rel.split("/")));
+      return { path: rel, bytes: buf.length, sha256: sha256(buf) };
+    });
+}
+
+function makeBuildManifest(pageManifest, layout, contentVersion) {
+  return {
+    schemaVersion: 1,
+    project: PROJECT,
+    site: SITE_ORIGIN,
+    runtime: { node: process.version },
+    source: {
+      sha256: sourceFingerprint(),
+      packageLockSha256: sha256(fs.readFileSync(path.join(ROOT, "package-lock.json")))
+    },
+    serviceWorkerVersion: contentVersion,
+    routes: pageManifest.map(function (entry) {
+      return {
+        path: entry.path,
+        output: pathToFile(entry.path),
+        canonical: layout.canonical(entry.path),
+        kind: entry.kind,
+        category: entry.category,
+        indexable: entry.indexable,
+        locale: entry.locale,
+        auditScopes: entry.auditScopes
+      };
+    }).sort(function (a, b) { return a.path.localeCompare(b.path); }),
+    files: buildFileLedger()
+  };
+}
+
+function validateBuildManifest(manifest) {
+  if (manifest.project !== PROJECT || manifest.site !== SITE_ORIGIN || manifest.schemaVersion !== 1) {
+    throw new Error("Build manifest identity is invalid");
+  }
+  const actual = buildFileLedger();
+  if (actual.some(function (file) { return file.path === "pp-indexnow-key.txt"; })) {
+    throw new Error("Raw IndexNow helper filename must not be published");
+  }
+  if (JSON.stringify(actual) !== JSON.stringify(manifest.files)) {
+    throw new Error("Build manifest file ledger does not match staged output");
+  }
+  const routeOutputs = new Set();
+  const routePaths = new Set();
+  manifest.routes.forEach(function (route) {
+    if (routePaths.has(route.path)) throw new Error("Duplicate route in manifest: " + route.path);
+    if (routeOutputs.has(route.output)) throw new Error("Duplicate route output in manifest: " + route.output);
+    routePaths.add(route.path);
+    routeOutputs.add(route.output);
+    const expectedMeta = manifestEntryForPath(route.path);
+    ["kind", "category", "indexable", "locale"].forEach(function (field) {
+      if (route[field] !== expectedMeta[field]) {
+        throw new Error("Build route " + field + " disagrees with page manifest: " + route.path);
+      }
+    });
+    if (JSON.stringify(route.auditScopes) !== JSON.stringify(expectedMeta.auditScopes)) {
+      throw new Error("Build route auditScopes disagree with page manifest: " + route.path);
+    }
+    const full = path.join(OUT, ...route.output.split("/"));
+    if (!fs.existsSync(full)) throw new Error("Manifest route output is missing: " + route.output);
+    const html = fs.readFileSync(full, "utf8");
+    if (canonicalOf(html) !== route.canonical) {
+      throw new Error("Canonical mismatch for " + route.path + ": " + canonicalOf(html));
+    }
+    if (/\son[a-z]+\s*=/i.test(html)) throw new Error("Inline event handler remains on " + route.path);
+    if (/\/assets\/fonts\/[a-z0-9-]+\.woff2/i.test(html)) {
+      throw new Error("Unversioned font URL remains on " + route.path);
+    }
+  });
+  const sitemap = fs.readFileSync(path.join(OUT, "sitemap.xml"), "utf8");
+  const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(function (m) { return m[1]; }).sort();
+  const expected = manifest.routes.filter(function (r) { return r.indexable; })
+    .map(function (r) { return r.canonical; }).sort();
+  if (JSON.stringify(locs) !== JSON.stringify(expected)) throw new Error("Sitemap does not exactly match indexable manifest routes");
+  locs.forEach(function (u) {
+    const parsed = new URL(u);
+    if (parsed.origin !== SITE_ORIGIN) throw new Error("Foreign sitemap URL: " + u);
+  });
+  const headers = fs.readFileSync(path.join(OUT, "_headers"), "utf8");
+  if (/\/assets\/fonts\/[a-z0-9-]+\.woff2/i.test(headers)) {
+    throw new Error("Unversioned font URL remains in _headers");
+  }
+  if (!fs.readFileSync(path.join(OUT, "sw.js"), "utf8").includes(manifest.serviceWorkerVersion)) {
+    throw new Error("Service-worker version does not match build manifest");
+  }
+}
+
+function publishStage() {
+  let movedOld = false;
+  if (fs.existsSync(BACKUP_DIST)) safeRemove(BACKUP_DIST, [BACKUP_DIST]);
+  try {
+    if (fs.existsSync(TARGET_DIST)) {
+      fs.renameSync(TARGET_DIST, BACKUP_DIST);
+      movedOld = true;
+    }
+    fs.renameSync(STAGE_DIST, TARGET_DIST);
+  } catch (e) {
+    if (!fs.existsSync(TARGET_DIST) && movedOld && fs.existsSync(BACKUP_DIST)) {
+      fs.renameSync(BACKUP_DIST, TARGET_DIST);
+    }
+    throw new Error("Atomic output promotion failed; previous output was retained: " + e.message);
+  }
+  if (movedOld) safeRemove(BACKUP_DIST, [BACKUP_DIST]);
+}
+
 function buildSitemapPage(pages) {
   const groups = {};
-  pages.filter(function (p) { return !p.noindex; }).forEach(function (p) {
-    const key = kindOf(p.path);
+  const reviewedDates = pages.map(function (p) { return p.updated; })
+    .filter(function (value) { return /^\d{4}-\d{2}-\d{2}$/.test(String(value || "")); })
+    .sort();
+  if (!reviewedDates.length) throw new Error("Sitemap requires at least one source-reviewed page date");
+  pages.filter(function (p) { return manifestEntryForPath(p.path).indexable; }).forEach(function (p) {
+    const key = manifestEntryForPath(p.path).kind;
     (groups[key] = groups[key] || []).push(p);
   });
   let body =
@@ -121,7 +348,7 @@ function buildSitemapPage(pages) {
     description: "Browse every page on PattayaPets — vets, groomers, import guides, emergency help and area directories for Pattaya pet owners.",
     crumb: "Sitemap",
     breadcrumbs: [],
-    updated: new Date().toISOString().slice(0, 10),
+    updated: reviewedDates[reviewedDates.length - 1],
     body: body
   };
 }
@@ -194,7 +421,7 @@ function buildRecentSection(pages) {
       '<span class="recent-date">' + fmtUpdated(p.updated) + "</span>" +
       '<span class="recent-title">' + pageLabel(p).replace(/&/g, "&amp;") + "</span>" +
       (desc ? '<span class="recent-desc">' + desc + "</span>" : "") +
-      '<span class="recent-kind">' + kindOf(p.path).replace(/&/g, "&amp;") + "</span></a>";
+      '<span class="recent-kind">' + manifestEntryForPath(p.path).kind.replace(/&/g, "&amp;") + "</span></a>";
   }).join("");
   return '<section class="section"><div class="container">' +
     '<div class="section-head"><p class="eyebrow">Fresh content</p>' +
@@ -212,65 +439,37 @@ function injectRecentUpdates(pages) {
   home.body = home.body.replace("<!--__RECENT_UPDATES__-->", buildRecentSection(pages));
 }
 
-// Additive: append a data-driven FAQPage node to each business listing page's
-// schema graph. Facts come only from verified fields in src/data/businesses.js.
-function injectFaqSchema(pages) {
-  var data = require("./src/data/businesses.js");
-  var BUSINESSES = data.BUSINESSES || [];
-  var AREAS = data.AREAS || {};
-  function lj(a) {
-    a = (a || []).filter(function (x) { return typeof x === "string" && x.trim(); });
-    if (a.length <= 1) return a.join("");
-    if (a.length === 2) return a[0] + " and " + a[1];
-    return a.slice(0, -1).join(", ") + ", and " + a[a.length - 1];
-  }
-  function areaLabel(s) {
-    return (AREAS[s] && (AREAS[s].name || AREAS[s].label)) ||
-      String(s || "").replace(/-/g, " ").replace(/\b\w/g, function (c) { return c.toUpperCase(); });
-  }
-  function faqsFor(b) {
-    var n = b.name, out = [];
-    var where = b.address || (b.areas && b.areas.length ? areaLabel(b.areas[0]) + ", Pattaya" : "Pattaya");
-    out.push({ q: "Where is " + n + " located?", a: n + " is located at " + where + ". The full address and map are on this page." });
-    if (b.c24 || /24[\s-]?hour|open 24/i.test(b.hours || "")) {
-      out.push({ q: "Is " + n + " open 24 hours?", a: "Yes — " + n + " is listed as offering 24-hour service. Always call ahead in an emergency to confirm availability." });
-    }
-    var svc = (b.services || []).filter(function (s) { return typeof s === "string" && s.trim(); }).slice(0, 5);
-    if (svc.length) out.push({ q: "What services does " + n + " offer?", a: n + " is listed as offering " + lj(svc) + "." });
-    if (b.languages && String(b.languages).trim()) {
-      out.push({ q: "Is English spoken at " + n + "?", a: n + " is listed as: " + String(b.languages).trim() + "." });
-    }
-    if (out.length < 4 && (b.phone || b.tel)) {
-      out.push({ q: "How do I contact " + n + "?", a: "You can reach " + n + " by phone at " + (b.phone || b.tel) + ". Contact details are on this page." });
-    }
-    return out.slice(0, 4);
-  }
-  var byPath = {};
-  BUSINESSES.forEach(function (b) { if (b.category && b.slug) byPath["/" + b.category + "/" + b.slug + ".html"] = b; });
-  var count = 0;
-  pages.forEach(function (p) {
-    var b = byPath[p.path];
-    if (!b) return;
-    var faqs = faqsFor(b);
-    if (!faqs.length) return;
-    var faqObj = { "@type": "FAQPage", mainEntity: faqs.map(function (x) {
-      return { "@type": "Question", name: x.q, acceptedAnswer: { "@type": "Answer", text: x.a } };
-    }) };
-    p.schema = (p.schema || []).concat([faqObj]);
-    count++;
-  });
-  console.log("FAQ schema:  " + count + " listing pages");
-}
-
 async function build() {
   const t0 = Date.now();
   log("\nPattayaPets build");
   log("=================");
-  rmrf(DIST);
-  ensureDir(DIST);
+  validateTarget(TARGET_DIST);
+  safeRemove(STAGE_DIST, [STAGE_DIST]);
+  ensureDir(STAGE_DIST);
 
-  const criticalRaw = fs.readFileSync(path.join(SRC, "critical.css"), "utf8");
-  const criticalMin = new CleanCSS({ level: 1 }).minify(criticalRaw).styles;
+  /* Fonts carry content-derived names. This keeps the one-year immutable cache
+     policy honest without requiring hard-coded version bumps in layout.js. */
+  const fontMap = {};
+  let assetCount = 0;
+  const fontsDir = path.join(SRC, "assets", "fonts");
+  for (const rel of walk(fontsDir).sort()) {
+    if (path.extname(rel).toLowerCase() !== ".woff2") continue;
+    const source = fs.readFileSync(path.join(fontsDir, rel));
+    const parsed = path.parse(rel);
+    const hashedRel = path.join(parsed.dir, parsed.name + "." + sha256(source).slice(0, 12) + parsed.ext)
+      .replace(/\\/g, "/");
+    const sourceUrl = "/assets/fonts/" + rel.replace(/\\/g, "/");
+    const hashedUrl = "/assets/fonts/" + hashedRel;
+    fontMap[sourceUrl] = hashedUrl;
+    write(hashedUrl.slice(1), source);
+    assetCount++;
+  }
+  if (!Object.keys(fontMap).length) throw new Error("No WOFF2 fonts found in src/assets/fonts");
+
+  const criticalRaw = replaceAssetRefs(fs.readFileSync(path.join(SRC, "critical.css"), "utf8"), fontMap);
+  const criticalResult = new CleanCSS({ level: 1 }).minify(criticalRaw);
+  if (criticalResult.errors.length) throw new Error("Critical CSS minification failed: " + criticalResult.errors.join("; "));
+  const criticalMin = criticalResult.styles;
 
   const layout = require(path.join(SRC, "layout.js"));
   const pagesDir = path.join(SRC, "pages");
@@ -286,68 +485,110 @@ async function build() {
   if (!pages.length) throw new Error("No pages found in src/pages/");
 
   pages.push(buildSitemapPage(pages));
+  const pageManifest = createPageManifest(pages);
+  const pageManifestByPath = indexPageManifest(pageManifest);
+  pages.forEach(function (page) {
+    const entry = pageManifestByPath.get(page.path);
+    /* renderPage still receives the historical noindex flag, but its value now
+       comes from the canonical manifest rather than ad-hoc page logic. */
+    page.noindex = !entry.indexable;
+    page.locale = entry.locale;
+  });
 
   const seen = {};
+  const aliases = {};
   pages.forEach(function (p) {
+    validateRoutePath(p.path);
     if (seen[p.path]) throw new Error("Duplicate page path: " + p.path);
     seen[p.path] = true;
+    const alias = routeAliasKey(p.path);
+    if (aliases[alias]) throw new Error("Ambiguous route aliases: " + aliases[alias] + " and " + p.path);
+    aliases[alias] = p.path;
   });
 
   injectRecentUpdates(pages);
-  injectFaqSchema(pages);
 
-  /* Long-lived assets are content-hashed so "immutable, 1 year" is true rather than
-     a bet. Must run BEFORE the render loop: pages embed the hashed filenames. */
-  const cssRaw = fs.readFileSync(path.join(SRC, "assets/css/site.css"), "utf8");
-  const cssMin = new CleanCSS({ level: 2 }).minify(cssRaw).styles;
-  const cssHash = crypto.createHash("sha1").update(cssMin).digest("hex").slice(0, 10);
+  /* layout.js historically emitted the same footer stylesheet on every page.
+     Extract it once into the external, hashed stylesheet and strip it at render. */
+  const probe = layout.renderPage(pages[0], {
+    criticalCss: criticalMin,
+    cssHref: "/assets/css/probe.css",
+    jsSrc: "/assets/js/probe.js"
+  });
+  const footerCssMatch = probe.match(/<style id=["']pf-css["']>([\s\S]*?)<\/style>/i);
+
+  /* Long-lived assets are content-hashed so "immutable, 1 year" is true. */
+  const siteCssSource = fs.readFileSync(path.join(SRC, "assets/css/site.css"), "utf8");
+  const extractedFooterCss = footerCssMatch && !/\.pf\s*\{/.test(siteCssSource)
+    ? "\n" + footerCssMatch[1] : "";
+  const cssRaw = replaceAssetRefs(criticalMin + "\n" + siteCssSource + extractedFooterCss, fontMap);
+  const cssResult = new CleanCSS({ level: 2 }).minify(cssRaw);
+  if (cssResult.errors.length) throw new Error("Site CSS minification failed: " + cssResult.errors.join("; "));
+  const cssMin = cssResult.styles;
+  const cssHash = sha256(cssMin).slice(0, 12);
   const cssHref = "/assets/css/site." + cssHash + ".css";
   write("assets/css/site." + cssHash + ".css", cssMin);
 
   const jsRaw = fs.readFileSync(path.join(SRC, "assets/js/site.js"), "utf8");
-  const jsMin = (await minifyJs(jsRaw)).code;
-  const jsHash = crypto.createHash("sha1").update(jsMin).digest("hex").slice(0, 10);
+  const jsResult = await minifyJs(jsRaw);
+  if (jsResult.error || !jsResult.code) throw new Error("Site JavaScript minification failed");
+  const jsMin = jsResult.code;
+  const jsHash = sha256(jsMin).slice(0, 12);
   const jsSrc = "/assets/js/site." + jsHash + ".js";
   write("assets/js/site." + jsHash + ".js", jsMin);
 
   let jsonldCount = 0;
   for (const page of pages) {
-    const html = layout.renderPage(page, { criticalCss: criticalMin, cssHref: cssHref, jsSrc: jsSrc });
+    let html = layout.renderPage(page, { criticalCss: criticalMin, cssHref: cssHref, jsSrc: jsSrc });
+    html = replaceAssetRefs(html, fontMap)
+      .replace(/<style id=["']pf-css["']>[\s\S]*?<\/style>/i, "")
+      .replace(/\s+onload=["']this\.onload=null;this\.rel=(?:\\?["'])stylesheet(?:\\?["'])["']/i, "");
     jsonldCount += validateJsonLd(html, page.path);
     const min = await minifyHtml(html, HTML_MIN);
     write(pathToFile(page.path), min);
   }
   log("Pages:      " + pages.length + " rendered, " + jsonldCount + " JSON-LD blocks valid");
 
-  let assetCount = 0;
-  for (const sub of ["fonts", "img"]) {
-    const dir = path.join(SRC, "assets", sub);
-    for (const rel of walk(dir)) {
-      if (ASSET_EXT.indexOf(path.extname(rel).toLowerCase()) === -1) continue;
-      const from = path.join(dir, rel);
-      const to = path.join(DIST, "assets", sub, rel);
-      ensureDir(path.dirname(to));
-      fs.copyFileSync(from, to);
-      assetCount++;
-    }
+  const imagesDir = path.join(SRC, "assets", "img");
+  for (const rel of walk(imagesDir).sort()) {
+    if (ASSET_EXT.indexOf(path.extname(rel).toLowerCase()) === -1) continue;
+    write("assets/img/" + rel.replace(/\\/g, "/"), fs.readFileSync(path.join(imagesDir, rel)));
+    assetCount++;
   }
   log("Assets:     1 css, 1 js, " + assetCount + " static assets");
 
   for (const rel of STATIC_FILES) {
     const from = path.join(SRC, "static", rel);
     if (fs.existsSync(from)) {
-      const to = path.join(DIST, rel);
-      ensureDir(path.dirname(to));
-      fs.copyFileSync(from, to);
+      let content = fs.readFileSync(from);
+      if (rel === "_headers") content = replaceAssetRefs(content.toString("utf8"), fontMap);
+      if (rel === ".well-known/security.txt") {
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(SITE.email)) {
+          throw new Error("SITE.email is not a valid security.txt contact mailbox");
+        }
+        content = content.toString("utf8");
+        const tokenMatches = content.match(/\{\{CONTACT_EMAIL\}\}/g) || [];
+        if (tokenMatches.length !== 1) {
+          throw new Error("security.txt must contain exactly one {{CONTACT_EMAIL}} token");
+        }
+        content = content.replace("{{CONTACT_EMAIL}}", SITE.email);
+        if (!content.includes("Contact: mailto:" + SITE.email) || content.includes("{{CONTACT_EMAIL}}")) {
+          throw new Error("security.txt contact did not resolve from SITE.email");
+        }
+      }
+      write(rel, content);
     }
   }
   var indexNowKeyPath = path.join(SRC, "static", "pp-indexnow-key.txt");
   if (fs.existsSync(indexNowKeyPath)) {
     var indexNowKey = fs.readFileSync(indexNowKeyPath, "utf8").trim();
-    fs.writeFileSync(path.join(DIST, indexNowKey + ".txt"), indexNowKey);
+    if (!/^[A-Za-z0-9_-]{8,128}$/.test(indexNowKey)) throw new Error("Unsafe IndexNow key filename");
+    write(indexNowKey + ".txt", indexNowKey);
   }
 
-  const indexable = pages.filter(function (p) { return !p.noindex; });
+  const indexable = pages.filter(function (p) {
+    return pageManifestByPath.get(p.path).indexable;
+  });
   const sitemap =
     '<?xml version="1.0" encoding="UTF-8"?>\n' +
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
@@ -359,21 +600,22 @@ async function build() {
     "\n</urlset>\n";
   write("sitemap.xml", sitemap);
 
+  if (typeof SITE.teamSummary !== "string" || !SITE.teamSummary.trim() ||
+      typeof SITE.teamWork !== "string" || !SITE.teamWork.trim()) {
+    throw new Error("SITE.teamSummary and SITE.teamWork are required for AI-facing publisher output");
+  }
   const llms =
-    "# PattayaPets\n\n" +
-    "> The honest pet resource for Pattaya, Thailand — an independent editorial " +
-    "directory of pet businesses and a guide hub for pet owners. No paid placements, " +
-    "no sponsored content, no affiliate links. Editorial and informational only; " +
-    "not veterinary advice.\n\n## Publisher\n\n" +
-    "Published by TIMPAEMI Co., Ltd. from Pattaya, Chon Buri, Thailand. Written and " +
-    "kept up to date by Tim & Paemi, who live in Pattaya. Author: https://timpaemi.com/\n\n" +
-    "## Editorial policy\n\n" +
-    "No paid placements, no sponsored tags, no affiliate links, ever. Business verdicts " +
-    "follow anonymous visits with the bill paid in full, and cover the business experience " +
-    "only - never veterinary medical quality. Regulated pet import and export guidance is " +
-    "date-stamped and cites primary government sources (Thailand DLD, destination-country " +
-    "authorities, airlines). Corrections are logged in public at " +
-    "https://pattayapets.com/corrections.html\n\n" +
+    "# " + SITE.name + "\n\n" +
+    "> " + SITE.tagline + ". An independent directory and guide publication for pet owners. " +
+    "Editorial and informational only; not veterinary advice.\n\n## Publisher\n\n" +
+    "Published by " + SITE.publisherLegalName + " under the " + SITE.publisherName + " brand. " +
+    SITE.teamSummary + " " + SITE.teamWork + " Entity home: " + SITE.publisherUrl + "\n\n" +
+    "## Editorial and evidence state\n\n" +
+    "No completed anonymous-visit or verdict records are currently published. A business entry " +
+    "is not an endorsement of veterinary quality; business facts are published or withheld from " +
+    "dated evidence dossiers according to their explicit publication state. Regulated import and " +
+    "export claims are released only through the dated primary-source claim registry and its " +
+    "blocking audit. Corrections are logged at " + SITE.url + "/corrections.html.\n\n" +
     "## Key pages\n\n" +
     indexable.map(function (p) {
       return "- [" + (p.crumb || p.shortTitle || p.title) + "](" +
@@ -381,311 +623,104 @@ async function build() {
     }).join("\n") + "\n";
   write("llms.txt", llms);
 
-  const { BUSINESSES, AREAS, CATEGORIES } = require(path.join(SRC, "data/businesses.js"));
+  const { BUSINESSES, AREAS, CATEGORIES, isPublishedBusiness } = require(path.join(SRC, "data/businesses.js"));
   const bizByPath = {};
-  BUSINESSES.forEach(function (b) {
+  const heldBusinessPaths = new Set();
+  BUSINESSES.filter(isPublishedBusiness).forEach(function (b) {
     bizByPath["/" + b.category + "/" + b.slug + ".html"] = b;
   });
+  BUSINESSES.filter(function (b) { return !isPublishedBusiness(b); }).forEach(function (b) {
+    heldBusinessPaths.add("/" + b.category + "/" + b.slug + ".html");
+  });
 
-  const GUIDE_KEYWORDS = {
-    "/bring-pet-to-thailand/": "import pet thailand DLD permit microchip rabies titer health certificate",
-    "/bring-pet-to-thailand/checklist.html": "import pet thailand checklist timeline printable steps",
-    "/bring-pet-to-thailand/import-permit-thailand-dld.html": "R1/1 import permit quarantine station AQS",
-    "/bring-pet-to-thailand/u-tapao-airport-pets.html": "U-Tapao UTP Suvarnabhumi BKK Pattaya airport pet",
-    "/bring-pet-to-thailand/snub-nosed-breeds-flying.html": "brachycephalic flat faced pug bulldog persian airline cargo",
-    "/take-pet-out-of-thailand/": "export pet Thailand DLD export permit leave destination",
-    "/take-pet-out-of-thailand/checklist.html": "export pet Thailand checklist timeline printable steps departure",
-    "/pet-emergency/heatstroke.html": "heat stroke overheating hot dog cat emergency",
-    "/pet-emergency/choking.html": "choking airway blocked dog cat",
-    "/pet-emergency/venomous-creatures.html": "toad centipede bee sting scorpion poison",
-    "/pet-health-pattaya/dental-care.html": "dental teeth tartar gum disease clean Pattaya",
-    "/pet-health-pattaya/healthy-weight.html": "overweight obesity diet exercise heat Pattaya",
-    "/pet-health-pattaya/tick-borne-disease.html": "tick disease ehrlichia babesia anaplasmosis fever Pattaya",
-    "/adopt-a-pet-pattaya/fostering.html": "foster rescue temporary home",
-    "/adopt-a-pet-pattaya/how-to-help.html": "street dog cat donate volunteer rescue",
-    "/adopt-a-pet-pattaya/": "adopt rescue shelter dog cat Pattaya",
-    "/pet-insurance-thailand.html": "pet insurance cover vet bill Thailand",
-    "/dogs/": "dog owner puppy vaccination walk training",
-    "/cats/": "cat owner indoor balcony vaccination",
-    "/dog-friendly-pattaya/": "dog friendly beach cafe restaurant hotel condo walk",
-    "/owning-a-pet-in-pattaya/songkran-and-your-pet.html": "songkran water festival pet noise escape",
-    "/mobile-vets/": "home visit vet mobile house call",
-    "/bring-pet-to-thailand/from-uk.html": "import pet UK DEFRA APHA titer tapeworm Thailand",
-    "/take-pet-out-of-thailand/to-uk.html": "export pet UK APHA tapeworm Thailand",
-    "/owning-a-pet-in-pattaya/getting-to-the-vet.html": "getting pet to vet transport taxi no car Grab Bolt Pattaya",
-    "/owning-a-pet-in-pattaya/lost-pet-pattaya.html": "lost pet missing microchip chip Pattaya",
-    "/pet-emergency/pet-first-aid.html": "first aid injured pet calm carrier",
-    "/bring-pet-to-thailand/thailand-pet-quarantine.html": "quarantine AQS inspection arrival Thailand import",
-    "/bring-pet-to-thailand/from-eu.html": "import pet EU pet passport Thailand",
-    "/take-pet-out-of-thailand/to-australia.html": "export pet Australia DAFF quarantine",
-    "/start-here.html": "new pet owner Pattaya orientation emergency vet climate",
-    "/take-pet-out-of-thailand/export-process.html": "export pet Thailand DLD health certificate permit airport",
-    "/take-pet-out-of-thailand/export-permit-thailand-dld.html": "DLD export permit AQS form 1/1 Suvarnabhumi",
-    "/take-pet-out-of-thailand/cost-to-export-a-pet-from-thailand.html": "export pet cost budget flight titer agent",
-    "/pet-health-pattaya/parvovirus.html": "parvovirus puppy vaccination deadly virus",
-    "/owning-a-pet-in-pattaya/rainy-season-pet-care.html": "rainy season monsoon humidity skin ear flood",
-    "/owning-a-pet-in-pattaya/microchipping-your-pet.html": "microchip ISO lost pet registration import export",
-    "/bring-pet-to-thailand/cost-to-bring-a-pet-to-thailand.html": "import pet cost budget flight quarantine agent",
-    "/bring-pet-to-thailand/health-certificate.html": "health certificate vet export import fit to fly",
-    "/bring-pet-to-thailand/microchip-requirements.html": "ISO microchip 15 digit import export Thailand",
-    "/pet-emergency/road-accident.html": "hit by car vehicle injured pet transport vet",
-    "/pet-emergency/street-dog-encounters.html": "soi dog loose dog walk leash Pattaya",
-    "/pet-emergency/snake-bites.html": "snake bite venom Thailand cobra viper emergency",
-    "/owning-a-pet-in-pattaya/dog-registration-thailand.html": "dog registration rabies law Thailand license",
-    "/cats/cat-boarding-pattaya.html": "cat boarding cattery sitter travel Pattaya",
-    "/dogs/puppy-care-pattaya.html": "puppy vaccination socialise training heat Pattaya",
-    "/area/jomtien.html": "Jomtien pet owner beach dog walk vet",
-    "/area/naklua.html": "Naklua pet owner north Pattaya vet walk",
-    "/area/central-pattaya.html": "Central Pattaya pet owner condo vet emergency",
-    "/take-pet-out-of-thailand/to-usa.html": "export pet USA CDC dog import Thailand",
-    "/bring-pet-to-thailand/from-usa.html": "import pet USA CDC Thailand",
-    "/bring-pet-to-thailand/from-australia.html": "import pet Australia DAFF Thailand",
-    "/bring-pet-to-thailand/from-japan.html": "import pet Japan MAFF Thailand",
-    "/bring-pet-to-thailand/from-singapore.html": "import pet Singapore AVS Thailand",
-    "/bring-pet-to-thailand/from-uae.html": "import pet UAE MOCCAE Dubai Abu Dhabi Thailand",
-    "/pet-emergency/poisoning.html": "poison toad bait chocolate xylitol toxic",
-    "/pet-health-pattaya/heartworm.html": "heartworm mosquito prevention Thailand",
-    "/pet-health-pattaya/skin-and-ear-problems.html": "skin ear infection yeast hot humid",
-    "/owning-a-pet-in-pattaya/travelling-in-thailand.html": "domestic flight road trip pet hotel Thailand",
-    "/owning-a-pet-in-pattaya/senior-pet-care.html": "older pet elderly dog cat heat climate",
-    "/area/wongamat.html": "Wongamat pet owner condo beach north Pattaya",
-    "/area/pratumnak.html": "Pratumnak pet owner hill walk vet",
-    "/area/bang-saray.html": "Bang Saray pet owner quiet south coast",
-    "/area/sattahip.html": "Sattahip pet owner naval south Pattaya",
-    "/area/banglamung.html": "Banglamung East Pattaya pet owner house garden",
-    "/bring-pet-to-thailand/arrival-suvarnabhumi-airport.html": "Suvarnabhumi BKK airport AQS arrival quarantine",
-    "/bring-pet-to-thailand/airline-pet-policies.html": "airline cabin cargo hold pet crate IATA",
-    "/bring-pet-to-thailand/rabies-vaccination-titer-test.html": "rabies titer FAVN blood test waiting period",
-    "/take-pet-out-of-thailand/to-eu.html": "export pet EU titer three month wait Thailand",
-    "/take-pet-out-of-thailand/to-japan.html": "export pet Japan MAFF 180 day wait Thailand",
-    "/take-pet-out-of-thailand/to-canada.html": "export pet Canada CFIA Thailand",
-    "/take-pet-out-of-thailand/to-germany.html": "export pet Germany EU titer Thailand",
-    "/dog-friendly-pattaya/beaches.html": "dog beach Jomtien walk sand leash",
-    "/owning-a-pet-in-pattaya/fireworks-and-noise-anxiety.html": "fireworks thunder noise anxious pet escape",
-    "/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html": "pet sitter dog walker house sit Pattaya",
-    "/bring-pet-to-thailand/from-germany.html": "import pet Germany EU Thailand",
-    "/bring-pet-to-thailand/from-france.html": "import pet France EU Thailand",
-    "/bring-pet-to-thailand/from-netherlands.html": "import pet Netherlands EU Thailand",
-    "/bring-pet-to-thailand/from-sweden.html": "import pet Sweden EU Thailand",
-    "/bring-pet-to-thailand/from-norway.html": "import pet Norway EU Thailand",
-    "/bring-pet-to-thailand/from-denmark.html": "import pet Denmark EU Thailand",
-    "/bring-pet-to-thailand/from-finland.html": "import pet Finland EU Thailand",
-    "/bring-pet-to-thailand/from-switzerland.html": "import pet Switzerland FSVO Thailand",
-    "/bring-pet-to-thailand/from-ireland.html": "import pet Ireland EU Thailand",
-    "/bring-pet-to-thailand/from-new-zealand.html": "import pet New Zealand MPI Thailand",
-    "/take-pet-out-of-thailand/to-france.html": "export pet France EU titer Thailand",
-    "/take-pet-out-of-thailand/to-netherlands.html": "export pet Netherlands EU titer Thailand",
-    "/take-pet-out-of-thailand/to-sweden.html": "export pet Sweden EU titer Thailand",
-    "/take-pet-out-of-thailand/to-norway.html": "export pet Norway EU titer Thailand",
-    "/take-pet-out-of-thailand/to-denmark.html": "export pet Denmark EU titer Thailand",
-    "/take-pet-out-of-thailand/to-finland.html": "export pet Finland EU titer Thailand",
-    "/take-pet-out-of-thailand/to-switzerland.html": "export pet Switzerland FSVO Thailand",
-    "/take-pet-out-of-thailand/to-ireland.html": "export pet Ireland EU titer Thailand",
-    "/take-pet-out-of-thailand/to-new-zealand.html": "export pet New Zealand MPI quarantine Thailand",
-    "/bring-pet-to-thailand/from-canada.html": "import pet Canada CFIA Thailand",
-    "/take-pet-out-of-thailand/to-uae.html": "export pet UAE MOCCAE Thailand",
-    "/take-pet-out-of-thailand/to-singapore.html": "export pet Singapore AVS Thailand",
-    "/bring-pet-to-thailand/from-russia.html": "import pet Russia Thailand",
-    "/bring-pet-to-thailand/from-india.html": "import pet India AQCS Thailand",
-    "/bring-pet-to-thailand/from-philippines.html": "import pet Philippines BAI Thailand",
-    "/bring-pet-to-thailand/from-china.html": "import pet China GACC customs quarantine Thailand",
-    "/bring-pet-to-thailand/from-south-africa.html": "import pet South Africa DAFF Thailand",
-    "/take-pet-out-of-thailand/to-india.html": "export pet India AQCS Thailand",
-    "/take-pet-out-of-thailand/to-philippines.html": "export pet Philippines BAI Thailand",
-    "/take-pet-out-of-thailand/to-china.html": "export pet China customs quarantine Thailand",
-    "/take-pet-out-of-thailand/to-south-africa.html": "export pet South Africa DALRRD Thailand",
-    "/vets/thonglor-pet-hospital-pattaya.html": "Thonglor 24 hour emergency animal hospital Pattaya",
-    "/vets/north-pattaya-animal-hospital.html": "North Pattaya Naklua Wongamat animal hospital vet",
-    "/vets/animal-army-hospital.html": "Animal Army Na Jomtien vet hospital rescue",
-    "/vets/pattaya-veterinary-clinic.html": "Pattaya Veterinary Clinic Naklua vet",
-    "/vets/siam-country-pet-hospital.html": "Siam Country Pet Hospital East Pattaya Banglamung",
-    "/mobile-vets/mor-ja-pet-clinic-pattaya.html": "Mor Ja home visit mobile vet Nong Prue Pattaya",
-    "/mobile-vets/baan-mor-raksasat-animal-hospital-pattaya.html": "Baan Mor Raksasat home visit vet Khao Talo",
-    "/groomers/woof-pattaya.html": "Woof Pattaya dog cat grooming Nong Prue",
-    "/boarding/elite-dog-resort.html": "Elite Dog Resort Pratumnak boarding daycare spa",
-    "/boarding/pattaya-dog-stay.html": "Pattaya Dog Stay central boarding daycare pool",
-    "/pet-shops/peturday-pattaya.html": "Peturday Pratumnak pet shop food supplies",
-    "/trainers/k9-coach.html": "K9 Coach Bang Saray dog training board train English",
-    "/cats/indoor-vs-outdoor-cats.html": "indoor cat balcony outdoor street dog Pattaya",
-    "/cats/getting-a-cat-in-pattaya.html": "adopt kitten street cat Pattaya",
-    "/dogs/common-dog-health-issues-tropics.html": "skin ear tick disease hot humid dog",
-    "/dogs/choosing-a-dog-for-the-climate.html": "breed heat brachycephalic climate Pattaya",
-    "/owning-a-pet-in-pattaya/saying-goodbye.html": "end of life euthanasia pet goodbye",
-    "/pet-emergency/": "pet emergency heatstroke snake poison 24 hour vet Pattaya",
-    "/pet-emergency/ticks-and-fleas.html": "ticks fleas parasite prevention year round",
-    "/pet-emergency/24-hour-vets-pattaya.html": "24 hour emergency vet hospital open night",
-    "/owning-a-pet-in-pattaya/": "owning pet Pattaya cost housing walk registration",
-    "/owning-a-pet-in-pattaya/cost-of-owning-a-pet.html": "pet cost budget food vet grooming Pattaya",
-    "/owning-a-pet-in-pattaya/pet-friendly-housing.html": "pet friendly condo rent housing Pattaya",
-    "/dogs/dog-vaccinations-thailand.html": "dog vaccination rabies heartworm parasite Thailand",
-    "/cats/cat-vaccinations-thailand.html": "cat vaccination rabies FIV FeLV Thailand",
-    "/dog-friendly-pattaya/condos.html": "dog friendly condo rent pet policy Pattaya",
-    "/dog-friendly-pattaya/hotels.html": "dog friendly hotel stay Pattaya pet policy",
-    "/guides.html": "pet guides import export emergency owning adoption health",
-    "/directory.html": "pet directory vets groomers boarding Pattaya",
-    "/pet-health-pattaya/": "heartworm tick parvovirus skin ear dental spay neuter tropical health",
-    "/vets/": "vet clinic animal hospital emergency 24 hour Pattaya",
-    "/groomers/": "dog cat grooming bath clip nail de-shed Pattaya",
-    "/boarding/": "pet hotel kennel cattery daycare travel Pattaya",
-    "/pet-shops/": "pet food supplies litter toys Pattaya shop",
-    "/trainers/": "dog training obedience behaviour Pattaya",
-    "/take-pet-out-of-thailand/to-russia.html": "export pet Russia Thailand veterinary certificate",
-    "/pet-emergency/beach-and-sea-hazards.html": "beach jellyfish hot sand seawater pufferfish dog",
-    "/dog-friendly-pattaya/cafes.html": "dog friendly cafe coffee Pattaya pet policy",
-    "/dog-friendly-pattaya/restaurants.html": "dog friendly restaurant dining Pattaya",
-    "/dog-friendly-pattaya/parks.html": "dog park green space walk Pattaya",
-    "/owning-a-pet-in-pattaya/where-to-buy-pet-food.html": "pet food litter supermarket online delivery Pattaya",
-    "/owning-a-pet-in-pattaya/hot-climate-pet-care.html": "hot climate heat stroke walk timing Pattaya",
-    "/owning-a-pet-in-pattaya/where-to-walk-your-dog.html": "where walk dog Pattaya cool hours beach soi dog leash routine",
-    "/pet-health-pattaya/spaying-and-neutering.html": "neuter spay sterilisation street animals Pattaya",
-    "/pet-relocation/": "pet relocation import export agent DLD permit nationwide Thailand",
-    "/adopt-a-pet-pattaya/hope-for-strays.html": "Hope for Strays dog rescue East Pattaya adopt",
-    "/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html": "Dog Cat Rescue Pattaya shelter adopt",
-    "/adopt-a-pet-pattaya/animal-army-foundation.html": "Animal Army Foundation Na Jomtien rescue adopt",
-    "/adopt-a-pet-pattaya/pattaya-street-dogs-k9aid.html": "Pattaya Street Dogs K9aid rescue adopt",
-    "/adopt-a-pet-pattaya/soi-dog-foundation.html": "Soi Dog Foundation Thailand rescue adopt",
-    "/adopt-a-pet-pattaya/malees-animal-shelter.html": "Malee Animal Shelter Pattaya Chanthaburi adopt",
-    "/adopt-a-pet-pattaya/ady-g-second-chance-pattaya.html": "Ady G Second Chance disabled dog sanctuary Pattaya",
-    "/about.html": "about PattayaPets editorial directory independent TIMPAEMI",
-    "/standards.html": "editorial standards anonymous visit verdict method",
-    "/contact.html": "contact PattayaPets email corrections editorial hello",
-    "/corrections.html": "correction mistake report update factual error",
-    "/privacy.html": "privacy policy data analytics PattayaPets",
-    "/accessibility.html": "accessibility WCAG PattayaPets website",
-    "/masthead.html": "editorial standards masthead publisher TimPaemi ownership funding",
-    "/search.html": "search PattayaPets vets guides directory find",
-    "/sitemap.html": "sitemap all pages directory guides PattayaPets",
-    "/": "vet pattaya pet directory import bring dog Thailand guides honest",
-    "/bring-pet-to-thailand/bring-a-dog-to-thailand.html": "bring dog to Thailand DLD import permit microchip rabies",
-    "/bring-pet-to-thailand/bring-a-cat-to-thailand.html": "bring cat to Thailand DLD import permit microchip rabies",
-    "/vets/english-speaking-vets-pattaya.html": "english speaking vet Pattaya clinic hospital expat",
-    "/owning-a-pet-in-pattaya/vet-costs-pattaya.html": "vet costs prices consultation vaccination Pattaya budget",
-    "/groomers/dog-grooming-pattaya.html": "dog grooming bath clip nail Pattaya salon",
-    "/bring-pet-to-thailand/from-italy.html": "import pet Italy EU Rome Milan Thailand DLD",
-    "/bring-pet-to-thailand/from-malaysia.html": "import pet Malaysia ASEAN DVS Thailand DLD",
-    "/bring-pet-to-thailand/from-south-korea.html": "import pet South Korea APQA Seoul Thailand DLD",
-    "/take-pet-out-of-thailand/to-italy.html": "export pet Italy EU titer Thailand DLD",
-    "/take-pet-out-of-thailand/to-malaysia.html": "export pet Malaysia ASEAN Thailand DLD",
-    "/take-pet-out-of-thailand/to-south-korea.html": "export pet South Korea APQA Thailand DLD",
-    "/adopt-a-pet-pattaya/animal-shelters-pattaya.html": "animal shelter rescue adopt dog cat Pattaya Soi Dog",
-    "/owning-a-pet-in-pattaya/bangkok-to-pattaya-with-pet.html": "Bangkok to Pattaya pet travel taxi van bus pet friendly",
-    "/owning-a-pet-in-pattaya/pet-taxi-pattaya.html": "pet taxi transport vet airport Bangkok Pattaya carrier"
-  };
+  const { htmlToText } = require(path.join(SRC, "html-text.js"));
+  function compactSearchTerms(value) {
+    const words = htmlToText(value).toLowerCase()
+      .replace(/[^\p{L}\p{N}+.-]+/gu, " ").split(/\s+/).filter(Boolean);
+    return [...new Set(words)].slice(0, 700).join(" ");
+  }
 
-  const searchIndex = indexable.map(function (p) {
-    var d = p.description || "";
+  /* A retained verification-hold URL may remain indexable only by an explicit
+     search-policy decision. It must not be promoted by the site's own search. */
+  const searchIndex = indexable.filter(function (p) {
+    return !heldBusinessPaths.has(p.path);
+  }).map(function (p) {
+    var d = htmlToText(p.description || "");
+    var visibleAndApproved = htmlToText(p.body || "");
     var b = bizByPath[p.path];
     if (b) {
-      if (b.name) {
-        d += " " + b.name;
-        b.name.replace(/[^\w\s]/g, " ").split(/\s+/).forEach(function (w) {
-          if (w.length > 2) d += " " + w;
-        });
-      }
-      if (b.address) d += " " + b.address;
-      if (b.c24 && b.phone) d += " " + b.phone;
-      if (b.type) d += " " + b.type;
-      if (b.languages) d += " " + b.languages;
-      if (CATEGORIES[b.category]) d += " " + CATEGORIES[b.category].name;
-      if (b.summary) d += " " + b.summary;
-      if (b.services && b.services.length) d += " " + b.services.join(" ");
-      if (b.category === "pet-relocation") {
-        d += " nationwide Thailand pet import export relocation";
-      }
-      if (b.email) d += " " + b.email;
-      if (b.line) d += " LINE " + b.line;
-      else {
-        var em = (b.summary || "").match(/[\w.+-]+@[\w.-]+\.\w+/);
-        if (em) d += " " + em[0];
-      }
-      b.areas.forEach(function (ak) {
-        if (AREAS[ak]) d += " " + AREAS[ak].name;
-      });
-      d += " " + b.slug.replace(/-/g, " ");
-      if (b.c24) d += " 24 hour emergency open night";
-      var catKw = {
-        vets: " veterinarian clinic animal hospital Pattaya",
-        groomers: " dog cat grooming bath nail trim Pattaya",
-        boarding: " pet hotel kennel cattery daycare travel Pattaya",
-        "pet-shops": " pet food litter supplies toys shop Pattaya",
-        trainers: " dog training obedience behaviour puppy Pattaya",
-        "pet-relocation": " import export relocation agent DLD permit Thailand",
-        "mobile-vets": " home visit mobile vet house call Pattaya"
-      };
-      if (catKw[b.category]) d += catKw[b.category];
+      visibleAndApproved += " " + [
+        b.name,
+        b.type,
+        CATEGORIES[b.category] && CATEGORIES[b.category].name,
+        (b.services || []).join(" "),
+        b.addressLocality,
+        (b.serviceAreas || []).join(" "),
+        (b.areas || []).map(function (area) { return AREAS[area] && AREAS[area].name; }).filter(Boolean).join(" ")
+      ].filter(Boolean).join(" ");
     }
-    var gk = GUIDE_KEYWORDS[p.path];
-    if (gk) d += " " + gk;
     return {
       t: p.crumb || p.shortTitle || p.title,
       u: p.path,
-      k: kindOf(p.path),
-      d: d.replace(/\s+/g, " ").trim()
+      k: pageManifestByPath.get(p.path).kind,
+      d: d,
+      x: compactSearchTerms(visibleAndApproved)
     };
   });
   write("search-index.json", JSON.stringify(searchIndex));
   log("Search:     " + searchIndex.length + " pages indexed");
 
-  const version = crypto.createHash("sha1")
-    .update(cssMin + jsMin + criticalMin).digest("hex").slice(0, 12);
+  /* Every staged byte except the generated worker and manifest contributes to
+     the cache generation. A correction to any HTML page therefore invalidates
+     the old runtime cache even though regulated pages are never precached. */
+  const version = hashTree(OUT, new Set(["sw.js", "build-manifest.json"])).slice(0, 12);
+  const criticalFonts = CRITICAL_FONT_URLS.map(function (sourceUrl) {
+    if (!fontMap[sourceUrl]) throw new Error("Missing critical font asset: " + sourceUrl);
+    return fontMap[sourceUrl];
+  });
   const precache = [
-    "/", "/offline", "/start-here.html", "/directory.html", "/guides.html",
-    "/pet-emergency/", "/pet-emergency/24-hour-vets-pattaya.html",
-    "/pet-emergency/heatstroke.html", "/pet-emergency/choking.html",
-    "/pet-emergency/poisoning.html", "/pet-emergency/beach-and-sea-hazards.html",
-    "/bring-pet-to-thailand/", "/take-pet-out-of-thailand/",
-    "/take-pet-out-of-thailand/checklist.html",
-    "/take-pet-out-of-thailand/export-process.html",
-    "/take-pet-out-of-thailand/export-permit-thailand-dld.html",
-    "/take-pet-out-of-thailand/to-japan.html", "/take-pet-out-of-thailand/to-india.html",
-    "/take-pet-out-of-thailand/to-philippines.html", "/take-pet-out-of-thailand/to-china.html",
-    "/bring-pet-to-thailand/checklist.html",
-    "/bring-pet-to-thailand/import-permit-thailand-dld.html",
-    "/bring-pet-to-thailand/microchip-requirements.html",
-    "/bring-pet-to-thailand/health-certificate.html",
-    "/bring-pet-to-thailand/from-india.html", "/bring-pet-to-thailand/from-philippines.html",
-    "/bring-pet-to-thailand/from-uk.html", "/bring-pet-to-thailand/from-usa.html",
-    "/bring-pet-to-thailand/from-eu.html",
-    "/bring-pet-to-thailand/rabies-vaccination-titer-test.html",
-    "/bring-pet-to-thailand/airline-pet-policies.html",
-    "/take-pet-out-of-thailand/to-uk.html", "/take-pet-out-of-thailand/to-usa.html",
-    "/take-pet-out-of-thailand/to-eu.html",
-    "/pet-relocation/",
-    "/pet-health-pattaya/", "/vets/", "/groomers/", "/boarding/", "/pet-shops/",
-    "/trainers/", "/mobile-vets/", "/cats/", "/dogs/",
-    "/adopt-a-pet-pattaya/", "/dog-friendly-pattaya/", "/owning-a-pet-in-pattaya/",
-    "/owning-a-pet-in-pattaya/hot-climate-pet-care.html",
-    "/area/central-pattaya.html", "/area/jomtien.html", "/area/naklua.html",
-    "/search-index.json", cssHref, jsSrc,
+    "/", "/offline", cssHref, jsSrc,
     "/assets/img/favicon.svg", "/assets/img/og-default.png",
-    "/assets/img/og-import.png", "/assets/img/og-export.png", "/assets/img/og-health.png",
-    "/assets/img/og-owning.png", "/assets/img/og-dog-friendly.png",
-    "/assets/img/og-emergency.png", "/assets/img/og-adoption.png", "/assets/img/og-vets.png",
-    "/assets/img/og-cats.png", "/assets/img/og-dogs.png",
-    "/assets/img/og-guides.png", "/assets/img/og-relocation.png",
-    "/manifest.webmanifest",
-    "/assets/img/og-groomers.png", "/assets/img/og-boarding.png",
-    "/assets/img/og-pet-shops.png", "/assets/img/og-trainers.png",
-    "/assets/img/og-mobile-vets.png",
-    "/assets/fonts/hanken-400.woff2", "/assets/fonts/hanken-500.woff2",
-    "/assets/fonts/hanken-700.woff2", "/assets/fonts/bricolage-600.woff2",
-    "/assets/fonts/bricolage-700.woff2"
-  ];
+    "/manifest.webmanifest", "/build-manifest.json"
+  ].concat(criticalFonts);
+  const precacheFiles = {
+    "/": "index.html",
+    "/offline": "offline.html",
+    "/build-manifest.json": null
+  };
+  precache.forEach(function (url) {
+    const rel = Object.prototype.hasOwnProperty.call(precacheFiles, url) ? precacheFiles[url] : url.slice(1);
+    if (rel && !fs.existsSync(path.join(OUT, ...rel.split("/")))) {
+      throw new Error("Service-worker precache entry is missing from staged output: " + url);
+    }
+  });
   let swRaw = fs.readFileSync(path.join(SRC, "sw.js"), "utf8");
   swRaw = swRaw.replace("__VERSION__", version)
                .replace("__PRECACHE__", JSON.stringify(precache));
-  const swMin = (await minifyJs(swRaw)).code;
-  write("sw.js", swMin);
+  const swResult = await minifyJs(swRaw);
+  if (swResult.error || !swResult.code) throw new Error("Service-worker minification failed");
+  write("sw.js", swResult.code);
+
+  const manifest = makeBuildManifest(pageManifest, layout, version);
+  write("build-manifest.json", JSON.stringify(manifest, null, 2) + "\n");
+  validateBuildManifest(manifest);
 
   let total = 0;
-  walk(DIST).forEach(function (f) { total += fs.statSync(path.join(DIST, f)).size; });
+  walk(OUT).forEach(function (f) { total += fs.statSync(path.join(OUT, f)).size; });
+  if (process.env.NODE_ENV === "test" && process.env.PP_BUILD_FAILPOINT === "before-publish") {
+    throw new Error("Intentional build-containment test failure before publish");
+  }
+  publishStage();
   log("Sitemap:    " + indexable.length + " indexable URLs");
   log("Service worker: " + precache.length + " precached, version " + version);
-  log("Output:     " + DIST + "  (" + (total / 1024).toFixed(0) + " KB)");
+  log("Manifest:   " + manifest.routes.length + " routes, " + manifest.files.length + " files verified");
+  log("Output:     " + TARGET_DIST + "  (" + (total / 1024).toFixed(0) + " KB)");
   log("Done in " + (Date.now() - t0) + " ms\n");
 }
 
 build().catch(function (e) {
+  try { safeRemove(STAGE_DIST, [STAGE_DIST]); }
+  catch (cleanupError) { log("Staging cleanup failed: " + cleanupError.message); }
   log("\nBUILD FAILED: " + e.message + "\n");
   process.exit(1);
 });

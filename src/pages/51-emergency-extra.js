@@ -9,10 +9,10 @@ const CLUSTER = { name: "Pet emergencies", path: "/pet-emergency/" };
 const SUB = [GUIDES, CLUSTER];
 
 const NOTVET =
-  "PattayaPets is not a veterinary practice and this is not veterinary advice. " +
-  "In a genuine emergency, the right move is almost always the same: get your pet " +
-  "to a veterinarian as fast as safely possible. The information here is general " +
-  "orientation only.";
+  "No licensed veterinarian has clinically reviewed this page. It deliberately does " +
+  "not provide a treatment algorithm. In a current emergency, call a veterinary clinic " +
+  "now, follow its live instructions and travel as the clinic directs; do not delay care " +
+  "to keep reading.";
 
 function hazard(o) {
   return article({
@@ -38,7 +38,8 @@ const pages = [];
 /* ---------------- CHOKING ---------------- */
 pages.push(hazard({
   slug: "choking", crumb: "Choking",
-  title: "Pet Choking Pattaya | What to Do Before the Vet | PattayaPets",
+  updated: "2026-08-01",
+  title: "Pet Choking in Pattaya: Before the Vet | PattayaPets",
   desc: "Recognising choking and an airway blockage in a dog or cat, what to do, " +
     "what not to do, how to prevent it, and why urgent veterinary help matters.",
   h1: "If your pet is choking",
@@ -46,36 +47,24 @@ pages.push(hazard({
     "without delay, matters more than any single technique.",
   sections: [
     { h: "Recognising choking", html:
-      "<p>A choking pet is suddenly, obviously distressed. Watch for " +
-      "<strong>pawing at the mouth</strong>, gagging or retching, drooling, " +
-      "coughing, a panicked look, and gums that turn pale or blue. The most " +
-      "dangerous sign is a pet that is <strong>struggling silently and cannot " +
-      "draw breath</strong>, or that collapses. A pet that is coughing strongly " +
-      "is at least still moving air &mdash; the cough itself may shift the " +
-      "object.</p>" },
+      "<p>Sudden gagging, retching, drooling, pawing at the mouth, abnormal breathing, " +
+      "pale or blue gums, extreme distress or collapse may indicate an airway emergency. " +
+      "A webpage cannot distinguish choking from another breathing problem. Call a " +
+      "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">veterinary clinic</a> " +
+      "immediately and describe exactly what you see.</p>" },
     { h: "What to do, and what not to do", html:
-      "<p>Stay calm and act fast. If your pet is still breathing and coughing, let " +
-      "the cough work and get straight to a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">" +
-      "vet</a>, phoning ahead so they are ready. If you can <strong>clearly and " +
-      "easily see</strong> an object at the front of the mouth, you may be able to " +
-      "remove it gently &mdash; but do <strong>not</strong> blindly push your " +
-      "fingers down the throat: you risk pushing the object deeper, or being " +
-      "bitten by a panicking animal.</p>" +
-      "<p>If your pet cannot breathe and is collapsing, this is a dire emergency. " +
-      "Phone a 24-hour clinic the moment you are moving, and let a vet talk you " +
-      "through what to do. Techniques to dislodge an airway blockage exist, but " +
-      "they can injure a pet if done wrong &mdash; they are best attempted under a " +
-      "vet&rsquo;s direct guidance while you get to help.</p>" },
+      "<p>Call a 24-hour clinic immediately, arrange transport and follow the " +
+      "veterinary team&rsquo;s live, case-specific direction. Do not put fingers, tools, " +
+      "food, water or medicine into the animal&rsquo;s mouth, and do not attempt an " +
+      "airway manoeuvre from an online description unless the veterinarian speaking " +
+      "to you directs it.</p>" },
     { h: "On the way to the clinic", html:
-      "<p>Keep the airway as open as possible without poking. For a small dog, " +
-      "support the chest and keep the head slightly down if safe; for cats, a hard " +
-      "carrier prevents further panic in the car. Have someone phone the clinic while " +
-      "you drive &mdash; reception can prepare oxygen and staff.</p>" +
-      "<p>If breathing stops entirely, only attempt rescue breaths or chest compressions " +
-      "if a vet is guiding you live on the phone. The priority in Pattaya traffic is " +
-      "still reaching a hospital fast; see " +
+      "<p>Tell the clinic the animal&rsquo;s species, size, consciousness and breathing " +
+      "status, and follow its instructions for handling and transport. This page gives " +
+      "no head position, mouth-clearing, thrust, rescue-breath or compression method. " +
+      "For transport options, see " +
       "<a href=\"/owning-a-pet-in-pattaya/getting-to-the-vet.html\">getting your pet " +
-      "to the vet</a> for transport options.</p>" },
+      "to the vet</a>.</p>" },
     { h: "Preventing it", html:
       "<p>Most choking is preventable. Choose toys and balls too large to lodge in " +
       "the throat, supervise chews and take away small end-pieces, and keep these " +
@@ -85,9 +74,9 @@ pages.push(hazard({
       "<a href=\"/pet-emergency/poisoning.html\">poisoning hazards</a> for items " +
       "that can block or injure the airway.</p>" },
     { h: "After a choking scare", html:
-      "<p>Even when an object is cleared, have a vet check for <strong>scratches, " +
-      "swelling or leftover material</strong> in the mouth or throat. Oesophageal " +
-      "blockages can present hours later with drooling, retching or refusal to eat.</p>" +
+      "<p>If an apparent choking episode stops, call a veterinary clinic and describe " +
+      "what happened. The clinic can decide whether examination is needed; do not use " +
+      "the animal&rsquo;s apparent recovery as a substitute for that advice.</p>" +
       "<p>Swap risky chews for size-appropriate toys, and tell household members and " +
       "guests not to feed table scraps — especially bones from Thai street food. " +
       "If your pet repeats choking episodes, investigate underlying dental disease or " +
@@ -98,17 +87,17 @@ pages.push(hazard({
     ["How do I know if my pet is choking?",
      "<p>Sudden distress, pawing at the mouth, gagging, drooling, coughing and pale or blue gums. The most serious sign is silent struggling with no air moving, or collapse &mdash; treat that as a dire emergency.</p>"],
     ["Should I try to pull the object out?",
-     "<p>Only if you can clearly and easily see it at the front of the mouth. Never push fingers blindly down the throat &mdash; you can lodge the object deeper or be bitten. If your pet cannot breathe, phone a 24-hour vet immediately and follow their guidance while you get there.</p>"],
+     "<p>Do not put fingers or tools into the mouth based on this page. Call a 24-hour veterinary clinic immediately and follow its live, case-specific instructions.</p>"],
     ["How can I prevent choking?",
      "<p>Use toys and balls too big to lodge in the throat, supervise all chews, and keep bones, rawhide pieces, corn cobs, fruit stones and small objects out of reach. Size every chew and toy to your pet.</p>"],
     ["Can cats choke the same way as dogs?",
-     "<p>Yes — string, small toys and hair ties are common cat hazards. The same rule applies: get to a vet fast; only remove objects you can see easily at the mouth.</p>"],
+     "<p>Cats can have airway emergencies. Call a veterinary clinic immediately and follow its live instructions; do not attempt a mouth or airway manoeuvre from this page.</p>"],
     ["Should I try the Heimlich manoeuvre on my pet?",
-     "<p>Only under direct veterinary guidance on the phone while you travel to a clinic. Blind attempts can injure ribs or push an object deeper.</p>"],
+     "<p>This unreviewed page gives no thrust or airway technique. Call a veterinary clinic immediately and do only what its team directs for this animal.</p>"],
     ["What objects do Pattaya dogs choke on most?",
      "<p>Chicken bones from street food scraps, corn cobs, small balls, and children's toys dropped in sois. Supervise chews and keep bins secured on balconies.</p>"],
     ["My pet gagged but seems fine now — still see a vet?",
-     "<p>Yes if you suspect something was swallowed partially — oesophageal blockages can worsen hours later. When in doubt, a quick vet check is safer than waiting.</p>"]
+     "<p>Call a veterinary clinic, describe the episode and follow its advice on examination and urgency.</p>"]
   ],
   related: [
     { name: "Poisoning hazards", path: "/pet-emergency/poisoning.html", desc: "Swallowed toxins and objects." },
@@ -121,7 +110,8 @@ pages.push(hazard({
 /* ---------------- ROAD ACCIDENTS ---------------- */
 pages.push(hazard({
   slug: "road-accident", crumb: "Road accidents",
-  title: "Pet Hit by a Car Pattaya | Road Accident First Steps | PattayaPets",
+  updated: "2026-08-01",
+  title: "Pet Road Accident in Pattaya: First Steps | PattayaPets",
   desc: "What to do if your dog or cat is hit by a vehicle in Pattaya: staying " +
     "safe, moving an injured pet, and why a vet check is essential after a collision.",
   h1: "If your pet is hit by a vehicle",
@@ -134,16 +124,17 @@ pages.push(hazard({
       "it safely, signal traffic to slow or stop, and approach only when the road " +
       "is clear.</p>" },
     { h: "Approaching an injured pet", html:
-      "<p>Even the gentlest pet, in pain and shock, may bite or scratch without " +
-      "meaning to. Move slowly, speak in a low calm voice, and keep your face " +
-      "away from its mouth. A towel laid gently over a small pet can calm it and " +
-      "give you safer handling. Do not attempt to muzzle a pet that is vomiting or " +
-      "struggling to breathe.</p>" },
+      "<p>An injured animal may bite or scratch. From a safe position, call a " +
+      "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">veterinary clinic</a>, " +
+      "describe the animal&rsquo;s location, size, consciousness, breathing and visible " +
+      "injuries, and follow the clinic&rsquo;s handling instructions. This unreviewed " +
+      "page gives no restraint or muzzling method.</p>" },
     { h: "Moving it off the road", html:
-      "<p>Get your pet out of the traffic and somewhere quiet, moving it as little " +
-      "as possible in case of a spinal or internal injury. Support the whole body: " +
-      "slide a larger dog onto a board or a blanket used as a stretcher; carry a " +
-      "small pet supporting its body fully. Keep it warm, still and calm.</p>" },
+      "<p>Do not enter moving traffic. Call the veterinary clinic and, where needed, " +
+      "local emergency services for immediate scene safety. Species, size, " +
+      "consciousness, breathing and suspected injury change how an animal can be moved; " +
+      "follow live professional direction. This page deliberately gives no lifting, " +
+      "stretcher, spinal-positioning, pressure or restraint technique.</p>" },
     { h: "See a vet &mdash; even if it 'seems fine'", html:
       "<p>This is the part owners get wrong. After being hit, a pet can look " +
       "almost normal and still have <strong>serious hidden injuries</strong> " +
@@ -166,7 +157,7 @@ pages.push(hazard({
     ["My pet was hit but seems okay - does it still need a vet?",
      "<p>Yes. A pet can seem normal after being hit and still have internal bleeding, a bruised lung, a fracture or delayed shock. Any pet hit by a vehicle should be seen by a vet promptly, even without a visible wound.</p>"],
     ["How do I move an injured pet safely?",
-     "<p>Move it as little as possible. Support the whole body - slide a larger dog onto a board or blanket stretcher, carry a small pet supporting it fully - and keep it warm, still and calm. Approach slowly, as a hurt pet may bite in shock.</p>"],
+     "<p>Call the receiving veterinary clinic before handling the animal and follow its live instructions. This page gives no lifting, stretcher, spinal-positioning or restraint method.</p>"],
     ["How can I reduce the risk of a road accident?",
      "<p>Keep dogs leashed near traffic, secure gates and fences so pets cannot get loose, and keep your pet microchipped and wearing ID. Most road accidents start with a pet escaping.</p>"],
     ["My pet was hit but the driver left — what now?",
@@ -187,7 +178,8 @@ pages.push(hazard({
 /* ---------------- BEACH & SEA HAZARDS ---------------- */
 pages.push(hazard({
   slug: "beach-and-sea-hazards", crumb: "Beach & sea hazards",
-  title: "Beach & Sea Hazards for Pets Pattaya | Jellyfish, Hot Sand & Toxins | PattayaPets",
+  updated: "2026-08-01",
+  title: "Pattaya Beach Hazards for Dogs | PattayaPets",
   desc: "The specific risks of Pattaya's beaches for dogs: jellyfish, hot sand, " +
     "seawater, the tideline, currents, and caring for your dog after a beach trip.",
   h1: "Beach and sea hazards for pets",
@@ -198,11 +190,11 @@ pages.push(hazard({
       "<p>Thai coastal waters carry jellyfish, and the Gulf sees, seasonally, more " +
       "dangerous species. A sting is painful and can be serious. Keep your dog " +
       "from mouthing or rolling on jellyfish <strong>washed up on the sand</strong> " +
-      "&mdash; they can still sting after death. If your pet is stung, stop it " +
-      "licking the area, rinse with <strong>seawater</strong> (not fresh water, " +
-      "which can set off more stinging cells), do not rub, and watch closely. " +
-      "Swelling, breathing trouble, weakness or collapse is an emergency &mdash; " +
-      "get to a <a href=\"/pet-emergency/24-hour-vets-pattaya.html\">vet</a>.</p>" },
+      "&mdash; they can still sting after death. If contact may have occurred, keep " +
+      "people and pets away from the jellyfish and call a " +
+      "<a href=\"/pet-emergency/24-hour-vets-pattaya.html\">veterinary clinic</a> " +
+      "immediately. Follow its case-specific handling and travel instructions. This " +
+      "unreviewed page deliberately gives no rinsing, removal or treatment method.</p>" },
     { h: "Hot sand and sun", html:
       "<p>Midday sand burns paw pads exactly as hot pavement does, and the open " +
       "beach offers little shade. Walk in the <strong>cool hours</strong>, test the " +
@@ -234,9 +226,9 @@ pages.push(hazard({
     ["Is the beach safe for my dog?",
      "<p>Yes, with the basics: go in the cool hours, bring fresh water and shade, supervise around the water and the tideline, and rinse and dry your dog afterwards. The main hazards are heat, jellyfish, seawater and scavenged debris.</p>"],
     ["My dog drank seawater - should I worry?",
-     "<p>A small amount usually just causes an upset stomach. Drinking a lot can cause salt poisoning, which is serious. Offer fresh water, watch your dog, and see a vet if it becomes unwell, very thirsty, wobbly or vomits repeatedly.</p>"],
+     "<p>Seawater ingestion can be harmful, and a webpage cannot assess the amount or the animal. Call a veterinary clinic, describe what happened and follow its instructions; do not wait for symptoms if a large or unknown amount may have been swallowed.</p>"],
     ["What should I do if my dog is stung by a jellyfish?",
-     "<p>Stop it licking the area, rinse with seawater rather than fresh water, and do not rub the spot. Watch closely - swelling, breathing difficulty, weakness or collapse is an emergency. If in any doubt, see a vet.</p>"],
+     "<p>Keep people and pets away from the jellyfish and call a veterinary clinic immediately. Follow its handling and travel instructions; this page gives no rinsing, tentacle-removal or treatment technique.</p>"],
     ["Should I rinse my dog after every beach visit?",
      "<p>Yes — salt irritates skin and ears. A fresh-water rinse and thorough dry, especially of ears and paws, prevents many post-beach vet visits.</p>"],
     ["Are jellyfish worse at certain times of year?",

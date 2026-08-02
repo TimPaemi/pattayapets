@@ -17,9 +17,8 @@ const CRITICAL = [
   "/guides.html",
   "/bring-pet-to-thailand/",
   "/pet-emergency/24-hour-vets-pattaya.html",
-  "/assets/css/site.css",
-  "/assets/js/site.js",
   "/sw.js",
+  "/build-manifest.json",
   "/robots.txt",
   "/sitemap.xml",
   "/manifest.webmanifest",
@@ -126,10 +125,27 @@ async function pool(items, fn, n) {
   var urls = parseSitemap(sm.body);
   console.log("Sitemap URLs:", urls.length);
 
+  var criticalPaths = CRITICAL.slice();
+  try {
+    var manifestResponse = await fetch(BASE + "/build-manifest.json");
+    if (manifestResponse.status !== 200) throw new Error("status " + manifestResponse.status);
+    var manifest = JSON.parse(manifestResponse.body);
+    if (manifest.project !== "pattayapets" || manifest.site !== "https://pattayapets.com") {
+      throw new Error("project identity mismatch");
+    }
+    var releaseAssets = (manifest.files || []).map(function (item) { return item.path; })
+      .filter(function (file) { return /^assets\/(?:css|js)\/site\.[0-9a-f]{8,}\.(?:css|js)$/.test(file); });
+    if (releaseAssets.length !== 2) throw new Error("expected exactly one hashed CSS and JS release asset");
+    criticalPaths = criticalPaths.concat(releaseAssets.map(function (file) { return "/" + file; }));
+  } catch (error) {
+    console.error("FAIL build manifest:", error.message);
+    process.exit(1);
+  }
+
   /* critical assets first */
   console.log("\n--- Critical paths ---");
-  for (var ci = 0; ci < CRITICAL.length; ci++) {
-    var cp = CRITICAL[ci];
+  for (var ci = 0; ci < criticalPaths.length; ci++) {
+    var cp = criticalPaths[ci];
     try {
       var cr = await fetch(BASE + cp);
       var ok = cr.status === 200;

@@ -1,0 +1,1 @@
+{"expectedCode":"PAGE_REVIEW_DATE_MISMATCH","operations":[{"op":"set","path":["pages",0,"body"],"value":"<p>This page was last reviewed on 31 July 2026.</p><a href=\"https://authority.example.test/pet-rule\" data-claim-id=\"TEST-CLAIM-2026-07\">Source</a>"}]}

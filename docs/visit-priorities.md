@@ -1,73 +1,42 @@
-# Directory visit priorities — PattayaPets
+# Business field-verification priorities — PattayaPets
 
-Operator guide: which listings to visit first for maximum trust and SEO impact.
-Not deployed. Last updated: May 2026.
+**Reviewed:** 2026-08-01  
+**Scope:** private operator planning; not deployed
 
-All **32** current listings show **not yet reviewed**. This order balances homepage
-visibility, expat search demand, and visit practicality (one trip, several wins).
+This file does not certify that any business is open, local, available, 24-hour, English-speaking, or suitable. The approved business registry and dossier gate determine what may appear publicly. Generate the actual queue from unresolved registry fields at the time of planning; do not rely on a static business list here.
 
----
+## Prioritisation model
 
-## Tier 1 — Do these first (highest impact)
+Score candidates from current evidence only:
 
-| Priority | Business | Category | Why |
-| --- | --- | --- | --- |
-| 1 | Thonglor Pet Hospital - Pattaya | Vets | Homepage emergency block, 24h, Thonglor network brand, expat-facing international desk |
-| 2 | Vetazoo Animal & Exotic Pet Hospital | Vets | Homepage emergency block, 24h line, only exotic-capable hospital listed |
-| 3 | Pattaya Veterinary Clinic | Vets | Naklua institution, compact everyday clinic — strong local word-of-mouth category |
-| 4 | Pattaya City Pet Shop & Grooming Salon | Groomers | Has phone + website; central; combined shop/groomer = common expat need |
-| 5 | Pattaya Dog Stay | Boarding | Best fact sheet (address, phone, amenities); central; visible category |
+| Factor | Priority signal |
+|---|---|
+| Reader safety | A potentially publishable emergency or urgent-care fact needs direct verification |
+| Publication hold | A useful record is held because operating status, locality, or service scope is unresolved |
+| Contact privacy | A contact needs public-business/private-person classification and publication basis |
+| Evidence conflict | Current sources disagree on a material field such as hours or address |
+| Reader demand | Dated first-party query/page data shows an in-scope need |
+| Coverage value | The visit can resolve a real category or locality gap without implying quality |
+| Logistics | Multiple high-priority records can be checked safely in one route |
 
-**One-day route:** Thonglor → Vetazoo (Sukhumvit south) → Pattaya Vet Clinic (Naklua) → Pattaya City Grooming → Pattaya Dog Stay.
+Do not score brand recognition, advertising potential, or an unverified superlative as trust evidence.
 
----
+## Before a visit
 
-## Tier 2 — High value, next month
+- Start from the current HUMAN QUEUE and the approved field brief.
+- Record which facts need checking and which must not be collected or published.
+- Check conflicts, safety, accessibility, travel, privacy, and expense handling.
+- Keep the visit unannounced if the approved method requires it; do not misrepresent identity or purpose when asked directly.
+- Do not promise coverage, ranking, a verdict, or a correction outcome.
 
-| Priority | Business | Category | Why |
-| --- | --- | --- | --- |
-| 6 | Muang Ake Pet Hospital - Pattaya | Vets | 24h, homepage emergency list |
-| 7 | Pet Relocation Thailand | Relocation | Flagship import/export guides funnel here; high-intent searches |
-| 8 | Brand Dog - Pattaya Pet Supplies | Pet shops | Full address + hours; South Pattaya anchor |
-| 9 | Zoeta Dogsoul | Trainers | English-first positioning; behaviour queries |
-| 10 | K9 Coach | Trainers | 18-rai Bang Saray facility; English-speaking; also runs Pattaya Dog Hotel |
-| 11 | Elite Dog Resort | Boarding | Premium segment; Pratumnak expat hill |
+## Evidence handling
 
----
+Follow `docs/visit-delegate-kit/README.md`. Keep receipts, photographs, contact details, and notes private until reviewed. Record observation date, method, uncertainty, conflicts, publication basis, and opt-out state. A visit proves only what was directly observed at that time.
 
-## Tier 3 — Fill gaps when convenient
+## Editorial boundary
 
-| Priority | Business | Category | Why |
-| --- | --- | --- | --- |
-| 11 | Pattaya Animal Hospital | Vets | Central Pattaya clinic; visit confirms hours and English support |
-| 12 | Pattaya Community Pet Hospital | Vets | 24h but thin public data — visit verifies location/contact |
-| 13 | North Pattaya Animal Hospital | Vets | Naklua coverage gap |
-| 14 | Relo4Paws | Relocation | Second relocation opinion for comparison |
-| 15 | K9 Pattaya Dog Training School | Trainers | South Pattaya–Sattahip; large training ground |
-| 16 | Mor Ja Pet Clinic | Mobile vets | Publicly advertises home visits; Nong Prue |
-| 17 | Baan Mor Raksasat Animal Hospital | Mobile vets | Home visits + pet transport; verify on visit |
+A future experience verdict may cover approved non-clinical service factors only after the required first-hand record and conflict review. It must never assess veterinary diagnosis, treatment quality, clinical outcome, or medical skill. A field visit also does not prove ongoing hours, licensing, pricing, emergency capability, or English support beyond the observed evidence.
 
----
+## Completion
 
-## Tier 4 — Lower urgency
-
-Remaining groomers (FURiday, Furpet), pet shops (PetSmart, Peturday, Pattaya Pet Center), boarding (Pattaya Dog Hotel), trainers (K9 Pattaya), and relocation agents (United Pet Express, Asia Relocation, Pawspective).
-
-Many rely on Facebook-only contact — visits need appointment planning.
-
----
-
-## Visit checklist (every listing)
-
-1. Anonymous arrival — no PR, no announcement.
-2. Pay full bill yourself; keep receipt.
-3. Note: booking, English, pricing clarity, cleanliness, comfort.
-4. Do **not** verdict on clinical outcomes or medical skill.
-5. Add verdict + notes to `src/data/businesses.js`, rebuild, push.
-
----
-
-## Categories still thin
-
-- **Mobile vets** — young category; listings added from public sources; verify home-visit coverage on visit.
-- **Groomers / trainers** — several Facebook-only; facts sparse until visited.
+TIM approves the final publish/hold/reject decision. SOL updates the single approved business model and evidence record. LOOP runs the business, privacy, structured-data, auxiliary-output, and full-site gates. Deployment is a separate authorised operation.

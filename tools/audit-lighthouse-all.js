@@ -1,15 +1,25 @@
 "use strict";
 /* Mobile Lighthouse gate across PattayaPets page templates.
-   Requires: npm run build && npx serve dist -l 8787
+   Requires: npm run build and a trusted local server on 127.0.0.1:8787.
    Usage: npm run audit:lighthouse:all */
 const { spawnSync } = require("child_process");
 const fs = require("fs");
+const os = require("os");
 const path = require("path");
 
 const base = process.env.PP_LH_BASE || "http://127.0.0.1:8787";
 const minPerf = Number(process.env.PP_LH_MIN || 90);
-const minOther = Number(process.env.PP_LH_MIN_A11Y || 90);
-const outDir = path.join(__dirname, "..", "lighthouse-reports");
+const minOther = Number(process.env.PP_LH_MIN_A11Y || 95);
+if (![minPerf, minOther].every(function (value) {
+  return Number.isFinite(value) && value >= 0 && value <= 100;
+})) throw new Error("Lighthouse thresholds must be finite percentages from 0 to 100");
+const root = path.resolve(__dirname, "..");
+const cli = path.join(root, "node_modules", "lighthouse", "cli", "index.js");
+const outDir = fs.mkdtempSync(path.join(os.tmpdir(), "pattayapets-lighthouse-all-"));
+process.on("exit", function () { fs.rmSync(outDir, { recursive: true, force: true }); });
+const parsedBase = new URL(base);
+if (parsedBase.protocol !== "http:" || !["127.0.0.1", "localhost", "[::1]"].includes(parsedBase.hostname) ||
+    parsedBase.username || parsedBase.password) throw new Error("PP_LH_BASE must be an unauthenticated loopback HTTP URL");
 
 /* Utility pages intentionally noindex — skip SEO category threshold */
 const NOINDEX_SKIP_SEO = new Set([
@@ -55,13 +65,13 @@ const URLS = [
   { label: "Relocation hub", path: "/pet-relocation/" }
 ];
 
-function runLh(url, outFile, attempt) {
-  attempt = attempt || 1;
-  if (attempt > 1 && fs.existsSync(outFile)) fs.unlinkSync(outFile);
+function runLh(url, outFile) {
+  var chromeFlags = process.env.PP_CHROME_NO_SANDBOX === "1" ?
+    "--headless --disable-gpu --no-sandbox --disable-setuid-sandbox" : "--headless --disable-gpu";
   var r = spawnSync(
-    process.platform === "win32" ? "npx.cmd" : "npx",
+    process.execPath,
     [
-      "lighthouse", url,
+      cli, url,
       "--only-categories=performance,accessibility,best-practices,seo",
       "--form-factor=mobile",
       "--screenEmulation.mobile=true",
@@ -69,16 +79,17 @@ function runLh(url, outFile, attempt) {
       "--quiet",
       "--output=json",
       "--output-path=" + outFile,
-      "--chrome-flags=--headless --no-sandbox --disable-gpu"
+      "--chrome-flags=" + chromeFlags
     ],
-    { stdio: "pipe", shell: process.platform === "win32", encoding: "utf8" }
+    { stdio: "pipe", shell: false, encoding: "utf8", cwd: root }
   );
-  if (r.status === 0 && fs.existsSync(outFile)) return true;
-  if (attempt < 3) return runLh(url, outFile, attempt + 1);
-  return false;
+  return r.status === 0 && fs.existsSync(outFile);
 }
 
-if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
+if (!fs.existsSync(cli)) {
+  console.error("Locked Lighthouse CLI is missing. Run `npm ci` first.");
+  process.exit(1);
+}
 
 console.log("Lighthouse all-templates audit");
 console.log("Base:", base, "| min performance:", minPerf);
@@ -96,15 +107,12 @@ URLS.forEach(function (item, i) {
   var report = null;
   var scores = {};
   var skipSeo = NOINDEX_SKIP_SEO.has(item.path);
-  for (var attempt = 1; attempt <= 3; attempt++) {
-    if (!runLh(url, outFile)) continue;
+  if (runLh(url, outFile)) {
     report = JSON.parse(fs.readFileSync(outFile, "utf8"));
     scores = {};
     Object.keys(report.categories).forEach(function (k) {
       scores[k] = Math.round(report.categories[k].score * 100);
     });
-    var perfOk = (scores.performance || 0) >= minPerf;
-    if (perfOk || attempt === 3) break;
   }
   if (!report) {
     console.log("ERROR (lighthouse failed)");

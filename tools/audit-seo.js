@@ -57,7 +57,8 @@ if (issues.noH1.length) { ok = false; console.log("FAIL no H1:", issues.noH1.len
 if (issues.multiH1.length) { ok = false; console.log("FAIL multi H1:", issues.multiH1.length); }
 if (issues.noDesc.length) { ok = false; console.log("FAIL no description:", issues.noDesc.length); }
 if (issues.longTitle.length) {
-  console.log("WARN long titles (>60):", issues.longTitle.length);
+  ok = false;
+  console.log("FAIL long titles (>60):", issues.longTitle.length);
   issues.longTitle.sort(function (a, b) { return b.l - a.l; });
   issues.longTitle.slice(0, 15).forEach(function (x) { console.log(" ", x.l, x.p); });
 }

@@ -1,17 +1,35 @@
 "use strict";
 /* True mobile-emulation overflow check (real Chrome, 360/390/412px).
    Catches viewport bugs Lighthouse no longer scores (content-width).
-   Requires: npm run build && npx serve dist -l 8787
+   Requires: npm run build and a trusted loopback server on port 8787.
    Usage: npm run audit:mobile  (or: node tools/check-mobile-overflow.js [base-url]) */
+const fs = require("fs");
+const path = require("path");
 const puppeteer = require("puppeteer-core");
 
-const CHROME = process.env.PP_CHROME || "C:/Program Files/Google/Chrome/Application/chrome.exe";
 const BASE = process.argv[2] || "http://127.0.0.1:8787";
 const WIDTHS = [360, 390, 412];
 const PAGES = ["/", "/vets/", "/bring-pet-to-thailand/", "/vets/thonglor-pet-hospital-pattaya.html", "/directory.html"];
 
+function chromePath() {
+  const candidates = [
+    process.env.CHROME_PATH, process.env.PP_CHROME,
+    process.env.PROGRAMFILES && path.join(process.env.PROGRAMFILES, "Google", "Chrome", "Application", "chrome.exe"),
+    process.env.LOCALAPPDATA && path.join(process.env.LOCALAPPDATA, "Google", "Chrome", "Application", "chrome.exe"),
+    "/usr/bin/google-chrome", "/usr/bin/chromium", "/usr/bin/chromium-browser"
+  ].filter(Boolean);
+  const found = candidates.find(fs.existsSync);
+  if (!found) throw new Error("Chrome was not found; set CHROME_PATH");
+  return found;
+}
+
+const parsedBase = new URL(BASE);
+if (parsedBase.protocol !== "http:" || !["127.0.0.1", "localhost", "[::1]"].includes(parsedBase.hostname) ||
+    parsedBase.username || parsedBase.password) throw new Error("Mobile audit base must be an unauthenticated loopback HTTP URL");
+
 (async () => {
-  const browser = await puppeteer.launch({ executablePath: CHROME, headless: "new", args: ["--no-sandbox"] });
+  const args = process.env.PP_CHROME_NO_SANDBOX === "1" ? ["--no-sandbox", "--disable-setuid-sandbox"] : [];
+  const browser = await puppeteer.launch({ executablePath: chromePath(), headless: true, args: args });
   const page = await browser.newPage();
   let issues = 0;
 
@@ -50,4 +68,7 @@ const PAGES = ["/", "/vets/", "/bring-pet-to-thailand/", "/vets/thonglor-pet-hos
   await browser.close();
   console.log(issues ? "\nFAIL — " + issues + " page/width combos overflow" : "\nPASS — no horizontal overflow, menu reachable at all widths");
   process.exit(issues ? 1 : 0);
-})();
+})().catch(function (error) {
+  console.error("Mobile overflow audit failed: " + error.message);
+  process.exit(1);
+});

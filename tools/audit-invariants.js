@@ -36,6 +36,10 @@ const pub = (f) => "/" + path.relative(DIST, f).split(path.sep).join("/");
 const htmlFiles = walk(DIST).filter((f) => f.endsWith(".html"));
 const read = (f) => fs.readFileSync(f, "utf8");
 
+if (fs.existsSync(path.join(DIST, "pp-indexnow-key.txt"))) {
+  fail("S1.6/deploy", "raw pp-indexnow-key.txt helper is published; emit only the protocol key-named file");
+}
+
 if (!htmlFiles.length) {
   console.error("audit-invariants: dist/ is empty — run the build first.");
   process.exit(1);
@@ -183,9 +187,7 @@ const UTAPAO_BANNED = [
 }
 
 /* ---------- 8. Cache assertion (S2.6) ---------------------------------------
-   Anything served immutable for a year must be content-addressed. Fonts are the
-   one documented exception: the filename encodes family+weight and the bytes are
-   never edited in place — a new weight ships as a new filename. */
+   Anything served immutable for a year must be content-addressed, including fonts. */
 {
   const referenced = new Set();
   for (const f of htmlFiles.concat([path.join(DIST, "sw.js")]).filter(fs.existsSync)) {
@@ -193,23 +195,21 @@ const UTAPAO_BANNED = [
   }
   const hdrs = read(path.join(ROOT, "src/static/_headers"));
   const blocks = hdrs.split(/\n(?=\S)/);
-  const IMMUTABLE_OK = [/^\/assets\/fonts\//];
   let ok = true;
   for (const b of blocks) {
     if (!/immutable/i.test(b)) continue;
     const glob = b.split(/\r?\n/)[0].trim();
-    if (IMMUTABLE_OK.some((re) => re.test(glob))) continue;
     /* Judge what the built site actually references. Orphaned files from an earlier
        build are not a cache-correctness problem, and dist/ is wiped on each build. */
     const prefix = glob.replace(/\*$/, "");
     const unhashed = [...referenced].filter((u) => u.startsWith(prefix) &&
-      /\.(css|js)$/.test(u) && !/\.[0-9a-f]{8,}\.(css|js)$/.test(u));
+      /\.(css|js|woff2)$/.test(u) && !/\.[0-9a-f]{8,}\.(css|js|woff2)$/.test(u));
     if (unhashed.length) {
       fail("S2.6/cache", glob + " is served immutable but the site references unversioned file(s): " +
         unhashed.join(", ") + ". Content-hash them or drop immutable."); ok = false;
     }
   }
-  if (ok) pass("S2.6  every immutable asset rule covers content-hashed filenames (fonts excepted by design)");
+  if (ok) pass("S2.6  every immutable CSS, JavaScript and font reference is content-addressed");
 }
 
 /* ---------- 9. Directory schema assertion (S2.3) ----------------------------- */

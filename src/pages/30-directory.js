@@ -1,7 +1,7 @@
 "use strict";
 /* Directory generator: category hubs, area hubs and business listing pages. */
 
-const { CATEGORIES, AREAS, BUSINESSES } = require("../data/businesses.js");
+const { CATEGORIES, AREAS, BUSINESSES, isPublishedBusiness } = require("../data/businesses.js");
 const SITE = "https://pattayapets.com";
 const { AREA_GUIDE } = require("../data/areas-content.js");
 const { HUB_GUIDE } = require("../data/hub-content.js");
@@ -19,13 +19,57 @@ function esc(s) {
     .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 function bizUrl(b) { return "/" + b.category + "/" + b.slug + ".html"; }
-function areaName(k) { return AREAS[k] ? AREAS[k].name : "Pattaya"; }
+function areaName(k) { return AREAS[k] ? AREAS[k].name : "Area not verified"; }
 function firstSentence(t) { var m = t.match(/^.*?[.](\s|$)/); return m ? m[0].trim() : t; }
 
+function joinReadable(items) {
+  items = (items || []).filter(Boolean);
+  if (items.length < 2) return items.join("");
+  if (items.length === 2) return items[0] + " and " + items[1];
+  return items.slice(0, -1).join(", ") + ", and " + items[items.length - 1];
+}
+
+function serviceAreaLabel(b) {
+  if (b.serviceAreaNote) return b.serviceAreaNote;
+  if (b.areas && b.areas.length) return b.areas.map(areaName).join(", ");
+  if (b.serviceScope === "nationwide") return "Thailand-wide service";
+  if (b.serviceScope === "remote-only") return "Online / remote service";
+  if (b.serviceScope === "regional" && b.serviceAreas.length) {
+    return "Serves " + joinReadable(b.serviceAreas);
+  }
+  if (b.serviceScope === "local" && b.addressLocality) {
+    return b.addressLocality + " service";
+  }
+  return "Service area not verified";
+}
+
+function titleQualifier(b) {
+  if (b.serviceScope === "nationwide") return " serving Thailand";
+  if (b.serviceScope === "remote-only") return " online";
+  if (b.serviceScope === "regional" && b.addressLocality) return " in " + b.addressLocality;
+  if (b.addressLocality) return " in " + b.addressLocality;
+  return "";
+}
+
 function bizPageTitle(b, cat) {
+  if (!isPublishedBusiness(b)) return b.name + " | Verification Hold";
   var role = cat.one === "boarding provider" ? "boarding" : cat.one;
   role = role.replace(/\b[a-z]/g, function (c) { return c.toUpperCase(); });
-  return b.name + " | " + role + " in Pattaya | PattayaPets";
+  /* The business name already carries the entity identity. Keep the page title
+     descriptive without appending a second brand token that crowds out the local
+     qualifier in search results. */
+  var qualified = b.name + " | " + role + titleQualifier(b);
+  if (qualified.length <= 60) return qualified;
+  var local = b.name + titleQualifier(b);
+  return local.length <= 60 ? local : b.name;
+}
+
+function businessDescription(b) {
+  if (!isPublishedBusiness(b)) {
+    return clampDesc(b.name + " is retained as an unverified evidence lead. Current " +
+      "operation or the available public contact route has not met the publication threshold.");
+  }
+  return clampDesc(firstSentence(b.summary));
 }
 
 const HUB_OG = {
@@ -56,11 +100,11 @@ const HUB_H1 = {
 };
 
 const HUB_DESC = {
-  vets: "Vets and animal hospitals in Pattaya — 24-hour emergency care, vaccinations and surgery. Verified facts pages; verdicts after anonymous visits.",
-  groomers: "Dog and cat groomers in Pattaya — baths, breed clips, nail trims and heat-aware coat care. Verified facts pages; verdicts after anonymous visits.",
-  boarding: "Pet boarding, kennels and dog hotels in Pattaya for travel and work days. Compare daycare options. Verified facts pages; verdicts after anonymous visits.",
-  "pet-shops": "Pet shops in Pattaya for food, litter, toys and supplies for dogs, cats and household basics. Verified facts pages; verdicts after anonymous visits.",
-  trainers: "Dog trainers, obedience classes, puppy training and behaviour support for local owners in Pattaya. Verified facts pages; verdicts after anonymous visits.",
+  vets: "Vets and animal hospitals in Pattaya — 24-hour emergency care, vaccinations and surgery. Evidence status is shown per page; verdicts follow anonymous visits.",
+  groomers: "Dog and cat groomers in Pattaya — baths, breed clips, nail trims and heat-aware coat care. Evidence status is shown per page; verdicts follow anonymous visits.",
+  boarding: "Pet boarding, kennels and dog hotels in Pattaya for travel and work days. Compare daycare options and each page's evidence status.",
+  "pet-shops": "Pet shops in Pattaya for food, litter, toys and household supplies. Each page distinguishes sourced facts from a pending first-hand visit.",
+  trainers: "Dog trainers, obedience classes, puppy training and behaviour support. Local, regional and remote scope is stated on each page.",
   "pet-relocation": "Pet relocation agents for import and export to and from Thailand — DLD permits, health certificates and flights for moves to and from Thailand.",
   "mobile-vets": "Mobile and home-visit vets in Pattaya — useful for nervous pets and owners without a car. Coverage, fees and availability vary; confirm before booking."
 };
@@ -80,7 +124,7 @@ const CAT_GUIDES = {
   ],
   groomers: [
     { name: "Dog grooming in Pattaya", path: "/groomers/dog-grooming-pattaya.html" },
-    { name: "Doggie Star Grooming", path: "/groomers/doggie-star-grooming-pattaya.html" },
+    { name: "Pet shops & supplies", path: "/pet-shops/" },
     { name: "Mobile & home-visit vets", path: "/mobile-vets/" },
     { name: "Skin & ear problems", path: "/pet-health-pattaya/skin-and-ear-problems.html" },
     { name: "Dental care", path: "/pet-health-pattaya/dental-care.html" },
@@ -167,7 +211,7 @@ function bizGuidesSidebar(catKey) {
     }).join("") +
     "</ul>" +
     (cat
-      ? '<p style="margin:.65rem 0 0;font-size:.92rem"><a href="/' + cat.slug +
+      ? '<p class="sidebar-more-link"><a href="/' + cat.slug +
         '/#guides">All ' + esc(cat.name.toLowerCase()) + " guides &rarr;</a></p>"
       : "");
 }
@@ -322,36 +366,35 @@ function catCrossSection(key) {
 const AREA_MISSING_HINTS = {
   naklua: {
     groomers: "<a href=\"/groomers/furiday-pet-grooming.html\">FURiday</a> (Naklua) or " +
-      "<a href=\"/groomers/pattaya-city-pet-shop-grooming.html\">Pattaya City Grooming</a> (central)",
+      "<a href=\"/groomers/woof-pattaya.html\">Woof Pattaya</a> (Nong Prue)",
     boarding: "<a href=\"/boarding/pattaya-dog-stay.html\">Pattaya Dog Stay</a> (central) or " +
       "<a href=\"/boarding/elite-dog-resort.html\">Elite Dog Resort</a> (Pratumnak)",
     "pet-shops": "<a href=\"/pet-shops/pattaya-pet-center.html\">Pattaya Pet Center</a> (South Pattaya) or " +
       "the <a href=\"/pet-shops/\">pet shops directory</a>",
-    trainers: "<a href=\"/trainers/zoeta-dogsoul.html\">Zoeta Dogsoul</a> (confirm Pattaya coverage) or " +
+    trainers: "<a href=\"/trainers/k9-coach.html\">K9 Coach</a> (Bang Saray) or " +
       "the <a href=\"/trainers/\">trainers directory</a>",
     "mobile-vets": "the <a href=\"/mobile-vets/\">mobile vets directory</a> &mdash; mostly East Pattaya / Banglamung"
   },
   wongamat: {
     vets: "<a href=\"/vets/north-pattaya-animal-hospital.html\">North Pattaya Animal Hospital</a> " +
       "(Naklua/Wongamat) or <a href=\"/vets/pattaya-veterinary-clinic.html\">Pattaya Veterinary Clinic</a> (Naklua)",
-    groomers: "<a href=\"/groomers/pattaya-city-pet-shop-grooming.html\">Pattaya City Grooming</a> (central) or " +
+    groomers: "<a href=\"/groomers/furiday-pet-grooming.html\">FURiday</a> (Naklua) or " +
       "the <a href=\"/groomers/\">groomers directory</a>",
     "pet-shops": "<a href=\"/pet-shops/brand-dog-pattaya-pet-supplies.html\">Brand Dog</a> (South Pattaya) or " +
       "<a href=\"/pet-shops/peturday-pattaya.html\">Peturday</a> (Pratumnak)",
     boarding: "<a href=\"/boarding/elite-dog-resort.html\">Elite Dog Resort</a> (Pratumnak) or " +
       "<a href=\"/boarding/pattaya-dog-stay.html\">Pattaya Dog Stay</a> (central)",
-    trainers: "<a href=\"/trainers/zoeta-dogsoul.html\">Zoeta Dogsoul</a> or " +
+    trainers: "<a href=\"/trainers/k9-coach.html\">K9 Coach</a> (Bang Saray) or " +
       "the <a href=\"/trainers/\">trainers directory</a>",
     "mobile-vets": "the <a href=\"/mobile-vets/\">mobile vets directory</a> &mdash; East Pattaya listings"
   },
   pratumnak: {
     vets: "<a href=\"/vets/thonglor-pet-hospital-pattaya.html\">Thonglor Pet Hospital</a> " +
       "(central Pattaya, 24h) or <a href=\"/vets/north-pattaya-animal-hospital.html\">North Pattaya Animal Hospital</a> (Naklua)",
-    groomers: "<a href=\"/groomers/pattaya-city-pet-shop-grooming.html\">Pattaya City " +
-      "Grooming</a> (central) or <a href=\"/groomers/woof-pattaya.html\">Woof Pattaya</a> " +
-      "(Nong Prue)",
-    trainers: "<a href=\"/trainers/zoeta-dogsoul.html\">Zoeta Dogsoul</a> or " +
-      "<a href=\"/trainers/\">trainers directory</a>"
+    groomers: "<a href=\"/groomers/woof-pattaya.html\">Woof Pattaya</a> (Nong Prue) or " +
+      "<a href=\"/groomers/furiday-pet-grooming.html\">FURiday</a> (Naklua)",
+    trainers: "<a href=\"/trainers/k9-coach.html\">K9 Coach</a> (Bang Saray) or " +
+      "the <a href=\"/trainers/\">trainers directory</a>"
   },
   jomtien: {
     groomers: "Confirm current Jomtien coverage with salons in the <a href=\"/groomers/\">groomers directory</a>",
@@ -390,13 +433,12 @@ const AREA_MISSING_HINTS = {
   banglamung: {
     vets: "<a href=\"/vets/pattaya-community-pet-hospital.html\">Pattaya Community Pet Hospital</a> " +
       "(Nernplubwan, 24h) or <a href=\"/vets/siam-country-pet-hospital.html\">Siam Country Pet Hospital</a>",
-    groomers: "<a href=\"/groomers/furpet-grooming-and-hotel.html\">Furpet</a>, " +
-      "<a href=\"/groomers/jaijai-grooming.html\">Jaijai Grooming</a> or " +
+    groomers: "<a href=\"/groomers/jaijai-grooming.html\">Jaijai Grooming</a> or " +
       "<a href=\"/groomers/woof-pattaya.html\">Woof Pattaya</a>",
     boarding: "<a href=\"/boarding/pattaya-dog-stay.html\">Pattaya Dog Stay</a> (central) or " +
       "the <a href=\"/boarding/\">boarding directory</a>",
-    trainers: "<a href=\"/trainers/zoeta-dogsoul.html\">Zoeta Dogsoul</a> or " +
-      "<a href=\"/trainers/k9-coach.html\">K9 Coach</a> (Bang Saray)",
+    trainers: "<a href=\"/trainers/k9-coach.html\">K9 Coach</a> (Bang Saray) or " +
+      "<a href=\"/trainers/k9-pattaya-dog-training-school.html\">K9 Pattaya</a> (Huai Yai)",
     "mobile-vets": "<a href=\"/mobile-vets/baan-mor-raksasat-animal-hospital-pattaya.html\">Baan Mor Raksasat</a> or " +
       "the <a href=\"/mobile-vets/\">mobile vets directory</a>",
     "pet-shops": "<a href=\"/pet-shops/pattaya-pet-center.html\">Pattaya Pet Center</a> or " +
@@ -448,8 +490,8 @@ const MOBILE_VETS_INTRO =
   '<h2>Mobile vets in Pattaya</h2>' +
   '<p>Some Pattaya clinics offer home visits alongside their clinic work, and a ' +
   'smaller number focus on mobile care. Coverage area, availability and fees ' +
-  'vary, so confirm the details directly. PattayaPets will list a mobile vet as ' +
-  'a verified facts page, and publish an honest verdict only after an anonymous ' +
+  'vary, so confirm the details directly. PattayaPets shows the evidence status ' +
+  'on each page, and publishes an honest verdict only after an anonymous ' +
   'visit with the bill paid in full. In the meantime, see ' +
   '<a href="/owning-a-pet-in-pattaya/getting-to-the-vet.html">getting your pet ' +
   'to the vet</a>, the listed ' +
@@ -468,37 +510,48 @@ function fmtDate(iso) {
   return parseInt(p[2], 10) + " " + months[parseInt(p[1], 10) - 1] + " " + p[0];
 }
 
-function verdictPending() {
-  return '<div class="callout"><span class="verdict verdict-pending">Not yet reviewed</span>' +
-    "<p style=\"margin-top:.6rem\">This is a verified <strong>facts page</strong>. " +
-    "PattayaPets will publish an honest verdict &mdash; recommend, OK or avoid &mdash; " +
-    "only after an anonymous visit, with the bill paid in full. Facts here are " +
-    "compiled from public sources; please confirm current details with the business " +
-    "before travelling.</p></div>";
+function verdictPending(b) {
+  if (!isPublishedBusiness(b)) {
+    return '<div class="callout callout-note"><span class="verdict verdict-pending">' +
+      "Verification hold</span>" +
+      "<p class=\"verdict-copy\">This page is retained as an <strong>unverified " +
+      "evidence lead</strong>. Current operation or the available public contact route " +
+      "has not met the publication threshold. It is not a recommendation or a current " +
+      "verified listing; do not make a trip based on this page.</p></div>";
+  }
+  return '<div class="callout"><span class="verdict verdict-pending">Facts page &mdash; visit pending</span>' +
+    "<p class=\"verdict-copy\">This is a source-checked <strong>facts page</strong>, " +
+    "not a first-hand review. PattayaPets will publish a verdict &mdash; recommend, OK " +
+    "or avoid &mdash; only after a documented anonymous visit with the bill paid in " +
+    "full. Some details can change; confirm current details before travelling.</p></div>";
 }
 
 function verdictBlock(b) {
-  if (b.verdict && b.review) {
+  if (isPublishedBusiness(b) && b.verdict && b.review) {
     var label = VERDICT_LABELS[b.verdict] || b.verdict;
     return '<div class="callout"><span class="verdict verdict-' + esc(b.verdict) + '">' +
       esc(label) + "</span>" +
-      '<p style="margin-top:.6rem">' + esc(b.review) + "</p>" +
-      (b.reviewed ? '<p class="updated" style="margin-top:.8rem">Reviewed ' +
+      '<p class="verdict-copy">' + esc(b.review) + "</p>" +
+      (b.reviewed ? '<p class="updated verdict-reviewed">Reviewed ' +
         fmtDate(b.reviewed) + "</p>" : "") +
       "</div>";
   }
-  return verdictPending();
+  return verdictPending(b);
 }
 
 function verdictBadge(b) {
-  if (b.verdict && b.review) {
+  if (isPublishedBusiness(b) && b.verdict && b.review) {
     var label = VERDICT_LABELS[b.verdict] || b.verdict;
     return '<span class="verdict verdict-' + esc(b.verdict) + '">' + esc(label) + "</span>";
   }
-  return '<span class="verdict verdict-pending">Not yet reviewed</span>';
+  if (!isPublishedBusiness(b)) {
+    return '<span class="verdict verdict-pending">Verification hold</span>';
+  }
+  return '<span class="verdict verdict-pending">Facts page &mdash; visit pending</span>';
 }
 
 function contactChip(b) {
+  if (!isPublishedBusiness(b)) return "";
   if (b.phone && b.tel) {
     return '<a class="chip chip-link" href="tel:' + b.tel + '">' + esc(b.phone) + "</a>";
   }
@@ -509,12 +562,13 @@ function contactChip(b) {
   if (b.line) return '<span class="chip">LINE ' + esc("@" + String(b.line).replace(/^@/, "")) + "</span>";
   if (b.website) {
     return '<a class="chip chip-link" href="' + b.website +
-      '" target="_blank" rel="noopener nofollow">Website</a>';
+      '" target="_blank" rel="noopener">Website</a>';
   }
   return "";
 }
 
 function bizContactActions(b) {
+  if (!isPublishedBusiness(b)) return "";
   var parts = [];
   if (b.phone && b.tel) {
     var cls = b.c24 ? "btn btn-alert" : "btn btn-primary";
@@ -526,7 +580,7 @@ function bizContactActions(b) {
   }
   if (b.website) {
     parts.push('<a class="btn btn-ghost" href="' + b.website +
-      '" target="_blank" rel="noopener nofollow">Official website</a>');
+      '" target="_blank" rel="noopener">Official website</a>');
   }
   if (!parts.length) return "";
   return '<div class="listing-contact-bar listing-contact-bar--sticky">' +
@@ -536,6 +590,7 @@ function bizContactActions(b) {
 
 function contactRows(b) {
   var rows = [];
+  if (!isPublishedBusiness(b)) return rows;
   if (b.phone && b.tel) {
     rows.push(["Phone", '<a href="tel:' + b.tel + '">' + esc(b.phone) + "</a>"]);
   }
@@ -557,9 +612,13 @@ function bizDirTags(b) {
   if (b.c24) tags.push("24h");
   if (b.areas.length) {
     b.areas.forEach(function (a) { tags.push("area:" + a); });
-  } else {
-    tags.push("nationwide");
   }
+  if (b.serviceScope === "nationwide") {
+    tags.push("nationwide");
+  } else if (b.serviceScope) {
+    tags.push("scope:" + b.serviceScope);
+  }
+  if (!isPublishedBusiness(b)) tags.push("verification-hold");
   return tags.join(" ");
 }
 
@@ -573,7 +632,7 @@ function areaHubQuickBar(areaKey) {
     '<a class="chip chip-link" href="/pet-health-pattaya/">Pet health</a>' +
     '<a class="chip chip-link" href="/dog-friendly-pattaya/">Dog-friendly</a>' +
     '<a class="chip chip-link" href="/start-here.html">Start here</a>';
-  return '<details class="corridor-panel hub-quick-panel hub-quick-links" style="margin-top:1.1rem">' +
+  return '<details class="corridor-panel hub-quick-panel hub-quick-links">' +
     '<summary class="corridor-panel__title">Jump to</summary>' +
     '<div class="corridor-panel__body chips">' + chips + "</div></details>";
 }
@@ -654,7 +713,7 @@ function dirFiltersPanel(list, areaKeys, catKey) {
 }
 
 function bizCard(b) {
-  var areas = b.areas.length ? b.areas.map(areaName).join(", ") : "Serves all Thailand";
+  var areas = serviceAreaLabel(b);
   return '<article class="biz-card" data-dir-tags="' + esc(bizDirTags(b)) + '" data-dir-cat="' +
     esc(b.category) + '"><div class="biz-top">' +
     "<div><h3><a href=\"" + bizUrl(b) + "\">" + esc(b.name) + "</a></h3>" +
@@ -667,23 +726,40 @@ function bizCard(b) {
 
 function factsTable(b) {
   var rows = [];
-  rows.push(["Type", esc(b.type)]);
-  rows.push(["Area", b.areas.length ? b.areas.map(function (k) {
+  rows.push(["Evidence status", isPublishedBusiness(b)
+    ? "Source-checked facts; first-hand visit pending"
+    : "Verification hold &mdash; current operation or contact route not sufficiently confirmed"]);
+  rows.push([isPublishedBusiness(b) ? "Type" : "Reported type", esc(b.type)]);
+  rows.push(["Service area", b.areas.length ? b.areas.map(function (k) {
     return '<a href="/area/' + k + '.html">' + esc(areaName(k)) + "</a>";
-  }).join(", ") : "Serves all of Thailand"]);
+  }).join(", ") : esc(serviceAreaLabel(b))]);
+  if (!isPublishedBusiness(b)) {
+    if (b.address) {
+      rows.push(["Last sourced address", esc(b.address) +
+        "<br><small>Current operation at this address is not confirmed.</small>"]);
+    }
+    rows.push(["Contact", (!b.phone && !b.website
+      ? "PattayaPets has not been able to confirm a contact route. "
+      : "") + "Contact actions are withheld while this record is on verification hold."]);
+    return '<div class="table-wrap"><table class="facts-table">' +
+      '<caption class="visually-hidden">Evidence record for ' + esc(b.name) + "</caption><tbody>" +
+      rows.map(function (r) {
+        return "<tr><th scope=\"row\">" + r[0] + "</th><td>" + r[1] + "</td></tr>";
+      }).join("") + "</tbody></table></div>";
+  }
   if (b.c24) rows.push(["Hours", "<strong>Open 24 hours</strong>"]);
   else if (b.hours) rows.push(["Hours", esc(b.hours)]);
   if (b.address) rows.push(["Address", esc(b.address)]);
   var contacts = contactRows(b);
   contacts.forEach(function (r) { rows.push(r); });
   if (b.website) rows.push(["Website",
-    '<a href="' + b.website + '" target="_blank" rel="noopener nofollow">Official site</a>']);
+    '<a href="' + b.website + '" target="_blank" rel="noopener">Official site</a>']);
   if (!contacts.length && !b.website) {
     rows.push(["Contact", "No verified public phone, website or hours. PattayaPets has not been " +
       "able to confirm a contact route for this business, so do not count on reaching it &mdash; " +
       "especially in an emergency."]);
   }
-  rows.push(["Languages", esc(b.languages)]);
+  if (b.languages) rows.push(["Languages", esc(b.languages)]);
   return '<div class="table-wrap"><table class="facts-table">' +
     '<caption class="visually-hidden">Key facts for ' + esc(b.name) + "</caption><tbody>" +
     rows.map(function (r) {
@@ -701,21 +777,37 @@ function markThai(s) {
 }
 
 function bizSchema(b) {
+  if (!isPublishedBusiness(b)) return null;
   var cat = CATEGORIES[b.category];
   var s = {
     "@type": cat.schemaType,
     "@id": SITE + bizUrl(b) + "#business",
     name: b.name,
-    url: SITE + bizUrl(b),
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Pattaya",
-      addressRegion: "Chon Buri",
-      addressCountry: "TH"
-    },
-    areaServed: { "@type": "City", name: "Pattaya" }
+    url: SITE + bizUrl(b)
   };
-  if (b.address) s.address.streetAddress = b.address;
+  if (b.address && b.addressLocality && b.addressCountry) {
+    s.address = {
+      "@type": "PostalAddress",
+      streetAddress: b.address,
+      addressLocality: b.addressLocality,
+      addressCountry: b.addressCountry
+    };
+    if (b.addressRegion) s.address.addressRegion = b.addressRegion;
+  }
+  if (b.serviceScope === "nationwide") {
+    s.areaServed = { "@type": "Country", name: "Thailand" };
+  } else if (b.serviceScope === "regional" && b.serviceAreas.length) {
+    s.areaServed = b.serviceAreas.map(function (name) {
+      return { "@type": "City", name: name };
+    });
+  } else if (b.serviceScope === "local") {
+    var localAreas = b.areas.length ? b.areas.map(areaName) : b.serviceAreas;
+    if (localAreas.length) {
+      s.areaServed = localAreas.map(function (name) {
+        return { "@type": "AdministrativeArea", name: name };
+      });
+    }
+  }
   if (b.c24 && b.tel) s.telephone = b.tel;
   if (b.website) s.sameAs = [b.website];
   if (b.c24) s.openingHours = "Mo-Su 00:00-23:59";
@@ -724,47 +816,50 @@ function bizSchema(b) {
 
 const pages = [];
 
-const FACTS_UPDATED = "2026-05-31";
-
 /* ---- business listing pages ---- */
 BUSINESSES.forEach(function (b) {
   var cat = CATEGORIES[b.category];
   var siblings = BUSINESSES.filter(function (x) {
-    return x.category === b.category && x.slug !== b.slug;
+    return x.category === b.category && x.slug !== b.slug && isPublishedBusiness(x);
   }).slice(0, 4);
   var primaryArea = b.areas[0];
+  var businessSchema = bizSchema(b);
 
   var body =
     '<section class="section"><div class="container"><div class="page-grid"><div>' +
     '<p class="eyebrow">' + esc(cat.name) + "</p>" +
     "<h1>" + esc(b.name) + "</h1>" +
-    '<p class="biz-sub" style="font-size:1rem">' + esc(b.type) +
-    (primaryArea
-      ? " &middot; " + esc(areaName(primaryArea)) +
-        (areaName(primaryArea).indexOf("Pattaya") === -1 ? ", Pattaya" : "")
-      : " &middot; serves all Thailand") +
-    (b.c24 ? ' &middot; <strong style="color:var(--alert)">open 24 hours</strong>' : "") +
+    '<p class="biz-sub biz-sub--listing">' + esc(b.type) +
+    " &middot; " + esc(serviceAreaLabel(b)) +
+    (isPublishedBusiness(b) && b.c24
+      ? ' &middot; <strong class="listing-24h">open 24 hours</strong>' : "") +
     "</p>" +
     verdictBlock(b) +
     bizContactActions(b) +
-    "<p class=\"lede\">" + markThai(esc(b.summary)) + "</p>" +
-    "<h2>The facts</h2>" +
+    (isPublishedBusiness(b)
+      ? "<p class=\"lede\">" + markThai(esc(b.summary)) + "</p>"
+      : "<h2>Why this record is held</h2><p>" + markThai(esc(b.summary)) + "</p>") +
+    "<h2>" + (isPublishedBusiness(b) ? "The facts" : "Evidence record") + "</h2>" +
     factsTable(b) +
-    "<h2>Services</h2>" +
-    '<div class="chips">' + b.services.map(function (s) {
-      return '<span class="chip">' + esc(s) + "</span>";
-    }).join("") + "</div>" +
-    '<div class="callout callout-note"><div class="ch">What our verdict will cover</div>' +
-    "<p>When PattayaPets visits, the verdict will describe the <strong>business " +
-    "experience only</strong>: how easy it is to book and communicate, whether " +
-    "staff speak English, billing transparency, cleanliness and comfort. We do " +
-    "not, and will not, rate veterinary medical quality.</p></div>" +
-    (b.category === "vets" || b.category === "mobile-vets"
+    (isPublishedBusiness(b)
+      ? "<h2>Services</h2>" +
+        '<div class="chips">' + b.services.map(function (s) {
+          return '<span class="chip">' + esc(s) + "</span>";
+        }).join("") + "</div>" +
+        '<div class="callout callout-note"><div class="ch">What a future verdict will cover</div>' +
+        "<p>After a documented PattayaPets visit, a verdict may describe the <strong>business " +
+        "experience only</strong>: booking and communication, billing transparency, " +
+        "cleanliness and comfort. PattayaPets does not rate veterinary medical quality.</p></div>"
+      : "<h2>Reported services</h2>" +
+        '<div class="callout callout-note"><p>Service claims are withheld while this record is ' +
+        "on verification hold. The dossier is retained for follow-up, not presented as a " +
+        "current service menu.</p></div>") +
+    (isPublishedBusiness(b) && (b.category === "vets" || b.category === "mobile-vets")
       ? '<div class="callout callout-emergency"><div class="ch">In an emergency</div><p>If your ' +
         "pet needs urgent help, do not wait for opening hours &mdash; see our list of " +
         '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in ' +
         "Pattaya</a>.</p></div>"
-      : b.category === "groomers"
+      : isPublishedBusiness(b) && b.category === "groomers"
       ? (b.type.toLowerCase().indexOf("mobile") !== -1
         ? '<div class="callout callout-note"><div class="ch">Mobile grooming</div><p>The van comes to your address &mdash; confirm parking access, service zone and any travel surcharge when booking. Humidity drives ' +
           '<a href="/pet-health-pattaya/skin-and-ear-problems.html">skin and ear problems</a> here &mdash; ' +
@@ -772,28 +867,28 @@ BUSINESSES.forEach(function (b) {
         : '<div class="callout callout-note"><div class="ch">Skin &amp; ears in the heat</div><p>Humidity drives ' +
           '<a href="/pet-health-pattaya/skin-and-ear-problems.html">skin and ear problems</a> here &mdash; ' +
           "a groomer who spots early signs is worth keeping.</p></div>")
-      : b.category === "pet-relocation"
+      : isPublishedBusiness(b) && b.category === "pet-relocation"
       ? '<div class="callout callout-note"><div class="ch">Import &amp; export guides</div><p>See our guides to ' +
         '<a href="/bring-pet-to-thailand/">bringing a pet to Thailand</a>, the ' +
         '<a href="/take-pet-out-of-thailand/export-process.html">export process</a>, ' +
         '<a href="/bring-pet-to-thailand/import-permit-thailand-dld.html">DLD import permit</a>, ' +
         '<a href="/bring-pet-to-thailand/airline-pet-policies.html">airline pet policies</a>, ' +
         'and the <a href="/bring-pet-to-thailand/checklist.html">import checklist</a>.</p></div>'
-      : b.category === "boarding"
+      : isPublishedBusiness(b) && b.category === "boarding"
       ? '<div class="callout callout-note"><div class="ch">Alternatives to boarding</div><p>Cats especially may ' +
         "do better with an " +
         '<a href="/owning-a-pet-in-pattaya/pet-sitters-and-dog-walkers.html">in-home pet sitter</a>. ' +
         'See also <a href="/cats/cat-boarding-pattaya.html">cat boarding and sitters</a>. ' +
         'Moving internationally? See <a href="/bring-pet-to-thailand/">bringing a pet to Thailand</a>.</p></div>'
-      : b.category === "pet-shops"
+      : isPublishedBusiness(b) && b.category === "pet-shops"
       ? '<div class="callout callout-note"><div class="ch">Supplies &amp; ID</div><p>See ' +
         '<a href="/owning-a-pet-in-pattaya/where-to-buy-pet-food.html">where to buy pet food</a> and ' +
         '<a href="/owning-a-pet-in-pattaya/microchipping-your-pet.html">microchipping your pet</a>.</p></div>'
-      : b.category === "trainers"
+      : isPublishedBusiness(b) && b.category === "trainers"
       ? '<div class="callout callout-note"><div class="ch">Training &amp; walks</div><p>Starting early? See ' +
         '<a href="/dogs/puppy-care-pattaya.html">puppy care in Pattaya</a> and ' +
         '<a href="/pet-emergency/street-dog-encounters.html">street-dog encounters</a>.</p></div>'
-      : b.category === "mobile-vets"
+      : isPublishedBusiness(b) && b.category === "mobile-vets"
       ? '<div class="callout callout-note"><div class="ch">When a clinic is still needed</div><p>Home visits suit routine care; emergencies and surgery still mean a ' +
         '<a href="/pet-emergency/24-hour-vets-pattaya.html">24-hour animal hospital</a>.</p></div>'
       : "") +
@@ -801,39 +896,46 @@ BUSINESSES.forEach(function (b) {
     "PattayaPets is not a veterinary practice and does not give veterinary advice. " +
     "This listing describes a business, not medical quality. Always consult a " +
     "qualified veterinarian.</div>" +
-    '<p class="notice" style="margin-top:1.2rem">Wrong phone, closed, or moved? ' +
+    '<p class="notice listing-correction">Wrong phone, closed, or moved? ' +
     '<a href="/corrections.html">Tell us on the corrections page</a> &mdash; we update facts when we can verify them.</p>' +
-    '<p class="updated">' + (b.reviewed ? "Reviewed " + fmtDate(b.reviewed) :
-      "Facts compiled " + fmtDate(FACTS_UPDATED)) + "</p>" +
+    '<p class="updated">' + (isPublishedBusiness(b) && b.reviewed
+      ? "Reviewed " + fmtDate(b.reviewed)
+      : "Dossier checked " + fmtDate(b.dossierCheckedAt)) + "</p>" +
     "</div>" +
     '<aside class="sidebar"><div class="card"><div class="ch">More ' + esc(cat.name.toLowerCase()) +
     "</div><ul class=\"toc\">" +
     siblings.map(function (s) {
       return '<li><a href="' + bizUrl(s) + '">' + esc(s.name) + "</a></li>";
     }).join("") +
-    '</ul><p style="margin:.8rem 0 0"><a href="/' + cat.slug + '/">All ' +
+    '</ul><p class="sidebar-more-link"><a href="/' + cat.slug + '/">All ' +
     esc(cat.name.toLowerCase()) + " &rarr;</a></p>" +
     (primaryArea
       ? '<hr><div class="ch">In this area</div><p><a href="/area/' + primaryArea + '.html">All pet ' +
         "services in " + esc(areaName(primaryArea)) + " &rarr;</a></p>"
       : "") +
     bizGuidesSidebar(b.category) +
-    sidebarLinkPanels(linkTopicForCategory(b.category), { internalLimit: 5, networkLimit: 4 }) +
+    sidebarLinkPanels(linkTopicForCategory(b.category), { internalLimit: 5 }) +
     "</div></aside>" +
     "</div></div></section>";
 
   pages.push({
     path: bizUrl(b),
     title: bizPageTitle(b, cat),
-    ogTitle: b.name + " - " + b.type + " in Pattaya",
-    description: clampDesc(firstSentence(b.summary)),
+    ogTitle: isPublishedBusiness(b)
+      ? b.name + " - " + b.type + titleQualifier(b)
+      : b.name + " - verification hold",
+    description: businessDescription(b),
     crumb: b.name,
     breadcrumbs: [
       { name: "Directory", path: "/directory.html" },
       { name: cat.name, path: "/" + cat.slug + "/" }
     ],
-    updated: FACTS_UPDATED,
-    schema: [bizSchema(b)],
+    updated: b.dossierCheckedAt,
+    schema: businessSchema ? [businessSchema] : [],
+    businessSlug: b.slug,
+    businessPublishState: b.publishState,
+    businessOperatingStatus: b.operatingStatus,
+    businessServiceScope: b.serviceScope,
     body: body
   });
 });
@@ -841,7 +943,15 @@ BUSINESSES.forEach(function (b) {
 /* ---- category hub pages ---- */
 Object.keys(CATEGORIES).forEach(function (key) {
   var cat = CATEGORIES[key];
-  var list = BUSINESSES.filter(function (b) { return b.category === key; });
+  var categoryBusinesses = BUSINESSES.filter(function (b) { return b.category === key; });
+  var list = categoryBusinesses.filter(function (b) {
+    return isPublishedBusiness(b) && (key === "pet-relocation" || b.areas.length > 0);
+  });
+  var outsideList = categoryBusinesses.filter(function (b) {
+    return isPublishedBusiness(b) && list.indexOf(b) === -1;
+  });
+  var heldList = categoryBusinesses.filter(function (b) { return !isPublishedBusiness(b); });
+  var schemaList = list.concat(outsideList);
   var areaKeys = Object.keys(AREAS).filter(function (ak) {
     return list.some(function (b) { return b.areas.indexOf(ak) !== -1; });
   });
@@ -870,19 +980,19 @@ Object.keys(CATEGORIES).forEach(function (key) {
     body += '<section class="section section-tint"><div class="container">' +
       '<div class="section-head"><h2>' + list.length + " listed " +
       (list.length === 1 ? cat.one : cat.one + "s") + "</h2>" +
-      "<p>Every listing is a verified facts page. Verdicts follow an anonymous " +
-      "visit.</p></div>" +
+      "<p>Each page identifies its source-backed facts and unresolved details. " +
+      "A verdict appears only after a documented anonymous visit.</p></div>" +
       '<div class="filters-sticky">' + dirFiltersPanel(list, areaKeys, key) + "</div>" +
       '<div class="grid grid-2 dir-listings" id="dir-listings">' + list.map(bizCard).join("") + "</div>";
     if (areaKeys.length) {
-      body += '<div class="section-head" style="margin-top:2rem" id="area"><h2>Browse by area</h2></div>' +
+      body += '<div class="section-head section-head--directory-spaced" id="area"><h2>Browse by area</h2></div>' +
         '<div class="chips">' + areaKeys.map(function (ak) {
           return '<a class="chip chip-link" href="/' + key + "/?filter=" +
             encodeURIComponent("area:" + ak) + '">' + esc(AREAS[ak].name) + "</a>";
         }).join("") + "</div>";
     }
     body += "</div></section>";
-  } else {
+  } else if (!outsideList.length && !heldList.length) {
     body += '<section class="section section-tint"><div class="container">' +
       '<div class="callout callout-note"><div class="ch">Listings are being added</div>' +
       "<p>PattayaPets is verifying " + esc(cat.one) + "s in Pattaya before " +
@@ -891,6 +1001,25 @@ Object.keys(CATEGORIES).forEach(function (key) {
       '<a href="/directory.html">full directory</a> or the ' +
       '<a href="/vets/">vets and animal hospitals</a>, several of which also ' +
       "offer related services.</p></div></div></section>";
+  }
+
+  if (outsideList.length) {
+    body += '<section class="section"><div class="container">' +
+      '<div class="section-head"><h2>Remote or outside Pattaya</h2>' +
+      '<p>These businesses remain useful to some readers, but their current verified scope ' +
+      'does not establish a Pattaya location or in-person Pattaya service. Their actual ' +
+      'scope is shown on each card.</p></div>' +
+      '<div class="grid grid-2">' + outsideList.map(bizCard).join("") + "</div></div></section>";
+  }
+
+  if (heldList.length) {
+    body += '<section class="section"><div class="container"><div class="callout callout-note">' +
+      '<div class="ch">Verification holds</div><p>These URLs are retained as evidence leads, ' +
+      'not current business recommendations. They have no contact actions or business schema.</p><ul>' +
+      heldList.map(function (b) {
+        return '<li><a href="' + bizUrl(b) + '">' + esc(b.name) +
+          '</a> &mdash; ' + esc(serviceAreaLabel(b)) + "</li>";
+      }).join("") + "</ul></div></div></section>";
   }
 
   if (HUB_GUIDE[key]) body += HUB_GUIDE[key];
@@ -906,15 +1035,15 @@ Object.keys(CATEGORIES).forEach(function (key) {
 
   /* Mirrors the visible listing cards above, in the same order. Names and URLs
      only — no Review or AggregateRating: there is no first-party rating corpus. */
-  var hubSchema = list.length ? [{
+  var hubSchema = schemaList.length ? [{
     "@type": "CollectionPage",
     name: HUB_TITLE[key] || cat.name,
     description: clampDesc(HUB_DESC[key] || cat.intro),
     url: SITE + "/" + cat.slug + "/",
     mainEntity: {
       "@type": "ItemList",
-      numberOfItems: list.length,
-      itemListElement: list.map(function (b, i) {
+      numberOfItems: schemaList.length,
+      itemListElement: schemaList.map(function (b, i) {
         return {
           "@type": "ListItem",
           position: i + 1,
@@ -942,7 +1071,9 @@ Object.keys(CATEGORIES).forEach(function (key) {
 /* ---- area hub pages ---- */
 Object.keys(AREAS).forEach(function (key) {
   var area = AREAS[key];
-  var list = BUSINESSES.filter(function (b) { return b.areas.indexOf(key) !== -1; });
+  var list = BUSINESSES.filter(function (b) {
+    return isPublishedBusiness(b) && b.areas.indexOf(key) !== -1;
+  });
   var countLabel = list.length === 1 ? "1 business" : list.length + " businesses";
 
   var body =
@@ -968,7 +1099,7 @@ Object.keys(AREAS).forEach(function (key) {
       var inCat = list.filter(function (b) { return b.category === ck; });
       if (!inCat.length) return;
       body += '<div class="dir-cat-block" data-dir-cat="' + ck + '">' +
-        '<div class="section-head" style="margin-top:1.4rem"><h2>' +
+        '<div class="section-head section-head--directory-group"><h2>' +
         esc(CATEGORIES[ck].name) + "</h2></div>" +
         '<div class="grid grid-2">' + inCat.map(bizCard).join("") + "</div></div>";
     });
@@ -976,7 +1107,7 @@ Object.keys(AREAS).forEach(function (key) {
       return !list.some(function (b) { return b.category === ck; });
     });
     if (missing.length) {
-      body += '<div class="callout callout-note" style="margin-top:1.6rem">' +
+      body += '<div class="callout callout-note directory-missing-callout">' +
         '<div class="ch">Not listed in ' + esc(area.name) + " yet</div>" +
         "<p>PattayaPets adds businesses only after verifying their facts. For categories " +
         "with no " + esc(area.name) + " listing yet, these are the nearest options we " +

@@ -1,22 +1,30 @@
 Project: C:\Projects\pattayapets  (use absolute paths - your working directory may be elsewhere)
 
-START A NEW RUN NOW. EXECUTE - DO NOT ANNOUNCE.
+START A NEW TURN NOW. EXECUTE - DO NOT ANNOUNCE.
 
 First action, before writing a single word of reply:
 Read C:\Projects\pattayapets\AUTOPILOT.md and C:\Projects\pattayapets\research\loop\log.md
-(the last "Run <n>" line numbers this run as n+1).
+(the last "Run <n>" line numbers this turn's first run as n+1), then run build.js,
+tools\check-links.js and tools\audit-invariants.js once to learn the starting state.
 
-Then do runs as that file describes, back to back: pick ONE class by the rotation in section
-1, execute it completely - files changed, the three checks run, the log line appended - then
-pick again and do the next run. Keep going until this turn is cut off. Never estimate whether
-you have time for more; decide one run at a time.
+A TURN IS AT MOST 3 RUNS. Do a run: pick ONE class by the rotation in section 3, execute it
+completely, run the three checks, append the log line. Then either start the next run or
+stop - and STOP as soon as any section-3 stop condition is true: 3 runs done, checks still
+red after 2 fix attempts, no work in the queue, or you are low on context. End with the
+section-7 TURN COMPLETE summary and nothing after it. Stopping on budget is a success.
 
-Your reply may contain ONLY completed run log lines with one sentence of context each. Never
-write what you selected or plan to do - a selection with no log line behind it is a failed
-run. Never reply "no action is needed" or "nothing to do".
+NEVER redo a completed run. NEVER retry a target after its budget. Max 8 sources per business
+or country - if the evidence is not there, record what you found, name the gap, move on. Max
+2 fix attempts when the checks go red, then undo that one edit, log REVERTED and end the
+turn. If the same gate finding survives 3 FIX runs, file an ALERT proposal and stop trying.
+
+Your reply may contain ONLY completed run log lines with one sentence of context each, plus
+the final turn summary. Never write what you selected or plan to do. Never reply "no action
+is needed" or "nothing to do".
 
 Hard limits: work only inside C:\Projects\pattayapets; never edit dist\, any
-/bring-pet-to-thailand/ or /take-pet-out-of-thailand/ page, tools\loop-queue.js or
-tools\audit-invariants.js; never invent a fact, price, hour, phone number, review or verdict;
-never deploy, push, commit or ping IndexNow; never touch canonicals, noindex or robots. If
-something breaks, revert your one edit, log it, and take the next run.
+/bring-pet-to-thailand/ or /take-pet-out-of-thailand/ page (section 5 is research-only),
+tools\loop-queue.js or tools\audit-invariants.js; never invent a fact, price, hour, phone
+number, review or verdict; never give veterinary advice; never deploy, push, commit or ping
+IndexNow; never touch canonicals, noindex, robots or sitemap policy; no Review or
+aggregateRating markup; no affiliate links.

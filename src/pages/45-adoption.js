@@ -1,5 +1,5 @@
 "use strict";
-/* Cluster: Adopt a pet in Pattaya */
+/* Cluster: Adopt a pet in Pattaya — current first-party evidence and named gaps. */
 
 const { article, hub } = require("../guidekit.js");
 
@@ -9,426 +9,289 @@ const SUB = [GUIDES, CLUSTER];
 
 const pages = [];
 
-/* ---- HUB ---- */
 pages.push(hub({
   path: "/adopt-a-pet-pattaya/",
-  title: "Adopt a Pet Pattaya | Shelters & Street Dogs | PattayaPets",
+  title: "Adopt a Pet in Pattaya: Verified Sources | PattayaPets",
   image: "/assets/img/og-adoption.png",
-  desc: "Adopt a dog or cat in Pattaya: how adoption works, shelters and rescues " +
-    "(Soi Dog, Hope for Strays), fostering, and helping street animals without adopting.",
+  updated: "2026-08-01",
+  desc: "Pattaya-area adoption and rescue sources separated by current first-party evidence, plus exact status gaps to confirm before visiting or applying.",
   crumb: "Adopt a pet in Pattaya",
   breadcrumbs: [GUIDES],
   eyebrow: "Guide",
-  h1: "Adopt a pet in Pattaya",
-  lede: "Pattaya has a real street-animal challenge &mdash; and a network of " +
-    "dedicated shelters and rescues. If you can offer a home, adoption is one of " +
-    "the most worthwhile things you can do here.",
+  h1: "Adopt a pet in Pattaya: verify the organisation first",
+  lede: "An organisation&rsquo;s website can confirm that it runs an adoption programme; it cannot guarantee that a particular animal is still available.",
   intro:
-    "<p>Thailand&rsquo;s tropical cities have large free-roaming dog and cat " +
-    "populations, and Pattaya is no exception. The organisations below rescue, " +
-    "treat, sterilise and rehome animals &mdash; and they are almost always " +
-    "looking for adopters, fosters, volunteers and donors.</p>" +
-    "<h2>How adoption usually works</h2>" +
-    "<p>Most shelters follow a similar path: you meet the animals, talk to the " +
-    "team about what suits your home and lifestyle, and there is often a home " +
-    "check or an adoption agreement. Reputable rescues rehome animals already " +
-    "<strong>vaccinated and sterilised</strong>, and will be honest with you " +
-    "about an animal&rsquo;s health and temperament. Expect questions &mdash; a " +
-    "good shelter cares where its animals end up. New owners should read " +
-    '<a href="/owning-a-pet-in-pattaya/dog-registration-thailand.html">dog registration in Thailand</a> ' +
-    "and " +
-    '<a href="/owning-a-pet-in-pattaya/microchipping-your-pet.html">microchipping</a> ' +
-    "once the pet is home.</p>" +
-    "<h2>If you cannot adopt</h2>" +
-    "<p>Fostering, volunteering, donating, or sponsoring an animal all genuinely " +
-    "help &mdash; and if you are leaving Thailand, some organisations can " +
-    "support adopters in flying an animal abroad. See " +
-    '<a href="/adopt-a-pet-pattaya/fostering.html">fostering</a>, ' +
-    '<a href="/adopt-a-pet-pattaya/how-to-help.html">how to help street animals</a>, ' +
-    "and our guide to " +
-    '<a href="/take-pet-out-of-thailand/export-process.html">exporting a pet from Thailand</a>.</p>' +
-    '<div class="callout callout-note"><p>PattayaPets lists these organisations ' +
-    "as a public-interest service. Details such as locations, opening times and " +
-    "current animals change &mdash; always confirm directly with the " +
-    "organisation. We are not affiliated with them and do not take payment from " +
-    "them.</p></div>",
+    "<p>The pages below were reviewed against the organisations&rsquo; own public channels on " +
+    "1 August 2026. Current operation and adoption information was found for some organisations. " +
+    "Others remain listed only so the evidence gap is explicit.</p>" +
+    "<p>Contact the organisation before travelling. Ask for the current process, location, appointment " +
+    "rules, animal records, fee or donation terms, and who will sign any agreement. PattayaPets is not " +
+    "affiliated with these organisations and receives no payment from them.</p>",
   groups: [
     {
-      title: "Shelters & rescue organisations",
-      note: "Established dog and cat rescues operating in and around Pattaya.",
+      title: "Current first-party information found",
+      note: "A live first-party page describes current rescue, adoption or sanctuary activity. Availability still requires direct confirmation.",
       cards: [
-        { tag: "Directory", name: "Animal shelters in Pattaya", desc: "All rescues in one place — adoption, fostering and volunteering.", path: "/adopt-a-pet-pattaya/animal-shelters-pattaya.html" },
-        { name: "Hope for Strays", desc: "East Pattaya dog rescue shelter — several hundred dogs, open to visitors by arrangement.", path: "/adopt-a-pet-pattaya/hope-for-strays.html" },
-        { name: "Dog & Cat Rescue Pattaya", desc: "A Pattaya shelter rescuing dogs and helping the city's street cats.", path: "/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html" },
-        { name: "Animal Army Foundation", desc: "Na Jomtien animal hospital and rescue service with an ambulance and daily clinic hours.", path: "/adopt-a-pet-pattaya/animal-army-foundation.html" },
-        { name: "Pattaya Street Dogs (K9aid)", desc: "A rescue caring for street dogs and feeding temple-dog colonies.", path: "/adopt-a-pet-pattaya/pattaya-street-dogs-k9aid.html" },
-        { name: "Soi Dog Foundation", desc: "Thailand's best-known animal-welfare charity, with Pattaya work.", path: "/adopt-a-pet-pattaya/soi-dog-foundation.html" },
-        { name: "Malee's Animal Shelter", desc: "A large shelter rescuing dogs and cats across the Pattaya–Chanthaburi area.", path: "/adopt-a-pet-pattaya/malees-animal-shelter.html" },
-        { name: "Ady G. Second Chance Pattaya", desc: "A sanctuary for disabled and rescued dogs — Sukjai Soi 6, central Pattaya.", path: "/adopt-a-pet-pattaya/ady-g-second-chance-pattaya.html" }
+        { name: "Hope for Strays", desc: "East Pattaya dog rescue with current shelter, adoption and contact pages.", path: "/adopt-a-pet-pattaya/hope-for-strays.html" },
+        { name: "Animal Army", desc: "Na Jomtien hospital and welfare organisation with current adoption, foster and rescue pages.", path: "/adopt-a-pet-pattaya/animal-army-foundation.html" },
+        { name: "Pattaya Street Dogs / K9aid", desc: "Current project page; present adoption availability is not stated.", path: "/adopt-a-pet-pattaya/pattaya-street-dogs-k9aid.html" },
+        { name: "Ady G. Second Chance Pattaya", desc: "Current sanctuary site describes adoption and volunteering.", path: "/adopt-a-pet-pattaya/ady-g-second-chance-pattaya.html" },
+        { name: "Soi Dog Foundation", desc: "Current adoption programme at its Phuket sanctuary; not a Pattaya shelter.", path: "/adopt-a-pet-pattaya/soi-dog-foundation.html" }
       ]
     },
     {
-      title: "Helping beyond adoption",
+      title: "Current status not independently verified",
+      note: "These routes are retained as verification records, not recommendations or claims of current operation.",
       cards: [
-        { name: "Fostering a pet", desc: "Give a rescue animal a temporary home while it waits for adoption.", path: "/adopt-a-pet-pattaya/fostering.html" },
-        { name: "How to help street animals", desc: "Donating, volunteering, and what to do for an injured animal.", path: "/adopt-a-pet-pattaya/how-to-help.html" },
-        { name: "Getting a cat in Pattaya", desc: "Adopting, kittens and taking in a street cat.", path: "/cats/getting-a-cat-in-pattaya.html" },
-        { name: "Choosing a dog for the heat", desc: "Which dogs cope with Pattaya's climate.", path: "/dogs/choosing-a-dog-for-the-climate.html" }
+        { name: "Dog & Cat Rescue Pattaya", desc: "The linked Facebook page was not independently readable during review.", path: "/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html" },
+        { name: "Malee&rsquo;s Animal Shelter", desc: "The accessible first-party page is dated February 2020; current status is unknown.", path: "/adopt-a-pet-pattaya/malees-animal-shelter.html" }
+      ]
+    },
+    {
+      title: "Adoption planning",
+      cards: [
+        { name: "Animal shelter evidence table", desc: "All seven routes with current evidence status.", path: "/adopt-a-pet-pattaya/animal-shelters-pattaya.html" },
+        { name: "Fostering", desc: "Questions to settle before taking temporary responsibility.", path: "/adopt-a-pet-pattaya/fostering.html" },
+        { name: "How to help street animals", desc: "General options and emergency orientation.", path: "/adopt-a-pet-pattaya/how-to-help.html" }
       ]
     }
   ],
   related: [
-    { name: "Getting a cat in Pattaya", path: "/cats/getting-a-cat-in-pattaya.html", desc: "Adopting, kittens and street cats." },
-    { name: "Fostering a pet", path: "/adopt-a-pet-pattaya/fostering.html", desc: "Temporary homes save lives between rescue and adoption." },
-    { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "Why rescues sterilise before rehoming." },
-    { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "If you might fly an adopted pet abroad." }
+    { name: "Pet-friendly housing", path: "/owning-a-pet-in-pattaya/pet-friendly-housing.html", desc: "Get written permission before adopting." },
+    { name: "Microchipping", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Identification questions for a qualified vet." },
+    { name: "Export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "If a future international move is possible." }
   ]
 }));
 
-/* ---- SHELTER PAGES ---- */
-function shelterDesc(s) {
-  return "Adopt from " + s.name + " near Pattaya — " + s.type.toLowerCase() +
-    ". How rescue, adoption, fostering and volunteering work." +
-    (s.slug === "animal-army-foundation" ? "" : " Contact before visiting.");
-}
-
 const SHELTERS = [
   {
-    slug: "hope-for-strays", name: "Hope for Strays",
-    pageTitle: "Hope for Strays Pattaya | Dog Rescue Shelter & Adoption",
+    slug: "hope-for-strays",
+    name: "Hope for Strays",
+    pageTitle: "Hope for Strays Pattaya: Current Sources",
     crumb: "Hope for Strays",
-    type: "Dog rescue shelter",
-    website: "https://hopeforstrays.org/",
-    facebook: "https://www.facebook.com/HopeforStraysThailand/",
-    address: "43/5 Moo 3, Chaiyapornwithi Road (Hwy 3240) Soi 33, East Pattaya (Nongprue), Chon Buri 20150",
-    lede: "Hope for Strays is a non-profit dog rescue shelter in East Pattaya, home to " +
-      "several hundred dogs at any time.",
-    what:
-      "<p>Hope for Strays Foundation is a Pattaya-based non-profit dedicated to " +
-      "improving the lives of stray dogs in East Pattaya &mdash; primarily the " +
-      "Nongprue, Nongpralai and Pong areas. It runs a shelter caring for a large " +
-      "number of dogs &mdash; reported as well over a hundred &mdash; and works " +
-      "on vaccination, sterilisation, medical treatment and street feeding " +
-      "alongside rehoming. Visits and volunteering are welcome; contact the " +
-      "foundation first to arrange a time. The shelter relies on donations for food, " +
-      "medicine and sterilisation programmes &mdash; typical of Pattaya&rsquo;s " +
-      "independent rescues.</p>",
-    adopt:
-      "<p>Healthy, vaccinated and sterilised dogs are available for adoption. As " +
-      "with any reputable rescue, expect a conversation about your home and " +
-      "lifestyle so the right dog is matched to the right family. If you are not " +
-      "ready to adopt permanently, " +
-      "<a href=\"/adopt-a-pet-pattaya/fostering.html\">fostering</a> frees kennel " +
-      "space here.</p>"
+    type: "East Pattaya dog rescue",
+    lede: "Hope for Strays&rsquo; current first-party site describes shelter, rescue, adoption and volunteer activity in East Pattaya.",
+    status: "Current first-party activity found",
+    statusHtml:
+      "<p>The organisation&rsquo;s current website identifies it as a dog rescue for East Pattaya. " +
+      "Its services page describes feeding, veterinary care, vaccination, sterilisation, temporary " +
+      "housing and adoption work, primarily in Nongprue, Nongpralai and Pong.</p>",
+    adoptionHtml:
+      "<p>Its current adoption page displays dogs and says listed dogs are vaccinated and spayed or " +
+      "neutered if old enough. Confirm the specific animal, records and process directly because the " +
+      "page can change.</p>",
+    visitHtml:
+      "<p>The contact page invites messages about visits and volunteering. Arrange a time before travelling.</p>",
+    address: "43/5 Moo 3, Chaiyapornwithi Road (Highway 3240), Soi 33, East Pattaya",
+    phone: "089 158 8345",
+    tel: "+66891588345",
+    sources: [
+      ["Official site", "https://hopeforstrays.org/", "identity and shelter location"],
+      ["Adoption page", "https://hopeforstrays.org/dog-adoption/", "current adoption programme and stated preparation of listed dogs"],
+      ["Contact page", "https://hopeforstrays.org/contact/", "current phone and visit contact route"]
+    ],
+    adoptionAnswer: "Its current first-party page describes an adoption programme and displays dogs. Confirm which animals are available now."
   },
   {
-    slug: "dog-cat-rescue-pattaya", name: "Dog & Cat Rescue Pattaya",
-    pageTitle: "Dog & Cat Rescue Pattaya | Adopt Dogs & Street Cats",
+    slug: "dog-cat-rescue-pattaya",
+    name: "Dog & Cat Rescue Pattaya",
+    pageTitle: "Dog & Cat Rescue Pattaya | Status Check",
     crumb: "Dog & Cat Rescue Pattaya",
-    type: "Dog & cat shelter",
-    website: "https://www.facebook.com/DogRescuePattaya/",
-    facebook: "https://www.facebook.com/DogRescuePattaya/",
-    lede: "Dog & Cat Rescue Pattaya is a Pattaya animal shelter that rescues dogs " +
-      "and helps the city&rsquo;s street cats.",
-    what:
-      "<p>Dog &amp; Cat Rescue Pattaya operates as a shelter rescuing dogs and " +
-      "supporting street cats around the city, with care, treatment and rehoming " +
-      "at the centre of its work. It is active on social media, where it shares " +
-      "animals in need of homes and updates on rescues. Shelter location and visiting " +
-      "arrangements are confirmed through its Facebook page rather than a fixed " +
-      "public address &mdash; message before you travel so volunteers can meet you.</p>",
-    adopt:
-      "<p>Dogs and cats are rehomed once cared for. Contact the organisation " +
-      "directly &mdash; its Facebook page is the most current channel &mdash; to " +
-      "ask about adopting, fostering or helping. Found an injured street animal? " +
-      "See <a href=\"/adopt-a-pet-pattaya/how-to-help.html\">how to help street " +
-      "animals</a>.</p>"
+    type: "unverified rescue listing",
+    lede: "PattayaPets could not independently verify this organisation&rsquo;s current operation, location or adoption availability.",
+    status: "Current status not independently verified",
+    statusHtml:
+      "<p>The previously cited source was a Facebook page. During this review, the public web response " +
+      "did not expose organisation posts or current contact details without platform access. Older third-party " +
+      "material is not enough to state that the rescue currently operates.</p>",
+    adoptionHtml:
+      "<p>Current animals, adoption, fostering, intake and fee terms are unknown. Do not travel or donate " +
+      "based on this route alone.</p>",
+    visitHtml:
+      "<p>No current public address or visiting policy was verified.</p>",
+    sources: [
+      ["Facebook page previously cited", "https://www.facebook.com/DogRescuePattaya/", "identity lead only; current content was not independently readable"]
+    ],
+    adoptionAnswer: "Unknown. No current adoption source was independently readable during this review."
   },
   {
-    slug: "animal-army-foundation", name: "Animal Army Foundation",
-    pageTitle: "Animal Army Foundation Pattaya | Rescue Hospital & Adoption",
-    crumb: "Animal Army Foundation",
-    type: "Animal welfare foundation & hospital",
-    phone: "085 093 5954", tel: "+66850935954",
+    slug: "animal-army-foundation",
+    name: "Animal Army",
+    pageTitle: "Animal Army Pattaya | Adoption Sources",
+    crumb: "Animal Army",
+    type: "animal hospital and welfare organisation",
+    lede: "Animal Army&rsquo;s current first-party site describes hospital, rescue, foster and adoption work from Na Jomtien.",
+    status: "Current first-party activity found",
+    statusHtml:
+      "<p>The organisation&rsquo;s current site describes a veterinary hospital and animal-welfare work, " +
+      "including a rescue ambulance, emergency response, foster care and adoption in the Pattaya and Chonburi area.</p>",
+    adoptionHtml:
+      "<p>Its adoption page describes an inquiry, matching and agreement process and says animals considered " +
+      "ready for adoption are examined, vaccinated and cleared by its veterinary team. Ask for current profiles " +
+      "and the individual record.</p>",
+    visitHtml:
+      "<p>The contact page states that animal intake is by appointment except critical emergencies. Contact the organisation before arrival.</p>",
     address: "90/55 Moo 5, Na Jomtien, Sattahip District, Chon Buri 20250",
+    hours: "Daily 08:00&ndash;17:00; intake by appointment except critical emergencies",
+    phone: "085 093 5954",
+    tel: "+66850935954",
     email: "info@animalarmy.org",
-    hours: "Daily 08:00&ndash;17:00; animal intake by appointment (emergencies excepted)",
-    lede: "Animal Army Foundation operates an animal hospital and rescue service in Na " +
-      "Jomtien.",
-    what:
-      "<p>Animal Army Foundation operates an animal hospital in Na Jomtien. Its veterinary team " +
-      "operates a dedicated rescue ambulance providing emergency care to street " +
-      "animals and pets in urgent need, alongside everyday clinic work. Its Na Jomtien site combines rescue " +
-      "ambulance work with everyday clinic services &mdash; useful if you adopt an " +
-      "animal that still needs follow-up treatment. See also our " +
-      "<a href=\"/vets/animal-army-hospital.html\">Animal Army Hospital listing</a> " +
-      "in the vets directory.</p>",
-    adopt:
-      "<p>Contact the foundation by phone or email to ask whether animals are currently " +
-      "available and what process applies. Its <a href=\"https://animalarmy.org/\" " +
-      "rel=\"noopener\">official website</a> is currently available.</p>"
+    sources: [
+      ["Official site", "https://animalarmy.org/", "current hospital and welfare activity"],
+      ["Adoption page", "https://animalarmy.org/pages/adoption-with-animal-army", "current adoption process"],
+      ["Contact page", "https://animalarmy.org/pages/contact", "address, hours, phone, email and intake note"]
+    ],
+    adoptionAnswer: "Its current site describes an adoption programme. Contact Animal Army for current animal profiles."
   },
   {
-    slug: "pattaya-street-dogs-k9aid", name: "Pattaya Street Dogs (K9aid)",
-    pageTitle: "Pattaya Street Dogs (K9aid) | Rescue & Temple-Dog Care",
-    crumb: "Pattaya Street Dogs (K9aid)",
-    type: "Dog rescue",
-    website: "https://k9aid.org/pattaya/",
-    facebook: "https://www.facebook.com/k9aid",
-    email: "cindy@k9aid.org",
-    lede: "Pattaya Street Dogs, part of K9aid, is a rescue caring for street dogs " +
-      "and supporting temple-dog colonies.",
-    what:
-      "<p>Founded in 2018, Pattaya Street Dogs (K9aid) provides a home for a " +
-      "group of rescued dogs and also feeds and monitors additional dogs living " +
-      "at a Buddhist temple near the sea. Its work centres on care, feeding and " +
-      "finding homes for street dogs around Pattaya. The project publishes updates " +
-      "through K9aid&rsquo;s Pattaya channels; contact before visiting so someone " +
-      "can meet you.</p>",
-    adopt:
-      "<p>The rescue rehomes dogs in its care and welcomes adopters, fosters, " +
-      "volunteers and donors. Contact it directly through " +
-      "<a href=\"https://k9aid.org/pattaya/\" target=\"_blank\" rel=\"noopener nofollow\">" +
-      "k9aid.org/pattaya</a> to ask how you can help or adopt. Its temple-colony " +
-      "work is one example of the wider street-animal picture in " +
-      "<a href=\"/adopt-a-pet-pattaya/how-to-help.html\">how to help</a>.</p>"
+    slug: "pattaya-street-dogs-k9aid",
+    name: "Pattaya Street Dogs / K9aid",
+    pageTitle: "Pattaya Street Dogs K9aid: Current Source",
+    crumb: "Pattaya Street Dogs / K9aid",
+    type: "dog-care project",
+    lede: "K9aid&rsquo;s current project page describes a Pattaya shelter and care for dogs at a nearby temple; it does not state current adoption availability.",
+    status: "Current project page found; adoption status unknown",
+    statusHtml:
+      "<p>The current K9aid page identifies the Pattaya Street Dogs project and describes shelter and " +
+      "temple-dog care. It also links a project blog. The route previously used by PattayaPets now redirects " +
+      "to the current project URL.</p>",
+    adoptionHtml:
+      "<p>The current project page does not publish a current list of adoptable dogs or a Pattaya-specific " +
+      "adoption process. Ask K9aid directly; do not infer availability from the project description.</p>",
+    visitHtml: "<p>No current public visitor hours or walk-in policy were found on the project page.</p>",
+    sources: [
+      ["K9aid Pattaya Street Dogs page", "https://k9aid.org/pattaya-street-dogs/", "current project description only"]
+    ],
+    adoptionAnswer: "Unknown. The current project page does not state which dogs, if any, are available for adoption."
   },
   {
-    slug: "soi-dog-foundation", name: "Soi Dog Foundation",
-    pageTitle: "Soi Dog Foundation | Thailand Rescue, Sterilisation & Adoption",
+    slug: "soi-dog-foundation",
+    name: "Soi Dog Foundation",
+    pageTitle: "Soi Dog Foundation | Phuket Adoption Source",
     crumb: "Soi Dog Foundation",
-    type: "Animal welfare charity",
-    website: "https://www.soidog.org/",
+    type: "Phuket-based animal-welfare foundation",
+    lede: "Soi Dog Foundation has a current adoption programme at its Phuket sanctuary; this review did not verify a current Pattaya shelter or Pattaya adoption facility.",
+    status: "Current national source; not a Pattaya shelter",
+    statusHtml:
+      "<p>Soi Dog&rsquo;s current adoption and visitor pages locate its sanctuary in Mai Khao, Phuket. " +
+      "Older reports described Pattaya sterilisation work, but this review did not find a current official " +
+      "Pattaya programme page. It is therefore presented as a Thailand-wide alternative, not a Pattaya rescue.</p>",
+    adoptionHtml:
+      "<p>The current official adoption page displays dogs at the Phuket shelter and links the process and " +
+      "travel-cost information. Confirm current profiles and destination conditions directly.</p>",
+    visitHtml:
+      "<p>The current visitor page publishes Phuket visitor hours and tour information. Those details apply " +
+      "to the Phuket sanctuary, not Pattaya.</p>",
     address: "167/9 Moo 4, Soi Mai Khao 10, Mai Khao, Thalang, Phuket 83110",
-    email: "clinic@soidog.org",
-    hours: "Head office Mon&ndash;Fri 08:00&ndash;17:00; sanctuary visits by arrangement",
-    lede: "Soi Dog Foundation is Thailand&rsquo;s best-known animal-welfare " +
-      "charity, with sterilisation, rescue and adoption work that reaches Pattaya.",
-    what:
-      "<p>Soi Dog Foundation is a major Thai animal-welfare charity based in " +
-      "Phuket, widely known for large-scale sterilisation and vaccination " +
-      "programmes, rescue, and international adoption. Its work includes the " +
-      "Pattaya area through outreach and sponsorship &mdash; but the main sanctuary " +
-      "and head office are in Phuket, not Pattaya city. Guided sanctuary tours run " +
-      "from the Phuket site by prior arrangement.</p>",
-    adopt:
-      "<p>Soi Dog runs an established adoption programme, including international " +
-      "adoption for supporters who have moved or are moving abroad. See its " +
-      "<a href=\"https://www.soidog.org/adopt\" target=\"_blank\" " +
-      "rel=\"noopener nofollow\">adoption pages</a> for current options. Flying a " +
-      "pet abroad later? Read the " +
-      "<a href=\"/take-pet-out-of-thailand/export-process.html\">export process</a>.</p>"
+    hours: "Phuket visitor hours: Mon&ndash;Fri 09:30&ndash;11:30 and 13:00&ndash;15:30",
+    email: "info@soidog.org",
+    sources: [
+      ["Adoption page", "https://www.soidog.org/adopt", "current Phuket adoption programme"],
+      ["Visit page", "https://www.soidog.org/index.php/content/visit-us", "Phuket address and visitor hours"]
+    ],
+    adoptionAnswer: "Its current adoption programme is at the Phuket sanctuary. This page does not establish a Pattaya adoption location."
   },
   {
-    slug: "malees-animal-shelter", name: "Malee's Animal Shelter",
-    pageTitle: "Malee's Animal Shelter | Pattaya & Chanthaburi Dog & Cat Rescue",
+    slug: "malees-animal-shelter",
+    name: "Malee&rsquo;s Animal Shelter",
+    plainName: "Malee's Animal Shelter",
+    pageTitle: "Malee's Animal Shelter: Status Check",
     crumb: "Malee's Animal Shelter",
-    type: "Dog & cat shelter",
-    website: "https://maleeanimalshelter.wordpress.com/",
-    address: "Chanthaburi province (confirm exact location via the website before visiting)",
-    lede: "Malee&rsquo;s Animal Shelter rescues dogs and cats across the Pattaya " +
-      "and Chanthaburi area, caring for several hundred animals.",
-    what:
-      "<p>Malee&rsquo;s Animal Shelter rescues and cares for dogs and cats in the " +
-      "Pattaya and Chanthaburi region &mdash; reported as more than four hundred " +
-      "dogs and several dozen cats at times. The shelter operates in Chanthaburi province " +
-      "east of Pattaya (roughly one to two hours by road). It relies on donations and " +
-      "volunteers; founders Malee and Derek have run the project for many years. Confirm " +
-      "the current location and visiting arrangements through " +
-      "<a href=\"https://maleeanimalshelter.wordpress.com/\" target=\"_blank\" " +
-      "rel=\"noopener nofollow\">its website</a> before you travel.</p>",
-    adopt:
-      "<p>Dogs and cats are available for adoption. Contact the shelter directly " +
-      "through its website to discuss adopting, " +
-      "<a href=\"/adopt-a-pet-pattaya/fostering.html\">fostering</a>, volunteering " +
-      "or donating. The site also lists ways to support its work if you cannot adopt.</p>"
+    type: "unverified shelter listing",
+    lede: "The accessible first-party page for Malee&rsquo;s Animal Shelter is dated February 2020, so current operation and adoption availability are unknown.",
+    status: "Current status not independently verified",
+    statusHtml:
+      "<p>The WordPress site remains accessible, but its home-page organisation description is attached " +
+      "to a post updated 4 February 2020. That historical page describes a Chanthaburi shelter; it is not " +
+      "sufficient evidence of operation, animal counts, adoption availability or visitor access in August 2026.</p>",
+    adoptionHtml: "<p>Current adoption, donation, volunteering and contact arrangements are unknown.</p>",
+    visitHtml: "<p>No current address, visitor hours or appointment process was verified.</p>",
+    sources: [
+      ["First-party WordPress page", "https://maleeanimalshelter.wordpress.com/", "historical description last updated in February 2020"]
+    ],
+    adoptionAnswer: "Unknown. The accessible first-party adoption statement is historical and does not prove current availability."
   },
   {
-    slug: "ady-g-second-chance-pattaya", name: "Ady G. Second Chance Pattaya",
-    pageTitle: "Ady G. Second Chance Pattaya | Disabled Dog Sanctuary",
+    slug: "ady-g-second-chance-pattaya",
+    name: "Ady G. Second Chance Pattaya",
+    pageTitle: "Ady G. Second Chance Pattaya | Current Sources",
     crumb: "Ady G. Second Chance Pattaya",
-    type: "Dog sanctuary",
-    website: "https://www.adygsecondchancepattaya.org/",
-    email: "adygsecondchancepattaya@gmail.com",
+    type: "dog sanctuary",
+    lede: "Ady G. Second Chance Pattaya&rsquo;s current first-party site describes a sanctuary for rescued and disabled dogs, adoption and volunteering.",
+    status: "Current first-party activity found",
+    statusHtml:
+      "<p>The current official site describes rescue and rehabilitation of dogs, with particular attention " +
+      "to disabled dogs. It publishes ways to donate, sponsor, adopt and volunteer.</p>",
+    adoptionHtml:
+      "<p>The current site says adoption is selective, includes healthy dogs as well as disabled dogs, and " +
+      "asks potential adopters to visit the dog on site at least three times. Confirm which dogs and process " +
+      "apply now.</p>",
+    visitHtml:
+      "<p>The site welcomes volunteers but asks people to make contact because capacity is limited. Arrange before travelling.</p>",
     address: "Sukjai Soi 6, Pattaya City, Bang Lamung District, Chon Buri 20150",
-    lede: "Ady G. Second Chance Pattaya is a sanctuary caring for disabled and rescued " +
-      "dogs in central Pattaya.",
-    what:
-      "<p>Founded in 2018, Ady G. Second Chance Pattaya runs a sanctuary for disabled " +
-      "and rescued dogs in central Pattaya &mdash; home to well over eighty dogs at " +
-      "times. The project focuses on dogs that would otherwise receive little help " +
-      "when injured or abandoned on the street, providing housing, food and medical care.</p>",
-    adopt:
-      "<p>Adoption may be possible for suitable homes. Contact the sanctuary directly " +
-      "to ask about the dogs in its care, visiting arrangements and how you can help " +
-      "as a donor or volunteer. Many sanctuary dogs need patient owners &mdash; see " +
-      "<a href=\"/dogs/choosing-a-dog-for-the-climate.html\">choosing a dog for " +
-      "Pattaya&rsquo;s climate</a> for the wider picture on care and exercise.</p>"
+    sources: [
+      ["Official site", "https://www.adygsecondchancepattaya.org/", "current sanctuary, adoption and volunteer descriptions"],
+      ["Contact page", "https://www.adygsecondchancepattaya.org/contact-us", "current address and contact channels"]
+    ],
+    adoptionAnswer: "Its current site describes selective adoption. Confirm current dogs and arrange the required visits directly."
   }
 ];
 
-const SHELTER_PEERS = {
-  "hope-for-strays": [
-    { name: "Dog & Cat Rescue Pattaya", path: "/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html",
-      desc: "Dogs and street cats around the city." },
-    { name: "Soi Dog Foundation", path: "/adopt-a-pet-pattaya/soi-dog-foundation.html",
-      desc: "Thailand-wide welfare with Pattaya work." }
-  ],
-  "dog-cat-rescue-pattaya": [
-    { name: "Hope for Strays", path: "/adopt-a-pet-pattaya/hope-for-strays.html",
-      desc: "East Pattaya dog rescue shelter." },
-    { name: "Pattaya Street Dogs (K9aid)", path: "/adopt-a-pet-pattaya/pattaya-street-dogs-k9aid.html",
-      desc: "Street dogs and temple-dog colonies." }
-  ],
-  "animal-army-foundation": [
-    { name: "Hope for Strays", path: "/adopt-a-pet-pattaya/hope-for-strays.html",
-      desc: "Large East Pattaya dog shelter." },
-    { name: "Animal Army Hospital", path: "/vets/animal-army-hospital.html",
-      desc: "Na Jomtien animal hospital open daily 08:00-17:00, with a rescue ambulance, urgent treatment, surgery, digital X-ray, inpatient and quarantine care." }
-  ],
-  "pattaya-street-dogs-k9aid": [
-    { name: "Hope for Strays", path: "/adopt-a-pet-pattaya/hope-for-strays.html",
-      desc: "East Pattaya dog rescue." },
-    { name: "Dog & Cat Rescue Pattaya", path: "/adopt-a-pet-pattaya/dog-cat-rescue-pattaya.html",
-      desc: "Dogs and cats around Pattaya." }
-  ],
-  "soi-dog-foundation": [
-    { name: "Hope for Strays", path: "/adopt-a-pet-pattaya/hope-for-strays.html",
-      desc: "Local Pattaya dog rescue." },
-    { name: "Malee's Animal Shelter", path: "/adopt-a-pet-pattaya/malees-animal-shelter.html",
-      desc: "Dogs and cats across the wider region." }
-  ],
-  "malees-animal-shelter": [
-    { name: "Soi Dog Foundation", path: "/adopt-a-pet-pattaya/soi-dog-foundation.html",
-      desc: "National charity with Pattaya programmes." },
-    { name: "Hope for Strays", path: "/adopt-a-pet-pattaya/hope-for-strays.html",
-      desc: "Pattaya-city dog rescue." }
-  ],
-  "ady-g-second-chance-pattaya": [
-    { name: "Hope for Strays", path: "/adopt-a-pet-pattaya/hope-for-strays.html",
-      desc: "General dog rescue in East Pattaya." },
-    { name: "Pattaya Street Dogs (K9aid)", path: "/adopt-a-pet-pattaya/pattaya-street-dogs-k9aid.html",
-      desc: "Street-dog rescue near the sea." }
-  ]
-};
+function sourceHtml(s) {
+  return "<ul>" + s.sources.map(function (source) {
+    return '<li><a href="' + source[1] + '" target="_blank" rel="noopener noreferrer">' +
+      source[0] + "</a> &mdash; " + source[2] + ".</li>";
+  }).join("") + "</ul><p>Sources checked 1 August 2026. A live page does not guarantee " +
+    "today&rsquo;s animal availability, appointment capacity or unchanged terms.</p>";
+}
 
-const SHELTER_HELP =
-  "<p>If you cannot adopt, " +
-  '<a href="/adopt-a-pet-pattaya/fostering.html">fostering</a>, ' +
-  '<a href="/adopt-a-pet-pattaya/how-to-help.html">volunteering and donating</a> ' +
-  "all make a real difference &mdash; shelters run on exactly that support.</p>";
-
-const SHELTER_VISIT =
-  "<p>Most Pattaya rescues are <strong>small teams on tight budgets</strong>, not " +
-  "tourist attractions. Message or email before you visit, wear closed shoes, and " +
-  "expect noise, strong smells and animals in various states of health. Children can " +
-  "visit when the organisation agrees, but supervise closely &mdash; frightened rescue " +
-  "dogs may not behave like pets at home.</p>" +
-  "<p>Volunteering often means cleaning, feeding, walking sociable dogs or helping " +
-  "with laundry &mdash; not only cuddling puppies. Donations of cash, food and " +
-  "medicine are usually welcome; ask what they need this week rather than assuming.</p>";
-
-const SHELTER_AFTER =
-  "<p>After adoption, schedule a vet check within the first week even if the rescue " +
-  "has vaccinated and sterilised the animal. Register and " +
-  '<a href="/owning-a-pet-in-pattaya/microchipping-your-pet.html">microchip</a> ' +
-  "as soon as practical, read " +
-  '<a href="/owning-a-pet-in-pattaya/dog-registration-thailand.html">dog registration in Thailand</a> ' +
-  "for dogs, and confirm your condo or landlord allows pets &mdash; see " +
-  '<a href="/owning-a-pet-in-pattaya/pet-friendly-housing.html">pet-friendly housing</a>. ' +
-  "Routine care: " +
-  '<a href="/cats/cat-vaccinations-thailand.html">cat vaccinations</a>, ' +
-  '<a href="/dogs/dog-vaccinations-thailand.html">dog vaccinations</a>, and ' +
-  '<a href="/pet-health-pattaya/spaying-and-neutering.html">spaying &amp; neutering</a> ' +
-  "if not already done. Flying abroad later? Start the " +
-  '<a href="/take-pet-out-of-thailand/export-process.html">export process</a> ' +
-  "months ahead &mdash; the rabies titer test cannot be rushed.</p>";
-
-const SHELTER_RELATED_BASE = [
-  { name: "Fostering a pet", path: "/adopt-a-pet-pattaya/fostering.html", desc: "Temporary homes between rescue and adoption." },
-  { name: "Cat vaccinations & health", path: "/cats/cat-vaccinations-thailand.html", desc: "Routine care after you adopt." },
-  { name: "Dog vaccinations & parasites", path: "/dogs/dog-vaccinations-thailand.html", desc: "Routine care after you adopt." },
-  { name: "Microchipping your pet", path: "/owning-a-pet-in-pattaya/microchipping-your-pet.html", desc: "Do this soon after adoption." },
-  { name: "Spaying & neutering", path: "/pet-health-pattaya/spaying-and-neutering.html", desc: "What good rescues do before rehoming." },
-  { name: "The export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "The Thai DLD side when you leave." }
-];
+function contactHtml(s) {
+  var rows = [];
+  if (s.address) rows.push("<p><strong>Published location:</strong> " + s.address + "</p>");
+  if (s.hours) rows.push("<p><strong>Published hours:</strong> " + s.hours + "</p>");
+  if (s.phone) rows.push('<p><strong>Phone:</strong> <a href="tel:' + s.tel + '">' + s.phone + "</a></p>");
+  if (s.email) rows.push('<p><strong>Email:</strong> <a href="mailto:' + s.email + '">' + s.email + "</a></p>");
+  if (!rows.length) rows.push("<p>No current public address, hours, phone or email was independently verified.</p>");
+  return rows.join("");
+}
 
 SHELTERS.forEach(function (s) {
-  var contact = "";
-  if (s.address) {
-    contact += "<p><strong>Location:</strong> " + s.address + "</p>";
-  }
-  if (s.hours) {
-    contact += "<p><strong>Hours:</strong> " + s.hours + "</p>";
-  }
-  if (s.email) {
-    contact += "<p><strong>Email:</strong> <a href=\"mailto:" + s.email + "\">" +
-      s.email + "</a></p>";
-  }
-  if (s.phone) {
-    contact += "<p><strong>Phone:</strong> <a href=\"tel:" + (s.tel || s.phone) + "\">" +
-      s.phone + "</a></p>";
-  }
-  var ext = [];
-  if (s.website) {
-    ext.push('<a href="' + s.website + '" target="_blank" rel="noopener nofollow">' +
-      (s.website.indexOf("facebook.com") !== -1 ? "Facebook page" : "Official website") +
-      "</a>");
-  }
-  if (s.facebook && s.facebook !== s.website) {
-    ext.push('<a href="' + s.facebook + '" target="_blank" rel="noopener nofollow">Facebook</a>');
-  }
-  if (ext.length) {
-    contact += "<p>" + ext.join(" &middot; ") +
-      " for current contact details, visiting arrangements and the animals " +
-      "looking for homes.</p>";
-  } else if (s.phone || s.email) {
-    contact += "<p>Contact the organisation directly for visiting arrangements and " +
-      "the animals looking for homes.</p>";
-  }
-
+  var displayName = s.plainName || s.name;
   pages.push(article({
     path: "/adopt-a-pet-pattaya/" + s.slug + ".html",
-    title: (s.pageTitle || s.name) + " | PattayaPets",
-    desc: shelterDesc(s),
+    title: s.pageTitle + " | PattayaPets",
+    desc: displayName + ": current first-party evidence, adoption-status limits, source links and what to confirm before visiting.",
     crumb: s.crumb,
     breadcrumbs: SUB,
     eyebrow: "Adopt a pet in Pattaya",
     h1: s.name,
     lede: s.lede,
+    updated: "2026-08-01",
+    verify: "Evidence status: " + s.status + ". PattayaPets is not affiliated with this organisation and receives no payment from it.",
     sections: [
-      { html:
-        '<div class="callout callout-note"><p>PattayaPets lists this ' +
-        "organisation as a public-interest service. We are not affiliated with " +
-        "it and take no payment from it. Locations, hours and the animals in " +
-        "care change &mdash; please confirm current details directly with the " +
-        "organisation.</p></div>" },
-      { h: "What it does", html: s.what },
-      { h: "Adopting from " + s.name, html: s.adopt + SHELTER_HELP },
-      { h: "Visiting, fostering and volunteering", html: SHELTER_VISIT + (s.visit || "") },
-      { h: "After you adopt in Pattaya", html: SHELTER_AFTER },
-      { h: "Get in touch", html: contact }
+      { h: "Current evidence status", html: s.statusHtml },
+      { h: "Adoption availability", html: s.adoptionHtml },
+      { h: "Visiting or volunteering", html: s.visitHtml },
+      { h: "Published contact details", html: contactHtml(s) },
+      { h: "Before committing", html:
+        "<p>Ask for the current application and agreement, the animal&rsquo;s identity and available health " +
+        "records, known behaviour and care needs, every fee or donation term, and the support offered after " +
+        "placement. Confirm written housing permission first. Ask a qualified veterinarian to interpret " +
+        "records and advise on care for the individual animal.</p>" },
+      { h: "First-party sources followed", html: sourceHtml(s) }
     ],
-    updated: "2026-06-01",
     faqs: [
-      ["Are pets from " + s.name + " vaccinated and sterilised?",
-       "<p>Reputable rescues rehome animals vaccinated and sterilised, and are open about each animal's health. Confirm the specifics for any animal directly with the organisation before you commit.</p>"],
-      ["Does " + s.name + " charge an adoption fee?",
-       "<p>Many rescues ask for a donation or adoption fee to cover vaccinations, sterilisation and food. Amounts vary — ask directly. A fee is normal; unusually high pressure for cash without paperwork is a red flag.</p>"],
-      ["I am leaving Thailand — can I adopt and take the pet with me?",
-       "<p>Often yes. Many rescues support adopters in relocating an animal abroad. Plan early and read our guide to the <a href=\"/take-pet-out-of-thailand/export-process.html\">export process</a> — the rabies titer test in particular needs lead time.</p>"],
-      ["How do I visit or volunteer?",
-       "<p>Contact the organisation directly via its website or Facebook page to ask about visiting hours, volunteering and fostering. PattayaPets does not coordinate visits — always arrange ahead.</p>"],
-      ["Can I foster before adopting from " + s.name + "?",
-       "<p>Many rescues welcome fosters — it frees kennel space and lets you learn the animal's temperament. See our <a href=\"/adopt-a-pet-pattaya/fostering.html\">fostering guide</a> and ask the organisation what they need.</p>"],
-      ["What should I ask before adopting a rescue pet?",
-       "<p>Ask about vaccinations, sterilisation, behavioural history, medical needs, bite history and post-adoption support. See our <a href=\"/adopt-a-pet-pattaya/\">adopt a pet in Pattaya</a> hub for the wider picture.</p>"],
-      ["Can foreigners adopt in Thailand?",
-       "<p>Yes — rescues regularly place animals with expat and tourist adopters. You need a stable home, commitment to vaccinations and registration, and realistic plans if you may leave Thailand later.</p>"],
-      ["What if my condo does not allow pets?",
-       "<p>Do not adopt until housing is sorted — returning an animal is traumatic for everyone. Read <a href=\"/owning-a-pet-in-pattaya/pet-friendly-housing.html\">pet-friendly housing</a> and get written permission from your landlord or juristic person where possible.</p>"]
+      ["Is adoption currently available from " + displayName + "?", "<p>" + s.adoptionAnswer + "</p>"],
+      ["Can I visit without arranging it?", "<p>Do not assume walk-in access. Use the current first-party contact channel and obtain confirmation before travelling.</p>"],
+      ["Does PattayaPets verify an individual animal&rsquo;s health?", "<p>No. Obtain the animal&rsquo;s records and ask a qualified veterinarian to interpret them and advise on the individual animal.</p>"],
+      ["Is PattayaPets affiliated with this organisation?", "<p>No. The listing is an editorial public-interest reference and no payment is taken.</p>"]
     ],
-    related: (SHELTER_PEERS[s.slug] || []).concat(SHELTER_RELATED_BASE)
+    related: [
+      { name: "Animal shelter evidence table", path: "/adopt-a-pet-pattaya/animal-shelters-pattaya.html", desc: "Compare current source status." },
+      { name: "Fostering", path: "/adopt-a-pet-pattaya/fostering.html", desc: "Temporary-care planning." },
+      { name: "Pet-friendly housing", path: "/owning-a-pet-in-pattaya/pet-friendly-housing.html", desc: "Written permission before placement." },
+      { name: "Export process", path: "/take-pet-out-of-thailand/export-process.html", desc: "If an international move may follow." }
+    ]
   }));
 });
 

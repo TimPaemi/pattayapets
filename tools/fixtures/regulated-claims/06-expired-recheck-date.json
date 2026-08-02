@@ -1,0 +1,1 @@
+{"expectedCode":"CLAIM_RECHECK_EXPIRED","operations":[{"op":"set","path":["registry","TEST-CLAIM-2026-07","recheckBy"],"value":"2026-07-31"}]}

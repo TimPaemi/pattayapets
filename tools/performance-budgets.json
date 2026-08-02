@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "measuredAt": "2026-08-01",
+  "profile": {
+    "viewportWidth": 390,
+    "viewportHeight": 844,
+    "deviceScaleFactor": 1,
+    "latencyMs": 150,
+    "downloadKbps": 1600,
+    "uploadKbps": 750,
+    "cpuSlowdownMultiplier": 4,
+    "settleMs": 1000
+  },
+  "policy": "HTML and local-transfer ceilings retain roughly 15-30% measured headroom; LCP remains below the 2.5s good-CWV boundary; CLS is capped at 0.05; no additional parser/render-blocking resource is allowed.",
+  "templates": [
+    {
+      "id": "home",
+      "path": "/",
+      "budgets": { "htmlBytes": 56000, "totalLocalTransferBytes": 250000, "criticalCssBytes": 22000, "lcpMs": 2100, "cls": 0.05, "renderBlockingResources": 1 }
+    },
+    {
+      "id": "directory",
+      "path": "/directory.html",
+      "budgets": { "htmlBytes": 34000, "totalLocalTransferBytes": 225000, "criticalCssBytes": 22000, "lcpMs": 2200, "cls": 0.05, "renderBlockingResources": 1 }
+    },
+    {
+      "id": "guides-hub",
+      "path": "/guides.html",
+      "budgets": { "htmlBytes": 45000, "totalLocalTransferBytes": 235000, "criticalCssBytes": 22000, "lcpMs": 2200, "cls": 0.05, "renderBlockingResources": 1 }
+    },
+    {
+      "id": "about",
+      "path": "/about.html",
+      "budgets": { "htmlBytes": 24000, "totalLocalTransferBytes": 215000, "criticalCssBytes": 22000, "lcpMs": 2100, "cls": 0.05, "renderBlockingResources": 1 }
+    },
+    {
+      "id": "search",
+      "path": "/search.html",
+      "budgets": { "htmlBytes": 28000, "totalLocalTransferBytes": 260000, "criticalCssBytes": 22000, "lcpMs": 2000, "cls": 0.05, "renderBlockingResources": 1 }
+    },
+    {
+      "id": "category-hub",
+      "path": "/vets/",
+      "budgets": { "htmlBytes": 38000, "totalLocalTransferBytes": 230000, "criticalCssBytes": 22000, "lcpMs": 2200, "cls": 0.05, "renderBlockingResources": 1 }
+    },
+    {
+      "id": "business-listing",
+      "path": "/vets/pattaya-animal-hospital.html",
+      "budgets": { "htmlBytes": 25000, "totalLocalTransferBytes": 215000, "criticalCssBytes": 22000, "lcpMs": 2200, "cls": 0.05, "renderBlockingResources": 1 }
+    },
+    {
+      "id": "area-guide",
+      "path": "/area/naklua.html",
+      "budgets": { "htmlBytes": 32000, "totalLocalTransferBytes": 225000, "criticalCssBytes": 22000, "lcpMs": 2200, "cls": 0.05, "renderBlockingResources": 1 }
+    },
+    {
+      "id": "import-hub",
+      "path": "/bring-pet-to-thailand/",
+      "budgets": { "htmlBytes": 45000, "totalLocalTransferBytes": 235000, "criticalCssBytes": 22000, "lcpMs": 2300, "cls": 0.05, "renderBlockingResources": 1 }
+    },
+    {
+      "id": "import-corridor",
+      "path": "/bring-pet-to-thailand/from-uk.html",
+      "budgets": { "htmlBytes": 49000, "totalLocalTransferBytes": 240000, "criticalCssBytes": 22000, "lcpMs": 2400, "cls": 0.05, "renderBlockingResources": 1 }
+    },
+    {
+      "id": "regulated-comparison",
+      "path": "/bring-pet-to-thailand/airline-pet-policies.html",
+      "budgets": { "htmlBytes": 52000, "totalLocalTransferBytes": 240000, "criticalCssBytes": 22000, "lcpMs": 2400, "cls": 0.05, "renderBlockingResources": 1 }
+    },
+    {
+      "id": "import-checklist",
+      "path": "/bring-pet-to-thailand/checklist.html",
+      "budgets": { "htmlBytes": 37000, "totalLocalTransferBytes": 230000, "criticalCssBytes": 22000, "lcpMs": 2300, "cls": 0.05, "renderBlockingResources": 1 }
+    },
+    {
+      "id": "export-corridor",
+      "path": "/take-pet-out-of-thailand/to-uk.html",
+      "budgets": { "htmlBytes": 48000, "totalLocalTransferBytes": 240000, "criticalCssBytes": 22000, "lcpMs": 2400, "cls": 0.05, "renderBlockingResources": 1 }
+    },
+    {
+      "id": "emergency-guide",
+      "path": "/pet-emergency/24-hour-vets-pattaya.html",
+      "budgets": { "htmlBytes": 41000, "totalLocalTransferBytes": 235000, "criticalCssBytes": 22000, "lcpMs": 2400, "cls": 0.05, "renderBlockingResources": 1 }
+    },
+    {
+      "id": "owning-guide",
+      "path": "/owning-a-pet-in-pattaya/hot-climate-pet-care.html",
+      "budgets": { "htmlBytes": 35000, "totalLocalTransferBytes": 225000, "criticalCssBytes": 22000, "lcpMs": 2300, "cls": 0.05, "renderBlockingResources": 1 }
+    },
+    {
+      "id": "adoption-organisation",
+      "path": "/adopt-a-pet-pattaya/hope-for-strays.html",
+      "budgets": { "htmlBytes": 29000, "totalLocalTransferBytes": 220000, "criticalCssBytes": 22000, "lcpMs": 2300, "cls": 0.05, "renderBlockingResources": 1 }
+    },
+    {
+      "id": "insurance-guide",
+      "path": "/pet-insurance-thailand.html",
+      "budgets": { "htmlBytes": 30000, "totalLocalTransferBytes": 220000, "criticalCssBytes": 22000, "lcpMs": 2300, "cls": 0.05, "renderBlockingResources": 1 }
+    },
+    {
+      "id": "relocation-hub",
+      "path": "/pet-relocation/",
+      "budgets": { "htmlBytes": 36000, "totalLocalTransferBytes": 225000, "criticalCssBytes": 22000, "lcpMs": 2300, "cls": 0.05, "renderBlockingResources": 1 }
+    }
+  ]
+}

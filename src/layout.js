@@ -1,16 +1,8 @@
 "use strict";
 /* PattayaPets shared layout. Renders a complete static HTML document per page. */
 
-const SITE = {
-  url: "https://pattayapets.com",
-  name: "PattayaPets",
-  tagline: "The honest pet resource for Pattaya",
-  operator: "TIMPAEMI Co., Ltd.",
-  email: "hello@pattayapets.com",
-  whatsapp: "",
-  ga: "G-TX1PLBHN2K",
-  cfBeacon: "CF-TOKEN-PLACEHOLDER"
-};
+const { SITE } = require("./site-config.js");
+const { imageForRoute } = require("./route-image.js");
 
 const NAV = [
   { name: "Directory", href: "/directory.html" },
@@ -23,9 +15,7 @@ const NAV = [
   { name: "Search", href: "/search.html" }
 ];
 
-const NETWORK_SLOGAN = "Built in Pattaya. For Pattaya.";
-
-/* Canonical Pattaya Authority network list — exclude this site (PattayaPets). */
+const SITE_SLOGAN = "Built in Pattaya. For Pattaya.";
 
 const DISCLAIMER =
   "Editorial and informational only. Not veterinary advice. Always consult a qualified veterinarian.";
@@ -56,9 +46,9 @@ function brandLink(cls) {
 
 function headerSearchForm(inputId) {
   return (
-    '<form class="header-search" action="/search.html" method="get" role="search">' +
+    '<form class="header-search" action="/search.html" method="get" role="search" aria-label="Site search">' +
     '<label class="visually-hidden" for="' + inputId + '">Search PattayaPets</label>' +
-    '<input type="search" name="q" id="' + inputId + '" autocomplete="search" ' +
+    '<input type="search" name="q" id="' + inputId + '" autocomplete="off" ' +
     'placeholder="Search the site" maxlength="80">' +
     '<button type="submit" aria-label="Search">' +
     '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" ' +
@@ -101,44 +91,11 @@ function header() {
 }
 
 function footer() {
-  const year = new Date().getFullYear();
+  const year = SITE.copyrightYear;
   /* FOOTER-SPEC-2027 — Insider layout: brand + byline + socials, 4 nav columns,
      rule, legal row, disclosure note. timpaemi.com is the only cross-site link. */
   return (
     '<footer class="site-footer"><!--FOOTER-SPEC-2027-->' +
-    '<style id="pf-css">' +
-    '.pf{--pf-ink:#FFFDF8;--pf-mut:rgba(255,253,248,.66);--pf-acc:#A8DCC3;max-width:1180px;margin:0 auto;padding:56px 24px 26px;text-align:left;color:var(--pf-ink)}' +
-    '.pf a{text-decoration:none}' +
-    '.pf-top{display:grid;grid-template-columns:1fr;gap:38px;margin:0 0 40px}' +
-    '@media(min-width:900px){.pf-top{grid-template-columns:minmax(280px,1.15fr) 3fr;gap:48px}}' +
-    '.pf-mark{display:flex;align-items:center;gap:11px;margin:0 0 16px}' +
-    '.pf-mark svg{width:34px;height:34px;flex:none}' +
-    '.pf-word{font-weight:700;font-size:1.32rem;letter-spacing:-.02em;color:var(--pf-ink)}' +
-    '.pf-word b{color:var(--pf-acc);font-weight:700}' +
-    '.pf-tag{color:var(--pf-mut);font-size:.9rem;line-height:1.62;margin:0 0 15px;max-width:34ch}' +
-    '.pf-by{display:flex;align-items:flex-start;gap:12px;color:var(--pf-mut);font-size:.9rem;line-height:1.6;margin:0 0 20px;max-width:36ch}' +
-    '.pf-by img{width:46px;height:46px;border-radius:50%;object-fit:cover;flex:none;border:1px solid rgba(255,253,248,.22)}' +
-    '.pf-by b{color:var(--pf-ink);font-weight:600}' +
-    '.pf-by a{color:var(--pf-acc);font-weight:600;display:block;margin-top:1px}' +
-    '.pf-by a:hover{text-decoration:underline}' +
-    '.pf-soc{display:flex;gap:10px;margin:0}' +
-    '.pf-soc a{width:38px;height:38px;border:1px solid rgba(255,253,248,.24);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--pf-mut);transition:.16s}' +
-    '.pf-soc a:hover{border-color:var(--pf-acc);color:var(--pf-acc)}' +
-    '.pf-soc svg{width:17px;height:17px;fill:currentColor}' +
-    '.pf-nav{display:grid;grid-template-columns:repeat(2,1fr);gap:30px 20px}' +
-    '@media(min-width:720px){.pf-nav{grid-template-columns:repeat(4,1fr);gap:30px}}' +
-    '.pf-h{font-size:.66rem;letter-spacing:.19em;text-transform:uppercase;color:var(--pf-ink);font-weight:700;margin:0 0 13px}' +
-    '.pf-nav ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}' +
-    '.pf-nav a{color:var(--pf-mut);font-size:.875rem;line-height:1.4}.pf-nav a:hover{color:var(--pf-acc)}' +
-    '.pf-rule{border:0;border-top:1px solid rgba(255,253,248,.16);margin:0 0 20px}' +
-    '.pf-base{display:flex;flex-direction:column;gap:12px;font-size:.78rem;color:var(--pf-mut)}' +
-    '@media(min-width:720px){.pf-base{flex-direction:row;justify-content:space-between;align-items:center}}' +
-    '.pf-base a{color:var(--pf-mut)}.pf-base a:hover{color:var(--pf-acc)}' +
-    '.pf-legal-links{display:flex;gap:20px;flex-wrap:wrap}' +
-    '.pf-note{font-size:.78rem;color:rgba(255,253,248,.5);line-height:1.6;margin:16px 0 0;max-width:78ch}' +
-    '.pf-note a{color:rgba(255,253,248,.62);text-decoration:underline;text-underline-offset:2px}' +
-    '.pf-note a:hover{color:var(--pf-acc)}' +
-    '</style>' +
     '<div class="pf">' +
     '<div class="pf-top">' +
     '<div>' +
@@ -150,11 +107,14 @@ function footer() {
     '<circle cx="18.8" cy="9.4" r="2.6"/><circle cx="22.3" cy="12.6" r="2.5"/></g></svg>' +
     '<span class="pf-word">Pattaya<b>Pets</b></span>' +
     '</div>' +
-    '<p class="pf-tag">The honest local guide to pets in Pattaya &mdash; vets, groomers, boarding, adoption and the import paperwork, written and kept up to date by people who live here.</p>' +
+    '<p class="pf-tag">Source-led pet guidance for Pattaya: local services, daily care, adoption, emergencies and travel paperwork.</p>' +
     '<div class="pf-by">' +
     '<img src="/assets/img/timpaemi.jpg" width="46" height="46" loading="lazy" alt="Tim and Paemi, who write and check PattayaPets">' +
-    '<span>Written and kept up to date by <b>Tim &amp; Paemi</b>, who live in Pattaya.' +
-    '<a href="https://timpaemi.com/" rel="author noopener">timpaemi.com</a></span>' +
+    '<span>Written, edited and maintained by ' +
+    '<a class="pf-author" href="/masthead.html#tim">Tim</a> &amp; ' +
+    '<a class="pf-author" href="/masthead.html#paemi">Paemi</a>, the married team behind TimPaemi, ' +
+    'working across publishing, web development, events and live production in Pattaya. ' +
+    '<a class="pf-credit" href="https://timpaemi.com/" rel="author noopener">TimPaemi.com</a></span>' +
     '</div>' +
     '<div class="pf-soc">' +
     '<a href="https://www.youtube.com/@timpaemi" rel="me noopener" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></a>' +
@@ -197,7 +157,7 @@ function footer() {
     '</div>' +
     '<hr class="pf-rule">' +
     '<div class="pf-base">' +
-    '<span>&copy; ' + year + ' TimPaemi Co., Ltd. &middot; Made in Pattaya, Thailand</span>' +
+    '<span>&copy; ' + year + ' ' + esc(SITE.publisherLegalName) + ' &middot; Made in Pattaya, Thailand</span>' +
     '<span class="pf-legal-links">' +
     '<a href="/privacy.html">Privacy</a>' +
     '<a href="/terms.html">Terms</a>' +
@@ -205,7 +165,7 @@ function footer() {
     '<a href="/sitemap.html">Sitemap</a>' +
     '</span>' +
     '</div>' +
-    '<p class="pf-note">Anonymous visits &middot; Bills paid in full &middot; No paid placements, no sponsorships, no affiliate links. ' +
+    '<p class="pf-note">Facts pages show their evidence and visit status &middot; No paid placements, sponsorships or affiliate links. ' +
     esc(DISCLAIMER) + ' ' +
     '<a href="https://google.com/preferences/source?q=pattayapets.com" rel="nofollow noopener" target="_blank">Make PattayaPets a preferred source in Google</a>.</p>' +
     '</div>' +
@@ -222,8 +182,8 @@ function fmtDate(iso) {
 function dateStamp(page) {
   if (!page.updated) return "";
   if (page.body && page.body.indexOf('class="updated"') !== -1) return "";
-  return '<div class="container"><p class="updated" style="margin:0 0 44px">Last updated ' +
-    fmtDate(page.updated) + "</p></div>";
+  return '<div class="container"><p class="updated date-stamp">Last updated <time datetime="' +
+    page.updated + '">' + fmtDate(page.updated) + "</time></p></div>";
 }
 
 function breadcrumbHtml(page) {
@@ -237,73 +197,63 @@ function breadcrumbHtml(page) {
   return '<nav class="breadcrumb container" aria-label="Breadcrumb"><ol>' + items.join("") + "</ol></nav>";
 }
 
-/* FOOTER-SPEC-2026: canonical TimPaemi publisher entity (Organization).
-   Same @id on every owned site — author/publisher fields reference it. */
-function personGraph() {
+function personGraphs(full) {
+  return SITE.authors.map(function (person, index) {
+    var node = {
+      "@type": "Person",
+      "@id": person.id,
+      name: person.name,
+      url: person.url
+    };
+    if (full) {
+      node.mainEntityOfPage = person.url;
+      node.image = {
+        "@type": "ImageObject",
+        "@id": SITE.url + "/assets/img/timpaemi.jpg#image",
+        url: SITE.url + "/assets/img/timpaemi.jpg",
+        contentUrl: SITE.url + "/assets/img/timpaemi.jpg",
+        width: 512,
+        height: 512,
+        caption: "Tim and Paemi, the married team behind TimPaemi and PattayaPets",
+        copyrightHolder: { "@id": SITE.publisherId }
+      };
+      node.jobTitle = person.role;
+      node.description = person.name + " is one half of the married team behind TimPaemi and a named author and editor of PattayaPets.";
+      node.spouse = { "@id": SITE.authors[index === 0 ? 1 : 0].id };
+      node.worksFor = { "@id": SITE.publisherId };
+    }
+    return node;
+  });
+}
+
+function publisherRef() {
   return {
     "@type": "Organization",
-    "@id": "https://timpaemi.com/#timpaemi",
-    name: "TimPaemi",
-    url: "https://timpaemi.com/",
-    founder: [
-      { "@type": "Person", name: "Tim" },
-      { "@type": "Person", name: "Paemi" }
-    ],
-    sameAs: [
-      "https://www.youtube.com/@timpaemi",
-      "https://www.tiktok.com/@timpaemi.com",
-      "https://www.instagram.com/timpaemi/",
-      "https://www.facebook.com/timpaemi"
-    ]
+    "@id": SITE.publisherId,
+    name: SITE.publisherName,
+    url: SITE.publisherUrl
   };
 }
 
-function orgGraph() {
-  return {
-    "@type": "Organization",
-    "@id": SITE.url + "/#org",
-    name: SITE.name,
-    url: SITE.url + "/",
-    slogan: NETWORK_SLOGAN,
-    description:
-      "An independent editorial directory and guide for pet owners in Pattaya, Thailand.",
-    logo: { "@type": "ImageObject", url: SITE.url + "/assets/img/icon-512.png" },
-    email: SITE.email,
-    foundingLocation: "Pattaya, Chon Buri, Thailand",
-    founder: [
-      { "@type": "Person", name: "Tim" },
-      { "@type": "Person", name: "Paemi" }
-    ],
-    parentOrganization: { "@id": "https://timpaemi.com/#timpaemi" },
-    legalName: SITE.operator,
-    alternateName: "Pattaya Pets",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Pattaya City",
-      addressRegion: "Chon Buri",
-      postalCode: "20150",
-      addressCountry: "TH"
-    },
-    areaServed: { "@type": "City", name: "Pattaya" },
-    knowsAbout: [
-      "Veterinary care in Pattaya",
-      "Pet import to Thailand",
-      "Pet export from Thailand",
-      "Dog-friendly places in Pattaya",
-      "Pet adoption in Thailand"
-    ],
-    publishingPrinciples: SITE.url + "/standards.html",
-    correctionsPolicy: SITE.url + "/corrections.html",
-    actionableFeedbackPolicy: SITE.url + "/contact.html",
-    ethicsPolicy: SITE.url + "/standards.html",
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "editorial",
-      email: SITE.email,
-      url: SITE.url + "/contact.html",
-      availableLanguage: ["en", "th"]
-    }
+function publisherGraph(full) {
+  var publisher = publisherRef();
+  if (!full) return publisher;
+  publisher.legalName = SITE.publisherLegalName;
+  publisher.description = SITE.teamSummary + " " + SITE.teamWork + " " +
+    SITE.publisherLegalName + " publishes PattayaPets.";
+  publisher.logo = {
+    "@type": "ImageObject",
+    url: SITE.url + "/assets/img/icon-512.png",
+    width: 512,
+    height: 512
   };
+  publisher.founder = SITE.authors.map(function (person) { return { "@id": person.id }; });
+  publisher.sameAs = SITE.socials.slice();
+  publisher.publishingPrinciples = SITE.policies.publishingPrinciples;
+  publisher.correctionsPolicy = SITE.policies.correctionsPolicy;
+  publisher.actionableFeedbackPolicy = SITE.policies.actionableFeedbackPolicy;
+  publisher.ownershipFundingInfo = SITE.policies.ownershipFundingInfo;
+  return publisher;
 }
 
 function websiteGraph() {
@@ -311,17 +261,12 @@ function websiteGraph() {
     "@type": "WebSite",
     "@id": SITE.url + "/#website",
     name: SITE.name,
+    alternateName: "Pattaya Pets",
     url: SITE.url + "/",
-    publisher: { "@id": SITE.url + "/#org" },
-    inLanguage: "en",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: SITE.url + "/search.html?q={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    }
+    creator: SITE.authors.map(function (person) { return { "@id": person.id }; }),
+    publisher: publisherRef(),
+    copyrightHolder: { "@id": SITE.publisherId },
+    inLanguage: "en"
   };
 }
 
@@ -330,12 +275,36 @@ function webPageGraph(page) {
     "@type": "WebPage",
     "@id": canonical(page.path) + "#webpage",
     url: canonical(page.path),
+    name: page.ogTitle || page.title,
+    description: page.description,
     isPartOf: { "@id": SITE.url + "/#website" },
-    about: { "@id": SITE.url + "/#org" },
+    creator: SITE.authors.map(function (person) { return { "@id": person.id }; }),
+    publisher: publisherRef(),
+    copyrightHolder: { "@id": SITE.publisherId },
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: SITE.url + imageForRoute(page.path, page.image),
+      width: 1200,
+      height: 630
+    },
     inLanguage: "en"
   };
+  if (page.path !== "/") node.breadcrumb = { "@id": canonical(page.path) + "#breadcrumb" };
+  var mainEntity = (page.schema || []).find(function (entry) {
+    return entry && entry["@id"] && entry["@type"] !== "FAQPage";
+  });
+  if (mainEntity) node.mainEntity = { "@id": mainEntity["@id"] };
   if (page.updated) node.dateModified = page.updated;
   if (page.published) node.datePublished = page.published;
+  if (page.path === "/masthead.html") {
+    node.about = SITE.authors.map(function (person) { return { "@id": person.id }; })
+      .concat([{ "@id": SITE.publisherId }]);
+  } else if (page.path === "/about.html") {
+    node.about = [
+      { "@id": SITE.url + "/#website" },
+      { "@id": SITE.publisherId }
+    ];
+  }
   return node;
 }
 
@@ -345,6 +314,7 @@ function breadcrumbGraph(page) {
   if (current) trail.push({ name: current, path: page.path });
   return {
     "@type": "BreadcrumbList",
+    "@id": canonical(page.path) + "#breadcrumb",
     itemListElement: trail.map(function (c, i) {
       return {
         "@type": "ListItem",
@@ -356,70 +326,55 @@ function breadcrumbGraph(page) {
   };
 }
 
-/* SERP display limit — trim at pipe boundaries when possible */
-function clampMetaTitle(title, maxLen) {
-  maxLen = maxLen || 60;
-  if (!title || title.length <= maxLen) return title;
-  var brand = " | PattayaPets";
-  var hasBrand = title.slice(-brand.length) === brand;
-  var core = hasBrand ? title.slice(0, -brand.length) : title;
-  var budget = maxLen - (hasBrand ? brand.length : 0);
-  if (core.length <= budget) return title;
-  var parts = core.split(" | ");
-  while (parts.length > 1) {
-    var trial = parts.slice(0, -1).join(" | ");
-    if (trial.length <= budget) return trial + (hasBrand ? brand : "");
-    parts.pop();
-  }
-  if (core.length > budget) {
-    core = core.slice(0, budget).replace(/\s+\S*$/, "").trim();
-    if (!core) core = title.slice(0, budget).trim();
-  }
-  return core + (hasBrand ? brand : "");
-}
-
+/* Render authored titles exactly; page-kind authoring and audits own title quality. */
 function renderPage(page, opts) {
   opts = opts || {};
-  const cssCritical = opts.criticalCss || "";
   const cssHref = opts.cssHref || "/assets/css/site.css";
   const jsSrc = opts.jsSrc || "/assets/js/site.js";
   const url = canonical(page.path);
-  const image = (page.image ? SITE.url + page.image : SITE.url + "/assets/img/og-default.png");
+  const image = SITE.url + imageForRoute(page.path, page.image);
   const ogType = page.ogType || "website";
   const robots = page.noindex
     ? "noindex, follow"
     : "index, follow, max-image-preview:large, max-snippet:-1";
 
-  const graph = [orgGraph(), personGraph(), websiteGraph(), breadcrumbGraph(page), webPageGraph(page)];
+  const isEntityPage = page.path === "/";
+  const graph = personGraphs(isEntityPage).concat([
+    publisherGraph(isEntityPage),
+    websiteGraph(),
+    webPageGraph(page)
+  ]);
+  if (page.path !== "/") graph.push(breadcrumbGraph(page));
   if (page.schema && page.schema.length) {
     page.schema.forEach(function (s) { graph.push(s); });
   }
-  const jsonld = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
-
-  const gaAttr = (SITE.ga && SITE.ga.indexOf("XXXX") === -1)
-    ? ' data-ga="' + SITE.ga + '"'
-    : "";
+  const jsonld = JSON.stringify({ "@context": "https://schema.org", "@graph": graph })
+    .replace(/</g, "\\u003c");
 
   return (
-    "<!doctype html><html lang=\"en\"" + gaAttr + "><head><meta charset=\"utf-8\">" +
+    "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">" +
     '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">' +
-    "<title>" + esc(clampMetaTitle(page.title)) + "</title>" +
+    "<title>" + esc(page.title) + "</title>" +
     '<meta name="description" content="' + esc(page.description) + '">' +
     '<link rel="canonical" href="' + url + '">' +
     '<meta name="robots" content="' + robots + '">' +
-    (page.updated
+    (ogType === "article" && page.published
+      ? '<meta property="article:published_time" content="' + page.published + 'T00:00:00+07:00">'
+      : "") +
+    (ogType === "article" && page.updated
       ? '<meta property="article:modified_time" content="' + page.updated + 'T00:00:00+07:00">' +
         '<meta property="og:updated_time" content="' + page.updated + 'T00:00:00+07:00">'
       : "") +
     '<meta name="theme-color" content="#1B5A4C">' +
-    '<meta name="author" content="TimPaemi (timpaemi.com)">' +
-    '<meta name="publisher" content="' + esc(SITE.operator) + '">' +
+    '<meta name="author" content="Tim and Paemi — TimPaemi">' +
+    '<meta name="publisher" content="' + esc(SITE.publisherLegalName) + '">' +
     '<meta property="og:type" content="' + ogType + '">' +
     '<meta property="og:site_name" content="PattayaPets">' +
     '<meta property="og:title" content="' + esc(page.ogTitle || page.title) + '">' +
     '<meta property="og:description" content="' + esc(page.description) + '">' +
     '<meta property="og:url" content="' + url + '">' +
     '<meta property="og:image" content="' + image + '">' +
+    '<meta property="og:image:alt" content="' + esc(page.ogTitle || page.title) + '">' +
     '<meta property="og:image:width" content="1200">' +
     '<meta property="og:image:height" content="630">' +
     '<meta property="og:locale" content="en_US">' +
@@ -427,20 +382,13 @@ function renderPage(page, opts) {
     '<meta name="twitter:title" content="' + esc(page.ogTitle || page.title) + '">' +
     '<meta name="twitter:description" content="' + esc(page.description) + '">' +
     '<meta name="twitter:image" content="' + image + '">' +
+    '<meta name="twitter:image:alt" content="' + esc(page.ogTitle || page.title) + '">' +
     '<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">' +
     '<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">' +
     '<link rel="manifest" href="/manifest.webmanifest">' +
     '<link rel="preload" href="/assets/fonts/bricolage-700.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">' +
     '<link rel="preload" href="/assets/fonts/hanken-400.woff2" as="font" type="font/woff2" crossorigin>' +
-    '<link rel="preload" href="/assets/fonts/hanken-500.woff2" as="font" type="font/woff2" crossorigin>' +
-    '<link rel="preload" href="/assets/fonts/hanken-700.woff2" as="font" type="font/woff2" crossorigin>' +
-    '<link rel="preload" href="/assets/fonts/bricolage-600.woff2" as="font" type="font/woff2" crossorigin>' +
-    "<style>" + cssCritical + "</style>" +
-    '<link rel="preload" href="' + cssHref + '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">' +
-    '<noscript><link rel="stylesheet" href="' + cssHref + '">' +
-    "<style>@media(max-width:860px){#primary-nav{display:flex;position:static;" +
-    "flex-direction:column;padding:4px 20px 12px;background:var(--mist)}" +
-    ".nav-toggle{display:none}}</style></noscript>" +
+    '<link rel="stylesheet" href="' + cssHref + '">' +
     '<script type="application/ld+json">' + jsonld + "</script>" +
     "</head><body" + (page.bodyClass ? ' class="' + page.bodyClass + '"' : "") + ">" +
     header() +
@@ -448,12 +396,12 @@ function renderPage(page, opts) {
     '<main id="main" tabindex="-1">' + page.body + dateStamp(page) + "</main>" +
     footer() +
     '<script src="' + jsSrc + '" defer></script>' +
-    (SITE.cfBeacon && SITE.cfBeacon.indexOf("PLACEHOLDER") === -1
+    (SITE.analytics.cloudflareBeaconToken
       ? '<script defer src="https://static.cloudflareinsights.com/beacon.min.js" ' +
-        "data-cf-beacon='{\"token\":\"" + SITE.cfBeacon + "\"}'></script>"
+        "data-cf-beacon='{\"token\":\"" + SITE.analytics.cloudflareBeaconToken + "\"}'></script>"
       : "") +
     "</body></html>"
   );
 }
 
-module.exports = { SITE, NAV, NETWORK_SLOGAN, DISCLAIMER, esc, canonical, renderPage, brandLink };
+module.exports = { SITE, NAV, SITE_SLOGAN, DISCLAIMER, esc, canonical, renderPage, brandLink };
