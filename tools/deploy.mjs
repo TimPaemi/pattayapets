@@ -28,6 +28,7 @@ const BLOCK = ['pattaya-school-guide'];   // hard abort — the actual incident
 const WARN = ['pattaya-authority'];       // report legacy identity residue
 
 const DRY = process.argv.includes('--dry-run');
+const PUBLIC_ARTIFACT_ONLY = process.argv.includes('--public-artifact-only');
 const problems = [];
 const warnings = [];
 const ok = [];
@@ -73,6 +74,16 @@ if (process.argv.some((a) => /^--project(-name)?/.test(a))) {
   console.error('\n  DEPLOY ABORTED\n  --project-name is not accepted. The target is hardcoded to "' + PROJECT + '".\n');
   process.exit(1);
 }
+const unknownArgs = process.argv.slice(2).filter((arg) =>
+  !['--dry-run', '--public-artifact-only'].includes(arg));
+if (unknownArgs.length) {
+  console.error('\n  DEPLOY ABORTED\n  Unsupported argument(s): ' + unknownArgs.join(', ') + '\n');
+  process.exit(1);
+}
+if (PUBLIC_ARTIFACT_ONLY && (!DRY || process.env.GITHUB_ACTIONS !== 'true')) {
+  console.error('\n  DEPLOY ABORTED\n  --public-artifact-only is restricted to dry-run GitHub Actions checks.\n');
+  process.exit(1);
+}
 
 if (!existsSync(DIST)) {
   console.error('\n  DEPLOY ABORTED\n  dist/ does not exist. Run: node build.js\n');
@@ -88,18 +99,38 @@ else fail('build manifest audit failed: ' + (manifestAudit.stderr || manifestAud
 // The checked-in airline snapshot makes clean CI builds reproducible, but a
 // production operator release must also prove exact parity with the private,
 // source-rich research dossier.
-const airlineAudit = spawnSync(process.execPath, [
+const airlineAuditArgs = [
   join(ROOT, 'tools', 'audit-airline-policies.js'),
   '--max-age-days', '90',
-  '--require-private-source',
-], {
+];
+if (!PUBLIC_ARTIFACT_ONLY) airlineAuditArgs.push('--require-private-source');
+const airlineAudit = spawnSync(process.execPath, airlineAuditArgs, {
   cwd: ROOT, encoding: 'utf8', shell: false,
 });
 if (airlineAudit.status === 0) {
-  pass('airline snapshot matches the private reviewed source');
+  pass(PUBLIC_ARTIFACT_ONLY
+    ? 'airline snapshot passes public-artifact checks'
+    : 'airline snapshot matches the private reviewed source');
 } else {
   fail('airline source-parity release gate failed: ' +
     (airlineAudit.stderr || airlineAudit.stdout || 'unknown error').trim());
+}
+
+const businessAuditArgs = [
+  join(ROOT, 'tools', 'audit-business-integrity.js'),
+  '--dist',
+];
+if (!PUBLIC_ARTIFACT_ONLY) businessAuditArgs.push('--require-private-source');
+const businessAudit = spawnSync(process.execPath, businessAuditArgs, {
+  cwd: ROOT, encoding: 'utf8', shell: false,
+});
+if (businessAudit.status === 0) {
+  pass(PUBLIC_ARTIFACT_ONLY
+    ? 'business live model, hold boundary and output pass public-artifact checks'
+    : 'business live output matches the private dossier corpus');
+} else {
+  fail('business private-dossier release gate failed: ' +
+    (businessAudit.stderr || businessAudit.stdout || 'unknown error').trim());
 }
 
 // Contact delivery must be proven by the operator before a production release.

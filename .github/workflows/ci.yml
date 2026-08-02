@@ -36,8 +36,8 @@ jobs:
       - name: Exercise staged-build containment
         run: npm run test:build-containment
       - name: Build and run release gates
-        run: npm run build:all
+        run: npm run build:ci
       - name: Run deterministic loopback performance harness
         run: npm run audit:local
-      - name: Verify guarded deploy identity without uploading
-        run: node tools/deploy.mjs --dry-run
+      - name: Verify public artifact identity without uploading
+        run: node tools/deploy.mjs --dry-run --public-artifact-only

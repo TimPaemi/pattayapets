@@ -157,3 +157,11 @@ Automated accessibility is not complete human verification: axe could not automa
 ## 8. Change boundary
 
 During the implementation verification recorded above, no Git command, deployment, cache purge, IndexNow submission or live mutation was performed. No canonical, public URL, redirect target, robots or noindex policy was changed. `dist` was generated only by the build; it was not manually edited. The Cloudflare project identity remains hardcoded and non-parameterised.
+
+## 9. Controlled release record
+
+After Tim explicitly confirmed mailbox delivery and approved release on 1 August 2026, the guarded PattayaPets operator route was used to build, commit, push and deploy only the hardcoded PattayaPets Cloudflare Pages project. The production live audit subsequently returned HTTP 200 for every one of the 205 sitemap URLs and all critical assets, with no content issue detected.
+
+Post-push verification exposed two clean-checkout failures that local operator data had masked: the airline build adapter and business integrity audit depended on gitignored private research files. The release controls now separate those concerns. Clean CI validates the checked-in publication snapshot, public business model, explicit hold boundary and generated output while stating that private parity was unavailable; operator builds, ordinary deploy dry-runs and production deploys hard-require the private airline and business sources before any approved release can proceed. No raw dossier, unpublished contact value or private research source was added to the repository or generated site.
+
+No IndexNow submission or cache purge was made as part of this release.

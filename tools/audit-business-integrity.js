@@ -23,6 +23,33 @@ const SCHEMA_FILE = path.join(ROOT, "schemas", "business-dossier.schema.json");
 const DATA_FILE = path.join(ROOT, "src", "data", "businesses.js");
 const DIST_DIR = path.join(ROOT, "dist");
 const CHECK_DIST = process.argv.includes("--dist");
+const REQUIRE_PRIVATE_SOURCE = process.argv.includes("--require-private-source");
+const DOSSIER_ONLY_HOLDS = Object.freeze([
+  "better-pets-hospital",
+  "chaiyapornwithi-vet-clinic",
+  "nana-pet-clinic",
+  "nern-plub-wan-animal-hospital",
+  "pakana-animal-hospital",
+  "pet-buddy-animal-clinic",
+  "sri-sara-animal-hospital",
+  "vet-pro-veterinary-clinic-sattahip"
+]);
+const PUBLICATION_BLOCKS = Object.freeze({
+  "better-pets-hospital": "vaccination-price-source-contradiction"
+});
+const PUBLIC_BUSINESS_FIELDS = new Set([
+  "address", "addressCountry", "addressLocality", "addressRegion", "areas", "c24",
+  "category", "contactPublicationState", "dossierCheckedAt", "dossierConfidence",
+  "dossierPath", "dossierStatusOverrideReason", "email", "hours", "languages", "line",
+  "locality", "name", "operatingStatus", "phone", "publicationBasis", "publishState",
+  "serviceAreaNote", "serviceAreas", "serviceScope", "services", "slug", "summary", "tel",
+  "type", "website", "whatsapp"
+]);
+const PUBLIC_INTEGRITY_FIELDS = new Set([
+  "addressLocality", "addressRegion", "dossierConfidence", "dossierStatusOverrideReason",
+  "operatingStatus", "publicationBasis", "publishState", "serviceAreaNote",
+  "serviceAreas", "serviceScope"
+]);
 
 const hard = [];
 const advisory = [];
@@ -140,6 +167,7 @@ try {
 const dossierFiles = fs.existsSync(DOSSIER_DIR)
   ? fs.readdirSync(DOSSIER_DIR).filter(function (file) { return file.endsWith(".json"); }).sort()
   : [];
+const privateDossiersAvailable = dossierFiles.length > 0;
 const dossiers = [];
 const rawBySlug = new Map();
 const missingSchemaVersion = [];
@@ -149,7 +177,14 @@ const missingCheckedAt = [];
 const sourceWithoutAccessDate = [];
 const shapeSignatures = new Set();
 
-if (!dossierFiles.length) addHard("DOSSIER_CORPUS", "No research/businesses/*.json files found");
+if (REQUIRE_PRIVATE_SOURCE && !privateDossiersAvailable) {
+  addHard("PRIVATE_DOSSIERS_REQUIRED",
+    "Guarded release requires research/businesses/*.json");
+}
+if (!privateDossiersAvailable) {
+  addAdvisory("PRIVATE_DOSSIER_PARITY",
+    "Private dossier corpus is unavailable; live-model, hold-boundary and rendered-output gates still run");
+}
 
 dossierFiles.forEach(function (filename) {
   var file = path.join(DOSSIER_DIR, filename);
@@ -338,6 +373,18 @@ collectDuplicates(dossiers, function (d) {
     entry[1].map(function (d) { return rel(d.__file); }).join(", "));
 });
 
+const privateDossierBySlug =
+  new Map(dossiers.map(function (dossier) { return [dossier.slug, dossier]; }));
+if (privateDossiersAvailable) {
+  Object.keys(PUBLICATION_BLOCKS).forEach(function (slug) {
+    var raw = rawBySlug.get(slug) || "";
+    if (!/vaccination/i.test(raw) || !/price/i.test(raw)) {
+      addHard("PUBLICATION_BLOCK_PARITY", slug +
+        " publication block is not supported by the private dossier text");
+    }
+  });
+}
+
 if (missingSchemaVersion.length) {
   addAdvisory("DOSSIER_MIGRATION", missingSchemaVersion.length + " dossiers remain on the legacy " +
     "unversioned shape; do not invent schemaVersion or decisions during mechanical migration");
@@ -367,7 +414,78 @@ const data = require(DATA_FILE);
 const BUSINESSES = data.BUSINESSES || [];
 const CATEGORIES = data.CATEGORIES || {};
 const AREAS = data.AREAS || {};
-const dossierBySlug = new Map(dossiers.map(function (dossier) { return [dossier.slug, dossier]; }));
+const BUSINESS_INTEGRITY = data.BUSINESS_INTEGRITY || {};
+const expectedDataExports =
+  ["AREAS", "BUSINESSES", "BUSINESS_INTEGRITY", "CATEGORIES", "isPublishedBusiness"];
+if (Object.keys(data).sort().join("|") !== expectedDataExports.slice().sort().join("|")) {
+  addHard("LIVE_EXPORT_BOUNDARY",
+    "src/data/businesses.js exports an unsupported key; private dossier data must stay isolated");
+}
+BUSINESSES.forEach(function (business) {
+  var unsupported = Object.keys(business)
+    .filter(function (field) { return !PUBLIC_BUSINESS_FIELDS.has(field); });
+  if (unsupported.length) {
+    addHard("LIVE_FIELD_BOUNDARY", business.slug + " exposes unsupported field(s): " +
+      unsupported.join(", "));
+  }
+});
+const integritySlugs = Object.keys(BUSINESS_INTEGRITY);
+const businessSlugsForIntegrity = BUSINESSES.map(function (business) { return business.slug; });
+if (integritySlugs.length !== businessSlugsForIntegrity.length ||
+    integritySlugs.some(function (slug) { return !businessSlugsForIntegrity.includes(slug); })) {
+  addHard("INTEGRITY_SLUG_BOUNDARY",
+    "BUSINESS_INTEGRITY keys must exactly match the live business model");
+}
+BUSINESSES.forEach(function (business) {
+  var integrity = BUSINESS_INTEGRITY[business.slug];
+  if (!integrity || typeof integrity !== "object" || Array.isArray(integrity)) {
+    addHard("INTEGRITY_RECORD", business.slug + " has no BUSINESS_INTEGRITY record");
+    return;
+  }
+  var unsupported = Object.keys(integrity)
+    .filter(function (field) { return !PUBLIC_INTEGRITY_FIELDS.has(field); });
+  if (unsupported.length) {
+    addHard("INTEGRITY_FIELD_BOUNDARY", business.slug +
+      " integrity record exposes unsupported field(s): " + unsupported.join(", "));
+  }
+  Object.keys(integrity).forEach(function (field) {
+    if (JSON.stringify(integrity[field]) !== JSON.stringify(business[field])) {
+      addHard("INTEGRITY_VALUE_PARITY", business.slug + "." + field +
+        " differs from the live business record");
+    }
+  });
+});
+const liveModelSlugs = new Set(BUSINESSES.map(function (business) { return business.slug; }));
+const dossierOnlyHoldSlugs = new Set(DOSSIER_ONLY_HOLDS);
+if (dossierOnlyHoldSlugs.size !== DOSSIER_ONLY_HOLDS.length) {
+  addHard("DOSSIER_ONLY_HOLD_DUPLICATE", "Dossier-only hold slug list contains a duplicate");
+}
+DOSSIER_ONLY_HOLDS.forEach(function (slug) {
+  if (liveModelSlugs.has(slug)) {
+    addHard("DOSSIER_ONLY_PROMOTION",
+      slug + " entered the live model without removal from the explicit hold boundary");
+  }
+});
+if (privateDossiersAvailable) {
+  const expectedPrivateSlugs =
+    new Set([].concat(Array.from(liveModelSlugs), DOSSIER_ONLY_HOLDS));
+  if (privateDossierBySlug.size !== expectedPrivateSlugs.size) {
+    addHard("PRIVATE_DOSSIER_COUNT", "Private dossier corpus has " +
+      privateDossierBySlug.size + " unique records; expected " + expectedPrivateSlugs.size +
+      " from the live model plus explicit dossier-only holds");
+  }
+  expectedPrivateSlugs.forEach(function (slug) {
+    if (!privateDossierBySlug.has(slug)) {
+      addHard("PRIVATE_DOSSIER_MISSING", slug + " is absent from the private dossier corpus");
+    }
+  });
+  privateDossierBySlug.forEach(function (_, slug) {
+    if (!expectedPrivateSlugs.has(slug)) {
+      addHard("PRIVATE_DOSSIER_UNCLASSIFIED",
+        slug + " is neither live nor in the explicit dossier-only hold boundary");
+    }
+  });
+}
 
 collectDuplicates(BUSINESSES, function (b) { return b.slug; }).forEach(function (entry) {
   addHard("LIVE_DUPLICATE_SLUG", entry[0] + " appears " + entry[1].length + " times");
@@ -393,10 +511,9 @@ const legacyContactReview = [];
 const unknownPublishedScope = [];
 BUSINESSES.forEach(function (business) {
   var where = "src/data/businesses.js#" + business.slug;
-  var dossier = dossierBySlug.get(business.slug);
-  if (!dossier) {
-    addHard("LIVE_DOSSIER", where + " has no matching dossier");
-    return;
+  var dossier = privateDossierBySlug.get(business.slug);
+  if (privateDossiersAvailable && !dossier) {
+    addHard("LIVE_DOSSIER", where + " has no matching private dossier");
   }
   var dossierRaw = rawBySlug.get(business.slug) || "";
   if (!Object.prototype.hasOwnProperty.call(CATEGORIES, business.category)) {
@@ -426,26 +543,33 @@ BUSINESSES.forEach(function (business) {
     addHard("LIVE_UNSAFE_PUBLISH", where + " is published without operatingStatus=open");
   }
   if (business.publishState !== "published") heldSlugs.push(business.slug);
-  if (business.operatingStatus !== dossier.status) {
+  if (dossier && business.operatingStatus !== dossier.status) {
     if (business.publishState === "hold" && nonEmptyString(business.dossierStatusOverrideReason)) {
       addAdvisory("CAUTIOUS_STATUS_OVERRIDE", business.slug + " is held as " + business.operatingStatus +
-        " while its legacy dossier says " + dossier.status + ": " + business.dossierStatusOverrideReason);
+        " while its legacy dossier says " + dossier.status + ": " +
+        business.dossierStatusOverrideReason);
     } else {
       addHard("STATUS_PARITY", where + " operatingStatus " + business.operatingStatus +
         " differs from dossier status " + dossier.status);
     }
   }
-  if (business.dossierConfidence !== dossier.confidence) {
-    addHard("CONFIDENCE_PARITY", where + " confidence differs from dossier");
+  if (!["high", "medium", "low"].includes(business.dossierConfidence)) {
+    addHard("LIVE_DOSSIER_CONFIDENCE", where + " has invalid dossierConfidence");
+  } else if (dossier && business.dossierConfidence !== dossier.confidence) {
+    addHard("CONFIDENCE_PARITY", where + " confidence differs from its private dossier");
   }
-  if (!business.dossierCheckedAt || business.dossierCheckedAt !== dossier.checkedAt) {
-    addHard("PROVENANCE_DATE", where + " dossierCheckedAt must equal its dossier checkedAt");
+  if (!validDate(business.dossierCheckedAt)) {
+    addHard("LIVE_DOSSIER_DATE", where + " has invalid dossierCheckedAt");
+  } else if (dossier && business.dossierCheckedAt !== dossier.checkedAt) {
+    addHard("PROVENANCE_DATE", where + " dossierCheckedAt must equal its private dossier checkedAt");
   }
-  if (path.resolve(ROOT, business.dossierPath || "") !== path.resolve(dossier.__file)) {
-    addHard("PROVENANCE_PATH", where + " dossierPath does not resolve to its dossier");
+  var expectedDossierPath = path.join(DOSSIER_DIR, business.slug + ".json");
+  if (path.resolve(ROOT, business.dossierPath || "") !== path.resolve(expectedDossierPath)) {
+    addHard("PROVENANCE_PATH",
+      where + " dossierPath does not resolve to its slug-matched private dossier path");
   }
-  if (!Array.isArray(dossier.sources) || !dossier.sources.length) {
-    addHard("PROVENANCE_SOURCES", where + " has no dossier sources");
+  if (dossier && (!Array.isArray(dossier.sources) || !dossier.sources.length)) {
+    addHard("PROVENANCE_SOURCES", where + " has no private dossier sources");
   }
   if (business.address && (!nonEmptyString(business.addressLocality) ||
       !nonEmptyString(business.addressCountry))) {
@@ -460,7 +584,8 @@ BUSINESSES.forEach(function (business) {
         business.locality.addressCountry !== business.addressCountry) {
       addHard("LOCALITY_MODEL", where + " locality object differs from its explicit address fields");
     }
-    if (dossierRaw.toLowerCase().indexOf(business.addressLocality.toLowerCase()) === -1) {
+    if (dossier &&
+        dossierRaw.toLowerCase().indexOf(business.addressLocality.toLowerCase()) === -1) {
       addHard("LOCALITY_PROVENANCE", where + " addressLocality is not present in its dossier evidence");
     }
   } else if (business.locality !== null) {
@@ -471,16 +596,17 @@ BUSINESSES.forEach(function (business) {
   }
   (business.serviceAreas || []).filter(function (area) { return area !== "Online"; })
     .forEach(function (area) {
-      if (dossierRaw.toLowerCase().indexOf(area.toLowerCase()) === -1) {
+      if (dossier && dossierRaw.toLowerCase().indexOf(area.toLowerCase()) === -1) {
         addHard("SERVICE_AREA_PROVENANCE", where + " service area " + area +
           " is not present in its dossier evidence");
       }
     });
-  if (business.serviceScope === "nationwide" &&
+  if (dossier && business.serviceScope === "nationwide" &&
       !/(nationwide|thailand-wide|locations across thailand|within thailand)/i.test(dossierRaw)) {
     addHard("NATIONWIDE_PROVENANCE", where + " claims nationwide scope without matching dossier support");
   }
-  if (business.serviceScope === "remote-only" && !/(online|remote|live video)/i.test(dossierRaw)) {
+  if (dossier && business.serviceScope === "remote-only" &&
+      !/(online|remote|live video)/i.test(dossierRaw)) {
     addHard("REMOTE_PROVENANCE", where + " claims remote-only scope without matching dossier support");
   }
   if (business.areas.length === 0) {
@@ -524,7 +650,8 @@ BUSINESSES.forEach(function (business) {
     addHard("CONTACT_WEBSITE", where + " has invalid website URL");
   }
   ["phone", "tel", "whatsapp", "line", "email", "website"].forEach(function (field) {
-    if (business[field] && !contactPresentInDossier(field, business[field], dossierRaw)) {
+    if (dossier && business[field] &&
+        !contactPresentInDossier(field, business[field], dossierRaw)) {
       addHard("CONTACT_PROVENANCE", where + " " + field + " is not found in its dossier evidence");
     }
   });
@@ -696,22 +823,34 @@ Object.keys(AREAS).forEach(function (area) {
   }
 });
 
-const liveSlugs = new Set(BUSINESSES.map(function (business) { return business.slug; }));
-const dossierOnly = dossiers.filter(function (dossier) { return !liveSlugs.has(dossier.slug); });
-dossierOnly.forEach(function (dossier) {
-  var matchingPage = businessPages.find(function (page) { return page.businessSlug === dossier.slug; });
-  if (matchingPage) addHard("DOSSIER_ONLY_PUBLIC", dossier.slug + " is emitted without a live approved record");
-  if (dossier.publishState === "published" ||
-      (dossier.publicationDecision && dossier.publicationDecision.state === "published")) {
-    addHard("UNIMPLEMENTED_PUBLISH_DECISION", dossier.slug +
-      " claims a publish decision but has no approved live record");
+const liveSlugs = liveModelSlugs;
+const dossierOnly = DOSSIER_ONLY_HOLDS.map(function (slug) {
+  return privateDossierBySlug.get(slug) || { slug: slug, status: null };
+});
+dossierOnly.forEach(function (heldDossier) {
+  var matchingPage =
+    businessPages.find(function (page) { return page.businessSlug === heldDossier.slug; });
+  if (matchingPage || liveSlugs.has(heldDossier.slug)) {
+    addHard("DOSSIER_ONLY_PUBLIC",
+      heldDossier.slug + " is emitted while on the explicit dossier-only hold boundary");
+  }
+  var privateDossier = privateDossierBySlug.get(heldDossier.slug);
+  if (privateDossier && (privateDossier.publishState === "published" ||
+      (privateDossier.publicationDecision &&
+       privateDossier.publicationDecision.state === "published"))) {
+    addHard("UNIMPLEMENTED_PUBLISH_DECISION", heldDossier.slug +
+      " claims a private publish decision but has no approved live record");
   }
 });
-const openDossierOnly = dossierOnly.filter(function (dossier) { return dossier.status === "open"; });
-if (openDossierOnly.length) {
+const openDossierOnly =
+  dossierOnly.filter(function (heldDossier) { return heldDossier.status === "open"; });
+if (privateDossiersAvailable && openDossierOnly.length) {
   addAdvisory("DOSSIER_ONLY_QUEUE", openDossierOnly.length + " open dossier-only records remain unpublished " +
     "pending Tim's per-URL publish/hold/reject decisions: " +
     openDossierOnly.map(function (dossier) { return dossier.slug; }).join(", "));
+} else if (!privateDossiersAvailable) {
+  addAdvisory("DOSSIER_ONLY_HOLDS", DOSSIER_ONLY_HOLDS.length +
+    " previously reviewed dossier-only slugs remain on the clean-checkout publication hold boundary");
 }
 
 /* HUMAN QUEUE tokens may remain in comments/research, never in the public model. */
@@ -732,18 +871,20 @@ if (!humanQueueNumbers.length) {
   addAdvisory("HUMAN_QUEUE_DISCOVERY", "No parseable HUMAN QUEUE phone token was found; keep named queue markers machine-readable");
 }
 
-/* Known unresolved contradiction remains a queue item and a hard stop if promoted. */
-var better = dossierBySlug.get("better-pets-hospital");
-if (better) {
-  var betterText = JSON.stringify(better).toLowerCase();
-  if (betterText.indexOf("vaccination") !== -1 && betterText.indexOf("price") !== -1) {
-    if (liveSlugs.has(better.slug)) {
-      addHard("BETTER_PETS_PRICE", "Better Pets cannot publish until its vaccination price/source contradiction is resolved");
-    } else {
-      addAdvisory("BETTER_PETS_PRICE", "Better Pets remains unpublished; resolve its vaccination price/source contradiction before approval");
-    }
+/* Explicit publication blockers remain hard stops even without private files. */
+Object.entries(PUBLICATION_BLOCKS).forEach(function (entry) {
+  if (liveSlugs.has(entry[0])) {
+    addHard("PUBLICATION_BLOCK",
+      entry[0] + " cannot publish while blocked: " + entry[1]);
+  } else if (entry[0] === "better-pets-hospital" &&
+      entry[1] === "vaccination-price-source-contradiction") {
+    addAdvisory("BETTER_PETS_PRICE",
+      "Better Pets remains unpublished; resolve its vaccination price/source contradiction before approval");
+  } else {
+    addAdvisory("PUBLICATION_BLOCK",
+      entry[0] + " remains unpublished: " + entry[1]);
   }
-}
+});
 
 /* Optional post-build surface. */
 if (CHECK_DIST) {
@@ -835,11 +976,14 @@ if (CHECK_DIST) {
   addAdvisory("DIST_NOT_CHECKED", "Generated output not inspected in this run; rerun with --dist after building");
 }
 
-console.log("Dossiers:         " + dossiers.length);
+console.log("Private dossiers: " + (privateDossiersAvailable
+  ? dossiers.length : "unavailable in this checkout"));
 console.log("Live records:     " + BUSINESSES.length);
 console.log("Held records:     " + heldSlugs.length + (heldSlugs.length ? " (" + heldSlugs.join(", ") + ")" : ""));
-console.log("Dossier-only:     " + dossierOnly.length + " (open: " + openDossierOnly.length + ")");
-console.log("Schema shapes:    " + shapeSignatures.size);
+console.log("Dossier-only:     " + dossierOnly.length + (privateDossiersAvailable
+  ? " (open: " + openDossierOnly.length + ")" : " (status parity not run)"));
+console.log("Schema shapes:    " + (privateDossiersAvailable
+  ? shapeSignatures.size : "not checked without private dossiers"));
 console.log("HARD:             " + hard.length);
 hard.forEach(function (finding) { console.error("  HARD [" + finding.code + "] " + finding.message); });
 console.log("ADVISORY:         " + advisory.length);
