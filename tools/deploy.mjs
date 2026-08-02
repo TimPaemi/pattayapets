@@ -85,6 +85,23 @@ const manifestAudit = spawnSync(process.execPath, [join(ROOT, 'tools', 'audit-bu
 if (manifestAudit.status === 0) pass('build manifest hashes match current source and dist');
 else fail('build manifest audit failed: ' + (manifestAudit.stderr || manifestAudit.stdout || 'unknown error').trim());
 
+// The checked-in airline snapshot makes clean CI builds reproducible, but a
+// production operator release must also prove exact parity with the private,
+// source-rich research dossier.
+const airlineAudit = spawnSync(process.execPath, [
+  join(ROOT, 'tools', 'audit-airline-policies.js'),
+  '--max-age-days', '90',
+  '--require-private-source',
+], {
+  cwd: ROOT, encoding: 'utf8', shell: false,
+});
+if (airlineAudit.status === 0) {
+  pass('airline snapshot matches the private reviewed source');
+} else {
+  fail('airline source-parity release gate failed: ' +
+    (airlineAudit.stderr || airlineAudit.stdout || 'unknown error').trim());
+}
+
 // Contact delivery must be proven by the operator before a production release.
 // Dry runs keep validating the artifact while reporting the external blocker.
 const siteConfigText = readFileSync(join(SRC, 'site-config.js'), 'utf8');

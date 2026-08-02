@@ -1,0 +1,172 @@
+[
+  {
+    "airline": "Thai Airways International",
+    "iata": "TG",
+    "ordinaryPetModes": ["Checked baggage"],
+    "bookingTiming": "At least 3 working days before departure; check in at least 2 hours before departure.",
+    "bookingMethod": "Request AVIH through a Thai Airways sales office or contact centre; other species and ineligible consignments must be arranged through Thai Cargo.",
+    "policyUrl": "https://www.thaiairways.com/en-no/content/special-assistance/travel-with-pets/pets-as-checked-baggage-AVIH/",
+    "asOf": "2026-07-20",
+    "confidence": "high"
+  },
+  {
+    "airline": "EVA Air",
+    "iata": "BR",
+    "ordinaryPetModes": ["Checked baggage"],
+    "bookingTiming": "At least 48 hours before departure.",
+    "bookingMethod": "Contact EVA Air and obtain acceptance before travel; complete the required live-animal declaration.",
+    "policyUrl": "https://www.evaair.com/fr-fr/fly-prepare/baggage/travelling-with-pets/",
+    "asOf": "2026-07-20",
+    "confidence": "high"
+  },
+  {
+    "airline": "Singapore Airlines",
+    "iata": "SQ",
+    "ordinaryPetModes": ["Checked baggage"],
+    "bookingTiming": "Contact Singapore Airlines at least 2 weeks before departure.",
+    "bookingMethod": "Contact the local Singapore Airlines office before booking is finalised; carriage must remain entirely on Singapore Airlines-operated flights.",
+    "policyUrl": "https://www.singaporeair.com/en_UK/sg/travel-info/special-assistance/travelling-with-pets/",
+    "asOf": "2026-07-20",
+    "confidence": "high"
+  },
+  {
+    "airline": "Emirates",
+    "iata": "EK",
+    "ordinaryPetModes": ["Checked baggage"],
+    "bookingTiming": "Submit the pet travel form at least 1 week before travel and complete booking and payment before departure.",
+    "bookingMethod": "Submit Emirates' online pets travel form; Emirates confirms whether the itinerary is eligible for checked baggage or must be handled by Emirates SkyCargo.",
+    "policyUrl": "https://www.emirates.com/us/english/before-you-fly/baggage/unusual-baggage-and-special-allowances/",
+    "asOf": "2026-07-20",
+    "confidence": "medium"
+  },
+  {
+    "airline": "Qatar Airways",
+    "iata": "QR",
+    "ordinaryPetModes": ["Checked baggage"],
+    "bookingTiming": "Request between 2 and 30 days before departure and no later than 48 hours before the intended flight.",
+    "bookingMethod": "Contact Qatar Airways and submit the live-animal request form; inbound transfer from another airline is not accepted.",
+    "policyUrl": "https://www.qatarairways.com/en-mt/baggage/animals.html",
+    "asOf": "2026-07-20",
+    "confidence": "medium"
+  },
+  {
+    "airline": "Etihad Airways",
+    "iata": "EY",
+    "ordinaryPetModes": ["Cabin"],
+    "bookingTiming": "Submit the booking form at least 7 days before travel; provide required documents at least 72 hours before travel and arrive 3 hours before departure.",
+    "bookingMethod": "Book an Etihad-operated itinerary, then submit the Pets Onboard booking form and await confirmation before travel.",
+    "policyUrl": "https://www.etihad.com/en-tw/plan/travel-companion/travelling-with-pets",
+    "asOf": "2026-07-20",
+    "confidence": "high"
+  },
+  {
+    "airline": "Lufthansa",
+    "iata": "LH",
+    "ordinaryPetModes": ["Cabin", "Checked baggage"],
+    "bookingTiming": "Register online at least 72 hours before departure; Lufthansa states that its Service Center may still accept a request until 24 hours before departure if capacity remains.",
+    "bookingMethod": "Register each animal with Lufthansa and wait for confirmation; transport is limited to Lufthansa-operated flights and accepted routes.",
+    "policyUrl": "https://www.lufthansa.com/us/en/dangerous-dogs",
+    "asOf": "2026-07-20",
+    "confidence": "medium"
+  },
+  {
+    "airline": "KLM Royal Dutch Airlines",
+    "iata": "KL",
+    "ordinaryPetModes": ["Cabin", "Checked baggage"],
+    "bookingTiming": "Reserve no later than 48 hours before departure; earlier booking is recommended because capacity is limited.",
+    "bookingMethod": "Reserve through My Trip or contact the KLM Customer Contact Centre. Hold carriage is unavailable when a transfer exceeds three hours.",
+    "policyUrl": "https://www.klm.com/information/pets/reservation",
+    "asOf": "2026-07-20",
+    "confidence": "medium"
+  },
+  {
+    "airline": "Turkish Airlines",
+    "iata": "TK",
+    "ordinaryPetModes": ["Cabin", "Checked baggage"],
+    "bookingTiming": "The online pet service may be purchased until six hours before departure, subject to quota; earlier booking is recommended.",
+    "bookingMethod": "Add the pet while buying or managing the ticket online, or contact Turkish Airlines; each flight is subject to pet quota and operational confirmation.",
+    "policyUrl": "https://www.turkishairlines.com/en-at/any-questions/traveling-with-pets/",
+    "asOf": "2026-07-20",
+    "confidence": "medium"
+  },
+  {
+    "airline": "Finnair",
+    "iata": "AY",
+    "ordinaryPetModes": ["Cabin", "Checked baggage"],
+    "bookingTiming": "For a hold pet, book the journey at least seven days before departure and notify Finnair within 24 hours of booking. Cabin space should be added when booking or confirmed immediately afterward.",
+    "bookingMethod": "Use Finnair's booking flow or customer service. Hold carriage requires a Finnair- or Norra-operated itinerary and a Helsinki connection of at least three hours.",
+    "policyUrl": "https://www.finnair.com/pl-en/pets-on-finnair-flights",
+    "asOf": "2026-07-20",
+    "confidence": "medium"
+  },
+  {
+    "airline": "Cathay Pacific",
+    "iata": "CX",
+    "ordinaryPetModes": ["Manifest cargo only"],
+    "bookingTiming": "No public minimum booking or request lead time is stated in the reviewed policy; request shipment-specific timing from the airline.",
+    "bookingMethod": "Ordinary pets travel as Cathay Cargo manifest shipments. For direct bookings accepted from 2025-09-01 onward, the booking party must be an IPATA or ATA member, an IATA-accredited freight forwarder, or a holder of valid IATA Live Animals Regulations training.",
+    "policyUrl": "https://www.cathaycargo.com/en-us/help-and-support/special-cargo-handling-procedures/live-animal/shipper-declaration-letter-and-embargo-list.html",
+    "asOf": "2026-07-20",
+    "confidence": "medium"
+  },
+  {
+    "airline": "China Airlines",
+    "iata": "CI",
+    "ordinaryPetModes": ["Checked baggage"],
+    "bookingTiming": "Contact China Airlines at least 48 hours before departure; acceptance is subject to flight and aircraft limits.",
+    "bookingMethod": "Reserve through China Airlines. Ordinary household cats and dogs travel only as checked baggage on China Airlines- or Mandarin Airlines-operated flights; immediate transfer to another airline is not accepted.",
+    "policyUrl": "https://cargo.china-airlines.com/ccnetv2/content/services/LiveAnimals.aspx",
+    "asOf": "2026-07-20",
+    "confidence": "medium"
+  },
+  {
+    "airline": "Korean Air",
+    "iata": "KE",
+    "ordinaryPetModes": ["Cabin", "Checked baggage"],
+    "bookingTiming": "Request service at least 48 hours before departure after buying the ticket; approval is required.",
+    "bookingMethod": "Request pet transport from Korean Air. A passenger may normally carry one pet in the cabin and two in the hold, subject to aircraft and route limits.",
+    "policyUrl": "https://www.koreanair.com/contents/plan-your-travel/special-assistance/travel-with-pets/guide",
+    "asOf": "2026-07-20",
+    "confidence": "medium"
+  },
+  {
+    "airline": "ANA",
+    "iata": "NH",
+    "ordinaryPetModes": ["Checked baggage"],
+    "bookingTiming": "Advance reservation is required. ANA directs passengers departing in four or more days to its message service and those departing within three days to contact ANA; this is a contact channel, not a guaranteed minimum acceptance deadline.",
+    "bookingMethod": "Reserve with ANA. Checked carriage is limited to ANA flight numbers operated by ANA, subject to aircraft, destination and container acceptance.",
+    "policyUrl": "https://www.ana.co.jp/en/jp/guide/reservation/support/international/pets/",
+    "asOf": "2026-07-20",
+    "confidence": "medium"
+  },
+  {
+    "airline": "Japan Airlines",
+    "iata": "JL",
+    "ordinaryPetModes": ["Checked baggage"],
+    "bookingTiming": "Advance reservation is required and confirmation can take several days. A rental-crate request may be made up to four days before departure, but that is not stated as the transport-booking deadline.",
+    "bookingMethod": "Reserve the animal with JAL after the passenger booking. Ordinary accompanied animals travel in the hold; unaccompanied animals use JAL Cargo.",
+    "policyUrl": "https://www.jal.co.jp/jp/en/inter/support/pet/",
+    "asOf": "2026-07-20",
+    "confidence": "medium"
+  },
+  {
+    "airline": "Qantas",
+    "iata": "QF",
+    "ordinaryPetModes": ["Manifest cargo only"],
+    "bookingTiming": "No universal public minimum was established. International pet movements require a Qantas Freight-approved pet-travel specialist and shipment-specific booking.",
+    "bookingMethod": "Book international pet freight through an approved pet-travel specialist. Pets are not ordinary cabin or checked baggage on international Qantas services.",
+    "policyUrl": "https://freight.qantas.com/au-en/pets/pets-international-travel.html",
+    "asOf": "2026-07-20",
+    "confidence": "medium"
+  },
+  {
+    "airline": "Air Canada",
+    "iata": "AC",
+    "ordinaryPetModes": ["Cabin", "Checked baggage"],
+    "bookingTiming": "Register the pet within 24 hours after completing the passenger booking. More than two pets requires Air Canada Cargo contact 7-14 days before travel.",
+    "bookingMethod": "Call Air Canada after booking. Acceptance applies only to Air Canada-, Air Canada Rouge- or Air Canada Express-operated services identified by the policy; codeshare partners set their own rules.",
+    "policyUrl": "https://www.aircanada.com/ca/en/aco/home/plan/special-assistance/pets.html",
+    "asOf": "2026-07-20",
+    "confidence": "high"
+  }
+]

@@ -7,6 +7,7 @@
  * Usage:
  *   node tools/audit-airline-policies.js
  *   node tools/audit-airline-policies.js --max-age-days 90 --as-of 2026-08-01
+ *   node tools/audit-airline-policies.js --require-private-source
  *
  * Airline policies change frequently, so the default freshness ceiling is 90
  * calendar days. --as-of exists for deterministic CI and fixture testing.
@@ -16,7 +17,8 @@ const fs = require("fs");
 const path = require("path");
 
 const ROOT = path.resolve(__dirname, "..");
-const SOURCE_FILE = path.join(ROOT, "research", "findings", "airline-pet-policies.json");
+const PRIVATE_SOURCE_FILE =
+  path.join(ROOT, "research", "findings", "airline-pet-policies.json");
 const ADAPTER_FILE = path.join(ROOT, "src", "data", "airline-policy-snapshot.js");
 const EXPECTED_COUNT = 17;
 const DEFAULT_MAX_AGE_DAYS = 90;
@@ -60,14 +62,15 @@ const OFFICIAL_DOMAINS = Object.freeze({
 
 function usage() {
   console.log("Usage: node tools/audit-airline-policies.js " +
-    "[--max-age-days N] [--as-of YYYY-MM-DD]");
+    "[--max-age-days N] [--as-of YYYY-MM-DD] [--require-private-source]");
   console.log("Default --max-age-days: " + DEFAULT_MAX_AGE_DAYS);
 }
 
 function parseArgs(argv) {
   const options = {
     maxAgeDays: DEFAULT_MAX_AGE_DAYS,
-    asOf: new Date().toISOString().slice(0, 10)
+    asOf: new Date().toISOString().slice(0, 10),
+    requirePrivateSource: false
   };
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -75,6 +78,10 @@ function parseArgs(argv) {
     if (arg === "--help" || arg === "-h") {
       usage();
       process.exit(0);
+    }
+    if (arg === "--require-private-source") {
+      options.requirePrivateSource = true;
+      continue;
     }
     if (arg === "--max-age-days" || arg === "--as-of") {
       if (index + 1 >= argv.length) throw new Error(arg + " requires a value");
@@ -141,11 +148,20 @@ function main() {
     failures.push({ code: code, message: message });
   };
 
-  let source = null;
-  try {
-    source = JSON.parse(fs.readFileSync(SOURCE_FILE, "utf8"));
-  } catch (error) {
-    fail("SOURCE_LOAD", path.relative(ROOT, SOURCE_FILE) + ": " + error.message);
+  const privateSourcePresent = fs.existsSync(PRIVATE_SOURCE_FILE);
+  if (options.requirePrivateSource && !privateSourcePresent) {
+    fail("PRIVATE_SOURCE_REQUIRED",
+      "Guarded release requires research/findings/airline-pet-policies.json");
+  }
+  let privateSourceUsable = false;
+  let source = [];
+  if (privateSourcePresent) {
+    try {
+      source = JSON.parse(fs.readFileSync(PRIVATE_SOURCE_FILE, "utf8"));
+      privateSourceUsable = Array.isArray(source);
+    } catch (error) {
+      fail("SOURCE_LOAD", path.relative(ROOT, PRIVATE_SOURCE_FILE) + ": " + error.message);
+    }
   }
 
   let adapter = null;
@@ -164,15 +180,16 @@ function main() {
   }
 
   const snapshot = adapter && adapter.AIRLINE_POLICY_SNAPSHOT;
-  if (!Array.isArray(source)) {
-    if (source !== null) fail("SOURCE_SHAPE", "Research source must be an array");
+  if (privateSourcePresent && !Array.isArray(source)) {
+    fail("SOURCE_SHAPE", "Private research source must be an array");
     source = [];
+    privateSourceUsable = false;
   }
   if (!Array.isArray(snapshot)) {
     fail("SNAPSHOT_SHAPE", "AIRLINE_POLICY_SNAPSHOT must be an array");
   }
 
-  if (source.length !== EXPECTED_COUNT) {
+  if (privateSourcePresent && source.length !== EXPECTED_COUNT) {
     fail("SOURCE_COUNT", "Expected " + EXPECTED_COUNT + " source policies, found " + source.length);
   }
   if (Array.isArray(snapshot) && snapshot.length !== EXPECTED_COUNT) {
@@ -304,32 +321,77 @@ function main() {
         new Set(policy.ordinaryPetModes).size !== policy.ordinaryPetModes.length) {
       fail("SNAPSHOT_MODES", where + " has invalid ordinaryPetModes");
     }
+    if (Array.isArray(policy.ordinaryPetModes) &&
+        policy.ordinaryPetModes.includes("Manifest cargo only") &&
+        policy.ordinaryPetModes.length !== 1) {
+      fail("SNAPSHOT_MODE_CONFLICT",
+        policy.iata + " mixes cargo-only and passenger modes");
+    }
+    if (!/^[A-Z0-9]{2}$/.test(String(policy.iata || ""))) {
+      fail("SNAPSHOT_IATA", where + " has invalid IATA code " + JSON.stringify(policy.iata));
+    }
     if (snapshotIata.has(policy.iata)) fail("SNAPSHOT_DUPLICATE_IATA", policy.iata + " is duplicated");
     snapshotIata.add(policy.iata);
     if (snapshotAirlines.has(policy.airline)) {
       fail("SNAPSHOT_DUPLICATE_AIRLINE", policy.airline + " is duplicated");
     }
     snapshotAirlines.add(policy.airline);
-    if (!validDate(policy.asOf)) fail("SNAPSHOT_DATE", policy.iata + " has an invalid asOf date");
+    if (!validDate(policy.asOf)) {
+      fail("SNAPSHOT_DATE", policy.iata + " has an invalid asOf date");
+    } else {
+      const ageDays = Math.floor((Date.parse(options.asOf + "T00:00:00Z") -
+        Date.parse(policy.asOf + "T00:00:00Z")) / DAY_MS);
+      if (ageDays < 0) {
+        fail("SNAPSHOT_FUTURE_DATE", policy.iata + " is dated " + (-ageDays) +
+          " days in the future");
+      } else if (ageDays > options.maxAgeDays) {
+        fail("SNAPSHOT_STALE_POLICY", policy.iata + " is " + ageDays +
+          " days old (maximum " + options.maxAgeDays + ")");
+      }
+    }
     if (!ALLOWED_CONFIDENCE.has(policy.confidence)) {
       fail("SNAPSHOT_CONFIDENCE", policy.iata + " has unsupported confidence");
     }
 
-    const raw = sourceByIata.get(policy.iata);
-    if (!raw) {
-      fail("SNAPSHOT_SOURCE_PARITY", policy.iata + " has no matching source record");
-      return;
+    let parsedSnapshotUrl = null;
+    try { parsedSnapshotUrl = new URL(policy.policyUrl); }
+    catch (_) { fail("SNAPSHOT_POLICY_URL", policy.iata + " has an invalid policy URL"); }
+    const officialDomains = OFFICIAL_DOMAINS[policy.iata];
+    if (!officialDomains) {
+      fail("SNAPSHOT_OFFICIAL_DOMAIN", "No official-domain allowlist for " + policy.iata);
+    } else if (parsedSnapshotUrl) {
+      if (parsedSnapshotUrl.protocol !== "https:" || parsedSnapshotUrl.username ||
+          parsedSnapshotUrl.password ||
+          (parsedSnapshotUrl.port && parsedSnapshotUrl.port !== "443")) {
+        fail("SNAPSHOT_POLICY_URL_HTTPS",
+          policy.iata + " policy URL must be credential-free HTTPS");
+      }
+      if (!hostnameIsOfficial(parsedSnapshotUrl.hostname, officialDomains)) {
+        fail("SNAPSHOT_POLICY_URL_DOMAIN", policy.iata + " policy URL host " +
+          parsedSnapshotUrl.hostname + " is not on its official-domain allowlist");
+      }
     }
-    const expectedTiming = raw.petPolicy.bookingLeadTime == null
-      ? NO_PUBLIC_MINIMUM_BOOKING_TIMING : raw.petPolicy.bookingLeadTime.trim();
-    const parity = policy.airline === raw.airline &&
-      equalArray(policy.ordinaryPetModes, expectedModes(raw)) &&
-      policy.bookingTiming === expectedTiming &&
-      policy.bookingMethod === raw.petPolicy.bookingMethod.trim() &&
-      policy.policyUrl === raw.breedRestrictions.policyUrl.trim() &&
-      policy.asOf === raw.breedRestrictions.asOf.trim() &&
-      policy.confidence === raw.confidence.trim();
-    if (!parity) fail("SNAPSHOT_SOURCE_PARITY", policy.iata + " differs from its reviewed source fields");
+
+    if (privateSourceUsable) {
+      const raw = sourceByIata.get(policy.iata);
+      if (!raw) {
+        fail("SNAPSHOT_SOURCE_PARITY", policy.iata + " has no matching source record");
+        return;
+      }
+      const expectedTiming = raw.petPolicy.bookingLeadTime == null
+        ? NO_PUBLIC_MINIMUM_BOOKING_TIMING : raw.petPolicy.bookingLeadTime.trim();
+      const parity = policy.airline === raw.airline &&
+        equalArray(policy.ordinaryPetModes, expectedModes(raw)) &&
+        policy.bookingTiming === expectedTiming &&
+        policy.bookingMethod === raw.petPolicy.bookingMethod.trim() &&
+        policy.policyUrl === raw.breedRestrictions.policyUrl.trim() &&
+        policy.asOf === raw.breedRestrictions.asOf.trim() &&
+        policy.confidence === raw.confidence.trim();
+      if (!parity) {
+        fail("SNAPSHOT_SOURCE_PARITY",
+          policy.iata + " differs from its reviewed source fields");
+      }
+    }
   });
 
   if (Array.isArray(snapshot) && !Object.isFrozen(snapshot)) {
@@ -351,8 +413,12 @@ function main() {
 
   console.log("AIRLINE POLICY SNAPSHOT AUDIT");
   console.log("=".repeat(54));
-  console.log("Research source:  research/findings/airline-pet-policies.json");
-  console.log("Source records:   " + source.length + " (required " + EXPECTED_COUNT + ")");
+  console.log("Private research: " + (privateSourceUsable
+    ? "available (" + source.length + " records)"
+    : privateSourcePresent ? "present but unusable" : "unavailable in this checkout"));
+  console.log("Source parity:    " + (privateSourceUsable
+    ? "checked against research/findings/airline-pet-policies.json"
+    : "not run; snapshot authority, shape, freshness and domains still enforced"));
   console.log("Snapshot records: " + (Array.isArray(snapshot) ? snapshot.length : 0));
   console.log("Published fields: " + SNAPSHOT_FIELDS.length + " allowlisted fields per record");
   console.log("Freshness:        maximum " + options.maxAgeDays + " days as of " + options.asOf +
@@ -366,8 +432,11 @@ function main() {
   if (failures.length) {
     console.error("FAIL - airline-policy snapshot is not safe to publish.");
     process.exitCode = 1;
-  } else {
+  } else if (privateSourceUsable) {
     console.log("PASS - 17 reviewed policies are complete, current, source-matched, and publication-safe.");
+  } else {
+    console.log("PASS - 17 publication snapshot records are complete, current, and publication-safe; " +
+      "private-source parity was not available in this checkout.");
   }
 }
 
