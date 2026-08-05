@@ -286,8 +286,8 @@ pages.push(own({
       "pet is central to your life here, widening your search to houses may provide " +
       "more options. Confirm every rule with the landlord and juristic office. Browse by " +
       "<a href=\"/directory.html\">neighbourhood</a> in the directory, and " +
-      "compare local pet services such as " +
-      "<a href=\"/vets/siam-country-pet-hospital.html\">Siam Country Pet Hospital</a> " +
+      "compare the currently published options in the " +
+      "<a href=\"/vets/\">vets directory</a> " +
       "before settling on a location.</p>" },
     { h: "What to confirm before you sign", html:
       "<ul><li>The <strong>building</strong> permits pets &mdash; see it in " +

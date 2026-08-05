@@ -25,7 +25,8 @@
     "audit:mobile": "node tools/check-mobile-overflow.js",
     "audit:invariants": "node tools/audit-invariants.js",
     "audit:secrets": "node tools/audit-secrets.js",
-    "audit:network": "node scripts/network-gate.js",
+    "audit:network": "node scripts/network-gate.js --require-dist",
+    "audit:network:source": "node scripts/network-gate.js --source-only",
     "audit:regulated": "node tools/audit-regulated-claims.js --registry src/data/regulated-claims.js --page-dir src/pages --fixtures tools/fixtures/regulated-claims --max-age-days 365",
     "audit:page-manifest": "node tools/audit-page-manifest.js",
     "audit:source": "node tools/audit-source-quality.js",
@@ -68,5 +69,8 @@
     "sharp": "^0.35.3",
     "terser": "^5.48.0",
     "wrangler": "^4.118.0"
+  },
+  "overrides": {
+    "undici": "7.29.0"
   }
 }

@@ -6,9 +6,9 @@
  * HARD failures are deterministic conditions that must not ship: malformed data,
  * unsafe state promotion, inferred geography, contact-policy violations, held-page
  * schema/contact leakage, and accidental publication of dossier-only records.
- * ADVISORY findings are named human work: legacy dossier migration, publication
- * decisions, and per-contact privacy/publication approval. Advisories do not pretend
- * that the human decision has already been made.
+ * ADVISORY findings are named human work that remains after the field-level contact
+ * and publication adjudication. Advisories do not pretend that later operational or
+ * first-hand verification has already been completed.
  *
  * Run `node tools/audit-business-integrity.js --dist` after a build to include the
  * generated HTML/search/auxiliary surface. The source-model gate always runs.
@@ -41,7 +41,7 @@ const PUBLIC_BUSINESS_FIELDS = new Set([
   "address", "addressCountry", "addressLocality", "addressRegion", "areas", "c24",
   "category", "contactPublicationState", "dossierCheckedAt", "dossierConfidence",
   "dossierPath", "dossierStatusOverrideReason", "email", "hours", "languages", "line",
-  "locality", "name", "operatingStatus", "phone", "publicationBasis", "publishState",
+  "locality", "name", "operatingStatus", "phone", "publicationBasis", "publicationReviewedAt", "publishState",
   "serviceAreaNote", "serviceAreas", "serviceScope", "services", "slug", "summary", "tel",
   "type", "website", "whatsapp"
 ]);
@@ -394,8 +394,9 @@ if (missingPublicationModel.length) {
     "operatingStatus/serviceScope and a dated publish, hold, or reject decision");
 }
 if (missingContactModel.length) {
-  addAdvisory("CONTACT_DECISIONS", missingContactModel.length + " dossiers lack per-field public-business/private-person, " +
-    "publication-basis, opt-out, source, and review metadata");
+  addAdvisory("DOSSIER_CONTACT_MIGRATION", missingContactModel.length +
+    " private dossiers still lack embedded per-field publication metadata; the separate versioned " +
+    "live contact ledger remains mandatory and is enforced below");
 }
 if (missingCheckedAt.length) {
   addAdvisory("DOSSIER_CHECKED_AT", "Missing checkedAt: " + missingCheckedAt.join(", "));
@@ -415,12 +416,87 @@ const BUSINESSES = data.BUSINESSES || [];
 const CATEGORIES = data.CATEGORIES || {};
 const AREAS = data.AREAS || {};
 const BUSINESS_INTEGRITY = data.BUSINESS_INTEGRITY || {};
-const expectedDataExports =
-  ["AREAS", "BUSINESSES", "BUSINESS_INTEGRITY", "CATEGORIES", "isPublishedBusiness"];
+const CONTACT_PUBLICATION = data.CONTACT_PUBLICATION || {};
+const expectedDataExports = [
+  "AREAS", "BUSINESSES", "BUSINESS_INTEGRITY", "CATEGORIES", "CONTACT_PUBLICATION",
+  "isContactPublishable", "isPublishedBusiness"
+];
 if (Object.keys(data).sort().join("|") !== expectedDataExports.slice().sort().join("|")) {
   addHard("LIVE_EXPORT_BOUNDARY",
     "src/data/businesses.js exports an unsupported key; private dossier data must stay isolated");
 }
+const CONTACT_FIELDS = ["phone", "tel", "whatsapp", "line", "email", "website"];
+if (CONTACT_PUBLICATION.schemaVersion !== "1.0.0" ||
+    CONTACT_PUBLICATION.ledgerVersion !== "2026-08-05.1" ||
+    CONTACT_PUBLICATION.reviewedAt !== "2026-08-05") {
+  addHard("CONTACT_LEDGER_VERSION",
+    "Contact publication ledger must use schema 1.0.0 and the 2026-08-05.1 adjudication");
+}
+if (!CONTACT_PUBLICATION.policy ||
+    CONTACT_PUBLICATION.policy.storedValueIsPublicationPermission !== false ||
+    CONTACT_PUBLICATION.policy.defaultPublicationState !== "withheld") {
+  addHard("CONTACT_LEDGER_POLICY",
+    "Stored contact values must default to withheld and never imply publication permission");
+}
+const contactRecords = CONTACT_PUBLICATION.records || {};
+const contactRecordSlugs = Object.keys(contactRecords);
+const contactBusinessSlugs = BUSINESSES.map(function (business) { return business.slug; });
+if (contactRecordSlugs.length !== contactBusinessSlugs.length ||
+    contactRecordSlugs.some(function (slug) { return !contactBusinessSlugs.includes(slug); })) {
+  addHard("CONTACT_LEDGER_SLUG_BOUNDARY",
+    "Field-level contact records must exactly match the live business model");
+}
+BUSINESSES.forEach(function (business) {
+  var record = contactRecords[business.slug];
+  if (!record) return;
+  var expectedDisposition = business.publishState === "published" ? "PUBLISH" :
+    business.publishState === "rejected" ? "REJECT" : "HOLD";
+  if (record.disposition !== expectedDisposition ||
+      record.defaultPublicationState !== "withheld" ||
+      record.reviewedAt !== "2026-08-05") {
+    addHard("CONTACT_LEDGER_DISPOSITION", business.slug +
+      " contact disposition/date differs from its publication state");
+  }
+  var storedFields = CONTACT_FIELDS.filter(function (field) { return Boolean(business[field]); }).sort();
+  var decisionFields = Object.keys(record.fields || {}).sort();
+  if (storedFields.join("|") !== decisionFields.join("|")) {
+    addHard("CONTACT_LEDGER_FIELD_BOUNDARY", business.slug +
+      " field decisions must exactly match stored contact fields");
+  }
+  var dossier = privateDossierBySlug.get(business.slug);
+  var dossierSources = new Set(dossier && Array.isArray(dossier.sources)
+    ? dossier.sources.map(function (source) { return source.url; }) : []);
+  decisionFields.forEach(function (field) {
+    var decision = record.fields[field];
+    if (!decision || !nonEmptyString(decision.publicationBasis) ||
+        !validHttpUrl(decision.source) || decision.reviewedAt !== "2026-08-05") {
+      addHard("CONTACT_LEDGER_PROVENANCE", business.slug + "." + field +
+        " lacks a dated publication basis and dossier source");
+      return;
+    }
+    if (privateDossiersAvailable && !dossierSources.has(decision.source)) {
+      addHard("CONTACT_LEDGER_SOURCE", business.slug + "." + field +
+        " cites a source that is not in its private dossier");
+    }
+    if (expectedDisposition === "PUBLISH") {
+      if (decision.publicationState !== "approved" ||
+          decision.classification !== "public-business" ||
+          decision.optOutState !== "none-recorded") {
+        addHard("CONTACT_LEDGER_APPROVAL", business.slug + "." + field +
+          " is stored on a published record without complete public-business approval");
+      }
+      if (typeof data.isContactPublishable !== "function" ||
+          !data.isContactPublishable(business, field)) {
+        addHard("CONTACT_LEDGER_RENDER_GATE", business.slug + "." + field +
+          " is approved but the renderer gate rejects it");
+      }
+    } else if (decision.publicationState !== "withheld" ||
+        data.isContactPublishable(business, field)) {
+      addHard("CONTACT_LEDGER_WITHHOLD", business.slug + "." + field +
+        " must remain withheld on a non-published record");
+    }
+  });
+});
 BUSINESSES.forEach(function (business) {
   var unsupported = Object.keys(business)
     .filter(function (field) { return !PUBLIC_BUSINESS_FIELDS.has(field); });
@@ -507,7 +583,6 @@ collectDuplicates(BUSINESSES, function (b) { return normalizedAddress(b.address)
 });
 
 const heldSlugs = [];
-const legacyContactReview = [];
 const unknownPublishedScope = [];
 BUSINESSES.forEach(function (business) {
   var where = "src/data/businesses.js#" + business.slug;
@@ -562,6 +637,10 @@ BUSINESSES.forEach(function (business) {
     addHard("LIVE_DOSSIER_DATE", where + " has invalid dossierCheckedAt");
   } else if (dossier && business.dossierCheckedAt !== dossier.checkedAt) {
     addHard("PROVENANCE_DATE", where + " dossierCheckedAt must equal its private dossier checkedAt");
+  }
+  if (business.publicationReviewedAt !== "2026-08-05") {
+    addHard("PUBLICATION_REVIEW_DATE", where +
+      " must carry the dated 5 August 2026 adjudication separately from dossierCheckedAt");
   }
   var expectedDossierPath = path.join(DOSSIER_DIR, business.slug + ".json");
   if (path.resolve(ROOT, business.dossierPath || "") !== path.resolve(expectedDossierPath)) {
@@ -621,11 +700,19 @@ BUSINESSES.forEach(function (business) {
   if (business.publishState === "hold" && business.contactPublicationState !== "withheld-by-hold") {
     addHard("HELD_CONTACT_STATE", where + " must use contactPublicationState=withheld-by-hold");
   }
+  if (business.publishState === "rejected" && business.contactPublicationState !== "withheld-by-reject") {
+    addHard("REJECTED_CONTACT_STATE", where + " must use contactPublicationState=withheld-by-reject");
+  }
+  if (business.publishState === "published" && storedContact &&
+      business.contactPublicationState !== "approved-public-contact") {
+    addHard("PUBLISHED_CONTACT_STATE", where + " must use contactPublicationState=approved-public-contact");
+  }
   if (business.contactPublicationState === "no-public-contact" && storedContact) {
     addHard("CONTACT_STATE", where + " says no-public-contact but stores a contact");
   }
-  if (business.contactPublicationState === "legacy-publication-unreviewed") {
-    legacyContactReview.push(business.slug);
+  if (business.publishState === "published" && !storedContact &&
+      business.contactPublicationState !== "no-public-contact") {
+    addHard("CONTACT_STATE", where + " has no stored contact but is not labelled no-public-contact");
   }
   if (business.phone || business.tel) {
     if (!business.phone || !business.tel || expectedTel(business.phone) !== business.tel) {
@@ -657,10 +744,6 @@ BUSINESSES.forEach(function (business) {
   });
 });
 
-if (legacyContactReview.length) {
-  addAdvisory("LIVE_CONTACT_REVIEW", legacyContactReview.length + " published records retain existing contacts " +
-    "under legacy-publication-unreviewed; human policy and per-field classification remain required");
-}
 if (unknownPublishedScope.length) {
   addAdvisory("UNKNOWN_SERVICE_SCOPE", "Published records with explicitly unknown service area (no " +
     "Pattaya/nationwide inference): " + unknownPublishedScope.join(", "));
@@ -726,15 +809,17 @@ BUSINESSES.forEach(function (business) {
       }
     }
   } else {
-    if (businessNodes.length) addHard("HELD_SCHEMA", pagePath + " exposes business schema while held");
+    if (businessNodes.length) addHard("NONPUBLISHED_SCHEMA", pagePath + " exposes business schema while not published");
     var pageText = JSON.stringify({ title: page.title, description: page.description, body: page.body });
     ["phone", "tel", "whatsapp", "line", "email", "website"].forEach(function (field) {
       if (business[field] && pageText.toLowerCase().indexOf(String(business[field]).toLowerCase()) !== -1) {
-        addHard("HELD_CONTACT_OUTPUT", pagePath + " exposes held " + field);
+        addHard("NONPUBLISHED_CONTACT_OUTPUT", pagePath + " exposes non-published " + field);
       }
     });
-    if (!/Verification hold/i.test(page.body) || /Facts page &mdash; visit pending/i.test(page.body)) {
-      addHard("HELD_LABEL", pagePath + " does not carry an unambiguous verification-hold label");
+    var expectedStateLabel = business.publishState === "rejected"
+      ? /Outside publication scope/i : /Verification hold/i;
+    if (!expectedStateLabel.test(page.body) || /Facts page &mdash; visit pending/i.test(page.body)) {
+      addHard("NONPUBLISHED_LABEL", pagePath + " does not carry its unambiguous non-published label");
     }
   }
   if (!business.areas.length && /serves all (?:of )?Thailand/i.test(page.body)) {
@@ -776,11 +861,11 @@ Object.keys(CATEGORIES).forEach(function (category) {
   }
   BUSINESSES.filter(function (b) { return b.category === category && b.publishState !== "published"; })
     .forEach(function (business) {
-      if (cards.some(function (card) { return card.indexOf(business.name) !== -1; })) {
-        addHard("HELD_CATEGORY_CARD", business.slug + " appears as a category business card while held");
+      if (cardPaths.includes(listingPath(business))) {
+        addHard("NONPUBLISHED_CATEGORY_CARD", business.slug + " appears as a category business card while not published");
       }
       if (hub.body.indexOf('href="' + listingPath(business) + '"') === -1) {
-        addHard("HELD_ROUTE_LINK", business.slug + " held route is not linked from its verification-hold section");
+        addHard("NONPUBLISHED_ROUTE_LINK", business.slug + " retained route is not linked from its decision section");
       }
     });
 });
@@ -897,7 +982,10 @@ if (CHECK_DIST) {
     var distText = distFiles.map(function (file) {
       return { file: file, text: fs.readFileSync(file, "utf8") };
     });
+    var distHtml = distText.filter(function (entry) { return /\.html$/i.test(entry.file); });
     var searchIndexFile = path.join(DIST_DIR, "search-index.json");
+    var homeFile = path.join(DIST_DIR, "index.html");
+    var homeHtml = fs.existsSync(homeFile) ? fs.readFileSync(homeFile, "utf8") : "";
     var searchRoutes = [];
     if (!fs.existsSync(searchIndexFile)) {
       addHard("DIST_SEARCH_INDEX", "dist/search-index.json is missing");
@@ -937,19 +1025,44 @@ if (CHECK_DIST) {
       });
       var faqNodes = nodes.filter(function (node) { return node["@type"] === "FAQPage"; });
       if (faqNodes.length) addHard("DIST_LISTING_FAQ", rel(file) + " contains fabricated/hidden listing FAQ schema");
-      if (business.publishState === "hold" && businessNodes.length) {
-        addHard("DIST_HELD_SCHEMA", rel(file) + " contains business schema while held");
+      if (business.publishState !== "published" && businessNodes.length) {
+        addHard("DIST_NONPUBLISHED_SCHEMA", rel(file) + " contains business schema while not published");
       }
       if (business.publishState === "published" && businessNodes.length !== 1) {
         addHard("DIST_BUSINESS_SCHEMA", rel(file) + " must contain exactly one business schema node");
       }
-      if (business.publishState === "hold") {
+      if (business.publishState !== "published") {
+        var publicRoute = listingPath(business);
+        var allowedReferenceFiles = new Set([
+          path.join(DIST_DIR, publicRoute.replace(/^\//, "").replace(/\//g, path.sep)),
+          path.join(DIST_DIR, business.category, "index.html"),
+          path.join(DIST_DIR, "sitemap.html")
+        ].map(function (entry) { return path.resolve(entry); }));
+        if (business.slug === "mor-ja-pet-clinic-pattaya") {
+          allowedReferenceFiles.add(path.resolve(path.join(DIST_DIR, "corrections.html")));
+        }
+        var routeLink = new RegExp(
+          "<a\\b[^>]*\\bhref=[\\\"']" +
+          publicRoute.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") +
+          "(?:[?#][^\\\"']*)?[\\\"']",
+          "i"
+        );
+        distHtml.forEach(function (entry) {
+          if (routeLink.test(entry.text) && !allowedReferenceFiles.has(path.resolve(entry.file))) {
+            addHard("DIST_NONPUBLISHED_PROMOTION", rel(entry.file) + " links to " + publicRoute +
+              " outside its own decision page, category hold list, sitemap or explicit correction record");
+          }
+        });
         if (searchRoutes.includes(listingPath(business))) {
-          addHard("DIST_HELD_SEARCH", listingPath(business) + " appears in the internal search index while held");
+          addHard("DIST_NONPUBLISHED_SEARCH", listingPath(business) + " appears in the internal search index while not published");
+        }
+        if (homeHtml.indexOf('href="' + listingPath(business) + '"') !== -1) {
+          addHard("DIST_NONPUBLISHED_HOME_PROMOTION", listingPath(business) +
+            " appears in the homepage recent-update/promotional surface while not published");
         }
         ["phone", "tel", "whatsapp", "line", "email", "website"].forEach(function (field) {
           if (business[field] && html.toLowerCase().indexOf(String(business[field]).toLowerCase()) !== -1) {
-            addHard("DIST_HELD_CONTACT", rel(file) + " exposes held " + field);
+            addHard("DIST_NONPUBLISHED_CONTACT", rel(file) + " exposes non-published " + field);
           }
         });
       } else {
@@ -979,7 +1092,7 @@ if (CHECK_DIST) {
 console.log("Private dossiers: " + (privateDossiersAvailable
   ? dossiers.length : "unavailable in this checkout"));
 console.log("Live records:     " + BUSINESSES.length);
-console.log("Held records:     " + heldSlugs.length + (heldSlugs.length ? " (" + heldSlugs.join(", ") + ")" : ""));
+console.log("Non-published:    " + heldSlugs.length + (heldSlugs.length ? " (" + heldSlugs.join(", ") + ")" : ""));
 console.log("Dossier-only:     " + dossierOnly.length + (privateDossiersAvailable
   ? " (open: " + openDossierOnly.length + ")" : " (status parity not run)"));
 console.log("Schema shapes:    " + (privateDossiersAvailable

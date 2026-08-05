@@ -3,6 +3,7 @@
 
 const { SITE } = require("./site-config.js");
 const { imageForRoute } = require("./route-image.js");
+const { projectCreators, peopleForRole, personRef } = require("./responsibility.js");
 
 const NAV = [
   { name: "Directory", href: "/directory.html" },
@@ -92,8 +93,7 @@ function header() {
 
 function footer() {
   const year = SITE.copyrightYear;
-  /* FOOTER-SPEC-2027 — Insider layout: brand + byline + socials, 4 nav columns,
-     rule, legal row, disclosure note. timpaemi.com is the only cross-site link. */
+  /* Publication footer: local navigation, publisher disclosure and legal links. */
   return (
     '<footer class="site-footer"><!--FOOTER-SPEC-2027-->' +
     '<div class="pf">' +
@@ -108,20 +108,9 @@ function footer() {
     '<span class="pf-word">Pattaya<b>Pets</b></span>' +
     '</div>' +
     '<p class="pf-tag">Source-led pet guidance for Pattaya: local services, daily care, adoption, emergencies and travel paperwork.</p>' +
-    '<div class="pf-by">' +
-    '<img src="/assets/img/timpaemi.jpg" width="46" height="46" loading="lazy" alt="Tim and Paemi, who write and check PattayaPets">' +
-    '<span>Written, edited and maintained by ' +
-    '<a class="pf-author" href="/masthead.html#tim">Tim</a> &amp; ' +
-    '<a class="pf-author" href="/masthead.html#paemi">Paemi</a>, the married team behind TimPaemi, ' +
-    'working across publishing, web development, events and live production in Pattaya. ' +
-    '<a class="pf-credit" href="https://timpaemi.com/" rel="author noopener">TimPaemi.com</a></span>' +
-    '</div>' +
-    '<div class="pf-soc">' +
-    '<a href="https://www.youtube.com/@timpaemi" rel="me noopener" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></a>' +
-    '<a href="https://www.instagram.com/timpaemi/" rel="me noopener" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4a3.7 3.7 0 0 1-1.4-.9 3.7 3.7 0 0 1-.9-1.4c-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 3.2A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4Zm0 10.9A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3Zm6.9-11.1a1.5 1.5 0 1 1-1.5-1.6 1.5 1.5 0 0 1 1.5 1.6Z"/></svg></a>' +
-    '<a href="https://www.tiktok.com/@timpaemi.com" rel="me noopener" target="_blank" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 8.4a5.9 5.9 0 0 1-4-1.6v6.9a5.4 5.4 0 1 1-4.6-5.3v2.8a2.6 2.6 0 1 0 1.8 2.5V2h2.8a4.1 4.1 0 0 0 4 3.6Z"/></svg></a>' +
-    '<a href="https://www.facebook.com/timpaemi" rel="me noopener" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.5V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg></a>' +
-    '</div>' +
+    '<p class="pf-by"><span>Published by <strong>' + esc(SITE.publisherLegalName) +
+    '</strong> under the TimPaemi publisher identity. Personal authorship is assigned only ' +
+    'when the route responsibility ledger contains supporting evidence.</span></p>' +
     '</div>' +
     '<nav class="pf-nav" aria-label="Footer">' +
     '<div><p class="pf-h">Explore</p><ul>' +
@@ -197,35 +186,6 @@ function breadcrumbHtml(page) {
   return '<nav class="breadcrumb container" aria-label="Breadcrumb"><ol>' + items.join("") + "</ol></nav>";
 }
 
-function personGraphs(full) {
-  return SITE.authors.map(function (person, index) {
-    var node = {
-      "@type": "Person",
-      "@id": person.id,
-      name: person.name,
-      url: person.url
-    };
-    if (full) {
-      node.mainEntityOfPage = person.url;
-      node.image = {
-        "@type": "ImageObject",
-        "@id": SITE.url + "/assets/img/timpaemi.jpg#image",
-        url: SITE.url + "/assets/img/timpaemi.jpg",
-        contentUrl: SITE.url + "/assets/img/timpaemi.jpg",
-        width: 512,
-        height: 512,
-        caption: "Tim and Paemi, the married team behind TimPaemi and PattayaPets",
-        copyrightHolder: { "@id": SITE.publisherId }
-      };
-      node.jobTitle = person.role;
-      node.description = person.name + " is one half of the married team behind TimPaemi and a named author and editor of PattayaPets.";
-      node.spouse = { "@id": SITE.authors[index === 0 ? 1 : 0].id };
-      node.worksFor = { "@id": SITE.publisherId };
-    }
-    return node;
-  });
-}
-
 function publisherRef() {
   return {
     "@type": "Organization",
@@ -235,39 +195,21 @@ function publisherRef() {
   };
 }
 
-function publisherGraph(full) {
-  var publisher = publisherRef();
-  if (!full) return publisher;
-  publisher.legalName = SITE.publisherLegalName;
-  publisher.description = SITE.teamSummary + " " + SITE.teamWork + " " +
-    SITE.publisherLegalName + " publishes PattayaPets.";
-  publisher.logo = {
-    "@type": "ImageObject",
-    url: SITE.url + "/assets/img/icon-512.png",
-    width: 512,
-    height: 512
-  };
-  publisher.founder = SITE.authors.map(function (person) { return { "@id": person.id }; });
-  publisher.sameAs = SITE.socials.slice();
-  publisher.publishingPrinciples = SITE.policies.publishingPrinciples;
-  publisher.correctionsPolicy = SITE.policies.correctionsPolicy;
-  publisher.actionableFeedbackPolicy = SITE.policies.actionableFeedbackPolicy;
-  publisher.ownershipFundingInfo = SITE.policies.ownershipFundingInfo;
-  return publisher;
-}
-
 function websiteGraph() {
-  return {
+  const node = {
     "@type": "WebSite",
     "@id": SITE.url + "/#website",
     name: SITE.name,
     alternateName: "Pattaya Pets",
     url: SITE.url + "/",
-    creator: SITE.authors.map(function (person) { return { "@id": person.id }; }),
     publisher: publisherRef(),
     copyrightHolder: { "@id": SITE.publisherId },
+    publishingPrinciples: SITE.policies.publishingPrinciples,
     inLanguage: "en"
   };
+  const creators = projectCreators();
+  if (creators.length) node.creator = creators.map(personRef);
+  return node;
 }
 
 function webPageGraph(page) {
@@ -278,7 +220,6 @@ function webPageGraph(page) {
     name: page.ogTitle || page.title,
     description: page.description,
     isPartOf: { "@id": SITE.url + "/#website" },
-    creator: SITE.authors.map(function (person) { return { "@id": person.id }; }),
     publisher: publisherRef(),
     copyrightHolder: { "@id": SITE.publisherId },
     primaryImageOfPage: {
@@ -289,6 +230,10 @@ function webPageGraph(page) {
     },
     inLanguage: "en"
   };
+  const creators = peopleForRole(page.path, "creator");
+  const authors = peopleForRole(page.path, "author");
+  if (creators.length) node.creator = creators.map(personRef);
+  if (authors.length) node.author = authors.map(personRef);
   if (page.path !== "/") node.breadcrumb = { "@id": canonical(page.path) + "#breadcrumb" };
   var mainEntity = (page.schema || []).find(function (entry) {
     return entry && entry["@id"] && entry["@type"] !== "FAQPage";
@@ -296,10 +241,7 @@ function webPageGraph(page) {
   if (mainEntity) node.mainEntity = { "@id": mainEntity["@id"] };
   if (page.updated) node.dateModified = page.updated;
   if (page.published) node.datePublished = page.published;
-  if (page.path === "/masthead.html") {
-    node.about = SITE.authors.map(function (person) { return { "@id": person.id }; })
-      .concat([{ "@id": SITE.publisherId }]);
-  } else if (page.path === "/about.html") {
+  if (page.path === "/masthead.html" || page.path === "/about.html") {
     node.about = [
       { "@id": SITE.url + "/#website" },
       { "@id": SITE.publisherId }
@@ -338,18 +280,23 @@ function renderPage(page, opts) {
     ? "noindex, follow"
     : "index, follow, max-image-preview:large, max-snippet:-1";
 
-  const isEntityPage = page.path === "/";
-  const graph = personGraphs(isEntityPage).concat([
-    publisherGraph(isEntityPage),
+  const graph = [
+    publisherRef(),
     websiteGraph(),
     webPageGraph(page)
-  ]);
+  ];
   if (page.path !== "/") graph.push(breadcrumbGraph(page));
   if (page.schema && page.schema.length) {
     page.schema.forEach(function (s) { graph.push(s); });
   }
   const jsonld = JSON.stringify({ "@context": "https://schema.org", "@graph": graph })
     .replace(/</g, "\\u003c");
+  const routeAuthors = peopleForRole(page.path, "author");
+  const authorMeta = routeAuthors.length
+    ? '<meta name="author" content="' + esc(routeAuthors.map(function (person) {
+        return person.name;
+      }).join("; ")) + '">'
+    : "";
 
   return (
     "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">" +
@@ -366,7 +313,7 @@ function renderPage(page, opts) {
         '<meta property="og:updated_time" content="' + page.updated + 'T00:00:00+07:00">'
       : "") +
     '<meta name="theme-color" content="#1B5A4C">' +
-    '<meta name="author" content="Tim and Paemi — TimPaemi">' +
+    authorMeta +
     '<meta name="publisher" content="' + esc(SITE.publisherLegalName) + '">' +
     '<meta property="og:type" content="' + ogType + '">' +
     '<meta property="og:site_name" content="PattayaPets">' +

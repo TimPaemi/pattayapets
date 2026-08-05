@@ -373,17 +373,17 @@ pages.push(exp({
   slug: "cost-to-export-a-pet-from-thailand", crumb: "What it costs",
   title: "Pet Export Costs from Thailand (2026) | PattayaPets",
   desc: "Verified pet-export costs from Thailand: DLD paperwork, Thai Airways AVIH fees, Singapore quarantine and why a single total misleads.",
-  updated: "2026-07-26",
+  updated: "2026-08-05",
   h1: "What it costs to export a pet from Thailand",
   lede: "There is no responsible single total for every route. The examples below " +
     "separate published airline and quarantine charges from veterinary, crate, " +
     "permit and agent costs that need case-specific quotes.",
-  verify: "Published figures were checked on 26 July 2026 against Thai Airways, " +
-    "Singapore AVS and Australia DAFF. Each amount below names its source and date; " +
+  verify: "The Thai Airways figures and current policy route were rechecked on 5 August 2026; " +
+    "the Singapore AVS and Australia DAFF figures retain their stated 26 July checks. Each amount names its source; " +
     "get written quotes before committing to travel.",
   officialExtra:
     "<p><strong>Price and pathway sources:</strong> " +
-    "<a href=\"https://www.thaiairways.com/en-us/content/special-assistance/travel-with-pets/pets-as-checked-baggage-AVIH/\" target=\"_blank\" rel=\"noopener\">Thai Airways AVIH</a>; " +
+    "<a href=\"https://www.thaiairways.com/en-tw/content/special-assistance/travel-with-pets/pets-as-checked-baggage-avih/\" target=\"_blank\" rel=\"noopener\">Thai Airways AVIH</a>; " +
     "<a href=\"https://avs.nparks.gov.sg/about-us/our-centres/animal-quarantine-centre/\" target=\"_blank\" rel=\"noopener\">Singapore Animal Quarantine Centre</a>; " +
     "<a href=\"https://www.agriculture.gov.au/biosecurity-trade/cats-dogs/frequently-asked-questions\" target=\"_blank\" rel=\"noopener\">Australia DAFF pet-import FAQ</a>.</p>",
   sections: [

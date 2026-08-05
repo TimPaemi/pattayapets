@@ -1,293 +1,517 @@
-#!/usr/bin/env node
 "use strict";
-/* Hardcoded PattayaPets network/entity gate. This repository must stand alone. */
 
+/*
+ * PattayaPets repository-local TimPaemi entity-v2 and network gate.
+ *
+ * This gate pins the authoritative standard and entity contract, validates the
+ * route-responsibility projection, renders the source corpus, optionally validates
+ * dist/, and executes adversarial fixtures. It never imports a sibling repository.
+ */
+
+const crypto = require("crypto");
 const fs = require("fs");
 const path = require("path");
 
 const ROOT = path.resolve(__dirname, "..");
+const SRC = path.join(ROOT, "src");
 const DIST = path.join(ROOT, "dist");
-const TEXT_EXT = new Set(["", ".css", ".html", ".js", ".json", ".md", ".mjs", ".txt", ".webmanifest", ".xml", ".yml", ".yaml"]);
-const EXCLUDED_DIRS = new Set([
-  ".git", ".artifacts", ".cache", ".wrangler", "node_modules", "lighthouse-reports", "_to_delete"
-]);
-const TRANSIENT_ROOT_FILES = /^(?:lh-tmp\.json|lighthouse-(?:audit|.+)\.(?:json|txt))$/i;
-const EVIDENCE_ALLOWLIST = [
-  /^RULES\.md$/,
-  /^docs\/(?:FULL-AUDIT(?:-BRIEF|-\d{4}-\d{2})?|AUDIT-\d{4}-\d{2})\.md$/,
-  /^research\//
-];
-const DEFENSIVE_IDENTITY_ALLOWLIST = new Set([
-  "scripts/network-gate.js",
-  "tools/deploy.mjs",
-  "tools/audit-invariants.js"
-]);
-const DEFENSIVE_RATING_ALLOWLIST = new Set([
-  "scripts/network-gate.js",
-  "tools/audit-invariants.js",
-  "src/pages/30-directory.js",
-  "docs/visit-delegate-kit/README.md",
-  "AUTOPILOT.md",
-  "AUTOPILOT-PASTE.txt"
-]);
-const FORBIDDEN_IDENTITIES = [
-  /pattaya[- ]school[- ]guide/gi,
-  /pattaya[- ]authority/gi,
-  /pattaya[- ]afterdark/gi,
-  /pattayaafterdark\.com/gi,
-  /mrweoutside\.com/gi,
-  /pattayaolympian\.com/gi,
-  /pattayapersonaltrainer\.com/gi,
-  /yannispagiannidis\.com/gi,
-  /pattaya[\s._-]*expat[\s._-]*hub(?:\.com)?/gi,
-  /pattaya[\s._-]*food[\s._-]*guide(?:\.com)?/gi,
-  /pattaya[\s._-]*health[\s._-]*hub(?:\.com)?/gi
-];
-const FORBIDDEN_NETWORK_WORDING = [
-  /\bsister (?:sites?|publications?)\b/gi,
-  /\bTimPaemi (?:publishing )?network\b/gi
-];
-const EXPECTED_SOCIALS = [
-  "https://www.youtube.com/@timpaemi",
-  "https://www.instagram.com/timpaemi/",
-  "https://www.tiktok.com/@timpaemi.com",
-  "https://www.facebook.com/timpaemi"
-].sort();
-const SITE_PERSON_IDS = [
-  "https://timpaemi.com/#tim",
-  "https://timpaemi.com/#paemi"
-];
+const FIXTURES = path.join(ROOT, "tools", "fixtures", "network-v2");
+const LOCAL_CONTRACT = path.join(ROOT, "schemas", "timpaemi-entity-contract.v2.json");
+const LOCAL_RULES = path.join(ROOT, "RULES.md");
+const GLOBAL_MANIFEST = "C:\\Projects\\NETWORK-STANDARD.json";
+const EXPECTED_STANDARD = "TP-NETWORK-2026-08-04.1";
+const EXPECTED_RULES_SHA = "921701a22c8ac50b71bb17cad86383b53f5035a9361f81dd3ad536440a81b588";
+const EXPECTED_CONTRACT_SHA = "be0e7f1d9b4c878efdfa764a3e2e5d3dffefbf8f56466639063e32b05ff8ff33";
+const REQUIRE_DIST = process.argv.includes("--require-dist");
+const SOURCE_ONLY = process.argv.includes("--source-only");
 
-function walk(dir, out) {
-  out = out || [];
-  if (!fs.existsSync(dir)) return out;
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    const full = path.join(dir, entry.name);
-    const file = rel(full);
-    if (entry.isDirectory() && (EXCLUDED_DIRS.has(entry.name) ||
-        /^\.?audit-dist(?:[-_.].*)?$/i.test(entry.name) ||
-        /^\..*\.(?:stage|backup)-/i.test(entry.name) || file === "tools/shots")) continue;
-    if (!entry.isDirectory() && path.dirname(full) === ROOT && TRANSIENT_ROOT_FILES.test(entry.name)) continue;
-    const stat = fs.lstatSync(full);
-    if (stat.isSymbolicLink()) throw new Error("Symlink is not allowed in gate scope: " + full);
-    if (stat.isDirectory()) walk(full, out);
-    else out.push(full);
+const SISTER_HOSTS = Object.freeze([
+  "pattaya-authority.com",
+  "pattaya-medical.com",
+  "pattaya-school.com",
+  "pattaya-gym.com",
+  "pattaya-coffee.com",
+  "pattayavisahelp.com",
+  "pattayastream.com",
+  "pattaya-vehicle-rentals.com",
+  "pattaya-restaurant-guide.com",
+  "pattaya-afterdark.com"
+]);
+
+const findings = [];
+const notes = [];
+function fail(code, message) { findings.push({ code: code, message: message }); }
+function note(message) { notes.push(message); }
+function rel(file) { return path.relative(ROOT, file).replace(/\\/g, "/"); }
+function sha256(file) {
+  return crypto.createHash("sha256").update(fs.readFileSync(file)).digest("hex");
+}
+function readJson(file, code) {
+  try { return JSON.parse(fs.readFileSync(file, "utf8")); }
+  catch (error) { fail(code, rel(file) + ": " + error.message); return null; }
+}
+function walk(dir) {
+  if (!fs.existsSync(dir)) return [];
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap(function (entry) {
+    var target = path.join(dir, entry.name);
+    return entry.isDirectory() ? walk(target) : [target];
+  });
+}
+function validDate(value) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(String(value || ""))) return false;
+  var parsed = new Date(value + "T00:00:00Z");
+  return !Number.isNaN(parsed.valueOf()) && parsed.toISOString().slice(0, 10) === value;
+}
+function htmlDecode(value) {
+  return String(value || "")
+    .replace(/&#x([0-9a-f]+);?/gi, function (_, hex) {
+      return String.fromCodePoint(parseInt(hex, 16));
+    })
+    .replace(/&#([0-9]+);?/g, function (_, dec) {
+      return String.fromCodePoint(parseInt(dec, 10));
+    })
+    .replace(/&(?:period|dot);/gi, ".")
+    .replace(/&(?:hyphen|dash);/gi, "-")
+    .replace(/&colon;/gi, ":")
+    .replace(/&sol;/gi, "/")
+    .replace(/&amp;/gi, "&");
+}
+function decodeForScan(value) {
+  var out = htmlDecode(value)
+    .replace(/\\[nr]/gi, "")
+    .replace(/\\x([0-9a-f]{2})/gi, function (_, hex) { return String.fromCharCode(parseInt(hex, 16)); })
+    .replace(/\\u\{([0-9a-f]+)\}/gi, function (_, hex) { return String.fromCodePoint(parseInt(hex, 16)); })
+    .replace(/\\u([0-9a-f]{4})/gi, function (_, hex) { return String.fromCharCode(parseInt(hex, 16)); });
+  for (var i = 0; i < 3; i += 1) {
+    try {
+      var decoded = decodeURIComponent(out);
+      if (decoded === out) break;
+      out = decoded;
+    } catch (_) { break; }
+  }
+  return out.toLowerCase();
+}
+function compactForDomain(value) {
+  return decodeForScan(value).replace(/[\s'"`<>\\]+/g, "");
+}
+function scanSurface(value, surface) {
+  var codes = new Set();
+  var decoded = decodeForScan(value);
+  var compact = compactForDomain(value);
+  SISTER_HOSTS.forEach(function (host) {
+    if (compact.includes(host)) codes.add("SISTER_DOMAIN");
+  });
+  SOCIAL_URLS.forEach(function (url) {
+    if (compact.includes(compactForDomain(url))) codes.add("SOCIAL_PROMOTION");
+  });
+  if (/c:[\\/]projects|c:\\projects|\/users\/[^/]+\/|research\/businesses|human\s+queue|dossierpath|network-standard\.json/i.test(decoded)) {
+    codes.add("PRIVATE_CONTROL_LEAK");
+  }
+  if (surface !== "html" && compact.includes("timpaemi.com")) {
+    codes.add("NETWORK_URL_NON_HTML");
+  }
+  return codes;
+}
+function attrs(tag) {
+  var out = {};
+  for (const match of String(tag).matchAll(/([^\s=/>]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/g)) {
+    out[match[1].toLowerCase()] = match[2] == null ? (match[3] == null ? match[4] : match[3]) : match[2];
   }
   return out;
 }
-
-function rel(file) { return path.relative(ROOT, file).replace(/\\/g, "/"); }
-function lineOf(text, offset) { return text.slice(0, offset).split(/\r?\n/).length; }
-function allowedEvidence(file) { return EVIDENCE_ALLOWLIST.some(function (pattern) { return pattern.test(file); }); }
-
-function addMatches(findings, file, text, label, regexes) {
-  regexes.forEach(function (original) {
-    const regex = new RegExp(original.source, original.flags);
-    let match;
-    while ((match = regex.exec(text))) {
-      findings.push(file + ":" + lineOf(text, match.index) + " " + label + ": " + JSON.stringify(match[0]));
-      if (!match[0].length) regex.lastIndex++;
-    }
-  });
+function tokens(value) {
+  return String(value || "").toLowerCase().split(/\s+/).filter(Boolean);
 }
-
-function attrs(tag) {
-  const out = {};
-  const regex = /([:\w-]+)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+)))?/g;
-  let match;
-  while ((match = regex.exec(tag))) out[match[1].toLowerCase()] = match[2] || match[3] || match[4] || "";
-  return out;
+function nodeTypes(node) {
+  return Array.isArray(node && node["@type"]) ? node["@type"] : [node && node["@type"]];
 }
-
-function objects(value, out) {
+function schemaNodes(value, out) {
   out = out || [];
   if (!value || typeof value !== "object") return out;
-  if (Array.isArray(value)) value.forEach(function (item) { objects(item, out); });
-  else {
-    out.push(value);
-    Object.keys(value).forEach(function (key) { objects(value[key], out); });
+  if (Array.isArray(value)) {
+    value.forEach(function (item) { schemaNodes(item, out); });
+    return out;
   }
+  if (value["@type"]) out.push(value);
+  Object.keys(value).forEach(function (key) { schemaNodes(value[key], out); });
   return out;
 }
+function ids(value) {
+  return (Array.isArray(value) ? value : (value ? [value] : []))
+    .map(function (item) { return item && item["@id"]; }).filter(Boolean).sort();
+}
+function sameMembers(actual, expected) {
+  return JSON.stringify(actual.slice().sort()) === JSON.stringify(expected.slice().sort());
+}
+function canonical(route) {
+  return route === "/" ? SITE.url + "/" : SITE.url + route;
+}
 
-function validateHtml(file, html, findings) {
-  const authorLinks = [...html.matchAll(/<a\b[^>]*>/gi)].map(function (match) { return attrs(match[0]); })
-    .filter(function (a) {
-      try { return a.href && new URL(a.href).hostname.toLowerCase() === "timpaemi.com"; }
-      catch (error) { return false; }
-    });
-  if (authorLinks.length !== 1) findings.push(file + ": expected exactly one timpaemi.com author link; found " + authorLinks.length);
-  else {
-    const link = authorLinks[0];
-    const relTokens = new Set(String(link.rel || "").toLowerCase().split(/\s+/));
-    if (link.href !== "https://timpaemi.com/" || !relTokens.has("author") || !relTokens.has("noopener")) {
-      findings.push(file + ": author link must be https://timpaemi.com/ with rel=\"author noopener\"");
+/* Pin the manifest, RULES and copied entity contract before loading site code. */
+const manifest = readJson(GLOBAL_MANIFEST, "MANIFEST_PARSE");
+if (manifest) {
+  if (manifest.standardId !== EXPECTED_STANDARD ||
+      !manifest.rules || manifest.rules.sha256 !== EXPECTED_RULES_SHA ||
+      !manifest.entityContract || manifest.entityContract.version !== 2 ||
+      manifest.entityContract.sha256 !== EXPECTED_CONTRACT_SHA) {
+    fail("MANIFEST_DRIFT", "The authoritative manifest no longer matches the pinned standard and hashes");
+  }
+}
+if (!fs.existsSync(LOCAL_RULES) || sha256(LOCAL_RULES) !== EXPECTED_RULES_SHA) {
+  fail("RULES_DRIFT", "RULES.md does not match the authoritative RULES hash");
+}
+if (!fs.existsSync(LOCAL_CONTRACT) || sha256(LOCAL_CONTRACT) !== EXPECTED_CONTRACT_SHA) {
+  fail("CONTRACT_DRIFT", "The repository-local entity-v2 contract is missing or has drifted");
+}
+
+const CONTRACT = readJson(LOCAL_CONTRACT, "CONTRACT_PARSE") || {};
+const ORGANIZATION = CONTRACT.organization || {};
+const PEOPLE = CONTRACT.people || {};
+const SOCIAL_URLS = Object.freeze((ORGANIZATION.sameAs || []).slice());
+if (CONTRACT.standardId !== EXPECTED_STANDARD || CONTRACT.contractVersion !== 2) {
+  fail("CONTRACT_VERSION", "The local contract must be entity-v2 under " + EXPECTED_STANDARD);
+}
+
+const { SITE } = require(path.join(SRC, "site-config.js"));
+const { htmlToText } = require(path.join(SRC, "html-text.js"));
+const responsibility = require(path.join(SRC, "responsibility.js"));
+const LEDGER = responsibility.LEDGER || {};
+if (SITE.publisherId !== ORGANIZATION["@id"] || SITE.publisherUrl !== ORGANIZATION.url ||
+    SITE.publisherName !== ORGANIZATION.name || SITE.publisherLegalName !== ORGANIZATION.legalName) {
+  fail("SITE_ENTITY_DRIFT", "src/site-config.js publisher identity differs from entity-v2");
+}
+var configuredPeople = Object.fromEntries((SITE.people || []).map(function (person) { return [person.key, person]; }));
+Object.keys(PEOPLE).forEach(function (key) {
+  var expected = PEOPLE[key];
+  var actual = configuredPeople[key];
+  if (!actual || actual.id !== expected["@id"] || actual.url !== expected.url || actual.name !== expected.name) {
+    fail("PERSON_CONFIG_DRIFT", "Configured person " + key + " differs from entity-v2");
+  }
+});
+if (Object.keys(configuredPeople).length !== Object.keys(PEOPLE).length) {
+  fail("PERSON_CONFIG_BOUNDARY", "The configured global-person set must exactly match entity-v2");
+}
+
+/* No runtime/build dependency may reach into a sibling repository. */
+walk(SRC).filter(function (file) { return /\.(?:js|json)$/i.test(file); })
+  .concat([path.join(ROOT, "build.js")]).forEach(function (file) {
+    var text = fs.readFileSync(file, "utf8");
+    if (/(?:require|import)[^\r\n]*(?:c:[\\/]projects[\\/]|\.\.[\\/].*timpaemi|timpaemi[\\/]schema)/i.test(text)) {
+      fail("SIBLING_RUNTIME_IMPORT", rel(file) + " imports or resolves a sibling project");
     }
-  }
-
-  const nodes = [];
-  for (const match of html.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)) {
-    try { objects(JSON.parse(match[1]), nodes); }
-    catch (error) { findings.push(file + ": invalid JSON-LD: " + error.message); }
-  }
-  const expected = [
-    ["https://timpaemi.com/#tim", "Person", "Tim"],
-    ["https://timpaemi.com/#paemi", "Person", "Paemi"],
-    ["https://timpaemi.com/#timpaemi", "Organization", "TimPaemi"]
-  ];
-  expected.forEach(function (item) {
-    const matches = nodes.filter(function (node) { return node["@id"] === item[0]; });
-    if (!matches.length) findings.push(file + ": missing entity node " + item[0]);
-    const definitions = matches.filter(function (node) {
-      return Object.prototype.hasOwnProperty.call(node, "@type") ||
-        Object.prototype.hasOwnProperty.call(node, "name");
-    });
-    if (!definitions.length) findings.push(file + ": missing entity definition " + item[0]);
-    definitions.forEach(function (node) {
-      const types = Array.isArray(node["@type"]) ? node["@type"] : [node["@type"]];
-      if (!types.includes(item[1]) || node.name !== item[2]) findings.push(file + ": malformed entity node " + item[0]);
-    });
   });
 
-  const webPage = nodes.find(function (node) { return node["@type"] === "WebPage"; });
-  const creators = webPage && Array.isArray(webPage.creator)
-    ? webPage.creator.map(function (item) { return item && item["@id"]; }).sort()
-    : [];
-  if (JSON.stringify(creators) !== JSON.stringify(SITE_PERSON_IDS.slice().sort())) {
-    findings.push(file + ": WebPage creator must reference Tim and Paemi");
+/* Assemble the source page corpus and validate the responsibility ledger. */
+const pages = [];
+walk(path.join(SRC, "pages")).filter(function (file) { return file.endsWith(".js"); }).sort()
+  .forEach(function (file) {
+    var exported = require(file);
+    (Array.isArray(exported) ? exported : (exported.pages || [])).forEach(function (page) { pages.push(page); });
+  });
+const sourceRoutes = new Set(pages.map(function (page) { return page.path; }).concat(["/sitemap.html"]));
+if (LEDGER.schemaVersion !== 1 || LEDGER.ledgerVersion !== "2026-08-05.1" ||
+    LEDGER.standardId !== EXPECTED_STANDARD || LEDGER.projectClass !== "OWNED PUBLICATION" ||
+    LEDGER.reviewedAt !== "2026-08-05" ||
+    LEDGER.defaultDisposition !== "OMIT_PERSONAL_ATTRIBUTION") {
+  fail("RESPONSIBILITY_VERSION", "The responsibility ledger is not the reviewed 2026-08-05.1 owned-publication ledger");
+}
+const projectEvidence = LEDGER.projectCreationEvidence || {};
+if (!["APPROVED", "HOLD", "REJECTED"].includes(projectEvidence.disposition) ||
+    !Array.isArray(projectEvidence.evidenceRefs) || !Array.isArray(projectEvidence.people)) {
+  fail("PROJECT_CREATION_SHAPE", "projectCreationEvidence has an invalid shape");
+} else if (projectEvidence.disposition === "APPROVED") {
+  if (!projectEvidence.evidenceRefs.length || !projectEvidence.people.length) {
+    fail("PROJECT_CREATION_EVIDENCE", "Approved project creators require people and evidence references");
   }
-  if (!webPage || !webPage.copyrightHolder ||
-      webPage.copyrightHolder["@id"] !== "https://timpaemi.com/#timpaemi") {
-    findings.push(file + ": WebPage copyrightHolder must reference TimPaemi");
+} else if (projectEvidence.people.length) {
+  fail("PROJECT_CREATION_HOLD", "Unapproved project creation evidence must not name creators");
+}
+const ledgerRoutes = new Map();
+(LEDGER.routes || []).forEach(function (record, index) {
+  var where = "route responsibility record " + index;
+  if (!record || !sourceRoutes.has(record.path) || ledgerRoutes.has(record.path)) {
+    fail("RESPONSIBILITY_ROUTE", where + " is duplicate or outside the frozen route corpus");
+    return;
   }
-  nodes.filter(function (node) { return node["@type"] === "Article"; }).forEach(function (article) {
-    const authorIds = Array.isArray(article.author)
-      ? article.author.map(function (item) { return item && item["@id"]; }).sort()
-      : [];
-    if (JSON.stringify(authorIds) !== JSON.stringify(SITE_PERSON_IDS.slice().sort())) {
-      findings.push(file + ": Article author must reference Tim and Paemi");
+  ledgerRoutes.set(record.path, record);
+  if (!["APPROVED", "HOLD", "REJECTED"].includes(record.disposition) || !validDate(record.reviewedAt) ||
+      !Array.isArray(record.evidenceRefs) || !Array.isArray(record.responsiblePeople)) {
+    fail("RESPONSIBILITY_SHAPE", where + " has an invalid shape");
+    return;
+  }
+  if (record.disposition === "APPROVED") {
+    if (!record.evidenceRefs.length || !record.responsiblePeople.length) {
+      fail("RESPONSIBILITY_EVIDENCE", where + " is approved without evidence and responsible people");
+    }
+  } else if (record.responsiblePeople.length) {
+    fail("RESPONSIBILITY_HOLD", where + " names responsible people without approval");
+  }
+  record.responsiblePeople.forEach(function (entry) {
+    if (!PEOPLE[entry.person] || !Array.isArray(entry.roles) || !entry.roles.length ||
+        entry.roles.some(function (role) { return !["author", "creator", "editor", "reviewer"].includes(role); })) {
+      fail("RESPONSIBILITY_PERSON", where + " has an unknown person or role");
     }
   });
+});
 
-  const fullEntityFiles = new Set([
-    "dist/index.html"
-  ]);
-  if (fullEntityFiles.has(file)) {
-    const publisher = nodes.find(function (node) { return node["@id"] === "https://timpaemi.com/#timpaemi" && node.legalName; });
-    if (!publisher || publisher.legalName !== "TIMPAEMI CO., LTD.") findings.push(file + ": entity page lacks the full legal publisher node");
-    const socialNode = nodes.find(function (node) {
-      return node["@id"] === "https://timpaemi.com/#timpaemi" && Array.isArray(node.sameAs);
-    });
-    const socials = socialNode ? socialNode.sameAs.slice().sort() : [];
-    if (JSON.stringify(socials) !== JSON.stringify(EXPECTED_SOCIALS)) {
-      findings.push(file + ": publisher sameAs must contain exactly the four approved social profiles");
+function expectedRole(route, role) {
+  var record = ledgerRoutes.get(route);
+  if (!record || record.disposition !== "APPROVED") return [];
+  return record.responsiblePeople.filter(function (entry) { return entry.roles.includes(role); })
+    .map(function (entry) { return PEOPLE[entry.person]; });
+}
+function expectedProjectCreators() {
+  if (projectEvidence.disposition !== "APPROVED") return [];
+  return projectEvidence.people.map(function (key) { return PEOPLE[key]; });
+}
+
+function parseGraphs(html, where) {
+  var graphs = [];
+  for (const match of String(html).matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)) {
+    try { graphs.push(JSON.parse(match[1])); }
+    catch (error) { fail("SCHEMA_JSON", where + ": " + error.message); }
+  }
+  return graphs;
+}
+
+function validateDocument(doc, corpus) {
+  var where = corpus + ":" + doc.route;
+  var html = doc.html;
+  scanSurface(html, "html").forEach(function (code) { fail(code, where); });
+  var graphs = parseGraphs(html, where);
+  var nodes = [];
+  graphs.forEach(function (graph) { schemaNodes(graph, nodes); });
+  var routeAuthors = expectedRole(doc.route, "author");
+  var routeCreators = expectedRole(doc.route, "creator");
+  var projectCreators = expectedProjectCreators();
+  var expectedAuthorIds = routeAuthors.map(function (person) { return person["@id"]; });
+  var expectedCreatorIds = routeCreators.map(function (person) { return person["@id"]; });
+  var expectedProjectCreatorIds = projectCreators.map(function (person) { return person["@id"]; });
+
+  var authorAnchors = [];
+  var networkAnchors = [];
+  for (const match of html.matchAll(/<a\b[^>]*>/gi)) {
+    var attr = attrs(match[0]);
+    var relTokens = tokens(attr.rel);
+    if (relTokens.includes("author")) authorAnchors.push(attr);
+    try {
+      if (attr.href && new URL(htmlDecode(attr.href), SITE.url).hostname.toLowerCase() === "timpaemi.com") {
+        networkAnchors.push(attr);
+      }
+    } catch (_) { /* malformed external URLs are handled by link audits */ }
+  }
+  var actualAuthorHrefs = authorAnchors.map(function (attr) { return htmlDecode(attr.href); }).sort();
+  var expectedAuthorHrefs = routeAuthors.map(function (person) { return person.url; }).sort();
+  if (!sameMembers(actualAuthorHrefs, expectedAuthorHrefs)) {
+    fail("AUTHOR_LINK_PARITY", where + " rel=author links differ from the route ledger");
+  }
+  authorAnchors.forEach(function (attr) {
+    if (htmlDecode(attr.href) === ORGANIZATION.url) {
+      fail("PUBLISHER_REL_AUTHOR", where + " uses the publisher home as rel=author");
     }
-    SITE_PERSON_IDS.forEach(function (id) {
-      const person = nodes.find(function (node) {
-        return node["@id"] === id && node["@type"] === "Person" && node.spouse && node.worksFor;
-      });
-      if (!person) findings.push(file + ": entity page lacks the full married-team Person node " + id);
-    });
+  });
+  var metaAuthors = [];
+  for (const match of html.matchAll(/<meta\b[^>]*>/gi)) {
+    var meta = attrs(match[0]);
+    if (String(meta.name || "").toLowerCase() === "author") metaAuthors.push(meta.content || "");
+  }
+  var expectedMeta = routeAuthors.length ? [routeAuthors.map(function (person) { return person.name; }).join("; ")] : [];
+  if (!sameMembers(metaAuthors, expectedMeta)) {
+    fail("AUTHOR_META_PARITY", where + " author metadata differs from the route ledger");
+  }
+  var hasByline = /class=["'][^"']*\bbyline\b/i.test(html);
+  if (hasByline !== Boolean(routeAuthors.length)) {
+    fail("VISIBLE_BYLINE_PARITY", where + " visible byline state differs from the route ledger");
+  }
+
+  var webPages = nodes.filter(function (node) {
+    return nodeTypes(node).includes("WebPage") && node["@id"] === canonical(doc.route) + "#webpage";
+  });
+  if (webPages.length !== 1) {
+    fail("WEBPAGE_NODE", where + " must contain one canonical WebPage node");
   } else {
-    const expanded = nodes.filter(function (node) {
-      if (!expected.some(function (item) { return node["@id"] === item[0]; })) return false;
-      return Object.prototype.hasOwnProperty.call(node, "legalName") ||
-        Object.prototype.hasOwnProperty.call(node, "sameAs") ||
-        Object.prototype.hasOwnProperty.call(node, "jobTitle") ||
-        Object.prototype.hasOwnProperty.call(node, "spouse") ||
-        Object.prototype.hasOwnProperty.call(node, "worksFor");
+    if (!sameMembers(ids(webPages[0].author), expectedAuthorIds)) {
+      fail("WEBPAGE_AUTHOR_PARITY", where + " WebPage.author differs from the route ledger");
+    }
+    if (!sameMembers(ids(webPages[0].creator), expectedCreatorIds)) {
+      fail("WEBPAGE_CREATOR_PARITY", where + " WebPage.creator differs from the route ledger");
+    }
+    if (!webPages[0].publisher || webPages[0].publisher["@id"] !== ORGANIZATION["@id"]) {
+      fail("WEBPAGE_PUBLISHER", where + " WebPage.publisher does not reference the global Organization");
+    }
+  }
+  var websites = nodes.filter(function (node) {
+    return nodeTypes(node).includes("WebSite") && node["@id"] === SITE.url + "/#website";
+  });
+  if (websites.length !== 1) {
+    fail("WEBSITE_NODE", where + " must contain one local WebSite node");
+  } else {
+    var website = websites[0];
+    if (!website.publisher || website.publisher["@id"] !== ORGANIZATION["@id"] ||
+        website.publishingPrinciples !== SITE.policies.publishingPrinciples) {
+      fail("WEBSITE_PUBLISHER_POLICY", where + " WebSite publisher or local publishingPrinciples drifted");
+    }
+    ["correctionsPolicy", "actionableFeedbackPolicy", "ownershipFundingInfo"].forEach(function (property) {
+      if (property in website) fail("WEBSITE_ORG_POLICY", where + " WebSite exposes Organization-only " + property);
     });
-    if (expanded.length) findings.push(file + ": full entity properties are homepage-only; compact nodes required here");
+    if (!sameMembers(ids(website.creator), expectedProjectCreatorIds)) {
+      fail("WEBSITE_CREATOR_PARITY", where + " WebSite.creator differs from project-creation evidence");
+    }
   }
-}
 
-function main() {
-  const findings = [];
-  const warnings = [];
-  const files = walk(ROOT);
-  files.forEach(function (full) {
-    const file = rel(full);
-    if (!TEXT_EXT.has(path.extname(file).toLowerCase()) || allowedEvidence(file)) return;
-    const bytes = fs.readFileSync(full);
-    if (bytes.includes(0)) return;
-    const content = bytes.toString("utf8");
-    if (!DEFENSIVE_IDENTITY_ALLOWLIST.has(file)) {
-      addMatches(findings, file, content, "forbidden identity", FORBIDDEN_IDENTITIES);
-      addMatches(findings, file, content, "forbidden network wording", FORBIDDEN_NETWORK_WORDING);
-    }
-    if (!DEFENSIVE_RATING_ALLOWLIST.has(file)) {
-      addMatches(findings, file, content, "aggregateRating is prohibited", [/aggregateRating/gi]);
+  nodes.filter(function (node) { return nodeTypes(node).includes("Article"); }).forEach(function (article) {
+    if (!expectedAuthorIds.length || !sameMembers(ids(article.author), expectedAuthorIds)) {
+      fail("ARTICLE_AUTHOR_PARITY", where + " Article schema lacks matching route-specific authorship evidence");
     }
   });
+  nodes.filter(function (node) { return nodeTypes(node).includes("Organization") && node["@id"] === ORGANIZATION["@id"]; })
+    .forEach(function (organization) {
+      var allowed = ["@type", "@id", "name", "url"];
+      var extra = Object.keys(organization).filter(function (key) { return !allowed.includes(key); });
+      if (organization["@type"] !== "Organization" || organization.name !== ORGANIZATION.name ||
+          organization.url !== ORGANIZATION.url || extra.length) {
+        fail("ORGANIZATION_COMPACTNESS", where + " expands or alters the global Organization projection");
+      }
+    });
 
-  const contactScope = files.filter(function (full) {
-    const file = rel(full);
-    return /^(?:src\/(?:layout|site-config|pages\/10-structural)\.js|src\/static\/\.well-known\/security\.txt|docs\/(?:launch-and-maintenance|distribution\/social-kit|visit-delegate-kit\/[^/]+)\.md|dist\/(?:about|contact|corrections|masthead|privacy|standards)\.html|dist\/\.well-known\/security\.txt)$/.test(file);
-  });
-  let ownContactFound = false;
-  const configuredContactFiles = new Set([
-    "src/site-config.js",
-    "dist/.well-known/security.txt",
-    "dist/about.html", "dist/contact.html", "dist/corrections.html",
-    "dist/masthead.html", "dist/privacy.html", "dist/standards.html"
-  ]);
-  contactScope.forEach(function (full) {
-    const file = rel(full);
-    const content = fs.readFileSync(full, "utf8");
-    if (/info@pattayapets\.com/i.test(content)) ownContactFound = true;
-    if (!configuredContactFiles.has(file)) {
-      addMatches(findings, file, content, "uncentralized interim site contact", [/hello@pattayapets\.com/gi]);
-    }
-  });
-  const siteConfig = fs.readFileSync(path.join(ROOT, "src", "site-config.js"), "utf8");
-  const configuredEmail = (siteConfig.match(/\bemail\s*:\s*["']([^"']+)["']/) || [])[1];
-  const deliveryPending = /contactDeliveryStatus\s*:\s*["']operator-verification-required["']/.test(siteConfig);
-  const securityTemplate = fs.readFileSync(path.join(ROOT, "src", "static", ".well-known", "security.txt"), "utf8");
-  if ((securityTemplate.match(/\{\{CONTACT_EMAIL\}\}/g) || []).length !== 1) {
-    findings.push("src/static/.well-known/security.txt: Contact must contain exactly one {{CONTACT_EMAIL}} token");
-  }
-  const builtSecurityPath = path.join(DIST, ".well-known", "security.txt");
-  if (fs.existsSync(builtSecurityPath) && configuredEmail) {
-    const builtSecurity = fs.readFileSync(builtSecurityPath, "utf8");
-    if (!builtSecurity.includes("Contact: mailto:" + configuredEmail)) {
-      findings.push("dist/.well-known/security.txt: Contact does not match SITE.email");
-    }
-  }
-  if (!ownContactFound) {
-    if (deliveryPending && /email\s*:\s*["']hello@pattayapets\.com["']/.test(siteConfig)) {
-      warnings.push("Rule 6 gap: info@pattayapets.com delivery is not operator-verified; centralized hello@ fallback remains active");
+  var profilePersonIds = [];
+  nodes.filter(function (node) { return nodeTypes(node).includes("ProfilePage"); }).forEach(function (profile) {
+    var personId = profile.mainEntity && profile.mainEntity["@id"];
+    var localUrl = canonical(doc.route);
+    if (!Object.values(PEOPLE).some(function (person) { return person["@id"] === personId; }) ||
+        (profile.url && profile.url !== localUrl) ||
+        (profile["@id"] && !String(profile["@id"]).startsWith(localUrl))) {
+      fail("PROFILEPAGE_CONTRACT", where + " ProfilePage must be local and point mainEntity to one global Person @id");
     } else {
-      findings.push("publisher/contact scope: info@pattayapets.com is missing without an explicit operator-verification gap");
+      profilePersonIds.push(personId);
+    }
+  });
+  var allowedPersonIds = new Set(expectedAuthorIds.concat(expectedCreatorIds, expectedProjectCreatorIds, profilePersonIds));
+  nodes.filter(function (node) { return nodeTypes(node).includes("Person"); }).forEach(function (personNode) {
+    var expected = Object.values(PEOPLE).find(function (person) { return person["@id"] === personNode["@id"]; });
+    var keys = Object.keys(personNode).sort();
+    var expectedKeys = ["@id", "@type", "name", "url"].sort();
+    if (!expected || personNode.name !== expected.name || personNode.url !== expected.url ||
+        !sameMembers(keys, expectedKeys) || !allowedPersonIds.has(personNode["@id"])) {
+      fail("PERSON_PROJECTION", where + " contains an unapproved, local-URL, or expanded Person projection");
+    }
+  });
+  nodes.forEach(function (node) {
+    if (nodeTypes(node).includes("Review") || Object.prototype.hasOwnProperty.call(node, "aggregateRating")) {
+      fail("RATING_SCHEMA", where + " emits Review or aggregateRating without a first-party rating corpus");
+    }
+  });
+  var visibleFaqs = [];
+  for (const match of html.matchAll(/<details\b[^>]*class=["'][^"']*\bfaq\b[^"']*["'][^>]*>\s*<summary>([\s\S]*?)<\/summary>\s*<div\b[^>]*class=["'][^"']*\bfaq-body\b[^"']*["'][^>]*>([\s\S]*?)<\/div>\s*<\/details>/gi)) {
+    visibleFaqs.push({ name: htmlToText(match[1]), text: htmlToText(match[2]) });
+  }
+  var faqPages = nodes.filter(function (node) { return nodeTypes(node).includes("FAQPage"); });
+  if ((visibleFaqs.length && faqPages.length !== 1) || (!visibleFaqs.length && faqPages.length)) {
+    fail("FAQ_SCHEMA_PARITY", where + " visible FAQ and FAQPage presence differ");
+  } else if (visibleFaqs.length) {
+    var schemaFaqs = Array.isArray(faqPages[0].mainEntity) ? faqPages[0].mainEntity.map(function (question) {
+      return { name: String(question.name || ""), text: String(question.acceptedAnswer && question.acceptedAnswer.text || "") };
+    }) : [];
+    if (JSON.stringify(schemaFaqs) !== JSON.stringify(visibleFaqs)) {
+      fail("FAQ_SCHEMA_PARITY", where + " visible FAQ questions/answers differ from FAQPage schema");
     }
   }
-
-  if (!fs.existsSync(DIST)) findings.push("dist/: generated output is missing; per-page rules were not checked");
-  else {
-    const manifestPath = path.join(DIST, "build-manifest.json");
-    if (!fs.existsSync(manifestPath)) findings.push("dist/build-manifest.json: missing route manifest");
-    else {
-      const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
-      (manifest.routes || []).forEach(function (route) {
-        const file = "dist/" + route.output;
-        const full = path.join(DIST, ...String(route.output).split("/"));
-        if (!fs.existsSync(full)) findings.push(file + ": route output missing");
-        else validateHtml(file, fs.readFileSync(full, "utf8"), findings);
-      });
-    }
-  }
-
-  if (findings.length) {
-    console.error("Network gate: FAIL (" + findings.length + " finding(s))");
-    findings.forEach(function (finding) { console.error("- " + finding); });
-    process.exit(1);
-  }
-  warnings.forEach(function (warning) { console.warn("Network gate: ADVISORY - " + warning); });
-  console.log("Network gate: PASS (" + files.length +
-    " authored/generated files considered; network wording, entity, author-link, rating and contact rules)");
+  return networkAnchors;
 }
 
-try { main(); }
-catch (error) {
-  console.error("Network gate: FAIL\n- " + error.message);
-  process.exit(1);
+function validateCorpus(name, docs) {
+  var homeLinks = [];
+  docs.forEach(function (doc) {
+    validateDocument(doc, name).forEach(function (attr) {
+      var href = htmlDecode(attr.href);
+      if (href === ORGANIZATION.url) {
+        homeLinks.push({ route: doc.route, attr: attr });
+      } else if (!expectedRole(doc.route, "author").some(function (person) { return person.url === href; })) {
+        fail("UNAPPROVED_NETWORK_LINK", name + ":" + doc.route + " links to an unapproved TimPaemi URL");
+      }
+    });
+  });
+  if (homeLinks.length !== 1) {
+    fail("ENTITY_HOME_LINK_COUNT", name + " corpus must contain exactly one followed TimPaemi home link; found " + homeLinks.length);
+  } else {
+    var link = homeLinks[0];
+    var relTokens = tokens(link.attr.rel);
+    if (!["/about.html", "/masthead.html"].includes(link.route) ||
+        relTokens.some(function (token) { return ["author", "nofollow", "sponsored", "ugc"].includes(token); })) {
+      fail("ENTITY_HOME_LINK_QUALIFICATION", name + " home link must be a natural followed ownership/masthead link, never authorship");
+    }
+  }
+}
+
+const layout = require(path.join(SRC, "layout.js"));
+const sourceDocs = pages.map(function (page) {
+  return { route: page.path, html: layout.renderPage(page) };
+});
+validateCorpus("source", sourceDocs);
+
+/* Public-source scan: catch sister domains and global-social promotion outside rendered HTML. */
+const publicSourceFiles = walk(SRC).filter(function (file) {
+  return /\.(?:js|json|html|xml|txt|css)$/i.test(file);
+}).concat([path.join(ROOT, "build.js")]);
+publicSourceFiles.forEach(function (file) {
+  var codes = scanSurface(fs.readFileSync(file, "utf8"), "source");
+  ["SISTER_DOMAIN", "SOCIAL_PROMOTION"].forEach(function (code) {
+    if (codes.has(code)) fail(code, rel(file));
+  });
+});
+
+if (SOURCE_ONLY) {
+  note("source-only mode; generated-surface validation was skipped");
+} else if (!fs.existsSync(DIST)) {
+  if (REQUIRE_DIST) fail("DIST_REQUIRED", "--require-dist was set but dist/ is missing");
+  else note("dist/ is absent; generated-surface validation was skipped");
+} else {
+  var distHtmlFiles = walk(DIST).filter(function (file) { return file.endsWith(".html"); }).sort();
+  var distDocs = distHtmlFiles.map(function (file) {
+    var relative = path.relative(DIST, file).replace(/\\/g, "/");
+    var route = relative === "index.html" ? "/" :
+      relative.endsWith("/index.html") ? "/" + relative.slice(0, -"index.html".length) : "/" + relative;
+    return { route: route, html: fs.readFileSync(file, "utf8") };
+  });
+  validateCorpus("dist", distDocs);
+  walk(DIST).filter(function (file) { return /\.(?:json|xml|txt|css|js)$/i.test(file); })
+    .forEach(function (file) {
+      scanSurface(fs.readFileSync(file, "utf8"), path.extname(file).slice(1)).forEach(function (code) {
+        fail(code, rel(file));
+      });
+    });
+  note("Generated corpus: " + distDocs.length + " HTML files plus non-HTML public surfaces");
+}
+
+/* Every deliberately broken network-v2 fixture must be rejected for its named reason. */
+if (!fs.existsSync(FIXTURES)) {
+  fail("FIXTURE_DIR", "tools/fixtures/network-v2 is missing");
+} else {
+  var fixtureFiles = fs.readdirSync(FIXTURES).filter(function (file) { return file.endsWith(".json"); }).sort();
+  if (fixtureFiles.length < 8) fail("FIXTURE_COUNT", "At least eight adversarial network-v2 fixtures are required");
+  fixtureFiles.forEach(function (filename) {
+    var fixture = readJson(path.join(FIXTURES, filename), "FIXTURE_JSON");
+    if (!fixture) return;
+    var codes = scanSurface(fixture.content, fixture.surface);
+    if (!codes.has(fixture.expectedCode)) {
+      fail("FIXTURE_NOT_REJECTED", filename + " did not trigger " + fixture.expectedCode);
+    }
+  });
+  note("Adversarial fixtures: " + fixtureFiles.length + " deliberate violations rejected");
+}
+
+console.log("PattayaPets entity-v2 / network gate");
+console.log("====================================");
+console.log("Standard:          " + EXPECTED_STANDARD);
+console.log("Entity contract:   v2 " + EXPECTED_CONTRACT_SHA);
+console.log("Responsibility:    " + (LEDGER.routes || []).length + " route records; project creation " + projectEvidence.disposition);
+console.log("Source corpus:     " + sourceDocs.length + " rendered pages");
+notes.forEach(function (message) { console.log("Note:              " + message); });
+console.log("HARD:              " + findings.length);
+findings.forEach(function (finding) { console.error("  HARD [" + finding.code + "] " + finding.message); });
+if (findings.length) {
+  console.error("FAIL - entity-v2, responsibility, link, or public-surface invariants failed.");
+  process.exitCode = 1;
+} else {
+  console.log("PASS - pinned entity-v2, evidence-gated responsibility and spoke-link boundaries hold.");
 }

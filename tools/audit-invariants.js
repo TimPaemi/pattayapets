@@ -147,14 +147,24 @@ const UTAPAO_BANNED = [
 /* ---------- 5. Scope-lock assertion (S2.5) ----------------------------------- */
 {
   const bad = [];
+  const homeLinks = [];
   for (const f of htmlFiles) {
     const s = read(f);
-    const author = (s.match(/href="https:\/\/timpaemi\.com[^"]*"/g) || []).length;
-    const sister = s.match(/href="https:\/\/(?:www\.)?(?:pattaya-authority|pattaya-medical|pattaya-school|pattaya-gym|pattaya-coffee|pattayavisahelp|pattayastream|pattaya-vehicle-rentals|pattaya-restaurant-guide|pattaya-afterdark)\.[^"]+"/g) || [];
-    if (author !== 1 || sister.length) bad.push(pub(f) + " (author=" + author + ", sister=" + sister.length + ")");
+    const network = [...s.matchAll(/<a\b[^>]*href="(https:\/\/timpaemi\.com[^"]*)"[^>]*>/gi)];
+    const sister = s.match(/https:\/\/(?:www\.)?(?:pattaya-authority|pattaya-medical|pattaya-school|pattaya-gym|pattaya-coffee|pattayavisahelp|pattayastream|pattaya-vehicle-rentals|pattaya-restaurant-guide|pattaya-afterdark)\.[^\s"'<>]+/gi) || [];
+    network.forEach((match) => {
+      if (match[1] === "https://timpaemi.com/") homeLinks.push({ route: pub(f), tag: match[0] });
+      else bad.push(pub(f) + " (unapproved network link=" + match[1] + ")");
+    });
+    if (sister.length) bad.push(pub(f) + " (sister=" + sister.length + ")");
   }
-  if (bad.length) fail("S2.5/scope-lock", bad.length + " page(s) breach one-author/no-sister:\n      " + bad.join("\n      "));
-  else pass("S2.5  every page: exactly one timpaemi.com link, zero sister-site links");
+  if (homeLinks.length !== 1 || homeLinks[0].route !== "/about.html" ||
+      /rel="[^"]*(?:author|nofollow|sponsored|ugc)/i.test(homeLinks[0].tag)) {
+    bad.push("corpus TimPaemi home links=" + homeLinks.length +
+      (homeLinks.length ? " on " + homeLinks.map((link) => link.route).join(", ") : ""));
+  }
+  if (bad.length) fail("S2.5/scope-lock", bad.length + " scope-lock breach(es):\n      " + bad.join("\n      "));
+  else pass("S2.5  corpus: one natural About-page TimPaemi home link, zero sister-site links");
 }
 
 /* ---------- 6. Blanket first-hand claim assertion (S1.4) --------------------- */

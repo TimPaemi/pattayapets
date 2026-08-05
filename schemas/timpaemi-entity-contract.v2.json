@@ -1,0 +1,87 @@
+{
+  "contractVersion": 2,
+  "contractDate": "2026-08-04",
+  "standardId": "TP-NETWORK-2026-08-04.1",
+  "entityHome": "https://timpaemi.com/",
+  "organization": {
+    "@type": "Organization",
+    "@id": "https://timpaemi.com/#timpaemi",
+    "name": "TimPaemi",
+    "legalName": "TIMPAEMI CO., LTD.",
+    "alternateName": "TIMPAEMI",
+    "url": "https://timpaemi.com/",
+    "sameAs": [
+      "https://www.youtube.com/@timpaemi",
+      "https://www.tiktok.com/@timpaemi.com",
+      "https://www.instagram.com/timpaemi/",
+      "https://www.facebook.com/timpaemi"
+    ]
+  },
+  "people": {
+    "tim": {
+      "@type": "Person",
+      "@id": "https://timpaemi.com/#tim",
+      "name": "Tim",
+      "url": "https://timpaemi.com/authors/tim/"
+    },
+    "paemi": {
+      "@type": "Person",
+      "@id": "https://timpaemi.com/#paemi",
+      "name": "Paemi",
+      "url": "https://timpaemi.com/authors/paemi/"
+    }
+  },
+  "website": {
+    "@type": "WebSite",
+    "@id": "https://timpaemi.com/#website",
+    "name": "TimPaemi",
+    "url": "https://timpaemi.com/"
+  },
+  "flagship": {
+    "foundingDate": "2026-03-16",
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "Thailand DBD juristic person registration number",
+      "value": "0205569014568"
+    },
+    "logo": {
+      "@type": "ImageObject",
+      "@id": "https://timpaemi.com/#logo",
+      "url": "https://timpaemi.com/assets/icons/icon-512.png",
+      "width": 512,
+      "height": 512
+    },
+    "policyUrls": {
+      "publishingPrinciples": "https://timpaemi.com/how-we-work/#publishing-principles",
+      "correctionsPolicy": "https://timpaemi.com/how-we-work/#corrections-policy",
+      "actionableFeedbackPolicy": "https://timpaemi.com/how-we-work/#actionable-feedback-policy",
+      "ownershipFundingInfo": "https://timpaemi.com/how-we-work/#ownership-funding-info"
+    }
+  },
+  "projectionRules": {
+    "identityRule": "The global Organization and Person @id and url values are invariant across every site.",
+    "ownedSitePublisherRule": "A verified owned editorial site may identify the global TimPaemi Organization as its WebSite publisher. Client sites and unverified projects may not.",
+    "personUrlRule": "Each global Person keeps the canonical TimPaemi profile URL. A spoke must not replace Person.url with a local profile URL.",
+    "profilePageRule": "A verified spoke-local profile may use a local ProfilePage URL and point mainEntity to the matching global Person @id.",
+    "policyRule": "The global TimPaemi Organization keeps all four flagship policy URLs. A local WebSite may use only its local publishingPrinciples URL. Keep local corrections, feedback, and ownership pages visible, but do not attach those Organization-only properties to WebSite.",
+    "siteCreatorRule": "WebSite.creator may reference Tim or Paemi only when project-level creation evidence exists. Ownership or publisher status alone is not creator evidence.",
+    "articleAuthorRule": "Article.author, author metadata, visible bylines, and rel=author require route-specific responsibility evidence and must agree. Publication-level creation is not Article authorship.",
+    "compactnessRule": "Use full flagship entity nodes on the flagship. A spoke emits only the minimum truthful nodes needed for the visible page and must not repeat irrelevant global Person nodes on unrelated pages.",
+    "sameAsRule": "The four approved social URLs are flagship Organization identity data. They do not authorize visible sitewide social promotion on spokes.",
+    "copyRule": "Each repository copies and pins this versioned contract and implements a repository-local gate. No site imports a sibling repository at build time or runtime.",
+    "linkRule": "Schema identity never creates, follows, qualifies, or requires an HTML link. HTML linking is governed separately by the network standard."
+  },
+  "allowedLocalWebSitePolicyProperties": [
+    "publishingPrinciples"
+  ],
+  "organizationOnlyPolicyProperties": [
+    "correctionsPolicy",
+    "actionableFeedbackPolicy",
+    "ownershipFundingInfo"
+  ],
+  "forbiddenOrganizationProperties": [
+    "address",
+    "telephone",
+    "geo"
+  ]
+}

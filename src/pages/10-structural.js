@@ -59,7 +59,7 @@ pages.push({
   crumb: "Start here",
   breadcrumbs: [],
   bodyClass: "page-start-here",
-  updated: "2026-08-01",
+  updated: "2026-08-05",
   body:
     '<section class="section"><div class="container"><div class="prose">' +
     '<p class="eyebrow">Orientation</p>' +
@@ -173,7 +173,7 @@ pages.push({
 /* ---------------- About ---------------- */
 pages.push(prosePage({
   path: "/about.html",
-  updated: "2026-08-01",
+  updated: "2026-08-05",
   title: "About PattayaPets | Editorial Standards & Publisher",
   desc: "About PattayaPets, an independent editorial directory and source-led guide for pet owners in Pattaya, published by TIMPAEMI CO., LTD.",
   crumb: "About",
@@ -195,15 +195,15 @@ pages.push(prosePage({
     "remaining uncertainty visible.</p>" +
     "<h2>Who runs it</h2>" +
     "<p>PattayaPets is published by <strong>TIMPAEMI CO., LTD.</strong>. Tim and Paemi, " +
-    "the married creative and technical team behind TimPaemi, are the named authors and " +
-    "editors of this publication. Their work in Pattaya spans editorial publishing, " +
-    "front-end and back-end development, events and live production. Their roles, bylines " +
-    "and the publisher identity are listed on the <a href=\"/masthead.html\">masthead</a>.</p>" +
-    "<p>TimPaemi is the central identity across their Pattaya publishing and production " +
-    "work. PattayaPets keeps its own subject, evidence records and editorial standards.</p>" +
-    "<p>On PattayaPets, their role is editorial and technical. A byline does not imply " +
-    "veterinary, legal or regulatory credentials; consequential claims still need the " +
-    "authority or qualified reviewer identified with the claim.</p>" +
+    "the married team behind <a href=\"https://timpaemi.com/\" rel=\"noopener\">TimPaemi</a>, " +
+    "are the principals and accountable publication operators. They manage editorial " +
+    "operations, evidence controls, product maintenance and release review. Their " +
+    "publication roles and the publisher identity are listed on the " +
+    "<a href=\"/masthead.html\">masthead</a>.</p>" +
+    "<p>Those project-level roles are not route-level authorship. PattayaPets assigns a " +
+    "personal byline, author metadata or creator claim only when a versioned responsibility " +
+    "record supports that exact route. No route has approved personal attribution in the " +
+    "current ledger.</p>" +
     "<p>No completed anonymous-visit record is currently published. Business pages " +
     "therefore separate sourced facts from unknowns and carry no experiential verdict. " +
     "The public <a href=\"/standards.html\">standards</a> explain the evidence and visit workflow.</p>" +
@@ -224,7 +224,7 @@ pages.push(prosePage({
 /* ---------------- Editorial Standards ---------------- */
 pages.push(prosePage({
   path: "/standards.html",
-  updated: "2026-08-01",
+  updated: "2026-08-05",
   title: "How PattayaPets Reviews Pet Businesses | Editorial Standards",
   desc: "How PattayaPets verifies business facts, records source dates, handles future anonymous visits, corrects errors and keeps commercial influence out.",
   crumb: "Editorial Standards",
@@ -263,8 +263,22 @@ pages.push(prosePage({
     "hours, locality or operating status stays unknown. Held or unverified records do not " +
     "receive verified labels, FAQ claims or LocalBusiness markup. A verdict requires a " +
     "documented first-hand visit.</p>" +
-    "<h2>Who, how and why</h2>" +
-    "<p>Tim and Paemi are the named authors and editors. PattayaPets exists to help pet " +
+    "owners make safer, clearer local and travel decisions &mdash; not to manufacture " +
+    "search variations. Research, drafting and mechanical checks may use software or " +
+    "AI-assisted tools, but automation is never treated as a source, a field visit, a " +
+    "professional reviewer or publication approval. Consequential facts must still be " +
+    "traced to the evidence record and accepted by the responsible editor.</p>" +
+    "<h2>Responsibility, tools and approval</h2>" +
+    "<p>Tim and Paemi are the principals and accountable publication operators. That " +
+    "project role does not establish who authored any individual route. Personal bylines, " +
+    "author metadata and creator claims require an approved route record in the versioned " +
+    "responsibility ledger; absent that record, they are omitted.</p>" +
+    "<p>PattayaPets exists to help pet owners make safer, clearer local and travel " +
+    "decisions &mdash; not to manufacture search variations. Research, drafting and " +
+    "mechanical checks may use software or AI-assisted tools, but automation is never " +
+    "treated as a source, a field visit, a professional reviewer or publication approval. " +
+    "Consequential facts must still be traced to the evidence record and accepted through " +
+    "the publication review process.</p>" +
     "owners make safer, clearer local and travel decisions &mdash; not to manufacture " +
     "search variations. Research, drafting and mechanical checks may use software or " +
     "AI-assisted tools, but automation is never treated as a source, a field visit, a " +
@@ -346,32 +360,31 @@ pages.push(prosePage({
 /* ---------------- Masthead ---------------- */
 pages.push(prosePage({
   path: "/masthead.html",
-  updated: "2026-08-01",
-  title: "PattayaPets Masthead | Who Writes the Directory & Guides",
+  updated: "2026-08-05",
+  title: "PattayaPets Masthead | Publisher & Accountability",
   crumb: "Masthead",
-  desc: "Meet Tim and Paemi, the married editors behind TimPaemi and PattayaPets, with the publisher, bylines, roles and evidence standards behind every page.",
+  desc: "PattayaPets publisher, accountable publication operators, responsibility controls and evidence standards.",
   eyebrow: "The publication",
   h1: "Masthead",
   linkTopic: "general",
   body:
     '<figure class="author-intro card"><img src="/assets/img/timpaemi.jpg" width="512" height="512" ' +
-    'loading="lazy" decoding="async" alt="Tim and Paemi, the married team behind TimPaemi and PattayaPets">' +
-    "<figcaption><strong>Tim and Paemi</strong><p>PattayaPets is written and maintained " +
-    "by the married creative and technical team behind TimPaemi, and published by " +
-    "<strong>TIMPAEMI CO., LTD.</strong> Their work in Pattaya spans editorial publishing, " +
-    "front-end and back-end development, events and live production. TimPaemi is the " +
-    "central identity for that work; PattayaPets retains its own subject and evidence " +
-    "standards.</p></figcaption></figure>" +
-    "<h2 id=\"tim\">Tim &mdash; editor and author</h2>" +
-    "<p>Tim writes, edits and maintains directory and guide content. A byline identifies " +
-    "authorship; it does not claim veterinary, legal or regulatory credentials.</p>" +
-    "<h2 id=\"paemi\">Paemi &mdash; editor and author</h2>" +
-    "<p>Paemi writes, edits and checks local context and clarity. Regulated and clinical " +
-    "claims still require the named authority or qualified reviewer shown with the claim.</p>" +
+    'loading="lazy" decoding="async" alt="Tim and Paemi, principals of the PattayaPets publisher">' +
+    "<figcaption><strong>Tim and Paemi</strong><p>They are the principals and accountable " +
+    "publication operators for PattayaPets, which is published by " +
+    "<strong>TIMPAEMI CO., LTD.</strong> They manage editorial operations, evidence " +
+    "controls, product maintenance and release review.</p></figcaption></figure>" +
+    "<h2 id=\"principals\">Principals and accountable operators</h2>" +
+    "<p>Tim and Paemi are accountable for the publication-level process. This masthead " +
+    "does not assign them authorship or creation responsibility for every route. Those " +
+    "claims are emitted only from an approved route-responsibility record.</p>" +
     "<h2 id=\"publisher\">Publisher</h2>" +
     "<p><strong>TIMPAEMI CO., LTD.</strong>, trading as " +
-    "TimPaemi. Tim and Paemi are the people behind the brand. The publication is funded " +
-    "by the publisher and accepts no paid placement.</p>" +
+    "TimPaemi. The publication is funded by the publisher and accepts no paid placement.</p>" +
+    "<h2>Responsibility ledger</h2>" +
+    "<p>The current ledger contains no approved personal route attribution and no approved " +
+    "project-creation claim. Accordingly, pages omit personal bylines, author metadata and " +
+    "creator metadata. Ownership alone is not used as evidence for those roles.</p>" +
     "<h2>Evidence and visits</h2>" +
     "<p>No completed anonymous-visit record is currently published. Facts pages therefore " +
     "carry no verdict. If visits begin, the reviewer will attend as an ordinary customer, " +
@@ -406,6 +419,11 @@ pages.push(prosePage({
     "<h2>Correction log</h2>" +
     "<p>Newest first. Each entry names what was wrong and what the guidance says now.</p>" +
     "<ul>" +
+    "<li><strong>5 August 2026 &mdash; authorship and creator claims narrowed to evidence.</strong> " +
+    "Project ownership and publication operations had been projected as personal authorship " +
+    "across the site. Those blanket bylines, author links and creator fields were removed. " +
+    "Personal attribution is now emitted only from a versioned, route-specific responsibility " +
+    "record. The current ledger contains no approved route author or project creator.</li>" +
     "<li><strong>1 August 2026 &mdash; Thailand import identity, sequence and timing.</strong> " +
     "We removed universal ISO-only, chip-before-rabies, automatic-revaccination, " +
     "rabies-only and arrival-wait claims. The current guidance requires the microchip " +
@@ -494,9 +512,9 @@ pages.push(prosePage({
     "when one is verified.</li>" +
     "<li><strong>29 July 2026 &mdash; footer wording corrected site-wide.</strong> " +
     "Every page said this guide was &ldquo;checked in person by people who live here&rdquo;. " +
-    "No completed anonymous-visit records are published, so the footer now names " +
-    "Tim and Paemi as authors and editors without claiming a completed visit or an " +
-    "unverified residence. How visits and " +
+    "No completed anonymous-visit records were published, so the visit claim was removed. " +
+    "The replacement wording named project principals as site-wide authors and editors; that " +
+    "separate attribution issue was corrected on 5 August 2026. How visits and " +
     "verdicts work is on <a href=\"/standards.html\">editorial standards</a>.</li>" +
     "<li><strong>28 July 2026 &mdash; EU pet travel regulation citation.</strong> " +
     "Export guides cited EU Regulation 576/2013. That framework has been replaced by " +
@@ -517,7 +535,7 @@ pages.push(prosePage({
   crumb: "Terms",
   eyebrow: "The legal bit",
   h1: "Terms of use",
-  updated: "2026-08-01",
+  updated: "2026-08-05",
   linkTopic: "general",
   body:
     "<p><b>Operator:</b> TIMPAEMI CO., LTD. <b>Contact:</b> <a href=\"/contact.html\">contact page</a>.</p>" +
@@ -633,8 +651,8 @@ pages.push(prosePage({
     "directory and guide for pet owners in Pattaya, Thailand &mdash; vets, groomers, " +
     "boarding, adoption and the import paperwork. Published by TIMPAEMI CO., LTD.</p>" +
     "<p><strong>Long boilerplate.</strong> PattayaPets is an independent pet resource " +
-    "for Pattaya, Thailand, written and maintained by Tim and Paemi, the married team " +
-    "behind TimPaemi. It combines a " +
+    "for Pattaya, Thailand, published by TIMPAEMI CO., LTD. Tim and Paemi are the " +
+    "principals and accountable publication operators. It combines a " +
     "source-status directory of pet services with guides to " +
     "veterinary care, emergencies, dog-friendly places, adoption, and the Thai import " +
     "and export rules. Business facts are source-led; no completed anonymous-visit " +
@@ -661,8 +679,8 @@ pages.push(prosePage({
     "<tr><th scope=\"row\">Publisher</th><td>TIMPAEMI CO., LTD.</td></tr>" +
     "<tr><th scope=\"row\">Brand</th><td>TimPaemi</td></tr>" +
     "<tr><th scope=\"row\">Brand relationship</th><td>Central identity for Tim and Paemi&rsquo;s Pattaya publishing and production work</td></tr>" +
-    "<tr><th scope=\"row\">Written and edited by</th><td>Tim and Paemi, a married creative and technical team</td></tr>" +
-    "<tr><th scope=\"row\">Team work</th><td>Editorial publishing, front-end and back-end development, events and live production in Pattaya</td></tr>" +
+    "<tr><th scope=\"row\">Accountable operators</th><td>Tim and Paemi, the publisher&rsquo;s principals</td></tr>" +
+    "<tr><th scope=\"row\">Responsibility policy</th><td>Personal authorship and creator claims require a route-specific approved ledger record; none is currently approved</td></tr>" +
     "<tr><th scope=\"row\">Language</th><td>English</td></tr>" +
     "<tr><th scope=\"row\">Evidence policy</th><td>Primary sources for regulated claims; field-level provenance for directory facts</td></tr>" +
     "<tr><th scope=\"row\">Published visit records</th><td>None; facts pages are labelled visit pending</td></tr>" +
@@ -738,10 +756,11 @@ pages.push(prosePage({
     "</tbody></table></div>" +
     "<p>Headings are set in Bricolage Grotesque, body text in Hanken Grotesk.</p>" +
 
-    "<h2>Official channels</h2>" +
-    "<p>PattayaPets publishes at <strong>pattayapets.com</strong> only. Tim and Paemi&rsquo;s " +
-    "channels are listed on <strong>timpaemi.com</strong>, linked from the footer of every page. " +
-    "Any other account, page or site using this name is not us, and we would like to " +
+    "<h2>Official channel</h2>" +
+    "<p>PattayaPets publishes at <strong>pattayapets.com</strong> only. The publisher&rsquo;s " +
+    "identity is disclosed on the masthead and About page without treating identity links " +
+    "as authorship or cross-site promotion. Any other account, page or site using the " +
+    "PattayaPets name is not us, and we would like to " +
     "hear about it.</p>",
   schema: [{
     "@type": "AboutPage",

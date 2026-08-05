@@ -5,6 +5,7 @@
 const crypto = require("crypto");
 const fs = require("fs");
 const path = require("path");
+const vm = require("vm");
 const { loadPageManifest, indexPageManifest } = require("../src/page-manifest.js");
 
 const ROOT = path.resolve(__dirname, "..");
@@ -67,7 +68,99 @@ function publicImageReferences(text) {
     .map(function (match) { return match[1]; });
 }
 
-function main() {
+async function auditServiceWorkerNavigation(worker) {
+  var fetchHandler = null;
+  var fetchImplementation = null;
+  var writes = [];
+  var matches = [];
+  var cache = {
+    addAll: function () { return Promise.resolve(); },
+    put: function (request) {
+      writes.push(request.url || request);
+      return Promise.resolve();
+    }
+  };
+  var context = {
+    URL: URL,
+    location: { origin: "https://pattayapets.com" },
+    self: {
+      addEventListener: function (type, handler) {
+        if (type === "fetch") fetchHandler = handler;
+      },
+      skipWaiting: function () { return Promise.resolve(); },
+      clients: { claim: function () { return Promise.resolve(); } }
+    },
+    caches: {
+      open: function () { return Promise.resolve(cache); },
+      keys: function () { return Promise.resolve([]); },
+      delete: function () { return Promise.resolve(true); },
+      match: function (request) {
+        var key = request.url || request;
+        matches.push(key);
+        return Promise.resolve(key === "/offline" ? { offline: true } : { cached: true });
+      }
+    },
+    fetch: function (request) { return fetchImplementation(request); }
+  };
+  vm.runInNewContext(worker, context, { filename: "dist/sw.js" });
+  if (typeof fetchHandler !== "function") throw new Error("Service-worker fetch handler is missing");
+
+  async function dispatch(pagePath, succeeds) {
+    writes = [];
+    matches = [];
+    var response = {
+      ok: true,
+      type: "basic",
+      clone: function () { return this; }
+    };
+    fetchImplementation = function () {
+      return succeeds ? Promise.resolve(response) : Promise.reject(new Error("simulated offline"));
+    };
+    var waits = [];
+    var responded = null;
+    fetchHandler({
+      request: {
+        method: "GET",
+        mode: "navigate",
+        url: "https://pattayapets.com" + pagePath
+      },
+      waitUntil: function (promise) { waits.push(promise); },
+      respondWith: function (promise) { responded = promise; }
+    });
+    if (!responded) throw new Error("Service-worker navigation did not call respondWith");
+    var result = await responded;
+    await Promise.all(waits);
+    return { result: result, writes: writes.slice(), matches: matches.slice() };
+  }
+
+  var sensitive = [
+    "/bring-pet-to-thailand/checklist.html",
+    "/take-pet-out-of-thailand/checklist.html",
+    "/pet-emergency/24-hour-vets-pattaya.html"
+  ];
+  for (const pagePath of sensitive) {
+    var online = await dispatch(pagePath, true);
+    if (online.writes.length || online.matches.length) {
+      throw new Error("Fresh-only navigation touched runtime cache while online: " + pagePath);
+    }
+    var offline = await dispatch(pagePath, false);
+    if (!offline.result || !offline.result.offline ||
+        JSON.stringify(offline.matches) !== JSON.stringify(["/offline"]) || offline.writes.length) {
+      throw new Error("Fresh-only navigation did not fall back directly to /offline: " + pagePath);
+    }
+  }
+  var ordinaryOnline = await dispatch("/about.html", true);
+  if (ordinaryOnline.writes.length !== 1 || ordinaryOnline.matches.length) {
+    throw new Error("Ordinary navigation no longer updates the runtime cache");
+  }
+  var ordinaryOffline = await dispatch("/about.html", false);
+  if (!ordinaryOffline.result || !ordinaryOffline.result.cached ||
+      ordinaryOffline.matches.length !== 1 || ordinaryOffline.writes.length) {
+    throw new Error("Ordinary offline navigation no longer uses its runtime cache");
+  }
+}
+
+async function main() {
   if (!fs.existsSync(MANIFEST)) throw new Error("dist/build-manifest.json is missing");
   const manifest = JSON.parse(fs.readFileSync(MANIFEST, "utf8"));
   if (manifest.schemaVersion !== 1 || manifest.project !== "pattayapets" ||
@@ -216,6 +309,16 @@ function main() {
   if (!fs.readFileSync(path.join(DIST, "sw.js"), "utf8").includes(manifest.serviceWorkerVersion)) {
     throw new Error("Service-worker and manifest versions differ");
   }
+  const siteStyles = actualFiles.filter(function (rel) {
+    return /^assets\/css\/site\.[0-9a-f]{12}\.css$/i.test(rel);
+  });
+  if (siteStyles.length !== 1) throw new Error("Expected exactly one content-addressed site stylesheet");
+  const siteStyle = fs.readFileSync(path.join(DIST, ...siteStyles[0].split("/")), "utf8");
+  if (/NaN/i.test(siteStyle) || !siteStyle.includes("@media(prefers-reduced-motion:reduce)") ||
+      !siteStyle.includes("animation-duration:1ms!important") ||
+      !siteStyle.includes("transition-duration:1ms!important")) {
+    throw new Error("Built reduced-motion duration overrides are missing or invalid");
+  }
   const siteScripts = actualFiles.filter(function (rel) {
     return /^assets\/js\/site\.[0-9a-f]{12}\.js$/i.test(rel);
   });
@@ -229,6 +332,17 @@ function main() {
   const precacheMatch = worker.match(/\bPRECACHE=(\[[^\]]*\])/);
   if (!precacheMatch) throw new Error("Service-worker precache array is missing or malformed");
   const workerPrecache = JSON.parse(precacheMatch[1]);
+  const freshOnlyMatch = worker.match(/\bFRESH_ONLY_NAVIGATION_PREFIXES=(\[[^\]]*\])/);
+  if (!freshOnlyMatch) throw new Error("Service-worker fresh-only navigation boundary is missing");
+  const freshOnlyPrefixes = JSON.parse(freshOnlyMatch[1]);
+  const expectedFreshOnlyPrefixes = [
+    "/bring-pet-to-thailand/",
+    "/take-pet-out-of-thailand/",
+    "/pet-emergency/"
+  ];
+  if (JSON.stringify(freshOnlyPrefixes) !== JSON.stringify(expectedFreshOnlyPrefixes)) {
+    throw new Error("Service-worker fresh-only navigation boundary has drifted");
+  }
   if (workerPrecache.includes("/search-index.json")) {
     throw new Error("Service worker must load the noncritical search index on demand, not during install");
   }
@@ -242,15 +356,24 @@ function main() {
   if (markupFontPreloads.some(function (url) { return !worker.includes(url); })) {
     throw new Error("Service worker omits a critical font preload from its app shell");
   }
-  if (/\/(?:bring-pet-to-thailand|take-pet-out-of-thailand|pet-emergency)\//.test(worker)) {
+  if (workerPrecache.some(function (url) {
+    return freshOnlyPrefixes.some(function (prefix) {
+      return url === prefix.slice(0, -1) || url.indexOf(prefix) === 0;
+    });
+  })) {
     throw new Error("Regulated or emergency HTML is present in the service-worker precache");
   }
+  const workerSource = fs.readFileSync(path.join(ROOT, "src", "sw.js"), "utf8");
+  if (!workerSource.includes("if (!freshOnly && res.ok") ||
+      !workerSource.includes('if (freshOnly) return caches.match("/offline")')) {
+    throw new Error("Fresh-only navigation must bypass runtime cache writes and reads");
+  }
+  await auditServiceWorkerNavigation(worker);
 
   console.log("Build manifest: PASS (" + manifest.routes.length + " routes, " + actualFiles.length + " files)");
 }
 
-try { main(); }
-catch (error) {
+main().catch(function (error) {
   console.error("Build manifest: FAIL\n- " + error.message);
   process.exit(1);
-}
+});

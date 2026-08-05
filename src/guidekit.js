@@ -1,5 +1,5 @@
 "use strict";
-/* Shared rendering kit for guide pages. Produces Article + FAQPage schema. */
+/* Shared rendering kit for guide pages. Article/authorship output is ledger-gated. */
 
 const {
   linkTopicFromPath,
@@ -13,6 +13,7 @@ const {
 const { SITE: SITE_CONFIG } = require("./site-config.js");
 const { htmlToText } = require("./html-text.js");
 const { imageForRoute } = require("./route-image.js");
+const { peopleForRole, personRef } = require("./responsibility.js");
 const SITE = SITE_CONFIG.url;
 const DISC =
   '<div class="disclaimer-box"><strong>Editorial and informational only.</strong> ' +
@@ -33,13 +34,15 @@ function fmtDate(iso) {
   return Number(parts[2]) + " " + months[Number(parts[1]) - 1] + " " + parts[0];
 }
 
-function articleMeta(updated) {
-  var authors = SITE_CONFIG.authors.map(function (person) {
-    return '<a rel="author" href="' + person.path + '">' + person.name + "</a>";
-  }).join(" and ");
-  return '<div class="article-meta"><p class="byline">Written and edited by ' + authors +
-    ' for <a href="/masthead.html#publisher">TimPaemi</a>' +
-    '</p><p class="updated">Last updated <time datetime="' + updated + '">' +
+function articleMeta(updated, path) {
+  var authors = peopleForRole(path, "author");
+  var responsibility = authors.length
+    ? '<p class="byline">By ' + authors.map(function (person) {
+        return '<a rel="author" href="' + person.url + '">' + person.name + "</a>";
+      }).join(" and ") + '</p>'
+    : '<p class="evidence-line">Source-led editorial guide</p>';
+  return '<div class="article-meta">' + responsibility +
+    '<p class="updated">Last reviewed <time datetime="' + updated + '">' +
     fmtDate(updated) + "</time></p></div>";
 }
 
@@ -92,6 +95,8 @@ function faqSchema(faqs) {
 
 function articleSchema(o, url) {
   var updated = requireReviewedDate(o);
+  var authors = peopleForRole(o.path, "author");
+  if (!authors.length) return null;
   var node = {
     "@type": "Article",
     "@id": url + "#article",
@@ -99,9 +104,7 @@ function articleSchema(o, url) {
     description: o.desc,
     dateModified: updated,
     image: [SITE + imageForRoute(o.path, o.image)],
-    author: SITE_CONFIG.authors.map(function (person) {
-      return { "@type": "Person", "@id": person.id, name: person.name, url: person.url };
-    }),
+    author: authors.map(personRef),
     publisher: {
       "@type": "Organization",
       "@id": SITE_CONFIG.publisherId,
@@ -166,7 +169,7 @@ function article(o) {
   let prose =
     '<p class="eyebrow">' + o.eyebrow + "</p><h1>" + o.h1 + "</h1>" +
     '<p class="lede">' + o.lede + "</p>" +
-    articleMeta(reviewedDate);
+    articleMeta(reviewedDate, o.path);
   if (isEmergencyGuide) {
     prose += '<div class="emergency-quick-bar emergency-quick-bar--sticky btn-row" role="navigation" aria-label="Emergency shortcuts">' +
       '<a class="btn btn-alert" href="/pet-emergency/24-hour-vets-pattaya.html">24-hour vets in Pattaya</a>' +
@@ -189,7 +192,8 @@ function article(o) {
     if (s.h) prose += '<h2 id="' + headingIds[i] + '">' + s.h + "</h2>";
     prose += s.html;
   });
-  let schema = [articleSchema(o, url)];
+  var routeArticleSchema = articleSchema(o, url);
+  let schema = routeArticleSchema ? [routeArticleSchema] : [];
   if (hasFaqs) {
     prose += '<h2 id="faq">Frequently asked</h2>' + faqBlock(o.faqs);
     schema.push(faqSchema(o.faqs));
@@ -220,6 +224,9 @@ function article(o) {
   body += "</div></section>";
 
   var bodyClass = o.bodyClass || "";
+  if (bodyClass.indexOf("guide-page") === -1) {
+    bodyClass = (bodyClass ? bodyClass + " " : "") + "guide-page";
+  }
   if (sidebar && bodyClass.indexOf("has-guide-toc") === -1) {
     bodyClass = (bodyClass ? bodyClass + " " : "") + "has-guide-toc";
   }
@@ -241,7 +248,7 @@ function article(o) {
     published: o.published || undefined,
     schema: schema,
     image: o.image,
-    ogType: "article",
+    ogType: routeArticleSchema ? "article" : "website",
     noindex: !!o.noindex,
     bodyClass: bodyClass || undefined,
     body: body
@@ -364,7 +371,7 @@ function hub(o) {
     '<p class="eyebrow">' + o.eyebrow + "</p>" +
     "<h1>" + o.h1 + "</h1>" +
     '<p class="lede">' + o.lede + "</p>" +
-    articleMeta(reviewedDate);
+    articleMeta(reviewedDate, o.path);
   if (o.intro) body += '<div class="prose guide-intro">' + o.intro + "</div>";
   body += hubShortcutBar(o.path);
   var guidesTopic = o.guidesTopic || hubGuidesTopic(o.path);

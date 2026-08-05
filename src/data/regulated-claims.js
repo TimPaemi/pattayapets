@@ -18,7 +18,7 @@ const REGULATED_CLAIMS = Object.freeze({
   "TH-IMPORT-ID-2026-02": Object.freeze({
     jurisdiction: "Thailand",
     scope: "Dogs, cats and rabbits entering Thailand under the published Thai consular/DLD process",
-    checkedAt: "2026-08-01",
+    checkedAt: "2026-08-05",
     editorialReviewer: "SOL",
     editorialReviewerRole: "Editorial audit; source transcription and scope review",
     qualifiedReviewStatus: "No independent Thai import regulatory specialist review",
@@ -38,7 +38,7 @@ const REGULATED_CLAIMS = Object.freeze({
   "TH-IMPORT-SEQUENCE-2026-02": Object.freeze({
     jurisdiction: "Thailand",
     scope: "The current Thai consular guide for dogs, cats and rabbits from the USA; other origins must confirm their AQS/origin authority",
-    checkedAt: "2026-08-01",
+    checkedAt: "2026-08-05",
     editorialReviewer: "SOL",
     editorialReviewerRole: "Editorial audit; source transcription and scope review",
     qualifiedReviewStatus: "No independent Thai import regulatory specialist review",
@@ -60,7 +60,7 @@ const REGULATED_CLAIMS = Object.freeze({
   "TH-IMPORT-WINDOW-2026-02": Object.freeze({
     jurisdiction: "Thailand",
     scope: "The current Thai consular guide for dogs, cats and rabbits travelling from the USA",
-    checkedAt: "2026-08-01",
+    checkedAt: "2026-08-05",
     editorialReviewer: "SOL",
     editorialReviewerRole: "Editorial audit; source transcription and scope review",
     qualifiedReviewStatus: "No independent Thai import regulatory specialist review",
@@ -80,7 +80,7 @@ const REGULATED_CLAIMS = Object.freeze({
   "TH-ARRIVAL-INSPECTION-2026-02": Object.freeze({
     jurisdiction: "Thailand",
     scope: "Arrival controls and import-licence fee in the current Thai consular guide for dogs, cats and rabbits from the USA",
-    checkedAt: "2026-08-01",
+    checkedAt: "2026-08-05",
     editorialReviewer: "SOL",
     editorialReviewerRole: "Editorial audit; source transcription and scope review",
     qualifiedReviewStatus: "No independent Thai import regulatory specialist review",
@@ -99,7 +99,7 @@ const REGULATED_CLAIMS = Object.freeze({
   "TH-EXPORT-SEQUENCE-2025-10": Object.freeze({
     jurisdiction: "Thailand",
     scope: "DLD Region 9's published pet-export sequence; the responsible departure AQS must confirm its own application intake",
-    checkedAt: "2026-08-01",
+    checkedAt: "2026-08-05",
     editorialReviewer: "SOL",
     editorialReviewerRole: "Editorial audit; Thai-source transcription and scope review",
     qualifiedReviewStatus: "No independent Thai export regulatory specialist or certified translator review",
@@ -123,7 +123,7 @@ const REGULATED_CLAIMS = Object.freeze({
   "AU-NONAPPROVED-PATH-2026-08": Object.freeze({
     jurisdiction: "Australia",
     scope: "Dogs and cats originating in a country not approved for direct import, including Thailand; returning-Australian exceptions require DAFF case assessment",
-    checkedAt: "2026-08-01",
+    checkedAt: "2026-08-05",
     editorialReviewer: "SOL",
     editorialReviewerRole: "Editorial audit; source transcription and scope review",
     qualifiedReviewStatus: "No independent Australian biosecurity specialist review",
@@ -143,7 +143,7 @@ const REGULATED_CLAIMS = Object.freeze({
   "KR-PET-ENTRY-AIP-2024-10": Object.freeze({
     jurisdiction: "South Korea",
     scope: "Passenger import of dogs and cats under Korea's published AIP",
-    checkedAt: "2026-08-01",
+    checkedAt: "2026-08-05",
     editorialReviewer: "SOL",
     editorialReviewerRole: "Editorial audit; source transcription and scope review",
     qualifiedReviewStatus: "No independent Korean quarantine specialist review",
@@ -164,7 +164,7 @@ const REGULATED_CLAIMS = Object.freeze({
   "KR-PET-ENTRY-MOFA-2023-12": Object.freeze({
     jurisdiction: "South Korea",
     scope: "Korean MOFA embassy guidance for dogs and cats; conflicts with the AIP at exactly ten animals",
-    checkedAt: "2026-08-01",
+    checkedAt: "2026-08-05",
     editorialReviewer: "SOL",
     editorialReviewerRole: "Editorial audit; source transcription and scope review",
     qualifiedReviewStatus: "No independent Korean quarantine specialist review; exact-ten conflict remains unresolved",
@@ -200,7 +200,7 @@ const REGULATED_CLAIMS = Object.freeze({
   "MY-NONSCHEDULED-CONTROLS-2026-03": Object.freeze({
     jurisdiction: "Malaysia",
     scope: "Dogs and cats from Thailand entering Malaysia under the reviewed non-scheduled-country cargo-consignment pathway",
-    checkedAt: "2026-08-01",
+    checkedAt: "2026-08-05",
     editorialReviewer: "SOL",
     editorialReviewerRole: "Editorial audit; source transcription and scope review",
     qualifiedReviewStatus: "No independent Malaysian DVS specialist review; accompanied mode remains unresolved",
@@ -221,7 +221,7 @@ const REGULATED_CLAIMS = Object.freeze({
   "IATA-CR1-ED52-2026-01": Object.freeze({
     jurisdiction: "International air transport",
     scope: "Dogs and cats transported under IATA Container Requirement 1, Edition 52",
-    checkedAt: "2026-08-01",
+    checkedAt: "2026-08-05",
     editorialReviewer: "SOL",
     editorialReviewerRole: "Editorial audit; source transcription and scope review",
     qualifiedReviewStatus: "No independent live-animal air-cargo specialist review",
@@ -240,11 +240,11 @@ const REGULATED_CLAIMS = Object.freeze({
   "TH-AQS-MAP-2025-10": Object.freeze({
     jurisdiction: "Thailand",
     scope: "DLD's map of 59 Animal Quarantine Stations, published 8 October 2025",
-    checkedAt: "2026-08-01",
+    checkedAt: "2026-08-05",
     editorialReviewer: "SOL",
     editorialReviewerRole: "Editorial audit; complete station-list review",
     qualifiedReviewStatus: "No independent DLD confirmation or certified translator review; source-list absence is not proof of impossibility",
-    recheckBy: "2026-11-01",
+    recheckBy: "2026-09-05",
     sourceUrl: "https://aqi-new.dld.go.th/index.php/th/news-head/mapaqithai",
     sourceExcerpt: Object.freeze(["แผนที่ด่านกักกันสัตว์ 59 ด่าน ฉบับภาษาไทย"]),
     sourceExcerptLanguage: "th",
@@ -255,11 +255,11 @@ const REGULATED_CLAIMS = Object.freeze({
   "TH-USA-AIRPORTS-2025-01": Object.freeze({
     jurisdiction: "Thailand",
     scope: "Dogs, cats and rabbits arriving from the USA under the revised 30 January 2025 consular instruction",
-    checkedAt: "2026-08-01",
+    checkedAt: "2026-08-05",
     editorialReviewer: "SOL",
     editorialReviewerRole: "Editorial audit; complete airport-list review",
     qualifiedReviewStatus: "No independent DLD confirmation; source is expressly USA-origin only",
-    recheckBy: "2026-11-01",
+    recheckBy: "2026-09-05",
     sourceUrl: "https://image.mfa.go.th/mfa/0/91fPdh6NtO/About-Thailand/Bringing_Pets_to_Thailand/All_Airports_-_Instructions_for_Bringing_Dog-Cat-Rabbit_into_Thailand_from_the_USA_%28Revised_30Jan2025%29.pdf",
     sourceExcerpt: Object.freeze([
       "Suvarnabhumi International Airport",
@@ -277,7 +277,7 @@ const REGULATED_CLAIMS = Object.freeze({
   "GB-RABIES-BLOOD-2026-08": Object.freeze({
     jurisdiction: "Great Britain",
     scope: "Non-commercial dogs, cats and ferrets entering Great Britain from a non-EU country that is not listed, including Thailand under the checked GOV.UK list",
-    checkedAt: "2026-08-01",
+    checkedAt: "2026-08-05",
     editorialReviewer: "SOL",
     editorialReviewerRole: "Editorial audit; source transcription, list check and scope review",
     qualifiedReviewStatus: "No independent APHA pet-travel specialist review",
@@ -301,7 +301,7 @@ const REGULATED_CLAIMS = Object.freeze({
   "GB-TAPEWORM-2026-08": Object.freeze({
     jurisdiction: "Great Britain",
     scope: "Dogs entering Great Britain from Thailand under the ordinary pet-travel route",
-    checkedAt: "2026-08-01",
+    checkedAt: "2026-08-05",
     editorialReviewer: "SOL",
     editorialReviewerRole: "Editorial audit; source transcription and scope review",
     qualifiedReviewStatus: "No independent APHA pet-travel specialist review",
@@ -342,12 +342,12 @@ const REGULATED_CLAIMS = Object.freeze({
   "EU-RABIES-TITER-2026-08": Object.freeze({
     jurisdiction: "European Union",
     scope: "Non-commercial dogs, cats and ferrets entering the EU from Thailand under the current non-listed-third-country route",
-    checkedAt: "2026-08-01",
+    checkedAt: "2026-08-05",
     editorialReviewer: "SOL",
     editorialReviewerRole: "Editorial audit; source transcription, list check and scope review",
     qualifiedReviewStatus: "No independent EU pet-movement regulatory specialist review",
     recheckBy: "2026-11-01",
-    sourceUrl: "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/eu-legislation/non-commercial-movement-non-eu-countries_en",
+    sourceUrl: "https://food.ec.europa.eu/animals/live-animal-movements/dogs-cats-and-ferrets/bringing-pet-eu-non-eu-country_en",
     sourceExcerpt: Object.freeze([
       "at least 30 days after the date of the primary vaccination",
       "not less than 90 days before the date of issue of the animal health certificate",
@@ -367,7 +367,7 @@ const REGULATED_CLAIMS = Object.freeze({
   "EU-NONCOMMERCIAL-ENTRY-2026-08": Object.freeze({
     jurisdiction: "European Union",
     scope: "Non-commercial movement of pet dogs, cats and ferrets into the EU from a non-EU country",
-    checkedAt: "2026-08-01",
+    checkedAt: "2026-08-05",
     editorialReviewer: "SOL",
     editorialReviewerRole: "Editorial audit; source transcription and movement-scope review",
     qualifiedReviewStatus: "No independent EU pet-movement regulatory specialist review",
@@ -390,7 +390,7 @@ const REGULATED_CLAIMS = Object.freeze({
   "US-CDC-THAILAND-RISK-2026-08": Object.freeze({
     jurisdiction: "United States",
     scope: "CDC dog-rabies risk classification for dogs that have been in Thailand during the six months before US entry",
-    checkedAt: "2026-08-01",
+    checkedAt: "2026-08-05",
     editorialReviewer: "SOL",
     editorialReviewerRole: "Editorial audit; complete country-list check and scope review",
     qualifiedReviewStatus: "No independent CDC dog-import specialist review",
@@ -408,7 +408,7 @@ const REGULATED_CLAIMS = Object.freeze({
   "US-CDC-FOREIGN-HIGH-RISK-2026-08": Object.freeze({
     jurisdiction: "United States",
     scope: "Foreign-vaccinated dogs that have been in a CDC high-risk country during the six months before US entry",
-    checkedAt: "2026-08-01",
+    checkedAt: "2026-08-05",
     editorialReviewer: "SOL",
     editorialReviewerRole: "Editorial audit; source transcription and pathway-scope review",
     qualifiedReviewStatus: "No independent CDC dog-import specialist review",
@@ -431,7 +431,7 @@ const REGULATED_CLAIMS = Object.freeze({
   "JP-NONDESIGNATED-ENTRY-2026-08": Object.freeze({
     jurisdiction: "Japan",
     scope: "Dogs and cats entering Japan from non-designated regions, including Thailand under the checked MAFF designated-region list",
-    checkedAt: "2026-08-01",
+    checkedAt: "2026-08-05",
     editorialReviewer: "SOL",
     editorialReviewerRole: "Editorial audit; source transcription, list check and scope review",
     qualifiedReviewStatus: "No independent Japanese AQS import specialist review",
@@ -455,7 +455,7 @@ const REGULATED_CLAIMS = Object.freeze({
   "SG-SCHEDULE-III-ENTRY-2026-08": Object.freeze({
     jurisdiction: "Singapore",
     scope: "Dogs and cats entering Singapore from a Schedule III country or region, including Thailand under the current AVS category page",
-    checkedAt: "2026-08-01",
+    checkedAt: "2026-08-05",
     editorialReviewer: "SOL",
     editorialReviewerRole: "Editorial audit; current AVS category-page check, source transcription and scope review",
     qualifiedReviewStatus: "No independent Singapore AVS import specialist review",
@@ -468,7 +468,7 @@ const REGULATED_CLAIMS = Object.freeze({
       "ensuring that a quarantine space has been booked"
     ]),
     sourceExcerptLanguage: "en",
-    sourceEvidenceNote: "AVS’s current import page, last updated 18 June 2026, was checked on 2026-08-01; Thailand is not in its Schedule I or II lists and therefore falls under the published Schedule III definition.",
+    sourceEvidenceNote: "AVS's current import page, last updated 5 August 2026, was checked on 2026-08-05; Thailand is not in its Schedule I or II lists and therefore falls under the published Schedule III definition.",
     support: "The Schedule III route requires valid rabies vaccination, a qualifying approved-lab serology sample at least 28 days later and 90 days to 12 months before export, at least 0.5 IU/ml, relevant licences, a booked AQC space, arrival vaccination and at least 30 days’ quarantine.",
     doesNotSupport: "The source does not guarantee quarantine space, airline acceptance or that Thailand’s category will remain unchanged.",
     exampleConsumers: [
@@ -502,7 +502,7 @@ const REGULATED_CLAIMS = Object.freeze({
   "CN-THAILAND-ENTRY-2025-10": Object.freeze({
     jurisdiction: "China",
     scope: "Shanghai Customs’ current operational guidance for accompanied pet dogs and cats arriving from Thailand",
-    checkedAt: "2026-08-01",
+    checkedAt: "2026-08-05",
     editorialReviewer: "SOL",
     editorialReviewerRole: "Editorial audit; current Shanghai Customs source transcription and Thailand-scope review",
     qualifiedReviewStatus: "No independent GACC or arrival-port import specialist review; port-level determination remains controlling",
@@ -529,7 +529,7 @@ const REGULATED_CLAIMS = Object.freeze({
     editorialReviewer: "SOL",
     editorialReviewerRole: "Editorial audit; source transcription and species-scope review",
     qualifiedReviewStatus: "No licensed veterinarian has reviewed the PattayaPets emergency guidance",
-    recheckBy: "2026-11-01",
+    recheckBy: "2026-08-19",
     sourceUrl: "https://www.rvc.ac.uk/vetcompass/news/the-rvc-urges-owners-of-hot-dogs-to-cool-first-transport-second",
     sourceExcerpt: Object.freeze([
       "cool first, transport second",

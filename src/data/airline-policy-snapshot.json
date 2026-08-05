@@ -5,8 +5,8 @@
     "ordinaryPetModes": ["Checked baggage"],
     "bookingTiming": "At least 3 working days before departure; check in at least 2 hours before departure.",
     "bookingMethod": "Request AVIH through a Thai Airways sales office or contact centre; other species and ineligible consignments must be arranged through Thai Cargo.",
-    "policyUrl": "https://www.thaiairways.com/en-no/content/special-assistance/travel-with-pets/pets-as-checked-baggage-AVIH/",
-    "asOf": "2026-07-20",
+    "policyUrl": "https://www.thaiairways.com/en-tw/content/special-assistance/travel-with-pets/pets-as-checked-baggage-avih/",
+    "asOf": "2026-08-05",
     "confidence": "high"
   },
   {
@@ -43,10 +43,10 @@
     "airline": "Qatar Airways",
     "iata": "QR",
     "ordinaryPetModes": ["Checked baggage"],
-    "bookingTiming": "Request between 2 and 30 days before departure and no later than 48 hours before the intended flight.",
-    "bookingMethod": "Contact Qatar Airways and submit the live-animal request form; inbound transfer from another airline is not accepted.",
+    "bookingTiming": "Submit the pet request at least 48 hours before departure; route and transport mode remain subject to confirmation.",
+    "bookingMethod": "Contact Qatar Airways and submit the live-animal request form; obtain confirmation for every sector and do not plan an inbound transfer from another airline.",
     "policyUrl": "https://www.qatarairways.com/en-mt/baggage/animals.html",
-    "asOf": "2026-07-20",
+    "asOf": "2026-08-05",
     "confidence": "medium"
   },
   {
@@ -83,10 +83,10 @@
     "airline": "Turkish Airlines",
     "iata": "TK",
     "ordinaryPetModes": ["Cabin", "Checked baggage"],
-    "bookingTiming": "The online pet service may be purchased until six hours before departure, subject to quota; earlier booking is recommended.",
-    "bookingMethod": "Add the pet while buying or managing the ticket online, or contact Turkish Airlines; each flight is subject to pet quota and operational confirmation.",
+    "bookingTiming": "Reserve through the website or app and obtain quota, route and operating-flight confirmation; no verified universal cutoff is published in this snapshot.",
+    "bookingMethod": "Add the pet while buying or managing the ticket online, or contact Turkish Airlines; obtain confirmation for the route, operating flight and available pet quota.",
     "policyUrl": "https://www.turkishairlines.com/en-at/any-questions/traveling-with-pets/",
-    "asOf": "2026-07-20",
+    "asOf": "2026-08-05",
     "confidence": "medium"
   },
   {

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "ledgerVersion": "2026-08-05.1",
+  "reviewedAt": "2026-08-05",
+  "policy": {
+    "externalVenueImagesImported": false,
+    "mapsOrReviewImagesImported": false,
+    "aiGeneratedImagesAdded": false,
+    "unknownRightsDefault": "HOLD_NEW_USES"
+  },
+  "records": [
+    {
+      "id": "brand-vector-sources",
+      "files": [
+        "src/assets/img/favicon.svg",
+        "src/assets/img/icon.svg",
+        "src/assets/img/logo-mark.svg"
+      ],
+      "kind": "project brand vector",
+      "provenance": "Checked-in project-authored vector source; no external image dependency or embedded third-party raster was found.",
+      "rightsDecision": "ACCEPT_CURRENT_PROJECT_USE",
+      "usage": "favicon, application icon source and press logo asset",
+      "limitations": "Operator remains responsible for brand-ownership and third-party redistribution decisions."
+    },
+    {
+      "id": "derived-icons",
+      "files": [
+        "src/assets/img/apple-touch-icon.png",
+        "src/assets/img/icon-192.png",
+        "src/assets/img/icon-512.png"
+      ],
+      "kind": "generated raster derivative",
+      "provenance": "Deterministically rendered from src/assets/img/icon.svg by tools/make-images.js using Sharp.",
+      "rightsDecision": "ACCEPT_CURRENT_PROJECT_USE",
+      "usage": "PWA and device icons",
+      "dimensions": ["180x180", "192x192", "512x512"]
+    },
+    {
+      "id": "og-vector-sources",
+      "files": [
+        "src/assets/img/og-adoption.svg",
+        "src/assets/img/og-boarding.svg",
+        "src/assets/img/og-cats.svg",
+        "src/assets/img/og-default.svg",
+        "src/assets/img/og-dog-friendly.svg",
+        "src/assets/img/og-dogs.svg",
+        "src/assets/img/og-emergency.svg",
+        "src/assets/img/og-export.svg",
+        "src/assets/img/og-groomers.svg",
+        "src/assets/img/og-guides.svg",
+        "src/assets/img/og-health.svg",
+        "src/assets/img/og-import.svg",
+        "src/assets/img/og-mobile-vets.svg",
+        "src/assets/img/og-owning.svg",
+        "src/assets/img/og-pet-shops.svg",
+        "src/assets/img/og-relocation.svg",
+        "src/assets/img/og-trainers.svg",
+        "src/assets/img/og-vets.svg"
+      ],
+      "kind": "project social-card vector",
+      "provenance": "Checked-in project-authored vector templates using the PattayaPets visual system; no real venue, practitioner, animal case, document or third-party photograph is depicted.",
+      "rightsDecision": "ACCEPT_CURRENT_PROJECT_USE",
+      "usage": "source for route-family social cards",
+      "dimensions": "1200x630"
+    },
+    {
+      "id": "og-raster-derivatives",
+      "files": [
+        "src/assets/img/og-adoption.png",
+        "src/assets/img/og-boarding.png",
+        "src/assets/img/og-cats.png",
+        "src/assets/img/og-default.png",
+        "src/assets/img/og-dog-friendly.png",
+        "src/assets/img/og-dogs.png",
+        "src/assets/img/og-emergency.png",
+        "src/assets/img/og-export.png",
+        "src/assets/img/og-groomers.png",
+        "src/assets/img/og-guides.png",
+        "src/assets/img/og-health.png",
+        "src/assets/img/og-import.png",
+        "src/assets/img/og-mobile-vets.png",
+        "src/assets/img/og-owning.png",
+        "src/assets/img/og-pet-shops.png",
+        "src/assets/img/og-relocation.png",
+        "src/assets/img/og-trainers.png",
+        "src/assets/img/og-vets.png"
+      ],
+      "kind": "generated raster derivative",
+      "provenance": "Deterministically rendered from the matching checked-in og-*.svg by tools/make-images.js using Sharp.",
+      "rightsDecision": "ACCEPT_CURRENT_PROJECT_USE",
+      "usage": "Open Graph and route-family image",
+      "dimensions": "1200x630"
+    },
+    {
+      "id": "timpaemi-portrait",
+      "files": ["src/assets/img/timpaemi.jpg"],
+      "kind": "portrait photograph",
+      "sha256": "52d6129ac55cdec0bd2bb0dc3cbf2ef1ba2b6fc55f49fd19594a8173a5aa2218",
+      "dimensions": "512x512",
+      "provenance": "Pre-existing repository asset. No written photographer, license, consent or ownership record was located in the reviewed repository materials.",
+      "rightsDecision": "HOLD_NEW_USES",
+      "currentUse": "One truthful masthead figure identifying Tim and Paemi as publisher principals.",
+      "removedUses": "Site-wide footer portrait and unrelated route contexts.",
+      "requiredDecision": "Tim must confirm rights/permission before reuse, redistribution or expansion to another surface."
+    }
+  ]
+}

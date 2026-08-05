@@ -3,7 +3,7 @@
    grooming and vet costs. Keyword-led titles under 60 characters. */
 
 const { article } = require("../guidekit.js");
-const { BUSINESSES, CATEGORIES } = require("../data/businesses.js");
+const { BUSINESSES, isPublishedBusiness } = require("../data/businesses.js");
 const rb = require("../data/richness-blocks.js");
 const {
   claimLink,
@@ -46,7 +46,7 @@ const STD_IMPORT =
 function vetListHtml() {
   var vetCats = { vets: 1, "mobile-vets": 1 };
   var rows = BUSINESSES.filter(function (b) {
-    return vetCats[b.category] && /english/i.test(b.languages || "");
+    return isPublishedBusiness(b) && vetCats[b.category] && /english/i.test(b.languages || "");
   });
   if (!rows.length) {
     return "<p>Browse the <a href=\"/vets/\">vets directory</a> and confirm " +
@@ -55,7 +55,6 @@ function vetListHtml() {
   return '<div class="table-wrap"><table class="facts-table"><thead><tr>' +
     '<th scope="col">Clinic</th><th scope="col">Type</th><th scope="col">Languages</th></tr></thead><tbody>' +
     rows.map(function (b) {
-      var cat = CATEGORIES[b.category];
       return "<tr><th scope=\"row\"><a href=\"/" + b.category + "/" + b.slug +
         ".html\">" + b.name + "</a></th><td>" + b.type + "</td><td>" +
         (b.languages || "Confirm when booking") + "</td></tr>";

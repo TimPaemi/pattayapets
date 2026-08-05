@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "ledgerVersion": "2026-08-05.1",
+  "standardId": "TP-NETWORK-2026-08-04.1",
+  "projectClass": "OWNED PUBLICATION",
+  "reviewedAt": "2026-08-05",
+  "defaultDisposition": "OMIT_PERSONAL_ATTRIBUTION",
+  "projectCreationEvidence": {
+    "disposition": "HOLD",
+    "evidenceRefs": [],
+    "people": [],
+    "note": "Publisher ownership and publication operations do not establish who created the project. No project-level creation evidence was located."
+  },
+  "routes": []
+}

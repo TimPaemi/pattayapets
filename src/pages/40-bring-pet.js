@@ -516,7 +516,7 @@ pages.push(importStep({
   lede: "The paperwork gets your pet permission to enter Thailand. The airline " +
     "decides how it actually flies — and policies vary a lot.",
   verify: VERIFY,
-  updated: "2026-08-01",
+  updated: "2026-08-05",
   sections: [
     { h: "The three ways a pet flies", html:
       "<p>There are broadly three options, and not every airline offers each:</p>" +

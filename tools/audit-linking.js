@@ -69,8 +69,9 @@ files.forEach(function (f) {
     fail.push(rel + " — cluster hub missing More to read strip");
   }
 
-  var isGuideArticle = h.includes('"@type":"Article"') ||
-    h.includes('"@type": "Article"');
+  // Guide identity is structural, not inferred from Article schema. Routes without
+  // approved responsibility evidence intentionally remain WebPage-only.
+  var isGuideArticle = /<body\b[^>]*\bguide-page\b/i.test(h);
   var isListing = h.includes("biz-sub") && h.includes("The facts");
   var isCategoryHub = /^\/(vets|groomers|boarding|pet-shops|trainers|mobile-vets|pet-relocation)\/$/.test(rel);
 

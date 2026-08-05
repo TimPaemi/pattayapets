@@ -1,7 +1,13 @@
 "use strict";
 /* Directory generator: category hubs, area hubs and business listing pages. */
 
-const { CATEGORIES, AREAS, BUSINESSES, isPublishedBusiness } = require("../data/businesses.js");
+const {
+  CATEGORIES,
+  AREAS,
+  BUSINESSES,
+  isContactPublishable,
+  isPublishedBusiness
+} = require("../data/businesses.js");
 const SITE = "https://pattayapets.com";
 const { AREA_GUIDE } = require("../data/areas-content.js");
 const { HUB_GUIDE } = require("../data/hub-content.js");
@@ -52,6 +58,7 @@ function titleQualifier(b) {
 }
 
 function bizPageTitle(b, cat) {
+  if (b.publishState === "rejected") return b.name + " | Outside Scope";
   if (!isPublishedBusiness(b)) return b.name + " | Verification Hold";
   var role = cat.one === "boarding provider" ? "boarding" : cat.one;
   role = role.replace(/\b[a-z]/g, function (c) { return c.toUpperCase(); });
@@ -65,6 +72,10 @@ function bizPageTitle(b, cat) {
 }
 
 function businessDescription(b) {
+  if (b.publishState === "rejected") {
+    return clampDesc(b.name + " is outside the PattayaPets publication scope. The existing " +
+      "route is retained as a non-published decision record without business facts or contacts.");
+  }
   if (!isPublishedBusiness(b)) {
     return clampDesc(b.name + " is retained as an unverified evidence lead. Current " +
       "operation or the available public contact route has not met the publication threshold.");
@@ -365,11 +376,11 @@ function catCrossSection(key) {
 
 const AREA_MISSING_HINTS = {
   naklua: {
-    groomers: "<a href=\"/groomers/furiday-pet-grooming.html\">FURiday</a> (Naklua) or " +
-      "<a href=\"/groomers/woof-pattaya.html\">Woof Pattaya</a> (Nong Prue)",
+    groomers: "<a href=\"/groomers/woof-pattaya.html\">Woof Pattaya</a> (Nong Prue) or " +
+      "the <a href=\"/groomers/\">groomers directory</a>",
     boarding: "<a href=\"/boarding/pattaya-dog-stay.html\">Pattaya Dog Stay</a> (central) or " +
       "<a href=\"/boarding/elite-dog-resort.html\">Elite Dog Resort</a> (Pratumnak)",
-    "pet-shops": "<a href=\"/pet-shops/pattaya-pet-center.html\">Pattaya Pet Center</a> (South Pattaya) or " +
+    "pet-shops": "<a href=\"/pet-shops/peturday-pattaya.html\">Peturday</a> (Pratumnak) or " +
       "the <a href=\"/pet-shops/\">pet shops directory</a>",
     trainers: "<a href=\"/trainers/k9-coach.html\">K9 Coach</a> (Bang Saray) or " +
       "the <a href=\"/trainers/\">trainers directory</a>",
@@ -377,11 +388,11 @@ const AREA_MISSING_HINTS = {
   },
   wongamat: {
     vets: "<a href=\"/vets/north-pattaya-animal-hospital.html\">North Pattaya Animal Hospital</a> " +
-      "(Naklua/Wongamat) or <a href=\"/vets/pattaya-veterinary-clinic.html\">Pattaya Veterinary Clinic</a> (Naklua)",
-    groomers: "<a href=\"/groomers/furiday-pet-grooming.html\">FURiday</a> (Naklua) or " +
+      "(Naklua/Wongamat) or the <a href=\"/vets/\">vets directory</a>",
+    groomers: "<a href=\"/groomers/woof-pattaya.html\">Woof Pattaya</a> (Nong Prue) or " +
       "the <a href=\"/groomers/\">groomers directory</a>",
-    "pet-shops": "<a href=\"/pet-shops/brand-dog-pattaya-pet-supplies.html\">Brand Dog</a> (South Pattaya) or " +
-      "<a href=\"/pet-shops/peturday-pattaya.html\">Peturday</a> (Pratumnak)",
+    "pet-shops": "<a href=\"/pet-shops/peturday-pattaya.html\">Peturday</a> (Pratumnak) or " +
+      "the <a href=\"/pet-shops/\">pet shops directory</a>",
     boarding: "<a href=\"/boarding/elite-dog-resort.html\">Elite Dog Resort</a> (Pratumnak) or " +
       "<a href=\"/boarding/pattaya-dog-stay.html\">Pattaya Dog Stay</a> (central)",
     trainers: "<a href=\"/trainers/k9-coach.html\">K9 Coach</a> (Bang Saray) or " +
@@ -392,7 +403,7 @@ const AREA_MISSING_HINTS = {
     vets: "<a href=\"/vets/thonglor-pet-hospital-pattaya.html\">Thonglor Pet Hospital</a> " +
       "(central Pattaya, 24h) or <a href=\"/vets/north-pattaya-animal-hospital.html\">North Pattaya Animal Hospital</a> (Naklua)",
     groomers: "<a href=\"/groomers/woof-pattaya.html\">Woof Pattaya</a> (Nong Prue) or " +
-      "<a href=\"/groomers/furiday-pet-grooming.html\">FURiday</a> (Naklua)",
+      "the <a href=\"/groomers/\">groomers directory</a>",
     trainers: "<a href=\"/trainers/k9-coach.html\">K9 Coach</a> (Bang Saray) or " +
       "the <a href=\"/trainers/\">trainers directory</a>"
   },
@@ -416,8 +427,8 @@ const AREA_MISSING_HINTS = {
       "the <a href=\"/trainers/\">trainers directory</a>",
     "mobile-vets": "<a href=\"/mobile-vets/baan-mor-raksasat-animal-hospital-pattaya.html\">Baan Mor Raksasat</a> " +
       "or the <a href=\"/mobile-vets/\">mobile vets directory</a>",
-    "pet-shops": "<a href=\"/pet-shops/tong-ma-aquarium-and-pets-shop.html\">Tong-ma</a> " +
-      "or <a href=\"/pet-shops/petsmart-pattaya.html\">PetSmart</a> (Thep Prasit, Jomtien)"
+    "pet-shops": "<a href=\"/pet-shops/petsmart-pattaya.html\">PetSmart</a> (Thep Prasit, Jomtien) " +
+      "or the <a href=\"/pet-shops/\">pet shops directory</a>"
   },
   sattahip: {
     vets: "<a href=\"/vets/animal-army-hospital.html\">Animal Army Hospital</a> (Na Jomtien)",
@@ -432,7 +443,7 @@ const AREA_MISSING_HINTS = {
   },
   banglamung: {
     vets: "<a href=\"/vets/pattaya-community-pet-hospital.html\">Pattaya Community Pet Hospital</a> " +
-      "(Nernplubwan, 24h) or <a href=\"/vets/siam-country-pet-hospital.html\">Siam Country Pet Hospital</a>",
+      "(Nernplubwan, 24h) or the <a href=\"/vets/\">vets directory</a>",
     groomers: "<a href=\"/groomers/jaijai-grooming.html\">Jaijai Grooming</a> or " +
       "<a href=\"/groomers/woof-pattaya.html\">Woof Pattaya</a>",
     boarding: "<a href=\"/boarding/pattaya-dog-stay.html\">Pattaya Dog Stay</a> (central) or " +
@@ -441,7 +452,7 @@ const AREA_MISSING_HINTS = {
       "<a href=\"/trainers/k9-pattaya-dog-training-school.html\">K9 Pattaya</a> (Huai Yai)",
     "mobile-vets": "<a href=\"/mobile-vets/baan-mor-raksasat-animal-hospital-pattaya.html\">Baan Mor Raksasat</a> or " +
       "the <a href=\"/mobile-vets/\">mobile vets directory</a>",
-    "pet-shops": "<a href=\"/pet-shops/pattaya-pet-center.html\">Pattaya Pet Center</a> or " +
+    "pet-shops": "<a href=\"/pet-shops/peturday-pattaya.html\">Peturday</a> (Pratumnak) or " +
       "the <a href=\"/pet-shops/\">pet shops directory</a>"
   },
   "central-pattaya": {
@@ -511,12 +522,19 @@ function fmtDate(iso) {
 }
 
 function verdictPending(b) {
+  if (b.publishState === "rejected") {
+    return '<div class="callout callout-note"><span class="verdict verdict-pending">' +
+      "Outside publication scope</span>" +
+      '<p class="verdict-copy">The reviewed business evidence places this operation outside ' +
+      "the Pattaya scope of this directory. The existing URL is retained as a decision record, " +
+      "but business facts, contact actions and business schema are withheld.</p></div>";
+  }
   if (!isPublishedBusiness(b)) {
     return '<div class="callout callout-note"><span class="verdict verdict-pending">' +
       "Verification hold</span>" +
       "<p class=\"verdict-copy\">This page is retained as an <strong>unverified " +
-      "evidence lead</strong>. Current operation or the available public contact route " +
-      "has not met the publication threshold. It is not a recommendation or a current " +
+      "evidence lead</strong>. PattayaPets has not been able to confirm a contact route " +
+      "and current operation or service scope to the publication threshold. It is not a recommendation or a current " +
       "verified listing; do not make a trip based on this page.</p></div>";
   }
   return '<div class="callout"><span class="verdict verdict-pending">Facts page &mdash; visit pending</span>' +
@@ -545,22 +563,23 @@ function verdictBadge(b) {
     return '<span class="verdict verdict-' + esc(b.verdict) + '">' + esc(label) + "</span>";
   }
   if (!isPublishedBusiness(b)) {
-    return '<span class="verdict verdict-pending">Verification hold</span>';
+    return '<span class="verdict verdict-pending">' +
+      (b.publishState === "rejected" ? "Outside scope" : "Verification hold") + "</span>";
   }
   return '<span class="verdict verdict-pending">Facts page &mdash; visit pending</span>';
 }
 
 function contactChip(b) {
   if (!isPublishedBusiness(b)) return "";
-  if (b.phone && b.tel) {
+  if (isContactPublishable(b, "phone") && isContactPublishable(b, "tel")) {
     return '<a class="chip chip-link" href="tel:' + b.tel + '">' + esc(b.phone) + "</a>";
   }
-  if (b.whatsapp) {
+  if (isContactPublishable(b, "whatsapp")) {
     return '<a class="chip chip-link" href="https://wa.me/' + esc(b.whatsapp) +
       '" target="_blank" rel="noopener">WhatsApp</a>';
   }
-  if (b.line) return '<span class="chip">LINE ' + esc("@" + String(b.line).replace(/^@/, "")) + "</span>";
-  if (b.website) {
+  if (isContactPublishable(b, "line")) return '<span class="chip">LINE ' + esc("@" + String(b.line).replace(/^@/, "")) + "</span>";
+  if (isContactPublishable(b, "website")) {
     return '<a class="chip chip-link" href="' + b.website +
       '" target="_blank" rel="noopener">Website</a>';
   }
@@ -570,15 +589,15 @@ function contactChip(b) {
 function bizContactActions(b) {
   if (!isPublishedBusiness(b)) return "";
   var parts = [];
-  if (b.phone && b.tel) {
+  if (isContactPublishable(b, "phone") && isContactPublishable(b, "tel")) {
     var cls = b.c24 ? "btn btn-alert" : "btn btn-primary";
     parts.push('<a class="' + cls + '" href="tel:' + b.tel + '">Call ' + esc(b.phone) + "</a>");
   }
-  if (b.whatsapp) {
+  if (isContactPublishable(b, "whatsapp")) {
     parts.push('<a class="btn btn-ghost" href="https://wa.me/' + esc(b.whatsapp) +
       '" target="_blank" rel="noopener">WhatsApp</a>');
   }
-  if (b.website) {
+  if (isContactPublishable(b, "website")) {
     parts.push('<a class="btn btn-ghost" href="' + b.website +
       '" target="_blank" rel="noopener">Official website</a>');
   }
@@ -591,17 +610,17 @@ function bizContactActions(b) {
 function contactRows(b) {
   var rows = [];
   if (!isPublishedBusiness(b)) return rows;
-  if (b.phone && b.tel) {
+  if (isContactPublishable(b, "phone") && isContactPublishable(b, "tel")) {
     rows.push(["Phone", '<a href="tel:' + b.tel + '">' + esc(b.phone) + "</a>"]);
   }
-  if (b.whatsapp) {
+  if (isContactPublishable(b, "whatsapp")) {
     rows.push(["WhatsApp", '<a href="https://wa.me/' + esc(b.whatsapp) +
       '" target="_blank" rel="noopener">Message on WhatsApp</a>']);
   }
-  if (b.line) {
+  if (isContactPublishable(b, "line")) {
     rows.push(["LINE", esc("@" + String(b.line).replace(/^@/, ""))]);
   }
-  if (b.email) {
+  if (isContactPublishable(b, "email")) {
     rows.push(["Email", '<a href="mailto:' + esc(b.email) + '">' + esc(b.email) + "</a>"]);
   }
   return rows;
@@ -618,7 +637,7 @@ function bizDirTags(b) {
   } else if (b.serviceScope) {
     tags.push("scope:" + b.serviceScope);
   }
-  if (!isPublishedBusiness(b)) tags.push("verification-hold");
+  if (!isPublishedBusiness(b)) tags.push(b.publishState === "rejected" ? "outside-scope" : "verification-hold");
   return tags.join(" ");
 }
 
@@ -669,8 +688,7 @@ function areaFiltersBar(list, areaSlug) {
     chips += '<a href="' + base + "?cat=" + ck + '" class="chip chip-link dir-filter" data-dir-filter="' +
       ck + '">' + esc(CATEGORIES[ck].name) + " (" + n + ")</a>";
   });
-  return '<div class="dir-filters" role="group" aria-label="Filter by category">' + chips + "</div>" +
-    '<p class="dir-filter-status notice" id="area-filter-status" role="status" tabindex="-1" hidden></p>';
+  return '<div class="dir-filters" role="group" aria-label="Filter by category">' + chips + "</div>";
 }
 
 function areaFiltersPanel(list, areaSlug) {
@@ -678,7 +696,8 @@ function areaFiltersPanel(list, areaSlug) {
   if (!inner) return "";
   return '<details class="corridor-panel filter-panel">' +
     '<summary class="corridor-panel__title">Filter by category</summary>' +
-    '<div class="corridor-panel__body">' + inner + "</div></details>";
+    '<div class="corridor-panel__body">' + inner + "</div></details>" +
+    '<p class="dir-filter-status notice" id="area-filter-status" role="status" tabindex="-1" hidden></p>';
 }
 
 function dirFiltersBar(list, areaKeys, catKey) {
@@ -700,8 +719,7 @@ function dirFiltersBar(list, areaKeys, catKey) {
       '" class="chip chip-link dir-filter" data-dir-filter="area:' + ak + '">' +
       esc(AREAS[ak].name) + " (" + n + ")</a>";
   });
-  return '<div class="dir-filters" role="group" aria-label="Filter listings">' + chips + "</div>" +
-    '<p class="dir-filter-status notice" id="dir-filter-status" role="status" tabindex="-1" hidden></p>';
+  return '<div class="dir-filters" role="group" aria-label="Filter listings">' + chips + "</div>";
 }
 
 function dirFiltersPanel(list, areaKeys, catKey) {
@@ -709,7 +727,8 @@ function dirFiltersPanel(list, areaKeys, catKey) {
   if (!inner) return "";
   return '<details class="corridor-panel filter-panel">' +
     '<summary class="corridor-panel__title">Filter listings</summary>' +
-    '<div class="corridor-panel__body">' + inner + "</div></details>";
+    '<div class="corridor-panel__body">' + inner + "</div></details>" +
+    '<p class="dir-filter-status notice" id="dir-filter-status" role="status" tabindex="-1" hidden></p>';
 }
 
 function bizCard(b) {
@@ -728,33 +747,32 @@ function factsTable(b) {
   var rows = [];
   rows.push(["Evidence status", isPublishedBusiness(b)
     ? "Source-checked facts; first-hand visit pending"
-    : "Verification hold &mdash; current operation or contact route not sufficiently confirmed"]);
-  rows.push([isPublishedBusiness(b) ? "Type" : "Reported type", esc(b.type)]);
-  rows.push(["Service area", b.areas.length ? b.areas.map(function (k) {
-    return '<a href="/area/' + k + '.html">' + esc(areaName(k)) + "</a>";
-  }).join(", ") : esc(serviceAreaLabel(b))]);
+    : b.publishState === "rejected"
+      ? "Outside PattayaPets publication scope"
+      : "Verification hold &mdash; current operation or scope not sufficiently confirmed"]);
   if (!isPublishedBusiness(b)) {
-    if (b.address) {
-      rows.push(["Last sourced address", esc(b.address) +
-        "<br><small>Current operation at this address is not confirmed.</small>"]);
-    }
-    rows.push(["Contact", (!b.phone && !b.website
-      ? "PattayaPets has not been able to confirm a contact route. "
-      : "") + "Contact actions are withheld while this record is on verification hold."]);
+    rows.push(["Publication decision", b.publishState === "rejected"
+      ? "Rejected for this directory after the reviewed evidence placed the operation outside its Pattaya scope."
+      : "Held pending stronger current-operation or service-scope evidence."]);
+    rows.push(["Public fields", "Business facts, services, address and contact values are withheld in this state."]);
     return '<div class="table-wrap"><table class="facts-table">' +
       '<caption class="visually-hidden">Evidence record for ' + esc(b.name) + "</caption><tbody>" +
       rows.map(function (r) {
         return "<tr><th scope=\"row\">" + r[0] + "</th><td>" + r[1] + "</td></tr>";
       }).join("") + "</tbody></table></div>";
   }
+  rows.push(["Type", esc(b.type)]);
+  rows.push(["Service area", b.areas.length ? b.areas.map(function (k) {
+    return '<a href="/area/' + k + '.html">' + esc(areaName(k)) + "</a>";
+  }).join(", ") : esc(serviceAreaLabel(b))]);
   if (b.c24) rows.push(["Hours", "<strong>Open 24 hours</strong>"]);
   else if (b.hours) rows.push(["Hours", esc(b.hours)]);
   if (b.address) rows.push(["Address", esc(b.address)]);
   var contacts = contactRows(b);
   contacts.forEach(function (r) { rows.push(r); });
-  if (b.website) rows.push(["Website",
+  if (isContactPublishable(b, "website")) rows.push(["Website",
     '<a href="' + b.website + '" target="_blank" rel="noopener">Official site</a>']);
-  if (!contacts.length && !b.website) {
+  if (!contacts.length && !isContactPublishable(b, "website")) {
     rows.push(["Contact", "No verified public phone, website or hours. PattayaPets has not been " +
       "able to confirm a contact route for this business, so do not count on reaching it &mdash; " +
       "especially in an emergency."]);
@@ -808,8 +826,8 @@ function bizSchema(b) {
       });
     }
   }
-  if (b.c24 && b.tel) s.telephone = b.tel;
-  if (b.website) s.sameAs = [b.website];
+  if (b.c24 && isContactPublishable(b, "tel")) s.telephone = b.tel;
+  if (isContactPublishable(b, "website")) s.sameAs = [b.website];
   if (b.c24) s.openingHours = "Mo-Su 00:00-23:59";
   return s;
 }
@@ -829,8 +847,9 @@ BUSINESSES.forEach(function (b) {
     '<section class="section"><div class="container"><div class="page-grid"><div>' +
     '<p class="eyebrow">' + esc(cat.name) + "</p>" +
     "<h1>" + esc(b.name) + "</h1>" +
-    '<p class="biz-sub biz-sub--listing">' + esc(b.type) +
-    " &middot; " + esc(serviceAreaLabel(b)) +
+    '<p class="biz-sub biz-sub--listing">' + (isPublishedBusiness(b)
+      ? esc(b.type) + " &middot; " + esc(serviceAreaLabel(b))
+      : "Non-published evidence record") +
     (isPublishedBusiness(b) && b.c24
       ? ' &middot; <strong class="listing-24h">open 24 hours</strong>' : "") +
     "</p>" +
@@ -838,7 +857,11 @@ BUSINESSES.forEach(function (b) {
     bizContactActions(b) +
     (isPublishedBusiness(b)
       ? "<p class=\"lede\">" + markThai(esc(b.summary)) + "</p>"
-      : "<h2>Why this record is held</h2><p>" + markThai(esc(b.summary)) + "</p>") +
+      : "<h2>Why this record is not published</h2><p>" +
+        (b.publishState === "rejected"
+          ? "The reviewed source packet places this operation outside the Pattaya scope of the directory."
+          : "The current-operation or service-scope evidence has not met the publication threshold.") +
+        " The underlying dossier remains private for follow-up.</p>") +
     "<h2>" + (isPublishedBusiness(b) ? "The facts" : "Evidence record") + "</h2>" +
     factsTable(b) +
     (isPublishedBusiness(b)
@@ -852,7 +875,7 @@ BUSINESSES.forEach(function (b) {
         "cleanliness and comfort. PattayaPets does not rate veterinary medical quality.</p></div>"
       : "<h2>Reported services</h2>" +
         '<div class="callout callout-note"><p>Service claims are withheld while this record is ' +
-        "on verification hold. The dossier is retained for follow-up, not presented as a " +
+        "not published. The dossier is retained for follow-up, not presented as a " +
         "current service menu.</p></div>") +
     (isPublishedBusiness(b) && (b.category === "vets" || b.category === "mobile-vets")
       ? '<div class="callout callout-emergency"><div class="ch">In an emergency</div><p>If your ' +
@@ -900,7 +923,7 @@ BUSINESSES.forEach(function (b) {
     '<a href="/corrections.html">Tell us on the corrections page</a> &mdash; we update facts when we can verify them.</p>' +
     '<p class="updated">' + (isPublishedBusiness(b) && b.reviewed
       ? "Reviewed " + fmtDate(b.reviewed)
-      : "Dossier checked " + fmtDate(b.dossierCheckedAt)) + "</p>" +
+      : "Publication evidence reviewed " + fmtDate(b.publicationReviewedAt)) + "</p>" +
     "</div>" +
     '<aside class="sidebar"><div class="card"><div class="ch">More ' + esc(cat.name.toLowerCase()) +
     "</div><ul class=\"toc\">" +
@@ -923,14 +946,14 @@ BUSINESSES.forEach(function (b) {
     title: bizPageTitle(b, cat),
     ogTitle: isPublishedBusiness(b)
       ? b.name + " - " + b.type + titleQualifier(b)
-      : b.name + " - verification hold",
+      : b.name + (b.publishState === "rejected" ? " - outside publication scope" : " - verification hold"),
     description: businessDescription(b),
     crumb: b.name,
     breadcrumbs: [
       { name: "Directory", path: "/directory.html" },
       { name: cat.name, path: "/" + cat.slug + "/" }
     ],
-    updated: b.dossierCheckedAt,
+    updated: b.publicationReviewedAt,
     schema: businessSchema ? [businessSchema] : [],
     businessSlug: b.slug,
     businessPublishState: b.publishState,
@@ -950,7 +973,8 @@ Object.keys(CATEGORIES).forEach(function (key) {
   var outsideList = categoryBusinesses.filter(function (b) {
     return isPublishedBusiness(b) && list.indexOf(b) === -1;
   });
-  var heldList = categoryBusinesses.filter(function (b) { return !isPublishedBusiness(b); });
+  var heldList = categoryBusinesses.filter(function (b) { return b.publishState === "hold"; });
+  var rejectedList = categoryBusinesses.filter(function (b) { return b.publishState === "rejected"; });
   var schemaList = list.concat(outsideList);
   var areaKeys = Object.keys(AREAS).filter(function (ak) {
     return list.some(function (b) { return b.areas.indexOf(ak) !== -1; });
@@ -992,7 +1016,7 @@ Object.keys(CATEGORIES).forEach(function (key) {
         }).join("") + "</div>";
     }
     body += "</div></section>";
-  } else if (!outsideList.length && !heldList.length) {
+  } else if (!outsideList.length && !heldList.length && !rejectedList.length) {
     body += '<section class="section section-tint"><div class="container">' +
       '<div class="callout callout-note"><div class="ch">Listings are being added</div>' +
       "<p>PattayaPets is verifying " + esc(cat.one) + "s in Pattaya before " +
@@ -1018,7 +1042,17 @@ Object.keys(CATEGORIES).forEach(function (key) {
       'not current business recommendations. They have no contact actions or business schema.</p><ul>' +
       heldList.map(function (b) {
         return '<li><a href="' + bizUrl(b) + '">' + esc(b.name) +
-          '</a> &mdash; ' + esc(serviceAreaLabel(b)) + "</li>";
+          '</a> &mdash; business facts and contacts withheld</li>';
+      }).join("") + "</ul></div></div></section>";
+  }
+
+  if (rejectedList.length) {
+    body += '<section class="section"><div class="container"><div class="callout callout-note">' +
+      '<div class="ch">Outside publication scope</div><p>These pre-existing URLs are retained ' +
+      'as non-published decision records. They have no business facts, contact actions or business schema.</p><ul>' +
+      rejectedList.map(function (b) {
+        return '<li><a href="' + bizUrl(b) + '">' + esc(b.name) +
+          '</a> &mdash; rejected from the Pattaya directory</li>';
       }).join("") + "</ul></div></div></section>";
   }
 

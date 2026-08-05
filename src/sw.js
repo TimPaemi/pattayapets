@@ -3,6 +3,17 @@ var VERSION = "__VERSION__";
 var CACHE_PREFIX = "pattayapets-";
 var CACHE = CACHE_PREFIX + VERSION;
 var PRECACHE = __PRECACHE__;
+var FRESH_ONLY_NAVIGATION_PREFIXES = [
+  "/bring-pet-to-thailand/",
+  "/take-pet-out-of-thailand/",
+  "/pet-emergency/"
+];
+
+function isFreshOnlyNavigation(pathname) {
+  return FRESH_ONLY_NAVIGATION_PREFIXES.some(function (prefix) {
+    return pathname === prefix.slice(0, -1) || pathname.indexOf(prefix) === 0;
+  });
+}
 
 self.addEventListener("install", function (e) {
   e.waitUntil(
@@ -29,14 +40,16 @@ self.addEventListener("fetch", function (e) {
   if (url.origin !== location.origin) return;
 
   if (req.mode === "navigate") {
+    var freshOnly = isFreshOnlyNavigation(url.pathname);
     var navigation = fetch(req);
     var navigationUpdate = navigation.then(function (res) {
-      if (res.ok && res.type !== "opaque" && !url.search) {
+      if (!freshOnly && res.ok && res.type !== "opaque" && !url.search) {
         return caches.open(CACHE).then(function (c) { return c.put(req, res.clone()); });
       }
     });
     e.waitUntil(navigationUpdate.catch(function () { /* Offline is handled below. */ }));
     e.respondWith(navigation.catch(function () {
+        if (freshOnly) return caches.match("/offline");
         return caches.match(req).then(function (r) {
           return r || caches.match("/offline");
         });

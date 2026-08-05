@@ -110,18 +110,27 @@ function checkHtml(path, body, issues, socialImages) {
   });
   var author = metas.find(function (attr) { return String(attr.name).toLowerCase() === "author"; });
   var publisher = metas.find(function (attr) { return String(attr.name).toLowerCase() === "publisher"; });
-  if (!author || author.content !== "Tim and Paemi \u2014 TimPaemi") {
-    issues.push({ kind: "AUTHOR", path: path, detail: "exact author metadata missing" });
+  if (author) {
+    issues.push({ kind: "AUTHOR", path: path, detail: "author metadata exists without an approved route-responsibility record" });
   }
   if (!publisher || publisher.content !== "TIMPAEMI CO., LTD.") {
     issues.push({ kind: "PUBLISHER", path: path, detail: "exact publisher metadata missing" });
   }
-  var timPaemiLinks = [...body.matchAll(/<a\b[^>]*>/gi)].map(function (match) {
+  var allLinks = [...body.matchAll(/<a\b[^>]*>/gi)].map(function (match) {
     return tagAttributes(match[0]);
-  }).filter(function (attr) { return attr.href === "https://timpaemi.com/"; });
-  if (timPaemiLinks.length !== 1 || !/(?:^|\s)author(?:\s|$)/.test(timPaemiLinks[0].rel || "") ||
-      /(?:^|\s)nofollow(?:\s|$)/.test(timPaemiLinks[0].rel || "")) {
-    issues.push({ kind: "AUTHOR_LINK", path: path, detail: "expected one followed rel=author TimPaemi link" });
+  });
+  var authorLinks = allLinks.filter(function (attr) {
+    return /(?:^|\s)author(?:\s|$)/.test(attr.rel || "");
+  });
+  if (authorLinks.length) {
+    issues.push({ kind: "AUTHOR_LINK", path: path, detail: "rel=author exists without an approved route-responsibility record" });
+  }
+  var timPaemiLinks = allLinks.filter(function (attr) { return attr.href === "https://timpaemi.com/"; });
+  var expectedHomeLinks = path === "/about.html" ? 1 : 0;
+  if (timPaemiLinks.length !== expectedHomeLinks || timPaemiLinks.some(function (attr) {
+    return /(?:^|\s)(?:author|nofollow|sponsored|ugc)(?:\s|$)/.test(attr.rel || "");
+  })) {
+    issues.push({ kind: "PUBLISHER_LINK", path: path, detail: "TimPaemi home-link count or qualification differs from entity-v2" });
   }
   metas.filter(function (attr) {
     return String(attr.property).toLowerCase() === "og:image";
@@ -337,7 +346,7 @@ async function pool(items, fn, n) {
   imageResults.filter(function (result) { return !result.ok; }).forEach(function (result) {
     issues.push({ kind: "SOCIAL_IMAGE", path: result.url, detail: result.error });
   });
-  console.log("Identity: author, publisher and single followed TimPaemi link checked on live HTML");
+  console.log("Identity: publisher, zero blanket authorship and one corpus-scoped About link checked on live HTML");
   console.log("Contact:  " + (protectedEmails.length || (rawContact ? 1 : 0)) + " verified mailbox payload(s)");
   console.log("Headers:  security contract present; SW/robots TTL bounded at four hours");
   console.log("Images:   " + imageResults.length + " content-addressed social images match release bytes");

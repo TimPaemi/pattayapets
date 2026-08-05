@@ -367,6 +367,10 @@ function recentTier(p) {
 
 function isRecentCandidate(p) {
   if (p.noindex || !p.updated || RECENT_SKIP[p.path] || RECENT_STRUCTURAL[p.path]) return false;
+  /* A held/rejected business route is retained for transparency, not promoted
+     as fresh directory content. The page object carries the canonical live
+     publication decision from src/data/businesses.js. */
+  if (p.businessPublishState && p.businessPublishState !== "published") return false;
   if (/^\/adopt-a-pet-pattaya\/[a-z0-9-]+\.html$/.test(p.path) &&
       p.path !== "/adopt-a-pet-pattaya/fostering.html" &&
       p.path !== "/adopt-a-pet-pattaya/how-to-help.html") return false;
@@ -627,8 +631,9 @@ async function build() {
     "# " + SITE.name + "\n\n" +
     "> " + SITE.tagline + ". An independent directory and guide publication for pet owners. " +
     "Editorial and informational only; not veterinary advice.\n\n## Publisher\n\n" +
-    "Published by " + SITE.publisherLegalName + " under the " + SITE.publisherName + " brand. " +
-    SITE.teamSummary + " " + SITE.teamWork + " Entity home: " + SITE.publisherUrl + "\n\n" +
+    "Published by " + SITE.publisherLegalName + " under the " + SITE.publisherName + " identity. " +
+    SITE.teamSummary + " " + SITE.teamWork + " Personal authorship and creator claims require " +
+    "an approved route-specific responsibility record; none is currently approved.\n\n" +
     "## Editorial and evidence state\n\n" +
     "No completed anonymous-visit or verdict records are currently published. A business entry " +
     "is not an endorsement of veterinary quality; business facts are published or withheld from " +

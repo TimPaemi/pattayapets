@@ -8,10 +8,12 @@
    ID without @). Do not publish landline phones except verified numbers on 24-hour
    emergency vet listings.
 
-   Integrity fields are joined below from BUSINESS_INTEGRITY. `publishState: "hold"`
-   is an evidence hold, not an instruction to remove or noindex an existing URL.
+   Integrity fields are joined below from BUSINESS_INTEGRITY. A non-published state
+   is an evidence/scope decision, not an instruction to remove or noindex an existing URL.
    `areas: []` always means that no Pattaya area was verified; serviceScope carries
    the separately sourced service geography and must never be inferred from [] alone. */
+
+const CONTACT_PUBLICATION = require("./business-contact-publication.js");
 
 const CATEGORIES = {
   vets: {
@@ -480,7 +482,7 @@ const BUSINESSES = [
     category: "trainers", areas: ["banglamung"], type: "Dog training school", c24: false,
     address: "51/3 Moo 5, Huai Yai, Bang Lamung, Chon Buri 20150",
     phone: "083 293 1694", tel: "+66832931694",
-    website: "https://www.facebook.com/255718304785371/", hours: "Daily 08:00-17:00",
+    website: "https://www.facebook.com/SJk9Pattaya/", hours: "Daily 08:00-17:00",
     languages: null,
     services: ["All-breed dog training", "Boarding", "Parking", "Wheelchair access"],
     summary: "A dog training and boarding operation in Huai Yai, currently listed as Dogs " +
@@ -564,7 +566,7 @@ const BUSINESSES = [
     address: "100 On Nut 40 Alley, Suan Luang, Bangkok 10250",
     email: "inquiryth@asia-relocation.com",
     whatsapp: "66810638189",
-    website: "https://www.asia-relocation.com/thailand/moving-services/pet-relocation/",
+    website: "https://www.asia-relocation.com/thailand/moving/pet-relocation/",
     hours: null,
     languages: null,
     services: ["Dog & cat import and export", "Microchip, vaccination & rabies-test coordination", "Vet-certificate coordination",
@@ -711,10 +713,8 @@ const BUSINESSES = [
  * makes an indexing/pruning decision. Dossier-only records are intentionally absent
  * from this registry and therefore cannot become public business pages accidentally.
  *
- * `dossierCheckedAt` records when the dossier was checked, not when every individual
- * field was independently reverified. Contact classification is also explicit below:
- * existing published contacts remain `legacy-publication-unreviewed` until the human
- * contact-publication policy and per-field review are complete.
+ * `dossierCheckedAt` records when the source dossier was checked. A separate versioned
+ * contact ledger records the 5 August 2026 field-level publication adjudication.
  */
 const BUSINESS_INTEGRITY = {
   "thonglor-pet-hospital-pattaya": {
@@ -722,8 +722,10 @@ const BUSINESS_INTEGRITY = {
     addressLocality: "Pattaya", addressRegion: "Chon Buri", dossierConfidence: "high"
   },
   "pattaya-veterinary-clinic": {
-    operatingStatus: "open", publishState: "published", serviceScope: "local",
-    addressLocality: "Na Kluea", addressRegion: "Chon Buri", dossierConfidence: "medium"
+    operatingStatus: "current-operation-unverified", publishState: "hold", serviceScope: "local",
+    addressLocality: "Na Kluea", addressRegion: "Chon Buri", dossierConfidence: "medium",
+    publicationBasis: "current-operation-unverified",
+    dossierStatusOverrideReason: "No attributable current first-party channel was verified in the 5 August adjudication."
   },
   "vetazoo-animal-and-exotic-pet-hospital": {
     operatingStatus: "open", publishState: "published", serviceScope: "local",
@@ -734,8 +736,10 @@ const BUSINESS_INTEGRITY = {
     addressLocality: "Nong Prue", addressRegion: "Chon Buri", dossierConfidence: "high"
   },
   "pattaya-animal-hospital": {
-    operatingStatus: "open", publishState: "published", serviceScope: "local",
-    addressLocality: "Nong Prue", addressRegion: "Chon Buri", dossierConfidence: "medium"
+    operatingStatus: "current-operation-unverified", publishState: "hold", serviceScope: "local",
+    addressLocality: "Nong Prue", addressRegion: "Chon Buri", dossierConfidence: "medium",
+    publicationBasis: "current-operation-unverified",
+    dossierStatusOverrideReason: "No attributable current first-party channel was verified in the 5 August adjudication."
   },
   "pattaya-community-pet-hospital": {
     operatingStatus: "open", publishState: "published", serviceScope: "local",
@@ -746,8 +750,10 @@ const BUSINESS_INTEGRITY = {
     addressLocality: "Na Jomtien", addressRegion: "Chon Buri", dossierConfidence: "high"
   },
   "siam-country-pet-hospital": {
-    operatingStatus: "open", publishState: "published", serviceScope: "local",
-    addressLocality: "Nong Prue", addressRegion: "Chon Buri", dossierConfidence: "medium"
+    operatingStatus: "current-operation-unverified", publishState: "hold", serviceScope: "local",
+    addressLocality: "Nong Prue", addressRegion: "Chon Buri", dossierConfidence: "medium",
+    publicationBasis: "current-operation-unverified",
+    dossierStatusOverrideReason: "Corporate registration evidence does not establish current consumer-facing operation."
   },
   "north-pattaya-animal-hospital": {
     operatingStatus: "open", publishState: "published", serviceScope: "local",
@@ -767,8 +773,10 @@ const BUSINESS_INTEGRITY = {
     addressLocality: "Nong Prue", addressRegion: "Chon Buri", dossierConfidence: "medium"
   },
   "furiday-pet-grooming": {
-    operatingStatus: "open", publishState: "published", serviceScope: "local",
-    addressLocality: "Na Kluea", addressRegion: "Chon Buri", dossierConfidence: "medium"
+    operatingStatus: "current-operation-unverified", publishState: "hold", serviceScope: "local",
+    addressLocality: "Na Kluea", addressRegion: "Chon Buri", dossierConfidence: "medium",
+    publicationBasis: "current-operation-unverified",
+    dossierStatusOverrideReason: "The reviewed sources did not establish a readable, current operator channel."
   },
   "furpet-grooming-and-hotel": {
     operatingStatus: "unverified", publishState: "hold", serviceScope: "unknown",
@@ -788,34 +796,42 @@ const BUSINESS_INTEGRITY = {
     addressLocality: "Bang Saray", addressRegion: "Chon Buri", dossierConfidence: "medium"
   },
   "brand-dog-pattaya-pet-supplies": {
-    operatingStatus: "open", publishState: "published", serviceScope: "local",
-    addressLocality: "Pattaya", addressRegion: "Chon Buri", dossierConfidence: "medium"
+    operatingStatus: "current-operation-unverified", publishState: "hold", serviceScope: "local",
+    addressLocality: "Pattaya", addressRegion: "Chon Buri", dossierConfidence: "medium",
+    publicationBasis: "current-operation-unverified",
+    dossierStatusOverrideReason: "Only aggregator and map-derived evidence was available; no attributable operator channel was verified."
   },
   "petsmart-pattaya": {
     operatingStatus: "open", publishState: "published", serviceScope: "local",
     addressLocality: "Nong Prue", addressRegion: "Chon Buri", dossierConfidence: "medium"
   },
   "tong-ma-aquarium-and-pets-shop": {
-    operatingStatus: "open", publishState: "published", serviceScope: "local",
-    addressLocality: "Pattaya", addressRegion: "Chon Buri", dossierConfidence: "medium"
+    operatingStatus: "current-operation-unverified", publishState: "hold", serviceScope: "local",
+    addressLocality: "Pattaya", addressRegion: "Chon Buri", dossierConfidence: "medium",
+    publicationBasis: "current-operation-unverified",
+    dossierStatusOverrideReason: "Only third-party directory evidence was available; current operation needs direct confirmation."
   },
   "peturday-pattaya": {
     operatingStatus: "open", publishState: "published", serviceScope: "local",
     addressLocality: "Bang Lamung", addressRegion: "Chon Buri", dossierConfidence: "medium"
   },
   "pattaya-pet-center": {
-    operatingStatus: "open", publishState: "published", serviceScope: "local",
-    addressLocality: "Nong Prue", addressRegion: "Chon Buri", dossierConfidence: "low"
+    operatingStatus: "current-operation-unverified", publishState: "hold", serviceScope: "local",
+    addressLocality: "Nong Prue", addressRegion: "Chon Buri", dossierConfidence: "low",
+    publicationBasis: "current-operation-unverified",
+    dossierStatusOverrideReason: "No attributable operator website or social channel was verified."
   },
   "k9-coach": {
     operatingStatus: "open", publishState: "published", serviceScope: "local",
     addressLocality: "Bang Saray", addressRegion: "Chon Buri", dossierConfidence: "high"
   },
   "zoeta-dogsoul": {
-    operatingStatus: "open", publishState: "published", serviceScope: "remote-only",
+    operatingStatus: "open", publishState: "hold", serviceScope: "remote-only",
     addressLocality: "Chiang Mai", addressRegion: "Chiang Mai", dossierConfidence: "medium",
     serviceAreas: ["Online"],
-    serviceAreaNote: "Online / remote service; in-person Pattaya service not verified"
+    serviceAreaNote: "Online / remote service; the former Pattaya programme route is gone",
+    publicationBasis: "pattaya-service-scope-conflict",
+    dossierStatusOverrideReason: "A former Pattaya programme URL is gone and no current in-person Pattaya service was verified."
   },
   "k9-pattaya-dog-training-school": {
     operatingStatus: "open", publishState: "published", serviceScope: "local",
@@ -857,16 +873,18 @@ const BUSINESS_INTEGRITY = {
     addressLocality: "Nong Prue", addressRegion: "Chon Buri", dossierConfidence: "high"
   },
   "pet-passions-mobile-grooming": {
-    operatingStatus: "open", publishState: "published", serviceScope: "regional",
+    operatingStatus: "open", publishState: "rejected", serviceScope: "regional",
     addressLocality: "Hua Hin", addressRegion: "Prachuap Khiri Khan", dossierConfidence: "high",
     serviceAreas: ["Hua Hin", "Cha-am", "Pranburi"],
-    serviceAreaNote: "Serves Hua Hin, Cha-am and Pranburi; Pattaya coverage not verified"
+    serviceAreaNote: "Serves Hua Hin, Cha-am and Pranburi; no Pattaya coverage is published",
+    publicationBasis: "out-of-area-rejected"
   },
   "pluto-luxury-pet-hotel-pattaya": {
-    operatingStatus: "open", publishState: "published", serviceScope: "local",
+    operatingStatus: "open", publishState: "rejected", serviceScope: "regional",
     addressLocality: "Bangkok", addressRegion: "Bangkok", dossierConfidence: "high",
     serviceAreas: ["Bangkok"],
-    serviceAreaNote: "Bangkok location; no Pattaya branch verified"
+    serviceAreaNote: "Bangkok location; no Pattaya or Bang Lamung branch is published",
+    publicationBasis: "out-of-area-rejected"
   },
   "doggie-star-grooming-pattaya": {
     operatingStatus: "unverified", publishState: "hold", serviceScope: "unknown",
@@ -882,6 +900,8 @@ BUSINESSES.forEach(function (business) {
   var integrity = BUSINESS_INTEGRITY[business.slug];
   if (!integrity) throw new Error("Missing BUSINESS_INTEGRITY record for " + business.slug);
   var hasStoredContact = CONTACT_FIELDS.some(function (field) { return Boolean(business[field]); });
+  var contactRecord = CONTACT_PUBLICATION.records[business.slug];
+  if (!contactRecord) throw new Error("Missing contact-publication record for " + business.slug);
   Object.assign(business, integrity, {
     addressCountry: integrity.addressLocality ? "TH" : null,
     locality: integrity.addressLocality ? {
@@ -893,9 +913,12 @@ BUSINESSES.forEach(function (business) {
     dossierCheckedAt: DOSSIER_CHECKED_AT,
     dossierPath: "research/businesses/" + business.slug + ".json",
     publicationBasis: integrity.publicationBasis || "reviewed-dossier",
+    publicationReviewedAt: contactRecord.reviewedAt,
     contactPublicationState: integrity.publishState === "hold"
       ? "withheld-by-hold"
-      : (hasStoredContact ? "legacy-publication-unreviewed" : "no-public-contact")
+      : integrity.publishState === "rejected"
+        ? "withheld-by-reject"
+        : (hasStoredContact ? "approved-public-contact" : "no-public-contact")
   });
 });
 
@@ -904,10 +927,22 @@ function isPublishedBusiness(business) {
     business.operatingStatus === "open";
 }
 
+function isContactPublishable(business, field) {
+  if (!isPublishedBusiness(business) || !CONTACT_FIELDS.includes(field)) return false;
+  var record = CONTACT_PUBLICATION.records[business.slug];
+  var decision = record && record.fields && record.fields[field];
+  return Boolean(business[field]) && Boolean(decision) &&
+    decision.publicationState === "approved" &&
+    decision.classification === "public-business" &&
+    decision.optOutState === "none-recorded";
+}
+
 module.exports = {
   CATEGORIES,
   AREAS,
   BUSINESSES,
   BUSINESS_INTEGRITY,
+  CONTACT_PUBLICATION,
+  isContactPublishable,
   isPublishedBusiness
 };

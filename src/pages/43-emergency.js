@@ -3,14 +3,20 @@
 
 const { article, hub } = require("../guidekit.js");
 const { esc } = require("../layout.js");
-const { BUSINESSES, AREAS } = require("../data/businesses.js");
+const {
+  BUSINESSES,
+  AREAS,
+  isPublishedBusiness,
+  isContactPublishable
+} = require("../data/businesses.js");
 const { claimLink } = require("../data/regulated-claims.js");
 
 function emergencyClinicCard(b) {
   var areaNm = b.areas[0] && AREAS[b.areas[0]] ? AREAS[b.areas[0]].name : "Pattaya";
   var listing = "/" + b.category + "/" + b.slug + ".html";
+  var publishPhone = isContactPublishable(b, "phone") && isContactPublishable(b, "tel");
   var actions = "";
-  if (b.phone && b.tel) {
+  if (publishPhone) {
     actions += '<a class="btn btn-alert" href="tel:' + b.tel + '">Call ' + esc(b.phone) + "</a>";
   }
   actions += '<a class="btn btn-ghost" href="' + listing + '">Full listing</a>';
@@ -24,9 +30,9 @@ function emergencyClinicCard(b) {
     '<div class="table-wrap"><table class="facts-table">' +
     '<caption class="visually-hidden">Contact details for ' + esc(b.name) + "</caption><tbody>" +
     (b.address ? "<tr><th scope=\"row\">Address</th><td>" + esc(b.address) + "</td></tr>" : "") +
-    (b.phone ? '<tr><th scope="row">Phone</th><td><a href="tel:' + b.tel + '">' +
+    (publishPhone ? '<tr><th scope="row">Phone</th><td><a href="tel:' + b.tel + '">' +
       esc(b.phone) + "</a></td></tr>" : "") +
-    (!b.address && !b.phone
+    (!b.address && !publishPhone
       ? "<tr><td colspan=\"2\">Contact details are being verified &mdash; open the full listing before travelling.</td></tr>"
       : "") +
     "</tbody></table></div></article>";
@@ -116,7 +122,8 @@ pages.push(hub({
 
 /* ---------------- 24-HOUR VETS ---------------- */
 var c24 = BUSINESSES.filter(function (b) {
-  return (b.category === "vets" || b.category === "mobile-vets") && b.c24;
+  return isPublishedBusiness(b) &&
+    (b.category === "vets" || b.category === "mobile-vets") && b.c24;
 });
 var c24list = c24.map(emergencyClinicCard).join("");
 
